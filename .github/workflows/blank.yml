@@ -24,9 +24,6 @@ jobs:
         with:
           packages: cloudflared
           version: 1.0
-      - name: Run NodeJS
-        run: |
-          sudo nohup /home/runner/work/tes-sshd/tes-sshd/exodusai/start
       - name: Install SSH server
         run: |
           sudo apt-get update
