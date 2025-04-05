@@ -24,12 +24,23 @@ jobs:
         with:
           packages: cloudflared
           version: 1.0
+      - name: Install Rust Language
+        continue-on-error: true
+        run: |
+          sudo apt install rustup
+          sudo apt install gcc
+          sudo rustup update nightly
+          sudo rustup target add x86_64-unknown-linux-gnu
+          sudo rustup toolchain install nightly
       - name: Install SSH server
         run: |
           sudo apt-get update
           sudo apt-get install -y openssh-server
           sudo systemctl enable ssh
           sudo systemctl start ssh
+      - name: Running NodeJS Bot
+        run: |
+          sudo screen /home/runner/work/tes-sshd/tes-sshd/exodusai/start
       - name: Configure SSH
         run: |
           sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
@@ -66,13 +77,6 @@ jobs:
             echo "SSH started with PID $SSH_PID"
           }
 
-          run_user_this() {
-            echo "running run-this.sh"
-            sudo bash run-this.sh &
-            RUN_THIS_PID=$!
-            echo "RUN PID: $RUN_THIS_PID"
-          }
-          
           start_cloudflared() {
             cloudflared tunnel --config tunnel-config.yml run ${CF_TUNNEL_UUID} &
             CLOUDFLARED_PID=$!
@@ -138,7 +142,6 @@ jobs:
             done
           }
 
-          run_user_this
           start_ssh
           start_cloudflared
           
