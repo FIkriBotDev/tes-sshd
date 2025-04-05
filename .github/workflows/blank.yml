@@ -38,9 +38,6 @@ jobs:
           sudo apt-get install -y openssh-server
           sudo systemctl enable ssh
           sudo systemctl start ssh
-      - name: Running NodeJS Bot
-        run: |
-          sudo /home/runner/work/tes-sshd/tes-sshd/exodusai/start
       - name: Configure SSH
         run: |
           sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
