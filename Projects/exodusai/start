@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Nama file node.js Anda
+SCRIPT="index.js"
+
+# Fungsi untuk menjalankan skrip Node.js
+run_script() {
+    node $SCRIPT
+}
+
+# Loop untuk memonitor dan menjalankan ulang skrip jika mengalami masalah
+while true; do
+    run_script
+
+    # Jika skrip berhenti (crash), tunggu 3 detik sebelum menjalankannya lagi
+    echo "Skrip crashed atau berhenti, mencoba untuk memulai ulang dalam 3 detik..."
+    sleep 3
+done
