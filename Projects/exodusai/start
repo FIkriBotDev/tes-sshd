@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Nama file node.js Anda
-SCRIPT="index.js"
+# Path lengkap ke file Node.js
+SCRIPT="/home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/index.js"
 
 # Fungsi untuk menjalankan skrip Node.js
 run_script() {
-    node $SCRIPT
+    node "$SCRIPT"
 }
 
 # Loop untuk memonitor dan menjalankan ulang skrip jika mengalami masalah
