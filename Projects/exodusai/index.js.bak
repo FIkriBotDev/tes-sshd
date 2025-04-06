@@ -6,8 +6,7 @@ const {
     fetchLatestBaileysVersion,
     makeInMemoryStore,
     downloadMediaMessage,
-    proto,
-    DisconnectReason
+    proto
 } = require('@whiskeysockets/baileys');
 
 const fs = require('fs');
@@ -92,36 +91,6 @@ function getMode(userId) {
         printQRInTerminal: true,
         auth: state,
         logger: P({ level: 'silent' }),
-    });
-
-    // === Debugging Connection Update ===
-    sock.ev.on('connection.update', (update) => {
-        const { connection, lastDisconnect, qr } = update;
-
-        if (qr) {
-            console.log('[DEBUG] QR code updated, scan it with your WhatsApp!');
-        }
-
-        if (connection === 'connecting') {
-            console.log('[DEBUG] Connecting to WhatsApp...');
-        }
-
-        if (connection === 'open') {
-            console.log('[DEBUG] Connected successfully!');
-        }
-
-        if (connection === 'close') {
-            console.log('[DEBUG] Connection closed.');
-            const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
-            console.log('[DEBUG] Reason:', lastDisconnect?.error?.output);
-            console.log('[DEBUG] Should reconnect:', shouldReconnect);
-            if (shouldReconnect) {
-                console.log('[DEBUG] Reconnecting...');
-                // kamu bisa trigger reconnecting logic di sini
-            } else {
-                console.log('[DEBUG] You are logged out.');
-            }
-        }
     });
 
     store.bind(sock.ev);
