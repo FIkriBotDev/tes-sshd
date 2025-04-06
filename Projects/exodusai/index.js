@@ -35,7 +35,7 @@ const uploadFile = async (buffer) => {
             },
         });
 
-        const urlMatch = response.data.match(/https:\/\/uploader\.nyxs\.pw\/tmp\/[^\s]+/);
+        const urlMatch = response.data.match(/https:\/\/uploader\.nyxs\.pw\/tmp\/[^"]+/);
         if (!urlMatch) throw new Error('URL not found in upload response');
 
         const uploadedUrl = urlMatch[0].replace(/"/g, '');
@@ -83,7 +83,7 @@ function getMode(userId) {
 }
 
 // === Start Bot with updated Baileys Auth ===
-(async () => {
+async function startBot() {
     const { state, saveCreds } = await useMultiFileAuthState('./auth_info');
     const { version, isLatest } = await fetchLatestBaileysVersion();
 
@@ -92,41 +92,28 @@ function getMode(userId) {
         printQRInTerminal: true,
         auth: state,
         logger: P({ level: 'silent' }),
-    });
-
-    // === Debugging Connection Update ===
-    sock.ev.on('connection.update', (update) => {
-        const { connection, lastDisconnect, qr } = update;
-
-        if (qr) {
-            console.log('[DEBUG] QR code updated, scan it with your WhatsApp!');
-        }
-
-        if (connection === 'connecting') {
-            console.log('[DEBUG] Connecting to WhatsApp...');
-        }
-
-        if (connection === 'open') {
-            console.log('[DEBUG] Connected successfully!');
-        }
-
-        if (connection === 'close') {
-            console.log('[DEBUG] Connection closed.');
-            const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
-            console.log('[DEBUG] Reason:', lastDisconnect?.error?.output);
-            console.log('[DEBUG] Should reconnect:', shouldReconnect);
-            if (shouldReconnect) {
-                console.log('[DEBUG] Reconnecting...');
-                // kamu bisa trigger reconnecting logic di sini
-            } else {
-                console.log('[DEBUG] You are logged out.');
-            }
-        }
+        browser: ['ExodusAI', 'Chrome', '1.0.0']
     });
 
     store.bind(sock.ev);
 
     sock.ev.on('creds.update', saveCreds);
+
+    sock.ev.on('connection.update', (update) => {
+        const { connection, lastDisconnect } = update;
+
+        if (connection === 'close') {
+            const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
+            console.log('[DEBUG] Connection closed. Reconnect?', shouldReconnect);
+            if (shouldReconnect) {
+                startBot();
+            } else {
+                console.log('[DEBUG] You are logged out.');
+            }
+        } else if (connection === 'open') {
+            console.log('[DEBUG] Bot is connected to WhatsApp!');
+        }
+    });
 
     sock.ev.on('messages.upsert', async ({ messages, type }) => {
         if (type !== 'notify') return;
@@ -238,4 +225,6 @@ function getMode(userId) {
             }
         }
     });
-})();
+}
+
+startBot();
