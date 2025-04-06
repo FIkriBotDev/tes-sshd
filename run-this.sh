@@ -1,1 +1,1 @@
-screen /home/runner/work/tes-sshd/tes-sshd/playit-linux-amd64
+sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start
