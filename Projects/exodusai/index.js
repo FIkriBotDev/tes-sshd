@@ -150,7 +150,7 @@ async function startBot() {
 
                 let geminiPrompt = userMessage || (m.message.audioMessage ? 'dengarkan audio ini' : m.message.videoMessage ? 'video apa ini' : 'lihatlah gambar ini');
 
-                const geminiApiUrl = `https://ytsummarize-ai.exoduscloud.my.id/api/gemini-image?text=${encodeURIComponent(geminiPrompt)}&url=${encodeURIComponent(uploadedFileUrl)}`;
+                const geminiApiUrl = `https://gemini-api.exoduscloud.my.id/api/gemini-image?text=${encodeURIComponent(geminiPrompt)}&url=${encodeURIComponent(uploadedFileUrl)}`;
                 const geminiResponse = await fetch(geminiApiUrl).then(res => res.json());
 
                 if (!geminiResponse.status || !geminiResponse.result) {
@@ -164,7 +164,7 @@ async function startBot() {
                     content: `Berikut ini adalah text dari gemini result: \"${geminiResult}\". Sekarang kirimkan gemini result tersebut ke user dengan menggunakan bahasa kamu (bahasa gaul seperti yang kamu gunakan) dan tambahkan sedikit kata kata biar lebih kreatif. dan kirimkan text nya saja tanpa perlu semacam kamu kirim \"Ini adalah hasilnya\" cukup kirimkan text yang kamu ubah saja.`
                 });
 
-                const chatbotResponse = await fetch('https://restapi.exoduscloud.my.id/post/rtist', {
+                const chatbotResponse = await fetch('https://rtist-api.exoduscloud.my.id/post/rtist', {
                     method: 'POST',
                     headers: {
                         'accept': 'application/json',
@@ -189,7 +189,7 @@ async function startBot() {
         if (currentMode === 'chatbot') {
             conversation.push({ role: "user", content: userMessage });
             try {
-                const response = await fetch('https://restapi.exoduscloud.my.id/post/rtist', {
+                const response = await fetch('https://rtist-api.exoduscloud.my.id/post/rtist', {
                     method: 'POST',
                     headers: {
                         'accept': 'application/json',
