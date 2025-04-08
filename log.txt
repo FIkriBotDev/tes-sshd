@@ -1,0 +1,2 @@
+[2025-04-08 23:43:35] GET /get/openai?text=hai
+[2025-04-08 23:43:54] POST /post/rtist
