@@ -110,7 +110,7 @@
     },
  {
       "role": "user",
-      "content": "jika saya suruh membuat sebuah gambar, gunakan url https://restapi.exoduscloud.my.id/get/image-generator bukan url pollinations https://image.pollinations.ai/prompt, tapi gunakan url tersebut seperti ini sebagai contoh https://restapi.exoduscloud.my.id/get/image-generator/pemandangan%20rumah%20mewah%20dengan%20taman%20yang%20indah%20dan%20kolam%20renang%2C%20arsitektur%20modern%20dan%20elegan%2C%20detail%20mewah%20seperti%20pilar%2C%20balkon%20luas%2C%20dan%20atap%20yang%20indah%2C%20iluminasi%20malam.%204k%20resolution.%20Highly%20detailed%20illustration.?width=768&height=384&nologo=true"
+      "content": "jika saya suruh membuat sebuah gambar, gunakan url https://rtist-api.exoduscloud.my.id/get/image-generator bukan url pollinations https://image.pollinations.ai/prompt, tapi gunakan url tersebut seperti ini sebagai contoh https://rtist-api.exoduscloud.my.id/get/image-generator/pemandangan%20rumah%20mewah%20dengan%20taman%20yang%20indah%20dan%20kolam%20renang%2C%20arsitektur%20modern%20dan%20elegan%2C%20detail%20mewah%20seperti%20pilar%2C%20balkon%20luas%2C%20dan%20atap%20yang%20indah%2C%20iluminasi%20malam.%204k%20resolution.%20Highly%20detailed%20illustration.?width=768&height=384&nologo=true"
     },
 {
       "role": "assistant",
@@ -126,7 +126,7 @@
     },
     {
       "role": "user",
-      "content": "Jika anda diminta user untuk melakukan screenshot ke url atau web yang ingin user screenshot... misalnya user meminta anda untuk screenshot google tanpa mengirim url nya, anda kan sudah tau url google itu apa kan? tinggal melakukan screenshot ke google.com atau url yang diberikan user dengan cara mengirim pesan seperti ini: \"![Image Caption](https://restapi.exoduscloud.my.id/tools/sswebpc?url=https://www.google.com)\" begitu juga dengan url yang lain atau web lain yang ingin user screenshot... paham kan? lakukan dengan cara mengirim pesan dengan format tersebut dan di url https://restapi.exoduscloud.my.id/tools/sswebpc?url=TARUH URL NYA DISINI... Tetapi jika user mengirim url seperti www.google.com saja, anda tambahkan https:// menjadi seperti url berikut https://www.google.com karena di url api screenshot tersebut itu tidak mendukung url dalam bentuk seperti www.google.com tanpa protokol http atau https."
+      "content": "Jika anda diminta user untuk melakukan screenshot ke url atau web yang ingin user screenshot... misalnya user meminta anda untuk screenshot google tanpa mengirim url nya, anda kan sudah tau url google itu apa kan? tinggal melakukan screenshot ke google.com atau url yang diberikan user dengan cara mengirim pesan seperti ini: \"![Image Caption](https://rtist-api.exoduscloud.my.id/tools/sswebpc?url=https://www.google.com)\" begitu juga dengan url yang lain atau web lain yang ingin user screenshot... paham kan? lakukan dengan cara mengirim pesan dengan format tersebut dan di url https://rtist-api.exoduscloud.my.id/tools/sswebpc?url=TARUH URL NYA DISINI... Tetapi jika user mengirim url seperti www.google.com saja, anda tambahkan https:// menjadi seperti url berikut https://www.google.com karena di url api screenshot tersebut itu tidak mendukung url dalam bentuk seperti www.google.com tanpa protokol http atau https."
     },
     {
       "role": "assistant",
@@ -138,7 +138,7 @@
     },
     {
       "role": "assistant",
-      "content": "![Image Caption](https://restapi.exoduscloud.my.id/tools/sswebpc?url=https://www.youtube.com)"
+      "content": "![Image Caption](https://rtist-api.exoduscloud.my.id/tools/sswebpc?url=https://www.youtube.com)"
     },
     {
       "role": "user",
