@@ -9,15 +9,16 @@ import fs from 'fs';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 const app = express();
 const port = 5000;
 const upload = multer({ storage: multer.memoryStorage() });
 
 app.use(cors());
 app.use(express.static('public'));
+
+// Get __dirname in ES module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // === Upload file function ===
 const uploadFile = async (buffer) => {
@@ -78,27 +79,26 @@ app.post('/analyze', upload.single('image'), async (req, res) => {
         const geminiUrl = `https://gemini-api.exoduscloud.my.id/api/gemini-image?text=${encodeURIComponent(geminiPrompt)}&url=${encodeURIComponent(uploadedUrl)}`;
 
         const response = await axios.get(geminiUrl);
-        const responseText = response.data;
-
-        console.log("🔍 Raw AI Response:");
-        console.log(responseText);
 
         let aiJson;
         try {
-            // Ambil isi JSON dari teks AI (jaga-jaga jika ada penjelasan tambahan)
-            const jsonStart = responseText.indexOf('{');
-            const jsonEnd = responseText.lastIndexOf('}');
-            const jsonString = responseText.slice(jsonStart, jsonEnd + 1);
+            const responseText = response.data.result;
 
+            // Ekstrak bagian JSON di dalam blok ```json
+            const jsonBlockMatch = responseText.match(/```json\n([\s\S]+?)\n```/);
+            if (!jsonBlockMatch) {
+                throw new Error('JSON block not found in AI response');
+            }
+
+            const jsonString = jsonBlockMatch[1];
             aiJson = JSON.parse(jsonString);
         } catch (e) {
-            console.error('❌ Gagal parsing JSON:', e);
-            return res.status(500).json({ error: 'Failed to parse AI response as JSON', raw: responseText });
+            return res.status(500).json({ error: 'Failed to parse AI response as JSON', raw: response.data });
         }
 
         res.json(aiJson);
     } catch (err) {
-        console.error('❌ Internal error:', err);
+        console.error(err);
         res.status(500).json({ error: 'Internal server error' });
     }
 });
