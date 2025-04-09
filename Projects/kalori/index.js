@@ -18,7 +18,7 @@ app.use(express.static('public'));
 // === Upload file function ===
 const uploadFile = async (buffer) => {
     try {
-        const { ext } = await fromBuffer(buffer);
+        const { ext } = await fileTypeFromBuffer(buffer);
         if (!ext) throw new Error('Could not determine file type from buffer');
 
         let form = new FormData();
