@@ -89,3 +89,5 @@
 [2025-04-09 05:36:59] GET /get/openai?text=apa%20kabar
 [2025-04-09 05:37:01] GET /get/openai?text=apa%20kabar
 [2025-04-09 05:37:03] GET /get/openai?text=apa%20kabar
+[2025-04-09 05:37:16] POST /post/rtist
+[2025-04-09 05:37:20] POST /post/rtist
