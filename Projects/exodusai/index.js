@@ -181,7 +181,7 @@ async function startBot() {
                     .replace(/\*\*?Powered by Pollinations\.AI.*?\n?/gi, '')
                     .replace(/\n{2,}/g, '\n')
                     .trim();
-                aiResponse += `\n\n---\nDitenagai oleh ExodusAI. [Dukung kami](https://sociabuzz.com/exodusai) untuk menjaga agar AI tetap dapat diakses untuk semua orang.`;
+                aiResponse += ``;
 
                 await sock.sendMessage(sender, { text: aiResponse });
                 conversation.push({ role: "assistant", content: aiResponse });
