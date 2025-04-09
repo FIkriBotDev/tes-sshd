@@ -216,7 +216,7 @@ async function startBot() {
                         .replace(/\n{2,}/g, '\n')
                         .trim();
 
-                    aiResponse += `\n\n---\nDitenagai oleh ExodusAI. [Dukung kami](https://sociabuzz.com/exodusai) untuk menjaga agar AI tetap dapat diakses untuk semua orang.`;
+                    aiResponse += ``;
 
                     const imageRegex = /!\[.*?\]\((https?:\/\/[^\s]+)\)/g;
                     let match = imageRegex.exec(aiResponse);
