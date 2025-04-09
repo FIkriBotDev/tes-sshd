@@ -7,7 +7,6 @@ import { fileTypeFromBuffer } from 'file-type';
 import path from 'path';
 import fs from 'fs';
 import cors from 'cors';
-import { fileURLToPath } from 'url';
 
 const app = express();
 const port = 5000;
@@ -15,10 +14,6 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 app.use(cors());
 app.use(express.static('public'));
-
-// Get __dirname in ES module
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // === Upload file function ===
 const uploadFile = async (buffer) => {
@@ -83,29 +78,33 @@ app.post('/analyze', upload.single('image'), async (req, res) => {
         let aiJson;
         try {
             const responseText = response.data.result;
+            console.log('🔍 Raw AI response:\n', responseText);
 
-            // Ekstrak bagian JSON di dalam blok ```json
             const jsonBlockMatch = responseText.match(/```json\n([\s\S]+?)\n```/);
             if (!jsonBlockMatch) {
+                console.error('❌ JSON block not found!');
                 throw new Error('JSON block not found in AI response');
             }
 
             const jsonString = jsonBlockMatch[1];
+            console.log('🧩 Extracted JSON string:\n', jsonString);
+
             aiJson = JSON.parse(jsonString);
         } catch (e) {
+            console.error('❌ Failed to parse JSON:', e.message);
             return res.status(500).json({ error: 'Failed to parse AI response as JSON', raw: response.data });
         }
 
         res.json(aiJson);
     } catch (err) {
-        console.error(err);
+        console.error('❌ Internal Server Error:', err.message);
         res.status(500).json({ error: 'Internal server error' });
     }
 });
 
 // === Serve Frontend ===
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(path.resolve(), 'public', 'index.html'));
 });
 
 app.listen(port, () => {
