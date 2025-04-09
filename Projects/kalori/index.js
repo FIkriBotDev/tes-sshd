@@ -1,17 +1,19 @@
-// === server.js ===
-const express = require('express');
-const multer = require('multer');
-const axios = require('axios');
-const fromBuffer = require('file-type').fromBuffer;
-const FormData = require('form-data');
-const cors = require('cors');
+// backend/index.js
+import express from 'express';
+import multer from 'multer';
+import axios from 'axios';
+import FormData from 'form-data';
+import { fromBuffer } from 'file-type';
+import path from 'path';
+import fs from 'fs';
+import cors from 'cors';
+
 const app = express();
-const port = 3000;
+const port = 5000;
+const upload = multer({ storage: multer.memoryStorage() });
 
 app.use(cors());
-app.use(express.json());
-
-const upload = multer();
+app.use(express.static('public'));
 
 // === Upload file function ===
 const uploadFile = async (buffer) => {
@@ -28,11 +30,10 @@ const uploadFile = async (buffer) => {
             },
         });
 
-        const urlMatch = response.data.match(/https:\/\/uploader\.nyxs\.pw\/tmp\/[^"\s]+/);
+        const urlMatch = response.data.match(/https:\/\/uploader\.nyxs\.pw\/tmp\/[^\"]+/);
         if (!urlMatch) throw new Error('URL not found in upload response');
 
-        const uploadedUrl = urlMatch[0];
-        console.log('Uploaded File URL:', uploadedUrl);
+        const uploadedUrl = urlMatch[0].replace(/"/g, '');
         return uploadedUrl;
     } catch (error) {
         console.error('Error during file upload:', error);
@@ -40,58 +41,59 @@ const uploadFile = async (buffer) => {
     }
 };
 
-// === Gemini Prompt Builder ===
-const buildPrompt = () => {
-    return `Berikan analisis lengkap dari makanan dalam gambar ini:
-- Skor kesehatan keseluruhan (1-5)
-- Apakah direkomendasikan atau tidak
-- Jelaskan alasannya
-- Rincian nutrisi (kalori, protein, karbohidrat, lemak + persentase)
-- Vitamin dan mineral
-- Analisis bahan atau ingredients
+// === Prompt Builder ===
+const buildPrompt = () => `
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+- Skor kesehatan keseluruhan
+- Apakah direkomendasikan atau tidak dan alasannya
+- Rincian nutrisi (kalori, protein, karbohidrat, lemak & persentase masing-masing terhadap total kalori)
+- Vitamin dan mineral yang terkandung
+- Analisis bahan/ingredients
 - Alternatif makanan yang lebih sehat
-Formatkan semua jawaban dalam format JSON yang valid seperti ini:
+Balas dalam format JSON:
 {
-  "skorKesehatan": 3,
-  "direkomendasikanAtauTidak": "Tidak direkomendasikan",
-  "alasan": "Makanan ini mengandung banyak gula, dan karbohidrat olahan, tetapi rendah nutrisi penting.",
-  "kalori": 350,
-  "protein": "4g",
-  "proteinPersen": "4% kalori",
-  "karbohidrat": "50g",
-  "karbohidratPersen": "57% kalori",
-  "lemak": "15g",
-  "lemakPersen": "39% kalori",
-  "vitaminDanMineral": ["Vitamin A", "Vitamin B12", "Riboflavin"],
-  "mineral": ["Kalsium", "Besi", "Kalium"],
-  "ingredients": "Gula, Tepung, Krim, Pewarna Makanan Merah",
-  "alternatif": "Kue rendah gula dengan tepung gandum dan krim yogurt"
-}`;
-};
+  "skorKesehatan": {"direkomendasikanAtauTidak": "...", "alasan": "..."},
+  "rincianNutrisi": {
+    "kalori": ..., "protein": "...", "proteinPersen": "...",
+    "karbohidrat": "...", "karbohidratPersen": "...",
+    "gemuk": "...", "gemukPersen": "...",
+    "vitaminDanMineral": [...], "mineral": [...]
+  },
+  "ingredients": [...],
+  "alternatif": [...]
+}
+`;
 
-// === Analyze Image Endpoint ===
+// === POST /analyze ===
 app.post('/analyze', upload.single('image'), async (req, res) => {
     try {
-        const buffer = req.file.buffer;
-        const uploadedUrl = await uploadFile(buffer);
+        const fileBuffer = req.file.buffer;
+        const uploadedUrl = await uploadFile(fileBuffer);
 
-        const prompt = buildPrompt();
-        const geminiURL = `https://gemini-api.exoduscloud.my.id/api/gemini-image?text=${encodeURIComponent(prompt)}&url=${encodeURIComponent(uploadedUrl)}`;
+        const geminiPrompt = buildPrompt();
+        const geminiUrl = `https://gemini-api.exoduscloud.my.id/api/gemini-image?text=${encodeURIComponent(geminiPrompt)}&url=${encodeURIComponent(uploadedUrl)}`;
 
-        const geminiResponse = await axios.get(geminiURL);
+        const response = await axios.get(geminiUrl);
 
-        // Try to extract valid JSON from response
-        const jsonMatch = geminiResponse.data.match(/\{[\s\S]*\}/);
-        if (!jsonMatch) throw new Error('No JSON found in response');
+        let aiJson;
+        try {
+            aiJson = JSON.parse(response.data);
+        } catch (e) {
+            return res.status(500).json({ error: 'Failed to parse AI response as JSON', raw: response.data });
+        }
 
-        const jsonData = JSON.parse(jsonMatch[0]);
-        res.json(jsonData);
-    } catch (error) {
-        console.error('Analysis error:', error.message);
-        res.status(500).json({ error: 'Image analysis failed' });
+        res.json(aiJson);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Internal server error' });
     }
 });
 
+// === Serve Frontend ===
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 app.listen(port, () => {
-    console.log(`Server listening at http://localhost:${port}`);
+    console.log(`🚀 Server ready at http://localhost:${port}`);
 });
