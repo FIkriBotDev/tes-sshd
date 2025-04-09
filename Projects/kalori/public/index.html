@@ -31,7 +31,7 @@
     <div id="previewContainer" class="text-center d-none">
       <img id="previewImage" src="" class="img-fluid rounded image-preview" />
       <div class="d-flex justify-content-center gap-2">
-        <button class="btn btn-dark btn-sm" onclick="startAnalysis()">📸 Take Photo</button>
+        <button class="btn btn-dark btn-sm" onclick="startAnalysis()">📸 Analyze</button>
         <button class="btn btn-outline-secondary btn-sm" onclick="resetImage()">🔄 Retake</button>
       </div>
     </div>
@@ -45,25 +45,28 @@
       <h6>📊 Result:</h6>
       <div class="mb-3">
         <h6>🧠 Skor Kesehatan Keseluruhan:</h6>
-        <div id="skorKesehatan" class="fw-bold fs-5"></div>
-        <div id="direkomendasikanAtauTidak"></div>
+        <div id="direkomendasikanAtauTidak" class="fw-bold fs-5"></div>
         <div id="alasan" class="text-muted"></div>
       </div>
+
       <div class="mb-3">
         <h6>📋 Rincian Nutrisi:</h6>
         <ul id="rincianNutrisi"></ul>
       </div>
+
       <div class="mb-3">
         <h6>💊 Vitamin & Mineral:</h6>
         <ul id="vitaminMineral"></ul>
       </div>
+
       <div class="mb-3">
         <h6>🔍 Analisis Bahan:</h6>
-        <p id="analisisBahan"></p>
+        <ul id="analisisBahan"></ul>
       </div>
+
       <div class="mb-3">
         <h6>🥗 Alternatif Lebih Sehat:</h6>
-        <p id="alternatifSehat"></p>
+        <ul id="alternatifSehat"></ul>
       </div>
     </div>
   </div>
@@ -107,43 +110,61 @@
         const res = await axios.post('https://food-analyzer.exoduscloud.my.id/analyze', formData);
         const data = res.data;
 
-        document.getElementById('skorKesehatan').textContent = data.skorKesehatan || '-';
+        // Skor kesehatan
+        const skor = data?.skorKesehatan;
         document.getElementById('direkomendasikanAtauTidak').innerHTML =
-          data.direkomendasikanAtauTidak === 'Direkomendasikan'
+          skor?.direkomendasikanAtauTidak === 'Direkomendasikan'
             ? '<span class="text-green">👍 Direkomendasikan</span>'
             : '<span class="text-red">👎 Tidak Direkomendasikan</span>';
-        document.getElementById('alasan').textContent = data.alasan || '';
+        document.getElementById('alasan').textContent = skor?.alasan || '-';
 
+        // Nutrisi
         const nutrisiList = document.getElementById('rincianNutrisi');
         nutrisiList.innerHTML = '';
-        const nutrisiKeys = ['kalori', 'protein', 'proteinPersen', 'karbohidrat', 'karbohidratPersen', 'gemuk', 'gemukPersen'];
-        nutrisiKeys.forEach(key => {
-          if (data[key]) {
+        const nutrisi = data?.rincianNutrisi || {};
+        const nutrisiKeys = {
+          kalori: "Kalori",
+          protein: "Protein",
+          proteinPersen: "Protein %",
+          karbohidrat: "Karbohidrat",
+          karbohidratPersen: "Karbohidrat %",
+          gemuk: "Lemak",
+          gemukPersen: "Lemak %"
+        };
+        for (const [key, label] of Object.entries(nutrisiKeys)) {
+          if (nutrisi[key]) {
             const li = document.createElement('li');
-            li.textContent = `${key}: ${data[key]}`;
+            li.textContent = `${label}: ${nutrisi[key]}`;
             nutrisiList.appendChild(li);
           }
-        });
+        }
 
+        // Vitamin & Mineral
         const vitaminList = document.getElementById('vitaminMineral');
         vitaminList.innerHTML = '';
-        if (data.vitaminDanMineral) {
-          data.vitaminDanMineral.split(',').forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = item.trim();
-            vitaminList.appendChild(li);
-          });
-        }
-        if (data.mineral) {
-          data.mineral.split(',').forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = item.trim();
-            vitaminList.appendChild(li);
-          });
-        }
+        [...(nutrisi.vitaminDanMineral || []), ...(nutrisi.mineral || [])].forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          vitaminList.appendChild(li);
+        });
 
-        document.getElementById('analisisBahan').textContent = data.analisisBahan || '-';
-        document.getElementById('alternatifSehat').textContent = data.alternatifSehat || '-';
+        // Analisis Bahan
+        const bahanList = document.getElementById('analisisBahan');
+        bahanList.innerHTML = '';
+        (data.ingredients || []).forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          bahanList.appendChild(li);
+        });
+
+        // Alternatif Sehat
+        const alternatifList = document.getElementById('alternatifSehat');
+        alternatifList.innerHTML = '';
+        (data.alternatif || []).forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          alternatifList.appendChild(li);
+        });
 
         document.getElementById('resultContainer').classList.remove('d-none');
       } catch (error) {
