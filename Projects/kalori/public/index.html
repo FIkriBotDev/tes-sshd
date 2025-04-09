@@ -104,7 +104,7 @@
       document.getElementById('resultContainer').classList.add('d-none');
 
       try {
-        const res = await axios.post('http://localhost:5000/analyze', formData);
+        const res = await axios.post('https://food-analyzer.exoduscloud.my.id/analyze', formData);
         const data = res.data;
 
         document.getElementById('skorKesehatan').textContent = data.skorKesehatan || '-';
