@@ -3,7 +3,7 @@ import express from 'express';
 import multer from 'multer';
 import axios from 'axios';
 import FormData from 'form-data';
-import { fromBuffer } from 'file-type';
+import { fileTypeFromBuffer } from 'file-type';
 import path from 'path';
 import fs from 'fs';
 import cors from 'cors';
