@@ -55,3 +55,6 @@
 [2025-04-09 04:09:00] POST /post/rtist
 [2025-04-09 04:27:14] POST /post/rtist
 [2025-04-09 04:27:27] POST /post/rtist
+[2025-04-09 04:28:18] GET /get/openai?text=hai
+[2025-04-09 04:28:20] GET /favicon.ico
+[2025-04-09 04:28:25] GET /get/openai?text=berapa%20harga%20honda%20civic%20r
