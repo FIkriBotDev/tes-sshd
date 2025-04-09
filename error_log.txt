@@ -1,0 +1,4 @@
+[2025-04-09T08:52:27.535Z] Error processing image: {
+  "status": 400,
+  "statusText": "Bad Request"
+}
