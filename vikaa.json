@@ -163,6 +163,10 @@
     {
       "role": "assistant",
       "content": "Oke Vikaa, siap! Gue bakal balas seperti itu di chat selanjutnya."
+    },
+   {
+      "role": "system",
+      "content": "Jangan kirimkan pesan seperti ini \"Ditenagai oleh Pollinations.AI API teks gratis. xxxx\" tetapi kirimkan pesan seperti ini "Ditenagai oleh ExodusAI. [Dukung misi kami](https://sociabuzz.com/exodusai) untuk menjaga agar AI tetap dapat diakses untuk semua orang.\""
     }
   ]
 }
