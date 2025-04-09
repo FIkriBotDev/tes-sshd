@@ -1,102 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Food Analysis</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Analysis Assistant</title>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body { background-color: #f2f4f6; }
-    .card-custom { max-width: 720px; margin: 50px auto; padding: 20px; border-radius: 20px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); background: #fff; }
-    .image-preview { max-height: 300px; object-fit: contain; margin-bottom: 1rem; }
-    .loading-spinner { font-size: 2rem; text-align: center; }
-    .text-green { color: #28a745; }
-    .text-red { color: #dc3545; }
-    .badge-pill { padding: 10px 20px; font-size: 0.9rem; border-radius: 50rem; }
-    .card-box { background-color: #f8f9fa; border-left: 4px solid #0d6efd; border-radius: 8px; padding: 10px 15px; margin-bottom: 10px; }
-    .badge-value { font-weight: bold; background-color: #e9ecef; border-radius: 12px; padding: 4px 8px; margin-left: 6px; }
+    body {
+      background: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .result-box {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      margin-top: 20px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+
+    .badge-box {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 10px;
+      background: #e9ecef;
+      margin: 2px;
+    }
+
+    .text-green {
+      color: #28a745;
+    }
+
+    .text-red {
+      color: #dc3545;
+    }
   </style>
 </head>
+
 <body>
-  <div class="card card-custom">
-    <h4 class="mb-4">🍽️ Food Analysis Assistant</h4>
-
-    <div class="mb-3 d-flex gap-2">
-      <button class="btn btn-info text-white" onclick="document.getElementById('fileInput').click()">📷 Camera</button>
-      <input type="file" id="fileInput" accept="image/*" class="d-none" onchange="handleImageUpload(event)" />
-      <button class="btn btn-outline-primary" onclick="document.getElementById('fileInput').click()">📤 Upload</button>
+  <div class="container py-5">
+    <h2 class="text-center mb-4">🍽️ Food Analysis Assistant</h2>
+    <div class="text-center">
+      <input type="file" id="fileInput" accept="image/*" class="form-control mb-3" style="max-width: 400px; margin: auto;">
+      <button class="btn btn-primary" onclick="startAnalysis()">🔍 Analisa Sekarang</button>
     </div>
 
-    <div id="previewContainer" class="text-center d-none">
-      <img id="previewImage" src="" class="img-fluid rounded image-preview" />
-      <div class="d-flex justify-content-center gap-2">
-        <button class="btn btn-dark btn-sm" onclick="startAnalysis()">Analyze</button>
-        <button class="btn btn-outline-secondary btn-sm" onclick="resetImage()">Reset</button>
-      </div>
-    </div>
-
-    <div id="loading" class="loading-spinner text-center mt-4 d-none">
+    <div id="loading" class="text-center d-none mt-3">
       <div class="spinner-border text-primary" role="status"></div>
-      <p>Analyzing with AI...</p>
+      <p class="mt-2">Memproses gambar...</p>
     </div>
 
-    <div id="resultContainer" class="mt-4 d-none">
-      <h5 class="mb-3">📊 Result:</h5>
+    <div id="resultContainer" class="result-box d-none">
+      <div class="section-title">📊 Hasil Analisis:</div>
 
-      <div class="card-box">
-        <h6>🧠 Skor Kesehatan:</h6>
-        <div id="direkomendasikanAtauTidak" class="fw-bold mb-1"></div>
-        <div id="alasan" class="text-muted"></div>
+      <div class="mt-3">
+        <strong>🧠 Skor Kesehatan:</strong>
+        <div id="direkomendasikanAtauTidak" class="mb-1"></div>
+        <p id="alasan" class="text-muted"></p>
       </div>
 
-      <div class="card-box">
-        <h6>📋 Rincian Nutrisi:</h6>
-        <ul id="rincianNutrisi" class="list-unstyled mb-0"></ul>
+      <div class="mt-4">
+        <strong class="section-title">📋 Rincian Nutrisi:</strong>
+        <ul id="rincianNutrisi"></ul>
       </div>
 
-      <div class="card-box">
-        <h6>💊 Vitamin & Mineral:</h6>
-        <ul id="vitaminMineral" class="list-inline mb-0"></ul>
+      <div class="mt-4">
+        <strong class="section-title">💊 Vitamin & Mineral:</strong>
+        <ul id="vitaminMineral"></ul>
       </div>
 
-      <div class="card-box">
-        <h6>🔍 Analisis Bahan:</h6>
-        <ul id="analisisBahan" class="list-inline mb-0"></ul>
+      <div class="mt-4">
+        <strong class="section-title">🔍 Analisis Bahan:</strong>
+        <p id="analisisBahan"></p>
       </div>
 
-      <div class="card-box">
-        <h6>🥗 Alternatif Lebih Sehat:</h6>
-        <ul id="alternatifSehat" class="list-inline mb-0"></ul>
+      <div class="mt-4">
+        <strong class="section-title">🥗 Alternatif Lebih Sehat:</strong>
+        <p id="alternatifSehat"></p>
       </div>
     </div>
   </div>
 
   <script>
-    let selectedFile = null;
-
-    function handleImageUpload(event) {
-      const file = event.target.files[0];
-      if (!file) return;
-      selectedFile = file;
-
-      const reader = new FileReader();
-      reader.onload = e => {
-        document.getElementById('previewImage').src = e.target.result;
-        document.getElementById('previewContainer').classList.remove('d-none');
-        document.getElementById('resultContainer').classList.add('d-none');
-      };
-      reader.readAsDataURL(file);
-    }
-
-    function resetImage() {
-      selectedFile = null;
-      document.getElementById('fileInput').value = null;
-      document.getElementById('previewImage').src = '';
-      document.getElementById('previewContainer').classList.add('d-none');
-      document.getElementById('loading').classList.add('d-none');
-      document.getElementById('resultContainer').classList.add('d-none');
-    }
+    let selectedFile;
+    document.getElementById('fileInput').addEventListener('change', function (e) {
+      selectedFile = e.target.files[0];
+    });
 
     async function startAnalysis() {
       if (!selectedFile) return;
@@ -111,50 +108,44 @@
         const res = await axios.post('https://food-analyzer.exoduscloud.my.id/analyze', formData);
         const data = res.data;
 
+        const skorData = data.skorKesehatan || {};
+        document.getElementById('alasan').textContent = skorData.alasan || '-';
         document.getElementById('direkomendasikanAtauTidak').innerHTML =
-          data.direkomendasikanAtauTidak === 'Direkomendasikan'
-            ? '<span class="text-green">👍 Direkomendasikan</span>'
-            : '<span class="text-red">👎 Tidak Direkomendasikan</span>';
-        document.getElementById('alasan').textContent = data.alasan || '';
+          skorData.direkomendasikanAtauTidak && skorData.direkomendasikanAtauTidak.toLowerCase().includes('tidak')
+            ? '<span class="text-red">👎 Tidak Direkomendasikan</span>'
+            : '<span class="text-green">👍 Direkomendasikan</span>';
 
+        const nutrisi = data.rincianNutrisi || {};
         const nutrisiList = document.getElementById('rincianNutrisi');
         nutrisiList.innerHTML = '';
-        const nutrisiKeys = ['kalori', 'protein', 'proteinPersen', 'karbohidrat', 'karbohidratPersen', 'gemuk', 'gemukPersen'];
-        nutrisiKeys.forEach(key => {
-          if (data[key]) {
+        const fields = ['kalori', 'protein', 'proteinPersen', 'karbohidrat', 'karbohidratPersen', 'gemuk', 'gemukPersen'];
+        fields.forEach(key => {
+          if (nutrisi[key]) {
             const li = document.createElement('li');
-            li.innerHTML = `${key.replace(/([A-Z])/g, ' $1')}: <span class="badge-value">${data[key]}</span>`;
+            li.textContent = `${key.charAt(0).toUpperCase() + key.slice(1)}: ${nutrisi[key]}`;
             nutrisiList.appendChild(li);
           }
         });
 
         const vitaminList = document.getElementById('vitaminMineral');
         vitaminList.innerHTML = '';
-        const vitaminItems = [...(data.vitaminDanMineral || []), ...(data.mineral || [])];
-        vitaminItems.forEach(item => {
-          const li = document.createElement('li');
-          li.classList.add('list-inline-item', 'badge', 'bg-secondary', 'me-1', 'mb-1');
-          li.textContent = item;
-          vitaminList.appendChild(li);
-        });
+        if (Array.isArray(nutrisi.vitaminDanMineral)) {
+          nutrisi.vitaminDanMineral.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            vitaminList.appendChild(li);
+          });
+        }
+        if (Array.isArray(nutrisi.mineral)) {
+          nutrisi.mineral.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            vitaminList.appendChild(li);
+          });
+        }
 
-        const bahanList = document.getElementById('analisisBahan');
-        bahanList.innerHTML = '';
-        (data.ingredients || []).forEach(item => {
-          const li = document.createElement('li');
-          li.classList.add('list-inline-item', 'badge', 'bg-warning', 'text-dark', 'me-1', 'mb-1');
-          li.textContent = item;
-          bahanList.appendChild(li);
-        });
-
-        const alternatifList = document.getElementById('alternatifSehat');
-        alternatifList.innerHTML = '';
-        (data.alternatif || []).forEach(item => {
-          const li = document.createElement('li');
-          li.classList.add('list-inline-item', 'badge', 'bg-success', 'me-1', 'mb-1');
-          li.textContent = item;
-          alternatifList.appendChild(li);
-        });
+        document.getElementById('analisisBahan').textContent = (data.ingredients || []).join(', ') || '-';
+        document.getElementById('alternatifSehat').textContent = (data.alternatif || []).join(', ') || '-';
 
         document.getElementById('resultContainer').classList.remove('d-none');
       } catch (error) {
@@ -165,4 +156,5 @@
     }
   </script>
 </body>
+
 </html>
