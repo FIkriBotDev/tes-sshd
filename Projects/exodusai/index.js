@@ -15,7 +15,7 @@ const axios = require('axios');
 const qrcode = require('qrcode-terminal');
 const fetch = require('node-fetch');
 const FormData = require('form-data');
-const { fromBuffer } = require('file-type');
+const fileType = require('file-type');
 const P = require('pino');
 
 const store = makeInMemoryStore({ logger: P().child({ level: 'silent', stream: 'store' }) });
@@ -23,7 +23,7 @@ const store = makeInMemoryStore({ logger: P().child({ level: 'silent', stream: '
 // === Upload file function ===
 const uploadFile = async (buffer) => {
     try {
-        const { ext } = await fromBuffer(buffer);
+        const { ext } = await fileType.fromBuffer(buffer);
         if (!ext) throw new Error('Could not determine file type from buffer');
 
         let form = new FormData();
