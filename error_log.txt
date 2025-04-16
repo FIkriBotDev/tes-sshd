@@ -6,3 +6,7 @@
   "status": 400,
   "statusText": "Bad Request"
 }
+[2025-04-16T03:21:49.845Z] Error processing image: {
+  "status": 400,
+  "statusText": "Bad Request"
+}
