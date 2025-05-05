@@ -161,3 +161,36 @@
     }
   ]
 }
+[2025-05-05T06:23:07.908Z] Error processing image: {
+  "status": 429,
+  "statusText": "Too Many Requests",
+  "errorDetails": [
+    {
+      "@type": "type.googleapis.com/google.rpc.QuotaFailure",
+      "violations": [
+        {
+          "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+          "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+          "quotaDimensions": {
+            "model": "gemini-1.5-pro",
+            "location": "global"
+          },
+          "quotaValue": "50"
+        }
+      ]
+    },
+    {
+      "@type": "type.googleapis.com/google.rpc.Help",
+      "links": [
+        {
+          "description": "Learn more about Gemini API quotas",
+          "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+        }
+      ]
+    },
+    {
+      "@type": "type.googleapis.com/google.rpc.RetryInfo",
+      "retryDelay": "52s"
+    }
+  ]
+}
