@@ -293,3 +293,7 @@
     }
   ]
 }
+[2025-05-06T10:05:23.065Z] Error processing image: {
+  "status": 400,
+  "statusText": "Bad Request"
+}
