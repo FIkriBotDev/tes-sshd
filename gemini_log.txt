@@ -52,3 +52,24 @@ Prompt    : lu suka makanan ini ga
 Image URL : https://uploader.nyxs.pw/tmp/vBNXvX-1747040066735.jpg
 Response  : Wah, kudapan klasik nih, teh hangat sama biskuit! Kalau aku sih pasti suka banget, apalagi kalau teh-nya pas hangat dan biskuitnya renyah. Kamu sering nyemil gini sambil ngapain? Lagi santai atau kerja?
 
+
+[2025-05-12T08:56:00.978Z]
+Prompt    : bantu jawab soal ini
+Image URL : https://uploader.nyxs.pw/tmp/hbGDtF-1747040155013.jpg
+Response  : Tentu! Berikut adalah jawaban lengkap untuk soal tersebut:
+
+1. If you **were** miner, you **would have** to work really hard.  
+2. If the petrol **were** extremely expensive, people **would not buy** it.  
+3. You **would not have to** commute to work if you **did not live** in the village.  
+4. They **would go** abroad if they **had** passports.  
+5. If you **did not eat** so much food, you **would be** healthier.  
+6. I **would buy** a new house if I **won** the lottery.  
+7. If I **did not have** a guitar, I **would not play** in the band.  
+8. If you **gave** my money back, I **would lend** you some now.  
+9. If she **lived** in a palace, she **would be** really happy.  
+10. They **would not be** punished if they **did not break** the window.  
+11. If I **went** to sleep early, I **would not be** so tired now.  
+12. If he **studied** hard, he **would have** good marks.  
+
+Kalau kamu mau penjelasan tentang penggunaan tenses-nya, saya bisa bantu juga!
+
