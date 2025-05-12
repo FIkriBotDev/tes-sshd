@@ -386,3 +386,10 @@ Response  : Berikut jawaban dengan pilihan a, b, c, d:
 2. Tujuan manajemen jaringan dasar yang mungkin tidak selaras dengan tujuan keamanan:  
    d. Manajemen lebih berfokus pada ketersediaan daripada kerahasiaan.
 
+
+[2025-05-12T14:45:47.425Z]
+Prompt    : jawab dengan abcd
+Image URL : https://uploader.nyxs.pw/tmp/y2I7D6-1747061143428.jpg
+Response  : a
+a
+
