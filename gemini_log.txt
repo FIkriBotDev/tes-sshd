@@ -281,3 +281,22 @@ Response  : Mantap, semangat bro! Dari yang kelihatan di gambar, ini beberapa pe
 
 Kalau kamu mau, aku bisa bantu bahas soal-soal lain juga, atau coba cek jawaban kamu supaya lebih pede! Gimana?
 
+
+[2025-05-12T14:10:30.705Z]
+Prompt    : bantu jawab
+Image URL : https://uploader.nyxs.pw/tmp/aoOqTz-1747059024714.jpg
+Response  : Berikut jawaban untuk soal-soal yang ada di gambar:
+
+1. Menganalisis jenis kerentanan dan meringkas eksploitasi zero-day.
+   Jawaban yang benar adalah:  
+   **Kerentanan yang dimanfaatkan sebelum pengembang mengetahuinya.**
+
+2. Manakah dari berikut ini merupakan solusi umum yang melindungi aplikasi agar tidak berperilaku tidak terduga saat meneruskan data tidak valid melalui suatu serangan?  
+   Jawaban yang benar adalah:  
+   **Validasi Masukan**
+
+3. Indikator kode berbahaya manakah yang merupakan program minimal yang dirancang untuk mengekploitasi luapan buffer?  
+   Karena pilihan tidak kelihatan lengkap di gambar, jika ada pilihan lain yang terkait dengan buffer overflow exploitation minimal payload, bisa dipilih yang paling tepat seperti "shellcode" atau "payload kecil". Jika hanya pilihan "Pembuangan kredensial", itu kurang tepat buat pertanyaan ini.
+
+Kalau kamu bisa kirimkan pilihan lengkap untuk pertanyaan nomor 3, bisa saya bantu jawab lebih tepat.
+
