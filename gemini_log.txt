@@ -300,3 +300,19 @@ Response  : Berikut jawaban untuk soal-soal yang ada di gambar:
 
 Kalau kamu bisa kirimkan pilihan lengkap untuk pertanyaan nomor 3, bisa saya bantu jawab lebih tepat.
 
+
+[2025-05-12T14:40:29.411Z]
+Prompt    : bantu jawab
+Image URL : https://uploader.nyxs.pw/tmp/qfn4g5-1747060822880.jpg
+Response  : Berikut jawaban yang sesuai untuk masing-masing pertanyaan:
+
+1. Pernyataan yang menjelaskan mekanisme bagaimana algoritma enkripsi membantu melindungi terhadap serangan ulang tahun adalah:
+   - Algoritma enkripsi menambahkan garam saat menghitung hash kata sandi.
+   Ini karena penambahan "garam" (salt) membantu mencegah serangan ulang tahun (birthday attack) dengan membuat hasil hash lebih unik dan sulit diprediksi.
+
+2. Pernyataan yang paling akurat menggambarkan keterbatasan utama teknologi komputasi kuantum adalah:
+   - Saat ini, komputer kuantum tidak memiliki kapasitas untuk menjalankan aplikasi yang berguna.
+   Ini menggambarkan keterbatasan teknologi komputasi kuantum pada saat ini yang masih dalam tahap pengembangan dan belum cukup matang untuk aplikasi praktis.
+
+Semoga membantu! Kalau ada soal lain, coba kasih tahu, ya.
+
