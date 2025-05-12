@@ -192,3 +192,28 @@ A. High asset value
 
 Kalau mau dibahas lebih lanjut atau ada pertanyaan lainnya, tinggal bilang saja ya!
 
+
+[2025-05-12T13:48:26.479Z]
+Prompt    : bantu jawab
+Image URL : https://uploader.nyxs.pw/tmp/OenbqG-1747057701655.jpg
+Response  : Berikut adalah jawaban yang tepat untuk masing-masing soal:
+
+1. Soal pertama:
+Penguji penetrasi menjalankan WPScan dan SQLmap untuk mengidentifikasi kerentanan dan informasi tambahan tentang sistem. Tujuan utama penguji penetrasi dalam konteks ini adalah menemukan titik lemah dan kerentanan dalam sistem.
+Jawaban yang tepat:  
+**B. Identifikasi semua kerentanan di lingkungan.**
+
+2. Soal kedua:  
+Penguji penetrasi mencari nomor telepon karyawan yang tidak ditemukan di website perusahaan, namun tahu bahwa katalog telepon telah dipublikasikan beberapa bulan lalu. Jadi, penguji perlu mencari sumber alternatif yang menyimpan informasi tersebut.  
+Jawaban yang tepat:  
+**A. Arsip web**  
+(Situs arsip web, seperti archive.org, menyimpan snapshot website lama yang mungkin masih memuat katalog telepon yang sekarang sudah tidak ada di situs resmi.)
+
+Kalau ingin penjelasan lebih detail atau diskusi soal lain, saya siap!
+
+---
+<div style="display: flex; align-items: center; margin-top: 10px; margin-bottom: 10px;">
+<img src="https://image.pollinations.ai/prompt/NordVPN%20NordVPN%20subscription%20service%20for%20secure%20internet%20browsing.%20advertisement%2C%20professional%2C%20clean%20design?width=200&height=120&nologo=true" alt="NordVPN" style="margin-right: 15px; border-radius: 5px; max-width: 200px; max-height: 120px;"/>
+<div>Amankan penelusuran internet Anda dengan langganan NordVPN. [Pelajari lebih lanjut](https://pollinations.ai/redirect/432264)</div>
+</div>
+
