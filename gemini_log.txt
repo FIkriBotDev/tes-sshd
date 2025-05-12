@@ -237,3 +237,33 @@ Enumerasi brute-force biasanya mencoba sandi atau kunci yang lemah untuk menembu
 
 Kalau mau penjelasan lebih rinci atau ada soal lain, saya siap bantu!
 
+
+[2025-05-12T13:50:05.565Z]
+Prompt    : bantu jawab
+Image URL : https://uploader.nyxs.pw/tmp/2BcAGp-1747057798016.jpg
+Response  : Berikut jawaban yang paling tepat untuk masing-masing pertanyaan:
+
+1. **Penguji penetrasi harus menyusun respons kueri DNS untuk dikirim kembali ke host target. Utilitas apa yang paling mendukung tujuan ini?**  
+Jawaban: **C. Scapy**  
+Penjelasan: Scapy adalah alat yang sangat fleksibel untuk membuat, mengirim, dan menerima paket, termasuk memanipulasi kueri DNS secara khusus. Tcpdump adalah untuk menangkap dan menganalisis paket, bukan untuk menyusun dan mengirim. "Terkejut" dan "kamu" bukan alat yang relevan.
+
+2. **Strategi pengujian penetrasi yang meminta penguji tidak menerima informasi apa pun tentang sistem perusahaan?**  
+Jawaban: **B. Bak pasir**  
+Penjelasan: Dalam pengujian penetrasi, istilah yang sering digunakan adalah:  
+- Kotak putih (white box): penguji diberi akses penuh dengan informasi lengkap.  
+- Kotak abu-abu (gray box): penguji menerima sebagian informasi.  
+- Kotak hitam (black box): penguji tidak mendapat informasi apapun tentang sistem.  
+"Sesuatu bak pasir" tidak umum sebagai istilah strategi pengujian penetrasi, kemungkinan ada kesalahan ketik. Jika maksud pertanyaannya adalah "black box" berarti jawabannya adalah **Kotak hitam** (black box). Jadi jawabannya adalah: **Kotak hitam**
+
+3. **Klien ingin struktur laporan sederhana dan tidak menerima temuan harian, elemen paling penting yang harus didefinisikan penguji?**  
+Jawaban: **A. Tetapkan format yang dibutuhkan oleh klien**  
+Penjelasan: Agar laporan memenuhi kebutuhan klien, format laporan harus disepakati sejak awal. Risk threshold dan jumlah laporan juga perlu disepakati, tapi inti dari permintaan adalah format sederhana, sehingga penekanan ada pada format laporan.  
+
+Semoga membantu! Kalau mau penjelasan lebih lanjut atau diskusi soal materinya, silakan.
+
+---
+<div style="display: flex; align-items: center; margin-top: 10px; margin-bottom: 10px;">
+<img src="https://image.pollinations.ai/prompt/IPRoyal%20Proxy%20services%20for%20online%20privacy%20and%20security%20advertisement%2C%20professional%2C%20clean%20design?width=200&height=120&nologo=true" alt="IPRoyal" style="margin-right: 15px; border-radius: 5px; max-width: 200px; max-height: 120px;"/>
+<div>Access secure proxy solutions for enhanced online privacy and data protection with IPRoyal. [Learn more](https://pollinations.ai/redirect/1281667)</div>
+</div>
+
