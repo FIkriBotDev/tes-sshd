@@ -28,3 +28,11 @@ Response  : Gambar ini adalah pengumuman dari Universitas Ciputra tentang progra
 
 Pendaftaran sudah bisa dilakukan dengan memindai QR code yang tersedia di gambar, dan program ini berlaku hingga tanggal 20 Juni 2025. Ini bisa jadi kesempatan menarik buat yang mau kuliah di Universitas Ciputra dengan berbagai kemudahan dan beasiswa yang cukup besar. Ada yang ingin kamu tanyakan lebih lanjut tentang program ini?
 
+
+[2025-05-12T08:52:19.833Z]
+Prompt    : apa ini?
+Image URL : https://uploader.nyxs.pw/tmp/I63q9S-1747039936239.jpg
+Response  : Ini adalah sebuah pengumuman atau iklan dari Universitas Ciputra tentang program "Golden Ticket". Dalam program ini, siswa dapat menukarkan kartu SNBT (Seleksi Nasional Berdasarkan Tes) mereka untuk mendapatkan berbagai keuntungan, seperti voucher pendaftaran gratis, pembebasan dari tes (hanya mengikuti proses wawancara), dan beasiswa hingga 100% dari Dana Pengembangan Pendidikan (DPP). 
+
+Ada juga informasi penting terkait batas akhir pendaftaran, yaitu tanggal 20 Juni 2025, serta tautan dan QR code untuk melakukan pendaftaran atau mendapatkan informasi lebih lanjut. Ini merupakan kesempatan menarik bagi calon mahasiswa yang ingin mendaftar ke Universitas Ciputra dengan berbagai keuntungan.
+
