@@ -180,3 +180,15 @@ Jadi, penjelasan terbaik adalah **C: Seorang penyerang mencoba melakukan brute f
 
 Jawaban yang paling tepat adalah **C**.
 
+
+[2025-05-12T13:22:49.979Z]
+Prompt    : bantu jawab
+Image URL : https://uploader.nyxs.pw/tmp/H5kOQe-1747056166810.jpg
+Response  : 1. Untuk pertanyaan pertama, organisasi yang dikenal dengan informasi praktis tentang keamanan aplikasi web dan framework keamanan adalah:
+A. OWASP (Open Web Application Security Project)
+
+2. Untuk pertanyaan kedua, karena mesin diambil offline akibat kerentanan yang tidak dapat diperbaiki dan data sangat sensitif, ini menunjukkan nilai aset yang sangat tinggi. Jadi jawabannya adalah:
+A. High asset value
+
+Kalau mau dibahas lebih lanjut atau ada pertanyaan lainnya, tinggal bilang saja ya!
+
