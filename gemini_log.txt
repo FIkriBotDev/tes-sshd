@@ -217,3 +217,23 @@ Kalau ingin penjelasan lebih detail atau diskusi soal lain, saya siap!
 <div>Amankan penelusuran internet Anda dengan langganan NordVPN. [Pelajari lebih lanjut](https://pollinations.ai/redirect/432264)</div>
 </div>
 
+
+[2025-05-12T13:49:15.322Z]
+Prompt    : bantu jawab
+Image URL : https://uploader.nyxs.pw/tmp/k5eIOS-1747057739845.jpg
+Response  : Tentu, aku bantu jawab satu per satu:
+
+1. Soal tentang pemindaian Nmap yang pada pemindaian kedua semua port terfilter:
+- Pilihan yang paling mungkin terjadi adalah **A. Firewall atau IPS memblokir pemindaian.** 
+Karena jika semua port tampak terfilter, biasanya itu tanda ada firewall atau Intrusion Prevention System (IPS) yang menolak koneksi dari pemindai.
+
+2. Soal tentang penilaian yang hanya menggunakan informasi yang tersedia untuk umum tentang perusahaan target, dimana klien sudah tahu latihan ini dan sedang mempersiapkan diri:
+- Jawaban yang tepat adalah **B. Pengujian lingkungan yang diketahui (Known environment testing).**
+Ini karena klien mengetahui latihan ini dan mempersiapkan diri, jadi bukan black-box (tak diketahui) tapi semacam grey-box atau diketahui.
+
+3. Soal tentang komponen mana yang menjadi sasaran enumerasi brute-force dari kerentanan enkripsi:
+- Jawabannya adalah **C. Sebuah sandi yang lemah.**
+Enumerasi brute-force biasanya mencoba sandi atau kunci yang lemah untuk menembus proteksi enkripsi.
+
+Kalau mau penjelasan lebih rinci atau ada soal lain, saya siap bantu!
+
