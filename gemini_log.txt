@@ -316,3 +316,61 @@ Response  : Berikut jawaban yang sesuai untuk masing-masing pertanyaan:
 
 Semoga membantu! Kalau ada soal lain, coba kasih tahu, ya.
 
+
+[2025-05-12T14:42:24.338Z]
+Prompt    : bantu jawab bro
+Image URL : https://uploader.nyxs.pw/tmp/taKtWN-1747060934343.jpg
+Response  : Baik, mari kita bahas satu per satu.
+
+Pertama, soal ide-ide penerapan kontrol keamanan yang konsisten dengan definisi industri:
+
+Pilihan yang relevan biasanya melibatkan penerapan kontrol teknis, operasional, dan preventif. Jadi, yang memang konsisten dengan definisi industri antara lain:
+
+- Terapkan kontrol teknis untuk menegakkan kebijakan akses jaringan. (Ini termasuk kontrol teknis untuk menjaga keamanan jaringan, cocok dengan praktik industri.)
+- Terapkan kontrol operasional untuk memantau kepatuhan terhadap peraturan eksternal. (Kontrol operasional penting untuk memastikan aturan diikuti sesuai dengan ketentuan yang berlaku.)
+- Jadwalkan lokakarya kesadaran keamanan triwulanan sebagai kontrol preventif untuk mencegah serangan rekayasa sosial. (Edukasi dan kesadaran adalah bagian penting dari strategi keamanan siber industri.)
+
+Pilihan keempat "Terapkan cadangan setelah serangan untuk menghilangkan atau mengurangi dampak serangan" itu lebih ke langkah reaktif/pemulihan, tapi dalam konteks industri biasanya yang konsisten itu fokus pada kontrol pencegahan dan pengawasan serta mitigasi dampak, jadi opsi ini juga bisa dianggap bagian dari kontrol tapi bukan bagian utama kerangka kerja keamanan secara umum dalam pengertian industri.
+
+Jadi jawaban untuk pertanyaan kategori kontrol yang konsisten dengan definisi industri adalah:
+
+- Terapkan kontrol teknis...
+- Terapkan kontrol operasional...
+- Jadwalkan lokakarya kesadaran keamanan triwulanan...
+
+---
+
+Kedua, soal lembaga federal yang mengembangkan kebijakan keamanan untuk sistem komputer yang memproses informasi rahasia.
+
+Jawabannya adalah:
+
+- Undang-Undang Manajemen Keamanan Informasi Federal (FISMA)
+
+FISMA memang mengharuskan lembaga federal mengembangkan kontrol keamanan bagi sistem informasi pemerintah pusat yang menangani data rahasia dan sensitif.
+
+Undang-undang lainnya:
+
+- Undang-Undang Keamanan Komputer lebih umum dan dulu.
+- GLBA (Gramm-Leach-Bliley Act) itu tentang perlindungan data keuangan pribadi.
+- SOX (Sarbanes-Oxley) fokus pada laporan keuangan dan akuntabilitas perusahaan.
+
+Jadi jawabannya adalah FISMA.
+
+---
+
+Kalau mau aku rangkum dalam bentuk pilihan:
+
+**Pertanyaan 1: Pilih yang konsisten:**
+
+- [x] Terapkan kontrol teknis untuk menegakkan kebijakan akses jaringan.
+- [x] Terapkan kontrol operasional untuk memantau kepatuhan terhadap peraturan eksternal.
+- [x] Jadwalkan lokakarya kesadaran keamanan triwulanan sebagai kontrol preventif.
+
+---
+
+**Pertanyaan 2:**
+
+- FISMA (Undang-Undang Manajemen Keamanan Informasi Federal)
+
+Semoga membantu! Butuh penjelasan lebih lanjut?
+
