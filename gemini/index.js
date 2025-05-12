@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const fetch = require("node-fetch");
 const fs = require("fs");
-const { GoogleGenerativeAI } = require("@google/generative-ai");
 require("dotenv").config();
 
 const app = express();
@@ -19,6 +18,8 @@ console.error = function (...args) {
     originalConsoleError.apply(console, args);
 };
 
+// Endpoint /api/ytsummarize masih pakai Gemini (tidak diubah)
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
@@ -53,6 +54,7 @@ app.get("/api/ytsummarize", async (req, res) => {
     }
 });
 
+// Endpoint baru /api/gemini-image (menggunakan Pollinations.ai)
 app.get("/api/gemini-image", async (req, res) => {
     const imageUrl = req.query.url;
     const textPrompt = req.query.text || "Jelaskan gambar ini";
@@ -62,32 +64,45 @@ app.get("/api/gemini-image", async (req, res) => {
     }
 
     try {
-        const imageResp = await fetch(imageUrl);
-        const imageBuffer = await imageResp.arrayBuffer();
+        const pollinationsRes = await fetch("https://text.pollinations.ai/openai", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                model: "openai",
+                messages: [
+                    {
+                        role: "user",
+                        content: [
+                            { type: "text", text: textPrompt },
+                            { type: "image_url", image_url: { url: imageUrl } }
+                        ]
+                    }
+                ],
+                max_tokens: 300
+            })
+        });
 
-        const result = await model.generateContent([
-            {
-                inlineData: {
-                    data: Buffer.from(imageBuffer).toString("base64"),
-                    mimeType: "image/jpeg",
-                },
-            },
-            textPrompt,
-        ]);
+        const data = await pollinationsRes.json();
 
-        const responseText = result.response.text().trim();
+        if (!data.choices || !data.choices[0]?.message?.content) {
+            throw new Error("Respons tidak valid dari Pollinations API");
+        }
+
+        const responseText = data.choices[0].message.content.trim();
 
         return res.json({
             creator: "@Fikri",
             status: true,
-            result: responseText,
+            result: responseText
         });
+
     } catch (error) {
         console.error("Error processing image:", error);
         return res.status(500).json({ status: false, error: "Terjadi kesalahan saat memproses gambar" });
     }
 });
 
+// Fungsi parsing hasil teks untuk ringkasan video
 function parseTextToJson(responseText) {
     const lines = responseText.split("\n").map(line => line.trim()).filter(line => line);
     let summary = "";
