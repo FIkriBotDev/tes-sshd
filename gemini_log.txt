@@ -267,3 +267,17 @@ Semoga membantu! Kalau mau penjelasan lebih lanjut atau diskusi soal materinya, 
 <div>Access secure proxy solutions for enhanced online privacy and data protection with IPRoyal. [Learn more](https://pollinations.ai/redirect/1281667)</div>
 </div>
 
+
+[2025-05-12T14:09:19.745Z]
+Prompt    : lagi ujian nih brow
+Image URL : https://uploader.nyxs.pw/tmp/QJuxG2-1747058953661.jpg
+Response  : Mantap, semangat bro! Dari yang kelihatan di gambar, ini beberapa penjelasan singkat yang mungkin bisa bantu:
+
+1. Indikator kode berbahaya untuk eksploitasi buffer overflow: pilihan yang kamu centang yaitu "Kode shell" memang tepat, karena shellcode biasanya adalah program kecil yang dimasukkan lewat buffer overflow untuk mengontrol sistem.
+
+2. Kebocoran memori di klien: jawaban yang benar biasanya "Perangkat lunak tidak melepaskan memori yang dialokasikan saat selesai menggunakannya." Ini karena kebocoran memori terjadi saat memory yang sudah tidak terpakai tapi tidak dikembalikan ke sistem.
+
+3. Bahasa yang bukan bahasa skrip: "ekspresi reguler" memang bukan bahasa skrip, melainkan pola pencarian dalam teks.
+
+Kalau kamu mau, aku bisa bantu bahas soal-soal lain juga, atau coba cek jawaban kamu supaya lebih pede! Gimana?
+
