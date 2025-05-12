@@ -148,8 +148,15 @@ async function startBot() {
                 const buffer = await downloadMediaMessage(m, 'buffer', {}, { logger: P({ level: 'silent' }), reuploadRequest: sock.updateMediaMessage });
                 const uploadedFileUrl = await uploadFile(buffer);
 
-                let geminiPrompt = userMessage || (m.message.audioMessage ? 'dengarkan audio ini' : m.message.videoMessage ? 'video apa ini' : 'lihatlah gambar ini');
-
+               // let geminiPrompt = userMessage || (m.message.audioMessage ? 'dengarkan audio ini' : m.message.videoMessage ? 'video apa ini' : 'lihatlah gambar ini');
+                let geminiPrompt = 'lihatlah gambar ini';
+                if (m.message.imageMessage?.caption || m.message.videoMessage?.caption || m.message.documentMessage?.caption) {
+                    geminiPrompt = m.message.imageMessage?.caption ||
+                   m.message.videoMessage?.caption ||
+                   m.message.documentMessage?.caption;
+                } else if (userMessage) {
+                    geminiPrompt = userMessage;
+                }
                 const geminiApiUrl = `https://gemini-api.exoduscloud.my.id/api/gemini-image?text=${encodeURIComponent(geminiPrompt)}&url=${encodeURIComponent(uploadedFileUrl)}`;
                 const geminiResponse = await fetch(geminiApiUrl).then(res => res.json());
 
