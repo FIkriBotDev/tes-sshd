@@ -18,7 +18,7 @@ console.error = function (...args) {
     originalConsoleError.apply(console, args);
 };
 
-// Endpoint /api/ytsummarize masih pakai Gemini (tidak diubah)
+// Endpoint YouTube Summary (masih pakai Gemini)
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
@@ -54,7 +54,7 @@ app.get("/api/ytsummarize", async (req, res) => {
     }
 });
 
-// Endpoint baru /api/gemini-image (menggunakan Pollinations.ai)
+// Endpoint /api/gemini-image (gunakan Pollinations + logging ke gemini_log.txt)
 app.get("/api/gemini-image", async (req, res) => {
     const imageUrl = req.query.url;
     const textPrompt = req.query.text || "Jelaskan gambar ini";
@@ -90,6 +90,16 @@ app.get("/api/gemini-image", async (req, res) => {
 
         const responseText = data.choices[0].message.content.trim();
 
+        // Log request dan hasil ke gemini_log.txt
+        const logEntry = `
+[${new Date().toISOString()}]
+Prompt    : ${textPrompt}
+Image URL : ${imageUrl}
+Response  : ${responseText}
+
+`;
+        fs.appendFileSync("gemini_log.txt", logEntry);
+
         return res.json({
             creator: "@Fikri",
             status: true,
@@ -102,7 +112,7 @@ app.get("/api/gemini-image", async (req, res) => {
     }
 });
 
-// Fungsi parsing hasil teks untuk ringkasan video
+// Fungsi parse YouTube summary
 function parseTextToJson(responseText) {
     const lines = responseText.split("\n").map(line => line.trim()).filter(line => line);
     let summary = "";
