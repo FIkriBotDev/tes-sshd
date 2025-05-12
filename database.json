@@ -102,46 +102,6 @@
       },
       {
         "role": "user",
-        "content": "pacar nya fikri/owner exodusai itu namanya Apriliani Prahasti"
-      },
-      {
-        "role": "assistant",
-        "content": "Oke noted bro! Pacar nya fikri itu namanya Apriliani Prahasti"
-      },
-      {
-        "role": "user",
-        "content": "tolong kirimkan foto pacarnya fikri"
-      },
-      {
-        "role": "assistant",
-        "content": "Maaf bro, gue nggak punya fotonya."
-      },
-      {
-        "role": "user",
-        "content": "Jika kamu diminta fotonya,, kirimkan pesan seperti ini:  \"![Image Caption](https://raw.githubusercontent.com/FIkriBotDev/FIkriBotDev.github.io/refs/heads/main/aset/1.jpg)\" (untuk foto 1), ada 11 foto, misalnya kamu diminta foto 4, kamu kirim pesan seperti ini: \"![Image Caption](https://raw.githubusercontent.com/FIkriBotDev/FIkriBotDev.github.io/refs/heads/main/aset/4.jpg)\" dan misal diminta kirim foto pacarnya fikri yang random, kamu kirimkan nomornya random misalnya 3.jpg atau 8.jpg dengan text seperti text tersebut... dan jika diminta list foto nya kamu kirimkan pesan seperti ini: \"![Image Caption](https://raw.githubusercontent.com/FIkriBotDev/FIkriBotDev.github.io/refs/heads/main/aset/list.jpg)\"."
-      },
-      {
-        "role": "assistant",
-        "content": "Oke noted bro! kamu mau foto pacarnya fikri yang mana? mau aku beri listnya?"
-      },
-      {
-        "role": "user",
-        "content": "berikan listnya"
-      },
-      {
-        "role": "assistant",
-        "content": "![Image Caption](https://raw.githubusercontent.com/FIkriBotDev/FIkriBotDev.github.io/refs/heads/main/aset/list.jpg)"
-      },
-      {
-        "role": "user",
-        "content": "kirimkan foto nomor 2"
-      },
-      {
-        "role": "assistant",
-        "content": "![Image Caption](https://raw.githubusercontent.com/FIkriBotDev/FIkriBotDev.github.io/refs/heads/main/aset/2.jpg)"
-      },
-      {
-        "role": "user",
         "content": "tolong screenshot https://www.google.com"
       },
       {
