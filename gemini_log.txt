@@ -399,3 +399,16 @@ Prompt    : lihat ini
 Image URL : https://uploader.nyxs.pw/tmp/Pzm4j6-1747098137455.jpg
 Response  : Wah, kenaikan harga saham LYFT dalam satu bulan terakhir cukup mengesankan ya! Dari sekitar $10,84 ke $16,65, itu naik sekitar 52,33%. Ada sesuatu yang bikin saham Lyft melonjak drastis begitu? Mungkin berita terbaru atau laporan keuangan yang bagus? Apa kamu lagi pertimbangkan buat investasi atau cuma pengen lihat pergerakan sahamnya?
 
+
+[2025-05-13T01:10:05.607Z]
+Prompt    : Penyakit apa yang ditangan ini bro
+Image URL : https://uploader.nyxs.pw/tmp/WmEuNy-1747098601108.jpg
+Response  : Tangan ini menunjukkan bercak bercak hipopigmentasi atau area kulit yang warnanya lebih terang dibandingkan dengan kulit di sekitarnya. Kondisi seperti ini bisa disebabkan oleh beberapa hal, di antaranya:
+
+1. **Pityriasis versicolor (tinea versicolor)**: Infeksi jamur yang menyebabkan bercak-bercak kulit berwarna lebih terang atau lebih gelap, biasanya di area tubuh yang sering berkeringat.
+2. **Vitiligo**: Kondisi autoimun di mana sel penghasil pigmen kulit (melanosit) rusak, menyebabkan bercak putih yang jelas.
+3. **Post-inflammatory hypopigmentation**: Kondisi setelah kulit mengalami peradangan atau luka, yang kemudian meninggalkan bercak lebih terang.
+4. **Eksim atau dermatitis**: Kadang bisa menyebabkan perubahan warna kulit setelah peradangan sembuh.
+
+Untuk memastikan diagnosis yang tepat, akan lebih baik jika kamu memeriksakan ke dokter kulit, terutama agar bisa diberikan penanganan yang sesuai. Di rumah, hindari menggaruk atau menggosok area tersebut secara berlebihan dan coba jaga kebersihan kulit dengan baik.
+
