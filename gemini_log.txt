@@ -441,3 +441,22 @@ Jawabannya:
 
 Jika perlu bantu lanjut untuk nomor lainnya, beri tahu saja!
 
+
+[2025-05-13T17:25:13.265Z]
+Prompt    : Ini maksutnya gimna bro?
+Image URL : https://uploader.nyxs.pw/tmp/qzXQem-1747157106662.jpg
+Response  : Oke bro, ini adalah cuplikan kode JavaScript/React Native yang buat aplikasi cuaca sederhana. Gue jelasin garis besarnya ya:
+
+- Ini komponen HomeScreen yang pakai Hook React (useState dan useEffect).
+- Komponen ini minta izin lokasi user (pakai `requestForegroundPermissionsAsync`) buat dapetin koordinat latitude dan longitude.
+- Kalau izin lokasi ditolak, munculin pesan error "Izin lokasi ditolak" dan berhenti prosesnya.
+- Kalau izin diberikan, dia ambil posisi user dengan `getCurrentPositionAsync`.
+- Terus, dia pakai `fetch` untuk request data cuaca dari API OpenWeatherMap berdasarkan koordinat tadi.
+- Data hasil fetch disimpan di state `weather`.
+- Kalau gagal ambil data dari API, muncul pesan error "Gagal mengambil data cuaca".
+- Ada juga state `loading` buat kontrol loading spinner selama proses.
+
+Jadi intinya, ini kode buat bikin aplikasi cuaca yang tahu lokasi kamu dan ngambil data cuaca real-time dari OpenWeatherMap API. Ada logika buat handle izin lokasi dan error juga.
+
+Kalau mau coba jalanin, kamu perlu ganti `API_KEY` dengan kunci API OpenWeatherMap kamu yang valid dulu bro. Ada yang mau lo tanyain lebih detail?
+
