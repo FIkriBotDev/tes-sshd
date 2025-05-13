@@ -460,3 +460,13 @@ Jadi intinya, ini kode buat bikin aplikasi cuaca yang tahu lokasi kamu dan ngamb
 
 Kalau mau coba jalanin, kamu perlu ganti `API_KEY` dengan kunci API OpenWeatherMap kamu yang valid dulu bro. Ada yang mau lo tanyain lebih detail?
 
+
+[2025-05-13T17:34:21.712Z]
+Prompt    : Maksutnya bro
+Image URL : https://uploader.nyxs.pw/tmp/dReb7B-1747157657284.jpg
+Response  : Kayaknya kamu salah ngetik email atau password pas coba login. Coba dicek lagi, pastikan huruf, angka, dan simbolnya benar. Kalau lupa password, biasanya ada opsi "Lost your password?" yang bisa kamu klik buat reset. Kalau masih gak bisa juga, coba cek email tersebut udah terdaftar atau belum di platform itu.
+
+Kalau maksud kamu nanya soal biaya/pembayaran (makjut = biaya), biasanya tergantung layanan atau produk yang ingin kamu akses setelah login. Bisa cek di menu Pricing atau Marketplace di bagian atas situsnya buat lihat detail harga dan paketnya.
+
+Butuh bantuan buat reset password atau info soal harga?
+
