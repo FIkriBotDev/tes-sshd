@@ -714,3 +714,9 @@ Prompt    : lolos bro
 Image URL : https://uploader.nyxs.pw/tmp/eWYIGg-1747465508293.jpg
 Response  : Wah, selamat ya! Lolos seleksi Bootcamp Cyber Security itu keren banget, pasti kerja kerasmu terbayar. Sekarang siap-siap deh buat tantangan-tantangan seru di programnya. Ada rencana apa nih setelah lolos ini?
 
+
+[2025-05-17T08:17:57.581Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.nyxs.pw/tmp/CBbC3y-1747469874352.jpg
+Response  : Selamat ya buat kamu yang sudah lolos seleksi Bootcamp Cyber Security! Ini pencapaian yang keren banget. Kamu pasti sudah melewati proses seleksi yang cukup ketat. Apa kamu sudah siap untuk tahap selanjutnya? Kalau ada yang ingin kamu bicarakan tentang bootcamp ini atau persiapan ke depannya, aku siap dengerin!
+
