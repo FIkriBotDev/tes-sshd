@@ -720,3 +720,21 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.nyxs.pw/tmp/CBbC3y-1747469874352.jpg
 Response  : Selamat ya buat kamu yang sudah lolos seleksi Bootcamp Cyber Security! Ini pencapaian yang keren banget. Kamu pasti sudah melewati proses seleksi yang cukup ketat. Apa kamu sudah siap untuk tahap selanjutnya? Kalau ada yang ingin kamu bicarakan tentang bootcamp ini atau persiapan ke depannya, aku siap dengerin!
 
+
+[2025-05-17T15:35:05.368Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.nyxs.pw/tmp/XOQePh-1747496101564.jpg
+Response  : Gambar ini menunjukkan mainan motor skuter berwarna merah dengan merek Scoopy K 611 dari PMB (Produsen Mainan Bermutu). 
+
+Beberapa fitur yang disorot:
+- Ada musik
+- Tempat penyimpanan di bawah jok
+
+Ukuran produknya sekitar 63 x 35 x 47 cm, cocok untuk anak usia 2-3 tahun, dengan batas usia maksimal 25 tahun (mungkin maksudnya batas berat atau umur pengunaan mainan ini atau bisa jadi typo).
+
+Warna yang tersedia ada putih, hitam, krem, dan merah.
+
+Mainan ini juga diproduksi di Indonesia dan memiliki sertifikat SNI (Standar Nasional Indonesia).
+
+Menarik, mainan ini terlihat modern dan fungsional, sangat cocok untuk anak kecil senang bermain sambil belajar berkendara! Apakah kamu tertarik untuk tahu lebih tentang produk ini?
+
