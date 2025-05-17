@@ -7,7 +7,7 @@ const fs = require('fs-extra');
 const path = require('path');
 
 const app = express();
-const PORT = 5000;
+const PORT = 9000;
 const UPLOAD_DIR = '/tmp';
 const MAX_SIZE = 100 * 1024 * 1024; // 100 MB
 const DELETE_DELAY = 10 * 60 * 1000; // 10 menit
