@@ -780,3 +780,31 @@ Serabi ini enak disantap hangat dengan saus santan manis yang gurih. Kalau ingin
 
 Kalau kamu suka, aku bisa jelaskan cara membuat varian lainnya juga!
 
+
+[2025-05-18T02:38:26.084Z]
+Prompt    : bantu jawab soal ini
+Image URL : https://uploader.nyxs.pw/tmp/6T7B5z-1747535902390.jpg
+Response  : Yuk kita selesaikan integralnya!
+
+Integral yang diberikan:
+∫ (2x + 5)^9 dx
+
+Langkah 1: Substitusi
+Misalkan u = 2x + 5, maka du/dx = 2 → du = 2 dx → dx = du/2
+
+Langkah 2: Ganti variabel x dengan u
+Integralnya jadi:
+∫ u^9 * (dx) = ∫ u^9 * (du/2) = (1/2) ∫ u^9 du
+
+Langkah 3: Integral u^9 du
+(1/2) * (u^(9+1) / (9+1)) + c = (1/2) * (u^10 / 10) + c = (1/20) u^10 + c
+
+Langkah 4: Kembalikan ke variabel x
+Jadi hasil integralnya adalah:
+(1/20) (2x + 5)^10 + c
+
+Jadi jawaban yang tepat adalah pilihan a:
+(1/20)(2x + 5)^10 + c
+
+Kalau mau coba soal integral lainnya, tinggal kasih tau ya!
+
