@@ -738,3 +738,45 @@ Mainan ini juga diproduksi di Indonesia dan memiliki sertifikat SNI (Standar Nas
 
 Menarik, mainan ini terlihat modern dan fungsional, sangat cocok untuk anak kecil senang bermain sambil belajar berkendara! Apakah kamu tertarik untuk tahu lebih tentang produk ini?
 
+
+[2025-05-18T02:36:10.725Z]
+Prompt    : ini makanan apa? dan bagaimana resep dan cara buatnya?
+Image URL : https://uploader.nyxs.pw/tmp/eTRza8-1747535764877.jpg
+Response  : Makanan pada gambar itu adalah "Serabi", sebuah makanan tradisional Indonesia yang mirip pancake kecil dengan tekstur lembut dan rasa manis gurih. Serabi biasanya disajikan dengan saus kinca (saus gula merah) atau santan manis seperti yang terlihat di gambar.
+
+Berikut resep dan cara membuat serabi khas Jawa:
+
+### Bahan-bahan
+- 200 gram tepung beras
+- 50 gram tepung terigu
+- 500 ml santan dari 1/2 butir kelapa
+- 100 gram gula pasir
+- 1/4 sdt garam
+- 1/2 sdt ragi instan
+- 1 lembar daun pandan (opsional, untuk aroma)
+- Minyak untuk olesan
+
+### Bahan saus santan:
+- 200 ml santan kental
+- 2 sdm gula pasir atau sesuai selera
+- 1/4 sdt garam
+- 1 lembar daun pandan
+
+### Cara membuat
+1. Campur tepung beras, tepung terigu, gula, garam, dan ragi dalam wadah.
+2. Panaskan santan bersama daun pandan sampai hangat, tapi tidak sampai mendidih.
+3. Tuang santan hangat ke campuran tepung sambil diaduk hingga rata dan tidak bergerindil.
+4. Tutup adonan dan diamkan selama 60 menit agar adonan mengembang dan ragi bekerja.
+5. Panaskan cetakan serabi dengan api kecil dan oles minyak tipis.
+6. Tuang adonan ke cetakan dan tutup agar panas merata. Masak hingga permukaan berlubang-lubang dan matang.
+7. Angkat dan sajikan dengan saus santan.
+
+### Membuat saus santan:
+1. Campur santan, gula, garam, dan daun pandan dalam panci.
+2. Masak dengan api kecil sambil terus diaduk supaya santan tidak pecah hingga mendidih dan gula larut.
+3. Angkat dan sajikan di samping serabi.
+
+Serabi ini enak disantap hangat dengan saus santan manis yang gurih. Kalau ingin variant yang lain, bisa juga dipadu dengan topping oncom, coklat, atau pisang.
+
+Kalau kamu suka, aku bisa jelaskan cara membuat varian lainnya juga!
+
