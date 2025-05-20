@@ -891,3 +891,25 @@ Prompt    : makan bro
 Image URL : https://uploader.nyxs.pw/tmp/5gNsF3-1747705298153.jpg
 Response  : Wah, nasi goreng simpel plus telur dan saus sambal, favorit banget! Enak dimakan hangat-hangat gitu ya. Suka tambah apa lagi biasanya? Ayam, sate, atau mungkin acar biar makin mantap?
 
+
+[2025-05-20T16:04:01.925Z]
+Prompt    : tolong bantu gue jawab dong broooo
+Image URL : https://uploader.nyxs.pw/tmp/9ioerE-1747757038086.jpg
+Response  : Sip, bro! Yuk kita analisis dulu.
+
+- P = 1/4 = 0,25 = 25%
+- Q = 1,25% = 0,0125
+
+Kalau disamain basis persennya, jadi:
+
+P = 25%
+Q = 1,25%
+
+Jelas banget nih, 25% > 1,25%, berarti:
+
+P > Q
+
+Jawaban yang tepat: A. P > Q
+
+Ada yang pengen dibahas lagi?
+
