@@ -1049,3 +1049,22 @@ Penjelasannya:
 
 Jadi kalimatnya menjadi "Lansia Nangis."
 
+
+[2025-05-21T08:00:44.008Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.nyxs.pw/tmp/hGzoqS-1747814438639.jpg
+Response  : Gambar ini adalah grafik candlestick yang menunjukkan analisis teknikal untuk sebuah aset atau mata uang digital. Ada beberapa level penting yang ditandai:
+
+- SUPPORT (dukungan): Level harga di mana aset cenderung menemukan support dan tidak turun lebih jauh (sekitar 0,16400 dan 0,17200).
+- RESISTANCE (resistensi): Level harga di mana aset cenderung menghadapi tekanan jual dan sulit melewati (sekitar 0,18600 dan 0,20000).
+
+Level entry BUY ada di 0,18084. Ada dua target profit (TP):
+- TP1 di 0,19000
+- TP2 di 0,20000
+
+Stop-loss (SL) ditetapkan di 0,17200 untuk membatasi kerugian jika harga bergerak turun.
+
+Tren harga tampak sedang sangat bullish (naik tajam) sejak support utama dengan potensi keuntungan yang cukup menarik jika mencapai TP1 atau TP2.
+
+Kalau kamu ingin membahas lebih dalam tentang strategi trading, manajemen risiko, atau ingin analisa lebih lanjut grafik ini, saya siap membantu!
+
