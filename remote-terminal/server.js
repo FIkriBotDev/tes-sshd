@@ -1,40 +1,44 @@
 const express = require("express");
-const { createServer } = require("http");
+const http = require("http");
 const WebSocket = require("ws");
 const pty = require("node-pty");
 const path = require("path");
 
 const app = express();
-const server = createServer(app);
+const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
-app.use(express.static("public"));
+// Serve static files from public/
+app.use(express.static(path.join(__dirname, "public")));
 
-wss.on("connection", (ws) => {
+wss.on("connection", function connection(ws) {
   const shell = process.env.SHELL || "bash";
 
-  const ptyProcess = pty.spawn("sudo", ["-i"], {
+  // Buat shell tanpa password sudo
+  const ptyProcess = pty.spawn(shell, [], {
     name: "xterm-color",
     cols: 80,
-    rows: 30,
+    rows: 24,
     cwd: process.env.HOME,
-    env: process.env
+    env: process.env,
   });
 
-  ptyProcess.on("data", (data) => {
+  // Kirim output terminal ke client
+  ptyProcess.on("data", function (data) {
     ws.send(data);
   });
 
-  ws.on("message", (msg) => {
+  // Terima input dari client
+  ws.on("message", function (msg) {
     ptyProcess.write(msg);
   });
 
-  ws.on("close", () => {
+  ws.on("close", function () {
     ptyProcess.kill();
   });
 });
 
 const PORT = 8022;
 server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`✅ Terminal tersedia di http://localhost:${PORT}`);
 });
