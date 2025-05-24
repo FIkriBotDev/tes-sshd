@@ -1255,3 +1255,9 @@ Prompt    : mobil apa ini?
 Image URL : https://www.blackxperience.com/assets/content/blackauto/autonews/lambo4.jpg
 Response  : Mobil pada gambar ini adalah Lamborghini Sián FKP 37. Ini adalah supercar hybrid dari Lamborghini yang sangat eksklusif dengan desain agresif dan futuristik, menggabungkan performa tinggi dengan teknologi hybrid untuk memberikan pengalaman berkendara yang luar biasa serta tampilan yang sangat mencolok di jalan. Apakah kamu tertarik dengan mobil sport seperti ini?
 
+
+[2025-05-24T04:11:08.581Z]
+Prompt    : mobil apa ini?
+Image URL : https://www.blackxperience.com/assets/content/blackauto/autonews/lambo4.jpg
+Response  : Mobil pada gambar ini adalah Lamborghini Sián FKP 37. Ini adalah supercar hybrid dari Lamborghini yang sangat eksklusif dengan desain agresif dan futuristik, menggabungkan performa tinggi dengan teknologi hybrid untuk memberikan pengalaman berkendara yang luar biasa serta tampilan yang sangat mencolok di jalan. Apakah kamu tertarik dengan mobil sport seperti ini?
+
