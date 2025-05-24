@@ -1186,3 +1186,60 @@ Response  : Gambar ini memberikan penjelasan yang sangat jelas tentang tiga doma
 
 Dengan pemisahan ini, organisasi dapat memiliki pendekatan menyeluruh dalam menjaga keamanan siber, dari penyerangan simulasi hingga pertahanan dan kolaborasi untuk pengembangan berkelanjutan. Apakah kamu mau saya jelaskan lebih dalam tentang salah satu tim ini?
 
+
+[2025-05-24T04:08:13.418Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+- Skor kesehatan keseluruhan
+- Apakah direkomendasikan atau tidak dan alasannya
+- Rincian nutrisi (kalori, protein, karbohidrat, lemak & persentase masing-masing terhadap total kalori)
+- Vitamin dan mineral yang terkandung
+- Analisis bahan/ingredients
+- Alternatif makanan yang lebih sehat
+Balas dalam format JSON:
+{
+  "skorKesehatan": {"direkomendasikanAtauTidak": "...", "alasan": "..."},
+  "rincianNutrisi": {
+    "kalori": ..., "protein": "...", "proteinPersen": "...",
+    "karbohidrat": "...", "karbohidratPersen": "...",
+    "gemuk": "...", "gemukPersen": "...",
+    "vitaminDanMineral": [...], "mineral": [...]
+  },
+  "ingredients": [...],
+  "alternatif": [...]
+}
+
+Image URL : https://uploader.nyxs.pw/tmp/f9DnbJ-1748059685064.webp
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan untuk konsumsi rutin",
+    "alasan": "Makanan ini terlihat menggunakan mie goreng yang tinggi kalori dan kemungkinan mengandung banyak minyak serta garam. Ditambah dengan pangsit goreng yang juga mengandung lemak jenuh dan kalori tinggi. Konsumsi berlebihan dapat meningkatkan risiko penyakit kardiovaskular dan obesitas."
+  },
+  "rincianNutrisi": {
+    "kalori": 450,
+    "protein": "12 gram",
+    "proteinPersen": "11%",
+    "karbohidrat": "60 gram",
+    "karbohidratPersen": "53%",
+    "gemuk": "18 gram",
+    "gemukPersen": "36%",
+    "vitaminDanMineral": ["Vitamin A (dari daun bawang)", "Vitamin C (dari bahan segar seperti cabai)"],
+    "mineral": ["Sodium (tinggi akibat saus dan penyedap)", "Zat besi (dari mie dan taburan bawang goreng)"]
+  },
+  "ingredients": [
+    "Mie telur goreng",
+    "Minyak goreng",
+    "Bawang goreng",
+    "Daun bawang cincang",
+    "Saus cabai atau sambal",
+    "Pangsit goreng (terbuat dari kulit pangsit dan isian daging atau ayam)",
+    "Bumbu tambahan (garam, kecap, penyedap rasa)"
+  ],
+  "alternatif": [
+    "Mie rebus dengan sayuran segar dan sedikit minyak",
+    "Pangsit kukus sebagai pengganti pangsit goreng",
+    "Nasi merah dengan sayur asem dan sumber protein tanpa lemak seperti ayam panggang",
+    "Mie shirataki dengan tumis sayuran dan protein nabati seperti tahu atau tempe"
+  ]
+}
+
