@@ -1978,3 +1978,102 @@
     at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
+[2025-05-26T13:40:08.402Z] AxiosError: Request failed with status code 502
+    at settle (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:2031:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:3148:11)
+    at IncomingMessage.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
+[2025-05-26T13:40:09.394Z] AxiosError: Request failed with status code 502
+    at settle (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:2031:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:3148:11)
+    at IncomingMessage.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
+[2025-05-26T13:40:09.909Z] AxiosError: Request failed with status code 502
+    at settle (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:2031:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:3148:11)
+    at IncomingMessage.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
+[2025-05-26T13:40:10.233Z] AxiosError: Request failed with status code 502
+    at settle (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:2031:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:3148:11)
+    at IncomingMessage.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
+[2025-05-26T13:40:10.764Z] AxiosError: Request failed with status code 502
+    at settle (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:2031:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:3148:11)
+    at IncomingMessage.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
+[2025-05-26T13:40:11.133Z] AxiosError: Request failed with status code 502
+    at settle (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:2031:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:3148:11)
+    at IncomingMessage.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
+[2025-05-26T13:40:11.422Z] AxiosError: Request failed with status code 502
+    at settle (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:2031:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:3148:11)
+    at IncomingMessage.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
+[2025-05-26T13:40:12.030Z] AxiosError: Request failed with status code 502
+    at settle (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:2031:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:3148:11)
+    at IncomingMessage.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
+[2025-05-26T13:40:12.349Z] AxiosError: Request failed with status code 502
+    at settle (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:2031:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:3148:11)
+    at IncomingMessage.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
+[2025-05-26T13:40:13.282Z] AxiosError: Request failed with status code 502
+    at settle (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:2031:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:3148:11)
+    at IncomingMessage.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
+[2025-05-26T13:40:13.664Z] AxiosError: Request failed with status code 502
+    at settle (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:2031:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:3148:11)
+    at IncomingMessage.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
