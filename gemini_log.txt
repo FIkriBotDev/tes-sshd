@@ -1370,3 +1370,19 @@ Kalau kita tambahkan 1 hari dan 2 jam 50 menit dari waktu sekarang:
 
 Jadi, pengumuman SNBT SNPMB 2025 akan keluar pada tanggal 28 Mei 2025 jam 15:59 WIB.
 
+
+[2025-05-30T06:25:17.713Z]
+Prompt    : Buat gambarnya lebih bagus dong
+Image URL : https://uploader.nyxs.pw/tmp/ronM46-1748586309288.jpg
+Response  : Aku nggak bisa langsung mengedit gambarnya, tapi aku bisa kasih beberapa saran supaya gambarnya bisa lebih bagus saat kamu foto ulang atau edit sendiri:
+
+1. **Atur pencahayaan** — Coba ambil foto dengan cahaya yang lebih merata. Di foto ini, bagian laptop terlalu gelap karena backlightnya terlalu kuat (latar belakang cerah). Kalau bisa, pindah ke tempat dengan cahaya yang lebih lembut atau gunakan filter brightness di aplikasi edit foto.
+
+2. **Fokus ke objek utama** — Jadi laptop dan minuman datang lebih jelas. Kalau di-edit, kamu bisa tingkatkan kontras dan sharpness di bagian layar laptop dan gelas minuman supaya tulisan lebih terbaca.
+
+3. **Hindari bagian background yang terlalu sibuk** — Bisa crop atau blur sedikit background supaya perhatian tertuju ke laptop dan minuman.
+
+4. **Susun ulang objek** — Kalau bisa, coba atur posisi laptop agar layar terlihat lebih menghadap kamera dan minuman tetap di dekat.
+
+Kalau kamu mau, aku juga bisa kasih langkah-langkah editing sederhana pakai aplikasi yang umum seperti Snapseed atau Lightroom Mobile. Mau?
+
