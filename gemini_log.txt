@@ -1436,3 +1436,26 @@ Prompt    : ini angka berapa
 Image URL : https://uploader.nyxs.pw/tmp/ci9K68-1748656380211.jpg
 Response  : Angka pada gambar tersebut adalah 2911505. Ada yang ingin kamu lakukan dengan angka tersebut?
 
+
+[2025-05-31T04:06:01.022Z]
+Prompt    : berikut adalah nilai rapot saya... berapa rata rata nilai mapel keahlian
+Image URL : https://uploader.nyxs.pw/tmp/xcPC5l-1748664353812.jpg
+Response  : Baik, mari kita hitung rata-rata nilai untuk Kelompok Mata Pelajaran Kejuruan berdasarkan nilai yang kamu berikan.
+
+Mata pelajaran kejuruan dan nilainya adalah:
+8. Matematika (Umum): 78
+9. Bahasa Inggris: 79
+10. Informatika: 90
+11. Proyek IPAS: 89
+12. Dasar Dasar Teknik Jaringan Komputer dan Telekomunikasi: 87
+
+Langkah pertama, jumlahkan nilai-nilai tersebut:
+78 + 79 + 90 + 89 + 87 = 423
+
+Kemudian, bagi dengan jumlah mata pelajaran kejuruan (5):
+423 / 5 = 84.6
+
+Jadi, rata-rata nilai mata pelajaran kejuruan kamu adalah 84.6.
+
+Kalau kamu ingin, saya juga bisa bantu hitung rata-rata untuk kelompok mata pelajaran umum atau total keseluruhan!
+
