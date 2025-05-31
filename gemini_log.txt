@@ -1459,3 +1459,22 @@ Jadi, rata-rata nilai mata pelajaran kejuruan kamu adalah 84.6.
 
 Kalau kamu ingin, saya juga bisa bantu hitung rata-rata untuk kelompok mata pelajaran umum atau total keseluruhan!
 
+
+[2025-05-31T04:08:53.105Z]
+Prompt    : berapa rata rata nilai matpel keahlian
+Image URL : https://uploader.nyxs.pw/tmp/5PzpJc-1748664526436.jpg
+Response  : Baik, saya akan menghitung rata-rata nilai Mata Pelajaran Keahlian berdasarkan nilai yang tercantum pada gambar yang Anda berikan. Mata Pelajaran Keahlian ada di Kelompok B:
+
+1. Muatan Lokal/Bahasa Daerah: 84
+2. Matematika (Umum): 75
+3. Bahasa Inggris: 78
+4. Informatika: 82
+5. Proyek PAS: 83
+6. Dasar-Dasar Teknik Jaringan Komputer dan Telekomunikasi: 81
+
+Langkah: jumlahkan semua nilai, lalu dibagi dengan jumlah mata pelajaran keahlian.
+
+(84 + 75 + 78 + 82 + 83 + 81) / 6 = 483 / 6 = 80,5
+
+Jadi, rata-rata nilai Mata Pelajaran Keahlian adalah 80,5. Ada yang ingin Anda tanyakan lebih lanjut seputar nilai ini?
+
