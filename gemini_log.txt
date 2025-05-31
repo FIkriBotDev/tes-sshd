@@ -1478,3 +1478,16 @@ Langkah: jumlahkan semua nilai, lalu dibagi dengan jumlah mata pelajaran keahlia
 
 Jadi, rata-rata nilai Mata Pelajaran Keahlian adalah 80,5. Ada yang ingin Anda tanyakan lebih lanjut seputar nilai ini?
 
+
+[2025-05-31T04:15:32.690Z]
+Prompt    : bisakah saya pilih 3 jurusan yang sama di pmb seperti ini
+karena tidak ada jurusan lain yang saya mau dan juga tidak bisa dikosongkan
+Image URL : https://uploader.nyxs.pw/tmp/Ctnptf-1748664925743.jpg
+Response  : Kalau dilihat dari gambar yang kamu kirim, secara teknis memang bisa memilih jurusan yang sama untuk tiga pilihan saat pendaftaran masuk (PMB), apalagi kalau aplikasi itu mengizinkan pilihannya seperti itu. Tetapi secara umum, banyak sistem PMB meminta pilihan program studi yang berbeda sebagai cara mengelola peluang masuk ke jurusan-jurusan yang kamu pilih berdasarkan prioritas.
+
+Kalau kamu hanya ingin jurusan Informatika, biasanya cukup memilih satu saja atau maksimal untuk pilihan kedua dan ketiga kamu isi dengan jurusan berbeda kalau ada. Memilih jurusan yang sama berturut-turut biasanya tidak menambah peluang kamu karena kamu tetap hanya akan diterima di satu program studi saja.
+
+Jika tidak ada pilihan lain yang tersedia dan sistemnya nggak bisa dikosongkan, pilihan mengulang jurusan yang sama sebenarnya nggak salah tapi memang kurang optimal. kamu juga bisa mempertimbangkan konsultasi langsung dengan bagian pendaftaran di kampus tersebut untuk memastikan dan menanyakan apakah kamu diperbolehkan seperti itu, atau ada opsi lain yang bisa kamu pakai supaya pendaftaranmu dianggap valid.
+
+Jadi, kalau hanya ada satu jurusan yang kamu minati, lebih baik konfirmasi saja ke panitia PMB supaya kamu nggak keliru dalam pengisian pilihan jurusan. Semoga membantu!
+
