@@ -1491,3 +1491,9 @@ Jika tidak ada pilihan lain yang tersedia dan sistemnya nggak bisa dikosongkan, 
 
 Jadi, kalau hanya ada satu jurusan yang kamu minati, lebih baik konfirmasi saja ke panitia PMB supaya kamu nggak keliru dalam pengisian pilihan jurusan. Semoga membantu!
 
+
+[2025-05-31T13:22:15.952Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.nyxs.pw/tmp/YoaM8y-1748697729703.jpg
+Response  : Sepatu pada gambar ini merk-nya ZEODDA. Sepatu tersebut berwarna putih dengan aksen abu-abu pada tali dan bagian atas yang terlihat seperti jaring/jala. Ada juga sedikit detail warna merah di bagian dalam sepatu. Keren, sepertinya desainnya cukup unik dan fungsional. Apakah kamu suka dengan model sepatu ini?
+
