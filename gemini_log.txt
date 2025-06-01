@@ -1553,3 +1553,9 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.nyxs.pw/tmp/y5JUwa-1748794462454.jpg
 Response  : Wah, tampak seru sekali! Dua orang ini sedang melompat dari batu di dekat air terjun yang deras. Mereka mengenakan pelampung keselamatan dan pakaian basah, menunjukkan bahwa ini mungkin bagian dari kegiatan petualangan atau rafting. Air terjunnya terlihat sangat kuat dan segar, membuat momen lompatannya semakin menegangkan sekaligus menyenangkan. Tempat ini sepertinya cocok untuk yang suka tantangan dan menikmati keindahan alam. Kamu pernah mencoba aktivitas seperti ini?
 
+
+[2025-06-01T16:15:57.667Z]
+Prompt    : Ini loh
+Image URL : https://uploader.nyxs.pw/tmp/Jj7gFU-1748794550875.jpg
+Response  : This photo captures an exciting moment of two people jumping together into a body of water near a waterfall. Both are wearing black wetsuits and orange life jackets, suggesting they are engaging in a water-based adventure activity, possibly cliff jumping or canyoning. The surrounding rocks and lush greenery add to the natural and adventurous atmosphere of the scene. The expressions and body language (even with faces blurred) convey enthusiasm and thrill, making it a vibrant and dynamic snapshot of outdoor fun.
+
