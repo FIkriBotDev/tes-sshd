@@ -1581,3 +1581,24 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.nyxs.pw/tmp/BdPK8D-1748828615442.jpg
 Response  : Saya lihat kucing dalam gambar ini tampak sangat santai dan nyaman. Wajahnya terlihat damai, mungkin sedang tidur atau hanya bersantai dengan mata setengah terpejam. Warna bulunya yang oranye dan putih memberikan kesan hangat dan lembut. Kucing ini pasti peliharaan yang manis dan penuh kasih sayang! Ada cerita khusus soal kucing ini yang ingin kamu ceritakan?
 
+
+[2025-06-03T02:48:08.767Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.nyxs.pw/tmp/DYS3wM-1748918880031.jpg
+Response  : Gambar ini adalah informasi mengenai beasiswa dan ketentuan pembayaran uang kuliah serta uang pembangunan di Universitas Muhammadiyah Makassar (Unismuh Makassar). Berikut poin-poin penting yang bisa saya simpulkan:
+
+- Ada beberapa jenis beasiswa yang diberikan:
+  - Untuk Non Alumni S-1 Pendidikan Dokter Unismuh Makassar.
+  - Beasiswa uang kuliah Rp 2.500.000 dan uang pembangunan Rp 600.000 dari Unismuh Makassar.
+  - Beasiswa uang kuliah Rp 1.000.000 dari Unismuh Makassar.
+  - Beasiswa Rp 1.500.000 dari Unismuh Makassar.
+  - Beasiswa Rp 3.100.000 untuk alumni maupun non-alumni Unismuh Makassar.
+
+- Uang Kuliah dibayar setiap semester.
+
+- Uang Pembangunan dibayar hanya sekali selama kuliah, namun bisa diangsurnya:
+  - 50% uang pembangunan, diangsur selama 2 semester untuk program studi non-kedokteran.
+  - 25% uang pembangunan, diangsur selama 4 semester untuk program studi kedokteran.
+
+Kalau kamu membutuhkan penjelasan lebih rinci dari salah satu poin atau ingin membahas tentang peluang beasiswa, cara pendaftaran, atau hal lain terkait kuliah di Unismuh Makassar, saya siap membantu! Apa yang ingin kamu ketahui lebih lanjut?
+
