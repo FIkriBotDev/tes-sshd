@@ -1602,3 +1602,9 @@ Response  : Gambar ini adalah informasi mengenai beasiswa dan ketentuan pembayar
 
 Kalau kamu membutuhkan penjelasan lebih rinci dari salah satu poin atau ingin membahas tentang peluang beasiswa, cara pendaftaran, atau hal lain terkait kuliah di Unismuh Makassar, saya siap membantu! Apa yang ingin kamu ketahui lebih lanjut?
 
+
+[2025-06-04T16:55:11.413Z]
+Prompt    : Gw beli nya utk ini bro, lo tau ga yg cocok nya ukuran berapa?
+Image URL : https://uploader.nyxs.pw/tmp/QjJBVR-1749056104449.jpg
+Response  : Bro, biasanya yang cocok itu ukuran 3/4 inch untuk fitting selang taman standar yang dipakai di Indonesia. Ukuran ini umum buat sambungan kran ke splitter seperti ini. Tapi, buat pastiin juga, coba cek diameter luar ulir kran lo sama diameter dalam fitting yang pengen lo pasang supaya gak bocor atau gak kedem. Kalau kran lo lebih kecil 1/2 inch juga ada pilihan lain. Kalau bisa, ukur langsung pakai caliper atau penggaris ya. Lo pake ini buat sambungin ke kran ukuran berapa? Mungkin bisa gue bantu lebih akurat lagi.
+
