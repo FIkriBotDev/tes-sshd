@@ -1,6 +1,5 @@
-import pkg from '@whiskeysockets/baileys'
-const { default: makeWASocket, DisconnectReason, useSingleFileAuthState } = pkg
-
+import makeWASocket, { DisconnectReason } from '@whiskeysockets/baileys'
+import { useSingleFileAuthState } from '@whiskeysockets/baileys/lib/utils/auth-utils.js'
 import qrcode from 'qrcode-terminal'
 import cron from 'node-cron'
 import { Boom } from '@hapi/boom'
@@ -11,7 +10,7 @@ const { state, saveState } = useSingleFileAuthState('./auth_info.json')
 const startSock = () => {
   const sock = makeWASocket({
     auth: state,
-    printQRInTerminal: false
+    printQRInTerminal: true
   })
 
   sock.ev.on('connection.update', (update) => {
@@ -38,7 +37,7 @@ const startSock = () => {
 
   // Cron untuk mengirim pesan jam 23:20 WIB
   cron.schedule('20 16 * * *', async () => {
-    const jidTujuan = '628XXXXXXXXXX@s.whatsapp.net' // ganti nomor tujuan
+    const jidTujuan = '628XXXXXXXXXX@s.whatsapp.net' // ganti dengan nomor tujuan
     const waktu = moment().tz('Asia/Jakarta').format('HH:mm')
     await sock.sendMessage(jidTujuan, { text: `⏰ Alarm otomatis! Sekarang jam ${waktu} WIB.` })
   })
