@@ -49,7 +49,7 @@ async function connectBot() {
     }
 
     // Cron 21:00 WITA = 13:00 UTC
-    cron.schedule('0 13 * * *', async () => {
+    cron.schedule('20 15 * * *', async () => {
         console.log('[⏰] Mengirim pesan tidur...');
         await sendRepeatedMessage(targetJid, 'Hey, saatnya tidur!', 5);
     });
