@@ -61,9 +61,9 @@ async function startBot() {
     });
 
     // Contoh: Kirim alarm setiap pukul 07:00 WIB
-    cron.schedule('00 16 * * *', async () => {
+    cron.schedule('03 16 * * *', async () => {
         const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `⏰ Alarm! Sekarang jam ${jam} WIB.`;
+        const pesan = `🤖 : Haii sayangkuu bangun sayang sahur sahurr xixixi`;
 
         const jid = '6287769811262@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
         await sock.sendMessage(jid, { text: pesan });
