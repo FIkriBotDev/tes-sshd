@@ -1,5 +1,5 @@
 import makeWASocket, { DisconnectReason } from '@whiskeysockets/baileys'
-import { useSingleFileAuthState } from '@whiskeysockets/baileys/lib/utils/auth-utils.js'
+import { useSingleFileAuthState } from '@whiskeysockets/baileys/lib/Utils/auth-utils.js'
 import qrcode from 'qrcode-terminal'
 import cron from 'node-cron'
 import { Boom } from '@hapi/boom'
