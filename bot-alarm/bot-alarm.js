@@ -1,8 +1,10 @@
-const { default: makeWASocket, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion } = require('@whiskeysockets/baileys');
+const baileys = require('@whiskeysockets/baileys');
+const makeWASocket = baileys.default;
+const { useSingleFileAuthState, fetchLatestBaileysVersion, DisconnectReason } = baileys;
+
 const qrcode = require('qrcode-terminal');
 const cron = require('node-cron');
 const moment = require('moment-timezone');
-const fs = require('fs');
 
 const { state, saveState } = useSingleFileAuthState('./auth_info.json');
 
@@ -12,7 +14,7 @@ async function connectBot() {
     const sock = makeWASocket({
         version,
         auth: state,
-        printQRInTerminal: false, // kita pakai qrcode-terminal manual
+        printQRInTerminal: false,
     });
 
     sock.ev.on('creds.update', saveState);
@@ -21,42 +23,37 @@ async function connectBot() {
         const { connection, lastDisconnect, qr } = update;
 
         if (qr) {
-            console.log('[!] Scan QR code di bawah ini menggunakan WhatsApp kamu:\n');
+            console.log('[!] Scan QR code:\n');
             qrcode.generate(qr, { small: true });
         }
 
         if (connection === 'close') {
             const shouldReconnect = (lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut);
-            console.log('[!] Koneksi terputus.', lastDisconnect?.error);
+            console.log('[!] Koneksi terputus.');
             if (shouldReconnect) {
                 connectBot();
             } else {
-                console.log('[!] Bot logout. Silakan hapus auth_info.json jika ingin login ulang.');
+                console.log('[!] Bot logout.');
             }
         } else if (connection === 'open') {
-            console.log('[✓] Bot berhasil terhubung.');
+            console.log('[✓] Bot terhubung!');
         }
     });
 
-    // Ganti dengan nomor tujuan
-    const targetJid = '6287769811262@s.whatsapp.net'; // nomor kamu
+    const targetJid = '6287769811262@s.whatsapp.net';
 
     async function sendRepeatedMessage(jid, message, count) {
         for (let i = 0; i < count; i++) {
             await sock.sendMessage(jid, { text: message });
-            await new Promise(resolve => setTimeout(resolve, 1000)); // delay 1 detik
+            await new Promise(res => setTimeout(res, 1000));
         }
     }
 
-    // Cron 21:00 WITA = 13:00 UTC
-    cron.schedule('20 15 * * *', async () => {
-        console.log('[⏰] Mengirim pesan tidur...');
+    cron.schedule('22 15 * * *', async () => {
         await sendRepeatedMessage(targetJid, 'Hey, saatnya tidur!', 5);
     });
 
-    // Cron 05:00 WITA = 21:00 UTC (hari sebelumnya)
     cron.schedule('0 21 * * *', async () => {
-        console.log('[⏰] Mengirim pesan bangun...');
         await sendRepeatedMessage(targetJid, 'Hey, saatnya bangun!', 5);
     });
 }
