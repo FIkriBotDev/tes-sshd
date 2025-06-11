@@ -39,7 +39,7 @@ async function connectBot() {
     });
 
     // Ganti dengan nomor tujuan
-    const targetJid = '6281234567890@s.whatsapp.net'; // nomor kamu
+    const targetJid = '6287769811262@s.whatsapp.net'; // nomor kamu
 
     async function sendRepeatedMessage(jid, message, count) {
         for (let i = 0; i < count; i++) {
