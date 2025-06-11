@@ -19,7 +19,7 @@ const store = makeInMemoryStore({ logger: P().child({ level: 'silent', stream: '
 
 // === Fungsi utama ===
 async function startBot() {
-    const { state, saveCreds } = await useMultiFileAuthState('auth_info');
+    const { state, saveCreds } = await useMultiFileAuthState('auth_info_alarm');
 
     const { version, isLatest } = await fetchLatestBaileysVersion();
 
