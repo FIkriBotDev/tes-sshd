@@ -61,7 +61,7 @@ async function startBot() {
     });
 
     // Contoh: Kirim alarm setiap pukul 07:00 WIB
-    cron.schedule('56 23 * * *', async () => {
+    cron.schedule('58 15 * * *', async () => {
         const jam = moment().tz('Asia/Makassar').format('HH:mm');
         const pesan = `⏰ Alarm! Sekarang jam ${jam} WIB.`;
 
