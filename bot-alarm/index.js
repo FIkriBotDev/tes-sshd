@@ -61,11 +61,11 @@ async function startBot() {
     });
 
     // Contoh: Kirim alarm setiap pukul 07:00 WIB
-    cron.schedule('03 16 * * *', async () => {
+    cron.schedule('06 16 * * *', async () => {
         const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `🤖 : Haii sayangkuu bangun sayang sahur sahurr xixixi`;
+        const pesan = `🤖 : Brok`;
 
-        const jid = '6287769811262@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
+        const jid = '6285735098913@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
         await sock.sendMessage(jid, { text: pesan });
     });
 }
