@@ -1,61 +1,65 @@
-const baileys = require('@whiskeysockets/baileys');
-const makeWASocket = baileys.default;
-const { useSingleFileAuthState, fetchLatestBaileysVersion, DisconnectReason } = baileys;
+import makeWASocket, {
+  fetchLatestBaileysVersion,
+  DisconnectReason,
+} from '@whiskeysockets/baileys';
 
-const qrcode = require('qrcode-terminal');
-const cron = require('node-cron');
-const moment = require('moment-timezone');
+import { default as baileys } from '@whiskeysockets/baileys';
+const { useSingleFileAuthState } = await import('@whiskeysockets/baileys/lib/utils/auth-utils.js').then(mod => mod);
+
+
+import qrcode from 'qrcode-terminal';
+import cron from 'node-cron';
 
 const { state, saveState } = useSingleFileAuthState('./auth_info.json');
 
 async function connectBot() {
-    const { version, isLatest } = await fetchLatestBaileysVersion();
+  const { version } = await fetchLatestBaileysVersion();
 
-    const sock = makeWASocket({
-        version,
-        auth: state,
-        printQRInTerminal: false,
-    });
+  const sock = makeWASocket({
+    version,
+    auth: state,
+    printQRInTerminal: false,
+  });
 
-    sock.ev.on('creds.update', saveState);
+  sock.ev.on('creds.update', saveState);
 
-    sock.ev.on('connection.update', (update) => {
-        const { connection, lastDisconnect, qr } = update;
-
-        if (qr) {
-            console.log('[!] Scan QR code:\n');
-            qrcode.generate(qr, { small: true });
-        }
-
-        if (connection === 'close') {
-            const shouldReconnect = (lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut);
-            console.log('[!] Koneksi terputus.');
-            if (shouldReconnect) {
-                connectBot();
-            } else {
-                console.log('[!] Bot logout.');
-            }
-        } else if (connection === 'open') {
-            console.log('[✓] Bot terhubung!');
-        }
-    });
-
-    const targetJid = '6287769811262@s.whatsapp.net';
-
-    async function sendRepeatedMessage(jid, message, count) {
-        for (let i = 0; i < count; i++) {
-            await sock.sendMessage(jid, { text: message });
-            await new Promise(res => setTimeout(res, 1000));
-        }
+  sock.ev.on('connection.update', ({ connection, lastDisconnect, qr }) => {
+    if (qr) {
+      console.log('Scan QR ini:\n');
+      qrcode.generate(qr, { small: true });
     }
 
-    cron.schedule('22 15 * * *', async () => {
-        await sendRepeatedMessage(targetJid, 'Hey, saatnya tidur!', 5);
-    });
+    if (connection === 'close') {
+      const shouldReconnect =
+        lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
+      if (shouldReconnect) {
+        connectBot();
+      } else {
+        console.log('Bot logout.');
+      }
+    } else if (connection === 'open') {
+      console.log('Bot terkoneksi!');
+    }
+  });
 
-    cron.schedule('0 21 * * *', async () => {
-        await sendRepeatedMessage(targetJid, 'Hey, saatnya bangun!', 5);
-    });
+  const targetJid = '6281234567890@s.whatsapp.net';
+
+  async function sendRepeatedMessage(jid, text, count) {
+    for (let i = 0; i < count; i++) {
+      await sock.sendMessage(jid, { text });
+      await new Promise(res => setTimeout(res, 1000));
+    }
+  }
+
+  // 21:00 WITA (UTC+8) = 13:00 UTC
+  cron.schedule('0 13 * * *', () => {
+    sendRepeatedMessage(targetJid, 'Hey, saatnya tidur!', 5);
+  });
+
+  // 05:00 WITA (UTC+8) = 21:00 UTC (hari sebelumnya)
+  cron.schedule('0 21 * * *', () => {
+    sendRepeatedMessage(targetJid, 'Hey, saatnya bangun!', 5);
+  });
 }
 
 connectBot();
