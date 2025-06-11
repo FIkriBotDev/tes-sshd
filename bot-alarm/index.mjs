@@ -3,7 +3,9 @@ import makeWASocket, {
   DisconnectReason,
 } from '@whiskeysockets/baileys';
 
-import { useSingleFileAuthState } from '@whiskeysockets/baileys/lib/utils/auth-utils.js';
+import { default as baileys } from '@whiskeysockets/baileys';
+const { useSingleFileAuthState } = await import('@whiskeysockets/baileys/lib/utils/auth-utils.js').then(mod => mod);
+
 
 import qrcode from 'qrcode-terminal';
 import cron from 'node-cron';
