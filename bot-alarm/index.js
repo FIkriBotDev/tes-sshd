@@ -1,10 +1,11 @@
 import makeWASocket, { DisconnectReason } from '@whiskeysockets/baileys'
-import { useSingleFileAuthState } from '@whiskeysockets/baileys/lib/Utils/auth-utils.js'
+import authUtils from '@whiskeysockets/baileys/lib/Utils/auth-utils.js'
 import qrcode from 'qrcode-terminal'
 import cron from 'node-cron'
 import { Boom } from '@hapi/boom'
 import moment from 'moment-timezone'
 
+const { useSingleFileAuthState } = authUtils
 const { state, saveState } = useSingleFileAuthState('./auth_info.json')
 
 const startSock = () => {
