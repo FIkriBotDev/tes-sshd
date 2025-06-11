@@ -6,7 +6,7 @@ const cron = require('node-cron')
 const moment = require('moment-timezone')
 
 // ✅ FIX di sini, ambil langsung dari path internal
-const { useSingleFileAuthState } = require('@whiskeysockets/baileys/lib/utils/auth-utils')
+const { useSingleFileAuthState } = require('@whiskeysockets/baileys/lib/Utils/auth-utils')
 
 const { state, saveState } = useSingleFileAuthState('./auth_info.json')
 
