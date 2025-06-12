@@ -61,49 +61,49 @@ async function startBot() {
     });
 
     // Schedule 1 Bobo
-    cron.schedule('00 18 * * *', async () => {
-        const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `💤 : Bobo jangan malem-malem yaa sayang, biar sehat terus😴 met bobo yaa sayangkuu bobo yang nyenyak`;
+//    cron.schedule('00 05 * * *', async () => {
+  //      const jam = moment().tz('Asia/Makassar').format('HH:mm');
+   //     const pesan = `💤 : Bobo jangan malem-malem yaa sayang, biar sehat terus😴 met bobo yaa sayangkuu bobo yang nyenyak`;
 
-        const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
-        await sock.sendMessage(jid, { text: pesan });
-    });
+//        const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
+  //      await sock.sendMessage(jid, { text: pesan });
+   // });
 
 // Schedule 2 Sahur
-    cron.schedule('00 20 * * *', async () => {
+    cron.schedule('00 11 * * *', async () => {
         const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `⏰ : Sayang sayang udah jam 3 ni di kmu, bangun sahur yaa sayangg😘😘`;
+        const pesan = `⏰🍝 : Met buka puasa sayangkuuu jangan lupa buka sama yang manis-manis kaya kamu😘😘`;
 
         const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
         await sock.sendMessage(jid, { text: pesan });
     });
 
 // Schedule 3 Salat
-    cron.schedule('30 22 * * *', async () => {
-        const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `🌅 : Haii sayangkuu bangun sayang udaa pagi nii jangan lupa salat subuh yaa😘`;
-
-        const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
-        await sock.sendMessage(jid, { text: pesan });
-    });
-
+//    cron.schedule('30 22 * * *', async () => {
+ //      const jam = moment().tz('Asia/Makassar').format('HH:mm');
+  //      const pesan = `🌅 : Haii sayangkuu bangun sayang udaa pagi nii jangan lupa salat subuh yaa😘`;
+//
+  //      const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
+  //      await sock.sendMessage(jid, { text: pesan });
+//    });
+//
 // Schedule 4 Pagi
-    cron.schedule('00 23 * * *', async () => {
-        const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `🌅 : Good Morning Sayangggg`;
+ //   cron.schedule('00 23 * * *', async () => {
+  //      const jam = moment().tz('Asia/Makassar').format('HH:mm');
+   //     const pesan = `🌅 : Good Morning Sayangggg`;
 
-        const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
-        await sock.sendMessage(jid, { text: pesan });
-    });
+    //    const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
+    //    await sock.sendMessage(jid, { text: pesan });
+  //  });
 
 // Schedule 5 Makan
-    cron.schedule('00 01 * * *', async () => {
-        const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `🥗 : Sayang udah jam segini jangan lupa mam yaa sayangkuuu😘`;
+  //  cron.schedule('00 01 * * *', async () => {
+    //    const jam = moment().tz('Asia/Makassar').format('HH:mm');
+    //    const pesan = `🥗 : Sayang udah jam segini jangan lupa mam yaa sayangkuuu😘`;
 
-        const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
-        await sock.sendMessage(jid, { text: pesan });
-    });
+   //     const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
+     //   await sock.sendMessage(jid, { text: pesan });
+   // });
 
 }
 
