@@ -28,15 +28,15 @@ const uploadFile = async (buffer) => {
         let form = new FormData();
         form.append('file', buffer, 'tmp.' + ext);
 
-        const response = await axios.post('https://uploader.nyxs.pw/upload', form, {
-        //const response = await axios.post('https://uploader.exoduscloud.my.id/upload', form, {
+       // const response = await axios.post('https://uploader.nyxs.pw/upload', form, {
+        const response = await axios.post('http://localhost:9000/upload', form, {
             headers: {
                 ...form.getHeaders(),
             },
         });
 
-        const urlMatch = response.data.match(/https:\/\/uploader\.nyxs\.pw\/tmp\/[^"']+/);
-        //const urlMatch = response.data.match(/https:\/\/uploader\.exoduscloud\.my\.id\/tmp\/[^"']+/);
+        //const urlMatch = response.data.match(/https:\/\/uploader\.nyxs\.pw\/tmp\/[^"']+/);
+       const urlMatch = response.data.match(/http:\/\/localhost:9000\/tmp\/[^"']+/);
         if (!urlMatch) throw new Error('URL not found in upload response');
 
         const uploadedUrl = urlMatch[0].replace(/"/g, '');
