@@ -63,7 +63,7 @@ async function startBot() {
      // Schedule 1 Bobo
     cron.schedule('00 15 * * *', async () => {
         const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `Sayang jangan lupa bobo yaa sayangnya fikriii😴, bobo jangan malem-malem sayang yaaaa💤`;
+        const pesan = `Sayangg jangan lupa bobo yaaa uda malem niii💤`;
 
         const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
         await sock.sendMessage(jid, { text: pesan });
@@ -72,8 +72,32 @@ async function startBot() {
 // Schedule 2 Dino
     cron.schedule('00 18 * * *', async () => {
         const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `Nih ya, hidup itu nggak cuma soal kerja keras doang, tapi juga kerja cerdas. Lo boleh capek kerja tiap hari, tapi kalo duit lo nggak diputer, ujung-ujungnya lo cuma jalan di tempat. \nInvestasi itu penting, men. Kenapa? Karena uang itu nilainya bisa turun. Lo simpen 10 juta di bawah bantal, 5 tahun lagi nilainya udah beda. Tapi kalo lo invest, uang lo bisa bertumbuh. Gak usah langsung mikir saham yang ribet, mulai dari yang simpel: emas, reksa dana, atau bahkan lo bisa belajar crypto dan properti kalo udah paham risikonya.\n\nNah, sekarang masuk ke bisnis. Jangan nunggu punya modal gede buat mulai. Bisnis itu soal mental dan konsistensi. Lo bisa mulai dari jualan kecil-kecilan, bikin jasa, atau bahkan jual skill lo sendiri. Yang penting jalanin dulu. Trial and error itu biasa, tapi dari situ lo belajar.\n\nLo jangan takut gagal. Karena semua pengusaha sukses itu pernah jatuh. Yang bikin mereka beda cuma satu: mereka gak nyerah. Lo bisa aja hari ini jualan gak laku, tapi besok bisa jadi rame asal lo terus improve dan dengerin pasar.\n\nIntinya, lo harus mulai mikir jangka panjang. Jangan cuma mikir buat hari ini kenyang, tapi mikir juga gimana caranya biar masa depan lo aman. Dan itu bisa lo raih lewat investasi dan bisnis.`;
+        const pesan = `Hai, aku baru beli saham pertamaku di Ajaib. 📈 Coba sendiri dan miliki perusahaan seperti bank BCA, bank BRI dan Antam. Kalau kamu daftar pakai kode Ajaib muhaq3bx, kita berdua bisa otomatis dapat hadiah saham hingga Rp100 juta setelah kamu beli saham pertamamu. Klik di sini: https://referral.ajaib.co.id/Qhwq `;
         const jid = '6285735098913@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
+        await sock.sendMessage(jid, { text: pesan });
+    });
+
+    // Schedule 2 Dino
+    cron.schedule('01 18 * * *', async () => {
+        const jam = moment().tz('Asia/Makassar').format('HH:mm');
+        const pesan = `Hai, aku baru beli saham pertamaku di Ajaib. 📈 Coba sendiri dan miliki perusahaan seperti bank BCA, bank BRI dan Antam. Kalau kamu daftar pakai kode Ajaib muhaq3bx, kita berdua bisa otomatis dapat hadiah saham hingga Rp100 juta setelah kamu beli saham pertamamu. Klik di sini: https://referral.ajaib.co.id/Qhwq `;
+        const jid = '6288242147173@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
+        await sock.sendMessage(jid, { text: pesan });
+    });
+
+      // Schedule 2 Dino
+    cron.schedule('02 18 * * *', async () => {
+        const jam = moment().tz('Asia/Makassar').format('HH:mm');
+        const pesan = `Hai, aku baru beli saham pertamaku di Ajaib. 📈 Coba sendiri dan miliki perusahaan seperti bank BCA, bank BRI dan Antam. Kalau kamu daftar pakai kode Ajaib muhaq3bx, kita berdua bisa otomatis dapat hadiah saham hingga Rp100 juta setelah kamu beli saham pertamamu. Klik di sini: https://referral.ajaib.co.id/Qhwq `;
+        const jid = '6281382737567@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
+        await sock.sendMessage(jid, { text: pesan });
+    });
+
+          // Schedule 2 Dino
+    cron.schedule('03 18 * * *', async () => {
+        const jam = moment().tz('Asia/Makassar').format('HH:mm');
+        const pesan = `Hai, aku baru beli saham pertamaku di Ajaib. 📈 Coba sendiri dan miliki perusahaan seperti bank BCA, bank BRI dan Antam. Kalau kamu daftar pakai kode Ajaib muhaq3bx, kita berdua bisa otomatis dapat hadiah saham hingga Rp100 juta setelah kamu beli saham pertamamu. Klik di sini: https://referral.ajaib.co.id/Qhwq `;
+        const jid = '6287761368878@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
         await sock.sendMessage(jid, { text: pesan });
     });
 
