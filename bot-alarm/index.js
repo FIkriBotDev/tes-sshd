@@ -117,6 +117,38 @@ async function startBot() {
         const jid = '6287769811262@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
         await sock.sendMessage(jid, { text: pesan });
     });
+
+
+            // Info
+    cron.schedule('10 13 * * *', async () => {
+        const jam = moment().tz('Asia/Makassar').format('HH:mm');
+        const pesan = `Hai user *ExodusAI*!\n\nMohon maaf jika sebelumnya ExodusAI tidak dapat digunakan karena terdapat kesalahan pada server AI!\n\nJika terjadi kesalahan pada ExodusAI, silahkan hubungi: 0877-6981-1262 (Owner ExodusAI)`;
+        const jid = '6287831752437@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
+        await sock.sendMessage(jid, { text: pesan });
+    });
+                // Info
+    cron.schedule('10 13 * * *', async () => {
+        const jam = moment().tz('Asia/Makassar').format('HH:mm');
+        const pesan = `Hai user *ExodusAI*!\n\nMohon maaf jika sebelumnya ExodusAI tidak dapat digunakan karena terdapat kesalahan pada server AI!\n\nJika terjadi kesalahan pada ExodusAI, silahkan hubungi: 0877-6981-1262 (Owner ExodusAI)`;
+        const jid = '6281382737567@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
+        await sock.sendMessage(jid, { text: pesan });
+    });
+                    // Info
+    cron.schedule('10 13 * * *', async () => {
+        const jam = moment().tz('Asia/Makassar').format('HH:mm');
+        const pesan = `Hai user *ExodusAI*!\n\nMohon maaf jika sebelumnya ExodusAI tidak dapat digunakan karena terdapat kesalahan pada server AI!\n\nJika terjadi kesalahan pada ExodusAI, silahkan hubungi: 0877-6981-1262 (Owner ExodusAI)`;
+        const jid = '6288242147173@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
+        await sock.sendMessage(jid, { text: pesan });
+    });
+                        // Info
+    cron.schedule('10 13 * * *', async () => {
+        const jam = moment().tz('Asia/Makassar').format('HH:mm');
+        const pesan = `Hai user *ExodusAI*!\n\nMohon maaf jika sebelumnya ExodusAI tidak dapat digunakan karena terdapat kesalahan pada server AI!\n\nJika terjadi kesalahan pada ExodusAI, silahkan hubungi: 0877-6981-1262 (Owner ExodusAI)`;
+        const jid = '6285922070016@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
+        await sock.sendMessage(jid, { text: pesan });
+    });
+
+    
 // Schedule 3 Salat
 //    cron.schedule('30 22 * * *', async () => {
  //      const jam = moment().tz('Asia/Makassar').format('HH:mm');
