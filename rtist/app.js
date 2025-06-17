@@ -550,7 +550,7 @@ app.post('/post/rtist', async (req, res) => {
 
     const payload = {
       messages,
-      model: 'openai', // Menggunakan model Unity with Mistral Large by Unity AI Lab
+      model: 'rtist', // Menggunakan model Unity with Mistral Large by Unity AI Lab
       seed: 42,
       jsonMode: false,
     };
