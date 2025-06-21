@@ -66,6 +66,7 @@ function getConversation(userId) {
                          userId === '6282269995370@s.whatsapp.net' ? 'sis.json' :
                          userId === '6282142719548@s.whatsapp.net' ? 'fu.json' :
                          userId === '62895351640508@s.whatsapp.net' ? 'april.json' :
+                         userId === '6283897921042@s.whatsapp.net' ? 's.json' :
                          userId === '6285271848176@s.whatsapp.net' ? 'nuni.json' : 'database.json';
         userConversations[userId] = loadConversation(fileName);
     }
