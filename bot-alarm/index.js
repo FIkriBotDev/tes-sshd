@@ -61,7 +61,7 @@ async function startBot() {
     });
 
 	// Schedule 1 Bangunin
-    cron.schedule('00 15 * * *', async () => {
+    cron.schedule('01 22 * * *', async () => {
         const jam = moment().tz('Asia/Makassar').format('HH:mm');
         const pesan = `sayangkuu bangun sayangg`;
 
