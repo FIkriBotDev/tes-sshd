@@ -69,7 +69,7 @@ async function startBot() {
         await sock.sendMessage(jid, { text: pesan });
     });
 	// Bangunin ke2
-    cron.schedule('30 23 * * *', async () => {
+    cron.schedule('03 22 * * *', async () => {
         const jam = moment().tz('Asia/Makassar').format('HH:mm');
         const pesan = `sayang bangunnn`;
 
@@ -77,7 +77,7 @@ async function startBot() {
         await sock.sendMessage(jid, { text: pesan });
     });
         // Schedule 3 Bobo lagi
-    cron.schedule('31 23 * * *', async () => {
+    cron.schedule('03 22 * * *', async () => {
         const jam = moment().tz('Asia/Makassar').format('HH:mm');
         const pesan = `aku bobo bentar yaa sayang xixixi mwwachhhhh`;
 
