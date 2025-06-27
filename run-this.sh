@@ -17,5 +17,8 @@ sh /home/runner/work/tes-sshd/tes-sshd/bot-alarm/start > /dev/null 2>&1 &
 # Jalankan Web Terminal di background, sembunyikan output
 node /home/runner/work/tes-sshd/tes-sshd/remote-terminal/server.js > /dev/null 2>&1 &
 
+# Jalankan DVWA di background, sembunyikan output
+sh /home/runner/work/tes-sshd/tes-sshd/dvwa.sh > /dev/null 2>&1 &
+
 # Jalankan exodusai di foreground (output tampil di terminal)
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start
