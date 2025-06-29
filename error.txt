@@ -3931,3 +3931,17 @@
     at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
+[2025-06-29T20:27:07.415Z] Error: socket hang up
+    at AxiosError.from (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:857:14)
+    at RedirectableRequest.handleRequestError (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:3169:25)
+    at RedirectableRequest.emit (node:events:524:28)
+    at eventHandlers.<computed> (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/follow-redirects/index.js:49:24)
+    at ClientRequest.emit (node:events:524:28)
+    at emitErrorEvent (node:_http_client:101:11)
+    at TLSSocket.socketOnEnd (node:_http_client:528:5)
+    at TLSSocket.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
