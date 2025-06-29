@@ -28,7 +28,7 @@ const uploadFile = async (buffer) => {
         let form = new FormData();
         form.append('file', buffer, 'tmp.' + ext);
 
-        const response = await axios.post('http://localhost:9000/upload', form, {
+        const response = await axios.post('https://uploader.exoduscloud.my.id/', form, {
             headers: {
                 ...form.getHeaders(),
             },
