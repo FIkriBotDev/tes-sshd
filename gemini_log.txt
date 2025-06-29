@@ -1821,3 +1821,9 @@ Selain itu, tampak juga video lain berjudul "Trauma Masa Kecil Anak Indonesia Di
 
 Adakah hal spesifik yang ingin kamu bicarakan tentang ini? Mungkin tentang cerita-cerita mistis tersebut atau tren konten di YouTube?
 
+
+[2025-06-29T05:05:05.051Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/b736ee-1751173501083.jpg
+Response  : Terima kasih sudah berbagi gambar, tapi saya nggak bisa melihat gambar secara langsung. Bisa jelaskan apa yang ada di gambar itu? Saya tertarik tahu apa yang ingin kamu tunjukkan atau bahas dari gambar tersebut.
+
