@@ -1683,3 +1683,9 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.exoduscloud.my.id/tmp/504cf2-1751169572537.jpg
 Response  : Mobil ini terlihat sangat sporty dan agresif, dengan lampu depan yang terang dan desain grill khas BMW yang ikonik. Sepertinya sedang melaju kencang di terowongan atau jalan bawah tanah, memberikan kesan kecepatan dan dinamika tinggi. Warna putihnya membuat garis-garis tajam pada bodi mobil makin menonjol dalam pencahayaan malam hari, menambah aura mewah dan performa. Kamu tertarik sama mobil jenis ini atau lagi cari-cari mobil dengan gaya serupa?
 
+
+[2025-06-29T04:11:33.929Z]
+Prompt    : ini apa namanya
+Image URL : https://uploader.exoduscloud.my.id/tmp/20e3f6-1751170288259.jpg
+Response  : Senjata dalam gambar itu adalah AK-47, sebuah jenis senapan serbu yang sangat terkenal dan banyak digunakan di seluruh dunia. Desainnya khas dengan magazin melengkung dan bagian kayu pada gagang dan larasnya. AK-47 dikenal karena ketahanan, kesederhanaan, dan kemudahan perawatannya dalam berbagai kondisi. Ada yang ingin kamu tahu lebih dalam tentang senjata ini?
+
