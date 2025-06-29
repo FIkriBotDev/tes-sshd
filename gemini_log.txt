@@ -2119,3 +2119,23 @@ Ada juga opsi "Baru" untuk membuat database baru.
 
 Kalau kamu butuh bantuan memahami fungsi-fungsi phpMyAdmin, mengelola database, atau ada yang ingin kamu tanyakan terkait isi layar ini, silakan!
 
+
+[2025-06-29T10:56:57.623Z]
+Prompt    : Ini bohong gak bang
+Image URL : https://uploader.exoduscloud.my.id/tmp/d9fc74-1751194609774.jpg
+Response  : Gambar yang kamu tunjukkan itu sepertinya adalah thumbnail atau bagian dari video tutorial yang mengklaim bisa menambah kapasitas RAM dan internal storage di HP Oppo A3s dari 2GB RAM dan 16GB internal jadi 4GB RAM dan 64GB internal.
+
+Secara teknis, hal seperti ini tidak benar sepenuhnya. Kapasitas RAM dan memori internal pada sebuah perangkat keras (hardware) adalah fisik, jadi tidak bisa ditambah atau digandakan hanya dengan "kode dial" atau aplikasi. Memori adalah komponen hardware yang terpasang secara fisik; tidak bisa diubah hanya lewat software atau kode rahasia.
+
+Kalau video itu menjanjikan bisa menaikkan RAM dari 2GB ke 4GB atau internal dari 16GB menjadi 64GB tanpa mengganti perangkat keras, kemungkinan besar itu hoax atau ada trik tertentu yang sebenarnya tidak benar-benar menambah kapasitas fisik, misalnya:
+
+- Menambah virtual RAM (RAM virtual adalah fitur di beberapa HP yang menggunakan sebagian penyimpanan sebagai RAM tambahan, tapi ini bukan menambah RAM sebenarnya dan performanya jauh berbeda).
+
+- Memperbaiki cache, atau membersihkan file sampah sehingga memori internal tampak ada sisa lebih banyak.
+
+- Menggunakan trik setting agar HP terasa lebih cepat, tapi bukan menambah kapasitas memori.
+
+Jadi, kalau melihat klaim dalam gambar itu, ini tidak benar kalau diartikan sebagai penambahan kapasitas memori fisik. Kalau kamu ingin lebih banyak RAM atau storage, kamu harus beli HP dengan spesifikasi yang lebih tinggi atau menambah kartu memori (microSD) untuk storage eksternal (kalau HP mendukung).
+
+Kalau kamu mau aku jelaskan lebih lanjut tentang RAM virtual atau trik buat meningkatkan performa HP, bisa aku jelaskan juga!
+
