@@ -2139,3 +2139,18 @@ Jadi, kalau melihat klaim dalam gambar itu, ini tidak benar kalau diartikan seba
 
 Kalau kamu mau aku jelaskan lebih lanjut tentang RAM virtual atau trik buat meningkatkan performa HP, bisa aku jelaskan juga!
 
+
+[2025-06-29T11:16:13.915Z]
+Prompt    : Ini bohong gak bang
+Image URL : https://uploader.exoduscloud.my.id/tmp/f9673f-1751195767702.jpg
+Response  : Kode dial seperti *#*#98637#*#* dan klaim bisa meningkatkan RAM atau ROM di ponsel biasanya adalah HOAX atau setidaknya tidak berfungsi sebagaimana yang dijanjikan.
+
+Berikut beberapa alasan kenapa itu tidak benar:
+1. RAM dan ROM adalah hardware fisik yang tidak bisa diubah atau ditambah hanya dengan memasukkan kode dial.
+2. Kode rahasia atau kode USSD yang sebenarnya digunakan oleh pabrikan biasanya untuk pengecekan hardware, tes perangkat, atau pengaturan sistem tertentu, bukan menambah kapasitas penyimpanan atau RAM.
+3. Video atau klaim seperti itu biasanya dibuat untuk mendapatkan views atau klik, tanpa ada efek nyata.
+
+Kalau kamu ingin RAM atau penyimpanan lebih besar, satu-satunya cara adalah beli perangkat dengan spesifikasi lebih tinggi atau menggunakan kartu microSD (kalau HP mendukung) untuk menambah penyimpanan. Jadi, mending jangan coba-coba kode seperti itu berharap bisa tambah RAM atau ROM karena besar kemungkinan tidak berhasil dan malah berisiko.
+
+Kalau kamu lihat di komentar dan ulasan videonya, biasanya juga banyak yang mengeluhkan hal yang sama. Jadi intinya, jangan terlalu percaya kode yang menjanjikan penambahan hardware lewat dial code.
+
