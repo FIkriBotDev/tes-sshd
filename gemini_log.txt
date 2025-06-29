@@ -1784,3 +1784,11 @@ Selain itu, ada judul video berjudul "Trauma Masa Kecil Anak Indonesia Dijelaska
 
 Apa kamu tertarik dengan cerita-cerita horor tersebut atau ada yang ingin kamu bicarakan dari gambar ini?
 
+
+[2025-06-29T05:00:46.107Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/09627c-1751173240913.jpg
+Response  : Wah, dari gambar ini terlihat ada data mengenai absensi atau catatan ketidakhadiran seseorang yang cukup lucu atau aneh. Terlihat jumlah hari sakit 1975 hari, izin 98 hari, dan total keterangan 89990 hari. Angka-angka tersebut sangat besar dan nggak masuk akal kalau dipakai di dunia nyata, mungkin ini angka yang error atau cuma buat lucu-lucuan saja.
+
+Kalau diolah jadi tahun, 1975 hari sakit itu sekitar 5,4 tahun, dan total hampir 90000 hari itu lebih dari 246 tahun, yang tentu saja nggak mungkin. Kamu ada cerita atau konteks di balik gambar ini? Seru nih buat dibahas!
+
