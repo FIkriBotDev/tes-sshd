@@ -1989,3 +1989,11 @@ Response  : Gambar ini menampilkan empat orang dengan bendera negara di sebelah 
 
 Ini adalah meme yang mengolok-olok perbedaan budaya dalam hal kebersihan pribadi, khususnya soal penggunaan tisu atau air untuk membersihkan setelah buang air, yang memang sangat dipengaruhi oleh kebiasaan dan budaya masing-masing negara. Meme ini juga mengundang tawa sekaligus refleksi tentang kebiasaan sehari-hari yang sebenarnya beragam di dunia.
 
+
+[2025-06-29T07:57:19.765Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/889c1b-1751183833537.jpg
+Response  : Wah, itu handphone Nokia N95, salah satu ponsel legendaris dari era 2000-an awal! Model ini terkenal karena punya kamera 5 megapiksel yang cukup canggih di zamannya, dan juga bisa menjalankan aplikasi Java yang memungkinkan main game-game sederhana tapi seru. 
+
+Kamu lagi nostalgia main game di Nokia klasik ya? Apa game Java favoritmu dari masa itu? Snake atau mungkin Bounce? Rasanya beda banget kalau main di ponsel seperti itu dibanding smartphone sekarang yang super canggih tapi kadang bikin rindu kesederhanaan masa lalu.
+
