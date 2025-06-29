@@ -2063,3 +2063,35 @@ Prompt    : Ini?
 Image URL : https://uploader.exoduscloud.my.id/tmp/b7e521-1751186123736.jpg
 Response  : Itu adalah gambar dari IBM Simon, yang merupakan salah satu perangkat pertama yang bisa dianggap sebagai smartphone. IBM Simon dirilis pada tahun 1994 dan memiliki fungsi lebih dari sekadar telepon, seperti kalender, fax, email, dan jam alarm, seperti yang terlihat pada mode alarm clock di gambar tersebut. Desainnya memang cukup berbeda dibandingkan dengan smartphone modern, karena memiliki layar sentuh monochrome dan bentuk yang cukup besar serta tebal. IBM Simon dianggap sebagai pionir dalam teknologi ponsel pintar. Apakah kamu tertarik dengan sejarah gadget atau teknologi lama?
 
+
+[2025-06-29T09:15:42.088Z]
+Prompt    : kenapa gini ya
+Image URL : https://uploader.exoduscloud.my.id/tmp/949b88-1751188532892.jpg
+Response  : Dilihat dari pesan yang muncul di terminal, masalahnya adalah "Permission denied (publickey,password)" saat mencoba login melalui SSH. Ini berarti SSH server menolak autentikasi yang kamu lakukan.
+
+Beberapa kemungkinan penyebabnya:
+
+1. **Password yang kamu masukkan salah**  
+   - Coba pastikan kamu mengetik password dengan benar, perhatikan caps lock, atau keyboard layout.
+
+2. **Login dengan root bisa saja dilarang oleh konfigurasi server**  
+   - Banyak server menonaktifkan login root langsung lewat SSH demi alasan keamanan.
+
+3. **Autentikasi Public Key mungkin diwajibkan tapi kamu belum setupnya**  
+   - Kalau server hanya mengizinkan login berdasarkan kunci publik, kamu harus generate SSH key pair dan upload public key ke server terlebih dahulu.
+
+4. **Port yang digunakan mungkin tidak benar**  
+   - Cek lagi port yang tepat untuk SSH, 6014 dan 6043 seperti yang kamu pakai bisa jadi bukan port SSH utama.
+
+5. **Akun kamu mungkin diblokir atau tidak diizinkan izin akses**  
+   - Bisa jadi ada pembatasan di server untuk user tertentu.
+
+Solusi singkat yang bisa kamu coba:
+
+- Konfirmasi ulang username dan password.
+- Jika kamu harus masuk menggunakan SSH key, buat key SSH dengan `ssh-keygen` dan upload ke server.
+- Hubungi admin server untuk memastikan konfigurasinya.
+- Pastikan port SSH yang kamu gunakan benar.
+
+Kalau mau saya bantu step-by-step buat generate dan pakai SSH key, bilang aja!
+
