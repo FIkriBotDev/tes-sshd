@@ -2154,3 +2154,17 @@ Kalau kamu ingin RAM atau penyimpanan lebih besar, satu-satunya cara adalah beli
 
 Kalau kamu lihat di komentar dan ulasan videonya, biasanya juga banyak yang mengeluhkan hal yang sama. Jadi intinya, jangan terlalu percaya kode yang menjanjikan penambahan hardware lewat dial code.
 
+
+[2025-06-29T11:27:49.010Z]
+Prompt    : Ini tambah ram gak
+Image URL : https://uploader.exoduscloud.my.id/tmp/3b777b-1751196463278.jpg
+Response  : Dari gambar yang kamu kirim, ini adalah bagian dari menu *Opsi Developer* di HP Android kamu. Di sini terlihat beberapa opsi terkait animasi, tata letak, dan render grafis. Tapi semua opsi yang terlihat dalam gambar itu dalam keadaan *mati* (off).
+
+Kalau pertanyaannya "Ini tambah RAM gak?", jawabannya: opsi-opsi di screenshot tersebut tidak secara langsung menambah kapasitas RAM fisik di HP kamu.
+
+Namun, ada trik di menu *Opsi Developer* bernama "Memori virtual berbasis file" atau "RAM expansion" di beberapa HP yang bisa menggunakan sebagian penyimpanan internal (storage) sebagai RAM virtual, tapi itu bukan bagian dari opsi yang terlihat di sini.
+
+Jadi, opsi yang kamu tunjukkan bukan cara untuk menambah RAM, melainkan lebih kepada mengatur performa visual dan animasi perangkat. Mematikan animasi atau mempercepat skala animasi bisa bikin HP terasa lebih cepat, tapi itu bukan menambah kapasitas RAM sebenarnya.
+
+Kalau mau tahu cara menambah RAM virtual di HP kamu (jika tersedia), biasanya ada di pengaturan terpisah seperti "RAM Plus", "Memory Extension", atau "RAM Turbo" tergantung merek dan tipe HP. Bisa dicari di pengaturan utama HP kamu.
+
