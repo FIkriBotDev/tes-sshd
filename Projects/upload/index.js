@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
 // Konfigurasi
 const app = express();
 const PORT = 9000;
-const UPLOAD_DIR = process.platform === 'win32' ? path.join(__dirname, 'tmp') : '/tmp';
+const UPLOAD_DIR = path.join(__dirname, 'tmp'); // ✅ fixed agar ke folder lokal tmp
 const MAX_SIZE = 100 * 1024 * 1024; // 100MB
 const DELETE_DELAY = 10 * 60 * 1000; // 10 menit
 const FORBIDDEN_TYPES = ['text/html'];
@@ -51,6 +51,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 
     await fs.writeFile(filepath, buffer);
     console.log(`✅ Uploaded: ${filename}`);
+    console.log(`📁 Saved to: ${filepath}`);
 
     // Hapus file setelah 10 menit
     setTimeout(() => {
