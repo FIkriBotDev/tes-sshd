@@ -1833,3 +1833,9 @@ Prompt    : mobil apa ini?
 Image URL : https://uploader.exoduscloud.my.id/tmp/73ac13-1751174401990.jpg
 Response  : Mobil pada gambar tersebut adalah Porsche 911. Ini adalah salah satu model ikonik dari Porsche yang dikenal dengan desain klasiknya yang aerodinamis serta performa tinggi. Mobil ini biasanya sering dijuluki sebagai sports car legendaris.
 
+
+[2025-06-29T06:21:06.368Z]
+Prompt    : apa ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/5c1482-1751178058608.jpg
+Response  : Ini adalah bungkus rokok Sampoerna A Mild. Di bagian atas bungkus terdapat gambar peringatan tentang efek merokok yang bisa menyebabkan kanker mulut, lengkap dengan tulisan peringatan "MEROKOK SEBABKAN KANKER MULUT" yang berarti "Merokok menyebabkan kanker mulut," sebuah regulasi yang umum di Indonesia untuk memberikan informasi risiko kesehatan akibat merokok. Jadi, ini adalah produk tembakau dari Indonesia. Kalau kamu ingin tahu lebih jauh atau ada pertanyaan lain, silakan tanya saja!
+
