@@ -1792,3 +1792,20 @@ Response  : Wah, dari gambar ini terlihat ada data mengenai absensi atau catatan
 
 Kalau diolah jadi tahun, 1975 hari sakit itu sekitar 5,4 tahun, dan total hampir 90000 hari itu lebih dari 246 tahun, yang tentu saja nggak mungkin. Kamu ada cerita atau konteks di balik gambar ini? Seru nih buat dibahas!
 
+
+[2025-06-29T05:01:25.968Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/98a9fe-1751173280139.jpg
+Response  : Tugas matematika ini sebenarnya mendekati soal logika proposisional. Kalimatnya seperti berikut:
+
+- Jika Andi tampan maka Ratna suka pada Andi.
+- Ratna suka kepada Edo.
+
+Soal ini biasanya menguji kemampuan memahami implikasi. Dari kalimat pertama, "Jika Andi tampan maka Ratna suka pada Andi," dan fakta kedua bahwa "Ratna suka pada Edo," opsi yang paling tepat untuk disimpulkan dari pilihan yang ada adalah "Edo jelek."
+
+Mengapa? Karena jika Ratna suka kepada Edo, sedangkan dia suka juga pada Andi bila Andi tampan, mungkin Edo adalah pilihan yang lebih mungkin karena Andi bukan tampan. Ini seolah mengindikasikan Andi tidak tampan dan Edo jelek, tapi Ratna tetap sukanya ke Edo.
+
+Lucu juga melihat ekspresi anak yang sedang mengerjakan ini, seperti dia benar-benar konsentrasi menghadapi soal logika yang membingungkan. Kadang soal seperti ini malah bikin siswa mikir keras atau bahkan bingung bagaimana menghubungkan logika "suka" dengan kondisi tampan atau jelek.
+
+Kalau kamu sendiri, bagaimana menafsirkan soal ini?
+
