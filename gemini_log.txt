@@ -2057,3 +2057,9 @@ Response  : Gambar ini menunjukkan perbandingan visual dari game Grand Theft Aut
 
 Intinya, ini adalah meme yang menyindir seberapa jauh kualitas game GTA San Andreas bisa dijalankan atau diimajinasikan dari perangkat canggih sampai perangkat yang tidak mungkin untuk gaming kelas berat. Adanya perbedaan kualitas grafis sangat kontras, dari sangat bagus di PC hingga konyol dan tidak lazim pada kalkulator. Lucu sekaligus kreatif!
 
+
+[2025-06-29T08:35:29.443Z]
+Prompt    : Ini?
+Image URL : https://uploader.exoduscloud.my.id/tmp/b7e521-1751186123736.jpg
+Response  : Itu adalah gambar dari IBM Simon, yang merupakan salah satu perangkat pertama yang bisa dianggap sebagai smartphone. IBM Simon dirilis pada tahun 1994 dan memiliki fungsi lebih dari sekadar telepon, seperti kalender, fax, email, dan jam alarm, seperti yang terlihat pada mode alarm clock di gambar tersebut. Desainnya memang cukup berbeda dibandingkan dengan smartphone modern, karena memiliki layar sentuh monochrome dan bentuk yang cukup besar serta tebal. IBM Simon dianggap sebagai pionir dalam teknologi ponsel pintar. Apakah kamu tertarik dengan sejarah gadget atau teknologi lama?
+
