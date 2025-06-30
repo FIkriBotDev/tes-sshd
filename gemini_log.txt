@@ -2267,3 +2267,86 @@ Response  : Tumpukan dan susunan barang di dalam gambar ini terlihat seperti gud
 
 Apakah kamu ingin saya membantu mengidentifikasi sesuatu dari gambar ini, seperti jenis barang atau bagaimana mengaturnya lebih rapi? Atau kamu punya cerita lain terkait gambar ini?
 
+
+[2025-06-30T07:50:39.874Z]
+Prompt    : jawab soal berikut ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/686dc5-1751269832977.jpg
+Response  : Kita punya:
+
+\[
+A = \begin{pmatrix}
+a & -3 \\
+4 & b
+\end{pmatrix}, \quad
+B = \begin{pmatrix}
+2 & -4 \\
+-2 & a
+\end{pmatrix}, \quad
+C = \begin{pmatrix}
+2 & 5 \\
+8 & -3
+\end{pmatrix}
+\]
+
+Diketahui:
+
+\[
+A - 2B = C
+\]
+
+Langkah pertama, hitung \(2B\):
+
+\[
+2B = 2 \times \begin{pmatrix}
+2 & -4 \\
+-2 & a
+\end{pmatrix} = \begin{pmatrix}
+4 & -8 \\
+-4 & 2a
+\end{pmatrix}
+\]
+
+Kemudian,
+
+\[
+A - 2B = \begin{pmatrix}
+a & -3 \\
+4 & b
+\end{pmatrix} - \begin{pmatrix}
+4 & -8 \\
+-4 & 2a
+\end{pmatrix} = \begin{pmatrix}
+a - 4 & -3 - (-8) \\
+4 - (-4) & b - 2a
+\end{pmatrix} = \begin{pmatrix}
+a - 4 & 5 \\
+8 & b - 2a
+\end{pmatrix}
+\]
+
+Karena \(A - 2B = C\), maka
+
+\[
+\begin{pmatrix}
+a - 4 & 5 \\
+8 & b - 2a
+\end{pmatrix} = \begin{pmatrix}
+2 & 5 \\
+8 & -3
+\end{pmatrix}
+\]
+
+Dari sini, kita dapatkan persamaan:
+
+1. \(a - 4 = 2 \implies a = 6\)
+
+2. \(b - 2a = -3 \implies b - 2(6) = -3 \implies b - 12 = -3 \implies b = 9\)
+
+Maka,
+
+\[
+a + b = 6 + 9 = 15
+\]
+
+Jadi, nilai \(a + b = 15\).
+
