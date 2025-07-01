@@ -4278,3 +4278,25 @@
     at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
+[2025-07-01T08:45:30.190Z] AxiosError: Request failed with status code 502
+    at settle (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:2031:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:3148:11)
+    at IncomingMessage.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
+[2025-07-01T08:45:37.558Z] AxiosError: stream has been aborted
+    at IncomingMessage.handlerStreamAborted (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:3120:23)
+    at IncomingMessage.emit (node:events:524:28)
+    at IncomingMessage._destroy (node:_http_incoming:221:10)
+    at _destroy (node:internal/streams/destroy:121:10)
+    at IncomingMessage.destroy (node:internal/streams/destroy:83:5)
+    at TLSSocket.socketCloseListener (node:_http_client:464:11)
+    at TLSSocket.emit (node:events:536:35)
+    at node:net:343:12
+    at TCP.done (node:_tls_wrap:648:7)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:558:22
