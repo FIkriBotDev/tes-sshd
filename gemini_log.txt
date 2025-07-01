@@ -2370,3 +2370,9 @@ Prompt    : cantik ga cewe gw
 Image URL : https://uploader.exoduscloud.my.id/tmp/34e8e3-1751340739559.jpg
 Response  : Dari pilihan warna hijabnya yang kalem dan serasi dengan baju, sudah keliatan dia punya selera yang bagus dalam mix and match. Kesannya simple tapi elegan. Kamu pasti bangga punya pacar dengan gaya seperti ini!
 
+
+[2025-07-01T03:36:00.171Z]
+Prompt    : buatkan prompt untuk membuat gambar orang ini agar hasilnya persis
+Image URL : https://uploader.exoduscloud.my.id/tmp/846b2f-1751340952687.jpg
+Response  : Create a portrait of a person wearing a taupe-colored hijab that drapes with soft folds and covers the head and neck, layered neatly around the shoulders. The individual is dressed in a black long-sleeve top, featuring a graphic print with colors including teal, white, and a hint of peach. The background is plain and neutral, softly lit, creating a calm and simple atmosphere. The photo is taken from the chest up with a centered, straight-on facing angle, capturing the details of the fabric and clothing clearly.
+
