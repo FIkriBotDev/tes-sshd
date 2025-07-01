@@ -1,5 +1,5 @@
 {
-  "messages": [
+  "default_conversation": [
     {
       "role": "assistant",
       "content": "Hello! How are you today?"
