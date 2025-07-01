@@ -61,62 +61,32 @@ async function startBot() {
     });
 
      // Schedule 1 Bobo
-    cron.schedule('00 15 * * *', async () => {
+    cron.schedule('02 21 * * *', async () => {
         const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `Sayangg jangan lupa bobo yaaa uda malem niii💤`;
+        const pesan = `sayang bangun sayang`;
 
         const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
         await sock.sendMessage(jid, { text: pesan });
     });
 
-// Schedule 2 Dino
-    cron.schedule('00 18 * * *', async () => {
-        const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `Hai, aku baru beli saham pertamaku di Ajaib. 📈 Coba sendiri dan miliki perusahaan seperti bank BCA, bank BRI dan Antam. Kalau kamu daftar pakai kode Ajaib muhaq3bx, kita berdua bisa otomatis dapat hadiah saham hingga Rp100 juta setelah kamu beli saham pertamamu. Klik di sini: https://referral.ajaib.co.id/Qhwq `;
-        const jid = '6285735098913@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
-        await sock.sendMessage(jid, { text: pesan });
-    });
 
-    // Schedule 2 Dino
-    cron.schedule('01 18 * * *', async () => {
+    cron.schedule('02 21 * * *', async () => {
         const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `Hai, aku baru beli saham pertamaku di Ajaib. 📈 Coba sendiri dan miliki perusahaan seperti bank BCA, bank BRI dan Antam. Kalau kamu daftar pakai kode Ajaib muhaq3bx, kita berdua bisa otomatis dapat hadiah saham hingga Rp100 juta setelah kamu beli saham pertamamu. Klik di sini: https://referral.ajaib.co.id/Qhwq `;
-        const jid = '6288242147173@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
-        await sock.sendMessage(jid, { text: pesan });
-    });
-
-      // Schedule 2 Dino
-    cron.schedule('02 18 * * *', async () => {
-        const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `Hai, aku baru beli saham pertamaku di Ajaib. 📈 Coba sendiri dan miliki perusahaan seperti bank BCA, bank BRI dan Antam. Kalau kamu daftar pakai kode Ajaib muhaq3bx, kita berdua bisa otomatis dapat hadiah saham hingga Rp100 juta setelah kamu beli saham pertamamu. Klik di sini: https://referral.ajaib.co.id/Qhwq `;
-        const jid = '6281382737567@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
-        await sock.sendMessage(jid, { text: pesan });
-    });
-
-          // Schedule 2 Dino
-    cron.schedule('03 18 * * *', async () => {
-        const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `Hai, aku baru beli saham pertamaku di Ajaib. 📈 Coba sendiri dan miliki perusahaan seperti bank BCA, bank BRI dan Antam. Kalau kamu daftar pakai kode Ajaib muhaq3bx, kita berdua bisa otomatis dapat hadiah saham hingga Rp100 juta setelah kamu beli saham pertamamu. Klik di sini: https://referral.ajaib.co.id/Qhwq `;
-        const jid = '6287761368878@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
-        await sock.sendMessage(jid, { text: pesan });
-    });
-
-    // Schedule 3 Bangun
-    cron.schedule('30 23 * * *', async () => {
-        const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `Sayang bangunnnnnn bangun sayangggg uda pagiii😘`;
+        const pesan = `sayang sayanggg bangunnnn`;
 
         const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
         await sock.sendMessage(jid, { text: pesan });
     });
-        // Schedule 3 Bangun
-    cron.schedule('31 23 * * *', async () => {
-        const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `Heyy bangun`;
 
-        const jid = '6287769811262@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
+    cron.schedule('03 21 * * *', async () => {
+        const jam = moment().tz('Asia/Makassar').format('HH:mm');
+        const pesan = `bangun iii sayanggg`;
+
+        const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
         await sock.sendMessage(jid, { text: pesan });
     });
+
+
 
 
 
