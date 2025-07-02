@@ -2416,3 +2416,19 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.exoduscloud.my.id/tmp/2e7448-1751433403067.jpg
 Response  : Gambarnya dari game Grand Theft Auto: San Andreas ya? Dari tampilan HUD dan map di kiri atas, game ini memang khas banget. Kamu lagi main dengan banyak uang dan persenjataan yang lengkap, lihat dari amunisinya yang cukup banyak dan nyaris penuh. Satu hal menarik di sini adalah kehadiran dua NPC yang tampak sedang duduk di bangku di trotoar. Ada apa yang ingin kamu bahas tentang gambar ini? Mungkin ada hal spesifik atau aneh yang kamu lihat?
 
+
+[2025-07-02T19:17:25.121Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/181c2a-1751483839655.jpg
+Response  : Dari gambar yang kamu tunjukkan, terlihat kamu sedang menggunakan Altair AI Studio Trial dan mencoba membuat model Decision Tree (Multiway) menggunakan data yang sudah di-retrieve (Retrieve andre 1).
+
+Pesan error "Missing label" muncul, dengan penjelasan "Input ExampleSet does not have a label attribute." Ini berarti dataset yang kamu gunakan belum memiliki atribut label (target variable) yang diperlukan untuk melakukan klasifikasi Decision Tree.
+
+Untuk memperbaikinya, kamu perlu:
+
+1. Pastikan dataset memiliki kolom label kelas yang ingin diprediksi.
+2. Tandai kolom tersebut sebagai atribut label di AI Studio.
+3. Periksa apakah kamu sudah mengatur label attribute di proses sebelum memasukkan data ke operator Decision Tree.
+
+Kalau kamu butuh petunjuk lebih rinci, beri tahu aku jenis data yang sedang kamu pakai dan langkah yang sudah dilakukan, supaya aku bisa bantu lebih detail.
+
