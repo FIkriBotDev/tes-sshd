@@ -2499,3 +2499,76 @@ Maka \( a + b = 6 + 9 = 15 \).
 
 Jawabannya adalah 15.
 
+
+[2025-07-03T06:27:57.347Z]
+Prompt    : jawab soal berikut ini beserta penjelasannya
+Image URL : https://uploader.exoduscloud.my.id/tmp/becd25-1751524069241.jpg
+Response  : Oke, mari kita kerjakan soal ini satu per satu.
+
+Diketahui matriks:
+\[
+A = \begin{pmatrix} a & -3 \\ 4 & b \end{pmatrix}, \quad
+B = \begin{pmatrix} 2 & -4 \\ -2 & a \end{pmatrix}, \quad
+C = \begin{pmatrix} 2 & 5 \\ 8 & -3 \end{pmatrix}
+\]
+
+Diberikan persamaan:
+\[
+A - 2B = C
+\]
+
+Langkah pertama, kita hitung \(2B\):
+\[
+2B = 2 \times \begin{pmatrix} 2 & -4 \\ -2 & a \end{pmatrix}
+= \begin{pmatrix} 4 & -8 \\ -4 & 2a \end{pmatrix}
+\]
+
+Kemudian turunkan persamaan ini:
+\[
+A - 2B = C \implies A = C + 2B
+\]
+
+Hitung \(C + 2B\):
+\[
+C + 2B = \begin{pmatrix} 2 & 5 \\ 8 & -3 \end{pmatrix} + \begin{pmatrix} 4 & -8 \\ -4 & 2a \end{pmatrix} = \begin{pmatrix} 2+4 & 5 + (-8) \\ 8 + (-4) & -3 + 2a \end{pmatrix} = \begin{pmatrix} 6 & -3 \\ 4 & -3 + 2a \end{pmatrix}
+\]
+
+Karena \(A = \begin{pmatrix} a & -3 \\ 4 & b \end{pmatrix}\), kita samakan elemen-elemen yang bersesuaian dari \(A\) dan \(C+2B\):
+
+1. Elemen (1,1):
+\[
+a = 6
+\]
+
+2. Elemen (1,2):
+\[
+-3 = -3 \quad \text{(sudah sama)}
+\]
+
+3. Elemen (2,1):
+\[
+4 = 4 \quad \text{(sudah sama)}
+\]
+
+4. Elemen (2,2):
+\[
+b = -3 + 2a
+\]
+
+Karena sudah diketahui \(a = 6\), maka
+\[
+b = -3 + 2 \times 6 = -3 + 12 = 9
+\]
+
+Jadi,
+\[
+a = 6, \quad b = 9
+\]
+
+Permintaan soal adalah \(a + b\), maka:
+\[
+a + b = 6 + 9 = 15
+\]
+
+**Kesimpulan: nilai \(a + b = 15\).**
+
