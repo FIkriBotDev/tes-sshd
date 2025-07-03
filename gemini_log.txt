@@ -2698,3 +2698,178 @@ Maka limitnya:
 
 Kalau mau belajar lebih mendalam soal-limit begini, aku suka banget pengen bahas tiap detailnya. Kalau mau, tanyakan saja!
 
+
+[2025-07-03T06:31:09.784Z]
+Prompt    : bantu jawab soal ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/b1b57e-1751524257726.jpg
+Response  : Oke, mari kita bahas satu per satu soal ini.
+
+a) \(\lim_{t \to 25} \frac{t - 25}{\sqrt{t} - 5}\)
+
+Ini kelihatannya bisa diselesaikan dengan substitution atau faktorisasi. Karena kalau langsung substitusi, kita dapat bentuk 0/0, jadi kita perlu manipulasi.
+
+Kita bisa kalikan pembilang dan penyebut dengan conjugate dari penyebut, yakni \(\sqrt{t} + 5\):
+
+\[
+\lim_{t \to 25} \frac{t - 25}{\sqrt{t} - 5} \times \frac{\sqrt{t} + 5}{\sqrt{t} + 5} = \lim_{t \to 25} \frac{(t - 25)(\sqrt{t} + 5)}{(\sqrt{t} - 5)(\sqrt{t} + 5)} 
+\]
+
+Karena \((\sqrt{t} - 5)(\sqrt{t} + 5) = t - 25\),
+
+Maka:
+
+\[
+= \lim_{t \to 25} \frac{(t - 25)(\sqrt{t} + 5)}{t - 25}
+\]
+
+Kalau t ≠ 25, kita bisa coret:
+
+\[
+= \lim_{t \to 25} \sqrt{t} + 5
+\]
+
+Substitusikan t = 25:
+
+\[
+\sqrt{25} + 5 = 5 + 5 = 10
+\]
+
+**Jawaban untuk a): 10**
+
+---
+
+b) \(\lim_{x \to 0} \frac{\sin 7x \tan 5x}{100 x \sin \frac{1}{2} x}\)
+
+Kalau x mendekati 0, kita tahu:
+
+- \(\sin kx \approx kx\)
+
+- \(\tan kx \approx kx\)
+
+- \(\sin \frac{1}{2} x \approx \frac{1}{2} x\)
+
+Substitusi perkiraan:
+
+Numerator:
+
+\(\sin 7x \tan 5x \approx (7x)(5x) = 35x^2\)
+
+Denominator:
+
+\(100 x \sin \frac{1}{2} x \approx 100 x \times \frac{1}{2} x = 50 x^2\)
+
+Jadi limitnya:
+
+\[
+\frac{35 x^2}{50 x^2} = \frac{35}{50} = \frac{7}{10}
+\]
+
+**Jawaban untuk b): 0.7 atau \(\frac{7}{10}\)**
+
+---
+
+c) \(\lim_{x \to 0} \frac{100 - 100 \cos^2 x}{\cos(2x) - 1}\)
+
+Perhatikan bahwa:
+
+\(\cos^2 x = \frac{1 + \cos 2x}{2}\)
+
+Maka:
+
+Numerator:
+
+\[
+100 - 100 \cos^2 x = 100 - 100 \times \frac{1 + \cos 2x}{2} = 100 - 50 (1 + \cos 2x) = 100 - 50 - 50 \cos 2x = 50 - 50 \cos 2x
+\]
+
+Denominator:
+
+\(\cos 2x - 1\)
+
+Jadi limitnya:
+
+\[
+\lim_{x \to 0} \frac{50 - 50 \cos 2x}{\cos 2x - 1} = \lim_{x \to 0} \frac{50(1 - \cos 2x)}{\cos 2x - 1}
+\]
+
+Perhatikan bahwa:
+
+\[
+1 - \cos 2x = - (\cos 2x - 1)
+\]
+
+Sehingga:
+
+\[
+= \lim_{x \to 0} \frac{50 \times - (\cos 2x - 1)}{\cos 2x - 1} = \lim_{x \to 0} -50 = -50
+\]
+
+**Jawaban untuk c): -50**
+
+---
+
+d) \(\lim_{x \to \infty} \left[ \sqrt{3x^2 - x + 9} - \sqrt{3x^2 - 2x + 8} \right]\)
+
+Ketika x besar, kita bisa gunakan pendekatan dengan membagi semua suku dalam akar dengan \(x^2\):
+
+\[
+\sqrt{3x^2 - x + 9} = |x| \sqrt{3 - \frac{1}{x} + \frac{9}{x^2}}
+\]
+
+Karena x menuju tak hingga, x positif, jadi |x| = x.
+
+Begitu juga yang kedua:
+
+\[
+\sqrt{3x^2 - 2x + 8} = x \sqrt{3 - \frac{2}{x} + \frac{8}{x^2}}
+\]
+
+Jadi, ekspresi menjadi:
+
+\[
+x \left( \sqrt{3 - \frac{1}{x} + \frac{9}{x^2}} - \sqrt{3 - \frac{2}{x} + \frac{8}{x^2}} \right)
+\]
+
+Ketika x → ∞, \(\frac{1}{x} \to 0\) dan \(\frac{8}{x^2} \to 0\), \(\frac{9}{x^2} \to 0\). Maka:
+
+\[
+x \left( \sqrt{3 + 0} - \sqrt{3 + 0} \right) = x ( \sqrt{3} - \sqrt{3} ) = 0
+\]
+
+Untuk memastikan, kita gunakan metode conjugate lagi:
+
+\[
+\text{Limit} = \lim_{x \to \infty} \frac{ \left( \sqrt{3x^2 - x + 9} - \sqrt{3x^2 - 2x + 8} \right) \times \left( \sqrt{3x^2 - x + 9} + \sqrt{3x^2 - 2x + 8} \right) } { \sqrt{3x^2 - x + 9} + \sqrt{3x^2 - 2x + 8} }
+\]
+
+Numerator:
+
+\[
+(3x^2 - x + 9) - (3x^2 - 2x + 8) = -x + 1
+\]
+
+Jadi:
+
+\[
+\lim_{x \to \infty} \frac{ -x + 1 }{ \sqrt{3x^2 - x + 9} + \sqrt{3x^2 - 2x + 8} }
+\]
+
+Seperti sebelumnya, akar di pembilang dan penyebut akan mendominasi dengan \(x\):
+
+\[
+\sqrt{3x^2 - x + 9} \approx x \sqrt{3} \quad \text{jika x besar}
+\]
+dll.
+
+Jadi,
+
+\[
+= \lim_{x \to \infty} \frac{ -x }{ x \sqrt{3} + x \sqrt{3} } = \lim_{x \to \infty} \frac{ -x }{ 2 x \sqrt{3} } = \frac{ -1 }{ 2 \sqrt{3} }
+\]
+
+**Jawaban untuk d): \(-\frac{1}{2 \sqrt{3}}\)**
+
+---
+
+Kalau kamu mau penjelasan lebih detail tentang salah satu soal, aku siap!
+
