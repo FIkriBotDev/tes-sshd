@@ -2572,3 +2572,129 @@ a + b = 6 + 9 = 15
 
 **Kesimpulan: nilai \(a + b = 15\).**
 
+
+[2025-07-03T06:29:20.727Z]
+Prompt    : bantu jawab soal ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/f66beb-1751524148230.jpg
+Response  : Baik, mari kita bahas satu per satu soal ini.
+
+**a)** \(\lim_{t \to 25} \frac{t - 25}{\sqrt{t} - 5}\)
+
+Ini tampaknya bentuk tak tentu 0/0, jadi kita bisa gunakan perkalian dengan conjugate dari penyebut untuk menyederhanakan.
+
+\[
+\frac{t - 25}{\sqrt{t} - 5} \times \frac{\sqrt{t} + 5}{\sqrt{t} + 5} = \frac{(t - 25)(\sqrt{t} + 5)}{t - 25}
+\]
+
+Karena \(t - 25 = (\sqrt{t} - 5)(\sqrt{t} + 5)\), maka:
+
+\[
+\frac{(\sqrt{t} - 5)(\sqrt{t} + 5) \times (\sqrt{t} + 5)}{(\sqrt{t} - 5)(\sqrt{t} + 5)} = \sqrt{t} + 5
+\]
+
+Jadi, limitnya sama dengan \(\sqrt{t} + 5\) saat \(t \to 25\):
+
+\[
+\sqrt{25} + 5 = 5 + 5 = 10
+\]
+
+**Jawaban untuk (a): 10**
+
+---
+
+**b)** \(\lim_{x \to 0} \frac{\sin 7x \tan 5x}{100 x \sin (\frac{1}{2} x)}\)
+
+Kalau kita perhatikan, saat \(x \to 0\), \(\sin 7x \approx 7x\), \(\tan 5x \approx 5x\), dan \(\sin (\frac{1}{2}x) \approx \frac{1}{2}x\). Jadi kita bisa mengaplikasikan limit standar:
+
+\[
+\lim_{x \to 0} \frac{\sin 7x \tan 5x}{100 x \sin (\frac{1}{2}x)} \approx \frac{(7x)(5x)}{100 x \times \frac{1}{2}x} = \frac{35 x^{2}}{100 x \times \frac{1}{2} x}
+\]
+
+Simplifikasi nomor dan penyebut:
+
+\[
+= \frac{35 x^{2}}{100 \times \frac{1}{2} x^{2}} = \frac{35 x^{2}}{50 x^{2}} = \frac{35}{50} = \frac{7}{10}
+\]
+
+Jadi, jawabannya adalah \(\frac{7}{10}\).
+
+**Jawaban untuk (b): 0.7**
+
+---
+
+**c)** \(\lim_{x \to 0} \frac{100 - 100 \cos^2 x}{\cos(2x) - 1}\)
+
+Ingat bahwa \(\cos^2 x = \frac{1 + \cos 2x}{2}\). Maka:
+
+\[
+100 - 100 \cos^2 x = 100 \left(1 - \cos^2 x \right) = 100 \times \sin^2 x
+\]
+
+Sehingga:
+
+\[
+\frac{100 \sin^2 x}{\cos(2x) - 1}
+\]
+
+Sekarang, \(\cos 2x - 1 = -2 \sin^2 x\), maka:
+
+\[
+\frac{100 \sin^2 x}{-2 \sin^2 x} = -50
+\]
+
+Karena \(\sin^2 x \neq 0\) saat x mendekati 0 (kecuali limit), dan sudah disederhanakan.
+
+**Jawaban untuk (c): -50**
+
+---
+
+**d)** \(\lim_{x \to \infty} \left[ \sqrt{3 x^2 - x + 9} - \sqrt{3 x^2 - 2x + 8} \right]\)
+
+Ketika \(x \to \infty\), kedua akar ini sangat besar, dan kita bisa gunakan metode mengalik dengan conjugate untuk eliminasi limit:
+
+\[
+= \lim_{x \to \infty} \frac{ \left( \sqrt{3 x^2 - x + 9} - \sqrt{3 x^2 - 2x + 8} \right) \times \left( \sqrt{3 x^2 - x + 9} + \sqrt{3 x^2 - 2x + 8} \right) }{ \sqrt{3 x^2 - x + 9} + \sqrt{3 x^2 - 2x + 8} }
+\]
+
+Numerator menjadi:
+
+\[
+(3 x^2 - x + 9) - (3 x^2 - 2x + 8) = -x + 9 - (-2x + 8) = -x + 9 + 2x - 8 = x + 1
+\]
+
+Jadi,
+
+\[
+\lim_{x \to \infty} \frac{x + 1}{ \sqrt{3 x^2 - x + 9} + \sqrt{3 x^2 - 2x + 8}}
+\]
+
+Ketika \(x \to \infty\):
+
+\[
+\sqrt{3 x^2 - x + 9} \approx \sqrt{3} x
+\]
+
+dan
+
+\[
+\sqrt{3 x^2 - 2x + 8} \approx \sqrt{3} x
+\]
+
+Sehingga denominator:
+
+\[
+2 \sqrt{3} x
+\]
+
+Maka limitnya:
+
+\[
+\lim_{x \to \infty} \frac{x + 1}{2 \sqrt{3} x} = \lim_{x \to \infty} \frac{x (1 + \frac{1}{x})}{2 \sqrt{3} x} = \frac{1}{2 \sqrt{3}} \times \lim_{x \to \infty} (1 + \frac{1}{x}) = \frac{1}{2 \sqrt{3}}
+\]
+
+**Jawaban untuk (d): \(\frac{1}{2 \sqrt{3}}\)**
+
+---
+
+Kalau mau belajar lebih mendalam soal-limit begini, aku suka banget pengen bahas tiap detailnya. Kalau mau, tanyakan saja!
+
