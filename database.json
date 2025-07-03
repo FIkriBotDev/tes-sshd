@@ -76,22 +76,26 @@
         "role": "assistant",
         "content": "Oke bro."
       },
-      {
-        "role": "user",
-        "content": "buatkan gambar rumah mewah"
-      },
-      {
-        "role": "assistant",
-        "content": "Pemandangan rumah mewah dengan taman yang indah dan kolam renang, arsitektur modern dan elegan, detail mewah seperti pilar, balkon luas, dan atap yang indah, iluminasi malam. 4K resolution. Highly detailed illustration. \n![Image Caption](https://image.pollinations.ai/prompt/pemandangan%20rumah%20mewah%20dengan%20taman%20yang%20indah%20dan%20kolam%20renang%2C%20arsitektur%20modern%20dan%20elegan%2C%20detail%20mewah%20seperti%20pilar%2C%20balkon%20luas%2C%20dan%20atap%20yang%20indah%2C%20iluminasi%20malam.%204k%20resolution.%20Highly%20detailed%20illustration.?width=768&height=384&nologo=true)"
-      },
-      {
-        "role": "user",
-        "content": "jika saya suruh membuat sebuah gambar, gunakan url https://rtist-api.exoduscloud.my.id/get/image-generator bukan url pollinations https://image.pollinations.ai/prompt, tapi gunakan url tersebut seperti ini sebagai contoh https://rtist-api.exoduscloud.my.id/get/image-generator/pemandangan%20rumah%20mewah%20dengan%20taman%20yang%20indah%20dan%20kolam%20renang%2C%20arsitektur%20modern%20dan%20elegan%2C%20detail%20mewah%20seperti%20pilar%2C%20balkon%20luas%2C%20dan%20atap%20yang%20indah%2C%20iluminasi%20malam.%204k%20resolution.%20Highly%20detailed%20illustration.?width=768&height=384&nologo=true"
-      },
-      {
-        "role": "assistant",
-        "content": "Oke lain kali saya menggunakan url tersebut."
-      },
+    {
+      "role": "user",
+      "content": "buatkan gambar rumah mewah"
+    },
+    {
+      "role": "assistant",
+      "content": "![Image Caption](https://rtist-api.exoduscloud.my.id/get/image-generator/pemandangan%20rumah%20mewah%20dengan%20taman%20yang%20indah%20dan%20kolam%20renang%2C%20arsitektur%20modern%20dan%20elegan%2C%20detail%20mewah%20seperti%20pilar%2C%20balkon%20luas%2C%20dan%20atap%20yang%20indah%2C%20iluminasi%20malam.%204k%20resolution.%20Highly%20detailed%20illustration.?width=768&height=384&nologo=true)"
+    },
+    {
+      "role": "user",
+      "content": "jika saya suruh membuat sebuah gambar, gunakan url https://rtist-api.exoduscloud.my.id/get/image-generator bukan url pollinations https://image.pollinations.ai/prompt, tapi gunakan url tersebut seperti ini sebagai contoh https://rtist-api.exoduscloud.my.id/get/image-generator/pemandangan%20rumah%20mewah%20dengan%20taman%20yang%20indah%20dan%20kolam%20renang%2C%20arsitektur%20modern%20dan%20elegan%2C%20detail%20mewah%20seperti%20pilar%2C%20balkon%20luas%2C%20dan%20atap%20yang%20indah%2C%20iluminasi%20malam.%204k%20resolution.%20Highly%20detailed%20illustration.?width=768&height=384&nologo=true"
+    },
+    {
+      "role": "system",
+      "content": "Pastikan saat membalas dengan link gambar dari image generator, jangan pernah menyisakan spasi atau encoding yang tidak sempurna di URL. Gunakan full URL yang benar-benar telah di-encode sepenuhnya, seperti ini: https://rtist-api.exoduscloud.my.id/get/image-generator/pemandangan%20rumah%20mewah%20dengan%20taman%20yang%20indah%20dan%20kolam%20renang%2C%20arsitektur%20modern%20dan%20elegan%2C%20detail%20mewah%20seperti%20pilar%2C%20balkon%20luas%2C%20dan%20atap%20yang%20indah%2C%20iluminasi%20malam.%204k%20resolution.%20Highly%20detailed%20illustration.?width=768&height=384&nologo=true"
+    },
+    {
+      "role": "system",
+      "content": "Setiap kali membalas dengan gambar dari image generator, *harus* dikirim dalam format markdown seperti ini: ![Image Caption](FULL_IMAGE_URL). Jangan hanya kirim URL mentah saja."
+    },
       {
         "role": "user",
         "content": "tolong screenshot https://www.google.com"
