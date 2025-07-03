@@ -2900,3 +2900,92 @@ Prompt    : bantu jawab
 Image URL : https://uploader.exoduscloud.my.id/tmp/4eaa30-1751526402155.jpg
 Response  : Tentu, saya bisa membantu menjawab pertanyaan dari soal tersebut. Silakan beri tahu pertanyaan mana yang ingin Anda jawab dan saya akan membantu memberikan penjelasan yang jelas dan lengkap!
 
+
+[2025-07-03T07:07:24.871Z]
+Prompt    : tolong jawab soal ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/97f14b-1751526435130.jpg
+Response  : Tentu, berikut penjelasan singkat dan analisis dari soal tersebut:
+
+**Soal ini meminta kamu untuk menjelaskan setiap kasus studi yang diberikan, apakah termasuk fakta, opini, atau campuran, serta memberi alasan dan kriteria penilaiannya.**
+
+---
+
+### 1. Kasus Studi:
+_"Sebuah artikel blog menyebutkan bahwa 'Indonesia harus menutup TikTok karena merusak moral generasi muda,' dan menyebutkan beberapa kutipan selebgram sebagai dasar argumentumnya."_
+
+**Evaluasi:**
+- **Fakta:** Jika kutipan dari artikel tersebut didukung data yang valid dan terverifikasi, bisa dianggap fakta.
+- **Opini:** Jika hanya pendapat pribadi penulis dan tidak didukung data, maka itu opini.
+- **Campuran:** Jika ada fakta yang didukung data dan opini pribadi, itu campuran.
+
+**Alasan:**
+- Kemungkinan besar artikel ini lebih mengandung opini karena menyatakan bahwa TikTok "merusak moral" tanpa data konkret, melainkan sebagai sebuah pendapat subyektif (opini pribadi selebgram).
+
+**Kriteria Penilaian:**
+- Apakah ada data valid dan terverifikasi? Jika ya, itu fakta.
+- Jika hanya pendapat tanpa data, maka opini.
+
+---
+
+### 2. Kasus Studi:
+_"Seorang pengguna Instagram memposting foto temannya tanpa izin saat di rumah sakit, lalu menambahkan caption bercanda. Postingan tersebut menjadi viral dan memicu reaksi negatif. Evaluasilah tindakannya dari perspektif etika bermedia sosial dan dampak jejak digitalnya."_
+
+**Evaluasi:**
+- Jika yang diposting tanpa izin dan menimbulkan reaksi negatif, ini lebih ke perbuatan yang tidak etis dan bisa menimbulkan dampak negatif dalam jangka panjang (jejak digital buruk).
+- Ini bukan fakta yang salah, tapi tindakan yang bersifat etis.
+
+**Alasan:**
+- Melanggar privasi dan izin orang lain.
+- Dampak jejak digital buruk, menyebabkan cemoohan atau tekanan sosial.
+
+**Kriteria Penilaian:**
+- Aspek etika media sosial (risiko privasi, izin).
+- Dampak jangka panjang jejak digital dan reputasi.
+
+---
+
+### 3. Kasus Studi:
+_"Seorang mahasiswa mendapat telepon penipuan setelah mengikuti giveaway online yang meminta data KTP dan nomor HP. Analisis risiko yang dihadapi dan langkah perlindungan data pribadi."_
+
+**Evaluasi:**
+- Kasus ini termasuk fakta karena berkaitan dengan kejadian nyata.
+- Risiko yang dihadapi termasuk pencurian identitas, penipuan finansial dll. Jadi, ini fakta terkait risiko.
+
+**Alasan:**
+- Penipuan biasanya memiliki dasar selama data pribadi diakses tanpa izin.
+- Analisis risiko, langkah perlindungan adalah bagian dari penilaian objektif.
+
+**Kriteria Penilaian:**
+- Keberadaan data dan kejadian nyata.
+- Perbandingan risiko dan solusi perlindungan data pribadi.
+
+---
+
+### 4. Kasus Studi:
+_"Buatlah dan ciptakan strategi kampanye edukasi digital untuk mencegah penyebaran hoaks, dengan pendekatan literasi media dan kompetensi multimodal."_
+
+**Evaluasi:**
+- Ini adalah tugas kreatif dan solusi inovatif. Jadi, ini lebih ke opini atau ide yang bersifat kreatif kita.
+
+**Alasan:**
+- Tidak didasarkan fakta atau kejadian nyata tertentu, lebih ke usulan solusi.
+- Bisa dikategorikan sebagai ide atau opini yang dikembangkan sendiri.
+
+**Kriteria Penilaian:**
+- Orisinalitas dan kebermanfaatan strategi.
+- Pendekatan literasi media dan multimodal sebagai solusi.
+
+---
+
+Kalau kamu mau penjelasan lagi, aku bisa bantu mengelaborasi tiap-tiap poin. Ada bagian tertentu yang mau kamu diskusikan lebih dalam?
+
+
+[2025-07-03T07:07:29.378Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/5c5d6c-1751526441866.jpg
+Response  : Terima kasih sudah membagikan gambar tersebut. Dari gambar terlihat ini adalah soal Ujian Akhir Semester Genap Tahun Akademik 2024/2025 untuk mata kuliah Literasi Media pada Program Studi Ilmu Komunikasi Universitas Pamulang.
+
+Soalnya terdiri dari 4 studi kasus dengan bobot dan waktu pengerjaan yang berbeda, yang menguji kemampuan analisis kritis mahasiswa terhadap konten media, etika bermedia sosial, perlindungan data pribadi, dan strategi kampanye edukasi digital.
+
+Kalau kamu ingin, saya bisa bantu menjelaskan kasus-kasus tersebut lebih detail, membantu membuat kerangka jawaban, atau berdiskusi terkait materi literasi media yang ada di dalam soal ini. Kamu tertarik ke bagian mana?
+
