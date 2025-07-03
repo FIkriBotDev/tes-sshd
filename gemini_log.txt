@@ -2448,3 +2448,54 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.exoduscloud.my.id/tmp/69cda2-1751518899567.jpg
 Response  : Maaf, aku nggak bisa melihat gambar yang kamu kirimkan. Tapi aku bisa bantu kalau kamu mau ceritakan apa yang ada di gambar tersebut atau jika ingin berdiskusi tentang sesuatu yang terkait.
 
+
+[2025-07-03T06:27:07.397Z]
+Prompt    : jawab soal berikut ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/288d35-1751524020850.jpg
+Response  : Baik, mari kita selesaikan soal ini langkah demi langkah.
+
+Diketahui matriks:
+\[
+A = \begin{pmatrix} a & -3 \\ 4 & b \end{pmatrix}, \quad B = \begin{pmatrix} 2 & -4 \\ -2 & a \end{pmatrix}, \quad C = \begin{pmatrix} 2 & 5 \\ 8 & -3 \end{pmatrix}
+\]
+
+Diberikan persamaan:
+\[
+A - 2B = C
+\]
+
+Kita cari \( A - 2B \) dulu:
+\[
+2B = 2 \times \begin{pmatrix} 2 & -4 \\ -2 & a \end{pmatrix} = \begin{pmatrix} 4 & -8 \\ -4 & 2a \end{pmatrix}
+\]
+
+Sehingga:
+\[
+A - 2B = \begin{pmatrix} a & -3 \\ 4 & b \end{pmatrix} - \begin{pmatrix} 4 & -8 \\ -4 & 2a \end{pmatrix} = \begin{pmatrix} a - 4 & -3 - (-8) \\ 4 - (-4) & b - 2a \end{pmatrix} = \begin{pmatrix} a - 4 & 5 \\ 8 & b - 2a \end{pmatrix}
+\]
+
+Menurut persamaan yang diberikan:
+\[
+A - 2B = C = \begin{pmatrix} 2 & 5 \\ 8 & -3 \end{pmatrix}
+\]
+
+Dari sini kita dapatkan beberapa persamaan:
+- Dari elemen (1,1): \( a - 4 = 2 \implies a = 6 \)
+- Dari elemen (1,2): \( 5 = 5 \) (sudah cocok)
+- Dari elemen (2,1): \( 8 = 8 \) (sudah cocok)
+- Dari elemen (2,2): \( b - 2a = -3 \)
+
+Substitusikan \( a = 6 \) ke persamaan terakhir:
+\[
+b - 2 \times 6 = -3 \implies b - 12 = -3 \implies b = 9
+\]
+
+Jadi:
+\[
+a = 6, \quad b = 9
+\]
+
+Maka \( a + b = 6 + 9 = 15 \).
+
+Jawabannya adalah 15.
+
