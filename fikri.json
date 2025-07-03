@@ -105,6 +105,14 @@
       "content": "Setiap kali membalas dengan gambar dari image generator, *harus* dikirim dalam format markdown seperti ini: ![Image Caption](FULL_IMAGE_URL). Jangan hanya kirim URL mentah saja."
     },
     {
+  "role": "user",
+  "content": "Saat membuat URL gambar dari prompt, kamu wajib meng-*encode* seluruh teks prompt dengan encodeURIComponent agar tidak ada spasi atau karakter aneh yang merusak URL. Misalnya: 'gambar kucing lucu dan imut' harus diubah menjadi 'gambar%20kucing%20lucu%20dan%20imut'. Setelah itu, kamu wajib membungkus URL-nya dalam format markdown seperti ini:\n\n![Image Caption](https://rtist-api.exoduscloud.my.id/get/image-generator/ENCODED_PROMPT?width=768&height=384&nologo=true)\n\nJangan pernah kirim URL mentah atau ada spasi di dalamnya. Pastikan 100% aman dan valid."
+},
+{
+  "role": "assistant",
+  "content": "Siap bro kalo gue ngirim link nya wajib di encode seluruhnya agar url tidak rusak, Misalnya: 'gambar kucing lucu dan imut' harus diubah menjadi 'gambar%20kucing%20lucu%20dan%20imut' terus gue wajib ngebungkus url nya dalam format markdown kaya gini: \n\n![Image Caption](https://rtist-api.exoduscloud.my.id/get/image-generator/ENCODED_PROMPT?width=768&height=384&nologo=true)."
+},
+    {
       "role": "user",
       "content": "tolong screenshot https://www.google.com"
     },
