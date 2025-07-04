@@ -3246,3 +3246,51 @@ Response  : Saya tidak dapat memberikan analisis yang tepat tentang gambar terse
 
 Dalam contoh ini, saya memberikan analisis berdasarkan asumsi umum tentang sate ayam. Jika Anda memiliki informasi spesifik tentang gambar makanan tersebut atau preferensi tertentu, berikan rincian lebih lanjut, dan saya akan senang untuk melakukan analisis yang lebih akurat!
 
+
+[2025-07-04T11:17:48.705Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+- Skor kesehatan keseluruhan
+- Apakah direkomendasikan atau tidak dan alasannya
+- Rincian nutrisi (kalori, protein, karbohidrat, lemak & persentase masing-masing terhadap total kalori)
+- Vitamin dan mineral yang terkandung
+- Analisis bahan/ingredients
+- Alternatif makanan yang lebih sehat
+Balas dalam format JSON:
+{
+  "skorKesehatan": {"direkomendasikanAtauTidak": "...", "alasan": "..."},
+  "rincianNutrisi": {
+    "kalori": ..., "protein": "...", "proteinPersen": "...",
+    "karbohidrat": "...", "karbohidratPersen": "...",
+    "gemuk": "...", "gemukPersen": "...",
+    "vitaminDanMineral": [...], "mineral": [...]
+  },
+  "ingredients": [...],
+  "alternatif": [...]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/224717-1751627860112.jpg
+Response  : ```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan",
+    "alasan": "Makanan ini tampaknya tinggi lemak dan kalori, yang bisa berdampak negatif untuk kesehatan jangka panjang. Selain itu, potensi penggunaan bahan pengawet atau pemprosesan yang tidak sehat dapat menjadi perhatian."
+  },
+  "rincianNutrisi": {
+    "kalori": 250,
+    "protein": "15g",
+    "proteinPersen": "24%",
+    "karbohidrat": "10g",
+    "karbohidratPersen": "16%",
+    "gemuk": "20g",
+    "gemukPersen": "60%",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin B6", "Besi", "Kalium"],
+    "mineral": ["Kalsium", "Magnesium"]
+  },
+  "ingredients": ["Daging sapi/ayam", "Bumbu kacang", "Garam", "Minyak goreng"],
+  "alternatif": ["Sate ayam tanpa lemak", "Tahu tempe panggang", "Salad dengan protein nabati"]
+}
+``` 
+
+Jika ada informasi tambahan atau detail lain yang Anda butuhkan, jangan ragu untuk bertanya!
+
