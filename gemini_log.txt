@@ -3196,3 +3196,53 @@ Response  : Tentu! Berikut adalah analisis lengkap tentang makanan yang terlihat
 
 Semoga analisis ini membantu! Jika ada pertanyaan lebih lanjut atau pendapat lain yang ingin kamu diskusikan, silakan saja!
 
+
+[2025-07-04T11:17:06.015Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+- Skor kesehatan keseluruhan
+- Apakah direkomendasikan atau tidak dan alasannya
+- Rincian nutrisi (kalori, protein, karbohidrat, lemak & persentase masing-masing terhadap total kalori)
+- Vitamin dan mineral yang terkandung
+- Analisis bahan/ingredients
+- Alternatif makanan yang lebih sehat
+Balas dalam format JSON:
+{
+  "skorKesehatan": {"direkomendasikanAtauTidak": "...", "alasan": "..."},
+  "rincianNutrisi": {
+    "kalori": ..., "protein": "...", "proteinPersen": "...",
+    "karbohidrat": "...", "karbohidratPersen": "...",
+    "gemuk": "...", "gemukPersen": "...",
+    "vitaminDanMineral": [...], "mineral": [...]
+  },
+  "ingredients": [...],
+  "alternatif": [...]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/2e942f-1751627817707.jpg
+Response  : Saya tidak dapat memberikan analisis yang tepat tentang gambar tersebut karena saya tidak dapat melihatnya. Namun, saya bisa memberi tahu Anda cara umum untuk menganalisis makanan, serta bagaimana membuat format JSON yang Anda inginkan. Mari kita coba dengan asumsi gambar ini adalah sebuah sate, misalnya sate ayam. Berikut adalah contohnya:
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan dengan catatan",
+    "alasan": "Sate ayam mengandung protein tinggi, namun jumlah lemak dan kalori tergantung pada cara memasak dan bumbu yang digunakan."
+  },
+  "rincianNutrisi": {
+    "kalori": 200,
+    "protein": "25g",
+    "proteinPersen": "50%",
+    "karbohidrat": "5g",
+    "karbohidratPersen": "10%",
+    "gemuk": "10g",
+    "gemukPersen": "40%",
+    "vitaminDanMineral": ["Vitamin B6", "Niasin", "Zinc"],
+    "mineral": ["Fosfor", "Selenium"]
+  },
+  "ingredients": ["Daging ayam", "Bumbu kacang", "Stik bambu", "Garam", "Merica"],
+  "alternatif": ["Sate telur puyuh", "Sate sayuran", "Sate ikan"]
+}
+```
+
+Dalam contoh ini, saya memberikan analisis berdasarkan asumsi umum tentang sate ayam. Jika Anda memiliki informasi spesifik tentang gambar makanan tersebut atau preferensi tertentu, berikan rincian lebih lanjut, dan saya akan senang untuk melakukan analisis yang lebih akurat!
+
