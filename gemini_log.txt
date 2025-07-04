@@ -3083,3 +3083,52 @@ Response  : ```json
 }
 ```
 
+
+[2025-07-04T11:09:23.245Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+- Skor kesehatan keseluruhan
+- Apakah direkomendasikan atau tidak dan alasannya
+- Rincian nutrisi (kalori, protein, karbohidrat, lemak & persentase masing-masing terhadap total kalori)
+- Vitamin dan mineral yang terkandung
+- Analisis bahan/ingredients
+- Alternatif makanan yang lebih sehat
+Balas dalam format JSON:
+{
+  "skorKesehatan": {"direkomendasikanAtauTidak": "...", "alasan": "..."},
+  "rincianNutrisi": {
+    "kalori": ..., "protein": "...", "proteinPersen": "...",
+    "karbohidrat": "...", "karbohidratPersen": "...",
+    "gemuk": "...", "gemukPersen": "...",
+    "vitaminDanMineral": [...], "mineral": [...]
+  },
+  "ingredients": [...],
+  "alternatif": [...]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/d91a3b-1751627355353.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak",
+    "alasan": "Makanan ini tinggi lemak dan kalori, yang dapat berkontribusi pada masalah kesehatan jika dikonsumsi secara berlebihan. Selain itu, metode pengolahannya yang digoreng membuatnya kurang sehat."
+  },
+  "rincianNutrisi": {
+    "kalori": 350,
+    "protein": "15g",
+    "proteinPersen": "17%",
+    "karbohidrat": "30g",
+    "karbohidratPersen": "34%",
+    "gemuk": "20g",
+    "gemukPersen": "51%",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Kalsium", "Zat Besi"],
+    "mineral": ["Natrium", "Kalium"]
+  },
+  "ingredients": ["Daging ayam", "Tepung terigu", "Bumbu (bawang, garam, merica)", "Minyak untuk menggoreng", "Daun selada", "Saus kecap Manis", "Cabai", "Jeruk nipis"],
+  "alternatif": [
+    "Ayam panggang dengan rempah",
+    "Tahu atau tempe bakar",
+    "Salad sayuran dengan protein rendah lemak",
+    "Sushi sayuran"
+  ]
+}
+
