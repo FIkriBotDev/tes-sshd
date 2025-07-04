@@ -3132,3 +3132,67 @@ Response  : {
   ]
 }
 
+
+[2025-07-04T11:09:46.424Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+- Skor kesehatan keseluruhan
+- Apakah direkomendasikan atau tidak dan alasannya
+- Rincian nutrisi (kalori, protein, karbohidrat, lemak & persentase masing-masing terhadap total kalori)
+- Vitamin dan mineral yang terkandung
+- Analisis bahan/ingredients
+- Alternatif makanan yang lebih sehat
+Balas dalam format JSON:
+{
+  "skorKesehatan": {"direkomendasikanAtauTidak": "...", "alasan": "..."},
+  "rincianNutrisi": {
+    "kalori": ..., "protein": "...", "proteinPersen": "...",
+    "karbohidrat": "...", "karbohidratPersen": "...",
+    "gemuk": "...", "gemukPersen": "...",
+    "vitaminDanMineral": [...], "mineral": [...]
+  },
+  "ingredients": [...],
+  "alternatif": [...]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/9b9d5d-1751627375289.jpg
+Response  : Tentu! Berikut adalah analisis lengkap tentang makanan yang terlihat pada gambar tersebut dalam format JSON:
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak Direkomendasikan",
+    "alasan": "Makanan ini adalah makanan yang digoreng dan tinggi kalori serta lemak jenuh, yang dapat berkontribusi pada masalah kesehatan bila dikonsumsi secara berlebihan."
+  },
+  "rincianNutrisi": {
+    "kalori": 350,
+    "protein": "15g",
+    "proteinPersen": "17%",
+    "karbohidrat": "30g",
+    "karbohidratPersen": "34%",
+    "gemuk": "20g",
+    "gemukPersen": "49%",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi"],
+    "mineral": ["Sodium", "Kalsium"]
+  },
+  "ingredients": [
+    "Ikan (seperti ikan tenggiri atau ikan kakap)",
+    "Tepung terigu",
+    "Bawang putih",
+    "Garam",
+    "Penyedap rasa",
+    "Minyak untuk menggoreng",
+    "Saus sambal",
+    "Lemon"
+  ],
+  "alternatif": [
+    "Ikan bakar dengan bumbu rempah",
+    "Tahu atau tempe goreng yang lebih sedikit minyak",
+    "Salad sayur segar dengan protein dari kacang-kacangan",
+    "Sup ikan dengan kaldu sayuran"
+  ]
+}
+```
+
+Semoga analisis ini membantu! Jika ada pertanyaan lebih lanjut atau pendapat lain yang ingin kamu diskusikan, silakan saja!
+
