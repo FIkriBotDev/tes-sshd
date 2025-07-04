@@ -3023,3 +3023,63 @@ Prompt    : siapa ini?
 Image URL : https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Elon_Musk_Colorado_2022_(cropped2).jpg/640px-Elon_Musk_Colorado_2022_(cropped2).jpg
 Response  : Maaf, saya tidak dapat mengidentifikasi orang ini berdasarkan foto yang diberikan. Jika Anda memiliki informasi tambahan atau konteks, mungkin saya bisa membantu lebih lanjut.
 
+
+[2025-07-04T11:06:03.589Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+- Skor kesehatan keseluruhan
+- Apakah direkomendasikan atau tidak dan alasannya
+- Rincian nutrisi (kalori, protein, karbohidrat, lemak & persentase masing-masing terhadap total kalori)
+- Vitamin dan mineral yang terkandung
+- Analisis bahan/ingredients
+- Alternatif makanan yang lebih sehat
+Balas dalam format JSON:
+{
+  "skorKesehatan": {"direkomendasikanAtauTidak": "...", "alasan": "..."},
+  "rincianNutrisi": {
+    "kalori": ..., "protein": "...", "proteinPersen": "...",
+    "karbohidrat": "...", "karbohidratPersen": "...",
+    "gemuk": "...", "gemukPersen": "...",
+    "vitaminDanMineral": [...], "mineral": [...]
+  },
+  "ingredients": [...],
+  "alternatif": [...]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/9860d4-1751627154970.jpg
+Response  : ```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan",
+    "alasan": "Makanan ini mengandung karbohidrat kompleks dari pasta, protein dari daging dan keju, serta vitamin dari saus tomat. Jika disajikan dengan porsi yang tepat dan dengan bahan-bahan berkualitas, dapat menjadi pilihan yang seimbang."
+  },
+  "rincianNutrisi": {
+    "kalori": 600,
+    "protein": "25g",
+    "proteinPersen": "17%",
+    "karbohidrat": "75g",
+    "karbohidratPersen": "50%",
+    "gemuk": "20g",
+    "gemukPersen": "30%",
+    "vitaminDanMineral": ["Vitamin C", "Vitamin A", "Kalsium", "Besi"],
+    "mineral": ["Kalium", "Magnesium"]
+  },
+  "ingredients": [
+    "Pasta",
+    "Daging giling",
+    "Saus tomat",
+    "Keju parut",
+    "Basil segar",
+    "Minyak zaitun",
+    "Bawang putih",
+    "Garam",
+    "Merica"
+  ],
+  "alternatif": [
+    "Pasta whole grain dengan saus sayuran.",
+    "Zucchini noodles dengan saus marinara.",
+    "Quinoa salad dengan protein nabati."
+  ]
+}
+```
+
