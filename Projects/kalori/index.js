@@ -19,7 +19,7 @@ app.use(express.static('public'));
 const logErrorToFile = (error) => {
     const logMessage = `[${new Date().toISOString()}] ${error.stack || error.message || error}\n\n`;
     fs.appendFileSync('error_log_food_analyzer.txt', logMessage);
-    console.error(error); // tetap tampilkan di terminal
+    console.error(error);
 };
 
 // === Upload file function ===
@@ -37,10 +37,12 @@ const uploadFile = async (buffer) => {
             },
         });
 
-        const urlMatch = response.data.match(/https:\/\/uploader\.exoduscloud\.my\.id\/tmp\/[^\"]+/);
-        if (!urlMatch) throw new Error('URL not found in upload response');
+        console.log('🛰 Upload response data:', response.data);
 
-        const uploadedUrl = urlMatch[0].replace(/"/g, '');
+        // Ganti sesuai struktur response.data kamu
+        const uploadedUrl = response.data.url;
+        if (!uploadedUrl) throw new Error('URL not found in upload response');
+
         return uploadedUrl;
     } catch (error) {
         logErrorToFile(error);
