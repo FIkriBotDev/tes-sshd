@@ -1,0 +1,10 @@
+[2025-07-04T11:02:26.066Z] TypeError: response.data.match is not a function
+    at uploadFile (file:///home/runner/work/tes-sshd/tes-sshd/Projects/kalori/index.js:40:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///home/runner/work/tes-sshd/tes-sshd/Projects/kalori/index.js:78:29
+
+[2025-07-04T11:02:26.068Z] TypeError: response.data.match is not a function
+    at uploadFile (file:///home/runner/work/tes-sshd/tes-sshd/Projects/kalori/index.js:40:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///home/runner/work/tes-sshd/tes-sshd/Projects/kalori/index.js:78:29
+
