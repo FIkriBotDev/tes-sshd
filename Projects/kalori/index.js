@@ -15,6 +15,13 @@ const upload = multer({ storage: multer.memoryStorage() });
 app.use(cors());
 app.use(express.static('public'));
 
+// === Error Logger ===
+const logErrorToFile = (error) => {
+    const logMessage = `[${new Date().toISOString()}] ${error.stack || error.message || error}\n\n`;
+    fs.appendFileSync('error_log_food_analyzer.txt', logMessage);
+    console.error(error); // tetap tampilkan di terminal
+};
+
 // === Upload file function ===
 const uploadFile = async (buffer) => {
     try {
@@ -36,7 +43,7 @@ const uploadFile = async (buffer) => {
         const uploadedUrl = urlMatch[0].replace(/"/g, '');
         return uploadedUrl;
     } catch (error) {
-        console.error('Error during file upload:', error);
+        logErrorToFile(error);
         throw error;
     }
 };
@@ -82,7 +89,6 @@ app.post('/analyze', upload.single('image'), async (req, res) => {
 
             const jsonBlockMatch = responseText.match(/```json\n([\s\S]+?)\n```/);
             if (!jsonBlockMatch) {
-                console.error('❌ JSON block not found!');
                 throw new Error('JSON block not found in AI response');
             }
 
@@ -91,13 +97,13 @@ app.post('/analyze', upload.single('image'), async (req, res) => {
 
             aiJson = JSON.parse(jsonString);
         } catch (e) {
-            console.error('❌ Failed to parse JSON:', e.message);
+            logErrorToFile(e);
             return res.status(500).json({ error: 'Failed to parse AI response as JSON', raw: response.data });
         }
 
         res.json(aiJson);
     } catch (err) {
-        console.error('❌ Internal Server Error:', err.message);
+        logErrorToFile(err);
         res.status(500).json({ error: 'Internal server error' });
     }
 });
