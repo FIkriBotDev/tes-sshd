@@ -12,3 +12,7 @@
     at file:///home/runner/work/tes-sshd/tes-sshd/Projects/kalori/index.js:94:23
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
 
+[2025-07-05T08:26:19.742Z] Error: JSON block not found in AI response
+    at file:///home/runner/work/tes-sshd/tes-sshd/Projects/kalori/index.js:134:23
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
