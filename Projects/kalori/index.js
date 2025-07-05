@@ -53,23 +53,48 @@ const uploadFile = async (buffer) => {
 // === Prompt Builder ===
 const buildPrompt = () => `
 Beri saya analisis lengkap tentang makanan pada gambar ini:
+
 - Skor kesehatan keseluruhan
 - Apakah direkomendasikan atau tidak dan alasannya
-- Rincian nutrisi (kalori, protein, karbohidrat, lemak & persentase masing-masing terhadap total kalori)
+- Rincian nutrisi:
+  - kalori
+  - takaran saji (dalam gram)
+  - jumlah sajian (jika tampak)
+  - protein & persentase terhadap kalori
+  - karbohidrat total, gula, serat & persentase terhadap kalori
+  - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+  - kolesterol
+  - natrium (garam)
 - Vitamin dan mineral yang terkandung
 - Analisis bahan/ingredients
 - Alternatif makanan yang lebih sehat
+
 Balas dalam format JSON:
 {
-  "skorKesehatan": {"direkomendasikanAtauTidak": "...", "alasan": "..."},
-  "rincianNutrisi": {
-    "kalori": ..., "protein": "...", "proteinPersen": "...",
-    "karbohidrat": "...", "karbohidratPersen": "...",
-    "gemuk": "...", "gemukPersen": "...",
-    "vitaminDanMineral": [...], "mineral": [...]
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
   },
-  "ingredients": [...],
-  "alternatif": [...]
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", ...]
+  },
+  "ingredients": ["...", "..."],
+  "alternatif": ["...", "..."]
 }
 `;
 
