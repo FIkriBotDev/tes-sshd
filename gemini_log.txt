@@ -5216,3 +5216,120 @@ Response  : ```json
 
 Informasi di atas memberikan analisis menyeluruh tentang makanan yang ditampilkan dalam gambar. Jika ada yang ingin kamu diskusikan lebih lanjut atau jika ada pertanyaan lain, silakan beri tahu!
 
+
+[2025-07-05T13:35:19.758Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", ...]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/9e0ca0-1751722507494.jpg
+Response  : Berikut adalah analisis lengkap tentang makanan yang terlihat dalam gambar (hamburger, kentang goreng, dan minuman bersoda) yang disajikan dalam format JSON:
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasiAtauTidak": "Tidak direkomendasikan",
+    "alasan": "Makanan ini tinggi kalori, lemak, dan gula, serta memiliki nilai gizi yang rendah."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "500g",
+    "jumlahSajian": "1 porsi",
+    "kalori": 800,
+    "protein": "25g",
+    "proteinPersen": "12.5%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "35%",
+    "gula": "15g",
+    "serat": "3g",
+    "lemakTotal": "45g",
+    "lemakJenuh": "15g",
+    "lemakTakJenuh": "30g",
+    "lemakPersen": "50%",
+    "kolesterol": "80mg",
+    "natrium": "1200mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "40%" },
+    { "nama": "Gula", "persen": "30%" },
+    { "nama": "Natrium", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "tinggi",
+    "Natrium": "tinggi"
+  },
+  "waktuKenyang": "3-4 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/bulan",
+  "ingredients": ["Roti burger", "Daging sapi", "Keju", "Selada", "Tomat", "Kecap", "Kentang goreng", "Minuman bersoda"],
+  "tipsSehat": [
+    "Pilih roti gandum untuk burger.",
+    "Ganti kentang goreng dengan sayuran panggang."
+  ],
+  "alternatif": [
+    "Salad dengan protein (ayam panggang, tuna).",
+    "Burger vegetarian dengan roti gandum."
+  ]
+}
+```
+
+Analisis di atas mempertimbangkan aspek gizi dan risiko kesehatan dari makanan yang terlihat dalam gambar. Jika ada poin tertentu yang ingin Anda diskusikan lebih lanjut, beri tahu saya!
+
