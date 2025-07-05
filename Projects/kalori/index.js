@@ -39,7 +39,6 @@ const uploadFile = async (buffer) => {
 
         console.log('🛰 Upload response data:', response.data);
 
-        // Ganti sesuai struktur response.data kamu
         const uploadedUrl = response.data.url;
         if (!uploadedUrl) throw new Error('URL not found in upload response');
 
@@ -54,20 +53,25 @@ const uploadFile = async (buffer) => {
 const buildPrompt = () => `
 Beri saya analisis lengkap tentang makanan pada gambar ini:
 
-- Skor kesehatan keseluruhan
-- Apakah direkomendasikan atau tidak dan alasannya
-- Rincian nutrisi:
-  - kalori
-  - takaran saji (dalam gram)
-  - jumlah sajian (jika tampak)
-  - protein & persentase terhadap kalori
-  - karbohidrat total, gula, serat & persentase terhadap kalori
-  - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
-  - kolesterol
-  - natrium (garam)
-- Vitamin dan mineral yang terkandung
-- Analisis bahan/ingredients
-- Alternatif makanan yang lebih sehat
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
 
 Balas dalam format JSON:
 {
@@ -93,7 +97,18 @@ Balas dalam format JSON:
     "natrium": "780mg",
     "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", ...]
   },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
   "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
   "alternatif": ["...", "..."]
 }
 `;
