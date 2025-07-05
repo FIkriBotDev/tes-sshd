@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Analysis</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { background-color: #f2f4f6; }
+    .card-custom { max-width: 720px; margin: 50px auto; padding: 20px; border-radius: 20px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); background: #fff; }
+    .image-preview { max-height: 300px; object-fit: contain; margin-bottom: 1rem; }
+    .loading-spinner { font-size: 2rem; text-align: center; }
+    .text-green { color: #28a745; }
+    .text-red { color: #dc3545; }
+    .badge-pill { padding: 10px 20px; font-size: 0.9rem; border-radius: 50rem; }
+    .card-box { background-color: #f8f9fa; border-left: 4px solid #0d6efd; border-radius: 8px; padding: 10px 15px; margin-bottom: 10px; }
+    .badge-value { font-weight: bold; background-color: #e9ecef; border-radius: 12px; padding: 4px 8px; margin-left: 6px; }
+  </style>
+</head>
+<body>
+  <div class="card card-custom">
+    <h4 class="mb-4">🍽️ Food Analysis Assistant</h4>
+
+    <div class="mb-3 d-flex gap-2">
+      <button class="btn btn-info text-white" onclick="document.getElementById('fileInput').click()">📷 Camera</button>
+      <input type="file" id="fileInput" accept="image/*" class="d-none" onchange="handleImageUpload(event)" />
+      <button class="btn btn-outline-primary" onclick="document.getElementById('fileInput').click()">📤 Upload</button>
+    </div>
+
+    <div id="previewContainer" class="text-center d-none">
+      <img id="previewImage" src="" class="img-fluid rounded image-preview" />
+      <div class="d-flex justify-content-center gap-2">
+        <button class="btn btn-dark btn-sm" onclick="startAnalysis()">Analyze</button>
+        <button class="btn btn-outline-secondary btn-sm" onclick="resetImage()">Reset</button>
+      </div>
+    </div>
+
+    <div id="loading" class="loading-spinner text-center mt-4 d-none">
+      <div class="spinner-border text-primary" role="status"></div>
+      <p>Analyzing with AI...</p>
+    </div>
+
+    <div id="resultContainer" class="mt-4 d-none">
+      <h5 class="mb-3">📊 Result:</h5>
+
+      <div class="card-box">
+        <h6>🧠 Skor Kesehatan:</h6>
+        <div id="direkomendasikanAtauTidak" class="fw-bold mb-1"></div>
+        <div id="alasan" class="text-muted"></div>
+      </div>
+
+      <div class="card-box">
+        <h6>📋 Rincian Nutrisi:</h6>
+        <ul id="rincianNutrisi" class="list-unstyled mb-0"></ul>
+      </div>
+
+      <div class="card-box">
+        <h6>💊 Vitamin & Mineral:</h6>
+        <ul id="vitaminMineral" class="list-inline mb-0"></ul>
+      </div>
+
+      <div class="card-box">
+        <h6>📈 Perbandingan terhadap AKG:</h6>
+        <ul id="perbandinganAKG" class="list-unstyled mb-0"></ul>
+      </div>
+
+      <div class="card-box">
+        <h6>⚠️ Indikator Risiko Kesehatan:</h6>
+        <ul id="risikoKesehatan" class="list-inline mb-0"></ul>
+      </div>
+
+      <div class="card-box">
+        <h6>⏱️ Perkiraan Waktu Pencernaan / Kenyang:</h6>
+        <div id="waktuKenyang" class="text-muted"></div>
+      </div>
+
+      <div class="card-box">
+        <h6>📅 Rekomendasi Frekuensi Konsumsi:</h6>
+        <div id="frekuensiKonsumsi" class="text-muted"></div>
+      </div>
+
+      <div class="card-box">
+        <h6>🔍 Analisis Bahan:</h6>
+        <ul id="analisisBahan" class="list-inline mb-0"></ul>
+      </div>
+
+      <div class="card-box">
+        <h6>👨‍🍳 Tips Penyajian Lebih Sehat:</h6>
+        <ul id="tipsSehat" class="list-inline mb-0"></ul>
+      </div>
+
+      <div class="card-box">
+        <h6>🥗 Alternatif Lebih Sehat:</h6>
+        <ul id="alternatifSehat" class="list-inline mb-0"></ul>
+      </div>
+
+      <div class="card-box">
+        <h6>🥧 Komposisi Kalori (Makronutrien):</h6>
+        <canvas id="macroChart" height="200"></canvas>
+      </div>
+    </div>
+  </div>
+<script>
+  let selectedFile = null;
+  let chartInstance = null;
+
+  function handleImageUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    selectedFile = file;
+
+    const reader = new FileReader();
+    reader.onload = e => {
+      document.getElementById('previewImage').src = e.target.result;
+      document.getElementById('previewContainer').classList.remove('d-none');
+      document.getElementById('resultContainer').classList.add('d-none');
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function resetImage() {
+    selectedFile = null;
+    document.getElementById('fileInput').value = null;
+    document.getElementById('previewImage').src = '';
+    document.getElementById('previewContainer').classList.add('d-none');
+    document.getElementById('loading').classList.add('d-none');
+    document.getElementById('resultContainer').classList.add('d-none');
+  }
+
+  async function startAnalysis() {
+    if (!selectedFile) return;
+
+    const formData = new FormData();
+    formData.append('image', selectedFile);
+
+    document.getElementById('loading').classList.remove('d-none');
+    document.getElementById('resultContainer').classList.add('d-none');
+
+    try {
+      const res = await axios.post('https://food-analyzer.exoduscloud.my.id/analyze', formData);
+      const data = res.data;
+
+      document.getElementById('direkomendasikanAtauTidak').innerHTML =
+        data?.skorKesehatan?.direkomendasikanAtauTidak?.toLowerCase().includes('tidak')
+          ? '<span class="text-red">👎 ' + data.skorKesehatan.direkomendasikanAtauTidak + '</span>'
+          : '<span class="text-green">👍 ' + data.skorKesehatan.direkomendasikanAtauTidak + '</span>';
+      document.getElementById('alasan').textContent = data.skorKesehatan.alasan || '';
+
+      const rincian = data.rincianNutrisi || {};
+      const nutrisiList = document.getElementById('rincianNutrisi');
+      nutrisiList.innerHTML = '';
+      Object.entries(rincian).forEach(([key, value]) => {
+        if (!Array.isArray(value)) {
+          const li = document.createElement('li');
+          li.innerHTML = `${key.replace(/([A-Z])/g, ' $1')}: <span class="badge-value">${value}</span>`;
+          nutrisiList.appendChild(li);
+        }
+      });
+
+      const vitaminList = document.getElementById('vitaminMineral');
+      vitaminList.innerHTML = '';
+      const vitaminItems = [...(rincian.vitaminDanMineral || []), ...(rincian.mineral || [])];
+      vitaminItems.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'list-inline-item badge bg-secondary me-1 mb-1';
+        li.textContent = item;
+        vitaminList.appendChild(li);
+      });
+
+      const perbandinganList = document.getElementById('perbandinganAKG');
+      perbandinganList.innerHTML = '';
+      (data.perbandinganAKG || []).forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.nama}: ${item.persen}`;
+        perbandinganList.appendChild(li);
+      });
+
+      const risikoList = document.getElementById('risikoKesehatan');
+      risikoList.innerHTML = '';
+      Object.entries(data.risikoKesehatan || {}).forEach(([k, v]) => {
+        const badge = document.createElement('li');
+        badge.className = `list-inline-item badge me-1 mb-1 ${v === 'tinggi' ? 'bg-danger' : v === 'sedang' ? 'bg-warning text-dark' : 'bg-success'}`;
+        badge.textContent = `${k}: ${v}`;
+        risikoList.appendChild(badge);
+      });
+
+      document.getElementById('waktuKenyang').textContent = data.waktuKenyang || '';
+      document.getElementById('frekuensiKonsumsi').textContent = data.frekuensiKonsumsi || '';
+
+      const bahanList = document.getElementById('analisisBahan');
+      bahanList.innerHTML = '';
+      (data.ingredients || []).forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'list-inline-item badge bg-warning text-dark me-1 mb-1';
+        li.textContent = item;
+        bahanList.appendChild(li);
+      });
+
+      const tipsList = document.getElementById('tipsSehat');
+      tipsList.innerHTML = '';
+      (data.tipsSehat || []).forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'list-inline-item badge bg-info text-dark me-1 mb-1';
+        li.textContent = item;
+        tipsList.appendChild(li);
+      });
+
+      const alternatifList = document.getElementById('alternatifSehat');
+      alternatifList.innerHTML = '';
+      (data.alternatif || []).forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'list-inline-item badge bg-success me-1 mb-1';
+        li.textContent = item;
+        alternatifList.appendChild(li);
+      });
+
+      const macroChart = document.getElementById('macroChart').getContext('2d');
+      const protein = parseFloat((rincian.proteinPersen || '').replace('%', '')) || 0;
+      const karbo = parseFloat((rincian.karbohidratPersen || '').replace('%', '')) || 0;
+      const lemak = parseFloat((rincian.lemakPersen || rincian.gemukPersen || '').replace('%', '')) || 0;
+
+      if (chartInstance) chartInstance.destroy();
+      chartInstance = new Chart(macroChart, {
+        type: 'doughnut',
+        data: {
+          labels: ['Protein', 'Karbohidrat', 'Lemak'],
+          datasets: [{
+            data: [protein, karbo, lemak],
+            backgroundColor: ['#36a2eb', '#ffcd56', '#ff6384']
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { position: 'bottom' } }
+        }
+      });
+
+      document.getElementById('resultContainer').classList.remove('d-none');
+    } catch (error) {
+      alert('Error analyzing image: ' + (error.response?.data?.error || error.message));
+    } finally {
+      document.getElementById('loading').classList.add('d-none');
+    }
+  }
+</script>
+</body>
+</html>
