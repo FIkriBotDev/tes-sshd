@@ -5093,3 +5093,126 @@ Balas dalam format JSON:
 Image URL : https://uploader.exoduscloud.my.id/tmp/032235-1751722398615.png
 Response  : Sepertinya yang kamu berikan adalah gambar logo WhatsApp yang sudah dimodifikasi dengan elemen robot. Sayangnya, saya tidak dapat memberikan analisis lengkap tentang makanan berdasarkan gambar tersebut, karena itu bukan makanan. Namun, jika kamu memiliki foto atau informasi tentang makanan tertentu, saya dengan senang hati akan membantu! Atau, jika ada topik lain yang ingin kamu diskusikan, silakan beri tahu saya.
 
+
+[2025-07-05T13:34:17.418Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", ...]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/c9911f-1751722442043.jpg
+Response  : ```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan",
+    "alasan": "Makanan ini kaya akan kalori, lemak jenuh, dan natrium, yang dapat berkontribusi pada risiko kesehatan jangka panjang jika dikonsumsi secara berlebihan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": 300,
+    "jumlahSajian": 1,
+    "kalori": 800,
+    "protein": "25g",
+    "proteinPersen": "12.5%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "35%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "50g",
+    "lemakJenuh": "15g",
+    "lemakTakJenuh": "35g",
+    "lemakPersen": "56.25%",
+    "kolesterol": "90mg",
+    "natrium": "900mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "Magnesium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "40%" },
+    { "nama": "Lemak", "persen": "75%" },
+    { "nama": "Natrium", "persen": "39%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "tinggi",
+    "Natrium": "tinggi"
+  },
+  "waktuKenyang": "4-5 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/bulan",
+  "ingredients": [
+    "roti burger",
+    "daging sapi",
+    "keju",
+    "sayuran segar (selada, tomat, bawang)",
+    "kentang goreng",
+    "saus"
+  ],
+  "tipsSehat": [
+    "Ganti daging sapi dengan daging ayam panggang atau ikan.",
+    "Pilih roti gandum utuh sebagai pengganti roti putih.",
+    "Kurangi jumlah saus atau ganti dengan saus berbasis yogurt."
+  ],
+  "alternatif": [
+    "Salad ayam panggang dengan vinaigrette ringan",
+    "Pizza dengan sayuran dan keju rendah lemak"
+  ]
+}
+``` 
+
+Informasi di atas memberikan analisis menyeluruh tentang makanan yang ditampilkan dalam gambar. Jika ada yang ingin kamu diskusikan lebih lanjut atau jika ada pertanyaan lain, silakan beri tahu!
+
