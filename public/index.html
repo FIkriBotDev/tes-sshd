@@ -9,97 +9,109 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body { background-color: #f2f4f6; }
-    .container-flex { display: flex; flex-direction: column; gap: 20px; }
-    @media (min-width: 992px) {
-      .container-flex { flex-direction: row; align-items: flex-start; }
-      .image-col, .result-col { flex: 1; }
-    }
-    .card-custom { padding: 20px; border-radius: 20px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); background: #fff; }
-    .image-preview { max-width: 100%; max-height: 300px; object-fit: contain; margin-bottom: 1rem; }
+    .card-custom { max-width: 1400px; margin: 50px auto; padding: 20px; border-radius: 20px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); background: #fff; }
+    .image-preview { max-height: 300px; object-fit: contain; margin-bottom: 1rem; }
     .loading-spinner { font-size: 2rem; text-align: center; }
     .text-green { color: #28a745; }
     .text-red { color: #dc3545; }
     .badge-pill { padding: 10px 20px; font-size: 0.9rem; border-radius: 50rem; }
     .card-box { background-color: #f8f9fa; border-left: 4px solid #0d6efd; border-radius: 8px; padding: 10px 15px; margin-bottom: 10px; }
     .badge-value { font-weight: bold; background-color: #e9ecef; border-radius: 12px; padding: 4px 8px; margin-left: 6px; }
+    @media (min-width: 992px) {
+      #layoutRow { display: flex; gap: 30px; }
+      #leftColumn, #rightColumn { flex: 1; }
+    }
   </style>
 </head>
 <body>
-  <div class="container mt-5">
-    <h4 class="mb-4 text-center">🍽️ Food Analysis Assistant</h4>
-    <div class="container-flex">
-      <div class="card-custom image-col">
-        <div class="mb-3 d-flex gap-2">
-          <button class="btn btn-info text-white" onclick="document.getElementById('fileInput').click()">📷 Camera</button>
-          <input type="file" id="fileInput" accept="image/*" class="d-none" onchange="handleImageUpload(event)" />
-          <button class="btn btn-outline-primary" onclick="document.getElementById('fileInput').click()">📤 Upload</button>
-        </div>
+  <div class="card card-custom">
+    <h4 class="mb-4">🍽️ Food Analysis Assistant</h4>
 
-        <div id="previewContainer" class="text-center d-none">
-          <img id="previewImage" src="" class="img-fluid rounded image-preview" />
-          <div class="d-flex justify-content-center gap-2">
-            <button class="btn btn-dark btn-sm" onclick="startAnalysis()">Analyze</button>
-            <button class="btn btn-outline-secondary btn-sm" onclick="resetImage()">Reset</button>
+    <div class="mb-3 d-flex gap-2">
+      <button class="btn btn-info text-white" onclick="document.getElementById('fileInput').click()">📷 Camera</button>
+      <input type="file" id="fileInput" accept="image/*" class="d-none" onchange="handleImageUpload(event)" />
+      <button class="btn btn-outline-primary" onclick="document.getElementById('fileInput').click()">📤 Upload</button>
+    </div>
+
+    <div id="previewContainer" class="text-center d-none">
+      <img id="previewImage" src="" class="img-fluid rounded image-preview" />
+      <div class="d-flex justify-content-center gap-2">
+        <button class="btn btn-dark btn-sm" onclick="startAnalysis()">Analyze</button>
+        <button class="btn btn-outline-secondary btn-sm" onclick="resetImage()">Reset</button>
+      </div>
+    </div>
+
+    <div id="loading" class="loading-spinner text-center mt-4 d-none">
+      <div class="spinner-border text-primary" role="status"></div>
+      <p>Analyzing with AI...</p>
+    </div>
+
+    <div id="resultContainer" class="mt-4 d-none">
+      <h5 class="mb-3">📊 Result:</h5>
+      <div id="layoutRow">
+        <div id="leftColumn">
+          <div class="card-box">
+            <h6>🧠 Skor Kesehatan:</h6>
+            <div id="direkomendasikanAtauTidak" class="fw-bold mb-1"></div>
+            <div id="alasan" class="text-muted"></div>
+          </div>
+
+          <div class="card-box">
+            <h6>📋 Rincian Nutrisi:</h6>
+            <ul id="rincianNutrisi" class="list-unstyled mb-0"></ul>
+          </div>
+
+          <div class="card-box">
+            <h6>💊 Vitamin & Mineral:</h6>
+            <ul id="vitaminMineral" class="list-inline mb-0"></ul>
           </div>
         </div>
 
-        <div id="loading" class="loading-spinner text-center mt-4 d-none">
-          <div class="spinner-border text-primary" role="status"></div>
-          <p>Analyzing with AI...</p>
-        </div>
-      </div>
+        <div id="rightColumn">
+          <div class="card-box">
+            <h6>📈 Perbandingan terhadap AKG:</h6>
+            <ul id="perbandinganAKG" class="list-unstyled mb-0"></ul>
+          </div>
 
-      <div class="card-custom result-col" id="resultContainer" class="mt-4 d-none">
-        <h5 class="mb-3">📊 Result:</h5>
-        <div class="card-box">
-          <h6>🧠 Skor Kesehatan:</h6>
-          <div id="direkomendasikanAtauTidak" class="fw-bold mb-1"></div>
-          <div id="alasan" class="text-muted"></div>
-        </div>
-        <div class="card-box">
-          <h6>📋 Rincian Nutrisi:</h6>
-          <ul id="rincianNutrisi" class="list-unstyled mb-0"></ul>
-        </div>
-        <div class="card-box">
-          <h6>💊 Vitamin & Mineral:</h6>
-          <ul id="vitaminMineral" class="list-inline mb-0"></ul>
-        </div>
-        <div class="card-box">
-          <h6>📈 Perbandingan terhadap AKG:</h6>
-          <ul id="perbandinganAKG" class="list-unstyled mb-0"></ul>
-        </div>
-        <div class="card-box">
-          <h6>⚠️ Indikator Risiko Kesehatan:</h6>
-          <ul id="risikoKesehatan" class="list-inline mb-0"></ul>
-        </div>
-        <div class="card-box">
-          <h6>⏱️ Perkiraan Waktu Pencernaan / Kenyang:</h6>
-          <div id="waktuKenyang" class="text-muted"></div>
-        </div>
-        <div class="card-box">
-          <h6>📅 Rekomendasi Frekuensi Konsumsi:</h6>
-          <div id="frekuensiKonsumsi" class="text-muted"></div>
-        </div>
-        <div class="card-box">
-          <h6>🔍 Analisis Bahan:</h6>
-          <ul id="analisisBahan" class="list-inline mb-0"></ul>
-        </div>
-        <div class="card-box">
-          <h6>👨‍🍳 Tips Penyajian Lebih Sehat:</h6>
-          <ul id="tipsSehat" class="list-inline mb-0"></ul>
-        </div>
-        <div class="card-box">
-          <h6>🥗 Alternatif Lebih Sehat:</h6>
-          <ul id="alternatifSehat" class="list-inline mb-0"></ul>
-        </div>
-        <div class="card-box">
-          <h6>🥧 Komposisi Kalori (Makronutrien):</h6>
-          <canvas id="macroChart" height="200"></canvas>
+          <div class="card-box">
+            <h6>⚠️ Indikator Risiko Kesehatan:</h6>
+            <ul id="risikoKesehatan" class="list-inline mb-0"></ul>
+          </div>
+
+          <div class="card-box">
+            <h6>⏱️ Perkiraan Waktu Pencernaan / Kenyang:</h6>
+            <div id="waktuKenyang" class="text-muted"></div>
+          </div>
+
+          <div class="card-box">
+            <h6>📅 Rekomendasi Frekuensi Konsumsi:</h6>
+            <div id="frekuensiKonsumsi" class="text-muted"></div>
+          </div>
+
+          <div class="card-box">
+            <h6>🔍 Analisis Bahan:</h6>
+            <ul id="analisisBahan" class="list-inline mb-0"></ul>
+          </div>
+
+          <div class="card-box">
+            <h6>👨‍🍳 Tips Penyajian Lebih Sehat:</h6>
+            <ul id="tipsSehat" class="list-inline mb-0"></ul>
+          </div>
+
+          <div class="card-box">
+            <h6>🥗 Alternatif Lebih Sehat:</h6>
+            <ul id="alternatifSehat" class="list-inline mb-0"></ul>
+          </div>
+
+          <div class="card-box">
+            <h6>🥧 Komposisi Kalori (Makronutrien):</h6>
+            <canvas id="macroChart" height="200"></canvas>
+          </div>
         </div>
       </div>
     </div>
   </div>
- <script>
+<script>
   let selectedFile = null;
   let chartInstance = null;
 
