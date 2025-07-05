@@ -4622,3 +4622,109 @@ Response  : Meskipun saya tidak dapat menganalisis gambar secara langsung, saya 
 
 Silakan modifikasi nilai-nilai tersebut agar lebih akurat sesuai makanan yang sedang Anda analisis. Apakah ada hal lain yang ingin Anda diskusikan atau tanyakan lebih lanjut?
 
+
+[2025-07-05T10:31:22.707Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", ...]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/9af75c-1751711472903.webp
+Response  : ```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan",
+    "alasan": "Sushi yang mengandung sayuran dan ikan memberikan kombinasi nutrisi yang baik, termasuk protein dan serat, serta rendah kalori."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "150g",
+    "jumlahSajian": "1 porsi",
+    "kalori": 300,
+    "protein": "25g",
+    "proteinPersen": "33.33%",
+    "karbohidrat": "45g",
+    "karbohidratPersen": "60%",
+    "gula": "5g",
+    "serat": "3g",
+    "lemakTotal": "10g",
+    "lemakJenuh": "2g",
+    "lemakTakJenuh": "8g",
+    "lemakPersen": "30%",
+    "kolesterol": "40mg",
+    "natrium": "400mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "15%" },
+    { "nama": "Gula", "persen": "10%" },
+    { "nama": "Lemak", "persen": "15%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "rendah"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "3-4 kali per minggu",
+  "ingredients": ["Nasi", "Rumput laut", "Ikan salmon", "Sayuran (timun, alpukat)", "Cuka", "Garam"],
+  "tipsSehat": ["Gunakan nasi merah sebagai alternatif", "Tambahkan lebih banyak sayuran segar"],
+  "alternatif": ["Sashimi", "Salad sushi", "Bowl poké dengan lebih banyak sayuran"]
+}
+```
+
