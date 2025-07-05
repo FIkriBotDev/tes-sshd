@@ -3346,3 +3346,63 @@ Response  : Looks like you're facing a DNS issue with the website win11.13848.de
 
 If you’ve tried all that and still can’t get it to load, the website might be down on their end or the domain could be expired. Want to talk about it more or need help with something else?
 
+
+[2025-07-05T06:38:34.901Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+- Skor kesehatan keseluruhan
+- Apakah direkomendasikan atau tidak dan alasannya
+- Rincian nutrisi (kalori, protein, karbohidrat, lemak & persentase masing-masing terhadap total kalori)
+- Vitamin dan mineral yang terkandung
+- Analisis bahan/ingredients
+- Alternatif makanan yang lebih sehat
+Balas dalam format JSON:
+{
+  "skorKesehatan": {"direkomendasikanAtauTidak": "...", "alasan": "..."},
+  "rincianNutrisi": {
+    "kalori": ..., "protein": "...", "proteinPersen": "...",
+    "karbohidrat": "...", "karbohidratPersen": "...",
+    "gemuk": "...", "gemukPersen": "...",
+    "vitaminDanMineral": [...], "mineral": [...]
+  },
+  "ingredients": [...],
+  "alternatif": [...]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/ac903c-1751697504940.jpg
+Response  : ```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak",
+    "alasan": "Makanan ini merupakan makanan yang digoreng, tinggi lemak dan kalori, yang dapat berkontribusi pada masalah kesehatan jika dikonsumsi terlalu sering."
+  },
+  "rincianNutrisi": {
+    "kalori": 350,
+    "protein": "15g",
+    "proteinPersen": "17%",
+    "karbohidrat": "40g",
+    "karbohidratPersen": "46%",
+    "gemuk": "20g",
+    "gemukPersen": "51%",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Kalsium", "Zat Besi"],
+    "mineral": ["Kalsium", "Zat Besi"]
+  },
+  "ingredients": [
+    "Daging ayam (atau daging lain)",
+    "Tepung terigu",
+    "Minyak goreng",
+    "Bumbu (seperti bawang putih, bawang merah, merica)",
+    "Daun selada",
+    "Saus sambal atau kecap untuk penyajian",
+    "Lemon (sebagai pelengkap)"
+  ],
+  "alternatif": [
+    "Daging ayam panggang tanpa kulit",
+    "Sate sayuran panggang",
+    "Tahu atau tempe bakar",
+    "Salad sayuran segar dengan dressing minimalis",
+    "Pasta gandum utuh dengan sayuran"
+  ]
+}
+```
+
