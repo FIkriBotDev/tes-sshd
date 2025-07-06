@@ -6880,3 +6880,114 @@ Response  : Berikut adalah analisis lengkap tentang makanan yang terdapat pada g
 
 Jika ada yang ingin Anda diskusikan lebih lanjut atau butuh penyesuaian dalam analisis tersebut, silakan beri tahu!
 
+
+[2025-07-06T15:53:07.425Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", ...]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/47b4a4-1751817173258.webp
+Response  : ```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan",
+    "alasan": "Makanan ini mengandung kombinasi karbohidrat, protein, dan sayuran yang seimbang, serta menawarkan nutrisi penting tanpa terlalu tinggi lemak dan gula."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "100 gram",
+    "jumlahSajian": "2 potong",
+    "kalori": 250,
+    "protein": "8g",
+    "proteinPersen": "12%",
+    "karbohidrat": "39g",
+    "karbohidratPersen": "62%",
+    "gula": "5g",
+    "serat": "2g",
+    "lemakTotal": "6g",
+    "lemakJenuh": "1g",
+    "lemakTakJenuh": "5g",
+    "lemakPersen": "25%",
+    "kolesterol": "30mg",
+    "natrium": "600mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "Omega-3"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "12%" },
+    { "nama": "Gula", "persen": "10%" },
+    { "nama": "Lemak Jenuh", "persen": "5%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "rendah"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "3-4 kali seminggu",
+  "ingredients": ["Nasi sushi", "Nori (alga)", "Ikan Salmon", "Mentimun", "Avokad", "Cuka beras"],
+  "tipsSehat": [
+    "Menggunakan nasi merah untuk menambah serat.",
+    "Menyajikan dengan saus kedelai rendah sodium."
+  ],
+  "alternatif": ["Bowl salad dengan protein", "Sushi dengan quinoa"]
+}
+``` 
+
+Analisis di atas memberikan gambaran yang jelas tentang keuntungan dan kerugian dari makanan sushi yang disajikan, serta memberikan ide tentang bagaimana menikmatinya dengan cara yang lebih sehat. Apakah ada hal lain yang ingin kamu tahu tentang makanan atau nutrisi?
+
