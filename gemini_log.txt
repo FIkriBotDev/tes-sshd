@@ -5449,3 +5449,121 @@ Response  : Berikut adalah analisis lengkap mengenai makanan yang terlihat pada 
 
 Makanan ini berpotensi menarik bagi para pencinta camilan, tetapi perlu diingat untuk mengonsumsinya dengan bijak. Jika ada yang ingin didalami lebih lanjut, atau ada area lain yang ingin kamu bahas, jangan ragu untuk memberitahuku!
 
+
+[2025-07-06T03:58:17.974Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", ...]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/1da479-1751774287835.jpg
+Response  : Berikut adalah analisis lengkap tentang makanan yang terdapat dalam gambar:
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan",
+    "alasan": "Makanan ini mengandung kalori tinggi, lemak jenuh berlebih, dan sodium tinggi, yang dapat meningkatkan risiko masalah kesehatan jika dikonsumsi secara berlebihan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "300 gram",
+    "jumlahSajian": "1 sajian",
+    "kalori": 450,
+    "protein": "25g",
+    "proteinPersen": "22.22%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "62.22%",
+    "gula": "8g",
+    "serat": "3g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "8g",
+    "lemakTakJenuh": "12g",
+    "lemakPersen": "40%",
+    "kolesterol": "60mg",
+    "natrium": "900mg",
+    "vitaminDanMineral": ["Vitamin C", "Zat Besi", "Kalsium", "Vitamin A", "Kalium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "22.5%" },
+    { "nama": "Gula", "persen": "16%" },
+    { "nama": "Lemak Jenuh", "persen": "40%" },
+    { "nama": "Natrium", "persen": "39%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang",
+    "Lemak": "tinggi",
+    "Natrium": "tinggi"
+  },
+  "waktuKenyang": "3-4 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1-2x/bulan",
+  "ingredients": ["mi", "bakso", "kaldu", "daun bawang", "bawang goreng", "seledri"],
+  "tipsSehat": [
+    "Ganti mi dengan mi gandum utuh.",
+    "Kurangi jumlah bakso dan tambahkan sayuran lebih banyak."
+  ],
+  "alternatif": [
+    "Sup sayuran dengan ayam panggang.",
+    "Salad dengan protein nabati seperti tahu atau tempe."
+  ]
+}
+```
+
+Analisis ini dirancang untuk membantu pendapat Anda tentang makanan tersebut, menjaga keseimbangan antara rasa dan kesehatan. Jika ada yang ingin Anda tanyakan lebih lanjut atau jika Anda ingin membahas lebih dalam, jangan ragu!
+
