@@ -6991,3 +6991,112 @@ Response  : ```json
 
 Analisis di atas memberikan gambaran yang jelas tentang keuntungan dan kerugian dari makanan sushi yang disajikan, serta memberikan ide tentang bagaimana menikmatinya dengan cara yang lebih sehat. Apakah ada hal lain yang ingin kamu tahu tentang makanan atau nutrisi?
 
+
+[2025-07-06T15:53:54.358Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", ...]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/b4b5ac-1751817223756.webp
+Response  : Berikut adalah analisis lengkap tentang makanan sushi yang tertera dalam gambar tersebut, disajikan dalam format JSON:
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan",
+    "alasan": "Sushi mengandung protein dari ikan, serat dari sayuran, serta karbohidrat dari nasi, tetapi perlu diperhatikan porsi nasi dan saus yang bisa meningkatkan kalori."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "100g",
+    "jumlahSajian": "2 potong",
+    "kalori": 150,
+    "protein": "10g",
+    "proteinPersen": "26.67%",
+    "karbohidrat": "25g",
+    "karbohidratPersen": "66.67%",
+    "gula": "3g",
+    "serat": "2g",
+    "lemakTotal": "5g",
+    "lemakJenuh": "1g",
+    "lemakTakJenuh": "4g",
+    "lemakPersen": "30%",
+    "kolesterol": "20mg",
+    "natrium": "500mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "7.5%" },
+    { "nama": "Gula", "persen": "6%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "rendah"
+  },
+  "waktuKenyang": "2 jam",
+  "frekuensiKonsumsi": "2-3 kali seminggu",
+  "ingredients": ["Nasi", "Ikan Salmon", "Alga Nori", "Timun", "Avokad"],
+  "tipsSehat": ["Gunakan nasi merah sebagai pengganti nasi putih", "Minimalkan penggunaan saus berkalori tinggi seperti mayo"],
+  "alternatif": ["Sushi sayuran", "Sushi dengan ikan panggang"]
+}
+```
+
+Analisis ini memberikan gambaran komprehensif mengenai nilai gizi sushi yang diperlihatkan. Jika ada pertanyaan lebih lanjut atau jika Anda ingin menganalisis makanan lain, jangan ragu untuk bertanya!
+
