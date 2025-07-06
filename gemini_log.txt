@@ -6316,3 +6316,115 @@ Analisis ini memberikan gambaran mendetail tentang makanan tersebut. Apakah ada 
 **Support Pollinations.AI:**
 🌸 **Iklan** 🌸 Makan lebih sehat dengan [alternatif rendah kalori dan kaya serat](https://pollinations.ai/redirect/kofi)—pilihan cerdas untuk tubuh Anda!
 
+
+[2025-07-06T07:15:56.408Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", ...]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/38bcbd-1751786137321.webp
+Response  : Tentu! Berikut adalah analisis lengkap berdasarkan gambar makanan yang diberikan:
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan",
+    "alasan": "Makanan ini mengandung sumber protein yang baik dari ikan dan tempe, serta serat dari sayuran. Namun, perlu diperhatikan kadar lemak dan natrium."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "300 gram",
+    "jumlahSajian": "1",
+    "kalori": 450,
+    "protein": "30g",
+    "proteinPersen": "26.67%",
+    "karbohidrat": "60g",
+    "karbohidratPersen": "53.33%",
+    "gula": "10g",
+    "serat": "8g",
+    "lemakTotal": "18g",
+    "lemakJenuh": "5g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "36%",
+    "kolesterol": "70mg",
+    "natrium": "900mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "20%" },
+    { "nama": "Gula", "persen": "20%" },
+    { "nama": "Natrium", "persen": "40%" },
+    { "nama": "Protein", "persen": "60%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang",
+    "Lemak": "sedang",
+    "Natrium": "tinggi"
+  },
+  "waktuKenyang": "4 jam",
+  "frekuensiKonsumsi": "1-2x/minggu",
+  "ingredients": ["Ikan bakar", "Tempe", "Sambal", "Sayuran segar"],
+  "tipsSehat": ["Kurangi sambal berlebihan untuk mengurangi natrium.", "Ganti tempe dengan tahu untuk variasi rendah lemak."],
+  "alternatif": ["Salad sayuran dengan protein rendah lemak.", "Ikan panggang dengan bumbu rempah dan sayuran kukus."]
+}
+```
+
+Analisis ini memberikan gambaran menyeluruh tentang makanan dalam gambar, termasuk detail nutrisi, rekomendasi konsumsi, dan alternatif yang lebih sehat. Apakah ada hal lain yang ingin Anda bahas mengenai makanan?
+
