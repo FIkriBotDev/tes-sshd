@@ -8801,3 +8801,53 @@ Jadi, hasil integral dari masing-masing soal adalah:
 
 Jika ada yang ingin kamu bahas lebih lanjut, silakan!
 
+
+[2025-07-07T11:32:56.526Z]
+Prompt    : ini makanan apa? bagaimana resep dan cara buatnya?
+Image URL : https://uploader.exoduscloud.my.id/tmp/26e0ea-1751887965075.jpg
+Response  : Makanan yang terlihat pada gambar tersebut adalah "Kue Cubir" atau "Kue Cubir Manis." Ini adalah salah satu jajanan tradisional Indonesia yang terbuat dari campuran tepung, santan, dan gula, biasanya disajikan dengan kuah kinca yang terbuat dari gula merah.
+
+Berikut adalah resep dan cara buat Kue Cubir:
+
+### Bahan untuk Kue Cubir:
+- 200 gr tepung terigu
+- 200 ml santan (bisa menggunakan santan instan)
+- 100 gr gula pasir
+- 1 sdt ragi instan
+- 1/2 sdt garam
+- 200 ml air hangat
+- Daun pisang (untuk alas)
+
+### Bahan Kinca:
+- 150 gr gula merah (serut halus)
+- 100 ml air
+- 1-2 lembar daun pandan (untuk aroma, jika suka)
+- Sejumput garam
+
+### Cara Membuat Kue Cubir:
+1. **Siapkan Adonan**:
+   - Dalam sebuah mangkuk, campurkan tepung terigu, gula pasir, ragi, dan garam.
+   - Tambahkan santan dan air hangat sedikit demi sedikit, aduk hingga tidak ada gumpalan.
+   - Diamkan selama kurang lebih 30 menit agar adonan mengembang.
+
+2. **Panaskan Cetakan**:
+   - Siapkan cetakan (biasanya cetakan kue cubir) dan panaskan di atas api sedang. Olesi cetakan dengan sedikit minyak agar tidak lengket.
+
+3. **Tuangkan Adonan**:
+   - Setelah cetakan panas, tuangkan adonan ke dalam cetakan. Tunggu hingga adonan mengembang dan permukaan kue terlihat bergelembung.
+
+4. **Masak Hingga Matang**:
+   - Masak kue cubir hingga bagian bawahnya berwarna kecokelatan dan bagian atasnya matang. Tutup cetakan selama proses memasak agar uapnya menyebar rata.
+
+5. **Angkat dan Sajikan**:
+   - Setelah matang, angkat kue cubir dan letakkan di atas daun pisang.
+
+### Cara Membuat Kinca:
+1. **Paduan Gula Merah**:
+   - Campurkan gula merah dengan air dan daun pandan dalam panci. Masak di atas api kecil sambil diaduk hingga gula larut dan kuah agak mengental. Tambahkan sejumput garam.
+
+2. **Sajikan**:
+   - Saji Kue Cubir dengan siraman kinca di atasnya atau sebagai cocolan.
+
+Kue Cubir ini enak banget disantap hangat-hangat. Selamat mencoba!
+
