@@ -187,7 +187,7 @@ async function startBot() {
                 aiResponse = aiResponse
                     .replace(/[-–]*\s*(Didukung oleh|Ditenagai oleh)?\s*Pollinations\.AI[^]*?(https?:\/\/pollinations\.ai[^\s]*)/gi, '')
                     .replace(/\*\*?Powered by Pollinations\.AI.*?\n?/gi, '')
-                    .replace(/https:\/\/pollinations\.ai/gi, 'https://www.exodusai.my.id') // Tambahan ganti URL
+                    .replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id') // Tambahan ganti URL
                     .replace(/\n{2,}/g, '\n')
                     .trim();
 
@@ -224,7 +224,7 @@ async function startBot() {
                     aiResponse = aiResponse
                         .replace(/[-–]*\s*(Didukung oleh|Ditenagai oleh)?\s*Pollinations\.AI[^]*?(https?:\/\/pollinations\.ai[^\s]*)/gi, '')
                         .replace(/\*\*?Powered by Pollinations\.AI.*?\n?/gi, '')
-                        .replace(/https:\/\/pollinations\.ai/gi, 'https://www.exodusai.my.id') // Tambahan ganti URL
+                        .replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id') // Tambahan ganti URL
                         .replace(/\n{2,}/g, '\n')
                         .trim();
 
