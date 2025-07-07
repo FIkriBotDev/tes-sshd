@@ -8889,3 +8889,118 @@ Response  : Kue yang kamu lihat di foto itu adalah "choux pastry" atau dalam beb
 
 Selamat mencoba! Kalau butuh tips atau trik lain, jangan ragu untuk tanya ya.
 
+
+[2025-07-07T13:38:24.035Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/a5ccfc-1751895489372.jpg
+Response  : Berikut adalah analisis lengkap makanan berdasarkan gambar yang diberikan:
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak",
+    "alasan": "Snack ini mengandung kalori tinggi dan komposisi nutrisi yang kurang seimbang, terutama dari segi gula dan lemak."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "30g",
+    "jumlahSajian": "1 pack",
+    "kalori": 150,
+    "protein": "2g",
+    "proteinPersen": "5.33%",
+    "karbohidrat": "18g",
+    "karbohidratPersen": "48%",
+    "gula": "0g",
+    "serat": "1g",
+    "lemakTotal": "8g",
+    "lemakJenuh": "1g",
+    "lemakTakJenuh": "7g",
+    "lemakPersen": "48%",
+    "kolesterol": "0mg",
+    "natrium": "150mg",
+    "vitaminDanMineral": ["Vitamin A", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "8%" },
+    { "nama": "Gula", "persen": "0%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "tinggi"
+  },
+  "waktuKenyang": "1-2 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["Kentang", "Minyak Goreng", "Garam", "Rasa"],
+  "tipsSehat": [
+    "Nikmati bersama sayuran segar.",
+    "Gabungkan dengan sumber protein sehat untuk memperkaya nutrisi."
+  ],
+  "alternatif": [
+    "Kacang-kacangan panggang tanpa garam.",
+    "Sayuran mentah dengan hummus."
+  ]
+}
+```
+
+Perlu diingat, angka-angka dan rincian mungkin bervariasi tergantung produk spesifik yang tertera pada kemasan. Jika Anda penasaran dengan makanan tertentu, sangat baik untuk membaca label nutrisi secara langsung. Ada yang ingin Anda tambahkan atau tanyakan lebih lanjut?
+
