@@ -95,7 +95,7 @@ Balas dalam format JSON:
     "lemakPersen": "30%",
     "kolesterol": "60mg",
     "natrium": "780mg",
-    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", ...]
   },
   "perbandinganAKG": [
     { "nama": "Kalori", "persen": "30%" },
@@ -129,23 +129,14 @@ app.post('/analyze', upload.single('image'), async (req, res) => {
             const responseText = response.data.result;
             console.log('🔍 Raw AI response:\n', responseText);
 
-            let jsonString;
-
-            // 1. Coba cari blok ```json
-            const jsonBlockMatch = responseText.match(/```json\s*([\s\S]+?)\s*```/);
-            if (jsonBlockMatch) {
-                jsonString = jsonBlockMatch[1];
-            } else {
-                // 2. Fallback cari {...}
-                const fallbackMatch = responseText.match(/\{[\s\S]*\}/);
-                if (fallbackMatch) {
-                    jsonString = fallbackMatch[0];
-                } else {
-                    throw new Error('JSON block not found in AI response');
-                }
+            const jsonBlockMatch = responseText.match(/```json\n([\s\S]+?)\n```/);
+            if (!jsonBlockMatch) {
+                throw new Error('JSON block not found in AI response');
             }
 
+            const jsonString = jsonBlockMatch[1];
             console.log('🧩 Extracted JSON string:\n', jsonString);
+
             aiJson = JSON.parse(jsonString);
         } catch (e) {
             logErrorToFile(e);
