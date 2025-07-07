@@ -7339,3 +7339,127 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.exoduscloud.my.id/tmp/1e4a8c-1751857699989.jpg
 Response  : It’s a clever take! The image shows a fictional game box for WhatsApp on PS4, which matches the playful absurdity of mixing messaging apps with gaming. The status "tidak ditemukan" (not found) is a nice touch, adding to the humor—like waiting for a game that doesn’t exist. It's a great example of meme culture merging with everyday technology. What do you think? It gives a humorous reflection on how deeply technology has become intertwined with our lives!
 
+
+[2025-07-07T05:44:54.171Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", ...]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/61125e-1751867085228.png
+Response  : Berikut adalah analisis lengkap tentang makanan yang Anda sebutkan, yaitu Mi Goreng dari IndoMie:
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak",
+    "alasan": "Makanan ini tinggi kalori, sodium, dan lemak jenuh, yang dapat berkontribusi pada risiko kesehatan jika dikonsumsi berlebihan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "85 gram",
+    "jumlahSajian": "2 sajian",
+    "kalori": 380,
+    "protein": "8g",
+    "proteinPersen": "8.42%",
+    "karbohidrat": "56g",
+    "karbohidratPersen": "59.47%",
+    "gula": "4g",
+    "serat": "2g",
+    "lemakTotal": "18g",
+    "lemakJenuh": "8g",
+    "lemakTakJenuh": "10g",
+    "lemakPersen": "42.11%",
+    "kolesterol": "0mg",
+    "natrium": "1600mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin B6", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "20%" },
+    { "nama": "Natrium", "persen": "70%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "tinggi",
+    "Natrium": "sangat tinggi"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/bulan",
+  "ingredients": ["mi tepung terigu", "bumbu", "minyak goreng"],
+  "tipsSehat": [
+    "Tambahkan sayuran segar seperti brokoli atau wortel.",
+    "Gunakan telur rebus daripada telur goreng untuk mengurangi lemak jenuh."
+  ],
+  "alternatif": [
+    "Mie sayur tanpa pengawet",
+    "Nasi dengan sayuran dan protein tanpa lemak."
+  ]
+}
+```
+
+Analisis ini memberikan gambaran umum tentang nilai gizi dan dampak Mi Goreng terhadap kesehatan. Jika Anda ingin lebih mendalami bagian tertentu atau memiliki pertanyaan lain, silakan beri tahu!
+
+
+
+---
+
+**Support Pollinations.AI:**
+🌸 **Iklan** 🌸  
+Mau hidup lebih sehat? Coba [mie sayur tanpa pengawet](https://pollinations.ai/redirect/kofi) yang direkomendasikan di sini!
+
