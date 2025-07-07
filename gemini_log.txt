@@ -8687,3 +8687,81 @@ Response  : ```json
 }
 ```
 
+
+[2025-07-07T11:20:54.818Z]
+Prompt    : bantu jawab soal berikut
+Image URL : https://uploader.exoduscloud.my.id/tmp/1170b9-1751887241231.jpg
+Response  : Tentu! Mari kita selesaikan soal integrasi ini satu per satu.
+
+a. \(\int (4x^2 + 7x - 5) \, dx\)
+
+Untuk mengintegrasikan, kita tambahkan 1 ke eksponen dan bagi dengan eksponen baru:
+\[
+\int (4x^2) \, dx = \frac{4}{3}x^3
+\]
+\[
+\int (7x) \, dx = \frac{7}{2}x^2
+\]
+\[
+\int (-5) \, dx = -5x
+\]
+
+Jadi, hasilnya adalah:
+\[
+\frac{4}{3}x^3 + \frac{7}{2}x^2 - 5x + C
+\]
+
+b. \(\int (4x^3 + 3x^2 + 8x + 3) \, dx\)
+
+Sekarang kita terapkan langkah yang sama:
+\[
+\int (4x^3) \, dx = \frac{4}{4}x^4 = x^4
+\]
+\[
+\int (3x^2) \, dx = \frac{3}{3}x^3 = x^3
+\]
+\[
+\int (8x) \, dx = \frac{8}{2}x^2 = 4x^2
+\]
+\[
+\int (3) \, dx = 3x
+\]
+
+Maka, hasilnya adalah:
+\[
+x^4 + x^3 + 4x^2 + 3x + C
+\]
+
+c. \(\int (6x^4 + 4x^3 + 7x^2 + 5x + 6) \, dx\)
+
+Lakukan langkah yang sama:
+\[
+\int (6x^4) \, dx = \frac{6}{5}x^5
+\]
+\[
+\int (4x^3) \, dx = \frac{4}{4}x^4 = x^4
+\]
+\[
+\int (7x^2) \, dx = \frac{7}{3}x^3
+\]
+\[
+\int (5x) \, dx = \frac{5}{2}x^2
+\]
+\[
+\int (6) \, dx = 6x
+\]
+
+Jadi, hasil akhirnya adalah:
+\[
+\frac{6}{5}x^5 + x^4 + \frac{7}{3}x^3 + \frac{5}{2}x^2 + 6x + C
+\]
+
+Semoga ini membantu! Jika ada yang ingin kamu diskusikan lebih lanjut, silakan saja!
+
+
+
+---
+
+**Support Pollinations.AI:**
+🌸 **Iklan** 🌸 Dapatkan bantuan integrasi matematika yang cepat dengan Pollinations.AI! [Dukung misi kami](https://pollinations.ai/redirect/kofi) agar AI tetap gratis untuk semua.
+
