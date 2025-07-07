@@ -8851,3 +8851,41 @@ Berikut adalah resep dan cara buat Kue Cubir:
 
 Kue Cubir ini enak banget disantap hangat-hangat. Selamat mencoba!
 
+
+[2025-07-07T11:34:55.258Z]
+Prompt    : ini kue apa? bagaimana resep dan cara buatnya?
+Image URL : https://uploader.exoduscloud.my.id/tmp/fa7c23-1751888085843.jpg
+Response  : Kue yang kamu lihat di foto itu adalah "choux pastry" atau dalam beberapa konteks, bisa dikenal sebagai "profiteroles" jika diisi dengan krim. Kue ini memiliki tekstur yang ringan dan renyah di luar dengan ruang kosong di dalamnya, yang bisa diisi dengan berbagai krim atau isian manis lainnya.
+
+**Berikut resep dan cara membuat kue choux pastry:**
+
+### Bahan-bahan:
+- 1 cangkir air
+- 1/2 cangkir mentega
+- 1 cangkir tepung terigu serbaguna
+- 4 butir telur besar
+- 1/4 sendok teh garam
+- 1/4 sendok teh gula
+
+### Cara Membuat:
+
+1. **Persiapkan Oven**: Panaskan oven pada suhu 200°C (392°F). Siapkan loyang yang sudah dialasi kertas roti.
+
+2. **Masak Air dan Mentega**: Dalam panci, campurkan air, mentega, garam, dan gula. Panaskan di atas api sedang hingga mendidih dan mentega sepenuhnya meleleh.
+
+3. **Campurkan Tepung**: Setelah mendidih, matikan api dan masukkan tepung terigu sekaligus. Aduk cepat hingga adonan menyatu dan membentuk bola yang halus. Masak selama beberapa menit hingga adonan sedikit kering dan menarik dari sisi panci.
+
+4. **Tambahkan Telur**: Pindahkan adonan ke mangkuk besar. Biarkan agak dingin, lalu tambahkan telur satu per satu, sambil terus diaduk hingga tekstur adonan lurus dan halus.
+
+5. **Membentuk Adonan**: Gunakan sendok atau piping bag untuk mengeluarkan adonan ke atas loyang. Buat bentuk bulat kecil (sekitar 1,5 inci) dengan jarak antar bulatan.
+
+6. **Panggang**: Panggang kue dalam oven selama 25-30 menit tanpa membuka pintu oven agar tidak kempes. Kue akan mengembang dan berwarna emas.
+
+7. **Pendinginan**: Setelah matang, keluarkan dari oven dan biarkan dingin di rak pendingin.
+
+8. **Isian**: Setelah dingin, kamu bisa memotong kue di bagian atas dan mengisinya dengan krim patissiere, krim whipped, atau bahkan es krim, tergantung selera.
+
+9. **Hidangkan**: Sajikan kue choux yang sudah diisi. Nikmati sebagai camilan manis atau pencuci mulut yang lezat!
+
+Selamat mencoba! Kalau butuh tips atau trik lain, jangan ragu untuk tanya ya.
+
