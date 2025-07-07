@@ -8765,3 +8765,39 @@ Semoga ini membantu! Jika ada yang ingin kamu diskusikan lebih lanjut, silakan s
 **Support Pollinations.AI:**
 🌸 **Iklan** 🌸 Dapatkan bantuan integrasi matematika yang cepat dengan Pollinations.AI! [Dukung misi kami](https://pollinations.ai/redirect/kofi) agar AI tetap gratis untuk semua.
 
+
+[2025-07-07T11:30:07.012Z]
+Prompt    : bantu jawab soal berikut
+Image URL : https://uploader.exoduscloud.my.id/tmp/9043bb-1751887795432.jpg
+Response  : Tentu, kita bisa menghitung integral dari fungsi-fungsi yang diberikan. Mari kita hitung satu per satu.
+
+### a. \(\int (4x^2 + 7x - 5) \, dx\)
+Untuk menghitung integral ini, kita akan menambahkan satu pada eksponen dan membagi dengan eksponen itu.
+
+\[
+= \frac{4}{3}x^3 + \frac{7}{2}x^2 - 5x + C
+\]
+
+### b. \(\int (4x^3 + 3x^2 + 8x + 3) \, dx\)
+\[
+= \frac{4}{4}x^4 + \frac{3}{3}x^3 + \frac{8}{2}x^2 + 3x + C
+\]
+\[
+= x^4 + x^3 + 4x^2 + 3x + C
+\]
+
+### c. \(\int (6x^4 + 4x^3 + 7x^2 + 5x + 6) \, dx\)
+\[
+= \frac{6}{5}x^5 + \frac{4}{4}x^4 + \frac{7}{3}x^3 + \frac{5}{2}x^2 + 6x + C
+\]
+\[
+= \frac{6}{5}x^5 + x^4 + \frac{7}{3}x^3 + \frac{5}{2}x^2 + 6x + C
+\]
+
+Jadi, hasil integral dari masing-masing soal adalah:
+- **Soal a**: \(\frac{4}{3}x^3 + \frac{7}{2}x^2 - 5x + C\)
+- **Soal b**: \(x^4 + x^3 + 4x^2 + 3x + C\)
+- **Soal c**: \(\frac{6}{5}x^5 + x^4 + \frac{7}{3}x^3 + \frac{5}{2}x^2 + 6x + C\)
+
+Jika ada yang ingin kamu bahas lebih lanjut, silakan!
+
