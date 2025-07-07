@@ -8468,3 +8468,109 @@ Response  : ```json
 }
 ```
 
+
+[2025-07-07T09:21:04.770Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/880267-1751880048255.jpg
+Response  : ```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan",
+    "alasan": "Ikan tuna kaya akan protein dan asam lemak omega-3, yang bermanfaat untuk kesehatan jantung. Namun, perhatikan jumlah lemak dan natrium tentang asupan diet keseluruhan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "120 gram",
+    "jumlahSajian": "1 sajian per kaleng",
+    "kalori": 220,
+    "protein": "25g",
+    "proteinPersen": "45.45%",
+    "karbohidrat": "0g",
+    "karbohidratPersen": "0%",
+    "gula": "0g",
+    "serat": "0g",
+    "lemakTotal": "14g",
+    "lemakJenuh": "3g",
+    "lemakTakJenuh": "11g",
+    "lemakPersen": "57%",
+    "kolesterol": "70mg",
+    "natrium": "480mg",
+    "vitaminDanMineral": ["Vitamin D", "Selenium", "Zat Besi", "Potassium", "Vitamin B12"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "11%" },
+    { "nama": "Lemak total", "persen": "22%" },
+    { "nama": "Natrium", "persen": "21%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "tinggi (meskipun sebagian besar adalah lemak sehat)"
+  },
+  "waktuKenyang": "4 jam",
+  "frekuensiKonsumsi": "2-3 kali/minggu, tergantung asupan total garam dalam diet",
+  "ingredients": ["Ikan Tuna", "Minyak Nabati", "Garam", "Pengawet"],
+  "tipsSehat": ["Gabungkan dengan sayuran segar untuk menambah nutrisi.", "Hindari konsumsi berlebihan pada yang sensitif terhadap sodium."],
+  "alternatif": ["Ikan Salmon dalam air", "Ikan Sarden dalam saus tomat", "Ikan tuna dalam kaleng tanpa minyak"]
+}
+```
+
