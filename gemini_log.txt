@@ -7463,3 +7463,113 @@ Analisis ini memberikan gambaran umum tentang nilai gizi dan dampak Mi Goreng te
 🌸 **Iklan** 🌸  
 Mau hidup lebih sehat? Coba [mie sayur tanpa pengawet](https://pollinations.ai/redirect/kofi) yang direkomendasikan di sini!
 
+
+[2025-07-07T05:47:10.743Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", ...]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/f99656-1751867219674.webp
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan secara rutin.",
+    "alasan": "Pizza ini mengandung kalori tinggi dan lemak jenuh yang berpotensi berisiko bagi kesehatan jantung jika dikonsumsi terlalu sering."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "100 gram",
+    "jumlahSajian": "1/8 dari pizza",
+    "kalori": 300,
+    "protein": "12g",
+    "proteinPersen": "16%",
+    "karbohidrat": "36g",
+    "karbohidratPersen": "48%",
+    "gula": "3g",
+    "serat": "2g",
+    "lemakTotal": "15g",
+    "lemakJenuh": "6g",
+    "lemakTakJenuh": "9g",
+    "lemakPersen": "45%",
+    "kolesterol": "25mg",
+    "natrium": "600mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Kalsium", "Zat Besi"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "15%" },
+    { "nama": "Lemak Jenuh", "persen": "30%" },
+    { "nama": "Natrium", "persen": "26%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "tinggi"
+  },
+  "waktuKenyang": "2-4 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/bulan.",
+  "ingredients": ["Tepung terigu", "Keju mozzarella", "Saus tomat", "Pepperoni", "Olive hitam", "Sayuran (paprika, jamur)"],
+  "tipsSehat": [
+    "Ganti pepperoni dengan sayuran lebih banyak.",
+    "Gunakan adonan pizza utuh untuk meningkatkan serat."
+  ],
+  "alternatif": [
+    "Pizza sayuran dengan adonan whole grain.",
+    "Pizza cauliflower untuk versi rendah karbohidrat."
+  ]
+}
+
