@@ -7217,3 +7217,113 @@ Response  : Berikut adalah analisis lengkap tentang makanan pada gambar yang And
 
 Jika ada yang ingin Anda elaborasi lebih jauh atau ada pertanyaan lain, silakan beritahu saya!
 
+
+[2025-07-07T01:52:34.531Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", ...]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/c9b9dd-1751853143276.jpg
+Response  : Berikut adalah analisis lengkap tentang makanan yang terlihat pada gambar:
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak",
+    "alasan": "Minuman ini tampaknya mengandung gula tambahan dan kalori tinggi, serta kurang nutrisi penting."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "500g",
+    "jumlahSajian": "1",
+    "kalori": 300,
+    "protein": "4g",
+    "proteinPersen": "5.33%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "45g",
+    "serat": "0g",
+    "lemakTotal": "15g",
+    "lemakJenuh": "6g",
+    "lemakTakJenuh": "9g",
+    "lemakPersen": "45%",
+    "kolesterol": "10mg",
+    "natrium": "150mg",
+    "vitaminDanMineral": ["Vitamin C", "Kalsium", "Zat Besi"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "15%" },
+    { "nama": "Gula", "persen": "90%" },
+    { "nama": "Lemak Total", "persen": "20%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "tinggi"
+  },
+  "waktuKenyang": "1-2 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/bulan",
+  "ingredients": ["Susu", "Gula", "Es", "Cokelat", "Bubuk kopi", "Sirup vanila"],
+  "tipsSehat": ["Gunakan pemanis alami", "Kurangi jumlah gula"],
+  "alternatif": ["Teh herbal", "Smoothie buah tanpa tambahan gula"]
+}
+```
+
+Secara keseluruhan, minuman ini bisa menjadi sumber kesenangan sesekali, tetapi sebaiknya tidak dikonsumsi terlalu sering, terutama bagi mereka yang mengawasi asupan gula dan kalori. Mengganti minuman tersebut dengan pilihan yang lebih sehat dapat memberikan manfaat lebih besar bagi kesehatan.
+
