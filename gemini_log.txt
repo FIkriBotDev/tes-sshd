@@ -9535,3 +9535,59 @@ Response  : Kue yang kamu lihat di foto itu adalah **profiteroles** atau **choux
 
 Voilà! Profiteroles siap dinikmati. Kue ini memang sangat enak dan bisa diisi dengan berbagai macam isi sesuai selera. Selamat mencoba!
 
+
+[2025-07-08T05:12:20.093Z]
+Prompt    : jawab soal berikut
+Image URL : https://uploader.exoduscloud.my.id/tmp/0d6ac6-1751951523089.jpg
+Response  : Mari kita selesaikan soal ini langkah demi langkah. Kita diberikan matriks A, B, dan C, serta persamaan \( A - 2B = C \). 
+
+Kita mulai dengan menyusun informasi yang kita punya. 
+
+1. **Matriks A, B, dan C:**
+   - \( A = \begin{pmatrix} a & -3 \\ 4 & b \end{pmatrix} \)
+   - \( B = \begin{pmatrix} 2 & -4 \\ -2 & a \end{pmatrix} \)
+   - \( C = \begin{pmatrix} 2 & 5 \\ 8 & -3 \end{pmatrix} \)
+
+2. **Menghitung 2B:**
+   \[
+   2B = 2 \begin{pmatrix} 2 & -4 \\ -2 & a \end{pmatrix} = \begin{pmatrix} 4 & -8 \\ -4 & 2a \end{pmatrix}
+   \]
+
+3. **Menyusun persamaan dari A - 2B = C:**
+   \[
+   A - 2B = \begin{pmatrix} a & -3 \\ 4 & b \end{pmatrix} - \begin{pmatrix} 4 & -8 \\ -4 & 2a \end{pmatrix} = \begin{pmatrix} a - 4 & -3 + 8 \\ 4 + 4 & b - 2a \end{pmatrix}
+   \]
+   \[
+   = \begin{pmatrix} a - 4 & 5 \\ 8 & b - 2a \end{pmatrix}
+   \]
+
+4. **Membandingkan dengan C:**
+   Kita punya \( A - 2B = C \), berarti kita bandingkan kedua matriks:
+   \[
+   \begin{pmatrix} a - 4 & 5 \\ 8 & b - 2a \end{pmatrix} = \begin{pmatrix} 2 & 5 \\ 8 & -3 \end{pmatrix}
+   \]
+
+Ini memberi kita dua persamaan:
+1. \( a - 4 = 2 \)
+2. \( b - 2a = -3 \)
+
+5. **Menyelesaikan persamaan pertama:**
+   Dari \( a - 4 = 2 \):
+   \[
+   a = 2 + 4 = 6
+   \]
+
+6. **Menggunakan nilai a untuk menyelesaikan persamaan kedua:**
+   Substitusi \( a = 6 \) ke dalam \( b - 2(6) = -3 \):
+   \[
+   b - 12 = -3
+   \]
+   \[
+   b = -3 + 12 = 9
+   \]
+
+7. **Mencari nilai a + b:**
+   \( a + b = 6 + 9 = 15 \)
+
+Akhirnya, nilai dari \( a + b \) adalah **15**.
+
