@@ -9668,3 +9668,13 @@ Dengan demikian, kita telah menunjukkan bahwa jika \( n \) habis dibagi 4, maka 
 🌸 **Iklan** 🌸
 Dukung akses AI gratis untuk soal matematika dengan [Support our mission](https://pollinations.ai/redirect/kofi)!
 
+
+[2025-07-08T11:45:11.954Z]
+Prompt    : Jawab soal nya tanpa penjelasan, langsung ke jawaban Formal
+Image URL : https://uploader.exoduscloud.my.id/tmp/ef2a7f-1751975105406.jpg
+Response  : **Kontradiksi**: Misalkan n adalah kelipatan 4 yang tidak genap. Maka n = 4k (dengan k bilangan bulat). Namun, 4k selalu genap, bertentangan dengan asumsi bahwa n tidak genap. 
+
+**Kontraposisi**: Misalkan n adalah angka ganjil. Maka n tidak dapat ditulis sebagai 4k (dengan k bilangan bulat), sehingga n tidak merupakan kelipatan 4. 
+
+Kesimpulan: Pernyataan terbukti benar.
+
