@@ -9591,3 +9591,41 @@ Ini memberi kita dua persamaan:
 
 Akhirnya, nilai dari \( a + b \) adalah **15**.
 
+
+[2025-07-08T05:13:22.197Z]
+Prompt    : ini kue apa? bagaimana resep dan cara buatnya?
+Image URL : https://uploader.exoduscloud.my.id/tmp/7aa95a-1751951590859.jpg
+Response  : Kue yang kamu lihat itu adalah choux pastry atau kue sus. Kue ini terkenal karena teksturnya yang ringan dan renyah di luar, dengan bagian dalam yang kosong dan biasanya diisi dengan krim. Bisa diisi dengan krim patissière, whipped cream, atau bahkan es krim. Berikut ini resep sederhana dan cara membuatnya:
+
+### Bahan-bahan:
+- 1 cangkir air
+- 1/2 cangkir mentega (113 gram)
+- 1 cangkir tepung terigu serbaguna
+- 4 butir telur
+- 1/4 sendok teh garam
+- 1 sendok teh gula (opsional, untuk menambah rasa)
+
+### Cara Membuat:
+
+1. **Membuat Adonan**:
+   - Dalam panci, masak air, mentega, garam, dan gula (jika digunakan) hingga mendidih.
+   - Setelah mentega meleleh, angkat panci dari api dan segera masukkan tepung terigu. Aduk cepat menggunakan spatula atau sendok kayu sampai adonan tercampur rata dan tidak lengket ke sisi panci.
+
+2. **Menambahkan Telur**:
+   - Biarkan adonan sedikit dingin selama beberapa menit.
+   - Masukkan telur satu per satu, aduk hingga tercampur rata sebelum menambahkan telur berikutnya. Adonan harus menjadi halus dan mengkilap setelah semua telur ditambahkan.
+
+3. **Memanggang**:
+   - Panaskan oven pada suhu 200°C (400°F).
+   - Siapkan loyang yang dialasi kertas parchment. Gunakan sendok atau piping bag untuk memplester adonan menjadi bulatan kecil di atas loyang.
+   - Panggang selama 20-25 menit hingga kue mengembang dan berwarna keemasan. Jangan membuka pintu oven selama proses pemanggangan agar kue tidak kempis.
+
+4. **Mendinginkan dan Mengisi**:
+   - Setelah matang, keluarkan dari oven dan biarkan dingin di rak kawat.
+   - Setelah dingin, kue dapat diisi dengan krim pilihan kamu melalui lubang kecil di bagian bawah atau menggunakan piping bag.
+
+5. **Penyajian**:
+   - Kue sus siap disajikan! Kamu bisa menambahkan taburan gula bubuk di atasnya jika ingin.
+
+Selamat mencoba membuat choux pastry! Semoga berhasil dan nikmati rasanya!
+
