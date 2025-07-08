@@ -9485,3 +9485,53 @@ Maka, \( a + b = 6 + 9 = 15 \).
 
 Jadi nilai \( a + b \) adalah \( 15 \).
 
+
+[2025-07-08T04:49:59.490Z]
+Prompt    : ini kue apa? bagaimana resep dan cara buatnya?
+Image URL : https://uploader.exoduscloud.my.id/tmp/9b3963-1751950186500.jpg
+Response  : Kue yang kamu lihat di foto itu adalah **profiteroles** atau **choux à la crème**. Ini adalah kue yang terbuat dari adonan choux, yang kemudian diisi dengan krim atau isian lainnya. Seringkali, mereka juga dilapisi dengan cokelat cair atau saus manis.
+
+### Resep Profiteroles
+
+#### Bahan untuk Adonan Choux:
+- 1 cangkir air
+- 1/2 cangkir mentega
+- 1 cangkir tepung serbaguna
+- 4 butir telur
+- 1/4 sendok teh garam
+
+#### Bahan untuk Isian:
+- 1 cangkir whipping cream
+- 2-3 sendok makan gula
+- 1 sendok teh ekstrak vanila
+
+#### Untuk Topping:
+- Cokelat leleh, gula halus, atau saus karamel (opsional)
+
+### Cara Membuat:
+
+1. **Persiapan Adonan Choux**:
+   - Didihkan air dan mentega dalam panci besar dengan api sedang.
+   - Setelah mentega meleleh, masukkan tepung dan garam sekaligus. Aduk cepat sampai adonan terbentuk menjadi bola yang halus dan tidak lengket dari panci. Masak selama 1-2 menit untuk menghilangkan kelembapan.
+
+2. **Menambahkan Telur**:
+   - Biarkan adonan sedikit dingin. Tambahkan telur satu per satu sambil terus diaduk hingga telur sepenuhnya tercampur dan adonan menjadi halus dan kental. 
+
+3. **Membentuk Profiteroles**:
+   - Panaskan oven hingga 200°C (400°F).
+   - Letakkan kain pastry atau sendok menghasilkan bola-bola kecil adonan di atas loyang yang sudah dialasi kertas roti. Pastikan ada jarak antar bola karena adonan akan mengembang.
+
+4. **Memanggang**:
+   - Panggang selama 20-25 menit atau hingga berwarna keemasan dan mengembang. Jangan membuka oven saat memanggang di awal, karena dapat membuat profiteroles kempes.
+
+5. **Membuat Isian**:
+   - Sementara itu, kocok whipping cream dengan gula dan ekstrak vanila hingga kaku. 
+
+6. **Mengisi Profiteroles**:
+   - Setelah profiteroles sudah dingin, gunakan pisau untuk membuat lubang kecil di bagian bawahnya atau potong bagian atasnya. Isi dengan krim yang sudah dikocok menggunakan piping bag atau sendok.
+
+7. **Topping** (Jika diinginkan):
+   - Banyak orang memilih untuk melapisi profiteroles dengan cokelat leleh atau saus manis lainnya. Biarkan mengeras sebelum disajikan.
+
+Voilà! Profiteroles siap dinikmati. Kue ini memang sangat enak dan bisa diisi dengan berbagai macam isi sesuai selera. Selamat mencoba!
+
