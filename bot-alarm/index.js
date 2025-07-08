@@ -13,25 +13,20 @@ const fs = require('fs');
 
 // === Konstanta ===
 const MESSAGE_COUNT_FILE = './user_message_count.json';
-const PROMO_THRESHOLD = 10;
+const PROMO_INTERVAL = 10;
 
 // === Load & Simpan Data ke File ===
 let userMessageCount = {};
-let userAlreadySentPromo = {};
 
 function loadMessageData() {
     if (fs.existsSync(MESSAGE_COUNT_FILE)) {
         const data = JSON.parse(fs.readFileSync(MESSAGE_COUNT_FILE));
         userMessageCount = data.userMessageCount || {};
-        userAlreadySentPromo = data.userAlreadySentPromo || {};
     }
 }
 
 function saveMessageData() {
-    fs.writeFileSync(MESSAGE_COUNT_FILE, JSON.stringify({
-        userMessageCount,
-        userAlreadySentPromo
-    }, null, 2));
+    fs.writeFileSync(MESSAGE_COUNT_FILE, JSON.stringify({ userMessageCount }, null, 2));
 }
 
 // === Fungsi Utama ===
@@ -80,11 +75,10 @@ async function startBot() {
         // Hitung jumlah pesan
         userMessageCount[sender] = (userMessageCount[sender] || 0) + 1;
 
-        // Cek apakah sudah 10+ dan belum dikirim promo
-        if (userMessageCount[sender] >= PROMO_THRESHOLD && !userAlreadySentPromo[sender]) {
+        // Cek kelipatan 10
+        if (userMessageCount[sender] % PROMO_INTERVAL === 0) {
             const promo = `🚀 Suka pakai *ExodusAI*?\nYuk bantu share ke teman-teman kamu biar mereka juga bisa ngerasain kecanggihannya!🤖✨`;
             await sock.sendMessage(sender, { text: promo });
-            userAlreadySentPromo[sender] = true;
         }
 
         saveMessageData();
@@ -103,7 +97,7 @@ async function startBot() {
     });
 
     cron.schedule('03 21 * * *', async () => {
-        const pesan = `bangun iii sayanggg`;
+        const pesan = `sayangkuuu bangun sayangkuuuu`;
         const jid = '62895351640508@s.whatsapp.net';
         await sock.sendMessage(jid, { text: pesan });
     });
