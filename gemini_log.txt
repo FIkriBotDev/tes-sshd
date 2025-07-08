@@ -9367,3 +9367,62 @@ a + b = 6 + 9 = 15
 
 Jadi, nilai \(a + b\) adalah **15**.
 
+
+[2025-07-08T04:47:33.954Z]
+Prompt    : jawab soal berikut ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/0937b6-1751950044506.jpg
+Response  : Kita punya tiga matriks A, B, dan C yang dinyatakan sebagai berikut:
+
+\[ 
+A = \begin{pmatrix} a & -3 \\ 4 & b \end{pmatrix}, \quad B = \begin{pmatrix} 2 & -4 \\ -2 & a \end{pmatrix}, \quad C = \begin{pmatrix} 2 & 5 \\ 8 & -3 \end{pmatrix} 
+\]
+
+Kita tahu bahwa \( A - 2B = C \). Mari kita hitung \( 2B \) terlebih dahulu:
+
+\[
+2B = 2 \cdot \begin{pmatrix} 2 & -4 \\ -2 & a \end{pmatrix} = \begin{pmatrix} 4 & -8 \\ -4 & 2a \end{pmatrix}
+\]
+
+Kemudian, kita substitusi \( 2B \) ke dalam persamaan \( A - 2B = C \):
+
+\[
+A - 2B = \begin{pmatrix} a & -3 \\ 4 & b \end{pmatrix} - \begin{pmatrix} 4 & -8 \\ -4 & 2a \end{pmatrix}
+\]
+
+Yang memberi kita:
+
+\[
+A - 2B = \begin{pmatrix} a - 4 & -3 + 8 \\ 4 + 4 & b - 2a \end{pmatrix} = \begin{pmatrix} a - 4 & 5 \\ 8 & b - 2a \end{pmatrix}
+\]
+
+Sekarang, kita samakan dengan matriks \( C \):
+
+\[
+\begin{pmatrix} a - 4 & 5 \\ 8 & b - 2a \end{pmatrix} = \begin{pmatrix} 2 & 5 \\ 8 & -3 \end{pmatrix}
+\]
+
+Dari sini, kita bisa mendapatkan sistem persamaan:
+
+1. \( a - 4 = 2 \)
+2. \( b - 2a = -3 \)
+
+Mari kita selesaikan persamaan pertama:
+
+\[
+a - 4 = 2 \quad \Rightarrow \quad a = 6
+\]
+
+Sekarang, substitusi nilai \( a \) ke dalam persamaan kedua:
+
+\[
+b - 2(6) = -3 \quad \Rightarrow \quad b - 12 = -3 \quad \Rightarrow \quad b = 9
+\]
+
+Akhirnya, kita perlu menentukan nilai \( a + b \):
+
+\[
+a + b = 6 + 9 = 15
+\]
+
+Jadi, nilai \( a + b \) adalah **15**.
+
