@@ -9426,3 +9426,62 @@ a + b = 6 + 9 = 15
 
 Jadi, nilai \( a + b \) adalah **15**.
 
+
+[2025-07-08T04:48:17.425Z]
+Prompt    : jawab soal berikut
+Image URL : https://uploader.exoduscloud.my.id/tmp/928955-1751950084474.jpg
+Response  : Untuk menyelesaikan soal ini, kita perlu menggunakan informasi yang diberikan pada soal.
+
+Diketahui:
+\[ A = \begin{pmatrix} a & -3 \\ 4 & b \end{pmatrix}, B = \begin{pmatrix} 2 & -4 \\ -2 & a \end{pmatrix}, C = \begin{pmatrix} 2 & 5 \\ 8 & -3 \end{pmatrix} \]
+
+Kita perlu memenuhi persamaan:
+\[ A - 2B = C \]
+
+Pertama, kita hitung \( 2B \):
+\[
+2B = 2 \cdot \begin{pmatrix} 2 & -4 \\ -2 & a \end{pmatrix} = \begin{pmatrix} 4 & -8 \\ -4 & 2a \end{pmatrix}
+\]
+
+Sekarang kita masukkan \( 2B \) ke dalam persamaan \( A - 2B = C \):
+\[
+A - \begin{pmatrix} 4 & -8 \\ -4 & 2a \end{pmatrix} = C
+\]
+\[
+\begin{pmatrix} a & -3 \\ 4 & b \end{pmatrix} - \begin{pmatrix} 4 & -8 \\ -4 & 2a \end{pmatrix} = \begin{pmatrix} 2 & 5 \\ 8 & -3 \end{pmatrix}
+\]
+
+Sekarang kita hitung \( A - 2B \):
+\[
+\begin{pmatrix} a - 4 & -3 + 8 \\ 4 + 4 & b - 2a \end{pmatrix} = \begin{pmatrix} 2 & 5 \\ 8 & -3 \end{pmatrix}
+\]
+
+Maka kita mendapatkan 4 persamaan:
+1. \( a - 4 = 2 \)
+2. \( -3 + 8 = 5 \) (ini benar, tidak perlu)
+3. \( 4 + 4 = 8 \) (ini juga benar, tidak perlu)
+4. \( b - 2a = -3 \)
+
+Sekarang kita selesaikan persamaan \( a - 4 = 2 \):
+\[
+a = 2 + 4 = 6
+\]
+
+Selanjutnya, kita masukkan nilai \( a \) ke persamaan keempat \( b - 2a = -3 \):
+\[
+b - 2(6) = -3
+\]
+\[
+b - 12 = -3
+\]
+\[
+b = -3 + 12 = 9
+\]
+
+Jadi, kita telah menemukan:
+\( a = 6 \) dan \( b = 9 \).
+
+Maka, \( a + b = 6 + 9 = 15 \).
+
+Jadi nilai \( a + b \) adalah \( 15 \).
+
