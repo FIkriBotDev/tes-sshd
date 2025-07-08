@@ -1,27 +1,45 @@
-// === WhatsApp Bot using Baileys (CommonJS style) ===
-
 const {
     default: makeWASocket,
     useMultiFileAuthState,
     fetchLatestBaileysVersion,
     makeInMemoryStore,
-    downloadMediaMessage,
-    proto,
     DisconnectReason
 } = require('@whiskeysockets/baileys');
 
 const P = require('pino');
 const cron = require('node-cron');
 const moment = require('moment-timezone');
+const fs = require('fs');
 
-// === Inisialisasi Store (untuk logging atau penggunaan lanjutan) ===
-const store = makeInMemoryStore({ logger: P().child({ level: 'silent', stream: 'store' }) });
+// === Konstanta ===
+const MESSAGE_COUNT_FILE = './user_message_count.json';
+const PROMO_THRESHOLD = 10;
 
-// === Fungsi utama ===
+// === Load & Simpan Data ke File ===
+let userMessageCount = {};
+let userAlreadySentPromo = {};
+
+function loadMessageData() {
+    if (fs.existsSync(MESSAGE_COUNT_FILE)) {
+        const data = JSON.parse(fs.readFileSync(MESSAGE_COUNT_FILE));
+        userMessageCount = data.userMessageCount || {};
+        userAlreadySentPromo = data.userAlreadySentPromo || {};
+    }
+}
+
+function saveMessageData() {
+    fs.writeFileSync(MESSAGE_COUNT_FILE, JSON.stringify({
+        userMessageCount,
+        userAlreadySentPromo
+    }, null, 2));
+}
+
+// === Fungsi Utama ===
 async function startBot() {
-    const { state, saveCreds } = await useMultiFileAuthState('auth_info_alarm');
+    loadMessageData();
 
-    const { version, isLatest } = await fetchLatestBaileysVersion();
+    const { state, saveCreds } = await useMultiFileAuthState('auth_info_alarm');
+    const { version } = await fetchLatestBaileysVersion();
 
     const sock = makeWASocket({
         version,
@@ -30,13 +48,13 @@ async function startBot() {
         auth: state
     });
 
+    const store = makeInMemoryStore({ logger: P().child({ level: 'silent', stream: 'store' }) });
     store.bind(sock.ev);
 
     sock.ev.on('creds.update', saveCreds);
 
     sock.ev.on('connection.update', (update) => {
         const { connection, lastDisconnect } = update;
-
         if (connection === 'close') {
             const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
             console.log('Koneksi terputus. Reconnect?', shouldReconnect);
@@ -53,72 +71,42 @@ async function startBot() {
         if (!msg.message || msg.key.fromMe) return;
 
         const sender = msg.key.remoteJid;
+
+        // Hanya tangani chat pribadi (bukan grup)
+        if (sender.endsWith('@g.us')) return;
+
         const text = msg.message.conversation || msg.message.extendedTextMessage?.text || '';
 
+        // Hitung jumlah pesan
+        userMessageCount[sender] = (userMessageCount[sender] || 0) + 1;
+
+        // Cek apakah sudah 10+ dan belum dikirim promo
+        if (userMessageCount[sender] >= PROMO_THRESHOLD && !userAlreadySentPromo[sender]) {
+            const promo = `🚀 Suka pakai *ExodusAI*?\nYuk bantu share ke teman-teman kamu biar mereka juga bisa ngerasain kecanggihannya!🤖✨`;
+            await sock.sendMessage(sender, { text: promo });
+            userAlreadySentPromo[sender] = true;
+        }
+
+        saveMessageData();
+
+        // Contoh command ping
         if (text.toLowerCase() === 'ping') {
             await sock.sendMessage(sender, { text: 'Pong 🏓' });
         }
     });
 
-     // Schedule 1 Bobo
+    // === Cron Jadwal Tambahan (Opsional) ===
     cron.schedule('02 21 * * *', async () => {
-        const jam = moment().tz('Asia/Makassar').format('HH:mm');
         const pesan = `sayang bangun sayang`;
-
-        const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
-        await sock.sendMessage(jid, { text: pesan });
-    });
-
-
-    cron.schedule('02 21 * * *', async () => {
-        const jam = moment().tz('Asia/Makassar').format('HH:mm');
-        const pesan = `sayang sayanggg bangunnnn`;
-
-        const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
+        const jid = '62895351640508@s.whatsapp.net';
         await sock.sendMessage(jid, { text: pesan });
     });
 
     cron.schedule('03 21 * * *', async () => {
-        const jam = moment().tz('Asia/Makassar').format('HH:mm');
         const pesan = `bangun iii sayanggg`;
-
-        const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
+        const jid = '62895351640508@s.whatsapp.net';
         await sock.sendMessage(jid, { text: pesan });
     });
-
-
-
-
-
-
-    
-// Schedule 3 Salat
-//    cron.schedule('30 22 * * *', async () => {
- //      const jam = moment().tz('Asia/Makassar').format('HH:mm');
-  //      const pesan = `🌅 : Haii sayangkuu bangun sayang udaa pagi nii jangan lupa salat subuh yaa😘`;
-//
-  //      const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
-  //      await sock.sendMessage(jid, { text: pesan });
-//    });
-//
-// Schedule 4 Pagi
- //   cron.schedule('00 23 * * *', async () => {
-  //      const jam = moment().tz('Asia/Makassar').format('HH:mm');
-   //     const pesan = `🌅 : Good Morning Sayangggg`;
-
-    //    const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
-    //    await sock.sendMessage(jid, { text: pesan });
-  //  });
-
-// Schedule 5 Makan
-  //  cron.schedule('00 01 * * *', async () => {
-    //    const jam = moment().tz('Asia/Makassar').format('HH:mm');
-    //    const pesan = `🥗 : Sayang udah jam segini jangan lupa mam yaa sayangkuuu😘`;
-
-   //     const jid = '62895351640508@s.whatsapp.net'; // Ganti dengan nomor WA tujuan
-     //   await sock.sendMessage(jid, { text: pesan });
-   // });
-
 }
 
 startBot();
