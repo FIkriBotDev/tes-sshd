@@ -26,22 +26,25 @@ const extractDocxText = async (filePath) => {
 };
 
 // Util: Jalankan Python script
-const runPythonScript = (code, inputPath, callback) => {
+const runPythonScript = (code, callback) => {
   const fileId = uuidv4();
   const scriptPath = `/tmp/script-${fileId}.py`;
   const outputDocx = `/tmp/hasil-${fileId}.docx`;
 
-  const finalCode = code
-    .replace(/Document\(['"](.+?)['"]\)/, `Document("${inputPath}")`)
-    .replace(/doc\.save\(['"](.+?)['"]\)/, `doc.save("${outputDocx}")`);
-
+  const finalCode = code.replace(/doc\.save\(['"](.*?)['"]\)/, `doc.save("${outputDocx}")`);
   fs.writeFileSync(scriptPath, finalCode);
+
   console.log("=== PYTHON SCRIPT ===\n", finalCode);
 
   const python = spawn("python3", [scriptPath]);
 
-  python.stdout.on("data", (data) => console.log(`PYTHON STDOUT: ${data}`));
-  python.stderr.on("data", (data) => console.error(`PYTHON ERROR: ${data}`));
+  python.stdout.on("data", (data) => {
+    console.log(`PYTHON STDOUT: ${data}`);
+  });
+
+  python.stderr.on("data", (data) => {
+    console.error(`PYTHON ERROR: ${data}`);
+  });
 
   python.on("close", (code) => {
     console.log(`PYTHON EXIT CODE: ${code}`);
@@ -53,30 +56,34 @@ const runPythonScript = (code, inputPath, callback) => {
   });
 };
 
-// Util: Clean blok kode dari AI
-const cleanCodeBlock = (code = "") =>
-  code.replace(/^```(python)?\n/, "").replace(/```$/, "").trim();
+// Util: Bersihkan blok kode Markdown dari RTIST
+const cleanCodeBlock = (code = "") => {
+  return code
+    .replace(/^```(python)?\n/, "")
+    .replace(/```$/, "")
+    .trim();
+};
 
-// Util: Request RTIST dengan fallback
+// Util: Request AI (messages → fallback conversation)
 const requestAIWithFallback = async (messages) => {
   try {
     const res = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", { messages });
     console.log("=== RESPONSE RTIST (messages) ===\n", res.data);
 
-    const rawCode = res.data.result || res.data.response;
+    let rawCode = res.data.result || res.data.response;
     if (!rawCode) throw new Error("AI tidak memberikan kode");
 
     const code = cleanCodeBlock(rawCode);
     if (!code.includes("doc.save")) throw new Error("Kode AI tidak valid");
+
     return code;
   } catch (err) {
     console.warn("Fallback ke conversation mode...");
-    const res = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", {
-      conversation: messages,
-    });
 
+    const res = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", { conversation: messages });
     console.log("=== RESPONSE RTIST (conversation) ===\n", res.data);
-    const rawCode = res.data.result || res.data.response;
+
+    let rawCode = res.data.result || res.data.response;
     if (!rawCode) throw new Error("Fallback AI tidak memberikan kode");
 
     const code = cleanCodeBlock(rawCode);
@@ -108,12 +115,11 @@ app.get("/api/edit", async (req, res) => {
     const code = await requestAIWithFallback(messages);
     console.log("=== FINAL KODE YANG DIEKSEKUSI ===\n", code);
 
-    runPythonScript(code, localPath, (err, outputPath) => {
+    runPythonScript(code, (err, outputPath) => {
       if (err) {
         console.error("GAGAL MENJALANKAN PYTHON:", err);
         return res.status(500).send("Gagal menjalankan script python.");
       }
-
       const url = `https://docx-ai.exoduscloud.my.id/tmp/${path.basename(outputPath)}`;
       console.log("=== FILE SUKSES ===\n", url);
       res.json({ url });
@@ -139,16 +145,11 @@ app.get("/api/buat", async (req, res) => {
     const code = await requestAIWithFallback(messages);
     console.log("=== FINAL KODE YANG DIEKSEKUSI ===\n", code);
 
-    // pakai dummy input jika tidak pakai Document("...")
-    const dummyInput = "/tmp/template-blank.docx";
-    fs.writeFileSync(dummyInput, "");
-
-    runPythonScript(code, dummyInput, (err, outputPath) => {
+    runPythonScript(code, (err, outputPath) => {
       if (err) {
         console.error("GAGAL MENJALANKAN PYTHON:", err);
         return res.status(500).send("Gagal menjalankan script python.");
       }
-
       const url = `https://docx-ai.exoduscloud.my.id/tmp/${path.basename(outputPath)}`;
       console.log("=== FILE SUKSES ===\n", url);
       res.json({ url });
