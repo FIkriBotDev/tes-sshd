@@ -236,37 +236,70 @@ async function startBot() {
 
         // === Default ChatBot
         if (currentMode === 'chatbot') {
-            conversation.push({ role: "user", content: userMessage });
-            try {
-                const response = await fetch('http://localhost:3000/post/rtist', {
-                    method: 'POST',
-                    headers: { 'accept': 'application/json', 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ messages: conversation }),
-                });
-                const data = await response.json();
-                let aiResponse = data.result;
+    conversation.push({ role: "user", content: userMessage });
 
-                aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id').trim();
+    try {
+        const response = await fetch('http://localhost:3000/post/rtist', {
+            method: 'POST',
+            headers: { 'accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify({ messages: conversation }),
+        });
 
-                const imageRegex = /!\[.*?\]\((https?:\/\/[^\s]+)\)/g;
-                let match = imageRegex.exec(aiResponse);
-                if (match) {
-                    const imageUrl = match[1];
-                    const [textBefore, textAfter] = aiResponse.split(match[0]);
-                    if (textBefore.trim()) await sock.sendMessage(sender, { text: textBefore.trim() });
-                    const imageBuffer = await fetch(imageUrl).then(res => res.buffer());
-                    await sock.sendMessage(sender, { image: imageBuffer, caption: textAfter.trim() });
-                } else {
-                    await sock.sendMessage(sender, { text: aiResponse.trim() });
-                }
+        const data = await response.json();
+        let aiResponse = data.result;
 
-                conversation.push({ role: "assistant", content: aiResponse });
-                saveConversation(sender, conversation);
-            } catch (err) {
-                console.error('Chatbot error:', err);
-                await sock.sendMessage(sender, { text: 'Mohon maaf terjadi kesalahan...' });
-            }
+        // Tangani jika respons mengandung ![Document Caption](...)
+        const docxMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exoduscloud\.my\.id\/get\/buat\?[^)]+)\)/;
+        const matchDocx = docxMarkdownRegex.exec(aiResponse);
+
+        if (matchDocx) {
+            const docxUrl = matchDocx[1];
+            const promptText = decodeURIComponent(new URL(docxUrl).searchParams.get("prompt") || "");
+
+            await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya dokumennya sesuai permintaan✨"` });
+
+            const docxBuffer = await fetch(docxUrl).then(res => res.buffer());
+
+            await sock.sendMessage(sender, {
+                document: docxBuffer,
+                mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                fileName: 'hasil-buat.docx'
+            });
+
+            aiResponse = aiResponse.replace(docxMarkdownRegex, '').trim();
         }
+
+        // Rebranding dan bersihkan teks
+        aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id').trim();
+
+        // Tangani jika ada image markdown
+        const imageRegex = /!\[.*?\]\((https?:\/\/[^\s]+)\)/g;
+        const matchImage = imageRegex.exec(aiResponse);
+
+        if (matchImage) {
+            const imageUrl = matchImage[1];
+            const [textBefore, textAfter] = aiResponse.split(matchImage[0]);
+
+            if (textBefore.trim()) await sock.sendMessage(sender, { text: textBefore.trim() });
+
+            const imageBuffer = await fetch(imageUrl).then(res => res.buffer());
+
+            await sock.sendMessage(sender, {
+                image: imageBuffer,
+                caption: textAfter.trim()
+            });
+        } else if (aiResponse.trim()) {
+            await sock.sendMessage(sender, { text: aiResponse.trim() });
+        }
+
+        conversation.push({ role: "assistant", content: aiResponse });
+        saveConversation(sender, conversation);
+
+    } catch (err) {
+        console.error('Chatbot error:', err);
+        await sock.sendMessage(sender, { text: 'Mohon maaf terjadi kesalahan...' });
+    }
+}
     });
 }
 
