@@ -25,7 +25,7 @@ const extractDocxText = async (filePath) => {
   return result.value;
 };
 
-// Util: Jalankan Python script
+// Util: Jalankan kode Python
 const runPythonScript = (code, callback) => {
   const fileId = uuidv4();
   const scriptPath = `/tmp/script-${fileId}.py`;
@@ -56,18 +56,16 @@ const runPythonScript = (code, callback) => {
   });
 };
 
-// Util: Bersihkan blok kode Markdown dari RTIST
-const cleanCodeBlock = (code = "") => {
-  return code
-    .replace(/^```(python)?\n/, "")
-    .replace(/```$/, "")
-    .trim();
-};
-
-// Util: Request AI (messages → fallback conversation)
+// Util: Request ke RTIST + Fallback
 const requestAIWithFallback = async (messages) => {
+  const cleanCodeBlock = (code = "") =>
+    code.replace(/^```(python)?\\n?/, "").replace(/```$/, "").trim();
+
   try {
-    const res = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", { messages });
+    const res = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", {
+      messages,
+    });
+
     console.log("=== RESPONSE RTIST (messages) ===\n", res.data);
 
     let rawCode = res.data.result || res.data.response;
@@ -80,9 +78,11 @@ const requestAIWithFallback = async (messages) => {
   } catch (err) {
     console.warn("Fallback ke conversation mode...");
 
-    const res = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", { conversation: messages });
-    console.log("=== RESPONSE RTIST (conversation) ===\n", res.data);
+    const res = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", {
+      conversation: messages,
+    });
 
+    console.log("=== RESPONSE RTIST (conversation) ===\n", res.data);
     let rawCode = res.data.result || res.data.response;
     if (!rawCode) throw new Error("Fallback AI tidak memberikan kode");
 
