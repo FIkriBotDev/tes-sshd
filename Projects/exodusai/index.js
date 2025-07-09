@@ -158,7 +158,7 @@ async function startBot() {
                     });
                     delete userDocxMap[sender];
                 } else {
-                    await sock.sendMessage(sender, { text: "📄 File berhasil diunggah!\nApa yang ingin kamu lakukan dengan file tersebut?" });
+                    await sock.sendMessage(sender, { text: "Bro, lo mau ngapain di file itu?" });
                 }
             } catch (err) {
                 console.error('Error uploading docx:', err);
