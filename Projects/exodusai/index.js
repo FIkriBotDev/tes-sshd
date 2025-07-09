@@ -249,7 +249,7 @@ async function startBot() {
         let aiResponse = data.result;
 
         // Tangani jika respons mengandung ![Document Caption](...)
-        const docxMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exoduscloud\.my\.id\/get\/buat\?[^)]+)\)/;
+        const docxMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exoduscloud\.my\.id\/api\/buat\?[^)]+)\)/;
         const matchDocx = docxMarkdownRegex.exec(aiResponse);
 
         if (matchDocx) {
@@ -263,7 +263,7 @@ async function startBot() {
             await sock.sendMessage(sender, {
                 document: docxBuffer,
                 mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                fileName: 'hasil-buat.docx'
+                fileName: 'hasil.docx'
             });
 
             aiResponse = aiResponse.replace(docxMarkdownRegex, '').trim();
