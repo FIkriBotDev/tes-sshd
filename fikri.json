@@ -166,7 +166,7 @@
     },
     {
       "role": "assistant",
-      "content": "![Image Caption](https://docx-ai.exoduscloud.my.id/get/buat?prompt=tolong buatkan biodata dalam bentuk word, berikut informasi biodatanya nama: muhammad fikri fahrezi, jurusan: teknik informatika, dan tambahkan yang lainnya seperti deskripsi diri saya)"
+      "content": "![Image Caption](https://docx-ai.exoduscloud.my.id/get/buat?prompt=tolong%20buatkan%20biodata%20dalam%20bentuk%20word,%20berikut%20informasi%20biodatanya%20nama:%20muhammad%20fikri%20fahrezi,%20jurusan:%20teknik%20informatika,%20dan%20tambahkan%20yang%20lainnya%20seperti%20deskripsi%20diri%20saya)"
     },
             {
       "role": "user",
