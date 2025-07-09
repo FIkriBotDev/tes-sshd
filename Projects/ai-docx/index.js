@@ -10,6 +10,9 @@ import multer from "multer";
 const app = express();
 const port = 1000;
 
+const TMP_DIR = "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-docx/tmp";
+if (!fs.existsSync(TMP_DIR)) fs.mkdirSync(TMP_DIR, { recursive: true });
+
 app.use(express.json());
 const upload = multer({ dest: "/tmp" });
 
@@ -29,7 +32,7 @@ const extractDocxText = async (filePath) => {
 const runPythonScript = (code, inputPath, callback) => {
   const fileId = uuidv4();
   const scriptPath = `/tmp/script-${fileId}.py`;
-  const outputDocx = `/tmp/hasil-${fileId}.docx`;
+  const outputDocx = `${TMP_DIR}/hasil-${fileId}.docx`;
 
   const finalCode = code
     .replace(/Document\(['"](.+?)['"]\)/, `Document("${inputPath}")`)
@@ -53,16 +56,15 @@ const runPythonScript = (code, inputPath, callback) => {
   });
 };
 
-// Util: Clean blok kode dari AI
+// Clean blok kode dari AI
 const cleanCodeBlock = (code = "") =>
   code.replace(/^```(python)?\n/, "").replace(/```$/, "").trim();
 
-// Util: Request RTIST dengan fallback
+// Request AI (with fallback)
 const requestAIWithFallback = async (messages) => {
   try {
     const res = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", { messages });
     console.log("=== RESPONSE RTIST (messages) ===\n", res.data);
-
     const rawCode = res.data.result || res.data.response;
     if (!rawCode) throw new Error("AI tidak memberikan kode");
 
@@ -74,19 +76,17 @@ const requestAIWithFallback = async (messages) => {
     const res = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", {
       conversation: messages,
     });
-
     console.log("=== RESPONSE RTIST (conversation) ===\n", res.data);
     const rawCode = res.data.result || res.data.response;
     if (!rawCode) throw new Error("Fallback AI tidak memberikan kode");
 
     const code = cleanCodeBlock(rawCode);
     if (!code.includes("doc.save")) throw new Error("Kode AI fallback tidak valid");
-
     return code;
   }
 };
 
-// Endpoint: /api/edit
+// Endpoint: /api/edit (langsung download file hasil)
 app.get("/api/edit", async (req, res) => {
   try {
     const { documentUrl, prompt } = req.query;
@@ -114,9 +114,8 @@ app.get("/api/edit", async (req, res) => {
         return res.status(500).send("Gagal menjalankan script python.");
       }
 
-      const url = `https://docx-ai.exoduscloud.my.id/tmp/${path.basename(outputPath)}`;
-      console.log("=== FILE SUKSES ===\n", url);
-      res.json({ url });
+      console.log("=== FILE SIAP DIUNDUH ===\n", outputPath);
+      res.download(outputPath); // langsung kirim file sebagai download
     });
   } catch (e) {
     console.error("ERROR:", e.message || e);
@@ -139,7 +138,6 @@ app.get("/api/buat", async (req, res) => {
     const code = await requestAIWithFallback(messages);
     console.log("=== FINAL KODE YANG DIEKSEKUSI ===\n", code);
 
-    // pakai dummy input jika tidak pakai Document("...")
     const dummyInput = "/tmp/template-blank.docx";
     fs.writeFileSync(dummyInput, "");
 
@@ -149,9 +147,8 @@ app.get("/api/buat", async (req, res) => {
         return res.status(500).send("Gagal menjalankan script python.");
       }
 
-      const url = `https://docx-ai.exoduscloud.my.id/tmp/${path.basename(outputPath)}`;
-      console.log("=== FILE SUKSES ===\n", url);
-      res.json({ url });
+      console.log("=== FILE SIAP DIUNDUH ===\n", outputPath);
+      res.download(outputPath); // langsung kirim file
     });
   } catch (e) {
     console.error("ERROR:", e.message || e);
