@@ -69,7 +69,7 @@ app.get("/api/edit", async (req, res) => {
 
     console.log("=== ISI DOKUMEN ===\n", docxContent);
 
-    const messages = [
+    const conversation = [
       { role: "system", content: "Kamu adalah AI khusus untuk mengedit file .docx menggunakan python." },
       { role: "user", content: `Isi dokumen:\n${docxContent}` },
       { role: "user", content: `Permintaan: ${prompt}` },
@@ -77,7 +77,7 @@ app.get("/api/edit", async (req, res) => {
     ];
 
     const aiResponse = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", {
-      messages,
+      conversation,
     });
 
     const code = aiResponse.data.response;
@@ -109,14 +109,14 @@ app.get("/api/buat", async (req, res) => {
     const { prompt } = req.query;
     if (!prompt) return res.status(400).send("Prompt kosong.");
 
-    const messages = [
+    const conversation = [
       { role: "system", content: "Kamu adalah AI khusus untuk membuat file .docx menggunakan python." },
       { role: "user", content: prompt },
       { role: "user", content: "Cukup kirimkan kode python tanpa penjelasan." },
     ];
 
     const aiResponse = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", {
-      messages,
+      conversation,
     });
 
     const code = aiResponse.data.response;
