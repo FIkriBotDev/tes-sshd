@@ -1,4 +1,3 @@
-// File: server.js
 import express from "express";
 import axios from "axios";
 import fs from "fs";
@@ -57,6 +56,26 @@ const runPythonScript = (code, callback) => {
   });
 };
 
+// Util: Request AI dari RTIST dengan fallback
+const requestAIWithFallback = async (messages) => {
+  try {
+    const res = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", {
+      messages
+    });
+    console.log("=== RESPONSE RTIST (messages) ===\n", res.data);
+    if (!res.data.response || !res.data.response.includes("doc.save")) throw new Error("Invalid AI code");
+    return res.data.response;
+  } catch (err) {
+    console.warn("Fallback ke conversation mode...");
+    const res = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", {
+      conversation: messages
+    });
+    console.log("=== RESPONSE RTIST (conversation) ===\n", res.data);
+    if (!res.data.response || !res.data.response.includes("doc.save")) throw new Error("Fallback AI juga gagal");
+    return res.data.response;
+  }
+};
+
 // Endpoint: /api/edit
 app.get("/api/edit", async (req, res) => {
   try {
@@ -65,7 +84,7 @@ app.get("/api/edit", async (req, res) => {
 
     const localPath = `/tmp/${path.basename(documentUrl)}`;
     await downloadFile(documentUrl, localPath);
-    const docxContent = (await extractDocxText(localPath)).slice(0, 2000); // Batasi panjang isi dokumen
+    const docxContent = (await extractDocxText(localPath)).slice(0, 2000); // batasi isi
 
     console.log("=== ISI DOKUMEN ===\n", docxContent);
 
@@ -76,52 +95,19 @@ app.get("/api/edit", async (req, res) => {
       { role: "user", content: "Cukup berikan kode python saja tanpa penjelasan." },
     ];
 
-    try {
-      const aiResponse = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", {
-        messages,
-      });
+    const code = await requestAIWithFallback(messages);
 
-      console.log("=== FULL RESPONSE DARI RTIST ===\n", aiResponse.data);
-      let code = aiResponse.data.response;
-
-      if (!code || !code.includes("doc.save")) {
-        throw new Error("Empty or invalid AI response");
+    runPythonScript(code, (err, outputPath) => {
+      if (err) {
+        console.error("GAGAL MENJALANKAN PYTHON:", err);
+        return res.status(500).send("Gagal menjalankan script python.");
       }
-
-      runPythonScript(code, (err, outputPath) => {
-        if (err) {
-          console.error("GAGAL MENJALANKAN PYTHON:", err);
-          return res.status(500).send("Gagal menjalankan script python.");
-        }
-        const url = `https://docx-ai.exoduscloud.my.id/tmp/${path.basename(outputPath)}`;
-        console.log("=== FILE SUKSES ===\n", url);
-        res.json({ url });
-      });
-    } catch (fallbackErr) {
-      console.warn("Fallback ke conversation (legacy mode)");
-
-      const fallbackPayload = { conversation: messages };
-      const fallbackResponse = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", fallbackPayload);
-
-      console.log("=== RESPONSE FALLBACK ===\n", fallbackResponse.data);
-      const code = fallbackResponse.data.response;
-
-      if (!code || !code.includes("doc.save")) {
-        return res.status(500).send("AI tetap gagal menghasilkan kode.");
-      }
-
-      runPythonScript(code, (err, outputPath) => {
-        if (err) {
-          console.error("GAGAL MENJALANKAN PYTHON:", err);
-          return res.status(500).send("Gagal menjalankan script python.");
-        }
-        const url = `https://docx-ai.exoduscloud.my.id/tmp/${path.basename(outputPath)}`;
-        console.log("=== FILE SUKSES ===\n", url);
-        res.json({ url });
-      });
-    }
+      const url = `https://docx-ai.exoduscloud.my.id/tmp/${path.basename(outputPath)}`;
+      console.log("=== FILE SUKSES ===\n", url);
+      res.json({ url });
+    });
   } catch (e) {
-    console.error("ERROR:", e);
+    console.error("ERROR:", e.message || e);
     res.status(500).send("Terjadi kesalahan saat memproses dokumen.");
   }
 });
@@ -138,17 +124,7 @@ app.get("/api/buat", async (req, res) => {
       { role: "user", content: "Cukup kirimkan kode python tanpa penjelasan." },
     ];
 
-    const aiResponse = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", {
-      messages,
-    });
-
-    console.log("=== FULL RESPONSE DARI RTIST ===\n", aiResponse.data);
-    const code = aiResponse.data.response;
-
-    if (!code || !code.includes("doc.save")) {
-      console.error("AI tidak membalas kode Python yang valid.");
-      return res.status(500).send("AI gagal menghasilkan kode untuk dokumen.");
-    }
+    const code = await requestAIWithFallback(messages);
 
     runPythonScript(code, (err, outputPath) => {
       if (err) {
@@ -160,7 +136,7 @@ app.get("/api/buat", async (req, res) => {
       res.json({ url });
     });
   } catch (e) {
-    console.error("ERROR:", e);
+    console.error("ERROR:", e.message || e);
     res.status(500).send("Terjadi kesalahan saat membuat dokumen.");
   }
 });
