@@ -9786,3 +9786,117 @@ Kalau kamu butuh lebih banyak dukungan atau ingin bercerita tentang pengalaman i
 🌸 **Iklan** 🌸
 Dukung akses AI gratis untuk semua—[bantu misi kami di sini](https://pollinations.ai/redirect/kofi)!
 
+
+[2025-07-09T00:27:32.848Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/85f87c-1752020839140.jpg
+Response  : Karena saya tidak memiliki akses untuk melihat gambar, saya akan memberikan analisis berdasarkan asumsi bahwa makanan yang ditampilkan adalah sate ayam atau sejenisnya. Mari kita lihat analisisnya dalam format JSON yang diminta:
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan dengan catatan",
+    "alasan": "Sate ayam dapat menjadi sumber protein hewani yang baik, tetapi perlu diperhatikan cara pengolahan dan tambahannya, seperti saus atau bumbu yang tinggi gula."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "100g",
+    "jumlahSajian": "3 tusuk",
+    "kalori": 250,
+    "protein": "20g",
+    "proteinPersen": "32%",
+    "karbohidrat": "15g",
+    "karbohidratPersen": "24%",
+    "gula": "4g",
+    "serat": "1g",
+    "lemakTotal": "15g",
+    "lemakJenuh": "5g",
+    "lemakTakJenuh": "10g",
+    "lemakPersen": "54%",
+    "kolesterol": "70mg",
+    "natrium": "600mg",
+    "vitaminDanMineral": ["Vitamin B6", "Zat Besi", "Fosfor", "Selenium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "12.5%" },
+    { "nama": "Gula", "persen": "8%"},
+    { "nama": "Lemak", "persen": "23%"}
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "tinggi",
+    "Natrium": "tinggi"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Sebaiknya 1-2x/minggu",
+  "ingredients": ["Daging ayam", "Bumbu rempah", "Minyak goreng", "Kecap manis"],
+  "tipsSehat": [
+    "Gunakan metode pemanggangan atau merebus daripada menggoreng.",
+    "Campurkan dengan sayuran segar sebagai pelengkap."
+  ],
+  "alternatif": ["Sate tempe", "Sate ikan"]
+}
+```
+
+Ini adalah analisis estimasi yang dapat disesuaikan lebih lanjut berdasarkan informasi spesifik mengenaijenis makanan dalam gambar. Jika ada pertanyaan atau rincian tambahan yang ingin Anda bahas, silakan beri tahu saya!
+
