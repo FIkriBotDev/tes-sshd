@@ -10189,3 +10189,11 @@ Prompt    : nama karakter pokemon ini
 Image URL : https://uploader.exoduscloud.my.id/tmp/7bd792-1752319897524.jpg
 Response  : Karakter Pokémon yang kamu lihat di gambar itu adalah Jigglypuff! Dia dikenal dengan suara nyanyinya yang bisa membuat orang tertidur. Jigglypuff memiliki sifat lucu dan suka bernyanyi, jadi dia sering kali menjadi favorit banyak orang. Apakah kamu penggemar Jigglypuff atau Pokémon lainnya?
 
+
+[2025-07-12T15:14:43.841Z]
+Prompt    : Apa tuh yang tanda hitam 😨
+Image URL : https://uploader.exoduscloud.my.id/tmp/a94bf2-1752333279546.jpg
+Response  : Wah, gambar itu terlihat seperti simbol yang biasa muncul di peta atau aplikasi navigasi. Tanda hitam berbentuk segitiga ini biasanya menunjukkan lokasi tertentu, seperti titik atau tempat yang menarik. Bisa jadi itu adalah lokasi tempat yang bisa kamu eksplorasi, atau mungkin itu tanda arah.
+
+Kalau ini muncul di aplikasi seperti Google Maps, bisa jadi kamu sedang melihat rute atau titik tujuan yang ingin kamu capai. Ada yang bikin kamu penasaran dengan tanda itu? 😊
+
