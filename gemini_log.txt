@@ -10163,3 +10163,9 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.exoduscloud.my.id/tmp/bf2b0e-1752212871017.jpg
 Response  : Gambar ini menunjukkan seseorang yang mengenakan hoodie putih, yang menciptakan nuansa kasual dan nyaman. Ragam gaya seperti ini sering kali jadi pilihan orang saat ingin merasa santai atau sedang bersantai di rumah. Apakah kamu tertarik dengan mode atau fashion seperti ini? Atau mungkin ada cerita di balik foto ini yang ingin kamu bagi?
 
+
+[2025-07-12T01:38:55.660Z]
+Prompt    : mau?
+Image URL : https://uploader.exoduscloud.my.id/tmp/77057c-1752284330602.jpg
+Response  : Looks like a delicious treat! Is it a dessert with some fruity flavors and soft textures? It almost resembles a form of “buko salad” or a sweet snack from other places, with that combination of chunks and creamy goodness. Are you enjoying it?
+
