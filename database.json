@@ -82,15 +82,15 @@
     },
     {
       "role": "assistant",
-      "content": "![Image Caption](https://rtist-api.exoduscloud.my.id/get/image-generator/pemandangan%20rumah%20mewah%20dengan%20taman%20yang%20indah%20dan%20kolam%20renang%2C%20arsitektur%20modern%20dan%20elegan%2C%20detail%20mewah%20seperti%20pilar%2C%20balkon%20luas%2C%20dan%20atap%20yang%20indah%2C%20iluminasi%20malam.%204k%20resolution.%20Highly%20detailed%20illustration.?width=768&height=384&nologo=true)"
+      "content": "![Image Caption](https://rtist-api.exoduscloud.my.id/get/image-generator/pemandangan%20rumah%20mewah%20dengan%20taman%20yang%20indah%20dan%20kolam%20renang%2C%20arsitektur%20modern%20dan%20elegan%2C%20detail%20mewah%20seperti%20pilar%2C%20balkon%20luas%2C%20dan%20atap%20yang%20indah%2C%20iluminasi%20malam.%204k%20resolution.%20Highly%20detailed%20illustration.?width=1920&height=1920&nologo=true)"
     },
     {
       "role": "user",
-      "content": "jika saya suruh membuat sebuah gambar, gunakan url https://rtist-api.exoduscloud.my.id/get/image-generator bukan url pollinations https://image.pollinations.ai/prompt, tapi gunakan url tersebut seperti ini sebagai contoh https://rtist-api.exoduscloud.my.id/get/image-generator/pemandangan%20rumah%20mewah%20dengan%20taman%20yang%20indah%20dan%20kolam%20renang%2C%20arsitektur%20modern%20dan%20elegan%2C%20detail%20mewah%20seperti%20pilar%2C%20balkon%20luas%2C%20dan%20atap%20yang%20indah%2C%20iluminasi%20malam.%204k%20resolution.%20Highly%20detailed%20illustration.?width=768&height=384&nologo=true"
+      "content": "jika saya suruh membuat sebuah gambar, gunakan url https://rtist-api.exoduscloud.my.id/get/image-generator bukan url pollinations https://image.pollinations.ai/prompt, tapi gunakan url tersebut seperti ini sebagai contoh https://rtist-api.exoduscloud.my.id/get/image-generator/pemandangan%20rumah%20mewah%20dengan%20taman%20yang%20indah%20dan%20kolam%20renang%2C%20arsitektur%20modern%20dan%20elegan%2C%20detail%20mewah%20seperti%20pilar%2C%20balkon%20luas%2C%20dan%20atap%20yang%20indah%2C%20iluminasi%20malam.%204k%20resolution.%20Highly%20detailed%20illustration.?width=1920&height=1920&nologo=true"
     },
     {
       "role": "system",
-      "content": "Pastikan saat membalas dengan link gambar dari image generator, jangan pernah menyisakan spasi atau encoding yang tidak sempurna di URL. Gunakan full URL yang benar-benar telah di-encode sepenuhnya, seperti ini: https://rtist-api.exoduscloud.my.id/get/image-generator/pemandangan%20rumah%20mewah%20dengan%20taman%20yang%20indah%20dan%20kolam%20renang%2C%20arsitektur%20modern%20dan%20elegan%2C%20detail%20mewah%20seperti%20pilar%2C%20balkon%20luas%2C%20dan%20atap%20yang%20indah%2C%20iluminasi%20malam.%204k%20resolution.%20Highly%20detailed%20illustration.?width=768&height=384&nologo=true"
+      "content": "Pastikan saat membalas dengan link gambar dari image generator, jangan pernah menyisakan spasi atau encoding yang tidak sempurna di URL. Gunakan full URL yang benar-benar telah di-encode sepenuhnya, seperti ini: https://rtist-api.exoduscloud.my.id/get/image-generator/pemandangan%20rumah%20mewah%20dengan%20taman%20yang%20indah%20dan%20kolam%20renang%2C%20arsitektur%20modern%20dan%20elegan%2C%20detail%20mewah%20seperti%20pilar%2C%20balkon%20luas%2C%20dan%20atap%20yang%20indah%2C%20iluminasi%20malam.%204k%20resolution.%20Highly%20detailed%20illustration.?width=1920&height=1920&nologo=true"
     },
     {
       "role": "system",
@@ -98,11 +98,11 @@
     },
     {
   "role": "user",
-  "content": "Saat membuat URL gambar dari prompt, kamu wajib meng-*encode* seluruh teks prompt dengan encodeURIComponent agar tidak ada spasi atau karakter aneh yang merusak URL. Misalnya: 'gambar kucing lucu dan imut' harus diubah menjadi 'gambar%20kucing%20lucu%20dan%20imut'. Setelah itu, kamu wajib membungkus URL-nya dalam format markdown seperti ini:\n\n![Image Caption](https://rtist-api.exoduscloud.my.id/get/image-generator/ENCODED_PROMPT?width=768&height=384&nologo=true)\n\nJangan pernah kirim URL mentah atau ada spasi di dalamnya. Pastikan 100% aman dan valid."
+  "content": "Saat membuat URL gambar dari prompt, kamu wajib meng-*encode* seluruh teks prompt dengan encodeURIComponent agar tidak ada spasi atau karakter aneh yang merusak URL. Misalnya: 'gambar kucing lucu dan imut' harus diubah menjadi 'gambar%20kucing%20lucu%20dan%20imut'. Setelah itu, kamu wajib membungkus URL-nya dalam format markdown seperti ini:\n\n![Image Caption](https://rtist-api.exoduscloud.my.id/get/image-generator/ENCODED_PROMPT?width=1920&height=1920&nologo=true)\n\nJangan pernah kirim URL mentah atau ada spasi di dalamnya. Pastikan 100% aman dan valid."
 },
 {
   "role": "assistant",
-  "content": "Siap bro kalo gue ngirim link nya wajib di encode seluruhnya agar url tidak rusak, Misalnya: 'gambar kucing lucu dan imut' harus diubah menjadi 'gambar%20kucing%20lucu%20dan%20imut' terus gue wajib ngebungkus url nya dalam format markdown kaya gini: \n\n![Image Caption](https://rtist-api.exoduscloud.my.id/get/image-generator/ENCODED_PROMPT?width=768&height=384&nologo=true)."
+  "content": "Siap bro kalo gue ngirim link nya wajib di encode seluruhnya agar url tidak rusak, Misalnya: 'gambar kucing lucu dan imut' harus diubah menjadi 'gambar%20kucing%20lucu%20dan%20imut' terus gue wajib ngebungkus url nya dalam format markdown kaya gini: \n\n![Image Caption](https://rtist-api.exoduscloud.my.id/get/image-generator/ENCODED_PROMPT?width=1920&height=1920&nologo=true)."
 },
       {
         "role": "user",
