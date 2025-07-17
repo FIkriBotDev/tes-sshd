@@ -10715,3 +10715,114 @@ Berikut adalah contoh format JSON untuk analisis makanan:
 
 Sesuaikan detail yang ada seperti kalori, protein, lemak, dan lainnya sesuai informasi yang benar dari makanan tersebut. Jika ada pertanyaan lebih lanjut atau Anda ingin membahas topik lain, silakan beri tahu!
 
+
+[2025-07-17T02:59:11.733Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/a74bd7-1752721128619.jpg
+Response  : Saya tidak dapat memberikan analisis lengkap tentang makanan berdasarkan gambar itu, karena saya tidak dapat melihatnya. Namun, saya dapat memberikan panduan tentang cara menyusun analisis makanan berdasarkan kriteria yang Anda berikan. Jika Anda memiliki informasi lebih lanjut tentang makanan tersebut atau detail spesifik, silakan bagikan, dan saya akan membantu Anda dengan analisisnya!
+
+Berikut adalah contoh skema JSON yang akan membantu Anda dalam menyusun analisis makanan:
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Ya/Tidak",
+    "alasan": "Alasan mengapa direkomendasikan atau tidak."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": "jumlah kalori",
+    "protein": "jumlah protein",
+    "proteinPersen": "persentase terhadap kalori",
+    "karbohidrat": "jumlah karbohidrat",
+    "karbohidratPersen": "persentase terhadap kalori",
+    "gula": "jumlah gula",
+    "serat": "jumlah serat",
+    "lemakTotal": "jumlah lemak total",
+    "lemakJenuh": "jumlah lemak jenuh",
+    "lemakTakJenuh": "jumlah lemak tak jenuh",
+    "lemakPersen": "persentase terhadap kalori",
+    "kolesterol": "jumlah kolesterol",
+    "natrium": "jumlah natrium",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "persentase" },
+    { "nama": "Gula", "persen": "persentase" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi/sedang/rendah",
+    "Lemak": "rendah/sedang/tinggi"
+  },
+  "waktuKenyang": "durasi",
+  "frekuensiKonsumsi": "frekuensi yang disarankan",
+  "ingredients": ["Bahan 1", "Bahan 2", "..."],
+  "tipsSehat": ["Tips 1", "Tips 2"],
+  "alternatif": ["Alternatif 1", "Alternatif 2"]
+}
+```
+
+Jadi jika Anda ingin mengisi template ini dengan informasi tentang makanan tertentu, saya ada di sini untuk membantu!
+
