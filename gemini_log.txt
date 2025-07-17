@@ -11214,3 +11214,11 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.exoduscloud.my.id/tmp/b3536a-1752729772581.jpg
 Response  : Wah, terlihat menggoda! Ini sepertinya adalah makanan yang diberi taburan keju, mungkin ciukue atau beberapa jenis camilan khas Indonesia yang dipadukan dengan keju parut. Keju yang melimpah seperti itu pasti menambah rasa gurih dan creamy. Apakah kamu suka makanan ini? Atau ada cerita spesial di balik gambar ini?
 
+
+[2025-07-17T05:25:04.102Z]
+Prompt    : es teler
+Image URL : https://uploader.exoduscloud.my.id/tmp/b7ac96-1752729896367.jpg
+Response  : Ah, es teler! It’s such a delicious delight. For anyone not in the know, es teler is an Indonesian dessert that’s a lovely mix of fruits and coconut milk, often served with glutinous rice or jelly and sometimes topped with bread (as seen in your cup). 
+
+Those chewy textures, sweet coconut, and a splash of different flavors—it's a refreshing treat, especially on a hot day! Do you have a favorite way to enjoy it, or is there a specific memory that comes to mind when you think about es teler?
+
