@@ -11222,3 +11222,113 @@ Response  : Ah, es teler! It’s such a delicious delight. For anyone not in the
 
 Those chewy textures, sweet coconut, and a splash of different flavors—it's a refreshing treat, especially on a hot day! Do you have a favorite way to enjoy it, or is there a specific memory that comes to mind when you think about es teler?
 
+
+[2025-07-17T05:28:46.261Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/b5cfb1-1752730112115.jpg
+Response  : Berikut adalah analisis untuk makanan yang terlihat dalam gambar tersebut, yaitu Oreo Space Dunk Sandwich:
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak",
+    "alasan": "Makanan ini tinggi gula dan lemak jenuh, serta memiliki kalori yang cukup tinggi tanpa nilai gizi yang signifikan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "119.6g",
+    "jumlahSajian": "1 porsi",
+    "kalori": 492,
+    "protein": "4g",
+    "proteinPersen": "3.27%",
+    "karbohidrat": "68g",
+    "karbohidratPersen": "55.46%",
+    "gula": "32g",
+    "serat": "2g",
+    "lemakTotal": "22g",
+    "lemakJenuh": "10g",
+    "lemakTakJenuh": "12g",
+    "lemakPersen": "40.29%",
+    "kolesterol": "0mg",
+    "natrium": "210mg",
+    "vitaminDanMineral": ["Kalsium", "Zat Besi", "Vitamin D"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "24%" },
+    { "nama": "Gula", "persen": "64%" },
+    { "nama": "Lemak Jenuh", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "tinggi"
+  },
+  "waktuKenyang": "1-2 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/bulan",
+  "ingredients": ["Gula", "Tepung terigu", "Minyak nabati", "Lecithin", "Bubuk kakao", "Rasa tiruan", "Pengemulsi"],
+  "tipsSehat": ["Hindari konsumsi berlebih", "Cobalah menyeimbangkan dengan makanan berserat tinggi"],
+  "alternatif": ["Biskuit gandum utuh", "Cokelat hitam tanpa tambahan gula", "Yogurt dengan buah segar"]
+}
+```
+
+Analisis ini memberikan gambaran lengkap mengenai komposisi gizi dan potensi dampaknya terhadap kesehatan dari Oreo Space Dunk Sandwich. Jika ada pertanyaan lebih lanjut tentang makanan atau diet secara umum, silakan beri tahu!
+
