@@ -1,4 +1,7 @@
-const { makeWASocket, useSingleFileAuthState, downloadMediaMessage, DisconnectReason } = require('@whiskeysockets/baileys');
+const baileys = require("@whiskeysockets/baileys");
+const { useSingleFileAuthState } = require("@whiskeysockets/baileys/lib/Utils");
+
+const { default: makeWASocket, DisconnectReason, fetchLatestBaileysVersion, makeCacheableSignalKeyStore } = baileys;
 const { Boom } = require('@hapi/boom');
 const fs = require('fs');
 const path = require('path');
