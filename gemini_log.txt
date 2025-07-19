@@ -11590,3 +11590,117 @@ Response  : Sepertinya ada seseorang yang sedang mulai mendaftar untuk bermain R
 
 Kalau kamu atau orang yang mendaftar ini baru mengenal Roblox, siap-siap untuk melihat dunia kreatif yang penuh kehidupan di sana! Apa ada yang ingin kamu diskusikan tentang Roblox atau game lain? Atau mungkin ingin berbagi pengalaman pertama kali kamu bermain?
 
+
+[2025-07-19T03:35:19.246Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/01bae7-1752896106607.jpg
+Response  : Tentu, berikut analisis lengkap tentang makanan yang terdapat dalam gambar:
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak",
+    "alasan": "Mengandung tinggi sodium dan karbohidrat, serta bahan tambahan yang kurang sehat."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "250 gram",
+    "jumlahSajian": "1",
+    "kalori": 350,
+    "protein": "25g",
+    "proteinPersen": "28.57%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "60%",
+    "gula": "6g",
+    "serat": "3g",
+    "lemakTotal": "10g",
+    "lemakJenuh": "3g",
+    "lemakTakJenuh": "7g",
+    "lemakPersen": "25%",
+    "kolesterol": "60mg",
+    "natrium": "800mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "17.5%" },
+    { "nama": "Natrium", "persen": "35%" },
+    { "nama": "Gula", "persen": "12%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "sedang",
+    "Natrium": "tinggi"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1-2x/minggu",
+  "ingredients": ["Mie instan", "Bumbu mie", "Bakso ikan", "Sayuran (seperti sawi)", "Telur"],
+  "tipsSehat": [
+    "Tambahkan lebih banyak sayuran segar untuk meningkatkan serat.",
+    "Kurangi bumbu instan atau garam yang ditambahkan."
+  ],
+  "alternatif": ["Nasi merah dengan sayuran dan sumber protein (ikan/daging tanpa lemak)", "Mi soba dengan sayuran dan kaldu rendah natrium"]
+}
+```
+
+Semoga analisis ini membantu! Jika ada yang ingin ditanyakan lebih lanjut atau jika Anda ingin menikmati makanan sambil berbagi cerita, silakan beritahu saya.
+
