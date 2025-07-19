@@ -11704,3 +11704,109 @@ Response  : Tentu, berikut analisis lengkap tentang makanan yang terdapat dalam 
 
 Semoga analisis ini membantu! Jika ada yang ingin ditanyakan lebih lanjut atau jika Anda ingin menikmati makanan sambil berbagi cerita, silakan beritahu saya.
 
+
+[2025-07-19T03:40:34.972Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/fd37a7-1752896418212.webp
+Response  : ```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan",
+    "alasan": "Makanan ini mengandung lemak jenuh dan gula yang tinggi, yang dapat berkontribusi pada masalah kesehatan jika dikonsumsi berlebihan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "100 gram",
+    "jumlahSajian": "3 porsi",
+    "kalori": 370,
+    "protein": "6g",
+    "proteinPersen": "6.49%",
+    "karbohidrat": "30g",
+    "karbohidratPersen": "32.43%",
+    "gula": "15g",
+    "serat": "1g",
+    "lemakTotal": "25g",
+    "lemakJenuh": "10g",
+    "lemakTakJenuh": "15g",
+    "lemakPersen": "61.36%",
+    "kolesterol": "80mg",
+    "natrium": "400mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin D", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "20%" },
+    { "nama": "Gula", "persen": "30%" },
+    { "nama": "Lemak Jenuh", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "tinggi"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/bulan",
+  "ingredients": ["Tepung terigu", "Gula", "Mentega", "Telur", "Krim", "Susu"],
+  "tipsSehat": ["Menggunakan lemak sehat dalam adonan.", "Menambahkan buah segar sebagai garnish."],
+  "alternatif": ["Kue buah", "Muffin gandum utuh"]
+}
+```
+
