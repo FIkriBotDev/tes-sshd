@@ -11895,3 +11895,11 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.exoduscloud.my.id/tmp/31f068-1752933199137.jpg
 Response  : Gambarnya menunjukkan notifikasi tentang webinar dari sebuah komunitas, terlihat ada analisis grafik dan beberapa petunjuk trading. Mungkin sekolah atau komunitas trader di situ memberikan tips dan strategi untuk memperoleh keuntungan dari trading. Apakah kamu tertarik dengan trading atau mungkin ingin membahas apa yang kamu lihat dalam gambar itu?
 
+
+[2025-07-19T15:09:29.493Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/e901b9-1752937762546.jpg
+Response  : Gambar yang kamu bagikan itu terlihat menggugah selera! Dari yang kulihat, sepertinya ini adalah produk roti mochi dari Roti Maros Salenrang dengan berbagai rasa seperti cokelat, stroberi, dan vanilla. Kombinasi tekstur lembut dan isian yang lumer pasti menjadi perpaduan yang enak.
+
+Kalian sudah mencoba salah satu rasa? Atau mungkin ada yang kamu ingin tahu lebih lanjut tentang produk itu?
+
