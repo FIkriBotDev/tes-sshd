@@ -3,8 +3,7 @@ const {
     useMultiFileAuthState,
     fetchLatestBaileysVersion,
     makeInMemoryStore,
-    DisconnectReason,
-    downloadMediaMessage
+    DisconnectReason
 } = require('@whiskeysockets/baileys');
 
 const P = require('pino');
@@ -12,8 +11,28 @@ const cron = require('node-cron');
 const moment = require('moment-timezone');
 const fs = require('fs');
 
+// === Konstanta ===
+const MESSAGE_COUNT_FILE = './user_message_count.json';
+const PROMO_INTERVAL = 10;
+
+// === Load & Simpan Data ke File ===
+let userMessageCount = {};
+
+function loadMessageData() {
+    if (fs.existsSync(MESSAGE_COUNT_FILE)) {
+        const data = JSON.parse(fs.readFileSync(MESSAGE_COUNT_FILE));
+        userMessageCount = data.userMessageCount || {};
+    }
+}
+
+function saveMessageData() {
+    fs.writeFileSync(MESSAGE_COUNT_FILE, JSON.stringify({ userMessageCount }, null, 2));
+}
+
 // === Fungsi Utama ===
 async function startBot() {
+    loadMessageData();
+
     const { state, saveCreds } = await useMultiFileAuthState('auth_info_alarm');
     const { version } = await fetchLatestBaileysVersion();
 
@@ -36,7 +55,7 @@ async function startBot() {
             console.log('Koneksi terputus. Reconnect?', shouldReconnect);
             if (shouldReconnect) startBot();
         } else if (connection === 'open') {
-            console.log('✅ Bot terkoneksi!');
+            console.log('Bot terkoneksi!');
         }
     });
 
@@ -47,43 +66,26 @@ async function startBot() {
         if (!msg.message || msg.key.fromMe) return;
 
         const sender = msg.key.remoteJid;
-        const content = msg.message;
 
-        // Hanya dari nomor 6287769811262
-        if (!sender.includes('6287769811262')) return;
+        // Hanya tangani chat pribadi (bukan grup)
+        if (sender.endsWith('@g.us')) return;
 
-        // Deteksi pesan viewOnce
-        const viewOnce = content?.viewOnceMessageV2 || content?.viewOnceMessage;
-        if (viewOnce) {
-            const viewOnceMsg = viewOnce.message;
-            const messageType = Object.keys(viewOnceMsg)[0]; // imageMessage atau videoMessage
+        const text = msg.message.conversation || msg.message.extendedTextMessage?.text || '';
 
-            try {
-                const buffer = await downloadMediaMessage(
-                    { message: viewOnceMsg },
-                    'buffer',
-                    {},
-                    { reuploadRequest: sock.updateMediaMessage }
-                );
+        // Hitung jumlah pesan
+        userMessageCount[sender] = (userMessageCount[sender] || 0) + 1;
 
-                if (messageType === 'imageMessage') {
-                    await sock.sendMessage(sender, {
-                        image: buffer,
-                        caption: '📸 Ini foto view-once kamu.'
-                    });
-                } else if (messageType === 'videoMessage') {
-                    await sock.sendMessage(sender, {
-                        video: buffer,
-                        caption: '🎥 Ini video view-once kamu.'
-                    });
-                }
+        // Cek kelipatan 10
+        if (userMessageCount[sender] % PROMO_INTERVAL === 0) {
+            const promo = `🚀 Suka pakai *ExodusAI*?\nYuk bantu share ke teman-teman kamu biar mereka juga bisa ngerasain kecanggihannya!🤖✨`;
+            await sock.sendMessage(sender, { text: promo });
+        }
 
-                console.log(`✅ ViewOnce media dari ${sender} berhasil dikirim ulang.`);
-            } catch (err) {
-                console.error('❌ Gagal mengambil media ViewOnce:', err);
-            }
-        } else {
-            console.log(`📥 Pesan biasa dari ${sender}`);
+        saveMessageData();
+
+        // Contoh command ping
+        if (text.toLowerCase() === 'ping') {
+            await sock.sendMessage(sender, { text: 'Pong 🏓' });
         }
     });
 
