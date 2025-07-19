@@ -1,104 +1,76 @@
-const {
-    default: makeWASocket,
-    useMultiFileAuthState,
-    fetchLatestBaileysVersion,
-    makeInMemoryStore,
-    DisconnectReason
-} = require('@whiskeysockets/baileys');
-
-const P = require('pino');
-const cron = require('node-cron');
-const moment = require('moment-timezone');
+const { makeWASocket, useSingleFileAuthState, downloadMediaMessage, DisconnectReason } = require('@whiskeysockets/baileys');
+const { Boom } = require('@hapi/boom');
 const fs = require('fs');
+const path = require('path');
 
-// === Konstanta ===
-const OWNER_NUMBER = '6287769811262@s.whatsapp.net'; // Nomor yang diizinkan akses fitur viewonce
+// Gunakan single file auth state (bisa juga pakai multi file)
+const { state, saveState } = useSingleFileAuthState('./auth.json');
 
-// === Fungsi Utama ===
 async function startBot() {
-    const { state, saveCreds } = await useMultiFileAuthState('auth_info_alarm');
-    const { version } = await fetchLatestBaileysVersion();
-
     const sock = makeWASocket({
-        version,
-        logger: P({ level: 'silent' }),
+        auth: state,
         printQRInTerminal: true,
-        auth: state
     });
 
-    const store = makeInMemoryStore({ logger: P().child({ level: 'silent', stream: 'store' }) });
-    store.bind(sock.ev);
+    // Simpan sesi saat ada perubahan
+    sock.ev.on('creds.update', saveState);
 
-    sock.ev.on('creds.update', saveCreds);
-
+    // Handle disconnect
     sock.ev.on('connection.update', (update) => {
         const { connection, lastDisconnect } = update;
         if (connection === 'close') {
-            const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
-            console.log('Koneksi terputus. Reconnect?', shouldReconnect);
+            const shouldReconnect = (lastDisconnect.error = new Boom(lastDisconnect?.error))?.output?.statusCode !== DisconnectReason.loggedOut;
+            console.log('Koneksi terputus. Reconnect:', shouldReconnect);
             if (shouldReconnect) startBot();
         } else if (connection === 'open') {
-            console.log('Bot terkoneksi!');
+            console.log('✅ Bot terhubung!');
         }
     });
 
+    // Handle pesan masuk
     sock.ev.on('messages.upsert', async ({ messages, type }) => {
-        if (type !== 'notify') return;
-
         const msg = messages[0];
+
         if (!msg.message || msg.key.fromMe) return;
 
         const sender = msg.key.remoteJid;
+        const content = msg.message;
 
-        // Hanya tangani chat pribadi (bukan grup)
-        if (sender.endsWith('@g.us')) return;
+        // Hanya respon jika dari nomor 6287769811262
+        if (!sender.includes('6287769811262')) return;
 
-        // === Fitur Buka Pesan View Once (khusus OWNER_NUMBER) ===
-        if (sender === OWNER_NUMBER && msg.message?.viewOnceMessageV2) {
+        // Deteksi View Once
+        if (content.viewOnceMessageV2) {
+            const viewOnceMsg = content.viewOnceMessageV2.message;
+            const messageType = Object.keys(viewOnceMsg)[0]; // 'imageMessage' atau 'videoMessage'
+
             try {
-                const actualMessage = msg.message.viewOnceMessageV2.message;
-                const type = Object.keys(actualMessage)[0]; // 'imageMessage' / 'videoMessage'
-                const mediaPath = 'viewonce_' + Date.now();
-
-                const filePath = await sock.downloadAndSaveMediaMessage(
-                    { message: actualMessage },
-                    mediaPath,
-                    true
+                const buffer = await downloadMediaMessage(
+                    { message: viewOnceMsg },
+                    "buffer",
+                    {},
+                    { reuploadRequest: sock.updateMediaMessage }
                 );
 
-                await sock.sendMessage(sender, {
-                    [type.includes('image') ? 'image' : 'video']: { url: filePath },
-                    caption: '✅ Ini media kamu (View Once dibuka otomatis).'
-                });
+                if (messageType === 'imageMessage') {
+                    await sock.sendMessage(sender, {
+                        image: buffer,
+                        caption: 'Ini foto view once kamu.',
+                    }, { quoted: msg });
+                } else if (messageType === 'videoMessage') {
+                    await sock.sendMessage(sender, {
+                        video: buffer,
+                        caption: 'Ini video view once kamu.',
+                    }, { quoted: msg });
+                }
 
-                fs.unlinkSync(filePath); // Hapus file setelah dikirim
-                console.log(`[VIEWONCE] Media dari ${sender} berhasil dikirim ulang.`);
+                console.log('✅ ViewOnce media berhasil dikirim ulang.');
             } catch (err) {
-                console.error('[ERROR VIEWONCE]', err);
-                await sock.sendMessage(sender, { text: '❌ Gagal mengambil pesan View Once. Mungkin sudah pernah dibuka sebelumnya.' });
+                console.error('❌ Gagal mengambil media ViewOnce:', err);
             }
-
-            return;
+        } else {
+            console.log('📥 Pesan biasa dari', sender);
         }
-
-        // === Command sederhana: ping
-        const text = msg.message.conversation || msg.message.extendedTextMessage?.text || '';
-        if (text.toLowerCase() === 'ping') {
-            await sock.sendMessage(sender, { text: 'Pong 🏓' });
-        }
-    });
-
-    // === Jadwal Cron (Opsional)
-    cron.schedule('02 21 * * *', async () => {
-        const pesan = `sayang bangun sayang`;
-        const jid = '62895351640508@s.whatsapp.net';
-        await sock.sendMessage(jid, { text: pesan });
-    });
-
-    cron.schedule('03 21 * * *', async () => {
-        const pesan = `sayangkuuu bangun sayangkuuuu`;
-        const jid = '62895351640508@s.whatsapp.net';
-        await sock.sendMessage(jid, { text: pesan });
     });
 }
 
