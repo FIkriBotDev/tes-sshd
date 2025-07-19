@@ -11828,3 +11828,58 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.exoduscloud.my.id/tmp/9f7958-1752918693363.jpg
 Response  : Sepertinya kamu menunjukkan gambar yang menarik! "Sendal goreng" terdengar lucu dan mungkin memiliki makna atau konteks tertentu. Apa kamu ingin berbagi lebih banyak tentang video ini atau menjelaskan penjelasan di balik makanan viral ini? Saya penasaran!
 
+
+[2025-07-19T11:14:19.467Z]
+Prompt    : bantu jawab
+Image URL : https://uploader.exoduscloud.my.id/tmp/f62a27-1752923649068.jpg
+Response  : Untuk menyelesaikan persamaan \( A - 2B = C \), kita lakukan langkah-langkah berikut:
+
+Diketahui:
+\[
+A = \begin{pmatrix} a & -3 \\ 4 & b \end{pmatrix}, \quad B = \begin{pmatrix} 2 & -4 \\ -2 & a \end{pmatrix}, \quad C = \begin{pmatrix} 2 & 5 \\ 8 & -3 \end{pmatrix}
+\]
+
+Langkah pertama, kita hitung \( 2B \):
+\[
+2B = 2 \times \begin{pmatrix} 2 & -4 \\ -2 & a \end{pmatrix} = \begin{pmatrix} 4 & -8 \\ -4 & 2a \end{pmatrix}
+\]
+
+Kemudian kita substitusikan ke dalam persamaan \( A - 2B \):
+\[
+A - 2B = \begin{pmatrix} a & -3 \\ 4 & b \end{pmatrix} - \begin{pmatrix} 4 & -8 \\ -4 & 2a \end{pmatrix} = \begin{pmatrix} a - 4 & -3 + 8 \\ 4 + 4 & b - 2a \end{pmatrix}
+\]
+\[
+= \begin{pmatrix} a - 4 & 5 \\ 8 & b - 2a \end{pmatrix}
+\]
+
+Setelah itu, kita samakan dengan \( C \):
+\[
+\begin{pmatrix} a - 4 & 5 \\ 8 & b - 2a \end{pmatrix} = \begin{pmatrix} 2 & 5 \\ 8 & -3 \end{pmatrix}
+\]
+
+Dari sini kita dapatkan dua sistem persamaan:
+1. \( a - 4 = 2 \)
+2. \( b - 2a = -3 \)
+
+Dari persamaan pertama:
+\[
+a - 4 = 2 \implies a = 2 + 4 = 6
+\]
+
+Kemudian substitusikan nilai \( a \) ke dalam persamaan kedua:
+\[
+b - 2(6) = -3 \implies b - 12 = -3 \implies b = -3 + 12 = 9
+\]
+
+Jadi, kita dapatkan nilai \( a \) dan \( b \):
+\[
+a = 6, \quad b = 9
+\]
+
+Akhirnya, kita cari \( a + b \):
+\[
+a + b = 6 + 9 = 15
+\]
+
+Jadi, nilai \( a + b = 15 \).
+
