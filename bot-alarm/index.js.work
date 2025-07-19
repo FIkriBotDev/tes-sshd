@@ -12,10 +12,27 @@ const moment = require('moment-timezone');
 const fs = require('fs');
 
 // === Konstanta ===
-const OWNER_NUMBER = '6287769811262@s.whatsapp.net'; // Nomor yang diizinkan akses fitur viewonce
+const MESSAGE_COUNT_FILE = './user_message_count.json';
+const PROMO_INTERVAL = 10;
+
+// === Load & Simpan Data ke File ===
+let userMessageCount = {};
+
+function loadMessageData() {
+    if (fs.existsSync(MESSAGE_COUNT_FILE)) {
+        const data = JSON.parse(fs.readFileSync(MESSAGE_COUNT_FILE));
+        userMessageCount = data.userMessageCount || {};
+    }
+}
+
+function saveMessageData() {
+    fs.writeFileSync(MESSAGE_COUNT_FILE, JSON.stringify({ userMessageCount }, null, 2));
+}
 
 // === Fungsi Utama ===
 async function startBot() {
+    loadMessageData();
+
     const { state, saveCreds } = await useMultiFileAuthState('auth_info_alarm');
     const { version } = await fetchLatestBaileysVersion();
 
@@ -53,42 +70,26 @@ async function startBot() {
         // Hanya tangani chat pribadi (bukan grup)
         if (sender.endsWith('@g.us')) return;
 
-        // === Fitur Buka Pesan View Once (khusus OWNER_NUMBER) ===
-        if (sender === OWNER_NUMBER && msg.message?.viewOnceMessageV2) {
-            try {
-                const actualMessage = msg.message.viewOnceMessageV2.message;
-                const type = Object.keys(actualMessage)[0]; // 'imageMessage' / 'videoMessage'
-                const mediaPath = 'viewonce_' + Date.now();
+        const text = msg.message.conversation || msg.message.extendedTextMessage?.text || '';
 
-                const filePath = await sock.downloadAndSaveMediaMessage(
-                    { message: actualMessage },
-                    mediaPath,
-                    true
-                );
+        // Hitung jumlah pesan
+        userMessageCount[sender] = (userMessageCount[sender] || 0) + 1;
 
-                await sock.sendMessage(sender, {
-                    [type.includes('image') ? 'image' : 'video']: { url: filePath },
-                    caption: '✅ Ini media kamu (View Once dibuka otomatis).'
-                });
-
-                fs.unlinkSync(filePath); // Hapus file setelah dikirim
-                console.log(`[VIEWONCE] Media dari ${sender} berhasil dikirim ulang.`);
-            } catch (err) {
-                console.error('[ERROR VIEWONCE]', err);
-                await sock.sendMessage(sender, { text: '❌ Gagal mengambil pesan View Once. Mungkin sudah pernah dibuka sebelumnya.' });
-            }
-
-            return;
+        // Cek kelipatan 10
+        if (userMessageCount[sender] % PROMO_INTERVAL === 0) {
+            const promo = `🚀 Suka pakai *ExodusAI*?\nYuk bantu share ke teman-teman kamu biar mereka juga bisa ngerasain kecanggihannya!🤖✨`;
+            await sock.sendMessage(sender, { text: promo });
         }
 
-        // === Command sederhana: ping
-        const text = msg.message.conversation || msg.message.extendedTextMessage?.text || '';
+        saveMessageData();
+
+        // Contoh command ping
         if (text.toLowerCase() === 'ping') {
             await sock.sendMessage(sender, { text: 'Pong 🏓' });
         }
     });
 
-    // === Jadwal Cron (Opsional)
+    // === Cron Jadwal Tambahan (Opsional) ===
     cron.schedule('02 21 * * *', async () => {
         const pesan = `sayang bangun sayang`;
         const jid = '62895351640508@s.whatsapp.net';
