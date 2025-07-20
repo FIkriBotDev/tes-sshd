@@ -11939,3 +11939,112 @@ Prompt    : mobil apa ini
 Image URL : https://uploader.exoduscloud.my.id/tmp/a5922f-1752992237827.jpg
 Response  : Mobil yang terlihat di gambar tersebut adalah BMW M4, lebih tepatnya generasi terbaru yang dikenal dengan kode G82. Desainnya yang sporty dan agresif, serta warna biru yang mencolok, sangat mencirikan model ini. BMW M4 dikenal karena performa tinggi, mesin bertenaga, dan teknologi canggih yang mendukung pengalaman berkendara yang menyenangkan, baik di jalan raya maupun di lintasan balap. Apa Anda seorang penggemar mobil, atau mungkin ada alasan khusus ini menarik perhatian Anda?
 
+
+[2025-07-20T07:30:16.027Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/cdb679-1752996605169.jpg
+Response  : Berikut adalah analisis tentang makanan yang terlihat di gambar sebagai roti isi atau roti bolu dengan isian, kemungkinan mengandung pasta atau selai hijau. Saya akan memberikan semua informasi dalam format JSON sesuai permintaanmu.
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan",
+    "alasan": "Makanan ini tinggi kalori dan bisa mengandung kadar gula serta lemak yang signifikan. Jika dikonsumsi secara berlebihan dapat berisiko untuk kesehatan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "100g",
+    "jumlahSajian": "1 porsi",
+    "kalori": 300,
+    "protein": "6g",
+    "proteinPersen": "8%",
+    "karbohidrat": "45g",
+    "karbohidratPersen": "60%",
+    "gula": "15g",
+    "serat": "2g",
+    "lemakTotal": "10g",
+    "lemakJenuh": "4g",
+    "lemakTakJenuh": "6g",
+    "lemakPersen": "30%",
+    "kolesterol": "20mg",
+    "natrium": "400mg",
+    "vitaminDanMineral": ["Vitamin A", "Kalsium", "Zat Besi"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "15%" },
+    { "nama": "Gula", "persen": "30%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 2x/minggu",
+  "ingredients": ["tepung terigu", "gula", "mentega", "yeast", "isi pasta hijau"],
+  "tipsSehat": ["Ganti dengan roti gandum untuk serat lebih tinggi", "Kurangi jumlah gula pada isian"],
+  "alternatif": ["Roti gandum utuh dengan isian sayuran", "Smoothie dengan buah-buahan segar"]
+}
+```
+
+Silakan beri tahu jika ada detail lain yang ingin kamu tambahkan atau ubah!
+
