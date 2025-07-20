@@ -12048,3 +12048,108 @@ Response  : Berikut adalah analisis tentang makanan yang terlihat di gambar seba
 
 Silakan beri tahu jika ada detail lain yang ingin kamu tambahkan atau ubah!
 
+
+[2025-07-20T07:35:42.563Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/9b49d7-1752996934609.webp
+Response  : ```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan",
+    "alasan": "Makanan ini tinggi kalori dan gula, yang dapat berkontribusi pada masalah kesehatan jika dikonsumsi terlalu sering."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "150 gram",
+    "jumlahSajian": "1 potong (sekitar 150 gram)",
+    "kalori": 300,
+    "protein": "5g",
+    "proteinPersen": "6.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "25g",
+    "serat": "2g",
+    "lemakTotal": "15g",
+    "lemakJenuh": "5g",
+    "lemakTakJenuh": "10g",
+    "lemakPersen": "45%",
+    "kolesterol": "30mg",
+    "natrium": "100mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "15%" },
+    { "nama": "Gula", "persen": "25%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "1.5-2 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/bulan",
+  "ingredients": ["Tepung terigu", "Gula", "Susu", "Krim", "Buah segar", "Pemanis"],
+  "tipsSehat": ["Ganti krim dengan yogurt rendah lemak", "Gunakan buah-buahan segar lebih banyak sebagai topping"],
+  "alternatif": ["Puding buah dengan yogurt", "Kue oatmeal dengan potongan buah"]
+}
+```
+
