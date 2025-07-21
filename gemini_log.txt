@@ -12161,3 +12161,108 @@ Response  : Ini tampaknya adalah tampilan dari permainan Grand Theft Auto: San A
 
 Maksudnya adalah untuk menyelesaikan berbagai misi dalam permainan, kamu perlu mengambil alih lebih banyak wilayah dari geng lain di sekitar Los Santos. Ini adalah salah satu elemen gameplay di mana kamu bisa memperluas kontrol wilayah gengmu dan meningkatkan kekuasaan di dalam permainan. Biasanya, ini melibatkan pertarungan dengan anggota geng lain dan strategi untuk memperkuat posisi gengmu. Apakah kamu sudah menikmati permainan ini?
 
+
+[2025-07-21T14:08:04.364Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/dca03c-1753106867880.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan dengan catatan",
+    "alasan": "Makanan ini tampak memiliki komponen yang baik seperti nori (rumput laut) yang kaya akan mineral dan serat, namun juga mengandung karbohidrat tinggi. Sebaiknya dikonsumsi dengan seimbang."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "100g",
+    "jumlahSajian": "1 sajian",
+    "kalori": 220,
+    "protein": "5g",
+    "proteinPersen": "9.09%",
+    "karbohidrat": "40g",
+    "karbohidratPersen": "72.73%",
+    "gula": "1g",
+    "serat": "2g",
+    "lemakTotal": "4g",
+    "lemakJenuh": "1g",
+    "lemakTakJenuh": "3g",
+    "lemakPersen": "16.36%",
+    "kolesterol": "0mg",
+    "natrium": "250mg",
+    "vitaminDanMineral": ["Vitamin A", "Kalsium", "Zat Besi", "Magnesium", "Vitamin C"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "11%" },
+    { "nama": "Gula", "persen": "1%" },
+    { "nama": "Lemak", "persen": "6%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "rendah",
+    "Natrium": "sedang"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "1-2x/minggu",
+  "ingredients": ["Nasi putih", "Nori", "Suplementasi protein (misal tuna atau tahu)"],
+  "tipsSehat": ["Tambahkan sayuran segar sebagai isi untuk meningkatkan serat", "Gunakan nasi cokelat untuk meningkatkan nilai gizi"],
+  "alternatif": ["Sushi dengan sayuran tambahan", "Onigiri dengan isi protein rendah lemak"]
+}
+
