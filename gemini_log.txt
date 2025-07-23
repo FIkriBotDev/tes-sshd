@@ -12514,3 +12514,128 @@ Response  : {
   "alternatif": ["Sup sayuran denganquinoa", "Mie soba dengan sayuran dan protein rendah lemak", "Nasi dengan lauk nabati dan sayuran"]
 }
 
+
+[2025-07-23T03:11:40.641Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/2a2241-1753240286886.png
+Response  : Berikut adalah analisis lengkap mengenai makanan dalam gambar tersebut, yaitu Mi Goreng dari Indomie:
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak",
+    "alasan": "Makanan ini tinggi karbohidrat sederhana, lemak jenuh, dan natrium, yang bisa berkontribusi pada masalah kesehatan jika dikonsumsi secara berlebihan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "85g",
+    "jumlahSajian": "1 sajian (1 bungkus)",
+    "kalori": 380,
+    "protein": "8g",
+    "proteinPersen": "8.42%",
+    "karbohidrat": "53g",
+    "karbohidratPersen": "55.68%",
+    "gula": "3g",
+    "serat": "2g",
+    "lemakTotal": "18g",
+    "lemakJenuh": "8g",
+    "lemakTakJenuh": "10g",
+    "lemakPersen": "42.11%",
+    "kolesterol": "0mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "19%" },
+    { "nama": "Gula", "persen": "5%" },
+    { "nama": "Natrium", "persen": "34%"},
+    { "nama": "Lemak Jenuh", "persen": "40%"}
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "tinggi",
+    "Natrium": "tinggi"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/bulan",
+  "ingredients": ["Tepung terigu", "Minyak kelapa", "Bumbu mi goreng", "Garam", "Pengawet", "Perisa buatan"],
+  "tipsSehat": [
+    "Tambahkan sayuran segar seperti wortel dan brokoli untuk meningkatkan kandungan nutrisi.",
+    "Kurangi penggunaan bumbu penyedap untuk menekan asupan natrium."
+  ],
+  "alternatif": [
+    "Mi gandum utuh dengan sayuran",
+    "Nasi merah dengan lauk sehat"
+  ]
+}
+```
+
+Analisis ini memberikan gambaran yang cukup jelas tentang makanan yang Anda sebutkan, mulai dari aspek kesehatan, nutrisi, hingga beberapa tips untuk memperbaiki penggunaannya. Jika ada pertanyaan lebih lanjut atau jika Anda ingin membahas lebih dalam, jangan ragu untuk bertanya!
+
+
+
+---
+
+**Support Pollinations.AI:**
+🌸 **Iklan** 🌸 Tingkatkan kesehatan Anda dengan mengganti Mi Goreng Indomie dengan [mi gandum utuh](https://pollinations.ai/redirect/kofi) dan sayuran segar!
+
