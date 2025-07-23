@@ -13036,3 +13036,118 @@ Response  : {
   "alternatif": ["Roti gandum dengan selai kacang", "Kue oatmeal dengan potongan buah"]
 }
 
+
+[2025-07-23T08:25:54.022Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/eea020-1753259138144.jpg
+Response  : Berikut adalah analisis lengkap mengenai makanan yang terlihat dalam gambar tersebut:
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Ya",
+    "alasan": "Makanan terlihat mengandung berbagai komponen yang seimbang, ada sumber karbohidrat dari nasi, protein dari daging atau ikan, serta sayuran."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "250 gram",
+    "jumlahSajian": "1 porsi",
+    "kalori": 500,
+    "protein": "25g",
+    "proteinPersen": "20%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "56%",
+    "gula": "8g",
+    "serat": "5g",
+    "lemakTotal": "15g",
+    "lemakJenuh": "5g",
+    "lemakTakJenuh": "10g",
+    "lemakPersen": "27%",
+    "kolesterol": "70mg",
+    "natrium": "600mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "25%" },
+    { "nama": "Gula", "persen": "16%" },
+    { "nama": "Lemak", "persen": "20%" },
+    { "nama": "Natrium", "persen": "25%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang",
+    "Lemak": "sedang",
+    "Natrium": "tinggi"
+  },
+  "waktuKenyang": "4 jam",
+  "frekuensiKonsumsi": "2-3x/minggu",
+  "ingredients": ["Nasi", "Ayam/ikan", "Sayuran hijau", "Bumbu rempah"],
+  "tipsSehat": [
+    "Mengurangi jumlahnya agar porsi lebih kecil.",
+    "Mengganti nasi putih dengan nasi merah atau quinoa untuk serat lebih tinggi."
+  ],
+  "alternatif": ["Salad dengan protein", "Sup sayur dengan daging", "Nasi dengan sayuran panggang"]
+}
+```
+
+Analisis ini mengedepankan keseimbangan gizi dan variasi pada makanan. Dengan memerhatikan detail-detail ini, kamu bisa membuat pilihan lebih baik dalam hal kesehatan dan kebiasaan makan. Jika butuh info lebih lanjut tentang jenis makanan tertentu, jangan ragu untuk bertanya!
+
