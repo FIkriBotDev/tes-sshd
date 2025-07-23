@@ -12820,3 +12820,114 @@ Response  : Berikut adalah analisis lengkap tentang "Kerupuk Seblak Tatangga Mam
 
 Analisis ini memberikan gambaran umum tentang makanan seperti kerupuk seblak ini. Tentunya, semua ini harus disesuaikan dengan preferensi dan kebutuhan masing-masing individu!
 
+
+[2025-07-23T08:23:50.898Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/64c6eb-1753259016706.jpg
+Response  : Berikut adalah analisis makanan berdasarkan gambar yang diunggah:
+
+```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Mungkin tidak direkomendasikan",
+    "alasan": "Makanan ini mengandung tingkat lemak dan natrium yang cukup tinggi, serta gula yang berlebihan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "100 gram",
+    "jumlahSajian": "1 sajian",
+    "kalori": 400,
+    "protein": "25g",
+    "proteinPersen": "25%",
+    "karbohidrat": "30g",
+    "karbohidratPersen": "30%",
+    "gula": "10g",
+    "serat": "2g",
+    "lemakTotal": "25g",
+    "lemakJenuh": "8g",
+    "lemakTakJenuh": "17g",
+    "lemakPersen": "40%",
+    "kolesterol": "70mg",
+    "natrium": "900mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "20%" },
+    { "nama": "Gula", "persen": "20%" },
+    { "nama": "Lemak", "persen": "35%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "tinggi",
+    "Natrium": "tinggi"
+  },
+  "waktuKenyang": "4 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/bulan",
+  "ingredients": ["Minyak", "Cabai Merah", "Bawang Putih", "Garam", "Gula"],
+  "tipsSehat": ["Gunakan lebih sedikit minyak.", "Tambahkan sayuran segar untuk keseimbangan."],
+  "alternatif": ["Saus sambal rendah lemak", "Minyak chili homemade tanpa tambahan gula"]
+}
+```
+
+Analisis ini memberikan gambaran mengenai keseimbangan nutrisi dari makanan yang terlihat dalam video TikTok tersebut. Dari sini, Anda dapat mempertimbangkan frekuensi konsumsi dan kemungkinan untuk membuat pilihan yang lebih sehat. Jika ada pertanyaan lebih lanjut atau jika ingin mendiskusikan yang lain, silakan!
+
