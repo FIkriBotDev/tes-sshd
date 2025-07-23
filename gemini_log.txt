@@ -12296,3 +12296,115 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.exoduscloud.my.id/tmp/8a6067-1753191337212.jpg
 Response  : Looks like someone’s getting a mysterious call! That's always a bit of a rollercoaster moment. You’re just chilling, and suddenly your phone’s lighting up with a name you might not recognize. It can be exciting or a little nerve-racking, depending on who it is, right? Got any idea who it might be, or are you just as puzzled as the person in the picture? 😂
 
+
+[2025-07-23T02:47:21.450Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/678db1-1753238828175.png
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan.",
+    "alasan": "Mi goreng mengandung jumlah karbohidrat dan lemak yang tinggi, serta kadar natrium yang signifikan, yang dapat meningkatkan risiko kesehatan jika dikonsumsi secara berlebihan. Makanan ini juga kurang nutrisi dibandingkan sayuran dan sumber protein lebih sehat."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "85 gram",
+    "jumlahSajian": "1 sajian per kemasan",
+    "kalori": 385,
+    "protein": "10g",
+    "proteinPersen": "10.4%",
+    "karbohidrat": "55g",
+    "karbohidratPersen": "57.1%",
+    "gula": "6g",
+    "serat": "2g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "46.5%",
+    "kolesterol": "0mg",
+    "natrium": "960mg",
+    "vitaminDanMineral": ["Vitamin B, Zat Besi", "Kalium", "Magnesium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "20%" },
+    { "nama": "Natrium", "persen": "42%" },
+    { "nama": "Lemak Total", "persen": "31%" },
+    { "nama": "Karbohidrat", "persen": "18%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang",
+    "Lemak": "tinggi",
+    "Natrium": "sangat tinggi"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/bulan.",
+  "ingredients": ["Mie terigu, Minyak Sawit, Bahan Perasa Mi Goreng, Gula, Garam", "Bubuk Bawang Putih", "Bubuk Bawang Merah", "Lecithin (Emulsifier)"],
+  "tipsSehat": [
+    "Sajikan dengan sayuran segar untuk meningkatkan nilai gizi.",
+    "Kurangi penggunaan bumbu yang diberikan untuk mengurangi natrium."
+  ],
+  "alternatif": [
+    "Mi gandum utuh dengan sayuran",
+    "Nasi merah dengan protein sehat seperti tofu atau ayam panggang"
+  ]
+}
+
