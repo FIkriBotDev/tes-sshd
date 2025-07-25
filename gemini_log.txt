@@ -13380,3 +13380,13 @@ Response  : Dari gambar yang kamu tunjukkan, sepertinya ini adalah penawaran unt
 
 Dengan potongan harga hingga 90%, ini mungkin kesempatan bagus bagi siapa saja yang ingin memperdalam pengetahuan di bidang ini. Apakah kamu sedang mempertimbangkan untuk mengambil salah satu paket tersebut, atau ada hal lain yang ingin kamu diskusikan terkait informasi ini?
 
+
+[2025-07-25T06:33:15.949Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/2c3b9b-1753425187719.jpg
+Response  : Gambar yang kamu bagikan menunjukkan informasi tentang bootcamp "Machine Learning & AI for Beginner" yang diselenggarakan oleh DQLab. Ada 16 sesi mentoring live via Zoom di mana peserta bisa belajar setiap Rabu malam dan Sabtu pagi. 
+
+Benefit yang ditawarkan termasuk silabus yang sesuai dengan kebutuhan industri, studi kasus nyata, diskusi dengan instruktur, akses materi dan rekaman sesi, serta sertifikat di akhir program. Harga awalnya Rp 2.500.000, tapi ada diskon menarik menjadi Rp 850.000 jika menggunakan kode voucher MUHA15BCMA. 
+
+Kalau kamu tertarik untuk belajar machine learning dan AI, ini bisa jadi kesempatan bagus! Ada yang ingin kamu diskusikan lebih lanjut tentang bootcamp ini?
+
