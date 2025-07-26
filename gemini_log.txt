@@ -13390,3 +13390,17 @@ Benefit yang ditawarkan termasuk silabus yang sesuai dengan kebutuhan industri, 
 
 Kalau kamu tertarik untuk belajar machine learning dan AI, ini bisa jadi kesempatan bagus! Ada yang ingin kamu diskusikan lebih lanjut tentang bootcamp ini?
 
+
+[2025-07-26T05:40:57.527Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/38fce9-1753508451716.jpg
+Response  : Gambar yang kamu tunjukkan menunjukkan konten YouTube yang tampaknya menarik perhatian. Terdapat beberapa video yang tampaknya cukup populer dengan banyak penonton. Judul dan thumbnail bisa menjadi faktor penting dalam menarik perhatian orang untuk mengkliknya. 
+
+Dalam hal ini, video tentang "iklan terkutuk" dan "sisi gelap roleplay" tampak menawarkan pengalaman yang menarik bagi penonton dengan tema yang intrigues. Apakah ada tema tertentu yang menarik bagimu dari video-video ini?
+
+
+[2025-07-26T05:41:22.519Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/afcded-1753508476738.jpg
+Response  : Sepertinya ada momen tegang di sini! Satu menit berlalu dan belum ada jawaban dari si chat. Rasanya pasti bikin tidak sabar, terutama kalau kita nunggu kabar dari seseorang yang kita harapkan. Di dunia digital ini, menunggu balasan terkadang bisa bikin kita berasa segala macam, dari penasaran hingga sedikit frustrasi. Apakah kamu lagi dalam situasi yang sama? Atau mungkin kamu butuh tips untuk menghadapi momen-momen seperti ini?
+
