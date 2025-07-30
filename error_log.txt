@@ -2291,3 +2291,4 @@
   "message": "invalid json response body at https://text.pollinations.ai/openai reason: Unexpected non-whitespace character after JSON at position 4",
   "type": "invalid-json"
 }
+[2025-07-30T05:05:40.822Z] Error processing image: {}
