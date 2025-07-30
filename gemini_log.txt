@@ -13766,3 +13766,15 @@ Response  : Menggunakan gambar yang diberikan, berikut adalah analisis makanan d
 
 Analisis ini didasarkan pada ciri-ciri umum makanan manis yang tampaknya seperti kue atau makanan penutup. Jika ada informasi spesifik yang lebih akurat tentang makanan tersebut atau pertanyaan tambahan, silakan beri tahu!
 
+
+[2025-07-30T04:41:26.093Z]
+Prompt    : menurutmu ini gimana worth it ga
+Image URL : https://uploader.exoduscloud.my.id/tmp/b32ad4-1753850479125.jpg
+Response  : Wow, diskon 98% itu luar biasa! Dari harga asli Rp 3.690.000 jadi cuma Rp 100.000, rasanya ini kesempatan yang sulit untuk ditolak. 
+
+Kelas yang ditawarkan mencakup Data Analyst, Data Scientist, dan Data Engineer, yang semuanya merupakan bidang yang sangat relevan dan diminati di pasar kerja saat ini. Akses ke materi industri terkini, konsultasi dengan instruktur ahli, dan kemampuan untuk membuat portfolio sangat menguntungkan buat mereka yang pengen terjun ke dunia data.
+
+Hal yang patut diperhatikan adalah kualitas program tersebut. Apakah mereka memberikan dukungan yang memadai? Apakah ada feedback dari alumni sebelumnya? Jika secara umum feedback-nya positif, sepertinya bisa jadi investasi yang baik.
+
+Jadi, tergantung pada tujuanmu dan seberapa percaya kamu dengan program itu. Jika semua kelihatan menjanjikan, kenapa tidak?
+
