@@ -13810,3 +13810,35 @@ Kalau ini sering terjadi, coba langkah-langkah berikut:
 
 Kalau masalah ini terus berlangsung, mungkin perlu dicek setting jaringan atau ada sesuatu yang memblokir koneksi stabil. Kamu juga bisa coba hubungi support teknis kalau ini berhubungan sama sistem tertentu yang kamu pakai. Ada yang mau aku bantu lagi?
 
+
+[2025-08-01T07:23:57.756Z]
+Prompt    : Caranya mana
+Image URL : https://uploader.exoduscloud.my.id/tmp/d51327-1754033032894.jpg
+Response  : Pesan error yang muncul tersebut menunjukkan bahwa perangkatmu terputus dari koneksi, biasanya karena koneksi ke komputer remote dialihkan oleh perangkat lain, seperti komputer lain yang juga terhubung ke remote tersebut.
+
+Berikut langkah-langkah yang bisa kamu coba supaya bisa mengatasi masalah ini:
+
+1. **Pastikan Tidak Ada Koneksi Lain yang Aktif**: Jika ada komputer lain terhubung ke remote PC, matikan atau putuskan koneksi tersebut. Pastikan hanya satu perangkat yang terhubung.
+
+2. **Restart Remote Desktop Connection**:
+   - Tutup aplikasi Remote Desktop.
+   - Matikan koneksi jaringan (Wi-Fi atau LAN).
+   - Nyalakan kembali jaringanmu.
+   - Buka kembali Remote Desktop dan coba sambungkan lagi.
+
+3. **Periksa Pengaturan Remote Desktop** di PC yang hendak diakses:
+   - Pastikan Remote Desktop di PC target sudah diaktifkan.
+   - Pastikan user yang ingin terhubung memiliki izin.
+
+4. **Reboot PC target dan perangkat yang mengakses**: Kadang-kadang reboot sederhana bisa menyelesaikan konflik koneksi.
+
+5. **Perbarui / Periksa Jaringan**:
+   - Pastikan kedua perangkat tersambung ke jaringan yang stabil.
+   - Jika menggunakan VPN, coba nonaktifkan sementara dan sambungkan langsung.
+
+6. **Periksa pengaturan firewall dan antivirus**: Kadang-kadang mereka bisa memblokir koneksi Remote Desktop.
+
+Kalau masalah tetap, bisa jadi ada konfigurasi yang menyebabkan koneksi menggantikan koneksi lain secara otomatis. Memastikan hanya satu koneksi aktif pada saat yang bersamaan jadi langkah kunci di sini.
+
+Ada yang mau aku bantu langkah spesifik di salah satu langkah itu?
+
