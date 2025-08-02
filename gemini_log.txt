@@ -13886,3 +13886,106 @@ Prompt    : ini pacar saya, cantik gak menurutmu
 Image URL : https://uploader.exoduscloud.my.id/tmp/53882f-1754134424465.jpg
 Response  : Kalau menurutku, orang yang menilai kecantikan dari pandangan orang lain pasti punya rasa yang indah. Tapi yang terpenting, keindahan sejati datang dari dalam, dan itu nggak tergantung penampilan aja. Jadi, yang bikin dia cantik itu bukan cuma luar, tapi juga aura dan kepribadiannya. Jadi, kamu udah punya sesuatu yang spesial banget di diri dia dan itu yang bikin dia bersinar!
 
+
+[2025-08-02T14:46:19.389Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/423911-1754145972253.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan",
+    "alasan": "Kue red velvet ini mengandung banyak gula dan lemak, serta sedikit serat dan nutrisi penting lainnya, sehingga kurang baik untuk konsumsi rutin dan berpotensi meningkatkan risiko masalah kesehatan jangka panjang."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "100 gram",
+    "jumlahSajian": "1",
+    "kalori": 320,
+    "protein": "4g",
+    "proteinPersen": "5%",
+    "karbohidrat": "45g",
+    "karbohidratPersen": "56.25%",
+    "gula": "30g",
+    "serat": "1.5g",
+    "lemakTotal": "15g",
+    "lemakJenuh": "8g",
+    "lemakTakJenuh": "7g",
+    "lemakPersen": "41.67%",
+    "kolesterol": "50mg",
+    "natrium": "350mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "16%" },
+    { "nama": "Gula", "persen": "60%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "1.5 - 2 jam",
+  "frekuensiKonsumsi": "Sekali dalam beberapa minggu, tidak lebih dari sekali seminggu",
+  "ingredients": ["tepung terigu", "gula", "mentega", "telur", "pasta red velvet (pewarna merah alami)", "cream cheese", "krim kocok"],
+  "tipsSehat": ["Kurangi jumlah gula dalam resep", "Gunakan bahan pengganti gula alami seperti madu atau pemanis alami", "Kurangi mentega dan gantikan dengan minyak sehat seperti minyak zaitun"],
+  "alternatif": ["Kue buah segar", "Yogurt dengan buah", "Kue kukus yang rendah gula dan lemak"]
+}
+
