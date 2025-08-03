@@ -14196,3 +14196,109 @@ Response  : {
   "alternatif": ["Sate ayam tanpa lemak", "Daging batang sapi tanpa lemak panggang", "Tumis sayuran dengan sedikit minyak"]
 }
 
+
+[2025-08-03T04:00:52.020Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/2c331f-1754193643196.jpg
+Response  : ```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak disarankan untuk konsumsi rutin",
+    "alasan": "Makanan ini tampaknya berlemak tinggi, kemungkinan mengandung banyak garam dan gula tergantung bumbu, dan tidak cukup serat atau vitamin. Kerapatan kalori yang tinggi dan potensi kandungan bahan pengawet atau MSG juga perlu diperhatikan, terutama jika dikonsumsi berlebihan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "secara perkiraan sekitar 200g",
+    "jumlahSajian": "1 porsi",
+    "kalori": 400,
+    "protein": "25g",
+    "proteinPersen": "25%",
+    "karbohidrat": "35g",
+    "karbohidratPersen": "35%",
+    "gula": "7g",
+    "serat": "2g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "45%",
+    "kolesterol": "70mg",
+    "natrium": "1500mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "20%" },
+    { "nama": "Gula", "persen": "14%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "tinggi",
+    "Garam": "tinggi"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Sebisa mungkin tidak lebih dari 1x seminggu",
+  "ingredients": ["Daging sapi atau ayam", "Bumbu rempah (bawang, lada, ketumbar)", "Kecap manis", "Garam", "Minyak goreng"],
+  "tipsSehat": ["Kurangi penggunaan garam dan gula", "Gunakan minyak dengan lemak tak jenuh", "Tambahkan sayur untuk serat dan vitamin"],
+  "alternatif": ["Daging panggang tanpa banyak lemak", "Sup ayam berisi sayuran segar", "Tempe atau tahu goreng dipanggang sebagai sumber protein"]
+}
+```
+
