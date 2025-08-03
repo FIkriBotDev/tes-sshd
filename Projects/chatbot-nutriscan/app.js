@@ -9,7 +9,7 @@ const app = express();
 const port = 2100;
 
 app.use(cors());
-app.use(express.static('public'));
+app.use(express.static('public_nutriscan_chatbot'));
 app.use(express.json());
 
 const storage = multer.memoryStorage();
