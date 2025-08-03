@@ -300,6 +300,16 @@
       const chatbot = document.getElementById("chatbotContainer");
       chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
     }
+
+// Kirim ke iframe chatbot
+const chatbotIframe = document.querySelector("iframe.chatbot-iframe");
+if (chatbotIframe) {
+    chatbotIframe.contentWindow.postMessage({
+        type: "nutrisi_data",
+        payload: data  // ← JSON dari NutriScan AI
+    }, "*");  // gunakan domain tertentu untuk security
+}
+
   </script>
 </body>
 </html>
