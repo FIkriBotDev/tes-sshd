@@ -2,79 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nutriscan AI with Chatbot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ExodusAI Chatbot</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 2rem; }
-    #result { margin-top: 1rem; }
-    .chatbox { border: 1px solid #ccc; padding: 1rem; margin-top: 2rem; max-width: 600px; }
-    .messages { height: 300px; overflow-y: auto; border: 1px solid #ddd; padding: 1rem; margin-bottom: 1rem; }
-    .message { margin: 0.5rem 0; }
-    .user { color: blue; }
-    .bot { color: green; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f2f5;
+    }
+
+    #chatbox {
+      width: 100%;
+      max-width: 600px;
+      margin: 50px auto;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .message {
+      margin-bottom: 15px;
+    }
+
+    .user {
+      text-align: right;
+      color: #333;
+    }
+
+    .bot {
+      text-align: left;
+      color: #007bff;
+    }
+
+    input[type="text"] {
+      width: 75%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      outline: none;
+    }
+
+    #fileInput {
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .image-preview {
+      max-width: 100%;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
-  <h1>Nutriscan AI</h1>
-  <input type="file" id="imageInput" accept="image/*" />
-  <button onclick="uploadImage()">Scan Gambar</button>
-  <div id="result"></div>
-
-  <div class="chatbox">
-    <h3>AI Chatbot</h3>
-    <div class="messages" id="chatMessages"></div>
-    <input type="text" id="chatInput" placeholder="Tulis pertanyaan..." style="width: 80%;" />
-    <button onclick="sendChat()">Kirim</button>
+  <div id="chatbox">
+    <div id="messages"></div>
+    <input type="file" id="fileInput" accept="image/*" />
+    <input type="text" id="userInput" placeholder="Tulis pertanyaan..." />
+    <button onclick="sendMessage()">Kirim</button>
   </div>
 
-  <script>
-    async function uploadImage() {
-      const input = document.getElementById('imageInput');
-      const resultDiv = document.getElementById('result');
-      if (input.files.length === 0) return alert('Pilih gambar terlebih dahulu.');
-      const formData = new FormData();
-      formData.append('image', input.files[0]);
-
-      resultDiv.innerHTML = 'Memproses gambar...';
-
-      try {
-        const response = await fetch('/upload', {
-          method: 'POST',
-          body: formData
-        });
-        const data = await response.json();
-        if (data.status && data.result) {
-          resultDiv.innerHTML = `Hasil Nutriscan:<pre>${JSON.stringify(data.result, null, 2)}</pre>`;
-        } else {
-          resultDiv.innerHTML = 'Gagal mengenali gambar.';
-        }
-      } catch (e) {
-        resultDiv.innerHTML = 'Terjadi kesalahan.';
-      }
-    }
-
-    async function sendChat() {
-      const input = document.getElementById('chatInput');
-      const messagesDiv = document.getElementById('chatMessages');
-      const userMessage = input.value.trim();
-      if (!userMessage) return;
-
-      messagesDiv.innerHTML += `<div class='message user'><strong>Kamu:</strong> ${userMessage}</div>`;
-      input.value = '';
-
-      try {
-        const res = await fetch('/chat', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ prompt: userMessage })
-        });
-        const data = await res.json();
-        messagesDiv.innerHTML += `<div class='message bot'><strong>AI:</strong> ${data.result || 'Tidak ada jawaban.'}</div>`;
-        messagesDiv.scrollTop = messagesDiv.scrollHeight;
-      } catch (e) {
-        messagesDiv.innerHTML += `<div class='message bot'>Terjadi kesalahan.</div>`;
-      }
-    }
-  </script>
+  <script src="chatbot.js"></script>
 </body>
 </html>
