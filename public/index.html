@@ -306,7 +306,7 @@ const chatbotIframe = document.querySelector("iframe.chatbot-iframe");
 if (chatbotIframe) {
     chatbotIframe.contentWindow.postMessage({
         type: "nutrisi_data",
-        payload: data  // ← JSON dari NutriScan AI
+        payload: hasilJSON  // ← JSON dari NutriScan AI
     }, "*");  // gunakan domain tertentu untuk security
 }
 
