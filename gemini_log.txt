@@ -14717,3 +14717,106 @@ Response  : {
   "alternatif": ["Sayur panggang atau kukus", "Daging tanpa lemak yang dimasak dengan cara lebih sehat (misalnya direbus atau dikukus)", "Tari pasta gandum utuh sebagai pengganti makanan berlemak tinggi"]
 }
 
+
+[2025-08-04T04:31:12.490Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/8f833b-1754281864012.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan secara rutin karena kandungan lemak jenuh dan natrium tinggi",
+    "alasan": "Makanan ini mengandung jumlah garam dan lemak jenuh yang cukup tinggi, yang dapat meningkatkan risiko penyakit jantung dan hipertensi jika dikonsumsi berlebihan. Secara umum, kurang ideal untuk dikonsumsi setiap hari."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "120g",
+    "jumlahSajian": "1",
+    "kalori": 250,
+    "protein": "18g",
+    "proteinPersen": "28.8%",
+    "karbohidrat": "12g",
+    "karbohidratPersen": "19.2%",
+    "gula": "3g",
+    "serat": "2g",
+    "lemakTotal": "15g",
+    "lemakJenuh": "6g",
+    "lemakTakJenuh": "9g",
+    "lemakPersen": "54%",
+    "kolesterol": "75mg",
+    "natrium": "1400mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "12.5%" },
+    { "nama": "Gula", "persen": "6%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "cukup tinggi"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 2 kali seminggu",
+  "ingredients": ["Daging sapi atau ayam", "Rempah-rempah", "Saus kecap", "Garam", "Lada"],
+  "tipsSehat": ["Kurangi garam dan minyak saat masak", "Tambahkan sayuran sebagai pelengkap", "Gunakan rempah alami untuk peningkatan rasa"],
+  "alternatif": ["Daging ayam tanpa kulit, dipanggang atau direbus", "Porsi kecil", "Penggunaan rempah alami tanpa garam berlebih"]
+}
+
