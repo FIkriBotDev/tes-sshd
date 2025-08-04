@@ -2300,3 +2300,5 @@
   "type": "invalid-json"
 }
 [2025-08-04T04:02:37.703Z] Error processing image: {}
+[2025-08-04T04:03:11.116Z] Error processing image: {}
+[2025-08-04T04:03:11.815Z] Error processing image: {}
