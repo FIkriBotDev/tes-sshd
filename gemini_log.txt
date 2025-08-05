@@ -15235,3 +15235,107 @@ Response  : {
   "alternatif": ["Nasi merah dengan sayuran dan protein tanpa lemak", "Sandwich dengan roti gandum dan banyak sayuran", "Telur rebus dan buah segar"]
 }
 
+
+[2025-08-05T11:55:50.046Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/8d44a8-1754394941768.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan sebagai pilihan sehat rutin",
+    "alasan": "Makanan ini tampaknya adalah mie instant yang mengandung tinggi garam, lemak jenuh, dan gula, serta rendah serat dan nutrisi penting lainnya. Konsumsi rutin, terutama dalam jumlah besar, dapat meningkatkan risiko hipertensi, masalah jantung, dan kesehatan metabolik."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "porsi kecil sekitar 150 gram",
+    "jumlahSajian": "1 porsi",
+    "kalori": 350,
+    "protein": "8g",
+    "proteinPersen": "9.14%",
+    "karbohidrat": "60g",
+    "karbohidratPersen": "68.57%",
+    "gula": "4g",
+    "serat": "2g",
+    "lemakTotal": "14g",
+    "lemakJenuh": "5g",
+    "lemakTakJenuh": "9g",
+    "lemakPersen": "36% dari total kalori",
+    "kolesterol": "20mg",
+    "natrium": "1400mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "20%" },
+    { "nama": "Gula", "persen": "8%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "cukup tinggi",
+    "Garam": "tinggi"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Max 1-2 kali seminggu, jangan terlalu sering",
+  "ingredients": ["mi gandum atau terigu", "bumbu penyedap (glutamat dan garam)", "minyak"], 
+  "tipsSehat": ["Kurangi penggunaan bumbu instan dan garam", "Tambah sayuran segar untuk nutrisi lebih lengkap", "Batasi konsumsi mi instan dalam diet rutin"],
+  "alternatif": ["Mi dari bahan alami seperti soba atau oat", "Sup sayur segar tanpa bumbu instan", "Nasi merah dengan lauk sehat"]
+}
+
