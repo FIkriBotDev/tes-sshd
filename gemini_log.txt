@@ -15028,3 +15028,107 @@ Response  : {
   "alternatif": ["pizza sayur dengan keju rendah lemak", "pizza dari tepung gandum utuh", "atau piza rumahan dengan bahan segar dan lebih sehat"]
 }
 
+
+[2025-08-05T10:31:39.606Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/f7dc1d-1754389892687.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan secara rutin",
+    "alasan": "Masakan ini tampaknya mengandung banyak lemak jenuh, kolesterol tinggi, dan garam, yang bisa meningkatkan risiko penyakit jantung dan hipertensi jika dikonsumsi terlalu sering."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "sekitar 150 gram",
+    "jumlahSajian": "1",
+    "kalori": 350,
+    "protein": "25g",
+    "proteinPersen": "28.57%",
+    "karbohidrat": "20g",
+    "karbohidratPersen": "22.86%",
+    "gula": "3g",
+    "serat": "2g",
+    "lemakTotal": "22g",
+    "lemakJenuh": "9g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "40%",
+    "kolesterol": "80mg",
+    "natrium": "1500mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "17.5%" },
+    { "nama": "Gula", "persen": "6%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "tinggi",
+    "Garam": "tinggi"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Sekali seminggu atau kurang",
+  "ingredients": ["Daging sapi", "Bumbu rempah-rempah", "Kecap manis", "Gula merah", "GarUm", "Bawang merah", "Bawang putih"],
+  "tipsSehat": ["Kurangi jumlah garam dan gula dalam memasak", "Gunakan daging tanpa lemak atau bagian yang lebih sehat", "Tambah sayur untuk serat dan nutrisi"],
+  "alternatif": ["Daging ayam tanpa kulit", "Metode memasak panggang atau kukus", "Penggunaan rempah alami tanpa tambahan gula"]
+}
+
