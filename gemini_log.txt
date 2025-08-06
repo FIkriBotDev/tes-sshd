@@ -15552,3 +15552,13 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.exoduscloud.my.id/tmp/1be98a-1754469900618.jpg
 Response  : Sepertinya kamu sedang menunjukkan gambar luka kecil pada lenganmu. Apakah kamu ingin berbicara tentang apa yang terjadi atau membutuhkan saran tentang perawatan luka ini? Jika luka ini cukup dalam, berdarah terus-menerus, atau ada tanda-tanda infeksi seperti bengkak, kemerahan, atau nyeri yang memburuk, sebaiknya kamu segera mencari bantuan medis.
 
+
+[2025-08-06T22:17:24.082Z]
+Prompt    : gw asam lambung tapi gw mau makan ini boleh ga?
+Image URL : https://uploader.exoduscloud.my.id/tmp/0b2e52-1754518638253.jpg
+Response  : Kalau gw lagi gugat lambung, biasanya disarankan menghindari makanan yang pedas, berminyak, atau terlalu berlemak. Mie instan kayak ini kan cenderung berminyak dan ga selalu rendah rasa pedasnya, tergantung tingkat bumbunya.
+
+Kalau kamu mau aman, coba perhatikan bagaimana lambungmu reaksi setelah makan hal kayak gini. Kalau merasa nggak nyaman, perih, atau makin parah gejalanya, sebaiknya hindari dulu. Tapi kalau merasa ok dan nggak bergejala, nggak apa-apa sih coba-coba, asal jangan terlalu sering atau dalam jumlah besar.
+
+Intinya, dengarkan tubuhmu dan jangan ragu buat konsultasi ke dokter untuk saran yang lebih spesifik ya!
+
