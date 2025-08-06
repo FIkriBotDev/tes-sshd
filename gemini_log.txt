@@ -15339,3 +15339,107 @@ Response  : {
   "alternatif": ["Mi dari bahan alami seperti soba atau oat", "Sup sayur segar tanpa bumbu instan", "Nasi merah dengan lauk sehat"]
 }
 
+
+[2025-08-06T08:37:37.406Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/263632-1754469448427.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan",
+    "alasan": "Kandungannya cenderung tinggi gula dan lemak jenuh dari biskuit Oreo, yang bila dikonsumsi berlebihan dapat meningkatkan risiko penyakit metabolik dan kesehatan jantung."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "sekitar 30g (1 biskuit besar)",
+    "jumlahSajian": "1",
+    "kalori": 154,
+    "protein": "1.8g",
+    "proteinPersen": "4.68%",
+    "karbohidrat": "22g",
+    "karbohidratPersen": "57.14%",
+    "gula": "13g",
+    "serat": "0.5g",
+    "lemakTotal": "7g",
+    "lemakJenuh": "2g",
+    "lemakTakJenuh": "5g",
+    "lemakPersen": "45.45%",
+    "kolesterol": "0mg",
+    "natrium": "105mg",
+    "vitaminDanMineral": ["Kalsium", "Zat Besi", "Vitamin A", "Vitamin C"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "7.7%" },
+    { "nama": "Gula", "persen": "26%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "30-45 menit",
+  "frekuensiKonsumsi": "Seberapa sering tergantung pola makan, tapi disarankan tidak lebih dari 2 kali seminggu karena kandungan gula dan lemaknya."
+  ],
+  "ingredients": ["Gula", "Minyak nabati (kecambah kedelai), Gorengan gandum (tepung terigu, gula, protein terigu)," "Pembuat krim (gula, mentega, susu skim), Bahan pengemulsi, Perisa"],
+  "tipsSehat": ["Kurangi jumlah konsumsi dan hindari makan berlebihan.", "Coba ganti dengan snack rendah gula dan lemak, seperti buah segar atau crackers gandum utuh."],
+  "alternatif": ["Kue kering gandum utuh", "Yogurt plain dengan buah segar", "Fruit bar tanpa tambahan gula"]
+}
+
