@@ -15615,3 +15615,116 @@ Kalau kamu pengen solusi cepat, kamu bisa pakai layanan yang otomatis generate d
 
 Gimana menurutmu? Butuh saran tentang tools yang bisa membantu otomatisasi ini?
 
+
+[2025-08-07T15:30:21.287Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/0665d1-1754580607181.jpg
+Response  : ```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan",
+    "alasan": "Makanan ini adalah makanan kecil yang tampaknya berupa makanan berprotein tinggi dan tinggi karbohidrat, kemungkinan besar camilan olahan atau snack. Jika berbicara secara umum, snack seperti ini biasanya mengandung banyak garam, lemak trans, dan tambahan gula, yang bila dikonsumsi berlebihan dapat meningkatkan risiko kesehatan seperti hipertensi, obesitas, dan penyakit kardiovaskular."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "sekitar 1 gram per biji",
+    "jumlahSajian": "sekitar 30-40 biji (perkiraan)",
+    "kalori": 150,
+    "protein": "5g",
+    "proteinPersen": "13.33%",
+    "karbohidrat": "20g",
+    "karbohidratPersen": "53.33%",
+    "gula": "3g",
+    "serat": "1g",
+    "lemakTotal": "8g",
+    "lemakJenuh": "1g",
+    "lemakTakJenuh": "7g",
+    "lemakPersen": "21.33%",
+    "kolesterol": "10mg",
+    "natrium": "200mg",
+    "vitaminDanMineral": ["Vitamin B6", "Zat Besi"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "7.5%" },
+    { "nama": "Gula", "persen": "6%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "cukup tinggi karena lemak tak jenuh yang berasal dari bahan olahan"
+  },
+  "waktuKenyang": "1-2 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1-2 kali per minggu",
+  "ingredients": ["tepung terigu", "minyak", "garam", "penguat rasa", "pengawet", "pemanis"],
+  "tipsSehat": [
+    "Kurangi konsumsi bahan pengawet dan pemanis buatan",
+    "Ganti minyak goreng dengan minyak yang lebih sehat seperti minyak zaitun",
+    "Ciptakan variasi camilan sehat seperti homemade granola atau biji-bijian panggang"
+  ],
+  "alternatif": [
+    "Kacang panggang tanpa tambahan garam",
+    "Buah segar dan yogurt alami",
+    "Kacang almond atau walnut"
+  ]
+}
+```
+
