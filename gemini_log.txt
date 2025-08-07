@@ -15831,3 +15831,107 @@ Response  : {
   "alternatif": ["Kacang ala panggang tanpa garam", "Singkong panggang", "Granola buatan sendiri"]
 }
 
+
+[2025-08-07T21:58:55.527Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/80f187-1754603924757.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan secara rutin",
+    "alasan": "Kondisi makanan tampak berminyak dan tinggi garam, serta berpotensi tinggi dalam kalori dan lemak jenuh, sehingga kurang cocok untuk konsumsi sering."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "data tidak tersedia",
+    "jumlahSajian": "per porsi",
+    "kalori": 0, // tidak dapat dihitung dari gambar
+    "protein": "tidak diketahui",
+    "proteinPersen": "Tidak dapat dihitung",
+    "karbohidrat": "tidak diketahui",
+    "karbohidratPersen": "Tidak dapat dihitung",
+    "gula": "tidak diketahui",
+    "serat": "tidak diketahui",
+    "lemakTotal": "tinggi",
+    "lemakJenuh": "tinggi",
+    "lemakTakJenuh": "tidak diketahui",
+    "lemakPersen": "tinggi",
+    "kolesterol": "tidak diketahui",
+    "natrium": "tinggi" // berdasarkan tampilan garam dan saus
+  },
+  "vitaminDanMineral": ["Tidak terlihat secara spesifik"],
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "N/A" },
+    { "nama": "Gula", "persen": "N/A" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "tinggi",
+    "Garam": "tinggi"
+  },
+  "waktuKenyang": "sekitar 2-3 jam",
+  "frekuensiKonsumsi": "Kurang dianjurkan lebih dari beberapa kali seminggu karena tinggi lemak dan garam",
+  "ingredients": ["daging ayam", "saus cokelat/karamel", "keju", "sauce lain dari gambar"],
+  "tipsSehat": ["Kurangi penggunaan saus berlemak dan garam", "Gunakan teknik memasak lebih sehat seperti panggang atau kukus", "Tambahkan sayuran segar untuk nutrisi lebih seimbang"],
+  "alternatif": ["ayam panggang tanpa saus berlemak", "salad ayam dengan vinaigrette rendah garam", "sayuran panggang"]
+}
+
