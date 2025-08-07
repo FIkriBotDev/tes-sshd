@@ -15935,3 +15935,106 @@ Response  : {
   "alternatif": ["ayam panggang tanpa saus berlemak", "salad ayam dengan vinaigrette rendah garam", "sayuran panggang"]
 }
 
+
+[2025-08-07T22:00:14.348Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/9dfe18-1754604006630.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan",
+    "alasan": "Kebanyakan makanan tampak berlemak tinggi dan kemungkinan mengandung banyak garam serta gula, karena tampaknya makanan olahan seperti daging panggang atau pizza. Konsumsi berlebihan dari makanan seperti ini berpotensi meningkatkan risiko penyakit jantung, hipertensi, dan lain-lain."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "Per porsi tidak jelas, estimasi sekitar 150-200 gram",
+    "jumlahSajian": "1",
+    "kalori": 350,
+    "protein": "15g",
+    "proteinPersen": "17.14%",
+    "karbohidrat": "35g",
+    "karbohidratPersen": "40%",
+    "gula": "8g",
+    "serat": "2g",
+    "lemakTotal": "22g",
+    "lemakJenuh": "8g",
+    "lemakTakJenuh": "14g",
+    "lemakPersen": "28%",
+    "kolesterol": "80mg",
+    "natrium": "900mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "18%" },
+    { "nama": "Gula", "persen": "10%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang",
+    "Lemak": "tinggi"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Sebisa mungkin dibatasi, maksimal 2-3 kali sebulan",
+  "ingredients": ["Daging olahan", "Keju", "Sosis", "Saos", "Tepung", "Rempah-rempah"],
+  "tipsSehat": ["Kurangi penggunaan keju dan saus tinggi lemak", "Gunakan daging ayam tanpa kulit atau ikan sebagai pengganti", "Tambah sayur-sayuran sebagai pelengkap"],
+  "alternatif": ["Salad sayur segar", "Steak ayam panggang", "Mi dari bahan whole grain"]
+}
+
