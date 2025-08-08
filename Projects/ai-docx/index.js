@@ -16,47 +16,33 @@ if (!fs.existsSync(TMP_DIR)) fs.mkdirSync(TMP_DIR, { recursive: true });
 app.use(express.json());
 const upload = multer({ dest: "/tmp" });
 
-// Util: Download file dari URL
 const downloadFile = async (url, outputPath) => {
   const response = await axios.get(url, { responseType: "arraybuffer" });
   fs.writeFileSync(outputPath, response.data);
 };
 
-// Util: Ekstrak text dari .docx
 const extractDocxText = async (filePath) => {
   const result = await mammoth.extractRawText({ path: filePath });
   return result.value;
 };
 
-// Util: Bersihkan blok kode Python
 const cleanCodeBlock = (code = "") =>
   code.replace(/^```(python)?\n/, "").replace(/```$/, "").trim();
 
-// Util: Jalankan AI request dengan fallback
 const requestAIWithFallback = async (messages) => {
   try {
     const res = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", { messages });
-    console.log("=== RESPONSE RTIST (messages) ===\n", res.data);
     const rawCode = res.data.result || res.data.response;
     if (!rawCode) throw new Error("AI tidak memberikan kode");
-
-    const code = cleanCodeBlock(rawCode);
-    return code;
-  } catch (err) {
-    console.warn("Fallback ke conversation mode...");
-    const res = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", {
-      conversation: messages,
-    });
-    console.log("=== RESPONSE RTIST (conversation) ===\n", res.data);
+    return cleanCodeBlock(rawCode);
+  } catch {
+    const res = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", { conversation: messages });
     const rawCode = res.data.result || res.data.response;
     if (!rawCode) throw new Error("Fallback AI tidak memberikan kode");
-
-    const code = cleanCodeBlock(rawCode);
-    return code;
+    return cleanCodeBlock(rawCode);
   }
 };
 
-// Endpoint: /api/edit (untuk .docx)
 app.get("/api/edit", async (req, res) => {
   try {
     const { documentUrl, prompt } = req.query;
@@ -66,8 +52,6 @@ app.get("/api/edit", async (req, res) => {
     await downloadFile(documentUrl, localPath);
     const docxContent = (await extractDocxText(localPath)).slice(0, 2000);
 
-    console.log("=== ISI DOKUMEN ===\n", docxContent);
-
     const messages = [
       { role: "system", content: "Kamu adalah AI khusus untuk mengedit file .docx menggunakan python." },
       { role: "user", content: `Isi dokumen:\n${docxContent}` },
@@ -76,15 +60,13 @@ app.get("/api/edit", async (req, res) => {
     ];
 
     const code = await requestAIWithFallback(messages);
-    console.log("=== FINAL KODE YANG DIEKSEKUSI ===\n", code);
-
     const fileId = uuidv4();
     const scriptPath = `/tmp/script-${fileId}.py`;
     const outputDocx = `${TMP_DIR}/hasil-${fileId}.docx`;
 
     let finalCode = code
       .replace(/dokumen_path\s*=.*\n?/g, '')
-      .replace(/Document\(['"](.+?)['"]\)/, `Document("${localPath}")`)
+      .replace(/Document\(["'](.+?)["']\)/, `Document("${localPath}")`)
       .replace(/doc\.save\((.*?)\)/g, `doc.save("${outputDocx}")`);
 
     fs.writeFileSync(scriptPath, finalCode);
@@ -94,7 +76,6 @@ app.get("/api/edit", async (req, res) => {
     python.stderr.on("data", (data) => console.error(`PYTHON ERROR: ${data}`));
 
     python.on("close", (code) => {
-      console.log(`PYTHON EXIT CODE: ${code}`);
       if (fs.existsSync(outputDocx)) {
         res.download(outputDocx);
       } else {
@@ -102,12 +83,10 @@ app.get("/api/edit", async (req, res) => {
       }
     });
   } catch (e) {
-    console.error("ERROR:", e.message || e);
     res.status(500).send("Terjadi kesalahan saat memproses dokumen.");
   }
 });
 
-// Endpoint: /api/buat (.docx)
 app.get("/api/buat", async (req, res) => {
   try {
     const { prompt } = req.query;
@@ -120,8 +99,6 @@ app.get("/api/buat", async (req, res) => {
     ];
 
     const code = await requestAIWithFallback(messages);
-    console.log("=== FINAL KODE YANG DIEKSEKUSI ===\n", code);
-
     const dummyInput = "/tmp/template-blank.docx";
     fs.writeFileSync(dummyInput, "");
 
@@ -129,8 +106,7 @@ app.get("/api/buat", async (req, res) => {
     const scriptPath = `/tmp/script-${fileId}.py`;
     const outputDocx = `${TMP_DIR}/hasil-${fileId}.docx`;
 
-    let finalCode = code
-      .replace(/doc\.save\((.*?)\)/g, `doc.save("${outputDocx}")`);
+    let finalCode = code.replace(/doc\.save\((.*?)\)/g, `doc.save("${outputDocx}")`);
 
     fs.writeFileSync(scriptPath, finalCode);
     const python = spawn("python3", [scriptPath]);
@@ -139,7 +115,6 @@ app.get("/api/buat", async (req, res) => {
     python.stderr.on("data", (data) => console.error(`PYTHON ERROR: ${data}`));
 
     python.on("close", (code) => {
-      console.log(`PYTHON EXIT CODE: ${code}`);
       if (fs.existsSync(outputDocx)) {
         res.download(outputDocx);
       } else {
@@ -147,12 +122,10 @@ app.get("/api/buat", async (req, res) => {
       }
     });
   } catch (e) {
-    console.error("ERROR:", e.message || e);
     res.status(500).send("Terjadi kesalahan saat membuat dokumen.");
   }
 });
 
-// Endpoint: /api/buat/excel (.xlsx)
 app.get("/api/buat/excel", async (req, res) => {
   try {
     const { prompt } = req.query;
@@ -165,8 +138,6 @@ app.get("/api/buat/excel", async (req, res) => {
     ];
 
     const code = await requestAIWithFallback(messages);
-    console.log("=== FINAL KODE YANG DIEKSEKUSI ===\n", code);
-
     const dummyInput = "/tmp/template-blank.xlsx";
     fs.writeFileSync(dummyInput, "");
 
@@ -175,10 +146,8 @@ app.get("/api/buat/excel", async (req, res) => {
     const outputXlsx = `${TMP_DIR}/hasil-${fileId}.xlsx`;
 
     let finalCode = code
-      .replace(/file_path\s*=.*\n?/g, '') // Hapus jika ada deklarasi file_path
-     // .replace(/workbook\.save\((.*?)\)/g, `workbook.save("${outputXlsx}")`);
-      .replace(/workbook\.save\s*\((["'`]).*?\1\)/g, `workbook.save("${outputXlsx}")`);
-
+      .replace(/file_path\s*=.*\n?/g, '')
+      .replace(/workbook\.save\s*\(([^)]*)\)/g, `workbook.save("${outputXlsx}")`);
 
     fs.writeFileSync(scriptPath, finalCode);
     const python = spawn("python3", [scriptPath]);
@@ -187,7 +156,6 @@ app.get("/api/buat/excel", async (req, res) => {
     python.stderr.on("data", (data) => console.error(`PYTHON ERROR: ${data}`));
 
     python.on("close", (code) => {
-      console.log(`PYTHON EXIT CODE: ${code}`);
       if (fs.existsSync(outputXlsx)) {
         res.download(outputXlsx);
       } else {
@@ -195,7 +163,6 @@ app.get("/api/buat/excel", async (req, res) => {
       }
     });
   } catch (e) {
-    console.error("ERROR:", e.message || e);
     res.status(500).send("Terjadi kesalahan saat membuat file Excel.");
   }
 });
