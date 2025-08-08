@@ -138,16 +138,11 @@ app.get("/api/buat/excel", async (req, res) => {
     ];
 
     const code = await requestAIWithFallback(messages);
-    const dummyInput = "/tmp/template-blank.xlsx";
-    fs.writeFileSync(dummyInput, "");
-
     const fileId = uuidv4();
     const scriptPath = `/tmp/script-${fileId}.py`;
     const outputXlsx = `${TMP_DIR}/hasil-${fileId}.xlsx`;
 
-    let finalCode = code
-      .replace(/file_path\s*=.*\n?/g, '')
-      .replace(/workbook\.save\s*\(([^)]*)\)/g, `workbook.save("${outputXlsx}")`);
+    let finalCode = code.replace(/\.save\s*\(\s*["'][^)]+["']\s*\)/g, `.save("${outputXlsx}")`);
 
     fs.writeFileSync(scriptPath, finalCode);
     const python = spawn("python3", [scriptPath]);
@@ -163,9 +158,11 @@ app.get("/api/buat/excel", async (req, res) => {
       }
     });
   } catch (e) {
+    console.error(e);
     res.status(500).send("Terjadi kesalahan saat membuat file Excel.");
   }
 });
+
 
 app.listen(port, () => {
   console.log(`Docx-AI server listening at http://localhost:${port}`);
