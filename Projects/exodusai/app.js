@@ -268,27 +268,6 @@ async function startBot() {
 
             aiResponse = aiResponse.replace(docxMarkdownRegex, '').trim();
         }
-        // Tangani jika respons mengandung ![Document Caption](...)
-        const excelMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exoduscloud\.my\.id\/api\/buat\/excel\?[^)]+)\)/;
-        const matchExcel = excelMarkdownRegex.exec(aiResponse);
-        
-        if (matchExcel) {
-            const excelUrl = matchExcel[1];
-            const promptText = decodeURIComponent(new URL(excelUrl).searchParams.get("prompt") || "");
-        
-            await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya datanya sesuai permintaan ✨` });
-        
-            const excelBuffer = await fetch(excelUrl).then(res => res.buffer());
-        
-            await sock.sendMessage(sender, {
-                document: excelBuffer,
-                mimetype: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                fileName: 'hasil.xlsx'
-            });
-        
-            aiResponse = aiResponse.replace(excelMarkdownRegex, '').trim();
-        }
-
 
         // Rebranding dan bersihkan teks
         aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id').trim();
