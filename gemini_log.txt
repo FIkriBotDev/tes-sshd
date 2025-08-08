@@ -16044,3 +16044,106 @@ Prompt    : Kok stok habis di XR cloud
 Image URL : https://uploader.exoduscloud.my.id/tmp/36c418-1754610410808.jpg
 Response  : Kelihatannya stok gratis buat XR cloud hari ini sudah habis. Kalau kamu perlu akses lagi, biasanya mereka mengizinkan untuk mencoba lagi keesokan harinya atau mungkin ada opsi upgrade ke plan berbayar kalau proyek kamu lagi mendesak. Bisa juga coba hubungi support mereka, siapa tahu ada opsi lain yang bisa diakses. Atau, kalau mau, aku bisa bantu cari alternatif cloud lain yang mungkin bisa memenuhi kebutuhan kamu.
 
+
+[2025-08-08T01:18:46.183Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/8227cc-1754615918848.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan",
+    "alasan": "Gambar menunjukkan satu jari tengah yang tampak di atas permukaan berwarna pink dengan pencahayaan yang cukup terang. Tidak ada makanan yang terlihat sehingga tidak dapat dianalisis dari segi kandungan nutrisi atau kesehatan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "Tidak tersedia",
+    "jumlahSajian": "Tidak tersedia",
+    "kalori": 0,
+    "protein": "0g",
+    "proteinPersen": "0%",
+    "karbohidrat": "0g",
+    "karbohidratPersen": "0%",
+    "gula": "0g",
+    "serat": "0g",
+    "lemakTotal": "0g",
+    "lemakJenuh": "0g",
+    "lemakTakJenuh": "0g",
+    "lemakPersen": "0%",
+    "kolesterol": "0mg",
+    "natrium": "0mg",
+    "vitaminDanMineral": []
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "0%" },
+    { "nama": "Gula", "persen": "0%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tidak ada konsumsi",
+    "Lemak": "tidak ada konsumsi"
+  },
+  "waktuKenyang": "Tidak dapat ditentukan",
+  "frekuensiKonsumsi": "Tidak berlaku",
+  "ingredients": ["Jari manusia"],
+  "tipsSehat": ["Lebih baik jangan makan jari manusia sebagai makanan"],
+  "alternatif": ["Sayuran segar", "Buah-buahan"]
+}
+
