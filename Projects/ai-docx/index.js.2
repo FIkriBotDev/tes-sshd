@@ -176,9 +176,7 @@ app.get("/api/buat/excel", async (req, res) => {
 
     let finalCode = code
       .replace(/file_path\s*=.*\n?/g, '') // Hapus jika ada deklarasi file_path
-     // .replace(/workbook\.save\((.*?)\)/g, `workbook.save("${outputXlsx}")`);
-      .replace(/workbook\.save\s*\((["'`]).*?\1\)/g, `workbook.save("${outputXlsx}")`);
-
+      .replace(/workbook\.save\((.*?)\)/g, `workbook.save("${outputXlsx}")`);
 
     fs.writeFileSync(scriptPath, finalCode);
     const python = spawn("python3", [scriptPath]);
