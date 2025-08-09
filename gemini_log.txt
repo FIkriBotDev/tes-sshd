@@ -16326,3 +16326,117 @@ Response  : {
   "alternatif": ["Kacang almond", "Kacang pistachio tanpa garam", "Biji chia atau flaxseed"]
 }
 
+
+[2025-08-09T11:55:30.235Z]
+Prompt    : gambar apa ini?
+Image URL : https://uploader.exoduscloud.my.id/tmp/9b75b1-1754740527282.jpg
+Response  : Ini bukan gambar, melainkan output terminal saat proses pengunduhan dan penginstalan paket perangkat lunak. Nampaknya ini terkait dengan pengelolaan paket Python dan beberapa dependensinya, seperti mammoth, openpyxl, dan lxml. Jadi, bukan gambar visual, melainkan sekumpulan teks yang menunjukkan langkah-langkah otomatis yang sedang berlangsung di sistem Anda. Kalau mau ngobrol tentang isi atau prosesnya, saya siap!
+
+
+[2025-08-09T11:55:52.710Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/0a6ab3-1754740542157.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan untuk konsumsi rutin",
+    "alasan": "Makanan ini kemungkinan tinggi lemak jenuh, natrium, dan kolesterol, yang bisa meningkatkan risiko penyakit kardiovaskular jika dikonsumsi berlebihan. Kurangnya detail nutrisi membuat sulit memastikan keseimbangan gizi."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "150 gram (berdasarkan tampilan porsi umum)",
+    "jumlahSajian": "1",
+    "kalori": 350,
+    "protein": "20g",
+    "proteinPersen": "22.86%",
+    "karbohidrat": "25g",
+    "karbohidratPersen": "28.57%",
+    "gula": "5g",
+    "serat": "3g",
+    "lemakTotal": "18g",
+    "lemakJenuh": "6g",
+    "lemakTakJenuh": "12g",
+    "lemakPersen": "51.43%",
+    "kolesterol": "75mg",
+    "natrium": "950mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "17.5%" },
+    { "nama": "Gula", "persen": "8.33%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang",
+    "Lemak": "tinggi"
+  },
+  "waktuKenyang": "2.5 jam",
+  "frekuensiKonsumsi": "Maksimal 1-2 kali seminggu, jangan berlebihan",
+  "ingredients": ["Daging sapi", "Rempah-rempah", "Kecap manis", "Garam", "Gula"],
+  "tipsSehat": [
+    "Kurangi penggunaan garam dan gula dalam proses memasak",
+    "Gunakan daging tanpa lemak atau bagian yang lebih rendah lemak",
+    "Temani dengan sayur segar untuk menambah serat dan vitamin",
+    "Kendalikan porsi untuk mengurangi asupan natrium dan lemak jenuh"
+  ],
+  "alternatif": ["Daging ayam tanpa kulit", "Tahu atau tempe sebagai pengganti protein hewani", "Sajian dengan banyak sayur dan kaldu rendah garam"]
+}
+
