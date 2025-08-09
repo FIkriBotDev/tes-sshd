@@ -16223,3 +16223,106 @@ Here's a basic recipe for making a delicious Chocolate Layer Cake:
 
 Would you like a variation, like a flourless or dairy-free version? Or maybe a tip for creating a smoother, more professional finish?
 
+
+[2025-08-09T08:27:01.372Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/d341e5-1754728012233.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak",
+    "alasan": "Gambar menunjukkan biji-bijian yang tampaknya sedang terjatuh di atas permukaan netral, tetapi tanpa informasi tambahan tentang bahan spesifik, metode pengolahan, dan porsi, sulit memberikan rekomendasi sehat secara umum. Jika biji-bijian ini diasumsikan tidak diproses dengan tambahan gula tinggi atau bahan tidak sehat lainnya, mereka bisa termasuk pilihan yang cukup sehat, tetapi perlu kehati-hatian."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "per porsi (sekitar 28g atau 1 ons)",
+    "jumlahSajian": "tidak tersedia",
+    "kalori": 160,
+    "protein": "6g",
+    "proteinPersen": "15%",
+    "karbohidrat": "15g",
+    "karbohidratPersen": "37.5%",
+    "gula": "0.5g",
+    "serat": "3g",
+    "lemakTotal": "10g",
+    "lemakJenuh": "1g",
+    "lemakTakJenuh": "9g",
+    "lemakPersen": "56%",
+    "kolesterol": "0mg",
+    "natrium": "2mg",
+    "vitaminDanMineral": ["Vitamin E", "Magnesium", "Zat Besi", "Tiamin"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "8%" },
+    { "nama": "Serat", "persen": "12%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "tinggi tergantung proses pengolahan"
+  },
+  "waktuKenyang": "3-4 jam",
+  "frekuensiKonsumsi": "Biasa dikonsumsi 3-4 kali seminggu sebagai snack sehat",
+  "ingredients": ["Biji-bijian (mungkin kedelai, biji wijen, biji bunga matahari, dst.)"],
+  "tipsSehat": ["Pilih biji mentah atau panggang tanpa garam dan gula berlebih", "Perhatikan porsi agar tidak berlebihan"],
+  "alternatif": ["Kacang almond", "Kacang pistachio tanpa garam", "Biji chia atau flaxseed"]
+}
+
