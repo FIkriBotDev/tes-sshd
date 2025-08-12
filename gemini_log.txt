@@ -16553,3 +16553,106 @@ Prompt    : temukan satu perbedaan
 Image URL : https://uploader.exoduscloud.my.id/tmp/107733-1754819624079.jpg
 Response  : Perbedaan yang paling mencolok selain dari fokus pada wajah adalah jumlah uang di dalam brankas. Pada gambar pertama, jumlah uang yang terlihat di dalam brankas tampak lebih banyak dan tersusun rapi, sedangkan pada gambar kedua, uang yang terlihat sedikit dan tersusun lebih acak.
 
+
+[2025-08-12T04:30:55.875Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/4d44e6-1754973045361.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan",
+    "alasan": "Gambar menunjukkan makanan dengan warna agak transparan dan tampaknya berisi lapisan manis, berpotensi mengandung banyak gula dan bahan tambahan. Jika makanan seperti ini adalah camilan atau makanan yang tinggi gula dan rendah serat, maka tidak cocok untuk konsumsi rutin."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "Perpaduan kecil sekitar 50-100 gram",
+    "jumlahSajian": "Tidak diketahui pasti dari gambar",
+    "kalori": 150,
+    "protein": "2g",
+    "proteinPersen": "5.33%",
+    "karbohidrat": "35g",
+    "karbohidratPersen": "93.33%",
+    "gula": "20g",
+    "serat": "1g",
+    "lemakTotal": "5g",
+    "lemakJenuh": "1g",
+    "lemakTakJenuh": "4g",
+    "lemakPersen": "15%",
+    "kolesterol": "10mg",
+    "natrium": "100mg",
+    "vitaminDanMineral": ["Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "7.5%" },
+    { "nama": "Gula", "persen": "40%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "1.5 - 2 jam",
+  "frekuensiKonsumsi": "Sesekali saja, tidak setiap hari",
+  "ingredients": ["Gula", "Air", "Perasa buatan", "Pengemulsi", "Pemertos"],
+  "tipsSehat": ["Kurangi konsumsi gula tambahan", "Pilih varian yang lebih rendah gula", "Tambahkan buah alami untuk rasa dan serat"],
+  "alternatif": ["Buah segar", "Yogurt alami dengan buah", "Es batu buah"]
+}
+
