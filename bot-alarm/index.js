@@ -78,7 +78,10 @@ async function startBot() {
         // Cek kelipatan 10
         if (userMessageCount[sender] % PROMO_INTERVAL === 0) {
             const promo = `🚀 Suka pakai *ExodusAI*?\nYuk bantu share ke teman-teman kamu biar mereka juga bisa ngerasain kecanggihannya!🤖✨`;
-            await sock.sendMessage(sender, { text: promo });
+            await sock.sendMessage(sender, {
+                image: { url: 'https://uploader.exoduscloud.my.id/tmp/banner.png' },
+                caption: promo
+            });
         }
 
         saveMessageData();
