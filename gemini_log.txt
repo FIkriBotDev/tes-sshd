@@ -16778,3 +16778,17 @@ Prompt    : makan bro
 Image URL : https://uploader.exoduscloud.my.id/tmp/3ed43c-1754975150032.jpg
 Response  : Makan bro! Looks like you've got some delicious stuff wrapped up there. Anything special about what's inside, or just a good ol' snack to indulge in?
 
+
+[2025-08-12T05:06:42.271Z]
+Prompt    : mobil apa ini? jelaskan spesifikasi nya
+Image URL : https://uploader.exoduscloud.my.id/tmp/85d18d-1754975196716.jpg
+Response  : Ini adalah BMW M3, model terbaru dari seri M yang dikenal dengan performa tinggi dan desain sporty. Dari penampilannya, tampak memiliki bodi yang aerodinamis dengan sentuhan fisik yang agresif — termasuk grille besar yang khas dan detail karbon di bagian atap serta splitter depan. 
+
+Spesifikasi utamanya meliputi:
+- Mesin: biasanya menggunakan mesin inline-six twin-turbo 3.0L, mampu menghasilkan sekitar 510-550 PS tergantung versinya.
+- Transmisi: otomatis 8-percepatan dengan penggerak belakang atau xDrive (penggerak semua roda) tergantung varian.
+- Performa: kecepatan maksimum bisa mencapai lebih dari 250 km/jam, dengan akselerasi dari 0-100 km/jam dalam sekitar 3,9 detik.
+- Fitur lain: suspensi sport, steering khas BMW M, dan fitur interior premium lengkap, termasuk sistem infotainment canggih dan material berkualitas tinggi.
+
+Kalau ini bukan M3, mungkin model yang sangat mirip, karena BMW sering melakukan variasi pada desain dan spesifikasi terutama untuk edisi khusus atau modifikasi pribadi. Kalau mau info lebih spesifik, bisa dicari tahu tahun produksi dan kode modelnya.
+
