@@ -16792,3 +16792,28 @@ Spesifikasi utamanya meliputi:
 
 Kalau ini bukan M3, mungkin model yang sangat mirip, karena BMW sering melakukan variasi pada desain dan spesifikasi terutama untuk edisi khusus atau modifikasi pribadi. Kalau mau info lebih spesifik, bisa dicari tahu tahun produksi dan kode modelnya.
 
+
+[2025-08-12T07:00:26.229Z]
+Prompt    : jelasin ini code apa bro
+Image URL : https://uploader.exoduscloud.my.id/tmp/0ae561-1754982021667.jpg
+Response  : Oke, ini kode yang kayaknya buat bot Powercord atau semacamnya yang berfungsi buat ngasih promo ke pengguna tertentu. Mari aku jelasin bagian demi bagian:
+
+1. **Cek kondisi if**:  
+   `if (userMessageCount[sender] % PROMO_INTERVAL === 0) {`  
+   Ini ngecek, apakah jumlah pesan dari pengguna `sender` habis dibagi interval tertentu `PROMO_INTERVAL`. Jadi, setiap pengguna yang udah kirim pesan sesuai interval itu, bakal dapet promo.
+
+2. **Set promo message**:  
+   `const promo = '🛸 Suka pakai *ExodusAI*?\nYuk bantu share ke teman-teman kamu!'`  
+   Di sini, dibuat pesan promo yang bakalan dikirim ke pengguna.
+
+3. **Ngirim pesan**:  
+   `await sock.sendMessage(sender, { ... })`  
+   Ini bagian buat kirim pesan ke user dengan beberapa atribut:
+   
+   - **image**: url gambar promonya, di-upload dari link tertentu.
+   - **caption**: caption pesan yang isinya promo, diambil dari variabel `promo`.
+
+Jadi, intinya kode ini akan berjalan setiap kali pengguna mengirim pesan dan sudah mencapai jumlah tertentu, untuk mengirimkan pesan promosi dengan gambar dan caption tertentu.
+
+Kalau mau tahu detail lebih teknis atau pengaplikasiannya, tinggal bilang aja!
+
