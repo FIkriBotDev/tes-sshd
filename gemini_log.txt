@@ -16950,3 +16950,210 @@ Response  : {
   ]
 }
 
+
+[2025-08-15T00:48:17.810Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/6eef0f-1755218888274.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan",
+    "alasan": "Makanan ini tampaknya adalah spaghetti dengan saus tomat dan ikan cakalang, yang meskipun mengandung protein dan beberapa vitamin, kemungkinan tinggi karbohidrat sederhana dan sodium dari saus. Selain itu, tergantung bahan dan cara masakannya, bisa jadi tinggi garam dan lemak jenuh, yang tidak baik jika dikonsumsi berlebihan secara rutin."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "porsinya kira-kira 150-200 gram per piring",
+    "jumlahSajian": "1",
+    "kalori": 400,  // asumsi perkiraan berdasarkan bahan
+    "protein": "15g",
+    "proteinPersen": "15%",
+    "karbohidrat": "60g",
+    "karbohidratPersen": "60%",
+    "gula": "8g",
+    "serat": "3g",
+    "lemakTotal": "10g",
+    "lemakJenuh": "2g",
+    "lemakTakJenuh": "8g",
+    "lemakPersen": "22.5%",
+    "kolesterol": "40mg",
+    "natrium": "800mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "20%" },
+    { "nama": "Gula", "persen": "10-15%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang",
+    "Sodium": "tinggi"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Sekali seminggu atau kurang",
+  "ingredients": ["spaghetti", "saus tomat", "ikan cakalang", "bawang putih", "minyak", "garam"],
+  "tipsSehat": ["Kurangi garam dan minyak saat memasak", "Gunakan saus tomat tanpa tambahan gula dan garam berlebih", "Tambah sayuran segar seperti bayam atau brokoli"],
+  "alternatif": ["Spaghetti gandum utuh", "Kacang-kacangan dan sayuran segar", "Saus berbasis tomat segar tanpa tambahan gula"]
+}
+
+
+[2025-08-15T00:48:32.651Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/c2fbe8-1755218903641.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan untuk konsumsi rutin",
+    "alasan": "Makanan ini tampaknya mengandung banyak lemak dan natrium, serta gula dari bumbu tambahan. Kurang lengkapnya bahan-bahan sehat seperti sayuran segar dan sumber protein rendah lemak menjadikan menu ini kurang seimbang secara nutrisi."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "sekitar 200 gram",
+    "jumlahSajian": "1",
+    "kalori": 400,
+    "protein": "12g",
+    "proteinPersen": "12%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "70%",
+    "gula": "8g",
+    "serat": "3g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "45%",
+    "kolesterol": "45mg",
+    "natrium": "800mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Thiamin", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "20%" },
+    { "nama": "Gula", "persen": "10%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "tinggi"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Sekali seminggu atau kurang",
+  "ingredients": ["spaghetti", "bawang putih", "mentega", "kecap manis", "daging (opsional)", "bumbu (garam, merica)", "saus tomat"],
+  "tipsSehat": ["Gunakan pasta gandum utuh sebagai pengganti pasta biasa", "Tambah sayuran segar seperti brokoli atau bayam untuk menambah serat dan nutrisi lainnya", "Kurangi penggunaan mentega dan ganti dengan minyak zaitun"],
+  "alternatif": ["Salad sayur dengan ayam panggang", "Supp sayur bening", "Pasta dari sayuran seperti zucchini spiral"]
+}
+
