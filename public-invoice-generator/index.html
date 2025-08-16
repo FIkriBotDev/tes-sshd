@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invoice Generator</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🧾 Invoice Generator</h1>
+
+    <section class="grid">
+      <div>
+        <h3>From</h3>
+        <label>Name <input id="fromName" placeholder="Your Company" /></label>
+        <label>Address <textarea id="fromAddress" placeholder="Street, City, Country"></textarea></label>
+        <label>Upload Logo:</label>
+<input type="file" id="logo" accept="image/*"><br><br>
+
+      </div>
+      <div>
+        <h3>Bill To</h3>
+        <label>Name <input id="toName" placeholder="Client Name" /></label>
+        <label>Address <textarea id="toAddress" placeholder="Street, City, Country"></textarea></label>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div>
+        <label>Invoice No <input id="invoiceNumber" placeholder="(auto)" /></label>
+      </div>
+      <div class="dates">
+        <label>Issue Date <input type="date" id="issueDate" /></label>
+        <label>Due Date <input type="date" id="dueDate" /></label>
+      </div>
+    </section>
+
+    <h3>Items</h3>
+    <div class="items">
+      <div class="items-head">
+        <span>Description</span><span>Qty</span><span>Unit Price</span><span>Amount</span>
+      </div>
+      <div id="items"></div>
+      <button id="addItem" class="secondary">+ Add Item</button>
+    </div>
+
+    <div class="actions">
+      <label>Notes
+        <textarea id="notes" placeholder="Payment terms, bank info, etc."></textarea>
+      </label>
+      <button id="generate">Generate PDF</button>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
