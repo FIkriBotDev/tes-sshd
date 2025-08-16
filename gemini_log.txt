@@ -17190,3 +17190,9 @@ Prompt    : makanan apaa ini
 Image URL : https://uploader.exoduscloud.my.id/tmp/b51d2a-1755321962528.jpg
 Response  : Ini kelihatannya seperti pastel atau lumpia, mungkin isinya bisa ayam, sayur, atau daging, kemudian digoreng sampai cokelat keemasan. Biasanya sih makanan camilan dari Indonesia yang digoreng ini cukup populer. Kalau mau yakin banget, bisa dicicipin atau lihat dari isinya. Kamu mau aku bantu buat resepnya?
 
+
+[2025-08-16T05:26:45.877Z]
+Prompt    : makan bro
+Image URL : https://uploader.exoduscloud.my.id/tmp/31f20e-1755322001604.jpg
+Response  : Makan bro! Looks tempting—crispy and delicious. What do you think, sit on the couch and enjoy, or dip into some spicy sauce?
+
