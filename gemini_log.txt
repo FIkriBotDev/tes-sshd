@@ -17202,3 +17202,13 @@ Prompt    : ini makanan apa bro
 Image URL : https://uploader.exoduscloud.my.id/tmp/7c4a68-1755333144052.jpg
 Response  : Ini terlihat kayak spaghetti carbonara, Bro. Biasanya pakai spaghetti, saus telur dan keju, sama sedikit daging asin kayak bacon atau ham, tapi di sini kayaknya ada tambahan sedikit rempah merah mungkin cabe atau saus khusus. Kalau mau kepastian, aku bisa bantu tebak lebih dalam. Tapi dari gambarnya, itu pasta aja sih, dan porsinya kayaknya cocok banget buat makan sendiri. Kamu lagi mau makan apa banget, nih?
 
+
+[2025-08-16T08:34:51.426Z]
+Prompt    : menurutmu gimana
+Image URL : https://uploader.exoduscloud.my.id/tmp/00ade3-1755333283555.jpg
+Response  : Hmm, kelihatannya ini promosi jualan produk digital, ya? Ada banyak tawaran menarik dengan bonus dan jaminan keuntungan. Tapi, kalau aku lihat dari segi tampilannya—dan jujur aja, dari segmentasinya—ini kayaknya usaha yang lagi ngejar kepercayaan orang lewat angka besar, kayak 750+ produk, bonus gratis, dan 100% keuntungan.
+
+Kalau mau tahu pendapatku, yang penting dilihat dari siapa yang tawarkan dan apakah mereka benar-benar bisa memberi jaminan kayak gitu secara realistis. Banyak penawaran begini bisa bikin pengen langsung percaya, tapi aku selalu angka besar dan klaim keuntungan 100% itu mesti diimbangi sama riset dan hati-hati.
+
+Kalau kamu lagi tertarik, coba cek reputasi dan testimoni dari orang yang udah pernah coba, jangan buru-buru terpancing sama angka menarik aja. Dan, kalau ingin, aku bisa bantu buatkan analisis lebih mendalam soal apa yang menawarkan model seperti ini. Gimana, tertarik?
+
