@@ -8,5 +8,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "dayjs": "^1.11.13",
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "path": "^0.12.7",
+    "pdfkit": "^0.17.1"
+  }
 }
