@@ -17218,3 +17218,106 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.exoduscloud.my.id/tmp/ae64eb-1755337830258.jpg
 Response  : Gambar ini menunjukkan spesifikasi dari Samsung Galaxy S5 mini tahun 2014, lengkap dengan detail teknis dan tampilan perangkatnya. Kalau mau diskusi lebih dalam soal apa yang menarik dari gambar ini, atau ada hal lain yang ingin kamu eksplorasi tentang teknologi zaman dulu versus sekarang, aku siap banget! Kamu mau ngobrolin tentang evolusi smartphone dari tahun 2014 sampai sekarang?
 
+
+[2025-08-19T07:55:27.749Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/14170d-1755590116442.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan sebagai konsumsi rutin",
+    "alasan": "Karena makanan ini tampaknya adalah makanan cepat saji atau olahan, kemungkinan tinggi lemak jenuh, garam, dan gula, yang dapat berdampak buruk jika dikonsumsi berlebihan. Selain itu, kandungan serat dan nutrisi lain tidak terlihat cukup tinggi."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "Perkiraan 150-200 gram (berdasarkan ukuran piring umum)",
+    "jumlahSajian": "1",
+    "kalori": 350,
+    "protein": "8g",
+    "proteinPersen": "9.14%",
+    "karbohidrat": "50g",
+    "karbohidratPersen": "57.14%",
+    "gula": "6g",
+    "serat": "2g",
+    "lemakTotal": "15g",
+    "lemakJenuh": "5g",
+    "lemakTakJenuh": "10g",
+    "lemakPersen": "27.27%",
+    "kolesterol": "40mg",
+    "natrium": "900mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "18%" },
+    { "nama": "Gula", "persen": "10%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang-tinggi",
+    "Lemak": "tinggi"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Sekali seminggu atau kurang",
+  "ingredients": ["Mie/mi instan", "daging olahan", "saus", "sayuran kalengan", "bumbu penyedap"],
+  "tipsSehat": ["Kurangi penggunaan garam dan MSG", "Tambah sayuran segar", "Gunakan sedikit minyak saat memasak", "Pilih varian mie yang rendah garam dan tanpa MSG"],
+  "alternatif": ["Nasi merah dengan sayuran dan lauk sehat", "Salad dengan protein tanpa pengolahan berlebih", "Mie homemade dari bahan alami"]
+}
+
