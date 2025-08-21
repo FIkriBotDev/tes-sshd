@@ -17901,3 +17901,107 @@ Response  : {
   "alternatif": ["Buah segar, seperti pisang atau apel yang diiris dan diberi sedikit cokelat cair dark", "Granola dengan buah kering dan susu rendah lemak", "Yogurt dengan sedikit madu dan potongan buah"]
 }
 
+
+[2025-08-21T15:23:46.484Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/b62388-1755789814149.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Secara keseluruhan, makanan ini cukup mengandung nutrisi dan bisa dinikmati, tapi perlu diperhatikan kandungan natrium dan lemak jenuh.",
+    "alasan": "Karekteristik kuah pedas dan seafood-nya menawarkan nutrisi baik, namun kadar sodium dari bahan olahan dan lemak jenuh dari beberapa bahan bisa menjadi pertimbangan. Konsumsi berlebihan bisa meningkatkan risiko kesehatan tertentu."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "Sekitar 300-400 gram",
+    "jumlahSajian": "1",
+    "kalori": 350,
+    "protein": "20g",
+    "proteinPersen": "22.86%",
+    "karbohidrat": "45g",
+    "karbohidratPersen": "51.43%",
+    "gula": "8g",
+    "serat": "4g",
+    "lemakTotal": "12g",
+    "lemakJenuh": "3.5g",
+    "lemakTakJenuh": "8.5g",
+    "lemakPersen": "34.29%",
+    "kolesterol": "50mg",
+    "natrium": "1500mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "17.5%" },
+    { "nama": "Gula", "persen": "10.67%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "sedang",
+    "Natrium": "tinggi"
+  },
+  "waktuKenyang": "Sekitar 2-3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 2-3 kali seminggu, terutama karena kandungan natrium yang tinggi",
+  "ingredients": ["Seafood (udang, fish balls)", "Kimchi", "Mie", "Sayuran (daun bawang, bayam)", "Bumbu rempah", "Saus dan bahan dasar kuah"],
+  "tipsSehat": ["Kurangi garam dan bahan pengawet", "Tambah lebih banyak sayuran segar", "Gunakan mie dari bahan whole grain"],
+  "alternatif": ["Sup seafood rendah garam", "Sup sayur dengan seafood minim garam", "Mie whole grain atau bihun dari gandum utuh"]
+}
+
