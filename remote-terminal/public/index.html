@@ -51,39 +51,47 @@
     }
 
     /* Terminal Window */
- #terminal-window {
-    display: none;
-    background: #111827;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.6);
-    width: 80%;
-    height: 80%;
-    overflow: hidden;
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    display: flex;
-    flex-direction: column;
-    resize: both;          /* <-- ini bikin bisa resize */
-    min-width: 400px;
-    min-height: 250px;
-  }
+    #terminal-window {
+      display: none;
+      background: #111827;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      width: 80%;
+      height: 80%;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    #terminal-header {
+      background: #1f2937;
+      color: #f9fafb;
+      padding: 8px 12px;
+      font-size: 14px;
+      cursor: move;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #terminal-header .buttons {
+      display: flex;
+      gap: 8px;
+    }
+    .circle {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .red { background: #ef4444; }
+    .yellow { background: #facc15; }
+    .green { background: #22c55e; }
 
-  #terminal-header {
-    background: #1f2937;
-    color: #f9fafb;
-    padding: 8px 12px;
-    font-size: 14px;
-    cursor: move; /* untuk drag */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  #terminal {
-    flex-grow: 1;
-    background: black;
-  }  </style>
+    #terminal {
+      flex-grow: 1;
+      background: black;
+    }
+  </style>
 </head>
 <body>
 
