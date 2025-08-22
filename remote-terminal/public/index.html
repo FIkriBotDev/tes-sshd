@@ -10,28 +10,144 @@
       padding: 0;
       height: 100%;
       width: 100%;
-      background: black;
+      background: #0f172a; /* dark navy */
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
+    /* Login Box */
+    #login-container {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.5);
+      width: 320px;
+      text-align: center;
+      color: #f8fafc;
+    }
+    #login-container h2 {
+      margin-bottom: 20px;
+    }
+    #login-container input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+    }
+    #login-container button {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    #login-container button:hover {
+      background: #2563eb;
+    }
+
+    /* Terminal Window */
+    #terminal-window {
+      display: none;
+      background: #111827;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      width: 80%;
+      height: 80%;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    #terminal-header {
+      background: #1f2937;
+      color: #f9fafb;
+      padding: 8px 12px;
+      font-size: 14px;
+      cursor: move;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #terminal-header .buttons {
+      display: flex;
+      gap: 8px;
+    }
+    .circle {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .red { background: #ef4444; }
+    .yellow { background: #facc15; }
+    .green { background: #22c55e; }
+
     #terminal {
-      height: 100%;
-      width: 100%;
+      flex-grow: 1;
+      background: black;
     }
   </style>
 </head>
 <body>
-  <div id="terminal"></div>
+
+  <!-- Login Page -->
+  <div id="login-container">
+    <h2>Login Web Terminal</h2>
+    <input type="text" id="username" placeholder="Username"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button onclick="login()">Login</button>
+    <p id="error" style="color: red; display: none;">Invalid credentials!</p>
+  </div>
+
+  <!-- Terminal Window -->
+  <div id="terminal-window">
+    <div id="terminal-header">
+      <span>root@web-terminal</span>
+      <div class="buttons">
+        <span class="circle red"></span>
+        <span class="circle yellow"></span>
+        <span class="circle green"></span>
+      </div>
+    </div>
+    <div id="terminal"></div>
+  </div>
 
   <script src="https://unpkg.com/xterm/lib/xterm.js"></script>
+  <script src="https://unpkg.com/xterm-addon-fit/lib/xterm-addon-fit.js"></script>
   <script>
-    const term = new Terminal();
-    term.open(document.getElementById('terminal'));
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      if (user === "root" && pass === "Fr7we8/729438") {
+        document.getElementById("login-container").style.display = "none";
+        document.getElementById("terminal-window").style.display = "flex";
+        startTerminal();
+      } else {
+        document.getElementById("error").style.display = "block";
+      }
+    }
 
-    const socket = new WebSocket(
-      `${location.protocol === "https:" ? "wss" : "ws"}://${location.host}`
-    );
+    function startTerminal() {
+      const term = new Terminal();
+      const fitAddon = new FitAddon.FitAddon();
+      term.loadAddon(fitAddon);
+      term.open(document.getElementById("terminal"));
+      fitAddon.fit();
 
-    term.onData(data => socket.send(data));
-    socket.onmessage = e => term.write(e.data);
+      const socket = new WebSocket(
+        `${location.protocol === "https:" ? "wss" : "ws"}://${location.host}`
+      );
+
+      term.onData(data => socket.send(data));
+      socket.onmessage = e => term.write(e.data);
+
+      window.addEventListener("resize", () => fitAddon.fit());
+    }
   </script>
 </body>
 </html>
