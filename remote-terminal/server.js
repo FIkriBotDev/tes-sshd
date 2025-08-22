@@ -8,13 +8,12 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
-// Serve static files from public/
+// Serve static files
 app.use(express.static(path.join(__dirname, "public")));
 
 wss.on("connection", function connection(ws) {
   const shell = process.env.SHELL || "bash";
 
-  // Buat shell tanpa password sudo
   const ptyProcess = pty.spawn(shell, [], {
     name: "xterm-color",
     cols: 80,
@@ -23,12 +22,10 @@ wss.on("connection", function connection(ws) {
     env: process.env,
   });
 
-  // Kirim output terminal ke client
   ptyProcess.on("data", function (data) {
     ws.send(data);
   });
 
-  // Terima input dari client
   ws.on("message", function (msg) {
     ptyProcess.write(msg);
   });
