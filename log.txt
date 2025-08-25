@@ -11147,3 +11147,5 @@
 [2025-08-25 12:43:42] GET /tools/sswebpc?url=https%3A%2F%2Fvirustotal.com
 [2025-08-25 12:45:49] POST /post/rtist
 [2025-08-25 12:45:53] GET /tools/sswebpc?url=https%3A%2F%2Fshopee.co.id%2Fvoucher%2Fdetails%3Fevcode%3DBotClaimKP%26promotionId%3D1222086920388612%26signature%3D920293b0039e85163deb115dfd4d3aaabd817450e70e749125cfd4186d62253a
+[2025-08-25 12:46:23] POST /post/rtist
+[2025-08-25 12:46:29] GET /tools/sswebpc?url=https%3A%2F%2Fclumpies.com%2F
