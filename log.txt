@@ -11135,3 +11135,5 @@
 [2025-08-25 12:39:04] GET /tools/sswebpc?url=https%3A%2F%2Fff.com
 [2025-08-25 12:39:11] POST /post/rtist
 [2025-08-25 12:39:15] GET /tools/sswebpc?url=https%3A%2F%2Fsmartfren.com
+[2025-08-25 12:40:33] POST /post/rtist
+[2025-08-25 12:40:37] GET /tools/sswebpc?url=https%3A%2F%2Fpuficoin.com
