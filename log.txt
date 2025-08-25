@@ -11129,3 +11129,5 @@
 [2025-08-25 12:36:30] GET /tools/sswebpc?url=https%3A%2F%2Famazon.com
 [2025-08-25 12:37:41] POST /post/rtist
 [2025-08-25 12:37:45] GET /tools/sswebpc?url=https%3A%2F%2Fshopee.com
+[2025-08-25 12:38:35] POST /post/rtist
+[2025-08-25 12:38:39] GET /tools/sswebpc?url=https%3A%2F%2Fshopee.co.id
