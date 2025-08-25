@@ -11141,3 +11141,5 @@
 [2025-08-25 12:41:10] GET /tools/sswebpc?url=https%3A%2F%2Fplaystore.com
 [2025-08-25 12:41:50] POST /post/rtist
 [2025-08-25 12:41:55] GET /tools/sswebpc?url=https%3A%2F%2Fgoogleplay.com
+[2025-08-25 12:42:47] POST /post/rtist
+[2025-08-25 12:42:51] GET /tools/sswebpc?url=https%3A%2F%2Ft.me%2FPufiAirdropBot%3Fstart%3D6567445106
