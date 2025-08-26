@@ -1465,7 +1465,7 @@ app.get('/tools/sswebpc', async (req, res) => {
     }
 
     // Kirim permintaan ke API eksternal untuk mengambil screenshot
-    const apiUrl = `https://api.apiflash.com/v1/urltoimage?access_key=9785a6553eed470ca677235bc5cd3750&wait_until=page_loaded&url=${encodeURIComponent(url)}`;
+    const apiUrl = `https://api.apiflash.com/v1/urltoimage?access_key=4c06086e796445fb8dcddbb64a61c07d&wait_until=page_loaded&url=${encodeURIComponent(url)}`;
 
     const response = await axios.get(apiUrl, {
       responseType: 'arraybuffer', // Membaca respons sebagai binary data (image)
