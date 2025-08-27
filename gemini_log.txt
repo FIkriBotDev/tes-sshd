@@ -18349,3 +18349,107 @@ Kalau ingin memperbaikinya, coba periksa:
 
 Kalau mau, aku bisa membantu analisis lebih dalam atau memberi saran solusi spesifik kalau aku tahu detail proyeknya.
 
+
+[2025-08-27T02:00:14.870Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/6e7d5d-1756259999983.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan untuk konsumsi rutin",
+    "alasan": "Karena terdiri dari makanan tinggi lemak dan karbohidrat olahan, serta kemungkinan tinggi garam dan gula tambahan, yang dapat berdampak negatif bila dikonsumsi berlebihan secara rutin."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "Estimasi 200 gram",
+    "jumlahSajian": "1 piring",
+    "kalori": 450,
+    "protein": "15g",
+    "proteinPersen": "13.33%",
+    "karbohidrat": "60g",
+    "karbohidratPersen": "53.33%",
+    "gula": "8g",
+    "serat": "4g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "6g",
+    "lemakTakJenuh": "14g",
+    "lemakPersen": "40%",
+    "kolesterol": "50mg",
+    "natrium": "900mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "25%" },
+    { "nama": "Gula", "persen": "10%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "tinggi",
+    "Garam": "tinggi"
+  },
+  "waktuKenyang": "2.5-3 jam",
+  "frekuensiKonsumsi": "Dibatasi, maksimal 1-2 kali seminggu",
+  "ingredients": ["Tortilla jagung", "Daging sapi/ayam/ikan", "Keju", "Saus tomat", "Kacang-kacangan", "Sayuran (selada, tomat, bawang)"],
+  "tipsSehat": ["Gunakan tortilla gandum utuh untuk serat lebih tinggi", "Kurangi penggunaan keju dan saus berlemak", "Tambah sayuran segar untuk vitamin dan serat", "Kurangi garam dan bahan pengawet"],
+  "alternatif": ["Bowl salad ayam panggang", "Taco isi sayuran dan daging tanpa keju berlebih", "Wrap gandum penuh dengan isian sehat"]
+}
+
