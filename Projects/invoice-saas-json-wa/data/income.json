@@ -29,6 +29,12 @@
       "invoice_id": "inv_fmQ7ZgPQ",
       "amount": 25000,
       "date": "2025-08-28T13:13:21.420Z"
+    },
+    {
+      "id": "inc_T3DMxBKj",
+      "invoice_id": "inv_yx9doe6o",
+      "amount": 25000,
+      "date": "2025-08-28T13:14:26.343Z"
     }
   ]
 }
