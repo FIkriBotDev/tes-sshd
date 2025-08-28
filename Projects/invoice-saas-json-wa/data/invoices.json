@@ -1,3 +1,15 @@
 {
-"invoices": []
+  "invoices": [
+    {
+      "id": "inv_lMpZwdLl",
+      "customer_name": "Muhammad Fikri Fahrezi",
+      "customer_whatsapp": "6287769811262",
+      "items": [],
+      "total": 9000000,
+      "type": "once",
+      "status": "unpaid",
+      "created_at": "2025-08-28T13:20:46.682Z",
+      "next_schedule": null
+    }
+  ]
 }
