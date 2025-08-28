@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.static(path.join(process.cwd(), 'public')));
 
 // Views (EJS)
-app.set('views', path.join(__dirname, 'views'));
+app.set('/home/runner/work/tes-sshd/tes-sshd/views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // Routes
@@ -26,3 +26,4 @@ app.use('/api/income', incomeRouter);
 
 // Basic healthcheck
 app.get('/health', (req, res) => res.json({ status: 'ok', pid: process.pid }));
+
