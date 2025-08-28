@@ -1,6 +1,5 @@
-//import makeWASocket, { useMultiFileAuthState, DisconnectReason } from "@whiskeysockets/baileys"
-import * as Baileys from "@whiskeysockets/baileys"
-console.log(Baileys)
+import baileys from '@whiskeysockets/baileys'
+const { makeWASocket, useMultiFileAuthState, DisconnectReason } = baileys
 import qrcode from "qrcode-terminal"
 import fs from "fs"
 import path from "path"
