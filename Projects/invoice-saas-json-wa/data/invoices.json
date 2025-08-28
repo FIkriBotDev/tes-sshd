@@ -40,7 +40,7 @@
       "items": [],
       "total": 67990000000,
       "type": "once",
-      "status": "unpaid",
+      "status": "paid",
       "created_at": "2025-08-28T13:47:53.804Z",
       "next_schedule": null
     },
