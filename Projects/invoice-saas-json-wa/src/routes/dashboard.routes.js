@@ -57,9 +57,9 @@ try {
   await sendText(
     payload.customer_whatsapp,
     `*Tagihan Anda untuk ExodusCloud*\n\n` +
-    `ID Reference: ${id}\n` +
-    `Total: Rp ${Number(payload.total).toLocaleString('id-ID')}\n` +
-    `Deskripsi: ExodusCloud - Invoice #${id}\n\n` +
+    `*ID Reference:* ${id}\n` +
+    `*Total:* Rp ${Number(payload.total).toLocaleString('id-ID')}\n` +
+    `*Deskripsi:* ExodusCloud - Invoice #${id}\n\n` +
     `Mohon segera selesaikan pembayaran sesuai tagihan.\n` +
     `Terima kasih telah menggunakan layanan ExodusCloud!`
   );
