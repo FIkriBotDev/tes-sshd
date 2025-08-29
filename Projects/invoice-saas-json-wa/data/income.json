@@ -1,22 +1,3 @@
 {
-  "income": [
-    {
-      "id": "inc_a8PW2Sz6",
-      "invoice_id": "inv_dG8LUJo0",
-      "amount": 25000,
-      "date": "2025-08-29T01:55:43.058Z"
-    },
-    {
-      "id": "inc_H2yqVf9Q",
-      "invoice_id": "inv_90RrAHx8",
-      "amount": 1,
-      "date": "2025-08-29T01:56:15.054Z"
-    },
-    {
-      "id": "inc_jJjPW6xf",
-      "invoice_id": "inv_xx3Bm4FF",
-      "amount": 1,
-      "date": "2025-08-29T02:06:22.150Z"
-    }
-  ]
+  "income": []
 }
