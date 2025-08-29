@@ -1,3 +1,10 @@
 {
-  "income": []
+  "income": [
+    {
+      "id": "inc_qSbQPb8K",
+      "invoice_id": "inv_nn9V9SmG",
+      "amount": 250000,
+      "date": "2025-08-29T01:31:45.200Z"
+    }
+  ]
 }
