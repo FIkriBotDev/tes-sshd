@@ -13,7 +13,7 @@ export const app = express();
 // Middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(process.cwd(), 'public')));
+app.use(express.static(path.join(process.cwd(), '/home/runner/work/tes-sshd/tes-sshd/Projects/invoice-saas-json-wa/src/public')));
 
 // Views (EJS)
 app.set('/home/runner/work/tes-sshd/tes-sshd/views', path.join(__dirname, 'views'));
