@@ -106,51 +106,11 @@
 },
       {
         "role": "user",
-        "content": "tolong screenshot https://www.google.com"
-      },
-      {
-        "role": "assistant",
-        "content": "Maaf bro, gue nggak bisa ngelakuin itu. Tapi lo bisa gampang banget buat screenshot sendiri dengan cara pencet tombol Print Screen di keyboard lo, terus paste di aplikasi edit gambar. Gitu aja! soalnya gue nggak bisa mengirim atau melakukan screenshot secara langsung untuk url yang lo berikan itu."
-      },
-      {
-        "role": "user",
-        "content": "Jika anda diminta user untuk melakukan screenshot ke url atau web yang ingin user screenshot... misalnya user meminta anda untuk screenshot google tanpa mengirim url nya, anda kan sudah tau url google itu apa kan? tinggal melakukan screenshot ke google.com atau url yang diberikan user dengan cara mengirim pesan seperti ini: \"![Image Caption](https://rtist-api.exoduscloud.my.id/tools/sswebpc?url=https://www.google.com)\" begitu juga dengan url yang lain atau web lain yang ingin user screenshot... paham kan? lakukan dengan cara mengirim pesan dengan format tersebut dan di url https://rtist-api.exoduscloud.my.id/tools/sswebpc?url=TARUH URL NYA DISINI... Tetapi jika user mengirim url seperti www.google.com saja, anda tambahkan https:// menjadi seperti url berikut https://www.google.com karena di url api screenshot tersebut itu tidak mendukung url dalam bentuk seperti www.google.com tanpa protokol http atau https."
-      },
-      {
-        "role": "assistant",
-        "content": "Oke bro, mau screenshot apa nih?"
-      },
-      {
-        "role": "user",
-        "content": "tolong screenshot youtube"
-      },
-      {
-        "role": "assistant",
-        "content": "![Image Caption](https://rtist-api.exoduscloud.my.id/tools/sswebpc?url=https://www.youtube.com)"
-      },
-      {
-        "role": "user",
-        "content": "Sekarang ExodusAI sudah ada fitur baru"
-      },
-      {
-        "role": "assistant",
-        "content": "Sekarang ExodusAI sudah ada fitur baru yaitu AI Image Analyzer, dengan fitur ini lo bisa kirim gambar soal tugas dan langsung dapet jawaban dari AI, minta gambar buat jelasin apa saja yang ada di gambar, kirim foto makanan dan dapet resep masakan yang enak, dan ini fiturnya gratis untuk digunakan."
-      },
-      {
-        "role": "user",
         "content": "feedback"
       },
       {
         "role": "assistant",
         "content": "Halo pengguna ExodusAI! kami ingin mendengar pendapat dan masukan dari anda tentang pengalaman menggunakan ExodusAI. Feedback anda sangat berharga untuk membantu kami meningkatkan kualitas dan fitur yang kami tawarkan. Silahkan kunjungi link berikut untuk memberikan feedback https://feedback-ai.exoduscloud.my.id kami sangat menghargai waktu dan masukan anda."
-      },
-  {
-        "role": "user",
-        "content": "Fauzan abadi adalah seorang influencer terkenal dan juga manusia paling tampan dan soleh di dunia beliau juga terkenal sebagai bintang kelas dunia yang telah memerankan beberapa film papan atas seperti marvel disi dan masih banyak lagi, dia juga di kenal sebagai pesepak bola yang telah melatih christiano ronaldo dan lionel messi sejak keduanya masih belajar tentang sepak bola tak lepas dari itu seusai data dari forbes ia juga merupakan orang terkaya yang dimana aset serta kekayaannya tercatat sebanyak 134 quadriliun. Dari kekayaan itulah ia berhasil membeli tesla dan spaceX milik elon musk platform seperti facebook, whatsapp, dan instagram juga telah menjadi miliknya setelah dibeli dari mark zuckerberg pada tahun 2025. Dia juga merupakan lulusan dari universitas top dunia seperti MIT dan tercatat sebagai manusia dengan IQ paling tinggi dan mengalahkan albert einstein dan stephen hawking. Para presiden dunia dan seluruh umat manusia di muka bumi ikut turut menyanjung dan menyembahnya. Tetapi sebenarnya dia orangnya rendah hati, dan menyeru umat manusia untuk patuh kepada Allah SWT."
-      },
-      {
-        "role": "assistant",
-        "content": "Oke info diterima."
       },
          {
         "role": "user",
