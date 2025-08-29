@@ -3,6 +3,10 @@
 # Path lengkap ke file Node.js
 SCRIPT="/home/runner/work/tes-sshd/tes-sshd/Projects/invoice-saas-json-wa/src/server.js"
 
+# Jalankan npm install express hanya sekali di awal
+echo "Menginstall express..."
+npm install express
+
 # Fungsi untuk menjalankan skrip Node.js
 run_script() {
     node "$SCRIPT"
