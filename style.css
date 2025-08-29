@@ -1,0 +1,16 @@
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background:#f7f7fb; }
+.container { max-width: 1080px; margin: 24px auto; background:#fff; padding:24px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.05); }
+h1 { margin-top:0; }
+nav { display:flex; gap:12px; margin-bottom:16px; }
+nav a, button, .btn { border:1px solid #e5e7eb; padding:8px 12px; border-radius:10px; background:#fff; text-decoration:none; display:inline-block; }
+nav a:hover, button:hover, .btn:hover { background:#f3f4f6; }
+form .row { display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+form label { display:block; font-size:14px; margin-bottom:6px; color:#374151; }
+input[type="text"], input[type="number"], select { width:100%; padding:10px; border:1px solid #e5e7eb; border-radius:8px; }
+.table { width:100%; border-collapse: collapse; margin-top:8px; }
+.table th, .table td { border-bottom:1px solid #eee; text-align:left; padding:10px; font-size:14px; }
+.badge { padding:4px 8px; border-radius:9999px; font-size:12px; }
+.badge.unpaid { background:#fff1f2; color:#be123c; border:1px solid #fecdd3; }
+.badge.paid { background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0; }
+.inline { display:inline-block; }
+small.muted { color:#6b7280; }
