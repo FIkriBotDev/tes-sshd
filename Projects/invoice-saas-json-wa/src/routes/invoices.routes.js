@@ -43,7 +43,6 @@ invoicesRouter.post('/', async (req, res) => {
       type,
       status: 'unpaid',
       created_at: now,
-      // For monthly: next_schedule is the ISO timestamp for the next recurrence (use created_at as base)
       next_schedule: type === 'monthly' ? now : null,
     };
 
@@ -52,7 +51,15 @@ invoicesRouter.post('/', async (req, res) => {
 
     // Send initial invoice via WhatsApp (best-effort)
     try {
-      await sendText(customer_whatsapp, `Halo ${customer_name}, ini invoice Anda #${id} sebesar Rp${Number(total).toLocaleString('id-ID')}. Mohon lakukan pembayaran. Terima kasih.`);
+      await sendText(
+        customer_whatsapp,
+        `*Tagihan Anda untuk ExodusCloud*\n\n` +
+        `ID Reference: ${id}\n` +
+        `Total: Rp ${Number(total).toLocaleString('id-ID')}\n` +
+        `Deskripsi: ExodusCloud - Invoice #${id}\n\n` +
+        `Mohon segera selesaikan pembayaran sesuai tagihan.\n` +
+        `Terima kasih telah menggunakan layanan ExodusCloud!`
+      );
     } catch (waErr) {
       console.warn('[invoices.routes] WA send error:', waErr?.message || waErr);
     }
