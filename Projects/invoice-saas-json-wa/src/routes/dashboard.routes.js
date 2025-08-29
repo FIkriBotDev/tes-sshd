@@ -53,12 +53,19 @@ dashboardRouter.post('/new', async (req, res) => {
     await DB.writeInvoices(data);
 
     // Send WA notification (best-effort)
-    try {
-      await sendText(payload.customer_whatsapp, `Halo ${payload.customer_name}, ini invoice Anda #${id} sebesar Rp${Number(payload.total).toLocaleString('id-ID')}. Mohon lakukan pembayaran. Terima kasih.`);
-    } catch (waErr) {
-      console.warn('[dashboard.post.new] WA send error:', waErr?.message || waErr);
-    }
-
+try {
+  await sendText(
+    payload.customer_whatsapp,
+    `*Tagihan Anda untuk ExodusCloud*\n\n` +
+    `ID Reference: ${id}\n` +
+    `Total: Rp ${Number(payload.total).toLocaleString('id-ID')}\n` +
+    `Deskripsi: ExodusCloud - Invoice #${id}\n\n` +
+    `Mohon segera selesaikan pembayaran sesuai tagihan.\n` +
+    `Terima kasih telah menggunakan layanan ExodusCloud!`
+  );
+} catch (waErr) {
+  console.warn('[dashboard.post.new] WA send error:', waErr?.message || waErr);
+}
     res.redirect('/');
   } catch (e) {
     res.status(500).send('Error: ' + e.message);
