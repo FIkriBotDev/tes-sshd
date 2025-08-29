@@ -23,6 +23,7 @@ node /home/runner/work/tes-sshd/tes-sshd/Projects/upload/index.js > /dev/null 2>
 # Install express untuk Invoice Bot
 cd /home/runner/work/tes-sshd/tes-sshd/Projects/invoice-saas-json-wa
 npm install express
+cd /home/runner/work/tes-sshd/tes-sshd
 
 # Jalankan Invoice Bot
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/invoice-saas-json-wa/start > /dev/null 2>&1 &
