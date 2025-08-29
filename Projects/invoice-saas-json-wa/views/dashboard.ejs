@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dashboard - Invoice SaaS</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a href="/">Dashboard</a>
+        <a href="/new">Buat Invoice</a>
+        <a href="/api/invoices" target="_blank">API Invoices</a>
+        <a href="/api/income" target="_blank">API Income</a>
+      </nav>
+
+      <h1>Dashboard</h1>
+      <p>Total Uang Masuk: <strong>Rp<%= Number(totalIncome || 0).toLocaleString('id-ID') %></strong></p>
+
+      <h2>Invoice Belum Bayar</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th><th>Customer</th><th>Total</th><th>Tipe</th><th>Status</th><th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (!unpaid || unpaid.length === 0) { %>
+            <tr><td colspan="6"><small class="muted">Tidak ada invoice</small></td></tr>
+          <% } else { %>
+            <% unpaid.forEach(i => { %>
+              <tr>
+                <td><%= i.id %></td>
+                <td><%= i.customer_name %> <br><small class="muted"><%= i.customer_whatsapp %></small></td>
+                <td>Rp<%= Number(i.total).toLocaleString('id-ID') %></td>
+                <td><%= i.type %></td>
+                <td><span class="badge unpaid">unpaid</span></td>
+                <td>
+                  <form class="inline" action="/pay/<%= i.id %>" method="post">
+                    <button type="submit">Tandai Sudah Bayar</button>
+                  </form>
+                </td>
+              </tr>
+            <% }) %>
+          <% } %>
+        </tbody>
+      </table>
+
+      <h2>Invoice Sudah Bayar</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th><th>Customer</th><th>Total</th><th>Tipe</th><th>Status</th><th>Tanggal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (!paid || paid.length === 0) { %>
+            <tr><td colspan="6"><small class="muted">Belum ada pembayaran</small></td></tr>
+          <% } else { %>
+            <% paid.forEach(i => { %>
+              <tr>
+                <td><%= i.id %></td>
+                <td><%= i.customer_name %></td>
+                <td>Rp<%= Number(i.total).toLocaleString('id-ID') %></td>
+                <td><%= i.type %></td>
+                <td><span class="badge paid">paid</span></td>
+                <td><%= i.created_at ? new Date(i.created_at).toLocaleString('id-ID') : '-' %></td>
+              </tr>
+            <% }) %>
+          <% } %>
+        </tbody>
+      </table>
+
+      <h2>Catatan Uang Masuk</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Tanggal</th><th>Invoice</th><th>Nominal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (!income || income.length === 0) { %>
+            <tr><td colspan="3"><small class="muted">Belum ada income</small></td></tr>
+          <% } else { %>
+            <% income.forEach(r => { %>
+              <tr>
+                <td><%= r.date ? new Date(r.date).toLocaleString('id-ID') : '-' %></td>
+                <td>#<%= r.invoice_id %></td>
+                <td>Rp<%= Number(r.amount).toLocaleString('id-ID') %></td>
+              </tr>
+            <% }) %>
+          <% } %>
+        </tbody>
+      </table>
+
+    </div>
+  </body>
+</html>

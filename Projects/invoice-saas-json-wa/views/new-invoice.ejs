@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Buat Invoice - Invoice SaaS</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a href="/">Dashboard</a>
+        <a href="/new">Buat Invoice</a>
+        <a href="/api/invoices" target="_blank">API Invoices</a>
+        <a href="/api/income" target="_blank">API Income</a>
+      </nav>
+
+      <h1>Buat Invoice</h1>
+      <form method="post" action="/new">
+        <div class="row">
+          <div>
+            <label>Nama Customer</label>
+            <input name="customer_name" type="text" required />
+          </div>
+          <div>
+            <label>No. WhatsApp (contoh: 62812xxxx)</label>
+            <input name="customer_whatsapp" type="text" required />
+          </div>
+          <div>
+            <label>Total (Rp)</label>
+            <input name="total" type="number" min="0" step="1" required />
+          </div>
+          <div>
+            <label>Tipe Tagihan</label>
+            <select name="type">
+              <option value="once">Sekali</option>
+              <option value="monthly">Bulanan</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Item (opsional) - Nama</label>
+            <input name="item_name" type="text" />
+          </div>
+          <div>
+            <label>Item (opsional) - Harga</label>
+            <input name="item_price" type="number" step="1" />
+          </div>
+        </div>
+
+        <br />
+        <button class="btn" type="submit">Simpan Invoice</button>
+      </form>
+
+    </div>
+  </body>
+</html>
