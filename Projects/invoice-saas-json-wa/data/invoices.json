@@ -1,3 +1,15 @@
 {
-  "invoices": []
+  "invoices": [
+    {
+      "id": "inv_qZl8q1JC",
+      "customer_name": "Ariya",
+      "customer_whatsapp": "6287774189592",
+      "items": [],
+      "total": 25000,
+      "type": "once",
+      "status": "unpaid",
+      "created_at": "2025-08-29T02:13:55.884Z",
+      "next_schedule": null
+    }
+  ]
 }
