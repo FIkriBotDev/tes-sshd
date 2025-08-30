@@ -18712,3 +18712,106 @@ Response  : {
   "alternatif": ["Daging ayam tanpa kulit", "Tahu atau tempe sebagai sumber protein", "Sayuran panggang"]
 }
 
+
+[2025-08-30T04:18:06.578Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/e4350e-1756527479676.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan",
+    "alasan": "Makanan ini tampaknya berupa telur dadar dengan tomat dan sayuran yang sehat, tetapi tanpa info lengkap tentang bahan dan cara memasak, sulit menilai secara akurat. Secara umum, jika direbus atau dikukus tanpa banyak minyak, makanan ini cukup baik, namun jika digoreng dengan banyak minyak, kandungan lemak dan kalori bisa meningkat secara signifikan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "paling tidak 150g-200g",
+    "jumlahSajian": "1",
+    "kalori": 250,
+    "protein": "12g",
+    "proteinPersen": "19.2%",
+    "karbohidrat": "12g",
+    "karbohidratPersen": "19.2%",
+    "gula": "5g",
+    "serat": "2g",
+    "lemakTotal": "18g",
+    "lemakJenuh": "4g",
+    "lemakTakJenuh": "10g",
+    "lemakPersen": "28.8%",
+    "kolesterol": "210mg",
+    "natrium": "400mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "12.5%" },
+    { "nama": "Gula", "persen": "10%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Boleh dikonsumsi 3-4 kali seminggu, tapi perhatikan cara memasaknya",
+  "ingredients": ["Telur", "Tomat", "Sayuran hijau (misalnya bayam)"],
+  "tipsSehat": ["Gunakan sedikit minyak saat menggoreng atau lebih baik merebus", "Tambah sayuran berwarna-warni untuk variasi vitamin"],
+  "alternatif": ["Omelet sayuran tanpa minyak banyak", "Telur rebus dengan potongan tomat dan sayuran segar"]
+}
+
