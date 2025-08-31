@@ -176,6 +176,12 @@
     document.getElementById('resultContainer').classList.add('d-none');
   }
 
+  function getProgressBarClass(persen) {
+    if (persen < 60) return "bg-success";
+    if (persen < 90) return "bg-warning";
+    return "bg-danger";
+  }
+
   async function startAnalysis() {
     if (!selectedFile) return;
 
@@ -209,7 +215,7 @@
               <span>${value}</span>
             </div>
             <div class="progress mt-1" style="height:6px;">
-              <div class="progress-bar bg-primary" role="progressbar" style="width:${persen}%"></div>
+              <div class="progress-bar ${getProgressBarClass(persen)}" role="progressbar" style="width:${persen}%"></div>
             </div>
           `;
           nutrisiList.appendChild(div);
@@ -238,7 +244,7 @@
             <span>${item.persen}</span>
           </div>
           <div class="progress mt-1" style="height:6px;">
-            <div class="progress-bar bg-success" role="progressbar" style="width:${persenVal}%"></div>
+            <div class="progress-bar ${getProgressBarClass(persenVal)}" role="progressbar" style="width:${persenVal}%"></div>
           </div>
         `;
         perbandinganList.appendChild(div);
