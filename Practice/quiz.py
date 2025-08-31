@@ -7,3 +7,5 @@ nilai_Y = raw_data[['Total']]
 nilai_X = raw_data[['Pendapatan']]
 model_regresi = sm.OLS(endog=nilai_Y,exog=nilai_X).fit()
 model_regresi.summary()
+
+print(model_regresi.summary())
