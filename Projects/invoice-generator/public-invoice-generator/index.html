@@ -1,4 +1,4 @@
-hai<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -6,6 +6,20 @@ hai<!doctype html>
   <title>Invoice Generator</title>
   <link rel="stylesheet" href="/style.css" />
 </head>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(function(registration) {
+        console.log('ServiceWorker registered with scope:', registration.scope);
+      })
+      .catch(function(error) {
+        console.log('ServiceWorker registration failed:', error);
+      });
+  }
+</script>
+
+
 <body>
   <div class="container">
     <h1>🧾 Invoice Generator</h1>
