@@ -21,6 +21,17 @@
       "status": "paid",
       "created_at": "2025-08-31T08:50:48.511Z",
       "next_schedule": null
+    },
+    {
+      "id": "inv_qR6tr6EN",
+      "customer_name": "Fikri",
+      "customer_whatsapp": "6287769811262",
+      "items": [],
+      "total": 98000,
+      "type": "once",
+      "status": "paid",
+      "created_at": "2025-08-31T22:22:38.062Z",
+      "next_schedule": null
     }
   ]
 }
