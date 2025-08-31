@@ -18962,3 +18962,107 @@ Kalau Anda ingin membuat grafik yang lebih kompleks, misalnya memasukkan analisi
 
 Kalau mau saya bantu buatkan langkah-langkah atau kode tertentu, tinggal bilang saja. Tapi dari apa yang terlihat di screenshot, langkah-langkah di atas cukup buat Anda mendapatkan grafik yang serupa.
 
+
+[2025-08-31T06:47:37.250Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/23356b-1756622850549.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak terlalu tinggi, cukup seimbang namun ada aspek yang perlu diperhatikan",
+    "alasan": "Mengandung buah segar dan sumber protein dari bacon dan telur, namun adanya pancake dan sirup berpotensi menambah gula dan kalori berlebih"
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "perkiraan 250 gram",
+    "jumlahSajian": "1 piring",
+    "kalori": 520,
+    "protein": "12g",
+    "proteinPersen": "9.23%",
+    "karbohidrat": "85g",
+    "karbohidratPersen": "65.38%",
+    "gula": "30g",
+    "serat": "5g",
+    "lemakTotal": "18g",
+    "lemakJenuh": "4g",
+    "lemakTakJenuh": "14g",
+    "lemakPersen": "31%",
+    "kolesterol": "150mg",
+    "natrium": "900mg",
+    "vitaminDanMineral": ["Vitamin C", "Vitamin A", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "26%" },
+    { "nama": "Gula", "persen": "60%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3-4 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 2x/minggu",
+  "ingredients": ["Strawberry", "Blueberry", "Bacon", "Pancake", "Pisang", "Sirup", "Telur", "Minyak"]
+  ,
+  "tipsSehat": ["Kurangi penggunaan sirup dengan madu alami atau buah segar", "Gunakan pancake gandum utuh untuk serat lebih tinggi", "Batasi konsumsi bacon karena tinggi lemak jenuh dan sodium", "Tambah sayuran segar untuk keseimbangan nutrisi"],
+  "alternatif": ["Yogurt dan buah segar", "Pancake oat tanpa gula tambahan", "Sumber protein lebih sehat seperti telur rebus atau keju rendah lemak"]
+}
+
