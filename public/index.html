@@ -9,111 +9,186 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body { background-color: #f2f4f6; }
-    .card-custom { max-width: 1400px; margin: 20px auto; padding: 20px; border-radius: 20px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); background: #fff; }
-    .image-preview { max-height: 300px; object-fit: contain; margin-bottom: 1rem; }
-    .loading-spinner { font-size: 2rem; text-align: center; }
-    .text-green { color: #28a745; }
-    .text-red { color: #dc3545; }
-    .badge-pill { padding: 10px 20px; font-size: 0.9rem; border-radius: 50rem; }
-    .card-box { background-color: #f8f9fa; border-left: 4px solid #0d6efd; border-radius: 8px; padding: 15px; margin-bottom: 15px; }
-    .badge-value { font-weight: bold; background-color: #e9ecef; border-radius: 12px; padding: 4px 8px; margin-left: 6px; }
-    .progress { height: 18px; border-radius: 10px; }
-    .progress-bar { transition: width 1s ease-in-out; }
-    @media (min-width: 992px) {
-      #layoutRow { display: flex; gap: 30px; }
-      #leftColumn, #rightColumn { flex: 1; }
+    body {
+      background: #f9fbfd;
+      font-family: "Inter", sans-serif;
+    }
+
+    .app-container {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 16px;
+    }
+
+    .card-custom {
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    /* Nutrisi grid style */
+    .nutrisi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 12px;
+    }
+
+    .nutrient-box {
+      background: #f8f9fb;
+      border-radius: 16px;
+      padding: 12px;
+      text-align: center;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .nutrient-icon {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .nutrient-value {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nutrient-label {
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    /* Progress bar animasi */
+    .progress {
+      height: 6px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #e9ecef;
+    }
+
+    .progress-bar {
+      transition: width 1s ease-in-out;
+    }
+
+    .badge-chip {
+      border-radius: 12px;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      margin: 4px;
+      display: inline-block;
+    }
+
+    .image-preview {
+      max-height: 300px;
+      object-fit: contain;
+      border-radius: 16px;
+      margin-bottom: 1rem;
+    }
+
+    .loading-spinner {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 576px) {
+      .app-container {
+        padding: 10px;
+      }
+      .nutrisi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
 <body>
-  <div class="card card-custom">
-    <h4 class="mb-4">🍽️ NutriScan AI by ExodusAI</h4>
+  <div class="app-container">
+    <div class="card-custom text-center">
+      <h4 class="mb-3">🍽️ NutriScan AI</h4>
+      <div class="mb-3 d-flex gap-2 justify-content-center">
+        <button class="btn btn-success text-white" onclick="document.getElementById('fileInput').click()">📷 Camera</button>
+        <input type="file" id="fileInput" accept="image/*" class="d-none" onchange="handleImageUpload(event)" />
+        <button class="btn btn-outline-primary" onclick="document.getElementById('fileInput').click()">📤 Upload</button>
+      </div>
 
-    <div class="mb-3 d-flex gap-2 flex-wrap">
-      <button class="btn btn-info text-white" onclick="document.getElementById('fileInput').click()">📷 Camera</button>
-      <input type="file" id="fileInput" accept="image/*" class="d-none" onchange="handleImageUpload(event)" />
-      <button class="btn btn-outline-primary" onclick="document.getElementById('fileInput').click()">📤 Upload</button>
-    </div>
+      <div id="previewContainer" class="text-center d-none">
+        <img id="previewImage" src="" class="img-fluid image-preview" />
+        <div class="d-flex justify-content-center gap-2">
+          <button class="btn btn-dark btn-sm" onclick="startAnalysis()">Analyze</button>
+          <button class="btn btn-outline-secondary btn-sm" onclick="resetImage()">Reset</button>
+        </div>
+      </div>
 
-    <div id="previewContainer" class="text-center d-none">
-      <img id="previewImage" src="" class="img-fluid rounded image-preview" />
-      <div class="d-flex justify-content-center gap-2 flex-wrap">
-        <button class="btn btn-dark btn-sm" onclick="startAnalysis()">Analyze</button>
-        <button class="btn btn-outline-secondary btn-sm" onclick="resetImage()">Reset</button>
+      <div id="loading" class="loading-spinner mt-4 d-none">
+        <div class="spinner-border text-primary" role="status"></div>
+        <p class="mt-2">Analyzing with AI...</p>
       </div>
     </div>
 
-    <div id="loading" class="loading-spinner text-center mt-4 d-none">
-      <div class="spinner-border text-primary" role="status"></div>
-      <p>Analyzing with AI...</p>
-    </div>
+    <div id="resultContainer" class="d-none">
+      <div class="card-custom">
+        <h5 class="section-title">🧠 Skor Kesehatan</h5>
+        <div id="direkomendasikanAtauTidak" class="fw-bold mb-1"></div>
+        <div id="alasan" class="text-muted"></div>
+      </div>
 
-    <div id="resultContainer" class="mt-4 d-none">
-      <h5 class="mb-3">📊 Result:</h5>
-      <div id="layoutRow">
-        <div id="leftColumn">
-          <div class="card-box">
-            <h6>🧠 Skor Kesehatan:</h6>
-            <div id="direkomendasikanAtauTidak" class="fw-bold mb-1"></div>
-            <div id="alasan" class="text-muted"></div>
-          </div>
+      <div class="card-custom">
+        <h5 class="section-title">📋 Rincian Nutrisi</h5>
+        <div class="nutrisi-grid" id="rincianNutrisi"></div>
+      </div>
 
-          <div class="card-box">
-            <h6>📋 Rincian Nutrisi:</h6>
-            <ul id="rincianNutrisi" class="list-unstyled mb-0"></ul>
-          </div>
+      <div class="card-custom">
+        <h5 class="section-title">💊 Vitamin & Mineral</h5>
+        <div id="vitaminMineral"></div>
+      </div>
 
-          <div class="card-box">
-            <h6>💊 Vitamin & Mineral:</h6>
-            <ul id="vitaminMineral" class="list-inline mb-0"></ul>
-          </div>
-        </div>
+      <div class="card-custom">
+        <h5 class="section-title">📈 Perbandingan terhadap AKG</h5>
+        <div id="perbandinganAKG"></div>
+      </div>
 
-        <div id="rightColumn">
-          <div class="card-box">
-            <h6>📈 Perbandingan terhadap AKG:</h6>
-            <ul id="perbandinganAKG" class="list-unstyled mb-0"></ul>
-          </div>
+      <div class="card-custom">
+        <h5 class="section-title">⚠️ Indikator Risiko Kesehatan</h5>
+        <div id="risikoKesehatan"></div>
+      </div>
 
-          <div class="card-box">
-            <h6>⚠️ Indikator Risiko Kesehatan:</h6>
-            <ul id="risikoKesehatan" class="list-inline mb-0"></ul>
-          </div>
+      <div class="card-custom">
+        <h5 class="section-title">⏱️ Perkiraan Waktu Pencernaan / Kenyang</h5>
+        <div id="waktuKenyang" class="text-muted"></div>
+      </div>
 
-          <div class="card-box">
-            <h6>⏱️ Perkiraan Waktu Pencernaan / Kenyang:</h6>
-            <div id="waktuKenyang" class="text-muted"></div>
-          </div>
+      <div class="card-custom">
+        <h5 class="section-title">📅 Rekomendasi Frekuensi Konsumsi</h5>
+        <div id="frekuensiKonsumsi" class="text-muted"></div>
+      </div>
 
-          <div class="card-box">
-            <h6>📅 Rekomendasi Frekuensi Konsumsi:</h6>
-            <div id="frekuensiKonsumsi" class="text-muted"></div>
-          </div>
+      <div class="card-custom">
+        <h5 class="section-title">🔍 Analisis Bahan</h5>
+        <div id="analisisBahan"></div>
+      </div>
 
-          <div class="card-box">
-            <h6>🔍 Analisis Bahan:</h6>
-            <ul id="analisisBahan" class="list-inline mb-0"></ul>
-          </div>
+      <div class="card-custom">
+        <h5 class="section-title">👨‍🍳 Tips Penyajian Lebih Sehat</h5>
+        <div id="tipsSehat"></div>
+      </div>
 
-          <div class="card-box">
-            <h6>👨‍🍳 Tips Penyajian Lebih Sehat:</h6>
-            <ul id="tipsSehat" class="list-inline mb-0"></ul>
-          </div>
+      <div class="card-custom">
+        <h5 class="section-title">🥗 Alternatif Lebih Sehat</h5>
+        <div id="alternatifSehat"></div>
+      </div>
 
-          <div class="card-box">
-            <h6>🥗 Alternatif Lebih Sehat:</h6>
-            <ul id="alternatifSehat" class="list-inline mb-0"></ul>
-          </div>
-
-          <div class="card-box">
-            <h6>🥧 Komposisi Kalori (Makronutrien):</h6>
-            <canvas id="macroChart" height="200"></canvas>
-          </div>
-        </div>
+      <div class="card-custom">
+        <h5 class="section-title">🥧 Komposisi Kalori (Makronutrien)</h5>
+        <canvas id="macroChart" height="200"></canvas>
       </div>
     </div>
   </div>
+
 <script>
   let selectedFile = null;
   let chartInstance = null;
@@ -156,36 +231,35 @@
 
       document.getElementById('direkomendasikanAtauTidak').innerHTML =
         data?.skorKesehatan?.direkomendasikanAtauTidak?.toLowerCase().includes('tidak')
-          ? '<span class="text-red">👎 ' + data.skorKesehatan.direkomendasikanAtauTidak + '</span>'
-          : '<span class="text-green">👍 ' + data.skorKesehatan.direkomendasikanAtauTidak + '</span>';
+          ? '<span class="text-danger">👎 ' + data.skorKesehatan.direkomendasikanAtauTidak + '</span>'
+          : '<span class="text-success">👍 ' + data.skorKesehatan.direkomendasikanAtauTidak + '</span>';
       document.getElementById('alasan').textContent = data.skorKesehatan.alasan || '';
 
       const rincian = data.rincianNutrisi || {};
       const nutrisiList = document.getElementById('rincianNutrisi');
       nutrisiList.innerHTML = '';
+
+      // mapping ikon nutrisi
+      const iconMap = {
+        Kalori: "⚡",
+        Energi: "⚡",
+        Protein: "🥛",
+        Karbohidrat: "🍬",
+        Lemak: "🥓"
+      };
+
       Object.entries(rincian).forEach(([key, value]) => {
         if (!Array.isArray(value)) {
-          const li = document.createElement('li');
-          let icon = '';
-          if (key.toLowerCase().includes('kalori')) icon = '⚡ ';
-          else if (key.toLowerCase().includes('protein')) icon = '🥛 ';
-          else if (key.toLowerCase().includes('gula') || key.toLowerCase().includes('karbo')) icon = '🍬 ';
-          li.innerHTML = `${icon}${key.replace(/([A-Z])/g, ' $1')}: <span class="badge-value">${value}</span>`;
-
-          // Jika persen (misalnya "40%") buat progress bar
-          const percent = parseFloat((value + '').replace('%',''));
-          if (!isNaN(percent)) {
-            const progress = document.createElement('div');
-            progress.className = 'progress my-1';
-            progress.innerHTML = `<div class="progress-bar bg-primary" role="progressbar" style="width: 0%">${percent}%</div>`;
-            li.appendChild(progress);
-
-            setTimeout(() => {
-              li.querySelector('.progress-bar').style.width = percent + '%';
-            }, 200);
-          }
-
-          nutrisiList.appendChild(li);
+          const persen = parseFloat((rincian[key + "Persen"] || '').replace('%', '')) || 0;
+          const box = document.createElement('div');
+          box.className = 'nutrient-box';
+          box.innerHTML = `
+            <div class="nutrient-icon">${iconMap[key] || "🍽️"}</div>
+            <div class="nutrient-value">${value}</div>
+            <div class="nutrient-label">${key}</div>
+            <div class="progress mt-2"><div class="progress-bar bg-primary" style="width:${persen}%"></div></div>
+          `;
+          nutrisiList.appendChild(box);
         }
       });
 
@@ -193,27 +267,37 @@
       vitaminList.innerHTML = '';
       const vitaminItems = [...(rincian.vitaminDanMineral || []), ...(rincian.mineral || [])];
       vitaminItems.forEach(item => {
-        const li = document.createElement('li');
-        li.className = 'list-inline-item badge bg-secondary me-1 mb-1';
-        li.textContent = item;
-        vitaminList.appendChild(li);
+        const span = document.createElement('span');
+        span.className = 'badge-chip bg-light border';
+        span.textContent = item;
+        vitaminList.appendChild(span);
       });
 
       const perbandinganList = document.getElementById('perbandinganAKG');
       perbandinganList.innerHTML = '';
       (data.perbandinganAKG || []).forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.nama}: ${item.persen}`;
-        perbandinganList.appendChild(li);
+        const persenVal = parseInt(item.persen.replace('%', '')) || 0;
+        const div = document.createElement('div');
+        div.className = 'nutrient-card mb-2';
+        div.innerHTML = `
+          <div class="d-flex justify-content-between">
+            <span>${item.nama}</span>
+            <span>${item.persen}</span>
+          </div>
+          <div class="progress mt-1">
+            <div class="progress-bar bg-success" role="progressbar" style="width:${persenVal}%"></div>
+          </div>
+        `;
+        perbandinganList.appendChild(div);
       });
 
       const risikoList = document.getElementById('risikoKesehatan');
       risikoList.innerHTML = '';
       Object.entries(data.risikoKesehatan || {}).forEach(([k, v]) => {
-        const badge = document.createElement('li');
-        badge.className = `list-inline-item badge me-1 mb-1 ${v === 'tinggi' ? 'bg-danger' : v === 'sedang' ? 'bg-warning text-dark' : 'bg-success'}`;
-        badge.textContent = `${k}: ${v}`;
-        risikoList.appendChild(badge);
+        const span = document.createElement('span');
+        span.className = `badge-chip ${v === 'tinggi' ? 'bg-danger text-white' : v === 'sedang' ? 'bg-warning text-dark' : 'bg-success text-white'}`;
+        span.textContent = `${k}: ${v}`;
+        risikoList.appendChild(span);
       });
 
       document.getElementById('waktuKenyang').textContent = data.waktuKenyang || '';
@@ -222,28 +306,28 @@
       const bahanList = document.getElementById('analisisBahan');
       bahanList.innerHTML = '';
       (data.ingredients || []).forEach(item => {
-        const li = document.createElement('li');
-        li.className = 'list-inline-item badge bg-warning text-dark me-1 mb-1';
-        li.textContent = item;
-        bahanList.appendChild(li);
+        const span = document.createElement('span');
+        span.className = 'badge-chip bg-warning text-dark';
+        span.textContent = item;
+        bahanList.appendChild(span);
       });
 
       const tipsList = document.getElementById('tipsSehat');
       tipsList.innerHTML = '';
       (data.tipsSehat || []).forEach(item => {
-        const li = document.createElement('li');
-        li.className = 'list-inline-item badge bg-info text-dark me-1 mb-1';
-        li.textContent = item;
-        tipsList.appendChild(li);
+        const span = document.createElement('span');
+        span.className = 'badge-chip bg-info text-dark';
+        span.textContent = item;
+        tipsList.appendChild(span);
       });
 
       const alternatifList = document.getElementById('alternatifSehat');
       alternatifList.innerHTML = '';
       (data.alternatif || []).forEach(item => {
-        const li = document.createElement('li');
-        li.className = 'list-inline-item badge bg-success me-1 mb-1';
-        li.textContent = item;
-        alternatifList.appendChild(li);
+        const span = document.createElement('span');
+        span.className = 'badge-chip bg-success text-white';
+        span.textContent = item;
+        alternatifList.appendChild(span);
       });
 
       const macroChart = document.getElementById('macroChart').getContext('2d');
