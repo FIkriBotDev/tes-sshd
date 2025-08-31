@@ -13,29 +13,80 @@
       background: #f9fbfd;
       font-family: "Inter", sans-serif;
     }
-    .app-container { max-width: 500px; margin: 20px auto; padding: 16px; }
-    .card-custom {
-      border-radius: 20px; background: #fff;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      padding: 20px; margin-bottom: 20px;
+    .app-container {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 16px;
     }
-    .section-title { font-weight: 600; font-size: 1rem; margin-bottom: 10px; }
-    .nutrisi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+    .card-custom {
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    .nutrisi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 12px;
+    }
     .nutrient-box {
-      background: #f8f9fb; border-radius: 16px; padding: 12px; text-align: center;
+      background: #f8f9fb;
+      border-radius: 16px;
+      padding: 12px;
+      text-align: center;
       box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
     }
-    .nutrient-icon { font-size: 20px; margin-bottom: 4px; }
-    .nutrient-value { font-weight: 600; font-size: 0.95rem; }
-    .nutrient-label { font-size: 0.8rem; color: #666; }
-    .progress { height: 6px; border-radius: 6px; overflow: hidden; background: #e9ecef; }
-    .progress-bar { transition: width 1s ease-in-out; }
-    .badge-chip { border-radius: 12px; padding: 4px 10px; font-size: 0.8rem; margin: 4px; display: inline-block; }
-    .image-preview { max-height: 300px; object-fit: contain; border-radius: 16px; margin-bottom: 1rem; }
-    .loading-spinner { text-align: center; font-size: 1.2rem; }
+    .nutrient-icon {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+    .nutrient-value {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .nutrient-label {
+      font-size: 0.8rem;
+      color: #666;
+    }
+    .progress {
+      height: 6px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #e9ecef;
+    }
+    .progress-bar {
+      transition: width 1s ease-in-out;
+    }
+    .badge-chip {
+      border-radius: 12px;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      margin: 4px;
+      display: inline-block;
+    }
+    .image-preview {
+      max-height: 300px;
+      object-fit: contain;
+      border-radius: 16px;
+      margin-bottom: 1rem;
+    }
+    .loading-spinner {
+      text-align: center;
+      font-size: 1.2rem;
+    }
     @media (max-width: 576px) {
-      .app-container { padding: 10px; }
-      .nutrisi-grid { grid-template-columns: repeat(2, 1fr); }
+      .app-container {
+        padding: 10px;
+      }
+      .nutrisi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
@@ -67,196 +118,240 @@
         <div id="direkomendasikanAtauTidak" class="fw-bold mb-1"></div>
         <div id="alasan" class="text-muted"></div>
       </div>
+
       <div class="card-custom">
         <h5 class="section-title">📋 Rincian Nutrisi</h5>
         <div class="nutrisi-grid" id="rincianNutrisi"></div>
       </div>
-      <div class="card-custom"><h5 class="section-title">💊 Vitamin & Mineral</h5><div id="vitaminMineral"></div></div>
-      <div class="card-custom"><h5 class="section-title">📈 Perbandingan terhadap AKG</h5><div id="perbandinganAKG"></div></div>
-      <div class="card-custom"><h5 class="section-title">⚠️ Indikator Risiko Kesehatan</h5><div id="risikoKesehatan"></div></div>
-      <div class="card-custom"><h5 class="section-title">⏱️ Perkiraan Waktu Pencernaan / Kenyang</h5><div id="waktuKenyang" class="text-muted"></div></div>
-      <div class="card-custom"><h5 class="section-title">📅 Rekomendasi Frekuensi Konsumsi</h5><div id="frekuensiKonsumsi" class="text-muted"></div></div>
-      <div class="card-custom"><h5 class="section-title">🔍 Analisis Bahan</h5><div id="analisisBahan"></div></div>
-      <div class="card-custom"><h5 class="section-title">👨‍🍳 Tips Penyajian Lebih Sehat</h5><div id="tipsSehat"></div></div>
-      <div class="card-custom"><h5 class="section-title">🥗 Alternatif Lebih Sehat</h5><div id="alternatifSehat"></div></div>
-      <div class="card-custom"><h5 class="section-title">🥧 Komposisi Kalori (Makronutrien)</h5><canvas id="macroChart" height="200"></canvas></div>
+
+      <div class="card-custom">
+        <h5 class="section-title">💊 Vitamin & Mineral</h5>
+        <div id="vitaminMineral"></div>
+      </div>
+
+      <div class="card-custom">
+        <h5 class="section-title">📈 Perbandingan terhadap AKG</h5>
+        <div id="perbandinganAKG"></div>
+      </div>
+
+      <div class="card-custom">
+        <h5 class="section-title">⚠️ Indikator Risiko Kesehatan</h5>
+        <div id="risikoKesehatan"></div>
+      </div>
+
+      <div class="card-custom">
+        <h5 class="section-title">⏱️ Perkiraan Waktu Pencernaan / Kenyang</h5>
+        <div id="waktuKenyang" class="text-muted"></div>
+      </div>
+
+      <div class="card-custom">
+        <h5 class="section-title">📅 Rekomendasi Frekuensi Konsumsi</h5>
+        <div id="frekuensiKonsumsi" class="text-muted"></div>
+      </div>
+
+      <div class="card-custom">
+        <h5 class="section-title">🔍 Analisis Bahan</h5>
+        <div id="analisisBahan"></div>
+      </div>
+
+      <div class="card-custom">
+        <h5 class="section-title">👨‍🍳 Tips Penyajian Lebih Sehat</h5>
+        <div id="tipsSehat"></div>
+      </div>
+
+      <div class="card-custom">
+        <h5 class="section-title">🥗 Alternatif Lebih Sehat</h5>
+        <div id="alternatifSehat"></div>
+      </div>
+
+      <div class="card-custom">
+        <h5 class="section-title">🥧 Komposisi Kalori (Makronutrien)</h5>
+        <canvas id="macroChart" height="200"></canvas>
+      </div>
     </div>
   </div>
 
 <script>
-let selectedFile = null;
-let chartInstance = null;
+  let selectedFile = null;
+  let chartInstance = null;
 
-function handleImageUpload(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-  selectedFile = file;
-  const reader = new FileReader();
-  reader.onload = e => {
-    document.getElementById('previewImage').src = e.target.result;
-    document.getElementById('previewContainer').classList.remove('d-none');
-    document.getElementById('resultContainer').classList.add('d-none');
-  };
-  reader.readAsDataURL(file);
-}
-
-function resetImage() {
-  selectedFile = null;
-  document.getElementById('fileInput').value = null;
-  document.getElementById('previewImage').src = '';
-  document.getElementById('previewContainer').classList.add('d-none');
-  document.getElementById('loading').classList.add('d-none');
-  document.getElementById('resultContainer').classList.add('d-none');
-}
-
-async function startAnalysis() {
-  if (!selectedFile) return;
-  const formData = new FormData();
-  formData.append('image', selectedFile);
-  document.getElementById('loading').classList.remove('d-none');
-  document.getElementById('resultContainer').classList.add('d-none');
-
-  try {
-    const res = await axios.post('https://food-analyzer.exoduscloud.my.id/analyze', formData);
-    const data = res.data;
-
-    // Health Score
-    document.getElementById('direkomendasikanAtauTidak').innerHTML =
-      data?.skorKesehatan?.direkomendasikanAtauTidak?.toLowerCase().includes('tidak')
-        ? '<span class="text-danger">👎 ' + data.skorKesehatan.direkomendasikanAtauTidak + '</span>'
-        : '<span class="text-success">👍 ' + data.skorKesehatan.direkomendasikanAtauTidak + '</span>';
-    document.getElementById('alasan').textContent = data.skorKesehatan.alasan || '';
-
-    const rincian = data.rincianNutrisi || {};
-    const nutrisiList = document.getElementById('rincianNutrisi');
-    nutrisiList.innerHTML = '';
-
-    // icon map with lowercase keys
-    const iconMap = {
-      kalori: "⚡", energi: "⚡",
-      protein: "🥛",
-      karbohidrat: "🍬", gula: "🍬",
-      lemak: "🥓",
-      natrium: "🌊",
-      kolesterol: "❤️"
+  function handleImageUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    selectedFile = file;
+    const reader = new FileReader();
+    reader.onload = e => {
+      document.getElementById('previewImage').src = e.target.result;
+      document.getElementById('previewContainer').classList.remove('d-none');
+      document.getElementById('resultContainer').classList.add('d-none');
     };
-
-    // daily reference values
-    const rdi = { protein: 50, karbohidrat: 300, gula: 50, lemak: 70, natrium: 2300, kolesterol: 300 };
-
-    Object.entries(rincian).forEach(([key, value]) => {
-      if (!Array.isArray(value)) {
-        const lowerKey = key.toLowerCase();
-        let persen = parseFloat((rincian[key + "Persen"] || '').replace('%', '')) || 0;
-
-        // fallback hitung manual jika tidak ada persen
-        if (persen === 0 && rdi[lowerKey]) {
-          const numeric = parseFloat(value) || 0;
-          persen = Math.min(100, (numeric / rdi[lowerKey]) * 100);
-        }
-
-        const box = document.createElement('div');
-        box.className = 'nutrient-box';
-        box.innerHTML = `
-          <div class="nutrient-icon">${iconMap[lowerKey] || "🍽️"}</div>
-          <div class="nutrient-value">${value}</div>
-          <div class="nutrient-label">${key}</div>
-          <div class="progress mt-2"><div class="progress-bar bg-primary" style="width:${persen}%"></div></div>
-        `;
-        nutrisiList.appendChild(box);
-      }
-    });
-
-    // vitamin & mineral
-    const vitaminList = document.getElementById('vitaminMineral');
-    vitaminList.innerHTML = '';
-    const vitaminItems = [...(rincian.vitaminDanMineral || []), ...(rincian.mineral || [])];
-    vitaminItems.forEach(item => {
-      const span = document.createElement('span');
-      span.className = 'badge-chip bg-light border';
-      span.textContent = item;
-      vitaminList.appendChild(span);
-    });
-
-    // perbandingan AKG
-    const perbandinganList = document.getElementById('perbandinganAKG');
-    perbandinganList.innerHTML = '';
-    (data.perbandinganAKG || []).forEach(item => {
-      const persenVal = parseInt(item.persen.replace('%', '')) || 0;
-      const div = document.createElement('div');
-      div.className = 'nutrient-card mb-2';
-      div.innerHTML = `
-        <div class="d-flex justify-content-between"><span>${item.nama}</span><span>${item.persen}</span></div>
-        <div class="progress mt-1"><div class="progress-bar bg-success" role="progressbar" style="width:${persenVal}%"></div></div>
-      `;
-      perbandinganList.appendChild(div);
-    });
-
-    // risiko
-    const risikoList = document.getElementById('risikoKesehatan');
-    risikoList.innerHTML = '';
-    Object.entries(data.risikoKesehatan || {}).forEach(([k, v]) => {
-      const span = document.createElement('span');
-      span.className = `badge-chip ${v === 'tinggi' ? 'bg-danger text-white' : v === 'sedang' ? 'bg-warning text-dark' : 'bg-success text-white'}`;
-      span.textContent = `${k}: ${v}`;
-      risikoList.appendChild(span);
-    });
-
-    document.getElementById('waktuKenyang').textContent = data.waktuKenyang || '';
-    document.getElementById('frekuensiKonsumsi').textContent = data.frekuensiKonsumsi || '';
-
-    // analisis bahan
-    const bahanList = document.getElementById('analisisBahan');
-    bahanList.innerHTML = '';
-    (data.ingredients || []).forEach(item => {
-      const span = document.createElement('span');
-      span.className = 'badge-chip bg-warning text-dark';
-      span.textContent = item;
-      bahanList.appendChild(span);
-    });
-
-    // tips sehat
-    const tipsList = document.getElementById('tipsSehat');
-    tipsList.innerHTML = '';
-    (data.tipsSehat || []).forEach(item => {
-      const span = document.createElement('span');
-      span.className = 'badge-chip bg-info text-dark';
-      span.textContent = item;
-      tipsList.appendChild(span);
-    });
-
-    // alternatif sehat
-    const alternatifList = document.getElementById('alternatifSehat');
-    alternatifList.innerHTML = '';
-    (data.alternatif || []).forEach(item => {
-      const span = document.createElement('span');
-      span.className = 'badge-chip bg-success text-white';
-      span.textContent = item;
-      alternatifList.appendChild(span);
-    });
-
-    // chart makro
-    const macroChart = document.getElementById('macroChart').getContext('2d');
-    const protein = parseFloat((rincian.proteinPersen || '').replace('%', '')) || 0;
-    const karbo = parseFloat((rincian.karbohidratPersen || '').replace('%', '')) || 0;
-    const lemak = parseFloat((rincian.lemakPersen || '').replace('%', '')) || 0;
-
-    if (chartInstance) chartInstance.destroy();
-    chartInstance = new Chart(macroChart, {
-      type: 'doughnut',
-      data: { labels: ['Protein', 'Karbohidrat', 'Lemak'],
-        datasets: [{ data: [protein, karbo, lemak], backgroundColor: ['#36a2eb', '#ffcd56', '#ff6384'] }]
-      },
-      options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
-    });
-
-    document.getElementById('resultContainer').classList.remove('d-none');
-  } catch (error) {
-    alert('Error analyzing image: ' + (error.response?.data?.error || error.message));
-  } finally {
-    document.getElementById('loading').classList.add('d-none');
+    reader.readAsDataURL(file);
   }
-}
+
+  function resetImage() {
+    selectedFile = null;
+    document.getElementById('fileInput').value = null;
+    document.getElementById('previewImage').src = '';
+    document.getElementById('previewContainer').classList.add('d-none');
+    document.getElementById('loading').classList.add('d-none');
+    document.getElementById('resultContainer').classList.add('d-none');
+  }
+
+  async function startAnalysis() {
+    if (!selectedFile) return;
+    const formData = new FormData();
+    formData.append('image', selectedFile);
+
+    document.getElementById('loading').classList.remove('d-none');
+    document.getElementById('resultContainer').classList.add('d-none');
+
+    try {
+      const res = await axios.post('https://food-analyzer.exoduscloud.my.id/analyze', formData);
+      const data = res.data;
+
+      document.getElementById('direkomendasikanAtauTidak').innerHTML =
+        data?.skorKesehatan?.direkomendasikanAtauTidak?.toLowerCase().includes('tidak')
+          ? '<span class="text-danger">👎 ' + data.skorKesehatan.direkomendasikanAtauTidak + '</span>'
+          : '<span class="text-success">👍 ' + data.skorKesehatan.direkomendasikanAtauTidak + '</span>';
+      document.getElementById('alasan').textContent = data.skorKesehatan.alasan || '';
+
+      const rincian = data.rincianNutrisi || {};
+      const nutrisiList = document.getElementById('rincianNutrisi');
+      nutrisiList.innerHTML = '';
+
+      // mapping ikon nutrisi (flexible match)
+      function getIcon(key) {
+        const lower = key.toLowerCase();
+        if (lower.includes("kalori") || lower.includes("energi")) return "⚡";
+        if (lower.includes("protein")) return "🥛";
+        if (lower.includes("karbo") || lower.includes("gula")) return "🍬";
+        if (lower.includes("lemak")) return "🥓";
+        return "🍽️";
+      }
+
+      Object.entries(rincian).forEach(([key, value]) => {
+        if (!Array.isArray(value)) {
+          let persen = parseFloat((rincian[key + "Persen"] || '').replace('%', '')) || 0;
+
+          // jika tidak ada persen → coba estimasi kasar (fallback)
+          if (persen === 0) {
+            const numVal = parseFloat(value) || 0;
+            let maxVal = 100;
+            if (key.toLowerCase().includes("gula")) maxVal = 50;
+            if (key.toLowerCase().includes("natrium")) maxVal = 2000;
+            if (key.toLowerCase().includes("kolesterol")) maxVal = 300;
+            persen = Math.min(100, (numVal / maxVal) * 100);
+          }
+
+          const box = document.createElement('div');
+          box.className = 'nutrient-box';
+          box.innerHTML = `
+            <div class="nutrient-icon">${getIcon(key)}</div>
+            <div class="nutrient-value">${value}</div>
+            <div class="nutrient-label">${key}</div>
+            <div class="progress mt-2">
+              <div class="progress-bar bg-primary" role="progressbar" style="width:${persen.toFixed(0)}%"></div>
+            </div>
+          `;
+          nutrisiList.appendChild(box);
+        }
+      });
+
+      const vitaminList = document.getElementById('vitaminMineral');
+      vitaminList.innerHTML = '';
+      const vitaminItems = [...(rincian.vitaminDanMineral || []), ...(rincian.mineral || [])];
+      vitaminItems.forEach(item => {
+        const span = document.createElement('span');
+        span.className = 'badge-chip bg-light border';
+        span.textContent = item;
+        vitaminList.appendChild(span);
+      });
+
+      const perbandinganList = document.getElementById('perbandinganAKG');
+      perbandinganList.innerHTML = '';
+      (data.perbandinganAKG || []).forEach(item => {
+        const persenVal = parseInt(item.persen.replace('%', '')) || 0;
+        const div = document.createElement('div');
+        div.className = 'nutrient-card mb-2';
+        div.innerHTML = `
+          <div class="d-flex justify-content-between">
+            <span>${item.nama}</span>
+            <span>${item.persen}</span>
+          </div>
+          <div class="progress mt-1">
+            <div class="progress-bar bg-success" role="progressbar" style="width:${persenVal}%"></div>
+          </div>
+        `;
+        perbandinganList.appendChild(div);
+      });
+
+      const risikoList = document.getElementById('risikoKesehatan');
+      risikoList.innerHTML = '';
+      Object.entries(data.risikoKesehatan || {}).forEach(([k, v]) => {
+        const span = document.createElement('span');
+        span.className = `badge-chip ${v === 'tinggi' ? 'bg-danger text-white' : v === 'sedang' ? 'bg-warning text-dark' : 'bg-success text-white'}`;
+        span.textContent = `${k}: ${v}`;
+        risikoList.appendChild(span);
+      });
+
+      document.getElementById('waktuKenyang').textContent = data.waktuKenyang || '';
+      document.getElementById('frekuensiKonsumsi').textContent = data.frekuensiKonsumsi || '';
+
+      const bahanList = document.getElementById('analisisBahan');
+      bahanList.innerHTML = '';
+      (data.ingredients || []).forEach(item => {
+        const span = document.createElement('span');
+        span.className = 'badge-chip bg-warning text-dark';
+        span.textContent = item;
+        bahanList.appendChild(span);
+      });
+
+      const tipsList = document.getElementById('tipsSehat');
+      tipsList.innerHTML = '';
+      (data.tipsSehat || []).forEach(item => {
+        const span = document.createElement('span');
+        span.className = 'badge-chip bg-info text-dark';
+        span.textContent = item;
+        tipsList.appendChild(span);
+      });
+
+      const alternatifList = document.getElementById('alternatifSehat');
+      alternatifList.innerHTML = '';
+      (data.alternatif || []).forEach(item => {
+        const span = document.createElement('span');
+        span.className = 'badge-chip bg-success text-white';
+        span.textContent = item;
+        alternatifList.appendChild(span);
+      });
+
+      const macroChart = document.getElementById('macroChart').getContext('2d');
+      const protein = parseFloat((rincian.proteinPersen || '').replace('%', '')) || 0;
+      const karbo = parseFloat((rincian.karbohidratPersen || '').replace('%', '')) || 0;
+      const lemak = parseFloat((rincian.lemakPersen || rincian.gemukPersen || '').replace('%', '')) || 0;
+
+      if (chartInstance) chartInstance.destroy();
+      chartInstance = new Chart(macroChart, {
+        type: 'doughnut',
+        data: {
+          labels: ['Protein', 'Karbohidrat', 'Lemak'],
+          datasets: [{
+            data: [protein, karbo, lemak],
+            backgroundColor: ['#36a2eb', '#ffcd56', '#ff6384']
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { position: 'bottom' } }
+        }
+      });
+
+      document.getElementById('resultContainer').classList.remove('d-none');
+    } catch (error) {
+      alert('Error analyzing image: ' + (error.response?.data?.error || error.message));
+    } finally {
+      document.getElementById('loading').classList.add('d-none');
+    }
+  }
 </script>
 </body>
 </html>
