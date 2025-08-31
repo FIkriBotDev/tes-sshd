@@ -1,7 +1,7 @@
 import pandas as pd
 import statsmodels.api as sm
 
-raw_data = pd.read_csv('https://storage.googleapis.com/dqlab-dataset/dataset_statistic.csv',
+raw_data = pd.read_csv('https://storage.googleapis.com/dqlab-dataset/dataset_statistic.csv',sep=';')
 
 nilai_Y = raw_data[['Total']]
 nilai_X = raw_data[['Pendapatan']]
