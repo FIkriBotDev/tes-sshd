@@ -130,3 +130,13 @@
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async file:///home/runner/work/tes-sshd/tes-sshd/Projects/kalori/index.js:125:26
 
+[2025-08-31T10:56:27.320Z] SyntaxError: Expected double-quoted property name in JSON at position 511
+    at JSON.parse (<anonymous>)
+    at file:///home/runner/work/tes-sshd/tes-sshd/Projects/kalori/index.js:149:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[2025-08-31T10:56:46.497Z] SyntaxError: Expected ',' or '}' after property value in JSON at position 530
+    at JSON.parse (<anonymous>)
+    at file:///home/runner/work/tes-sshd/tes-sshd/Projects/kalori/index.js:149:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+

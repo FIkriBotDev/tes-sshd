@@ -20222,3 +20222,210 @@ Demo: https://invoice-generator.exodusai.biz.id
 Image URL : https://uploader.exoduscloud.my.id/tmp/ae6619-1756633731803.jpg
 Response  : That looks like a handy tool! Auto invoice generators like this can really streamline billing processes, especially when dealing with recurring clients or multiple transactions. Do you need help with customizing this tool further, or are you looking for ideas on what additional features could make it even more effective?
 
+
+[2025-08-31T10:56:27.290Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/74b23d-1756637780214.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Secara umum, cukup baik tetapi perlu memperhatikan tingkat gula dan lemak.",
+    "alasan": "Buah-buahan segar tinggi antioksidan dan serat, namun pancake dan bacon mengandung tinggi gula dan lemak jenuh. Kombinasi ini dapat meningkatkan risiko kesehatan jika dikonsumsi berlebihan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "Tidak disebutkan secara spesifik, estimasi sekitar 300 gram",
+    "jumlahSajian": "1 set piring besar",
+    "kalori": 550,  // estimasi berdasarkan komposisi
+    "protein": "12g",
+    "proteinPersen": "8.73%",
+    "karbohidrat": "75g",
+    "karbohidratPersen": "54.55%",
+    "gula": "20g",
+    "serat": "8g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "8g",
+    "lemakTakJenuh": "12g",
+    "lemakPersen": "36.36%",
+    "kolesterol": "70mg",
+    "natrium": "650mg",
+    "vitaminDanMineral": ["Vitamin C", "Vitamin A", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "27.5%" },
+    { "nama": "Gula", "persen": "40%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "2.5-3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 2 kali seminggu, dan sebaiknya dengan porsi lebih kecil",
+  "ingredients": ["buah strawberry", "buah blueberry", "buah pisang", "bacon", "pancake", "sirup berry"],
+  "tipsSehat": ["Kurangi penggunaan sirup manis dan bacon berlemak tinggi", "Tambah lebih banyak buah segar dan gunakan pancake gandum utuh", "Jaga porsi agar tidak berlebihan"],
+  "alternatif": ["Greek yogurt dengan buah segar dan madu", "Pancake gandum utuh dengan topping buah dan sedikit sirup alami", "Bacon kalkun atau sumber protein rendah lemak"]
+}
+
+
+[2025-08-31T10:56:46.478Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/d54e51-1756637799324.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Sebagian besar cenderung sehat, tetapi tergantung pada jumlah konsumsi dan cara penyajian",
+    "alasan": "Komposisi meliputi buah-buahan segar, sumber protein dari bacon dan pancake, serta rendaman buah dan saus. Tinggi gula dari saus dan pancake mungkin perlu diperhatikan dalam konsumsi rutin"
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "tidak disebutkan secara spesifik, tapi porsi ini tampaknya cukup besar",
+    "jumlahSajian": "1 porsi lengkap",
+    "kalori": 600-700 (perkiraan kasar, tergantung porsi dan bahan),
+    "protein": "15-20g",
+    "proteinPersen": "8-11%",
+    "karbohidrat": "80-90g",
+    "karbohidratPersen": "46-50%",
+    "gula": "20-30g",
+    "serat": "6g",
+    "lemakTotal": "20-30g",
+    "lemakJenuh": "5-10g",
+    "lemakTakJenuh": "10-20g",
+    "lemakPersen": "25-30%",
+    "kolesterol": "70-100mg",
+    "natrium": "700-900mg",
+    "vitaminDanMineral": ["Vitamin C", "Vitamin A", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30-35%" },
+    { "nama": "Gula", "persen": "25-30%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang",
+    "Kolesterol": "sedang"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Terkadang, tidak setiap hari; tidak disarankan setiap hari karena tinggi gula dan lemak",
+  "ingredients": ["Strawberry", "Blueberry", "Bacon", "Pancake", "Syrup", "Pisang"],
+  "tipsSehat": ["Kurangi pemakaian sirup manis dan tambahkan buah segar sebagai pemanis alami", "Pilih pancake gandum utuh", "Batasi konsumsi bacon yang tinggi garam dan lemak jenuh"],
+  "alternatif": ["Pancake dari tepung gandum utuh", "Yogurt sebagai pengganti sirup", "Bacon ayam atau kalkun"]
+}
+
