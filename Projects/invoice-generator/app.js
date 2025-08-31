@@ -10,7 +10,7 @@ const app = express();
 const PORT = 1212;
 
 // Static file serve
-app.use(express.static(path.join(__dirname, 'public-invoice-generator')));
+app.use(express.static(path.join(__dirname, '/home/runner/work/tes-sshd/tes-sshd/public-invoice-generator')));
 
 // Multer setup (logo upload in memory)
 const upload = multer({ storage: multer.memoryStorage() });
