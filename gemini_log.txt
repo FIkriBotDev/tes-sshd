@@ -21156,3 +21156,108 @@ Response  : {
   "alternatif": ["Sup sayur dengan sedikit garam", "Salad segar dengan minyak zaitun", "Nasi merah dengan lauk sayur panggang"]
 }
 
+
+[2025-08-31T14:52:44.967Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/5fea9e-1756651959155.jpg
+Response  : ```json
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan untuk konsumsi rutin",
+    "alasan": "Mengandung makanan yang digoreng dan diproses dengan kemungkinan tinggi lemak dan garam, serta kurangnya sayuran segar yang mendukung kesehatan jantung dan pencernaan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "perkiraan 150 gram",
+    "jumlahSajian": "1",
+    "kalori": 350,
+    "protein": "8g",
+    "proteinPersen": "9.14%",
+    "karbohidrat": "50g",
+    "karbohidratPersen": "57.14%",
+    "gula": "5g",
+    "serat": "3g",
+    "lemakTotal": "15g",
+    "lemakJenuh": "4g",
+    "lemakTakJenuh": "11g",
+    "lemakPersen": "38%",
+    "kolesterol": "45mg",
+    "natrium": "600mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "15%" },
+    { "nama": "Gula", "persen": "8.33%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang ke tinggi",
+    "Lemak": "tinggi"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Sesekali, tidak lebih dari 1 kali seminggu",
+  "ingredients": ["Nasi putih", "Ayam goreng", "Saus sambal", "Bawang goreng"],
+  "tipsSehat": ["Ganti nasi putih dengan nasi merah atau kayu manis", "Kurangi penggunaan garam dan minyak saat memasak", "Tambahkan sayuran segar sebagai pendamping"],
+  "alternatif": ["Ayam panggang tanpa kulit", "Nasi merah", "Sayuran tumis"]
+}
+```
+
