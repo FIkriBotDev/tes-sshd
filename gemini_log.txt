@@ -19582,3 +19582,107 @@ Response  : {
   "alternatif": ["Cupcake dengan buah-buahan", "Yogurt dengan taburan cokelat hitam", "Pudding chia dengan cokelat"]
 }
 
+
+[2025-08-31T07:09:55.500Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/c73698-1756624189316.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Secara umum, makanan ini cukup seimbang dan sehat, tetapi mengandung gula dan karbohidrat yang cukup tinggi.",
+    "alasan": "Buah-buahan segar memberikan nutrisi penting dan serat, sementara pancake dan bacon memberikan sumber energi dan protein. Namun, pancake dan bacon dapat mengandung lemak jenuh dan natrium yang perlu dikonsumsi dengan moderasi."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "perkiraan 200-250 gram",
+    "jumlahSajian": "1 porsi",
+    "kalori": 400,
+    "protein": "15g",
+    "proteinPersen": "15%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "70%",
+    "gula": "20g",
+    "serat": "5g",
+    "lemakTotal": "15g",
+    "lemakJenuh": "4g",
+    "lemakTakJenuh": "11g",
+    "lemakPersen": "33%",
+    "kolesterol": "80mg",
+    "natrium": "650mg",
+    "vitaminDanMineral": ["Vitamin C", "Vitamin A", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "20%" },
+    { "nama": "Gula", "persen": "40%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang",
+    "Natrium": "cukup tinggi"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Sedang, tidak setiap hari",
+  "ingredients": ["Tepung terigu", "Telur", "Susu", "Gula", "Baking powder", "Bacon", "Buah-buahan segar", "Sirup buah"],
+  "tipsSehat": ["Kurangi penambahan gula dan sirup manis", "Gunakan pancake gandum utuh", "Batasi konsumsi bacon untuk menghindari lemak jenuh berlebih", "Perbanyak sayur dan buah"],
+  "alternatif": ["Pancake dari oats atau tepung barley", "Topping yogurt rendah lemak dan buah segar", "Turunkan konsumsi bacon, gantikan dengan protein lain seperti ayam panggang"]
+}
+
