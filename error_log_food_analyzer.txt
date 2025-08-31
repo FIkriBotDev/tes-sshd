@@ -100,3 +100,8 @@
     at file:///home/runner/work/tes-sshd/tes-sshd/Projects/kalori/index.js:149:27
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
 
+[2025-08-31T07:02:12.641Z] SyntaxError: Expected ',' or '}' after property value in JSON at position 505
+    at JSON.parse (<anonymous>)
+    at file:///home/runner/work/tes-sshd/tes-sshd/Projects/kalori/index.js:149:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
