@@ -19169,3 +19169,106 @@ Response  : {
   "alternatif": ["Cupcake buah rendah gula", "Yogurt dengan topping buah segar", "Muffin gandum utuh"]
 }
 
+
+[2025-08-31T06:56:07.093Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/f5f264-1756623361615.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Ya, dengan catatan porsi dan frekuensi yang tepat",
+    "alasan": "Makanan ini mengandung sumber karbohidrat kompleks dan buah-buahan yang kaya serat serta antioksidan. Namun, terdapat kandungan gula dan lemak jenuh yang perlu diperhatikan untuk konsumsi rutin."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "sekitar 150g (perkiraan jumlah pancake dan buah)",
+    "jumlahSajian": "1 porsi",
+    "kalori": 350,
+    "protein": "8g",
+    "proteinPersen": "9.14%",
+    "karbohidrat": "55g",
+    "karbohidratPersen": "62.86%",
+    "gula": "15g",
+    "serat": "5g",
+    "lemakTotal": "12g",
+    "lemakJenuh": "4g",
+    "lemakTakJenuh": "8g",
+    "lemakPersen": "30%",
+    "kolesterol": "50mg",
+    "natrium": "400mg",
+    "vitaminDanMineral": ["Vitamin C", "Vitamin A", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "18%" },
+    { "nama": "Gula", "persen": "30%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "2-3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 3x seminggu",
+  "ingredients": ["Tepung terigu", "Telur", "Susu", "Gula", "Ragi", "Mentega", "Buah-buahan segar (stroberi, blueberry, pisang)"],
+  "tipsSehat": ["Gunakan tepung gandum utuh untuk menambah serat", "Kurangi jumlah gula dalam adonan", "Tambahkan topping buah segar untuk menambah nutrisi"],
+  "alternatif": ["Pancake gandum utuh tanpa tambahan gula", "Pancake dengan yogurt dan buah segar sebagai topping"]
+}
+
