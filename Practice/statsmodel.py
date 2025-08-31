@@ -11,3 +11,9 @@ nilai_Y = raw_data[['Total']]
 
 # Variabel bebas (x)
 nilai_X = sm.add_constant(raw_data[['Pendapatan']])
+
+# Membuat model regresi linier
+model_regresi = sm.OLS(endog=nilai_Y, exog=nilai_X).fit()
+
+# Cetak laporan dari variabel model_regresi
+print(model_regresi.summary())
