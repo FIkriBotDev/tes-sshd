@@ -21267,3 +21267,115 @@ Prompt    : dumpling
 Image URL : https://uploader.exoduscloud.my.id/tmp/069248-1756677529856.jpg
 Response  : Those dumplings look absolutely delicious! The bright, golden topping hints at a flavorful sauce or glaze, making them even more tempting. Do you love them steamed, fried, or maybe filled with something special?
 
+
+[2025-08-31T22:30:29.470Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/108b13-1756679421189.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan untuk konsumsi rutin",
+    "alasan": "Makanan ini terlihat tinggi lemak jenuh, kolesterol, dan kemungkinan tinggi natrium serta gula, yang bisa berkontribusi pada risiko kesehatan jangka panjang jika dikonsumsi berlebihan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "sekitar 50 gram per porsi (asumsi dari gambar)",
+    "jumlahSajian": "Kurang lebih 3-4 porsi",
+    "kalori": 250,
+    "protein": "14g",
+    "proteinPersen": "22.4%",
+    "karbohidrat": "20g",
+    "karbohidratPersen": "32%",
+    "gula": "4g",
+    "serat": "2g",
+    "lemakTotal": "15g",
+    "lemakJenuh": "5g",
+    "lemakTakJenuh": "10g",
+    "lemakPersen": "54%",
+    "kolesterol": "75mg",
+    "natrium": "900mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "15%" },
+    { "nama": "Gula", "persen": "20%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "Sedang hingga tinggi (tergantung gula tambahan)",
+    "Lemak": "Tinggi, terutama lemak jenuh"
+  },
+  "waktuKenyang": "Sekitar 2-3 jam, tergantung porsi dan bahan",
+  "frekuensiKonsumsi": "Sebisa mungkin dibatasi, tidak lebih dari 1-2 kali seminggu",
+  "ingredients": ["camilan berisi mayones", "bakso", "telur", "nori", "tumis sayur", "sosis", "keju"],
+  "tipsSehat": [
+    "Kurangi jumlah mayones dan keju untuk mengurangi lemak dan natrium.",
+    "Gunakan bahan alami dan rendah garam.",
+    "Cermat dalam porsi agar tidak berlebihan kalori."
+  ],
+  "alternatif": [
+    "Bakso dari daging tanpa lemak dan sayuran",
+    "Telur rebus atau dadar telur tanpa tambahan banyak minyak dan keju",
+    "Sayuran segar dengan sedikit saus rendah natrium",
+    "Makanan berbasis tahu atau tempe sebagai pengganti bakso"
+  ]
+}
+
