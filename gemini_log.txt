@@ -19686,3 +19686,107 @@ Response  : {
   "alternatif": ["Pancake dari oats atau tepung barley", "Topping yogurt rendah lemak dan buah segar", "Turunkan konsumsi bacon, gantikan dengan protein lain seperti ayam panggang"]
 }
 
+
+[2025-08-31T07:11:41.762Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/08f466-1756624293921.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak terlalu direkomendasikan",
+    "alasan": "Makanan ini tampaknya adalah kumpulan bakso atau sejenis dimsum yang kaya akan bahan pengikat dan topping mayones, serta bahan lain yang cenderung tinggi garam, lemak, dan gula. Kurangnya informasi tentang bahan pokoknya juga membuat penilaian keseluruhan agak terbatas."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "sekitar 100g per porsi (asumsi)",
+    "jumlahSajian": "kurang dari 4 porsi",
+    "kalori": 250,  // estimasi kasar
+    "protein": "12g",
+    "proteinPersen": "19.2%",
+    "karbohidrat": "20g",
+    "karbohidratPersen": "32%",
+    "gula": "4g",
+    "serat": "1g",
+    "lemakTotal": "15g",
+    "lemakJenuh": "5g",
+    "lemakTakJenuh": "10g",
+    "lemakPersen": "54%",
+    "kolesterol": "60mg",
+    "natrium": "950mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "12%" },
+    { "nama": "Gula", "persen": "8%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "Sedang tinggi",
+    "Lemak": "Tinggi",
+    "Garam": "Tinggi"
+  },
+  "waktuKenyang": "1.5 - 2 jam",
+  "frekuensiKonsumsi": "Boleh sesekali, tetapi tidak rutin agar tidak berdampak buruk",
+  "ingredients": ["Bakso ikan/daging", "Mayones", "Sayur (seperti bayam/wortel)", "Bumbu-bumbu", "Pengikat (seperti tepung atau telur)"],
+  "tipsSehat": ["Kurangi penggunaan mayones, gantikan dengan yogurt rendah lemak", "Batasi jumlah garam dan gula dari bumbu", "Tambah sayuran segar untuk kaya serat"],
+  "alternatif": ["Bakso ayam tanpa pengawet", "Bakso dari bahan alami", "Bakso tahu atau berbahan nabati"]
+}
+
