@@ -22526,3 +22526,96 @@ Response  : {
   "risk_reward_ratio": "2.73"
 }
 
+
+[2025-09-01T08:19:06.979Z]
+Prompt    : 
+You are a professional financial chart analyst AI. Analyze the uploaded chart image carefully and provide your analysis strictly in valid JSON format only.
+
+The JSON must have this structure:
+{
+  "analysis": {
+    "current_trend": "short-term and long-term trend",
+    "trend_strength": "Strong/Moderate/Weak",
+    "chart_pattern": "Detected chart pattern",
+    "technical_indicators": {
+      "SMA": "cross info",
+      "EMA": "cross info",
+      "RSI": numeric value,
+      "MACD": "trend info",
+      "BollingerBands": "position info"
+    },
+    "support_levels": [list of numeric support levels],
+    "resistance_levels": [list of numeric resistance levels],
+    "confidence_level": "percentage confidence of main prediction",
+    "ai_commentary": "Concise text commentary"
+  },
+  "prediction": "Text describing expected next price movement",
+  "trade_suggestions": {
+    "entry": {
+      "price": numeric entry price,
+      "reason": "Reasoning for entry"
+    },
+    "recommendation": "BUY/SELL/HOLD",
+    "take_profit": [
+      {
+        "price": numeric TP level,
+        "reason": "Reasoning for TP"
+      }
+    ],
+    "stop_loss": {
+      "price": numeric SL level,
+      "reason": "Reasoning for SL"
+    }
+  },
+  "pattern_type": "Specific chart pattern type",
+  "risk_reward_ratio": "Estimated risk/reward ratio"
+}
+
+Rules:
+1. Always output valid JSON only.
+2. Fill numeric values where possible; if unavailable, use null.
+3. Include confidence_level, trend_strength, technical_indicators, ai_commentary.
+4. Do not include any explanations or extra text outside JSON.
+5. Include all components even if some are null.
+6. Provide concise, precise, and professional financial analysis.
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/792fa5-1756714741601.png
+Response  : {
+  "analysis": {
+    "current_trend": "short-term bullish, long-term sideways/downward",
+    "trend_strength": "Moderate",
+    "chart_pattern": "Breakout candlestick surge",
+    "technical_indicators": {
+      "SMA": "No clear cross",
+      "EMA": "No clear cross",
+      "RSI": 70,
+      "MACD": "Bullish trend",
+      "BollingerBands": "Price touching upper band"
+    },
+    "support_levels": [3.000, 2.880, 2.800],
+    "resistance_levels": [3.320, 3.200],
+    "confidence_level": "75%",
+    "ai_commentary": "Rapid bullish spike with volume surge suggests bullish momentum continuation in short term."
+  },
+  "prediction": "Price likely to continue upward with potential slight correction after the sharp rally.",
+  "trade_suggestions": {
+    "entry": {
+      "price": 3.250,
+      "reasoning": "Breakout confirmation and volume spike indicating strong buying momentum"
+    },
+    "recommendation": "BUY",
+    "take_profit": [
+      {
+        "price": 3.320,
+        "reason": "Near resistance level and recent high point"
+      }
+    ],
+    "stop_loss": {
+      "price": 3.200,
+      "reasoning": "Below recent support and breakout level to limit downside risk"
+    }
+  },
+  "pattern_type": "Breakout candlestick",
+  "risk_reward_ratio": "1.5:1"
+}
+
