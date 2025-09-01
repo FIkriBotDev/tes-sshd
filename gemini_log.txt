@@ -22219,3 +22219,96 @@ Response  : {
   "risk_reward_ratio": "2.5:1"
 }
 
+
+[2025-09-01T06:24:16.839Z]
+Prompt    : 
+You are a professional financial chart analyst AI. Analyze the uploaded chart image carefully and provide your analysis strictly in valid JSON format only.
+
+The JSON must have this structure:
+{
+  "analysis": {
+    "current_trend": "short-term and long-term trend",
+    "trend_strength": "Strong/Moderate/Weak",
+    "chart_pattern": "Detected chart pattern",
+    "technical_indicators": {
+      "SMA": "cross info",
+      "EMA": "cross info",
+      "RSI": numeric value,
+      "MACD": "trend info",
+      "BollingerBands": "position info"
+    },
+    "support_levels": [list of numeric support levels],
+    "resistance_levels": [list of numeric resistance levels],
+    "confidence_level": "percentage confidence of main prediction",
+    "ai_commentary": "Concise text commentary"
+  },
+  "prediction": "Text describing expected next price movement",
+  "trade_suggestions": {
+    "entry": {
+      "price": numeric entry price,
+      "reason": "Reasoning for entry"
+    },
+    "recommendation": "BUY/SELL/HOLD",
+    "take_profit": [
+      {
+        "price": numeric TP level,
+        "reason": "Reasoning for TP"
+      }
+    ],
+    "stop_loss": {
+      "price": numeric SL level,
+      "reason": "Reasoning for SL"
+    }
+  },
+  "pattern_type": "Specific chart pattern type",
+  "risk_reward_ratio": "Estimated risk/reward ratio"
+}
+
+Rules:
+1. Always output valid JSON only.
+2. Fill numeric values where possible; if unavailable, use null.
+3. Include confidence_level, trend_strength, technical_indicators, ai_commentary.
+4. Do not include any explanations or extra text outside JSON.
+5. Include all components even if some are null.
+6. Provide concise, precise, and professional financial analysis.
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/e6acbd-1756707851548.jpg
+Response  : {
+  "analysis": {
+    "current_trend": "Short-term downtrend, long-term sideways",
+    "trend_strength": "Moderate",
+    "chart_pattern": "No clear pattern identified",
+    "technical_indicators": {
+      "SMA": "Bearish crossover",
+      "EMA": "Bearish crossover",
+      "RSI": 45,
+      "MACD": "Weak bearish momentum",
+      "BollingerBands": "Price near lower band"
+    },
+    "support_levels": [4360, 4320],
+    "resistance_levels": [4464, 4480],
+    "confidence_level": "65%",
+    "ai_commentary": "Price shows signs of short-term weakness with support around 4360, but overall momentum remains cautious."
+  },
+  "prediction": "Potential continuation of downward movement with possible support bounce around 4360.",
+  "trade_suggestions": {
+    "entry": {
+      "price": 4365,
+      "reason": "Near support level with bearish indicators softening"
+    },
+    "recommendation": "HOLD",
+    "take_profit": [
+      {
+        "price": 4480,
+        "reason": "Previous resistance level and short-term rally target"
+      }
+    ],
+    "stop_loss": {
+      "price": 4320,
+      "reason": "Below support level to limit loss"
+    }
+  },
+  "pattern_type": "None",
+  "risk_reward_ratio": "1.6"
+}
+
