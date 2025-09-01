@@ -12,7 +12,7 @@ const port = 1010;
 const upload = multer({ storage: multer.memoryStorage() });
 
 app.use(cors());
-app.use(express.static('public'));
+app.use(express.static('public-chart-analyzer'));
 
 // === Error Logger ===
 const logErrorToFile = (error) => {
