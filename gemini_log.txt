@@ -22844,3 +22844,96 @@ Contoh, baris seperti "total_response.count.txt" dan "log.txt" menunjukkan file 
 
 Kalau mau tahu secara spesifik, bisa beritahu konteksnya: Apakah ini dari server, komputer, program tertentu, atau perangkat lain? Kalau mengirim lebih banyak potongan log-nya, saya bisa bantu analisis lebih mendalam.
 
+
+[2025-09-01T12:14:59.590Z]
+Prompt    : 
+You are a professional financial chart analyst AI. Analyze the uploaded chart image carefully and provide your analysis strictly in valid JSON format only.
+
+The JSON must have this structure:
+{
+  "analysis": {
+    "current_trend": "short-term and long-term trend",
+    "trend_strength": "Strong/Moderate/Weak",
+    "chart_pattern": "Detected chart pattern",
+    "technical_indicators": {
+      "SMA": "cross info",
+      "EMA": "cross info",
+      "RSI": numeric value,
+      "MACD": "trend info",
+      "BollingerBands": "position info"
+    },
+    "support_levels": [list of numeric support levels],
+    "resistance_levels": [list of numeric resistance levels],
+    "confidence_level": "percentage confidence of main prediction",
+    "ai_commentary": "Concise text commentary"
+  },
+  "prediction": "Text describing expected next price movement",
+  "trade_suggestions": {
+    "entry": {
+      "price": numeric entry price,
+      "reason": "Reasoning for entry"
+    },
+    "recommendation": "BUY/SELL/HOLD",
+    "take_profit": [
+      {
+        "price": numeric TP level,
+        "reason": "Reasoning for TP"
+      }
+    ],
+    "stop_loss": {
+      "price": numeric SL level,
+      "reason": "Reasoning for SL"
+    }
+  },
+  "pattern_type": "Specific chart pattern type",
+  "risk_reward_ratio": "Estimated risk/reward ratio"
+}
+
+Rules:
+1. Always output valid JSON only.
+2. Fill numeric values where possible; if unavailable, use null.
+3. Include confidence_level, trend_strength, technical_indicators, ai_commentary.
+4. Do not include any explanations or extra text outside JSON.
+5. Include all components even if some are null.
+6. Provide concise, precise, and professional financial analysis.
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/a3f38b-1756728892367.png
+Response  : {
+  "analysis": {
+    "current_trend": "uptrend (long-term), consolidation (short-term)",
+    "trend_strength": "Moderate",
+    "chart_pattern": "Cup and Handle",
+    "technical_indicators": {
+      "SMA": "short-term below long-term",
+      "EMA": "short-term crossing above long-term",
+      "RSI": 65,
+      "MACD": "bullish crossover detected",
+      "BollingerBands": "price near upper band"
+    },
+    "support_levels": [145000.0, 140000.0],
+    "resistance_levels": [185000.0, 190000.0],
+    "confidence_level": "75%",
+    "ai_commentary": "Price shows signs of bullish continuation with consolidation, breakout potential evident."
+  },
+  "prediction": "Likely to break above resistance and continue upward in the near term.",
+  "trade_suggestions": {
+    "entry": {
+      "price": 180000,
+      "reason": "Breakout confirmed with MACD and EMA signals"
+    },
+    "recommendation": "BUY",
+    "take_profit": [
+      {
+        "price": 190000,
+        "reason": "Next resistance level and profit target"
+      }
+    ],
+    "stop_loss": {
+      "price": 170000,
+      "reason": "Below recent support, manageable risk"
+    }
+  },
+  "pattern_type": "Cup and Handle",
+  "risk_reward_ratio": "2.0"
+}
+
