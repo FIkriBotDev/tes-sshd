@@ -5,6 +5,12 @@
       "invoice_id": "inv_qZl8q1JC",
       "amount": 25000,
       "date": "2025-09-01T01:17:41.211Z"
+    },
+    {
+      "id": "inc_suYSuP1v",
+      "invoice_id": "inv_FpTaNICJ",
+      "amount": 12,
+      "date": "2025-09-01T08:37:46.965Z"
     }
   ]
 }
