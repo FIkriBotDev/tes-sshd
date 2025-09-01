@@ -22054,3 +22054,75 @@ Response  : {
   "risk_reward_ratio": "approximately 2:1"
 }
 
+
+[2025-09-01T05:57:06.431Z]
+Prompt    : 
+You are a professional financial chart analyst AI. Analyze the uploaded chart image carefully and provide your analysis strictly in valid JSON format only.
+
+The JSON must have this structure:
+{
+  "analysis": {
+    "current_trend": "short-term and long-term trend",
+    "chart_pattern": "Detected chart pattern",
+    "support_levels": [list of numeric support levels],
+    "resistance_levels": [list of numeric resistance levels]
+  },
+  "prediction": "Text describing expected next price movement",
+  "trade_suggestions": {
+    "entry": {
+      "price": numeric entry price,
+      "reason": "Reasoning for entry"
+    },
+    "recommendation": "BUY/SELL/HOLD",
+    "take_profit": [
+      {
+        "price": numeric TP level,
+        "reason": "Reasoning for TP"
+      }
+    ],
+    "stop_loss": {
+      "price": numeric SL level,
+      "reason": "Reasoning for SL"
+    }
+  },
+  "pattern_type": "Specific chart pattern type",
+  "risk_reward_ratio": "Estimated risk/reward ratio"
+}
+
+Rules:
+1. Always output valid JSON only.
+2. Fill numeric values where possible; if unavailable, use null.
+3. Do not include any explanations or extra text outside JSON.
+4. Include all components even if some are null.
+5. Provide concise, precise, and professional financial analysis.
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/b65e09-1756706221543.png
+Response  : {
+  "analysis": {
+    "current_trend": "short-term downside, long-term sideways",
+    "chart_pattern": "Possible double bottom",
+    "support_levels": [107200, 106800, 106000],
+    "resistance_levels": [108800, 109600, 110400]
+  },
+  "prediction": "Likely continuation of short-term upward correction after recent dip, but overall downward bias persists.",
+  "trade_suggestions": {
+    "entry": {
+      "price": 107800,
+      "reasoning": "Confirmation of rebound from support zone with bullish candle, potential upside momentum."
+    },
+    "recommendation": "BUY",
+    "take_profit": [
+      {
+        "price": 109200,
+        "reason": "Targeting resistance zone where previous selling pressure appeared."
+      }
+    ],
+    "stop_loss": {
+      "price": 107200,
+      "reasoning": "Below recent support to limit downside risk."
+    }
+  },
+  "pattern_type": "Double Bottom",
+  "risk_reward_ratio": "2:1"
+}
+
