@@ -54,19 +54,9 @@ The JSON must have this structure:
 {
   "analysis": {
     "current_trend": "short-term and long-term trend",
-    "trend_strength": "Strong/Moderate/Weak",
     "chart_pattern": "Detected chart pattern",
-    "technical_indicators": {
-      "SMA": "cross info",
-      "EMA": "cross info",
-      "RSI": numeric value,
-      "MACD": "trend info",
-      "BollingerBands": "position info"
-    },
     "support_levels": [list of numeric support levels],
-    "resistance_levels": [list of numeric resistance levels],
-    "confidence_level": "percentage confidence of main prediction",
-    "ai_commentary": "Concise text commentary"
+    "resistance_levels": [list of numeric resistance levels]
   },
   "prediction": "Text describing expected next price movement",
   "trade_suggestions": {
@@ -93,10 +83,9 @@ The JSON must have this structure:
 Rules:
 1. Always output valid JSON only.
 2. Fill numeric values where possible; if unavailable, use null.
-3. Include confidence_level, trend_strength, technical_indicators, ai_commentary.
-4. Do not include any explanations or extra text outside JSON.
-5. Include all components even if some are null.
-6. Provide concise, precise, and professional financial analysis.
+3. Do not include any explanations or extra text outside JSON.
+4. Include all components even if some are null.
+5. Provide concise, precise, and professional financial analysis.
 `;
 
 // === POST /analyze ===
