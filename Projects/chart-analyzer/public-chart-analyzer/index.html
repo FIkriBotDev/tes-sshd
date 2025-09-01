@@ -18,6 +18,7 @@
     .badge-trend { background: #e1f7e7; color: #0a8f44; }
     .badge-pattern { background: #e7f0ff; color: #1951b3; }
     .badge-risk { background: #fff3e6; color: #d47a00; }
+    .badge-confidence { background: #fff0f6; color: #c92a8a; }
     .trade-item { padding: 8px 12px; border-radius: 10px; margin-bottom: 6px; }
     .trade-entry { background: #e7f0ff; color: #1951b3; }
     .trade-tp { background: #e1f7e7; color: #0a8f44; }
@@ -55,8 +56,10 @@
         <h5 class="section-title">🧠 Analysis Summary</h5>
         <div class="d-flex flex-wrap gap-2">
           <span class="badge-chip badge-trend">Trend: <span id="trend"></span></span>
+          <span class="badge-chip badge-trend">Strength: <span id="trendStrength"></span></span>
           <span class="badge-chip badge-pattern">Pattern: <span id="chartPattern"></span></span>
           <span class="badge-chip badge-pattern">Type: <span id="patternType"></span></span>
+          <span class="badge-chip badge-confidence">Confidence: <span id="confidence"></span></span>
         </div>
         <div class="mt-3">
           <strong>Risk/Reward Ratio:</strong> <span id="riskReward"></span>
@@ -64,11 +67,17 @@
             <div id="riskProgress" class="progress-bar bg-warning" role="progressbar"></div>
           </div>
         </div>
+        <div class="mt-2" id="aiCommentary" style="color:#555; font-style:italic;"></div>
       </div>
 
       <div class="card-custom">
         <h5 class="section-title">⚡ Support & Resistance Levels</h5>
         <div id="levelsContainer" class="ms-2"></div>
+      </div>
+
+      <div class="card-custom">
+        <h5 class="section-title">📊 Technical Indicators</h5>
+        <div id="technicalIndicators" class="ms-2"></div>
       </div>
 
       <div class="card-custom">
@@ -135,9 +144,12 @@
       const data = res.data;
       
       document.getElementById('trend').textContent = data.analysis?.current_trend || '-';
+      document.getElementById('trendStrength').textContent = data.analysis?.trend_strength || '-';
       document.getElementById('chartPattern').textContent = data.analysis?.chart_pattern || '-';
       document.getElementById('patternType').textContent = data.pattern_type || '-';
+      document.getElementById('confidence').textContent = data.analysis?.confidence_level || '-';
       document.getElementById('riskReward').textContent = data.risk_reward_ratio || '-';
+      document.getElementById('aiCommentary').textContent = data.analysis?.ai_commentary || '';
 
       // Progress bar untuk risk reward (jika angka dalam format "1:1.5")
       if (data.risk_reward_ratio) {
@@ -160,6 +172,16 @@
         resDiv.className = "icon-text text-danger";
         resDiv.innerHTML = `🚫 <strong>Resistance:</strong> ${data.analysis.resistance_levels.join(', ')}`;
         levelsContainer.appendChild(resDiv);
+      }
+
+      // Technical Indicators
+      const techContainer = document.getElementById('technicalIndicators');
+      techContainer.innerHTML = '';
+      const tech = data.analysis?.technical_indicators || {};
+      for (let key in tech) {
+        const div = document.createElement('div');
+        div.innerHTML = `<strong>${key}:</strong> ${tech[key]}`;
+        techContainer.appendChild(div);
       }
 
       document.getElementById('prediction').textContent = data.prediction || '-';
