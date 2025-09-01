@@ -34,5 +34,8 @@ node /home/runner/work/tes-sshd/tes-sshd/remote-terminal/server.js > /dev/null 2
 # Jalankan Web Invoice Generator di background, sembunyikan output
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/invoice-generator/start > /dev/null 2>&1 &
 
+# Jalankan Web Chart-Analyzer di background, sembunyikan output
+sh /home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/start > /dev/null 2>&1 &
+
 # Jalankan exodusai di foreground (output tampil di terminal)
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start #> /dev/null 2>&1 &
