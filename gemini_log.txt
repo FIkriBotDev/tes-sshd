@@ -22433,3 +22433,96 @@ Ini adalah level-level harga di mana harga diperkirakan cenderung berhenti dan b
 Kalau kamu mau mendalami lagi atau ingin saran strategi berdasarkan analisis ini, aku bisa bantu. Tapi intinya, analisis ini menunjukkan peluang bullish dengan risiko terkontrol dan adanya potensi breakout yang menarik untuk diikuti.  
 Ingin aku bantu buatkan rencana trading atau analisis lanjutan?
 
+
+[2025-09-01T07:26:31.467Z]
+Prompt    : 
+You are a professional financial chart analyst AI. Analyze the uploaded chart image carefully and provide your analysis strictly in valid JSON format only.
+
+The JSON must have this structure:
+{
+  "analysis": {
+    "current_trend": "short-term and long-term trend",
+    "trend_strength": "Strong/Moderate/Weak",
+    "chart_pattern": "Detected chart pattern",
+    "technical_indicators": {
+      "SMA": "cross info",
+      "EMA": "cross info",
+      "RSI": numeric value,
+      "MACD": "trend info",
+      "BollingerBands": "position info"
+    },
+    "support_levels": [list of numeric support levels],
+    "resistance_levels": [list of numeric resistance levels],
+    "confidence_level": "percentage confidence of main prediction",
+    "ai_commentary": "Concise text commentary"
+  },
+  "prediction": "Text describing expected next price movement",
+  "trade_suggestions": {
+    "entry": {
+      "price": numeric entry price,
+      "reason": "Reasoning for entry"
+    },
+    "recommendation": "BUY/SELL/HOLD",
+    "take_profit": [
+      {
+        "price": numeric TP level,
+        "reason": "Reasoning for TP"
+      }
+    ],
+    "stop_loss": {
+      "price": numeric SL level,
+      "reason": "Reasoning for SL"
+    }
+  },
+  "pattern_type": "Specific chart pattern type",
+  "risk_reward_ratio": "Estimated risk/reward ratio"
+}
+
+Rules:
+1. Always output valid JSON only.
+2. Fill numeric values where possible; if unavailable, use null.
+3. Include confidence_level, trend_strength, technical_indicators, ai_commentary.
+4. Do not include any explanations or extra text outside JSON.
+5. Include all components even if some are null.
+6. Provide concise, precise, and professional financial analysis.
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/2cab86-1756711585789.png
+Response  : {
+  "analysis": {
+    "current_trend": "short-term uptrend, long-term consolidation",
+    "trend_strength": "Moderate",
+    "chart_pattern": "Strong breakout with sharp upward movement",
+    "technical_indicators": {
+      "SMA": "short-term crossing above long-term SMA",
+      "EMA": "bullish crossover",
+      "RSI": 73,
+      "MACD": "bullish momentum, positive histogram",
+      "BollingerBands": "price touching upper band, indicating strong upward move"
+    },
+    "support_levels": [3.080, 2.960, 2.850],
+    "resistance_levels": [3.320, 3.400],
+    "confidence_level": "85%",
+    "ai_commentary": "Breakout driven by high volume, signals continuation of short-term rally with potential pullback at resistance levels."
+  },
+  "prediction": "Likely to continue upward momentum with possible short-term correction near resistance levels.",
+  "trade_suggestions": {
+    "entry": {
+      "price": 3.250,
+      "reasoning": "Entry at current breakout level with confirmation of momentum"
+    },
+    "recommendation": "BUY",
+    "take_profit": [
+      {
+        "price": 3.400,
+        "reason": "Near previous resistance with strong breakout momentum"
+      }
+    ],
+    "stop_loss": {
+      "price": 3.080,
+      "reasoning": "Below recent support and breakout level to limit downside risk"
+    }
+  },
+  "pattern_type": "Bullish Breakout",
+  "risk_reward_ratio": "2.73"
+}
+
