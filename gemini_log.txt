@@ -22405,3 +22405,31 @@ Response  : {
   "risk_reward_ratio": "2.4:1"
 }
 
+
+[2025-09-01T06:36:12.039Z]
+Prompt    : model machine learning analisis grafik saham & crypto
+https://chartanalyzer.exodusai.biz.id
+Image URL : https://uploader.exoduscloud.my.id/tmp/4da8fd-1756708566467.jpg
+Response  : Tentu, mari kita bahas tentang analisis grafik saham dan crypto yang dilakukan oleh model machine learning di situs tersebut.
+
+**Kesimpulan Analisis:**
+- **Trend:** Short-term uptrend dan long-term sideways. Ini menunjukkan bahwa meski dalam jangka pendek harga cenderung naik, secara jangka panjang harga mungkin bergerak sideways tanpa tren yang jelas.
+- **Kekuatan:** Strong, yang mengindikasikan sinyal yang cukup solid dan kepercayaan yang tinggi dari model.
+- **Pola:** Breakout spike dengan momentum candlestick, yang menunjukkan adanya potensi pergerakan besar dan kuat.
+- **Kepercayaan:** 85%, ini cukup tinggi dan memberi gambaran bahwa analisis cukup meyakinkan.
+
+**Risk/Reward Ratio:** 2.5:1
+- Ini memberi tahu bahwa potensi keuntungan relatif terhadap risiko cukup menarik, menunjukkan peluang bagus untuk trading dengan risiko terbatas dan potensi keuntungan tinggi.
+
+**Support dan Resistance:**
+- Support: 2.96 - 2.88
+- Resistance: 3.32 - 3.3
+
+Ini adalah level-level harga di mana harga diperkirakan cenderung berhenti dan berbalik. Trader biasanya mengawasi level ini untuk mengambil keputusan buy/sell.
+
+**Indikator Teknis:**
+- Moving Average (SMA): Short-term crossing above long-term, mendukung tren bullish.
+
+Kalau kamu mau mendalami lagi atau ingin saran strategi berdasarkan analisis ini, aku bisa bantu. Tapi intinya, analisis ini menunjukkan peluang bullish dengan risiko terkontrol dan adanya potensi breakout yang menarik untuk diikuti.  
+Ingin aku bantu buatkan rencana trading atau analisis lanjutan?
+
