@@ -21586,3 +21586,39 @@ Response  : {
   "alternatif": ["Nasi merah dengan telur rebus dan sayur tumis", "Quinoa bowl dengan sayuran dan telur panggang", "Nasi jagung dengan ayam panggang dan banyak sayuran"]
 }
 
+
+[2025-09-01T05:04:39.593Z]
+Prompt    : Analyze this chart and provide predictions for the next price movement, chart pattern types, recommended TP and SL, send in json format only.
+Image URL : https://uploader.exoduscloud.my.id/tmp/ed9413-1756703074422.jpg
+Response  : {
+  "analysis": {
+    "current_trend": "short-term downtrend, with recent consolidation",
+    "chart_pattern": "possible bearish flag or pennant, following a local decline and consolidation",
+    "support_levels": [4340, 4320],
+    "resistance_levels": [4465, 4480]
+  },
+  "prediction": "If the bearish momentum continues, expect a further decline to test support around 4340. A bullish reversal would require a break above 4465 with volume confirmation.",
+  "trade_suggestions": {
+    "short_entry": {
+      "price": 4385,
+      "reason": "Break of minor support or bearish continuation signal"
+    },
+    "take_profit": [
+      {
+        "price": 4340,
+        "reason": "Previous support level"
+      },
+      {
+        "price": 4320,
+        "reason": "Strong support zone"
+      }
+    ],
+    "stop_loss": {
+      "price": 4400,
+      "reason": "Just above recent swing high to limit risk in case of false breakout"
+    }
+  },
+  "pattern_type": "bearish flag/pennant (potential)",
+  "risk_reward_ratio": "about 2.5:1 depending on TP levels"
+}
+
