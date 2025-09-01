@@ -23030,3 +23030,96 @@ Response  : {
   "risk_reward_ratio": "2.8:1"
 }
 
+
+[2025-09-01T22:25:31.154Z]
+Prompt    : 
+You are a professional financial chart analyst AI. Analyze the uploaded chart image carefully and provide your analysis strictly in valid JSON format only.
+
+The JSON must have this structure:
+{
+  "analysis": {
+    "current_trend": "short-term and long-term trend",
+    "trend_strength": "Strong/Moderate/Weak",
+    "chart_pattern": "Detected chart pattern",
+    "technical_indicators": {
+      "SMA": "cross info",
+      "EMA": "cross info",
+      "RSI": numeric value,
+      "MACD": "trend info",
+      "BollingerBands": "position info"
+    },
+    "support_levels": [list of numeric support levels],
+    "resistance_levels": [list of numeric resistance levels],
+    "confidence_level": "percentage confidence of main prediction",
+    "ai_commentary": "Concise text commentary"
+  },
+  "prediction": "Text describing expected next price movement",
+  "trade_suggestions": {
+    "entry": {
+      "price": numeric entry price,
+      "reason": "Reasoning for entry"
+    },
+    "recommendation": "BUY/SELL/HOLD",
+    "take_profit": [
+      {
+        "price": numeric TP level,
+        "reason": "Reasoning for TP"
+      }
+    ],
+    "stop_loss": {
+      "price": numeric SL level,
+      "reason": "Reasoning for SL"
+    }
+  },
+  "pattern_type": "Specific chart pattern type",
+  "risk_reward_ratio": "Estimated risk/reward ratio"
+}
+
+Rules:
+1. Always output valid JSON only.
+2. Fill numeric values where possible; if unavailable, use null.
+3. Include confidence_level, trend_strength, technical_indicators, ai_commentary.
+4. Do not include any explanations or extra text outside JSON.
+5. Include all components even if some are null.
+6. Provide concise, precise, and professional financial analysis.
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/76a205-1756765525934.png
+Response  : {
+  "analysis": {
+    "current_trend": "short-term upward spike, long-term sideways or slight downtrend",
+    "trend_strength": "Strong",
+    "chart_pattern": "Breakout rally",
+    "technical_indicators": {
+      "SMA": "Crosses above EMA indicating bullish momentum",
+      "EMA": "Bullish crossover with SMA",
+      "RSI": 78,
+      "MACD": "Bullish trend with increasing histogram",
+      "BollingerBands": "Price at upper band, indicating potential overbought condition"
+    },
+    "support_levels": [3.080, 2.950],
+    "resistance_levels": [3.320, 3.380],
+    "confidence_level": "85%",
+    "ai_commentary": "Rapid breakout suggests strong buying interest, but overbought RSI warrants caution."
+  },
+  "prediction": "Likely continuation of upward movement in the short term, potential for consolidation or slight pullback after overbought RSI.",
+  "trade_suggestions": {
+    "entry": {
+      "price": 3.250,
+      "reason": "Entry near current support level after strong breakout and bullish indicators"
+    },
+    "recommendation": "HOLD",
+    "take_profit": [
+      {
+        "price": 3.380,
+        "reason": "Next resistance level"
+      }
+    ],
+    "stop_loss": {
+      "price": 3.080,
+      "reason": "Support level below recent breakout"
+    }
+  },
+  "pattern_type": "Breakout rally",
+  "risk_reward_ratio": "2.5"
+}
+
