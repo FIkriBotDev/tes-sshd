@@ -21910,3 +21910,75 @@ Response  : {
   "risk_reward_ratio": "1:2"
 }
 
+
+[2025-09-01T05:40:37.804Z]
+Prompt    : 
+You are a professional financial chart analyst AI. Analyze the uploaded chart image carefully and provide your analysis strictly in valid JSON format only.
+
+The JSON must have this structure:
+{
+  "analysis": {
+    "current_trend": "short-term and long-term trend",
+    "chart_pattern": "Detected chart pattern",
+    "support_levels": [list of numeric support levels],
+    "resistance_levels": [list of numeric resistance levels]
+  },
+  "prediction": "Text describing expected next price movement",
+  "trade_suggestions": {
+    "entry": {
+      "price": numeric entry price,
+      "reason": "Reasoning for entry"
+    },
+    "recommendation": "BUY/SELL/HOLD",
+    "take_profit": [
+      {
+        "price": numeric TP level,
+        "reason": "Reasoning for TP"
+      }
+    ],
+    "stop_loss": {
+      "price": numeric SL level,
+      "reason": "Reasoning for SL"
+    }
+  },
+  "pattern_type": "Specific chart pattern type",
+  "risk_reward_ratio": "Estimated risk/reward ratio"
+}
+
+Rules:
+1. Always output valid JSON only.
+2. Fill numeric values where possible; if unavailable, use null.
+3. Do not include any explanations or extra text outside JSON.
+4. Include all components even if some are null.
+5. Provide concise, precise, and professional financial analysis.
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/510a5e-1756705233149.jpg
+Response  : {
+  "analysis": {
+    "current_trend": "short-term downtrend, long-term sideways/stable",
+    "chart_pattern": "None clearly identifiable",
+    "support_levels": [4300, 4250],
+    "resistance_levels": [4450, 4475]
+  },
+  "prediction": "Price is likely to consolidate around current levels or slightly retrace before testing support levels again",
+  "trade_suggestions": {
+    "entry": {
+      "price": 4380,
+      "reason": "Current price near short-term resistance, potential for further decline, waiting for confirmation on support or reversal"
+    },
+    "recommendation": "HOLD",
+    "take_profit": [
+      {
+        "price": 4300,
+        "reason": "Support level where price may bounce"
+      }
+    ],
+    "stop_loss": {
+      "price": 4450,
+      "reason": "Above recent resistance indicating invalidation of short-term bearish view"
+    }
+  },
+  "pattern_type": "None",
+  "risk_reward_ratio": "Approximately 1:2.5"
+}
+
