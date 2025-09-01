@@ -21838,3 +21838,75 @@ Response  : {
   "risk_reward_ratio": "1:1.5"
 }
 
+
+[2025-09-01T05:37:40.028Z]
+Prompt    : 
+You are a professional financial chart analyst AI. Analyze the uploaded chart image carefully and provide your analysis strictly in valid JSON format only.
+
+The JSON must have this structure:
+{
+  "analysis": {
+    "current_trend": "short-term and long-term trend",
+    "chart_pattern": "Detected chart pattern",
+    "support_levels": [list of numeric support levels],
+    "resistance_levels": [list of numeric resistance levels]
+  },
+  "prediction": "Text describing expected next price movement",
+  "trade_suggestions": {
+    "entry": {
+      "price": numeric entry price,
+      "reason": "Reasoning for entry"
+    },
+    "recommendation": "BUY/SELL/HOLD",
+    "take_profit": [
+      {
+        "price": numeric TP level,
+        "reason": "Reasoning for TP"
+      }
+    ],
+    "stop_loss": {
+      "price": numeric SL level,
+      "reason": "Reasoning for SL"
+    }
+  },
+  "pattern_type": "Specific chart pattern type",
+  "risk_reward_ratio": "Estimated risk/reward ratio"
+}
+
+Rules:
+1. Always output valid JSON only.
+2. Fill numeric values where possible; if unavailable, use null.
+3. Do not include any explanations or extra text outside JSON.
+4. Include all components even if some are null.
+5. Provide concise, precise, and professional financial analysis.
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/0c70d6-1756705055466.jpg
+Response  : {
+  "analysis": {
+    "current_trend": "short-term downtrend, long-term consolidation",
+    "chart_pattern": "Possible double bottom or sideway consolidation",
+    "support_levels": [4300, 4250, 4200],
+    "resistance_levels": [4400, 4450, 4500]
+  },
+  "prediction": "Potential reversal or continuation of sideways movement unless a decisive breakout occurs",
+  "trade_suggestions": {
+    "entry": {
+      "price": 4350,
+      "reason": "Approaching support level with signs of potential bounce"
+    },
+    "recommendation": "HOLD",
+    "take_profit": [
+      {
+        "price": 4400,
+        "reason": "Near resistance level, potential for upward move"
+      }
+    ],
+    "stop_loss": {
+      "price": 4300,
+      "reasoning": "Below support, to limit downside risk"
+    }
+  },
+  "pattern_type": "Double bottom / Sideways",
+  "risk_reward_ratio": "1:2"
+}
+
