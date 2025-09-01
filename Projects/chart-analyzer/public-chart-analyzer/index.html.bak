@@ -8,14 +8,11 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <style>
     body { background: #f9fbfd; font-family: "Inter", sans-serif; }
-    .app-container { max-width: 600px; margin: 20px auto; padding: 16px; }
+    .app-container { max-width: 500px; margin: 20px auto; padding: 16px; }
     .card-custom { border-radius: 20px; background: #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.08); padding: 20px; margin-bottom: 20px; }
     .section-title { font-weight: 600; font-size: 1rem; margin-bottom: 10px; }
     .image-preview { max-height: 300px; object-fit: contain; border-radius: 16px; margin-bottom: 1rem; }
     .loading-spinner { text-align: center; font-size: 1.2rem; }
-    .badge-chip { border-radius: 12px; padding: 4px 10px; font-size: 0.8rem; margin: 4px; display: inline-block; }
-    .progress { height: 6px; border-radius: 6px; overflow: hidden; background: #e9ecef; }
-    .progress-bar { transition: width 1s ease-in-out; }
   </style>
 </head>
 <body>
@@ -42,30 +39,8 @@
 
     <div id="resultContainer" class="d-none">
       <div class="card-custom">
-        <h5 class="section-title">🧠 Analysis Summary</h5>
-        <p><strong>Trend:</strong> <span id="trend"></span></p>
-        <p><strong>Chart Pattern:</strong> <span id="chartPattern"></span></p>
-        <p><strong>Pattern Type:</strong> <span id="patternType"></span></p>
-        <p><strong>Risk/Reward Ratio:</strong> <span id="riskReward"></span></p>
-      </div>
-
-      <div class="card-custom">
-        <h5 class="section-title">⚡ Support & Resistance Levels</h5>
-        <div id="levelsContainer"></div>
-      </div>
-
-      <div class="card-custom">
-        <h5 class="section-title">💡 Prediction</h5>
-        <p id="prediction"></p>
-      </div>
-
-      <div class="card-custom">
-        <h5 class="section-title">📊 Trade Suggestions</h5>
-        <p><strong>Entry Price:</strong> <span id="entryPrice"></span> (<span id="entryReason"></span>)</p>
-        <p><strong>Recommendation:</strong> <span id="recommendation"></span></p>
-        <p><strong>Take Profit:</strong></p>
-        <div id="takeProfitContainer"></div>
-        <p><strong>Stop Loss:</strong> <span id="stopLossPrice"></span> (<span id="stopLossReason"></span>)</p>
+        <h5 class="section-title">🧠 Analysis</h5>
+        <pre id="analysisJson" style="white-space: pre-wrap;"></pre>
       </div>
     </div>
   </div>
@@ -106,46 +81,7 @@
     try {
       const res = await axios.post('/analyze', formData);
       const data = res.data;
-      
-      document.getElementById('trend').textContent = data.analysis?.current_trend || '-';
-      document.getElementById('chartPattern').textContent = data.analysis?.chart_pattern || '-';
-      document.getElementById('patternType').textContent = data.pattern_type || '-';
-      document.getElementById('riskReward').textContent = data.risk_reward_ratio || '-';
-
-      // Support & Resistance
-      const levelsContainer = document.getElementById('levelsContainer');
-      levelsContainer.innerHTML = '';
-      if(data.analysis?.support_levels) {
-        const supDiv = document.createElement('div');
-        supDiv.innerHTML = `<strong>Support:</strong> ${data.analysis.support_levels.join(', ')}`;
-        levelsContainer.appendChild(supDiv);
-      }
-      if(data.analysis?.resistance_levels) {
-        const resDiv = document.createElement('div');
-        resDiv.innerHTML = `<strong>Resistance:</strong> ${data.analysis.resistance_levels.join(', ')}`;
-        levelsContainer.appendChild(resDiv);
-      }
-
-      document.getElementById('prediction').textContent = data.prediction || '-';
-
-      // Trade Suggestions
-      const entry = data.trade_suggestions?.entry || {};
-      document.getElementById('entryPrice').textContent = entry.price || '-';
-      document.getElementById('entryReason').textContent = entry.reason || '-';
-      document.getElementById('recommendation').textContent = data.trade_suggestions?.recommendation || '-';
-
-      const takeProfitContainer = document.getElementById('takeProfitContainer');
-      takeProfitContainer.innerHTML = '';
-      (data.trade_suggestions?.take_profit || []).forEach(tp => {
-        const div = document.createElement('div');
-        div.innerHTML = `Price: ${tp.price} (${tp.reason})`;
-        takeProfitContainer.appendChild(div);
-      });
-
-      const stopLoss = data.trade_suggestions?.stop_loss || {};
-      document.getElementById('stopLossPrice').textContent = stopLoss.price || '-';
-      document.getElementById('stopLossReason').textContent = stopLoss.reason || '-';
-
+      document.getElementById('analysisJson').textContent = JSON.stringify(data, null, 2);
       document.getElementById('resultContainer').classList.remove('d-none');
     } catch (error) {
       alert('Error analyzing chart: ' + (error.response?.data?.error || error.message));
