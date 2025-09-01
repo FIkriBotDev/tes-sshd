@@ -21982,3 +21982,75 @@ Response  : {
   "risk_reward_ratio": "Approximately 1:2.5"
 }
 
+
+[2025-09-01T05:42:25.958Z]
+Prompt    : 
+You are a professional financial chart analyst AI. Analyze the uploaded chart image carefully and provide your analysis strictly in valid JSON format only.
+
+The JSON must have this structure:
+{
+  "analysis": {
+    "current_trend": "short-term and long-term trend",
+    "chart_pattern": "Detected chart pattern",
+    "support_levels": [list of numeric support levels],
+    "resistance_levels": [list of numeric resistance levels]
+  },
+  "prediction": "Text describing expected next price movement",
+  "trade_suggestions": {
+    "entry": {
+      "price": numeric entry price,
+      "reason": "Reasoning for entry"
+    },
+    "recommendation": "BUY/SELL/HOLD",
+    "take_profit": [
+      {
+        "price": numeric TP level,
+        "reason": "Reasoning for TP"
+      }
+    ],
+    "stop_loss": {
+      "price": numeric SL level,
+      "reason": "Reasoning for SL"
+    }
+  },
+  "pattern_type": "Specific chart pattern type",
+  "risk_reward_ratio": "Estimated risk/reward ratio"
+}
+
+Rules:
+1. Always output valid JSON only.
+2. Fill numeric values where possible; if unavailable, use null.
+3. Do not include any explanations or extra text outside JSON.
+4. Include all components even if some are null.
+5. Provide concise, precise, and professional financial analysis.
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/ea17bd-1756705341264.png
+Response  : {
+  "analysis": {
+    "current_trend": "short-term bullish reversal, long-term consolidation or slight downtrend",
+    "chart_pattern": "breakout from prior consolidation phase with sharp upward movement",
+    "support_levels": [2.880, 2.920, 2.960],
+    "resistance_levels": [3.320, 3.280, 3.250]
+  },
+  "prediction": "Likely continuation of upward momentum with potential minor pullback to support levels before further advances",
+  "trade_suggestions": {
+    "entry": {
+      "price": 3.250,
+      "reason": "Strong recent bullish breakout confirmed by volume spike, suitable for long entry"
+    },
+    "recommendation": "BUY",
+    "take_profit": [
+      {
+        "price": 3.320,
+        "reason": "Near-term resistance level, potential target for short-term profits"
+      }
+    ],
+    "stop_loss": {
+      "price": 3.200,
+      "reason": "Below recent breakout level to protect against false breakouts"
+    }
+  },
+  "pattern_type": "bullish breakout",
+  "risk_reward_ratio": "approximately 2:1"
+}
+
