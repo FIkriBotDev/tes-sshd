@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChartAnalyzer AI by ExodusAI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    body { background: #f9fbfd; font-family: "Inter", sans-serif; }
+    .app-container { max-width: 650px; margin: 20px auto; padding: 16px; }
+    .card-custom { border-radius: 20px; background: #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.08); padding: 20px; margin-bottom: 20px; position: relative; overflow: hidden; }
+    .card-custom::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, #4facfe, #00f2fe); }
+    .section-title { font-weight: 600; font-size: 1.05rem; margin-bottom: 12px; color: #222; }
+    .image-preview { max-height: 300px; object-fit: contain; border-radius: 16px; margin-bottom: 1rem; }
+    .loading-spinner { text-align: center; font-size: 1.2rem; }
+    .badge-chip { border-radius: 12px; padding: 6px 12px; font-size: 0.85rem; margin: 3px; display: inline-block; font-weight: 500; }
+    .badge-trend { background: #e1f7e7; color: #0a8f44; }
+    .badge-pattern { background: #e7f0ff; color: #1951b3; }
+    .badge-risk { background: #fff3e6; color: #d47a00; }
+    .trade-item { padding: 8px 12px; border-radius: 10px; margin-bottom: 6px; }
+    .trade-entry { background: #e7f0ff; color: #1951b3; }
+    .trade-tp { background: #e1f7e7; color: #0a8f44; }
+    .trade-sl { background: #ffeaea; color: #c92a2a; }
+    .progress { height: 8px; border-radius: 6px; overflow: hidden; background: #e9ecef; }
+    .progress-bar { transition: width 1s ease-in-out; }
+    .icon-text { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+    .icon-text i { font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <div class="card-custom text-center">
+      <h4 class="mb-3">📈 ChartAnalyzer AI</h4>
+      <div class="mb-3 d-flex gap-2 justify-content-center">
+        <button class="btn btn-success text-white" onclick="document.getElementById('fileInput').click()">📷 Camera</button>
+        <input type="file" id="fileInput" accept="image/*" class="d-none" onchange="handleImageUpload(event)" />
+        <button class="btn btn-outline-primary" onclick="document.getElementById('fileInput').click()">📤 Upload</button>
+      </div>
+      <div id="previewContainer" class="text-center d-none">
+        <img id="previewImage" src="" class="img-fluid image-preview" />
+        <div class="d-flex justify-content-center gap-2">
+          <button class="btn btn-dark btn-sm" onclick="startAnalysis()">Analyze</button>
+          <button class="btn btn-outline-secondary btn-sm" onclick="resetImage()">Reset</button>
+        </div>
+      </div>
+      <div id="loading" class="loading-spinner mt-4 d-none">
+        <div class="spinner-border text-primary" role="status"></div>
+        <p class="mt-2">Analyzing with AI...</p>
+      </div>
+    </div>
+
+    <div id="resultContainer" class="d-none">
+      <div class="card-custom">
+        <h5 class="section-title">🧠 Analysis Summary</h5>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="badge-chip badge-trend">Trend: <span id="trend"></span></span>
+          <span class="badge-chip badge-pattern">Pattern: <span id="chartPattern"></span></span>
+          <span class="badge-chip badge-pattern">Type: <span id="patternType"></span></span>
+        </div>
+        <div class="mt-3">
+          <strong>Risk/Reward Ratio:</strong> <span id="riskReward"></span>
+          <div class="progress mt-1">
+            <div id="riskProgress" class="progress-bar bg-warning" role="progressbar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-custom">
+        <h5 class="section-title">⚡ Support & Resistance Levels</h5>
+        <div id="levelsContainer" class="ms-2"></div>
+      </div>
+
+      <div class="card-custom">
+        <h5 class="section-title">💡 Prediction</h5>
+        <p id="prediction" class="text-secondary"></p>
+      </div>
+
+      <div class="card-custom">
+        <h5 class="section-title">📊 Trade Suggestions</h5>
+        <div class="trade-item trade-entry">
+          <strong>Entry Price:</strong> <span id="entryPrice"></span> 
+          <div><small id="entryReason"></small></div>
+        </div>
+        <div class="trade-item">
+          <strong>Recommendation:</strong> <span id="recommendation"></span>
+        </div>
+        <div class="trade-item trade-tp">
+          <strong>Take Profit:</strong>
+          <div id="takeProfitContainer"></div>
+        </div>
+        <div class="trade-item trade-sl">
+          <strong>Stop Loss:</strong> <span id="stopLossPrice"></span>
+          <div><small id="stopLossReason"></small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  let selectedFile = null;
+
+  function handleImageUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    selectedFile = file;
+    const reader = new FileReader();
+    reader.onload = e => {
+      document.getElementById('previewImage').src = e.target.result;
+      document.getElementById('previewContainer').classList.remove('d-none');
+      document.getElementById('resultContainer').classList.add('d-none');
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function resetImage() {
+    selectedFile = null;
+    document.getElementById('fileInput').value = null;
+    document.getElementById('previewImage').src = '';
+    document.getElementById('previewContainer').classList.add('d-none');
+    document.getElementById('loading').classList.add('d-none');
+    document.getElementById('resultContainer').classList.add('d-none');
+  }
+
+  async function startAnalysis() {
+    if (!selectedFile) return;
+    const formData = new FormData();
+    formData.append('image', selectedFile);
+
+    document.getElementById('loading').classList.remove('d-none');
+    document.getElementById('resultContainer').classList.add('d-none');
+
+    try {
+      const res = await axios.post('/analyze', formData);
+      const data = res.data;
+      
+      document.getElementById('trend').textContent = data.analysis?.current_trend || '-';
+      document.getElementById('chartPattern').textContent = data.analysis?.chart_pattern || '-';
+      document.getElementById('patternType').textContent = data.pattern_type || '-';
+      document.getElementById('riskReward').textContent = data.risk_reward_ratio || '-';
+
+      // Progress bar untuk risk reward (jika angka dalam format "1:1.5")
+      if (data.risk_reward_ratio) {
+        let ratioNum = parseFloat(data.risk_reward_ratio.split(':')[1]) || 0;
+        let percent = Math.min(100, (ratioNum / 5) * 100);
+        document.getElementById('riskProgress').style.width = percent + '%';
+      }
+
+      // Support & Resistance
+      const levelsContainer = document.getElementById('levelsContainer');
+      levelsContainer.innerHTML = '';
+      if(data.analysis?.support_levels) {
+        const supDiv = document.createElement('div');
+        supDiv.className = "icon-text text-success";
+        supDiv.innerHTML = `✅ <strong>Support:</strong> ${data.analysis.support_levels.join(', ')}`;
+        levelsContainer.appendChild(supDiv);
+      }
+      if(data.analysis?.resistance_levels) {
+        const resDiv = document.createElement('div');
+        resDiv.className = "icon-text text-danger";
+        resDiv.innerHTML = `🚫 <strong>Resistance:</strong> ${data.analysis.resistance_levels.join(', ')}`;
+        levelsContainer.appendChild(resDiv);
+      }
+
+      document.getElementById('prediction').textContent = data.prediction || '-';
+
+      // Trade Suggestions
+      const entry = data.trade_suggestions?.entry || {};
+      document.getElementById('entryPrice').textContent = entry.price || '-';
+      document.getElementById('entryReason').textContent = entry.reason || '-';
+      document.getElementById('recommendation').textContent = data.trade_suggestions?.recommendation || '-';
+
+      const takeProfitContainer = document.getElementById('takeProfitContainer');
+      takeProfitContainer.innerHTML = '';
+      (data.trade_suggestions?.take_profit || []).forEach(tp => {
+        const div = document.createElement('div');
+        div.innerHTML = `💰 Price: <strong>${tp.price}</strong> <small>(${tp.reason})</small>`;
+        takeProfitContainer.appendChild(div);
+      });
+
+      const stopLoss = data.trade_suggestions?.stop_loss || {};
+      document.getElementById('stopLossPrice').textContent = stopLoss.price || '-';
+      document.getElementById('stopLossReason').textContent = stopLoss.reason || '-';
+
+      document.getElementById('resultContainer').classList.remove('d-none');
+    } catch (error) {
+      alert('Error analyzing chart: ' + (error.response?.data?.error || error.message));
+    } finally {
+      document.getElementById('loading').classList.add('d-none');
+    }
+  }
+</script>
+</body>
+</html>
