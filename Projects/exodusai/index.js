@@ -221,6 +221,9 @@ async function startBot() {
 
                 const chatbotData = await chatbotResponse.json();
                 let aiResponse = chatbotData.result;
+
+                // ✅ FIX: pastikan tidak ada https://localhost
+                aiResponse = aiResponse.replace(/https:\/\/localhost:/gi, 'http://localhost:');
                 aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id').trim();
 
                 await sock.sendMessage(sender, { text: aiResponse });
@@ -236,91 +239,85 @@ async function startBot() {
 
         // === Default ChatBot
         if (currentMode === 'chatbot') {
-    conversation.push({ role: "user", content: userMessage });
+            conversation.push({ role: "user", content: userMessage });
 
-    try {
-        const response = await fetch('http://localhost:3000/post/rtist', {
-            method: 'POST',
-            headers: { 'accept': 'application/json', 'Content-Type': 'application/json' },
-            body: JSON.stringify({ messages: conversation }),
-        });
+            try {
+                const response = await fetch('http://localhost:3000/post/rtist', {
+                    method: 'POST',
+                    headers: { 'accept': 'application/json', 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ messages: conversation }),
+                });
 
-        const data = await response.json();
-        let aiResponse = data.result;
+                const data = await response.json();
+                let aiResponse = data.result;
 
-        // Tangani jika respons mengandung ![Document Caption](...)
-        const docxMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exoduscloud\.my\.id\/api\/buat\?[^)]+)\)/;
-        const matchDocx = docxMarkdownRegex.exec(aiResponse);
+                // Tangani jika respons mengandung ![Document Caption](...)
+                const docxMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exoduscloud\.my\.id\/api\/buat\?[^)]+)\)/;
+                const matchDocx = docxMarkdownRegex.exec(aiResponse);
 
-        if (matchDocx) {
-            const docxUrl = matchDocx[1];
-            const promptText = decodeURIComponent(new URL(docxUrl).searchParams.get("prompt") || "");
+                if (matchDocx) {
+                    const docxUrl = matchDocx[1];
+                    await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya dokumennya sesuai permintaan✨"` });
 
-            await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya dokumennya sesuai permintaan✨"` });
+                    const docxBuffer = await fetch(docxUrl).then(res => res.buffer());
+                    await sock.sendMessage(sender, {
+                        document: docxBuffer,
+                        mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                        fileName: 'hasil.docx'
+                    });
 
-            const docxBuffer = await fetch(docxUrl).then(res => res.buffer());
+                    aiResponse = aiResponse.replace(docxMarkdownRegex, '').trim();
+                }
 
-            await sock.sendMessage(sender, {
-                document: docxBuffer,
-                mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                fileName: 'hasil.docx'
-            });
+                const excelMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exoduscloud\.my\.id\/api\/buat\/excel\?[^)]+)\)/;
+                const matchExcel = excelMarkdownRegex.exec(aiResponse);
+                
+                if (matchExcel) {
+                    const excelUrl = matchExcel[1];
+                    await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya datanya sesuai permintaan ✨` });
 
-            aiResponse = aiResponse.replace(docxMarkdownRegex, '').trim();
+                    const excelBuffer = await fetch(excelUrl).then(res => res.buffer());
+                    await sock.sendMessage(sender, {
+                        document: excelBuffer,
+                        mimetype: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                        fileName: 'hasil.xlsx'
+                    });
+
+                    aiResponse = aiResponse.replace(excelMarkdownRegex, '').trim();
+                }
+
+                // ✅ FIX: pastikan tidak ada https://localhost
+                aiResponse = aiResponse.replace(/https:\/\/localhost:/gi, 'http://localhost:');
+                aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id').trim();
+
+                // Tangani jika ada image markdown
+                const imageRegex = /!\[.*?\]\((https?:\/\/[^\s]+)\)/g;
+                const matchImage = imageRegex.exec(aiResponse);
+
+                if (matchImage) {
+                    const imageUrl = matchImage[1];
+                    const [textBefore, textAfter] = aiResponse.split(matchImage[0]);
+
+                    if (textBefore.trim()) await sock.sendMessage(sender, { text: textBefore.trim() });
+
+                    const imageBuffer = await fetch(imageUrl).then(res => res.buffer());
+
+                    await sock.sendMessage(sender, {
+                        image: imageBuffer,
+                        caption: textAfter.trim()
+                    });
+                } else if (aiResponse.trim()) {
+                    await sock.sendMessage(sender, { text: aiResponse.trim() });
+                }
+
+                conversation.push({ role: "assistant", content: aiResponse });
+                saveConversation(sender, conversation);
+
+            } catch (err) {
+                console.error('Chatbot error:', err);
+                await sock.sendMessage(sender, { text: 'Mohon maaf terjadi kesalahan...' });
+            }
         }
-        // Tangani jika respons mengandung ![Document Caption](...)
-        const excelMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exoduscloud\.my\.id\/api\/buat\/excel\?[^)]+)\)/;
-        const matchExcel = excelMarkdownRegex.exec(aiResponse);
-        
-        if (matchExcel) {
-            const excelUrl = matchExcel[1];
-            const promptText = decodeURIComponent(new URL(excelUrl).searchParams.get("prompt") || "");
-        
-            await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya datanya sesuai permintaan ✨` });
-        
-            const excelBuffer = await fetch(excelUrl).then(res => res.buffer());
-        
-            await sock.sendMessage(sender, {
-                document: excelBuffer,
-                mimetype: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                fileName: 'hasil.xlsx'
-            });
-        
-            aiResponse = aiResponse.replace(excelMarkdownRegex, '').trim();
-        }
-
-
-        // Rebranding dan bersihkan teks
-        aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id').trim();
-
-        // Tangani jika ada image markdown
-        const imageRegex = /!\[.*?\]\((https?:\/\/[^\s]+)\)/g;
-        const matchImage = imageRegex.exec(aiResponse);
-
-        if (matchImage) {
-            const imageUrl = matchImage[1];
-            const [textBefore, textAfter] = aiResponse.split(matchImage[0]);
-
-            if (textBefore.trim()) await sock.sendMessage(sender, { text: textBefore.trim() });
-
-            const imageBuffer = await fetch(imageUrl).then(res => res.buffer());
-
-            await sock.sendMessage(sender, {
-                image: imageBuffer,
-                caption: textAfter.trim()
-            });
-        } else if (aiResponse.trim()) {
-            await sock.sendMessage(sender, { text: aiResponse.trim() });
-        }
-
-        conversation.push({ role: "assistant", content: aiResponse });
-        saveConversation(sender, conversation);
-
-    } catch (err) {
-        console.error('Chatbot error:', err);
-        await sock.sendMessage(sender, { text: 'Mohon maaf terjadi kesalahan...' });
-    }
-}
     });
 }
 
