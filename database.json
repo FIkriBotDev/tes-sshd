@@ -192,6 +192,7 @@
     "content": "Jangan pernah kirim link dengan karakter spasi di dalamnya. Semua URL harus aman dan valid dengan encoding penuh."
   },
 {
+        "role": "assistant",
         "content": "Siap info diterima bro."
         },
          {
