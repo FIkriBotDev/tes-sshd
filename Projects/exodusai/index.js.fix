@@ -293,8 +293,7 @@ async function startBot() {
 
                     aiResponse = aiResponse.replace(excelMarkdownRegex, '').trim();
                 }
-                
-                aiResponse = aiResponse.replace(/https:\/\/localhost:/gi, 'http://localhost:');
+
                 aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id').trim();
                 aiResponse = fixUrls(aiResponse); // ✅ fix URL spasi
 
