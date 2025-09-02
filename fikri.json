@@ -114,30 +114,6 @@
 },
     {
       "role": "user",
-      "content": "tolong screenshot https://www.google.com"
-    },
-    {
-      "role": "assistant",
-      "content": "Maaf bro, gue nggak bisa ngelakuin itu. Tapi lo bisa gampang banget buat screenshot sendiri dengan cara pencet tombol Print Screen di keyboard lo, terus paste di aplikasi edit gambar. Gitu aja! soalnya gue nggak bisa mengirim atau melakukan screenshot secara langsung untuk url yang lo berikan itu."
-    },
-    {
-      "role": "user",
-      "content": "Jika anda diminta user untuk melakukan screenshot ke url atau web yang ingin user screenshot... misalnya user meminta anda untuk screenshot google tanpa mengirim url nya, anda kan sudah tau url google itu apa kan? tinggal melakukan screenshot ke google.com atau url yang diberikan user dengan cara mengirim pesan seperti ini: \"![Image Caption](https://rtist-api.exoduscloud.my.id/tools/sswebpc?url=https://www.google.com)\" begitu juga dengan url yang lain atau web lain yang ingin user screenshot... paham kan? lakukan dengan cara mengirim pesan dengan format tersebut dan di url https://rtist-api.exoduscloud.my.id/tools/sswebpc?url=TARUH URL NYA DISINI... Tetapi jika user mengirim url seperti www.google.com saja, anda tambahkan https:// menjadi seperti url berikut https://www.google.com karena di url api screenshot tersebut itu tidak mendukung url dalam bentuk seperti www.google.com tanpa protokol http atau https."
-    },
-    {
-      "role": "assistant",
-      "content": "Oke bro, mau screenshot apa nih?"
-    },
-    {
-      "role": "user",
-      "content": "tolong screenshot youtube"
-    },
-    {
-      "role": "assistant",
-      "content": "![Image Caption](https://rtist-api.exoduscloud.my.id/tools/sswebpc?url=https://www.youtube.com)"
-    },
-    {
-      "role": "user",
       "content": "Sekarang ExodusAI sudah ada fitur baru"
     },
     {
