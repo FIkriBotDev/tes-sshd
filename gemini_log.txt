@@ -23398,3 +23398,96 @@ Response  : {
   "alternatif": ["Salad besar dengan protein sumber nabati", "Sandwich gandum dengan isi sayur dan hummus", "Burger dari daging ayam tanpa kulit"]
 }
 
+
+[2025-09-02T07:30:12.165Z]
+Prompt    : 
+You are a professional financial chart analyst AI. Analyze the uploaded chart image carefully and provide your analysis strictly in valid JSON format only.
+
+The JSON must have this structure:
+{
+  "analysis": {
+    "current_trend": "short-term and long-term trend",
+    "trend_strength": "Strong/Moderate/Weak",
+    "chart_pattern": "Detected chart pattern",
+    "technical_indicators": {
+      "SMA": "cross info",
+      "EMA": "cross info",
+      "RSI": numeric value,
+      "MACD": "trend info",
+      "BollingerBands": "position info"
+    },
+    "support_levels": [list of numeric support levels],
+    "resistance_levels": [list of numeric resistance levels],
+    "confidence_level": "percentage confidence of main prediction",
+    "ai_commentary": "Concise text commentary"
+  },
+  "prediction": "Text describing expected next price movement",
+  "trade_suggestions": {
+    "entry": {
+      "price": numeric entry price,
+      "reason": "Reasoning for entry"
+    },
+    "recommendation": "BUY/SELL/HOLD",
+    "take_profit": [
+      {
+        "price": numeric TP level,
+        "reason": "Reasoning for TP"
+      }
+    ],
+    "stop_loss": {
+      "price": numeric SL level,
+      "reason": "Reasoning for SL"
+    }
+  },
+  "pattern_type": "Specific chart pattern type",
+  "risk_reward_ratio": "Estimated risk/reward ratio"
+}
+
+Rules:
+1. Always output valid JSON only.
+2. Fill numeric values where possible; if unavailable, use null.
+3. Include confidence_level, trend_strength, technical_indicators, ai_commentary.
+4. Do not include any explanations or extra text outside JSON.
+5. Include all components even if some are null.
+6. Provide concise, precise, and professional financial analysis.
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/2e7ca9-1756798207234.png
+Response  : {
+  "analysis": {
+    "current_trend": "short-term: upward; long-term: downward",
+    "trend_strength": "Moderate",
+    "chart_pattern": "Double Bottom",
+    "technical_indicators": {
+      "SMA": "Price crossing above SMA indicating short-term bullishness",
+      "EMA": "EMA converging with SMA, suggesting potential trend reversal",
+      "RSI": 45,
+      "MACD": "Bullish crossover observed",
+      "BollingerBands": "Price approaching upper band indicating increasing momentum"
+    },
+    "support_levels": [16.380, 16.400],
+    "resistance_levels": [16.440, 16.460],
+    "confidence_level": "75%",
+    "ai_commentary": "The recent bounce and crossing indicators suggest a potential reversal to the upside, supported by MACD and Bollinger Bands signals."
+  },
+  "prediction": "Likely to see further upward movement in the near term with potential retest of resistance levels.",
+  "trade_suggestions": {
+    "entry": {
+      "price": 16.410,
+      "reason": "Confirmation of bullish reversal signals and support at 16.400"
+    },
+    "recommendation": "BUY",
+    "take_profit": [
+      {
+        "price": 16.460,
+        "reason": "Near resistance level with strong bullish momentum"
+      }
+    ],
+    "stop_loss": {
+      "price": 16.385,
+      "reason": "Below recent support, limiting downside risk"
+    }
+  },
+  "pattern_type": "Double Bottom",
+  "risk_reward_ratio": "2:1"
+}
+
