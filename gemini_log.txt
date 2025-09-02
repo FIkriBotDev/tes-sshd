@@ -23123,3 +23123,13 @@ Response  : {
   "risk_reward_ratio": "2.5"
 }
 
+
+[2025-09-02T01:49:51.938Z]
+Prompt    : nasi kucing
+Image URL : https://uploader.exoduscloud.my.id/tmp/4f7e64-1756777788021.jpg
+Response  : Nasi kucing—literally "cat rice" in Indonesian—is a popular street snack, especially in Indonesia and Malaysia. It’s usually a small portion of rice served with a variety of toppings or sides, like sambal, fried chicken, satay, or shredded meat. The name comes from the idea that it’s just enough for a small, leftover-like portion—something a cat might nibble on. 
+
+It’s pretty much the perfect late-night snack—cheap, flavorful, and satisfying without overdoing it. And because it’s often served from street vendors, variations are plentiful, reflecting local flavors and preferences. 
+
+Are you craving it, or just curious about the name and concept?
+
