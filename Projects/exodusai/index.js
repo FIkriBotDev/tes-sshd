@@ -58,7 +58,7 @@ let userDocxMap = {}; // untuk menyimpan URL docx terakhir
 function getConversation(userId) {
     if (!userConversations[userId]) {
         const fileName = userId === '6287863293173@s.whatsapp.net' ? 'dika.json' :
-                         userId === '6287769811262@s.whatsapp.net' ? '/home/runner/work/tes-sshd/tes-sshd/fikri.json' :
+//                         userId === '6287769811262@s.whatsapp.net' ? '/home/runner/work/tes-sshd/tes-sshd/fikri.json' :
                          userId === '6287824613268@s.whatsapp.net' ? 'say.json' :
                          userId === '6283140117292@s.whatsapp.net' ? 'cece.json' :
                          userId === '6282269995370@s.whatsapp.net' ? 'sis.json' :
