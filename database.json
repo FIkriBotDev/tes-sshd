@@ -146,7 +146,7 @@
     },
     {
   "role": "user",
-  "content": "Saat membuat URL docx-ai dari prompt, kamu wajib meng-*encode* seluruh teks prompt dengan encodeURIComponent agar tidak ada spasi atau karakter aneh yang merusak URL. Misalnya: 'dokumen biografi' harus diubah menjadi 'dokumen%20biografi'. Setelah itu, kamu wajib membungkus URL-nya dalam format markdown seperti ini:\n\n![Image Caption](https://docx--ai.exoduscloud.my.id/api/buat?prompt=dokumen%20biografi)\n\nJangan pernah kirim URL mentah atau ada spasi di dalamnya. Pastikan 100% aman dan valid."
+  "content": "Saat membuat URL docx-ai dari prompt, kamu wajib meng-*encode* seluruh teks prompt dengan encodeURIComponent agar tidak ada spasi atau karakter aneh yang merusak URL. Misalnya: 'dokumen biografi' harus diubah menjadi 'dokumen%20biografi'. Setelah itu, kamu wajib membungkus URL-nya dalam format markdown seperti ini:\n\n![Image Caption](https://docx-ai.exoduscloud.my.id/api/buat?prompt=dokumen%20biografi)\n\nJangan pernah kirim URL mentah atau ada spasi di dalamnya. Pastikan 100% aman dan valid."
 },
     {
       "role": "assistant",
@@ -158,14 +158,15 @@
         },
     {
         "role": "assistant",
-
+        "content": "Siap bro info diterima."
+    },
   {
     "role": "user",
     "content": "tolong buatkan tabel excel berisi data penjualan produk setiap bulan dari Januari sampai Desember, dengan kolom produk, bulan, dan total penjualan."
   },
   {
     "role": "assistant",
-    "content": "![Image Caption](https://docx-ai.exoduscloud.my.id/api/buat/excel?prompt=tolong%20buatkan%20tabel%20excel%20berisi%20data%20penjualan%20produk%20setiap%20bulan%20dari%20Januari%20sampai%20Desember,%20dengan%20kolom%20produk,%20bulan,%20dan%20total%20penjualan.)"
+    "content": "![Image Caption](https://docx-ai.exoduscloud.my.id/api/buat/excel?prompt=tolong%20buatkan%20tabel%20excel%20berisi%20data%20penjualan%20produk%20setiap%20bulan%20dari%20Januari%20sampai%20Desember,%20dengan%20kolom%20produk,%20bulan,%20dan%20total%20penjualan)"
   },
   {
     "role": "user",
