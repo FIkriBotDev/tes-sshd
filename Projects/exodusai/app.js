@@ -83,15 +83,6 @@ function getMode(userId) {
     return userModes[userId] || 'chatbot';
 }
 
-// === Helper: Fix URL di response AI ===
-function fixUrls(text) {
-    if (!text) return text;
-    return text.replace(/!\[.*?\]\((.*?)\)/g, (match, url) => {
-        const safeUrl = encodeURI(url.trim()); // encode spasi & karakter aneh
-        return match.replace(url, safeUrl);
-    });
-}
-
 // === Start Bot with updated Baileys Auth ===
 async function startBot() {
     const { state, saveCreds } = await useMultiFileAuthState('./auth_info');
@@ -231,9 +222,9 @@ async function startBot() {
                 const chatbotData = await chatbotResponse.json();
                 let aiResponse = chatbotData.result;
 
+                // ✅ FIX: pastikan tidak ada https://localhost
                 aiResponse = aiResponse.replace(/https:\/\/localhost:/gi, 'http://localhost:');
                 aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id').trim();
-                aiResponse = fixUrls(aiResponse); // ✅ fix URL spasi
 
                 await sock.sendMessage(sender, { text: aiResponse });
                 conversation.push({ role: "assistant", content: aiResponse });
@@ -260,6 +251,7 @@ async function startBot() {
                 const data = await response.json();
                 let aiResponse = data.result;
 
+                // Tangani jika respons mengandung ![Document Caption](...)
                 const docxMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exoduscloud\.my\.id\/api\/buat\?[^)]+)\)/;
                 const matchDocx = docxMarkdownRegex.exec(aiResponse);
 
@@ -294,9 +286,11 @@ async function startBot() {
                     aiResponse = aiResponse.replace(excelMarkdownRegex, '').trim();
                 }
 
+                // ✅ FIX: pastikan tidak ada https://localhost
+                aiResponse = aiResponse.replace(/https:\/\/localhost:/gi, 'http://localhost:');
                 aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id').trim();
-                aiResponse = fixUrls(aiResponse); // ✅ fix URL spasi
 
+                // Tangani jika ada image markdown
                 const imageRegex = /!\[.*?\]\((https?:\/\/[^\s]+)\)/g;
                 const matchImage = imageRegex.exec(aiResponse);
 
@@ -307,6 +301,7 @@ async function startBot() {
                     if (textBefore.trim()) await sock.sendMessage(sender, { text: textBefore.trim() });
 
                     const imageBuffer = await fetch(imageUrl).then(res => res.buffer());
+
                     await sock.sendMessage(sender, {
                         image: imageBuffer,
                         caption: textAfter.trim()
