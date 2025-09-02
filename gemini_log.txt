@@ -23491,3 +23491,96 @@ Response  : {
   "risk_reward_ratio": "2:1"
 }
 
+
+[2025-09-02T07:32:41.442Z]
+Prompt    : 
+You are a professional financial chart analyst AI. Analyze the uploaded chart image carefully and provide your analysis strictly in valid JSON format only.
+
+The JSON must have this structure:
+{
+  "analysis": {
+    "current_trend": "short-term and long-term trend",
+    "trend_strength": "Strong/Moderate/Weak",
+    "chart_pattern": "Detected chart pattern",
+    "technical_indicators": {
+      "SMA": "cross info",
+      "EMA": "cross info",
+      "RSI": numeric value,
+      "MACD": "trend info",
+      "BollingerBands": "position info"
+    },
+    "support_levels": [list of numeric support levels],
+    "resistance_levels": [list of numeric resistance levels],
+    "confidence_level": "percentage confidence of main prediction",
+    "ai_commentary": "Concise text commentary"
+  },
+  "prediction": "Text describing expected next price movement",
+  "trade_suggestions": {
+    "entry": {
+      "price": numeric entry price,
+      "reason": "Reasoning for entry"
+    },
+    "recommendation": "BUY/SELL/HOLD",
+    "take_profit": [
+      {
+        "price": numeric TP level,
+        "reason": "Reasoning for TP"
+      }
+    ],
+    "stop_loss": {
+      "price": numeric SL level,
+      "reason": "Reasoning for SL"
+    }
+  },
+  "pattern_type": "Specific chart pattern type",
+  "risk_reward_ratio": "Estimated risk/reward ratio"
+}
+
+Rules:
+1. Always output valid JSON only.
+2. Fill numeric values where possible; if unavailable, use null.
+3. Include confidence_level, trend_strength, technical_indicators, ai_commentary.
+4. Do not include any explanations or extra text outside JSON.
+5. Include all components even if some are null.
+6. Provide concise, precise, and professional financial analysis.
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/28aeb1-1756798355323.png
+Response  : {
+  "analysis": {
+    "current_trend": "short-term uptrend fading into consolidation",
+    "trend_strength": "Moderate",
+    "chart_pattern": "Rising wedge",
+    "technical_indicators": {
+      "SMA": "short-term SMA crossing below long-term SMA",
+      "EMA": "EMA showing slight bearish crossover",
+      "RSI": 55,
+      "MACD": "Near zero, slight bearish shift",
+      "BollingerBands": "Price near upper band, indicating potential resistance"
+    },
+    "support_levels": [1320.00, 1305.00],
+    "resistance_levels": [1350.00, 1370.00],
+    "confidence_level": "70%",
+    "ai_commentary": "The stock shows signs of weakening after a brief rally, with technicals hinting at possible further downside."
+  },
+  "prediction": "Likely correction or sideways movement in the near term after recent gains.",
+  "trade_suggestions": {
+    "entry": {
+      "price": 1330.00,
+      "reason": "Current price near resistance with signals of weakening trend"
+    },
+    "recommendation": "HOLD",
+    "take_profit": [
+      {
+        "price": 1305.00,
+        "reason": "Support level providing downside target if correction occurs"
+      }
+    ],
+    "stop_loss": {
+      "price": 1340.00,
+      "reason": "Above recent highs to limit potential loss if trend turns bullish unexpectedly"
+    }
+  },
+  "pattern_type": "Rising wedge",
+  "risk_reward_ratio": "1:1.5"
+}
+
