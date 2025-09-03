@@ -23687,3 +23687,100 @@ Response  : {
   "alternatif": ["Cokelat black cocoa tanpa tambahan gula", "Snack buah kering", "Yogurt plain"]
 }
 
+
+[2025-09-03T03:03:20.914Z]
+Prompt    : 
+You are a professional financial chart analyst AI. Analyze the uploaded chart image carefully and provide your analysis strictly in valid JSON format only.
+
+The JSON must have this structure:
+{
+  "analysis": {
+    "current_trend": "short-term and long-term trend",
+    "trend_strength": "Strong/Moderate/Weak",
+    "chart_pattern": "Detected chart pattern",
+    "technical_indicators": {
+      "SMA": "cross info",
+      "EMA": "cross info",
+      "RSI": numeric value,
+      "MACD": "trend info",
+      "BollingerBands": "position info"
+    },
+    "support_levels": [list of numeric support levels],
+    "resistance_levels": [list of numeric resistance levels],
+    "confidence_level": "percentage confidence of main prediction",
+    "ai_commentary": "Concise text commentary"
+  },
+  "prediction": "Text describing expected next price movement",
+  "trade_suggestions": {
+    "entry": {
+      "price": numeric entry price,
+      "reason": "Reasoning for entry"
+    },
+    "recommendation": "BUY/SELL/HOLD",
+    "take_profit": [
+      {
+        "price": numeric TP level,
+        "reason": "Reasoning for TP"
+      }
+    ],
+    "stop_loss": {
+      "price": numeric SL level,
+      "reason": "Reasoning for SL"
+    }
+  },
+  "pattern_type": "Specific chart pattern type",
+  "risk_reward_ratio": "Estimated risk/reward ratio"
+}
+
+Rules:
+1. Always output valid JSON only.
+2. Fill numeric values where possible; if unavailable, use null.
+3. Include confidence_level, trend_strength, technical_indicators, ai_commentary.
+4. Do not include any explanations or extra text outside JSON.
+5. Include all components even if some are null.
+6. Provide concise, precise, and professional financial analysis.
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/816141-1756868583771.png
+Response  : {
+  "analysis": {
+    "current_trend": "Short-term bullish; Long-term neutral",
+    "trend_strength": "Moderate",
+    "chart_pattern": "No clear pattern",
+    "technical_indicators": {
+      "SMA": null,
+      "EMA": null,
+      "RSI": null,
+      "MACD": null,
+      "BollingerBands": null
+    },
+    "support_levels": [7700, 7600, 7550],
+    "resistance_levels": [8000, 8050, 8100],
+    "confidence_level": "60%",
+    "ai_commentary": "Price has bounced off recent support and closed near the 7,900s with near-term resistance around 8,000–8,050. A break above 8,050 could signal continuation; else risk remains for a pullback toward the 7,800 region."
+  },
+  "prediction": "Near-term bullish bias with a potential push above 8,000–8,050. If the resistance is breached, targets around 8,100+. If not, expect a pullback toward 7,900–7,800 before any new leg higher.",
+  "trade_suggestions": {
+    "entry": {
+      "price": 7898,
+      "reason": "Bounce from recent dip with upside momentum and proximity to minor resistance; risk defined below 7,800."
+    },
+    "recommendation": "BUY",
+    "take_profit": [
+      {
+        "price": 8000,
+        "reason": "Psychological/round-number resistance and near-term breakout level"
+      },
+      {
+        "price": 8100,
+        "reason": "Secondary resistance where partial profit could be booked if momentum continues"
+      }
+    ],
+    "stop_loss": {
+      "price": 7800,
+      "reason": "Below recent swing low to limit downside risk"
+    }
+  },
+  "pattern_type": "None",
+  "risk_reward_ratio": "1.04:1"
+}
+
