@@ -23784,3 +23784,96 @@ Response  : {
   "risk_reward_ratio": "1.04:1"
 }
 
+
+[2025-09-03T03:05:07.497Z]
+Prompt    : 
+You are a professional financial chart analyst AI. Analyze the uploaded chart image carefully and provide your analysis strictly in valid JSON format only.
+
+The JSON must have this structure:
+{
+  "analysis": {
+    "current_trend": "short-term and long-term trend",
+    "trend_strength": "Strong/Moderate/Weak",
+    "chart_pattern": "Detected chart pattern",
+    "technical_indicators": {
+      "SMA": "cross info",
+      "EMA": "cross info",
+      "RSI": numeric value,
+      "MACD": "trend info",
+      "BollingerBands": "position info"
+    },
+    "support_levels": [list of numeric support levels],
+    "resistance_levels": [list of numeric resistance levels],
+    "confidence_level": "percentage confidence of main prediction",
+    "ai_commentary": "Concise text commentary"
+  },
+  "prediction": "Text describing expected next price movement",
+  "trade_suggestions": {
+    "entry": {
+      "price": numeric entry price,
+      "reason": "Reasoning for entry"
+    },
+    "recommendation": "BUY/SELL/HOLD",
+    "take_profit": [
+      {
+        "price": numeric TP level,
+        "reason": "Reasoning for TP"
+      }
+    ],
+    "stop_loss": {
+      "price": numeric SL level,
+      "reason": "Reasoning for SL"
+    }
+  },
+  "pattern_type": "Specific chart pattern type",
+  "risk_reward_ratio": "Estimated risk/reward ratio"
+}
+
+Rules:
+1. Always output valid JSON only.
+2. Fill numeric values where possible; if unavailable, use null.
+3. Include confidence_level, trend_strength, technical_indicators, ai_commentary.
+4. Do not include any explanations or extra text outside JSON.
+5. Include all components even if some are null.
+6. Provide concise, precise, and professional financial analysis.
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/b4b611-1756868689377.png
+Response  : {
+  "analysis": {
+    "current_trend": "Short-term: uptrend; Long-term: uptrend",
+    "trend_strength": "Moderate",
+    "chart_pattern": "None detected",
+    "technical_indicators": {
+      "SMA": "No clear cross on 30m",
+      "EMA": "No clear cross on 30m",
+      "RSI": null,
+      "MACD": "No clear signal on current bar",
+      "BollingerBands": "Price near middle band with mild expansion"
+    },
+    "support_levels": [110000, 109000],
+    "resistance_levels": [112000, 113000],
+    "confidence_level": "62%",
+    "ai_commentary": "The price is in a cautious uptrend with near-term resistance around 112k. Break above 112k could open move toward 113k; a drop below 110k would challenge the bullish setup."
+  },
+  "prediction": "Near-term bullish continuation toward the 112k–113k zone. A breakout above 112k strengthens the case for 113k. Failure to clear 112k could lead to a pullback toward 110k.",
+  "trade_suggestions": {
+    "entry": {
+      "price": 111343,
+      "reason": "Uptrend continuation with higher highs and a recent pullback finding support near 111k"
+    },
+    "recommendation": "BUY",
+    "take_profit": [
+      {
+        "price": 112800,
+        "reason": "Approaches the immediate resistance area and prior consolidation"
+      }
+    ],
+    "stop_loss": {
+      "price": 110500,
+      "reason": "Protective stop below the recent swing low to limit risk"
+    }
+  },
+  "pattern_type": "None detected",
+  "risk_reward_ratio": "1.73"
+}
+
