@@ -23974,3 +23974,115 @@ Response  : {
   "risk_reward_ratio": "1.0"
 }
 
+
+[2025-09-03T04:09:16.686Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/518e65-1756872533458.webp
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan untuk konsumsi rutin",
+    "alasan": "Gula tinggi dan lemak total relatif signifikan pada satu cupcake standar; nilai gizi mikro cenderung rendah jika dibandingkan dengan kebutuhan harian. Sesekali sebagai camilan lebih tepat daripada bagian dari menu harian."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "1 cupcake standar (~50 g)",
+    "jumlahSajian": "1",
+    "kalori": 350,
+    "protein": "4 g",
+    "proteinPersen": "4.6%",
+    "karbohidrat": "42 g",
+    "karbohidratPersen": "48%",
+    "gula": "22 g",
+    "serat": "1.5 g",
+    "lemakTotal": "18 g",
+    "lemakJenuh": "8 g",
+    "lemakTakJenuh": "10 g",
+    "lemakPersen": "46%",
+    "kolesterol": "60 mg",
+    "natrium": "180 mg",
+    "vitaminDanMineral": ["Kalsium", "Zat Besi", "Magnesium", "Kalium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "18%" },
+    { "nama": "Gula", "persen": "88%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "sekitar 2-3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["tepung terigu", "gula pasir", "mentega", "telur", "coklat bubuk", "susu", "vanili", "garam", "coklat chip"],
+  "tipsSehat": [
+    "Kurangi gula tambahan pada adonan",
+    "Ganti sebagian tepung terigu dengan tepung almond atau oat untuk meningkatkan serat",
+    "Gunakan frosting rendah lemak atau cream cheese rendah lemak",
+    "Tambahkan buah segar sebagai topping untuk menambah serat dan vitamin"
+  ],
+  "alternatif": [
+    "cupcake gula rendah dengan frosting yogurt",
+    "parfait yogurt buah dengan sedikit cokelat chip cokelat tinggi persentase kakao",
+    "potong buah segar dengan saus coklat tipis dari coklat hitam 70%"
+  ]
+}
+
