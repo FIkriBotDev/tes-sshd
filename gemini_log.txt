@@ -24104,3 +24104,125 @@ Kalau Anda butuh fokus praktis, inilah beberapa langkah umum untuk melindungi di
 
 Mau saya jelaskan lebih lanjut tentang konteks tertentu (misalnya untuk penjelasan visual/design, atau cara membuat caption/penjelasan untuk konten)? Beri tahu arah yang Anda inginkan.
 
+
+[2025-09-05T14:29:42.417Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/d749c0-1757082543251.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak terlalu sering",
+    "alasan": "Mie goreng udang teriyaki cenderung tinggi kalori, lemak total, dan natrium akibat proses menggoreng dan penggunaan saus teriyaki yang mengandung gula serta natrium. Keberadaan sayuran dan protein udang memberi nilai gizi, tetapi perlu moderasi dan variasi versi rendah natrium/gula untuk dijadikan bagian pola makan rutin."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "sekitar 350-400 gram",
+    "jumlahSajian": "1",
+    "kalori": 700,
+    "protein": "26 g",
+    "proteinPersen": "14-15%",
+    "karbohidrat": "90 g",
+    "karbohidratPersen": "51%",
+    "gula": "14 g",
+    "serat": "4 g",
+    "lemakTotal": "20 g",
+    "lemakJenuh": "5 g",
+    "lemakTakJenuh": "15 g",
+    "lemakPersen": "25%",
+    "kolesterol": "170 mg",
+    "natrium": "1100 mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "35%" },
+    { "nama": "Gula", "persen": "20%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang",
+    "Natrium": "tinggi"
+  },
+  "waktuKenyang": "sekitar 2,5-3,5 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1-2x/minggu",
+  "ingredients": [
+    "Mie kuning/goreng",
+    "udang",
+    "bawang bombay",
+    "bawang putih",
+    "paprika/daun bawang",
+    "kol",
+    "saus teriyaki (gula + natrium)",
+    "minyak goreng"
+  ],
+  "tipsSehat": [
+    "Ganti mie putih dengan mie gandum atau biji-bijian utuh",
+    "Gunakan saus teriyaki rendah natrium atau buat sendiri dengan rendah gula",
+    "Tambahkan lebih banyak sayuran untuk serat dan volume tanpa banyak kalori",
+    "Gunakan sedikit minyak, atau masak dengan wajan non-stick"
+  ],
+  "alternatif": [
+    "Mie goreng sayuran tanpa minyak berlebih",
+    "Mie soba atau bihun dengan banyak sayuran dan protein tanpa saus manis berlebih",
+    "Nasi merah/menuik dengan lauk ikan panggang dan sayuran"
+  ]
+}
+
