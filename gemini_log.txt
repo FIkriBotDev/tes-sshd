@@ -24226,3 +24226,25 @@ Response  : {
   ]
 }
 
+
+[2025-09-06T03:08:58.592Z]
+Prompt    : lagi pkkmb
+Image URL : https://uploader.exoduscloud.my.id/tmp/700c99-1757128125291.jpg
+Response  : Gambaran singkatnya: PKKMB sedang berlangsung. Di panggung ada orang berdiri di podium dengan microphone, backdrop warna magenta putih, serta spanduk kampus di samping. Di sisi kanan terlihat panel jadwal acara.
+
+Beberapa ide buat kamu:
+
+- Caption media sosial (pilih yang needs tone-mu)
+  - Formal: PKKMB hari ini di Universitas Muhammadiyah. Sesi pengenalan kehidupan kampus, fasilitas, dan kesempatan kegiatan mahasiswa baru.
+  - Santai: Selamat datang mahasiswa baru! PKKMB hari ini penuh semangat dan informasi penting buat langkah awal di kampus.
+  - Singkat + emoji: PKKMB 2025 — siap memulai perjalanan kampus! 🎓✨
+  - Informatif: Pengenalan visi misi kampus, tata tertib, dan peluang kegiatan organisasi selama PKKMB.
+
+- Tips praktis buat PKKMB
+  - Bawa catatan, pulpen, botol minum, dan kartu identitas kampus.
+  - Siapkan beberapa pertanyaan untuk sesi tanya jawab (fasilitas, organisasi kemahasiswaan, beasiswa, dll).
+  - Catat kontak panitia atau akun resmi kampus untuk update jadwal.
+  - Jalin koneksi dengan teman sesama mahasiswa baru; bisa jadi jaringan hangat untuk tahun pertama.
+
+- Jika ingin, aku bisa bantu buatkan naskah singkat untuk pembicara, atau buat caption dengan nuansa khusus (lebih formal, lucu, atau inspiratif). Mau tone-nya seperti apa?
+
