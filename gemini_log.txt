@@ -24264,3 +24264,106 @@ Mau saya bantu dengan hal-hal berikut?
 - Tips foto supaya wajah kucing lebih jelas (cahaya natural, sudut pandang sejajar mata, fokus pada wajah).
 - Saran perawatan singkat kalau kamu khawatir soal kenyamanan kucing saat berjemur di luar.
 
+
+[2025-09-08T05:38:10.033Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/5d1b12-1757309852435.webp
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan dengan catatan",
+    "alasan": "Gula tinggi dan lemak jenuh tinggi per porsi; cocok sebagai camilan sesekali."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "100 g",
+    "jumlahSajian": "1",
+    "kalori": 420,
+    "protein": "5 g",
+    "proteinPersen": "4.76%",
+    "karbohidrat": "52 g",
+    "karbohidratPersen": "49.52%",
+    "gula": "38 g",
+    "serat": "2 g",
+    "lemakTotal": "22 g",
+    "lemakJenuh": "12 g",
+    "lemakTakJenuh": "6 g",
+    "lemakPersen": "47%",
+    "kolesterol": "60 mg",
+    "natrium": "250 mg",
+    "vitaminDanMineral": ["Kalsium", "Zat Besi", "Magnesium", "Vitamin A (minor)", "Vitamin B2"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "25%" },
+    { "nama": "Gula", "persen": "60%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "2–3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["Tepung terigu", "Gula pasir", "Cokelat bubuk", "Mentega", "Telur", "Susu", "Baking powder", "Vanili", "Cokelat chips"],
+  "tipsSehat": ["Ganti sebagian tepung dengan tepung gandum utuh, kurangi gula frosting, gunakan yogurt frosting rendah lemak atau buah sebagai topping", "Penyajian porsi lebih kecil dengan hiasan buah bisa mengurangi dampak gula dan kalori"],
+  "alternatif": ["Cupcake gandum utuh tanpa frosting tinggi gula", "Muffin pisang rendah gula dengan oat", "Yogurt parfait dengan potongan buah"]
+}
+
