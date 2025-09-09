@@ -1,0 +1,22 @@
+[
+  {
+    "id": "6d3b46b8-0ea3-46b0-8f8e-e5b557f598a3",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Mandi",
+    "date": "2025-09-10",
+    "time": "06:53",
+    "offsets": [
+      0
+    ],
+    "description": "saatnya mandi",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-09T23:52:06.990Z",
+    "sentLog": []
+  }
+]
