@@ -10,7 +10,7 @@ const { DateTime } = require('luxon');
 const { startBot, sendWhatsAppMessage, isReady } = require('./bot');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 6287;
 
 const USERS_DB = path.resolve('./db/database-login-user-reminder-app.json');
 const REM_DB = path.resolve('./db/database-schedule-reminder-app.json');
