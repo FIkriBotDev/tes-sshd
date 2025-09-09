@@ -6,7 +6,7 @@ const { Boom } = require('@hapi/boom');
 const path = require('path');
 
 const authFile = path.resolve('./auth_info/auth_info.json');
-const { state, saveState } = useSingleFileAuthState(authFile);
+const { state, saveState } = useMultiFileAuthState(authFile);
 
 let sock = null;
 let store = makeInMemoryStore({});
