@@ -1,1 +1,25 @@
-[]
+[
+  {
+    "id": "ba10b151-4c0d-43bd-8390-31f835a8e30b",
+    "userId": "0e6db09a-3d18-4eb2-9094-e4b9764114fc",
+    "username": "fikrifahrezi",
+    "userPhone": "6287769811262",
+    "title": "Makan",
+    "date": "2025-09-09",
+    "time": "16:40",
+    "offsets": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "description": "masak mie",
+    "location": "Dapur",
+    "category": "Makan",
+    "priority": "sedang",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-09T08:37:13.188Z",
+    "sentLog": []
+  }
+]
