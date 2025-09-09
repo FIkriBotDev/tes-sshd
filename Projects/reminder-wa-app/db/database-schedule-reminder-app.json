@@ -1,49 +1,5 @@
 [
   {
-    "id": "a2c92329-191e-49cd-8580-227816344ab8",
-    "userId": "0e6db09a-3d18-4eb2-9094-e4b9764114fc",
-    "username": "fikrifahrezi",
-    "userPhone": "6287769811262",
-    "title": "Shalat Ashar",
-    "date": "2025-09-09",
-    "time": "03:15",
-    "offsets": [
-      2,
-      1,
-      0
-    ],
-    "description": "Shalat Ashar",
-    "location": "Masjid",
-    "category": "Kewajiban",
-    "priority": "tinggi",
-    "repeat": "none",
-    "customDates": [],
-    "createdAt": "2025-09-09T07:11:04.808Z",
-    "sentLog": []
-  },
-  {
-    "id": "7cf346a9-99a1-47d2-b1d5-8c01c1ddb207",
-    "userId": "0e6db09a-3d18-4eb2-9094-e4b9764114fc",
-    "username": "fikrifahrezi",
-    "userPhone": "6287769811262",
-    "title": "Shalat Ashar",
-    "date": "2025-09-09",
-    "time": "02:15",
-    "offsets": [
-      2,
-      1,
-      0
-    ],
-    "description": "Shalat Ashar",
-    "location": "Masjid",
-    "category": "Kewajiban",
-    "priority": "tinggi",
-    "repeat": "none",
-    "customDates": [],
-    "createdAt": "2025-09-09T07:12:48.603Z",
-    "sentLog": []
-  },
-  {
     "id": "e63db07f-8ca3-4bab-9129-e89e4af8db48",
     "userId": "0e6db09a-3d18-4eb2-9094-e4b9764114fc",
     "username": "fikrifahrezi",
