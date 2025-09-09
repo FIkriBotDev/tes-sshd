@@ -10,7 +10,7 @@ const qrcode = require('qrcode-terminal');
 const path = require('path');
 
 // Lokasi penyimpanan auth
-const authFile = path.resolve('./auth_info');
+const authFile = path.resolve('./auth_info_reminder_bot');
 let sock = null;
 
 // Start bot
