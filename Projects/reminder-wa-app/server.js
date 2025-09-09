@@ -57,8 +57,9 @@ app.post('/register', async (req, res) => {
 
   const hashed = await bcrypt.hash(password, 10);
 
-  // Generate OTP
+  // Generate OTP 6 digit random
   const otp = Math.floor(100000 + Math.random() * 900000).toString();
+  const otpExpiry = Date.now() + (5 * 60 * 1000); // 5 menit berlaku
 
   // Simpan sementara di session
   req.session.pendingUser = { 
@@ -67,7 +68,8 @@ app.post('/register', async (req, res) => {
     phone, 
     password: hashed, 
     createdAt: new Date().toISOString(), 
-    otp 
+    otp, 
+    otpExpiry
   };
 
   // Kirim OTP ke WhatsApp
@@ -94,15 +96,22 @@ app.post('/verify-otp', async (req, res) => {
   if (!req.session.pendingUser) return res.redirect('/register');
 
   const { otp } = req.body;
-  if (otp === req.session.pendingUser.otp) {
+  const pending = req.session.pendingUser;
+
+  if (Date.now() > pending.otpExpiry) {
+    delete req.session.pendingUser;
+    return res.render('verify-otp', { error: 'Kode OTP sudah kedaluwarsa, silakan register ulang.' });
+  }
+
+  if (otp === pending.otp) {
     // OTP benar → simpan user ke DB
     const users = await readDB(USERS_DB);
     const newUser = {
-      id: req.session.pendingUser.id,
-      username: req.session.pendingUser.username,
-      phone: req.session.pendingUser.phone,
-      password: req.session.pendingUser.password,
-      createdAt: req.session.pendingUser.createdAt
+      id: pending.id,
+      username: pending.username,
+      phone: pending.phone,
+      password: pending.password,
+      createdAt: pending.createdAt
     };
     users.push(newUser);
     await writeDB(USERS_DB, users);
@@ -148,21 +157,25 @@ async function schedulerTick() {
 
     for (let rem of reminders) {
       const occurrences = [];
-      const baseDate = rem.date;
-      const time = rem.time;
       function pushOccurrence(dt) { occurrences.push(dt); }
 
       if (rem.repeat === 'none') {
         const dt = DateTime.fromISO(`${rem.date}T${rem.time}`, { zone: 'Asia/Jakarta' });
         if (dt.isValid) pushOccurrence(dt);
       } else if (rem.repeat === 'daily') {
-        const dt = DateTime.fromObject({ year: now.year, month: now.month, day: now.day, hour: Number(rem.time.split(':')[0]), minute: Number(rem.time.split(':')[1])}, { zone: 'Asia/Jakarta' });
+        const dt = DateTime.fromObject(
+          { year: now.year, month: now.month, day: now.day, hour: Number(rem.time.split(':')[0]), minute: Number(rem.time.split(':')[1]) }, 
+          { zone: 'Asia/Jakarta' }
+        );
         pushOccurrence(dt);
       } else if (rem.repeat === 'weekly') {
         const orig = DateTime.fromISO(`${rem.date}T${rem.time}`, { zone: 'Asia/Jakarta' });
         const origWeekday = orig.weekday;
         if (now.weekday === origWeekday) {
-          const dt = DateTime.fromObject({ year: now.year, month: now.month, day: now.day, hour: Number(rem.time.split(':')[0]), minute: Number(rem.time.split(':')[1])}, { zone: 'Asia/Jakarta' });
+          const dt = DateTime.fromObject(
+            { year: now.year, month: now.month, day: now.day, hour: Number(rem.time.split(':')[0]), minute: Number(rem.time.split(':')[1]) }, 
+            { zone: 'Asia/Jakarta' }
+          );
           pushOccurrence(dt);
         }
       } else if (rem.repeat === 'monthly') {
@@ -170,7 +183,10 @@ async function schedulerTick() {
         const day = orig.day;
         const lastDayOfMonth = DateTime.local(now.year, now.month).setZone('Asia/Jakarta').endOf('month').day;
         if (day <= lastDayOfMonth) {
-          const dt = DateTime.fromObject({ year: now.year, month: now.month, day, hour: Number(rem.time.split(':')[0]), minute: Number(rem.time.split(':')[1])}, { zone: 'Asia/Jakarta' });
+          const dt = DateTime.fromObject(
+            { year: now.year, month: now.month, day, hour: Number(rem.time.split(':')[0]), minute: Number(rem.time.split(':')[1]) }, 
+            { zone: 'Asia/Jakarta' }
+          );
           pushOccurrence(dt);
         }
       } else if (rem.repeat === 'custom') {
