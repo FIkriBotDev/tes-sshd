@@ -84,5 +84,28 @@
       "2025-09-10T01:00:00.000+07:00|2",
       "2025-09-10T01:00:00.000+07:00|0"
     ]
+  },
+  {
+    "id": "098c4bce-6bd3-4393-a9aa-03104a5fba6a",
+    "userId": "0e6db09a-3d18-4eb2-9094-e4b9764114fc",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Mandi",
+    "date": "2025-09-10",
+    "time": "05:15",
+    "offsets": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "description": "*Mandi!!!*",
+    "location": "Toilet",
+    "category": "Mandi",
+    "priority": "sedang",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-09T22:11:37.852Z",
+    "sentLog": []
   }
 ]
