@@ -23,5 +23,27 @@
     "customDates": [],
     "createdAt": "2025-09-09T15:35:17.624Z",
     "sentLog": []
+  },
+  {
+    "id": "fdb1547a-178a-4364-84e8-d1164360f895",
+    "userId": "0e6db09a-3d18-4eb2-9094-e4b9764114fc",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Shalat Subuh",
+    "date": "2025-09-10",
+    "time": "04:00",
+    "offsets": [
+      10,
+      5,
+      0
+    ],
+    "description": "Shalat",
+    "location": "Rumah",
+    "category": "Kewajiban",
+    "priority": "tinggi",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-09-09T15:36:14.798Z",
+    "sentLog": []
   }
 ]
