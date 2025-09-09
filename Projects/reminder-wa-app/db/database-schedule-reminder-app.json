@@ -42,5 +42,29 @@
     "customDates": [],
     "createdAt": "2025-09-09T07:12:48.603Z",
     "sentLog": []
+  },
+  {
+    "id": "e63db07f-8ca3-4bab-9129-e89e4af8db48",
+    "userId": "0e6db09a-3d18-4eb2-9094-e4b9764114fc",
+    "username": "fikrifahrezi",
+    "userPhone": "6287769811262",
+    "title": "Shalat Ashar",
+    "date": "2025-09-09",
+    "time": "14:17",
+    "offsets": [
+      2,
+      1,
+      0
+    ],
+    "description": "Shalat Ashar",
+    "location": "Masjid",
+    "category": "Kewajiban",
+    "priority": "tinggi",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-09T07:15:16.796Z",
+    "sentLog": [
+      "2025-09-09T14:17:00.000+07:00|2"
+    ]
   }
 ]
