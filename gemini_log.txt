@@ -24467,3 +24467,124 @@ Response  : {
   "alternatif": []
 }
 
+
+[2025-09-09T01:41:40.469Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/e7bd33-1757382056162.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan untuk konsumsi rutin",
+    "alasan": "Makanan ini tampak digoreng dengan adonan tepung pada sayuran hijau serta dilengkapi saus berwarna, sehingga cenderung tinggi kalori, lemak total (terutama lemak jenuh jika minyak baru/goreng ganda), dan natrium. Kandungan serat bisa moderat, tetapi risiko gula dari saus juga perlu diperhatikan. Cocok dikonsumsi sesekali dalam porsi sedang, bukan sebagai pilihan harian."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "sekitar 250 gram",
+    "jumlahSajian": "1 porsi",
+    "kalori": 600,
+    "protein": "12 g",
+    "proteinPersen": "8%",
+    "karbohidrat": "60 g",
+    "karbohidratPersen": "40%",
+    "gula": "12 g",
+    "serat": "4 g",
+    "lemakTotal": "36 g",
+    "lemakJenuh": "10 g",
+    "lemakTakJenuh": "26 g",
+    "lemakPersen": "54%",
+    "kolesterol": "120 mg",
+    "natrium": "1100 mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "20%" },
+    { "nama": "Natrium", "persen": "46%" },
+    { "nama": "Lemak Total", "persen": "52%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang",
+    "Lemak": "tinggi",
+    "Natrium": "tinggi"
+  },
+  "waktuKenyang": "sekitar 2-4 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1-2x/minggu",
+  "ingredients": [
+    "Daun sayuran hijau (mis. kale/spinach/bayam)",
+    "tepung terigu atau adonan tepung",
+    "telur (opsional)",
+    "minyak untuk menggoreng",
+    "saus berwarna oranye/pedas"
+  ],
+  "tipsSehat": [
+    "Goreng dengan jumlah minyak lebih sedikit atau panggang/oven",
+    "Ganti tepung putih dengan tepung gandum utuh atau tepung jagung untuk tekstur yang lebih sehat",
+    "Gunakan saus rendah gula atau yogurt sebagai saus pendamping",
+    "Tambahkan lebih banyak sayuran untuk serat dan volume"
+  ],
+  "alternatif": [
+    "Fritter sayuran panggang oven dengan sedikit minyak",
+    "Sayur tumis sederhana dengan bumbu minimal",
+    "Sup sayuran bergizi"
+  ]
+}
+
