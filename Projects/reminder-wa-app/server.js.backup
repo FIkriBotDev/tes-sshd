@@ -42,7 +42,6 @@ app.get('/', (req, res) => {
   res.redirect('/login');
 });
 
-// register view
 app.get('/register', (req, res) => res.render('register', { error: null, editing: false }));
 
 app.post('/register', async (req, res) => {
@@ -126,7 +125,6 @@ app.post('/verify-otp', async (req, res) => {
   }
 });
 
-// login
 app.get('/login', (req, res) => res.render('login', { error: null }));
 app.post('/login', async (req, res) => {
   const { phone, password } = req.body;
@@ -150,118 +148,6 @@ app.get('/dashboard', requireLogin, async (req, res) => {
   const userReminders = reminders.filter(r => r.userId === req.session.user.id);
   const tz = "Asia/Jakarta";
   res.render('dashboard', { reminders: userReminders, tz, user: req.session.user });
-});
-
-// ------------ Reminder CRUD (create/edit/delete) ------------
-
-// Show create form
-app.get('/reminder/create', requireLogin, (req, res) => {
-  res.render('create', { error: null });
-});
-
-// Handle create submission
-app.post('/reminder/create', requireLogin, async (req, res) => {
-  try {
-    const { title, date, time, offsets, description, location, category, priority, repeat, customDates } = req.body;
-    if (!title || !date || !time) return res.render('create', { error: 'Judul, tanggal, dan jam wajib diisi' });
-
-    const offsetsArr = (offsets || '').split(',').map(s => s.trim()).filter(Boolean).map(Number).filter(n => !isNaN(n));
-    if (!offsetsArr.includes(0)) offsetsArr.push(0);
-    offsetsArr.sort((a,b)=>b-a);
-
-    const reminders = await readDB(REM_DB);
-    const newRem = {
-      id: uuidv4(),
-      userId: req.session.user.id,
-      username: req.session.user.username,
-      userPhone: req.session.user.phone,
-      title,
-      date,
-      time,
-      offsets: offsetsArr,
-      description: description || '',
-      location: location || '',
-      category: category || '',
-      priority: priority || 'sedang',
-      repeat: repeat || 'none',
-      customDates: customDates ? customDates.split(',').map(s=>s.trim()).filter(Boolean) : [],
-      createdAt: new Date().toISOString(),
-      sentLog: []
-    };
-    reminders.push(newRem);
-    await writeDB(REM_DB, reminders);
-    res.redirect('/dashboard');
-  } catch (e) {
-    console.error(e);
-    res.render('create', { error: 'Gagal buat reminder' });
-  }
-});
-
-// Show edit form
-app.get('/reminder/edit/:id', requireLogin, async (req, res) => {
-  const reminders = await readDB(REM_DB);
-  const rem = reminders.find(r => r.id === req.params.id && r.userId === req.session.user.id);
-  if (!rem) return res.redirect('/dashboard');
-  res.render('edit', { reminder: rem, error: null });
-});
-
-// Handle edit submission
-app.post('/reminder/edit/:id', requireLogin, async (req, res) => {
-  const reminders = await readDB(REM_DB);
-  const idx = reminders.findIndex(r => r.id === req.params.id && r.userId === req.session.user.id);
-  if (idx === -1) return res.redirect('/dashboard');
-  const { title, date, time, offsets, description, location, category, priority, repeat, customDates } = req.body;
-  const offsetsArr = (offsets || '').split(',').map(s => s.trim()).filter(Boolean).map(Number).filter(n => !isNaN(n));
-  if (!offsetsArr.includes(0)) offsetsArr.push(0);
-  reminders[idx] = {
-    ...reminders[idx],
-    title, date, time,
-    offsets: offsetsArr,
-    description: description || '',
-    location: location || '',
-    category: category || '',
-    priority: priority || 'sedang',
-    repeat: repeat || 'none',
-    customDates: customDates ? customDates.split(',').map(s=>s.trim()).filter(Boolean) : []
-  };
-  await writeDB(REM_DB, reminders);
-  res.redirect('/dashboard');
-});
-
-// Delete reminder
-app.post('/reminder/delete/:id', requireLogin, async (req, res) => {
-  let reminders = await readDB(REM_DB);
-  reminders = reminders.filter(r => !(r.id === req.params.id && r.userId === req.session.user.id));
-  await writeDB(REM_DB, reminders);
-  res.redirect('/dashboard');
-});
-
-// ------------ Settings (update username / phone) ------------
-app.get('/settings', requireLogin, async (req, res) => {
-  const users = await readDB(USERS_DB);
-  const user = users.find(u => u.id === req.session.user.id);
-  // reuse register view for editing
-  res.render('register', { error: null, editing: true, user });
-});
-
-app.post('/settings', requireLogin, async (req, res) => {
-  const { username, phone } = req.body;
-  if (!username || !phone) return res.send('Lengkapi');
-  if (!/^62\d{6,15}$/.test(phone)) return res.send('Format WA harus 628xxxxxxx');
-  const users = await readDB(USERS_DB);
-  const idx = users.findIndex(u => u.id === req.session.user.id);
-  if (idx === -1) return res.redirect('/login');
-  users[idx].username = username;
-  users[idx].phone = phone;
-  await writeDB(USERS_DB, users);
-  // update session
-  req.session.user.username = username;
-  req.session.user.phone = phone;
-  // also update reminders' userPhone for consistent sending
-  const reminders = await readDB(REM_DB);
-  reminders.forEach(r => { if (r.userId === req.session.user.id) r.userPhone = phone; });
-  await writeDB(REM_DB, reminders);
-  res.redirect('/dashboard');
 });
 
 // ------------ Scheduler ------------
@@ -355,7 +241,6 @@ setInterval(schedulerTick, 20 * 1000);
 // start WhatsApp bot
 startBot().catch(e => console.error('Start bot failed', e));
 
-// start server
 app.listen(PORT, () => {
   console.log(`Server berjalan di http://localhost:${PORT}`);
 });
