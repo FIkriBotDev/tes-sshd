@@ -68,5 +68,25 @@
     "customDates": [],
     "createdAt": "2025-09-09T15:37:56.530Z",
     "sentLog": []
+  },
+  {
+    "id": "1ead8673-db9b-46a2-9e95-34101a57cc73",
+    "userId": "931e1f57-2d28-4fa9-8e26-d60eb6a0239e",
+    "username": "ExodusAI",
+    "userPhone": "6285150984232",
+    "title": "Tidur Woy",
+    "date": "2025-09-09",
+    "time": "22:44",
+    "offsets": [
+      0
+    ],
+    "description": "*Tidur Woy!!!*",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-09T15:43:05.514Z",
+    "sentLog": []
   }
 ]
