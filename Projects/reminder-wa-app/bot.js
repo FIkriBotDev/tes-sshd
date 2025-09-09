@@ -1,5 +1,6 @@
 // bot.js
-const { default: makeWASocket, useSingleFileAuthState, DisconnectReason, makeInMemoryStore, fetchLatestBaileysVersion } = require('@adiwajshing/baileys');
+//const { default: makeWASocket, useSingleFileAuthState, DisconnectReason, makeInMemoryStore, fetchLatestBaileysVersion } = require('@adiwajshing/baileys');
+const { default: makeWASocket, useMultiFileAuthState, DisconnectReason } = require('@whiskeysockets/baileys')
 const qrcode = require('qrcode-terminal');
 const { Boom } = require('@hapi/boom');
 const path = require('path');
