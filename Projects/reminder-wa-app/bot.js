@@ -3,20 +3,15 @@ const {
   default: makeWASocket,
   useMultiFileAuthState,
   DisconnectReason,
-  makeInMemoryStore,
   fetchLatestBaileysVersion
 } = require('@whiskeysockets/baileys');
 
 const qrcode = require('qrcode-terminal');
-const { Boom } = require('@hapi/boom');
 const path = require('path');
 
 // Lokasi penyimpanan auth
 const authFile = path.resolve('./auth_info');
 let sock = null;
-
-// Inisialisasi store untuk menyimpan state
-let store = makeInMemoryStore({});
 
 // Start bot
 async function startBot() {
@@ -33,8 +28,6 @@ async function startBot() {
       auth: state,
       printQRInTerminal: true
     });
-
-    store.bind(sock.ev);
 
     sock.ev.on('connection.update', (update) => {
       const { connection, lastDisconnect, qr } = update;
