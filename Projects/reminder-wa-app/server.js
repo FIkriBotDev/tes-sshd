@@ -16,8 +16,8 @@ const USERS_DB = path.resolve('./db/database-login-user-reminder-app.json');
 const REM_DB = path.resolve('./db/database-schedule-reminder-app.json');
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, 'views-reminder-app'));
+app.use('/public', express.static(path.join(__dirname, 'public-reminder-app')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
   secret: 'rahasia-reminder-app',
