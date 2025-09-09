@@ -45,5 +45,28 @@
     "customDates": [],
     "createdAt": "2025-09-09T15:36:14.798Z",
     "sentLog": []
+  },
+  {
+    "id": "9edb0fcb-a321-4994-8152-dcd38f60d269",
+    "userId": "0e6db09a-3d18-4eb2-9094-e4b9764114fc",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Batas jam tidur",
+    "date": "2025-09-10",
+    "time": "01:00",
+    "offsets": [
+      30,
+      10,
+      2,
+      0
+    ],
+    "description": "Tidur!! jangan begadang!",
+    "location": "Rumah",
+    "category": "Tidur",
+    "priority": "sedang",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-09T15:37:56.530Z",
+    "sentLog": []
   }
 ]
