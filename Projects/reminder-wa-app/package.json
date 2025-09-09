@@ -6,7 +6,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "@adiwajshing/baileys": "^4.4.0",
+    "@whiskeysockets/baileys": "^7.0.0-rc.2",
     "baileys": "^7.0.0-rc.2",
     "bcrypt": "^5.1.0",
     "body-parser": "^2.2.0",
