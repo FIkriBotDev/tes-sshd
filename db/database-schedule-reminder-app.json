@@ -78,5 +78,30 @@
     "customDates": [],
     "createdAt": "2025-09-10T00:58:51.153Z",
     "sentLog": []
+  },
+  {
+    "id": "2bfdf7e8-90d9-49f6-a0f4-22bd5d618071",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Shalat Shubuh",
+    "date": "2025-09-11",
+    "time": "04:00",
+    "offsets": [
+      30,
+      20,
+      10,
+      5,
+      1,
+      0
+    ],
+    "description": "*Waktunya shalat shubuh*",
+    "location": "Masjid",
+    "category": "Kewajiban",
+    "priority": "tinggi",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-09-10T00:59:37.125Z",
+    "sentLog": []
   }
 ]
