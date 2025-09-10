@@ -127,32 +127,5 @@
     "customDates": [],
     "createdAt": "2025-09-10T01:01:29.832Z",
     "sentLog": []
-  },
-  {
-    "id": "002ff25c-0dd4-4329-a3d6-860882a042e1",
-    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
-    "username": "Muhammad Fikri Fahrezi",
-    "userPhone": "6287769811262",
-    "title": "Meeting di kantor",
-    "date": "2025-09-10",
-    "time": "10:25",
-    "offsets": [
-      3,
-      2,
-      1,
-      0
-    ],
-    "description": "*Meeting di kantor*",
-    "location": "Kantor",
-    "category": "Meeting",
-    "priority": "sedang",
-    "repeat": "none",
-    "customDates": [],
-    "createdAt": "2025-09-10T03:23:04.932Z",
-    "sentLog": [
-      "2025-09-10T10:25:00.000+07:00|2",
-      "2025-09-10T10:25:00.000+07:00|1",
-      "2025-09-10T10:25:00.000+07:00|0"
-    ]
   }
 ]
