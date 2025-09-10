@@ -325,9 +325,8 @@ async function schedulerTick() {
               const title = rem.title;
               const hhmm = occ.toFormat('HH:mm');
               const dateStr = occ.toFormat('dd/LL/yyyy');
-              const header = offset === 0 ? `Halo ${rem.username || ''} 👋\n\n🔔 REMINDER! 🔔\n\nSekarang sudah jam ${hhmm} waktunya ${rem.title || '-'}.\n\n✨ Kegiatan: ${rem.title || '-'}\n📅 Tanggal: ${dateStr}\n⏰ Waktu: ${hhmm}\n📍 Lokasi: ${rem.location || '-'}\n\n💡 Catatan: ${rem.description || '-'}`;
-              //const message = `Halo ${rem.username || ''},\n${header}\nTanggal: ${dateStr}\nWaktu: ${hhmm}\nLokasi: ${rem.location || '-'}\nCatatan: ${rem.description || '-'}`;
-              const message = `Halo ${rem.username || ''} 👋\n\n🔔 REMINDER! 🔔\n\n✨ Kegiatan: ${rem.title || '-'}\n📅 Tanggal: ${dateStr}\n⏰ Waktu: ${hhmm}\n📍 Lokasi: ${rem.location || '-'}\n\n💡 Catatan: ${rem.description || '-'}`;
+              const header = offset === 0 ? `Sekarang sudah jam ${hhmm}.` : `Kegiatan "${title}" akan dimulai pada ${hhmm}.`;
+              const message = `Halo ${rem.username || ''},\n${header}\nTanggal: ${dateStr}\nWaktu: ${hhmm}\nLokasi: ${rem.location || '-'}\nCatatan: ${rem.description || '-'}`;
               (async ()=>{
                 try {
                   if (isReady()) {
