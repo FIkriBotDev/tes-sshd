@@ -1,0 +1,22 @@
+[
+  {
+    "id": "81ab174a-86f1-467e-8ecc-582ab504de6c",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "a",
+    "date": "0001-01-01",
+    "time": "01:01",
+    "offsets": [
+      0
+    ],
+    "description": "",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-10T02:11:05.932Z",
+    "sentLog": []
+  }
+]
