@@ -134,5 +134,26 @@
       "2025-09-10T11:20:00.000+07:00|1",
       "2025-09-10T11:20:00.000+07:00|0"
     ]
+  },
+  {
+    "id": "31d998d7-7f14-4684-b03b-cd447b8cc933",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Makan Sore",
+    "date": "2025-09-10",
+    "time": "15:20",
+    "offsets": [
+      10,
+      0
+    ],
+    "description": "*Makan sore*",
+    "location": "Rumah",
+    "category": "Makan",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-09-10T06:43:13.787Z",
+    "sentLog": []
   }
 ]
