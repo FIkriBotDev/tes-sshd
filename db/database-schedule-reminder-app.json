@@ -83,7 +83,9 @@
     "repeat": "daily",
     "customDates": [],
     "createdAt": "2025-09-10T00:58:51.153Z",
-    "sentLog": []
+    "sentLog": [
+      "2025-09-10T18:20:00.000+07:00|0"
+    ]
   },
   {
     "id": "2bfdf7e8-90d9-49f6-a0f4-22bd5d618071",
@@ -228,6 +230,8 @@
     "repeat": "none",
     "customDates": [],
     "createdAt": "2025-09-10T11:15:53.714Z",
-    "sentLog": []
+    "sentLog": [
+      "2025-09-10T18:20:00.000+07:00|0"
+    ]
   }
 ]
