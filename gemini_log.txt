@@ -24588,3 +24588,41 @@ Response  : {
   ]
 }
 
+
+[2025-09-10T03:36:15.526Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/9c3ab0-1757475357706.jpg
+Response  : Wah, gambarnya nunjukin tiga jendela/jendela kecil yang terkait dengan fitur reminder via WhatsApp. Intinya sistemnya bisa bikin pengingat dari UI web, lalu dikirim ke WA lewat bot ExodusAI. Ini breakdown singkatnya:
+
+- Edit Reminder (atas kiri)
+  - Judul/Kegiatan: Belajar Python
+  - Tanggal: 10/09/2025
+  - Jam: 10.35
+  - Notifikasi/Reminder: misalnya 10,5,1 (mungkin berarti 10 menit, 5 menit, dsb sebelum waktu)
+  - Deskripsi/Catatan: Mengerjakan latihan soal data science
+  - Lokasi: -
+  - Kategori/Tag: Coding
+  - Prioritas: Sedang
+  - Repeat: Mingguan
+
+- Dashboard (bawah kiri)
+  - Ringkasannya: timezone Asia/Jakarta, nomor terdaftar, reminder “Belajar Python” (sedang), waktu 10:35, catatan sama seperti di atas
+  - Ada tombol “Buat Reminder” untuk menambah yang baru
+
+- WhatsApp chat (kanan)
+  - Percakapan dengan ExodusAI (business account)
+  - Pesan notifikasi REMINDER:
+    - Kegiatan: Belajar Python
+    - Tanggal: 10/09/2025
+    - Waktu: 10:35
+    - Catatan: Mengerjakan latihan soal data science
+  - Ada label “Halo Muhammad Fikri Fahrezi” dan beberapa info status bot (online, dsb)
+
+Gimana kalau saya bantu dengan beberapa opsi selanjutnya?
+- Mau saya jelaskan cara mengubah waktu/timezone atau mengatur ulang pengingat (misalnya jadi harian, mingguan)?
+- Mau saya bantu menjelaskan arti “Notifikasi/Reminder” (10,5,1) atau cara mengaktifkan/menonaktifkan notifikasi?
+- Ingin saya bantu memastikan semua data terisi benar sebelum mengirim reminder pertama?
+- Butuh saran peningkatan UI/UX, misalnya menampilkan konfirmasi ketika pengingat berhasil dibuat, preview isi notifikasi, atau opsi tes pengingat sekarang?
+
+Kalau ada bagian yang ingin kamu fokuskan (misalnya pengaturan kapan notifikasinya muncul, atau bagaimana cara menghubungkan bot ke WA), kasih tahu saja ya. Saya bisa pandu langkah demi langkah.
+
