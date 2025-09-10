@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Verifikasi OTP - Reminder App</title>
+  <link rel="stylesheet" href="/public/style.css">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f8f9fa; }
+    .container { max-width: 400px; margin: 80px auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+    h2 { text-align: center; margin-bottom: 20px; }
+    .error { color: red; text-align: center; margin-bottom: 10px; }
+    input[type="text"] { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; text-align: center; font-size: 18px; letter-spacing: 5px; }
+    button { width: 100%; padding: 10px; background: #007bff; border: none; color: white; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    .info { text-align: center; font-size: 14px; color: #555; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Verifikasi OTP</h2>
+    <% if (error) { %>
+      <div class="error"><%= error %></div>
+    <% } %>
+    <form method="POST" action="/verify-otp">
+      <input type="text" name="otp" placeholder="Masukkan 6 digit OTP" maxlength="6" required>
+      <button type="submit">Verifikasi</button>
+    </form>
+    <div class="info">Kode OTP sudah dikirim ke WhatsApp kamu. Berlaku 5 menit.</div>
+  </div>
+</body>
+</html>
