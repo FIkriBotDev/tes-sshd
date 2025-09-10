@@ -183,5 +183,29 @@
     "customDates": [],
     "createdAt": "2025-09-10T06:44:15.634Z",
     "sentLog": []
+  },
+  {
+    "id": "298843bb-5d83-4059-8edf-ca3008146663",
+    "userId": "fde0b2ea-8a6b-4d4b-9754-53243050d863",
+    "username": "Dino",
+    "userPhone": "6285735098913",
+    "title": "Test",
+    "date": "2025-09-10",
+    "time": "17:03",
+    "offsets": [
+      2,
+      1,
+      0
+    ],
+    "description": "test",
+    "location": "Rumah",
+    "category": "Rutinitas",
+    "priority": "tinggi",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-10T10:01:27.523Z",
+    "sentLog": [
+      "2025-09-10T17:03:00.000+07:00|2"
+    ]
   }
 ]
