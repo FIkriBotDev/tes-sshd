@@ -1,0 +1,22 @@
+[
+  {
+    "id": "501ff961-20c0-4bd6-8f86-20450e7c4ca7",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Belajar Python",
+    "date": "2025-09-10",
+    "time": "10:35",
+    "offsets": [
+      0
+    ],
+    "description": "*Mengerjakan latihan soal data science*",
+    "location": "-",
+    "category": "Coding",
+    "priority": "sedang",
+    "repeat": "weekly",
+    "customDates": [],
+    "createdAt": "2025-09-10T03:33:00.679Z",
+    "sentLog": []
+  }
+]
