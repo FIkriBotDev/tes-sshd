@@ -113,7 +113,7 @@
     "userPhone": "6287769811262",
     "title": "Makan Siang",
     "date": "2025-09-10",
-    "time": "13:15",
+    "time": "11:20",
     "offsets": [
       5,
       3,
@@ -128,6 +128,8 @@
     "repeat": "daily",
     "customDates": [],
     "createdAt": "2025-09-10T01:01:29.832Z",
-    "sentLog": []
+    "sentLog": [
+      "2025-09-10T11:20:00.000+07:00|3"
+    ]
   }
 ]
