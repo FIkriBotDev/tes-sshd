@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "d727fe45-5bf0-4a17-a843-2b3cfe960cec",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Shalat Dhuhur",
+    "date": "2025-09-10",
+    "time": "11:00",
+    "offsets": [
+      0
+    ],
+    "description": "*Waktunya shalat dhuhur*",
+    "location": "Masjid",
+    "category": "Kewajiban",
+    "priority": "tinggi",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-09-10T00:56:50.621Z",
+    "sentLog": []
+  }
+]
