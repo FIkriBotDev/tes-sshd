@@ -127,5 +127,31 @@
     "customDates": [],
     "createdAt": "2025-09-10T01:01:29.832Z",
     "sentLog": []
+  },
+  {
+    "id": "9e04a254-451a-4739-b453-04bf420992ef",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Mandi",
+    "date": "2025-09-10",
+    "time": "08:20",
+    "offsets": [
+      10,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "description": "*Waktunya mandi!!*",
+    "location": "Rumah",
+    "category": "Mandi",
+    "priority": "sedang",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-10T01:02:28.061Z",
+    "sentLog": []
   }
 ]
