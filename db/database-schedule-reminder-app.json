@@ -155,5 +155,26 @@
     "customDates": [],
     "createdAt": "2025-09-10T06:43:13.787Z",
     "sentLog": []
+  },
+  {
+    "id": "7a1aeeb2-9d44-419e-bef4-6bbd7f7c899a",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Tidur",
+    "date": "2025-09-10",
+    "time": "22:00",
+    "offsets": [
+      10,
+      0
+    ],
+    "description": "*Waktunya tidur*",
+    "location": "Rumah",
+    "category": "Tidur",
+    "priority": "tinggi",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-09-10T06:44:15.634Z",
+    "sentLog": []
   }
 ]
