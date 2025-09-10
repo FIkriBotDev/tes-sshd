@@ -1,22 +1,165 @@
 [
   {
-    "id": "81ab174a-86f1-467e-8ecc-582ab504de6c",
+    "id": "d727fe45-5bf0-4a17-a843-2b3cfe960cec",
     "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
     "username": "Muhammad Fikri Fahrezi",
     "userPhone": "6287769811262",
-    "title": "a",
-    "date": "0001-01-01",
-    "time": "01:01",
+    "title": "Shalat Dhuhur",
+    "date": "2025-09-10",
+    "time": "11:00",
     "offsets": [
       0
     ],
-    "description": "",
-    "location": "",
-    "category": "",
+    "description": "*Waktunya shalat dhuhur*",
+    "location": "Masjid",
+    "category": "Kewajiban",
+    "priority": "tinggi",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-09-10T00:56:50.621Z",
+    "sentLog": []
+  },
+  {
+    "id": "c66b2d8b-e084-4455-bd10-818c6526d613",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Shalat Ashar",
+    "date": "2025-09-10",
+    "time": "14:25",
+    "offsets": [
+      0
+    ],
+    "description": "*Waktunya shalat ashar*",
+    "location": "Masjid",
+    "category": "Kewajiban",
+    "priority": "tinggi",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-09-10T00:57:30.156Z",
+    "sentLog": []
+  },
+  {
+    "id": "772f974d-547f-4c4d-95f2-e349346c5244",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Shalat Maghrib",
+    "date": "2025-09-10",
+    "time": "17:00",
+    "offsets": [
+      0
+    ],
+    "description": "*Waktunya shalat maghrib*",
+    "location": "Masjid",
+    "category": "Kewajiban",
+    "priority": "tinggi",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-09-10T00:58:00.885Z",
+    "sentLog": []
+  },
+  {
+    "id": "5d223329-ef7c-4ef6-b05c-64b174e671c6",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Shalat Isya",
+    "date": "2025-09-10",
+    "time": "18:20",
+    "offsets": [
+      0
+    ],
+    "description": "*Waktunya shalat ashar*",
+    "location": "Masjid",
+    "category": "Kewajiban",
+    "priority": "tinggi",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-09-10T00:58:51.153Z",
+    "sentLog": []
+  },
+  {
+    "id": "2bfdf7e8-90d9-49f6-a0f4-22bd5d618071",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Shalat Shubuh",
+    "date": "2025-09-11",
+    "time": "04:00",
+    "offsets": [
+      30,
+      20,
+      10,
+      5,
+      1,
+      0
+    ],
+    "description": "*Waktunya shalat shubuh*",
+    "location": "Masjid",
+    "category": "Kewajiban",
+    "priority": "tinggi",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-09-10T00:59:37.125Z",
+    "sentLog": []
+  },
+  {
+    "id": "f5363b98-d7d0-4192-830b-6e7d2b38e44b",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Makan Siang",
+    "date": "2025-09-10",
+    "time": "13:15",
+    "offsets": [
+      5,
+      3,
+      2,
+      1,
+      0
+    ],
+    "description": "*Waktunya makan siang*",
+    "location": "Rumah",
+    "category": "Makan",
+    "priority": "tinggi",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-09-10T01:01:29.832Z",
+    "sentLog": []
+  },
+  {
+    "id": "9e04a254-451a-4739-b453-04bf420992ef",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Mandi",
+    "date": "2025-09-10",
+    "time": "08:20",
+    "offsets": [
+      10,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "description": "*Waktunya mandi!!*",
+    "location": "Rumah",
+    "category": "Mandi",
     "priority": "sedang",
     "repeat": "none",
     "customDates": [],
-    "createdAt": "2025-09-10T02:11:05.932Z",
-    "sentLog": []
+    "createdAt": "2025-09-10T01:02:28.061Z",
+    "sentLog": [
+      "2025-09-10T08:20:00.000+07:00|10",
+      "2025-09-10T08:20:00.000+07:00|5",
+      "2025-09-10T08:20:00.000+07:00|4",
+      "2025-09-10T08:20:00.000+07:00|3",
+      "2025-09-10T08:20:00.000+07:00|2",
+      "2025-09-10T08:20:00.000+07:00|1",
+      "2025-09-10T08:20:00.000+07:00|0"
+    ]
   }
 ]
