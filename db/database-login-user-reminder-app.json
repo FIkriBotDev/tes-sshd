@@ -5,5 +5,12 @@
     "phone": "6287769811262",
     "password": "$2b$10$PPIqvvF17..rfRuKETS40O1lso6Z9cU.6u7XvvEWGcL6Ly6TYrROG",
     "createdAt": "2025-09-09T23:50:26.404Z"
+  },
+  {
+    "id": "41191e83-0f1e-4b3f-a9d3-c97720eb02e6",
+    "username": "ExodusAI",
+    "phone": "6285150984232",
+    "password": "$2b$10$5zYBVFWgiYsNni0QrNHnPeti3KgjlZR6pDp6PvGlA8KYOc7K0X8l.",
+    "createdAt": "2025-09-10T03:45:43.014Z"
   }
 ]
