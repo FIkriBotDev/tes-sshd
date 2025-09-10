@@ -61,7 +61,9 @@
     "repeat": "daily",
     "customDates": [],
     "createdAt": "2025-09-10T00:58:00.885Z",
-    "sentLog": []
+    "sentLog": [
+      "2025-09-10T17:00:00.000+07:00|0"
+    ]
   },
   {
     "id": "5d223329-ef7c-4ef6-b05c-64b174e671c6",
