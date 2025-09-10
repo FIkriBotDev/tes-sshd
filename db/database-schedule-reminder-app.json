@@ -58,5 +58,25 @@
     "customDates": [],
     "createdAt": "2025-09-10T00:58:00.885Z",
     "sentLog": []
+  },
+  {
+    "id": "5d223329-ef7c-4ef6-b05c-64b174e671c6",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Shalat Isya",
+    "date": "2025-09-10",
+    "time": "18:20",
+    "offsets": [
+      0
+    ],
+    "description": "*Waktunya shalat ashar*",
+    "location": "Masjid",
+    "category": "Kewajiban",
+    "priority": "tinggi",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-09-10T00:58:51.153Z",
+    "sentLog": []
   }
 ]
