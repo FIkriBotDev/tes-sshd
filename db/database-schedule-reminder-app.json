@@ -18,5 +18,25 @@
     "customDates": [],
     "createdAt": "2025-09-10T00:56:50.621Z",
     "sentLog": []
+  },
+  {
+    "id": "c66b2d8b-e084-4455-bd10-818c6526d613",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Muhammad Fikri Fahrezi",
+    "userPhone": "6287769811262",
+    "title": "Shalat Ashar",
+    "date": "2025-09-10",
+    "time": "14:25",
+    "offsets": [
+      0
+    ],
+    "description": "*Waktunya shalat ashar*",
+    "location": "Masjid",
+    "category": "Kewajiban",
+    "priority": "tinggi",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-09-10T00:57:30.156Z",
+    "sentLog": []
   }
 ]
