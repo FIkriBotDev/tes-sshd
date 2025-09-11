@@ -19,5 +19,12 @@
     "phone": "6285735098913",
     "password": "$2b$10$EFBGjUao63MBqwOQRPxVE.F6xzL84CbMC/qnQnFX/8I/e.iRsMIoG",
     "createdAt": "2025-09-10T10:00:31.702Z"
+  },
+  {
+    "id": "cf671a13-7153-4381-8d02-222ca8761e0d",
+    "username": "1",
+    "phone": "62812312312312",
+    "password": "$2b$10$EWB4PnkRLT52R9iKp3anoOG.OZWAM1snEfe7JXbSvc4zcOcSDS.pK",
+    "createdAt": "2025-09-11T10:44:59.136Z"
   }
 ]
