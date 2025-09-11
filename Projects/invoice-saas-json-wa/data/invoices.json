@@ -10,6 +10,17 @@
       "status": "paid",
       "created_at": "2025-08-29T02:13:55.884Z",
       "next_schedule": null
+    },
+    {
+      "id": "inv_2Z9Nb1HF",
+      "customer_name": "Muhammad Fikri Fahrezi",
+      "customer_whatsapp": "6287769811262",
+      "items": [],
+      "total": 11000,
+      "type": "once",
+      "status": "paid",
+      "created_at": "2025-09-11T06:30:27.024Z",
+      "next_schedule": null
     }
   ]
 }
