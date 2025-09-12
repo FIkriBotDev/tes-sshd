@@ -2367,3 +2367,7 @@
   "message": "invalid json response body at https://text.pollinations.ai/openai reason: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
   "type": "invalid-json"
 }
+[2025-09-12T04:53:19.857Z] Error processing image: {
+  "message": "invalid json response body at https://text.pollinations.ai/openai reason: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+  "type": "invalid-json"
+}
