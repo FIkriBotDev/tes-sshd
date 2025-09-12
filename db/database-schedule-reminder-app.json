@@ -281,5 +281,30 @@
     "sentLog": [
       "2025-09-10T18:20:00.000+07:00|0"
     ]
+  },
+  {
+    "id": "2f432c9a-16d8-4b41-99ee-ecac96d0a065",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Fikri",
+    "userPhone": "6287769811262",
+    "title": "Zoom Pengukuhan Maba",
+    "date": "2025-09-13",
+    "time": "06:00",
+    "offsets": [
+      40,
+      30,
+      20,
+      10,
+      5,
+      0
+    ],
+    "description": "*Jangan lupa hari ini ada jadwal zoom pengukuhan maba!!*",
+    "location": "Zoom Meeting",
+    "category": "Meeting",
+    "priority": "tinggi",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-12T21:25:12.526Z",
+    "sentLog": []
   }
 ]
