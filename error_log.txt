@@ -2363,3 +2363,7 @@
 [2025-09-11T06:45:45.821Z] Error processing image: {}
 [2025-09-11T06:46:35.954Z] Error processing image: {}
 [2025-09-11T10:33:06.408Z] Error processing image: {}
+[2025-09-12T04:45:35.448Z] Error processing image: {
+  "message": "invalid json response body at https://text.pollinations.ai/openai reason: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+  "type": "invalid-json"
+}
