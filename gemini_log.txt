@@ -24658,3 +24658,18 @@ Saya bisa bantu dengan berbagai hal setelah Anda mengunggah gambarnya, misalnya:
 
 Silakan unggah gambar atau jelaskan apa yang ingin Anda ketahui tentangnya. Apakah ada bagian tertentu yang ingin difokuskan?
 
+
+[2025-09-13T08:00:35.293Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exoduscloud.my.id/tmp/100136-1757750428792.jpg
+Response  : Saya tidak bisa membuka URL gambar secara langsung di sini. Bisa tolong unggah gambar itu langsung di chat ini atau tempelkan isi gambar tersebut?
+
+Kalau kamu unggah gambar, saya bisa bantu:
+- Memberi deskripsi visual singkat (apa yang terlihat, objek utama, suasana)
+- Mengidentifikasi objek/aktivitas yang ada
+- Membaca teks yang ada di gambar dan menerjemahkannya jika perlu
+- Menilai komposisi, kontras, fokus, dan saran perbaikan
+- Menafsirkan maksud atau tema gambar
+
+Kalau kamu punya fokus tertentu (misalnya ingin tahu objek apa saja, atau ada teks yang perlu diterjemahkan), beri tahu ya.
+
