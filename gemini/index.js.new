@@ -92,18 +92,12 @@ app.get("/api/gemini-image", async (req, res) => {
             throw new Error("Pollinations API tidak mengembalikan JSON");
         }
 
-        let responseText;
-        if (data.error) {
-            fs.appendFileSync("error_gemini_web.txt", `[${new Date().toISOString()}] API Error:\n${JSON.stringify(data, null, 2)}\n\n`);
-            throw new Error("Pollinations API mengembalikan error");
-        } else if (typeof data === "string") {
-            responseText = data.trim();
-        } else if (data.choices && data.choices[0]?.message?.content) {
-            responseText = data.choices[0].message.content.trim();
-        } else {
-            fs.appendFileSync("error_gemini_web.txt", `[${new Date().toISOString()}] Invalid structure:\n${JSON.stringify(data, null, 2)}\n\n`);
+        if (!data.choices || !data.choices[0]?.message?.content) {
+            fs.appendFileSync("error_gemini_web.txt", `[${new Date().toISOString()}] Invalid structure:\n${rawResponse}\n\n`);
             throw new Error("Respons tidak valid dari Pollinations API");
         }
+
+        const responseText = data.choices[0].message.content.trim();
 
         // Log request dan hasil ke gemini_log.txt
         const logEntry = `
