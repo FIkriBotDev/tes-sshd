@@ -9,29 +9,24 @@ const port = 8009;
 
 app.use(cors());
 
-// helper: normalisasi berbagai bentuk message.content menjadi string
+// helper: normalisasi berbagai bentuk message.content jadi string
 function normalizeMessageContent(content) {
     if (content == null) return "";
     if (typeof content === "string") return content;
     if (Array.isArray(content)) {
         return content.map(item => {
-            if (item == null) return "";
+            if (!item) return "";
             if (typeof item === "string") return item;
             if (typeof item === "object") {
                 if (typeof item.text === "string") return item.text;
-                if (item.type === "image_url" && item.image_url && item.image_url.url) return `[image: ${item.image_url.url}]`;
-                // some providers put nested content
-                if (Array.isArray(item.content)) return normalizeMessageContent(item.content);
-                // fallback to JSON
-                try { return JSON.stringify(item); } catch (e) { return String(item); }
+                if (item.type === "image_url" && item.image_url?.url) return `[image: ${item.image_url.url}]`;
+                return JSON.stringify(item);
             }
             return String(item);
         }).join(" ");
     }
-    if (typeof content === "object") {
-        if (typeof content.text === "string") return content.text;
-        if (Array.isArray(content.parts)) return content.parts.join(" ");
-        try { return JSON.stringify(content); } catch (e) { return String(content); }
+    if (typeof content === "object" && typeof content.text === "string") {
+        return content.text;
     }
     return String(content);
 }
@@ -45,7 +40,7 @@ console.error = function (...args) {
     originalConsoleError.apply(console, args);
 };
 
-// Endpoint YouTube Summary (masih pakai Gemini)
+// Endpoint YouTube Summary (pakai Gemini)
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
@@ -81,7 +76,7 @@ app.get("/api/ytsummarize", async (req, res) => {
     }
 });
 
-// Endpoint /api/gemini-image (gunakan Pollinations + logging ke gemini_log.txt)
+// Endpoint /api/gemini-image
 app.get("/api/gemini-image", async (req, res) => {
     const imageUrl = req.query.url;
     const textPrompt = req.query.text || "Jelaskan gambar ini";
@@ -91,8 +86,6 @@ app.get("/api/gemini-image", async (req, res) => {
     }
 
     try {
-        // Kirim request sebagai satu string agar tidak memicu error pada pihak Pollinations
-        // (sebelumnya mengirim array objek pada message.content --> kemungkinan penyebab internal .trim error)
         const pollinationsRes = await fetch("https://text.pollinations.ai/openai", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -101,8 +94,10 @@ app.get("/api/gemini-image", async (req, res) => {
                 messages: [
                     {
                         role: "user",
-                        // gabungkan prompt dan image URL jadi satu string
-                        content: `${textPrompt}\n\nImage URL: ${imageUrl}`
+                        content: [
+                            { type: "text", text: textPrompt },
+                            { type: "image_url", image_url: { url: imageUrl } }
+                        ]
                     }
                 ],
                 max_tokens: 300
@@ -126,7 +121,6 @@ app.get("/api/gemini-image", async (req, res) => {
         } else if (typeof data === "string") {
             responseText = data.trim();
         } else if (data.choices && data.choices[0]?.message?.content !== undefined) {
-            // normalisasi berbagai bentuk message.content (string | array | object)
             const rawContent = data.choices[0].message.content;
             responseText = normalizeMessageContent(rawContent).trim();
         } else {
