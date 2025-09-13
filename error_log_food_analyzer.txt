@@ -264,3 +264,13 @@
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async file:///home/runner/work/tes-sshd/tes-sshd/Projects/kalori/index.js:125:26
 
+[2025-09-13T02:20:26.439Z] AxiosError: Request failed with status code 500
+    at settle (file:///home/runner/work/tes-sshd/tes-sshd/Projects/kalori/node_modules/axios/lib/core/settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (file:///home/runner/work/tes-sshd/tes-sshd/Projects/kalori/node_modules/axios/lib/adapters/http.js:599:11)
+    at IncomingMessage.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (file:///home/runner/work/tes-sshd/tes-sshd/Projects/kalori/node_modules/axios/lib/core/Axios.js:45:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///home/runner/work/tes-sshd/tes-sshd/Projects/kalori/index.js:125:26
+
