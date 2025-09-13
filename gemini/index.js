@@ -82,9 +82,18 @@ app.get("/api/gemini-image", async (req, res) => {
             })
         });
 
-        const data = await pollinationsRes.json();
+        const rawResponse = await pollinationsRes.text();
+
+        let data;
+        try {
+            data = JSON.parse(rawResponse);
+        } catch (e) {
+            fs.appendFileSync("error_gemini_web.txt", `[${new Date().toISOString()}] RAW Response (parse error):\n${rawResponse}\n\n`);
+            throw new Error("Pollinations API tidak mengembalikan JSON");
+        }
 
         if (!data.choices || !data.choices[0]?.message?.content) {
+            fs.appendFileSync("error_gemini_web.txt", `[${new Date().toISOString()}] Invalid structure:\n${rawResponse}\n\n`);
             throw new Error("Respons tidak valid dari Pollinations API");
         }
 
