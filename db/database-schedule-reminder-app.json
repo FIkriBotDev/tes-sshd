@@ -313,5 +313,28 @@
       "2025-09-13T06:00:00.000+07:00|5",
       "2025-09-13T06:00:00.000+07:00|0"
     ]
+  },
+  {
+    "id": "2f498141-a118-4364-ad1c-98e073b5a719",
+    "userId": "fde0b2ea-8a6b-4d4b-9754-53243050d863",
+    "username": "Dino",
+    "userPhone": "6285735098913",
+    "title": "Test",
+    "date": "2025-09-13",
+    "time": "07:35",
+    "offsets": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "description": "*Test*",
+    "location": "Test",
+    "category": "Test",
+    "priority": "sedang",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-13T00:23:20.267Z",
+    "sentLog": []
   }
 ]
