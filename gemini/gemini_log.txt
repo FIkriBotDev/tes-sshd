@@ -98,3 +98,113 @@ Response  : {
   "alternatif": []
 }
 
+
+[2025-09-13T02:30:26.732Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exoduscloud.my.id/tmp/74f7a1-1757730615496.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak bisa dinilai secara akurat",
+    "alasan": "Gambar tidak dapat diakses atau dianalisis melalui URL yang diberikan dalam percakapan ini"
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "tidak tersedia",
+    "jumlahSajian": "tidak tersedia",
+    "kalori": 0,
+    "protein": "0 g",
+    "proteinPersen": "0%",
+    "karbohidrat": "0 g",
+    "karbohidratPersen": "0%",
+    "gula": "0 g",
+    "serat": "0 g",
+    "lemakTotal": "0 g",
+    "lemakJenuh": "0 g",
+    "lemakTakJenuh": "0 g",
+    "lemakPersen": "0%",
+    "kolesterol": "0 mg",
+    "natrium": "0 mg",
+    "vitaminDanMineral": ["tidak dapat diidentifikasi"]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "0%" },
+    { "nama": "Gula", "persen": "0%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tidak dapat dinilai",
+    "Lemak": "tidak dapat dinilai"
+  },
+  "waktuKenyang": "tidak bisa diprediksi",
+  "frekuensiKonsumsi": "tidak bisa direkomendasikan tanpa identifikasi bahan",
+  "ingredients": ["tidak dapat diidentifikasi"],
+  "tipsSehat": [
+    "Unggah gambar langsung di chat atau berikan deskripsi rinci bahan utama.",
+    "Setelah gambar dapat dianalisis, saya bisa memberikan rekomendasi nutrisi yang lebih akurat."
+  ],
+  "alternatif": [
+    "Alternatif lebih sehat secara umum jika ingin pilihan yang lebih seimbang: buah segar, yogurt tanpa gula tambahan, sayuran mentah atau dipanggang, sumber protein tanpa lemak seperti dada ayam tanpa kulit atau kacang-kacangan, biji-bijian utuh (quinoa, beras merah).",
+    "Kurangi makanan dengan gula tambahan dan natrium tinggi jika tujuan Anda adalah peningkatan kualitas nutrisi."
+  ],
+  "catatanTambahan": "Silakan unggah gambar secara langsung atau berikan deskripsi rinci tentang isi piring (jenis makanan, ukuran porsi, metode memasak) agar analisis bisa dilakukan dengan rinci dan akurat."
+}
+
