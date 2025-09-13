@@ -5,26 +5,5 @@
     "phone": "6287769811262",
     "password": "$2b$10$PPIqvvF17..rfRuKETS40O1lso6Z9cU.6u7XvvEWGcL6Ly6TYrROG",
     "createdAt": "2025-09-09T23:50:26.404Z"
-  },
-  {
-    "id": "41191e83-0f1e-4b3f-a9d3-c97720eb02e6",
-    "username": "ExodusAI",
-    "phone": "6285150984232",
-    "password": "$2b$10$5zYBVFWgiYsNni0QrNHnPeti3KgjlZR6pDp6PvGlA8KYOc7K0X8l.",
-    "createdAt": "2025-09-10T03:45:43.014Z"
-  },
-  {
-    "id": "fde0b2ea-8a6b-4d4b-9754-53243050d863",
-    "username": "Dino",
-    "phone": "6285735098913",
-    "password": "$2b$10$EFBGjUao63MBqwOQRPxVE.F6xzL84CbMC/qnQnFX/8I/e.iRsMIoG",
-    "createdAt": "2025-09-10T10:00:31.702Z"
-  },
-  {
-    "id": "cf671a13-7153-4381-8d02-222ca8761e0d",
-    "username": "1",
-    "phone": "62812312312312",
-    "password": "$2b$10$EWB4PnkRLT52R9iKp3anoOG.OZWAM1snEfe7JXbSvc4zcOcSDS.pK",
-    "createdAt": "2025-09-11T10:44:59.136Z"
   }
 ]
