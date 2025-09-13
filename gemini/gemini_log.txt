@@ -325,3 +325,108 @@ Prompt    : gambar apa ini?
 Image URL : https://www.adira.co.id/img/frontend/news/thumb_10rekomendasiwisatapantaiterbaikdiindonesiajpg.jpg
 Response  : Menurut nama filenya, gambar ini adalah thumbnail berita dari situs Adira (adira.co.id) berjudul “10 rekomendasi wisata pantai terbaik di Indonesia.” Jadi topiknya tentang 10 pantai terbaik di Indonesia. Visualnya kemungkinan berupa foto pantai/tropis, mungkin dengan teks judul di overlay-nya. Namun saya tidak bisa melihat isi gambar secara langsung dari URL ini. Jika Anda bisa mengunggah gambar atau menyalin isi judul/teks di gambar, saya bisa memberi deskripsi yang lebih rinci.
 
+
+[2025-09-13T04:24:42.344Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+
+Image URL : https://www.pastisania.com/storage/app/media/posts/87.webp
+Response  : Saya tidak bisa melihat isi gambar secara langsung lewat chat ini, jadi saya tidak bisa mengenali dengan pasti jenis makanan atau menghitung nutrisinya hanya dari gambar. Jika Anda bisa memberi data pendukung (misalnya label gizi, daftar bahan, ukuran porsi dalam gram, atau deskripsi bahan utama dan cara masaknya), saya bisa menghitung analisis lengkap seperti yang Anda minta. Di bawah ini saya sertakan kerangka analisis lengkap yang akan saya pakai, beserta cara menghitungnya. Anda bisa mengisi bagian data yang relevan, nanti saya lengkapi dengan nilai-nilai dan evaluasi.
+
+1) Deskripsi atau skor kesehatan keseluruhan
+- Deskripsi singkat: misalnya bagaimana keseimbangan komponen (protein, karbo, lemak), kehadiran sayuran, tingkat pengolahan (gorengan, saus tinggi gula, lemak jenuh), bahan tambahan (garam, saus tinggi natrium), dan ukuran porsi.
+- Penilaian sehat secara umum (skala 1–10): berikan skor berdasarkan kriteria
+  - Keseimbangan makronutrien (protein cukup, karbohidrat dari sumber kompleks, lemak sehat)
+  - Banyaknya sayuran/serat
+  - Tingkat olahan dan asupan natrium/gula tambahan
+  - Ukuran porsi yang wajar untuk sekali makan
+- Catatan penting: analisis berbasis gambar memiliki keterbatasan (porsinya bisa tidak akurat, bahan perasa dan minyak bisa tidak terlihat jelas).
+
+2) Apakah direkomendasikan atau tidak dan alasannya
+- Rekomendasi: Ya / Tidak (berdasarkan kriteria kesehatan umum)
+- Alasannya:
+  - Jika serba sayur, protein cukup, dan lemak sehat mendominasi: lebih direkomendasikan
+  - Jika banyak gorengan, saus tinggi gula/natrium, porsi besar, atau kurang serat: perlu kehati-hatian
+  - Pertimbangkan konteks diet spesifik Anda (mis. rendah garam, rendah gula, tinggi protein, dll)
+
+3) Rincian nutrisi
+Data yang diperlukan (silakan isi sesuai data yang Anda miliki; jika tidak ada, saya bisa bantu memperkirakan dengan asumsi yang wajar setelah Anda memberi konteks):
+- Kalori per sajian (kcal)
+- Takaran saji (gram)
+- Jumlah sajian (jika pada gambar terlihat beberapa porsi, tuliskan jumlahnya)
+- Protein (gram) dan persentase terhadap kalori
+  - Perhitungan: persentase = (protein_g * 4) / total_kcal * 100
+- Karbohidrat total (gram)
+  - Gula (gram)
+  - Serat (gram)
+  - Persentase terhadap kalori karbohidrat: total_karbohidrat_kcal = karbohidrat_g * 4; persentase karbohidrat terhadap total kalori = (karbohidarat_g * 4) / total_kcal * 100
+- Lemak total (gram)
+  - Lemak jenuh (gram)
+  - Lemak tak jenuh (gram)
+  - Persentase terhadap kalori: total_lemak_kcal = fat_g * 9; persentase lemak terhadap total kalori = (fat_g * 9) / total_kcal * 100
+- Kolesterol (mg)
+- Natrium (mg)
+
+4) Vitamin dan mineral yang terkandung
+- Daftar vitamin/mineral utama yang terlihat atau diindikasikan oleh bahan (contoh umum):
+  - Vitamin A, Vitamin C, Vitamin D, Vitamin K, Vitamin E, B kompleks (B1, B2, B3, B6, B12, folat)
+  - Mineral: kalsium, zat besi, magnesium, kalium, fosfor, seng
+- Catatan: nilai rinci vitamin/mineral sangat bergantung pada bahan spesifik dan metode pengolahan. Jika Anda punya data dari label gizi atau perkiraan berbasis bahan, tulisnya akan saya konversi ke angka aktual per sajian.
+
+Cara saya menghitung jika Anda memberi data
+- Ambil data dari label gizi atau perkiraan:
+  - Total kalori per sajian (kcal)
+  - Berat satu sajian (gram)
+  - Protein, karbohidrat total, lemak total (gram)
+  - Lemak jenuh (gram)
+  - Kolesterol (mg)
+  - Natrium (mg)
+  - Serat, gula (gram)
+  - Vitamin/mineral jika tersedia
+- Hitung proporsi kalori dari makronutrien:
+  - Kalori dari protein = protein_g * 4
+  - Kalori dari karbohidrat = karbohidrat_g * 4
+  - Kalori dari lemak = fat_g * 9
+  - Verifikasi bahwa jumlah kalori dari makronutrien mendekati total kalori (selisih kecil bisa wajar karena alkohol/komponen lain tidak umum pada makanan biasa)
+- Hitung persentase:
+  - Protein: (protein_g * 4) / total_kcal * 100
+  - Karbohidrat: (karbohidrat_g * 4) / total_kcal * 100
+  - Lemak: (fat_g * 9) / total_kcal * 100
+- Nilai tambah:
+  - Natrium dan kolesterol dalam mg
+  - Serat dan gula sebagai bagian dari karbohidrat total
+- Vitamin/mineral akan dilaporkan jika data tersedia; jika tidak, saya bisa menjelaskan kemungkinan sumbernya berdasarkan bahan utama.
+
+Catatan penting
+- Menggambar nutrisi yang akurat hanya dari gambar sangat terbatas. Banyak faktor yang tidak terlihat jelas: porsi pasti, bumbu/saus yang menambah kalori dan natrium, minyak yang diserap saat penggorengan, serta bahan rahasia.
+- Jika Anda ingin hasil yang akurat, sertakan label gizi, daftar bahan, atau ukuran porsi yang jelas. Saya bisa mengubah data tersebut menjadi analisis komprehensif seperti yang Anda minta.
+- Jika Anda ingin, Anda bisa mengisi data berikut (bila tersedia) dan saya akan menghitung lengkap:
+  - Total kalori (kcal) per sajian
+  - Takaran saji (gram) per sajian
+  - Jumlah sajian
+  - Protein (g)
+  - Karbohidrat total (g)
+  - Gula (g)
+  - Serat (g)
+  - Lemak total (g)
+  - Lemak jenuh (g)
+  - Lemak tak jenuh (g)
+  - Kolesterol (mg)
+  - Natrium (mg)
+  - Vitamin/mineral yang terdeteksi (jika ada)
+
+Jika Anda bisa memberikan beberapa data pendukung (deskripsi bahan utama, ukuran porsi dalam gram, atau label gizi), saya akan langsung mengeluarkan analisis lengkap 4 bagian sesuai permintaan.
+
