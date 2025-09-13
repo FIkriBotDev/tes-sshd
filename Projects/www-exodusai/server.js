@@ -14,23 +14,17 @@ if (!fs.existsSync(visitorLogPath)) {
   fs.writeFileSync(visitorLogPath, "0", "utf-8");
 }
 
-// Middleware untuk melayani file statis
-app.use(express.static(path.join(__dirname, "public-www-exodusai")));
-
-// Route default -> index.html
-app.get("/", (req, res) => {
-  // Baca jumlah visitor saat ini
-  let count = parseInt(fs.readFileSync(visitorLogPath, "utf-8")) || 0;
+// Middleware logging visitor setiap ada request ke "/"
+app.get("/", (req, res, next) => {
+  let count = parseInt(fs.readFileSync(visitorLogPath, "utf-8").trim()) || 0;
   count += 1;
-
-  // Tulis kembali ke file
   fs.writeFileSync(visitorLogPath, count.toString(), "utf-8");
-
   console.log(`Visitor ke-${count} baru masuk.`);
-
-  // Kirim index.html
-  res.sendFile(path.join(__dirname, "public-www-exodusai", "index.html"));
+  next(); // lanjutkan ke static/index.html
 });
+
+// Middleware untuk melayani file statis dari folder public-www-exodusai
+app.use(express.static(path.join(__dirname, "public-www-exodusai")));
 
 app.listen(PORT, () => {
   console.log(`ExodusAI Web Server running at http://localhost:${PORT}`);
