@@ -60,17 +60,17 @@ const GEMINI_KEYS = [
     process.env.GEMINI_KEY_1,
     process.env.GEMINI_KEY_2,
     process.env.GEMINI_KEY_3
+    //process.env.GEMINI_KEY_4
 ].filter(Boolean);
 
-// generateContent dengan fallback
-async function generateWithGemini(contents) {
+async function generateWithGemini(promptParts) {
     let lastError;
     for (let i = 0; i < GEMINI_KEYS.length; i++) {
         const key = GEMINI_KEYS[i];
         try {
             const genAI = new GoogleGenerativeAI(key);
             const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
-            const result = await model.generateContent({ contents });
+            const result = await model.generateContent(promptParts);
             return result.response.text().trim();
         } catch (err) {
             lastError = err;
@@ -84,7 +84,6 @@ async function generateWithGemini(contents) {
 // helper: ambil image URL jadi base64 (untuk Gemini Vision)
 async function fetchImageAsBase64(url) {
     const res = await fetch(url);
-    if (!res.ok) throw new Error(`Gagal fetch gambar: ${res.status} ${res.statusText}`);
     const buffer = await res.arrayBuffer();
     return Buffer.from(buffer).toString("base64");
 }
@@ -99,20 +98,15 @@ app.get("/api/ytsummarize", async (req, res) => {
 
     try {
         const responseText = await generateWithGemini([
-            {
-                role: "user",
-                parts: [
-                    { text: `Ringkas video ini dengan format berikut:
+            `Ringkas video ini dengan format berikut:
 
-[Ringkasan Video]
-<Deskripsi umum tentang isi video>
+            [Ringkasan Video]
+            <Deskripsi umum tentang isi video>
 
-[Timeline]
-00:00:05 - <Deskripsi peristiwa pertama>
-00:01:00 - <Deskripsi peristiwa kedua>
-00:02:30 - <Deskripsi peristiwa berikutnya>` }
-                ]
-            }
+            [Timeline]
+            00:00:05 - <Deskripsi peristiwa pertama>
+            00:01:00 - <Deskripsi peristiwa kedua>
+            00:02:30 - <Deskripsi peristiwa berikutnya>`
         ]);
 
         const jsonResponse = parseTextToJson(responseText);
@@ -124,7 +118,7 @@ app.get("/api/ytsummarize", async (req, res) => {
     }
 });
 
-// Endpoint /api/gemini-image (gunakan Pollinations, fallback ke Gemini Vision)
+// Endpoint /api/gemini-image (gunakan Pollinations, fallback ke Gemini)
 app.get("/api/gemini-image", async (req, res) => {
     const imageUrl = req.query.url;
     const textPrompt = req.query.text || "Jelaskan gambar ini";
@@ -195,8 +189,7 @@ Response  : ${responseText}
         return res.json({
             creator: "@Fikri",
             status: true,
-            result: responseText,
-            source: "pollinations"
+            result: responseText
         });
     } catch (error) {
         console.error("Error Pollinations:", error.message);
@@ -208,8 +201,8 @@ Response  : ${responseText}
                 {
                     role: "user",
                     parts: [
-                        { inlineData: { mimeType: "image/jpeg", data: base64Img } },
-                        { text: textPrompt }
+                        { text: textPrompt },
+                        { inlineData: { mimeType: "image/jpeg", data: base64Img } }
                     ]
                 }
             ]);
