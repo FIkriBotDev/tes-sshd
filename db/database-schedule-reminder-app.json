@@ -288,5 +288,25 @@
     "customDates": [],
     "createdAt": "2025-09-14T09:02:39.197Z",
     "sentLog": []
+  },
+  {
+    "id": "45b7a904-aa7a-4a32-a62a-7432eb56824f",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Fikri",
+    "userPhone": "6287769811262",
+    "title": "*Test*",
+    "date": "2025-09-15",
+    "time": "02:00",
+    "offsets": [
+      0
+    ],
+    "description": "*Test aja*",
+    "location": "Rumah",
+    "category": "test",
+    "priority": "sedang",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-14T15:12:22.625Z",
+    "sentLog": []
   }
 ]
