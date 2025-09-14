@@ -69,7 +69,7 @@ async function generateWithGemini(contents) {
         const key = GEMINI_KEYS[i];
         try {
             const genAI = new GoogleGenerativeAI(key);
-            const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+            const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
             const result = await model.generateContent({ contents });
             return result.response.text().trim();
         } catch (err) {
