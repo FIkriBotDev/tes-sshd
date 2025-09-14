@@ -16,3 +16,9 @@
   "status": 404
 }
 
+[2025-09-14T06:16:22.147Z] API Error:
+{
+  "error": "Model not found: claude-hybridspace",
+  "status": 404
+}
+
