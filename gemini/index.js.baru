@@ -19,14 +19,11 @@ function normalizeMessageContent(content) {
             if (typeof item === "string") return item;
             if (typeof item === "object") {
                 if (typeof item.text === "string") return item.text;
-                if (item.type === "image_url" && item.image_url && item.image_url.url)
-                    return `[image: ${item.image_url.url}]`;
+                if (item.type === "image_url" && item.image_url && item.image_url.url) return `[image: ${item.image_url.url}]`;
+                // some providers put nested content
                 if (Array.isArray(item.content)) return normalizeMessageContent(item.content);
-                try {
-                    return JSON.stringify(item);
-                } catch (e) {
-                    return String(item);
-                }
+                // fallback to JSON
+                try { return JSON.stringify(item); } catch (e) { return String(item); }
             }
             return String(item);
         }).join(" ");
@@ -34,11 +31,7 @@ function normalizeMessageContent(content) {
     if (typeof content === "object") {
         if (typeof content.text === "string") return content.text;
         if (Array.isArray(content.parts)) return content.parts.join(" ");
-        try {
-            return JSON.stringify(content);
-        } catch (e) {
-            return String(content);
-        }
+        try { return JSON.stringify(content); } catch (e) { return String(content); }
     }
     return String(content);
 }
@@ -46,13 +39,13 @@ function normalizeMessageContent(content) {
 // Log error ke file
 const originalConsoleError = console.error;
 console.error = function (...args) {
-    const message = args.map(a => (typeof a === "string" ? a : JSON.stringify(a, null, 2))).join(" ");
+    const message = args.map(a => (typeof a === 'string' ? a : JSON.stringify(a, null, 2))).join(' ');
     const logEntry = `[${new Date().toISOString()}] ${message}\n`;
-    fs.appendFileSync("error_log.txt", logEntry);
+    fs.appendFileSync('error_log.txt', logEntry);
     originalConsoleError.apply(console, args);
 };
 
-// Endpoint YouTube Summary (pakai Gemini)
+// Endpoint YouTube Summary (masih pakai Gemini)
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
@@ -81,13 +74,14 @@ app.get("/api/ytsummarize", async (req, res) => {
         const jsonResponse = parseTextToJson(responseText);
 
         return res.json({ summarize: jsonResponse });
+
     } catch (error) {
         console.error("Error generating summary:", error);
         return res.status(500).json({ error: "Terjadi kesalahan saat memproses permintaan" });
     }
 });
 
-// Endpoint /api/gemini-image (gunakan Pollinations + logging)
+// Endpoint /api/gemini-image (gunakan Pollinations + logging ke gemini_log.txt)
 app.get("/api/gemini-image", async (req, res) => {
     const imageUrl = req.query.url;
     const textPrompt = req.query.text || "Jelaskan gambar ini";
@@ -97,13 +91,15 @@ app.get("/api/gemini-image", async (req, res) => {
     }
 
     try {
+        // Kirim request sebagai satu string agar tidak memicu error pada pihak Pollinations
+        // (sebelumnya mengirim array objek pada message.content --> kemungkinan penyebab internal .trim error)
         const pollinationsRes = await fetch("https://text.pollinations.ai/openai", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 model: "openai",
                 messages: [
-                    {
+{
                         role: "user",
                         content: [
                             { type: "text", text: textPrompt },
@@ -111,40 +107,31 @@ app.get("/api/gemini-image", async (req, res) => {
                         ]
                     }
                 ],
-                max_tokens: 500
+                max_tokens: 300
             })
         });
-
         const rawResponse = await pollinationsRes.text();
 
         let data;
         try {
             data = JSON.parse(rawResponse);
         } catch (e) {
-            fs.appendFileSync(
-                "error_gemini_web.txt",
-                `[${new Date().toISOString()}] RAW Response (parse error):\n${rawResponse}\n\n`
-            );
+            fs.appendFileSync("error_gemini_web.txt", `[${new Date().toISOString()}] RAW Response (parse error):\n${rawResponse}\n\n`);
             throw new Error("Pollinations API tidak mengembalikan JSON");
         }
 
         let responseText;
         if (data.error) {
-            fs.appendFileSync(
-                "error_gemini_web.txt",
-                `[${new Date().toISOString()}] API Error:\n${JSON.stringify(data, null, 2)}\n\n`
-            );
+            fs.appendFileSync("error_gemini_web.txt", `[${new Date().toISOString()}] API Error:\n${JSON.stringify(data, null, 2)}\n\n`);
             throw new Error("Pollinations API mengembalikan error");
         } else if (typeof data === "string") {
             responseText = data.trim();
         } else if (data.choices && data.choices[0]?.message?.content !== undefined) {
+            // normalisasi berbagai bentuk message.content (string | array | object)
             const rawContent = data.choices[0].message.content;
             responseText = normalizeMessageContent(rawContent).trim();
         } else {
-            fs.appendFileSync(
-                "error_gemini_web.txt",
-                `[${new Date().toISOString()}] Invalid structure:\n${JSON.stringify(data, null, 2)}\n\n`
-            );
+            fs.appendFileSync("error_gemini_web.txt", `[${new Date().toISOString()}] Invalid structure:\n${JSON.stringify(data, null, 2)}\n\n`);
             throw new Error("Respons tidak valid dari Pollinations API");
         }
 
@@ -163,6 +150,7 @@ Response  : ${responseText}
             status: true,
             result: responseText
         });
+
     } catch (error) {
         console.error("Error processing image:", error);
         return res.status(500).json({ status: false, error: "Terjadi kesalahan saat memproses gambar" });
