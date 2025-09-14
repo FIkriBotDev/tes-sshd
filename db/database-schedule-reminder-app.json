@@ -261,5 +261,28 @@
       "2025-09-13T22:00:00.000+07:00|10",
       "2025-09-13T22:00:00.000+07:00|0"
     ]
+  },
+  {
+    "id": "54468c74-f18a-4402-93de-6e2b513a2b01",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Fikri",
+    "userPhone": "6287769811262",
+    "title": "Sarapan",
+    "date": "2025-09-15",
+    "time": "07:00",
+    "offsets": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "description": "*Waktunya sarapan*",
+    "location": "Rumah",
+    "category": "Makan",
+    "priority": "tinggi",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-09-14T09:02:39.197Z",
+    "sentLog": []
   }
 ]
