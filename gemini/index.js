@@ -9,6 +9,33 @@ const port = 8009;
 
 app.use(cors());
 
+// helper: normalisasi berbagai bentuk message.content menjadi string
+function normalizeMessageContent(content) {
+    if (content == null) return "";
+    if (typeof content === "string") return content;
+    if (Array.isArray(content)) {
+        return content.map(item => {
+            if (item == null) return "";
+            if (typeof item === "string") return item;
+            if (typeof item === "object") {
+                if (typeof item.text === "string") return item.text;
+                if (item.type === "image_url" && item.image_url && item.image_url.url) return `[image: ${item.image_url.url}]`;
+                // some providers put nested content
+                if (Array.isArray(item.content)) return normalizeMessageContent(item.content);
+                // fallback to JSON
+                try { return JSON.stringify(item); } catch (e) { return String(item); }
+            }
+            return String(item);
+        }).join(" ");
+    }
+    if (typeof content === "object") {
+        if (typeof content.text === "string") return content.text;
+        if (Array.isArray(content.parts)) return content.parts.join(" ");
+        try { return JSON.stringify(content); } catch (e) { return String(content); }
+    }
+    return String(content);
+}
+
 // Log error ke file
 const originalConsoleError = console.error;
 console.error = function (...args) {
@@ -64,6 +91,8 @@ app.get("/api/gemini-image", async (req, res) => {
     }
 
     try {
+        // Kirim request sebagai satu string agar tidak memicu error pada pihak Pollinations
+        // (sebelumnya mengirim array objek pada message.content --> kemungkinan penyebab internal .trim error)
         const pollinationsRes = await fetch("https://text.pollinations.ai/openai", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -72,23 +101,38 @@ app.get("/api/gemini-image", async (req, res) => {
                 messages: [
                     {
                         role: "user",
-                        content: [
-                            { type: "text", text: textPrompt },
-                            { type: "image_url", image_url: { url: imageUrl } }
-                        ]
+                        // gabungkan prompt dan image URL jadi satu string
+                        content: `${textPrompt}\n\nImage URL: ${imageUrl}`
                     }
                 ],
                 max_tokens: 300
             })
         });
 
-        const data = await pollinationsRes.json();
+        const rawResponse = await pollinationsRes.text();
 
-        if (!data.choices || !data.choices[0]?.message?.content) {
-            throw new Error("Respons tidak valid dari Pollinations API");
+        let data;
+        try {
+            data = JSON.parse(rawResponse);
+        } catch (e) {
+            fs.appendFileSync("error_gemini_web.txt", `[${new Date().toISOString()}] RAW Response (parse error):\n${rawResponse}\n\n`);
+            throw new Error("Pollinations API tidak mengembalikan JSON");
         }
 
-        const responseText = data.choices[0].message.content.trim();
+        let responseText;
+        if (data.error) {
+            fs.appendFileSync("error_gemini_web.txt", `[${new Date().toISOString()}] API Error:\n${JSON.stringify(data, null, 2)}\n\n`);
+            throw new Error("Pollinations API mengembalikan error");
+        } else if (typeof data === "string") {
+            responseText = data.trim();
+        } else if (data.choices && data.choices[0]?.message?.content !== undefined) {
+            // normalisasi berbagai bentuk message.content (string | array | object)
+            const rawContent = data.choices[0].message.content;
+            responseText = normalizeMessageContent(rawContent).trim();
+        } else {
+            fs.appendFileSync("error_gemini_web.txt", `[${new Date().toISOString()}] Invalid structure:\n${JSON.stringify(data, null, 2)}\n\n`);
+            throw new Error("Respons tidak valid dari Pollinations API");
+        }
 
         // Log request dan hasil ke gemini_log.txt
         const logEntry = `
