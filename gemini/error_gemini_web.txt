@@ -91,3 +91,8 @@
   "status": 404
 }
 
+[2025-09-14T03:41:27.829Z] RAW Response (parse error):
+502 Bad Gateway
+Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared
+
+

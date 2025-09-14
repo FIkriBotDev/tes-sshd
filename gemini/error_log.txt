@@ -29,3 +29,4 @@ Invalid JSON payload received. Unknown name "parts" at 'contents[0].parts[0]': C
 [2025-09-14T03:35:11.055Z] Error Pollinations: Pollinations API mengembalikan error
 [2025-09-14T03:36:04.532Z] Error Pollinations: Pollinations API mengembalikan error
 [2025-09-14T03:39:49.663Z] Error Pollinations: Pollinations API mengembalikan error
+[2025-09-14T03:41:27.829Z] Error Pollinations: Pollinations API tidak mengembalikan JSON
