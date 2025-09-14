@@ -25,3 +25,9 @@
   "status": 500
 }
 
+[2025-09-14T03:16:05.171Z] API Error:
+{
+  "error": "message.content.trim is not a function",
+  "status": 500
+}
+
