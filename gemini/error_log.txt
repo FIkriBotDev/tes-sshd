@@ -10,3 +10,5 @@
 [2025-09-14T03:19:36.805Z] Error processing image: {}
 [2025-09-14T03:20:43.972Z] Error processing image: {}
 [2025-09-14T03:20:53.489Z] Error processing image: {}
+[2025-09-14T03:29:59.061Z] Error Pollinations: Pollinations API mengembalikan error
+[2025-09-14T03:29:59.165Z] Error fallback Gemini: Semua Gemini API Key gagal dipakai: undefined
