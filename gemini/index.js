@@ -99,16 +99,17 @@ app.get("/api/gemini-image", async (req, res) => {
             body: JSON.stringify({
                 model: "openai",
                 messages: [
-                    {
+{
                         role: "user",
-                        // gabungkan prompt dan image URL jadi satu string
-                        content: `${textPrompt}\n\nImage URL: ${imageUrl}`
+                        content: [
+                            { type: "text", text: textPrompt },
+                            { type: "image_url", image_url: { url: imageUrl } }
+                        ]
                     }
                 ],
                 max_tokens: 300
             })
         });
-
         const rawResponse = await pollinationsRes.text();
 
         let data;
