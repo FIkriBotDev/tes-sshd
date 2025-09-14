@@ -51,3 +51,9 @@
 Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared
 
 
+[2025-09-14T10:45:54.195Z] API Error:
+{
+  "error": "Model not found: claude-hybridspace",
+  "status": 404
+}
+
