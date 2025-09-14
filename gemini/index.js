@@ -59,8 +59,8 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const GEMINI_KEYS = [
     process.env.GEMINI_KEY_1,
     process.env.GEMINI_KEY_2,
-    process.env.GEMINI_KEY_3,
-    process.env.GEMINI_KEY_4
+    process.env.GEMINI_KEY_3
+    //process.env.GEMINI_KEY_4
 ].filter(Boolean);
 
 async function generateWithGemini(promptParts) {
