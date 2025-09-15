@@ -2411,3 +2411,4 @@
 [2025-09-14T16:09:25.123Z] Gemini API Key 4 gagal: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [400 Bad Request] Provided image is not valid.
 [2025-09-14T16:09:25.744Z] Gemini API Key 5 gagal: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [400 Bad Request] Provided image is not valid.
 [2025-09-14T16:09:25.744Z] Error fallback Gemini: Semua Gemini API Key gagal dipakai: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [400 Bad Request] Provided image is not valid.
+[2025-09-15T04:05:33.619Z] Error Pollinations: Pollinations API mengembalikan error
