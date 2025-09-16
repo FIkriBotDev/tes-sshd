@@ -4,10 +4,10 @@ const puppeteer = require("puppeteer");
 const app = express();
 const PORT = 5151;
 
-app.get("/api/tiktokdownloader", async (req, res) => {
-  const videoUrl = req.query.url;
-  if (!videoUrl) {
-    return res.status(400).json({ error: "URL TikTok wajib diberikan" });
+app.get("/api/ssweb", async (req, res) => {
+  const targetUrl = req.query.url;
+  if (!targetUrl) {
+    return res.status(400).json({ error: "Parameter ?url= wajib diisi" });
   }
 
   let browser;
@@ -18,35 +18,21 @@ app.get("/api/tiktokdownloader", async (req, res) => {
     });
 
     const page = await browser.newPage();
-    await page.setUserAgent(
-      "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) " +
-        "AppleWebKit/605.1.15 (KHTML, like Gecko) " +
-        "Version/15.0 Mobile/15E148 Safari/604.1"
-    );
+    await page.setViewport({ width: 1280, height: 720 }); // ukuran screenshot
 
-    await page.goto(videoUrl, { waitUntil: "networkidle2", timeout: 0 });
-
-    // ambil src dari tag video
-    const videoSrc = await page.evaluate(() => {
-      const videoTag = document.querySelector("video");
-      return videoTag ? videoTag.src : null;
+    console.log(`📸 Membuka halaman: ${targetUrl}`);
+    await page.goto(targetUrl, {
+      waitUntil: "networkidle2",
+      timeout: 60000,
     });
 
-    if (!videoSrc) {
-      return res.status(500).json({ error: "Gagal menemukan source video" });
-    }
+    const screenshotBuffer = await page.screenshot({ fullPage: true });
 
-    console.log("✅ URL Video:", videoSrc);
-
-    // download video menggunakan puppeteer request
-    const response = await page.goto(videoSrc, { timeout: 0 });
-
-    res.setHeader("Content-Disposition", "attachment; filename=tiktok.mp4");
-    res.setHeader("Content-Type", "video/mp4");
-
-    res.send(await response.buffer());
+    res.setHeader("Content-Type", "image/png");
+    res.setHeader("Content-Disposition", "inline; filename=screenshot.png");
+    res.send(screenshotBuffer);
   } catch (err) {
-    console.error(err);
+    console.error("❌ Error:", err.message);
     res.status(500).json({ error: "Terjadi kesalahan: " + err.message });
   } finally {
     if (browser) await browser.close();
