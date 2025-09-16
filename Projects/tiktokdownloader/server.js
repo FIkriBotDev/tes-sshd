@@ -34,22 +34,29 @@ app.get("/api/tiktokdownloader", async (req, res) => {
     const html = response.data;
     const $ = cheerio.load(html);
 
-    // Cari JSON metadata di SIGI_STATE
-    let scriptTag = $('script[id="SIGI_STATE"]').html();
+    // Cari metadata di beberapa tempat
+    let scriptTag =
+      $('script[id="SIGI_STATE"]').html() ||
+      $('script[id="__UNIVERSAL_DATA_LOADER_STATE__"]').html() ||
+      $('script[id="__NEXT_DATA__"]').html();
+
     if (!scriptTag) {
-      scriptTag = $('script[id="__UNIVERSAL_DATA_LOADER_STATE__"]').html(); // fallback lama
-    }
-    if (!scriptTag) {
-      return res.status(500).json({ error: "Gagal menemukan metadata video (SIGI_STATE tidak ada)" });
+      return res.status(500).json({ error: "Gagal menemukan metadata video (SIGI_STATE / NEXT_DATA tidak ada)" });
     }
 
     const json = JSON.parse(scriptTag);
 
-    // Cari link video
     let downloadUrl;
+
+    // Jika SIGI_STATE / UNIVERSAL_DATA_LOADER_STATE
     if (json.ItemModule) {
       const firstKey = Object.keys(json.ItemModule)[0];
       downloadUrl = json.ItemModule[firstKey]?.video?.downloadAddr;
+    }
+
+    // Jika NEXT_DATA
+    if (!downloadUrl && json.props?.pageProps?.itemInfo?.itemStruct) {
+      downloadUrl = json.props.pageProps.itemInfo.itemStruct.video?.downloadAddr;
     }
 
     if (!downloadUrl) {
