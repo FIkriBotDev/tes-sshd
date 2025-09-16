@@ -17,9 +17,8 @@ app.get("/api/tiktokdownloader", async (req, res) => {
       headless: true,
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
-    const page = await browser.newPage();
 
-    // pakai mobile UA supaya TikTok kasih data
+    const page = await browser.newPage();
     await page.setUserAgent(
       "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) " +
         "AppleWebKit/605.1.15 (KHTML, like Gecko) " +
@@ -28,54 +27,21 @@ app.get("/api/tiktokdownloader", async (req, res) => {
 
     await page.goto(videoUrl, { waitUntil: "networkidle2", timeout: 0 });
 
-    // coba ambil __NEXT_DATA__
-    let json = await page.evaluate(() => {
-      const script = document.querySelector("script#__NEXT_DATA__");
-      return script ? JSON.parse(script.textContent) : null;
+    // coba ambil dari tag video langsung
+    const videoSrc = await page.evaluate(() => {
+      const videoTag = document.querySelector("video");
+      return videoTag ? videoTag.src : null;
     });
 
-    // kalau tidak ada __NEXT_DATA__, fallback ke SIGI_STATE
-    if (!json) {
-      const sigi = await page.evaluate(() => {
-        const script = document.querySelector("script#SIGI_STATE");
-        return script ? JSON.parse(script.textContent) : null;
-      });
-      json = sigi;
-    }
-
-    if (!json) {
+    if (!videoSrc) {
       return res
         .status(500)
-        .json({ error: "Metadata TikTok tidak ditemukan (__NEXT_DATA__ / SIGI_STATE kosong)" });
+        .json({ error: "Gagal menemukan video source (<video> kosong)" });
     }
 
-    // cari info video
-    let videoData = null;
+    console.log("✅ URL Video:", videoSrc);
 
-    if (json.props?.pageProps?.itemInfo?.itemStruct?.video) {
-      videoData = json.props.pageProps.itemInfo.itemStruct.video;
-    } else if (json.ItemModule) {
-      const firstKey = Object.keys(json.ItemModule)[0];
-      videoData = json.ItemModule[firstKey]?.video;
-    }
-
-    if (!videoData) {
-      return res
-        .status(500)
-        .json({ error: "Gagal menemukan info video dari JSON TikTok" });
-    }
-
-    const downloadUrl = videoData.playAddr || videoData.downloadAddr;
-    if (!downloadUrl) {
-      return res
-        .status(500)
-        .json({ error: "URL video tidak ditemukan dalam metadata" });
-    }
-
-    console.log("✅ URL Video:", downloadUrl);
-
-    // ambil stream video
-    const videoRes = await axios.get(downloadUrl, {
+    const videoRes = await axios.get(videoSrc, {
       responseType: "stream",
       headers: {
         "User-Agent":
