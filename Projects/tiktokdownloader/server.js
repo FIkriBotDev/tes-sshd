@@ -1,0 +1,59 @@
+const express = require("express");
+const axios = require("axios");
+const cheerio = require("cheerio");
+
+const app = express();
+const PORT = 5151;
+
+app.get("/api/tiktokdownloader", async (req, res) => {
+  const videoUrl = req.query.url;
+  if (!videoUrl) {
+    return res.status(400).json({ error: "URL TikTok wajib diberikan" });
+  }
+
+  try {
+    // 1. Ambil halaman HTML TikTok
+    const response = await axios.get(videoUrl, {
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
+          "(KHTML, like Gecko) Chrome/120.0 Safari/537.36",
+      },
+    });
+
+    const html = response.data;
+
+    // 2. Parsing HTML dan ambil metadata video
+    const $ = cheerio.load(html);
+    const scriptTag = $('script[id="__UNIVERSAL_DATA_LOADER_STATE__"]').html();
+
+    if (!scriptTag) {
+      return res.status(500).json({ error: "Gagal menemukan metadata video" });
+    }
+
+    const json = JSON.parse(scriptTag);
+    const videoData = Object.values(json).find((item) => item?.video?.playAddr);
+
+    if (!videoData) {
+      return res.status(500).json({ error: "Gagal mengekstrak link video" });
+    }
+
+    const downloadUrl = videoData.video.playAddr[0].src;
+    console.log("✅ URL Video:", downloadUrl);
+
+    // 3. Ambil binary video dan stream ke browser
+    const videoRes = await axios.get(downloadUrl, { responseType: "stream" });
+
+    res.setHeader("Content-Disposition", "attachment; filename=tiktok.mp4");
+    res.setHeader("Content-Type", "video/mp4");
+
+    videoRes.data.pipe(res);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: "Terjadi kesalahan: " + err.message });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server berjalan di http://localhost:${PORT}`);
+});
