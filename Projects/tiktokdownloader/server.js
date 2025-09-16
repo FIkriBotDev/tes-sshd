@@ -5,6 +5,18 @@ const cheerio = require("cheerio");
 const app = express();
 const PORT = 5151;
 
+// Endpoint root agar user tidak bingung
+app.get("/", (req, res) => {
+  res.send(`
+    <h2>🚀 TikTok Downloader API</h2>
+    <p>Gunakan endpoint berikut:</p>
+    <code>http://localhost:${PORT}/api/tiktokdownloader?url=URL_TIKTOK</code>
+    <p>Contoh:</p>
+    <code>http://localhost:${PORT}/api/tiktokdownloader?url=https://www.tiktok.com/@scout2015/video/6718335390845095173</code>
+  `);
+});
+
+// Endpoint utama TikTok downloader
 app.get("/api/tiktokdownloader", async (req, res) => {
   const videoUrl = req.query.url;
   if (!videoUrl) {
