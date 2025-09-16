@@ -5,7 +5,6 @@ const cheerio = require("cheerio");
 const app = express();
 const PORT = 5151;
 
-// Endpoint root agar user tidak bingung
 app.get("/", (req, res) => {
   res.send(`
     <h2>🚀 TikTok Downloader API</h2>
@@ -16,7 +15,6 @@ app.get("/", (req, res) => {
   `);
 });
 
-// Endpoint utama TikTok downloader
 app.get("/api/tiktokdownloader", async (req, res) => {
   const videoUrl = req.query.url;
   if (!videoUrl) {
@@ -24,7 +22,7 @@ app.get("/api/tiktokdownloader", async (req, res) => {
   }
 
   try {
-    // 1. Ambil halaman HTML TikTok
+    // Ambil HTML TikTok
     const response = await axios.get(videoUrl, {
       headers: {
         "User-Agent":
@@ -34,26 +32,33 @@ app.get("/api/tiktokdownloader", async (req, res) => {
     });
 
     const html = response.data;
-
-    // 2. Parsing HTML dan ambil metadata video
     const $ = cheerio.load(html);
-    const scriptTag = $('script[id="__UNIVERSAL_DATA_LOADER_STATE__"]').html();
 
+    // Cari JSON metadata di SIGI_STATE
+    let scriptTag = $('script[id="SIGI_STATE"]').html();
     if (!scriptTag) {
-      return res.status(500).json({ error: "Gagal menemukan metadata video" });
+      scriptTag = $('script[id="__UNIVERSAL_DATA_LOADER_STATE__"]').html(); // fallback lama
+    }
+    if (!scriptTag) {
+      return res.status(500).json({ error: "Gagal menemukan metadata video (SIGI_STATE tidak ada)" });
     }
 
     const json = JSON.parse(scriptTag);
-    const videoData = Object.values(json).find((item) => item?.video?.playAddr);
 
-    if (!videoData) {
+    // Cari link video
+    let downloadUrl;
+    if (json.ItemModule) {
+      const firstKey = Object.keys(json.ItemModule)[0];
+      downloadUrl = json.ItemModule[firstKey]?.video?.downloadAddr;
+    }
+
+    if (!downloadUrl) {
       return res.status(500).json({ error: "Gagal mengekstrak link video" });
     }
 
-    const downloadUrl = videoData.video.playAddr[0].src;
     console.log("✅ URL Video:", downloadUrl);
 
-    // 3. Ambil binary video dan stream ke browser
+    // Ambil binary video dan stream ke browser
     const videoRes = await axios.get(downloadUrl, { responseType: "stream" });
 
     res.setHeader("Content-Disposition", "attachment; filename=tiktok.mp4");
