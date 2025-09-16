@@ -18,7 +18,7 @@ app.get("/api/ssweb", async (req, res) => {
     });
 
     const page = await browser.newPage();
-    await page.setViewport({ width: 1280, height: 720 }); // ukuran screenshot
+    await page.setViewport({ width: 1920, height: 1080 }); // ukuran screenshot
 
     console.log(`📸 Membuka halaman: ${targetUrl}`);
     await page.goto(targetUrl, {
