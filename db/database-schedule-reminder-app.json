@@ -381,5 +381,25 @@
     "customDates": [],
     "createdAt": "2025-09-17T01:09:47.996Z",
     "sentLog": []
+  },
+  {
+    "id": "50ed3c54-2b06-4086-bea1-e9eecb339984",
+    "userId": "7ec610ae-fd9f-47c2-be17-ff3704b0ecd5",
+    "username": "Dino",
+    "userPhone": "6285735098913",
+    "title": "\\n\\n\\n\\n\\n\\n\\n\\ntest",
+    "date": "2025-09-17",
+    "time": "19:51",
+    "offsets": [
+      0
+    ],
+    "description": "",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-17T12:49:20.277Z",
+    "sentLog": []
   }
 ]
