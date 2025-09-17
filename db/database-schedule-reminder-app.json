@@ -401,5 +401,25 @@
     "customDates": [],
     "createdAt": "2025-09-17T12:49:20.277Z",
     "sentLog": []
+  },
+  {
+    "id": "50bbee4c-d174-42bd-a4be-63f7f122a206",
+    "userId": "7ec610ae-fd9f-47c2-be17-ff3704b0ecd5",
+    "username": "Dino",
+    "userPhone": "6285735098913",
+    "title": "<button>test</button>",
+    "date": "2025-09-17",
+    "time": "19:53",
+    "offsets": [
+      0
+    ],
+    "description": "<button>test</button>",
+    "location": "<button></button>",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-17T12:50:39.614Z",
+    "sentLog": []
   }
 ]
