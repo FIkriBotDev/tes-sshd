@@ -5,5 +5,12 @@
     "phone": "6287769811262",
     "password": "$2b$10$PPIqvvF17..rfRuKETS40O1lso6Z9cU.6u7XvvEWGcL6Ly6TYrROG",
     "createdAt": "2025-09-09T23:50:26.404Z"
+  },
+  {
+    "id": "7ec610ae-fd9f-47c2-be17-ff3704b0ecd5",
+    "username": "Dino",
+    "phone": "6285735098913",
+    "password": "$2b$10$Zfjzq14rt1bx4.6fmdtozOBbqIZjJ8a6afrkSU5lYMFa2j6GU/v0y",
+    "createdAt": "2025-09-17T12:48:08.208Z"
   }
 ]
