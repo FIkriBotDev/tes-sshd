@@ -457,7 +457,9 @@
     "repeat": "none",
     "customDates": [],
     "createdAt": "2025-09-18T13:00:55.306Z",
-    "sentLog": []
+    "sentLog": [
+      "2025-09-18T20:05:00.000+07:00|0"
+    ]
   },
   {
     "id": "78bbf072-7fec-4281-a798-b9ece908d48f",
@@ -477,6 +479,8 @@
     "repeat": "none",
     "customDates": [],
     "createdAt": "2025-09-18T13:00:55.814Z",
-    "sentLog": []
+    "sentLog": [
+      "2025-09-18T20:05:00.000+07:00|0"
+    ]
   }
 ]
