@@ -467,9 +467,12 @@
     "username": "Fikri",
     "userPhone": "6287769811262",
     "title": "test",
-    "date": "2025-09-18",
-    "time": "20:05",
+    "date": "2025-09-19",
+    "time": "01:05",
     "offsets": [
+      3,
+      2,
+      1,
       0
     ],
     "description": "test",
