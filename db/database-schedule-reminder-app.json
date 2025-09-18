@@ -405,49 +405,5 @@
       "2025-09-18T02:00:00.000+07:00|1",
       "2025-09-18T02:00:00.000+07:00|0"
     ]
-  },
-  {
-    "id": "50ed3c54-2b06-4086-bea1-e9eecb339984",
-    "userId": "7ec610ae-fd9f-47c2-be17-ff3704b0ecd5",
-    "username": "Dino",
-    "userPhone": "6285735098913",
-    "title": "\\n\\n\\n\\n\\n\\n\\n\\ntest",
-    "date": "2025-09-17",
-    "time": "19:51",
-    "offsets": [
-      0
-    ],
-    "description": "",
-    "location": "",
-    "category": "",
-    "priority": "sedang",
-    "repeat": "none",
-    "customDates": [],
-    "createdAt": "2025-09-17T12:49:20.277Z",
-    "sentLog": [
-      "2025-09-17T19:51:00.000+07:00|0"
-    ]
-  },
-  {
-    "id": "50bbee4c-d174-42bd-a4be-63f7f122a206",
-    "userId": "7ec610ae-fd9f-47c2-be17-ff3704b0ecd5",
-    "username": "Dino",
-    "userPhone": "6285735098913",
-    "title": "<button>test</button>",
-    "date": "2025-09-17",
-    "time": "19:53",
-    "offsets": [
-      0
-    ],
-    "description": "<button>test</button>",
-    "location": "<button></button>",
-    "category": "",
-    "priority": "sedang",
-    "repeat": "none",
-    "customDates": [],
-    "createdAt": "2025-09-17T12:50:39.614Z",
-    "sentLog": [
-      "2025-09-17T19:53:00.000+07:00|0"
-    ]
   }
 ]
