@@ -478,45 +478,5 @@
     "customDates": [],
     "createdAt": "2025-09-18T13:00:55.814Z",
     "sentLog": []
-  },
-  {
-    "id": "b77c8542-a015-4dcf-9875-05f881ba724e",
-    "userId": "7ec610ae-fd9f-47c2-be17-ff3704b0ecd5",
-    "username": "Dino",
-    "userPhone": "6285735098913",
-    "title": "test",
-    "date": "2025-09-18",
-    "time": "20:10",
-    "offsets": [
-      0
-    ],
-    "description": "",
-    "location": "",
-    "category": "",
-    "priority": "sedang",
-    "repeat": "none",
-    "customDates": [],
-    "createdAt": "2025-09-18T13:01:49.362Z",
-    "sentLog": []
-  },
-  {
-    "id": "bf9fb1ed-4107-4e5f-9366-19dc5c86060e",
-    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
-    "username": "Fikri",
-    "userPhone": "6287769811262",
-    "title": "test",
-    "date": "2025-09-18",
-    "time": "20:10",
-    "offsets": [
-      0
-    ],
-    "description": "",
-    "location": "",
-    "category": "",
-    "priority": "sedang",
-    "repeat": "none",
-    "customDates": [],
-    "createdAt": "2025-09-18T13:01:49.582Z",
-    "sentLog": []
   }
 ]
