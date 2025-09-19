@@ -531,5 +531,31 @@
       "2025-09-19T01:05:00.000+07:00|1",
       "2025-09-19T01:05:00.000+07:00|0"
     ]
+  },
+  {
+    "id": "cd302c50-5373-4bad-92e1-e67e6f8f0073",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Fikri",
+    "userPhone": "6287769811262",
+    "title": "*UNDANGAN SOSIALISASI KURIKULUM BARU*",
+    "date": "2025-09-20",
+    "time": "08:00",
+    "offsets": [
+      15,
+      10,
+      5,
+      3,
+      2,
+      1,
+      0
+    ],
+    "description": "Link Zoom: https://zoom.us/j/92761926793?pwd=caL8ZAwadqDrw6t1JDCU7CgjdKWdxE.1",
+    "location": "Zoom",
+    "category": "Meeting",
+    "priority": "tinggi",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-19T23:42:14.975Z",
+    "sentLog": []
   }
 ]
