@@ -485,5 +485,28 @@
     "customDates": [],
     "createdAt": "2025-09-21T10:20:03.942Z",
     "sentLog": []
+  },
+  {
+    "id": "77a77020-b475-471a-aebb-519408e2fec9",
+    "userId": "7ec610ae-fd9f-47c2-be17-ff3704b0ecd5",
+    "username": "Dino",
+    "userPhone": "6285735098913",
+    "title": "bangun",
+    "date": "2025-09-22",
+    "time": "05:00",
+    "offsets": [
+      30,
+      20,
+      10,
+      0
+    ],
+    "description": "*BANGUN WOYY*",
+    "location": "-",
+    "category": "",
+    "priority": "tinggi",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-21T10:21:00.612Z",
+    "sentLog": []
   }
 ]
