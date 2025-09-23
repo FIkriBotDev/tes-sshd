@@ -534,5 +534,25 @@
     "customDates": [],
     "createdAt": "2025-09-23T04:09:38.593Z",
     "sentLog": []
+  },
+  {
+    "id": "3101d5c7-8456-4c41-a3da-443bf322ef83",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Fikri",
+    "userPhone": "6287769811262",
+    "title": "k",
+    "date": "2025-09-23",
+    "time": "20:26",
+    "offsets": [
+      0
+    ],
+    "description": "",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-23T12:21:52.633Z",
+    "sentLog": []
   }
 ]
