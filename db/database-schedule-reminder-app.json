@@ -501,5 +501,28 @@
     "customDates": [],
     "createdAt": "2025-09-23T04:08:43.190Z",
     "sentLog": []
+  },
+  {
+    "id": "b9250a3c-83ff-4262-a1e2-c0c977dc85b0",
+    "userId": "7ec610ae-fd9f-47c2-be17-ff3704b0ecd5",
+    "username": "Dino",
+    "userPhone": "6285735098913",
+    "title": "Shalat Jumat",
+    "date": "2025-09-26",
+    "time": "11:00",
+    "offsets": [
+      30,
+      20,
+      10,
+      0
+    ],
+    "description": "*Jangan lupa shalat jumat*",
+    "location": "Masjid",
+    "category": "Shalat",
+    "priority": "tinggi",
+    "repeat": "weekly",
+    "customDates": [],
+    "createdAt": "2025-09-23T04:09:38.593Z",
+    "sentLog": []
   }
 ]
