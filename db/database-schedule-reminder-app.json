@@ -480,28 +480,6 @@
     ]
   },
   {
-    "id": "b62c765c-403a-4dbc-bf53-6215863dc6f7",
-    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
-    "username": "Fikri",
-    "userPhone": "6287769811262",
-    "title": "Test",
-    "date": "2025-09-21",
-    "time": "10:33",
-    "offsets": [
-      0
-    ],
-    "description": "",
-    "location": "",
-    "category": "",
-    "priority": "sedang",
-    "repeat": "none",
-    "customDates": [],
-    "createdAt": "2025-09-21T03:31:57.881Z",
-    "sentLog": [
-      "2025-09-21T10:33:00.000+07:00|0"
-    ]
-  },
-  {
     "id": "f8567cbf-e228-4c81-a0b8-e825d80d58e4",
     "userId": "7ec610ae-fd9f-47c2-be17-ff3704b0ecd5",
     "username": "Dino",
