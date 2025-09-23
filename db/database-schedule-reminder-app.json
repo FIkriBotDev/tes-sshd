@@ -480,58 +480,6 @@
     ]
   },
   {
-    "id": "f8567cbf-e228-4c81-a0b8-e825d80d58e4",
-    "userId": "7ec610ae-fd9f-47c2-be17-ff3704b0ecd5",
-    "username": "Dino",
-    "userPhone": "6285735098913",
-    "title": "test test test",
-    "date": "2025-09-21",
-    "time": "17:23",
-    "offsets": [
-      2,
-      1,
-      0
-    ],
-    "description": "test test test",
-    "location": "test test test",
-    "category": "test test test",
-    "priority": "tinggi",
-    "repeat": "none",
-    "customDates": [],
-    "createdAt": "2025-09-21T10:20:03.942Z",
-    "sentLog": [
-      "2025-09-21T17:23:00.000+07:00|0"
-    ]
-  },
-  {
-    "id": "77a77020-b475-471a-aebb-519408e2fec9",
-    "userId": "7ec610ae-fd9f-47c2-be17-ff3704b0ecd5",
-    "username": "Dino",
-    "userPhone": "6285735098913",
-    "title": "bangun",
-    "date": "2025-09-22",
-    "time": "05:00",
-    "offsets": [
-      30,
-      20,
-      10,
-      0
-    ],
-    "description": "*BANGUN WOYY*",
-    "location": "-",
-    "category": "",
-    "priority": "tinggi",
-    "repeat": "none",
-    "customDates": [],
-    "createdAt": "2025-09-21T10:21:00.612Z",
-    "sentLog": [
-      "2025-09-22T05:00:00.000+07:00|30",
-      "2025-09-22T05:00:00.000+07:00|20",
-      "2025-09-22T05:00:00.000+07:00|10",
-      "2025-09-22T05:00:00.000+07:00|0"
-    ]
-  },
-  {
     "id": "53650bf4-da57-435d-82c9-78697fabd690",
     "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
     "username": "Fikri",
