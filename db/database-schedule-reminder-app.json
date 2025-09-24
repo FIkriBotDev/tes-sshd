@@ -579,5 +579,31 @@
     "sentLog": [
       "2025-09-24T12:45:00.000+07:00|0"
     ]
+  },
+  {
+    "id": "557fc4bc-2413-49cb-b3f2-b89baa5c86cb",
+    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
+    "username": "Fikri",
+    "userPhone": "6287769811262",
+    "title": "Bangun",
+    "date": "2025-09-25",
+    "time": "01:00",
+    "offsets": [
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "description": "Bangun sudah jam 02:00 nih udah pagi banget",
+    "location": "Taman",
+    "category": "",
+    "priority": "tinggi",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-09-24T14:15:52.898Z",
+    "sentLog": []
   }
 ]
