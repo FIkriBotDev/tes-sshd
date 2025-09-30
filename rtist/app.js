@@ -540,6 +540,7 @@ app.post('/post/mistral', async (req, res) => {
 });
 
 // Route untuk endpoint unity
+/*
 app.post('/post/rtist', async (req, res) => {
   try {
     const { messages } = req.body;
@@ -581,6 +582,46 @@ app.post('/post/rtist', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+*/
+
+app.post("/post/rtist", async (req, res) => {
+  try {
+    const { messages } = req.body;
+
+    if (!messages || !Array.isArray(messages)) {
+      return res
+        .status(400)
+        .json({ error: 'Invalid request format. "messages" harus berupa array.' });
+    }
+
+    const result = await callHF(messages);
+
+    // Ambil content dari respons Hugging Face
+    const content =
+      result?.choices?.[0]?.message?.content || "Tidak ada respons dari model.";
+
+    res.json({
+      status: true,
+      creator: "Fikri",
+      result: content,
+    });
+  } catch (error) {
+    console.error("Error:", error.message);
+
+    // Simpan error ke file error.txt
+    const errorLog = `[${new Date().toISOString()}] ${
+      error.stack || error.message
+    }\n`;
+    fs.appendFile("error.txt", errorLog, (err) => {
+      if (err) {
+        console.error("Failed to write to error.txt:", err.message);
+      }
+    });
+
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 
 // Route untuk midijourney
 app.post('/post/midijourney', async (req, res) => {
