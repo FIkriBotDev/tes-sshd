@@ -584,6 +584,47 @@ app.post('/post/rtist', async (req, res) => {
 });
 */
 
+// Daftar token Hugging Face (fallback)
+const HF_TOKENS = [
+  "hf_token1",
+  "hf_token2",
+  "hf_token3",
+  "hf_token4",
+  "hf_token5",
+];
+
+// Model Hugging Face yang ingin dipakai
+const HF_MODEL = "moonshotai/Kimi-K2-Instruct-0905";
+
+// Fungsi helper untuk mencoba request dengan fallback token
+async function callHF(messages) {
+  let lastError;
+  for (const token of HF_TOKENS) {
+    try {
+      const response = await axios.post(
+        `https://api-inference.huggingface.co/v1/chat/completions`,
+        {
+          model: HF_MODEL,
+          messages,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      return response.data;
+    } catch (error) {
+      lastError = error;
+      console.error(`Token gagal: ${token.slice(0, 10)}...`, error.message);
+      continue; // coba token berikutnya
+    }
+  }
+  throw lastError;
+}
+
+// Route untuk endpoint unity
 app.post("/post/rtist", async (req, res) => {
   try {
     const { messages } = req.body;
@@ -621,7 +662,6 @@ app.post("/post/rtist", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-
 
 // Route untuk midijourney
 app.post('/post/midijourney', async (req, res) => {
