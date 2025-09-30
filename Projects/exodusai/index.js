@@ -318,9 +318,9 @@ async function startBot() {
                     aiResponse = aiResponse.replace(videoRegex, '').trim();
                 }
 
-                if (aiResponse.trim()) {
-                    await sock.sendMessage(sender, { text: aiResponse.trim() });
-                }
+//                if (aiResponse.trim()) {
+  //                  await sock.sendMessage(sender, { text: aiResponse.trim() });
+    //            }
 
                 conversation.push({ role: "assistant", content: aiResponse });
                 saveConversation(sender, conversation);
