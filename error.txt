@@ -7007,3 +7007,23 @@
     at callHF (file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:574:15)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:599:20
+[2025-09-30T10:18:15.620Z] Error: HTTP 401: Unauthorized
+    at callHF (file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:574:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:599:20
+[2025-09-30T10:18:21.798Z] Error: HTTP 401: Unauthorized
+    at callHF (file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:574:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:599:20
+[2025-09-30T10:18:23.790Z] Error: HTTP 401: Unauthorized
+    at callHF (file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:574:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:599:20
+[2025-09-30T10:18:25.408Z] Error: HTTP 401: Unauthorized
+    at callHF (file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:574:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:599:20
+[2025-09-30T10:18:26.969Z] Error: HTTP 401: Unauthorized
+    at callHF (file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:574:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:599:20
