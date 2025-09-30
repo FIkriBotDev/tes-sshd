@@ -543,10 +543,10 @@ app.post('/post/mistral', async (req, res) => {
 // RTIST
 // Daftar token Hugging Face (fallback)
 const HF_TOKENS = [
-  "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",
-  "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",
-  "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",
-  "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",
+  "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",
+  "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",
+  "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",
+  "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",
   "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",
 ];
 
@@ -628,10 +628,10 @@ app.post("/post/rtist", async (req, res) => {
 
 // Daftar token Hugging Face (fallback)
 const HF_VIDEO_TOKENS = [
-  "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",
-  "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",
-  "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",
-  "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",
+  "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",
+  "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",
+  "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",
+  "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",
   "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",
 ];
 
