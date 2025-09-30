@@ -6985,3 +6985,21 @@
     at callHF (file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:574:15)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:599:20
+[2025-09-30T10:06:15.435Z] HubApiError: Failed to fetch inference provider mapping for model Wan-AI/Wan2.2-T2V-A14B: User Access Token "token5" is expired
+    at fetchInferenceProviderMappingForModel (file:///home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/@huggingface/inference/dist/esm/lib/getInferenceProviderMapping.js:48:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getInferenceProviderMapping (file:///home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/@huggingface/inference/dist/esm/lib/getInferenceProviderMapping.js:75:22)
+    at async makeRequestOptions (file:///home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/@huggingface/inference/dist/esm/lib/makeRequestOptions.js:49:11)
+    at async innerRequest (file:///home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/@huggingface/inference/dist/esm/utils/request.js:26:27)
+    at async textToVideo (file:///home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/@huggingface/inference/dist/esm/tasks/cv/textToVideo.js:8:32)
+    at async HF_VIDEO_call (file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:648:29)
+    at async file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:683:29
+[2025-09-30T10:06:25.820Z] HubApiError: Failed to fetch inference provider mapping for model Wan-AI/Wan2.2-T2V-A14B: User Access Token "token5" is expired
+    at fetchInferenceProviderMappingForModel (file:///home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/@huggingface/inference/dist/esm/lib/getInferenceProviderMapping.js:48:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getInferenceProviderMapping (file:///home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/@huggingface/inference/dist/esm/lib/getInferenceProviderMapping.js:75:22)
+    at async makeRequestOptions (file:///home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/@huggingface/inference/dist/esm/lib/makeRequestOptions.js:49:11)
+    at async innerRequest (file:///home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/@huggingface/inference/dist/esm/utils/request.js:26:27)
+    at async textToVideo (file:///home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/@huggingface/inference/dist/esm/tasks/cv/textToVideo.js:8:32)
+    at async HF_VIDEO_call (file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:648:29)
+    at async file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:683:29
