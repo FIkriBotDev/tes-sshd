@@ -7003,3 +7003,7 @@
     at async textToVideo (file:///home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/@huggingface/inference/dist/esm/tasks/cv/textToVideo.js:8:32)
     at async HF_VIDEO_call (file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:648:29)
     at async file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:683:29
+[2025-09-30T10:10:30.651Z] Error: HTTP 401: Unauthorized
+    at callHF (file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:574:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:599:20
