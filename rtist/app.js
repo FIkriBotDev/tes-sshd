@@ -1,8 +1,9 @@
-const express = require('express');
-const axios = require('axios');
-const cors = require('cors');
-const os = require('os-utils');
-const fs = require('fs');
+import express from "express";
+import axios from "axios";
+import cors from "cors";
+import os from "os-utils";
+import fs from "fs";
+import { InferenceClient } from "@huggingface/inference";
 
 const app = express();
 const PORT = 3000;
@@ -539,54 +540,10 @@ app.post('/post/mistral', async (req, res) => {
   }
 });
 
-// Route untuk endpoint unity
-/*
-app.post('/post/rtist', async (req, res) => {
-  try {
-    const { messages } = req.body;
-
-    if (!messages || !Array.isArray(messages)) {
-      return res.status(400).json({ error: 'Invalid request format. "messages" harus berupa array.' });
-    }
-
-    const payload = {
-      messages,
-      model: 'openai', // Menggunakan model Unity with Mistral Large by Unity AI Lab
-      seed: 42,
-      jsonMode: false,
-    };
-
-    const response = await axios.post('https://text.pollinations.ai/', payload, {
-      headers: {
-        'accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-    });
-
-    const result = response.data;
-
-    res.json({
-      status: true,
-      creator: 'Fikri',
-      result,
-    });
-  } catch (error) {
-    console.error('Error:', error.message);
- // Simpan error ke file error.txt
-    const errorLog = `[${new Date().toISOString()}] ${error.stack || error.message}\n`;
-    fs.appendFile('error.txt', errorLog, (err) => {
-      if (err) {
-        console.error('Failed to write to error.txt:', err.message);
-      }
-    });
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
-*/
-
+// RTIST
 // Daftar token Hugging Face (fallback)
 const HF_TOKENS = [
-  "hf_token1",
+  "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",
   "hf_token2",
   "hf_token3",
   "hf_token4",
@@ -594,30 +551,34 @@ const HF_TOKENS = [
 ];
 
 // Model Hugging Face yang ingin dipakai
-const HF_MODEL = "moonshotai/Kimi-K2-Instruct-0905";
+const HF_MODEL = "moonshotai/Kimi-K2-Instruct-0905:groq";
 
 // Fungsi helper untuk mencoba request dengan fallback token
 async function callHF(messages) {
   let lastError;
   for (const token of HF_TOKENS) {
     try {
-      const response = await axios.post(
-        `https://api-inference.huggingface.co/v1/chat/completions`,
-        {
+      const response = await fetch("https://router.huggingface.co/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
           model: HF_MODEL,
           messages,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      return response.data;
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+
+      const result = await response.json();
+      return result;
     } catch (error) {
       lastError = error;
-      console.error(`Token gagal: ${token.slice(0, 10)}...`, error.message);
+      console.error(`Token gagal: ${token.slice(0, 12)}...`, error.message);
       continue; // coba token berikutnya
     }
   }
@@ -630,9 +591,9 @@ app.post("/post/rtist", async (req, res) => {
     const { messages } = req.body;
 
     if (!messages || !Array.isArray(messages)) {
-      return res
-        .status(400)
-        .json({ error: 'Invalid request format. "messages" harus berupa array.' });
+      return res.status(400).json({
+        error: 'Invalid request format. "messages" harus berupa array.',
+      });
     }
 
     const result = await callHF(messages);
@@ -662,6 +623,85 @@ app.post("/post/rtist", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+
+
+// Daftar token Hugging Face (fallback)
+const HF_VIDEO_TOKENS = [
+  "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",
+  "hf_token2",
+  "hf_token3",
+  "hf_token4",
+  "hf_token5",
+];
+
+// Model Hugging Face yang ingin dipakai
+const HF_VIDEO_MODEL = "Wan-AI/Wan2.2-T2V-A14B";
+
+// Fungsi helper untuk request video dengan fallback token
+async function HF_VIDEO_call(prompt) {
+  let HF_VIDEO_lastError;
+  for (const HF_VIDEO_token of HF_VIDEO_TOKENS) {
+    try {
+      const HF_VIDEO_client = new InferenceClient(HF_VIDEO_token);
+
+      const HF_VIDEO_blob = await HF_VIDEO_client.textToVideo({
+        provider: "fal-ai",
+        model: HF_VIDEO_MODEL,
+        inputs: prompt,
+      });
+
+      // Konversi Blob → Buffer (biar bisa dikirim ke browser)
+      const HF_VIDEO_buffer = Buffer.from(await HF_VIDEO_blob.arrayBuffer());
+      return HF_VIDEO_buffer;
+    } catch (HF_VIDEO_error) {
+      HF_VIDEO_lastError = HF_VIDEO_error;
+      console.error(
+        `Token gagal: ${HF_VIDEO_token.slice(0, 10)}...`,
+        HF_VIDEO_error.message
+      );
+      continue;
+    }
+  }
+  throw HF_VIDEO_lastError;
+}
+
+// Route GET untuk generate video
+app.get("/get/generatevideo", async (req, res) => {
+  try {
+    const HF_VIDEO_prompt = req.query.prompt;
+
+    if (!HF_VIDEO_prompt) {
+      return res.status(400).json({
+        error:
+          'Query "prompt" wajib diisi. Contoh: ?prompt=a man walk in street',
+      });
+    }
+
+    console.log("Generate video dengan prompt:", HF_VIDEO_prompt);
+
+    const HF_VIDEO_buffer = await HF_VIDEO_call(HF_VIDEO_prompt);
+
+    res.setHeader("Content-Type", "video/mp4");
+    res.send(HF_VIDEO_buffer);
+  } catch (HF_VIDEO_error) {
+    console.error("Error:", HF_VIDEO_error.message);
+
+    const HF_VIDEO_errorLog = `[${new Date().toISOString()}] ${
+      HF_VIDEO_error.stack || HF_VIDEO_error.message
+    }\n`;
+    fs.appendFile("error.txt", HF_VIDEO_errorLog, (err) => {
+      if (err) {
+        console.error("Failed to write to error.txt:", err.message);
+      }
+    });
+
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+
+
 
 // Route untuk midijourney
 app.post('/post/midijourney', async (req, res) => {
