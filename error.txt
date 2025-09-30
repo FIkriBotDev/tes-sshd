@@ -6981,3 +6981,7 @@
     at callHF (file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:574:15)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:599:20
+[2025-09-30T10:05:59.076Z] Error: HTTP 401: Unauthorized
+    at callHF (file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:574:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///home/runner/work/tes-sshd/tes-sshd/rtist/app.js:599:20
