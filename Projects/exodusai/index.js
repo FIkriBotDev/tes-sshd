@@ -291,8 +291,8 @@ async function startBot() {
                 }
 
                // aiResponse = aiResponse.replace(/https:\/\/localhost:/gi, 'http://localhost:');
-                aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id').trim();
-                aiResponse = fixUrls(aiResponse);
+//                aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id').trim();
+  //              aiResponse = fixUrls(aiResponse);
 
                 // === IMAGE
                 const imageRegex = /!\[.*?\]\((http:\/\/localhost:3000\/get\/image-generator\?[^)]+)\)/;
