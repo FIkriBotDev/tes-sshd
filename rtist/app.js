@@ -543,11 +543,11 @@ app.post('/post/mistral', async (req, res) => {
 // RTIST
 // Daftar token Hugging Face (fallback)
 const HF_TOKENS = [
-  "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",
-  "hf_token2",
-  "hf_token3",
-  "hf_token4",
-  "hf_token5",
+  "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",
+  "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",
+  "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",
+  "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",
+  "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",
 ];
 
 // Model Hugging Face yang ingin dipakai
@@ -628,11 +628,11 @@ app.post("/post/rtist", async (req, res) => {
 
 // Daftar token Hugging Face (fallback)
 const HF_VIDEO_TOKENS = [
-  "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",
-  "hf_token2",
-  "hf_token3",
-  "hf_token4",
-  "hf_token5",
+  "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",
+  "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",
+  "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",
+  "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",
+  "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",
 ];
 
 // Model Hugging Face yang ingin dipakai
