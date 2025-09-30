@@ -31,3 +31,4 @@
 [2025-09-30 09:36:39] GET /post/generatevideo
 [2025-09-30 09:36:49] GET /get/generatevideo
 [2025-09-30 09:36:51] GET /get/generatevideo
+[2025-09-30 09:37:21] POST /post/rtist
