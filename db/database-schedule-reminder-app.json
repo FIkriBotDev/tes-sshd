@@ -844,6 +844,8 @@
     "repeat": "none",
     "customDates": [],
     "createdAt": "2025-10-05T14:26:21.741Z",
-    "sentLog": []
+    "sentLog": [
+      "2025-10-06T03:00:00.000+07:00|0"
+    ]
   }
 ]
