@@ -171,3 +171,37 @@ Invalid JSON payload received. Unknown name "parts" at 'contents[0].parts[0]': C
   }
 }
 
+[2025-10-08T07:27:59.969Z] Error Pollinations: Pollinations API mengembalikan error
+[2025-10-08T07:28:00.225Z] Gemini API Key 1 gagal: [429] {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Generate Content API requests per minute' and limit 'GenerateContent request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:554521356109'.",
+    "status": "RESOURCE_EXHAUSTED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "RATE_LIMIT_EXCEEDED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "quota_limit": "GenerateContentRequestsPerMinutePerProjectPerRegion",
+          "quota_location": "us-central1",
+          "quota_limit_value": "0",
+          "service": "generativelanguage.googleapis.com",
+          "quota_unit": "1/min/{project}/{region}",
+          "consumer": "projects/554521356109",
+          "quota_metric": "generativelanguage.googleapis.com/generate_content_requests"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Request a higher quota limit.",
+            "url": "https://cloud.google.com/docs/quotas/help/request_increase"
+          }
+        ]
+      }
+    ]
+  }
+}
+
