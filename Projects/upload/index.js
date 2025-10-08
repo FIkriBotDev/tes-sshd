@@ -47,7 +47,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
     const ext = mime.extension(mimeType) || 'bin';
     const filename = `${uuidv4().slice(0, 6)}-${Date.now()}.${ext}`;
     const filepath = path.join(UPLOAD_DIR, filename);
-    const fileUrl = `https://uploader.exoduscloud.my.id/tmp/${filename}`;
+    const fileUrl = `https://uploader.exodusai.biz.id/tmp/${filename}`;
 
     await fs.writeFile(filepath, buffer);
     console.log(`✅ Uploaded: ${filename}`);
