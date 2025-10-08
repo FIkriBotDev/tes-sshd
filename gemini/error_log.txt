@@ -205,3 +205,5 @@ Invalid JSON payload received. Unknown name "parts" at 'contents[0].parts[0]': C
   }
 }
 
+[2025-10-08T07:48:18.142Z] Error Pollinations: Pollinations API mengembalikan error
+[2025-10-08T07:48:28.160Z] Error fallback Gemini: request to https://uploader.exoduscloud.my.id/tmp/9f91da-1759909696867.png failed, reason: getaddrinfo EAI_AGAIN uploader.exoduscloud.my.id
