@@ -53,7 +53,6 @@ console.error = function (...args) {
 };
 
 // ===== Gemini dengan fallback API Key =====
-const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 // kumpulan API key dari .env
 const GEMINI_KEYS = [
@@ -64,16 +63,33 @@ const GEMINI_KEYS = [
     process.env.GEMINI_KEY_5
 ].filter(Boolean);
 
-// generateContent dengan fallback
+// generateContent dengan fallback ke endpoint v1
 async function generateWithGemini(contents) {
     let lastError;
     for (let i = 0; i < GEMINI_KEYS.length; i++) {
         const key = GEMINI_KEYS[i];
         try {
-            const genAI = new GoogleGenerativeAI(key);
-            const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-            const result = await model.generateContent({ contents });
-            return result.response.text().trim();
+            const response = await fetch(
+                "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${key}`,
+                    },
+                    body: JSON.stringify({ contents }),
+                }
+            );
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`[${response.status}] ${errorText}`);
+            }
+
+            const data = await response.json();
+            const text =
+                data.candidates?.[0]?.content?.parts?.map(p => p.text).join(" ")?.trim() || "";
+            return text;
         } catch (err) {
             lastError = err;
             console.error(`Gemini API Key ${i + 1} gagal: ${err.message}`);

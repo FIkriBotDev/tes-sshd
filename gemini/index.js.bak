@@ -9,20 +9,89 @@ const port = 8009;
 
 app.use(cors());
 
+// helper: normalisasi berbagai bentuk message.content menjadi string
+function normalizeMessageContent(content) {
+    if (content == null) return "";
+    if (typeof content === "string") return content;
+    if (Array.isArray(content)) {
+        return content.map(item => {
+            if (item == null) return "";
+            if (typeof item === "string") return item;
+            if (typeof item === "object") {
+                if (typeof item.text === "string") return item.text;
+                if (item.type === "image_url" && item.image_url && item.image_url.url)
+                    return `[image: ${item.image_url.url}]`;
+                if (Array.isArray(item.content)) return normalizeMessageContent(item.content);
+                try {
+                    return JSON.stringify(item);
+                } catch (e) {
+                    return String(item);
+                }
+            }
+            return String(item);
+        }).join(" ");
+    }
+    if (typeof content === "object") {
+        if (typeof content.text === "string") return content.text;
+        if (Array.isArray(content.parts)) return content.parts.join(" ");
+        try {
+            return JSON.stringify(content);
+        } catch (e) {
+            return String(content);
+        }
+    }
+    return String(content);
+}
+
 // Log error ke file
 const originalConsoleError = console.error;
 console.error = function (...args) {
-    const message = args.map(a => (typeof a === 'string' ? a : JSON.stringify(a, null, 2))).join(' ');
+    const message = args.map(a => (typeof a === "string" ? a : JSON.stringify(a, null, 2))).join(" ");
     const logEntry = `[${new Date().toISOString()}] ${message}\n`;
-    fs.appendFileSync('error_log.txt', logEntry);
+    fs.appendFileSync("error_log.txt", logEntry);
     originalConsoleError.apply(console, args);
 };
 
-// Endpoint YouTube Summary (masih pakai Gemini)
+// ===== Gemini dengan fallback API Key =====
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
+// kumpulan API key dari .env
+const GEMINI_KEYS = [
+    process.env.GEMINI_KEY_1,
+    process.env.GEMINI_KEY_2,
+    process.env.GEMINI_KEY_3,
+    process.env.GEMINI_KEY_4,
+    process.env.GEMINI_KEY_5
+].filter(Boolean);
+
+// generateContent dengan fallback
+async function generateWithGemini(contents) {
+    let lastError;
+    for (let i = 0; i < GEMINI_KEYS.length; i++) {
+        const key = GEMINI_KEYS[i];
+        try {
+            const genAI = new GoogleGenerativeAI(key);
+            const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+            const result = await model.generateContent({ contents });
+            return result.response.text().trim();
+        } catch (err) {
+            lastError = err;
+            console.error(`Gemini API Key ${i + 1} gagal: ${err.message}`);
+            continue;
+        }
+    }
+    throw new Error("Semua Gemini API Key gagal dipakai: " + lastError?.message);
+}
+
+// helper: ambil image URL jadi base64 (untuk Gemini Vision)
+async function fetchImageAsBase64(url) {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Gagal fetch gambar: ${res.status} ${res.statusText}`);
+    const buffer = await res.arrayBuffer();
+    return Buffer.from(buffer).toString("base64");
+}
+
+// Endpoint YouTube Summary (pakai Gemini + fallback key)
 app.get("/api/ytsummarize", async (req, res) => {
     const videoUrl = req.query.url;
 
@@ -31,30 +100,33 @@ app.get("/api/ytsummarize", async (req, res) => {
     }
 
     try {
-        const result = await model.generateContent([
-            `Ringkas video ini dengan format berikut:
+        const responseText = await generateWithGemini([
+            {
+                role: "user",
+                parts: [
+                    { text: `Ringkas video ini dengan format berikut:
 
-            [Ringkasan Video]
-            <Deskripsi umum tentang isi video>
+[Ringkasan Video]
+<Deskripsi umum tentang isi video>
 
-            [Timeline]
-            00:00:05 - <Deskripsi peristiwa pertama>
-            00:01:00 - <Deskripsi peristiwa kedua>
-            00:02:30 - <Deskripsi peristiwa berikutnya>`
+[Timeline]
+00:00:05 - <Deskripsi peristiwa pertama>
+00:01:00 - <Deskripsi peristiwa kedua>
+00:02:30 - <Deskripsi peristiwa berikutnya>` }
+                ]
+            }
         ]);
 
-        const responseText = result.response.text().trim();
         const jsonResponse = parseTextToJson(responseText);
 
         return res.json({ summarize: jsonResponse });
-
     } catch (error) {
         console.error("Error generating summary:", error);
         return res.status(500).json({ error: "Terjadi kesalahan saat memproses permintaan" });
     }
 });
 
-// Endpoint /api/gemini-image (gunakan Pollinations + logging ke gemini_log.txt)
+// Endpoint /api/gemini-image (gunakan Pollinations, fallback ke Gemini Vision)
 app.get("/api/gemini-image", async (req, res) => {
     const imageUrl = req.query.url;
     const textPrompt = req.query.text || "Jelaskan gambar ini";
@@ -68,27 +140,49 @@ app.get("/api/gemini-image", async (req, res) => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                model: "openai",
+                model: "claude-hybridspace",
                 messages: [
                     {
                         role: "user",
-                        content: [
-                            { type: "text", text: textPrompt },
-                            { type: "image_url", image_url: { url: imageUrl } }
-                        ]
+                        content: `${textPrompt}\n\nGambar: ${imageUrl}`
                     }
                 ],
-                max_tokens: 300
+                max_tokens: 500
             })
         });
 
-        const data = await pollinationsRes.json();
+        const rawResponse = await pollinationsRes.text();
 
-        if (!data.choices || !data.choices[0]?.message?.content) {
-            throw new Error("Respons tidak valid dari Pollinations API");
+        let data;
+        try {
+            data = JSON.parse(rawResponse);
+        } catch (e) {
+            fs.appendFileSync(
+                "error_gemini_web.txt",
+                `[${new Date().toISOString()}] RAW Response (parse error):\n${rawResponse}\n\n`
+            );
+            throw new Error("Pollinations API tidak mengembalikan JSON");
         }
 
-        const responseText = data.choices[0].message.content.trim();
+        let responseText;
+        if (data.error) {
+            fs.appendFileSync(
+                "error_gemini_web.txt",
+                `[${new Date().toISOString()}] API Error:\n${JSON.stringify(data, null, 2)}\n\n`
+            );
+            throw new Error("Pollinations API mengembalikan error");
+        } else if (typeof data === "string") {
+            responseText = data.trim();
+        } else if (data.choices && data.choices[0]?.message?.content !== undefined) {
+            const rawContent = data.choices[0].message.content;
+            responseText = normalizeMessageContent(rawContent).trim();
+        } else {
+            fs.appendFileSync(
+                "error_gemini_web.txt",
+                `[${new Date().toISOString()}] Invalid structure:\n${JSON.stringify(data, null, 2)}\n\n`
+            );
+            throw new Error("Respons tidak valid dari Pollinations API");
+        }
 
         // Log request dan hasil ke gemini_log.txt
         const logEntry = `
@@ -103,12 +197,35 @@ Response  : ${responseText}
         return res.json({
             creator: "@Fikri",
             status: true,
-            result: responseText
+            result: responseText,
+            source: "pollinations"
         });
-
     } catch (error) {
-        console.error("Error processing image:", error);
-        return res.status(500).json({ status: false, error: "Terjadi kesalahan saat memproses gambar" });
+        console.error("Error Pollinations:", error.message);
+
+        // Fallback ke Gemini Vision
+        try {
+            const base64Img = await fetchImageAsBase64(imageUrl);
+            const responseText = await generateWithGemini([
+                {
+                    role: "user",
+                    parts: [
+                        { inlineData: { mimeType: "image/jpeg", data: base64Img } },
+                        { text: textPrompt }
+                    ]
+                }
+            ]);
+
+            return res.json({
+                creator: "@Fikri",
+                status: true,
+                result: responseText,
+                source: "gemini-fallback"
+            });
+        } catch (err2) {
+            console.error("Error fallback Gemini:", err2.message);
+            return res.status(500).json({ status: false, error: "Gagal memproses gambar (Pollinations & Gemini error)" });
+        }
     }
 });
 
