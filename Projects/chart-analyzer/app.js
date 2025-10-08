@@ -106,7 +106,7 @@ app.post('/analyze', upload.single('image'), async (req, res) => {
         const uploadedUrl = await uploadFile(fileBuffer);
 
         const geminiPrompt = buildPrompt();
-        const geminiUrl = `https://gemini-api.exoduscloud.my.id/api/gemini-image?text=${encodeURIComponent(geminiPrompt)}&url=${encodeURIComponent(uploadedUrl)}`;
+        const geminiUrl = `https://gemini-api.exodusai.biz.id/api/gemini-image?text=${encodeURIComponent(geminiPrompt)}&url=${encodeURIComponent(uploadedUrl)}`;
 
         const response = await axios.get(geminiUrl);
 
