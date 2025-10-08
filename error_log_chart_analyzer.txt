@@ -60,3 +60,35 @@
     at async uploadFile (file:///home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/app.js:33:26)
     at async file:///home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/app.js:106:29
 
+[2025-10-08T07:36:56.954Z] Error: getaddrinfo EAI_AGAIN uploader.exoduscloud.my.id
+    at AxiosError.from (file:///home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/node_modules/axios/lib/core/AxiosError.js:92:14)
+    at RedirectableRequest.handleRequestError (file:///home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/node_modules/axios/lib/adapters/http.js:620:25)
+    at RedirectableRequest.emit (node:events:524:28)
+    at eventHandlers.<computed> (/home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/node_modules/follow-redirects/index.js:49:24)
+    at ClientRequest.emit (node:events:524:28)
+    at emitErrorEvent (node:_http_client:101:11)
+    at TLSSocket.socketErrorListener (node:_http_client:504:5)
+    at TLSSocket.emit (node:events:524:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at Axios.request (file:///home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/node_modules/axios/lib/core/Axios.js:45:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async uploadFile (file:///home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/app.js:33:26)
+    at async file:///home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/app.js:106:29
+
+[2025-10-08T07:36:56.955Z] Error: getaddrinfo EAI_AGAIN uploader.exoduscloud.my.id
+    at AxiosError.from (file:///home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/node_modules/axios/lib/core/AxiosError.js:92:14)
+    at RedirectableRequest.handleRequestError (file:///home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/node_modules/axios/lib/adapters/http.js:620:25)
+    at RedirectableRequest.emit (node:events:524:28)
+    at eventHandlers.<computed> (/home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/node_modules/follow-redirects/index.js:49:24)
+    at ClientRequest.emit (node:events:524:28)
+    at emitErrorEvent (node:_http_client:101:11)
+    at TLSSocket.socketErrorListener (node:_http_client:504:5)
+    at TLSSocket.emit (node:events:524:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at Axios.request (file:///home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/node_modules/axios/lib/core/Axios.js:45:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async uploadFile (file:///home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/app.js:33:26)
+    at async file:///home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/app.js:106:29
+
