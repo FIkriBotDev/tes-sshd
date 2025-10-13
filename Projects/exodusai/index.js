@@ -295,7 +295,7 @@ async function startBot() {
                 aiResponse = fixUrls(aiResponse);
 
                 // === IMAGE
-                const imageRegex = /!\[.*?\]\((http:\/\/localhost:3000\/get\/image-generator\?[^)]+)\)/;
+                //const imageRegex = /!\[.*?\]\((http:\/\/localhost:3000\/get\/image-generator\?[^)]+)\)/;
                 const imageRegex = /!\[.*?\]\((http:\/\/localhost:3000\/get\/image-generator\/[^)]+)\)/;
                 const matchImage = imageRegex.exec(aiResponse);
                 if (matchImage) {
