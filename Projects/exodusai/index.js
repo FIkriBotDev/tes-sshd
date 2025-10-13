@@ -232,7 +232,7 @@ async function startBot() {
                 let aiResponse = chatbotData.result;
 
                 aiResponse = aiResponse.replace(/https:\/\/localhost:/gi, 'http://localhost:');
-                aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id').trim();
+                aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exodusai.biz.id').trim();
                 aiResponse = fixUrls(aiResponse);
 
                 await sock.sendMessage(sender, { text: aiResponse });
@@ -291,7 +291,7 @@ async function startBot() {
                 }
 
                 aiResponse = aiResponse.replace(/https:\/\/localhost:/gi, 'http://localhost:');
-                aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id').trim();
+                aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exodusai.biz.id').trim();
                 aiResponse = fixUrls(aiResponse);
 
                 // === IMAGE
