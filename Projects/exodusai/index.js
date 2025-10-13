@@ -157,7 +157,7 @@ async function startBot() {
 
                 const caption = m.message.documentMessage.caption;
                 if (caption) {
-                    const apiUrl = `https://docx-ai.exoduscloud.my.id/api/edit?documentUrl=${encodeURIComponent(uploadedFileUrl)}&prompt=${encodeURIComponent(caption)}`;
+                    const apiUrl = `https://docx-ai.exodusai.biz.id/api/edit?documentUrl=${encodeURIComponent(uploadedFileUrl)}&prompt=${encodeURIComponent(caption)}`;
                     const response = await fetch(apiUrl);
                     const docxBuffer = await response.buffer();
                     await sock.sendMessage(sender, {
@@ -181,7 +181,7 @@ async function startBot() {
             try {
                 const documentUrl = userDocxMap[sender];
                 const prompt = userMessage;
-                const apiUrl = `https://docx-ai.exoduscloud.my.id/api/edit?documentUrl=${encodeURIComponent(documentUrl)}&prompt=${encodeURIComponent(prompt)}`;
+                const apiUrl = `https://docx-ai.exodusai.biz.id/api/edit?documentUrl=${encodeURIComponent(documentUrl)}&prompt=${encodeURIComponent(prompt)}`;
                 const response = await fetch(apiUrl);
                 const docxBuffer = await response.buffer();
                 await sock.sendMessage(sender, {
@@ -208,7 +208,7 @@ async function startBot() {
                 if (caption) geminiPrompt = caption;
                 else if (userMessage) geminiPrompt = userMessage;
 
-                const geminiApiUrl = `https://gemini-api.exoduscloud.my.id/api/gemini-image?text=${encodeURIComponent(geminiPrompt)}&url=${encodeURIComponent(uploadedFileUrl)}`;
+                const geminiApiUrl = `https://gemini-api.exodusai.biz.id/api/gemini-image?text=${encodeURIComponent(geminiPrompt)}&url=${encodeURIComponent(uploadedFileUrl)}`;
                 const geminiResponse = await fetch(geminiApiUrl).then(res => res.json());
 
                 if (!geminiResponse.status || !geminiResponse.result) {
