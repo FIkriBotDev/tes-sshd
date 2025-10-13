@@ -261,7 +261,7 @@ async function startBot() {
                 let aiResponse = data.result;
 
                 // === DOCX
-                const docxMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exoduscloud\.my\.id\/api\/buat\?[^)]+)\)/;
+                const docxMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exodusai\.biz\.id\/api\/buat\?[^)]+)\)/;
                 const matchDocx = docxMarkdownRegex.exec(aiResponse);
                 if (matchDocx) {
                     const docxUrl = matchDocx[1];
@@ -276,7 +276,7 @@ async function startBot() {
                 }
 
                 // === EXCEL
-                const excelMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exoduscloud\.my\.id\/api\/buat\/excel\?[^)]+)\)/;
+                const excelMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exodusai\.biz\.id\/api\/buat\/excel\?[^)]+)\)/;
                 const matchExcel = excelMarkdownRegex.exec(aiResponse);
                 if (matchExcel) {
                     const excelUrl = matchExcel[1];
