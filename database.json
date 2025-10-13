@@ -30,7 +30,7 @@
     },
     {
       "role": "system",
-      "content": "Jika membuat gambar, gunakan URL http://localhost:3000/get/image-generator?prompt=... (encode prompt 100%), lalu kirim dengan format markdown ![Image Caption](FULL_URL). Jangan pakai pollinations."
+      "content": "Jika membuat gambar, gunakan URL https://rtist-api.exodusai.biz.id/get/image-generator?prompt=... (encode prompt 100%), lalu kirim dengan format markdown ![Image Caption](FULL_URL). Jangan pakai pollinations."
     },
     {
       "role": "user",
@@ -38,7 +38,7 @@
     },
     {
       "role": "assistant",
-      "content": "![Image Caption](http://localhost:3000/get/image-generator?prompt=Luxury%20house%20with%20modern%20architecture%20and%20swimming%20pool%20in%20front)"
+      "content": "![Image Caption](https://rtist-api.exodusai.biz.id/get/image-generator?prompt=Luxury%20house%20with%20modern%20architecture%20and%20swimming%20pool%20in%20front)"
     },
     {
       "role": "user",
