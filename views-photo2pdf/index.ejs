@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foto ke PDF Converter</title>
+    <link href="/style.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md text-center">
+      <h1 class="text-2xl font-bold text-gray-800 mb-4">
+        Konversi Foto ke PDF
+      </h1>
+      <form
+        action="/convert"
+        method="post"
+        enctype="multipart/form-data"
+        class="flex flex-col items-center"
+      >
+        <label
+          for="photo"
+          class="border-2 border-dashed border-gray-400 rounded-lg p-6 w-full cursor-pointer hover:bg-gray-50 transition"
+        >
+          <span class="text-gray-600">Pilih foto untuk dikonversi</span>
+          <input
+            type="file"
+            id="photo"
+            name="photo"
+            accept="image/*"
+            required
+            class="hidden"
+            onchange="showFileName(event)"
+          />
+        </label>
+        <p id="fileName" class="text-sm text-gray-500 mt-2"></p>
+
+        <button
+          type="submit"
+          class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-medium transition"
+        >
+          Konversi ke PDF
+        </button>
+      </form>
+
+      <% if (pdfPath) { %>
+      <div class="mt-6">
+        <p class="text-green-600 font-medium mb-2">PDF berhasil dibuat!</p>
+        <a
+          href="<%= pdfPath %>"
+          class="inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition"
+          >Download PDF</a
+        >
+      </div>
+      <% } %>
+    </div>
+
+    <script>
+      function showFileName(event) {
+        const file = event.target.files[0];
+        document.getElementById("fileName").textContent = file
+          ? file.name
+          : "";
+      }
+    </script>
+  </body>
+</html>
