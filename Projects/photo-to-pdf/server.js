@@ -4,28 +4,30 @@ import fs from "fs";
 import PDFDocument from "pdfkit";
 import path from "path";
 import { fileURLToPath } from "url";
+
 const app = express();
 const port = 5152;
 
-// Konfigurasi folder upload
-const upload = multer({ dest: "uploads/" });
-
-
+// Setup __dirname untuk ES Module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Konfigurasi upload
+const upload = multer({ dest: "uploads/" });
 
-// Middleware
+// Setup EJS dan folder view
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views-photo2pdf"));
-app.use(express.static("public-photo2pdf"));
+
+// Setup folder public untuk CSS
+app.use(express.static(path.join(__dirname, "public-photo2pdf")));
 
 // Halaman utama
 app.get("/", (req, res) => {
   res.render("index", { pdfPath: null });
 });
 
-// Proses upload dan konversi ke PDF
+// Endpoint konversi foto ke PDF
 app.post("/convert", upload.single("photo"), (req, res) => {
   const photoPath = req.file.path;
   const outputDir = "output";
@@ -34,7 +36,7 @@ app.post("/convert", upload.single("photo"), (req, res) => {
   const pdfName = `photo-${Date.now()}.pdf`;
   const pdfPath = path.join(outputDir, pdfName);
 
-  // Membuat PDF
+  // Buat PDF dari gambar
   const doc = new PDFDocument({ autoFirstPage: false });
   const writeStream = fs.createWriteStream(pdfPath);
   doc.pipe(writeStream);
@@ -44,8 +46,9 @@ app.post("/convert", upload.single("photo"), (req, res) => {
   doc.image(photoPath, 0, 0);
   doc.end();
 
+  // Setelah selesai tulis PDF
   writeStream.on("finish", () => {
-    fs.unlinkSync(photoPath); // hapus foto sementara
+    fs.unlinkSync(photoPath); // hapus file gambar sementara
     res.render("index", { pdfPath: `/download/${pdfName}` });
   });
 });
@@ -58,6 +61,7 @@ app.get("/download/:filename", (req, res) => {
   });
 });
 
-app.listen(port, () =>
-  console.log(`Server berjalan di http://localhost:${port}`)
-);
+// Jalankan server
+app.listen(port, () => {
+  console.log(`✅ Server berjalan di http://localhost:${port}`);
+});
