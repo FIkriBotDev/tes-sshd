@@ -12,7 +12,7 @@ const upload = multer({ dest: "uploads/" });
 
 // Middleware
 app.set("view engine", "ejs");
-app.use(express.static("public"));
+app.use(express.static("public-photo2pdf"));
 
 // Halaman utama
 app.get("/", (req, res) => {
