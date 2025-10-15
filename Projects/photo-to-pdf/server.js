@@ -5,7 +5,7 @@ import PDFDocument from "pdfkit";
 import path from "path";
 
 const app = express();
-const port = 5000;
+const port = 5152;
 
 // Konfigurasi folder upload
 const upload = multer({ dest: "uploads/" });
