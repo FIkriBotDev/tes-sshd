@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path lengkap ke file Node.js
-SCRIPT="/home/runner/work/tes-sshd/tes-sshd/Projects/"
+SCRIPT="/home/runner/work/tes-sshd/tes-sshd/Projects/photo2pdf/server.js"
 
 # Fungsi untuk menjalankan skrip Node.js
 run_script() {
