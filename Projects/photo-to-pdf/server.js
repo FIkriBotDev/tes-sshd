@@ -3,12 +3,17 @@ import multer from "multer";
 import fs from "fs";
 import PDFDocument from "pdfkit";
 import path from "path";
-
+import { fileURLToPath } from "url";
 const app = express();
 const port = 5152;
 
 // Konfigurasi folder upload
 const upload = multer({ dest: "uploads/" });
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 // Middleware
 app.set("view engine", "ejs");
