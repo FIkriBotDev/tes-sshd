@@ -42,6 +42,8 @@ sh /home/runner/work/tes-sshd/tes-sshd/Projects/reminder-wa-app/start > /dev/nul
 
 # Jalankan Web Reminder-App di background, sembunyikan output
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/www-exodusai/start > /dev/null 2>&1 &
+# Jalankan Web Reminder-App di background, sembunyikan output
+sh /home/runner/work/tes-sshd/tes-sshd/Projects/www-exodusai/start > /dev/null 2>&1 &
 
 # Jalankan exodusai di foreground (output tampil di terminal)
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start #> /dev/null 2>&1 &
