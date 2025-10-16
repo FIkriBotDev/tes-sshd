@@ -2,8 +2,23 @@ const express = require("express");
 const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
-const pdfParse = require("pdf-parse");
+const pdfParseModule = require("pdf-parse");
 const { Document, Packer, Paragraph } = require("docx");
+
+// ✅ Deteksi fungsi parse secara aman (karena beberapa versi pdf-parse berbeda struktur)
+const pdfParse =
+  typeof pdfParseModule === "function"
+    ? pdfParseModule
+    : typeof pdfParseModule.pdfParse === "function"
+    ? pdfParseModule.pdfParse
+    : typeof pdfParseModule.default === "function"
+    ? pdfParseModule.default
+    : null;
+
+if (!pdfParse) {
+  console.error("❌ Modul pdf-parse tidak memiliki fungsi parse yang valid.");
+  process.exit(1);
+}
 
 const app = express();
 const port = 5153;
@@ -12,17 +27,14 @@ app.use(express.static("public-pdf2docx"));
 
 const upload = multer({ dest: "uploads/" });
 
-// Upload dan konversi PDF ke DOCX
 app.post("/upload", upload.single("pdfFile"), async (req, res) => {
   try {
     const pdfPath = req.file.path;
     const dataBuffer = fs.readFileSync(pdfPath);
 
-    // Parse isi teks dari PDF
     const pdfData = await pdfParse(dataBuffer);
     const text = pdfData.text || "Tidak ada teks yang dapat dibaca dari PDF.";
 
-    // Buat file DOCX baru
     const doc = new Document({
       sections: [
         {
@@ -40,11 +52,8 @@ app.post("/upload", upload.single("pdfFile"), async (req, res) => {
     if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
 
     fs.writeFileSync(outputPath, buffer);
-
-    // Hapus file PDF asli
     fs.unlinkSync(pdfPath);
 
-    // ✅ Kirim respon JSON ke frontend
     res.json({
       success: true,
       message: "Konversi berhasil!",
@@ -59,7 +68,6 @@ app.post("/upload", upload.single("pdfFile"), async (req, res) => {
   }
 });
 
-// Endpoint download hasil DOCX
 app.get("/download/:filename", (req, res) => {
   const filePath = path.join("converted", req.params.filename);
   if (!fs.existsSync(filePath)) {
@@ -67,9 +75,7 @@ app.get("/download/:filename", (req, res) => {
   }
 
   res.download(filePath, (err) => {
-    if (!err) {
-      fs.unlinkSync(filePath); // hapus setelah diunduh
-    }
+    if (!err) fs.unlinkSync(filePath);
   });
 });
 
