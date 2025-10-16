@@ -5,38 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PDF ke DOCX Converter</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="/script.js"></script>
   </head>
-  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
-    <div class="bg-white shadow-xl rounded-2xl p-10 w-full max-w-lg text-center">
-      <h1 class="text-3xl font-bold mb-4 text-gray-800">
-        🧾 PDF ke DOCX Converter
-      </h1>
-      <p class="text-gray-500 mb-6">
-        Unggah file PDF kamu dan ubah menjadi file DOCX dengan mudah.
-      </p>
-
-      <form id="uploadForm" class="space-y-4">
+  <body class="bg-gradient-to-br from-blue-100 to-blue-300 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-10 rounded-2xl shadow-xl w-full max-w-md text-center">
+      <h1 class="text-2xl font-bold mb-6 text-gray-800">🪶 Konversi PDF ke DOCX</h1>
+      <form id="uploadForm" enctype="multipart/form-data" class="space-y-4">
         <input
           type="file"
           name="pdfFile"
-          accept=".pdf"
+          accept="application/pdf"
           required
-          class="w-full border border-gray-300 p-2 rounded-lg"
+          class="block w-full text-sm text-gray-600 border border-gray-300 rounded-lg p-2 cursor-pointer focus:ring focus:ring-blue-200"
         />
         <button
           type="submit"
-          class="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition-all"
+          class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition-all"
         >
           Convert Sekarang
         </button>
       </form>
 
-      <div id="loading" class="hidden mt-6 text-blue-600 font-semibold">
-        ⏳ Sedang mengonversi...
-      </div>
+      <p id="status" class="mt-6 text-gray-600"></p>
 
-      <div id="result" class="hidden mt-6"></div>
+      <div id="downloadLink" class="mt-4 hidden">
+        <a
+          id="fileLink"
+          href="#"
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg inline-block"
+          >⬇️ Download DOCX</a
+        >
+      </div>
     </div>
+
+    <script>
+      const form = document.getElementById("uploadForm");
+      const status = document.getElementById("status");
+      const downloadLink = document.getElementById("downloadLink");
+      const fileLink = document.getElementById("fileLink");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        status.textContent = "⏳ Sedang mengonversi...";
+        downloadLink.classList.add("hidden");
+
+        const formData = new FormData(form);
+        const response = await fetch("/convert", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (response.ok) {
+          const blob = await response.blob();
+          const url = URL.createObjectURL(blob);
+          fileLink.href = url;
+          fileLink.download = "converted.docx";
+          downloadLink.classList.remove("hidden");
+          status.textContent = "✅ Konversi selesai!";
+        } else {
+          status.textContent = "❌ Gagal mengonversi PDF.";
+        }
+      });
+    </script>
   </body>
 </html>
