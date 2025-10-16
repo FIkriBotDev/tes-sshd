@@ -9,11 +9,11 @@ const app = express();
 const port = 5153;
 const upload = multer({ dest: "uploads/" });
 
-app.use(express.static("public"));
+app.use(express.static("public-pdf2docx"));
 
 // Halaman utama
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve("public/index.html"));
+  res.sendFile(path.resolve("public-pdf2docx/index.html"));
 });
 
 // Upload dan convert PDF ke DOCX
