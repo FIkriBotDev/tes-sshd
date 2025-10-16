@@ -2,11 +2,26 @@ const express = require("express");
 const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
-
-// FIX: pastikan bisa jalan di semua versi pdf-parse
-const pdfParseModule = require("pdf-parse");
-const pdfParse = pdfParseModule.default || pdfParseModule;
 const { Document, Packer, Paragraph } = require("docx");
+
+// === FIX untuk berbagai versi pdf-parse ===
+let pdfParse;
+try {
+  const pdfModule = require("pdf-parse");
+  if (typeof pdfModule === "function") {
+    pdfParse = pdfModule;
+  } else if (typeof pdfModule.pdf === "function") {
+    pdfParse = pdfModule.pdf;
+  } else if (typeof pdfModule.default === "function") {
+    pdfParse = pdfModule.default;
+  } else {
+    throw new Error("Modul pdf-parse tidak ditemukan fungsi parse-nya.");
+  }
+} catch (err) {
+  console.error("❌ Gagal memuat modul pdf-parse:", err);
+  process.exit(1);
+}
+// ==========================================
 
 const app = express();
 const port = 5153;
@@ -24,18 +39,17 @@ app.post("/upload", upload.single("pdfFile"), async (req, res) => {
   try {
     const pdfPath = req.file.path;
     const dataBuffer = fs.readFileSync(pdfPath);
+
+    // Parse PDF → ambil teks
     const pdfData = await pdfParse(dataBuffer);
 
-    // Buat dokumen DOCX baru
+    // Buat file DOCX dari teks hasil PDF
     const doc = new Document({
       sections: [
         {
-          properties: {},
-          children: [
-            new Paragraph({
-              text: pdfData.text,
-            }),
-          ],
+          children: pdfData.text
+            .split("\n")
+            .map((line) => new Paragraph(line.trim())),
         },
       ],
     });
@@ -46,17 +60,18 @@ app.post("/upload", upload.single("pdfFile"), async (req, res) => {
 
     fs.writeFileSync(outputPath, docxBuffer);
 
-    // Hapus file PDF setelah convert
+    // Hapus file PDF asli
     fs.unlinkSync(pdfPath);
 
+    // Kirim link download
     res.json({ success: true, downloadUrl: `/download/${outputName}` });
   } catch (error) {
-    console.error(error);
+    console.error("❌ ERROR saat konversi:", error);
     res.status(500).json({ success: false, message: "Gagal mengonversi file." });
   }
 });
 
-// Endpoint download hasil DOCX
+// Endpoint untuk download hasil DOCX
 app.get("/download/:filename", (req, res) => {
   const filePath = path.join("uploads", req.params.filename);
   res.download(filePath, (err) => {
