@@ -9,7 +9,7 @@ const app = express();
 const port = 5153;
 
 // Middleware
-app.use(express.static("public"));
+app.use(express.static("public-pdf2docx"));
 
 // Setup multer untuk upload
 const upload = multer({ dest: "uploads/" });
