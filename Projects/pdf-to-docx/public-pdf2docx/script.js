@@ -9,7 +9,7 @@ form.addEventListener("submit", async (e) => {
 
   const formData = new FormData(form);
 
-  const response = await fetch("/convert", {
+  const response = await fetch("/upload", {
     method: "POST",
     body: formData,
   });
