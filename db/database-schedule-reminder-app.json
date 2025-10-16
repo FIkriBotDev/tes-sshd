@@ -1066,27 +1066,5 @@
     "customDates": [],
     "createdAt": "2025-10-02T14:15:25.284Z",
     "sentLog": []
-  },
-  {
-    "id": "122ce7ba-ecf0-447f-a273-fe9e51938208",
-    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
-    "username": "Fikri",
-    "userPhone": "6287769811262",
-    "title": "cek info dosen",
-    "date": "2025-10-06",
-    "time": "03:00",
-    "offsets": [
-      0
-    ],
-    "description": "cek info dosen di grup, kalau belum ada.... segera mandi dan siap siap berangkat kampus",
-    "location": "Kampus",
-    "category": "Info",
-    "priority": "rendah",
-    "repeat": "none",
-    "customDates": [],
-    "createdAt": "2025-10-05T14:26:21.741Z",
-    "sentLog": [
-      "2025-10-06T03:00:00.000+07:00|0"
-    ]
   }
 ]
