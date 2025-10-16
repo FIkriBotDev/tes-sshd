@@ -1,25 +1,12 @@
-import express from "express";
-import multer from "multer";
-import fs from "fs";
-import path from "path";
-import pkg from "pdf-parse";
-import { Document, Packer, Paragraph } from "docx";
+const express = require("express");
+const multer = require("multer");
+const fs = require("fs");
+const path = require("path");
+const pdfParse = require("pdf-parse");
+const { Document, Packer, Paragraph } = require("docx");
 
 const app = express();
 const port = 5153;
-
-// Deteksi fungsi parser (untuk pdf-parse versi lama dan baru)
-let pdfParse =
-  typeof pkg === "function"
-    ? pkg
-    : typeof pkg.default === "function"
-    ? pkg.default
-    : pkg.PDFParse || pkg.parse;
-
-if (typeof pdfParse !== "function") {
-  console.error("❌ Gagal menemukan fungsi parser pdf-parse.");
-  process.exit(1);
-}
 
 // Middleware
 app.use(express.static("public"));
@@ -34,7 +21,7 @@ app.post("/convert", upload.single("pdfFile"), async (req, res) => {
     const dataBuffer = fs.readFileSync(pdfPath);
 
     const data = await pdfParse(dataBuffer);
-    const text = data.text || "Tidak ada teks terbaca dari PDF ini.";
+    const text = data.text || "Tidak ada teks yang dapat dibaca dari PDF.";
 
     const doc = new Document({
       sections: [
@@ -53,7 +40,7 @@ app.post("/convert", upload.single("pdfFile"), async (req, res) => {
     const buffer = await Packer.toBuffer(doc);
     fs.writeFileSync(outputPath, buffer);
 
-    // Hapus file PDF asli
+    // Hapus file PDF asli setelah selesai
     fs.unlinkSync(pdfPath);
 
     res.download(outputPath, "converted.docx", (err) => {
