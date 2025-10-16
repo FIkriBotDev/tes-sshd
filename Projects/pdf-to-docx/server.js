@@ -2,7 +2,10 @@ const express = require("express");
 const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
-const pdfParse = require("pdf-parse");
+
+// FIX: pastikan bisa jalan di semua versi pdf-parse
+const pdfParseModule = require("pdf-parse");
+const pdfParse = pdfParseModule.default || pdfParseModule;
 const { Document, Packer, Paragraph } = require("docx");
 
 const app = express();
