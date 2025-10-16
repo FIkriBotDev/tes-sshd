@@ -1,19 +1,19 @@
-import express from "express";
-import multer from "multer";
-import fs from "fs";
-import path from "path";
-import pdfParse from "pdf-parse";
-import { Document, Packer, Paragraph } from "docx";
+const express = require("express");
+const multer = require("multer");
+const fs = require("fs");
+const path = require("path");
+const pdfParse = require("pdf-parse");
+const { Document, Packer, Paragraph } = require("docx");
 
 const app = express();
 const port = 5153;
 const upload = multer({ dest: "uploads/" });
 
-app.use(express.static("public-pdf2docx"));
+app.use(express.static("public"));
 
 // Halaman utama
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve("public-pdf2docx/index.html"));
+  res.sendFile(path.resolve("public/index.html"));
 });
 
 // Upload dan convert PDF ke DOCX
@@ -46,7 +46,6 @@ app.post("/upload", upload.single("pdfFile"), async (req, res) => {
     // Hapus file PDF setelah convert
     fs.unlinkSync(pdfPath);
 
-    // Kirim link download
     res.json({ success: true, downloadUrl: `/download/${outputName}` });
   } catch (error) {
     console.error(error);
