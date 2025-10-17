@@ -2684,3 +2684,170 @@
   }
 }
 
+[2025-10-17T08:17:04.672Z] Error Pollinations: Pollinations API mengembalikan error
+[2025-10-17T08:17:04.867Z] Gemini API Key 1 gagal: [429] {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Generate Content API requests per minute' and limit 'GenerateContent request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:554521356109'.",
+    "status": "RESOURCE_EXHAUSTED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "RATE_LIMIT_EXCEEDED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "quota_unit": "1/min/{project}/{region}",
+          "quota_limit": "GenerateContentRequestsPerMinutePerProjectPerRegion",
+          "quota_limit_value": "0",
+          "consumer": "projects/554521356109",
+          "service": "generativelanguage.googleapis.com",
+          "quota_metric": "generativelanguage.googleapis.com/generate_content_requests",
+          "quota_location": "us-central1"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Request a higher quota limit.",
+            "url": "https://cloud.google.com/docs/quotas/help/request_increase"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+[2025-10-17T08:17:04.971Z] Gemini API Key 2 gagal: [403] {
+  "error": {
+    "code": 403,
+    "message": "Permission denied: Consumer 'api_key:AIzaSyAhNe8PXaY4gFLrJcAcxDOB3CkS_N_UcsM' has been suspended.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "CONSUMER_SUSPENDED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "containerInfo": "api_key:AIzaSyAhNe8PXaY4gFLrJcAcxDOB3CkS_N_UcsM",
+          "service": "generativelanguage.googleapis.com",
+          "consumer": "projects/701689184880"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Permission denied: Consumer 'api_key:AIzaSyAhNe8PXaY4gFLrJcAcxDOB3CkS_N_UcsM' has been suspended."
+      }
+    ]
+  }
+}
+
+[2025-10-17T08:17:05.073Z] Gemini API Key 3 gagal: [403] {
+  "error": {
+    "code": 403,
+    "message": "Permission denied: Consumer 'api_key:AIzaSyCyDxCi2MElJ4lzR9wpx95oSlbZdbkglwE' has been suspended.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "CONSUMER_SUSPENDED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "containerInfo": "api_key:AIzaSyCyDxCi2MElJ4lzR9wpx95oSlbZdbkglwE",
+          "service": "generativelanguage.googleapis.com",
+          "consumer": "projects/271780090586"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Permission denied: Consumer 'api_key:AIzaSyCyDxCi2MElJ4lzR9wpx95oSlbZdbkglwE' has been suspended."
+      }
+    ]
+  }
+}
+
+[2025-10-17T08:17:05.174Z] Gemini API Key 4 gagal: [429] {
+  "error": {
+    "code": 429,
+    "message": "Quota exceeded for quota metric 'Generate Content API requests per minute' and limit 'GenerateContent request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:910496404776'.",
+    "status": "RESOURCE_EXHAUSTED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "RATE_LIMIT_EXCEEDED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "service": "generativelanguage.googleapis.com",
+          "quota_limit": "GenerateContentRequestsPerMinutePerProjectPerRegion",
+          "quota_unit": "1/min/{project}/{region}",
+          "quota_metric": "generativelanguage.googleapis.com/generate_content_requests",
+          "consumer": "projects/910496404776",
+          "quota_limit_value": "0",
+          "quota_location": "us-central1"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Request a higher quota limit.",
+            "url": "https://cloud.google.com/docs/quotas/help/request_increase"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+[2025-10-17T08:17:05.272Z] Gemini API Key 5 gagal: [403] {
+  "error": {
+    "code": 403,
+    "message": "Permission denied: Consumer 'api_key:AIzaSyDV2JM2yOyEtHjnxaJsFh7PeLbOySTspJg' has been suspended.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "CONSUMER_SUSPENDED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "service": "generativelanguage.googleapis.com",
+          "consumer": "projects/796167732919",
+          "containerInfo": "api_key:AIzaSyDV2JM2yOyEtHjnxaJsFh7PeLbOySTspJg"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Permission denied: Consumer 'api_key:AIzaSyDV2JM2yOyEtHjnxaJsFh7PeLbOySTspJg' has been suspended."
+      }
+    ]
+  }
+}
+
+[2025-10-17T08:17:05.272Z] Error fallback Gemini: Semua Gemini API Key gagal dipakai: [403] {
+  "error": {
+    "code": 403,
+    "message": "Permission denied: Consumer 'api_key:AIzaSyDV2JM2yOyEtHjnxaJsFh7PeLbOySTspJg' has been suspended.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "CONSUMER_SUSPENDED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "service": "generativelanguage.googleapis.com",
+          "consumer": "projects/796167732919",
+          "containerInfo": "api_key:AIzaSyDV2JM2yOyEtHjnxaJsFh7PeLbOySTspJg"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "Permission denied: Consumer 'api_key:AIzaSyDV2JM2yOyEtHjnxaJsFh7PeLbOySTspJg' has been suspended."
+      }
+    ]
+  }
+}
+
