@@ -1,2 +1,2 @@
 sudo apt install jupyter-notebook -y
-jupyter notebook
+jupyter notebook --allow-root
