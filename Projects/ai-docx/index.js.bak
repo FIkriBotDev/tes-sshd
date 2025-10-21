@@ -31,12 +31,12 @@ const cleanCodeBlock = (code = "") =>
 
 const requestAIWithFallback = async (messages) => {
   try {
-    const res = await axios.post("https://rtist-api.exodusai.biz.id/post/rtist", { messages });
+    const res = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", { messages });
     const rawCode = res.data.result || res.data.response;
     if (!rawCode) throw new Error("AI tidak memberikan kode");
     return cleanCodeBlock(rawCode);
   } catch {
-    const res = await axios.post("https://rtist-api.exodusai.biz.id/post/rtist", { conversation: messages });
+    const res = await axios.post("https://rtist-api.exoduscloud.my.id/post/rtist", { conversation: messages });
     const rawCode = res.data.result || res.data.response;
     if (!rawCode) throw new Error("Fallback AI tidak memberikan kode");
     return cleanCodeBlock(rawCode);
