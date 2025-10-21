@@ -564,7 +564,6 @@ app.post('/post/rtist', async (req, res) => {
         headers: {
           'accept': 'application/json',
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer XOYha3sjdByNrw_q', // API Token
         },
       }
     );
@@ -1568,4 +1567,3 @@ app.listen(PORT, () => {
   console.log(`Server berjalan pada http://localhost:${PORT}`);
   setInterval(showServerStatus, 1000); // Memperbarui tampilan setiap 1 detik
 });
-
