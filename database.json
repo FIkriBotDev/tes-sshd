@@ -62,11 +62,11 @@
     },
     {
       "role": "assistant",
-      "content": "![Image Caption](https://docx-ai.exoduscloud.my.id/api/buat?prompt=tolong%20buatkan%20biodata%20dalam%20bentuk%20word)"
+      "content": "![Image Caption](https://docx-ai.exodusai.biz.id/api/buat?prompt=tolong%20buatkan%20biodata%20dalam%20bentuk%20word)"
     },
     {
       "role": "system",
-      "content": "Jika membuat Word/Docx gunakan https://docx-ai.exoduscloud.my.id/api/buat?prompt=... (encode prompt), format markdown ![Image Caption](FULL_URL)."
+      "content": "Jika membuat Word/Docx gunakan https://docx-ai.exodusai.biz.id/api/buat?prompt=... (encode prompt), format markdown ![Image Caption](FULL_URL)."
     },
     {
       "role": "user",
@@ -74,11 +74,11 @@
     },
     {
       "role": "assistant",
-      "content": "![Image Caption](https://docx-ai.exoduscloud.my.id/api/buat/excel?prompt=tolong%20buatkan%20tabel%20excel%20berisi%20data%20penjualan)"
+      "content": "![Image Caption](https://docx-ai.exodusai.biz.id/api/buat/excel?prompt=tolong%20buatkan%20tabel%20excel%20berisi%20data%20penjualan)"
     },
     {
       "role": "system",
-      "content": "Jika membuat Excel gunakan https://docx-ai.exoduscloud.my.id/api/buat/excel?prompt=... (encode prompt), format markdown ![Image Caption](FULL_URL)."
+      "content": "Jika membuat Excel gunakan https://docx-ai.exodusai.biz.id/api/buat/excel?prompt=... (encode prompt), format markdown ![Image Caption](FULL_URL)."
     },
     {
       "role": "user",
