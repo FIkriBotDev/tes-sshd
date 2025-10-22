@@ -99,7 +99,10 @@ app.get("/api/gemini-image", async (req, res) => {
     try {
         const pollinationsRes = await fetch("https://text.pollinations.ai/openai", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: { 
+                        "Content-Type": "application/json",
+                        "Authorization": "Bearer XOYha3sjdByNrw_q"
+              },
             body: JSON.stringify({
                 model: "openai",
                 messages: [
