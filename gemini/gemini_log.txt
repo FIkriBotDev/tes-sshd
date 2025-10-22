@@ -543,3 +543,9 @@ Beberapa opsi yang bisa saya bantu:
 
 Mau saya buatkan caption, atau jelaskan lebih lanjut bagaimana proses erupsinya?
 
+
+[2025-10-22T03:56:46.849Z]
+Prompt    : ini gambar apa?
+Image URL : https://uploader.exodusai.biz.id/tmp/e0858a-1761105399580.jpg
+Response  : Gambar ini adalah gunung berapi yang sedang meletus. Lava merah mengalir dari kawah ke lerengnya, disertai awan asap tebal. Nama gunungnya tidak bisa dipastikan dari foto saja tanpa informasi lokasi. Kalau kamu punya konteksnya (negara/area), kasih tahu—saya bantu cari kemungkinan katanya.
+
