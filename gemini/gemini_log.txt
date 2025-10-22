@@ -530,3 +530,16 @@ Response  : {
   "alternatif": []
 }
 
+
+[2025-10-22T03:52:58.650Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/c29c6e-1761105171178.jpg
+Response  : Gambar ini menunjukkan gunung berapi stratovolcano yang sedang meletus: kawah memuntahkan asap tebal, sementara lava pijar mengalir turun menuruni lereng dalam jalur-jalur lahar yang menyala. Warna oranye-merah sangat kontras dengan lanskap sekitarnya yang gelap.
+
+Beberapa opsi yang bisa saya bantu:
+- Caption media sosial dalam bahasa Indonesia atau Inggris (beberapa gaya, misalnya sopan, puitis, atau agak dramatis).
+- Penjelasan singkat tentang bagaimana lava mengalir dan mengapa ada kolom asapnya.
+- Jawaban atas pertanyaan soal bahaya, bagaimana para ilmuwan memantau gunung berapi, atau cara keselamatan terkait erupsi.
+
+Mau saya buatkan caption, atau jelaskan lebih lanjut bagaimana proses erupsinya?
+
