@@ -52,62 +52,11 @@ console.error = function (...args) {
     originalConsoleError.apply(console, args);
 };
 
-// ===== Gemini dengan fallback API Key =====
+// Endpoint YouTube Summary (pakai Gemini)
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
-// kumpulan API key dari .env
-const GEMINI_KEYS = [
-    process.env.GEMINI_KEY_1,
-    process.env.GEMINI_KEY_2,
-    process.env.GEMINI_KEY_3,
-    process.env.GEMINI_KEY_4,
-    process.env.GEMINI_KEY_5
-].filter(Boolean);
-
-// generateContent dengan fallback ke endpoint v1
-async function generateWithGemini(contents) {
-    let lastError;
-    for (let i = 0; i < GEMINI_KEYS.length; i++) {
-        const key = GEMINI_KEYS[i];
-        try {
-            const response = await fetch(
-                "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "x-goog-api-key": key, // ✅ diperbaiki (bukan Authorization Bearer)
-                    },
-                    body: JSON.stringify({ contents }),
-                }
-            );
-
-            if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error(`[${response.status}] ${errorText}`);
-            }
-
-            const data = await response.json();
-            const text =
-                data.candidates?.[0]?.content?.parts?.map(p => p.text).join(" ")?.trim() || "";
-            return text;
-        } catch (err) {
-            lastError = err;
-            console.error(`Gemini API Key ${i + 1} gagal: ${err.message}`);
-            continue;
-        }
-    }
-    throw new Error("Semua Gemini API Key gagal dipakai: " + lastError?.message);
-}
-
-// helper: ambil image URL jadi base64 (untuk Gemini Vision)
-async function fetchImageAsBase64(url) {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Gagal fetch gambar: ${res.status} ${res.statusText}`);
-    const buffer = await res.arrayBuffer();
-    return Buffer.from(buffer).toString("base64");
-}
-
-// Endpoint YouTube Summary (pakai Gemini + fallback key)
 app.get("/api/ytsummarize", async (req, res) => {
     const videoUrl = req.query.url;
 
@@ -116,23 +65,19 @@ app.get("/api/ytsummarize", async (req, res) => {
     }
 
     try {
-        const responseText = await generateWithGemini([
-            {
-                role: "user",
-                parts: [
-                    { text: `Ringkas video ini dengan format berikut:
+        const result = await model.generateContent([
+            `Ringkas video ini dengan format berikut:
 
-[Ringkasan Video]
-<Deskripsi umum tentang isi video>
+            [Ringkasan Video]
+            <Deskripsi umum tentang isi video>
 
-[Timeline]
-00:00:05 - <Deskripsi peristiwa pertama>
-00:01:00 - <Deskripsi peristiwa kedua>
-00:02:30 - <Deskripsi peristiwa berikutnya>` }
-                ]
-            }
+            [Timeline]
+            00:00:05 - <Deskripsi peristiwa pertama>
+            00:01:00 - <Deskripsi peristiwa kedua>
+            00:02:30 - <Deskripsi peristiwa berikutnya>`
         ]);
 
+        const responseText = result.response.text().trim();
         const jsonResponse = parseTextToJson(responseText);
 
         return res.json({ summarize: jsonResponse });
@@ -142,7 +87,7 @@ app.get("/api/ytsummarize", async (req, res) => {
     }
 });
 
-// Endpoint /api/gemini-image (gunakan Pollinations, fallback ke Gemini Vision)
+// Endpoint /api/gemini-image (gunakan Pollinations + logging)
 app.get("/api/gemini-image", async (req, res) => {
     const imageUrl = req.query.url;
     const textPrompt = req.query.text || "Jelaskan gambar ini";
@@ -160,7 +105,10 @@ app.get("/api/gemini-image", async (req, res) => {
                 messages: [
                     {
                         role: "user",
-                        content: `${textPrompt}\n\nGambar: ${imageUrl}`
+                        content: [
+                            { type: "text", text: textPrompt },
+                            { type: "image_url", image_url: { url: imageUrl } }
+                        ]
                     }
                 ],
                 max_tokens: 500
@@ -213,35 +161,11 @@ Response  : ${responseText}
         return res.json({
             creator: "@Fikri",
             status: true,
-            result: responseText,
-            source: "pollinations"
+            result: responseText
         });
     } catch (error) {
-        console.error("Error Pollinations:", error.message);
-
-        // Fallback ke Gemini Vision
-        try {
-            const base64Img = await fetchImageAsBase64(imageUrl);
-            const responseText = await generateWithGemini([
-                {
-                    role: "user",
-                    parts: [
-                        { inlineData: { mimeType: "image/jpeg", data: base64Img } },
-                        { text: textPrompt }
-                    ]
-                }
-            ]);
-
-            return res.json({
-                creator: "@Fikri",
-                status: true,
-                result: responseText,
-                source: "gemini-fallback"
-            });
-        } catch (err2) {
-            console.error("Error fallback Gemini:", err2.message);
-            return res.status(500).json({ status: false, error: "Gagal memproses gambar (Pollinations & Gemini error)" });
-        }
+        console.error("Error processing image:", error);
+        return res.status(500).json({ status: false, error: "Terjadi kesalahan saat memproses gambar" });
     }
 });
 
