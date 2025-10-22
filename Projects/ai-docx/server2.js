@@ -65,7 +65,7 @@ app.get("/api/edit", async (req, res) => {
     const outputDocx = `${TMP_DIR}/hasil-${fileId}.docx`;
 
     let finalCode = code
-      .replace(/dokumen_path\s*=.*\n?/g, '')
+      .replace(/dokumen_path\s*=.*\n?/g, "")
       .replace(/Document\(["'](.+?)["']\)/, `Document("${localPath}")`)
       .replace(/doc\.save\((.*?)\)/g, `doc.save("${outputDocx}")`);
 
@@ -76,8 +76,11 @@ app.get("/api/edit", async (req, res) => {
     python.stderr.on("data", (data) => console.error(`PYTHON ERROR: ${data}`));
 
     python.on("close", (code) => {
+      const altPath = "/tmp/biodata.docx";
       if (fs.existsSync(outputDocx)) {
         res.download(outputDocx);
+      } else if (fs.existsSync(altPath)) {
+        res.download(altPath);
       } else {
         res.status(500).send("Gagal menjalankan script python.");
       }
@@ -115,8 +118,14 @@ app.get("/api/buat", async (req, res) => {
     python.stderr.on("data", (data) => console.error(`PYTHON ERROR: ${data}`));
 
     python.on("close", (code) => {
+      const altPath = "/tmp/biodata.docx";
+      console.log("Output path:", outputDocx);
+      console.log("TMP_DIR files:", fs.readdirSync(TMP_DIR));
+      console.log("TMP files:", fs.readdirSync("/tmp"));
       if (fs.existsSync(outputDocx)) {
         res.download(outputDocx);
+      } else if (fs.existsSync(altPath)) {
+        res.download(altPath);
       } else {
         res.status(500).send("Gagal menjalankan script python.");
       }
@@ -151,8 +160,11 @@ app.get("/api/buat/excel", async (req, res) => {
     python.stderr.on("data", (data) => console.error(`PYTHON ERROR: ${data}`));
 
     python.on("close", (code) => {
+      const altPath = "/tmp/biodata.xlsx";
       if (fs.existsSync(outputXlsx)) {
         res.download(outputXlsx);
+      } else if (fs.existsSync(altPath)) {
+        res.download(altPath);
       } else {
         res.status(500).send("Gagal menjalankan script python atau file tidak dibuat.");
       }
@@ -162,7 +174,6 @@ app.get("/api/buat/excel", async (req, res) => {
     res.status(500).send("Terjadi kesalahan saat membuat file Excel.");
   }
 });
-
 
 app.listen(port, () => {
   console.log(`Docx-AI server listening at http://localhost:${port}`);
