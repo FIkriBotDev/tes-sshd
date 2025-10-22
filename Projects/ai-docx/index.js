@@ -8,7 +8,7 @@ import { spawn } from "child_process";
 import multer from "multer";
 
 const app = express();
-const port = 1000;
+const port = 1001;
 
 const TMP_DIR = "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-docx/tmp";
 if (!fs.existsSync(TMP_DIR)) fs.mkdirSync(TMP_DIR, { recursive: true });
