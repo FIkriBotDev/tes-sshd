@@ -327,3 +327,9 @@ Unable to reach the origin service. The service may be down or it may not be res
   "status": 404
 }
 
+[2025-10-22T02:44:37.199Z] API Error:
+{
+  "error": "Model not found: claude-hybridspace",
+  "status": 404
+}
+
