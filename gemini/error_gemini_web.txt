@@ -192,3 +192,9 @@ Unable to reach the origin service. The service may be down or it may not be res
   "status": 404
 }
 
+[2025-10-22T03:49:04.946Z] API Error:
+{
+  "error": "Model not found or tier not high enough. Your tier: anonymous, required tier: seed. To get a token or add a referrer, visit https://auth.pollinations.ai",
+  "status": 402
+}
+
