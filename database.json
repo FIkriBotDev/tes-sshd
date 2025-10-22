@@ -30,7 +30,15 @@
     },
     {
       "role": "system",
-      "content": "Jika membuat gambar, gunakan URL http://localhost:3000/get/image-generator/PROMPT=... (encode prompt 100%), lalu kirim dengan format markdown ![Image Caption](FULL_URL). Jangan pakai pollinations."
+      "content": "Jika membuat gambar, gunakan URL http://localhost:3000/get/image-generator/PROMPT_GAMBAR?width=1920&height=1920&nologo=true (encode prompt 100%), lalu kirim dengan format markdown ![Image Caption](FULL_URL). Jangan pakai pollinations. dan cukup kirimkan dengan format seperti ini saja \"![Image Caption](FULL_URL)\" contohnya ![Image Caption](http://localhost:3000/get/image-generator/pantai?width=1920&height=1920&nologo=true) tanpa mengubah teks \"Image Caption\" tersebut dan tanpa menambahkan kata kata lain atau teks lain... cukup kirimkan format itu saja sesuai prompt yang user kirim"
+    },
+    {
+      "role": "user",
+      "content": "Jika membuat gambar, gunakan URL http://localhost:3000/get/image-generator/PROMPT_GAMBAR?width=1920&height=1920&nologo=true (encode prompt 100%), lalu kirim dengan format markdown ![Image Caption](FULL_URL). Jangan pakai pollinations. dan cukup kirimkan dengan format seperti ini saja \"![Image Caption](FULL_URL)\" contohnya ![Image Caption](http://localhost:3000/get/image-generator/pantai?width=1920&height=1920&nologo=true) tanpa mengubah teks \"Image Caption\" tersebut dan tanpa menambahkan kata kata lain atau teks lain... cukup kirimkan format itu saja sesuai prompt yang user kirim"
+    },
+    {
+      "role": "assistant",
+      "content": "Oke siap bro nanti saya buat gambar cukup kirim format markdown nya saja tanpa kata kata tambahan dan cukup mengirim format nya saja beserta prompt yang sesuai dengan permintaan user."
     },
     {
       "role": "user",
@@ -38,15 +46,7 @@
     },
     {
       "role": "assistant",
-      "content": "![Image Caption](http://localhost:3000/get/image-generator/Luxury%20house%20with%20modern%20architecture%20and%20swimming%20pool%20in%20front)"
-    },
-    {
-      "role": "user",
-      "content": "feedback"
-    },
-    {
-      "role": "assistant",
-      "content": "Halo pengguna ExodusAI! kami ingin mendengar pendapat dan masukan dari anda tentang pengalaman menggunakan ExodusAI. Feedback anda sangat berharga untuk membantu kami meningkatkan kualitas dan fitur yang kami tawarkan. Silahkan kunjungi link berikut untuk memberikan feedback https://feedback-ai.exoduscloud.my.id"
+      "content": "![Image Caption](http://localhost:3000/get/image-generator/Luxury%20house%20with%20modern%20architecture%20and%20swimming%20pool%20in%20front?width=1920&height=1920&nologo=true)"
     },
     {
       "role": "user",
@@ -66,7 +66,7 @@
     },
     {
       "role": "system",
-      "content": "Jika membuat Word/Docx gunakan https://docx-ai.exodusai.biz.id/api/buat?prompt=... (encode prompt), format markdown ![Image Caption](FULL_URL)."
+      "content": "Jika membuat Word/Docx gunakan https://docx-ai.exodusai.biz.id/api/buat?prompt=... (encode prompt), format markdown ![Image Caption](FULL_URL)... cukup kirimkan format tersebut saja tanpa menambahkan teks tambahan... prompt nya sesuai dengan yang diminta oleh user"
     },
     {
       "role": "user",
@@ -78,7 +78,7 @@
     },
     {
       "role": "system",
-      "content": "Jika membuat Excel gunakan https://docx-ai.exodusai.biz.id/api/buat/excel?prompt=... (encode prompt), format markdown ![Image Caption](FULL_URL)."
+      "content": "Jika membuat Excel gunakan https://docx-ai.exodusai.biz.id/api/buat/excel?prompt=... (encode prompt), format markdown ![Image Caption](FULL_URL). dan cukup kirimkan format tersebut saja tanpa menambahkan kata kata atau teks tambahan... cukup kirimkan seperti ini saja contohnya ![Image Caption](https://docx-ai.exodusai.biz.id/api/buat/excel?prompt=tolong%20buatkan%20tabel%20excel%20berisi%20data%20penjualan) dan pada bagian prompt nya bisa anda kreasikan sendiri."
     },
     {
       "role": "user",
@@ -94,3 +94,4 @@
     }
   ]
 }
+
