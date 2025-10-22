@@ -43,19 +43,10 @@ const requestAIWithFallback = async (messages) => {
   }
 };
 
-// 🧹 Hapus file lama yang mungkin masih tersisa
-const cleanOldFiles = () => {
-  ["/tmp/biodata.docx", "/tmp/biodata.xlsx"].forEach((f) => {
-    if (fs.existsSync(f)) fs.unlinkSync(f);
-  });
-};
-
 app.get("/api/edit", async (req, res) => {
   try {
     const { documentUrl, prompt } = req.query;
     if (!documentUrl || !prompt) return res.status(400).send("Missing parameters.");
-
-    cleanOldFiles();
 
     const localPath = `/tmp/${path.basename(documentUrl)}`;
     await downloadFile(documentUrl, localPath);
@@ -81,13 +72,20 @@ app.get("/api/edit", async (req, res) => {
     fs.writeFileSync(scriptPath, finalCode);
     const python = spawn("python3", [scriptPath]);
 
-    python.on("close", () => {
+    python.stdout.on("data", (data) => console.log(`PYTHON STDOUT: ${data}`));
+    python.stderr.on("data", (data) => console.error(`PYTHON ERROR: ${data}`));
+
+    python.on("close", (code) => {
       const altPath = "/tmp/biodata.docx";
-      if (fs.existsSync(outputDocx)) res.download(outputDocx);
-      else if (fs.existsSync(altPath)) res.download(altPath);
-      else res.status(500).send("Gagal menjalankan script python.");
+      if (fs.existsSync(outputDocx)) {
+        res.download(outputDocx);
+      } else if (fs.existsSync(altPath)) {
+        res.download(altPath);
+      } else {
+        res.status(500).send("Gagal menjalankan script python.");
+      }
     });
-  } catch {
+  } catch (e) {
     res.status(500).send("Terjadi kesalahan saat memproses dokumen.");
   }
 });
@@ -97,8 +95,6 @@ app.get("/api/buat", async (req, res) => {
     const { prompt } = req.query;
     if (!prompt) return res.status(400).send("Prompt kosong.");
 
-    cleanOldFiles();
-
     const messages = [
       { role: "system", content: "Kamu adalah AI khusus untuk membuat file .docx menggunakan python." },
       { role: "user", content: prompt },
@@ -106,6 +102,9 @@ app.get("/api/buat", async (req, res) => {
     ];
 
     const code = await requestAIWithFallback(messages);
+    const dummyInput = "/tmp/template-blank.docx";
+    fs.writeFileSync(dummyInput, "");
+
     const fileId = uuidv4();
     const scriptPath = `/tmp/script-${fileId}.py`;
     const outputDocx = `${TMP_DIR}/hasil-${fileId}.docx`;
@@ -115,13 +114,23 @@ app.get("/api/buat", async (req, res) => {
     fs.writeFileSync(scriptPath, finalCode);
     const python = spawn("python3", [scriptPath]);
 
-    python.on("close", () => {
+    python.stdout.on("data", (data) => console.log(`PYTHON STDOUT: ${data}`));
+    python.stderr.on("data", (data) => console.error(`PYTHON ERROR: ${data}`));
+
+    python.on("close", (code) => {
       const altPath = "/tmp/biodata.docx";
-      if (fs.existsSync(outputDocx)) res.download(outputDocx);
-      else if (fs.existsSync(altPath)) res.download(altPath);
-      else res.status(500).send("Gagal menjalankan script python.");
+      console.log("Output path:", outputDocx);
+      console.log("TMP_DIR files:", fs.readdirSync(TMP_DIR));
+      console.log("TMP files:", fs.readdirSync("/tmp"));
+      if (fs.existsSync(outputDocx)) {
+        res.download(outputDocx);
+      } else if (fs.existsSync(altPath)) {
+        res.download(altPath);
+      } else {
+        res.status(500).send("Gagal menjalankan script python.");
+      }
     });
-  } catch {
+  } catch (e) {
     res.status(500).send("Terjadi kesalahan saat membuat dokumen.");
   }
 });
@@ -130,8 +139,6 @@ app.get("/api/buat/excel", async (req, res) => {
   try {
     const { prompt } = req.query;
     if (!prompt) return res.status(400).send("Prompt kosong.");
-
-    cleanOldFiles();
 
     const messages = [
       { role: "system", content: "Kamu adalah AI yang membuat file Excel (.xlsx) menggunakan Python dan library openpyxl." },
@@ -149,13 +156,21 @@ app.get("/api/buat/excel", async (req, res) => {
     fs.writeFileSync(scriptPath, finalCode);
     const python = spawn("python3", [scriptPath]);
 
-    python.on("close", () => {
+    python.stdout.on("data", (data) => console.log(`PYTHON STDOUT: ${data}`));
+    python.stderr.on("data", (data) => console.error(`PYTHON ERROR: ${data}`));
+
+    python.on("close", (code) => {
       const altPath = "/tmp/biodata.xlsx";
-      if (fs.existsSync(outputXlsx)) res.download(outputXlsx);
-      else if (fs.existsSync(altPath)) res.download(altPath);
-      else res.status(500).send("Gagal menjalankan script python atau file tidak dibuat.");
+      if (fs.existsSync(outputXlsx)) {
+        res.download(outputXlsx);
+      } else if (fs.existsSync(altPath)) {
+        res.download(altPath);
+      } else {
+        res.status(500).send("Gagal menjalankan script python atau file tidak dibuat.");
+      }
     });
-  } catch {
+  } catch (e) {
+    console.error(e);
     res.status(500).send("Terjadi kesalahan saat membuat file Excel.");
   }
 });
