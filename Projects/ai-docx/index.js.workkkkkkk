@@ -51,7 +51,6 @@ const cleanOldFiles = () => {
 
 const runPython = (scriptPath, outputPaths, res) => {
   console.log(`🚀 Menjalankan Python: ${scriptPath}`);
-  const beforeFiles = fs.readdirSync("/tmp");
   const python = spawn("python3", [scriptPath], {
     cwd: "/tmp",
     stdio: ["ignore", "pipe", "pipe"],
@@ -68,10 +67,7 @@ const runPython = (scriptPath, outputPaths, res) => {
 
   python.on("close", (code) => {
     console.log(`✅ Python selesai dengan kode ${code}`);
-    const afterFiles = fs.readdirSync("/tmp");
-    const newFiles = afterFiles.filter(f => !beforeFiles.includes(f) && f.endsWith(".docx"));
-    
-    for (const out of [...outputPaths, ...newFiles.map(f => `/tmp/${f}`)]) {
+    for (const out of outputPaths) {
       if (fs.existsSync(out)) {
         console.log(`📄 Mengirim file hasil: ${out}`);
         return res.download(out);
