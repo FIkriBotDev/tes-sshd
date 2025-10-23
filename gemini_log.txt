@@ -24735,3 +24735,28 @@ Kalau Anda ingin saya mengambil frame dari video itu, ini beberapa opsi yang bis
 
 Jika Anda unggah gambar atau jelaskan lebih rinci, saya bisa langsung bantu analisis atau menjawab pertanyaan Anda.
 
+
+[2025-10-23T06:32:26.106Z]
+Prompt    : ini apa?
+Image URL : https://uploader.exodusai.biz.id/tmp/282b67-1761201137334.jpg
+Response  : Ini layar monitor sistem Linux bernama htop. Mirip top, tapi lebih interaktif dan berwarna. Menampilkan:
+
+- Penggunaan CPU, memori (Mem) dan swap (Swp)
+- Daftar proses yang sedang berjalan dengan info seperti PID, USER, VIRT/RES/SHR, CPU%, MEM%, TIME+, dan perintahnya
+
+Tombol yang terlihat di bagian bawah (F1–F10) adalah fasilitas tombol bantuan dan kontrol:
+- F1 Help, F2 Setup, F3 Search, F4 Filter
+- F5 Tree view (tampilan pohon)
+- F6 SortBy (mengubah urutan kolom)
+- F9 Kill (mengakhiri proses)
+- F10 Quit (keluar)
+
+Cara pakai singkat:
+- Panah atas/bawah untuk memilih proses
+- F3 cari proses, F4 filter
+- F9 untuk membunuh proses yang dipilih
+- F5 tampilkan sebagai pohon, F6 ubah urutan kolom
+- F10 keluar dari layar htopp
+
+Kalau mau, aku bisa bantu jelaskan kolom-kolomnya lebih rinci atau cara pakainya sesuai kasusmu.
+
