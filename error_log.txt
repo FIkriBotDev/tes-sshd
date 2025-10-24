@@ -3018,3 +3018,4 @@
   }
 }
 
+[2025-10-24T23:50:17.505Z] Error processing image: {}
