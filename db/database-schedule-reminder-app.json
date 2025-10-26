@@ -1401,6 +1401,8 @@
     "repeat": "daily",
     "customDates": [],
     "createdAt": "2025-10-26T14:35:40.089Z",
-    "sentLog": []
+    "sentLog": [
+      "2025-10-27T04:00:00.000+07:00|3"
+    ]
   }
 ]
