@@ -1346,5 +1346,25 @@
     "customDates": [],
     "createdAt": "2025-10-26T14:33:59.913Z",
     "sentLog": []
+  },
+  {
+    "id": "d480b151-c668-4f11-870e-d200c9cf961d",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Tidur",
+    "date": "2025-10-26",
+    "time": "22:00",
+    "offsets": [
+      0
+    ],
+    "description": "*Waktunya tidur!!*",
+    "location": "Rumah",
+    "category": "Tidur",
+    "priority": "tinggi",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-10-26T14:35:03.654Z",
+    "sentLog": []
   }
 ]
