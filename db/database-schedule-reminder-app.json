@@ -1323,5 +1323,28 @@
     "customDates": [],
     "createdAt": "2025-10-02T14:15:25.284Z",
     "sentLog": []
+  },
+  {
+    "id": "6ea3c4e2-adeb-4c05-a464-401d63d5db67",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Test",
+    "date": "2025-10-27",
+    "time": "00:00",
+    "offsets": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "description": "*Waktunya makan siang*",
+    "location": "Rumah",
+    "category": "Makan",
+    "priority": "tinggi",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-10-26T14:33:59.913Z",
+    "sentLog": []
   }
 ]
