@@ -1366,5 +1366,28 @@
     "customDates": [],
     "createdAt": "2025-10-26T14:35:03.654Z",
     "sentLog": []
+  },
+  {
+    "id": "835fdeb1-20ba-484a-842f-cb917e24dbc7",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Bangun",
+    "date": "2025-10-27",
+    "time": "04:00",
+    "offsets": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "description": "*BANGUN WOYY*",
+    "location": "Rumah",
+    "category": "Rutinitas",
+    "priority": "tinggi",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-10-26T14:35:40.089Z",
+    "sentLog": []
   }
 ]
