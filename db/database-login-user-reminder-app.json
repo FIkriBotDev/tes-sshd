@@ -12,5 +12,12 @@
     "phone": "6285735098913",
     "password": "$2b$10$Zfjzq14rt1bx4.6fmdtozOBbqIZjJ8a6afrkSU5lYMFa2j6GU/v0y",
     "createdAt": "2025-09-17T12:48:08.208Z"
+  },
+  {
+    "id": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "phone": "6285928087634",
+    "password": "$2b$10$S/wED2HzqkFVly3EJ3o.2.iSq4NxWMlNe/UkFbJjMlXvTeeEsS5Am",
+    "createdAt": "2025-10-26T14:23:39.651Z"
   }
 ]
