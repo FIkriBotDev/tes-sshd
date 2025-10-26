@@ -48,4 +48,4 @@ sh /home/runner/work/tes-sshd/tes-sshd/Projects/photo-to-pdf/start > /dev/null 2
 
 # Jalankan exodusai di foreground (output tampil di terminal)
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start > /dev/null 2>&1 &
-sh /home/runner/work/tes-sshd/tes-sshd/Projects/reminder-wa-app/start > /dev/null 2>&1 &
+sh /home/runner/work/tes-sshd/tes-sshd/Projects/reminder-wa-app/start #> /dev/null 2>&1 &
