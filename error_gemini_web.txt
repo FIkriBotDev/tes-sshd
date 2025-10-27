@@ -348,3 +348,18 @@ Unable to reach the origin service. The service may be down or it may not be res
   }
 }
 
+[2025-10-27T12:29:20.663Z] API Error:
+{
+  "error": "400 Bad Request",
+  "status": 400,
+  "details": {
+    "error": {
+      "message": "azure-openai error: The response was filtered due to the prompt triggering Azure OpenAI's content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766",
+      "type": null,
+      "param": "prompt",
+      "code": "content_filter"
+    },
+    "provider": "azure-openai"
+  }
+}
+
