@@ -24760,3 +24760,21 @@ Cara pakai singkat:
 
 Kalau mau, aku bisa bantu jelaskan kolom-kolomnya lebih rinci atau cara pakainya sesuai kasusmu.
 
+
+[2025-10-28T05:53:21.609Z]
+Prompt    : ini kue apa? apakah sehat untuk dikonsumsi?
+Image URL : https://uploader.exodusai.biz.id/tmp/785c1e-1761630784861.jpg
+Response  : Itu kue sus (cream puff), yaitu kulit pastry yang ringan diisi krim/krim susu, kadang bagian atasnya diberi taburan gula atau hiasan. Secara visual mirip profiteroles kalau isiannya berbeda.
+
+Apakah sehat untuk dikonsumsi?
+- Secara umum, tidak termasuk pilihan makanan “super sehat.” Kue sus tinggi gula dan lemak dari kulit puff dan isi krim. Tapi boleh dinikmati sesekali asalkan porsi dan frekuensinya masuk akal.
+- Beberapa faktor memengaruhi kesehatan: jenis isian (krim kental vs krim rendah lemak atau yogurt), jumlah gula, ukuran tiap buah, serta metode pembuatannya (kue sus umumnya dipanggang, bukan digoreng, jadi lebih ringan daripada banyak camilan manis lain).
+
+Tips membuatnya sedikit lebih sehat (kalau mau mencoba):
+- Isi dengan krim rendah lemak, yogurt plain manis dengan sedikit madu, atau buah segar + krim putih rendah lemak.
+- Kurangi gula pada adonan dan isian; gunakan vanila atau kulit jeruk untuk aroma tanpa tambahan gula berlebih.
+- Gunakan ukuran porsi yang lebih kecil; 1–2 buah bisa jadi pegangan yang lebih pas daripada banyak.
+- Jika bisa, buat versi memakai tepung gandum utuh atau campuran almond untuk sedikit meningkatkan serat.
+
+Mau saya bantu estimasikan kandungan gizinya berdasarkan resep atau ukuran tertentu, atau kasih versi resep kue sus yang lebih sehat?
+
