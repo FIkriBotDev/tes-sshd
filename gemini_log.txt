@@ -24778,3 +24778,19 @@ Tips membuatnya sedikit lebih sehat (kalau mau mencoba):
 
 Mau saya bantu estimasikan kandungan gizinya berdasarkan resep atau ukuran tertentu, atau kasih versi resep kue sus yang lebih sehat?
 
+
+[2025-10-28T05:55:53.716Z]
+Prompt    : tolong bantu jawab soal berikut
+Image URL : https://uploader.exodusai.biz.id/tmp/54cf75-1761630938604.jpg
+Response  : Kita asumsikan A, B, C adalah matriks 2x2:
+- A = [[2, 4], [-6, 3]]
+- B = [[1, -4], [5, 2]]
+- C = [[-2, 2], [4, 6]]
+
+Langkah:
+1) 2B = [[2, -8], [10, 4]]
+2) A + 2B = [[2+2, 4+(-8)], [-6+10, 3+4]] = [[4, -4], [4, 7]]
+3) (A + 2B) - C = [[4-(-2), -4-2], [4-4, 7-6]] = [[6, -6], [0, 1]]
+
+Jawaban: A + 2B - C = [[6, -6], [0, 1]]
+
