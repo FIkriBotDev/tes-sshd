@@ -555,6 +555,7 @@ app.post('/post/rtist', async (req, res) => {
       model: 'gemini', // Menggunakan model Unity with Mistral Large by Unity AI Lab
       seed: 42,
       jsonMode: false,
+      isPrivate: true,
     };
 
     const response = await axios.post(
