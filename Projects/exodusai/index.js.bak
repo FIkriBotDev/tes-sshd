@@ -28,7 +28,7 @@ const uploadFile = async (buffer) => {
         let form = new FormData();
         form.append('file', buffer, 'tmp.' + ext);
 
-        const response = await axios.post('https://uploader.exoduscloud.my.id/upload', form, {
+        const response = await axios.post('https://uploader.exodusai.biz.id/upload', form, {
             headers: {
                 ...form.getHeaders(),
             },
@@ -58,7 +58,7 @@ let userDocxMap = {}; // untuk menyimpan URL docx terakhir
 function getConversation(userId) {
     if (!userConversations[userId]) {
         const fileName = userId === '6287863293173@s.whatsapp.net' ? 'dika.json' :
-                         userId === '6287769811262@s.whatsapp.net' ? '/home/runner/work/tes-sshd/tes-sshd/fikri.json' :
+//                         userId === '6287769811262@s.whatsapp.net' ? '/home/runner/work/tes-sshd/tes-sshd/fikri.json' :
                          userId === '6287824613268@s.whatsapp.net' ? 'say.json' :
                          userId === '6283140117292@s.whatsapp.net' ? 'cece.json' :
                          userId === '6282269995370@s.whatsapp.net' ? 'sis.json' :
@@ -81,6 +81,15 @@ function setMode(userId, mode) {
 
 function getMode(userId) {
     return userModes[userId] || 'chatbot';
+}
+
+// === Helper: Fix URL di response AI ===
+function fixUrls(text) {
+    if (!text) return text;
+    return text.replace(/!\[.*?\]\((.*?)\)/g, (match, url) => {
+        const safeUrl = encodeURI(url.trim()); // encode spasi & karakter aneh
+        return match.replace(url, safeUrl);
+    });
 }
 
 // === Start Bot with updated Baileys Auth ===
@@ -148,7 +157,7 @@ async function startBot() {
 
                 const caption = m.message.documentMessage.caption;
                 if (caption) {
-                    const apiUrl = `https://docx-ai.exoduscloud.my.id/api/edit?documentUrl=${encodeURIComponent(uploadedFileUrl)}&prompt=${encodeURIComponent(caption)}`;
+                    const apiUrl = `https://docx-ai.exodusai.biz.id/api/edit?documentUrl=${encodeURIComponent(uploadedFileUrl)}&prompt=${encodeURIComponent(caption)}`;
                     const response = await fetch(apiUrl);
                     const docxBuffer = await response.buffer();
                     await sock.sendMessage(sender, {
@@ -172,7 +181,7 @@ async function startBot() {
             try {
                 const documentUrl = userDocxMap[sender];
                 const prompt = userMessage;
-                const apiUrl = `https://docx-ai.exoduscloud.my.id/api/edit?documentUrl=${encodeURIComponent(documentUrl)}&prompt=${encodeURIComponent(prompt)}`;
+                const apiUrl = `https://docx-ai.exodusai.biz.id/api/edit?documentUrl=${encodeURIComponent(documentUrl)}&prompt=${encodeURIComponent(prompt)}`;
                 const response = await fetch(apiUrl);
                 const docxBuffer = await response.buffer();
                 await sock.sendMessage(sender, {
@@ -199,7 +208,7 @@ async function startBot() {
                 if (caption) geminiPrompt = caption;
                 else if (userMessage) geminiPrompt = userMessage;
 
-                const geminiApiUrl = `https://gemini-api.exoduscloud.my.id/api/gemini-image?text=${encodeURIComponent(geminiPrompt)}&url=${encodeURIComponent(uploadedFileUrl)}`;
+                const geminiApiUrl = `https://gemini-api.exodusai.biz.id/api/gemini-image?text=${encodeURIComponent(geminiPrompt)}&url=${encodeURIComponent(uploadedFileUrl)}`;
                 const geminiResponse = await fetch(geminiApiUrl).then(res => res.json());
 
                 if (!geminiResponse.status || !geminiResponse.result) {
@@ -221,7 +230,10 @@ async function startBot() {
 
                 const chatbotData = await chatbotResponse.json();
                 let aiResponse = chatbotData.result;
-                aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id').trim();
+
+                aiResponse = aiResponse.replace(/https:\/\/localhost:/gi, 'http://localhost:');
+                aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exodusai.biz.id').trim();
+                aiResponse = fixUrls(aiResponse);
 
                 await sock.sendMessage(sender, { text: aiResponse });
                 conversation.push({ role: "assistant", content: aiResponse });
@@ -236,91 +248,89 @@ async function startBot() {
 
         // === Default ChatBot
         if (currentMode === 'chatbot') {
-    conversation.push({ role: "user", content: userMessage });
+            conversation.push({ role: "user", content: userMessage });
 
-    try {
-        const response = await fetch('http://localhost:3000/post/rtist', {
-            method: 'POST',
-            headers: { 'accept': 'application/json', 'Content-Type': 'application/json' },
-            body: JSON.stringify({ messages: conversation }),
-        });
+            try {
+                const response = await fetch('http://localhost:3000/post/rtist', {
+                    method: 'POST',
+                    headers: { 'accept': 'application/json', 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ messages: conversation }),
+                });
 
-        const data = await response.json();
-        let aiResponse = data.result;
+                const data = await response.json();
+                let aiResponse = data.result;
 
-        // Tangani jika respons mengandung ![Document Caption](...)
-        const docxMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exoduscloud\.my\.id\/api\/buat\?[^)]+)\)/;
-        const matchDocx = docxMarkdownRegex.exec(aiResponse);
+                // === DOCX
+                const docxMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exodusai\.biz\.id\/api\/buat\?[^)]+)\)/;
+                const matchDocx = docxMarkdownRegex.exec(aiResponse);
+                if (matchDocx) {
+                    const docxUrl = matchDocx[1];
+                    await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya dokumennya sesuai permintaan✨` });
+                    const docxBuffer = await fetch(docxUrl).then(res => res.buffer());
+                    await sock.sendMessage(sender, {
+                        document: docxBuffer,
+                        mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                        fileName: 'hasil.docx'
+                    });
+                    aiResponse = aiResponse.replace(docxMarkdownRegex, '').trim();
+                }
 
-        if (matchDocx) {
-            const docxUrl = matchDocx[1];
-            const promptText = decodeURIComponent(new URL(docxUrl).searchParams.get("prompt") || "");
+                // === EXCEL
+                const excelMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exodusai\.biz\.id\/api\/buat\/excel\?[^)]+)\)/;
+                const matchExcel = excelMarkdownRegex.exec(aiResponse);
+                if (matchExcel) {
+                    const excelUrl = matchExcel[1];
+                    await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya datanya sesuai permintaan ✨` });
+                    const excelBuffer = await fetch(excelUrl).then(res => res.buffer());
+                    await sock.sendMessage(sender, {
+                        document: excelBuffer,
+                        mimetype: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                        fileName: 'hasil.xlsx'
+                    });
+                    aiResponse = aiResponse.replace(excelMarkdownRegex, '').trim();
+                }
 
-            await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya dokumennya sesuai permintaan✨"` });
+                aiResponse = aiResponse.replace(/https:\/\/localhost:/gi, 'http://localhost:');
+                aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exodusai.biz.id').trim();
+                aiResponse = fixUrls(aiResponse);
 
-            const docxBuffer = await fetch(docxUrl).then(res => res.buffer());
+                // === IMAGE
+                //const imageRegex = /!\[.*?\]\((http:\/\/localhost:3000\/get\/image-generator\?[^)]+)\)/;
+                const imageRegex = /!\[.*?\]\((http:\/\/localhost:3000\/get\/image-generator\/[^)]+)\)/;
+                const matchImage = imageRegex.exec(aiResponse);
+                if (matchImage) {
+                    const imageUrl = matchImage[1];
+                    const [textBefore, textAfter] = aiResponse.split(matchImage[0]);
+                    if (textBefore.trim()) await sock.sendMessage(sender, { text: textBefore.trim() });
+                    const imageBuffer = await fetch(imageUrl).then(res => res.buffer());
+                    await sock.sendMessage(sender, { image: imageBuffer, caption: textAfter.trim() });
+                    aiResponse = aiResponse.replace(imageRegex, '').trim();
+                }
 
-            await sock.sendMessage(sender, {
-                document: docxBuffer,
-                mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                fileName: 'hasil.docx'
-            });
+                // === VIDEO 🎥
+                const videoRegex = /!\[.*?\]\((http:\/\/localhost:3000\/get\/generatevideo\?[^)]+)\)/;
+                const matchVideo = videoRegex.exec(aiResponse);
+                if (matchVideo) {
+                    const videoUrl = matchVideo[1];
+                    const [textBefore, textAfter] = aiResponse.split(matchVideo[0]);
+                    if (textBefore.trim()) await sock.sendMessage(sender, { text: textBefore.trim() });
+                    const videoBuffer = await fetch(videoUrl).then(res => res.buffer());
+                    await sock.sendMessage(sender, { video: videoBuffer, caption: textAfter.trim() });
+                    aiResponse = aiResponse.replace(videoRegex, '').trim();
+                }
 
-            aiResponse = aiResponse.replace(docxMarkdownRegex, '').trim();
+                if (aiResponse.trim()) {
+                    await sock.sendMessage(sender, { text: aiResponse.trim() });
+                }
+
+                conversation.push({ role: "assistant", content: aiResponse });
+                saveConversation(sender, conversation);
+
+            } catch (err) {
+                console.error('Chatbot error:', err);
+                await sock.sendMessage(sender, { text: 'Mohon maaf terjadi kesalahan...' });
+            }
         }
-        // Tangani jika respons mengandung ![Document Caption](...)
-        const excelMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exoduscloud\.my\.id\/api\/buat\/excel\?[^)]+)\)/;
-        const matchExcel = excelMarkdownRegex.exec(aiResponse);
-        
-        if (matchExcel) {
-            const excelUrl = matchExcel[1];
-            const promptText = decodeURIComponent(new URL(excelUrl).searchParams.get("prompt") || "");
-        
-            await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya datanya sesuai permintaan ✨` });
-        
-            const excelBuffer = await fetch(excelUrl).then(res => res.buffer());
-        
-            await sock.sendMessage(sender, {
-                document: excelBuffer,
-                mimetype: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                fileName: 'hasil.xlsx'
-            });
-        
-            aiResponse = aiResponse.replace(excelMarkdownRegex, '').trim();
-        }
-
-
-        // Rebranding dan bersihkan teks
-        aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exoduscloud.my.id').trim();
-
-        // Tangani jika ada image markdown
-        const imageRegex = /!\[.*?\]\((https?:\/\/[^\s]+)\)/g;
-        const matchImage = imageRegex.exec(aiResponse);
-
-        if (matchImage) {
-            const imageUrl = matchImage[1];
-            const [textBefore, textAfter] = aiResponse.split(matchImage[0]);
-
-            if (textBefore.trim()) await sock.sendMessage(sender, { text: textBefore.trim() });
-
-            const imageBuffer = await fetch(imageUrl).then(res => res.buffer());
-
-            await sock.sendMessage(sender, {
-                image: imageBuffer,
-                caption: textAfter.trim()
-            });
-        } else if (aiResponse.trim()) {
-            await sock.sendMessage(sender, { text: aiResponse.trim() });
-        }
-
-        conversation.push({ role: "assistant", content: aiResponse });
-        saveConversation(sender, conversation);
-
-    } catch (err) {
-        console.error('Chatbot error:', err);
-        await sock.sendMessage(sender, { text: 'Mohon maaf terjadi kesalahan...' });
-    }
-}
     });
 }
 
