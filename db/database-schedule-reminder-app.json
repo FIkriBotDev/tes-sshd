@@ -1584,5 +1584,25 @@
       "2025-11-02T04:00:00.000+07:00|1",
       "2025-11-02T04:00:00.000+07:00|0"
     ]
+  },
+  {
+    "id": "a2e3d58a-1d64-49bc-87df-f7fb236d7847",
+    "userId": "7ec610ae-fd9f-47c2-be17-ff3704b0ecd5",
+    "username": "Dino",
+    "userPhone": "6285735098913",
+    "title": "Bangun",
+    "date": "2025-11-03",
+    "time": "05:00",
+    "offsets": [
+      0
+    ],
+    "description": "Bangun",
+    "location": "-",
+    "category": "-",
+    "priority": "tinggi",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-02T13:47:41.436Z",
+    "sentLog": []
   }
 ]
