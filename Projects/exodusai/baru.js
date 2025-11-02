@@ -278,65 +278,6 @@ async function startBot() {
                 aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exodusai.biz.id').trim();
                 aiResponse = fixUrls(aiResponse);
 
-                // === NEW: Deteksi & kirim file yang disertakan dalam response AI (DOCX, EXCEL, IMAGE, VIDEO)
-                try {
-                    // DOCX
-                    const docxMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exodusai\.biz\.id\/api\/buat\?[^)]+)\)/;
-                    const matchDocx = docxMarkdownRegex.exec(aiResponse);
-                    if (matchDocx) {
-                        const docxUrl = matchDocx[1];
-                        await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya dokumennya sesuai permintaan✨` });
-                        const docxBuffer = await fetch(docxUrl).then(res => res.buffer());
-                        await sock.sendMessage(sender, {
-                            document: docxBuffer,
-                            mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                            fileName: 'hasil.docx'
-                        });
-                        aiResponse = aiResponse.replace(docxMarkdownRegex, '').trim();
-                    }
-
-                    // EXCEL
-                    const excelMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exodusai\.biz\.id\/api\/buat\/excel\?[^)]+)\)/;
-                    const matchExcel = excelMarkdownRegex.exec(aiResponse);
-                    if (matchExcel) {
-                        const excelUrl = matchExcel[1];
-                        await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya datanya sesuai permintaan ✨` });
-                        const excelBuffer = await fetch(excelUrl).then(res => res.buffer());
-                        await sock.sendMessage(sender, {
-                            document: excelBuffer,
-                            mimetype: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                            fileName: 'hasil.xlsx'
-                        });
-                        aiResponse = aiResponse.replace(excelMarkdownRegex, '').trim();
-                    }
-
-                    // IMAGE (localhost image-generator)
-                    const imageRegex = /!\[.*?\]\((http:\/\/localhost:3000\/get\/image-generator\/[^)]+)\)/;
-                    const matchImage = imageRegex.exec(aiResponse);
-                    if (matchImage) {
-                        const imageUrl = matchImage[1];
-                        const [textBefore, textAfter] = aiResponse.split(matchImage[0]);
-                        if (textBefore && textBefore.trim()) await sock.sendMessage(sender, { text: textBefore.trim() });
-                        const imageBuffer = await fetch(imageUrl).then(res => res.buffer());
-                        await sock.sendMessage(sender, { image: imageBuffer, caption: (textAfter || '').trim() });
-                        aiResponse = aiResponse.replace(imageRegex, '').trim();
-                    }
-
-                    // VIDEO (localhost generatevideo)
-                    const videoRegex = /!\[.*?\]\((http:\/\/localhost:3000\/get\/generatevideo\?[^)]+)\)/;
-                    const matchVideo = videoRegex.exec(aiResponse);
-                    if (matchVideo) {
-                        const videoUrl = matchVideo[1];
-                        const [textBefore, textAfter] = aiResponse.split(matchVideo[0]);
-                        if (textBefore && textBefore.trim()) await sock.sendMessage(sender, { text: textBefore.trim() });
-                        const videoBuffer = await fetch(videoUrl).then(res => res.buffer());
-                        await sock.sendMessage(sender, { video: videoBuffer, caption: (textAfter || '').trim() });
-                        aiResponse = aiResponse.replace(videoRegex, '').trim();
-                    }
-                } catch (innerErr) {
-                    console.error('Error while processing attachments from AI response (media/docx/excel):', innerErr);
-                }
-
                 await sock.sendMessage(sender, { text: aiResponse });
                 conversation.push({ role: "assistant", content: aiResponse });
                 saveConversation(sender, conversation);
@@ -359,66 +300,6 @@ async function startBot() {
                 });
                 const data = await response.json();
                 let aiResponse = data.result;
-
-                // === NEW: Deteksi & kirim file yang disertakan dalam response AI (DOCX, EXCEL, IMAGE, VIDEO)
-                try {
-                    // === DOCX
-                    const docxMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exodusai\.biz\.id\/api\/buat\?[^)]+)\)/;
-                    const matchDocx = docxMarkdownRegex.exec(aiResponse);
-                    if (matchDocx) {
-                        const docxUrl = matchDocx[1];
-                        await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya dokumennya sesuai permintaan✨` });
-                        const docxBuffer = await fetch(docxUrl).then(res => res.buffer());
-                        await sock.sendMessage(sender, {
-                            document: docxBuffer,
-                            mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                            fileName: 'hasil.docx'
-                        });
-                        aiResponse = aiResponse.replace(docxMarkdownRegex, '').trim();
-                    }
-
-                    // === EXCEL
-                    const excelMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exodusai\.biz\.id\/api\/buat\/excel\?[^)]+)\)/;
-                    const matchExcel = excelMarkdownRegex.exec(aiResponse);
-                    if (matchExcel) {
-                        const excelUrl = matchExcel[1];
-                        await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya datanya sesuai permintaan ✨` });
-                        const excelBuffer = await fetch(excelUrl).then(res => res.buffer());
-                        await sock.sendMessage(sender, {
-                            document: excelBuffer,
-                            mimetype: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                            fileName: 'hasil.xlsx'
-                        });
-                        aiResponse = aiResponse.replace(excelMarkdownRegex, '').trim();
-                    }
-
-                    // === IMAGE
-                    const imageRegex = /!\[.*?\]\((http:\/\/localhost:3000\/get\/image-generator\/[^)]+)\)/;
-                    const matchImage = imageRegex.exec(aiResponse);
-                    if (matchImage) {
-                        const imageUrl = matchImage[1];
-                        const [textBefore, textAfter] = aiResponse.split(matchImage[0]);
-                        if (textBefore && textBefore.trim()) await sock.sendMessage(sender, { text: textBefore.trim() });
-                        const imageBuffer = await fetch(imageUrl).then(res => res.buffer());
-                        await sock.sendMessage(sender, { image: imageBuffer, caption: (textAfter || '').trim() });
-                        aiResponse = aiResponse.replace(imageRegex, '').trim();
-                    }
-
-                    // === VIDEO 🎥
-                    const videoRegex = /!\[.*?\]\((http:\/\/localhost:3000\/get\/generatevideo\?[^)]+)\)/;
-                    const matchVideo = videoRegex.exec(aiResponse);
-                    if (matchVideo) {
-                        const videoUrl = matchVideo[1];
-                        const [textBefore, textAfter] = aiResponse.split(matchVideo[0]);
-                        if (textBefore && textBefore.trim()) await sock.sendMessage(sender, { text: textBefore.trim() });
-                        const videoBuffer = await fetch(videoUrl).then(res => res.buffer());
-                        await sock.sendMessage(sender, { video: videoBuffer, caption: (textAfter || '').trim() });
-                        aiResponse = aiResponse.replace(videoRegex, '').trim();
-                    }
-                } catch (attachErr) {
-                    console.error('Error while processing attachments from AI response in chatbot mode:', attachErr);
-                }
-
                 aiResponse = aiResponse.replace(/https:\/\/localhost:/gi, 'http://localhost:');
                 aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exodusai.biz.id').trim();
                 aiResponse = fixUrls(aiResponse);
@@ -434,4 +315,3 @@ async function startBot() {
 }
 
 startBot();
-
