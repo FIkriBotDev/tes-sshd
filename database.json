@@ -89,8 +89,81 @@
       "content": "![Image Caption](https://docx-ai.exodusai.biz.id/api/buat?prompt=laporan%20keuangan%20dalam%20bentuk%20word)"
     },
     {
+      "role": "user",
+      "content": "buatkan gambar pantai"
+    },
+    {
       "role": "assistant",
-      "content": "Siap bro, semua format URL udah gue kunci biar nggak ngaco atau dobel lagi 🔥"
+      "content": "![Image Caption](http://localhost:3000/get/image-generator/gambar%20pantai%20yang%20memiliki%20pemandangan%20yang%20indah?width=1920&height=1920&nologo=true)"
+    },
+    {
+      "role": "user",
+      "content": "buatkan dokumen laporan penjualan pada word"
+    },
+    {
+      "role": "assistant",
+      "content": "![Image Caption](https://docx-ai.exodusai.biz.id/api/buat?prompt=laporan%20penjualan%20dalam%20bentuk%20word)"
+    },
+    {
+      "role": "user",
+      "content": "buatkan laporan laba rugi perusahaan dalam excel"
+    },
+    {
+      "role": "assistant",
+      "content": "![Image Caption](https://docx-ai.exodusai.biz.id/api/buat/excel?prompt=laporan%20laba%20rugi%20perusahaan)"
+    },
+    {
+      "role": "user",
+      "content": "buatkan gambar kota malam hari"
+    },
+    {
+      "role": "assistant",
+      "content": "![Image Caption](http://localhost:3000/get/image-generator/kota%20di%20malam%20hari?width=1920&height=1920&nologo=true)"
+    },
+    {
+      "role": "user",
+      "content": "buatkan gambar kota jakarta"
+    },
+    {
+      "role": "assistant",
+      "content": "![Image Caption](http://localhost:3000/get/image-generator/kota%20jakarta?width=1920&height=1920&nologo=true)"
+    },
+    {
+      "role": "user",
+      "content": "buatkan gambar pemandangan gunung"
+    },
+    {
+      "role": "assistant",
+      "content": "![Image Caption](http://localhost:3000/get/image-generator/pemandangan%20gunung%20yang%20indah?width=1920&height=1920&nologo=true)"
+    },
+    {
+      "role": "user",
+      "content": "buatkan makalah yang membahas tentang ai dalam bentuk word"
+    },
+    {
+      "role": "assistant",
+      "content": "![Image Caption](https://docx-ai.exodusai.biz.id/api/buat?prompt=makalah%20tentang%20ai)"
+    },
+    {
+      "role": "user",
+      "content": "halo"
+    },
+    {
+      "role": "assistant",
+      "content": "Halo bro apa kabar? ada yang bisa gue bantu gak?"
+    },
+    {
+      "role": "user",
+      "content": "nama lu siapa"
+    },
+    {
+      "role": "assistant",
+      "content": "Nama gue ExodusAI bro"
+    },
+    {
+      "role": "assistant",
+      "content": "Halo ada yang bisa gue bantu hari ini bro?"
     }
   ]
 }
+
