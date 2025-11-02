@@ -1474,26 +1474,6 @@
     ]
   },
   {
-    "id": "10e489f7-d603-427c-b674-5b9dba3a741e",
-    "userId": "cd1df924-d469-4fc7-aa50-c4b15100db81",
-    "username": "Fikri",
-    "userPhone": "6287769811262",
-    "title": "Bangun Bre",
-    "date": "2025-11-03",
-    "time": "01:35",
-    "offsets": [
-      0
-    ],
-    "description": "Bangun",
-    "location": "",
-    "category": "",
-    "priority": "sedang",
-    "repeat": "none",
-    "customDates": [],
-    "createdAt": "2025-10-02T14:15:25.284Z",
-    "sentLog": []
-  },
-  {
     "id": "6ea3c4e2-adeb-4c05-a464-401d63d5db67",
     "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
     "username": "Fikri",
