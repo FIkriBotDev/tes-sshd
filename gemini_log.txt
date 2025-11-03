@@ -24876,3 +24876,29 @@ Kalau Anda mau, saya bisa bantu:
 - memberi saran gaya penulisan maupun nada (formal, santai, humoris),
 - atau analisis lebih lanjut soal komposisi, pencahayaan, dan storytelling visual.
 
+
+[2025-11-03T02:09:19.327Z]
+Prompt    : bantu jawab
+Image URL : https://uploader.exodusai.biz.id/tmp/a0e52d-1762135744855.jpg
+Response  : Bisa, aku bantu. Tapi gambar yang kamu kirim agak blur, jadi aku susah baca tepat soalnya. Kamu bisa:
+
+- ketikkan teks soalnya satu per satu, atau
+- unggah gambar yang lebih jelas, atau
+- tulis inti soalnya (mis. bagian kiri: contoh soal apa, bagian kanan: aturan log yang mana).
+
+Sementara itu, kalau mau, aku kasih ringkasan singkat aturan logaritma yang sering dipakai biar bisa dipakai buat ngegabungin atau nyelesaikan soal:
+
+- log_a(xy) = log_a x + log_a y
+- log_a(x/y) = log_a x - log_a y
+- log_a(x^r) = r · log_a x
+- log_a(a^x) = x
+- log_a b = 1 / log_b a
+- Ubah basis: log_a b = log_c b / log_c a (c bisa apa saja, misalnya c = 10 atau e)
+
+Cara umum menyelesaikan soal log:
+1) Gabungkan semua log jadi satu menggunakan aturan di atas.
+2) Jika ada log dengan basis yang sama, jadikan satu ekspresi log (mis. log A = log B -> A = B dengan asumsi A>0, B>0).
+3) Ubah jadi persamaan eksponensial jika perlu, lalu selesaikan untuk variabelnya.
+
+Kalau kamu kirim salah satu soal dari gambar (mis. bagian kiri “Contoh soal” atau item dari daftar di kanan), aku akan selesaikan langkah demi langkah. Mau fokus di soal kiri dulu atau salah satu aturan di kanan?
+
