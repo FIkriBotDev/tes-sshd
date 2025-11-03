@@ -24902,3 +24902,29 @@ Cara umum menyelesaikan soal log:
 
 Kalau kamu kirim salah satu soal dari gambar (mis. bagian kiri “Contoh soal” atau item dari daftar di kanan), aku akan selesaikan langkah demi langkah. Mau fokus di soal kiri dulu atau salah satu aturan di kanan?
 
+
+[2025-11-03T02:10:43.048Z]
+Prompt    : bantu jawab
+Image URL : https://uploader.exodusai.biz.id/tmp/13ad76-1762135831681.jpg
+Response  : Bisa bantu, tapi gambarnya agak buram untuk dibaca isi soalnya. Bisa tolong:
+- tulis ulang soal-soalnya (atau ketikkan isi pilihan ganda-nya), atau
+- unggah gambar yang lebih jelas.
+
+Sambil menunggu, ini ringkasan langkah umum soal-log yang sering muncul, supaya kita bisa langsung pakai begitu jelas:
+
+Prinsip dasar log (asumsi basisnya sama, misalnya log berarti log10):
+- log(xy) = log x + log y
+- log(x/y) = log x − log y
+- log(x^k) = k log x
+- log_a(b) = log(b) / log(a) (ubah basis jika perlu)
+- Jika log A = log B (dengan basis yang sama dan A,B>0), maka A = B
+
+Cara menyelesaikan soal log yang umum:
+- Jika ada satu log dengan ekspresi berbentuk log(sesuatu) = log(sesuatu lain), tinggal samakan argumen: siapkan agar A = B.
+- Jika ada jumlah log, gabungkan jadi satu log: log X + log Y = log(XY).
+- Jika ada selisih log, gabungkan jadi satu log: log X − log Y = log(X/Y).
+- Jika ada log pada satu sisi sama dengan konstanta, gunakan eksponensial: misalnya log X = c → X = 10^c (atau basis yang dipakai).
+- Bila ada persamaan dengan variabel di dalam argumen log, sering kali perlu mengubah ke bentuk eksponensial, misalnya log(X) = log(Y) → X = Y; atau X^p = Y → X = Y^(1/p).
+
+Kalau kamu kasih satu atau dua contoh soal dari gambar itu (misalnya soal nomor 1–3), saya akan tunjukkan langkah demi langkah penyelesaiannya.
+
