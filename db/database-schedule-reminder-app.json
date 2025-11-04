@@ -1535,7 +1535,7 @@
     "location": "Rumah",
     "category": "Makan",
     "priority": "tinggi",
-    "repeat": "none",
+    "repeat": "daily",
     "customDates": [],
     "createdAt": "2025-10-26T14:33:59.913Z",
     "sentLog": [
