@@ -1691,25 +1691,5 @@
     "customDates": [],
     "createdAt": "2025-11-04T09:27:48.029Z",
     "sentLog": []
-  },
-  {
-    "id": "66c74bcd-bb43-4872-97b1-90475e56c29a",
-    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
-    "username": "Fikri",
-    "userPhone": "6285928087634",
-    "title": "testAja",
-    "date": "2025-11-04",
-    "time": "16:30",
-    "offsets": [
-      0
-    ],
-    "description": "test",
-    "location": "",
-    "category": "",
-    "priority": "sedang",
-    "repeat": "none",
-    "customDates": [],
-    "createdAt": "2025-11-04T09:29:05.636Z",
-    "sentLog": []
   }
 ]
