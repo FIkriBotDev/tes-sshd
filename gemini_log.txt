@@ -24928,3 +24928,28 @@ Cara menyelesaikan soal log yang umum:
 
 Kalau kamu kasih satu atau dua contoh soal dari gambar itu (misalnya soal nomor 1–3), saya akan tunjukkan langkah demi langkah penyelesaiannya.
 
+
+[2025-11-04T05:26:12.828Z]
+Prompt    : edit foto ini background nya lagi di pantai
+Image URL : https://uploader.exodusai.biz.id/tmp/e1d791-1762233960749.jpg
+Response  : Bisa. Berikut langkah gampangnya supaya backgroundnya jadi pantai.
+
+Pilihan pakai Photoshop (atau editor desktop serupa)
+- Duplikat layer foto -> pakai Quick Selection Tool atau Pen Tool untuk memilih subjek, lalu buat masknya (Filter > Select and Mask).
+- Buka gambar pantai yang ingin dipakai, tempatkan sebagai layer di bawah layer subjek. Sesuaikan ukuran dan posisi agar horizon cocok.
+- Sesuaikan pencahayaan dan warna supaya subjek menyatu: pakai Curves/Levels, Color Balance, dan Hue/Saturation. Sesuaikan WB agar tone kulit di-subjek sejalan dengan pantai.
+- Haluskan tepi mask: balikkan brush di mask untuk merapikan tepi, pakai Feather jika perlu.
+- Tambahkan bayangan jika perlu: buat layer baru, set ke Multiply, gambar bayangan halus di bawah subjek dengan brush lembut, atur opasitas.
+- Simpan sebagai PSD untuk menjaga layer, atau ekspor sebagai JPEG/PNG.
+
+Pilihan pakai aplikasi mobile
+- PicsArt: Gunakan fitur Cutout atau Remove BG untuk isolasi, lalu Background Change pilih gambar pantai, sesuaikan ukuran dan warna.
+- Canva Pro / remove.bg + edit: hapus background, tambahkan pantai sebagai background, atur brightness/contrast agar serasi.
+
+Tips cepat
+- Pilih background pantai dengan horizon sejajar dengan foto asli.
+- Sesuaikan saturasi dan suhu warna background agar mood senada (hangat untuk siang cerah, cool untuk senja).
+- Perhatikan lambertian shading: area belakang kepala/bahu bisa diberi sedikit sentuhan cahaya agar terlihat alami.
+
+Mau aku buatkan versi instruksi singkat untuk Photoshop, GIMP, atau aplikasi HP tertentu? Kamu bisa sebutkan alat yang kamu pakai, aku sesuaikan langkahnya.
+
