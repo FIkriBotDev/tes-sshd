@@ -1,4 +1,5 @@
 // === Versi Baileys dari WhatsApp Bot ===
+// Jangan nyolong sc
 const {
     default: makeWASocket,
     useMultiFileAuthState,
