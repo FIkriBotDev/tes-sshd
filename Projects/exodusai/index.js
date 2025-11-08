@@ -157,7 +157,7 @@ async function startBot() {
             setMode(sender, 'photoeditor');
             await sock.sendMessage(sender, {
              text: '✅ Mode berhasil diubah ke *AI Photo Editor (Image-to-Image)*.\n\nKirim gambar beserta deskripsi editan yang diinginkan untuk mulai mengedit.\n\nUntuk kembali ke mode chatbot, ketik *`/mode chatbot`*.'
-     });
+        });
           return;
         }
 
