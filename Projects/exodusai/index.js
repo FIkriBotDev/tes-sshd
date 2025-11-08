@@ -155,9 +155,12 @@ async function startBot() {
         }
         if (userMessage === '/mode photoeditor') {
             setMode(sender, 'photoeditor');
-            await sock.sendMessage(sender, { text: 'Mode berhasil diubah ke AI Photo Editor (Image-to-Image).' });
-            return;
-        }
+            await sock.sendMessage(sender, {
+             text: '✅ Mode berhasil diubah ke *AI Photo Editor (Image-to-Image)*.\n\nKirim gambar beserta deskripsi editan yang diinginkan untuk mulai mengedit.\n\nUntuk kembali ke mode chatbot, ketik *`/mode chatbot`*.'
+     });
+    return;
+}
+
 
         // === AI Docx Handling (tidak diubah)
         if (m.message.documentMessage && m.message.documentMessage.mimetype === "application/vnd.openxmlformats-officedocument.wordprocessingml.document") {
