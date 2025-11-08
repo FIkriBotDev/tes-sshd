@@ -363,3 +363,18 @@ Unable to reach the origin service. The service may be down or it may not be res
   }
 }
 
+[2025-11-08T06:57:26.807Z] API Error:
+{
+  "error": "400 Bad Request",
+  "status": 400,
+  "details": {
+    "error": {
+      "message": "azure-openai error: Invalid image data.",
+      "type": null,
+      "param": null,
+      "code": "BadRequest"
+    },
+    "provider": "azure-openai"
+  }
+}
+
