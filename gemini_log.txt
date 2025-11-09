@@ -25060,3 +25060,24 @@ Jika kamu butuh bantuan, aku bisa:
 
 Mau aku bantu dengan salah satu dari itu? Atau jelaskan tujuan penggunaan logo ini supaya aku bisa kasih rekomendasi yang lebih tepat.
 
+
+[2025-11-09T10:39:11.402Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/77ff5a-1762684736141.jpg
+Response  : Gambar itu terlihat mencurigakan. Ada pola scam yang sering muncul: klaim “konsultasi” palsu, terus minta kiriman file (meski hanya foto JPG). Biasanya tujuannya untuk malware maupun penggalian informasi.
+
+Beberapa tanda bahaya yang terlihat:
+- Akun mengaku “konsultasi” tapi tidak jelas identitasnya.
+- Meminta kamu mengirim file foto (bisa jadi untuk menipu atau menyisipkan payload).
+- Pertanyaan teknis yang tampak relevan, tetapi jadi sidelong untuk membuka obrolan lebih lanjut.
+- Pelunak seperti “langsung blokir saja” bisa jadi tanda mereka mencoba menekan kamu.
+
+Langkah yang bisa kamu lakukan sekarang:
+- Jangan membalas lebih banyak lagi dan jangan mengunduh file apa pun dari kontak itu.
+- Langsung blokir kontak tersebut dan, jika perlu, laporkan ke platform (WhatsApp/IG/FB) agar tidak ada orang lain yang tergiur.
+- jika kamu sudah mengunduh file itu, lakukan pemindaian antivirus dan periksa perangkatmu untuk tanda-tanda malware.
+- jangan berbagi data pribadi, akun, atau izin akses ke perangkat/akun lain dengan kontak tak dikenal.
+- jika kamu perlu konsultasi soal listrik/teknik, hubungi lewat kanal resmi perusahaan/teknisi yang sudah kamu percaya atau lewat kontak yang kamu ketahui asli.
+
+Kalau mau, ceritakan konteksnya sedikit lagi (platform apa, apa saja yang sudah kamu lakukan), nanti aku bantu bikin rencana langkah-langkah aman berikutnya.
+
