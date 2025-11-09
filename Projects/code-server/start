@@ -1,0 +1,24 @@
+#!/bin/bash
+set -e
+
+# Install code-server
+curl -fsSL https://code-server.dev/install.sh | sh
+
+# Pastikan folder config dan user setting ada
+mkdir -p /home/runner/.config/code-server
+mkdir -p ~/.local/share/code-server/User
+
+# Hapus config bawaan dan ganti dengan config milikmu
+rm -f /home/runner/.config/code-server/config.yaml
+cp /home/runner/work/tes-sshd/tes-sshd/Projects/code-server/config.yaml /home/runner/.config/code-server/config.yaml
+
+# Hapus settings VSCode default dan ganti dengan setting kamu
+rm -f ~/.local/share/code-server/User/settings.json
+cp /home/runner/work/tes-sshd/tes-sshd/Projects/code-server/settings.json ~/.local/share/code-server/User/settings.json
+
+# Ubah permission agar bisa diakses oleh user code-server
+chmod 600 /home/runner/.config/code-server/config.yaml
+chmod 600 ~/.local/share/code-server/User/settings.json
+
+# Jalankan code-server
+code-server
