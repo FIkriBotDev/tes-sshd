@@ -1858,5 +1858,28 @@
       "2025-11-06T11:00:00.000+07:00|1",
       "2025-11-06T11:00:00.000+07:00|0"
     ]
+  },
+  {
+    "id": "06765dd8-0e44-4f91-9721-98f54b76b704",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "testtest",
+    "date": "2025-11-10",
+    "time": "02:36",
+    "offsets": [
+      15,
+      8,
+      2,
+      0
+    ],
+    "description": "testttt",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-11-09T13:36:58.003Z",
+    "sentLog": []
   }
 ]
