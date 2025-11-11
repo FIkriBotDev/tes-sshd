@@ -1991,7 +1991,9 @@
     "repeat": "none",
     "customDates": [],
     "createdAt": "2025-11-11T14:14:29.822Z",
-    "sentLog": []
+    "sentLog": [
+      "2025-11-12T03:00:00.000+07:00|0"
+    ]
   },
   {
     "id": "4300c91a-877c-40b3-b3b0-d8a0a292cd77",
