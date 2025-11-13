@@ -25245,3 +25245,42 @@ Butir bantuanku tetap fleksibel
 
 Kalau kasih tahu platform yang kamu pakai (Instagram, X, LinkedIn, atau lainnya) dan kemampuan timmu, aku sesuaikan isi promosi atau materi persiapannya. Siap bantu langkah konkret untuk hari terakhir ini.
 
+
+[2025-11-13T06:41:50.033Z]
+Prompt    : pusing banget ngoding bro
+Image URL : https://uploader.exodusai.biz.id/tmp/54d0e6-1763016095483.jpg
+Response  : Pusing tuh wajar kok, apalagi lagi nulis code di code-server. Mau bikin lebih enak biar bisa lanjut?
+
+Beberapa langkah praktis yang bisa langsung \u2018nsist:\u2019
+- Tentukan masalahnya dulu
+  - Apa tujuan yang lo mau capai? Error apa yang muncul? Baris kode mana yang bikin bingung?
+  - Share log/error message atau potongan kode yang bikin pusing biar gue bisa lihat konteksnya.
+- Buat minimal reproducible
+  - Coba buat contoh kecil yang tetap mereproduksi masalahnya. Kadang masalahnya hilang pas kita persempit kasusnya.
+- Pisahkan masalahnya
+  - Pisahkan antara masalah environment, dependensi, sama logika kode. Cek hal-hal dasar dulu:
+    - Versi node/npm, dependency yang terpasang (cek package.json), jalankan npm install lagi kalau perlu.
+    - Jalankan bagian kode secara isolasi (mis. jalankan satu file Node/JS secara terpisah atau script kecil).
+- Debug secara cepat
+  - Tambahkan console.log atau breakpoint untuk tahu nilai variabel di titik tertentu.
+  - Gunakan perintah sederhana seperti:
+    - node -v, npm -v buat cek environment
+    - npm ls // lihat struktur dependensi
+    - tail -f log.log (atau file log lain) kalau lagi lihat log
+- Jangan sungkan kirim detail
+  - Kalau lo bisa, tempelkan:
+    - Error log lengkap
+    - Potongan kode yang relevan
+    - Langkah-langkah reproduce
+  - Gue bisa bantu cek baris demi baris dan kasih saran konkret.
+
+Kalau lo mau, gue bisa pandu langsung. Cukup kirim:
+- Apa yang lo coba lakuin (tujuan)
+- Error/message yang muncul
+- Kode bagian terkait (sedikit saja, cukup bikin konteks)
+- Langkah-langkah yang sudah lo coba
+
+Sambil nanganin, istirahat sebentar juga nggak apa-apa. Kadang istirahat 5–10 menit bikin pola pikir jadi lebih jelas.
+
+Mau mulai sekarang? Share aja detailnya, gue bantu cek.
+
