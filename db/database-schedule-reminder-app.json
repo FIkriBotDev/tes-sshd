@@ -2451,5 +2451,85 @@
     "customDates": [],
     "createdAt": "2025-11-14T13:20:45.734Z",
     "sentLog": []
+  },
+  {
+    "id": "cb496fc4-c9e1-4033-aa1a-f0de12f3d7da",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 20",
+    "date": "2025-11-15",
+    "time": "19:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 20",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:46.471Z",
+    "sentLog": []
+  },
+  {
+    "id": "4f1c8c03-008b-40ae-a38c-0aa7ba25c7d7",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 21",
+    "date": "2025-11-15",
+    "time": "20:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 21",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:47.154Z",
+    "sentLog": []
+  },
+  {
+    "id": "a207293a-d566-460c-b0d2-31a433e7d6d4",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 22",
+    "date": "2025-11-15",
+    "time": "21:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 22",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:47.843Z",
+    "sentLog": []
+  },
+  {
+    "id": "ee80767f-811e-4838-ab44-5e66486b94c7",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 23",
+    "date": "2025-11-15",
+    "time": "22:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 23",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:48.552Z",
+    "sentLog": []
   }
 ]
