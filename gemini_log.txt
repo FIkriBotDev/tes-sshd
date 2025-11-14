@@ -25284,3 +25284,125 @@ Sambil nanganin, istirahat sebentar juga nggak apa-apa. Kadang istirahat 5–10 
 
 Mau mulai sekarang? Share aja detailnya, gue bantu cek.
 
+
+[2025-11-14T15:17:45.274Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/06cd5a-1763133439278.jpg
+Response  : Seru tugasnya. Berdasarkan gambar, isinya tentang membuat analisis living law yang akan diterapkan dalam KUHP baru, khususnya pasal 2 tahun 2026, dengan tiga pertanyaan utama. Saya kasih kerangka dan contoh isi supaya kamu bisa langsung tulis 2 lembar atau lebih di kertas folio bergaris.
+
+Gagasan inti yang bisa kamu pakai
+- Living law (hukum yang hidup) adalah hukum yang hidup dalam praktik sosial sehari-hari di komunitas, terutama hukum adat. Konsep ini sering dipakai dalam teori hukum pluralistik untuk melihat bagaimana hukum nasional berinteraksi dengan hukum adat.
+- KUHP baru: pasal 2 bisa jadi mencoba mengakomodasi hukum adat sebagai bagian dari sistem hukum nasional, dengan batasan-batasan tertentu (misalnya tidak bertentangan dengan Pancasila, UUD 1945, hak asasi, dsb.).
+- Tujuan tugas: menunjukkan pemahaman konsep living law, membahas isi pasal 2 (kalau pasal itu adalah isi hipotetis), menganalisis manfaat-risiko penerapannya, serta sikap yang sebaiknya diambil mahasiswa dalam konteks hukum adat vs hukum formal.
+
+Kerangka tugas (disarankan format 2 lembar folio bergaris)
+1) Pendahuluan
+- Definisikan living law dan hukum adat.
+- Kaitkan dengan konteks KUHP baru (tahun 2026) dan alasan perlunya mempertimbangkan hukum adat dalam sistem kriminal nasional.
+- Nyatakan posisi atau tesis singkatmu tentang penerapan pasal 2 (misalnya: “Penerapan living law dalam KUHP baru dapat memperluas keadilan bagi komunitas adat asalkan ada syarat-syarat due process dan perlindungan hak asasi.”).
+
+2) Analisis isi pasal 2 (sudah ada bunyi pasal 2 yang kamu sebutkan)
+- Jika pasal 2 berisi: “Hukum adat yang hidup di masyarakat dapat diterapkan dalam penyelesaian perkara tertentu sepanjang tidak bertentangan dengan Pancasila dan UUD 1945,” jelaskan bagaimana bunyi itu bekerja.
+- Bahas pokok-pokok pokok:
+  - Subjek yang dimaksud (komunitas adat, perkara apa saja yang bisa/ tidak bisa diajarkan).
+  - Ruang lingkup materi (pidana apa saja, pelanggaran adat mana, bagaimana sanksi adat akan diakui).
+  - Batasan-batasan (prinsip konstitusional, hak terdakwa, mekanisme pembuktian, tenggat waktu, lembaga adat vs lembaga peradilan nasional).
+- Kaitkan dengan teori living law (Eugen Ehrlich, hukum adat sebagai bagian dari “sistem hukum yang hidup”) dan konsep legal pluralism (interaksi antara hukum nasional dengan hukum adat).
+
+3) Analisis pertanyaan utama (tiga poin pertanyaan di tugas)
+- Pertanyaan 1: Bagaimana menurut pendapat saudara terhadap penerapan pasal tersebut.
+  - Argumen pro: memberi keadilan substantif bagi komunitas adat, mengurangi beban kriminalisasi bagi pelanggaran adat ringan, menjaga identitas budaya, memanfaatkan penegakan sosial melalui sanksi adat yang lebih tepat sasaran.
+  - Argumen kontra: potensi inkonstitusional jika bertentangan hak asasi, risiko diskriminasi antar komunitas, kebingungan antara hukum adat dan hukum nasional, risiko prosedur yang tidak transparan.
+  - Penilaian pribadi (posisi kamu) dengan landasan prinsip keadilan, kesetaraan, dan perlindungan hak asasi.
+
+- Pertanyaan 2: Jelaskan isi bunyi pasal tersebut sesuai dengan undang-undang tersebut.
+  - Uraikan bagaimana bunyi pasal 2 (hipotetis) itu membentuk pola penerapan: kapan hukum adat diterapkan, bagaimana pembuktian dilakukan, peran lembaga adat vs pengadilan negara, serta bagaimana perlindungan hak terdakwa dijaga.
+  - Jelaskan hubungan hierarki hukum (lex superior, lex specialis) dan bagaimana pasal itu saling melengkapi atau berpotensi konflik dengan KUHP, KUHAP, UUD 1945, HAM.
+
+- Pertanyaan 3: Buatlah analisis sejalan dengan Mata Kuliah Hukum Adat tentang persoalan tersebut dan sikap apa yang harus diambil saudara selaku mahasiswa.
+  - Analisis kritis: bagaimana konsep living law bisa meskipun adaptif, tetap mempertahankan prinsip keadilan formal (due process, transparansi, hak pembela).
+  - Saran sikap: advokasi kebijakan yang inklusif, penguatan mekanisme pembuktian adat yang dapat diverifikasi secara yuridis, pembentukan pedoman implementasi yang jelas, dan kajian tentang bagaimana menjaga persamaan hak semua warga negara.
+  - Rekomendasi praktis: usulkan langkah-langkah implementasi bertahap, studi komparatif dengan negara lain yang mengakui hukum adat, serta usulan mekanisme evaluasi.
+
+4) Penutup
+- Ringkas temuan utama.
+- Tekankan posisi pribadi dengan dukungan argumen yang konsisten.
+
+5) Daftar pustaka (contoh format)
+- Ehrlich, Eugen. The Sociology of Law.
+- Buku teks hukum adat Indonesia (sesuaikan dengan literatur yang kamu pakai).
+- Sumber-sumber tentang hukum pluralisme dan dinamika hukum adat di Indonesia.
+
+Contoh paragraf pendek (untuk memulai tulisan)
+- Pendahuluan: “Living law adalah konsep yang menegaskan bahwa hukum tidak berdiri kaku di atas kertas, melainkan hidup dan berevolusi melalui praktik sosial suatu komunitas. Dalam konteks Indonesia, hukum adat masih berperan penting sebagai kerangka norma yang mengatur praktik sosial tertentu. Dengan hadirnya KUHP baru, pasal 2 didudukkan sebagai pintu masuk bagi pengakuan hidupnya hukum adat dalam penyelesaian perkara tertentu, asalkan tetap sejalan dengan Pancasila, UUD 1945, dan hak asasi manusia.”
+- Analisis isi pasal 2 (hipotetis): “Bunyi pasal ini mengakui bahwa hukum adat yang hidup di masyarakat dapat diterapkan dalam perkara yang terkait hukum adat, tetapi pembatasan utama adalah tidak bertentangan dengan konstitusi dan hak asasi. Hal ini menuntut pengadilan untuk menilai apakah norma adat yang relevan benar-benar telah memiliki basis praktik lama yang diakui, serta bagaimana pembuktian elemen adat dapat diuji secara objektif dihadapkan pada prosedur peradilan negara.”
+- Sikap mahasiswa: “Sebagai mahasiswa hukum adat, saya melihat manfaat nyata jika penerapan pasal 2 dilakukan dengan tata kelola yang ketat: adanya pedoman pembuktian hukum adat, pelatihan hakim mengenai bagaimana membaca norma adat tanpa mengabaikan hak terdakwa, dan mekanisme pengawasan agar tidak terjadi diskriminasi.”
+
+Tips praktis menulis tugas
+- Gunakan tiga bagian utama yang jelas: pendahuluan, analisis isi pasal 2, analisis kritis + sikap.
+- Sajikan argumen berimbang: seimbang antara manfaat dan risiko.
+- Gunakan bahasa akademik yang lugas, hindari kalimat terlalu panjang.
+- Sertakan contoh konkret bagaimana pembuktian adat bisa terjadi (misalnya parjalanan peradilan adat vs peradilan nasional untuk hal-hal tertentu).
+- Jika kamu punya bunyi pasal 2 yang pasti, pakai bunyi itu untuk analisis yang lebih tepat. Kalau tidak, jelaskan bahwa kamu bekerja dengan versi hipotetis pasal 2 yang diilustrasikan di tugas/gambar.
+
+Mau saya bantu buatkan versi draft 2 lembar (atau 3 lembar) berdasarkan versi pasal 2 yang kamu miliki (kalau kamu bisa tulis bunyi pasal 2-nya, atau kutip dari materimu)? Atau kalau kamu ingin, saya bisa buatkan versi draft lengkap dengan gaya akademik siap cetak.
+
+
+[2025-11-14T15:17:59.541Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/06cd5a-1763133439278.jpg
+Response  : Ngerti. Gambar itu menunjukkan tugas kuliah tentang “Living Law” dalam KUHP baru (pasal 2, 2026). Kamu bisa pakai kerangka berikut untuk menulis analisis 2 lembar (atau lebih) di kertas folio bergaris. Jika kamu ingin, aku bisa buatkan draf penuh setelah kamu tempel teks pasal 2-nya atau kasih konfirmasi bahwa kita pakai versi umum.
+
+Kerangka analisis yang bisa dipakai (2 lembar atau lebih)
+
+1) Pendapat pribadi terhadap penerapan pasal tersebut
+- Sajikan posisi inti: setuju, kurang setuju, atau netral dengan alasan utama.
+- Argumen pro (alasan mendukung penerapan hukum adat dalam KUHP):
+  - Mengakui keberadaan hukum lokal sebagai sumber normatif yang relevan bagi warga setempat.
+  - Meningkatkan akses ke keadilan bagi komunitas adat yang sering terpinggirkan.
+  - Mendorong harmonisasi antara hukum nasional dengan praktik hukum adat yang sudah berjalan.
+- Argumen kontra (risiko atau kendala):
+  - Potensi inkonsistensi dengan hak asasi manusia dan prinsip persamaan di hadapan hukum.
+  - Ancaman konflik normatif antara hukum adat dengan KUHP nasional.
+  - Tantangan pembuktian, prosedur, dan akuntabilitas di ranah peradilan.
+- Ringkasan posisi pribadi setelah mempertimbangkan pro dan kontra.
+
+2) Jelaskan isi bunyi pasal tersebut (sesuai teks pasal jika kamu punya)
+- Ringkas pokok-pokok pasal 2: tujuan, definisi, ruang lingkup, syarat penerapan, mekanisme integrasi hukum adat dalam KUHP.
+- Identifikasi unsur kunci:
+  - Sumber hukum mana yang diakui (hukum adat tertentu, wilayah, subkultur).
+  - Ketentuan pembatasan (misalnya terkait HAM, kesetaraan, keadilan pidana).
+  - Mekanisme peradilan atau rujukan antar lembaga (mis. Mahkamah Adat, pengadilan umum, standar pembuktian).
+- Catat kemungkinan ambigu atau hal yang perlu diperjelas.
+
+3) Analisis sejalan dengan Mata Kuliah HUKUM ADAT (persoalan dan sikap yang perlu diambil mahasiswa)
+- Konteks teoretis: bagaimana konsep “living law” dipraktikkan secara historis dan filsafat hukum adat.
+- Konsistensi konstitusional: apakah pasal ini sejalan dengan UUD 1945, HAM, dan prinsip kesetaraan di hadapan hukum.
+- Pluralisme hukum: bagaimana mekanisme koordinasi antara hukum negara dan hukum adat agar tidak tumpang tindih secara merugikan pihak tertentu.
+- Prosedur dan bukti: bagaimana bukti hukum adat diterima, bagaimana prosesnya diadopsi tanpa mengurangi due process.
+- Kebijakan dan implementasi: langkah konkret yang diperlukan untuk menghindari penyalahgunaan, standar akuntabilitas, pelibatan komunitas, dan pengawasan publik.
+- Sikap mahasiswa: pandangan kritis yang membangun—sarankan mekanisme evaluasi berkala, pelatihan bagi aparat, termasuk dialog antara stakeholder (komunitas adat, aparat penegak hukum, dan akademisi).
+
+4) Struktur penulisan yang bisa kamu pakai
+- Pendahuluan: gambaran singkat tentang konteks, rumusan masalah, dan tesis analisis.
+- Pembahasan bagian 1: pendapat pribadi (pro/kontra) dengan argumen masing-masing.
+- Pembahasan bagian 2: isi pasal 2 (ringkas dan jelas).
+- Pembahasan bagian 3: analisis hukum adat (konteks, kesesuaian konstitusional, implementasi, hambatan, solusi).
+- Kesimpulan dan rekomendasi kebijakan/pendidikan (apa yang sebaiknya dilakukan mahasiswa, lembaga, dan pemerintah).
+- Referensi: cantumkan sumber teori hukum adat, kajian pluralisme hukum, serta rambu HAM jika ada.
+
+5) Contoh paragraf pembuka (opsional)
+- “Penerapan hukum adat sebagai bagian dari sistem hukum nasional melalui pasal 2 KUHP 2026 menandai langkah penting menuju pluralisme hukum Indonesia. Namun, penerapan tersebut juga menimbulkan pertanyaan krusial mengenai konsistensi dengan hak asasi manusia, kepastian hukum, dan keadilan bagi semua pihak. Analisis ini bertujuan untuk menimbang manfaat praktis dan tantangan teoretis dari living law dalam ranah pidana, serta menyarankan kerangka kerja yang menjaga keseimbangan antara kedaulatan hukum adat dan prinsip-prinsip negara hukum.”
+
+6) Tips praktis menulis 2 lembar
+- Gunakan bahasa yang jelas, hindari jargon bertele-tele.
+- Pemetaan paragraf: satu paragraf untuk pendahuluan, 2–3 paragraf untuk setiap bagian (pendapat, isi pasal, analisis Hukum Adat), satu paragraf kesimpulan.
+- Sertakan contoh konkret jika memungkinkan (kasus contoh yang relevan atau analogi sederhana).
+- Kaitkan setiap bagian dengan konteks KUHP dan HAM, agar analisis terasa relevan dan tidak abstrak.
+
+Penawaran bantuan
+- Jika kamu bisa tempelkan teks pasal 2 yang dimaksud (atau konfirmasi inti isi pasalnya), aku bisa buatkan draf analisis lengkap sekitar 2 lembar (800–1200 kata) dengan alur yang rapi.
+- Kalau kamu cuma ingin gambaran umum tanpa teks pasal, aku bisa menuliskan draf versi ringkas (sekitar 2–3 paragraf per bagian) yang bisa kamu kembangkan lebih lanjut.
+
+Ingin lanjut? Kirimkan teks pasal 2 atau konfirmasi preferensi: mau saya buatkan draf penuh sekarang, atau kamu ingin mulai dengan kerangka detail di atas lalu kita kembangkan bersama.
+
