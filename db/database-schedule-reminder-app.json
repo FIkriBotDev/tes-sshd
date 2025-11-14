@@ -2171,5 +2171,285 @@
       "2025-11-13T06:00:00.000+07:00|0",
       "2025-11-14T05:00:00.000+07:00|0"
     ]
+  },
+  {
+    "id": "47ba8a64-4483-4c68-a7a7-e6651b44f0b4",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 00",
+    "date": "2025-11-14",
+    "time": "23:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 00",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:22.970Z",
+    "sentLog": []
+  },
+  {
+    "id": "7386b13b-e92c-485d-8fe9-e6e536c385fd",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 7",
+    "date": "2025-11-15",
+    "time": "06:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 7",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:24.949Z",
+    "sentLog": []
+  },
+  {
+    "id": "63bde2fe-6b0a-4782-a5fd-93ab8f5e0b25",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 8",
+    "date": "2025-11-15",
+    "time": "07:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 8",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:26.591Z",
+    "sentLog": []
+  },
+  {
+    "id": "fb3fbd7c-3aa7-4892-9147-2d07262499e5",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 9",
+    "date": "2025-11-15",
+    "time": "08:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 9",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:28.190Z",
+    "sentLog": []
+  },
+  {
+    "id": "af4eda49-e1ac-492b-9f42-2f812654a0ef",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 10",
+    "date": "2025-11-15",
+    "time": "09:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 10",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:30.398Z",
+    "sentLog": []
+  },
+  {
+    "id": "62d7a55d-c7cf-4754-b8c7-ef60a4ddb022",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 11",
+    "date": "2025-11-15",
+    "time": "10:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 11",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:32.494Z",
+    "sentLog": []
+  },
+  {
+    "id": "5cc9fbc6-4f89-4f7e-b96f-8f789e227713",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 12",
+    "date": "2025-11-15",
+    "time": "11:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 12",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:34.128Z",
+    "sentLog": []
+  },
+  {
+    "id": "7c7b3d5a-273d-4837-9f9c-d07683a431f7",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 13",
+    "date": "2025-11-15",
+    "time": "12:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 13",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:36.296Z",
+    "sentLog": []
+  },
+  {
+    "id": "30f382d2-f441-44e5-8b24-6f311f065f1f",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 14",
+    "date": "2025-11-15",
+    "time": "13:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 14",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:37.718Z",
+    "sentLog": []
+  },
+  {
+    "id": "9489a0aa-dfb4-405f-9d3b-ebdc79c9ccd3",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 15",
+    "date": "2025-11-15",
+    "time": "14:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 15",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:39.120Z",
+    "sentLog": []
+  },
+  {
+    "id": "a767099a-1d0e-4cac-a8a7-be12f1eee73a",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 16",
+    "date": "2025-11-15",
+    "time": "15:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 16",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:40.770Z",
+    "sentLog": []
+  },
+  {
+    "id": "15ce12e1-7729-4704-a89f-2cb6d95da714",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 17",
+    "date": "2025-11-15",
+    "time": "16:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 17",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:44.204Z",
+    "sentLog": []
+  },
+  {
+    "id": "a16c1ac2-b96b-4fef-a84d-7b4316e739ad",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 18",
+    "date": "2025-11-15",
+    "time": "17:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 18",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:45.046Z",
+    "sentLog": []
+  },
+  {
+    "id": "3b884558-78ed-4697-8226-be9f5d9c9d0d",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Jam 19",
+    "date": "2025-11-15",
+    "time": "18:00",
+    "offsets": [
+      0
+    ],
+    "description": "Jam 19",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "daily",
+    "customDates": [],
+    "createdAt": "2025-11-14T13:20:45.734Z",
+    "sentLog": []
   }
 ]
