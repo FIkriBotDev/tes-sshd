@@ -2280,7 +2280,9 @@
     "repeat": "daily",
     "customDates": [],
     "createdAt": "2025-11-14T13:20:28.190Z",
-    "sentLog": []
+    "sentLog": [
+      "2025-11-15T08:00:00.000+07:00|0"
+    ]
   },
   {
     "id": "af4eda49-e1ac-492b-9f42-2f812654a0ef",
