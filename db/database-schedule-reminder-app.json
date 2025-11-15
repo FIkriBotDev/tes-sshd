@@ -2533,7 +2533,9 @@
     "repeat": "daily",
     "customDates": [],
     "createdAt": "2025-11-14T13:20:46.471Z",
-    "sentLog": []
+    "sentLog": [
+      "2025-11-15T19:00:00.000+07:00|0"
+    ]
   },
   {
     "id": "4f1c8c03-008b-40ae-a38c-0aa7ba25c7d7",
