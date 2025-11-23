@@ -25570,3 +25570,26 @@ Pertanyaan singkat untuk menyesuaikan saran:
 
 Kalau kamu kasih arah sedikit tentang tujuan dan gaya yang diinginkan, aku bisa langsung buatkan versi copy yang lebih matang dan siap dipakai.
 
+
+[2025-11-23T13:39:52.767Z]
+Prompt    : mau
+Image URL : https://uploader.exodusai.biz.id/tmp/a768a9-1763905184301.jpg
+Response  : Mau bantu apa nih? Kamu kasih gambar produk matcha di Orami. Aku bisa:
+- jelasin cara milih matcha yang berkualitas
+- bandingin produk yang ada di gambar (ceremonial vs culinary, harga, sertifikasi)
+- kasih resep mudah pakai matcha
+- atau bantu bikin daftar rekomendasi sesuai kebutuhanmu (minum harian, latte, masak)
+
+Gampangnya, beberapa hal penting saat milih matcha:
+- Grade: ceremonial untuk diminum langsung (tebal, rasa halus), culinary untuk masak/minum dingin (lebih murah, rasa kuat).
+- Asal dan certifications: Jepang (Uji/Nishio) biasanya lebih konsisten, cek label halal/organik jika perlu.
+- Warna dan aroma: warna hijau cerah, aroma segar rumput. Hindari warna kusam atau bau bawah.
+- Kemasan: foil atau kedap udara, kedap cahaya, buat menjaga rasa dan warna.
+- Taku tanggal panen/grinding: semakin baru biasanya lebih segar.
+
+Tentang gambar: terlihat kemasan "Pure Matcha" di merk Matchamu/Orami. Tanpa label grade jelas, sulit memastikan cocok untuk ceremonial atau culinary. Jika kamu bisa cek labelnya (ceremonial vs culinary), itu bantu banget buat keputusan.
+
+Mau aku buatkan:
+- ringkasan cepat yang bisa kamu pakai untuk memilih satu produk di marketplace,
+- atau rekomendasi 3 opsi (ceremonial, culinary, budget) berdasarkan kebutuhanmu?
+
