@@ -25593,3 +25593,21 @@ Mau aku buatkan:
 - ringkasan cepat yang bisa kamu pakai untuk memilih satu produk di marketplace,
 - atau rekomendasi 3 opsi (ceremonial, culinary, budget) berdasarkan kebutuhanmu?
 
+
+[2025-11-25T23:24:10.600Z]
+Prompt    : Ini obat apa?
+Image URL : https://uploader.exodusai.biz.id/tmp/14207b-1764113039566.jpg
+Response  : Saya tidak bisa memastikan obat hanya dari foto. Bentuk kapsul merah bisa milik banyak obat, jadi identifikasi lewat visual saja bisa salah.
+
+Cara aman mengidentifikasinya:
+- Periksa kemasan/blister: ada nama obat, dosis, produsen, atau nomor registrasi (BPOM). Catat juga kode atau imprint pada tablet/kapsul.
+- Jika ada imprint (kode huruf/angka) pada kapsul, sebutkan atau tulis di sini. Bisa membantu menelusuri identitasnya.
+- Gunakan sumber identifikasi pil terpercaya (misalnya situs identifikasi obat di internet) atau tanyakan apoteker setempat.
+- Jangan diminum jika tidak yakin identitasnya.
+
+Langkah selanjutnya:
+- Bawa kemasan dan kapsulnya ke apotek atau fasilitas kesehatan supaya dipastikan.
+- Jika tanpa sengaja tertelan, atau muncul gejala tidak biasa, hubungi layanan darurat atau dokter.
+
+Kalau kamu bisa kasih informasi apa tertulis pada obat/kemasan (nama obat, dosis, imprint pada kapsul), saya bisa bantu mencoba mengidentifikasinya lebih lanjut.
+
