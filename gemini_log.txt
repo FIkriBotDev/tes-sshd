@@ -25611,3 +25611,33 @@ Langkah selanjutnya:
 
 Kalau kamu bisa kasih informasi apa tertulis pada obat/kemasan (nama obat, dosis, imprint pada kapsul), saya bisa bantu mencoba mengidentifikasinya lebih lanjut.
 
+
+[2025-11-25T23:28:24.266Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/263a45-1764113288300.jpg
+Response  : Gambar itu menunjukkan blister obat Pro TB 4. Isinya kombinasi empat obat untuk TB:
+
+- Rifampicin 150 mg
+- Isoniazid 75 mg
+- Pyrazinamide 400 mg
+- Ethambutol HCl 275 mg
+
+Diproduksi oleh PT. PhaproS Tbk, Semarang, Indonesia. Pada kemasan tertulis HARUS DENGAN RESEP DOKTER, jadi obat ini memang lewat resep.
+
+Hal yang perlu diperhatikan:
+- Cara pakai: ikuti dosis dan jadwal yang diresepkan dokter. Jangan mengganti dosis atau menghentikan tanpa arahan dokter.
+- Efek samping yang umum (mindahani): 
+  - Hepatotoksik (Rifampicin/Isoniazid/Pyrazinamide): bisa jadi kuning pada kulit/mata, urin gelap, nyeri perut, lemas. Jika ada gejala ini, hubungi dokter.
+  - Isoniazid: neuropati perifer (nyeri/kesemutan pada tangan/kaki). Dokter biasanya memberi suplemen vitamin B6 untuk pencegahan.
+  - Ethambutol: neuritis optik, bisa menyebabkan perubahan warna pengelihatan (merah-hijau). Segera konsultasikan jika ada gangguan penglihatan.
+  - Pyrazinamide bisa menimbulkan nyeri sendi atau peningkatan asam urat.
+  - Ruam atau reaksi alergi juga bisa terjadi.
+- Interaksi dan hal-hal yang perlu dihindari: hindari alkohol karena risiko kerusakan hati. Obat lain bisa berinteraksi dengan rifampicin (induksi enzim hati) sehingga efek obat lain bisa berubah.
+- Penyimpanan: simpan di tempat sejuk, kering, terlindung dari cahaya, serta jauhkan dari jangkauan anak.
+- Keaslian/keamanan: pastikan kemasan ada nomor registrasi/izin edar yang jelas sesuai negara (di Indonesia biasanya BPOM), tanggal kedaluwarsa jelas, dan label produksi sesuai. Jika ragu keasliannya, hubungi apotek tempat membeli atau dokter yang meresepkan.
+
+Kalau kamu ingin, kasih tahu apa yang ingin kamu ketahui lebih lanjut:
+- penjelasan lebih rinci tentang cara pakai tiap obatnya,
+- efek samping yang perlu waspadai secara spesifik,
+- atau bagaimana memeriksa keaslian obat tersebut.
+
