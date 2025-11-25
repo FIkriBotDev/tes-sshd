@@ -3130,5 +3130,28 @@
       "2025-11-23T22:00:00.000+07:00|0",
       "2025-11-24T22:00:00.000+07:00|0"
     ]
+  },
+  {
+    "id": "176a390b-dbe0-4a48-88e7-6adc51e63862",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "Berangkat Kuliah",
+    "date": "2025-11-26",
+    "time": "08:00",
+    "offsets": [
+      30,
+      20,
+      10,
+      0
+    ],
+    "description": "*Waktunya berangkat kuliah sekarang*",
+    "location": "Kampus",
+    "category": "Kuliah",
+    "priority": "tinggi",
+    "repeat": "weekly",
+    "customDates": [],
+    "createdAt": "2025-11-25T14:48:00.746Z",
+    "sentLog": []
   }
 ]
