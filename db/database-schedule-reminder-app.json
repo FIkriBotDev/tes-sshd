@@ -3180,7 +3180,9 @@
     "repeat": "weekly",
     "customDates": [],
     "createdAt": "2025-11-25T14:48:00.746Z",
-    "sentLog": []
+    "sentLog": [
+      "2025-11-26T08:00:00.000+07:00|30"
+    ]
   },
   {
     "id": "17e67ce6-0bba-48f0-a358-14fd86abe501",
