@@ -3257,5 +3257,25 @@
     "sentLog": [
       "2025-11-25T21:51:00.000+07:00|0"
     ]
+  },
+  {
+    "id": "efc1c33c-2d00-40bb-b75d-71f899df378b",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "*WOY*",
+    "date": "2025-11-27",
+    "time": "14:31",
+    "offsets": [
+      0
+    ],
+    "description": "WOYYY",
+    "location": "",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-11-27T07:29:34.320Z",
+    "sentLog": []
   }
 ]
