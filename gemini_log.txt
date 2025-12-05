@@ -25719,3 +25719,16 @@ Hal yang bisa ditingkatkan
 
 Kalau kamu mau, saya bisa langsung buatkan beberapa opsi caption, deskripsi layanan terstruktur, dan rekomendasi visual dalam satu paket. Ceritakan mana yang paling kamu butuhkan.
 
+
+[2025-12-05T12:31:10.181Z]
+Prompt    : Huek
+Image URL : https://uploader.exodusai.biz.id/tmp/9b0e6e-1764937854415.jpg
+Response  : Nice display. You’ve got a little tropical lineup there: durians in the front, pineapples with Sunpride labels, and bananas overhead.
+
+A quick rundown in case you’re curious:
+- Durians: those spiky green-brown spheres are the “king of fruits.” Ripe durian smells sweet and strong; the shell might crack a bit and the fruit feels slightly soft when you press it. If you’re buying, a good ripeness cue is a noticeable aroma and a feeling of heft. If you’re not ready to eat them right away, you can store them in a cool place for a day or two.
+- Pineapples: look for a fragrant smell at the base, a golden/yellow tinged color, and heft for their size. Leaves that are green and fresh are a good sign.
+- Bananas: bright yellow is ripe; a few brown specks mean they’re extra sweet. If you’re not planning to eat them soon, choose green-tinged bunches to let them ripen at home.
+
+If you want, tell me what you’re planning to make (a durian treat, pineapple dish, smoothies, etc.), and I can suggest ripe-fresh picks and simple recipes or prep tips. Are you aiming to eat one of these today or just browsing?
+
