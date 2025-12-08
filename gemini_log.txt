@@ -25762,3 +25762,34 @@ Biar saya bisa kasih langkah yang lebih tepat:
 
 Mau saya bantu buat skema rangkaian sederhana buat motor getarnya sekarang juga?
 
+
+[2025-12-08T00:25:21.540Z]
+Prompt    : kalau aku ambil ini juga gmn ke esp33
+Image URL : https://uploader.exodusai.biz.id/tmp/93faef-1765153508006.jpg
+Response  : Bisa kok, asalkan interface board itu ke ESP32 kompatibel. Dari foto kelihatan ada kabel flat (FFC) masuk ke PCB hijau, kemungkinan itu modul display/driver. Intinya adalah menentukan tipe antarmuka (SPI atau paralel) dan voltasenya.
+
+Langkah cek dulu:
+- Tegangan operasinya 3.3V atau 5V? ESP32 logikanya 3.3V, jadi hindari memberi 5V ke pin IO.
+- Jenis antarmuka: SPI (umum untuk display) atau paralel (8/16-bit). Cek chip utama di board atau silkscreen pada PCB untuk petunjuk interface.
+- Ada konverter level di jalur data? Banyak modul 5V punya level shifter, tapi kalau tidak, you perlu level shifter.
+- Ground harus sama antara ESP32 dan board.
+
+Cara nyambung kalau pakai SPI (yang paling sering):
+- VCC ke 3.3V, GND ke GND.
+- ESP32 MOSI → DIN (data in) pada modul.
+- ESP32 SCK → CLK pada modul.
+- ESP32 CS (chip select) → CS pada modul (pakai GPIO bebas, mis. GPIO5).
+- ESP32 DC (data/command) → DC pada modul (pakai GPIO bebas, mis. GPIO16).
+- ESP32 RST (reset) → RST pada modul (pakai GPIO bebas, mis. GPIO17) kalau diperlukan.
+- MISO biasanya tidak diperlukan kalau hanya menulis ke layar.
+
+Kalau antarmukanya paralel:
+- Kamu bakal butuh banyak GPIO ESP32 untuk data bus (misal D0–D7) plus kontrol (CS, WR, RS, E, dll). Konfigurasi lebih ribet dan biasanya butuh library khusus.
+
+Gue bisa bantu lebih spesifik kalau kamu kasih:
+- Nama atau nomor bagian modulnya (tempelan label IC utama atau model PCB).
+- Jumlah pin di konektor FFC (berapa pin).
+- Label pada IC utama di board (atau foto sisi lain).
+
+Kalau kamu mau, kasih detail itu atau foto lebih jelas, nanti gue buatkan pinout khusus sama skematik kasarnya biar tinggal tinggal implementasinya ke ESP32.
+
