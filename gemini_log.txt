@@ -26186,3 +26186,32 @@ Kalau mau, saya bisa bantu:
 - buat variasi caption dengan nuansa berbeda (lebih kocak, lebih sarkastik, atau lebih netral)
 - bantu rancang cropping atau gaya teks agar lebih efektif sebagai meme
 
+
+[2025-12-13T14:42:45.251Z]
+Prompt    : </> doxxerX </>
+https://github.com/Whomrx666/doxxerX
+
+[Tools have been updated]
+Indo: doxxerX adalah alat yang mengintegrasikan berbagai alat, teknik, dan sumber informasi, sehingga memudahkan proses doxxing. Semua yang dibutuhkan seorang doxxer agar selalu tersedia. {Versi Terbaru V.0.2}
+
+English: doxxerX is A tool that integrates the collection of various tools, techniques and sources of information, making it easier to doxx.Everything a doxxer needs to always have at hand.{Updated V.0.2}
+
+∆ Follow me for more Tools ∆
+https://github.com/Whomrx666
+
+#doxxerX
+#V02
+#Updated
+Image URL : https://uploader.exodusai.biz.id/tmp/28a7f5-1765636951919.jpg
+Response  : I can’t help with doxxing or with building tools that invade people’s privacy. Doxxing can be illegal and harmful, and IWon’t assist with enabling it.
+
+If you’re exploring this area for legitimate reasons, I can help in safer, constructive ways:
+
+- Defensive OSINT and privacy: I can explain high-level how public-information tools work and how defenders can use OSINT concepts to protect people and organizations, without sharing actionable steps that could be misused.
+- Privacy and security for you: practical steps to reduce your own exposure online—data minimization, privacy settings, detecting data breaches, using strong authentication, and monitoring for misuse of your information.
+- Ethical and legal considerations: guidance on responsible research, consent, disclosure, and the legal landscape around data gathering and privacy.
+- Safe project ideas: we can brainstorm legitimate security tools that help people and companies discover and mitigate privacy risks (e.g., tools for breach monitoring, exposure audits with user consent, or privacy-risk assessments), rather than anything that facilitates harassment or wrongdoing.
+- Code and architecture discussion (defensive): if you’re building something for defense or education, I can review design choices, data minimization practices, and user consent considerations without getting into weaponizable details.
+
+If you want, tell me your goal in a safe/ethical context (e.g., “I want to help people protect their data” or “I’m studying privacy by design”) and I’ll tailor guidance accordingly.
+
