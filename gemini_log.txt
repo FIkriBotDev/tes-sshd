@@ -26150,3 +26150,29 @@ Apa yang ingin kamu lakukan?
 
 Kamu ingin saya jelaskan bagian UI-nya lebih detail, atau kasih saran soal gameplay/nugget humor untuk postingan?
 
+
+[2025-12-13T13:42:52.788Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/612377-1765633353961.jpg
+Response  : Berikut gambaran tanpa menyentuh wajah yang blur:
+
+- Ada seorang pembicara laki-laki mengenakan jas putih, duduk di sofa dengan latar belakang hijau muda. Ada mikrofon lavalier terpasang di bajunya.
+- Suasana seperti acara talk-show atau segmen edukasi singkat.
+- Tampilan antarmuka video mirip platform video pendek: bagian komentar terlihat, dengan beberapa komentar berbahasa Indonesia dan ikon like, reply, dsb.
+- Watermark kecil di pojok kanan atas dengan teks seperti “YT: Zeeexee22”.
+
+Beberapa hal yang bisa dipakai untuk caption atau respon konten:
+- Caption opsi:
+  - “Ngobrol santai soal kesehatan mata dan gejala umum.”
+  - “Tanya jawab singkat tentang mata kabur.”
+  - “Punya gejala mata? Simak saran dari ahlinya.”
+- Balasan untuk komentar yang muncul (tanpa memberi diagnosis): 
+  - “Mata kabur bisa disebabkan banyak hal. Kalau gejala muncul sebelah, sebaiknya periksakan ke dokter mata untuk evaluasi lebih lanjut.”
+  - “Kalau disertai nyeri, perubahan tiba-tiba pada penglihatan, atau hampir tidak bisa melihat, segera cari bantuan medis.”
+
+Tips membuat konten lebih jelas:
+- Tambah keterangan di video soal topik pembahasan (mis. “Gejala mata kabur: penyebab umum dan kapan perlu ke dokter”).
+- Sertakan CTA (ajakan tindakan) seperti “ konsultasi mata gratis di klinik …” jika relevan.
+
+Mau saya bantu buat beberapa caption alternatif atau contoh balasan komentar yang sesuai dengan gaya kontennya?
+
