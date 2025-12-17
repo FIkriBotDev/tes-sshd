@@ -26353,3 +26353,25 @@ Mau saya bantu dengan:
 
 Kalau kamu kasih tahu gaya yang kamu suka (humor, empati, netral), saya buatkan beberapa opsi balasan. Atau kalau ingin, saya juga bisa jelasin arti kata-kata slang di caption ini.
 
+
+[2025-12-17T05:17:07.994Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/e9d216-1765948612133.jpg
+Response  : Gambar ini menunjukkan rak display produk perawatan kulit merek CeraVe di toko. Ada beberapa jenis produk yang tampak:
+
+- Poster di atas menyebutkan varian baru: Loción Hidratante Intensiva dengan klaim bisa menghidrasi kulit kering hingga 72 jam.
+- Di depan ada botol pump besar (kemungkinan loción/Hidratante) dan beberapa botol kecil berwarna putih dengan tutup hijau/tegas.
+- Rak bagian bawah diberi label “Limpieza” (pembersihan) dan bagian bawahnya “Hidratación Rostro” (hidrasi wajah), menunjukkan ada rangkaian pembersih dan pelembap untuk wajah.
+
+Gaya produk ini biasanya terdiri dari:
+- Pembersih wajah (cleanser) dengan formula yang lembut, sering mengandung ceramides dan asam hialuronat.
+- Pelembap/loción dengan ceramides untuk memperkuat penghalang kulit, cocok untuk kulit kering atau sangat kering.
+- Beberapa varian bisa “intensiva” atau lebih berat untuk kulit sangat kering.
+
+Cara memilih kalau kamu sedang mempertimbangkan:
+- Untuk kulit kering: pilih pembersih yang ringan tanpa garam sabun keras, lalu lanjutkan dengan loción/pelembap yang mengandung ceramides dan hyaluronic acid.
+- Untuk kulit sensitif: cari produk tanpa pewangi tambahan, uji di area kecil dulu.
+- Rutinitas singkat: cleanser → hydrating lotion/cream → sunscreen di siang hari.
+
+Mau saya bantu simpulkan produk mana yang paling cocok buat tipe kulitmu, atau jelaskan arti label bahasa Spanyolnya lebih rinci?
+
