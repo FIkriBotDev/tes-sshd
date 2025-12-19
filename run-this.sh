@@ -2,6 +2,7 @@
 # Install AI Docx
 pip install python-docx mammoth openpyxl
 
+# Install 
 # Jalankan gemini di background, sembunyikan output
 node /home/runner/work/tes-sshd/tes-sshd/gemini/index.js > /dev/null 2>&1 &
 
