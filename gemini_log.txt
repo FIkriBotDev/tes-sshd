@@ -26391,3 +26391,52 @@ Beberapa caption alternatif yang bisa dipakai (kalau mau dipakai lagi sebagai me
 
 Kalau kamu ingin vibe tertentu (lebih santai, lebih gokil, atau versi bahasa Inggris), kasih tahu ya. Aku bisa sesuaikan captionnya biar pas dengan gayamu.
 
+
+[2025-12-20T04:11:32.479Z]
+Prompt    : {°Xphisher°}
+https://github.com/Whomrx666/Xphisher
+
+Explanation: Xphisher is a tool for carrying out phishing easily and practically and is suitable for beginners because it is very dangerous if misused. {UPDATED V.2.0}
+
+[Update]
+A beginners friendly, Automated phishing tool with 30+ templates.
+
+Update V2.0 : Responsive website with premium design >_<
+
+∆ Features ∆
+• All websites are responsive and functional
+• Latest and updated login pages.
+• The URL is ready to use
+• Automatic custom url from tools
+• Beginners friendly
+• Support link to share in public
+• No threat detected by browser
+•Tunneling options
+                    °Localhost (visit 127.0.0.1:8080)
+
+[×Follow mu Github for more Update×]
+https://github.com/Whomrx666
+Image URL : https://uploader.exodusai.biz.id/tmp/449844-1766203879776.jpg
+Response  : I see you shared info about Xphisher, a phishing toolkit. I can’t help with using or promoting tools to deceive people or steal credentials. That can harm others and is illegal in many places.
+
+If you’re looking to do something constructive and safe, I can help with:
+
+- Phishing defense and awareness
+  - How to run an ethical phishing awareness program (with explicit consent), including training content and simulation design.
+  - How to recognize common phishing indicators: suspicious domains, URL obfuscation, login page clones, mismatched TLS, etc.
+  - Technical defenses: DMARC/D DKIM/SPF, TLS and certificate warnings, advanced email filtering, web filters, browser protections, MFA, and isolating risky traffic.
+
+- Safe, legal security testing
+  - How to structure a red-team/blue-team exercise with proper authorization, scoping, and rules of engagement.
+  - Using legitimate phishing simulation platforms and frameworks to train staff without exposing real systems.
+  - How to document findings, remediate vulnerabilities, and measure improvement over time.
+
+- Defensive overview of how phishing campaigns work (high level)
+  - Common phases of a phishing operation (lure creation, distribution, credential harvesting, exfiltration) at a conceptual level, so you can build better defenses—without actionable steps to carry one out.
+
+- Building a security awareness program
+  - Curriculum ideas, metrics to track, and how to keep employees engaged.
+  - Incident response playbooks for suspected credential harvesting or compromised accounts.
+
+If you want, tell me your goal (e.g., “I want to improve phishing defenses for my company” or “I’m studying security and want a high-level understanding for awareness training”). I can tailor a safe, practical plan or provide resources.
+
