@@ -3,48 +3,32 @@ const path = require("path");
 
 function runPythonExtractor(filePath) {
   return new Promise((resolve, reject) => {
-    const pythonScriptPath = path.join(
-      __dirname,
-      "../../python/extract.py"
-    );
+    const script = path.join(__dirname, "../../python/extract.py");
+    const py = spawn("python", [script, filePath]);
 
-    const pythonProcess = spawn("python3", [
-      pythonScriptPath,
-      filePath,
-    ]);
+    let stdout = "";
+    let stderr = "";
 
-    let stdoutData = "";
-    let stderrData = "";
+    py.stdout.on("data", d => stdout += d.toString());
+    py.stderr.on("data", d => stderr += d.toString());
 
-    pythonProcess.stdout.on("data", (data) => {
-      stdoutData += data.toString();
-    });
-
-    pythonProcess.stderr.on("data", (data) => {
-      stderrData += data.toString();
-    });
-
-    pythonProcess.on("close", (code) => {
+    py.on("close", code => {
       if (code !== 0) {
-        return reject({
-          message: "Python process failed",
-          error: stderrData || stdoutData,
-        });
+        console.error("❌ PYTHON ERROR");
+        console.error(stderr || stdout);
+        return reject(new Error(stderr || "Python failed"));
       }
 
       try {
-        const parsed = JSON.parse(stdoutData);
-
+        const parsed = JSON.parse(stdout);
         if (parsed.status !== "success") {
-          return reject(parsed);
+          return reject(new Error(parsed.message));
         }
-
         resolve(parsed.text);
-      } catch (err) {
-        reject({
-          message: "Failed to parse Python output",
-          error: stdoutData,
-        });
+      } catch (e) {
+        console.error("❌ JSON PARSE ERROR FROM PYTHON");
+        console.error(stdout);
+        reject(e);
       }
     });
   });
