@@ -8,7 +8,7 @@ function runPythonExtractor(filePath) {
       "../../python/extract.py"
     );
 
-    const pythonProcess = spawn("python", [
+    const pythonProcess = spawn("python3", [
       pythonScriptPath,
       filePath,
     ]);
