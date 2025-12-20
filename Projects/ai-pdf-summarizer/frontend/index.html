@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Materi Ringkas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: Inter, system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white flex flex-col items-center px-6 py-12">
+
+  <!-- Header -->
+  <h1 class="text-4xl font-bold mb-2">
+    📘 AI Materi Ringkas
+  </h1>
+  <p class="text-slate-400 mb-8 text-center max-w-xl">
+    Upload file PDF atau DOCX, lalu dapatkan ringkasan poin-poin penting
+    secara otomatis menggunakan AI.
+  </p>
+
+  <!-- Upload Box -->
+  <div class="bg-slate-800/60 border border-slate-700 rounded-xl p-6 w-full max-w-xl">
+    <h2 class="text-xl font-semibold mb-4">
+      Upload Materi
+    </h2>
+
+    <input
+      id="fileInput"
+      type="file"
+      accept=".pdf,.docx"
+      class="block w-full text-sm
+             file:bg-sky-600 file:border-none
+             file:px-4 file:py-2 file:rounded-lg
+             file:text-white file:cursor-pointer"
+    />
+
+    <button
+      onclick="uploadFile()"
+      id="submitBtn"
+      class="mt-4 w-full bg-sky-600 hover:bg-sky-700 transition rounded-lg py-2 font-semibold"
+    >
+      Ringkas Materi
+    </button>
+  </div>
+
+  <!-- Loading -->
+  <div id="loading" class="hidden mt-6 text-sky-400">
+    ⏳ Sedang meringkas materi...
+  </div>
+
+  <!-- Result -->
+  <div
+    id="result"
+    class="hidden mt-8 bg-slate-800/60 border border-slate-700 rounded-xl p-6 max-w-3xl whitespace-pre-wrap"
+  >
+    <h2 class="text-xl font-semibold mb-4">
+      Hasil Ringkasan
+    </h2>
+    <p id="summaryText" class="text-slate-200 leading-relaxed"></p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-12 text-slate-500 text-sm">
+    © 2025 • AI PDF Summarizer
+  </footer>
+
+  <!-- Script -->
+  <script>
+    async function uploadFile() {
+      const fileInput = document.getElementById("fileInput");
+      const loading = document.getElementById("loading");
+      const result = document.getElementById("result");
+      const summaryText = document.getElementById("summaryText");
+      const submitBtn = document.getElementById("submitBtn");
+
+      if (!fileInput.files.length) {
+        alert("Silakan upload file PDF atau DOCX");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("file", fileInput.files[0]);
+
+      loading.classList.remove("hidden");
+      result.classList.add("hidden");
+      submitBtn.disabled = true;
+
+      try {
+        const res = await fetch("/api/summarize", {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await res.json();
+
+        if (data.status !== "success") {
+          throw new Error(data.message);
+        }
+
+        summaryText.textContent = data.summary;
+        result.classList.remove("hidden");
+      } catch (err) {
+        alert("Gagal meringkas dokumen");
+        console.error(err);
+      } finally {
+        loading.classList.add("hidden");
+        submitBtn.disabled = false;
+      }
+    }
+  </script>
+
+</body>
+</html>
