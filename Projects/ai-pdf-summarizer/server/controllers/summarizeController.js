@@ -3,63 +3,40 @@ const runPythonExtractor = require("../services/pythonRunner");
 const summarizeWithPollinations = require("../services/pollinations");
 const chunkText = require("../utils/chunkText");
 
-async function summarizeController(req, res) {
+module.exports = async (req, res) => {
   if (!req.file) {
-    return res.status(400).json({
-      status: "error",
-      message: "No file uploaded",
-    });
+    return res.status(400).json({ status: "error", message: "No file" });
   }
 
   const filePath = req.file.path;
 
   try {
-    // 1. Extract text dari PDF / DOCX
-    const extractedText = await runPythonExtractor(filePath);
+    console.log("📁 FILE:", filePath);
 
-    if (!extractedText || extractedText.length < 50) {
-      throw new Error("Extracted text is too short");
-    }
+    const text = await runPythonExtractor(filePath);
+    console.log("📄 TEXT LENGTH:", text.length);
 
-    // 2. Chunking text (hindari limit AI)
-    const chunks = chunkText(extractedText, 3000);
+    const chunks = chunkText(text, 3000);
+    console.log("✂️ CHUNKS:", chunks.length);
 
-    // 3. Ringkas tiap chunk
-    const partialSummaries = [];
+    const partial = [];
     for (let i = 0; i < chunks.length; i++) {
-      const summary = await summarizeWithPollinations(
-        chunks[i],
-        "ringkas"
-      );
-      partialSummaries.push(summary);
+      console.log(`🤖 AI chunk ${i + 1}/${chunks.length}`);
+      partial.push(await summarizeWithPollinations(chunks[i]));
     }
 
-    // 4. Gabungkan hasil ringkasan
-    const combinedSummary = partialSummaries.join("\n\n");
+    const finalSummary = await summarizeWithPollinations(partial.join("\n"));
 
-    // 5. Ringkas ulang agar lebih padat & menyatu
-    const finalSummary = await summarizeWithPollinations(
-      combinedSummary,
-      "ringkas"
-    );
-
-    // 6. Cleanup file upload
     fs.unlink(filePath, () => {});
+    res.json({ status: "success", summary: finalSummary });
 
-    return res.json({
-      status: "success",
-      chunks: chunks.length,
-      summary: finalSummary,
-    });
-  } catch (error) {
+  } catch (err) {
+    console.error("❌ CONTROLLER ERROR:", err.message);
     fs.unlink(filePath, () => {});
-
-    return res.status(500).json({
+    res.status(500).json({
       status: "error",
-      message: "Failed to summarize document",
-      detail: error.message || error,
+      stage: "summarizeController",
+      message: err.message,
     });
   }
-}
-
-module.exports = summarizeController;
+};
