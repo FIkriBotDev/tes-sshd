@@ -2,50 +2,28 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 
-// Pastikan folder uploads ada
 const uploadDir = path.join(__dirname, "../uploads");
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
-}
+if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
 
-// Konfigurasi storage
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, uploadDir);
-  },
+  destination: uploadDir,
   filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname);
-    const uniqueName = `${Date.now()}-${Math.round(
-      Math.random() * 1e9
-    )}${ext}`;
-    cb(null, uniqueName);
+    cb(null, Date.now() + path.extname(file.originalname));
   },
 });
 
-// Filter file
 const fileFilter = (req, file, cb) => {
-  const allowedTypes = [
+  const allowed = [
     "application/pdf",
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
   ];
-
-  if (allowedTypes.includes(file.mimetype)) {
-    cb(null, true);
-  } else {
-    cb(
-      new Error("Only PDF and DOCX files are allowed"),
-      false
-    );
-  }
+  allowed.includes(file.mimetype)
+    ? cb(null, true)
+    : cb(new Error("Only PDF & DOCX allowed"));
 };
 
-// Multer instance
-const upload = multer({
+module.exports = multer({
   storage,
   fileFilter,
-  limits: {
-    fileSize: 10 * 1024 * 1024, // 10 MB
-  },
+  limits: { fileSize: 10 * 1024 * 1024 },
 });
-
-module.exports = upload;
