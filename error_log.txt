@@ -3036,3 +3036,5 @@
 [2025-11-23T10:29:22.584Z] Error processing image: {}
 [2025-11-29T10:14:58.138Z] Error processing image: {}
 [2025-12-04T11:32:21.581Z] Error processing image: {}
+[2025-12-21T09:51:15.804Z] Error processing image: {}
+[2025-12-21T09:51:37.149Z] Error processing image: {}
