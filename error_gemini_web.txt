@@ -900,3 +900,18 @@ b.send(JSON.stringify(a));c.classList.add("feedback-hidden");d.classList.remove(
   }
 }
 
+[2025-12-21T10:01:32.687Z] API Error:
+{
+  "error": "429 Too Many Requests",
+  "status": 429,
+  "details": {
+    "error": {
+      "message": "azure-openai error: The system is currently experiencing high demand and cannot process your request. Your request exceeds the maximum usage size allowed during peak load. Please retry after 1 second. For improved latency reliability, consider switching to Provisioned Throughput.",
+      "type": null,
+      "param": null,
+      "code": "NoCapacity"
+    },
+    "provider": "azure-openai"
+  }
+}
+
