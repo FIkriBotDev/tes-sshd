@@ -26468,3 +26468,25 @@ Beberapa ide caption yang bisa dipakai:
 
 Mau saya buatkan caption khusus sesuai suasana hati atau tema acara yang kamu maksud?
 
+
+[2025-12-24T00:26:29.971Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/5158a1-1766535976202.jpg
+Response  : Berikut gambaran singkat tentang kartu mahasiswa tersebut (tanpa membahas bagian wajah):
+
+- Institusi: Universitas Muhammadiyah Makassar (UNISMUH Makassar)
+- Keterangan kampus: Kampus Jl. Sultan Alauddin, No. 259 Makassar
+- Halaman header: Kartu Mahasiswa
+- Identitas utama:
+  - NIM: 105841106925
+  - Nama: Muhammad Fikri Fahrezi
+  - Tempat, Tanggal Lahir: Pangkep, 29 Juli 2007
+  - Program Studi: Informatika
+- Otoritas kampus:
+  - Rektor: Dr. Ir. H. Abd. Rakhim Nanda, ST., MT., IPU. NBM. 795 107
+  - Tanda tangan dan stempel resmi
+- Akses web kampus: https://unismuh.ac.id
+- Elemen visual: latar belakang bergambar kampus dengan bagian foto profil di sisi kanan kartu
+
+Jika Anda ingin, saya bisa menyoroti bagian mana yang mungkin berguna untuk verifikasi atau keperluan dokumentasi.
+
