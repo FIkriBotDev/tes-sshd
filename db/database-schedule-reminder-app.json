@@ -4683,5 +4683,28 @@
     "sentLog": [
       "2025-11-27T14:31:00.000+07:00|0"
     ]
+  },
+  {
+    "id": "f901ab41-63b8-4639-8703-639b08614326",
+    "userId": "47cd6724-0dbd-4527-8e8a-cb41cedcbac9",
+    "username": "Fikri",
+    "userPhone": "6285928087634",
+    "title": "*TEST*",
+    "date": "2025-12-28",
+    "time": "01:15",
+    "offsets": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "description": "~Test test test test test~",
+    "location": "```Rumah```",
+    "category": "",
+    "priority": "sedang",
+    "repeat": "none",
+    "customDates": [],
+    "createdAt": "2025-12-27T14:37:14.572Z",
+    "sentLog": []
   }
 ]
