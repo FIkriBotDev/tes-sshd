@@ -1,32 +1,41 @@
 /**
- * Memecah text panjang menjadi beberapa chunk
+ * Memecah text panjang menjadi chunk kecil
+ * AMAN untuk Pollinations + reverse proxy
+ *
  * @param {string} text - text panjang
- * @param {number} maxLength - max karakter per chunk
+ * @param {number} maxLength - max karakter per chunk (default 700)
  * @returns {string[]} array of chunks
  */
-function chunkText(text, maxLength = 3000) {
+function chunkText(text, maxLength = 700) {
   if (!text || typeof text !== "string") return [];
 
+  // bersihkan text agar tidak boros karakter
+  text = text
+    .replace(/\s+/g, " ")     // hapus spasi berlebihan
+    .replace(/\n+/g, " ")     // hapus newline berlebihan
+    .trim();
+
   const chunks = [];
-  let startIndex = 0;
+  let index = 0;
 
-  while (startIndex < text.length) {
-    let endIndex = startIndex + maxLength;
+  while (index < text.length) {
+    let end = index + maxLength;
 
-    // Usahakan potong di akhir kalimat
-    if (endIndex < text.length) {
-      const lastDot = text.lastIndexOf(".", endIndex);
-      if (lastDot > startIndex) {
-        endIndex = lastDot + 1;
+    // kalau masih ada sisa, coba potong di titik terakhir
+    if (end < text.length) {
+      const lastDot = text.lastIndexOf(".", end);
+      if (lastDot > index + 100) {
+        end = lastDot + 1;
       }
     }
 
-    const chunk = text.slice(startIndex, endIndex).trim();
+    const chunk = text.slice(index, end).trim();
+
     if (chunk.length > 0) {
       chunks.push(chunk);
     }
 
-    startIndex = endIndex;
+    index = end;
   }
 
   return chunks;
