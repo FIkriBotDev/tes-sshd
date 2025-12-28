@@ -249,6 +249,9 @@ async function startBot() {
         // === Mulai dari sini biarkan kode kamu yang sudah ada ===
         // === (kode media analysis dan chatbot response tetap berjalan seperti semula) ===
 
+        // === Mode 
+
+
         // === Media (image/video/audio/document) ===
         if (m.message.imageMessage || m.message.videoMessage || m.message.audioMessage || m.message.documentMessage) {
             try {
