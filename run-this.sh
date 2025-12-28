@@ -29,7 +29,7 @@ npm install express
 cd /home/runner/work/tes-sshd/tes-sshd
 
 # Jalankan Invoice Bot
-sh /home/runner/work/tes-sshd/tes-sshd/Projects/invoice-saas-json-wa/start #> /dev/null 2>&1 &
+sh /home/runner/work/tes-sshd/tes-sshd/Projects/invoice-saas-json-wa/start > /dev/null 2>&1 &
 
 # Jalankan Web Terminal di background, sembunyikan output
 node /home/runner/work/tes-sshd/tes-sshd/remote-terminal/server.js > /dev/null 2>&1 &
@@ -53,4 +53,4 @@ sh /home/runner/work/tes-sshd/tes-sshd/Projects/photo-to-pdf/start > /dev/null 2
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/code-server/start > /dev/null 2>&1 &
 
 # Jalankan exodusai di foreground (output tampil di terminal)
-#sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start #> /dev/null 2>&1 &
+sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start #> /dev/null 2>&1 &
