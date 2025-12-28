@@ -1,41 +1,38 @@
 const axios = require("axios");
 
-async function summarizeWithPollinations(text, mode = "ringkas") {
-  const prompt = `
+async function summarizeWithPollinations(text) {
+  try {
+    const prompt = encodeURIComponent(`
 Ringkas materi berikut menjadi poin-poin penting.
 Gunakan bahasa Indonesia sederhana.
-Gaya: ${mode}
 
 Materi:
 ${text}
-`;
+    `);
 
-  try {
-    const res = await axios.post(
-      "https://text.pollinations.ai/",
-      { prompt, model: "openai" },
-      {
-        timeout: 120000,
-        headers: {
-          accept: "application/json",
-          "Content-Type": "application/json",
-          Authorization: "Bearer XOYha3sjdByNrw_q",
-        },
-      }
-    );
+    const url = `https://text.pollinations.ai/${prompt}`;
 
-    return typeof res.data === "string"
-      ? res.data.trim()
-      : res.data.text || JSON.stringify(res.data);
+    console.log("🌐 POLLINATIONS URL:", url.slice(0, 120) + "...");
+
+    const res = await axios.get(url, {
+      timeout: 120000,
+      headers: {
+        accept: "text/plain",
+        Authorization: "Bearer XOYha3sjdByNrw_q",
+      },
+    });
+
+    return res.data;
 
   } catch (err) {
-    console.error("❌ POLLINATIONS ERROR");
+    console.error("❌ POLLINATIONS ERROR DETAIL");
     if (err.response) {
-      console.error(err.response.status, err.response.data);
+      console.error("STATUS:", err.response.status);
+      console.error("DATA:", err.response.data);
     } else {
-      console.error(err.message);
+      console.error("MESSAGE:", err.message);
     }
-    throw new Error("Pollinations AI failed");
+    throw err;
   }
 }
 
