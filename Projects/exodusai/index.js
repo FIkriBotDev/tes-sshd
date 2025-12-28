@@ -249,7 +249,8 @@ async function startBot() {
         // === Mulai dari sini biarkan kode kamu yang sudah ada ===
         // === (kode media analysis dan chatbot response tetap berjalan seperti semula) ===
 
-        // === Mode 
+        // === Mode AI Ringkas Materi
+        
 
 
         // === Media (image/video/audio/document) ===
