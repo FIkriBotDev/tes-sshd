@@ -2,35 +2,30 @@ const axios = require("axios");
 
 async function summarizeWithPollinations(text) {
   try {
-    const prompt = encodeURIComponent(`
-Ringkas materi berikut menjadi poin-poin penting.
-Gunakan bahasa Indonesia sederhana.
-
-Materi:
-${text}
-    `);
+    const prompt = encodeURIComponent(
+      "Ringkas poin penting:\n" + text.slice(0, 800)
+    );
 
     const url = `https://text.pollinations.ai/${prompt}`;
 
-    console.log("🌐 POLLINATIONS URL:", url.slice(0, 120) + "...");
+    console.log("🌐 HIT POLLINATIONS");
 
     const res = await axios.get(url, {
-      timeout: 120000,
+      timeout: 60000,
       headers: {
         accept: "text/plain",
-        Authorization: "Bearer XOYha3sjdByNrw_q",
       },
     });
 
     return res.data;
 
   } catch (err) {
-    console.error("❌ POLLINATIONS ERROR DETAIL");
+    console.error("❌ POLLINATIONS FAIL");
     if (err.response) {
-      console.error("STATUS:", err.response.status);
-      console.error("DATA:", err.response.data);
+      console.error(err.response.status);
+      console.error(err.response.data);
     } else {
-      console.error("MESSAGE:", err.message);
+      console.error(err.message);
     }
     throw err;
   }
