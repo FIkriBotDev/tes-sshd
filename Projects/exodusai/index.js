@@ -250,7 +250,133 @@ async function startBot() {
         // === (kode media analysis dan chatbot response tetap berjalan seperti semula) ===
 
         // === Mode AI Ringkas Materi
-        
+        if (
+    currentMode === 'ringkasmateri' &&
+    m.message.documentMessage &&
+    (
+        m.message.documentMessage.mimetype === "application/pdf" ||
+        m.message.documentMessage.mimetype === "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    )
+) {
+    try {
+        await sock.sendMessage(sender, {
+            text: '📄 Dokumen diterima, membaca isi materi...'
+        });
+
+        // Download file
+        const buffer = await downloadMediaMessage(
+            m,
+            'buffer',
+            {},
+            { logger: P({ level: 'silent' }), reuploadRequest: sock.updateMediaMessage }
+        );
+
+        // Tentukan ekstensi
+        const ext =
+            m.message.documentMessage.mimetype === "application/pdf"
+                ? ".pdf"
+                : ".docx";
+
+        // Simpan file sementara
+        const tempPath = path.join(os.tmpdir(), `ringkas_${Date.now()}${ext}`);
+        fs.writeFileSync(tempPath, buffer);
+
+        // Jalankan Python extractor
+        const py = spawn("python3", ["extract.py", tempPath]);
+
+        let stdout = "";
+        let stderr = "";
+
+        py.stdout.on("data", (data) => {
+            stdout += data.toString();
+        });
+
+        py.stderr.on("data", (data) => {
+            stderr += data.toString();
+        });
+
+        py.on("close", async () => {
+            fs.unlinkSync(tempPath);
+
+            if (stderr) {
+                console.error("[RingkasMateri] Python error:", stderr);
+                await sock.sendMessage(sender, {
+                    text: '❌ Gagal membaca dokumen.'
+                });
+                return;
+            }
+
+            let parsed;
+            try {
+                parsed = JSON.parse(stdout);
+            } catch (err) {
+                console.error("[RingkasMateri] JSON parse error:", stdout);
+                await sock.sendMessage(sender, {
+                    text: '❌ Format dokumen tidak valid.'
+                });
+                return;
+            }
+
+            if (parsed.status !== "success" || !parsed.text) {
+                await sock.sendMessage(sender, {
+                    text: '❌ Dokumen kosong atau tidak dapat diproses.'
+                });
+                return;
+            }
+
+            await sock.sendMessage(sender, {
+                text: '🧠 Sedang meringkas materi, tunggu sebentar...'
+            });
+
+            // Kirim ke RTIST
+            const rtistRes = await fetch(
+                "http://localhost:3000/post/rtist",
+                {
+                    method: "POST",
+                    headers: {
+                        "accept": "application/json",
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        messages: [
+                            {
+                                role: "user",
+                                content:
+`Ringkaslah materi berikut menjadi poin-poin penting.
+Gunakan bahasa Indonesia yang rapi dan mudah dipahami.
+
+Materi:
+${parsed.text}`
+                            }
+                        ]
+                    })
+                }
+            );
+
+            const rtistData = await rtistRes.json();
+            const summary = rtistData.result;
+
+            if (!summary) {
+                await sock.sendMessage(sender, {
+                    text: '❌ AI gagal meringkas materi.'
+                });
+                return;
+            }
+
+            // Kirim hasil ringkasan (TEXT, BUKAN JSON)
+            await sock.sendMessage(sender, {
+                text: `📘 *Ringkasan Materi*\n\n${summary}`
+            });
+        });
+
+    } catch (err) {
+        console.error("[RingkasMateri] Error:", err);
+        await sock.sendMessage(sender, {
+            text: '❌ Terjadi kesalahan saat memproses dokumen.'
+        });
+    }
+    return;
+}
 
 
         // === Media (image/video/audio/document) ===
