@@ -155,10 +155,9 @@ async function startBot() {
         }
         if (userMessage === '/mode ringkasmateri') {
             setMode(sender, 'ringkasmateri');
-            await sock.sendMessage(sender, { text: '📄 Mode *Ringkas Materi* aktif.\n\nSilakan kirim file PDF atau DOCX untuk diringkas.'
-            )} 
-            return;
-        }
+            await sock.sendMessage(sender, { text: '📄 Mode *AI Ringkas Materi* aktif.\n\nSilakan kirim file PDF atau DOCX untuk diringkas.' });   
+    return;
+}
         if (userMessage === '/mode photoeditor') {
             setMode(sender, 'photoeditor');
             await sock.sendMessage(sender, {
