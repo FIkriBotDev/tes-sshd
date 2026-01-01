@@ -4781,6 +4781,8 @@
     "repeat": "none",
     "customDates": [],
     "createdAt": "2026-01-01T15:32:12.370Z",
-    "sentLog": []
+    "sentLog": [
+      "2026-01-01T22:33:00.000+07:00|0"
+    ]
   }
 ]
