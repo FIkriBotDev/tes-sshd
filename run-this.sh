@@ -50,7 +50,7 @@ sh /home/runner/work/tes-sshd/tes-sshd/Projects/www-exodusai/start > /dev/null 2
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/photo-to-pdf/start > /dev/null 2>&1 &
 
 # Jalankan code-server di background, sembunyikan output
-sh /home/runner/work/tes-sshd/tes-sshd/Projects/code-server/start #> /dev/null 2>&1 &
+sh /home/runner/work/tes-sshd/tes-sshd/Projects/code-server/start > /dev/null 2>&1 &
 
 # Jalankan exodusai di foreground (output tampil di terminal)
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start #> /dev/null 2>&1 &
