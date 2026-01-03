@@ -539,7 +539,7 @@ app.post('/post/mistral', async (req, res) => {
   }
 });
 
-// Route untuk endpoint unity
+// Route untuk endpoint rtist (Pollinations Pollen - Gemini)
 app.post('/post/rtist', async (req, res) => {
   try {
     const { messages } = req.body;
@@ -551,43 +551,36 @@ app.post('/post/rtist', async (req, res) => {
     }
 
     const payload = {
-      messages,
-      model: 'gemini', // Menggunakan model Unity with Mistral Large by Unity AI Lab
-      seed: 42,
-      jsonMode: false,
-      isPrivate: true,
+      model: 'gemini',
+      messages
     };
 
     const response = await axios.post(
-      'https://text.pollinations.ai/',
+      'https://gen.pollinations.ai/v1/chat/completions',
       payload,
       {
         headers: {
-          'accept': 'application/json',
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer XOYha3sjdByNrw_q', // API Token
-        },
+          'Authorization': 'Bearer sk_OvYib8j1oljIIAF10ltLiK2QajiZYj08', // API Key Pollen
+          'Content-Type': 'application/json'
+        }
       }
     );
 
-    const result = response.data;
+    // Ambil hanya content dari response Pollinations
+    const result =
+      response.data?.choices?.[0]?.message?.content || '';
 
     res.json({
       status: true,
       creator: 'Fikri',
-      result,
+      result
     });
+
   } catch (error) {
     console.error('Error:', error.message);
 
-    // Simpan error ke file error.txt
     const errorLog = `[${new Date().toISOString()}] ${error.stack || error.message}\n`;
-
-    fs.appendFile('error.txt', errorLog, (err) => {
-      if (err) {
-        console.error('Failed to write to error.txt:', err.message);
-      }
-    });
+    fs.appendFile('error.txt', errorLog, () => {});
 
     res.status(500).json({ error: 'Internal Server Error' });
   }
