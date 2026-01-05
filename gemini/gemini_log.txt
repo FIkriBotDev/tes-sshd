@@ -549,3 +549,27 @@ Prompt    : ini gambar apa?
 Image URL : https://uploader.exodusai.biz.id/tmp/e0858a-1761105399580.jpg
 Response  : Gambar ini adalah gunung berapi yang sedang meletus. Lava merah mengalir dari kawah ke lerengnya, disertai awan asap tebal. Nama gunungnya tidak bisa dipastikan dari foto saja tanpa informasi lokasi. Kalau kamu punya konteksnya (negara/area), kasih tahu—saya bantu cari kemungkinan katanya.
 
+
+[2026-01-05T09:40:46.310Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/fe701b-1767606032286.jpg
+Response  : Ini screenshot halaman News dari Cisco Networking Academy (netacad.com) — tampak header dengan menu (My Learning, language, ikon akun), banner pembaruan hijau, bagian Featured (beberapa artikel besar di kiri/kanan), dan daftar "All News" di bawahnya.
+
+Yang terlihat di halaman:
+- Featured articles: How to Use AI to Create a Resume..., Capture the F..., How to Updat... (label ARTICLE pada tiap kartu).
+- Quick Links di kanan: Students! Welcome and Get..., Monthly Downtime Schedule, How to earn digital badges, Events.
+- All News (dengan tanggal): How to Learn English for IT (20 Des 2025), Capture the Flag to Earn Your Cisco Certificate In Ethical... (06 Des 2025), How to Update Your Profile Name (06 Des 2025), How to Use AI to Create a Resume That Gets Noticed (22 Nov 2025), Monthly Downtime Schedule (22 Nov 2025), Empowering the Future of Industry: Build Your OT Skills... (20 Nov 2025).
+
+Saran singkat kalau kamu mau bertindak:
+- Baca "How to Update Your Profile Name" kalau perlu menyesuaikan nama akun sebelum menyelesaikan kursus.
+- Cek "Monthly Downtime Schedule" bila mau mengakses platform pada waktu tertentu agar terhindar gangguan.
+- Artikel tentang AI untuk resume dan Capture the Flag bisa berguna kalau kamu ingin tingkatkan peluang kerja atau keterampilan cybersecurity.
+
+Langkah cepat untuk ubah nama profil (umum di NetAcad):
+1. Klik ikon akun/avatar di pojok kanan atas.
+2. Buka My Profile atau Profile Settings.
+3. Pilih Edit/Update name, masukkan nama yang diinginkan.
+4. Simpan perubahan.
+
+Kalau mau, saya bisa: ringkas salah satu artikel yang terlihat, bantu tulis nama profil yang rapi untuk sertifikat, atau tunjukkan poin penting dari artikel AI untuk resume. Mau yang mana?
+
