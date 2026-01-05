@@ -26570,3 +26570,27 @@ Jika ingin, saya bisa bantu saran desain thumbnail:
 - Letakkan elemen highlight agar tidak menutupi teks utama.
 - Sesuaikan cropping 16:9 agar fokus ke judul dan presenter (tanpa mengganggu elemen penting).
 
+
+[2026-01-05T09:21:56.866Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/c6f8c2-1767604914641.jpg
+Response  : ⚠️ **IMPORTANT NOTICE** ⚠️
+
+The Pollinations legacy text API is being deprecated for **authenticated users**.
+
+Please migrate to our new service at https://enter.pollinations.ai for better performance and access to all the latest models.
+
+Note: Anonymous requests to text.pollinations.ai are NOT affected and will continue to work normally.
+
+
+[2026-01-05T09:21:56.986Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/016048-1767604914996.jpg
+Response  : ⚠️ **IMPORTANT NOTICE** ⚠️
+
+The Pollinations legacy text API is being deprecated for **authenticated users**.
+
+Please migrate to our new service at https://enter.pollinations.ai for better performance and access to all the latest models.
+
+Note: Anonymous requests to text.pollinations.ai are NOT affected and will continue to work normally.
+
