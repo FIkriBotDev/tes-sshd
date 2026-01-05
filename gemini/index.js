@@ -87,36 +87,44 @@ app.get("/api/ytsummarize", async (req, res) => {
     }
 });
 
-// Endpoint /api/gemini-image (gunakan Pollinations + logging)
+// Endpoint /api/gemini-image (Pollinations Pollen - Vision)
 app.get("/api/gemini-image", async (req, res) => {
     const imageUrl = req.query.url;
-    const textPrompt = req.query.text || "Jelaskan gambar ini";
+    const textPrompt = req.query.text || "lihat gambar ini";
 
     if (!imageUrl) {
-        return res.status(400).json({ status: false, error: "URL gambar tidak boleh kosong" });
+        return res.status(400).json({
+            status: false,
+            error: "URL gambar tidak boleh kosong"
+        });
     }
 
     try {
-        const pollinationsRes = await fetch("https://text.pollinations.ai/openai", {
-            method: "POST",
-            headers: { 
-                        "Content-Type": "application/json",
-                        "Authorization": "Bearer XOYha3sjdByNrw_q"
-              },
-            body: JSON.stringify({
-                model: "openai",
-                messages: [
-                    {
-                        role: "user",
-                        content: [
-                            { type: "text", text: textPrompt },
-                            { type: "image_url", image_url: { url: imageUrl } }
-                        ]
-                    }
-                ],
-                max_tokens: 500
-            })
-        });
+        const pollinationsRes = await fetch(
+            "https://gen.pollinations.ai/v1/chat/completions",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer sk_OvYib8j1oljIIAF10ltLiK2QajiZYj08"
+                },
+                body: JSON.stringify({
+                    model: "openai", // Vision-capable model
+                    messages: [
+                        {
+                            role: "user",
+                            content: [
+                                { type: "text", text: textPrompt },
+                                {
+                                    type: "image_url",
+                                    image_url: { url: imageUrl }
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }
+        );
 
         const rawResponse = await pollinationsRes.text();
 
@@ -138,11 +146,10 @@ app.get("/api/gemini-image", async (req, res) => {
                 `[${new Date().toISOString()}] API Error:\n${JSON.stringify(data, null, 2)}\n\n`
             );
             throw new Error("Pollinations API mengembalikan error");
-        } else if (typeof data === "string") {
-            responseText = data.trim();
-        } else if (data.choices && data.choices[0]?.message?.content !== undefined) {
-            const rawContent = data.choices[0].message.content;
-            responseText = normalizeMessageContent(rawContent).trim();
+        } else if (data.choices?.[0]?.message?.content !== undefined) {
+            responseText = normalizeMessageContent(
+                data.choices[0].message.content
+            ).trim();
         } else {
             fs.appendFileSync(
                 "error_gemini_web.txt",
