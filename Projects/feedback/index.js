@@ -32,15 +32,28 @@ async function startBot() {
     sock.ev.on("creds.update", saveCreds);
 
     // === QR CODE TERMINAL ===
-    sock.ev.on("connection.update", (update) => {
-        const { qr, connection } = update;
-        if (qr) {
-            qrcode.generate(qr, { small: true });
+sock.ev.on("connection.update", async (update) => {
+    const { qr, connection, lastDisconnect } = update;
+
+    if (qr) {
+        qrcode.generate(qr, { small: true });
+    }
+
+    if (connection === "open") {
+        console.log("✅ WhatsApp Bot Connected");
+    }
+
+    if (connection === "close") {
+        const shouldReconnect =
+            lastDisconnect?.error?.output?.statusCode !== 401;
+
+        console.log("⚠️ Connection closed. Reconnect:", shouldReconnect);
+
+        if (shouldReconnect) {
+            startBot(); // RESTART BOT
         }
-        if (connection === "open") {
-            console.log("✅ WhatsApp Bot Connected");
-        }
-    });
+    }
+});
 
     sock.ev.on("messages.upsert", async ({ messages }) => {
         const msg = messages[0];
