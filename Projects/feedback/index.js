@@ -11,7 +11,7 @@ const {
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public-"));
+app.use(express.static("public-feedback"));
 
 const OWNER = "6285928087634@s.whatsapp.net";
 const DB_FILE = "./database_user.txt";
