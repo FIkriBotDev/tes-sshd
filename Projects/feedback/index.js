@@ -136,7 +136,7 @@ Testimoni: ${data.permission}
         if (sock && isConnected) {
             await sock.sendMessage(userJid, {
                 text: `Halo ${data.nama}! 👋  
-Terima kasih telah mengisi feedback anda 🙏`
+Terima kasih! Feedback kamu sangat membantu perkembangan ExodusAI 🙏`
             });
 
             await sock.sendMessage(OWNER, {
