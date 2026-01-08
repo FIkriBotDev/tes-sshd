@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ExodusAI Feedback</title>
+<style>
+body { font-family: Arial; background:#111; color:#fff; }
+.slide { display:none; }
+.active { display:block; }
+button { padding:10px; margin-top:10px; }
+.star { font-size:25px; cursor:pointer; color:gray; }
+.star.active { color:gold; }
+</style>
+</head>
+<body>
+
+<form id="form">
+<div class="slide active">
+<h3>Nama</h3>
+<input name="nama" required>
+<button type="button" onclick="next()">Next</button>
+</div>
+
+<div class="slide">
+<h3>Nomor WhatsApp</h3>
+<input name="whatsapp" pattern="628[0-9]+" required>
+<button type="button" onclick="next()">Next</button>
+</div>
+
+<div class="slide">
+<h3>Seberapa puas?</h3>
+<label><input type="radio" name="puas" value="Sangat puas"> Sangat puas</label><br>
+<label><input type="radio" name="puas" value="Puas"> Puas</label><br>
+<label><input type="radio" name="puas" value="Biasa saja"> Biasa saja</label><br>
+<label><input type="radio" name="puas" value="Kurang puas"> Kurang puas</label><br>
+<label><input type="radio" name="puas" value="Tidak puas"> Tidak puas</label><br>
+<button type="button" onclick="next()">Next</button>
+</div>
+
+<div class="slide">
+<h3>Kualitas AI</h3>
+<div class="rating" data-name="ai"></div>
+<h3>Kecepatan</h3>
+<div class="rating" data-name="speed"></div>
+<h3>Fitur</h3>
+<div class="rating" data-name="fitur"></div>
+<h3>Kemudahan</h3>
+<div class="rating" data-name="mudah"></div>
+<h3>Stabilitas</h3>
+<div class="rating" data-name="stabil"></div>
+<button type="button" onclick="next()">Next</button>
+</div>
+
+<div class="slide">
+<h3>Hal terbaik?</h3>
+<textarea name="best"></textarea>
+<button type="button" onclick="next()">Next</button>
+</div>
+
+<div class="slide">
+<h3>Perlu diperbaiki?</h3>
+<textarea name="fix"></textarea>
+<button type="button" onclick="next()">Next</button>
+</div>
+
+<div class="slide">
+<h3>Fitur masa depan?</h3>
+<textarea name="future"></textarea>
+<button type="button" onclick="next()">Next</button>
+</div>
+
+<div class="slide">
+<h3>Rekomendasi (0–10)</h3>
+<input type="number" name="recommend" min="0" max="10">
+<button type="button" onclick="next()">Next</button>
+</div>
+
+<div class="slide">
+<h3>Izin Testimoni</h3>
+<select name="permission">
+<option>Boleh dengan nama</option>
+<option>Anonim</option>
+<option>Tidak</option>
+</select>
+<button type="submit">Submit</button>
+</div>
+</form>
+
+<script>
+let slide = 0;
+const slides = document.querySelectorAll(".slide");
+
+function next() {
+    slides[slide].classList.remove("active");
+    slide++;
+    slides[slide].classList.add("active");
+}
+
+// Rating stars
+document.querySelectorAll(".rating").forEach(div=>{
+    const name = div.dataset.name;
+    let input = document.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    div.appendChild(input);
+
+    for(let i=1;i<=5;i++){
+        let s=document.createElement("span");
+        s.innerHTML="★";
+        s.className="star";
+        s.onclick=()=>{
+            input.value=i;
+            [...div.children].forEach((x,idx)=>{
+                if(idx<=i) x.classList.add("active");
+                else x.classList.remove("active");
+            });
+        };
+        div.appendChild(s);
+    }
+});
+
+document.getElementById("form").onsubmit=async e=>{
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.target));
+    await fetch("/submit", {
+        method:"POST",
+        headers:{ "Content-Type":"application/json" },
+        body:JSON.stringify(data)
+    });
+    alert("Terima kasih 🙏");
+};
+</script>
+
+</body>
+</html>
