@@ -18,6 +18,7 @@ const DB_FILE = "./database_user.txt";
 const FEEDBACK_FILE = "./feedback_data.txt";
 
 let sock;
+let isConnected = false; // ✅ FIX: FLAG KONEKSI
 
 // =======================
 // WHATSAPP BOT
@@ -32,28 +33,30 @@ async function startBot() {
     sock.ev.on("creds.update", saveCreds);
 
     // === QR CODE TERMINAL ===
-sock.ev.on("connection.update", async (update) => {
-    const { qr, connection, lastDisconnect } = update;
+    sock.ev.on("connection.update", async (update) => {
+        const { qr, connection, lastDisconnect } = update;
 
-    if (qr) {
-        qrcode.generate(qr, { small: true });
-    }
-
-    if (connection === "open") {
-        console.log("✅ WhatsApp Bot Connected");
-    }
-
-    if (connection === "close") {
-        const shouldReconnect =
-            lastDisconnect?.error?.output?.statusCode !== 401;
-
-        console.log("⚠️ Connection closed. Reconnect:", shouldReconnect);
-
-        if (shouldReconnect) {
-            startBot(); // RESTART BOT
+        if (qr) {
+            qrcode.generate(qr, { small: true });
         }
-    }
-});
+
+        if (connection === "open") {
+            isConnected = true; // ✅ FIX
+            console.log("✅ WhatsApp Bot Connected");
+        }
+
+        if (connection === "close") {
+            isConnected = false; // ✅ FIX
+            const shouldReconnect =
+                lastDisconnect?.error?.output?.statusCode !== 401;
+
+            console.log("⚠️ Connection closed. Reconnect:", shouldReconnect);
+
+            if (shouldReconnect) {
+                startBot();
+            }
+        }
+    });
 
     sock.ev.on("messages.upsert", async ({ messages }) => {
         const msg = messages[0];
@@ -100,17 +103,18 @@ startBot();
 // =======================
 app.post("/submit", async (req, res) => {
     try {
-        if (!sock || !isConnected) {
-            console.log("❌ WhatsApp socket not ready");
-            return res.status(500).json({ error: "WA not connected" });
-        }
+        console.log("FEEDBACK MASUK:", req.body); // ✅ DEBUG
 
         const data = req.body;
+
+        // === NORMALISASI NOMOR WA (AMAN) ===
+        let wa = data.whatsapp.replace(/^0/, "62");
+        const userJid = wa + "@s.whatsapp.net";
 
         const log = `
 ========================
 Nama: ${data.nama}
-WhatsApp: ${data.whatsapp}
+WhatsApp: ${wa}
 Kepuasan: ${data.puas}
 AI Quality: ${data.ai}
 Speed: ${data.speed}
@@ -125,16 +129,20 @@ Testimoni: ${data.permission}
 ========================
 `;
 
+        // ✅ PASTIKAN FILE TERBUAT
         fs.appendFileSync(FEEDBACK_FILE, log);
 
-        await sock.sendMessage(`${data.whatsapp}@s.whatsapp.net`, {
-            text: `Halo ${data.nama}! 👋  
+        // === KIRIM WA JIKA CONNECTED ===
+        if (sock && isConnected) {
+            await sock.sendMessage(userJid, {
+                text: `Halo ${data.nama}! 👋  
 Terima kasih telah mengisi feedback anda 🙏`
-        });
+            });
 
-        await sock.sendMessage(OWNER, {
-            text: `📊 FEEDBACK BARU EXODUSAI\n${log}`
-        });
+            await sock.sendMessage(OWNER, {
+                text: `📊 FEEDBACK BARU EXODUSAI\n${log}`
+            });
+        }
 
         res.json({ status: true });
     } catch (err) {
@@ -142,7 +150,6 @@ Terima kasih telah mengisi feedback anda 🙏`
         res.status(500).json({ error: "Internal error" });
     }
 });
-
 
 app.listen(8181, () => {
     console.log("🌐 Web Feedback berjalan di http://localhost:8181");
