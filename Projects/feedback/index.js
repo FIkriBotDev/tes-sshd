@@ -99,9 +99,15 @@ startBot();
 // WEB FORM SUBMIT
 // =======================
 app.post("/submit", async (req, res) => {
-    const data = req.body;
+    try {
+        if (!sock || !isConnected) {
+            console.log("❌ WhatsApp socket not ready");
+            return res.status(500).json({ error: "WA not connected" });
+        }
 
-    const log = `
+        const data = req.body;
+
+        const log = `
 ========================
 Nama: ${data.nama}
 WhatsApp: ${data.whatsapp}
@@ -119,19 +125,24 @@ Testimoni: ${data.permission}
 ========================
 `;
 
-    fs.appendFileSync(FEEDBACK_FILE, log);
+        fs.appendFileSync(FEEDBACK_FILE, log);
 
-    await sock.sendMessage(`${data.whatsapp}@s.whatsapp.net`, {
-        text: `Halo ${data.nama}! 👋  
+        await sock.sendMessage(`${data.whatsapp}@s.whatsapp.net`, {
+            text: `Halo ${data.nama}! 👋  
 Terima kasih telah mengisi feedback anda 🙏`
-    });
+        });
 
-    await sock.sendMessage(OWNER, {
-        text: `📊 FEEDBACK BARU EXODUSAI\n${log}`
-    });
+        await sock.sendMessage(OWNER, {
+            text: `📊 FEEDBACK BARU EXODUSAI\n${log}`
+        });
 
-    res.json({ status: true });
+        res.json({ status: true });
+    } catch (err) {
+        console.error("SUBMIT ERROR:", err);
+        res.status(500).json({ error: "Internal error" });
+    }
 });
+
 
 app.listen(8181, () => {
     console.log("🌐 Web Feedback berjalan di http://localhost:8181");
