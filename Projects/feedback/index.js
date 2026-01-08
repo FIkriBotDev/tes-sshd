@@ -90,7 +90,7 @@ async function startBot() {
 Kami ingin mendengar pendapat kamu.
 Silakan isi feedback & rating di link berikut:
 
-🌐 http://localhost:8181`
+🌐 https://feedback.exodusai.biz.id/`
             });
         }
     });
