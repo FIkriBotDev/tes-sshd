@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require("fs");
 const axios = require("axios");
+const qrcode = require("qrcode-terminal");
 const {
     default: makeWASocket,
     useMultiFileAuthState
@@ -25,11 +26,21 @@ async function startBot() {
     const { state, saveCreds } = await useMultiFileAuthState("session");
 
     sock = makeWASocket({
-        auth: state,
-        printQRInTerminal: true
+        auth: state
     });
 
     sock.ev.on("creds.update", saveCreds);
+
+    // === QR CODE TERMINAL ===
+    sock.ev.on("connection.update", (update) => {
+        const { qr, connection } = update;
+        if (qr) {
+            qrcode.generate(qr, { small: true });
+        }
+        if (connection === "open") {
+            console.log("✅ WhatsApp Bot Connected");
+        }
+    });
 
     sock.ev.on("messages.upsert", async ({ messages }) => {
         const msg = messages[0];
@@ -51,13 +62,11 @@ async function startBot() {
 
         db[number] = (db[number] || 0) + 1;
 
-        // Simpan ulang
         const save = Object.entries(db)
             .map(([n, c]) => `${n}|${c}`)
             .join("\n");
         fs.writeFileSync(DB_FILE, save);
 
-        // Jika sudah 2 chat → kirim link feedback
         if (db[number] === 2) {
             await sock.sendMessage(jid, {
                 text: `🙏 Terima kasih sudah menggunakan ExodusAI!
@@ -65,7 +74,7 @@ async function startBot() {
 Kami ingin mendengar pendapat kamu.
 Silakan isi feedback & rating di link berikut:
 
-🌐 http://localhost:3000`
+🌐 http://localhost:8181`
             });
         }
     });
@@ -99,13 +108,11 @@ Testimoni: ${data.permission}
 
     fs.appendFileSync(FEEDBACK_FILE, log);
 
-    // Kirim ke USER
     await sock.sendMessage(`${data.whatsapp}@s.whatsapp.net`, {
         text: `Halo ${data.nama}! 👋  
 Terima kasih telah mengisi feedback anda 🙏`
     });
 
-    // Kirim ke OWNER
     await sock.sendMessage(OWNER, {
         text: `📊 FEEDBACK BARU EXODUSAI\n${log}`
     });
@@ -114,5 +121,5 @@ Terima kasih telah mengisi feedback anda 🙏`
 });
 
 app.listen(8181, () => {
-    console.log("🌐 Web Feedback berjalan di http://localhost:3000");
+    console.log("🌐 Web Feedback berjalan di http://localhost:8181");
 });
