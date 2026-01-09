@@ -971,3 +971,25 @@ b.send(JSON.stringify(a));c.classList.add("feedback-hidden");d.classList.remove(
   "status": 400
 }
 
+[2026-01-09T07:22:28.785Z] API Error:
+{
+  "success": false,
+  "error": {
+    "message": "Insufficient pollen balance to use this model",
+    "code": "FORBIDDEN",
+    "timestamp": "2026-01-09T07:22:28.754Z"
+  },
+  "status": 403
+}
+
+[2026-01-09T07:22:29.832Z] API Error:
+{
+  "success": false,
+  "error": {
+    "message": "Insufficient pollen balance to use this model",
+    "code": "FORBIDDEN",
+    "timestamp": "2026-01-09T07:22:29.806Z"
+  },
+  "status": 403
+}
+
