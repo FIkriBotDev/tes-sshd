@@ -94,3 +94,19 @@ Fitur Baru:
 Rekomendasi: 
 Testimoni: Boleh dengan nama
 ========================
+
+========================
+Nama: test
+WhatsApp: 6285928087634
+Kepuasan: Tidak puas
+AI Quality: 1
+Speed: 2
+Fitur: 3
+Kemudahan: 4
+Stabilitas: 5
+Terbaik: 
+Perbaikan: 
+Fitur Baru: 
+Rekomendasi: 
+Testimoni: Boleh dengan nama
+========================
