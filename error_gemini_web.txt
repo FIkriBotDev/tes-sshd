@@ -993,3 +993,14 @@ b.send(JSON.stringify(a));c.classList.add("feedback-hidden");d.classList.remove(
   "status": 403
 }
 
+[2026-01-09T07:22:44.115Z] API Error:
+{
+  "success": false,
+  "error": {
+    "message": "Insufficient pollen balance to use this model",
+    "code": "FORBIDDEN",
+    "timestamp": "2026-01-09T07:22:44.082Z"
+  },
+  "status": 403
+}
+
