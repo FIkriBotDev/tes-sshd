@@ -106,7 +106,7 @@ app.get("/api/gemini-image", async (req, res) => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": "Bearer sk_OvYib8j1oljIIAF10ltLiK2QajiZYj08"
+                    "Authorization": "Bearer sk_nILEwigYyDAdIPJxQVXl8rwliLtLPJhE"
                 },
                 body: JSON.stringify({
                     model: "openai", // Vision-capable model
