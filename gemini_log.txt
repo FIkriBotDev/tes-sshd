@@ -26904,3 +26904,9 @@ Mau saya bantu?
 
 Pilih salah satu dan saya olah langsung.
 
+
+[2026-01-09T09:47:19.086Z]
+Prompt    : kue apa ini
+Image URL : https://uploader.exodusai.biz.id/tmp/15101a-1767952028968.jpg
+Response  : Sepertinya itu roti, bukan kue—jenis roti Jepang yang dikenal sebagai shokupan atau Hokkaido milk bread. Di Indonesia sering disebut juga roti susu atau roti sobek: bentuknya kotak dengan beberapa bongkah empuk yang bisa ditarik, teksturnya sangat lembut dan rasa susunya terasa. Mau tahu resep atau cara menyajikannya?
+
