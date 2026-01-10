@@ -26940,3 +26940,22 @@ Beberapa ide cepat:
 
 Mau caption buat foto ini di medsos? Atau mau tips resep/penyajian lain?
 
+
+[2026-01-10T13:28:33.978Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/79ecc7-1768051703292.jpg
+Response  : Oke — ini ringkasan cepat dari gambar itu (dalam bahasa Indonesia):
+
+- Jawaban: Tidak dianjurkan pakai salep Diprogenta (betametason + gentamisin) untuk abses perianal.  
+- Alasan:
+  - Abses = kantong nanah, pengobatan utama adalah insisi dan drainase (mengeluarkan nanah).
+  - Betametason adalah kortikosteroid yang menekan imun lokal → bisa memperburuk infeksi.
+  - Salep antibiotik biasanya tidak cukup menembus kantong abses.
+- Yang seharusnya dilakukan:
+  - Periksa ke dokter bedah atau dokter umum untuk evaluasi dan drainage.
+  - Mungkin perlu antibiotik oral atau suntik, bukan salep.
+- Segera periksakan jika ada: nyeri hebat, bengkak merah/panas, demam, keluarnya nanah, atau nyeri saat BAB.
+- Kalau mau, kamu bisa ceritakan gejalanya (nyeri, demam, ada nanah atau tidak, sejak kapan), nanti saya bantu arahkan langkah selanjutnya atau bantu susun pertanyaan untuk dokter.
+
+Mau jelaskan gejalanya sekarang?
+
