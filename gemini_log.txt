@@ -26959,3 +26959,38 @@ Response  : Oke — ini ringkasan cepat dari gambar itu (dalam bahasa Indonesia)
 
 Mau jelaskan gejalanya sekarang?
 
+
+[2026-01-12T13:59:38.820Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/32030f-1768226362199.jpg
+Response  : Oke — saya lihat gambarnya. Berikut transkripsi teks dari screenshot:
+
+FEEDBACK BARU EXODUSAI
+========================
+Nama: test
+WhatsApp: 6285928087634
+Kepuasan: Puas
+AI Quality:
+Speed:
+Fitur:
+Kemudahan:
+Stabilitas:
+Terbaik:
+Perbaikan:
+Fitur Baru:
+Rekomendasi:
+Testimoni: Boleh dengan nama
+========================
+15:39
+
+Saran singkat:
+- Kalau mau dipublikasikan, sembunyikan sebagian nomor WA (mis. +62*******7634) demi privasi.
+- Hapus atau isi kolom-kolom kosong (AI Quality, Speed, dsb.) supaya feedback terasa lengkap. Bisa gunakan skala 1–5 atau kata singkat (Baik/Cukup/Perlu perbaikan).
+- Tata letak: jadikan item yang sama kelompok (mis. kualitas & speed di bawah header “Performa”), tambahkan label “Waktu” sebelum 15:39.
+- Jika sering menerima feedback, pertimbangkan format terpola (checkbox atau rating) supaya mudah diolah secara otomatis.
+
+Mau saya:
+- sembunyikan nomor secara otomatis,
+- contoh format feedback yang lebih rapi,
+- atau terjemahkan ke bahasa Inggris?
+
