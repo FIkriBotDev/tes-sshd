@@ -198,3 +198,14 @@ Unable to reach the origin service. The service may be down or it may not be res
   "status": 402
 }
 
+[2026-01-14T10:30:02.861Z] API Error:
+{
+  "success": false,
+  "error": {
+    "message": "{\"error\":\"Bad Request\",\"message\":\"400 Bad Request\",\"requestId\":\"az84qa\",\"requestParameters\":{\"messages\":[{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"lihatlah gambar ini\"},{\"type\":\"image_url\",\"image_url\":{\"url\":\"https://uploader.exodusai.biz.id/tmp/c9aa06-1768386599803.mp4\"}}]}],\"jsonMode\":false,\"model\":\"openai\",\"referrer\":null,\"isPrivate\":true,\"voice\":\"alloy\",\"private\":true},\"details\":{\"error\":{\"message\":\"azure-openai error: Invalid image data.\",\"type\":null,\"param\":null,\"code\":\"BadRequest\"},\"provider\":\"azure-openai\"}}",
+    "code": "BAD_REQUEST",
+    "timestamp": "2026-01-14T10:30:02.844Z"
+  },
+  "status": 400
+}
+

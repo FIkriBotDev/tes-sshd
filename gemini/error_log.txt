@@ -1522,3 +1522,4 @@ Invalid JSON payload received. Unknown name "parts" at 'contents[0].parts[0]': C
 }
 
 [2025-10-22T03:49:04.947Z] Error processing image: {}
+[2026-01-14T10:30:02.861Z] Error processing image: {}
