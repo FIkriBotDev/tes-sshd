@@ -52,7 +52,9 @@ function loadConversation(fileName) {
     return parsedData.default_conversation || [];
 }
 
-let userConversations = {};
+//let userConversations = {};
+let userConversationsChatbot = {};
+let userConversationsWebsearch = {};
 let userModes = {};
 let userDocxMap = {}; // untuk menyimpan URL docx terakhir
 
