@@ -163,7 +163,6 @@ async function startBot() {
             await sock.sendMessage(sender, { text: 'Mode berhasil diubah ke AI ChatBot.' });
             return;
         }
-        
         if (userMessage === '/mode image-generator') {
             setMode(sender, 'image-generator');
             await sock.sendMessage(sender, { text: 'Mode berhasil diubah ke AI Image Generator.' });
