@@ -489,6 +489,20 @@ ${parsed.text}`
 
 
 // Mode websearch
+const WEBSEARCH_SYSTEM = {
+    role: "system",
+    content: `
+Kamu adalah AI Web Search Assistant.
+Tugas kamu:
+- Mencari informasi terbaru dari internet
+- Menjawab berdasarkan hasil web search
+- Jika user berkata "yang lain", "yang terbaru", "yang 2026",
+  kamu HARUS melanjutkan konteks pencarian sebelumnya.
+- Jangan mengarang.
+- Jawaban harus rapi dan informatif.
+`
+};
+
 if (currentMode === 'websearch') {
     try {
         let conversation = getConversation(sender);
