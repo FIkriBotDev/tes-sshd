@@ -487,6 +487,87 @@ ${parsed.text}`
             return;
         }
 
+
+if (currentMode === 'websearch') {
+    try {
+        let conversation = getConversation(sender);
+
+        // inject system prompt sekali saja
+        if (conversation.length === 0) {
+            conversation.push(WEBSEARCH_SYSTEM);
+        }
+
+        conversation.push({
+            role: "user",
+            content: userMessage
+        });
+
+        await sock.sendMessage(sender, { text: '🔎 Lagi gue cariin di web...' });
+
+        const response = await axios.post(
+            'https://gen.pollinations.ai/v1/chat/completions',
+            {
+                model: 'gemini-search',
+                messages: conversation
+            },
+            {
+                headers: {
+                    Authorization: 'Bearer sk_xxxxx',
+                    'Content-Type': 'application/json'
+                }
+            }
+        );
+
+        const msg = response.data.choices[0].message;
+
+        // === Ambil text utama
+        let answer = '';
+        if (msg.content_blocks) {
+            answer = msg.content_blocks
+                .filter(b => b.type === 'text')
+                .map(b => b.text)
+                .join('\n');
+        } else {
+            answer = msg.content || '';
+        }
+
+        // === Ambil sumber URL
+        const sources =
+            response.data.choices[0].groundingMetadata?.groundingChunks || [];
+
+        let sourceText = '';
+        if (sources.length > 0) {
+            sourceText = '\n\n*Sumber URL:*\n';
+            sources.forEach(s => {
+                const cleanUrl = s.web.uri.replace(
+                    'https://vertexaisearch.cloud.google.com/grounding-api-redirect/',
+                    'https://aisearch.exodusai.biz.id/'
+                );
+                sourceText += `${cleanUrl} (${s.web.domain})\n`;
+            });
+        }
+
+        const finalText = answer + sourceText;
+
+        await sock.sendMessage(sender, { text: finalText });
+
+        // simpan context
+        conversation.push({
+            role: "assistant",
+            content: answer
+        });
+        saveConversation(sender, conversation);
+
+    } catch (err) {
+        console.error('[WebSearch Error]', err);
+        await sock.sendMessage(sender, {
+            text: '❌ Gagal melakukan pencarian web.'
+        });
+    }
+    return;
+}
+
+
         // === Default ChatBot Mode ===
         if (currentMode === 'chatbot') {
             conversation.push({ role: "user", content: userMessage });
