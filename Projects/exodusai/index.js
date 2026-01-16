@@ -565,6 +565,7 @@ if (currentMode === 'websearch') {
                     'https://aisearch.exodusai.biz.id/'
                 );
                 sourceText += `${cleanUrl} (${s.web.domain})\n`;
+                s
             });
         }
 
