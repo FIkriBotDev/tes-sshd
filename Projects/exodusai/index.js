@@ -488,7 +488,7 @@ ${parsed.text}`
         }
 
 
-// Mode websearch
+// Mode Web Search
 const WEBSEARCH_SYSTEM = {
     role: "system",
     content: `
