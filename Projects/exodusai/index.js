@@ -70,6 +70,20 @@ function getConversation(userId) {
     }
     return userConversations[userId];
 }
+function reloadChatbotConversation(userId) {
+    const fileName =
+        userId === '6287863293173@s.whatsapp.net' ? 'dika.json' :
+        userId === '6287824613268@s.whatsapp.net' ? 'say.json' :
+        userId === '6283140117292@s.whatsapp.net' ? 'cece.json' :
+        userId === '6282269995370@s.whatsapp.net' ? 'sis.json' :
+        userId === '6282142719548@s.whatsapp.net' ? 'fu.json' :
+        userId === '62895351640508@s.whatsapp.net' ? 'april.json' :
+        userId === '6283897921042@s.whatsapp.net' ? 's.json' :
+        userId === '6285271848176@s.whatsapp.net' ? 'nuni.json' :
+        '/home/runner/work/tes-sshd/tes-sshd/database.json';
+
+    userConversations[userId] = loadConversation(fileName);
+}
 
 function saveConversation(userId, conversation) {
     userConversations[userId] = conversation;
