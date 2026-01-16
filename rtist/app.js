@@ -587,6 +587,47 @@ app.post('/post/rtist', async (req, res) => {
   }
 });
 
+// Route untuk gemini-search
+app.post('/post/gemini-search', async (req, res) => {
+  try {
+    const { messages } = req.body;
+
+    if (!messages || !Array.isArray(messages)) {
+      return res.status(400).json({
+        error: 'Invalid request format. "messages" harus berupa array.'
+      });
+    }
+
+    const payload = {
+      model: 'gemini-search',
+      messages
+    };
+
+    const response = await axios.post(
+      'https://gen.pollinations.ai/v1/chat/completions',
+      payload,
+      {
+        headers: {
+          'Authorization': 'Bearer sk_RM9sUErPNlaj7kFenSIMljnIVvAyssUk',
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+
+    // Gemini-search bisa mengembalikan content_blocks
+    const message = response.data?.choices?.[0]?.message;
+
+    res.json({
+      status: true,
+      creator: 'Fikri',
+      result: message
+    });
+
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
 
 
