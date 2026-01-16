@@ -52,40 +52,35 @@ function loadConversation(fileName) {
     return parsedData.default_conversation || [];
 }
 
-let userConversationsChatbot = {};
-let userConversationsWebsearch = {};
+let userConversations = {};
 let userModes = {};
-let userDocxMap = {};
-
+let userDocxMap = {}; // untuk menyimpan URL docx terakhir
 
 function getConversation(userId) {
-    const mode = getMode(userId);
-
-    // ===== WEBSEARCH =====
-    if (mode === 'websearch') {
-        if (!userConversationsWebsearch[userId]) {
-            userConversationsWebsearch[userId] = [];
-        }
-        return userConversationsWebsearch[userId];
+    if (!userConversations[userId]) {
+        const fileName = userId === '6287863293173@s.whatsapp.net' ? 'dika.json' :
+                         userId === '6287824613268@s.whatsapp.net' ? 'say.json' :
+                         userId === '6283140117292@s.whatsapp.net' ? 'cece.json' :
+                         userId === '6282269995370@s.whatsapp.net' ? 'sis.json' :
+                         userId === '6282142719548@s.whatsapp.net' ? 'fu.json' :
+                         userId === '62895351640508@s.whatsapp.net' ? 'april.json' :
+                         userId === '6283897921042@s.whatsapp.net' ? 's.json' :
+                         userId === '6285271848176@s.whatsapp.net' ? 'nuni.json' : '/home/runner/work/tes-sshd/tes-sshd/database.json';
+        userConversations[userId] = loadConversation(fileName);
     }
+    return userConversations[userId];
+}
 
-    // ===== CHATBOT (DEFAULT) =====
-    if (!userConversationsChatbot[userId]) {
-        const fileName =
-            userId === '6287863293173@s.whatsapp.net' ? 'dika.json' :
-            userId === '6287824613268@s.whatsapp.net' ? 'say.json' :
-            userId === '6283140117292@s.whatsapp.net' ? 'cece.json' :
-            userId === '6282269995370@s.whatsapp.net' ? 'sis.json' :
-            userId === '6282142719548@s.whatsapp.net' ? 'fu.json' :
-            userId === '62895351640508@s.whatsapp.net' ? 'april.json' :
-            userId === '6283897921042@s.whatsapp.net' ? 's.json' :
-            userId === '6285271848176@s.whatsapp.net' ? 'nuni.json' :
-            '/home/runner/work/tes-sshd/tes-sshd/database.json';
+function saveConversation(userId, conversation) {
+    userConversations[userId] = conversation;
+}
 
-        userConversationsChatbot[userId] = loadConversation(fileName);
-    }
+function setMode(userId, mode) {
+    userModes[userId] = mode;
+}
 
-    return userConversationsChatbot[userId];
+function getMode(userId) {
+    return userModes[userId] || 'chatbot';
 }
 
 // === Helper: Fix URL di response AI ===
