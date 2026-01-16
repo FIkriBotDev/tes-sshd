@@ -59,30 +59,33 @@ let userDocxMap = {};
 
 
 function getConversation(userId) {
-    if (!userConversations[userId]) {
-        const fileName = userId === '6287863293173@s.whatsapp.net' ? 'dika.json' :
-                         userId === '6287824613268@s.whatsapp.net' ? 'say.json' :
-                         userId === '6283140117292@s.whatsapp.net' ? 'cece.json' :
-                         userId === '6282269995370@s.whatsapp.net' ? 'sis.json' :
-                         userId === '6282142719548@s.whatsapp.net' ? 'fu.json' :
-                         userId === '62895351640508@s.whatsapp.net' ? 'april.json' :
-                         userId === '6283897921042@s.whatsapp.net' ? 's.json' :
-                         userId === '6285271848176@s.whatsapp.net' ? 'nuni.json' : '/home/runner/work/tes-sshd/tes-sshd/database.json';
-        userConversations[userId] = loadConversation(fileName);
+    const mode = getMode(userId);
+
+    // ===== WEBSEARCH =====
+    if (mode === 'websearch') {
+        if (!userConversationsWebsearch[userId]) {
+            userConversationsWebsearch[userId] = [];
+        }
+        return userConversationsWebsearch[userId];
     }
-    return userConversations[userId];
-}
 
-function saveConversation(userId, conversation) {
-    userConversations[userId] = conversation;
-}
+    // ===== CHATBOT (DEFAULT) =====
+    if (!userConversationsChatbot[userId]) {
+        const fileName =
+            userId === '6287863293173@s.whatsapp.net' ? 'dika.json' :
+            userId === '6287824613268@s.whatsapp.net' ? 'say.json' :
+            userId === '6283140117292@s.whatsapp.net' ? 'cece.json' :
+            userId === '6282269995370@s.whatsapp.net' ? 'sis.json' :
+            userId === '6282142719548@s.whatsapp.net' ? 'fu.json' :
+            userId === '62895351640508@s.whatsapp.net' ? 'april.json' :
+            userId === '6283897921042@s.whatsapp.net' ? 's.json' :
+            userId === '6285271848176@s.whatsapp.net' ? 'nuni.json' :
+            '/home/runner/work/tes-sshd/tes-sshd/database.json';
 
-function setMode(userId, mode) {
-    userModes[userId] = mode;
-}
+        userConversationsChatbot[userId] = loadConversation(fileName);
+    }
 
-function getMode(userId) {
-    return userModes[userId] || 'chatbot';
+    return userConversationsChatbot[userId];
 }
 
 // === Helper: Fix URL di response AI ===
