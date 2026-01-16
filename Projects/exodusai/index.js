@@ -52,36 +52,64 @@ function loadConversation(fileName) {
     return parsedData.default_conversation || [];
 }
 
-let userConversations = {};
+// === CONVERSATION STORAGE DIPISAH ===
+let userConversationsChatbot = {};
+let userConversationsWebsearch = {};
 let userModes = {};
 let userDocxMap = {}; // untuk menyimpan URL docx terakhir
 
+
 function getConversation(userId) {
-    if (!userConversations[userId]) {
-        const fileName = userId === '6287863293173@s.whatsapp.net' ? 'dika.json' :
-                         userId === '6287824613268@s.whatsapp.net' ? 'say.json' :
-                         userId === '6283140117292@s.whatsapp.net' ? 'cece.json' :
-                         userId === '6282269995370@s.whatsapp.net' ? 'sis.json' :
-                         userId === '6282142719548@s.whatsapp.net' ? 'fu.json' :
-                         userId === '62895351640508@s.whatsapp.net' ? 'april.json' :
-                         userId === '6283897921042@s.whatsapp.net' ? 's.json' :
-                         userId === '6285271848176@s.whatsapp.net' ? 'nuni.json' : '/home/runner/work/tes-sshd/tes-sshd/database.json';
-        userConversations[userId] = loadConversation(fileName);
+    const mode = getMode(userId);
+
+    // ===== MODE WEBSEARCH =====
+    if (mode === 'websearch') {
+        if (!userConversationsWebsearch[userId]) {
+            userConversationsWebsearch[userId] = [];
+        }
+        return userConversationsWebsearch[userId];
     }
-    return userConversations[userId];
+
+    // ===== MODE CHATBOT (DEFAULT) =====
+    if (!userConversationsChatbot[userId]) {
+        const fileName =
+            userId === '6287863293173@s.whatsapp.net' ? 'dika.json' :
+            userId === '6287824613268@s.whatsapp.net' ? 'say.json' :
+            userId === '6283140117292@s.whatsapp.net' ? 'cece.json' :
+            userId === '6282269995370@s.whatsapp.net' ? 'sis.json' :
+            userId === '6282142719548@s.whatsapp.net' ? 'fu.json' :
+            userId === '62895351640508@s.whatsapp.net' ? 'april.json' :
+            userId === '6283897921042@s.whatsapp.net' ? 's.json' :
+            userId === '6285271848176@s.whatsapp.net' ? 'nuni.json' :
+            '/home/runner/work/tes-sshd/tes-sshd/database.json';
+
+        userConversationsChatbot[userId] = loadConversation(fileName);
+    }
+
+    return userConversationsChatbot[userId];
 }
 
+
 function saveConversation(userId, conversation) {
-    userConversations[userId] = conversation;
+    const mode = getMode(userId);
+
+    if (mode === 'websearch') {
+        userConversationsWebsearch[userId] = conversation;
+    } else {
+        userConversationsChatbot[userId] = conversation;
+    }
 }
+
 
 function setMode(userId, mode) {
     userModes[userId] = mode;
 }
 
+
 function getMode(userId) {
     return userModes[userId] || 'chatbot';
 }
+
 
 // === Helper: Fix URL di response AI ===
 function fixUrls(text) {
