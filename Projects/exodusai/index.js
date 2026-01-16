@@ -558,7 +558,7 @@ if (currentMode === 'websearch') {
 
         let sourceText = '';
         if (sources.length > 0) {
-            sourceText = '\n\n*Sumber URL:*\n';
+            sourceText = '\n\n*Link:*\n';
             sources.forEach(s => {
                 const cleanUrl = s.web.uri.replace(
                     'https://vertexaisearch.cloud.google.com/grounding-api-redirect/',
