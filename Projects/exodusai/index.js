@@ -569,7 +569,7 @@ if (currentMode === 'websearch') {
             //
             // situslain.com:
             //    sourceText += `${cleanUrl} (${s.web.domain})\n`;
-                sourceText += '${s.web.domain}`;
+                sourceText += `${s.web.domain}:\n${cleanUrl}\n\n`;
             });
         }
 
