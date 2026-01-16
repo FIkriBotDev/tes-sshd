@@ -52,64 +52,36 @@ function loadConversation(fileName) {
     return parsedData.default_conversation || [];
 }
 
-// === CONVERSATION STORAGE DIPISAH ===
-let userConversationsChatbot = {};
-let userConversationsWebsearch = {};
+let userConversations = {};
 let userModes = {};
 let userDocxMap = {}; // untuk menyimpan URL docx terakhir
 
-
 function getConversation(userId) {
-    const mode = getMode(userId);
-
-    // ===== MODE WEBSEARCH =====
-    if (mode === 'websearch') {
-        if (!userConversationsWebsearch[userId]) {
-            userConversationsWebsearch[userId] = [];
-        }
-        return userConversationsWebsearch[userId];
+    if (!userConversations[userId]) {
+        const fileName = userId === '6287863293173@s.whatsapp.net' ? 'dika.json' :
+                         userId === '6287824613268@s.whatsapp.net' ? 'say.json' :
+                         userId === '6283140117292@s.whatsapp.net' ? 'cece.json' :
+                         userId === '6282269995370@s.whatsapp.net' ? 'sis.json' :
+                         userId === '6282142719548@s.whatsapp.net' ? 'fu.json' :
+                         userId === '62895351640508@s.whatsapp.net' ? 'april.json' :
+                         userId === '6283897921042@s.whatsapp.net' ? 's.json' :
+                         userId === '6285271848176@s.whatsapp.net' ? 'nuni.json' : '/home/runner/work/tes-sshd/tes-sshd/database.json';
+        userConversations[userId] = loadConversation(fileName);
     }
-
-    // ===== MODE CHATBOT (DEFAULT) =====
-    if (!userConversationsChatbot[userId]) {
-        const fileName =
-            userId === '6287863293173@s.whatsapp.net' ? 'dika.json' :
-            userId === '6287824613268@s.whatsapp.net' ? 'say.json' :
-            userId === '6283140117292@s.whatsapp.net' ? 'cece.json' :
-            userId === '6282269995370@s.whatsapp.net' ? 'sis.json' :
-            userId === '6282142719548@s.whatsapp.net' ? 'fu.json' :
-            userId === '62895351640508@s.whatsapp.net' ? 'april.json' :
-            userId === '6283897921042@s.whatsapp.net' ? 's.json' :
-            userId === '6285271848176@s.whatsapp.net' ? 'nuni.json' :
-            '/home/runner/work/tes-sshd/tes-sshd/database.json';
-
-        userConversationsChatbot[userId] = loadConversation(fileName);
-    }
-
-    return userConversationsChatbot[userId];
+    return userConversations[userId];
 }
-
 
 function saveConversation(userId, conversation) {
-    const mode = getMode(userId);
-
-    if (mode === 'websearch') {
-        userConversationsWebsearch[userId] = conversation;
-    } else {
-        userConversationsChatbot[userId] = conversation;
-    }
+    userConversations[userId] = conversation;
 }
-
 
 function setMode(userId, mode) {
     userModes[userId] = mode;
 }
 
-
 function getMode(userId) {
     return userModes[userId] || 'chatbot';
 }
-
 
 // === Helper: Fix URL di response AI ===
 function fixUrls(text) {
@@ -194,7 +166,6 @@ async function startBot() {
 }
         if (userMessage === '/mode photoeditor') {
             setMode(sender, 'photoeditor');
-            userConversations[sender] = [];
             await sock.sendMessage(sender, {
              text: '✅ Mode berhasil diubah ke *AI Photo Editor (Image-to-Image)*.\n\nKirim gambar beserta deskripsi editan yang diinginkan untuk mulai mengedit.\n\nUntuk kembali ke mode chatbot, ketik *`/mode chatbot`*.'
         });
