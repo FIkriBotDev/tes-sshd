@@ -488,6 +488,7 @@ ${parsed.text}`
         }
 
 
+// Mode websearch
 if (currentMode === 'websearch') {
     try {
         let conversation = getConversation(sender);
@@ -512,7 +513,7 @@ if (currentMode === 'websearch') {
             },
             {
                 headers: {
-                    Authorization: 'Bearer sk_xxxxx',
+                    Authorization: 'Bearer sk_SETrd7HFtdLzVVlBUGDCoFPg2taPkjCv',
                     'Content-Type': 'application/json'
                 }
             }
