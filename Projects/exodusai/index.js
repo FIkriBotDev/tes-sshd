@@ -137,8 +137,7 @@ async function startBot() {
             await sock.sendMessage(sender, {
                 text: "*Berikut adalah mode yang tersedia di ExodusAI*\n\n" +
                       "=> AI ChatBot [/mode chatbot]\n" +
-                      "=> AI Ringkas Materi (Word/PDF) [/mode ringkasmateri]\n" +
-                      "=> AI Photo Editor [/mode photoeditor]"
+                      "=> AI Search [/mode websearch]"
             });
             return;
         }
