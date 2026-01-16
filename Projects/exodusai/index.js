@@ -564,10 +564,12 @@ if (currentMode === 'websearch') {
                     'https://vertexaisearch.cloud.google.com/grounding-api-redirect/',
                     'https://aisearch.exodusai.biz.id/'
                 );
-                
+            // jobstreet.com:
+            // https://aisearch.exodusai.biz.id/
+            //
+            // situslain.com:
             //    sourceText += `${cleanUrl} (${s.web.domain})\n`;
-            
-                sourceText += '';
+                sourceText += '${s.web.domain}`;
             });
         }
 
