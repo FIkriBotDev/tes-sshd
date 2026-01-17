@@ -27088,3 +27088,43 @@ If your goal is legitimate (research, auditing, improving security, or learning)
 
 If you tell me what you actually want to do (secure cameras, prepare a lab, convert the project into a defensive tool, improve documentation, or learn ethical hacking), I’ll give specific, actionable guidance that’s safe and legal.
 
+
+[2026-01-17T03:32:22.946Z]
+Prompt    : Yang kek gini gmn bro?
+Image URL : https://uploader.exodusai.biz.id/tmp/d44e50-1768620731026.jpg
+Response  : Bisa banget, bro. Flowchart-mu hampir benar tapi ada salah di bagian perhitungan pajak dan total. Intinya:
+
+Perbaikan langkah dan rumus:
+- Input price (harga)
+- Input discount (%) —> discount_pct
+- Input tax (%) —> tax_pct
+- discount = price * (discount_pct / 100)
+- subtotal = price - discount
+- tax_amount = subtotal * (tax_pct / 100)   <- ini yang salah di flowchart lama
+- total = subtotal + tax_amount
+- Output discount, subtotal, tax_amount, total
+
+Contoh angka:
+- price = 100
+- discount_pct = 10 -> discount = 10
+- subtotal = 90
+- tax_pct = 10 -> tax_amount = 9
+- total = 99
+
+Kalau mau langsung jadi kode, ini versi Python singkat:
+price = float(input("Price: "))
+discount_pct = float(input("Discount (%): "))
+tax_pct = float(input("Tax (%): "))
+
+discount = price * (discount_pct / 100)
+subtotal = price - discount
+tax_amount = subtotal * (tax_pct / 100)
+total = subtotal + tax_amount
+
+print("Discount:", discount)
+print("Subtotal:", subtotal)
+print("Tax:", tax_amount)
+print("Total:", total)
+
+Mau aku perbaiki flowchart gambarnya juga? Atau butuh versi JavaScript/Excel formula?
+
