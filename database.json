@@ -163,6 +163,10 @@
     {
       "role": "assistant",
       "content": "Halo ada yang bisa gue bantu hari ini bro?"
+    },
+    {
+      "role": "user",
+      "content": ""
     }
   ]
 }
