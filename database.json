@@ -170,7 +170,7 @@
     },
     {
       "role": "assistant",
-      "content": "Sekarang ExodusAI sudah mendukung pencarian langsung ke web. kamu bisa dapat informasi terbaru tanpa keluar dari chat. cara pakainya ketik /mode websearch lalu ketik apa yang ingin kamu cari contohnya berita kripto hari ini."
+      "content": "Sekarang ExodusAI sudah mendukung pencarian langsung ke web. kamu bisa dapat informasi terbaru tanpa keluar dari chat. cara pakainya ketik /mode websearch lalu kirim, dan setelah itu ketik apa yang ingin kamu cari contohnya berita kripto hari ini."
     }
   ]
 }
