@@ -142,3 +142,20 @@ Fitur Baru: bisa buat video
 Rekomendasi: 10
 Testimoni: Anonim
 ========================
+
+========================
+Nama: Dino
+WhatsApp: 6285735098913
+Kepuasan: Sangat puas
+AI Quality: 5
+Speed: 5
+Fitur: 5
+Kemudahan: 5
+Stabilitas: 5
+Terbaik: Banyak AI berhenti di web. Kamu bawa AI ke tempat user sudah nyaman: WhatsApp. Ini nilai jual besar, apalagi untuk user non-teknis.
+Perbaikan: User belum tahu value berbayar ke depannya
+Fitur Baru: Ingat preferensi, konteks, dan kebiasaan user (opt-in).
+→ bikin ExodusAI terasa “punya otak”, bukan bot sekali pakai.
+Rekomendasi: 10
+Testimoni: Boleh dengan nama
+========================
