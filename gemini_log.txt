@@ -27147,3 +27147,36 @@ Saran kecil jika mau memperbaiki foto untuk dokumentasi atau sosial media:
 
 Kalau mau, saya bisa bantu menulis caption singkat untuk Instagram/FB yang cocok dengan nuansa foto. Mau versi formal atau lebih santai?
 
+
+[2026-01-19T02:41:37.209Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/5dd92b-1768790486202.jpg
+Response  : Oke — saya sudah lihat gambarnya. Ini brosur/Banner untuk "BIMBEL IT" (cyber learning). Mau saya bantu apa selanjutnya? (mis. ringkasan, terjemahan ke Inggris, perbaikan teks, saran desain, contoh caption untuk medsos, atau versi teks yang lebih rapi untuk dicetak).
+
+Sementara itu, ini ringkasan cepat dan beberapa catatan perbaikan yang bisa membantu:
+
+Ringkasan isi:
+- Judul: BIMBEL IT (webcyberlearning.my.id)
+- Slogan: Upgrade your skills Advance your career.
+- Program kursus: Computer Basic, Wordpress Course, Algoritma dan Struktur data, Web Programming, Bahasa C & C++, Python Dasar.
+- Waktu & tempat: Every Saturday, mulai 08:30 sampai 15:00. (Wajib membawa laptop)
+- Kontak pendaftaran: 0813 1535 9237 (Ariya)
+- Alamat: Jalan Benoa Boulevard W07/29, Cluster Benoa Citra Maja City
+- Ajak review di Google: “Ulas Kami di Google cyber learning maja”
+
+Catatan perbaikan teks dan tata bahasa:
+- Konsistensi kapitalisasi: gunakan “Algoritma dan Struktur Data”, “Python Dasar”, “WordPress” (penulisan WordPress dengan P dan W kapital).
+- Waktu: tulis konsisten, mis. “08:30 — 15:00” atau “08.30 — 15.00”. Hindari gabungan “15.00pm”.
+- Bahasa campur Inggris–Indonesia: tentukan satu bahasa untuk kesan profesional, atau pisahkan bagian bilingual dengan jelas.
+- Tombol/CTA: “Register Here” bisa diganti ke Bahasa Indonesia jika target lokal, mis. “Daftar Sekarang”.
+- URL memakai http — pertimbangkan https jika tersedia, atau tampilkan website lebih singkat/QR code.
+- Kontras warna: teks merah “Wajib Membawa Laptop” sudah jelas; pastikan ukuran font kontak/ alamat cukup besar agar terbaca.
+
+Bisa saya bantu buat:
+- Versi teks brosur yang sudah diperbaiki dan rapih;
+- Terjemahan penuh ke Bahasa Inggris;
+- Contoh caption Instagram/Facebook untuk promosi;
+- Saran desain visual (warna, layout, ukuran font) atau mock teks untuk dicetak.
+
+Mau saya mulai dengan yang mana?
+
