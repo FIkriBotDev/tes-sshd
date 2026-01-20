@@ -35,10 +35,10 @@ node /home/runner/work/tes-sshd/tes-sshd/Projects/upload/index.js > /dev/null 2>
 #node /home/runner/work/tes-sshd/tes-sshd/remote-terminal/server.js > /dev/null 2>&1 &
 
 # Jalankan Web Invoice Generator di background, sembunyikan output
-sh /home/runner/work/tes-sshd/tes-sshd/Projects/invoice-generator/start > /dev/null 2>&1 &
+#sh /home/runner/work/tes-sshd/tes-sshd/Projects/invoice-generator/start > /dev/null 2>&1 &
 
 # Jalankan Web Chart-Analyzer di background, sembunyikan output
-sh /home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/start > /dev/null 2>&1 &
+#sh /home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/start > /dev/null 2>&1 &
 
 # Jalankan Web Reminder-App di background, sembunyikan output
 #sh /home/runner/work/tes-sshd/tes-sshd/Projects/reminder-wa-app/start > /dev/null 2>&1 &
@@ -47,7 +47,7 @@ sh /home/runner/work/tes-sshd/tes-sshd/Projects/chart-analyzer/start > /dev/null
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/www-exodusai/start > /dev/null 2>&1 &
 
 # Jalankan Web Photo 2 PDF di background, sembunyikan output
-sh /home/runner/work/tes-sshd/tes-sshd/Projects/photo-to-pdf/start > /dev/null 2>&1 &
+#sh /home/runner/work/tes-sshd/tes-sshd/Projects/photo-to-pdf/start > /dev/null 2>&1 &
 
 # Jalankan code-server di background, sembunyikan output
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/code-server/start > /dev/null 2>&1 &
