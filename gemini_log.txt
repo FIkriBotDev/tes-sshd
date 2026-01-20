@@ -27180,3 +27180,50 @@ Bisa saya bantu buat:
 
 Mau saya mulai dengan yang mana?
 
+
+[2026-01-20T09:40:50.037Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/4a538a-1768902033018.jpg
+Response  : Oke — saya lihat gambarnya. Berikut ringkasan informasi penting dari brosur itu:
+
+- Nama rute: Jawa - Bali - Lombok - Sumbawa  
+- Tanggal: 19 Maret 2026 s.d. 29 Maret 2026 (11 hari, 10 malam)  
+- Harga: Rp 4.500.000/orang; DP: Rp 1.000.000/orang  
+- Kontak utama: Yana Budi — 0852 1248 0148  
+- Keberangkatan: 19 Maret 2026, jam 03.00 pagi; berkumpul di pom bensin Taman Cibodas, Tangerang  
+
+Tujuan/destinasi (sesuai brosur):
+- Taman Ujung
+- Taman Tirta Gangga
+- Taman Edelwes
+- Narmada Botanic Garden
+- Gili Terawangan (tertulis “OPP”)
+- Pantai Kute Lombok
+- Tanjung Aan
+- Pantai Gelora
+- Pantai Jempol
+- Bukit Malibu
+- Pantai Ampenan
+- Bukit Mantar
+- Desa Tenganan
+- Candi Kuning
+- Pura Suranadi
+- Pura Batu Bolong
+- Butik Dewata
+- Joger
+- Oleh-oleh khas Sumbawa, Lombok, Bali, Kota Batu, Semarang
+
+Fasilitas yang dicantumkan:
+- Big bus AC (kapasitas 42 seat)
+- Tiket wisata
+- Hotel AC (1 kamar untuk 2 orang)
+- Ferry PP
+- Sarapan pagi di hotel
+- Air minum + kopi + teh
+
+Catatan:
+- Ada sedikit teks yang tertutup/sticker di bagian bawah (terlihat nama “Upc. Ariya P.C, M.Ti., M.Pd”) — mungkin info panitia tambahan.  
+- Beberapa nama mungkin typo kecil (mis. “Gili Terawangan” kemungkinan maksudnya Gili Trawangan). Kalau mau, saya bantu susun pertanyaan untuk diverifikasi ke penyelenggara.
+
+Mau saya buatkan pesan WhatsApp singkat untuk menghubungi Yana Budi (mis. tanya ketersediaan dan fasilitas), atau ingin saya terjemahkan brosur ini ke bahasa Inggris?
+
