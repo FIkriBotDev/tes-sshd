@@ -24,15 +24,15 @@ node /home/runner/work/tes-sshd/tes-sshd/Projects/upload/index.js > /dev/null 2>
 #sh /home/runner/work/tes-sshd/tes-sshd/bot-alarm/start > /dev/null 2>&1 &
 
 # Install express untuk Invoice Bot
-cd /home/runner/work/tes-sshd/tes-sshd/Projects/invoice-saas-json-wa
-npm install express
-cd /home/runner/work/tes-sshd/tes-sshd
+#cd /home/runner/work/tes-sshd/tes-sshd/Projects/invoice-saas-json-wa
+#npm install express
+#cd /home/runner/work/tes-sshd/tes-sshd
 
 # Jalankan Invoice Bot
 #sh /home/runner/work/tes-sshd/tes-sshd/Projects/invoice-saas-json-wa/start > /dev/null 2>&1 &
 
 # Jalankan Web Terminal di background, sembunyikan output
-node /home/runner/work/tes-sshd/tes-sshd/remote-terminal/server.js > /dev/null 2>&1 &
+#node /home/runner/work/tes-sshd/tes-sshd/remote-terminal/server.js > /dev/null 2>&1 &
 
 # Jalankan Web Invoice Generator di background, sembunyikan output
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/invoice-generator/start > /dev/null 2>&1 &
