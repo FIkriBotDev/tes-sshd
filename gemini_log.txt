@@ -27419,3 +27419,35 @@ Mau saya bantu buatkan:
 
 Katakan mana yang kamu perlukan.
 
+
+[2026-01-21T05:31:56.598Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/f25f8a-1768973500437.jpg
+Response  : Saya sudah lihat gambarnya. Intinya poster itu menyebut 3 jenis kopi yang “pembunuh pankreas”: (1) kopi sachet 3-in-1 — banyak gula + krimer nabati, (2) kopi susu dengan gula aren — tetap banyak kalori/karbohidrat, (3) frappuccino/blended — minuman seperti dessert penuh sirup, whipped cream, karamel. Di bagian bawah ada saran: kopi sehat = black coffee tanpa gula, atau latte/cappuccino tanpa sirup pakai susu rendah lemak/plant-based.
+
+Sedikit koreksi dan penjelasan singkat tiap poin:
+
+- Kopi sachet 3‑in‑1
+  - Benar: seringkali mengandung banyak gula dan krimer non-dairy yang menambah kalori. Konsumsi rutin gula berlebih bisa mendorong kenaikan berat badan dan meningkatkan risiko resistensi insulin.
+  - Berlebihan menyederhanakan kalau dikatakan “menginjeksikan gula langsung ke darah” — itu metafora. Dampaknya tergantung total asupan gula/kalori harian.
+  - Periksa label: hindari produk yang menulis “partially hydrogenated” (sumber trans fat).
+
+- Kopi susu dengan gula aren
+  - Gula aren (gula kelapa/palm sugar) kadang punya indeks glikemik sedikit lebih rendah, tapi kalorinya hampir sama dengan gula pasir. Jadi tetap sumber gula/kalori yang signifikan jika tak dikurangi.
+  - Oleh karena itu lonjakan gula darah (sugar spike) tetap mungkin kalau porsinya besar.
+
+- Frappuccino / blended coffee
+  - Tepat: banyak versi komersial mengandung sirup, krim, saus gula sehingga kalorinya tinggi — lebih mirip dessert. Kalau sering dikonsumsi, kontribusi gula/kalori bisa meningkatkan risiko obesitas dan diabetes tipe 2.
+
+Praktis: apa yang bisa dilakukan
+- Bila suka kopi tanpa efek kesehatan negatif: pilih black coffee atau kopi dengan sedikit susu non-manis.  
+- Kurangi atau hindari sirup, whipped cream, dan gula tambahan.  
+- Baca label: lihat gram gula per sajian.  
+- Batasi asupan gula tambahan harian (WHO merekomendasikan <10% energi, idealnya ~5% = ~25 g gula/ hari untuk kebanyakan orang).  
+- Jika punya kondisi medis (diabetes, gangguan pankreas), bicarakan pilihan minuman dengan penyedia layanan kesehatan.
+
+Kalau mau, saya bisa:
+- Transkrip teks gambar lengkapnya.
+- Buat versi singkat untuk dishare di sosmed.
+- Periksa klaim nutrisi tertentu lebih jauh (mis. kandungan gula rata‑rata frappuccino populer). Mau yang mana?
+
