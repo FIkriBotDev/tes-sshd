@@ -267,7 +267,7 @@ app.get('/get/claude', async (req, res) => {
 app.get('/get/image-generator/:prompt', async (req, res) => {
     try {
         const { prompt } = req.params;
-        const { width = 768, height = 384, nologo = true } = req.query; // Default values
+        const { width = 1080, height = 1080, nologo = true } = req.query; // Default values
 
         // Encode prompt untuk URL
         const encodedPrompt = encodeURIComponent(prompt);
