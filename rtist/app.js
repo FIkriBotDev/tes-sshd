@@ -268,8 +268,8 @@ app.get('/get/image-generator/:prompt', async (req, res) => {
     try {
         const { prompt } = req.params;
         const {
-            width = 1080,
-            height = 1080,
+            width = 1920,
+            height = 1920,
             model = 'flux'
         } = req.query;
         const encodedPrompt = encodeURIComponent(prompt);
