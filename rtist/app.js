@@ -263,28 +263,29 @@ app.get('/get/claude', async (req, res) => {
   }
 });
 
-// Rute GET untuk /get/image-generator/:prompt
+// Rute GET untuk /get/image-generator/:prompt (VERSI BARU)
 app.get('/get/image-generator/:prompt', async (req, res) => {
     try {
         const { prompt } = req.params;
-        const { width = 1080, height = 1080, nologo = true } = req.query; // Default values
-
-        // Encode prompt untuk URL
+        const {
+            width = 1080,
+            height = 1080,
+            model = 'flux'
+        } = req.query;
         const encodedPrompt = encodeURIComponent(prompt);
-
-        // Bangun URL API Pollinations
-        const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=${width}&height=${height}&nologo=${nologo}`;
-
-        // Ambil gambar dari API Pollinations
-        const response = await axios.get(imageUrl, { responseType: 'arraybuffer' });
-
-        // Set header response untuk gambar
+        const imageUrl = `https://gen.pollinations.ai/image/${encodedPrompt}?model=${model}&width=${width}&height=${height}`;
+        const response = await axios.get(imageUrl, {
+            responseType: 'arraybuffer',
+            headers: {
+                Authorization: 'Bearer sk_p5xMGHdrzkzfGUMzr31sddn59lJpu769'
+            }
+        });
         res.setHeader('Content-Type', 'image/png');
         res.send(response.data);
     } catch (error) {
         console.error('Error:', error.message);
         res.status(500).json({
-            error: 'Failed to fetch image from Pollinations API.',
+            error: 'Failed to fetch image from Pollinations API',
             message: error.message
         });
     }
