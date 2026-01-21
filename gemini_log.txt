@@ -27451,3 +27451,24 @@ Kalau mau, saya bisa:
 - Buat versi singkat untuk dishare di sosmed.
 - Periksa klaim nutrisi tertentu lebih jauh (mis. kandungan gula rata‑rata frappuccino populer). Mau yang mana?
 
+
+[2026-01-21T22:23:38.199Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/456fbf-1769034209304.jpg
+Response  : Oke, sudah saya lihat. Itu foto daftar menu dari Kaku (menu terbaru 2025). Intinya:
+
+- Kategori utama:
+  - Pisang (nugget, goreng, roll, coklat) — banyak varian topping, harga sekitar 20–24K.
+  - Gorengan/culinary street: cireng (biasa & crispy), cimol, pentol pedas, tahu bakso, batagor, pangsit (goreng & basah) — kebanyakan 15–20K.
+  - Bakso goreng dan pangsit goreng juga ada sebagai frozen (sekitar 25K per bungkus).
+  - Minuman (es kopi aren, es teh, lemon tea, green tea, thai tea, milk tea, choco hazelnut, dll.) — kisaran 10–17K.
+  - Frozen/ambil pulang: bakso goreng, tahu bakso, cireng crispy, pangsit goreng (sekitar 20–25K per kemasan).
+  - Extra: air mineral 7K, sambal/sambel kecil 4K.
+
+- Catatan lain:
+  - Banyak item diberi label rekomendasi.
+  - Tersedia pilihan “1/2 matang” untuk beberapa produk (ditunjukkan di pojok).
+  - Rentang harga umum: 15K–25K majority.
+
+Mau saya bantu rekomendasikan yang enak berdasarkan selera kamu (manis vs pedas vs gurih)? Atau mau saya terjemahkan tiap item ke bahasa Inggris?
+
