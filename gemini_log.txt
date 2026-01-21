@@ -27310,3 +27310,82 @@ Info/Contact: +62 813 8700 3600
 
 Mau saya buatkan versi lain (lebih resmi, lebih singkat, kartu acara untuk Instagram story), atau terjemahan lengkap poster ke bahasa Inggris?
 
+
+[2026-01-21T04:28:01.882Z]
+Prompt    : {°ThemeX°}
+https://github.com/Whomrx666/ThemeX
+
+Explanation: ThemeX is a tools created to make your terminal look beautiful and pretty and there are lots of different themes in it that you can choose from.
+
+[Note]
+If your terminal is not attractive, use ThemeX. There are many theme options available for your terminal to make it look better and more colorful.
+
+∆ Themes menu ∆
+================
+Banner List	📝
+================
+° Alien	✔️
+° Bat	✔️
+° Biohazard	✔️
+° Dragon	✔️
+° Gost Buster	✔️
+° Grim Reaper	✔️
+° Keyboard	✔️
+° Linux	✔️
+° Lion	✔️
+° Minotaur	✔️
+° Redhat	✔️
+° Skull	✔️
+° Snail	✔️
+° Weed	✔️
+° yin yang	✔️
+
+[×Follow my Github for more Update×]
+https://github.com/Whomrx666
+Image URL : https://uploader.exodusai.biz.id/tmp/8867a0-1768969663652.jpg
+Response  : Nice find — ThemeX looks like a quick way to add colorful ASCII banners and themed menus to a terminal. Below is a compact guide to get you running, customize it, and avoid common snags.
+
+What ThemeX does
+- Provides a menu of ASCII banners/themes you can show in your terminal.
+- Likely driven by a shell script that prints art and colors (see the GitHub repo you shared).
+
+Quick install & run
+1. Clone the repo:
+   git clone https://github.com/Whomrx666/ThemeX.git
+2. Enter the folder:
+   cd ThemeX
+3. Inspect the files (always a good idea before running scripts):
+   ls -la
+4. Make the main script executable (replace name if different):
+   chmod +x ThemeX.sh
+5. Run it:
+   ./ThemeX.sh
+(If the main file has another name, look for something like themex.sh, install.sh, or a README that tells you what to run.)
+
+Make it easy to open
+- Create an alias in your shell rc (bash: ~/.bashrc, zsh: ~/.zshrc):
+  alias themex='bash ~/ThemeX/ThemeX.sh'
+- Or launch automatically on new shells (careful — can be annoying): add a line to your rc file to call the script.
+
+Common dependencies & terminal tips
+- Many banner/ASCII projects use utilities like figlet, toilet, boxes, or lolcat for coloring. If a banner fails to render, install these via your package manager (apt, pacman, brew).
+- Use a terminal with UTF-8 and 256-color or truecolor support (gnome-terminal, iTerm2, kitty, alacritty, etc.) for best results.
+- If characters look wrong, confirm your locale: LANG=en_US.UTF-8 (or equivalent).
+
+Troubleshooting
+- Script won’t run: check executable permission and run with bash explicitly: bash ./ThemeX.sh
+- Missing commands: errors naming figlet/toilet/boxes → install those packages or edit the script to remove those calls.
+- Broken layout/overflow: increase terminal columns/rows or try a different font (monospace recommended).
+
+Customize or add banners
+- Open the banner files (often stored in a folder like banners/ or within the script). Add your ASCII art or new file and add a menu entry that points to it.
+- To create simple large text, try figlet or toilet and save the output as a banner file.
+- For colors, the script probably uses ANSI escape sequences; copy patterns from existing banners to keep consistent styling.
+
+Security note
+- Don’t run arbitrary scripts as root. Scan or read the script before executing so you know what it does (network calls, file writes, etc.).
+- If unsure, run it in a throwaway VM or container first.
+
+Want help with anything specific?
+- I can inspect the script contents if you paste key parts, suggest exact dependency installs for your distro, or show how to add ThemeX to your prompt or startup without it being intrusive. Which terminal and OS are you using?
+
