@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <h2>$EXOD / IDR</h2>
+    <h1 id="price">0</h1>
+
+    <div class="box">
+      <p>Saldo: <span id="balance"></span></p>
+      <p>Coin: <span id="coin"></span></p>
+      <p>Portfolio: <span id="portfolio"></span></p>
+    </div>
+
+    <input id="amount" placeholder="Jumlah IDR">
+    <button onclick="deposit()">Deposit</button>
+    <button onclick="buy()">BUY</button>
+    <button onclick="sell()">SELL</button>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
