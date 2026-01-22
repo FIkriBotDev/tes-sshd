@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><body class="container"><div class="card">
+<h2>Register</h2>
+<input id="u" placeholder="Username"><input id="p" type="password" placeholder="Password">
+<button onclick="reg()">Register</button>
+<script>
+async function reg(){await fetch('/api/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:u.value,password:p.value})});location.href='/login.html'}
+</script></div></body></html>

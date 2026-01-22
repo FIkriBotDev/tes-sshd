@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" href="style.css"></head>
+<body class="container"><div class="card">
+<h2>$EXOD Exchange</h2>
+<p>Price: Rp <span id="price"></span></p>
+<p>Saldo: Rp <span id="saldo"></span></p>
+<p>Coin: <span id="coin"></span></p>
+<input id="dep" placeholder="Deposit IDR"><button onclick="fetch('/api/deposit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({amount:dep.value})})">Deposit</button>
+<input id="buy" placeholder="Buy IDR"><button onclick="fetch('/api/buy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({amount:buy.value})})">Buy</button>
+<input id="sell" placeholder="Sell Coin"><button onclick="fetch('/api/sell',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({qty:sell.value})})">Sell</button>
+</div><script src="app.js"></script></body></html>
