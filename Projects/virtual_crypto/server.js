@@ -109,6 +109,6 @@ app.post('/api/sell', (req, res) => {
 });
 
 // ================= SERVER =================
-app.listen(3000, () => {
-  console.log('EXOD Simulator running on http://localhost:3000');
+app.listen(1111, () => {
+  console.log('EXOD Simulator running on http://localhost:1111');
 });
