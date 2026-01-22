@@ -1,7 +1,0 @@
-<!DOCTYPE html><html><body class="container"><div class="card">
-<h2>Login</h2>
-<input id="u" placeholder="Username"><input id="p" type="password" placeholder="Password">
-<button onclick="login()">Login</button>
-<script>
-async function login(){let r=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:u.value,password:p.value})});let d=await r.json();if(d.success)location.href='/dashboard.html';}
-</script></div></body></html>
