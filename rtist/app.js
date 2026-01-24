@@ -264,7 +264,7 @@ app.get('/get/claude', async (req, res) => {
 });
 
 // Rute GET untuk /get/image-generator/:prompt (VERSI BARU)
-app.get('/get/image-generator/:prompt', async (req, res) => {
+/*app.get('/get/image-generator/:prompt', async (req, res) => {
     try {
         const { prompt } = req.params;
         const {
@@ -289,7 +289,7 @@ app.get('/get/image-generator/:prompt', async (req, res) => {
             message: error.message
         });
     }
-});
+}); */
 
 // Rute GET untuk /get/image-generator/:prompt (VERSI BARU)
 app.get('/get/image-generator/:prompt', async (req, res) => {
@@ -298,14 +298,14 @@ app.get('/get/image-generator/:prompt', async (req, res) => {
         const {
             width = 1920,
             height = 1920,
-            model = 'flux'
+            model = 'gptimage-large'
         } = req.query;
         const encodedPrompt = encodeURIComponent(prompt);
         const imageUrl = `https://gen.pollinations.ai/image/${encodedPrompt}?model=${model}&width=${width}&height=${height}`;
         const response = await axios.get(imageUrl, {
             responseType: 'arraybuffer',
             headers: {
-                Authorization: 'Bearer sk_p5xMGHdrzkzfGUMzr31sddn59lJpu769'
+                Authorization: 'Bearer sk_UZ2Fl25V9NA2I8zSC6xFaJ82dbPOB5Fu'
             }
         });
         res.setHeader('Content-Type', 'image/png');
