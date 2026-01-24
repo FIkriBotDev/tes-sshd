@@ -589,8 +589,8 @@ app.post('/post/rtist', async (req, res) => {
 });
 
 
-// Route untuk endpoint premium (Pollinations Pollen - Gemini-large)
-app.post('/post/rtist', async (req, res) => {
+// Route untuk endpoint premium (Pollinations Pollen - openai-large)
+app.post('/post/openai-large', async (req, res) => {
   try {
     const { messages } = req.body;
 
@@ -601,7 +601,7 @@ app.post('/post/rtist', async (req, res) => {
     }
 
     const payload = {
-      model: 'gemini',
+      model: 'openai-large',
       messages
     };
 
