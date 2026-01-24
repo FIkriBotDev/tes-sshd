@@ -589,7 +589,7 @@ app.post('/post/rtist', async (req, res) => {
 });
 
 
-// Route untuk endpoint rtist (Pollinations Pollen - Gemini)
+// Route untuk endpoint premium (Pollinations Pollen - Gemini-large)
 app.post('/post/rtist', async (req, res) => {
   try {
     const { messages } = req.body;
