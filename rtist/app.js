@@ -588,6 +588,55 @@ app.post('/post/rtist', async (req, res) => {
   }
 });
 
+
+// Route untuk endpoint rtist (Pollinations Pollen - Gemini)
+app.post('/post/rtist', async (req, res) => {
+  try {
+    const { messages } = req.body;
+
+    if (!messages || !Array.isArray(messages)) {
+      return res.status(400).json({
+        error: 'Invalid request format. "messages" harus berupa array.'
+      });
+    }
+
+    const payload = {
+      model: 'gemini',
+      messages
+    };
+
+    const response = await axios.post(
+      'https://gen.pollinations.ai/v1/chat/completions',
+      payload,
+      {
+        headers: {
+//          'Authorization': 'Bearer sk_nILEwigYyDAdIPJxQVXl8rwliLtLPJhE', // API Key Pollen
+          'Authorization': 'Bearer sk_RM9sUErPNlaj7kFenSIMljnIVvAyssUk',
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+
+    // Ambil hanya content dari response Pollinations
+    const result =
+      response.data?.choices?.[0]?.message?.content || '';
+
+    res.json({
+      status: true,
+      creator: 'Fikri',
+      result
+    });
+
+  } catch (error) {
+    console.error('Error:', error.message);
+
+    const errorLog = `[${new Date().toISOString()}] ${error.stack || error.message}\n`;
+    fs.appendFile('error.txt', errorLog, () => {});
+
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 // Route untuk gemini-search
 app.post('/post/gemini-search', async (req, res) => {
   try {
