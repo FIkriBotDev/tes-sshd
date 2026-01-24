@@ -291,6 +291,34 @@ app.get('/get/image-generator/:prompt', async (req, res) => {
     }
 });
 
+// Rute GET untuk /get/image-generator-premium/:prompt (VERSI BARU)
+app.get('/get/image-generator-premium/:prompt', async (req, res) => {
+    try {
+        const { prompt } = req.params;
+        const {
+            width = 1920,
+            height = 1920,
+            model = 'flux'
+        } = req.query;
+        const encodedPrompt = encodeURIComponent(prompt);
+        const imageUrl = `https://gen.pollinations.ai/image/${encodedPrompt}?model=${model}&width=${width}&height=${height}`;
+        const response = await axios.get(imageUrl, {
+            responseType: 'arraybuffer',
+            headers: {
+                Authorization: 'Bearer sk_p5xMGHdrzkzfGUMzr31sddn59lJpu769'
+            }
+        });
+        res.setHeader('Content-Type', 'image/png');
+        res.send(response.data);
+    } catch (error) {
+        console.error('Error:', error.message);
+        res.status(500).json({
+            error: 'Failed to fetch image from Pollinations API',
+            message: error.message
+        });
+    }
+});
+
 // Route untuk /get/text2image
 app.get('/get/text2image', async (req, res) => {
   try {
