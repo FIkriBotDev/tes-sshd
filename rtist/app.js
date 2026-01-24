@@ -611,7 +611,7 @@ app.post('/post/openai-large', async (req, res) => {
       {
         headers: {
 //          'Authorization': 'Bearer sk_nILEwigYyDAdIPJxQVXl8rwliLtLPJhE', // API Key Pollen
-          'Authorization': 'Bearer sk_RM9sUErPNlaj7kFenSIMljnIVvAyssUk',
+          'Authorization': 'Bearer sk_ITNeyJn7g0UD7vIe1yWzuSMnSc9nEQG9',
           'Content-Type': 'application/json'
         }
       }
