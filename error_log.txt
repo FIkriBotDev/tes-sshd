@@ -3058,3 +3058,5 @@
 [2026-01-24T14:38:48.820Z] Error processing image: {}
 [2026-01-24T14:42:47.902Z] Error processing image: {}
 [2026-01-24T14:45:34.637Z] Error processing image: {}
+[2026-01-25T12:20:50.049Z] Error processing image: {}
+[2026-01-25T12:20:50.074Z] Error processing image: {}
