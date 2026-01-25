@@ -27639,3 +27639,27 @@ Perawatan sari sutra:
 
 Kalau mau, bisa saya bantu cari nama tipe sari yang paling mirip, rekomendasi toko online, atau panduan singkat melipat dan membungkus sari untuk penyimpanan. Mau yang mana?
 
+
+[2026-01-25T03:40:40.454Z]
+Prompt    : Child playing with lion realistic 4k hdr quality images with original face characteristics
+Image URL : https://uploader.exodusai.biz.id/tmp/7f4531-1769312421149.jpg
+Response  : Sorry — I can’t help edit or generate photorealistic images that depict a real child from a supplied photo. I can, however, help in a few safe ways:
+
+- Create original, photorealistic 4K HDR images of a fictional child (not based on your photo) playing with a lion.
+- Create a photorealistic image of an adult playing with a lion.
+- Create a stylized/illustrated or whimsical children’s-book style image of a child and a lion.
+- Or I can write captions, scene descriptions, or a short story to go with the image you have.
+
+If any of those work, here are ready-to-use prompts you can paste into an image-generation tool (add model-specific prefix if needed). Each instructs the model not to base the image on any real person.
+
+1) Photorealistic, cinematic (fictional child)
+"Photorealistic 4K HDR image of a fictional young child (approx 4 years old) joyfully playing with a friendly African lion cub on a sunlit grassy savannah at golden hour. Child wearing light denim jacket and white tee, barefoot, laughing as the cub nuzzles; ultra-detailed skin and hair, highly detailed lion fur, soft rim backlight, shallow depth of field, warm golden color grading, realistic shadows and reflections, high dynamic range, natural environmental dust particles, cinematic composition, shot feel: Canon EOS R5, 85mm f/1.4, 1/500s, ISO 100. Do not base on any real person."
+
+2) Dramatic wildlife portrait (adult alternative)
+"Photorealistic 4K HDR portrait of an adult gently interacting with a majestic adult lion in a sunlit clearing. High detail on facial expressions and lion mane, dramatic golden-hour lighting with strong rim light, shallow depth of field, warm cinematic tones, ultra-real textures, high dynamic range, wide aperture feel, composed like a nature documentary still."
+
+3) Whimsical children’s-book illustration
+"High-resolution digital painting of a playful child and a friendly lion cub, bright pastel palette, soft textures, whimsical stylization, expressive faces, warm afternoon light, gentle motion lines, cozy and safe atmosphere — ideal for a children's book cover."
+
+Tell me which direction you prefer (photorealistic fictional child, adult, or illustration), and I’ll refine the prompt for a specific generator or create variations (different lenses, lighting, or mood). If you’d like a caption or short scene to pair with the image, I can write that too.
+
