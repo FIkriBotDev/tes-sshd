@@ -172,3 +172,5 @@
 [2026-01-25 06:37:45] POST /post/rtist
 [2026-01-25 06:38:33] POST /post/rtist
 [2026-01-25 06:38:51] POST /post/rtist
+[2026-01-25 06:43:49] GET /get/image-generator/pantai
+[2026-01-25 06:43:52] GET /get/image-generator/pantai
