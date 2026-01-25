@@ -27577,3 +27577,41 @@ Kalau kamu mau, aku bisa bantu salah satu dari ini:
 
 Mau aku lakukan yang mana dulu? Kalau kamu ingin aku OCR/ekstrak teks sekarang, bilang saja — aku akan mulai menyalin bagian yang terlihat.
 
+
+[2026-01-25T03:25:21.044Z]
+Prompt    : Create her like real human
+Image URL : https://uploader.exodusai.biz.id/tmp/4fef1d-1769311503846.jpg
+Response  : Name: Anaya Rao
+Age: 31
+
+How she looks and carries herself
+- Long, dark hair parted in the middle and left loose over her shoulders, often threaded with a single jasmine bloom when she’s going somewhere special.
+- Wears a rich red silk saree with intricate gold brocade and a deep green border; the fabric moves with a quiet, confident grace.
+- Small gold jhumka earrings and a delicate gold necklace that belonged to her grandmother catch the light when she turns her head. Her posture is relaxed but composed, like someone used to standing in front of people and being listened to.
+
+Personality
+- Warm and steady. She listens first, then speaks with slow clarity; people leave conversations with her feeling heard and lighter.
+- Quietly ambitious. She cares about craft, continuity, and making spaces where traditional artisans can thrive alongside new ideas.
+- Has an easy sense of humor—dry, observant, and more likely to make you laugh than to be the center of a joke.
+
+Background and daily life
+- Grew up in a house where festivals, food, and storytelling marked the calendar. Those early domestic rituals taught her how much a single object—an embroidered cloth, a folded recipe—can hold family history.
+- Works as a textile conservator and small-business consultant for handloom co-ops. Her weekdays are a mix of lab notes, client meetings, and field visits to weaving clusters. She likes solving practical problems: packaging that preserves fragile saris, pricing that honors labor, design tweaks that increase market appeal without erasing tradition.
+- Mornings begin with strong, milky tea and ten minutes of vocal practice (she sings), followed by whatever small, deliberate task sets the tone for the day—sorting threads, planning a meeting, or reading a single poem aloud.
+- Evenings belong to family. She cooks occasionally, preferring recipes passed down by her grandmother: slow-cooked lentils, a bright chutney, and a dessert that everyone expects and judges lovingly.
+
+Dreams, tensions and small contradictions
+- Wants to open a studio that is equal parts archive, workshop, and marketplace—a place where young designers and elder artisans can teach each other.
+- Juggles respect for tradition with a desire to innovate. She’ll experiment with a new weave or dye, but she’s protective of techniques that would be flattened by mass production.
+- Feels occasional impatience with bureaucracy and slow funding cycles; when those walls show up, she retreats to something tactile—a spool of thread, a worn notebook of swatch swatches—and reorients herself.
+
+Habits and mannerisms that make her feel real
+- Tucks the saree’s pallu over her wrist when concentrating, like an artist settling into a sketch.
+- Collects small notebooks: one for shop sketches, one for recipes, one for quotes and lines of poetry. If you borrow one, she’ll insist you keep it until she asks for it back.
+- Has a tiny, private ritual before meetings: she breathes in the scent of jasmine if it’s there, smooths the necklace, and hums a two-note cadence.
+
+A line she might say
+- “If a thread breaks, you don’t toss the whole weave—you find the knot, mend it, and maybe learn a new way to keep the next one from fraying.”
+
+Would you like a short scene of her at work or a sample social-media bio for her studio?
+
