@@ -264,7 +264,7 @@ app.get('/get/claude', async (req, res) => {
 });
 
 // Rute GET untuk /get/image-generator/:prompt (VERSI BARU)
-/*app.get('/get/image-generator/:prompt', async (req, res) => {
+app.get('/get/image-generator/:prompt', async (req, res) => {
     try {
         const { prompt } = req.params;
         const {
@@ -289,10 +289,10 @@ app.get('/get/claude', async (req, res) => {
             message: error.message
         });
     }
-}); */
+}); 
 
 // Rute GET untuk /get/image-generator/:prompt (VERSI BARU)
-app.get('/get/image-generator/:prompt', async (req, res) => {
+/*app.get('/get/image-generator/:prompt', async (req, res) => {
     try {
         const { prompt } = req.params;
         const {
@@ -317,7 +317,7 @@ app.get('/get/image-generator/:prompt', async (req, res) => {
             message: error.message
         });
     }
-});
+}); */
 
 // Rute GET untuk /get/image-generator-premium/:prompt (VERSI BARU)
 app.get('/get/image-generator-premium/:prompt', async (req, res) => {
