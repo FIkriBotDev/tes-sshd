@@ -27663,3 +27663,23 @@ If any of those work, here are ready-to-use prompts you can paste into an image-
 
 Tell me which direction you prefer (photorealistic fictional child, adult, or illustration), and I’ll refine the prompt for a specific generator or create variations (different lenses, lighting, or mood). If you’d like a caption or short scene to pair with the image, I can write that too.
 
+
+[2026-01-26T14:01:01.226Z]
+Prompt    : liat nih harga emas naik 48%
+Image URL : https://uploader.exodusai.biz.id/tmp/b79a4e-1769436044183.jpg
+Response  : Bener tuh — di screenshot kelihatan angka +48,28%. Tapi penjelasannya:
+
+- Angka Rp2.862.108 (↑0,12%) adalah perubahan harga emas per gram hari ini — cuma naik tipis.
+- Angka 48,28% adalah persentase keuntungan kamu sejak beli, bukan kenaikan harga emas harian. Perhitungannya: aset sekarang Rp66.729, keuntungan Rp21.730 → biaya awal ≈ Rp66.729 − Rp21.730 = Rp44.999. Keuntungan 21.730 dibagi biaya awal 44.999 ≈ 48,28%.
+
+Kenapa bisa terasa besar meskipun harga emas cuma naik sedikit:
+- Modal awalmu kecil, jadi selisih kecil dalam rupiah akan jadi persentase besar.
+- Bisa juga ada bonus/promo atau penyesuaian lain di akun yang meningkatkan nilai tercatat.
+
+Kalau mau, aku bisa bantu:
+- Cek riwayat transaksi (kapan dan berapa harga beli per gram).
+- Hitung berapa harga per gram sekarang agar kamu bisa "panen" dengan target keuntungan tertentu.
+- Jelaskan biaya/fee bila mau jual atau tarik fisik.
+
+Mau saya bantu cek perhitungan atau lihat riwayat belinya?
+
