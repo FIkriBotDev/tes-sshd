@@ -1191,3 +1191,14 @@ b.send(JSON.stringify(a));c.classList.add("feedback-hidden");d.classList.remove(
   "status": 400
 }
 
+[2026-01-27T23:28:15.264Z] API Error:
+{
+  "success": false,
+  "error": {
+    "message": "{\"error\":\"Bad Request\",\"message\":\"400 Bad Request\",\"requestId\":\"byj44t\",\"requestParameters\":{\"messages\":[{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"https://vt.tiktok.com/ZSamVa2j3/\"},{\"type\":\"image_url\",\"image_url\":{\"url\":\"https://uploader.exodusai.biz.id/tmp/fceddf-1769556491969.mp4\"}}]}],\"jsonMode\":false,\"model\":\"openai\",\"referrer\":null,\"isPrivate\":true,\"voice\":\"alloy\",\"private\":true},\"details\":{\"error\":{\"message\":\"azure-openai error: Invalid image data.\",\"type\":null,\"param\":null,\"code\":\"BadRequest\"},\"provider\":\"azure-openai\"}}",
+    "code": "BAD_REQUEST",
+    "timestamp": "2026-01-27T23:28:15.239Z"
+  },
+  "status": 400
+}
+
