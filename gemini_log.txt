@@ -27733,3 +27733,26 @@ Response  : Gambarnya jelas — itu screenshot komentar yang menempelkan tautan 
 
 Mau balasan yang santai, tegas, atau formal untuk kamu pakai?
 
+
+[2026-01-27T04:44:55.194Z]
+Prompt    : tolong balas pake link grup ini
+Image URL : https://uploader.exodusai.biz.id/tmp/48f7e4-1769489085110.jpg
+Response  : Oke — aku siap bikin balasan. Berikut beberapa pilihan singkat yang bisa kamu kopi-paste langsung (link sudah aku masukkan):
+
+1) Santai:
+Gabung yuk ke grup Python: https://chat.whatsapp.com/HG92z2TPtZOBV98ejsvOR
+
+2) Resmi/ramah:
+Terima kasih! Untuk yang mau belajar Python, silakan gabung di grup ini: https://chat.whatsapp.com/HG92z2TPtZOBV98ejsvOR
+
+3) Pendek:
+Join grup Python: https://chat.whatsapp.com/HG92z2TPtZOBV98ejsvOR
+
+4) Lucu/ajak:
+Mau ngulik Python bareng? Masuk sini biar gak kudet: https://chat.whatsapp.com/HG92z2TPtZOBV98ejsvOR
+
+5) Kalau mau peringatan singkat (mis. takut spam):
+Link grup: https://chat.whatsapp.com/HG92z2TPtZOBV98ejsvOR — cek dulu sebelum gabung ya.
+
+Mau versi lain (lebih formal, promosi acara, atau pakai emotikon)?
+
