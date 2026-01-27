@@ -27689,3 +27689,30 @@ Prompt    : mau gak?
 Image URL : https://uploader.exodusai.biz.id/tmp/3ed909-1769463934906.jpg
 Response  : Mau dong! Nampak segar banget — itu nanas ya? Manis atau agak asem? Enak dicocol sedikit garam atau sambal terasi kalau mau pedes.
 
+
+[2026-01-27T01:41:30.184Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/c12e1c-1769478075904.jpg
+Response  : Ini adalah kartu pengumuman duka cita dari PC Magabudhi Kota Tangerang untuk almarhum(a) PMd. Yanti / Oey Seng Lian, dengan keterangan peran (Mama tercinta dari Saddha & Sashia) dan jabatan organisasional, tanggal pemakaman/kepergian (Selasa, 27 Januari 2026), serta kutipan Dhammapada di bagian bawah. Desain memakai palet lembut (pink/cream), dekorasi bunga di sudut dan di sekitar nama, serta logo organisasi di bagian atas.
+
+Beberapa saran desain dan konten bila ingin diperbaiki atau dipakai ulang:
+- Hierarki teks: perbesar nama dan sedikit kurangi ukuran subtitle agar nama lebih menonjol. Pastikan jarak antarbaris cukup sehingga kutipan tidak terlihat padat.
+- Kontras warna: teks hijau tua di latar pink/cream terlihat baik, tapi periksa keterbacaan pada cetak — pertimbangkan warna sedikit lebih gelap untuk teks kecil (seperti kutipan).
+- Penempatan logo: sudah rapi di atas; pastikan proporsinya tidak terlalu mendominasi agar nama tetap fokus utama.
+- Elemen dekoratif: bunga menambah kesan lembut dan hormat — bagus untuk acara keagamaan/dukacita. Pastikan ornamen tidak menutupi teks penting.
+- Informasi praktis: bila pengumuman ini untuk undangan pemakaman/layatan, tambahkan waktu, alamat, kontak yang bisa dihubungi, atau info prosesi jika perlu.
+- Versi untuk media sosial: buat juga versi persegi (Instagram) dan versi story (potret tinggi) dengan teks yang lebih besar dan sedikit disingkat.
+- Aksesibilitas: sediakan versi teks (caption) untuk dibagikan di platform agar mesin pembaca (screen reader) dapat menyampaikan informasi.
+
+Contoh teks singkat untuk caption atau ucapan belasungkawa:
+- Formal singkat: "Turut berbelasungkawa atas wafatnya PMd. Yanti / Oey Seng Lian. Semoga diterima dalam kebaikan dan keluarga yang ditinggalkan diberi ketabahan."
+- Lebih pribadi: "Berduka atas kepergian Mama Yanti. Kenangan dan kebaikannya akan selalu bersama kita."
+- Versi agama/Buddha singkat: "Sabbe Saṅkhārā Aniccā — Semoga mendapat kelapangan dan kedamaian."
+
+Kalau mau, saya bisa:
+- Membuat beberapa versi teks ucapan (resmi, singkat, personal).
+- Menyusun ulang tata letak untuk format cetak atau ukuran sosial media tertentu.
+- Menterjemahkan seluruh isi ke bahasa Inggris atau bahasa lain.
+
+Mau saya bantu membuat salah satu dari opsi di atas sekarang?
+
