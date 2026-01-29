@@ -333,7 +333,7 @@ app.get('/get/image-generator-premium/:prompt', async (req, res) => {
         const response = await axios.get(imageUrl, {
             responseType: 'arraybuffer',
             headers: {
-                Authorization: 'Bearer sk_UZ2Fl25V9NA2I8zSC6xFaJ82dbPOB5Fu'
+                Authorization: 'Bearer sk_Yw64vxnfAiSj8o7d4OufhQ8DNTtCPlRD'
             }
         });
         res.setHeader('Content-Type', 'image/png');
