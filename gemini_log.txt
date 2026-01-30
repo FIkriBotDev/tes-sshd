@@ -28050,3 +28050,18 @@ Rekomendasi target resolusi
 
 Mau saya proses versi HD sekarang? Sebut resolusi yang diinginkan dan format, saya bantu langkah demi langkah atau jalankan opsi yang kamu pilih.
 
+
+[2026-01-30T00:52:19.990Z]
+Prompt    : apakah ini berbahaya?
+Image URL : https://uploader.exodusai.biz.id/tmp/3d87b4-1769734326884.jpg
+Response  : Singkatnya: belum tentu langsung berbahaya — tapi berisiko. Pop‑up itu meminta izin supaya situs (utweb.rainberrytv.com) bisa "mencari dan menghubungkan ke perangkat apa pun di jaringan lokal Anda" — artinya kalau Anda klik Izinkan, situs bisa memindai dan berkomunikasi dengan perangkat di jaringan rumah (TV pintar, kamera, NAS, printer, komputer lain).
+
+Saran praktis:
+- Kalau Anda tidak kenal atau tidak yakin dengan situs itu: pilih Blokir.
+- Izin semacam ini masuk akal kalau situs memang layanan yang Anda percayai dan fungsinya memerlukan akses perangkat lokal (mis. aplikasi remote control untuk TV, aplikasi streaming/Media Server).  
+- Kalau sudah klik Izinkan dan ingin membatalkan: buka pengaturan situs di browser dan kembalikan ke Blokir atau Hapus izin. Cara cepat di Chrome/Edge: klik ikon gembok di sebelah kiri address bar → Site settings (Pengaturan situs) → pada permission "Find devices on local network" (atau "Mencari perangkat di jaringan lokal") pilih Block.  
+- Untuk rasa aman ekstra: hapus cookies/cache untuk situs itu, restart browser, dan periksa perangkat di jaringan untuk perilaku aneh.  
+- Jaga perangkat Anda: pastikan firmware perangkat jaringan/IoT terbarui, gunakan kata sandi router yang kuat, pertimbangkan jaringan tamu untuk perangkat IoT.
+
+Kalau mau, saya bantu langkah‑langkah menonaktifkan izin di browser Anda — beri tahu browser yang dipakai (Chrome, Firefox, Edge, dsb.).
+
