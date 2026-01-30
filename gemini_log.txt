@@ -28065,3 +28065,25 @@ Saran praktis:
 
 Kalau mau, saya bantu langkah‑langkah menonaktifkan izin di browser Anda — beri tahu browser yang dipakai (Chrome, Firefox, Edge, dsb.).
 
+
+[2026-01-30T05:51:31.335Z]
+Prompt    : ini udah bener menurutmu atau salah? soalnya sebutkan nama folder yang memiliki nama terpendek dan terpanjang
+Image URL : https://uploader.exodusai.biz.id/tmp/471033-1769752277246.jpg
+Response  : Salah — jawabanmu belum kelihatan. Dari screenshot ls -l di folder Documents yang kamu lampirkan, hanya ada dua folder: "School" dan "Work". Jadi:
+
+- Nama folder terpanjang: School (6 huruf)  
+- Nama folder terpendek: Work (4 huruf)
+
+Cara cepat untuk memastikan di terminal (jika mau otomatis):
+- Daftar semua folder di direktori saat ini dan tampilkan panjang namanya:
+  ls -d */ | sed 's:/$::' | awk '{print length,$0}' | sort -n
+- Untuk langsung ambil yang terpendek:
+  ls -d */ | sed 's:/$::' | awk '{print length,$0}' | sort -n | head -1
+- Untuk langsung ambil yang terpanjang:
+  ls -d */ | sed 's:/$::' | awk '{print length,$0}' | sort -n | tail -1
+
+Catatan: perintah ls -d */ tidak menunjukkan folder tersembunyi (yang mulai dengan titik). Kalau mau sertakan folder tersembunyi gunakan find:
+  find . -maxdepth 1 -type d -printf "%f\n" | awk '{print length,$0}' | sort -n
+
+Kalau mau, aku bisa bantu edit jawabanmu di file tugas supaya rapi.
+
