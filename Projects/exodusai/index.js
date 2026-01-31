@@ -400,208 +400,113 @@ ${parsed.text}`
 }
 
 
-        // ================================
-// === Media (image/video/audio/document) ===
-// ================================
-if (
-    m.message.imageMessage ||
-    m.message.videoMessage ||
-    m.message.audioMessage ||
-    m.message.documentMessage
-) {
-    try {
-        // download media dari WhatsApp
-        const buffer = await downloadMediaMessage(
-            m,
-            'buffer',
-            {},
-            { logger: P({ level: 'silent' }), reuploadRequest: sock.updateMediaMessage }
-        );
+        // === Media (image/video/audio/document) ===
+        if (m.message.imageMessage || m.message.videoMessage || m.message.audioMessage || m.message.documentMessage) {
+            try {
+                const buffer = await downloadMediaMessage(m, 'buffer', {}, { logger: P({ level: 'silent' }), reuploadRequest: sock.updateMediaMessage });
+                const uploadedFileUrl = await uploadFile(buffer);
 
-        // upload ke uploader ExodusAI
-        const uploadedFileUrl = await uploadFile(buffer);
+                let geminiPrompt = 'lihatlah gambar ini';
+                const caption = m.message.imageMessage?.caption || m.message.videoMessage?.caption || m.message.documentMessage?.caption;
+                if (caption) geminiPrompt = caption;
+                else if (userMessage) geminiPrompt = userMessage;
 
-        // ambil caption atau fallback
-        const caption =
-            m.message.imageMessage?.caption ||
-            m.message.videoMessage?.caption ||
-            m.message.documentMessage?.caption ||
-            'lihat gambar ini';
+                const geminiApiUrl = `https://gemini-api.exodusai.biz.id/api/gemini-image?text=${encodeURIComponent(geminiPrompt)}&url=${encodeURIComponent(uploadedFileUrl)}`;
+                const geminiResponse = await fetch(geminiApiUrl).then(res => res.json());
 
-        // ambil conversation sebelumnya (tanpa diubah)
-        const visionMessages = [];
+                if (!geminiResponse.status || !geminiResponse.result) {
+                    await sock.sendMessage(sender, { text: 'Maaf, file tidak dapat dianalisis.' });
+                    return;
+                }
 
-        // masukkan context chat sebelumnya
-        for (const msg of conversation) {
-            if (typeof msg.content === 'string') {
-                visionMessages.push({
-                    role: msg.role,
-                    content: msg.content
+                const geminiResult = geminiResponse.result;
+                conversation.push({
+                    role: "user",
+                    content: `Berikut ini adalah text dari gemini result: \"${geminiResult}\". Sekarang kirimkan gemini result tersebut ke user dengan menggunakan bahasa kamu (bahasa gaul seperti yang kamu gunakan) dan tambahkan sedikit kata kata biar lebih kreatif. dan kirimkan text nya saja tanpa perlu semacam kamu kirim \"Ini adalah hasilnya\" cukup kirimkan text yang kamu ubah saja.`
                 });
-            }
-        }
 
-        // tambahkan message terakhir: text + image
-        visionMessages.push({
-            role: 'user',
-            content: [
-                { type: 'text', text: caption },
-                {
-                    type: 'image_url',
-                    image_url: {
-                        url: uploadedFileUrl
+                const chatbotResponse = await fetch('http://localhost:3000/post/rtist', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ messages: conversation }),
+                });
+
+                const chatbotData = await chatbotResponse.json();
+                let aiResponse = chatbotData.result;
+
+                aiResponse = aiResponse.replace(/https:\/\/localhost:/gi, 'http://localhost:');
+                aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exodusai.biz.id').trim();
+                aiResponse = fixUrls(aiResponse);
+
+                // === NEW: Deteksi & kirim file yang disertakan dalam response AI (DOCX, EXCEL, IMAGE, VIDEO)
+                try {
+                    // DOCX
+                    const docxMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exodusai\.biz\.id\/api\/buat\?[^)]+)\)/;
+                    const matchDocx = docxMarkdownRegex.exec(aiResponse);
+                    if (matchDocx) {
+                        const docxUrl = matchDocx[1];
+                        await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya dokumennya sesuai permintaan✨` });
+                        const docxBuffer = await fetch(docxUrl).then(res => res.buffer());
+                        await sock.sendMessage(sender, {
+                            document: docxBuffer,
+                            mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                            fileName: 'hasil.docx'
+                        });
+                        aiResponse = aiResponse.replace(docxMarkdownRegex, '').trim();
                     }
-                }
-            ]
-        });
 
-        // kirim ke Pollinations Vision
-        const response = await axios.post(
-            'https://gen.pollinations.ai/v1/chat/completions',
-            {
-                model: 'openai',
-                messages: visionMessages
-            },
-            {
-                headers: {
-                    Authorization: 'Bearer sk_RM9sUErPNlaj7kFenSIMljnIVvAyssUk',
-                    'Content-Type': 'application/json'
+                    // EXCEL
+                    const excelMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exodusai\.biz\.id\/api\/buat\/excel\?[^)]+)\)/;
+                    const matchExcel = excelMarkdownRegex.exec(aiResponse);
+                    if (matchExcel) {
+                        const excelUrl = matchExcel[1];
+                        await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya datanya sesuai permintaan ✨` });
+                        const excelBuffer = await fetch(excelUrl).then(res => res.buffer());
+                        await sock.sendMessage(sender, {
+                            document: excelBuffer,
+                            mimetype: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                            fileName: 'hasil.xlsx'
+                        });
+                        aiResponse = aiResponse.replace(excelMarkdownRegex, '').trim();
+                    }
+
+                    // IMAGE (localhost image-generator)
+                    const imageRegex = /!\[.*?\]\((http:\/\/localhost:3000\/get\/image-generator\/[^)]+)\)/;
+                    const matchImage = imageRegex.exec(aiResponse);
+                    if (matchImage) {
+                        const imageUrl = matchImage[1];
+                        const [textBefore, textAfter] = aiResponse.split(matchImage[0]);
+                        if (textBefore && textBefore.trim()) await sock.sendMessage(sender, { text: textBefore.trim() });
+                        const imageBuffer = await fetch(imageUrl).then(res => res.buffer());
+                        await sock.sendMessage(sender, { image: imageBuffer, caption: (textAfter || '').trim() });
+                        aiResponse = aiResponse.replace(imageRegex, '').trim();
+                    }
+
+                    // VIDEO (localhost generatevideo)
+                    const videoRegex = /!\[.*?\]\((http:\/\/localhost:3000\/get\/generatevideo\?[^)]+)\)/;
+                    const matchVideo = videoRegex.exec(aiResponse);
+                    if (matchVideo) {
+                        const videoUrl = matchVideo[1];
+                        const [textBefore, textAfter] = aiResponse.split(matchVideo[0]);
+                        if (textBefore && textBefore.trim()) await sock.sendMessage(sender, { text: textBefore.trim() });
+                        const videoBuffer = await fetch(videoUrl).then(res => res.buffer());
+                        await sock.sendMessage(sender, { video: videoBuffer, caption: (textAfter || '').trim() });
+                        aiResponse = aiResponse.replace(videoRegex, '').trim();
+                    }
+                } catch (innerErr) {
+                    console.error('Error while processing attachments from AI response (media/docx/excel):', innerErr);
                 }
+
+                await sock.sendMessage(sender, { text: aiResponse });
+                conversation.push({ role: "assistant", content: aiResponse });
+                saveConversation(sender, conversation);
+
+            } catch (err) {
+                console.error('Error processing media:', err);
+                await sock.sendMessage(sender, { text: 'Terjadi kesalahan saat memproses file.' });
             }
-        );
-
-        const msg = response.data.choices?.[0]?.message;
-
-        // ambil text hasil vision
-        let visionAnswer = '';
-        if (msg?.content_blocks) {
-            visionAnswer = msg.content_blocks
-                .filter(b => b.type === 'text')
-                .map(b => b.text)
-                .join('\n');
-        } else {
-            visionAnswer = msg?.content || '';
-        }
-
-        if (!visionAnswer) {
-            await sock.sendMessage(sender, {
-                text: 'Maaf, gambar tidak dapat dianalisis.'
-            });
             return;
         }
-
-        // kirim langsung ke user
-        await sock.sendMessage(sender, {
-            text: visionAnswer
-        });
-
-        // simpan ke conversation agar nyambung
-        conversation.push({
-            role: 'assistant',
-            content: visionAnswer
-        });
-        saveConversation(sender, conversation);
-
-    } catch (err) {
-        console.error('Vision Media Error:', err);
-        await sock.sendMessage(sender, {
-            text: 'Terjadi kesalahan saat memproses media.'
-        });
-    }
-
-    return; // ⛔ STOP: media tidak lanjut ke text AI
-}
-
-
-// ================================
-// === TEXT AI / RTIST HANDLER ===
-// ================================
-
-
-    // === NEW: Deteksi & kirim file yang disertakan dalam response AI (DOCX, EXCEL, IMAGE, VIDEO)
-    try {
-        // DOCX
-        const docxMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exodusai\.biz\.id\/api\/buat\?[^)]+)\)/;
-        const matchDocx = docxMarkdownRegex.exec(aiResponse);
-        if (matchDocx) {
-            const docxUrl = matchDocx[1];
-            await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya dokumennya sesuai permintaan✨` });
-            const docxBuffer = await fetch(docxUrl).then(res => res.buffer());
-            await sock.sendMessage(sender, {
-                document: docxBuffer,
-                mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                fileName: 'hasil.docx'
-            });
-            aiResponse = aiResponse.replace(docxMarkdownRegex, '').trim();
-        }
-
-        // EXCEL
-        const excelMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exodusai\.biz\.id\/api\/buat\/excel\?[^)]+)\)/;
-        const matchExcel = excelMarkdownRegex.exec(aiResponse);
-        if (matchExcel) {
-            const excelUrl = matchExcel[1];
-            await sock.sendMessage(sender, { text: `Oke, gue buatin dulu ya datanya sesuai permintaan ✨` });
-            const excelBuffer = await fetch(excelUrl).then(res => res.buffer());
-            await sock.sendMessage(sender, {
-                document: excelBuffer,
-                mimetype: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                fileName: 'hasil.xlsx'
-            });
-            aiResponse = aiResponse.replace(excelMarkdownRegex, '').trim();
-        }
-
-        // IMAGE (localhost image-generator)
-        const imageRegex = /!\[.*?\]\((http:\/\/localhost:3000\/get\/image-generator\/[^)]+)\)/;
-        const matchImage = imageRegex.exec(aiResponse);
-        if (matchImage) {
-            const imageUrl = matchImage[1];
-            const [textBefore, textAfter] = aiResponse.split(matchImage[0]);
-            if (textBefore && textBefore.trim()) {
-                await sock.sendMessage(sender, { text: textBefore.trim() });
-            }
-            const imageBuffer = await fetch(imageUrl).then(res => res.buffer());
-            await sock.sendMessage(sender, {
-                image: imageBuffer,
-                caption: (textAfter || '').trim()
-            });
-            aiResponse = aiResponse.replace(imageRegex, '').trim();
-        }
-
-        // VIDEO (localhost generatevideo)
-        const videoRegex = /!\[.*?\]\((http:\/\/localhost:3000\/get\/generatevideo\?[^)]+)\)/;
-        const matchVideo = videoRegex.exec(aiResponse);
-        if (matchVideo) {
-            const videoUrl = matchVideo[1];
-            const [textBefore, textAfter] = aiResponse.split(matchVideo[0]);
-            if (textBefore && textBefore.trim()) {
-                await sock.sendMessage(sender, { text: textBefore.trim() });
-            }
-            const videoBuffer = await fetch(videoUrl).then(res => res.buffer());
-            await sock.sendMessage(sender, {
-                video: videoBuffer,
-                caption: (textAfter || '').trim()
-            });
-            aiResponse = aiResponse.replace(videoRegex, '').trim();
-        }
-
-    } catch (innerErr) {
-        console.error(
-            'Error while processing attachments from AI response (media/docx/excel):',
-            innerErr
-        );
-    }
-
-    // kirim sisa text
-    if (aiResponse && aiResponse.trim()) {
-        await sock.sendMessage(sender, { text: aiResponse });
-    }
-
-    conversation.push({ role: 'assistant', content: aiResponse });
-    saveConversation(sender, conversation);
-
-
-return;
-
 
 
 // Mode Web Search
