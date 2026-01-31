@@ -513,15 +513,7 @@ if (
 }
 
 
-// ================================
-// === TEXT AI / RTIST HANDLER ===
-// ================================
-try {
-    // pastikan aiResponse ADA
-    let aiResponse = '';
 
-    // === Panggil AI Text (RTIST / Exodus / dll)
-    aiResponse = await callRTIST(conversation); // ganti sesuai function lo
 
     // === NEW: Deteksi & kirim file yang disertakan dalam response AI (DOCX, EXCEL, IMAGE, VIDEO)
     try {
@@ -538,7 +530,7 @@ try {
                 fileName: 'hasil.docx'
             });
             aiResponse = aiResponse.replace(docxMarkdownRegex, '').trim();
-        }
+        
 
         // EXCEL
         const excelMarkdownRegex = /!\[.*?\]\((https:\/\/docx-ai\.exodusai\.biz\.id\/api\/buat\/excel\?[^)]+)\)/;
@@ -609,7 +601,7 @@ try {
     await sock.sendMessage(sender, {
         text: 'Terjadi kesalahan saat memproses file.'
     });
-}
+
 
 return;
 
