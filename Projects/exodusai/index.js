@@ -464,7 +464,7 @@ if (
             },
             {
                 headers: {
-                    Authorization: 'Bearer YOUR_API_KEY',
+                    Authorization: 'Bearer sk_RM9sUErPNlaj7kFenSIMljnIVvAyssUk',
                     'Content-Type': 'application/json'
                 }
             }
