@@ -599,12 +599,6 @@ if (
     conversation.push({ role: 'assistant', content: aiResponse });
     saveConversation(sender, conversation);
 
- catch (err) {
-    console.error('Error processing media:', err);
-    await sock.sendMessage(sender, {
-        text: 'Terjadi kesalahan saat memproses file.'
-    });
-}
 
 return;
 
