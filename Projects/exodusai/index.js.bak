@@ -70,6 +70,20 @@ function getConversation(userId) {
     }
     return userConversations[userId];
 }
+function reloadChatbotConversation(userId) {
+    const fileName =
+        userId === '6287863293173@s.whatsapp.net' ? 'dika.json' :
+        userId === '6287824613268@s.whatsapp.net' ? 'say.json' :
+        userId === '6283140117292@s.whatsapp.net' ? 'cece.json' :
+        userId === '6282269995370@s.whatsapp.net' ? 'sis.json' :
+        userId === '6282142719548@s.whatsapp.net' ? 'fu.json' :
+        userId === '62895351640508@s.whatsapp.net' ? 'april.json' :
+        userId === '6283897921042@s.whatsapp.net' ? 's.json' :
+        userId === '6285271848176@s.whatsapp.net' ? 'nuni.json' :
+        '/home/runner/work/tes-sshd/tes-sshd/database.json';
+
+    userConversations[userId] = loadConversation(fileName);
+}
 
 function saveConversation(userId, conversation) {
     userConversations[userId] = conversation;
@@ -137,8 +151,7 @@ async function startBot() {
             await sock.sendMessage(sender, {
                 text: "*Berikut adalah mode yang tersedia di ExodusAI*\n\n" +
                       "=> AI ChatBot [/mode chatbot]\n" +
-                      "=> AI Ringkas Materi (Word/PDF) [/mode ringkasmateri]\n" +
-                      "=> AI Photo Editor [/mode photoeditor]"
+                      "=> AI Search [/mode websearch]"
             });
             return;
         }
@@ -146,6 +159,7 @@ async function startBot() {
         // === Mode Switch
         if (userMessage === '/mode chatbot') {
             setMode(sender, 'chatbot');
+            reloadChatbotConversation(sender);
             await sock.sendMessage(sender, { text: 'Mode berhasil diubah ke AI ChatBot.' });
             return;
         }
@@ -159,6 +173,13 @@ async function startBot() {
             await sock.sendMessage(sender, { text: '📄 Mode *AI Ringkas Materi* aktif.\n\nSilakan kirim file PDF atau DOCX untuk diringkas.' });   
             return;
         }
+        if (userMessage === '/mode websearch') {
+            setMode(sender, 'websearch');
+            userConversations[sender] = [];
+            await sock.sendMessage(sender, { text: '🌐 Mode *Web Search* aktif.\n\nKetikkan apa yang ingin kamu cari.\nContoh:\n• Berita AI hari ini\n• Loker cybersecurity 2026\n\nnUntuk kembali ke mode chatbot, ketik *`/mode chatbot`*.'
+    });
+    return;
+}
         if (userMessage === '/mode photoeditor') {
             setMode(sender, 'photoeditor');
             await sock.sendMessage(sender, {
@@ -486,6 +507,107 @@ ${parsed.text}`
             }
             return;
         }
+
+
+// Mode Web Search
+const WEBSEARCH_SYSTEM = {
+    role: "system",
+    content: `
+Kamu adalah AI Web Search Assistant.
+Tugas kamu:
+- Mencari informasi terbaru dari internet
+- Menjawab berdasarkan hasil web search
+- Jika user berkata "yang lain", "yang terbaru", "yang 2026",
+  kamu HARUS melanjutkan konteks pencarian sebelumnya.
+- Jangan mengarang.
+- Jawaban harus rapi dan informatif.
+`
+};
+
+if (currentMode === 'websearch') {
+    try {
+        let conversation = getConversation(sender);
+
+        // inject system prompt sekali saja
+        if (conversation.length === 0) {
+            conversation.push(WEBSEARCH_SYSTEM);
+        }
+
+        conversation.push({
+            role: "user",
+            content: userMessage
+        });
+
+        await sock.sendMessage(sender, { text: '🔎 Lagi gue cariin di web...' });
+
+        const response = await axios.post(
+            'https://gen.pollinations.ai/v1/chat/completions',
+            {
+                model: 'gemini-search',
+                messages: conversation
+            },
+            {
+                headers: {
+                    Authorization: 'Bearer sk_SETrd7HFtdLzVVlBUGDCoFPg2taPkjCv',
+                    'Content-Type': 'application/json'
+                }
+            }
+        );
+
+        const msg = response.data.choices[0].message;
+
+        // === Ambil text utama
+        let answer = '';
+        if (msg.content_blocks) {
+            answer = msg.content_blocks
+                .filter(b => b.type === 'text')
+                .map(b => b.text)
+                .join('\n');
+        } else {
+            answer = msg.content || '';
+        }
+
+        // === Ambil sumber URL
+        const sources =
+            response.data.choices[0].groundingMetadata?.groundingChunks || [];
+
+        let sourceText = '';
+        if (sources.length > 0) {
+            sourceText = '\n\n*Link:*\n';
+            sources.forEach(s => {
+                const cleanUrl = s.web.uri.replace(
+                    'https://vertexaisearch.cloud.google.com/grounding-api-redirect/',
+                    'https://aisearch.exodusai.biz.id/'
+                );
+            // jobstreet.com:
+            // https://aisearch.exodusai.biz.id/
+            //
+            // situslain.com:
+            //    sourceText += `${cleanUrl} (${s.web.domain})\n`;
+                sourceText += `${s.web.domain}:\n${cleanUrl}\n\n`;
+            });
+        }
+
+        const finalText = answer + sourceText;
+
+        await sock.sendMessage(sender, { text: finalText });
+
+        // simpan context
+        conversation.push({
+            role: "assistant",
+            content: answer
+        });
+        saveConversation(sender, conversation);
+
+    } catch (err) {
+        console.error('[WebSearch Error]', err);
+        await sock.sendMessage(sender, {
+            text: '❌ Gagal melakukan pencarian web.'
+        });
+    }
+    return;
+}
+
 
         // === Default ChatBot Mode ===
         if (currentMode === 'chatbot') {
