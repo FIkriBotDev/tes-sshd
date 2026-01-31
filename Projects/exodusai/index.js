@@ -401,110 +401,42 @@ ${parsed.text}`
 
 
         // === Media (image/video/audio/document) ===
-        // === Media (image/video/audio/document) ===
-if (m.message.imageMessage || m.message.videoMessage || m.message.audioMessage || m.message.documentMessage) {
-    try {
-        // download media dari WhatsApp
-        const buffer = await downloadMediaMessage(
-            m,
-            'buffer',
-            {},
-            { logger: P({ level: 'silent' }), reuploadRequest: sock.updateMediaMessage }
-        );
+        if (m.message.imageMessage || m.message.videoMessage || m.message.audioMessage || m.message.documentMessage) {
+            try {
+                const buffer = await downloadMediaMessage(m, 'buffer', {}, { logger: P({ level: 'silent' }), reuploadRequest: sock.updateMediaMessage });
+                const uploadedFileUrl = await uploadFile(buffer);
 
-        // upload ke uploader ExodusAI
-        const uploadedFileUrl = await uploadFile(buffer);
+                let geminiPrompt = 'lihatlah gambar ini';
+                const caption = m.message.imageMessage?.caption || m.message.videoMessage?.caption || m.message.documentMessage?.caption;
+                if (caption) geminiPrompt = caption;
+                else if (userMessage) geminiPrompt = userMessage;
 
-        // ambil caption atau fallback
-        const caption =
-            m.message.imageMessage?.caption ||
-            m.message.videoMessage?.caption ||
-            m.message.documentMessage?.caption ||
-            'Tolong analisa gambar ini sesuai konteks percakapan sebelumnya';
+                const geminiApiUrl = `https://gemini-api.exodusai.biz.id/api/gemini-image?text=${encodeURIComponent(geminiPrompt)}&url=${encodeURIComponent(uploadedFileUrl)}`;
+                const geminiResponse = await fetch(geminiApiUrl).then(res => res.json());
 
-        // ambil conversation sebelumnya (tanpa diubah)
-        const visionMessages = [];
+                if (!geminiResponse.status || !geminiResponse.result) {
+                    await sock.sendMessage(sender, { text: 'Maaf, file tidak dapat dianalisis.' });
+                    return;
+                }
 
-        // masukkan context chat sebelumnya
-        for (const msg of conversation) {
-            if (typeof msg.content === 'string') {
-                visionMessages.push({
-                    role: msg.role,
-                    content: msg.content
+                const geminiResult = geminiResponse.result;
+                conversation.push({
+                    role: "user",
+                    content: `Berikut ini adalah text dari gemini result: \"${geminiResult}\". Sekarang kirimkan gemini result tersebut ke user dengan menggunakan bahasa kamu (bahasa gaul seperti yang kamu gunakan) dan tambahkan sedikit kata kata biar lebih kreatif. dan kirimkan text nya saja tanpa perlu semacam kamu kirim \"Ini adalah hasilnya\" cukup kirimkan text yang kamu ubah saja.`
                 });
-            }
-        }
 
-        // tambahkan message terakhir: text + image
-        visionMessages.push({
-            role: 'user',
-            content: [
-                { type: 'text', text: caption },
-                {
-                    type: 'image_url',
-                    image_url: {
-                        url: uploadedFileUrl
-                    }
-                }
-            ]
-        });
+                const chatbotResponse = await fetch('http://localhost:3000/post/rtist', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ messages: conversation }),
+                });
 
-        // kirim ke Pollinations Vision
-        const response = await axios.post(
-            'https://gen.pollinations.ai/v1/chat/completions',
-            {
-                model: 'openai',
-                messages: visionMessages
-            },
-            {
-                headers: {
-                    Authorization: 'Bearer YOUR_API_KEY',
-                    'Content-Type': 'application/json'
-                }
-            }
-        );
+                const chatbotData = await chatbotResponse.json();
+                let aiResponse = chatbotData.result;
 
-        const msg = response.data.choices[0].message;
-
-        // ambil text hasil vision
-        let visionAnswer = '';
-        if (msg.content_blocks) {
-            visionAnswer = msg.content_blocks
-                .filter(b => b.type === 'text')
-                .map(b => b.text)
-                .join('\n');
-        } else {
-            visionAnswer = msg.content || '';
-        }
-
-        if (!visionAnswer) {
-            await sock.sendMessage(sender, {
-                text: 'Maaf, gambar tidak dapat dianalisis.'
-            });
-            return;
-        }
-
-        // kirim langsung ke user
-        await sock.sendMessage(sender, {
-            text: visionAnswer
-        });
-
-        // simpan ke conversation agar nyambung
-        conversation.push({
-            role: 'assistant',
-            content: visionAnswer
-        });
-        saveConversation(sender, conversation);
-
-    } catch (err) {
-        console.error('Vision Media Error:', err);
-        await sock.sendMessage(sender, {
-            text: 'Terjadi kesalahan saat memproses media.'
-        });
-    }
-    return;
-}
-
+                aiResponse = aiResponse.replace(/https:\/\/localhost:/gi, 'http://localhost:');
+                aiResponse = aiResponse.replace(/https:\/\/pollinations\.ai/gi, 'https://www.exodusai.biz.id').trim();
+                aiResponse = fixUrls(aiResponse);
 
                 // === NEW: Deteksi & kirim file yang disertakan dalam response AI (DOCX, EXCEL, IMAGE, VIDEO)
                 try {
