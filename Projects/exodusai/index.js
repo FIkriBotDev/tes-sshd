@@ -426,7 +426,7 @@ if (
             m.message.imageMessage?.caption ||
             m.message.videoMessage?.caption ||
             m.message.documentMessage?.caption ||
-            'Tolong analisa gambar ini sesuai konteks percakapan sebelumnya';
+            'lihat gambar ini';
 
         // ambil conversation sebelumnya (tanpa diubah)
         const visionMessages = [];
