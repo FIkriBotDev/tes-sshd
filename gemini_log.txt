@@ -28202,3 +28202,9 @@ Response  : A = [2  4; -6  3], B = [1 -4; 5  2], C = [-2  2; 4  6]
 
 Jadi A + 2B - C = [6  -6; 0  1].
 
+
+[2026-02-01T10:27:10.121Z]
+Prompt    : mana jawaban yang benar dari soal pilihan ganda ini
+Image URL : https://uploader.exodusai.biz.id/tmp/3f196b-1769941619234.jpg
+Response  : Jawabannya seharusnya 4 bit per digit — BCD merepresentasikan setiap angka desimal dengan 4 bit. Karena pilihan 4 bit tidak ada, yang paling mendekati adalah (B) 8 bits: banyak implementasi memakai 1 byte untuk menyimpan BCD (unpacked = 1 digit per byte) atau menyimpan 2 digit per byte (packed BCD). Jadi pilih (B) jika harus memilih dari opsi yang diberikan.
+
