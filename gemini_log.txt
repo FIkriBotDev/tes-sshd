@@ -28190,3 +28190,15 @@ Yang bisa diperbaiki:
 
 Mau aku bantu buat mockup versi flat atau beberapa alternatif?
 
+
+[2026-02-01T10:24:14.826Z]
+Prompt    : bantu jawab soal ini
+Image URL : https://uploader.exodusai.biz.id/tmp/101469-1769941447447.jpg
+Response  : A = [2  4; -6  3], B = [1 -4; 5  2], C = [-2  2; 4  6]
+
+1. 2B = [2  -8; 10  4]
+2. A + 2B = [2+2   4+(-8);  -6+10   3+4] = [4  -4; 4  7]
+3. A + 2B - C = [4-(-2)   -4-2;  4-4   7-6] = [6  -6; 0  1]
+
+Jadi A + 2B - C = [6  -6; 0  1].
+
