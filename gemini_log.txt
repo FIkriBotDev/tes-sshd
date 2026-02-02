@@ -28245,3 +28245,47 @@ Di gambar terlihat rel, peron sepi, tangga menuju jembatan penyeberangan/gedung 
 
 Mau aku bantu apa dengan gambarnya? Contoh: transkripsi penuh, terjemahan ke bahasa lain, saran caption IG, atau mau aku coba cek jadwal kereta (sebutkan rutenya)?
 
+
+[2026-02-02T09:35:15.573Z]
+Prompt    : kok laptop gw ngeblank gini bro
+Image URL : https://uploader.exodusai.biz.id/tmp/59e21f-1770024894995.jpg
+Response  : Waduh, ngeselin ya. Dari gambarnya layar kayak masih nyala tapi ga nampilin isi (gradasi abu-abu), jadi kemungkinan besar masalah display/driver/boot, bukan layar mati total. Cobain langkah-langkah ini dulu—urut dari yang paling gampang ke yang agak teknis:
+
+1) Cek tanda hidup
+- Ada lampu power, kipas berputar, bunyi Windows chime atau suara HDD/SSD saat nyala?  
+- Tekan Caps Lock / Num Lock di keyboard — lampu indikator berubah nggak? Kalau berubah berarti OS masih respon.
+
+2) Reset cepat driver GPU (Windows)
+- Tekan Windows + Ctrl + Shift + B (akan kedip sebentar kalau berhasil). Ini merefresh driver grafis.
+
+3) Periksa kecerahan dan tombol fungsi
+- Tekan tombol Fn + tombol brightness (up/down). Kadang brightness tertekan sampai minimum.
+
+4) Sambungkan ke monitor/TV eksternal
+- Colok HDMI/DisplayPort. Kalau di eksternal muncul gambar, artinya layar laptop atau kabel LVDS/eDP dalam masalah. Kalau eksternal juga blank, kemungkinan GPU/OS boot problem.
+
+5) Boot ke BIOS / UEFI
+- Matikan, hidupkan lagi lalu tekan F2 / Del / F10 (tergantung merk) untuk masuk BIOS. Kalau BIOS tampil → hardware layar oke, masalah ada di OS/driver. Kalau BIOS juga blank → masalah hardware (layar kabel, panel, GPU, motherboard).
+
+6) Safe Mode / TTY
+- Windows: tahan Shift lalu klik Restart → Troubleshoot → Safe Mode.  
+- Linux: tekan Ctrl+Alt+F3 untuk pindah TTY, atau boot ulang masuk recovery.  
+Kalau Safe Mode tampil, reinstall driver grafis atau lakukan sistem restore.
+
+7) Power cycle dan cabut baterai (jika bisa)
+- Matikan, cabut charger, lepaskan baterai kalau model bisa dilepas, tahan tombol power 15-30 detik, pasang lagi dan nyalakan.
+
+8) Reseat RAM / SSD (lebih berani buka)
+- Kadang RAM/SSD longgar bikin boot stuck. Matikan, cabut baterai, buka back cover, cabut dan pasang ulang RAM/SSD. Lakukan antistatik (grounding).
+
+9) Reset NVRAM/SMC (Mac)
+- MacBook: reset NVRAM (Option+Cmd+P+R saat boot) dan SMC sesuai model.
+
+10) Kalau ada kerusakan fisik / cairan / pernah jatuh
+- Kalau sempat terkena cairan atau jatuh, bawain ke servis cepat. Kabel layar/connector sering rusak karena engsel lepas.
+
+Kapan ke teknisi:
+- BIOS juga blank, atau eksternal juga gak nampak gambar, atau kamu ga nyaman buka-buka hardware → bawa ke servis. Bisa jadi kabel layar, inverter (laptop lama), panel LCD, atau kerusakan chip GPU/motherboard.
+
+Kamu pake Windows/ Linux/ Mac? Merk dan model laptopnya apa? Bisa jelasin ada kejadian sebelumnya (jatuh/terkena air/update/drivers)? Biar aku bantu arahkan langkah yang paling cocok.
+
