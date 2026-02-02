@@ -28289,3 +28289,28 @@ Kapan ke teknisi:
 
 Kamu pake Windows/ Linux/ Mac? Merk dan model laptopnya apa? Bisa jelasin ada kejadian sebelumnya (jatuh/terkena air/update/drivers)? Biar aku bantu arahkan langkah yang paling cocok.
 
+
+[2026-02-02T12:35:51.616Z]
+Prompt    : Bro liat deh dia kok area bug? Di GTA sa
+Image URL : https://uploader.exodusai.biz.id/tmp/52fe4e-1770035733301.jpg
+Response  : Wkwk iya aneh bener, itu jelas bug grafis/terrain. Kemungkinan penyebab dan solusi singkat:
+
+Kemungkinan penyebab
+- File game/texture korup atau mod/texture pack yang nggak kompatibel (paling sering).
+- Masalah rendering GPU di device (driver/OS) sehingga terrain/texture nggak kebaca dengan benar.
+- Kekurangan memori/streaming texture gagal bikin muncul pola aneh waktu load area.
+- Versi game yang dimodifikasi atau instalasi rusak.
+
+Coba langkah ini dulu
+1. Tutup game lalu restart HP (simple tapi sering ngatasin texture glitch sementara).
+2. Save → keluar → buka lagi. Kalau save nggak ada, coba keluar dan masuk ulang area.
+3. Kalau pake mod/texture/ENB: matikan/revert ke versi original (hapus folder mod atau ganti file IMG yang asli).
+4. Turunin setting grafis (resolusi, filter, draw distance) lalu restart game.
+5. Clear cache data app (Settings > Apps > GTA SA > Clear cache) atau reinstall game kalau perlu.
+6. Update game dari Play Store/riil sumber, dan update OS kalau tersedia.
+
+Kalau masih muncul, kasih tahu:
+- Kamu pake versi original dari Play Store atau APK mod?
+- Merk & model HP + versi Android.
+Dengan itu aku coba bantu lebih spesifik biar nggak terus nge-bug.
+
