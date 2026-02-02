@@ -28332,3 +28332,22 @@ Beberapa variasi caption yang bisa dipakai:
 
 Mau aku bikin versi caption yang lebih singkat, sarkastik, atau pakai bahasa daerah?
 
+
+[2026-02-02T12:38:11.463Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/fc52e0-1770035881252.jpg
+Response  : Ya — itu jelas label/ikon “4K” berwarna kuning-hitam, tapi gambarnya sangat pixelated sehingga teks di atas (mungkin “VIDEO HD” atau yang serupa) hampir tak terbaca. Kesannya: file kecil atau sudah di-zoom/di-compress sampai pecah.
+
+Beberapa kemungkinan penyebab:
+- sumber gambarnya resolusi rendah,
+- sudah di-zoom dari versi kecil,
+- atau di-save berulang dengan kompresi lossy.
+
+Kalau mau memperbaiki atau membuat versi yang bersih, pilihan praktis:
+- Cari sumber asli beresolusi tinggi (reverse image search bisa membantu).
+- Rekonstruksi vektor: buka Illustrator/Inkscape, buat kotak kuning/tepi hitam, pakai font sans-serif tebal, ketik “4K” dan export PNG/SVG. Hasilnya tajam di semua ukuran.
+- Upscale pakai AI super-resolution: Topaz Gigapixel, ESRGAN/Real-ESRGAN, atau layanan online seperti Let’s Enhance / waifu2x. Mereka bisa memperbaiki tepi dan mengurangi blockiness, tapi tidak selalu “mencipta” detail yang hilang.
+- Perbaikan cepat: sedikit sharpening + noise reduction di Photoshop/GIMP kadang membantu tampilan.
+
+Mau aku coba buat ulang versi bersih untukmu (mis. PNG/SVG dengan warna dan ukuran tertentu)? Kalau ya, beri tahu ukuran atau gaya yang diinginkan.
+
