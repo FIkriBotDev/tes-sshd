@@ -28414,3 +28414,55 @@ Prompt    : jawab
 Image URL : https://uploader.exodusai.biz.id/tmp/671fd7-1770100026611.jpg
 Response  : B. 23 Desember.
 
+
+[2026-02-04T08:50:49.173Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/b4fd98-1770195031864.jpg
+Response  : Oke — saya lihat gambarnya. Ini ringkasan yang saya baca dari poster tersebut dan beberapa catatan kecil:
+
+Isi utama
+- Judul: CANDRA TOUR — Overlands Tour Explore
+- Durasi: 8 Hari 6 Malam
+- Tanggal yang tercantum: 19 Maret 2025 s.d. 26 Maret 2026 (ini kemungkinan salah ketik; mungkin maksudnya 26 Maret 2025)
+- Tujuan/wisata yang tercantum:
+  - Tanah Lot
+  - Penglipuran
+  - Kintamani
+  - Argo Kopi
+  - Big Garden Corner
+  - Pantai Pandawa
+  - Taman Bunga Edelweis
+  - Tirta Gangga
+  - Candi Kuning
+  - Joger
+  - Krisna
+  - Butik Dewata
+  - Oleh-oleh khas Kota Batu
+  - Oleh-oleh khas Semarang
+
+Biaya dan ketentuan
+- Biaya: Rp 3.050.000 per orang
+- DP: Rp 1.000.000 per orang
+
+Kumpul dan waktu
+- Lokasi kumpul: Dpn Cluster Benoa
+- Jam: 03.30 pagi
+
+Kontak
+- Hp/WA: 087774189592
+
+Fasilitas (sebagian teks tertutup oleh highlight, tapi yang terbaca:)
+- Bus AC (seat 2-2)
+- Hotel AC (1 kamar isi 2)
+- Tiket wisata
+- Ferry Bali–Jawa PP
+- Sarapan pagi di hotel
+- (bagian terhalang, kemungkinan termasuk air mineral dan lain-lain)
+
+Catatan/pertanyaan yang mungkin perlu dicek
+- Periksa tanggal karena tulisan s.d. sampai tahun berikutnya kemungkinan salah ketik.
+- Beberapa fasilitas tertutup highlight; kalau mau saya bisa bantu menajamkan/mengekstrak lebih banyak jika Anda unggah versi gambar yang lebih jelas.
+- Mau saya bantu: terjemahkan ke Bahasa Inggris, buat caption/iklan untuk WhatsApp/Instagram, atau cek susunan itinerary jadi lebih rapi?
+
+Mau saya lakukan apa selanjutnya dengan gambar ini?
+
