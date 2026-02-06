@@ -608,7 +608,7 @@ app.post('/post/rtist', async (req, res) => {
     }
 
     const payload = {
-      model: 'openai',
+      model: 'gemini',
       messages
     };
 
