@@ -1378,3 +1378,14 @@ b.send(JSON.stringify(a));c.classList.add("feedback-hidden");d.classList.remove(
   "status": 400
 }
 
+[2026-02-11T16:37:19.809Z] API Error:
+{
+  "success": false,
+  "error": {
+    "message": "azure-openai error: The image size is not allowed to be zero or larger than 20971520 bytes.",
+    "code": "BAD_REQUEST",
+    "timestamp": "2026-02-11T16:37:19.788Z"
+  },
+  "status": 400
+}
+
