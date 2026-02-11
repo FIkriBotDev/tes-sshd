@@ -28532,3 +28532,37 @@ Response  : Saya lihat kodenya — secara sintaksis sudah benar dan seharusnya b
 
 Beritahu masalah yang muncul (pesan error atau perilaku yang tidak diharapkan) kalau mau saya bantu perbaiki lebih lanjut.
 
+
+[2026-02-11T04:12:32.819Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/15efdf-1770783139346.jpg
+Response  : Ini brosur Universitas LIA — desain dominan biru-oranye dengan elemen foto mahasiswa dan layout tri-fold. Inti informasi yang terlihat:
+
+- Program studi:
+  - S1 Bahasa Inggris
+  - S1 Bahasa Jepang
+  - S1 Desain Komunikasi Visual
+  - S1 Informatika
+  - S1 Sistem Informasi
+  - S1 Bisnis Digital
+  - D3 Bahasa Inggris
+- Tagline: "When Technology Meets Language Expertise"
+- Keunggulan yang disorot: "Tanpa uang gedung" dan "Biaya dapat dicicil"
+- Kontak & pendaftaran:
+  - Website: universitaslia.ac.id
+  - Link pendaftaran: pmb.universitaslia.ac.id (QR code juga tersedia)
+  - Nomor WA: 0858-8103-6948
+  - Alamat: Jl. Pengadegan Timur Raya No.3, Jakarta Selatan
+  - Ikon media sosial (Instagram, Facebook, TikTok, YouTube) tercantum dengan nama UNIVERSITAS LIA
+- Visual: logo UL / Universitas LIA, kontras warna kuat antara biru tua, oranye, dan putih.
+
+Saran singkat jika mau disempurnakan:
+- Perbesar QR dan beri teks ajakan jelas (contoh: "Scan untuk daftar sekarang") supaya mudah dipindai.
+- Tambahkan jam pendaftaran atau tenggat jika ada, serta kisaran biaya studi untuk transparansi.
+- Pastikan teks kontak cukup kontras agar mudah dibaca dari jarak jauh.
+- Sertakan link langsung ke profil media sosial (URL) agar audiens bisa follow dengan cepat.
+
+Kalau mau, aku bisa bantu:
+- membuat versi teks singkat untuk posting media sosial dari isi brosur,
+- atau menyusun email tanya-jawab yang bisa dikirim ke nomor/website pendaftaran. Mau yang mana?
+
