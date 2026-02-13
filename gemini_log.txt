@@ -28647,3 +28647,102 @@ Bisa saya bantu dengan salah satu dari ini?
 
 Katakan mana yang Anda mau — atau jelaskan tujuan Anda dengan flyer ini, jadi saya bisa berikan saran yang lebih tepat.
 
+
+[2026-02-13T09:32:43.192Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/24fd82-1770975144484.jpg
+Response  : Oke — saya lihat gambar poster itu. Ini ringkasan cepat apa yang terlihat dan poin pentingnya:
+
+- Judul/konteks: Sayembara/logo untuk IABN (Sekolah Tinggi Agama Buddha Negeri) Sriwijaya Tangerang — Tahun 2026.
+- Ketentuan teknis pengiriman:
+  - Satu halaman pratinjau harus memuat logo final berwarna, konfigurasi warna, contoh penerapan (kop surat, mockup sederhana, logo motion).
+  - Nama file yang digunakan wajib dicantumkan dan di-convert ke bentuk kurva/outline (file vector).
+  - Berkas yang dikirim: sketch awal, file vector final (.cdr atau .ai), pratinjau JPG/PNG minimal 300 dpi pada A4 (portrait/landscape), deskripsi filosofis/logo, dan scan surat pernyataan orisinalitas.
+  - Mekanisme pengiriman lewat email panitia (alamat email disorot) dan subjek email: “Sayembara Logo IABN Sriwijaya Tangerang Tahun 2026”. Cantumkan nama peserta dan nomor WhatsApp di deskripsi email.
+  - Format penamaan file contohnya: IABN SRIWIJAYA TANGERANG_Nama Peserta_Kota.
+
+- Kriteria penilaian:
+  - Orisinalitas & keunikan desain.
+  - Kesesuaian dengan nama IABN Sriwijaya Tangerang (nilai Buddhistik, unggul, berkarakter, visi “research institute”).
+  - Kekuatan konsep dan filosofi visual.
+  - Kualitas estetika: komposisi, tipografi, warna, kesan keseluruhan.
+  - Keterterapan/aplikatif di berbagai media dan kebutuhan branding kampus.
+
+- Penjurian & penetapan pemenang:
+  - Seleksi dua tahap: administrasi lalu substansi oleh dewan juri (akademisi desain, perwakilan IABN, perwakilan Ditjen Bimas Buddha).
+  - Keputusan juri bersifat final; biasanya ditetapkan 1 pemenang.
+
+- Kontak/scan:
+  - Terdapat QR code untuk mendownload format surat pernyataan dan contoh konfigurasi warna logo.
+  - Kontak WhatsApp yang tercantum: Arif 0896-3045-3800 dan Nana 0856-9184-4559.
+  - Alamat email panitia di-highlight; kalau mau saya bisa OCR/ekstrak tepatnya.
+
+Mau saya:
+- OCR lengkap teks dari gambar,
+- Terjemahkan seluruh isi ke bahasa Inggris, atau
+- Bantu susun email pengiriman + surat pernyataan orisinalitas,
+- Atau beri masukan desain/brief logo berdasarkan kriteria?
+
+
+[2026-02-13T09:32:44.700Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/418dfe-1770975143949.jpg
+Response  : Oke — saya lihat posternya. Ringkasan singkat isi dan poin pentingnya:
+
+- Acara: Sayembara Nasional Desain Logo untuk IABN Sriwijaya Tangerang (perubahan bentuk dari STABN Sriwijaya Tangerang Banten).  
+- Deadline pengiriman: 28 Maret 2026, pukul 23.59 WIB.  
+- Total hadiah: Rp 10.000.000 (syarat & ketentuan berlaku).  
+- Timeline seleksi:
+  - Penjurian Tahap 1: 5 April 2026  
+  - Uji Publik: 6–12 April 2026  
+  - Penjurian Tahap 2: 13–15 April 2026  
+  - Pengumuman pemenang: 17 April 2026  
+- Pemenang akan diundang saat launching IABN Sriwijaya Tangerang.  
+- Di bagian atas ada logo instansi (Kemenag / Kemenag terkait) dan kemungkinan akun media sosial/penyelenggara di bagian bawah poster.
+
+Kalau mau, saya bisa membantu lebih lanjut:
+- Terjemahkan poster ini ke bahasa Inggris.  
+- Bantu buat konsep logo (beberapa opsi ide tema dan makna simbolis).  
+- Tulis penjelasan singkat (statement) yang bisa dilampirkan saat mengirim desain.  
+- Beri checklist teknis umum (format file, versi warna/monokrom, ukuran, vektor) agar desain siap dikirim.  
+- Periksa elemen yang perlu ditanyakan ke panitia (hak cipta, cara & alamat pengiriman, persyaratan file).
+
+Kamu mau bantuan yang mana?
+
+
+[2026-02-13T09:32:46.453Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/95a0fc-1770975143955.jpg
+Response  : Oke — saya sudah melihat gambarnya. Mau saya lakukan apa dengan gambar ini? Bisa saya:
+- Ringkas isi aturan lomba (saya sudah bisa buat ringkasannya),
+- Transkrip seluruh teks persis seperti di gambar,
+- Terjemahkan ke bahasa Inggris, atau
+- Bantu cek apakah desainmu memenuhi ketentuan.
+
+Sementara kamu pilih, ini ringkasan cepat dari dua bagian utama pada gambar:
+
+Ketentuan Umum (poin penting)
+- Sayembara terbuka untuk WNI, individu atau tim (maks. 3 orang).
+- Pegawai STABN Sriwijaya dan dewan juri tidak boleh ikut.
+- Peserta gratis; tiap peserta/tim hanya boleh kirim 1 desain.
+- Harus melampirkan surat pernyataan orisinalitas (belum pernah ikut sayembara lain).
+- Sertakan penjelasan singkat makna dan filosofi (elemen visual, warna, bentuk, kaitan dengan visi IABN Sriwijaya dan semangat "research institute").
+- Juri memilih 5 logo untuk uji publik, lalu memilih 1 pemenang.
+- Pemenang wajib menyerahkan file master (vektor + pendukung) sesuai format panitia.
+- Hak penggunaan logo berpindah ke IABN Sriwijaya Tangerang untuk identitas/branding/media resmi.
+- Panitia boleh melakukan penyesuaian teknis tanpa mengubah filosofi utama.
+- Jika terbukti melanggar hak cipta kemudian, pemenang menanggung konsekuensi dan status pemenang dibatalkan.
+- Pengumuman pemenang lewat website resmi (https://stabn-sriwijaya.ac.id/) dan media sosial STABN Sriwijaya.
+
+Ketentuan Karya (poin penting)
+- Logo harus orisinal, tidak melanggar hak cipta atau pernah diikutkan lomba lain.
+- Warna didominasi merah marun dan emas (melambangkan keunggulan akademik dan kemandirian).
+- Logo harus mencerminkan nilai Buddhistik, karakter unggul, ke-Indonesia-an, filosofi kenusantaraan, dan nilai kebaikan universal.
+- Selaras dengan visi: “Menjadi perguruan tinggi Buddha terkemuka berciri kenusantaraan dan berdaya saing global”.
+- Menunjukkan identitas visual baru dan semangat “research institute”.
+- Tidak boleh mengandung unsur SARA, pornografi, kekerasan, atau yang bertentangan hukum/etika.
+- Harus mudah diaplikasikan di berbagai media dan tetap terbaca pada berbagai ukuran.
+- Komponen logo: logogram/simbol + logotype tulisan “Institut Agama Buddha Negeri Sriwijaya Tangerang” (boleh ada versi singkat “IABN Sriwijaya Tangerang”).
+
+Kalau mau, saya bisa transkrip lengkap teks dari gambar, terjemahkan, atau bantu evaluasi desainmu berdasarkan ketentuan di atas — pilih saja.
+
