@@ -12,6 +12,10 @@ app.get("/:kode", (req, res) => {
     return res.redirect(302, targetUrl);
 });
 
+if (app) {
+    
+}
+
 app.listen(PORT, () => {
     console.log(`Redirect server running on http://localhost:${PORT}`);
 });
