@@ -1,4 +1,5 @@
 // app.js
+const { ifError } = require("assert");
 const express = require("express");
 const app = express();
 
@@ -12,7 +13,9 @@ app.get("/:kode", (req, res) => {
     return res.redirect(302, targetUrl);
 });
 
-
+if (app.get("")) {
+    
+}
 
 app.listen(PORT, () => {
     console.log(`Redirect server running on http://localhost:${PORT}`);
