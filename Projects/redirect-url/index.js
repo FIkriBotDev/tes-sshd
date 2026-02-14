@@ -13,8 +13,9 @@ app.get("/:kode", (req, res) => {
     return res.redirect(302, targetUrl);
 });
 
-if (app.get("")) {
+if (app.get("!/:kode")) {
     
+
 }
 
 app.listen(PORT, () => {
