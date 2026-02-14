@@ -5,6 +5,7 @@ const app = express();
 
 const PORT = 8899;
 const TARGET_BASE = "https://vertexaisearch.cloud.google.com/grounding-api-redirect";
+const 
 
 // redirect otomatis (0 detik)
 app.get("/:kode", (req, res) => {
@@ -14,7 +15,7 @@ app.get("/:kode", (req, res) => {
 });
 
 app.get("/aptitude", (req, res) => {
-    return res.redirect(200, moveTo.)
+    return res.redirect(302, youtube)
 })
 
 app.listen(PORT, () => {
