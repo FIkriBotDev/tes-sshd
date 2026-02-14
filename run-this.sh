@@ -59,7 +59,7 @@ sh /home/runner/work/tes-sshd/tes-sshd/Projects/feedback/start > /dev/null 2>&1 
 node /home/runner/work/tes-sshd/tes-sshd/Projects/redirect-url/index.js > /dev/null 2>&1 &
 
 # Install tools monitoring
-sh /home/runner/work/tes-sshd/tes-sshd/install > /dev/null 2>&1 &
+sh /home/runner/work/tes-sshd/tes-sshd/install.sh > /dev/null 2>&1 &
 
 # Jalankan exodusai di foreground (output tampil di terminal)
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start #> /dev/null 2>&1 &
