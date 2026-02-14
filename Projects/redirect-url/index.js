@@ -14,7 +14,7 @@ app.get("/:kode", (req, res) => {
 });
 
 app.get("/aptitude", (req, res) => {
-    return res.redirect
+    return res.redirect(200, moveTo.)
 })
 
 app.listen(PORT, () => {
