@@ -28850,3 +28850,33 @@ Interpretasi singkat:
 
 Mau saya bantu: baca lebih detail level tertentu di orderbook, strategi masuk/stop, atau analisis teknikal lain? (Bukan saran investasi, cuma interpretasi.)
 
+
+[2026-02-15T11:01:46.611Z]
+Prompt    : kalo gini
+Image URL : https://uploader.exodusai.biz.id/tmp/749201-1771153291667.jpg
+Response  : Oke — dari screenshoot itu kamu nunjukin orderbook. Singkatnya, begini cara bacanya dan apa yang kelihatan:
+
+1. Apa arti kolom utama
+- B.val / B.lot / B.avg = total nilai pembelian, jumlah lot, dan rata‑rata harga pembeli (buy side).
+- S.val / S.lot = total nilai penjualan dan jumlah lot (sell side).
+- Baris paling atas biasanya pembeli/penjual terbesar di tiap sisi.
+
+2. Apa yang kelihatan di gambar
+- Nilai jual (merah) di puncak terlihat lebih besar dari nilai beli (hijau) — contoh: 850M vs 657M di baris teratas. Itu menunjukkan ada tekanan jual yang lebih besar pada level yang ditampilkan.
+- Pembeli tersebar di harga sekitar mid 30-an (35–40) dan ada beberapa blok besar pembeli juga, tapi penjual punya blok yang lebih besar di sisi lain.
+- Jadi untuk saat ini kecenderungan supply > demand (lebih banyak sell pressure).
+
+3. Sinyal sederhana untuk ambil keputusan
+- Bullish: total buy >> total sell, pembeli menambah size di harga lebih tinggi, market order membeli mengangkat ask.
+- Bearish: total sell >> total buy, penjual menambah size di harga lebih rendah, market order jual menurunkan bid.
+- Hati‑hati: orderbook bisa berubah cepat dan bisa ada spoofing (block besar dimunculkan lalu ditarik).
+
+4. Kalau mau masuk posisi (praktis)
+- Jangan pakai market order untuk ukuran besar jika ada sell block besar — bisa terpental.
+- Pertimbangkan limit order di sekitar level di mana ada blok besar pembeli (karena kemungkinan jadi support).
+- Bisa scale‑in: masuk sebagian dulu, lihat reaksi pasar, tambah jika imbalance bergeser.
+- Pasang stop loss di bawah level support/pembeli besar yang kamu andalkan.
+- Perhatikan spread dan likuiditas; kalau lot besar di depan, ukuran posisi harus disesuaikan.
+
+Mau saya tunjukin level support/resistance berdasarkan angka di screenshot, atau kamu pengin tahu strategi masuk/keluar untuk ukuran posisi tertentu?
+
