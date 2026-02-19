@@ -1518,3 +1518,18 @@ b.send(JSON.stringify(a));c.classList.add("feedback-hidden");d.classList.remove(
   "status": 500
 }
 
+[2026-02-19T22:08:43.537Z] API Error:
+{
+  "success": false,
+  "error": {
+    "message": "createBaseErrorResponse is not defined",
+    "code": "INTERNAL_ERROR",
+    "timestamp": "2026-02-19T22:08:43.519Z",
+    "details": {
+      "name": "ReferenceError",
+      "stack": "ReferenceError: createBaseErrorResponse is not defined\n    at handleError (assets/worker-entry-CT4ec4cU.js:59010:23)\n    at dispatch (assets/worker-entry-CT4ec4cU.js:856:25)\n    at async assets/worker-entry-CT4ec4cU.js:63415:3\n    at async dispatch (assets/worker-entry-CT4ec4cU.js:852:17)\n    at async assets/worker-entry-CT4ec4cU.js:62602:5\n    at async dispatch (assets/worker-entry-CT4ec4cU.js:852:17)\n    at async assets/worker-entry-CT4ec4cU.js:58219:12\n    at async dispatch (assets/worker-entry-CT4ec4cU.js:852:17)\n    at async middleware (assets/worker-entry-CT4ec4cU.js:58916:5)\n    at async dispatch (assets/worker-entry-CT4ec4cU.js:852:17)"
+    }
+  },
+  "status": 500
+}
+
