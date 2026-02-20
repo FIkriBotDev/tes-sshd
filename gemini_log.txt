@@ -29126,3 +29126,66 @@ Kalau mau, saya bisa:
 - Membuat daftar pertanyaan yang bisa diajukan ke pihak berwenang.
 - Membantu menulis pesan bantuan atau laporan singkat.
 
+
+[2026-02-20T12:39:49.677Z]
+Prompt    : Webinar dulu kita
+Image URL : https://uploader.exodusai.biz.id/tmp/f70543-1771591171016.jpg
+Response  : Sip — kalau mau langsung gelar webinar, ini ringkasan plus materi promosi dan rundown siap pakai dari poster yang kamu kirim:
+
+Ringkasan acara
+- Judul: Menggagas Pendidikan Buddhis Masa Depan: Prospek dan Tantangan
+- Program: Knowledge Sharing & Sosialisasi Program RPL
+- Kerja sama: STABN Sriwijaya & PD MAGABUDHI Provinsi Banten
+- Pembicara: Dr. Li. Edi Ramawijaya Putra, M.Pd (Ketua STABN Sriwijaya)
+- Keynote: Pdt. Sima Budy, S.Dt.B., M.Pd. (Ketua PD MAGABUDHI Provinsi Banten)
+- Hari/tanggal: Selasa, 24 Februari 2026
+- Waktu: 19.00–21.00 WIB
+- Zoom Meeting ID: 8932 8282 133
+- Kode Sandi: SosRPL
+- Penyelenggara: Sekolah Tinggi Agama Buddha Negeri Sriwijaya (Tangerang, Banten)
+
+Contoh teks promosi (pilih sesuai platform)
+- Instagram (caption singkat):
+  Yuk ikut webinar “Menggagas Pendidikan Buddhis Masa Depan: Prospek dan Tantangan” — Selasa, 24 Feb 2026, 19.00–21.00 WIB. Zoom ID: 8932 8282 133 | Kode: SosRPL. Pembicara & keynote dari tokoh pendidikan Buddhis. Jangan lewatkan!
+
+- Facebook / Grup WA (lebih lengkap):
+  Kami mengundang semua praktisi, akademisi, dan peminat pendidikan Buddhis untuk bergabung dalam Knowledge Sharing & Sosialisasi Program RPL: “Menggagas Pendidikan Buddhis Masa Depan: Prospek dan Tantangan”. 
+  Waktu: Selasa, 24 Februari 2026, pukul 19.00–21.00 WIB.
+  Pembicara: Dr. Li. Edi Ramawijaya Putra, M.Pd (Ketua STABN Sriwijaya) dan Keynote: Pdt. Sima Budy, S.Dt.B., M.Pd. (Ketua PD MAGABUDHI Provinsi Banten).
+  Zoom: ID 8932 8282 133 | Kode: SosRPL.
+  Share ke teman yang tertarik — tempat terbuka untuk umum.
+
+- Tweet / X:
+  Webinar: “Menggagas Pendidikan Buddhis Masa Depan” — 24 Feb 2026, 19.00 WIB. Zoom ID 8932 8282 133 | Pass: SosRPL. Join!
+
+Pesan pengingat H-1 dan H-0
+- H-1 (pagi): Reminder: Besok jam 19.00 WIB ada webinar “Menggagas Pendidikan Buddhis Masa Depan”. Simpan Zoom ID 8932 8282 133 & kode SosRPL.
+- H-0 (2 jam sebelum): Mulai persiapan: buka Zoom, cek koneksi, siapkan pertanyaan. Meeting 19.00 WIB — jangan telat!
+
+Rundown (sasaran 2 jam)
+- 18.45–19.00: Zoom open & registrasi peserta
+- 19.00–19.05: Pembukaan & sambutan singkat dari moderator
+- 19.05–19.25: Sambutan institusi/ketua penyelenggara
+- 19.25–20.00: Presentasi pembicara utama (Dr. Li. Edi…)
+- 20.00–20.25: Keynote speech (Pdt. Sima Budy…)
+- 20.25–20.50: Sesi tanya jawab (dikoordinasi moderator)
+- 20.50–21.00: Penutup dan info tindak lanjut (sertifikat, materi, kontak)
+
+Naskah pembukaan singkat untuk moderator
+- Salam, perkenalan singkat diri, tujuan acara, pengumuman teknis (kamera/mik mute, cara tanya: chat atau raise hand), perkenalan singkat pembicara, lalu dipersilakan sambutan.
+
+Tips teknis & operasional
+- Tes audio/video & share screen 30–45 menit sebelum mulai.
+- Siapkan dua akun Zoom (host + co-host) untuk menangani peserta/ breakout/hand-raising.
+- Siapkan slide pembuka (agenda, aturan tanya jawab, kontak panitia).
+- Rekam sesi jika mau dibagikan setelah acara; minta izin pembicara dulu.
+- Siapkan moderator yang memfilter pertanyaan (chat → ringkas → ajukan ke pembicara).
+- Siapkan kontak darurat panitia (WhatsApp) untuk peserta yang kesulitan join.
+
+Materi follow-up setelah acara
+- Kirim rekaman dan slide ke peserta lewat email/WA.
+- Bagikan link pendaftaran bila ada sertifikat.
+- Kumpulkan feedback singkat (Google Form) untuk evaluasi.
+
+Mau aku buat versi poster caption yang lebih “formal” atau template undangan email? Atau bantu susun pertanyaan panel/talk track untuk pembicara?
+
