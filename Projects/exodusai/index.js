@@ -1,4 +1,3 @@
-// === Versi Baileys dari WhatsApp Bot ===
 // Jangan nyolong script orang woy!
 const {
     default: makeWASocket,
