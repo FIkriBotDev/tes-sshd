@@ -1555,3 +1555,14 @@ b.send(JSON.stringify(a));c.classList.add("feedback-hidden");d.classList.remove(
   "status": 400
 }
 
+[2026-02-25T08:21:53.586Z] API Error:
+{
+  "success": false,
+  "error": {
+    "message": "azure-openai error: Invalid image data.",
+    "code": "BAD_REQUEST",
+    "timestamp": "2026-02-25T08:21:53.574Z"
+  },
+  "status": 400
+}
+
