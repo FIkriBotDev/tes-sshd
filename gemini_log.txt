@@ -29342,3 +29342,30 @@ Acara RPL (26 Feb) ditunda. Info jadwal baru segera diumumkan. Simpan link Zoom 
 
 Mau saya isi template nomor 2 dengan tanggal & jam pengganti sekarang juga, atau buat versi poster/graphic yang sudah diperbarui untuk disebarluaskan?
 
+
+[2026-02-26T03:25:32.333Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/0b11cf-1772076319709.jpg
+Response  : Ini poster promosi untuk sekolah Dhammasekha yang dikeluarkan oleh Kemenag (Direktorat Jenderal Bimas Buddha). Intinya:
+
+- Judul besar: "Ayo bersekolah di DHAMMASEKHA"
+- Penjelasan singkat: Dhammasekha adalah satuan pendidikan keagamaan Buddha yang diselenggarakan dalam jalur pendidikan formal.
+- Jenjang pendidikan yang ditawarkan:
+  - Nava Dhammasekha (PAUD)
+  - Mula Dhammasekha (SD)
+  - Muda Dhammasekha (SMP)
+  - Uttama Dhammasekha (SMA)
+- Keunggulan yang dicantumkan:
+  - Legal: setara dengan jenjang PAUD/SD/SMP/SMA umum
+  - Fleksibel: lulusan bisa melanjutkan ke sekolah/universitas umum
+  - Spesifik: porsi pendalaman Dhamma lebih intensif dibanding sekolah umum
+- Visual: latar gedung bergaya resmi dengan patung Buddha dan kolam air mancur, serta anak-anak berpakaian seragam sekolah berjalan/berlari menuju gedung; ada bendera Merah Putih di kanan atas.
+- Logo dan kanal resmi: logo Kemenag, logo inisiatif lain (mis. Kemenag Berdampak / Pusaka), alamat web bimasbuddha.kemenag.go.id, nomor WhatsApp layanan (081110011809), dan akun media sosial (@bimas_buddha, Bimas Buddha, ditjenbimasbuddha).
+- Slogan akhir: "Semangat Dhammasekha cetak generasi Buddhis yang Cerdas, Tumbuh, dan Bersusila!"
+
+Jika ingin mendaftar atau mencari info lebih lanjut:
+- Kunjungi bimasbuddha.kemenag.go.id atau hubungi nomor WhatsApp yang tertera untuk menanyakan syarat pendaftaran, lokasi sekolah terdekat, kurikulum, dan akreditasi.
+- Tanyakan juga tata cara pengakuan ijazah bila berencana pindah ke sekolah umum atau melanjutkan ke perguruan tinggi.
+
+Mau aku bantu susun pesan singkat (WhatsApp) untuk menanyakan pendaftaran ke layanan itu?
+
