@@ -29537,3 +29537,21 @@ Pertimbangan privasi:
 
 Mau aku bantu dengan hal spesifik? Contoh: menghitung jumlah kotak peserta, nge-crop bagian tertentu, membuat template pengumuman untuk peserta, atau menyusun agenda singkat untuk pertemuan besar ini.
 
+
+[2026-02-26T12:50:05.743Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/d5099f-1772110190590.jpg
+Response  : Berikut ringkasan dan info penting dari poster acara itu:
+
+- Judul: Knowledge Sharing & Sosialisasi Program RPL — Menggagas Pendidikan Buddhis Masa Depan: Prospek dan Tantangan
+- Penyelenggara: atas MoU antara STABN Sriwijaya dan PD MAGABUDHI Provinsi Banten (tercantum nomor MoU pada poster)
+- Pembicara: perwakilan dari STABN Sriwijaya (ketua) sebagai pembicara utama, dan ketua PD MAGABUDHI Provinsi Banten sebagai keynote
+- Tanggal & waktu: Kamis, 26 Februari 2026 — 19.00 s.d. 21.00 WIB
+- Platform: Zoom Meeting
+  - ID Rapat: 894 0255 9836
+  - Kode Sandi: SosRPL
+- Logo/afiliasi yang terlihat: Kemenag, MAGABUDHI, Pusaka, STABN Sriwijaya
+- Di bagian bawah terdapat nama/akun media sosial STABN Sriwijaya untuk kontak/ikuti
+
+Mau aku buatkan versi pengumuman singkat untuk WA/Instagram dari info ini, atau langsung format teks yang bisa kamu tempel ke kalender (ICS)?
+
