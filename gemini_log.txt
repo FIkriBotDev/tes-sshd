@@ -29369,3 +29369,41 @@ Jika ingin mendaftar atau mencari info lebih lanjut:
 
 Mau aku bantu susun pesan singkat (WhatsApp) untuk menanyakan pendaftaran ke layanan itu?
 
+
+[2026-02-26T03:37:36.567Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/3dbd91-1772077041044.jpg
+Response  : Sudah saya lihat. Mau saya bantu apa — ringkasan, terjemahan ke Inggris, transkrip teks lengkap, atau cek informasi pendaftaran? Kalau ingin langsung, ini rangkuman cepat dari poster:
+
+- Acara: Kursus Dasar Buddha Dhamma  
+- Tanggal: 08 & 15 Maret 2026  
+- Waktu:  
+  - Hari pertama: 12.00–18.00 WIB  
+  - Hari kedua: 12.00–19.30 WIB (jika ikut Visuddhi)  
+- Topik (beberapa pembicara tercantum):  
+  - Empat Kebenaran Mulia dan Jalan Mulia Berunsur Delapan (PMy. Andi Harjanto ST)  
+  - Sila dalam Agama Buddha (Upc. Tan Yuliana)  
+  - Riwayat Hidup Buddha Gautama (PMd. Haresh Moolchand)  
+  - Ketuhanan Yang Maha Esa (Pdt. Dharma Kumara Widya)  
+  - Hukum Kamma dan Punabbhava (PMy. Andhy Kusuma)  
+  - Lambang-lambang, ungkapan dan aspek sosial dalam agama Buddha (Upc. Juliani)  
+  - Pali Wacana (Bhikkhu Sangha)  
+  - Visuddhi Upasaka dan Upasika oleh Bhikkhu Sangha
+
+- Biaya pendaftaran: Rp 100.008,- per peserta  
+- Pembayaran: BCA 3910318135 a.n. Magabudhi Jakarta Pusat (kode 08 contoh: Rp. 100.008)  
+- Lokasi: Wisma Narada Lt. 5, Vihara Jakarta Dhammacakka Jaya  
+- Kontak/Informasi & Pendaftaran:  
+  - PMd. Ariaguna N Ma’mur: 0813 1781 5255  
+  - Miming Humas VJDJ: 0898 8370 511  
+- Catatan pakaian: Atasan putih (kemeja/kaos berkerah) & bawahan hitam  
+- Ada QR code untuk link pendaftaran di poster
+
+Kalau mau, saya bisa:
+- Menuliskan teks poster utuh sebagai transkrip,
+- Terjemahkan ke bahasa Inggris,
+- Bantu susun pesan pendaftaran/konfirmasi ke panitia,
+- Atau bantu buat entri kalender dengan detail acara.
+
+Katakan pilihanmu.
+
