@@ -1,5 +1,5 @@
 # Declaring and assigning value to constants
-PI = 3.14
+'''PI = 3.14
 GRAVITY = 9.8
 print(PI)
 
@@ -20,7 +20,7 @@ print(b,c,d)
 
 # Assigning same value to multiple variable
 b = c = d = 5
-print(b,c,d)
+print(b,c,d)'''
 
 nilai_mtk, nilai_bhs, nilai_praktikum = 89,90,95
 print(nilai_mtk,nilai_bhs,nilai_praktikum)
