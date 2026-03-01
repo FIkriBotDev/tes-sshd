@@ -21,3 +21,4 @@ print(b,c,d)
 # Assigning same value to multiple variable
 b = c = d = 5
 print(b,c,d)
+
