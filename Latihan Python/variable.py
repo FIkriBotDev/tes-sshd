@@ -22,4 +22,5 @@ print(b,c,d)
 b = c = d = 5
 print(b,c,d)'''
 
-nilai_mtk, nilai_bhs, nilai_
+nilai_mtk, nilai_bhs, nilai_agama = 89, 95, 90
+nilai_bhs = 
