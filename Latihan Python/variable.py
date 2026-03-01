@@ -1,3 +1,3 @@
 PI = 3.14
 GRAVITY = 9.8
-print(""GRAVITY * PI)
+print("GRAVITY * PI = " +GRAVITY * PI)
