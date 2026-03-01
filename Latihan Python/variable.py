@@ -13,3 +13,6 @@ print(a)
 
 a = 100
 print(a)
+
+# Assigning Multiple values to a variable
+b, c, d     
