@@ -8,3 +8,8 @@ a = "Apple"
 print(a)
 
 # Changing value of a variable
+a = "Avocado"
+print(a)
+
+a = 100
+print(a)
