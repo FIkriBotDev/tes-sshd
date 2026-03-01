@@ -25,4 +25,5 @@ print(b,c,d)
 nilai_mtk, nilai_bhs, nilai_praktikum = 89,90,95
 print(nilai_mtk,nilai_bhs,nilai_praktikum)
 
-nilai_mtk = nilai_bhs = nil
+nilai_mtk = nilai_bhs = nilai_praktikum
+print(nilai_bhs)
