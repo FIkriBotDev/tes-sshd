@@ -22,3 +22,4 @@ print(b,c,d)
 b = c = d = 5
 print(b,c,d)
 
+nilai_mtk, nilai_bhs, nilai_praktikum
