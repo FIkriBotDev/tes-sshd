@@ -17,3 +17,7 @@ print(a)
 # Assigning Multiple values to a variable
 b, c, d = 1, 2.5, "Hello"
 print(b,c,d)
+
+# Assigning same value to multiple variable
+b = c = d = 5
+print(b)
