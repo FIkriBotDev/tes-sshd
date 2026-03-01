@@ -17,4 +17,3 @@ print(a)
 # Assigning Multiple values to a variable
 b, c, d = 1, 2.5, "Hello"
 print(b,c,d)
-print(d)
