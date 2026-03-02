@@ -1,4 +1,4 @@
-# Declaring and assigning value to constants
+'''# Declaring and assigning value to constants
 PI = 3.14
 GRAVITY = 9.8
 print(PI)
@@ -27,3 +27,5 @@ nilai_praktikum = nilai_bhs = nilai_agama = nilai_bhs
 nilai_bhs = nilai_mtk = nilai_praktikum = nilai_agama
 nilai_agama = nilai_bhs
 print(nilai_bhs)'''
+
+nilai_1, nilai_2 nilai_3 nilai_4 nilai_5 = 10
