@@ -29,4 +29,5 @@ nilai_agama = nilai_bhs
 print(nilai_bhs)'''
 
 nilai_1, nilai_2, nilai_3 nilai_4 nilai_5 = 80, 89, 90, 95, 78
-nilai_1 = nilai_1 
+nilai_1 = nilai_2 = nilai_3 = nilai_4 = nilai_5 = nilai_1 = nilai_5
+nilai_5 = nilai 
