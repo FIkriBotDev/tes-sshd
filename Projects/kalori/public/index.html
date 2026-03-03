@@ -139,7 +139,7 @@
     document.getElementById('resultContainer').classList.add('d-none');
 
     try {
-      const res = await axios.post('https://nutriscan.exodusai.biz.id//analyze', formData);
+      const res = await axios.post('https://nutriscan.exodusai.biz.id/analyze', formData);
       const data = res.data;
 
       document.getElementById('direkomendasikanAtauTidak').innerHTML =
