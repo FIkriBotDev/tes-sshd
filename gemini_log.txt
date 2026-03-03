@@ -29910,3 +29910,156 @@ Response  : {
   ]
 }
 
+
+[2026-03-03T02:11:46.704Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/58978a-1772503876910.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan untuk konsumsi rutin; boleh dikonsumsi sesekali sebagai pencuci mulut",
+    "alasan": "Donat pada gambar tampak berupa donat goreng berlapis glasir dan topping (cokelat, kacang/pistachio, glasir gula). Kandungan gula tambahan, lemak (termasuk lemak jenuh) dan karbohidrat halus relatif tinggi, sementara protein dan serat rendah — cocok sebagai makanan nikmat tetapi bukan pilihan bergizi harian."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "85 g (perkiraan 1 donat sedang)",
+    "jumlahSajian": "1 donat (terlihat 3 pada piring, tiap satu porsi terpisah)",
+    "kalori": 340,
+    "protein": "5 g",
+    "proteinPersen": "6%",
+    "karbohidrat": "38 g",
+    "karbohidratPersen": "45%",
+    "gula": "18 g (termasuk glasir dan isian/topping)",
+    "serat": "1.5 g",
+    "lemakTotal": "20 g",
+    "lemakJenuh": "7 g",
+    "lemakTakJenuh": "13 g",
+    "lemakPersen": "53%",
+    "kolesterol": "35 mg",
+    "natrium": "320 mg",
+    "vitaminDanMineral": [
+      "Vitamin A (jejak, dari telur/susu dalam adonan atau glasir)",
+      "Vitamin B kompleks (B1, B2, B3, folat dalam jumlah kecil)",
+      "Vitamin E (jejak, dari kacang/topping)",
+      "Zat Besi (jejak)",
+      "Kalsium (jejak dari susu/glasir)",
+      "Magnesium (jejak, lebih terasa jika ada kacang)",
+      "Fosfor",
+      "Kalium (jejak)"
+    ]
+  },
+  "perbandinganAKG": [
+    {
+      "nama": "Kalori (dari rujukan 2000 kkal/hari)",
+      "persen": "17%"
+    },
+    {
+      "nama": "Gula (terhadap batas populer 50 g/hari)",
+      "persen": "36%"
+    },
+    {
+      "nama": "Lemak Jenuh (terhadap batas ~22 g/hari dari 10% energi)",
+      "persen": "32%"
+    },
+    {
+      "nama": "Natrium (terhadap 2000 mg/hari)",
+      "persen": "16%"
+    }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi — kontribusi gula tambahan signifikan, berisiko menaikkan gula darah dan asupan energi berlebih",
+    "Lemak": "sedang-tinggi — total lemak cukup tinggi, dengan porsi lemak jenuh yang perlu diperhatikan",
+    "KarbohidratHalus": "tinggi — tepung terigu halus dapat menyebabkan lonjakan glukosa",
+    "Serat": "rendah — kurang membantu kenyang dan regulasi gula darah",
+    "Alergen": "mengandung gluten, telur, susu, dan kemungkinan kacang (potensi alergen)"
+  },
+  "waktuKenyang": "1.5–2 jam (kenyang relatif singkat karena rendah protein/serat dan tinggi gula/karbohidrat halus)",
+  "frekuensiKonsumsi": "Sebaiknya sebagai camilan sesekali (mis. 1x/minggu atau lebih jarang) tergantung pola makan keseluruhan dan kebutuhan energi",
+  "ingredients": [
+    "Tepung terigu (gluten)",
+    "Gula pasir / gula halus (glasir)",
+    "Minyak sayur / lemak (untuk menggoreng atau dalam adonan)",
+    "Telur",
+    "Susu atau produk susu (untuk adonan/glasir)",
+    "Ragi atau bahan pengembang",
+    "Garam",
+    "Cokelat / gula cokelat (glasir)",
+    "Matcha atau pewarna/pasta untuk glasir hijau",
+    "Kacang cincang / pistachio (topping)",
+    "Pengemulsi / pengawet atau perasa tambahan (opsional, pada produk komersial)"
+  ],
+  "tipsSehat": [
+    "Batasi porsi: makan setengah donat atau bagi bersama untuk mengurangi kalori dan gula.",
+    "Padukan dengan sumber protein/serat (mis. yogurt rendah lemak atau segenggam kacang polos) untuk memperlambat penyerapan gula dan menambah kenyang.",
+    "Pilih versi dipanggang (baked) daripada digoreng bila tersedia untuk mengurangi lemak total.",
+    "Kurangi atau tinggalkan glasir tebal; minta lebih sedikit topping gula atau ganti dengan buah segar.",
+    "Jika membuat sendiri: gunakan tepung gandum sebagian, kurangi gula resep, dan panggang bukan menggoreng."
+  ],
+  "alternatif": [
+    "Roti gandum utuh panggang dengan selai kacang alami dan irisan pisang",
+    "Yogurt Yunani rendah lemak dengan buah segar dan sedikit granola",
+    "Pancake pisang dari tepung gandum utuh tanpa tambahan gula berlebih",
+    "Bar oat buatan rumah (rendah gula) dengan kacang dan biji-bijian",
+    "Buah segar dengan segenggam kacang untuk camilan manis dan mengenyangkan"
+  ]
+}
+
