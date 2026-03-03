@@ -29610,3 +29610,9 @@ Saran (jika mau dicoba):
 
 Mau saya bantu pilih kombinasi warna lain, ide hijab, atau edit ringan foto (mis. pencahayaan/kontras)?
 
+
+[2026-03-03T01:39:56.307Z]
+Prompt    : ini mobil apa?
+Image URL : https://uploader.exodusai.biz.id/tmp/1f822e-1772501987085.jpg
+Response  : Itu Lamborghini Sián FKP 37 — supercar hybrid limited‑edition dari Lamborghini. Perpaduan V12 plus sistem elektrik, tenaga gabungan sekitar 819 PS, akselerasi ~0–100 km/jam di kisaran 2,8 detik dan produksi sangat terbatas. Mau tahu lebih detail (tahun, spesifikasi, atau berapa harganya)?
+
