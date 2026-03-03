@@ -30373,3 +30373,140 @@ Response  : {
   ]
 }
 
+
+[2026-03-03T03:15:49.866Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/183d2b-1772507713097.webp
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan sebagai makanan harian (boleh sebagai sesekali)",
+    "alasan": "Berdasarkan tampilan, ini terlihat seperti donut cokelat berlapis glasir — makanan yang padat energi, tinggi gula tambahan dan lemak jenuh, serta rendah serat dan protein. Cocok sebagai camilan sesekali tetapi kurang ideal untuk konsumsi rutin."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "≈75 g (perkiraan satu donut sedang)",
+    "jumlahSajian": "1 donut",
+    "kalori": 320,
+    "protein": "4 g",
+    "proteinPersen": "5% (persentase dari total kalori)",
+    "karbohidrat": "38 g",
+    "karbohidratPersen": "47.5%",
+    "gula": "18 g (tambahannya terutama dari glasir)",
+    "serat": "1 g",
+    "lemakTotal": "16 g",
+    "lemakJenuh": "7 g",
+    "lemakTakJenuh": "9 g",
+    "lemakPersen": "45%",
+    "kolesterol": "30 mg",
+    "natrium": "350 mg",
+    "vitaminDanMineral": [
+      "Kalsium (kecil)",
+      "Zat besi (kecil)",
+      "Kalium (kecil)",
+      "Vitamin B (jejak: B1/B2/B3/folat, tergantung bahan)",
+      "Vitamin A (jejak, jika ada susu/mentega)"
+    ]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori (dari 2000 kkal/hari)", "persen": "≈16%" },
+    { "nama": "Protein (RDI ≈50 g)", "persen": "≈8%" },
+    { "nama": "Gula (batas bebas gula ≈50 g/hari WHO)", "persen": "≈36%" },
+    { "nama": "Serat (RDI ≈25 g)", "persen": "≈4%" },
+    { "nama": "Natrium (batas <2000 mg)", "persen": "≈17.5%" },
+    { "nama": "Lemak jenuh (batas ≈22 g)", "persen": "≈32%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi (menambah risiko karies gigi, lonjakan glukosa)",
+    "LemakJenuh": "sedang-tinggi (berdampak pada profil lipid jika sering dikonsumsi)",
+    "Kalori": "sedang-tinggi (mudah menyebabkan kelebihan energi bila sering dikonsumsi)",
+    "Serat": "rendah (tidak menambah rasa kenyang lama atau mendukung pencernaan)",
+    "Natrium": "sedang (bergantung resep/penambahan garam)"
+  },
+  "waktuKenyang": "1.5-2.5 jam (karbohidrat halus + gula menyebabkan kenyang singkat dan penurunan energi cepat)",
+  "frekuensiKonsumsi": "Sesekali — idealnya ≤1x/minggu sebagai camilan; bila tujuan kebugaran/penurunan berat, kurangi frekuensi lebih jauh",
+  "ingredients": [
+    "Tepung terigu (refined wheat flour)",
+    "Gula pasir dan/atau sirup glukosa",
+    "Minyak sayur/palm oil atau margarin",
+    "Telur",
+    "Susu atau susu bubuk",
+    "Ragi atau bahan pengembang",
+    "Garam",
+    "Glasir cokelat (gula, cocoa/cocoa powder, minyak, susu bubuk/lecithin sebagai emulsifier)",
+    "Pengemulsi/pengawet/additif (mono/diglycerides, perisa)"
+  ],
+  "tipsSehat": [
+    "Kurangi porsi: pilih setengah donut atau potong untuk mengurangi kalori dan gula.",
+    "Padukan dengan sumber protein/serat (mis. yoghurt tanpa gula, buah, atau segenggam kacang) untuk memperlambat penyerapan gula dan menambah kenyang.",
+    "Jika membuat sendiri: panggang bukan digoreng, gunakan tepung gandum utuh sebagian, kurangi gula pada adonan dan glasir, gunakan minyak tak jenuh (mis. minyak kanola) dan kurangi mentega.",
+    "Ganti glasir manis dengan lapisan tipis cokelat dark (70% cacao) untuk lemak lebih baik dan sedikit polifenol.",
+    "Perhatikan frekuensi: jadikan sebagai treat, bukan makanan rutin."
+  ],
+  "alternatif": [
+    "Roti gandum panggang dengan selai kacang alami dan irisan pisang (lebih banyak serat & protein)",
+    "Yoghurt Yunani tanpa gula + buah segar + sedikit granola (protein tinggi, serat lebih baik)",
+    "Muffin gandum utuh rendah gula atau oatmeal banana cookie buatan rumahan",
+    "Apel atau pear dengan 1 sdm selai kacang (kombinasi karbohidrat kompleks + lemak sehat + protein)"
+  ]
+}
+
