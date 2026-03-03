@@ -29616,3 +29616,141 @@ Prompt    : ini mobil apa?
 Image URL : https://uploader.exodusai.biz.id/tmp/1f822e-1772501987085.jpg
 Response  : Itu Lamborghini Sián FKP 37 — supercar hybrid limited‑edition dari Lamborghini. Perpaduan V12 plus sistem elektrik, tenaga gabungan sekitar 819 PS, akselerasi ~0–100 km/jam di kisaran 2,8 detik dan produksi sangat terbatas. Mau tahu lebih detail (tahun, spesifikasi, atau berapa harganya)?
 
+
+[2026-03-03T02:06:52.519Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/298a5f-1772503570395.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan untuk konsumsi rutin (boleh sebagai camilan sesekali)",
+    "alasan": "Donat bertabur topping mengandung kalori padat dari gula rafinasi, lemak (seringnya hasil menggoreng/mentega), dan sedikit serat/mikronutrien sehingga mudah meningkatkan asupan kalori, gula, dan lemak jenuh jika dikonsumsi sering."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "1 donat (~80 g)",
+    "jumlahSajian": "Terlihat 12 donat dalam kotak",
+    "kalori": 320,
+    "protein": "5 g",
+    "proteinPersen": "≈6%",
+    "karbohidrat": "38 g",
+    "karbohidratPersen": "≈48%",
+    "gula": "18 g (perkiraan, tergantung topping)",
+    "serat": "1.5 g",
+    "lemakTotal": "17 g",
+    "lemakJenuh": "6 g",
+    "lemakTakJenuh": "11 g (perkiraan: mono ≈7 g, poli ≈4 g)",
+    "lemakPersen": "≈48%",
+    "kolesterol": "40 mg",
+    "natrium": "300 mg",
+    "vitaminDanMineral": [
+      "Kalsium (kecil–sedikit dari susu/glasur)",
+      "Zat Besi (sedikit dari tepung diperkaya)",
+      "Vitamin B kompleks (trace dari tepung terfortifikasi)",
+      "Kalium (sedikit)",
+      "Vitamin C (jika ada selai buah sebagai topping, jumlah kecil)"
+    ]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori (dari 2000 kcal/hari)", "persen": "≈16%" },
+    { "nama": "Gula (dibanding batas WHO 50 g/hari)", "persen": "≈36%" },
+    { "nama": "Lemak Jenuh (dibanding batas ~22 g/hari)", "persen": "≈27%" },
+    { "nama": "Natrium (dari 2000 mg/hari)", "persen": "≈15%" },
+    { "nama": "Protein (dibanding kebutuhan ~50 g/hari)", "persen": "≈10%" },
+    { "nama": "Serat (dibanding kebutuhan ~25 g/hari)", "persen": "≈6%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi (mendekati >30% dari batas harian WHO pada 1 porsi)",
+    "LemakJenuh": "sedang-tinggi (menambah risiko kardiometabolik bila sering dikonsumsi)",
+    "Kalori": "padat energi — mudah menyebabkan surplus kalori",
+    "KarbohidratRefined": "tinggi (indeks glikemik/karbohidrat cepat naik)",
+    "SeratMikro": "rendah (sedikit serat dan mikronutrien dibandingkan makanan padat gizi)"
+  },
+  "waktuKenyang": "1.5–2 jam (kenyang cepat tetapi mudah lapar lagi karena gula dan karbohidrat cepat cerna)",
+  "frekuensiKonsumsi": "Sebaiknya sebagai treat: maksimal 1x/minggu untuk orang sehat; lebih jarang untuk yang berisiko (diabetes/obesitas/penyakit jantung).",
+  "ingredients": [
+    "Tepung terigu (sering diperkaya)",
+    "Gula pasir / sirup jagung / glukosa pada glasur",
+    "Minyak goreng atau mentega (lemak)",
+    "Telur",
+    "Susu atau bubuk susu",
+    "Ragi atau bahan pengembang (untuk donat goreng)",
+    "Topping: cokelat, gula glasir, selai buah, krim, sprinkles",
+    "Kacang iris (pada beberapa donat)",
+    "Pewarna / perisa tambahan, emulsifier, pengawet (pada produk komersial)"
+  ],
+  "tipsSehat": [
+    "Batasi porsi: makan setengah donat atau bagi dengan orang lain.",
+    "Pilih varian tanpa glasur tebal atau tanpa isi selai untuk mengurangi gula.",
+    "Gabungkan dengan sumber protein/serat (mis. segelas susu rendah lemak atau yoghurt + buah) untuk menambah rasa kenyang dan menurunkan lonjakan gula darah.",
+    "Jika membuat sendiri: panggang bukan digoreng, kurangi gula pada adonan dan glasir, gunakan tepung gandum utuh sebagian, dan gunakan minyak yang lebih sehat (minyak kanola) atau mentega lebih sedikit.",
+    "Hindari mengonsumsi bersama minuman manis (es kopi manis, soda) untuk mengurangi total asupan gula."
+  ],
+  "alternatif": [
+    "Yoghurt Yunani tawar dengan buah segar dan sedikit granola (lebih tinggi protein, serat lebih baik)",
+    "Oatmeal hangat dengan pisang dan kacang cincang (serat + lemak sehat)",
+    "Donat panggang buatan rumah dari tepung gandum utuh dan gula dikurangi",
+    "Roti gandum panggang dengan selai kacang alami dan irisan buah",
+    "Bar energi berasaskan kacang & biji tanpa gula tambahan berlebih"
+  ]
+}
+
