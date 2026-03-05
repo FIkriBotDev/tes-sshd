@@ -30804,3 +30804,31 @@ Kalau Anda ingin, saya bisa:
 - Menyusun caption untuk media sosial,
 - Atau mengekstrak link/nomor ke format yang mudah disimpan.
 
+
+[2026-03-05T00:34:29.802Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/388d67-1772670857563.jpg
+Response  : Terima kasih — saya sudah lihat gambarnya. Berikut ringkasan dan beberapa saran/opsi yang bisa saya bantu:
+
+Ringkasan iklan (dari gambar)
+- Lokasi: Cluster Benoa, Ruelia-C Blok W19-11
+- Tipe/Keadaan: Rumah minimalis modern, belum direnovasi (ori bawaan perumahan)
+- Kamar: 1 kamar tidur, 1 kamar mandi
+- Garasi: Tersedia (bawaan)
+- Luas tanah: 60 m2
+- Luas bangunan: 22 m2
+- Harga: Nego (siapa cepat dia dapat)
+- Kontak: ada nomor WA pada iklan (terlihat di gambar)
+
+Saya bisa bantu:
+- Menyalin atau menerjemahkan teks iklan ke Bahasa Inggris.
+- Menyusun pesan WhatsApp singkat dan sopan untuk menghubungi penjual (contoh siap pakai).
+- Memberi checklist pemeriksaan sebelum bertemu/menawar (dokumen, sertifikat, SHM/SHGB, IMB, pajak, kondisi bangunan).
+- Memberi tips menilai harga (butuh info lokasi detail, fasilitas sekitar, kondisi rumah, tahun bangun untuk perkiraan).
+- Merekomendasikan perbaikan kecil pada iklan agar lebih menarik (foto interior, sertakan harga, sertifikat, foto peta lokasi, ukuran tiap ruangan).
+
+Contoh pesan WA singkat (Indonesia) jika mau menghubungi:
+"Halo, saya tertarik dengan rumah di Cluster Benoa Ruelia-C Blok W19-11 yang diiklankan. Apakah rumah masih tersedia? Bisa minta info harga akhir, status sertifikat, dan jadwal untuk melihat rumah? Terima kasih."
+
+Mau saya lakukan yang mana dulu? (salin teks, terjemahkan, buat pesan WA lain, atau checklist pemeriksaan)
+
