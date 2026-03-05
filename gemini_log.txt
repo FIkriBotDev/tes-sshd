@@ -30832,3 +30832,159 @@ Contoh pesan WA singkat (Indonesia) jika mau menghubungi:
 
 Mau saya lakukan yang mana dulu? (salin teks, terjemahkan, buat pesan WA lain, atau checklist pemeriksaan)
 
+
+[2026-03-05T07:06:58.016Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/d06c07-1772694381188.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak untuk konsumsi rutin; direkomendasikan hanya sebagai sesekali (treat).",
+    "alasan": "Terlihat sebagai roti manis/bolen/roti isi cokelat dengan permukaan mengkilap dan taburan cokelat/kakao. Makanan ini tinggi karbohidrat rafinasi, gula dan lemak (termasuk lemak jenuh) sehingga cocok sebagai camilan sesekali, bukan bagian utama pola makan harian."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "≈110 g (perkiraan 1 buah/1 porsi pada gambar)",
+    "jumlahSajian": "1 (diperkirakan dari gambar)",
+    "kalori": 380,
+    "protein": "8 g",
+    "proteinPersen": "8.4%",
+    "karbohidrat": "52 g",
+    "karbohidratPersen": "54.7%",
+    "gula": "20 g",
+    "serat": "2 g",
+    "lemakTotal": "15 g",
+    "lemakJenuh": "5 g",
+    "lemakTakJenuh": "10 g",
+    "lemakPersen": "35.5%",
+    "kolesterol": "60 mg",
+    "natrium": "450 mg",
+    "vitaminDanMineral": [
+      "Vitamin B1 (tiamin) - sedikit",
+      "Vitamin B2 (riboflavin) - sedikit",
+      "Folat (B9) - sedikit",
+      "Vitamin A - sedikit",
+      "Kalsium - ≈60 mg",
+      "Zat besi - ≈2.5 mg",
+      "Kalium - ≈120 mg"
+    ]
+  },
+  "perbandinganAKG": [
+    {
+      "nama": "Kalori",
+      "persen": "≈19% (dari AKG 2000 kkal)"
+    },
+    {
+      "nama": "Gula (dibanding batas WHO ~50 g/hari)",
+      "persen": "≈40%"
+    },
+    {
+      "nama": "Protein (dari kebutuhan ≈50 g/hari)",
+      "persen": "≈16%"
+    },
+    {
+      "nama": "Serat (dari target ≈25 g/hari)",
+      "persen": "≈8%"
+    },
+    {
+      "nama": "Lemak jenuh (batas <22 g/hari)",
+      "persen": "≈23%"
+    },
+    {
+      "nama": "Natrium (dari batas ≈2000 mg/hari)",
+      "persen": "≈22.5%"
+    }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi (dapat berkontribusi pada kelebihan kalori dan fluktuasi gula darah)",
+    "Lemak": "sedang-tinggi (mengandung lemak jenuh; risiko untuk profil lipid jika sering dikonsumsi)",
+    "Karbohidrat rafinasi": "tinggi (rendah serat => cepat menaikkan gula darah)",
+    "Natrium": "sedang (menambah asupan garam jika sering dimakan)"
+  },
+  "waktuKenyang": "≈2–3 jam (tergantung individu dan apa yang dikonsumsi bersamaan)",
+  "frekuensiKonsumsi": "Sebagai treat: 1–3x/minggu; jika ada risiko metabolik (diabetes, dislipidemia, hipertensi) sebaiknya ≤1x/minggu atau jarang",
+  "ingredients": [
+    "Tepung terigu (rafinasi)",
+    "Gula pasir",
+    "Mentega/margarine/minyak",
+    "Telur",
+    "Susu atau susu bubuk",
+    "Ragi (yeast) atau pengembang",
+    "Cokelat/cocoa paste atau isian cokelat",
+    "Garam",
+    "Pengemulsi/penstabil atau pewarna/penambah kilap (opsional)"
+  ],
+  "tipsSehat": [
+    "Konsumsi porsi lebih kecil (potong separuh) untuk mengurangi kalori dan gula.",
+    "Padankan dengan sumber protein/serat (mis. yogurt plain atau buah segar) untuk menahan lapar lebih lama dan menurunkan lonjakan gula darah.",
+    "Pilih varian dengan isian dark chocolate minimal 70% cocoa atau kurangi sirup gula.",
+    "Jika membuat sendiri: ganti sebagian tepung putih dengan tepung gandum utuh, kurangi gula, gunakan minyak tak jenuh (minyak zaitun/kanola) atau mentega sedikit saja.",
+    "Hindari menambah selai gula atau sirup di atasnya."
+  ],
+  "alternatif": [
+    "Roti gandum utuh panggang isi pisang dan selai kacang (kaya serat & protein sehat).",
+    "Oatmeal dengan buah dan sedikit bubuk kakao (rendah gula, tinggi serat).",
+    "Yogurt Greek + buah + sedikit dark chocolate cincang (protein lebih tinggi, gula lebih rendah).",
+    "Roti isi kacang-kacangan dan potongan buah tanpa tambahan gula."
+  ]
+}
+
