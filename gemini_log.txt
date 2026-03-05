@@ -30784,3 +30784,23 @@ Response  : Berikut yang bisa saya sampaikan tentang gambar ini (tanpa menyebut 
 
 Butuh terjemahan teks ke bahasa Inggris atau file siap cetak/versi desain ulang? Saya bisa bantu.
 
+
+[2026-03-05T00:16:59.669Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/a7c04a-1772669804119.jpg
+Response  : Berikut ringkasan informasi dari poster tersebut:
+
+- Acara: Kuliah Umum — "From Degree to Employability: Reorientasi Pendidikan Tinggi dalam Membangun Kompetensi Profesional di Era Transformasi Digital"
+- Penyelenggara: Universitas LIA
+- Hari/tanggal: Rabu, 4 Maret 2026
+- Waktu: 16.00 WIB — Selesai
+- Pendaftaran/akses: bit.ly/KuliahumumUL (tersedia juga QR code untuk dipindai)
+- Informasi lanjut hubungi: 0811 1980 4936
+- Website: universitaslia.edunitas.com
+- Status pembicara: ada pemateri yang tercantum pada poster
+
+Kalau Anda ingin, saya bisa:
+- Membuat teks undangan singkat berdasarkan poster,
+- Menyusun caption untuk media sosial,
+- Atau mengekstrak link/nomor ke format yang mudah disimpan.
+
