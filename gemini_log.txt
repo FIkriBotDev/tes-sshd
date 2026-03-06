@@ -31020,3 +31020,158 @@ Hashtags (optional)
 
 Tell me which caption style you prefer or if you want it tailored (more formal, poetic, religious, short for Instagram/Twitter, etc.).
 
+
+[2026-03-06T06:21:43.710Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/3ed8e3-1772778057506.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan (dengan catatan)",
+    "alasan": "Berdasarkan penampakan, makanan tampak seperti bubur/oatmeal berbasis gandum (oat) yang dimasak dengan cairan (susu atau air). Oat adalah sumber karbohidrat kompleks dan serat larut (beta-glucan) yang baik untuk kesehatan jantung dan kenyang. Namun kesehatan akhir bergantung pada bahan tambahan: jika menggunakan susu rendah lemak tanpa gula tambahan -> direkomendasikan; jika ditambah gula/krim/mentega banyak atau menggunakan susu sangat berlemak -> rekomendasi berkurang karena peningkatan gula/lemak jenuh."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "≈250 gram (estimasi 1 mangkok sedang)",
+    "jumlahSajian": "1 mangkok (estimasi)",
+    "kalori": 300,
+    "protein": "12 g",
+    "proteinPersen": "16% (estimasi terhadap total kalori)",
+    "karbohidrat": "37 g",
+    "karbohidratPersen": "50% (estimasi terhadap total kalori)",
+    "gula": "≈10 g (jika hanya dari susu; bisa lebih jika ditambah gula)",
+    "serat": "≈4 g",
+    "lemakTotal": "≈10 g",
+    "lemakJenuh": "≈4 g",
+    "lemakTakJenuh": "≈6 g (gabungan tak jenuh tunggal & ganda)",
+    "lemakPersen": "30% (estimasi % kalori dari lemak)",
+    "kolesterol": "≈20 mg",
+    "natrium": "≈150 mg",
+    "vitaminDanMineral": [
+      "Kalsium (dari susu)",
+      "Vitamin B2 (riboflavin)",
+      "Vitamin B12 (jika menggunakan susu)",
+      "Tiamin (B1)",
+      "Folat (jumlah kecil)",
+      "Besi",
+      "Magnesium",
+      "Fosfor",
+      "Mangan",
+      "Zinc"
+    ]
+  },
+  "perbandinganAKG": [
+    {
+      "nama": "Kalori",
+      "persen": "≈15% (berdasarkan AKG 2000 kcal/hari)"
+    },
+    {
+      "nama": "Protein",
+      "persen": "≈24% (berdasarkan AKG 50 g/hari)"
+    },
+    {
+      "nama": "Serat",
+      "persen": "≈16% (berdasarkan AKG 25 g/hari)"
+    },
+    {
+      "nama": "Kalsium",
+      "persen": "≈24% (berdasarkan AKG 1000 mg/hari; bergantung pada jumlah susu)"
+    },
+    {
+      "nama": "Zat Besi",
+      "persen": "≈12% (berdasarkan AKG 15 mg/hari)"
+    },
+    {
+      "nama": "Natrium",
+      "persen": "≈7% (berdasarkan batas 2000 mg/hari)"
+    }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah-sedang (≈10 g jika hanya dari susu; menjadi tinggi jika ditambah gula/selai/kurma)",
+    "Lemak": "sedang (lemak total ≈10 g; lemak jenuh ≈4 g — meningkat jika menggunakan krim/mentega)",
+    "Garam": "rendah",
+    "KaloriBerlebih": "kemungkinan rendah untuk porsi ini; risiko jika porsi lebih besar atau ditambah topping kalori tinggi",
+    "Alergi": "mengandung susu (kemungkinan) dan gandum/oat — risiko bagi yang alergi/lainnya"
+  },
+  "waktuKenyang": "3-4 jam (oat memberi rasa kenyang sedang-lama karena serat larut)",
+  "frekuensiKonsumsi": "Bisa dikonsumsi beberapa kali seminggu hingga setiap hari bila disiapkan sehat (tanpa gula berlebih dan dengan sumber lemak sehat). Jika ditambah gula/krim banyak: batasi 1–2x/minggu.",
+  "ingredients": [
+    "Oat (rolled oats atau oat instan)",
+    "Susu atau air (kemungkinan susu karena tekstur krim)",
+    "(Kemungkinan) sedikit garam",
+    "(Kemungkinan) gula atau pemanis jika terasa manis"
+  ],
+  "tipsSehat": [
+    "Gunakan susu rendah lemak atau susu nabati tanpa pemanis untuk mengurangi lemak jenuh dan gula tambahan.",
+    "Kurangi atau hilangkan gula tambahan; maniskan dengan potongan buah segar (pisang, beri) atau sedikit kayu manis.",
+    "Tambahkan sumber protein untuk keseimbangan (putih telur kocok, greek yogurt, atau satu sendok protein powder tanpa gula).",
+    "Tambahkan lemak sehat dalam porsi kecil (1 sdt chia seeds, flaxseed, atau kacang cincang) untuk rasa kenyang lebih lama dan asam lemak tak jenuh.",
+    "Kontrol porsi: 40 g oat kering (≈1/2 cangkir) menjadi porsi ideal untuk satu kali makan."
+  ],
+  "alternatif": [
+    "Oat dengan susu rendah lemak dan buah beri segar (lebih rendah gula, lebih tinggi antioksidan).",
+    "Greek yogurt + buah + biji chia (lebih tinggi protein, tekstur creamy).",
+    "Bubur gandum utuh lainnya (mis. barley porridge) untuk variasi serat dan rasa.",
+    "Overnight oats dengan susu almond tanpa gula dan topping buah kering + kacang (praktis dan sehat)."
+  ]
+}
+
