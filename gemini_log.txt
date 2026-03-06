@@ -31486,3 +31486,173 @@ Response  : {
   "catatan": "Semua angka di atas adalah perkiraan berdasarkan tampilan gambar (croissant / pastry marbled berisi cokelat). Nilai nyata bergantung resep, ukuran porsi, dan bahan yang digunakan. Untuk angka yang akurat gunakan label nutrisi produk atau analisis resep konkret."
 }
 
+
+[2026-03-06T07:27:18.211Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/ad2d88-1772782001755.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan sebagai makanan rutin",
+    "alasan": "Ini adalah pastry berbasis tepung dan lemak (mentega/minyak) dengan isian/cokelat — padat kalori, relatif tinggi lemak jenuh dan gula tambahan, serta rendah serat dan protein relatif. Baik dikonsumsi sesekali sebagai treat, bukan sebagai makanan reguler terutama bagi yang berisiko metabolik/kardiovaskular."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "100 g (perkiraan porsi per item pada gambar ≈100 g)",
+    "jumlahSajian": "1 (terlihat satu croissant utuh, dengan satu potongan)",
+    "kalori": 420,
+    "protein": "8 g",
+    "proteinPersen": "7.6%",
+    "karbohidrat": "44 g",
+    "karbohidratPersen": "41.9%",
+    "gula": "14 g (perkiraan, termasuk gula isian/cokelat)",
+    "serat": "3 g",
+    "lemakTotal": "24 g",
+    "lemakJenuh": "12 g",
+    "lemakTakJenuh": "12 g (perkiraan gabungan lemak tak jenuh tunggal & ganda)",
+    "lemakPersen": "50.5%",
+    "kolesterol": "70 mg",
+    "natrium": "450 mg",
+    "vitaminDanMineral": [
+      "Vitamin A (dari mentega)",
+      "Vitamin B1 (Tiamin)",
+      "Vitamin B2 (Riboflavin)",
+      "Niacin (B3)",
+      "Folat (B9) - sedikit",
+      "Zat Besi",
+      "Kalsium (sedikit)",
+      "Potasium (sedikit)",
+      "Magnesium (sedikit)",
+      "Selenium"
+    ]
+  },
+  "perbandinganAKG": [
+    {
+      "nama": "Kalori (dengan acuan 2000 kcal)",
+      "persen": "≈21%"
+    },
+    {
+      "nama": "Protein (dengan acuan 50 g/hari)",
+      "persen": "≈16%"
+    },
+    {
+      "nama": "Karbohidrat (dengan acuan 275 g/hari)",
+      "persen": "≈16%"
+    },
+    {
+      "nama": "Lemak Total (dengan acuan ≈70 g/hari)",
+      "persen": "≈34%"
+    },
+    {
+      "nama": "Lemak Jenuh (dengan acuan <20 g ideal/hari)",
+      "persen": "≈60% (tinggi)"
+    },
+    {
+      "nama": "Gula Tambahan (dengan batas WHO ≈50 g/hari)",
+      "persen": "≈28%"
+    },
+    {
+      "nama": "Natrium (dengan acuan <2000 mg/hari)",
+      "persen": "≈22.5%"
+    },
+    {
+      "nama": "Kolesterol (dengan acuan <300 mg/hari)",
+      "persen": "≈23%"
+    }
+  ],
+  "risikoKesehatan": {
+    "Kalori": "tinggi (padat energi — dapat berkontribusi ke surplus kalori jika sering dikonsumsi)",
+    "LemakJenuh": "tinggi (mentega dan pastry mengandung lemak jenuh yang signifikan)",
+    "Gula": "sedang (isi/cokelat menambah gula sederhana)",
+    "Natrium": "sedang",
+    "Serat": "rendah (tidak cukup untuk efek kenyang jangka panjang atau kesehatan usus)",
+    "RisikoTerkait": "konsumsi rutin berisiko meningkatkan LDL kolesterol, berat badan, dan risiko kardiometabolik"
+  },
+  "waktuKenyang": "2-3 jam (karena kombinasi karbohidrat halus + lemak memberikan kenyang sedang tetapi tidak lama)",
+  "frekuensiKonsumsi": "1–2 kali/minggu sebagai treat; kurangi jika memiliki penyakit jantung, kolesterol tinggi, diabetes atau sedang menurunkan berat badan",
+  "ingredients": [
+    "Tepung terigu (refined wheat flour)",
+    "Mentega (butter) atau margarin/minyak",
+    "Gula (pada adonan dan/atau isian cokelat)",
+    "Cokelat atau pasta cokelat (isian/marbling)",
+    "Ragi",
+    "Susu/produk susu (milk/whey)",
+    "Telur (opsional dalam adonan atau olesan)",
+    "Garam",
+    "Emulsifier/pengawet/minyak sayur (tergantung resep pabrikan)"
+  ],
+  "tipsSehat": [
+    "Jika membuat sendiri: gunakan lebih banyak lapisan dengan minyak nabati tak jenuh atau kurangi jumlah mentega untuk mengurangi lemak jenuh.",
+    "Ganti sebagian tepung terigu halus dengan tepung gandum utuh untuk menambah serat (namun tekstur pastry akan sedikit berubah).",
+    "Pilih cokelat dengan kadar kakao lebih tinggi (>70%) untuk mengurangi gula tambahan.",
+    "Batasi porsi: potong ukuran lebih kecil atau bagi menjadi dua agar asupan kalori berkurang.",
+    "Sajikan dengan buah segar atau yogurt tanpa gula untuk menambah serat, vitamin, dan keseimbangan nutrisi."
+  ],
+  "alternatif": [
+    "Roti gandum panggang dengan selai kacang alami dan irisan pisang",
+    "Greek yogurt polos dengan buah segar dan sedikit kacang/seed untuk protein & serat",
+    "Oatmeal dengan bubuk kakao, kacang, dan sedikit madu (serat tinggi, lemak sehat)",
+    "Roti lapis gandum utuh isi telur rebus/omelet dan sayuran (lebih tinggi protein)",
+    "Biscotti gandum utuh atau muffin gandum utuh rendah gula sebagai pilihan camilan yang lebih sehat"
+  ]
+}
+
