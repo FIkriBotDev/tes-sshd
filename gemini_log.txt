@@ -31175,3 +31175,158 @@ Response  : {
   ]
 }
 
+
+[2026-03-06T06:22:06.682Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/b05b69-1772778087810.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan dengan catatan",
+    "alasan": "Tampak seperti bubur/overnight oats (gandum/oat) bercampur susu/air. Oat merupakan sumber serat larut (baik untuk jantung dan kenyang) dan menyediakan karbohidrat kompleks serta beberapa protein dan mineral. Kesehatan akhir bergantung pada bahan tambahan (gula, krim, mentega). Jika tanpa gula tambahan dan menggunakan susu rendah lemak atau air, ini pilihan sarapan sehat. Jika banyak gula/krim ditambahkan, menjadi kurang sehat."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "300g (perkiraan satu mangkuk seperti pada foto)",
+    "jumlahSajian": "1",
+    "kalori": 290,
+    "protein": "14g",
+    "proteinPersen": "20%",
+    "karbohidrat": "45g",
+    "karbohidratPersen": "62%",
+    "gula": "12g",
+    "serat": "4.5g",
+    "lemakTotal": "6g",
+    "lemakJenuh": "2.5g",
+    "lemakTakJenuh": "3.5g",
+    "lemakPersen": "18%",
+    "kolesterol": "25mg",
+    "natrium": "150mg",
+    "vitaminDanMineral": [
+      "Serat pangan",
+      "Zat besi",
+      "Magnesium",
+      "Fosfor",
+      "Kalium",
+      "Kalsium (jika menggunakan susu)",
+      "Vitamin B (B1, B2, B3, B6) dari oat",
+      "Vitamin D dan Vitamin A (jika menggunakan susu diperkaya)"
+    ]
+  },
+  "perbandinganAKG": [
+    {
+      "nama": "Kalori",
+      "persen": "≈14% (dari AKG 2000 kcal)"
+    },
+    {
+      "nama": "Protein",
+      "persen": "≈28% (dari rekomendasi ~50g protein/hari)"
+    },
+    {
+      "nama": "Gula",
+      "persen": "≈24% (dari batas 50g gula total/hari)"
+    },
+    {
+      "nama": "Serat",
+      "persen": "≈18% (dari rekomendasi ~25g serat/hari)"
+    },
+    {
+      "nama": "Natrium",
+      "persen": "≈7.5% (dari batas ~2000mg/hari)"
+    },
+    {
+      "nama": "Lemak jenuh",
+      "persen": "≈12% (dari batas ~20g/hari, tergantung pedoman lokal)"
+    }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang (tergantung penggunaan susu biasa atau gula tambahan; foto tidak menunjukkan potongan buah jadi asupan gula kemungkinan dari susu/laktosa)",
+    "Lemak": "rendah",
+    "Kalori": "sedang (bergantung porsi dan topping)",
+    "Alergi": "ada risiko bagi yang intoleran laktosa atau sensitif gluten (beberapa oat terkontaminasi gluten)",
+    "Sodium": "rendah"
+  },
+  "waktuKenyang": "3-4 jam (serat dan karbohidrat kompleks di oat memberi rasa kenyang sedang-lama)",
+  "frekuensiKonsumsi": "Bisa dikonsumsi beberapa kali/minggu atau setiap hari sebagai sarapan sehat jika tanpa gula berlebih — kurangi bila ada tambahan gula/krim atau jika tujuan penurunan berat badan kalori dibatasi",
+  "ingredients": [
+    "Oat (rolled oats atau quick oats) — tampak sebagai partikel gandum",
+    "Susu sapi atau susu nabati/air (campuran cair terlihat)",
+    "Opsional: sedikit garam",
+    "Kemungkinan tidak ada atau sedikit gula/penambah rasa (tidak terlihat potongan buah atau gula)"
+  ],
+  "tipsSehat": [
+    "Gunakan susu rendah lemak, susu nabati tanpa gula, atau air untuk menurunkan kalori dan gula tambahan.",
+    "Hindari menambahkan gula putih; gunakan pemanis alami sedikit (mis. potongan buah matang, pisang tumbuk) jika perlu rasa manis.",
+    "Tambahkan sumber protein/lemak sehat: 1 sdm kacang cincang, biji chia, atau 1 sdm selai kacang untuk meningkatkan rasa kenyang dan profil nutrisi.",
+    "Tambahkan buah segar (berry, potongan apel) untuk vitamin, antioksidan, dan serat ekstra.",
+    "Tambahkan rempah seperti kayu manis atau vanila untuk rasa tanpa gula.",
+    "Jika ada intoleransi gluten, pilih oat terlabel 'gluten-free'."
+  ],
+  "alternatif": [
+    "Greek yogurt plain + oat/gandum utuh + buah + biji (lebih tinggi protein)",
+    "Chia pudding dengan susu nabati + buah (lebih banyak omega-3 dan serat)",
+    "Quinoa porridge (protein lebih lengkap daripada oat)",
+    "Roti gandum utuh + telur rebus + sayuran (pilihan sarapan seimbang)",
+    "Smoothie bowl dengan sayuran hijau, buah, dan satu porsi protein (sebagai variasi)"
+  ]
+}
+
