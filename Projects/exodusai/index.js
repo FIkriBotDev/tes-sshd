@@ -291,7 +291,6 @@ async function startBot() {
             { logger: P({ level: 'silent' }), reuploadRequest: sock.updateMediaMessage }
         );
 
-        // Tentukan ekstensi
         const ext =
             m.message.documentMessage.mimetype === "application/pdf"
                 ? ".pdf"
