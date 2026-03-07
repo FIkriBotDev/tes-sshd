@@ -31656,3 +31656,159 @@ Response  : {
   ]
 }
 
+
+[2026-03-07T02:41:24.235Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/5615d9-1772851250327.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan (dengan catatan)",
+    "alasan": "Parfait pada gambar terlihat terdiri dari yogurt, oat (rolled oats) dan campuran buah segar. Kombinasi ini secara umum seimbang: sumber protein (yogurt), karbohidrat kompleks + serat (oat & buah) serta lemak sedikit. Keuntungannya termasuk kandungan protein yang baik, serat dan vitamin dari buah. Catatan: jika ditambahkan gula, sirup, atau granola manis maka nilai kesehatannya turun."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "sekitar 350 g (1 gelas parfait - estimasi)",
+    "jumlahSajian": "2 gelas terlihat dalam gambar; analisis untuk 1 gelas",
+    "kalori": 360,
+    "protein": "25 g",
+    "proteinPersen": "≈27%",
+    "karbohidrat": "48 g",
+    "karbohidratPersen": "≈53%",
+    "gula": "≈18 g (gabungan gula alami buah + laktosa dari yogurt; belum termasuk pemanis tambahan)",
+    "serat": "≈8 g",
+    "lemakTotal": "≈8 g",
+    "lemakJenuh": "≈2 g",
+    "lemakTakJenuh": "≈6 g (gabungan lemak tak jenuh dari oat & buah)",
+    "lemakPersen": "≈20%",
+    "kolesterol": "≈20 mg",
+    "natrium": "≈100–150 mg",
+    "vitaminDanMineral": [
+      "Vitamin C (dari buah - stroberi, blueberry, dsb.)",
+      "Kalsium (dari yogurt)",
+      "Kalium (dari buah)",
+      "Vitamin A (jumlah kecil, tergantung jenis buah)",
+      "Zat Besi (jumlah kecil dari oat & buah)",
+      "Magnesium (dari oat)",
+      "Fosfor (dari yogurt)"
+    ]
+  },
+  "perbandinganAKG": [
+    {
+      "nama": "Kalori (terhadap kebutuhan 2000 kcal/hari)",
+      "persen": "≈18%"
+    },
+    {
+      "nama": "Protein (terhadap rekomendasi 50 g/hari)",
+      "persen": "≈50%"
+    },
+    {
+      "nama": "Serat (terhadap rekomendasi 25 g/hari)",
+      "persen": "≈32%"
+    },
+    {
+      "nama": "Gula (terhadap batas WHO ~50 g gula tambahan/hari)",
+      "persen": "≈36% (catatan: ini gula alami; gula tambahan akan menaikkan persen)"
+    },
+    {
+      "nama": "Natrium (terhadap batas ~2000 mg/hari)",
+      "persen": "≈5–8%"
+    },
+    {
+      "nama": "Kalsium (terhadap kebutuhan ~1000 mg/hari)",
+      "persen": "≈18–25% (bergantung jenis & jumlah yogurt)"
+    },
+    {
+      "nama": "Vitamin C (terhadap kebutuhan ~75 mg/hari)",
+      "persen": "≈30–60% (bergantung jenis & jumlah buah)"
+    }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang — sebagian besar gula tampak berasal dari buah dan laktosa; jika ada tambahan madu/sirup/granola manis maka menjadi tinggi",
+    "Lemak": "rendah — mayoritas lemak tidak jenuh; lemak jenuh juga rendah",
+    "Natrium": "rendah",
+    "Kalori": "sedang — baik sebagai sarapan atau camilan namun perhatikan porsi jika diet pembatas kalori",
+    "Alergen": "mungkin — mengandung produk susu; oat bisa terkontaminasi gluten kecuali label bebas gluten"
+  },
+  "waktuKenyang": "≈3–4 jam (kombinasi protein, serat dan karbohidrat kompleks memberikan rasa kenyang sedang-lama)",
+  "frekuensiKonsumsi": "Bisa dikonsumsi beberapa kali/minggu (3–7x/minggu) jika tanpa pemanis tambahan; bila menggunakan granola manis atau sirup batasi 1–3x/minggu",
+  "ingredients": [
+    "Yogurt (kemungkinan: Greek/plain, tekstur kental)",
+    "Rolled oats / oat gandum",
+    "Buah segar (stroberi, blueberry, potongan buah lain seperti peach/nectarine/kiwi)",
+    "Kemungkinan topping kecil (parutan kelapa atau madu) — tidak pasti dari gambar"
+  ],
+  "tipsSehat": [
+    "Pilih yogurt tanpa gula tambahan (plain Greek yogurt) untuk meningkatkan protein dan mengurangi gula ekstra.",
+    "Gunakan rolled oats atau homemade granola rendah gula — hindari granola komersial yang tinggi gula dan minyak.",
+    "Tambahkan sumber lemak sehat (sejumlah kecil kacang cincang atau biji chia/flax) untuk memperbaiki profil lemak dan rasa kenyang.",
+    "Batasi atau hindari menambahkan madu/sirup jika ingin mengurangi asupan gula total.",
+    "Kontrol porsi (sekitar 300–350 g) agar kalori tidak berlebihan sebagai camilan."
+  ],
+  "alternatif": [
+    "Cottage cheese + buah + biji chia (lebih tinggi protein)",
+    "Chia pudding (chia+susu nabati) dengan buah segar (lebih tinggi serat, lemak sehat)",
+    "Oatmeal hangat dengan potongan buah & kacang (alternatif hangat, bisa ditambahkan protein bubuk jika perlu)",
+    "Smoothie bowl berbasis Greek yogurt + bayam + buah + topping kacang/seed (lebih padat nutrisi, kontrol gula)"
+  ]
+}
+
