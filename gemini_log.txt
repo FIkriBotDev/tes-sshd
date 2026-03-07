@@ -31812,3 +31812,161 @@ Response  : {
   ]
 }
 
+
+[2026-03-07T02:45:48.840Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/cebaa3-1772851525256.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan untuk dikonsumsi secara rutin",
+    "alasan": "Burger ini tampak tinggi kalori, lemak total dan lemak jenuh, serta natrium (garam) dan kemungkinan mengandung daging olahan (bacon) dan keju olahan. Kalori dan komposisi makronutrien cocok sebagai makanan sesekali, tetapi tidak ideal jika dikonsumsi sering karena meningkatkan risiko penyakit kardiometabolik."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "≈300 gram (perkiraan)",
+    "jumlahSajian": "1 burger (dalam gambar)",
+    "kalori": 750,
+    "protein": "35 g",
+    "proteinPersen": "18.7%",
+    "karbohidrat": "45 g",
+    "karbohidratPersen": "24.0%",
+    "gula": "8 g",
+    "serat": "3 g",
+    "lemakTotal": "48 g",
+    "lemakJenuh": "18 g",
+    "lemakTakJenuh": "30 g (mono ≈20 g, poli ≈10 g)",
+    "lemakPersen": "57.3%",
+    "kolesterol": "120 mg",
+    "natrium": "1,100 mg",
+    "vitaminDanMineral": [
+      "Zat Besi (Fe) — dari daging sapi",
+      "Kalsium — dari keju",
+      "Vitamin B12 — dari daging sapi dan keju",
+      "Zinc — dari daging sapi",
+      "Vitamin A — sedikit, dari selada/keju",
+      "Vitamin C — sedikit, dari tomat/selada",
+      "Kalium — dari tomat/daging"
+    ]
+  },
+  "perbandinganAKG": [
+    {
+      "nama": "Kalori",
+      "persen": "37.5% (dari asumsi kebutuhan 2000 kcal/hari)"
+    },
+    {
+      "nama": "Protein",
+      "persen": "70% (dari asumsi kebutuhan 50 g/hari)"
+    },
+    {
+      "nama": "Lemak Total",
+      "persen": "≈69% (dari asumsi batas 70 g/hari)"
+    },
+    {
+      "nama": "Lemak Jenuh",
+      "persen": "≈90% (dari batas rekomendasi ≈20 g/hari)"
+    },
+    {
+      "nama": "Natrium",
+      "persen": "≈48% (dari batas 2300 mg/hari)"
+    },
+    {
+      "nama": "Gula Tambahan",
+      "persen": "≈32% (dari batas WHO ≈25 g/hari)"
+    }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang (mengandung saus/karbohidrat halus)",
+    "Lemak": "tinggi (terutama lemak jenuh)",
+    "Natrium": "tinggi",
+    "Kolesterol": "sedang-tinggi",
+    "DagingOlahan": "potensial (presence of bacon) — meningkatkan risiko jika sering dikonsumsi"
+  },
+  "waktuKenyang": "3-5 jam (rata-rata ≈4 jam) — kandungan protein dan lemak membuat kenyang lebih lama daripada makanan berkarbohidrat sederhana",
+  "frekuensiKonsumsi": "Sesuai saran: sekali-sekali (mis. ≤1–2 kali/minggu). Jika memiliki faktor risiko kardiovaskular, batasi menjadi ≤1 kali/bulan atau kurang.",
+  "ingredients": [
+    "Roti burger (tepung terigu, gula, ragi, minyak, garam, biji wijen)",
+    "Patty daging sapi cincang (garam, lada, mungkin pengikat/minyak)",
+    "Keju olahan (slice cheddar atau mirip)",
+    "Bacon atau daging asap (kemungkinan)",
+    "Selada",
+    "Irisan tomat",
+    "Irisan bawang merah",
+    "Saus (mayones/saus tomat/saus manis/barbecue)"
+  ],
+  "tipsSehat": [
+    "Ganti roti putih dengan roti gandum utuh untuk menambah serat.",
+    "Pilih patty yang lebih ramping (lean beef 90/10) atau gunakan daging ayam/turkey cincang tanpa kulit.",
+    "Kurangi jumlah keju atau gunakan keju rendah lemak, atau hilangkan keju jika ingin menurunkan lemak jenuh.",
+    "Hindari bacon/daging olahan atau ganti dengan irisan alpukat untuk rasa dan lemak tak jenuh sehat.",
+    "Gunakan saus rendah gula/garam atau yogurt-based sauce, dan oles tipis untuk mengurangi gula/kalori/garam.",
+    "Tambahkan lebih banyak sayuran (selada, tomat, timun, bawang) untuk meningkatkan serat dan mikronutrien.",
+    "Memasak dengan dipanggang/grill daripada digoreng untuk mengurangi lemak tambahan."
+  ],
+  "alternatif": [
+    "Burger daging tanpa lemak atau burger ayam panggang pada roti gandum dengan banyak sayur",
+    "Burger nabati berbahan kacang-kacangan atau jamur pada roti gandum",
+    "Sandwich dada ayam panggang dengan alpukat dan sayuran segar",
+    "Salad besar dengan sumber protein (ikan panggang / ayam / tahu) dan dressing ringan"
+  ]
+}
+
