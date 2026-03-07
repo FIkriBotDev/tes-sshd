@@ -32157,3 +32157,36 @@ Response  : Ini foto jalan raya pada malam hari — suasana ramai dan macet. Hal
 
 Mau saya jelaskan lebih detail, terjemahkan teks, analisis kepadatan lalu lintas, atau bantu sunting/blur bagian wajah? Saya tidak bisa mengidentifikasi atau menamai orang di gambar.
 
+
+[2026-03-07T19:02:35.153Z]
+Prompt    : Banjir
+Image URL : https://uploader.exodusai.biz.id/tmp/21a78c-1772910140236.jpg
+Response  : Maaf, semoga kamu dan keluarga aman. Terima kasih sudah bagi fotonya — terlihat banjir cukup tinggi. Beberapa hal yang bisa segera dilakukan:
+
+1. Pastikan keselamatan dulu
+   - Jika air naik cepat atau ada arus kuat, segera pindah ke tempat yang lebih tinggi atau evakuasi ke pos pengungsian.
+   - Hubungi RT/RW, aparat desa/kelurahan atau petugas BPBD kalau perlu evakuasi.
+
+2. Listrik dan gas
+   - Jika aman, matikan sumber listrik utama dan gas dari luar/posisi kering. Jangan menyentuh panel/stopkontak saat berlumpur/terendam.
+   - Jangan menyalakan generator atau peralatan bertenaga di dalam rumah tertutup.
+
+3. Hindari kontak langsung dengan air banjir
+   - Air banjir bisa tercemar. Gunakan sepatu/sepatu karet dan sarung tangan saat harus berjalan di air.
+   - Hindari kontak luka terbuka dengan air.
+
+4. Amankan barang penting
+   - Pindahkan dokumen penting, obat-obatan, ponsel, dan barang berharga ke tempat yang lebih tinggi atau plastik kedap air.
+   - Letakkan perabotan di atas batu bata/meja agar tidak terendam sepenuhnya.
+
+5. Dokumentasi dan komunikasi
+   - Foto/video kondisi untuk bukti klaim asuransi atau bantuan.
+   - Informasikan kondisi ke keluarga/teman dan warga sekitar (sebut lokasi, tingkat air, kebutuhan mendesak).
+
+6. Setelah banjir surut
+   - Keringkan dan ventilasi rumah, buang barang yang sudah tidak layak, desinfeksi area yang terkena.
+   - Periksa instalasi listrik oleh teknisi sebelum menyalakan lagi.
+   - Waspadai potensi penyakit; bila ada gejala sakit, segera periksa ke fasilitas kesehatan.
+
+Butuh saya bantu buat pengumuman evakuasi/permintaan bantuan ke tetangga atau media sosial? Atau apakah kalian butuh nomor kontak darurat lokal — apakah aman untuk saya kirimkan?
+
