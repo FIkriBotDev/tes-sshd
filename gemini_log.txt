@@ -32108,3 +32108,39 @@ Response  : {
   ]
 }
 
+
+[2026-03-07T11:38:24.577Z]
+Prompt    : berikan resep makanan ini
+Image URL : https://uploader.exodusai.biz.id/tmp/81951c-1772883491147.jpg
+Response  : Berikut resep sederhana untuk membuat Yogurt Parfait buah segar seperti pada foto. Cocok untuk sarapan atau camilan sehat.
+
+Porsi: 2 gelas
+Waktu: Persiapan ~10 menit
+
+Bahan:
+- 400 g yogurt plain (Greek yogurt lebih kental; bisa diganti yogurt nabati)  
+- 100–120 g rolled oats (atau ½ cangkir oats + ½ cangkir granola jika suka tekstur renyah)  
+- 1–2 sdm madu atau sirup maple (opsional, untuk pemanis)  
+- 1 cup stroberi, potong-potong  
+- ½ cup blueberry  
+- 1 buah kiwi atau 1 buah mangga (dipotong dadu)  
+- 2 sdm kacang cincang (almond/walnut) atau biji chia (opsional)  
+- Sedikit kelapa parut atau kulit lemon parut untuk garnish (opsional)
+
+Cara membuat:
+1. Cuci, keringkan, dan potong-potong buah sesuai selera.
+2. Jika ingin yogurt sedikit manis, campur yogurt dengan madu atau sirup maple, aduk rata.
+3. Siapkan 2 gelas saji. Lapisi dasar dengan sekitar 2 sdm oats (atau granola).
+4. Tambahkan lapisan yogurt hingga sekitar 1/3 gelas. Taburkan sedikit blueberry di atas yogurt jika ingin tampilan seperti di foto.
+5. Tambahkan lapisan oats/granola lagi, lalu tambahkan sisa yogurt.
+6. Tutup dengan buah campur di bagian atas. Taburi kacang atau biji, dan kelapa parut jika digunakan.
+7. Sajikan segera agar oats/granola tetap renyah. Jika disimpan di kulkas, tekstur oats akan melunak (lebih cocok sebagai overnight oats).
+
+Tips dan variasi:
+- Untuk versi vegan: gunakan yogurt kelapa/soya dan sirup maple.
+- Jika ingin oats lebih lembut, rendam oats dengan sedikit susu/air selama 10–15 menit sebelum dirakit (atau buat sebagai overnight oats semalam).
+- Untuk ekstra protein, tambahkan satu scoop protein powder ke yogurt atau taburi biji chia.
+- Simpan sisa dalam wadah tertutup di kulkas maksimal 1–2 hari (buah segar sebaiknya ditambahkan saat akan disajikan).
+
+Perkiraan gizi per porsi (bervariasi tergantung bahan): 300–400 kcal, protein 12–18 g (lebih tinggi jika pakai Greek yogurt). Selamat mencoba!
+
