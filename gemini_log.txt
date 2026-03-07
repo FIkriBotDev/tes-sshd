@@ -31970,3 +31970,141 @@ Response  : {
   ]
 }
 
+
+[2026-03-07T02:49:50.395Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/50b54e-1772851758592.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan sebagai makanan pokok harian",
+    "alasan": "Produk ini adalah mi instan (Indomie Rasa Soto Mie) yang tinggi natrium, mengandung lemak jenuh sedang, dan mayoritas kalorinya berasal dari karbohidrat olahan. Nilai serat dan mikronutrien relatif rendah sehingga kurang ideal bila dikonsumsi sering tanpa penambahan sayur/ protein segar."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "≈85 g (1 bungkus standar mi instan)",
+    "jumlahSajian": "1 bungkus",
+    "kalori": 418,
+    "protein": "8 g",
+    "proteinPersen": "7.7%",
+    "karbohidrat": "56 g",
+    "karbohidratPersen": "53.6%",
+    "gula": "5 g",
+    "serat": "3 g",
+    "lemakTotal": "18 g",
+    "lemakJenuh": "7 g",
+    "lemakTakJenuh": "11 g",
+    "lemakPersen": "34.7%",
+    "kolesterol": "0 mg",
+    "natrium": "1,760 mg (≈4.4 g garam)",
+    "vitaminDanMineral": [
+      "Zat besi (kecil, ≈2 mg)",
+      "Kalsium (rendah, ≈20–40 mg)",
+      "Beberapa vitamin B (tiamin/niasin/ri boflavin jika difortifikasi)",
+      "Sodium (tinggi)",
+      "Mineral jejak lainnya dalam jumlah kecil"
+    ]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori (acu 2000 kcal)", "persen": "20.9%" },
+    { "nama": "Protein (acu 50 g)", "persen": "16%" },
+    { "nama": "Lemak total (acu 70 g)", "persen": "25.7%" },
+    { "nama": "Lemak jenuh (acu 20 g)", "persen": "35%" },
+    { "nama": "Karbohidrat (acu 300 g)", "persen": "18.7%" },
+    { "nama": "Serat (acu 25 g)", "persen": "12%" },
+    { "nama": "Natrium (batas WHO ≤2000 mg/hari)", "persen": "88%" },
+    { "nama": "Gula (batas rekomendasi <25 g/hari)", "persen": "20%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah–sedang (≈5 g)",
+    "Lemak": "sedang (lemak total sedang; lemak jenuh cukup tinggi relatif terhadap porsi)",
+    "Natrium": "tinggi (dapat mendekati atau melampaui sebagian besar batas harian tunggal)",
+    "Karbohidrat olahan": "tinggi (dapat menyebabkan lonjakan gula darah)",
+    "Serat & mikronutrien": "rendah (kurang mendukung kebutuhan harian vitamin & mineral)"
+  },
+  "waktuKenyang": "2–3 jam (karena dominasi karbohidrat olahan dan rendah serat/protein yang memadai)",
+  "frekuensiKonsumsi": "Tidak rutin — idealnya ≤1 kali/minggu sebagai makanan cepat saji; bila sering, modifikasi sehat diperlukan",
+  "ingredients": [
+    "Tepung terigu (wheat flour)",
+    "Minyak sawit (palm oil)",
+    "Bumbu bubuk (garam, gula, penyedap rasa/MSG, rempah kering)",
+    "Bumbu minyak/saus (minyak berbumbu, kecap, dll)",
+    "Perisa (flavour) alam/identik alami untuk rasa soto",
+    "Bawang kering, bawang putih kering, rempah-rempah kering",
+    "Antioksidan / pengawet dalam jumlah kecil (mis. TBHQ) — tergantung varian",
+    "Tambahan: pewarna atau penyedap tertentu (variasi pabrik)"
+  ],
+  "tipsSehat": [
+    "Kurangi kandungan garam/MSG dengan memakai hanya sebagian sachet bumbu (mis. setengah atau tanpa sachet minyak) dan tambahkan kecap rendah garam jika perlu.",
+    "Tambahkan sumber serat dan vitamin: sayuran segar atau beku (sawi, bayam, wortel, kol), tomat, atau daun bawang.",
+    "Tambahkan protein lean untuk kenyang lebih lama: telur rebus/omelet, dada ayam suwir, tahu/tempe goreng atau kukus.",
+    "Gunakan metode memasak lebih sehat: buang sebagian air rebusan yang mengandung minyak/bumbu lalu tambahkan air panas bersih untuk sup yang lebih ringan.",
+    "Pilih porsi lebih kecil (mis. setengah bungkus) bila dikonsumsi sebagai lauk kecil, dan lengkapi dengan makanan bernutrisi."
+  ],
+  "alternatif": [
+    "Mie gandum utuh atau mie soba dengan kaldu jelas, sayuran banyak, dan protein tanpa lemak.",
+    "Sup ayam sayur dengan nasi merah atau bihun dari beras merah.",
+    "Mie shirataki atau mi sayur dengan potongan ayam/tempe dan sayuran segar.",
+    "Soto rumahan dengan kuah ringan, banyak sayur, dan sumber protein tanpa lemak."
+  ]
+}
+
