@@ -32391,3 +32391,158 @@ Response  : {
   ]
 }
 
+
+[2026-03-08T07:10:39.155Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/13d5d2-1772953812598.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan dengan catatan",
+    "alasan": "Tampak seperti bubur/semacam oat yang dimasak dengan susu (atau susu nabati). Oat utamanya adalah sumber karbohidrat kompleks dan serat yang baik — secara umum pilihan sarapan yang sehat. Rekomendasi bergantung pada bahan tambahan (gula, krim, mentega) dan jenis susu: jika sedikit atau tanpa gula tambahan dan menggunakan susu rendah lemak atau nabati tanpa gula, maka sehat; jika banyak gula/krim dan susu penuh lemak, maka kandungan kalori dan lemak jenuh meningkat."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "300 g (perkiraan 1 mangkuk)",
+    "jumlahSajian": "1 mangkuk (perkiraan)",
+    "kalori": 350,
+    "protein": "14 g",
+    "proteinPersen": "16% (dari total kalori, ~56 kcal)",
+    "karbohidrat": "52 g",
+    "karbohidratPersen": "59% (dari total kalori, ~208 kcal)",
+    "gula": "12 g (perkiraan, termasuk gula susu/laktosa atau tambahan)",
+    "serat": "6 g",
+    "lemakTotal": "9 g",
+    "lemakJenuh": "3.5 g",
+    "lemakTakJenuh": "5.5 g (gabungan lemak tak jenuh tunggal & ganda)",
+    "lemakPersen": "23% (dari total kalori, ~81 kcal)",
+    "kolesterol": "20 mg (perkiraan; mendekati 0 jika pakai susu nabati)",
+    "natrium": "180 mg (perkiraan)",
+    "vitaminDanMineral": [
+      "Kalsium (dari susu)",
+      "Zat Besi (dari oat)",
+      "Magnesium",
+      "Fosfor",
+      "Kalium",
+      "Vitamin B kompleks (B1, B2, B3, B6) dalam jumlah kecil",
+      "Vitamin D (jika susu diperkaya)",
+      "Zinc (sedikit)"
+    ]
+  },
+  "perbandinganAKG": [
+    {
+      "nama": "Kalori",
+      "persen": "17% (dari kebutuhan 2000 kcal/hari)"
+    },
+    {
+      "nama": "Protein",
+      "persen": "28% (dari rekomendasi ~50 g/hari)"
+    },
+    {
+      "nama": "Serat",
+      "persen": "24% (dari rekomendasi ~25 g/hari)"
+    },
+    {
+      "nama": "Gula (total)",
+      "persen": "24% (dari batas 50 g/hari sebagai acuan)"
+    },
+    {
+      "nama": "Sodium",
+      "persen": "9% (dari batas ~2000 mg/hari)"
+    },
+    {
+      "nama": "Lemak Jenuh",
+      "persen": "18% (dari batas ~20 g/hari)"
+    }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang (bergantung ada/tidaknya gula tambahan atau madu)",
+    "Lemak": "rendah-sedang (lebih tinggi jika pakai susu penuh/krim)",
+    "KaloriBerlebih": "kemungkinan sedang jika porsi besar atau banyak topping manis",
+    "Sodium": "rendah",
+    "Serat": "baik (mendukung pencernaan dan kenyang)"
+  },
+  "waktuKenyang": "3-4 jam (bergantung aktivitas dan komposisi protein/lemak tambahan)",
+  "frekuensiKonsumsi": "Bisa dikonsumsi harian (3–7x/minggu) jika disajikan tanpa gula berlebih dan dengan sumber protein/lemak sehat",
+  "ingredients": [
+    "Oat (rolled/instant/cooked oats) — terdeteksi dari tekstur",
+    "Susu atau susu nabati (menyebabkan warna cair krem)",
+    "Kemungkinan sedikit garam atau rempah (mis. kayu manis)",
+    "Mungkin gula atau madu (tidak jelas dari gambar)",
+    "Air (untuk pengenceran)"
+  ],
+  "tipsSehat": [
+    "Gunakan rolled oats atau steel-cut oat daripada varian instant yang mengandung gula tambahan.",
+    "Gunakan susu rendah lemak atau susu nabati tanpa gula (susu almond/susu oat tanpa pemanis) untuk mengurangi kalori/lemak jenuh.",
+    "Tambahkan potongan buah segar (pisang, beri) untuk gula alami, vitamin, dan serat ekstra.",
+    "Tambahkan sumber protein/lemak sehat seperti yogurt Yunani, kacang-kacangan, biji chia atau biji rami untuk kenyang lebih lama.",
+    "Batasi atau hilangkan penambahan gula/madu; gunakan kayu manis sebagai pemanis alami."
+  ],
+  "alternatif": [
+    "Overnight oats dengan yogurt rendah lemak dan buah beri (lebih padat protein)",
+    "Bubur gandum utuh dengan potongan apel dan taburan kacang almond",
+    "Greek yogurt + granola rendah gula + buah segar",
+    "Chia pudding dengan susu nabati dan buah"
+  ],
+  "catatan": "Semua angka adalah perkiraan berdasarkan penampilan (gambar) dan ukuran porsi rata‑rata. Tidak mungkin memastikan komposisi tepat (mis. jenis susu, adanya gula/mentega, porsi sebenarnya) hanya dari foto. Untuk angka nutrisi akurat, sediakan resep lengkap atau label nutrisi."
+}
+
