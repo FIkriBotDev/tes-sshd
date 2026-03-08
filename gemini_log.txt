@@ -32238,3 +32238,156 @@ Response  : Kemungkinan besar ini dari keluarga Ferrari 812 (mis. 812 Superfast 
 
 Ingin lebih pasti? Kirim foto dari samping/depan atau close-up emblem/plat model—atau foto interior/engine bay—nanti saya bantu cek lagi.
 
+
+[2026-03-08T07:09:49.273Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/415975-1772953756788.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan (dengan catatan)",
+    "alasan": "Gambar tampak seperti pisang yang dikupas (mungkin dibekukan). Pisang merupakan buah yang bergizi — sumber karbohidrat cepat, vitamin (terutama vitamin C dan B6), dan mineral (terutama kalium). Cocok sebagai camilan sehat untuk kebanyakan orang. Namun bagi penderita diabetes, penyakit ginjal (batas kalium) atau jika dikonsumsi berlebihan dalam bentuk digoreng/berlapis gula, perlu pembatasan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "Perkiraan: 100 g (standar) / Per buah sedang ~118 g (estimasi dari tampilan)",
+    "jumlahSajian": "Tampak 2–3 buah/potong di gambar (diperkirakan 3 buah)",
+    "kalori": {
+      "per100g": 89,
+      "perBuah(~118g)": 105,
+      "catatan": "Estimasi berdasarkan pisang matang biasa; jika pisang beku atau diproses nilai bisa sedikit berbeda."
+    },
+    "protein": "per100g ≈ 1.1 g; per buah ≈ 1.3 g",
+    "proteinPersen": "per100g ≈ 4.9% dari kalori; per buah ≈ 5.0% dari kalori (perkiraan; dihitung dari 4 kcal/g protein)",
+    "karbohidrat": "per100g ≈ 22.8 g; per buah ≈ 27 g",
+    "karbohidratPersen": "per100g ≈ 102% dari kalori (angka dapat tampak >100% karena pembulatan nilai gizi); per buah ≈ 103% (perkiraan berdasarkan 4 kcal/g karbohidrat)",
+    "gula": "per100g ≈ 12.2 g (gula total alami); per buah ≈ 14 g",
+    "serat": "per100g ≈ 2.6 g; per buah ≈ 3.1 g",
+    "lemakTotal": "per100g ≈ 0.3 g; per buah ≈ 0.4 g",
+    "lemakJenuh": "per100g ≈ 0.1 g",
+    "lemakTakJenuh": "per100g ≈ 0.2 g (gabungan lemak tak jenuh tunggal & ganda; sangat rendah)",
+    "lemakPersen": "per100g ≈ 3% dari kalori (perkiraan)",
+    "kolesterol": "0 mg (buah tidak mengandung kolesterol)",
+    "natrium": "per100g ≈ 1 mg (sangat rendah)",
+    "vitaminDanMineral": [
+      "Kalium (potassium) ≈ 358 mg/100g (≈422 mg/per buah)",
+      "Vitamin C ≈ 8.7 mg/100g",
+      "Vitamin B6 ≈ 0.37 mg/100g",
+      "Magnesium ≈ 27 mg/100g",
+      "Manganese ≈ 0.27 mg/100g",
+      "Folat ≈ 20 µg/100g",
+      "Kalsium ≈ 5–6 mg/100g",
+      "Zat Besi ≈ 0.3 mg/100g"
+    ]
+  },
+  "perbandinganAKG": [
+    {
+      "nama": "Kalori (basis kebutuhan 2000 kcal/hari)",
+      "persen": "per buah ≈ 5.3%"
+    },
+    {
+      "nama": "Protein (AKG ≈ 50 g/hari)",
+      "persen": "per buah ≈ 2.6%"
+    },
+    {
+      "nama": "Karbohidrat (AKG ≈ 275 g/hari)",
+      "persen": "per buah ≈ 9.8%"
+    },
+    {
+      "nama": "Serat (AKG ≈ 25 g/hari)",
+      "persen": "per buah ≈ 12.4%"
+    },
+    {
+      "nama": "Kalium (AKG ≈ 4700 mg/hari)",
+      "persen": "per buah ≈ 9.0%"
+    },
+    {
+      "nama": "Vitamin C (AKG ≈ 90 mg/hari)",
+      "persen": "per buah ≈ 9.7%"
+    }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang–tinggi (gula alami cukup tinggi; dapat meningkatkan lonjakan gula darah jika dikonsumsi sendiri dalam jumlah besar atau jika sangat matang)",
+    "Lemak": "rendah",
+    "Kalium": "potensi risiko bagi pasien penyakit ginjal yang harus batasi kalium",
+    "IndeksGlikemik": "moderate (tergantung tingkat kematangan — makin matang makin tinggi GI)",
+    "Lainnya": "Jika disajikan digoreng atau dilapisi gula/saus manis, akan meningkatkan kalori, gula dan lemak jenuh sehingga risiko metabolik meningkat."
+  },
+  "waktuKenyang": "Perkiraan 1,5–3 jam (karena kandungan karbohidrat sederhana menimbulkan energi cepat; satiety dapat diperpanjang jika dipadukan protein/lemak)",
+  "frekuensiKonsumsi": "Untuk orang sehat: 1 buah per hari ideal. Untuk penderita diabetes: batasi sesuai saran dokter/ahli gizi (mis. setengah hingga 1 buah, tergantung kontrol gula). Hindari konsumsi berlebih setiap hari jika juga banyak asupan karbohidrat lain.",
+  "ingredients": [
+    "Pisang (diperkirakan pisang yang dikupas; mungkin beku)"
+  ],
+  "tipsSehat": [
+    "Konsumsi bersama sumber protein/lemak sehat (contoh: yogurt, kacang almond, selai kacang) untuk mengurangi lonjakan gula darah dan memperpanjang rasa kenyang.",
+    "Pilih pisang yang sedikit matang (hijau-kuning) jika ingin indeks glikemik lebih rendah dan rasa manis tidak terlalu tinggi.",
+    "Hindari menggoreng atau menambahkan gula/saus manis jika tujuannya makan sehat.",
+    "Jika dibekukan, gunakan untuk smoothie dengan sayuran hijau dan protein tanpa gula tambahan."
+  ],
+  "alternatif": [
+    "Apel atau pir (lebih rendah gula dan GI untuk beberapa varietas)",
+    "Buah beri (strawberry, blueberry) — lebih tinggi serat relatif dan rendah gula",
+    "Yogurt plain dengan potongan buah untuk tambahan protein",
+    "Kombinasi sayur + protein (mis. salad sayur dengan ayam/tempe) jika menginginkan opsi rendah gula dan lebih mengenyangkan"
+  ]
+}
+
