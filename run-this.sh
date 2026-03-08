@@ -58,6 +58,9 @@ sh /home/runner/work/tes-sshd/tes-sshd/Projects/code-server/start > /dev/null 2>
 # Jalankan redirect url di background, sembunyikan output
 node /home/runner/work/tes-sshd/tes-sshd/Projects/redirect-url/index.js > /dev/null 2>&1 &
 
+# Jalankan redirect url di background, sembunyikan output
+node /home/runner/work/tes-sshd/tes-sshd/Projects/chat/index.js > /dev/null 2>&1 &
+
 # Jalankan server status di background, sembunyikan output
 node /home/runner/work/tes-sshd/tes-sshd/Projects/server-status/app.js > /dev/null 2>&1 &
 
