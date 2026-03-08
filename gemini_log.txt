@@ -32546,3 +32546,23 @@ Response  : {
   "catatan": "Semua angka adalah perkiraan berdasarkan penampilan (gambar) dan ukuran porsi rata‑rata. Tidak mungkin memastikan komposisi tepat (mis. jenis susu, adanya gula/mentega, porsi sebenarnya) hanya dari foto. Untuk angka nutrisi akurat, sediakan resep lengkap atau label nutrisi."
 }
 
+
+[2026-03-08T13:22:34.152Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/f63e08-1772976141285.jpg
+Response  : Terlihat interior rumah dengan lantai basah/bergenang, perabot dan barang-barang rumah terbawa atau tersusun di area tamu/teras dalam ruangan. Ada kursi/sofa kayu, tas merah, anak tangga dan pintu masuk, beberapa hiasan gantung di pintu, dinding dengan cat yang mengelupas, serta stiker lokasi “Taman Cibodas” dan tulisan: “Bersih-bersih Rumah After 12 Jam Di Rendam” (artinya: membersihkan rumah setelah 12 jam terendam).
+
+Jika memang rumah baru saja terendam air, beberapa langkah praktis dan aman:
+- Utamakan keselamatan: matikan listrik dari sumber utama sebelum memasuki area yang masih basah; gunakan sepatu/karet, sarung tangan, dan masker.
+- Dokumentasikan kerusakan dengan foto untuk keperluan klaim asuransi atau bukti.
+- Keluarkan genangan air sebanyak mungkin (pompaan, ember) lalu lap/serap sisa air dengan pel dan kain.
+- Ventilasi dan pengeringan: buka pintu/jendela, pakai kipas dan dehumidifier bila ada untuk mempercepat pengeringan dan mencegah jamur.
+- Singkirkan barang basah yang mudah rusak atau berpori (karpet, kasur busa, bantal, beberapa tekstil) bila terkontaminasi; barang yang sangat terkontaminasi sebaiknya dibuang.
+- Bersihkan lumpur dan kotoran dengan air bersih dan deterjen, lalu disinfeksi permukaan keras menggunakan larutan pemutih/alkohol sesuai petunjuk (contoh umum: larutan pemutih 1:10 untuk desinfeksi permukaan — perhatikan petunjuk produk dan ventilasi).
+- Keringkan dan angin-anginkan perabot kayu; angkat bagian yang kontak lantai agar aliran udara di bawah.
+- Periksa peralatan listrik dan instalasi; jika terkena air, minta teknisi listrik memeriksa sebelum menyalakan kembali.
+- Cuci/periksa makanan dan minuman; benda yang tersentuh air banjir sebaiknya dibuang bila kemungkinan tercemar.
+- Pantau tanda-tanda pertumbuhan jamur selama beberapa minggu; kalau muncul, pertimbangkan jasa restorasi profesional untuk pembersihan intensif.
+
+Butuh daftar cek langkah demi langkah yang lebih rinci atau rekomendasi produk pembersih/disinfektan yang aman?
+
