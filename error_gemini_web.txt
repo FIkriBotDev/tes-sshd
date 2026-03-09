@@ -1753,3 +1753,25 @@ b.send(JSON.stringify(a));c.classList.add("feedback-hidden");d.classList.remove(
   "status": 400
 }
 
+[2026-03-09T04:50:20.477Z] API Error:
+{
+  "success": false,
+  "error": {
+    "message": "azure-openai error: Invalid image data.",
+    "code": "BAD_REQUEST",
+    "timestamp": "2026-03-09T04:50:20.456Z"
+  },
+  "status": 400
+}
+
+[2026-03-09T04:50:20.491Z] API Error:
+{
+  "success": false,
+  "error": {
+    "message": "azure-openai error: Invalid image data.",
+    "code": "BAD_REQUEST",
+    "timestamp": "2026-03-09T04:50:20.471Z"
+  },
+  "status": 400
+}
+
