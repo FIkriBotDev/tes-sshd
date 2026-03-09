@@ -32769,3 +32769,302 @@ Response  : {
   "catatan": "Semua angka di atas adalah perkiraan berdasarkan penampilan visual — nilai sebenarnya dapat berbeda bergantung resep, ukuran potong, dan bahan yang dipakai. Jika Anda membutuhkan analisis nutrisi akurat, kirimkan resep lengkap atau label nutrisi produk."
 }
 
+
+[2026-03-09T07:23:46.834Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/6819ce-1773040984697.png
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tergantung konteks",
+    "alasan": "Gambar menampilkan minuman kopi berbasis espresso (latte/cappuccino) — secara umum minuman ini memberikan sumber protein, kalsium, dan energi dari susu namun mengandung lemak jenuh dan gula alami (laktosa). Jika dibuat tanpa sirup/penambah gula, minuman ini cocok sebagai pilihan berkafein sedang. Namun bila menggunakan susu penuh dan tambahan sirup manis, menjadi lebih tinggi kalori, gula dan lemak jenuh sehingga kurang ideal untuk konsumsi harian."
+  },
+  "rincianNutrisi": {
+    "asumsi": "1 porsi latte ukuran medium ~12 fl oz (355 ml) dibuat dengan susu sapi penuh (whole milk) + 1 shot espresso, tanpa sirup tambahan",
+    "takaranSaji": "355 g (ml)",
+    "jumlahSajian": "1",
+    "kalori": 230,
+    "protein": "11.7 g",
+    "proteinPersen": "≈20%",
+    "karbohidrat": "17 g",
+    "karbohidratPersen": "≈30%",
+    "gula": "17 g (laktosa alami)",
+    "serat": "0 g",
+    "lemakTotal": "12.8 g",
+    "lemakJenuh": "6.8 g",
+    "lemakTakJenuh": "≈6 g (gabungan lemak tak jenuh tunggal & ganda, perkiraan)",
+    "lemakPersen": "≈50%",
+    "kolesterol": "≈36 mg",
+    "natrium": "≈156 mg",
+    "kafein": "≈63 mg (1 shot espresso)",
+    "vitaminDanMineral": [
+      "Kalsium (≈420 mg)",
+      "Fosfor (perkiraan ≈320 mg)",
+      "Kalium (perkiraan ≈530 mg)",
+      "Vitamin B12 (perkiraan ≈1.5 µg)",
+      "Riboflavin (Vitamin B2)",
+      "Vitamin A (kecil, tergantung fortifikasi)",
+      "Vitamin D (jika susu difortifikasi)"
+    ]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori (terhadap 2000 kcal/hari)", "persen": "≈11.5%" },
+    { "nama": "Protein (terhadap 50 g/hari)", "persen": "≈23%" },
+    { "nama": "Kalsium (terhadap 1000 mg/hari)", "persen": "≈42%" },
+    { "nama": "Gula total (terhadap rekomendasi WHO ≤25 g 'free sugars')", "persen": "≈68% (catatan: ini gula laktosa alami, bukan sirup berikutnya)" },
+    { "nama": "Lemak jenuh (terhadap batas ≤22 g/hari sebagai acuan)", "persen": "≈31%" },
+    { "nama": "Natrium (terhadap 2000 mg/hari)", "persen": "≈8%" }
+  ],
+  "risikoKesehatan": {
+    "KeteranganUmum": "Risiko tergantung bahan tambahan dan pola konsumsi.",
+    "Gula": "Sedang jika tanpa tambahan sirup; tinggi kontribusi terhadap batas harian bila ditambahkan sirup/pemanis.",
+    "Lemak Jenuh": "Sedang—kontribusi dari susu penuh; signifikan bila dikonsumsi sering.",
+    "Kalori": "Sedang—bisa bertambah signifikan jika ukuran lebih besar atau ada sirup.",
+    "Kafein": "Biasa (≈63 mg per shot). Perhatian untuk orang hamil, anak-anak atau sensitif kafein.",
+    "Laktosa": "Ada—tidak cocok untuk intoleran laktosa tanpa pengganti."
+  },
+  "waktuKenyang": "≈2–3 jam (minuman cair berprotein dan lemak memberi rasa kenyang sedang; bisa lebih cepat dicerna dibanding makanan padat)",
+  "frekuensiKonsumsi": "Jika tanpa gula tambahan: 1x/hari umumnya aman bagi kebanyakan orang dewasa. Jika menggunakan susu penuh + sirup: batasi 1–3x/minggu.",
+  "ingredients": [
+    "Espresso (kopi hitam)",
+    "Susu sapi penuh (whole milk)",
+    "Busa susu (milk foam)",
+    "Opsional: sirup rasa (vanila, karamel), gula/ gula cair, krim"
+  ],
+  "tipsSehat": [
+    "Pilih susu rendah lemak (skim/1%) atau susu nabati tanpa pemanis (susu almond/oat unsweetened) untuk menurunkan kalori dan lemak jenuh.",
+    "Hindari atau kurangi sirup manis; minta 'no syrup' atau 'half syrup'.",
+    "Pilih ukuran lebih kecil (small) untuk mengurangi kalori total.",
+    "Untuk tambahan protein tanpa lemak jenuh, tambahkan bubuk protein tanpa gula (jika ingin menjadikannya pengganti makanan ringan).",
+    "Jika sensitif kafein, minta decaf atau single shot."
+  ],
+  "alternatif": [
+    "Americano (espresso + air) — hampir tanpa kalori jika tanpa gula",
+    "Latte dengan susu nabati unsweetened (oat/almond) — lebih rendah lemak jenuh",
+    "Teh hijau atau teh hitam tanpa gula",
+    "Espresso single shot (lebih sedikit kalori) dengan segelas air",
+    "Sarapan lebih seimbang: oatmeal + buah + yoghurt rendah gula (untuk rasa kenyang lebih lama dan nutrisi lebih lengkap)"
+  ]
+}
+
+
+[2026-03-09T07:24:02.876Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/50f238-1773041007583.png
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan dengan catatan",
+    "alasan": "Gambar menampilkan minuman kopi berbasis espresso (latte/cappuccino) yang umumnya hanya terdiri dari espresso dan susu. Minuman ini memberikan protein dan kalsium dari susu tetapi juga mengandung lemak jenuh (jika menggunakan susu utuh) dan kafein. Untuk kebanyakan orang sehat, 1 cangkir sehari aman; bagi yang berisiko penyakit jantung atau perlu batasi lemak jenuh/kafein, disarankan pilih susu rendah lemak atau alternatif nabati tanpa tambahan gula."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "sekitar 355 gram (12 fl oz; 1 cangkir latte ukuran sedang)",
+    "jumlahSajian": "1 (pada gambar tampak 1 cangkir)",
+    "kalori": 190,
+    "protein": "9.4 g",
+    "proteinPersenKalori": "20.1%",
+    "karbohidrat": "14.2 g",
+    "karbohidratPersenKalori": "30.4%",
+    "gula": "14 g (laktosa alami jika tidak ditambahkan sirup/gula)",
+    "serat": "0 g",
+    "lemakTotal": "10.3 g",
+    "lemakJenuh": "6.8 g",
+    "lemakTakJenuh": "kira-kira 3.5 g (campuran MUFA/PUFA dari susu)",
+    "lemakPersenKalori": "49.5%",
+    "kolesterol": "≈29 mg",
+    "natrium": "≈130 mg",
+    "vitaminDanMineral": [
+      "Kalsium (≈370 mg)",
+      "Fosfor",
+      "Potasium",
+      "Vitamin B2 (Riboflavin)",
+      "Vitamin B12",
+      "Vitamin A (jika susu diperkaya)",
+      "Vitamin D (jika susu diperkaya)",
+      "Selenium"
+    ]
+  },
+  "perbandinganAKG": [
+    {
+      "nama": "Kalori",
+      "persen": "9.5% (dari asupan harian 2000 kcal)"
+    },
+    {
+      "nama": "Protein",
+      "persen": "18.8% (dari kebutuhan ~50 g/hari)"
+    },
+    {
+      "nama": "Karbohidrat",
+      "persen": "4.7% (dari acuan 300 g/hari)"
+    },
+    {
+      "nama": "Gula (total)",
+      "persen": "28% (dari batasan gula bebas WHO ~50 g/hari) — catatan: ini gula alami laktosa, bukan gula tambahan"
+    },
+    {
+      "nama": "Lemak total",
+      "persen": "14.7% (dari acuan 70 g/hari)"
+    },
+    {
+      "nama": "Lemak jenuh",
+      "persen": "34% (dari rekomendasi <20 g/hari; menunjukkan kontribusi jenuh cukup besar untuk satu sajian jika menggunakan susu utuh)"
+    },
+    {
+      "nama": "Kalsium",
+      "persen": "≈37% (dari acuan 1000 mg/hari)"
+    },
+    {
+      "nama": "Natrium",
+      "persen": "6.5% (dari batas ~2000 mg/hari)"
+    }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang (semua gula pada minuman ini umumnya laktosa alami; jika ditambah sirup/gula menjadi tinggi)",
+    "Lemak": "sedang-tinggi (terutama lemak jenuh jika memakai susu utuh)",
+    "Kafein": "perhatian untuk orang sensitif kafein, ibu hamil, atau hipertensi — satu shot espresso mengandung ~60–100 mg kafein",
+    "Kolesterol": "rendah-moderat (sekitar 29 mg), namun bisa bertambah jika sering konsumsi susu tinggi lemak",
+    "Lainnya": "Jika ditambahkan sirup manis atau whipped cream, risiko gula dan kalori meningkat signifikan"
+  },
+  "waktuKenyang": "2–4 jam (bergantung ukuran porsi dan apakah dimakan bersamaan makanan lain) — protein dan lemak dari susu memberi rasa kenyang sedang",
+  "frekuensiKonsumsi": "1–2 cangkir per hari umumnya aman untuk orang dewasa sehat; batasi jika memiliki penyakit kardiovaskular, kadar kolesterol/lemak jenuh tinggi, atau sensitif kafein",
+  "ingredients": [
+    "Espresso (air + bubuk kopi)",
+    "Susu utuh (jika terlihat berbusa kental) — bisa juga susu 2% atau skim",
+    "Busa susu/foam"
+  ],
+  "tipsSehat": [
+    "Pilih susu rendah lemak (skim/1%) atau susu nabati tanpa gula (susu almond/oat unsweetened) untuk mengurangi kalori dan lemak jenuh.",
+    "Hindari menambahkan sirup manis, gula, whipped cream, atau saus karamel untuk menekan gula dan kalori tambahan.",
+    "Pilih ukuran kecil (mis. 8–12 oz) jika ingin batasi asupan kalori/kafein.",
+    "Jika khawatir lemak jenuh, minta 'skin milk' atau susut dibuih tipis (less foam).",
+    "Perhatikan frekuensi konsumsi kafein jika sensitif atau sedang hamil."
+  ],
+  "alternatif": [
+    "Americano (espresso + air) — hampir nol kalori jika tanpa susu",
+    "Latte dibuat dengan susu rendah lemak atau alternatif nabati tanpa gula (oat/almond unsweetened)",
+    "Cappuccino kecil dengan susu skim",
+    "Teh hijau atau teh hitam tanpa gula sebagai pengganti kafein/kalori lebih rendah",
+    "Cold brew dengan sedikit susu nabati tanpa gula"
+  ]
+}
+
