@@ -32620,3 +32620,152 @@ Kalau mau, saya bisa bantu:
 - membantu mengedit/crop/menajamkan foto,
 - atau menganalisis lebih lanjut—katakan apa yang Anda perlukan.
 
+
+[2026-03-09T07:18:48.190Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/6fa978-1773040697672.webp
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan untuk dikonsumsi rutin",
+    "alasan": "Roti gulung bertabur floss (pork/chicken floss) dan lapisan saus/mentega terlihat tinggi karbohidrat halus, lemak, natrium dan gula tambahan. Mengandung bahan olahan (meat floss, mayones/saus) sehingga cocok sebagai makanan sesekali tapi kurang baik bila dikonsumsi sering."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "100 g (perkiraan; 1 potong pada gambar ≈ 90–110 g)",
+    "jumlahSajian": "6 potong terlihat pada gambar (masing‑masing ~1 sajian)",
+    "kalori": 360,
+    "protein": "10 g",
+    "proteinPersen": "11%",
+    "karbohidrat": "48 g",
+    "karbohidratPersen": "53%",
+    "gula": "10 g",
+    "serat": "2 g",
+    "lemakTotal": "15 g",
+    "lemakJenuh": "4 g",
+    "lemakTakJenuh": "11 g",
+    "lemakPersen": "37.5%",
+    "kolesterol": "40 mg",
+    "natrium": "750 mg",
+    "vitaminDanMineral": [
+      "Vitamin A (kecil)",
+      "Vitamin B1 (tiamin)",
+      "Vitamin B2 (riboflavin)",
+      "Niacin / B3 (kecil)",
+      "Vitamin B12 (jika pork/chicken floss)",
+      "Vitamin E (kecil)",
+      "Zat Besi (~1.5–2 mg)",
+      "Kalsium (~50–80 mg)",
+      "Kalium (~120–180 mg)",
+      "Selenium (dari daging floss)"
+    ]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori (berdasarkan 2000 kcal/hari)", "persen": "18%" },
+    { "nama": "Gula (batas ≤50 g/hari)", "persen": "20%" },
+    { "nama": "Natrium (batas ~2000 mg/hari)", "persen": "37%" },
+    { "nama": "Lemak Jenuh (referensi ~22 g/hari)", "persen": "18%" },
+    { "nama": "Protein (referensi ~50 g/hari)", "persen": "20%" },
+    { "nama": "Serat (referensi ~25 g/hari)", "persen": "8%" }
+  ],
+  "risikoKesehatan": {
+    "Natrium": "tinggi (dapat meningkatkan tekanan darah bila sering dikonsumsi)",
+    "Karbohidrat halus": "tinggi (mudah meningkatkan gula darah cepat)",
+    "Gula tambahan": "sedang",
+    "Lemak jenuh": "sedang",
+    "Bahan olahan & pengawet": "ada (meat floss, saus/mentega olahan) — risiko bila konsumsi berlebihan",
+    "Alergen": "gluten (tepung terigu), susu, telur, wijen; daging (pork/chicken) bagi yang sensitif"
+  },
+  "waktuKenyang": "Sekitar 2–4 jam (karena kandungan karbohidrat halus + lemak menyebabkan kenyang sedang tetapi cepat hilang)",
+  "frekuensiKonsumsi": "Sebaiknya tidak lebih dari 1–2 kali per minggu sebagai makanan selingan; hindari konsumsi harian",
+  "ingredients": [
+    "Tepung terigu",
+    "Gula",
+    "Ragi",
+    "Susu atau susu bubuk",
+    "Telur",
+    "Mentega / margarin / minyak",
+    "Pork floss atau chicken floss (rousong)",
+    "Mayones atau saus manis/krim",
+    "Garam",
+    "Bawang daun (scallion) dan irisan cabai (untuk hiasan)",
+    "Biji wijen",
+    "Pengawet atau emulsifier (kemungkinan pada produk komersial)"
+  ],
+  "tipsSehat": [
+    "Kurangi porsi: makan setengah potong alih‑alih satu potong penuh untuk mengurangi kalori dan sodium.",
+    "Pilih varian dengan lapisan saus yang lebih sedikit atau mintalah tanpa mayo/saus manis.",
+    "Ganti roti putih dengan roti gandum utuh untuk menambah serat dan menurunkan respons gula darah.",
+    "Ganti pork floss dengan floss versi rendah garam atau sumber protein tanpa pengolahan (irisan ayam panggang).",
+    "Tambahkan sayuran segar di samping (mis. salad kecil) untuk meningkatkan serat dan volume makan.",
+    "Hindari konsumsi berbarengan minuman manis untuk mengurangi total gula harian."
+  ],
+  "alternatif": [
+    "Roti gandum isi dada ayam panggang + sayuran segar",
+    "Wrap gandum isi sayur, hummus dan irisan kalkun tanpa lemak",
+    "Roti lapis telur rebus + alpukat + tomat pada roti gandum",
+    "Bowl nasi merah/beras kampung dengan sayur kukus dan protein panggang (porsi terkontrol)",
+    "Pancake gandum utuh dengan topping buah segar dan sedikit yoghurt (mengganti saus manis)"
+  ],
+  "catatan": "Semua angka di atas adalah perkiraan berdasarkan penampilan visual — nilai sebenarnya dapat berbeda bergantung resep, ukuran potong, dan bahan yang dipakai. Jika Anda membutuhkan analisis nutrisi akurat, kirimkan resep lengkap atau label nutrisi produk."
+}
+
