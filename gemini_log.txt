@@ -33374,3 +33374,20 @@ Arti singkat:
 
 Berdasarkan tanggal itu, orang ini berumur sekitar 16–17 tahun saat meninggal. Kalau mau aku bantu baca bagian lain yang agak buram di foto atau terjemahkan ke bahasa lain, bilang saja.
 
+
+[2026-03-10T14:50:10.290Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/8bd9b3-1773154192147.jpg
+Response  : Gambarnya tampak seperti meme/thumbnail video dengan latar ruang kelas dan teks overlay besar. Di pojok kanan atas ada tagar “#NGIDUL KISAH NYATA” dan di bawah ada tulisan provokatif: “HAHAHA DASAR KULIT HITAM BODOH!” (pesan ini bersifat menghina dan menargetkan warna kulit).
+
+Hal penting:
+- Kalimat itu adalah ujaran yang merendahkan berdasarkan ciri fisik (kulit) dan jelas bersifat rasis/hina — tidak pantas dan berbahaya.
+- Jangan menyebarkan atau membagikan gambar semacam ini karena memperkuat dan menyebarluaskan kebencian.
+- Jika gambar ini muncul di media sosial, pertimbangkan untuk:
+  - Melaporkan konten ke platform (laporkan sebagai ujaran kebencian/pelecehan).
+  - Memblokir atau membisukan akun yang menyebarkannya.
+  - Jika perlu, beri tahu administrator/grup agar konten dihapus.
+
+Butuh bantuan?
+- Saya bisa bantu menulis pesan pelaporan ke platform atau contoh balasan sopan untuk menegur pembuatnya, serta menyarankan sumber edukasi tentang antiprasialisme. Mau saya buatkan?
+
