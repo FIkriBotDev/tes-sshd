@@ -33170,3 +33170,31 @@ Status            : Lunas
 
 Jika Anda mau, saya bisa mengirimkan tabel ini dalam format CSV atau Excel.
 
+
+[2026-03-10T05:17:01.290Z]
+Prompt    : buatkan laporan berupa tabel dari invoice ini.
+Image URL : https://uploader.exodusai.biz.id/tmp/cdb085-1773119808211.jpg
+Response  : Berikut laporan dalam bentuk tabel berdasarkan invoice:
+
+Toko: Alfamart Jogja
+Alamat: Jl. Kenangan, Jogja
+Telepon: 08897482739
+Tanggal / Waktu: 18.7.2024 08:49
+No. Struk: #281
+Kasir: Sinta
+
+Item                           | Qty | Harga Satuan (Rp) | Jumlah (Rp)
+-------------------------------|-----|-------------------:|------------:
+Cimory                         | 1   |            2.000   |     2.000
+Cimory hazelnut                | 1   |            9.000   |     9.000
+Frestea madu                   | 1   |            8.000   |     8.000
+Ice cream aice                 | 1   |            5.000   |     5.000
+Kanzler                        | 1   |           10.000   |    10.000
+Le Minerale                    | 1   |            4.000   |     4.000
+-------------------------------|-----|--------------------|-----------
+Total                          |     |                    |    38.000
+
+Pembayaran: Tunai Rp38.000 (Lunas)
+
+Catatan di struk: "Barang yang sudah dibeli tidak bisa dikembalikan lagi."
+
