@@ -33210,3 +33210,145 @@ Kalau mau aku keluarkan juga teks caption di bawah, ini isi caption yang terliha
 
 Mau semua teks di gambar (termasuk tombol/label lain) aku OCR-kan lengkap?
 
+
+[2026-03-10T13:38:15.272Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/2a569c-1773149861051.webp
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan sebagai makanan harian (boleh sebagai sesekali/comfort food)",
+    "alasan": "Roti gulung yang tampak diberi lapisan 'meat floss' (daging suwir kering), saus/gel kandungan lemak (mayones/saus manis), biji wijen dan irisan cabai. Makanan ini relatif tinggi kalori, natrium, karbohidrat halus dan mengandung lemak jenuh serta bahan olahan (meat floss) sehingga kurang optimal jika dikonsumsi rutin."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "±80 g (1 potong/roll)",
+    "jumlahSajian": "6 potong terlihat pada gambar; 1 potong dianggap 1 sajian",
+    "kalori": 320,
+    "protein": "9 g",
+    "proteinPersen": "11%",
+    "karbohidrat": "38 g",
+    "karbohidratPersen": "48%",
+    "gula": "6 g",
+    "serat": "2 g",
+    "lemakTotal": "14 g",
+    "lemakJenuh": "4 g",
+    "lemakTakJenuh": "10 g",
+    "lemakPersen": "39%",
+    "kolesterol": "30 mg",
+    "natrium": "700 mg",
+    "vitaminDanMineral": [
+      "Zat Besi (Fe)",
+      "Vitamin B1/B2/B3 (dari roti dan daging)",
+      "Vitamin B12 (jika meat floss berbahan daging babi/ayam/bebas)",
+      "Kalsium (kecil)",
+      "Kalium (kecil)",
+      "Vitamin A (kecil, jika ada bahan telur/mentega)",
+      "Vitamin C (kecil, dari irisan cabai segar)"
+    ]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "16% (dari AKG 2000 kcal/hari)" },
+    { "nama": "Protein", "persen": "18% (dari AKG 50 g/hari)" },
+    { "nama": "Lemak Jenuh", "persen": "20% (dari batas ~20 g/hari)" },
+    { "nama": "Natrium", "persen": "35% (dari batas ~2000 mg/hari)" },
+    { "nama": "Serat", "persen": "8% (dari kebutuhan ~25 g/hari)" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang (mengandung gula pada adonan/glasir atau meat floss manis)",
+    "Lemak": "sedang (lemak total moderat, lemak jenuh ada)",
+    "Natrium": "tinggi (meat floss dan bumbu olahan cenderung tinggi garam)",
+    "KarbohidratHalus": "tinggi (roti putih/tepung terigu halus)",
+    "BahanOlahan": "ada risiko (meat floss diproses, mungkin pengawet/natrium nitrit)"
+  },
+  "waktuKenyang": "2–3 jam (bergantung aktivitas dan konsumsi lauk/serat tambahan)",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu sebagai camilan/penyegar; jika sering, batasi porsi dan modifikasi bahan",
+  "ingredients": [
+    "Tepung terigu (roti)",
+    "Gula",
+    "Ragi",
+    "Susu/air",
+    "Mentega/minyak",
+    "Telur (mungkin pada adonan atau glasir)",
+    "Pork/chicken floss (meat floss / rousong)",
+    "Mayones/saus manis atau glasir",
+    "Biji wijen",
+    "Irisan cabai dan daun bawang",
+    "Garam",
+    "Pengawet/emulsifier (mungkin ada pada meat floss atau produk komersial)"
+  ],
+  "tipsSehat": [
+    "Gunakan tepung gandum utuh atau campuran gandum utuh untuk menambah serat.",
+    "Kurangi atau ganti mayo/glasir manis dengan yogurt plain tipis atau saus berbasis minyak zaitun sedikit bercampur mustard.",
+    "Kurangi jumlah meat floss atau pilih versi tanpa pengawet/natrium nitrit; atau ganti dengan ayam suwir tanpa pengawet.",
+    "Tambahkan sayuran segar (selada, timun, wortel) untuk menambah volume dan serat.",
+    "Panggang roti tanpa tambahan gula berlebih dan gunakan lapisan tipis minyak untuk menurunkan lemak total.",
+    "Perkecil porsi (mis. makan setengah potong) untuk menurunkan asupan kalori dan natrium."
+  ],
+  "alternatif": [
+    "Roti gandum utuh isi ayam panggang cincang, sayuran segar dan saus yogurt — lebih tinggi serat, lebih rendah garam",
+    "Wrap/gulung dengan tortilla gandum, sayur, dan protein panggang (ayam/ikan) tanpa meat floss",
+    "Roti panggang gandum dengan alpukat dan telur rebus — lemak sehat dan protein lebih baik",
+    "Bento kecil: nasi merah, sayur kukus, dan lauk protein tanpa pengolahan berlebih"
+  ]
+}
+
