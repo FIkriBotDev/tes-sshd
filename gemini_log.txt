@@ -33471,3 +33471,37 @@ Response  : Lucu, ini meme dari screenshot chat yang penuh typo/autocorrect. Int
 
 Jadi lucunya karena kumpulan typo yang makin ngawur ditutup dengan salah kata yang bikin maknanya jadi konyol.
 
+
+[2026-03-10T14:58:43.757Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/124de1-1773154705575.jpg
+Response  : Berikut ringkasan dan transkripsi teks yang tampak pada gambar (tanpa menyebut bagian wajah):
+
+- Judul/atas:
+  - "Goyang roti JAWA"
+  - "Lagu Duo JAWA ft. Ali Tamvan"
+  - Tombol: "Informasi Umum" dan "Lirik"
+
+- Potongan lirik (beberapa kata tampil dengan blok warna dan ada tumpang-tindih; saya tulis sesuai yang terbaca):
+  - "... Janganlah NYAWIT jangan AWOR AWOR
+    Hanya gara-gara TESTIS KERAM sahaja
+    Bila memang tak ada SAWITnya
+    Lalu mau bilang JAWA?"
+  - "... Mari MENGHITAM ikuti SI ADMIN
+    Kita bergembira, bersi[ng]ga bersama
+    Hilangkan NASI KUNING PAKCIC DAVID buanglah Gorengan FESNUK"
+  - "... Ini lagu baru diciptakan
+    Diciptakan hanya 326 malam sahaja pakcik
+    Karna ADMINnya orang JAWA
+    Lagu ini judulnya Goyang roti JAWA"
+  - "... Goyang roti JAWA pakai GORENGAN FESNUK
+    Sama orang JAWA yang ikut bers[ing]ga
+    BIJI PRABOWO jadi hilang
+    Otak ADMIN PUN HILANG"
+
+Catatan:
+- Beberapa bagian tumpang-tindih atau sebagian huruf terpotong sehingga ada ketidakpastian kecil (mis. "bersig­ma"/"bersama"/"bersig­ma" terlihat), saya menandai sebisa mungkin.
+- Nada teks terlihat seperti parodi/meme (banyak sisipan kata-kata lucu/nyeleneh dan blok teks warna-warni).
+
+Mau saya bersihkan transkripsinya jadi teks rapi, terjemahkan ke bahasa Inggris, atau bantu edit liriknya?
+
