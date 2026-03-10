@@ -33557,3 +33557,30 @@ Kalau mau, saya bisa:
 - Membantu menyusun pesan laporan ke bank atau ke pihak berwajib (template).
 - Menjelaskan langkah-langkah keamanan kartu dan akun online lebih rinci.
 
+
+[2026-03-10T15:05:40.717Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/5b0c05-1773155117702.jpg
+Response  : Terlihat ini tangkapan layar percakapan dengan Meta AI (Llama 4). Anda mengetik “Gambar sapi”, tetapi hasil yang muncul bukan sapi — ada gambar singa dengan ular sebelumnya, lalu AI menampilkan ilustrasi robot di laboratorium. Jadi AI tampaknya salah menafsirkan atau memilih aset yang tidak sesuai.
+
+Saran cepat untuk dapatkan gambar sapi yang diinginkan:
+- Beri prompt yang lebih spesifik: sebutkan gaya (foto realistis / ilustrasi / kartun), jenis sapi, pose, lingkungan, sudut pandang, dan kualitas.
+- Sertakan prompt negatif supaya AI menghindari elemen yang tidak diinginkan (mis. “tanpa robot, tanpa manusia, tanpa elemen futuristik”).
+- Jika ada tombol feedback (like/dislike), berikan umpan balik “tidak sesuai” agar model belajar.
+- Jika terus salah, coba ulang percakapan baru atau laporkan bug ke dukungan.
+
+Contoh prompt yang bisa dicoba:
+- Foto realistis: “Foto realistis seekor sapi perah Holstein sedang merumput di padang rumput hijau, siang hari, full body, fokus tajam, latar belakang kebun, resolusi tinggi. Tanpa robot atau elemen futuristik.”
+- Ilustrasi: “Ilustrasi bergaya kartun seekor sapi lucu di ladang bunga, warna cerah, sudut pandang tiga-perempat.”
+- Close-up: “Foto close-up wajah sapi bali, pencahayaan lembut, latar belakang blur, detail bulu terlihat.”
+
+Contoh prompt negatif singkat: “Exclude: robot, manusia, singa, ular, efek futuristik.”
+
+Langkah praktis:
+1. Kirim ulang prompt yang diperjelas.  
+2. Tambahkan kata-kata “photo-realistic” atau “illustration” sesuai kebutuhan.  
+3. Gunakan prompt negatif jika perlu.  
+4. Beri feedback/laporkan jika hasil tetap tidak sesuai.
+
+Mau saya bantu susun prompt yang lebih spesifik sesuai gaya atau jenis sapi yang Anda inginkan?
+
