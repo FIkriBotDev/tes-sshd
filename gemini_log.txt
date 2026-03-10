@@ -33352,3 +33352,25 @@ Response  : {
   ]
 }
 
+
+[2026-03-10T14:48:20.305Z]
+Prompt    : Bro coba liat
+Image URL : https://uploader.exodusai.biz.id/tmp/c3beae-1773154083871.jpg
+Response  : Kuy, aku lihat.
+
+Transkripsi yang terlihat di batu nisan:
+- (tulisan Arab) "Inna lillahi wa inna ilayhi raji'un" (إِنَّا لِلَّٰهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ)
+- JACK
+- BIN
+- OWIE
+- LAHIR : KEBUMEN 1989
+- WAFAT : METRO, 16 JUNI 2006
+
+Arti singkat:
+- "bin" = anak laki-laki dari (menunjukkan nama bapak).
+- "lahir" = lahir (tempat: Kebumen, tahun 1989).
+- "wafat" = meninggal (tempat: Metro, tanggal 16 Juni 2006).
+- Tulisan Arab berarti "Sesungguhnya kami milik Allah dan kepada-Nya kami kembali."
+
+Berdasarkan tanggal itu, orang ini berumur sekitar 16–17 tahun saat meninggal. Kalau mau aku bantu baca bagian lain yang agak buram di foto atau terjemahkan ke bahasa lain, bilang saja.
+
