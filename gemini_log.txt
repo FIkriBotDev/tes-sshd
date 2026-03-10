@@ -33505,3 +33505,27 @@ Catatan:
 
 Mau saya bersihkan transkripsinya jadi teks rapi, terjemahkan ke bahasa Inggris, atau bantu edit liriknya?
 
+
+[2026-03-10T15:00:28.218Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/177888-1773154806133.jpg
+Response  : Terlihat screenshot sebuah postingan yang mengeluh karena mendapat file PDF menu Ramadhan berukuran ~303 MB (terlihat di preview unduhan). Jadi intinya: file menu sangat besar — wajar orang kaget.
+
+Kenapa bisa segitu besar?
+- PDF berisi banyak foto beresolusi sangat tinggi (gambar full‑page).
+- Dibuat dari scan tanpa kompresi (scan sebagai gambar besar).
+- Ada elemen yang tidak perlu: font ter‑embed, banyak halaman, atau bahkan media terbenam (video/gambar ganda).
+- File dibuat/ditgekspor dengan pengaturan kualitas maksimum.
+
+Cara mengatasinya (untuk pengirim)
+- Kompres PDF sebelum kirim (online: Smallpdf, iLovePDF, PDF Compressor; atau pakai Adobe Acrobat: File > Save as Other > Reduced Size PDF).
+- Turunkan resolusi gambar dan simpan ulang (mis. 150–200 dpi cukup untuk menu tampil di HP).
+- Kirim foto menu sebagai album JPG/WebP dengan ukuran disesuaikan, atau kirim link Google Drive/Dropbox daripada file besar.
+
+Cara untuk penerima (jika mau hemat data)
+- Minta versi yang dikompres atau link yang bisa dibuka tanpa unduh penuh.
+- Minta foto/screenshots dari halaman penting saja.
+- Jika sudah terunduh, gunakan aplikasi kompres PDF di HP untuk mengecilkan ukurannya.
+
+Jika mau, sebutkan perangkat/OS kamu (Android/iPhone/PC), saya bisa jelaskan langkah‑langkah konkret untuk kompres/konversi.
+
