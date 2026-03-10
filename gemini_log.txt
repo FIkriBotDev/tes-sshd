@@ -33198,3 +33198,15 @@ Pembayaran: Tunai Rp38.000 (Lunas)
 
 Catatan di struk: "Barang yang sudah dibeli tidak bisa dikembalikan lagi."
 
+
+[2026-03-10T12:39:44.122Z]
+Prompt    : Keluarkan text nya bro di judul
+Image URL : https://uploader.exodusai.biz.id/tmp/ec7d1a-1773146366918.jpg
+Response  : Kalau yang kamu maksud teks di judul (pojok kiri atas), tulisannya: 
+- Video
+
+Kalau mau aku keluarkan juga teks caption di bawah, ini isi caption yang terlihat:
+- Buat lu yang sering gagal pakai metode lama, cobain nih pake IP South Korea dan VCC sakti dari Telegram Bot @msverifybot. Gue udah buktiin sendiri di video ini, gak pake lama langsung 'Boom' jadi Plus! lebih sedikit
+
+Mau semua teks di gambar (termasuk tombol/label lain) aku OCR-kan lengkap?
+
