@@ -33598,3 +33598,30 @@ Humornya: ironis bahwa foto objek yang sangat jauh bisa terlihat jernih berkat t
 
 Mau saya terjemahkan teksnya ke bahasa lain, jelaskan lebih teknis, atau buat variasi meme serupa?
 
+
+[2026-03-10T15:08:38.238Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/5b5bc0-1773155300893.jpg
+Response  : Kocak — tampaknya sistem atau peluncur (launcher) di Android tersebut menerjemahkan nama aplikasi secara harfiah ke Bahasa Indonesia. Beberapa contoh yang terlihat:
+
+- ApaApp = WhatsApp  
+- Api Gratis = Free Fire  
+- KamuTabung = YouTube  
+- Tambangkerajinan Letupan Mimpi ≈ Minecraft (terjemahan literal dari “mine/craft” + sesuatu seperti “explosion/dream”)  
+- Legenda Seluler: Letupan Letupan = Mobile Legends (terjemahan literal)  
+- Panggilan Tugas = Call of Duty  
+- Perselisihan = Discord  
+- Berkedut = Twitch
+
+Jika mau mengembalikan nama aplikasi ke versi aslinya (mis. bahasa Inggris), solusi yang bisa dicoba:
+
+1. Ubah bahasa sistem:
+   - Settings > System > Languages & input > Languages (atau di Samsung: Settings > General management > Language and input > Language).  
+   - Tambahkan English dan pindahkan ke posisi teratas, lalu restart bila perlu.
+
+2. Gunakan peluncur pihak ketiga (mis. Nova Launcher, Lawnchair) yang mengizinkan mengganti nama ikon manual, sehingga kamu bisa mengatur nama tampilan aplikasi sendiri.
+
+3. Jika perubahan muncul karena data Play Store/akun, periksa pengaturan akun Google/region atau update aplikasi/launcher ke versi terbaru.
+
+Itu saja — gampang diperbaiki dengan mengganti bahasa sistem atau memakai launcher yang lebih fleksibel.
+
