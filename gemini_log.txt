@@ -33637,3 +33637,156 @@ Catatan singkat:
 - Nyi Roro Kidul adalah tokoh legenda/kultural penting; beberapa lokasi pantai memiliki adat, larangan, dan tata krama tertentu — sebaiknya menghormati kebiasaan setempat saat berkunjung.
 - Menggunakan ungkapan yang menghina terhadap tokoh yang dihormati oleh sebagian orang dapat menyinggung; jika ingin berbagi foto, pertimbangkan bahasa yang lebih sopan.
 
+
+[2026-03-10T20:21:38.269Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/32e114-1773174067790.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Direkomendasikan dengan catatan",
+    "alasan": "Komposisi dasar (yogurt + buah + oats) menyediakan protein, serat, vitamin dan mineral yang baik. Namun kandungan gula bisa meningkat jika yogurt manis atau granola/selai ditambahkan. Kesehatan akhir tergantung pada jenis yogurt dan jumlah/jenis granola atau pemanis tambahan."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "sekitar 300 gram (per gelas, perkiraan)",
+    "jumlahSajian": "1 gelas (gambar menunjukkan 2 gelas, analisis untuk 1 gelas)",
+    "kalori": 340,
+    "protein": "12 g",
+    "proteinPersen": "14%",
+    "karbohidrat": "55 g",
+    "karbohidratPersen": "65%",
+    "gula": "30 g (termasuk gula buah dan kemungkinan gula tambahan)",
+    "serat": "7 g",
+    "lemakTotal": "8 g",
+    "lemakJenuh": "1.5 g",
+    "lemakTakJenuh": "6.5 g",
+    "lemakPersen": "21%",
+    "kolesterol": "20 mg",
+    "natrium": "150 mg",
+    "vitaminDanMineral": [
+      "Vitamin C (buah beri, stroberi)",
+      "Kalsium (dari yogurt)",
+      "Vitamin B kompleks (dari oats & yogurt)",
+      "Kalium (buah)",
+      "Magnesium (oats)",
+      "Fosfor (yogurt & oats)",
+      "Zat Besi (kecil dari oats & buah)",
+      "Vitamin A (jumlah kecil dari buah)"
+    ]
+  },
+  "perbandinganAKG": [
+    {
+      "nama": "Kalori",
+      "persen": "17% (dari 2000 kcal)"
+    },
+    {
+      "nama": "Protein",
+      "persen": "24% (dari kebutuhan ~50 g/hari)"
+    },
+    {
+      "nama": "Gula (batas WHO ~50 g/hari)",
+      "persen": "60%"
+    },
+    {
+      "nama": "Serat",
+      "persen": "28% (dari rekomendasi ~25 g/hari)"
+    },
+    {
+      "nama": "Kalsium",
+      "persen": "20–25% (perkiraan, tergantung jenis yogurt)"
+    },
+    {
+      "nama": "Sodium",
+      "persen": "8% (dari batas ~2000 mg/hari)"
+    }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang-tinggi jika yogurt atau granola mengandung gula tambahan; alami dari buah lebih aman",
+    "Lemak": "rendah (kecuali bila menggunakan yogurt full-fat atau granola berlemak)",
+    "Sodium": "rendah",
+    "Kolesterol": "rendah",
+    "RisikoTambahan": "Jika sering mengonsumsi versi manis/granola banyak, risiko asupan gula berlebih dan kalori berlebih meningkat"
+  },
+  "waktuKenyang": "3-4 jam (bergantung porsi & komposisi lemak/protein/serat)",
+  "frekuensiKonsumsi": "Bisa dikonsumsi beberapa kali/minggu jika menggunakan yogurt plain/Greek tanpa pemanis tambahan; batasi menjadi 1–2x/minggu jika memakai yogurt manis atau granola/penambah gula berlebih.",
+  "ingredients": [
+    "Yogurt (plain atau Greek) - asumsi",
+    "Oats/rolled oats (atau granola) - terlihat lapisan butiran",
+    "Buah campur: stroberi, blueberry, mungkin anggur dan potongan buah lain",
+    "Kemungkinan topping: kelapa parut atau sedikit madu/saus (tampak serpihan putih di atas)"
+  ],
+  "tipsSehat": [
+    "Pilih yogurt plain atau Greek tanpa gula tambahan untuk meningkatkan protein dan menurunkan gula.",
+    "Batasi granola manis; gunakan oats mentah/overnight oats untuk tekstur tanpa gula ekstra.",
+    "Tambahkan biji chia atau flaxseed untuk serat dan lemak omega-3.",
+    "Perbanyak porsi buah segar sebagai pemanis alami dan sumber vitamin.",
+    "Kontrol porsi: sekitar 1 gelas/300 g agar kalori tetap terkontrol."
+  ],
+  "alternatif": [
+    "Overnight oats (oats + susu nabati + buah segar + biji chia) tanpa pemanis tambahan",
+    "Cottage cheese atau Greek yogurt dengan buah untuk lebih banyak protein",
+    "Smoothie bowl dengan sayuran hijau, protein powder, buah, dan topping biji-bijian",
+    "Buah utuh + segenggam kacang untuk camilan seimbang"
+  ]
+}
+
