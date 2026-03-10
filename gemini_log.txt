@@ -33108,3 +33108,40 @@ Saran singkat bila ingin diperbaiki:
 - Perjelas apakah acara terbuka untuk umum atau khusus orang tua.
 - Sesuaikan ukuran teks alamat agar tetap terbaca saat dicetak berukuran kecil.
 
+
+[2026-03-10T05:06:25.931Z]
+Prompt    : buat laporan berupa tabel dari invoice ini.
+Image URL : https://uploader.exodusai.biz.id/tmp/894cbd-1773119157640.jpg
+Response  : Berikut laporan dalam bentuk tabel berdasarkan isi invoice (struk) yang Anda berikan. Nama orang pada gambar tidak dicantumkan demi privasi.
+
+Informasi toko:
+- Nama toko: Alfamart Jogja
+- Alamat: Jl. Kenangan, Jogja
+- Telepon: 08897482739
+- Tanggal/Waktu: 18-07-2024 08:49
+- No. struk: #281
+
+Daftar item:
+No | Item             | Qty | Harga satuan (Rp) | Subtotal (Rp)
+1  | Cimory           | 1   | 2.000             | 2.000
+2  | Cimory hazelnut  | 1   | 9.000             | 9.000
+3  | Frestea madu     | 1   | 8.000             | 8.000
+4  | Ice cream aice   | 1   | 5.000             | 5.000
+5  | Kanzler          | 1   | 10.000            | 10.000
+6  | Le Minerale      | 1   | 4.000             | 4.000
+
+Ringkasan pembayaran:
+- Total: Rp 38.000
+- Pembayaran: Tunai Rp 38.000
+- Status: Lunas
+
+Catatan pada struk:
+- "Barang yang sudah dibeli tidak bisa dikembalikan lagi"
+
+Kasir:
+- Nama kasir terlihat pada struk namun tidak saya cantumkan demi privasi.
+
+Jika Anda ingin, saya bisa:
+- Mengirim versi tabel dalam format CSV/Excel, atau
+- Menambahkan kolom kode/nomor barang atau total kumulatif.
+
