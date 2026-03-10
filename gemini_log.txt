@@ -33145,3 +33145,28 @@ Jika Anda ingin, saya bisa:
 - Mengirim versi tabel dalam format CSV/Excel, atau
 - Menambahkan kolom kode/nomor barang atau total kumulatif.
 
+
+[2026-03-10T05:12:24.651Z]
+Prompt    : buatkan laporan berupa tabel dari invoice ini.
+Image URL : https://uploader.exodusai.biz.id/tmp/d2d486-1773119530521.jpg
+Response  : Berikut laporan dalam bentuk tabel berdasarkan invoice yang Anda berikan:
+
+Tanggal : 18.7.2024 08:49
+No. struk : #281
+(Catatan: nama kasir tidak disertakan)
+
+Tabel item:
+No | Item               | Qty | Harga satuan (Rp) | Jumlah (Rp)
+1  | Cimory             | 1   | 2.000             | 2.000
+2  | Cimory hazelnut    | 1   | 9.000             | 9.000
+3  | Frestea madu       | 1   | 8.000             | 8.000
+4  | Ice cream aice     | 1   | 5.000             | 5.000
+5  | Kanzler            | 1   | 10.000            | 10.000
+6  | Le Minerale        | 1   | 4.000             | 4.000
+
+Total pembayaran : Rp38.000
+Metode pembayaran : Tunai
+Status            : Lunas
+
+Jika Anda mau, saya bisa mengirimkan tabel ini dalam format CSV atau Excel.
+
