@@ -33800,3 +33800,21 @@ Mau saya coba:
 - tebak teks atas lebih spesifik, atau
 - rekomendasi cara memperjelas (mis. kirim versi resolusi lebih tinggi, atau gunakan perangkat lunak upscaling)?
 
+
+[2026-03-11T07:12:45.775Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/9bc5cf-1773213152989.jpg
+Response  : Gambar ini adalah poster bergaya pink berisi “Tips Mempercepat Doksli Turun” dengan empat poin berurutan dan informasi kontak di bagian bawah (nomor telepon dan situs). Isi teks pada poster (terjemahan/penjelasan singkat):
+
+- Judul: Tips Mempercepat Doksli Turun
+- 1) Jangan Terpancing Emosi — tetap tenang.
+- 2) Spam Kolom Komentar — (menganjurkan mengisi komentar berulang).
+- 3) Report Bareng-bareng — (mendorong laporan massal).
+- 4) Laporkan ke Admin! — hubungi admin/moderator.
+- Kontak: nomor telepon dan alamat situs tercantum di bagian bawah.
+
+Catatan penting dan saran praktis:
+- Pendekatan seperti spam dan laporan massal sering bertentangan dengan aturan platform dan bisa berbalik merugikan (mis. dianggap pelanggaran atau pembajakan proses moderation).
+- Alternatif yang lebih aman dan efektif: tetap tenang, kumpulkan bukti (screenshot, tautan, waktu), buat laporan tunggal dan jelas kepada moderator/admin dengan bukti, jelaskan pelanggaran spesifik terhadap kebijakan, dan gunakan saluran resmi (form laporan atau support). Jika masalah serius atau melanggar hukum, pertimbangkan konsultasi hukum atau melaporkan ke pihak berwajib sesuai prosedur.
+- Jika tujuan poster tidak jelas, tanyakan langsung ke admin situs yang bersangkutan untuk prosedur yang tepat.
+
