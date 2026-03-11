@@ -33844,3 +33844,23 @@ Saran singkat kalau ingin memperbaiki tampilan:
 - Jika ingin kesan lebih netral, pilih warna dasi dengan kontras lebih rendah terhadap jas/kemeja.
 - Gunakan pencahayaan lembut untuk mengurangi bayangan keras dan memberi dimensi pada foto.
 
+
+[2026-03-11T07:15:45.116Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/a0370f-1773213325206.jpg
+Response  : Gambarnya jelas — screenshot kanal YouTube bernama "shinywr" yang menampilkan durasi video yang sangat tidak masuk akal (mis. "1,234,567:30:00" — itu sekitar 1.234.567 jam ≈ 140,9 tahun). Ada juga thumbnail yang menulis "150 HOURS IN 1 SHORT" dan durasi "294:00:00" (294 jam ≈ 12,25 hari).
+
+Kemungkinan penjelasan (urut dari yang paling mungkin):
+- Thumbnail atau screenshot diedit untuk viral/klik (paling umum). Pembuat bisa menambahkan teks durasi palsu di gambar.
+- Bug/eror tampilan YouTube atau API yang membuat bidang durasi dipenuhi angka yang salah (mis. overflow/metadata korup).
+- Kesalahan metadata/video (mis. livestream dijadwalkan dengan timestamp aneh) — tapi YouTube membatasi fitur tertentu, sehingga durasi ratusan tahun sangat tidak masuk akal.
+- Screenshot dari alat pihak ketiga atau hasil parsing yang salah sehingga waktu ditampilkan keliru.
+
+Cara cepat verifikasi sendiri:
+1. Buka langsung kanal/video di YouTube dan lihat durasi pada pemutar video (bukan hanya thumbnail).
+2. Di halaman video: klik kanan → "Stats for nerds" untuk lihat total duration sebenarnya.
+3. Periksa deskripsi/tanggal upload dan komentar — kalau manipulasi biasanya ada komentar yang mempertanyakan juga.
+4. Jika mau lebih teknis: ambil ID video dan cek lewat YouTube Data API atau lihat source HTML untuk field durasi.
+
+Kesimpulan singkat: hampir pasti palsu atau glitch — durasi ratusan tahun tidak realistis untuk video YouTube biasa. Mau aku bantu langkah pemeriksaan lebih lanjut (mis. apa yang harus dicari di halaman video) atau coba periksa linknya?
+
