@@ -34102,3 +34102,146 @@ Response  : {
   "catatanKeterbatasan": "Analisis ini berupa estimasi berdasarkan tampilan foto. Kandungan nutrisi sebenar tergantung resep, ukuran porsi, dan bahan yang digunakan oleh pembuat. Untuk angka pasti, diperlukan label nutrisi atau analisis laboratorium resep yang dipakai."
 }
 
+
+[2026-03-12T11:28:37.456Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/662e9e-1773314885854.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan sebagai pilihan harian",
+    "alasan": "Makanan pada gambar tampak sebagai croissant/roti lapis cokelat (pastry berlapis dengan isian cokelat). Makanan ini padat energi (kalori tinggi) dengan proporsi lemak dan gula yang relatif tinggi, serat rendah, dan kandungan natrium sedang — cocok sebagai camilan sesekali tetapi kurang ideal untuk konsumsi rutin jika tujuan kesehatan adalah menjaga berat badan, kesehatan jantung, atau kontrol gula darah."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "100 g (perkiraan)",
+    "jumlahSajian": "1 potong (terlihat satu potong pada gambar, ~80–120 g tergantung ukuran)",
+    "kalori": 360,
+    "protein": "6 g",
+    "proteinPersen": "6.7% (dari total kalori)",
+    "karbohidrat": "38 g",
+    "karbohidratPersen": "42.2% (dari total kalori)",
+    "gula": "14 g (gula tambahan + dari cokelat)",
+    "serat": "2 g",
+    "lemakTotal": "20 g",
+    "lemakJenuh": "8 g",
+    "lemakTakJenuh": "12 g (gabungan tak jenuh tunggal & ganda, perkiraan)",
+    "lemakPersen": "50% (dari total kalori)",
+    "kolesterol": "60 mg",
+    "natrium": "350 mg",
+    "vitaminDanMineral": [
+      "Vitamin A (dari mentega/susu, jumlah kecil)",
+      "Vitamin B1 (Tiamin), B2 (Riboflavin), B3 (Niacin) - jejak dari tepung & ragi",
+      "Kalsium (kecil, dari susu/mentega/cokelat)",
+      "Zat Besi (kecil)",
+      "Magnesium (jejak dari cokelat)",
+      "Fosfor (jejak)",
+      "Zinc (jejak)"
+    ]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "18% (dari kebutuhan 2000 kcal/hari)" },
+    { "nama": "Protein", "persen": "12% (asumsikan kebutuhan 50 g/hari)" },
+    { "nama": "Karbohidrat", "persen": "14% (dari kebutuhan 275 g/hari)" },
+    { "nama": "Lemak total", "persen": "29% (dari rekomendasi 70 g/hari)" },
+    { "nama": "Lemak jenuh", "persen": "40% (dari batas <20 g/hari)" },
+    { "nama": "Gula (tambahan)", "persen": "28% (dari batas 50 g/hari WHO)" },
+    { "nama": "Natrium", "persen": "15% (dari batas 2300 mg/hari)" },
+    { "nama": "Serat", "persen": "8% (dari rekomendasi ~25 g/hari)" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "sedang (mengandung gula tambahan dari isi cokelat/glasir)",
+    "Lemak": "tinggi terutama lemak jenuh (dari mentega/lemak pastry)",
+    "Kalori": "sedang-tinggi (padat energi, mudah konsumsi berlebih)",
+    "Serat": "rendah (kurang membantu kenyang jangka panjang dan kontrol gula darah)",
+    "Natrium": "sedang (bukan sangat tinggi, namun berkontribusi jika dikonsumsi bersama sumber garam lain)"
+  },
+  "waktuKenyang": "2–4 jam (perkiraan; lemak memperlambat pencernaan sehingga rasa kenyang dapat bertahan ~2–3 jam pada banyak orang)",
+  "frekuensiKonsumsi": "Sebaiknya sesekali: 1–2 kali/minggu untuk orang yang aktif; ≤1 kali/minggu bagi yang sedentari atau memiliki risiko kardiometabolik",
+  "ingredients": [
+    "Tepung terigu (wheat flour)",
+    "Mentega atau margarin (untuk laminasi pastry)",
+    "Cokelat atau pasta cokelat (isi)",
+    "Gula pasir",
+    "Ragi (bila dibuat roti tanda terangkat)",
+    "Susu atau susu bubuk",
+    "Telur",
+    "Garam",
+    "Emulsifier/penstabil (opsional, bila produk komersial)",
+    "Pewarna/pengawet/penambah rasa (opsional, bila komersial)"
+  ],
+  "tipsSehat": [
+    "Batasi porsi: ambil potongan lebih kecil (mis. 50–60 g) untuk mengurangi kalori & gula.",
+    "Pilih versi dengan cokelat hitam (70%+) atau kurangi jumlah isian manis untuk mengurangi gula tambahan.",
+    "Jika membuat sendiri: gunakan mentega secukupnya, kurangi gula dalam adonan, dan pertimbangkan substitusi sebagian tepung putih dengan tepung gandum utuh (hasil tekstur akan berubah).",
+    "Padukan dengan sumber protein/serat saat makan (mis. yoghurt tanpa gula + buah berry) untuk meningkatkan rasa kenyang dan menurunkan lonjakan gula darah.",
+    "Hindari konsumsi bersamaan minuman manis (kopi gula, jus) untuk mengurangi total gula dan kalori."
+  ],
+  "alternatif": [
+    "Roti gandum utuh panggang dengan selai kacang tanpa gula dan irisan pisang (lebih serat & protein)",
+    "Yoghurt plain rendah lemak + granola buatan sendiri + buah beri",
+    "Oatmeal hangat dengan potongan buah dan sedikit kacang (lebih serat dan pelepas energi lambat)",
+    "Roti panggang gandum dengan potongan cokelat hitam (1–2 kotak) dan kacang sebagai sumber lemak sehat",
+    "Bolu atau muffin oat rendah gula buatan rumah sebagai camilan yang lebih seimbang"
+  ]
+}
+
