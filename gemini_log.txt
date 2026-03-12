@@ -33945,3 +33945,160 @@ Bisa saya bantu:
 
 Mau saya lakukan apa dengan gambar ini?
 
+
+[2026-03-12T11:28:21.871Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/93f53c-1773314864314.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan untuk dikonsumsi rutin; cocok sebagai sesekali (cemilan/nikmat).",
+    "alasan": "Berdasarkan tampilan, makanan ini adalah pastry lapis cokelat (croissant/croissant marmer) berisi cokelat atau ganache. Mengandung lemak (dari mentega/minyak), gula tambahan (isi cokelat dan adonan manis), dan karbohidrat olahan (tepung terigu). Kandungan kalori, lemak jenuh, dan gula cenderung tinggi sehingga tidak ideal untuk konsumsi harian."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "120g (perkiraan untuk 1 buah/potong pada gambar)",
+    "jumlahSajian": "1 buah (perkiraan)",
+    "kalori": 420,
+    "protein": "6g",
+    "proteinPersen": "5.7%",
+    "karbohidrat": "45g",
+    "karbohidratPersen": "42.9%",
+    "gula": "18g",
+    "serat": "2g",
+    "lemakTotal": "24g",
+    "lemakJenuh": "12g",
+    "lemakTakJenuh": "12g",
+    "lemakPersen": "51.4%",
+    "kolesterol": "70mg",
+    "natrium": "420mg",
+    "vitaminDanMineral": [
+      "Kalsium (sedikit, dari susu/butter)",
+      "Zat Besi (sedikit, dari tepung terigu dan cokelat)",
+      "Vitamin B kompleks (trace, dari ragi/tepung)",
+      "Vitamin A (trace, dari butter)",
+      "Sodium (sebagaimana tertera)"
+    ]
+  },
+  "perbandinganAKG": [
+    {
+      "nama": "Kalori (vs kebutuhan 2000 kcal/hari)",
+      "persen": "21%"
+    },
+    {
+      "nama": "Protein (vs kebutuhan ~50g/hari)",
+      "persen": "12%"
+    },
+    {
+      "nama": "Serat (vs rekomendasi ~25g/hari)",
+      "persen": "8%"
+    },
+    {
+      "nama": "Gula tambahan (vs batas WHO 50g/hari)",
+      "persen": "36%"
+    },
+    {
+      "nama": "Lemak jenuh (vs batas ~22g/hari untuk 10% energi)",
+      "persen": "55%"
+    },
+    {
+      "nama": "Natrium (vs batas ~2000mg/hari)",
+      "persen": "21%"
+    }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi (mengandung gula tambahan pada isi cokelat dan adonan)",
+    "LemakJenuh": "tinggi (mentega/butter dan cokelat dapat menyumbang lemak jenuh signifikan)",
+    "Kalori": "sedang-tinggi (energi padat sehingga mudah berlebih bila sering dikonsumsi)",
+    "KarbohidratOlahan": "tinggi (tepung terigu halus, cepat meningkatkan gula darah)",
+    "Natrium": "sedang (tergantung resep/penggaraman)"
+  },
+  "waktuKenyang": "2-3 jam (karena kandungan lemak membuat rasa kenyang lebih lama daripada karbohidrat murni, namun rendah serat sehingga tidak bertahan lama)",
+  "frekuensiKonsumsi": "Sebagai penganan: tidak lebih dari 1x/minggu untuk konsumsi rutin; sebagai sesekali treat boleh lebih sering tergantung kebutuhan energi harian.",
+  "ingredients": [
+    "Tepung terigu (refined wheat flour)",
+    "Butter/mentega atau margarin",
+    "Cokelat/ganache atau pasta cokelat (gula, cocoa mass, cocoa butter)",
+    "Gula",
+    "Ragi",
+    "Susu atau susu bubuk",
+    "Telur (kemungkinan dalam adonan atau olesan)",
+    "Garam",
+    "Emulsifier/pengemulsi dan mungkin pengawet (tergantung pembuat)"
+  ],
+  "tipsSehat": [
+    "Konsumsi porsi lebih kecil: bagi 1 buah menjadi 2 dan nikmati setengah porsi jika ingin mengurangi kalori.",
+    "Padankan dengan sumber protein/serat: makan bersama yogurt rendah lemak, buah segar, atau selai kacang untuk memperlambat penyerapan gula.",
+    "Panaskan sebentar untuk mengurangi keinginan menambah topping gula seperti selai atau gula bubuk.",
+    "Pilih varian dengan cokelat dark (lebih sedikit gula) atau croissant dengan isian buah tanpa tambahan gula jika tersedia.",
+    "Batasi frekuensi; gunakan sebagai treat bukan makanan rutin."
+  ],
+  "alternatif": [
+    "Roti gandum panggang dengan sedikit selai kacang alami dan irisan pisang (lebih serat dan protein)",
+    "Greek yogurt dengan potongan buah dan sedikit dark chocolate parut",
+    "Almond croissant buatan rumah dengan pengurangan gula dan mentega, serta tepung campuran gandum utuh",
+    "Biskuit gandum utuh atau muffin gandum utuh rendah gula",
+    "Buah segar + segenggam kacang sebagai camilan berenergi dan penuh nutrisi"
+  ],
+  "catatanKeterbatasan": "Analisis ini berupa estimasi berdasarkan tampilan foto. Kandungan nutrisi sebenar tergantung resep, ukuran porsi, dan bahan yang digunakan oleh pembuat. Untuk angka pasti, diperlukan label nutrisi atau analisis laboratorium resep yang dipakai."
+}
+
