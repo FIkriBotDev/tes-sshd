@@ -34274,3 +34274,145 @@ Response  : Terlihat sebuah pertemuan santai di luar (di jalan perumahan) menjel
 
 Saran singkat bila ingin memperjelas foto: ambil dari sudut sedikit lebih tinggi atau lebih dekat ke makanan untuk menangkap detail, tambahkan sumber cahaya depan atau gunakan mode malam agar obyek lebih terang, dan pindahkan stiker teks agar tidak menutupi bagian penting.
 
+
+[2026-03-13T15:17:47.412Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/bd2d19-1773415016745.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tergantung tujuan dan frekuensi",
+    "alasan": "Makanan tampak berupa semangkuk bihun kuah berbasis santan dengan telur, bakso/otak-otak/ikan, tahu/prefried tofu dan sayuran. Ini sumber karbohidrat, protein dan lemak jenuh dari santan — bergizi tetapi relatif tinggi kalori, lemak jenuh dan natrium jika dikonsumsi sering."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "sekitar 450 g (1 mangkuk, perkiraan)",
+    "jumlahSajian": "1",
+    "kalori": 610,
+    "protein": "25 g",
+    "proteinPersen": "16.4%",
+    "karbohidrat": "60 g",
+    "karbohidratPersen": "39.3%",
+    "gula": "6 g",
+    "serat": "4 g",
+    "lemakTotal": "30 g",
+    "lemakJenuh": "14 g",
+    "lemakTakJenuh": "16 g",
+    "lemakPersen": "44.3%",
+    "kolesterol": "186 mg",
+    "natrium": "1200 mg",
+    "vitaminDanMineral": [
+      "Vitamin A (dari sayuran)",
+      "Vitamin C (dari sayuran)",
+      "Vitamin B12 (dari telur, produk ikan)",
+      "Vitamin D (dari telur, sedikit)",
+      "Folat (dari sayuran)",
+      "Zat Besi (dari telur, bakso/ikan)",
+      "Kalsium (sedikit, dari bahan hewani dan tahu jika ada)",
+      "Kalium",
+      "Magnesium",
+      "Fosfor"
+    ]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30.5% (dari 2000 kkal/hari)" },
+    { "nama": "Protein", "persen": "50% (dari rekom. 50 g/hari)" },
+    { "nama": "Karbohidrat", "persen": "21.8% (dari rek. 275 g/hari)" },
+    { "nama": "Lemak total", "persen": "42.9% (dari rek. 70 g/hari)" },
+    { "nama": "Lemak jenuh", "persen": "70% (dari batas <20 g/hari)" },
+    { "nama": "Natrium", "persen": "60% (dari batas <2000 mg/hari)" },
+    { "nama": "Kolesterol", "persen": "62% (dari batas <300 mg/hari)" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah–sedang",
+    "Lemak": "tinggi (khususnya lemak jenuh)",
+    "Natrium": "tinggi",
+    "Kalori": "sedang-tinggi",
+    "Bahan Olahan": "potensi risiko (bakso/produk ikan olahan tinggi garam/penambah rasa)"
+  },
+  "waktuKenyang": "3-4 jam (kombinasi karbohidrat dan lemak memperpanjang kenyang)",
+  "frekuensiKonsumsi": "1–2 kali/minggu jika menjaga asupan lemak jenuh dan natrium; lebih jarang jika memiliki hipertensi/kolesterol tinggi",
+  "ingredients": [
+    "bihun (vermicelli / rice vermicelli)",
+    "santan atau campuran santan (kuah berbasis kelapa)",
+    "telur rebus (dipotong)",
+    "bakso/otak-otak/produk ikan olahan",
+    "tahu/fried tofu",
+    "sayuran hijau (mis. kangkung/sawi)",
+    "minyak/cabai (minyak pedas)",
+    "bumbu (garam, gula, kaldu/penyedap seperti MSG kemungkinan ada)"
+  ],
+  "tipsSehat": [
+    "Kurangi jumlah santan atau gunakan santan encer/low-fat untuk menurunkan lemak jenuh dan kalori.",
+    "Ganti sebagian bihun putih dengan bihun shirataki atau mie gandum utuh untuk menambah serat dan menurunkan indeks glikemik.",
+    "Tambahkan lebih banyak sayuran (wortel, sawi, tomat) untuk vitamin, serat dan volume tanpa banyak kalori.",
+    "Kurangi produk olahan (bakso) atau gunakan sumber protein rendah sodium seperti dada ayam kukus, ikan segar atau tahu tempe panggang.",
+    "Gunakan kaldu buatan sendiri rendah garam dan kurangi penggunaan penyedap siap pakai untuk menurunkan natrium."
+  ],
+  "alternatif": [
+    "Bihun kuah bening dengan ayam suwir dan banyak sayuran (tanpa santan)",
+    "Sup sayur + tahu + mie gandum utuh",
+    "Soto ayam tanpa santan dengan tambahan sayur dan nasi merah dalam porsi kecil",
+    "Laksa versi lebih sehat: santan encer, lebih banyak sayuran, porsi mie lebih kecil, dan protein tanpa banyak olahan"
+  ]
+}
+
