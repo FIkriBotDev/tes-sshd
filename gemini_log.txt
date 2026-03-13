@@ -34245,3 +34245,19 @@ Response  : {
   ]
 }
 
+
+[2026-03-13T02:47:21.786Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/9c70af-1773370029780.jpg
+Response  : Foto menunjukkan tiket antrean C-045 dari KPP Pratama Jakarta Kramat Jati untuk layanan “AKTIVASI CORETAX” (tertera tanggal dan jam pada tiket), dan suasana ruang tunggu dengan beberapa kursi dan pengunjung. Ada juga stiker lokasi dan teks overlay “Kisah Salah Input Di Moment Liburan” serta waktu 09:46.
+
+Beberapa saran praktis jika masalahnya adalah kesalahan input data saat mengurus layanan pajak:
+- Tunjukkan tiket dan bukti transaksi/printout data yang salah ke petugas, minta koreksi atau pembatalan input.  
+- Bawa dokumen identitas (KTP), NPWP, dan berkas pendukung lain agar verifikasi lebih cepat.  
+- Jika antrean panjang atau kantor sedang libur, tanyakan prosedur penanganan kesalahan saat libur (apakah bisa dikirim via email/layanan online atau harus datang langsung saat buka).  
+- Minta konfirmasi tertulis atau tanda terima setelah perbaikan data dilakukan (nama petugas, jam, catatan perubahan).  
+- Catat kronologis kejadian (waktu input, siapa yang membantu bila ada, bukti kesalahan) untuk referensi jika perlu eskalasi.  
+- Jika layanan CoreTax memiliki dukungan online/telepon, hubungi juga untuk mempercepat penanganan.
+
+Kalau mau, kirim foto tiket bagian detail (tanpa menampilkan data pribadi lain) atau tuliskan ringkasan kesalahan inputnya, supaya saya bisa bantu susun pesan/permintaan koreksi yang lebih spesifik.
+
