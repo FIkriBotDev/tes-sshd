@@ -68,6 +68,22 @@ app.post("/v1/chat/completions", async (req, res) => {
 
 });
 
+app.get("/v1/models", (req, res) => {
+
+    res.json({
+        object: "list",
+        data: [
+            {
+                id: "openai",
+                object: "model",
+                created: 0,
+                owned_by: "pollinations"
+            }
+        ]
+    });
+
+});
+
 app.listen(PORT, () => {
     console.log(`AI Proxy running on http://localhost:${PORT}`);
 });
