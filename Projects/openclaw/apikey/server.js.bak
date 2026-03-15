@@ -14,7 +14,9 @@ app.post("/v1/chat/completions", async (req, res) => {
     const auth = req.headers.authorization;
 
     if (!auth || auth !== `Bearer ${LOCAL_API_KEY}`) {
-        return res.status(401).json({ error: "Invalid API key" });
+        return res.status(401).json({
+            error: "Invalid API key"
+        });
     }
 
     try {
@@ -24,38 +26,13 @@ app.post("/v1/chat/completions", async (req, res) => {
             req.body,
             {
                 headers: {
-                    Authorization: `Bearer ${POLLINATIONS_KEY}`,
+                    "Authorization": `Bearer ${POLLINATIONS_KEY}`,
                     "Content-Type": "application/json"
                 }
             }
         );
 
-        const data = response.data;
-
-        // NORMALIZE RESPONSE
-        const normalized = {
-            id: data.id || "chatcmpl-local",
-            object: "chat.completion",
-            created: data.created || Math.floor(Date.now() / 1000),
-            model: data.model || req.body.model,
-            choices: [
-                {
-                    index: 0,
-                    message: {
-                        role: "assistant",
-                        content: data.choices?.[0]?.message?.content || ""
-                    },
-                    finish_reason: "stop"
-                }
-            ],
-            usage: data.usage || {
-                prompt_tokens: 0,
-                completion_tokens: 0,
-                total_tokens: 0
-            }
-        };
-
-        res.json(normalized);
+        res.json(response.data);
 
     } catch (error) {
 
