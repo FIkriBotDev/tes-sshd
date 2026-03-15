@@ -83,7 +83,7 @@ app.post("/v1/chat/completions", async (req, res) => {
     console.log("Incoming body:", JSON.stringify(body, null, 2))
 
     const cleanedBody = {
-      model: "openai",
+      model: "claude-fast",
       messages: body.messages || [
         { role: "user", content: "Hello" }
       ],
