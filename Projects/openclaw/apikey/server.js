@@ -84,6 +84,17 @@ app.get("/v1/models", (req, res) => {
 
 });
 
+app.get("/v1/models/:id", (req, res) => {
+
+    res.json({
+        id: req.params.id,
+        object: "model",
+        created: 0,
+        owned_by: "pollinations"
+    });
+
+});
+
 app.listen(PORT, () => {
     console.log(`AI Proxy running on http://localhost:${PORT}`);
 });
