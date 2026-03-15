@@ -96,6 +96,32 @@ app.post("/v1/chat/completions", async (req, res) => {
   }
 });
 
+app.get("/v1/models", (req, res) => {
+
+  if (!checkAuth(req)) {
+    return res.status(401).json({
+      error: {
+        message: "Invalid API key",
+        type: "invalid_request_error",
+        code: "invalid_api_key"
+      }
+    });
+  }
+
+  res.json({
+    object: "list",
+    data: [
+      {
+        id: "openai",
+        object: "model",
+        created: 0,
+        owned_by: "exodusai"
+      }
+    ]
+  });
+
+});
+
 app.listen(PORT, () => {
   console.log(`OpenAI Compatible API running on http://localhost:${PORT}`);
 });
