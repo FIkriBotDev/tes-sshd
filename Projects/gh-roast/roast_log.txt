@@ -19,3 +19,10 @@ Hasil: FikriBotDev, nama keren kayak superhero tech tapi followernya 1 dan follo
 
 Bio-nya "ExodusAI" terdengar ambisius, tapi top language JavaScript? Bro, ngapain ngembangin “AI” pake callback hell dan npm audit fix sekali-sekali. 24 repo sih impresif, tapi kemungkinan besar isinya 90% "test", "final_final_really", dan satu README yang cuma tulis "coming soon". Santuy, terusin aja—kapan-kapan kita nobar pas kamu release sesuatu yang beneran bikin follower ke-2 nangis bahagia 🔥
 ========================================
+
+========================================
+Username: fikrifahrezi25
+Hasil: Woy fikrifahrezi25, profil lo kayak kos-kosan sepi—bio? Gak ada. Repo cuma 2 doang, followers 0, following 0. Ini mah bukan GitHub, ini museum barang antik yang ditinggal pemiliknya pulang kampung 😅. Lu lagi ngasih sinyal kuat: “aku jomblo coding” atau “aku suka mystery mode”? Pilih salah satu, bro.
+
+Top language Unknown? Wah, keren, lu pake bahasa alien atau kodenya masih nunggu tolol compile? 🤡 Kalo mau keliatan pro, mulai dari yang paling gampang: isi bio. Minimal tulis “lagi belajar” biar ada ceritanya, jangan diem doang kayak file .gitignore yang ga pernah diapa-apain. 🫠
+========================================
