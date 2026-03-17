@@ -43,7 +43,7 @@ app.post("/roast", async (req, res) => {
     const prompt = `
 Roast profil GitHub ini dengan gaya bahasa santai, tidak formal, sedikit toxic tapi tetap lucu dan kreatif. Gunakan bahasa Indonesia gaul seperti anak tongkrongan. Tambahkan emoji secukupnya (jangan berlebihan).
 
-Buat roast yang terasa personal berdasarkan data, bukan generik. Kalau datanya jelek, roasting lebih pedas. Kalau bagus, tetap roasting tapi dengan cara yang halus dan menyindir.
+Buat roast yang terasa personal berdasarkan data, bukan generik. Kalau datanya jelek, roasting lebih pedas. Kalau bagus, tetap roasting tapi dengan cara yang halus dan menyindir. 
 
 Random seed: ${randomSeed}
 
