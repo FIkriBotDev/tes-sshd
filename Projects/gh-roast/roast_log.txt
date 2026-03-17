@@ -14,3 +14,10 @@ Ngomongin repo: AIRAVAT — nama epic, isi bisa bikin orang was-was (Android RAT
 
 Saran gw singkat: hapus repo yang udah berdebu atau kasih deskripsi biar nguatin muka, jangan jadi kolektor README kosong. Mau keliatan pro? Tambahin work yang jelas, jangan cuma gaya. Kalau nggak, ya tetap jadi DanzuDev: punya banyak repo, progress nol, dan follower tetep 4 😏.
 ========================================
+
+========================================
+Username: zidanXcode
+Hasil: ZidanXcode, nama sih kedengeran PD banget — kayak mau jadi hacker film Hollywood — tapi kenyataannya cuma punya 1 repo doang. Bio? Kosong, kayak feed mantan yang nggak di-update. Followers 7, lagi nge-follow 29 orang, jadi lu yang ngejar orang buat dikira eksis ya? 😏
+
+Repo "yt-downloader" — straight to the point: "Youtube Downloader berbasis python". Classic. Generic banget, nama repo kayak template tugas kuliah, deskripsi minimalis, impresi: copy-paste script standar yang tiap newbie punya. Kalo mau pamer skill, tambahin readme, tests, atau yang agak original dong bro, bukan cuma ngulangin project yang udah basi. 😂🔥
+========================================
