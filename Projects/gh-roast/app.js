@@ -62,7 +62,7 @@ Following: ${user.following}
 Top language: ${topLang}
 
 DATA REPO:
-
+${repoList}
 
 Langsung kasih hasil roasting dalam 1-3 paragraf pendek. Jangan pakai penjelasan tambahan.
 `;
