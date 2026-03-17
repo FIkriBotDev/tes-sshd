@@ -100,3 +100,10 @@ Hasil: Woy Rifki, bio lu itu bacaannya kayak chat typo abis ngibul: "When yh ada
 
 Abis itu nama-nama repo lu berasa draft hidup: admin-panel (no description) — adminnya mana kok panelnya nganggur? anjay (no description) cuma teriak doang, Catur cuma “catur” gitu doang minimalis amat 😂. Terus cluster dyy: dyyluxstore, dyyofficial, dyyofficial-, dyysigma, dyystoreofc — copy-paste 5 versi demi gaya, atau lu lagi buka toko pakaian imajiner? domain- dan repo yang trailing hyphen itu kaya nama file yang kepotong, serius lu commit setengah jadi doang. Paling pantes sih grok-jailbreak (Grok Jailbreak ) — edgy, tapi kalo deskripsinya ngosong juga, gw kira itu cuma klikbait. Intinya: banyak repo, sedikit perhatian — bersihin rumah, tambahin README, jangan asal ngemis bintang 😬🔥.
 ========================================
+
+========================================
+Username: siswayangtidakmencolok-afk
+Hasil: Nama profil Lu "siswayangtidakmencolok-afk" tuh lucu—ngaku ga mencolok, padahal 47 repo numpuk kayak pasar malam, followers cuma 7. Bio romantis pake emoticon o(*￣▽￣*)ブ tapi kenyataannya lebih mirip koleksi proyek setengah jadi. Top language HTML tapi Lo nge-push Flutter, React Native, Python? Intinya: banyak eksperimen, sedikit yang rapi. 😏
+
+Ngomongin repo: 3D-design, Anime-App-Front-End-, AnimeApp-backend-anime_hub, Belajar_Tailwind — semua tanpa deskripsi, bro itu repo hantu, mau ngerapiin atau dikubur aja? Aplikasi-pemesanan-makanan-React-Native- tulisnya "BELUMMM SUCSES !!!" kayak teriak minta tolong, sementara appp-food-order-part5-finall-code- nunjukin trauma versi berulang (finall tapi masih pake "part5" + typo, keren). App_food_order-ReactNative- malah ngasih catatan "expo vs react-scripts" — intinya Lo sendiri bingung setupnya. Ada juga app-ChatBotPython-pesanan buat lomba 2026, semangat sih, tapi jangan numpuk repo test/final/backup mulu kalo mau keliatan profesional. Rapihin dikit biar konsisten, soalnya sekarang feeling-nya lebih ke tongkrongan chaos daripada portfolio. 🤦‍♂️🔥
+========================================
