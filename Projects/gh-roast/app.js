@@ -80,9 +80,9 @@ Hasil: ${result}
 `;
 
     // simpan ke file
-fs.appendFile("roast_log.txt", log, (err) => {
-  if (err) console.error("Gagal simpan log:", err);
-});
+    fs.appendFile("roast_log.txt", log, (err) => {
+     if (err) console.error("Gagal simpan log:", err);
+    });
 
     res.json({ roast: result });
 
