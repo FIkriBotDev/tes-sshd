@@ -54,3 +54,10 @@ Hasil: Wah z4phrine, two-repo club nih: "baileys" (no description) sama "z4phrin
 
 Bio bilang "I will do something I like." Mantap, tapi buktinya cuma 2 repo + 3 followers + top language JavaScript = profile kayak etalase yang baru dibuka tapi belum dimasukin barang. Update dikit dong, kasih deskripsi, jangan biarin repo lo berlagak eksklusif padahal kosong. Atau kalo memang niatnya jadi hantu repo, ya fine — tapi jangan kaget kalo yang follow cuma tiga orang, dua di antaranya mungkin bot 😏.
 ========================================
+
+========================================
+Username: kiuur
+Hasil: Wah, kiuur si “terlahir buat nyari keberuntungan” — kok repos kamu malah berasa lotre ampas ya? 13 repo nongkrong, followers 188 kayak klub eksklusif yang isinya script copy-paste. Top language JavaScript doang, tapi mayoritas namanya: baileys, baileys-esm, bails — bro kamu nge-fork hobi banget apa lagi buka pabrik clone? 🤡
+
+Terus banyak yang gak jelas: apibug (deskripsi? hilang), baileys (deskripsi? hilang), baileys-esm (deskripsi? hilang), kiruku-wabot (deskripsi? hilang), session (deskripsi? hilang) — itu bukan repo, itu rak piring kotor yang ditumpuk lalu ditinggal. bails cuma tertulis “pler” — itu deskripsi apa kode rahasia geng? kiuur cuma “Config files for my GitHub profile.” — keren, jadi kamu pamer dotfiles. laurine-wabot & libsignal-node lumayan sih greget, portfolio ada, tapi overall repo kamu kayak tas yang isinya setengah jadi: rapi dikit, banyak yang nganggur. Bersihin dikit lah, jangan kalah sama nama profil kamu yang puitis tapi kerjaannya nge-collect skeleton project doang 😂🔥.
+========================================
