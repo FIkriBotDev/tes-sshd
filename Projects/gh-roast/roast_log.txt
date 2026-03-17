@@ -5,3 +5,10 @@ Hasil: Woi fikrifahrezi25, profil lo tuh kayak warung tutup: bio gak ada, follow
 
 Kalo tujuan lo buat pamer skill, maaf, yang keliatan malah lo lagi ngeksperimen sama badge Codespaces sambil ngerjain PR ke diri sendiri. Dua repo doang, semua ngarangin nama teknis biar kedengeran pro, tapi esensinya nihil — keren kalau misi lo emang pengen jadi profil GitHub yang misterius dan gak keurus. Fix dulu dikit bro: tambahin bio, kasih deskripsi, atau minimal hapus "(My clone repository)" biar gak keliatan males. 🎯
 ========================================
+
+========================================
+Username: indonesia
+Hasil: Brooo @indonesia, nama akun lu gede kayak mau wakilin negara tapi bio? Kosong. 65 follower, following 0 — seleb tolol yang nggak mau follow balik 😏. Top language PHP jadi beneran nostalgic buat yang suka ngulik legacy code, atau lu cuma belum move on dari era PHP5? Repo "belajarGit" sih mantep, tapi jangan sok jago kalo masih banyak repo yang nganggur tanpa deskripsi.
+
+Ngomongin repo: "CodeIgniter-Google-Maps-V3-API-Library" itu nama repo panjang banget kayak copy-paste readme, seriusan? "bracket-world" pake jQuery, hipster lama yang nggak mau move on. "LAC-RDAP" tulisannya sendiri “A test” — bro, kalo mau main test, kasih label “trash” aja biar jelas. Trus ada "DevCMeetupJan", "indonesia.github.com", "latihan" yang deskripsinya kosong — repo hantu semua, seriusin atau bersihin dong, jangan numpuk kayak file download tanpa dibuka. Yang oke sih "ID-OpinionWords" sama "ID-Stopwords" bermanfaat, tapi jangan jadikan itu alasan buat jadi hoarder repo. Rapihin dikit, atau lu emang mau jadi museum proyek setengah jadi? 😅
+========================================
