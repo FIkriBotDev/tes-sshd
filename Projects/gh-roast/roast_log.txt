@@ -5,3 +5,12 @@ Hasil: Wah, gaya banget sih namanya z3r0-d4y-3xplo1t — bilang diri “Vulnerab
 
 Trus apa nih, Encode-HTML, Mx-Shimmer, SmileYourSystem, SYS, Zero-Ai — semua no description, berasa baca daftar tugas bocah malas. "rawcode (UntukRaw)"? Maksudnya ngasih kode mentah atau ngasih alasan malas? "Ip-Finder (About You)" sama "Qr-Code (WhatsApp Generator)" kedengeran banget sketchy — lebih cocok jadi script prank ketimbang exploit research. Intinya: 9 repo, banyak nama gitu doang, gak keurus, gaya hacker tapi karya ngambang. Upgrade deskripsi dulu lah, biar orang gak kira Lu cuma mainan leetspeak doang. 😏
 ========================================
+
+========================================
+Username: DanzuDev
+Hasil: Woi DanzuDev, bio lo kayak buka toko keluarga: “Halo Guys Aku Danzu Dev Dan Aku Mempunyai Ayah Dengan Nama Danzu Dad” terus dikasih link biar kelihatan mewah. Followers cuma 4, kayanya yang nge-follow cuma keluarga beneran sama akun spam 😂. Top bahasa JavaScript doang—JS everywhere, skill somewhere? 🤡
+
+Ngomongin repo: AIRAVAT — nama epic, isi bisa bikin orang was-was (Android RAT? Bro serius mau jadi hacker atau mau ketahuan?). Danzu-MD lu nulis pakai font alay dan minta star, padahal isinya kemungkinan juga setengah matang, influencer coder vibes banget. Sisanya? CekKhodam, DanzEye, Danzu-Block-Tower, DanzuHub, Morse-Converter, public-chat-realtime, SimpleApi — semua tanpa deskripsi, jadiin GitHub lu kayak kuburan file: cuma nama doang, ga jelas, ga terurus. Nama generic kayak SimpleApi atau public-chat-realtime itu shoutout ke malas: “tolong klik, gw gausah jelasin.”  
+
+Saran gw singkat: hapus repo yang udah berdebu atau kasih deskripsi biar nguatin muka, jangan jadi kolektor README kosong. Mau keliatan pro? Tambahin work yang jelas, jangan cuma gaya. Kalau nggak, ya tetap jadi DanzuDev: punya banyak repo, progress nol, dan follower tetep 4 😏.
+========================================
