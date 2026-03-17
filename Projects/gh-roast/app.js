@@ -56,7 +56,7 @@ Langsung kasih hasil roasting dalam 1-3 paragraf pendek. Jangan pakai penjelasan
     const aiRes = await axios.post(
       "https://gen.pollinations.ai/v1/chat/completions",
       {
-        model: "gemini-fast",
+        model: "openai",
         messages: [
           { role: "user", content: prompt }
         ]
