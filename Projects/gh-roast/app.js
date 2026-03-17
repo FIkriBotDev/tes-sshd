@@ -39,6 +39,8 @@ Roast profil GitHub ini dengan gaya bahasa santai, tidak formal, sedikit toxic t
 
 Buat roast yang terasa personal berdasarkan data, bukan generik. Kalau datanya jelek, roasting lebih pedas. Kalau bagus, tetap roasting tapi dengan cara yang halus dan menyindir.
 
+Random seed: ${randomSeed}
+
 Data:
 Username: ${username}
 Bio: ${user.bio || "tidak ada bio"}
