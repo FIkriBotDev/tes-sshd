@@ -47,3 +47,10 @@ Hasil: Woi z4phrine, bio bilang "I will do something I like" — tapi yang kelia
 
 Terus nih, repo "baileys" tanpa deskripsi — itu sih klasik: copy-paste library orang trus ditaruh di GitHub kaya kucing taro kardus. Repo "z4phrine" juga kosong deskripsi, bukannya personal branding malah kaya kotak kosong: keren di nama, nol isi. Kalau mau pamer repo bikinlah yang jelas, jangan numpang nama doang, malu-maluin sih 😅🔥.
 ========================================
+
+========================================
+Username: z4phrine
+Hasil: Wah z4phrine, two-repo club nih: "baileys" (no description) sama "z4phrine" (no description) — cakep namanya classy tapi isinya ghost town. "baileys" kedengeran kayak mau fancy, ternyata cuma nama doang; "z4phrine" repository sendiri? Narsis mode on, tapi portfolio-level off. Kalau ngarep orang follow karena misterius, sori bro, cuma bikin orang mikir lo lagi ngoding sambil ketiduran 😅.
+
+Bio bilang "I will do something I like." Mantap, tapi buktinya cuma 2 repo + 3 followers + top language JavaScript = profile kayak etalase yang baru dibuka tapi belum dimasukin barang. Update dikit dong, kasih deskripsi, jangan biarin repo lo berlagak eksklusif padahal kosong. Atau kalo memang niatnya jadi hantu repo, ya fine — tapi jangan kaget kalo yang follow cuma tiga orang, dua di antaranya mungkin bot 😏.
+========================================
