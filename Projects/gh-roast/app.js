@@ -43,7 +43,7 @@ app.post("/roast", async (req, res) => {
     const prompt = `
 Roast profil GitHub ini dengan gaya bahasa santai, tidak formal, sedikit toxic tapi tetap lucu dan kreatif. Gunakan bahasa Indonesia gaul seperti anak tongkrongan. Tambahkan emoji secukupnya (jangan berlebihan).
 
-Buat roast yang terasa personal berdasarkan data, bukan generik. Kalau datanya jelek, roasting lebih pedas. Kalau bagus, tetap roasting tapi dengan cara yang halus dan menyindir. Roast nama repo secara spesifik (sebutin nama repo di roast), kalau ada repo mencurigakan kayak "backup",
+Buat roast yang terasa personal berdasarkan data, bukan generik. Kalau datanya jelek, roasting lebih pedas. Kalau bagus, tetap roasting tapi dengan cara yang halus dan menyindir. Roast nama repo secara spesifik (sebutin nama repo di roast), kalau ada repo mencurigakan kayak "backup", "test", "final", sindir keras. kalau ada repo deskripsinya kosong, hina dengan kreatif
 
 Random seed: ${randomSeed}
 
