@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 3000;
+const PORT = 2027;
 
 // helper ambil bahasa dominan
 function getTopLanguage(repos) {
