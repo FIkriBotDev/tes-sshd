@@ -121,3 +121,10 @@ Hasil: Woi siswayangtidakmencolok-afk, nama akun lo kayak tagline low profile ta
 
 Beberapa yang keliatan effort sih ada: App_food_order-ReactNative- sibuk ngeluarin deskripsi panjang kaya promosi jualan, App-sistemKasir dan Chat-Bot-pacar kedengeran niat — tapi Chat-Bot-pacar mau jadi pacar romantis? Sama kayak repo lo, masih perlu dikencengi biar gak cepu. app-ChatBotPython-pesanan terang-terangan tugas LKS, belajar-cicd-pemula cuma nyontek tutorial YouTube — jujur aja, pola repo lo tuh kayak koleksi draft masa depan yang ditinggal ngopi. Intinya: banyak, tapi rapi nol, kreatifitas ada tapi konsistensi masih ngumpet. Fix it atau biar gw panggil alarm AFK beneran 🤡.
 ========================================
+
+========================================
+Username: FikriBotDev
+Hasil: Woy FikriBotDev, Lu nulis bio "ExodusAI" berasa mau takeover dunia, tapi faktanya cuma 24 repo dan 1 follower — startup impian yang ditolak sama internet 😂. Semua berbahasa JavaScript doang, kayak kerajaan React tapi ga ada rakyatnya. Jangan lupa, nama akun kayak mau besar, tapi feed-nya masih jualan bot murah: FikriBot, databot, exodusapi — repetitif banget, identitasnya kabur bro.
+
+Ngomongin repo: "backup" sama "backupserver" tanpa deskripsi? Serius, itu bukan misteri, itu malu-maluin — lu nyimpen file di folder "backup" terus lupa ngasih konteks, pro hacker doang yang bahagia. "backup-database" minimal ada deskripsi, tapi tetep bosen. "FoodMetrixAI" dikasih deskripsi "abc"? Lu ngetik sambil ngantuk apa gimana. "Apache2-Auto-Installer" dan "cisco-it-essentials-virtual-desktop" kedengeran wah tapi kemungkinan setengah jadi, sedangkan "FIkriBotDev.github.io" kapital I yang aneh nunjukin lu juga males ngecek detail. Intinya: banyak repo, sedikit perawatan — behave like a dev, jangan kayak tukang ojek ngumpulin order tapi ga pernah ngantar. 👍
+========================================
