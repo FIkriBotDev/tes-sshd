@@ -28,3 +28,10 @@ Hasil: TriAhadi03, niat Lu mau "ingin membahagiakan kedua orang tua" bagus sih, 
 
 Ngomongin repo: "flower" tanpa deskripsi — itu kode apa katalog bunga mati? Kekosongan deskripsi di sana tuh bikin gue mikir Lu cuma nge-commit biar tugas kelar. "RPL" — nama se-generic itu, serius? Kayak folder default pas deadline jam 2 pagi. "kritik-dan-saran-mahasiswa" jelas tugas: TUGAS REKAYASA PERANGKAT LUNAK KELOMPOK 3 — bukan proyek yang banggain orang tua, lebih ke PR yang lu push sambil ngantuk. Intinya, mau bahagiain ortu? Mulai dari yang gampang: kasih deskripsi, tambahin README, belajar dikit selain HTML, atau minimal hapus repo kosong supaya gak malu-maluin halaman profil 😅.
 ========================================
+
+========================================
+Username: alokku
+Hasil: Woy alokku, profil lo tuh kayak lemari kosong: bio ga ada, public repo 0, followers 0, following 0, top language: Unknown — keren banget jadi akun hantu, lu serius mau ikut komunitas apa mau ikut kompetisi "siapa paling nganggur"? 👻🤡
+
+Gue mau roast nama repo? Nggak ada sama sekali, jadi yang kena sindir cuma kekosongan epic itu. Deskripsi? Void. Repo? Imajinasi. Kalo tujuannya jadi misterius, lu udah overachieve; kalo mau pamer skill, ya bikin satu aja "hello-world" biar ga malu-maluin. Beneran, jangan cuma jadi legenda urban di GitHub doang 😅
+========================================
