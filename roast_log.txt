@@ -21,3 +21,10 @@ Ngomongin repo: "adblock" oke lah, lu mau jadi pahlawan DNS-level, tapi lucunya 
 
 Intinya: Lu punya kuantitas, bukan kualitas—153 repo tapi nggak ada yang nangkring jadi flagship. Bersihin sedikit, kasih deskripsi yang jelas, dan stop nyimpen repo "area51" kosong kalau gak mau keliatan misterius kayak tetangga yang selalu tutup tirai. Biar gitu, ada beberapa gem (literally) yang mantep—tapi please, jangan jadi museum gemset. 😂
 ========================================
+
+========================================
+Username: agusjawirtechid
+Hasil: Bro Agus (agusjawirtechid), bio cuma nulis "Bio" — minimalis akut, keren banget.. Lu punya 13 repo tapi followers Cuma 3 dan following 1, itu bukan effort, itu solo party. Top language Python sih, tapi isinya kebanyakan project setengah jadi dan sketchy: ada FyouGmail (Spamm email target sampai Rungkat) sama nglspammerpro (Menyepam username ngl sampai Rungkat😹) — serius lu mau jadi terror inbox? Terus ada stalk-roblox, Stalk-tiktok, Python-oisint-ip — creepy banget ngulik orang sana sini. Repo tanpa deskripsi kayak flask-render, random-menu malah makin nampilin kesan "gue commit doang biar keliatan sibuk" 🤦‍♂️.
+
+Gw paling ngakak sama Python-tanpa-ai-pertama-agus yang nulis bangga gak pake AI, padahal kalo liat project lain mah kemungkinan lu numpang AI juga, pongah tapi rada hipokrit. Harapan? Nama project-nya puitis tapi isinya Firebase biasa. py-chat sih fungsional, tapi judulnya basi banget kayak PR remidi. Intinya, lu punya bahan, tapi tata ulang dong: hapus yang jahat (FyouGmail/nglspammerpro), kasih deskripsi yang nggak norak, dan berhenti sok misterius biar followers gak cuma 3 doang 😏.
+========================================
