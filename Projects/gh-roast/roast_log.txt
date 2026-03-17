@@ -61,3 +61,10 @@ Hasil: Wah, kiuur si “terlahir buat nyari keberuntungan” — kok repos kamu 
 
 Terus banyak yang gak jelas: apibug (deskripsi? hilang), baileys (deskripsi? hilang), baileys-esm (deskripsi? hilang), kiruku-wabot (deskripsi? hilang), session (deskripsi? hilang) — itu bukan repo, itu rak piring kotor yang ditumpuk lalu ditinggal. bails cuma tertulis “pler” — itu deskripsi apa kode rahasia geng? kiuur cuma “Config files for my GitHub profile.” — keren, jadi kamu pamer dotfiles. laurine-wabot & libsignal-node lumayan sih greget, portfolio ada, tapi overall repo kamu kayak tas yang isinya setengah jadi: rapi dikit, banyak yang nganggur. Bersihin dikit lah, jangan kalah sama nama profil kamu yang puitis tapi kerjaannya nge-collect skeleton project doang 😂🔥.
 ========================================
+
+========================================
+Username: kiuur
+Hasil: Brooo kiuur, profil GitHub lu ini vibe-nya: 13 repo, 188 follower — bukan jelek, tapi juga gak kayak developer serius, more like tukang cincang bot WhatsApp. Lu punya "baileys" sama "baileys-esm" kayak dua saudara kembar yang lu nggak bisa bedain, terus ada "bails" cuma berdeskripsi "pler" — serius? Itu keterangannya apa, singkatan pola hidup malas? 😂 "apibug", "kiruku-wabot", "session" semua tanpa deskripsi, kerasnya kayak slap di muka: kosong, nggak jelas, nggak sopan. "kiuur" isinya cuma config files? Bro, pamer config doang? Keren? Lebih berkesan lagi kalo lu nulis apa fungsinya, bukan bikin orang nebak-nebak.
+
+Ada juga yang kelihatan legit sih: "laurine-wabot" jelas niatnya (selfbot WhatsApp, agak shady tapi niat), "libsignal-node" kedengeran serius banget — itu yang oke, dan "portfolio" minimal nunjukin usaha. Jadi intinya: lu punya potensi, tapi gaya lo masih random collection of half-baked projects. Rapiin deskripsi buat "apibug", "baileys", "baileys-esm", "kiruku-wabot", "session" biar orang nggak mikir lu cuma nyimpen draft setengah mateng. Kalau nggak, ya siap-siap kaget tiap kali orang buka repo lu dan cuma nemu kekosongan emosi. 🤡🔧
+========================================
