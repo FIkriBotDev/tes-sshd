@@ -1,0 +1,7 @@
+
+========================================
+Username: Farhankerdiwangsa
+Hasil: Bro Farhankerdiwangsa, profil GitHub lu tuh kayak gudang barang antik: 16 repo tapi bio? kosong. Followers cuma 2 — bukan malu, itu namanya private fanclub kecil-kecilan 😂 Top language HTML, berarti mayoritas kerjaan lu cuma bikin page statis doang sambil ngarep dipanggil startup.  
+
+Ngomongin repo: Archirou, BAHLUIL, Kydra — semua tanpa deskripsi, bro lu nyimpen mystery box atau apa? Trus ada tumpukan Kynay-apa aja: Kynay-ai, Kynay-Assistent, KynayAnime (nah ini ada web anime, congrats), Kynaybacken (backend? typo? backup? curiga), Kynaymic, Kynaystream dan KynayStreaming — itu satu project apa klon kloningan? Kynay-Assistent pake dua s? Kreatifnya ke typo aja. Intinya, lu kayak orang yang buat repo biar keliatan sibuk padahal cuma hoarder file kosong. Saran singkat: pilih satu, kasih README, atau stop bikin "final", "backup", "test" versi 17. Kalo enggak, GitHub lu bakal terus jadi museum repo setengah jadi 🤡🔧
+========================================
