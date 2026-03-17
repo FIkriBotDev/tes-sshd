@@ -51,3 +51,10 @@ Hasil: Arthur, eh? Gak ada bio, 37 follower, 8 repo — profilnya kayak rumah ko
 
 Mandelbrot-java-applet dari 1997 sama unconfirmd Merb dari 2008? Lu lagi ngurus museum web atau ngumpulin fossil framework? 😅 robot-dog-control-app deskripsinya "Un projet MakeCode" — bahasa campur aduk, lu lagi serius apa lagi coba? Wikimate klaim "Texmate" — typo low effort atau lu sok eksklusif pake editor baru? Intinya: profil Arthur ini kayak pameran "dulu gue keren" plus satu repo Terraform yang berusaha jadi dewasa. Bersihin yang goblok, update yang legit, atau minimal tambahin bio biar follower 37 gak keder milih siapa yang di-follow 😂.
 ========================================
+
+========================================
+Username: Vann1945
+Hasil: Vann1945 ya? Ngaku "Jesus Christ." padahal realitanya cuma punya 1 repo doang — Test2. Messiah energy cuman buat bio, follow 1 doang (mungkin bot pacaran sama lu 🤡), lo follow 3 orang kayak lagi koleksi teman, tapi follower beneran nol koma satu. Keren sih klaim ilahi, cuma sayangnya service-nya masih versi trial.
+
+Bicara soal repo: "Test2" — nama lebih ngasal daripada PR tanpa review. Deskripsi? Kosong. Itu bukan proyek, itu cuma sticky note digital: "gw coba-coba nanti diurus" 😂 Top language TypeScript? Mantap, tapi ngapain pinter kalau gak diomongin atau dipamerin. Singkatnya, kalo mau impresi, ganti nama repo dari "Test2" ke "BeneranSesuatu" atau minimal tambahin deskripsi, biar ga dikira akun sandbox.
+========================================
