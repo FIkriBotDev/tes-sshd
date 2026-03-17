@@ -68,3 +68,10 @@ Hasil: Brooo kiuur, profil GitHub lu ini vibe-nya: 13 repo, 188 follower — buk
 
 Ada juga yang kelihatan legit sih: "laurine-wabot" jelas niatnya (selfbot WhatsApp, agak shady tapi niat), "libsignal-node" kedengeran serius banget — itu yang oke, dan "portfolio" minimal nunjukin usaha. Jadi intinya: lu punya potensi, tapi gaya lo masih random collection of half-baked projects. Rapiin deskripsi buat "apibug", "baileys", "baileys-esm", "kiruku-wabot", "session" biar orang nggak mikir lu cuma nyimpen draft setengah mateng. Kalau nggak, ya siap-siap kaget tiap kali orang buka repo lu dan cuma nemu kekosongan emosi. 🤡🔧
 ========================================
+
+========================================
+Username: FikriBotDev
+Hasil: FikriBotDev, bio lo "ExodusAI" bunyinya wah banget, padahal kenyataannya 24 repo, 1 follower, dan following 0 — hype lebih gede dari kerjaan, bro 😏. Gw liat pola: tiga repo bertema trauma hidup, namanya cuma "backup", "backup-database", "backupserver" — serius lu? Kayak orang yang takut kehilangan file notepad doang. Dan dua dari situ nggak punya deskripsi, jadi misi rahasia atau lu males aja nulis? 🤦‍♂️
+
+Terus init nama repo kacau: ada "FikriBot" sama "FIkriBot" (capslock random), berasa ngeliat kloning diri yang plintat-plintut. "FoodMetrixAI" deskripsinya cuma "abc" — ABC? Lu coding pake template nyala? "databot" = "Data Bot Kunci Jawaban" — bot ngerjain PR anak kosan ya? "exodusapi" sama "FIkriBotDev.github.io" cuma tulis "web", minimal kasih URL dong, jangan cuman ngaku developer terus projectnya setengah jadi. Apalagi top language JS, tapi followers segitu doang — lu ngelatih AI atau ngelatih ego? 😂
+========================================
