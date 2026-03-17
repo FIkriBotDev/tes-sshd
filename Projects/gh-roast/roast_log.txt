@@ -21,3 +21,10 @@ Hasil: ZidanXcode, nama sih kedengeran PD banget — kayak mau jadi hacker film 
 
 Repo "yt-downloader" — straight to the point: "Youtube Downloader berbasis python". Classic. Generic banget, nama repo kayak template tugas kuliah, deskripsi minimalis, impresi: copy-paste script standar yang tiap newbie punya. Kalo mau pamer skill, tambahin readme, tests, atau yang agak original dong bro, bukan cuma ngulangin project yang udah basi. 😂🔥
 ========================================
+
+========================================
+Username: TriAhadi03
+Hasil: TriAhadi03, niat Lu mau "ingin membahagiakan kedua orang tua" bagus sih, tapi portofolio GitHub Lu? Kayak warisan yg belum dibuka. Followers 0, following 1 — akun Lo kayak kuburan follower, cuma ada satu saksi mata. Top language HTML doang, 3 repo doang, berasa jadi developer statis: cuma bisa bikin tampilan aja, backend hati belum kebahagiain 😏.
+
+Ngomongin repo: "flower" tanpa deskripsi — itu kode apa katalog bunga mati? Kekosongan deskripsi di sana tuh bikin gue mikir Lu cuma nge-commit biar tugas kelar. "RPL" — nama se-generic itu, serius? Kayak folder default pas deadline jam 2 pagi. "kritik-dan-saran-mahasiswa" jelas tugas: TUGAS REKAYASA PERANGKAT LUNAK KELOMPOK 3 — bukan proyek yang banggain orang tua, lebih ke PR yang lu push sambil ngantuk. Intinya, mau bahagiain ortu? Mulai dari yang gampang: kasih deskripsi, tambahin README, belajar dikit selain HTML, atau minimal hapus repo kosong supaya gak malu-maluin halaman profil 😅.
+========================================
