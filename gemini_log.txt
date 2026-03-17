@@ -34416,3 +34416,76 @@ Response  : {
   ]
 }
 
+
+[2026-03-17T11:26:54.228Z]
+Prompt    : rate project hasil gabut (AI roasting profile github) 
+https://github-roast.exodusai.biz.id
+Image URL : https://uploader.exodusai.biz.id/tmp/def915-1773746794101.jpg
+Response  : Nice little side project — fun, clear idea, and it shows. Here’s a concise, practical appraisal with strengths, weaknesses, and prioritized suggestions so you can iterate fast.
+
+Quick scores (out of 10)
+- Concept / novelty: 8 — playful, shareable idea that’s easy to understand.
+- UI / design: 7 — visually pleasing, consistent dark theme, clear CTA.
+- Execution / features: 6 — works for the core use case but needs polish and robustness.
+- Safety / ethics: 4 — potential for harassment/abuse without protections.
+- Overall: 6.5 — good prototype with clear directions to improve.
+
+What’s working well
+- Clear, focused purpose: enter a GitHub username and get a roast — straightforward and shareable.
+- Visual design: modern dark UI, readable typography, strong CTA button.
+- Instant feedback loop: entertaining output, likely to encourage social sharing.
+- Lightweight and fast-looking from the screenshot — likely good for demos.
+
+Main issues & risks
+- Harassment and moderation: automated “roasting” can easily cross into abusive content, doxxing, defamation, or private-info exposure.
+- Missing edge-case handling: username not found, private accounts, rate limits, or API failures need robust UX flows.
+- Trust/credibility: if the roast outputs inaccurate claims about repos (e.g., “you have X followers”), it could mislead.
+- Reusability & growth: limited features for engagement beyond a one-off roast (no sharing buttons, no saving, no reactions).
+- Accessibility: contrast and screen-reader labels may need checking for WCAG compliance.
+
+High-impact improvements (prioritized)
+1. Safety and moderation (must-have)
+   - Add content filters and a safety layer: ban/soften insulting language, block hate speech, sexual content, personal attacks, and PII exposure.
+   - Implement a “tone” control (mild / spicy / roast but friendly) and keep default at mild/spoofing.
+   - Rate-limit and logging to detect abuse. Add a clear disclaimer and report button.
+   - Consider whitelist/consent flow if you ever roast living devs in a way that can be shared publicly.
+
+2. Accuracy & privacy
+   - Use the official GitHub API for profile and public repo data (instead of scraping). Handle not-found, private, and rate-limit responses gracefully.
+   - Avoid inventing factual claims. Phrase jokes as opinions clearly (“looks like you…” instead of “you have X followers” unless verified).
+
+3. UX polish
+   - Add avatar, basic stats (repos, followers), and verified facts in the roast so jokes have context.
+   - Provide copy & share buttons (Twitter/X, Mastodon, link shortener).
+   - Improve empty-state / error messaging for non-existent users or API rate limits.
+   - Mobile responsiveness and keyboard accessibility.
+
+4. Trust & transparency
+   - Add an “About” / FAQ / How it works page: explain AI model used, prompt approach, and data sources.
+   - Add a visible “built for fun — don’t take seriously” note and an opt-out mechanism for people who don’t want to be roasted (blocklist).
+
+5. Product features to increase retention
+   - Save/share best roasts, upvote/downvote system, or “Roast of the day.”
+   - Allow users to customize style (sarcastic, playful, brutal but friendly).
+   - Add API/back-end caching to avoid repeated heavy calls and hit GitHub limits.
+
+Technical recommendations
+- Back end: serverless functions or small Node/Go server that handles GitHub API requests, AI prompt generation, and moderation.
+- Caching: cache GitHub responses and generated roasts for a short TTL to reduce calls and speed up repeat requests.
+- Prompt engineering: few-shot examples and system instructions that enforce safety rules; control temperature for consistency.
+- Logging & analytics: track errors, common abuses, and popular roasts to iterate.
+- Tests & CI: add unit tests for prompt outputs and API flow, plus a simple e2e smoke test.
+
+Legal / ethical notes
+- Avoid generating or repeating private data or unverified claims.
+- Consider a takedown process and a clear terms-of-use to limit liability.
+- If you plan to monetize or scale, add stronger moderation and legal review.
+
+Small UI & copy tweaks
+- Change “Roast” to include a small tooltip about tone setting.
+- Make the “built for fun • jangan baper” message more prominent near the disclaimer.
+- Add microcopy for loading states (“crafting the perfect burn…”).
+
+Final thought
+This is a fun, shareable project with strong viral potential. Before scaling or promoting it heavily, prioritize safety & moderation and tighten up accuracy and error handling. With a few targeted improvements (tone controls, filters, better UX, share features), it could be a charming little product that’s both entertaining and responsible.
+
