@@ -52,7 +52,7 @@ Langsung kasih hasil roasting dalam 1-3 paragraf pendek. Jangan pakai penjelasan
 
     // call pollinations
     const aiRes = await axios.post(
-      "https://api.pollinations.ai/v1/chat/completions",
+      "https://gen.pollinations.ai/v1/chat/completions",
       {
         model: "openai",
         messages: [
