@@ -65,10 +65,10 @@ node /home/runner/work/tes-sshd/tes-sshd/Projects/chat/index.js > /dev/null 2>&1
 node /home/runner/work/tes-sshd/tes-sshd/Projects/server-status/app.js > /dev/null 2>&1 &
 
 # Jalankan github roast app di background, sembunyikan output
-node /home/runner/work/tes-sshd/tes-sshd/Projects/server-status/app.js > /dev/null 2>&1 &
+node /home/runner/work/tes-sshd/tes-sshd/Projects/gh-roast/app.js > /dev/null 2>&1 &
 
-# Jalankan github roast server 
-node /home/runner/work/tes-sshd/tes-sshd/Projects/server-status/app.js > /dev/null 2>&1 &
+# Jalankan github roast server di background, sembunyikan output
+node /home/runner/work/tes-sshd/tes-sshd/Projects/gh-roast/server.js > /dev/null 2>&1 &
 
 # Jalankan test server di background, sembunyikan output
 node /home/runner/work/tes-sshd/tes-sshd/Projects/test/index.js > /dev/null 2>&1 &
