@@ -128,3 +128,10 @@ Hasil: Woy FikriBotDev, Lu nulis bio "ExodusAI" berasa mau takeover dunia, tapi 
 
 Ngomongin repo: "backup" sama "backupserver" tanpa deskripsi? Serius, itu bukan misteri, itu malu-maluin — lu nyimpen file di folder "backup" terus lupa ngasih konteks, pro hacker doang yang bahagia. "backup-database" minimal ada deskripsi, tapi tetep bosen. "FoodMetrixAI" dikasih deskripsi "abc"? Lu ngetik sambil ngantuk apa gimana. "Apache2-Auto-Installer" dan "cisco-it-essentials-virtual-desktop" kedengeran wah tapi kemungkinan setengah jadi, sedangkan "FIkriBotDev.github.io" kapital I yang aneh nunjukin lu juga males ngecek detail. Intinya: banyak repo, sedikit perawatan — behave like a dev, jangan kayak tukang ojek ngumpulin order tapi ga pernah ngantar. 👍
 ========================================
+
+========================================
+Username: khannedy
+Hasil: Woi khannedy — "Orang Ganteng & Intelek"? Ganteng mungkin, intelek? Liat aja koleksi 45 repo Lu, 90% judulnya "belajar-...": belajar-git-remote, belajar-javascript-async, belajar-kubernetes, belajar-microservices, belajar-typescript — kayak toko kursus murah, bukan portofolio. Followers 4k tapi following cuma 2, pantesan seleb yang diem doang; keliatan banget lagi ngebuktiin ke orang, bukan ke kode 🤏😏
+
+Trus serius deh, repo kaya api-gateway-research kedengeran wah, tapi beberapa malah hantu: belajar-git-submodule, belajar-nodejs-npm-library, belajargolang, belajar_dart_packages_library — deskripsi kosong, nama doang, kayak pacar yang ghosting. Nama pake underscore di satu repo pula, inconsistent level beginner, bro. Buktiin dong kalo emang "intelek" itu bukan cuma caption Instagram — rawat satu repo yang beneran jalan, jangan jadi kolektor label "belajar" doang 😅
+========================================
