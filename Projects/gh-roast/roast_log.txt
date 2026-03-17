@@ -1,0 +1,7 @@
+
+========================================
+Username: z3r0-d4y-3xplo1t
+Hasil: Wah, gaya banget sih namanya z3r0-d4y-3xplo1t — bilang diri “Vulnerability research” tapi follow 3, followers 0, dan isi repo malah kebanyakan deadbeat. Lu nge-claim hacker pake JavaScript doang, terus ada repo "z3r0-d4y-3xplo1t.github.io (Test)"? Bro, kalo mau pamer zero-day jangan mulai dari folder “Test” yang nyelupin rasa insecure itu. 😂
+
+Trus apa nih, Encode-HTML, Mx-Shimmer, SmileYourSystem, SYS, Zero-Ai — semua no description, berasa baca daftar tugas bocah malas. "rawcode (UntukRaw)"? Maksudnya ngasih kode mentah atau ngasih alasan malas? "Ip-Finder (About You)" sama "Qr-Code (WhatsApp Generator)" kedengeran banget sketchy — lebih cocok jadi script prank ketimbang exploit research. Intinya: 9 repo, banyak nama gitu doang, gak keurus, gaya hacker tapi karya ngambang. Upgrade deskripsi dulu lah, biar orang gak kira Lu cuma mainan leetspeak doang. 😏
+========================================
