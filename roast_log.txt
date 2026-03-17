@@ -44,3 +44,10 @@ Hasil: Woi Roast, namanya udah ngundang diserang, tapi bio? Kosong. Lu punya 22 
 
 Ngomong-ngomong soal repo: "iBoot" — wah berani amat klaim source code iPhone, itu mau buka toko bumbu atau undang Apple ke rumah? "Kronos" ngomongnya heboh jadi Foundation Model finansial, padahal followers aja segitu, slow down boss. "iOSCodeDifferHelper" panjang banget deskripsinya, kaya lagi jual jasa reno rumahan buat kode Objective-C, baca capek. "fingerprint-browser" sama "mmtls-demo" berbau beda level serius—kayak mainan hacker amatir yang lupa pakai sarung tangan. Yang simpel kayak "mnemonic" ama "mindmaps" sih oke, tapi keseluruhan profil kayak buffet prasmanan: ambil semua, makan sedikit, sisain berantakan. Fix up, pilih fokus, jangan jadi Jack of all trends, master of none 😉🔥
 ========================================
+
+========================================
+Username: Arthur
+Hasil: Arthur, eh? Gak ada bio, 37 follower, 8 repo — profilnya kayak rumah kontrakan yang isinya barang antik. Lu punya arthur.github.com tanpa deskripsi, bro, itu kayak pajangan yang nggak dipasang lampu. integrity bilang "The easy and fun Continuous Integration server" — bilang gampang terus? Berani banget, padahal udah ada sepuluh CI yang lebih pintar. terraform-google-influx itu baru keliatan dewasa dan berguna, sisanya lebih mirip koleksi kenangan: onzeer (nama cringe, deskripsi cukup jelas sih), tapi tetep kesannya project iseng.
+
+Mandelbrot-java-applet dari 1997 sama unconfirmd Merb dari 2008? Lu lagi ngurus museum web atau ngumpulin fossil framework? 😅 robot-dog-control-app deskripsinya "Un projet MakeCode" — bahasa campur aduk, lu lagi serius apa lagi coba? Wikimate klaim "Texmate" — typo low effort atau lu sok eksklusif pake editor baru? Intinya: profil Arthur ini kayak pameran "dulu gue keren" plus satu repo Terraform yang berusaha jadi dewasa. Bersihin yang goblok, update yang legit, atau minimal tambahin bio biar follower 37 gak keder milih siapa yang di-follow 😂.
+========================================
