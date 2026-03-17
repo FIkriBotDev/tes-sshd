@@ -1,0 +1,7 @@
+
+========================================
+Username: FikriBotDev
+Hasil: FikriBotDev bilang ExodusAI, kedengeran kayak startup bocah sultan — padahal di lapangan cuma 24 repo, followers 1, following 0. Exodus of followers, bro? 😂 Kayaknya yang nge-follow cuma akun cadangan atau kucing peliharaan. Top language JavaScript doang juga, raja console.log sejagat, AI-nya mungkin sesederhana if (!found) return "sorry"; 😏
+
+Saran sih, daripada numpuk repo ala koleksi stiker, mending fokus bikin satu proyek yang orang mau fork. README yang jelas, issue yang dibales, follow orang balik — itu baru kelihatan bukan cuma pajangan. Kalo nggak, tetap aja ExodusAI: nama bombastis, follower minim, hype maksimal. 🔥
+========================================
