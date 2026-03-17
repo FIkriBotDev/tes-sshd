@@ -5,3 +5,19 @@ Hasil: Bro Farhankerdiwangsa, profil GitHub lu tuh kayak gudang barang antik: 16
 
 Ngomongin repo: Archirou, BAHLUIL, Kydra — semua tanpa deskripsi, bro lu nyimpen mystery box atau apa? Trus ada tumpukan Kynay-apa aja: Kynay-ai, Kynay-Assistent, KynayAnime (nah ini ada web anime, congrats), Kynaybacken (backend? typo? backup? curiga), Kynaymic, Kynaystream dan KynayStreaming — itu satu project apa klon kloningan? Kynay-Assistent pake dua s? Kreatifnya ke typo aja. Intinya, lu kayak orang yang buat repo biar keliatan sibuk padahal cuma hoarder file kosong. Saran singkat: pilih satu, kasih README, atau stop bikin "final", "backup", "test" versi 17. Kalo enggak, GitHub lu bakal terus jadi museum repo setengah jadi 🤡🔧
 ========================================
+
+========================================
+Username: p
+Hasil: Woi p, 153 repo? Lu ngumpulin project kayak koleksi kartu salah satu geng — banyak, tapi mayoritas cuma numpuk. Gue acungkan jempol buat byebug (itu beneran cakep ✨) sama adblock yang ambisius mau jadi pahlawan DNS — tapi kenapa masih ada assert_cookie buat Rails 2.3? Lu lagi ngutak-atik mesin waktu? 😂
+
+Terus yang parah: area51 dan browser-launcher gak ada deskripsi — itu repo apa: proyek rahasia atau folder desktop yang lu upload pas lagi setengah sadar? alternating-sample sama always kedengeran keren tapi juga agak random, buildploy & better-delayed-job-web nunjukin lu paham infrastruktur, problemnya konsistensi nol: 153 repo tapi followers 139 dan following cuma 6 — produktif, tapi kayak orang yang nonton banyak seri tapi gak pernah nonton sampe abis. Intinya: multi-talented tapi rapiin dong, jangan biarin repo lo jd museum barang setengah jadi 🙈🔥
+========================================
+
+========================================
+Username: p
+Hasil: Bro 'p'? Nama user cuma satu huruf—lu males banget sampe namain akun kaya variabel satu huruf di skrip 1999. Nggak ada bio, 153 repo, 139 followers, dan lu cuma follow 6 orang. Intinya: jadi hoarder repo profesional yang mendingan disimpen di lemari daripada dipajang 🤡. Top language Ruby? Masih nostalgia ke era gemset dan Bundler, nice try.
+
+Ngomongin repo: "adblock" oke lah, lu mau jadi pahlawan DNS-level, tapi lucunya lu koleksi lebih banyak project random yang gak jelas fungsi. "alternating-sample" kedengeran ilmiah tapi pada praktiknya nama repo itu terlalu jelimet buat apa—kayak nama akun medsos yang kepikiran pas mabok. "always" sama "buildploy" kedengeran useful, tapi nama yang generic itu bikin gue mikir lu suka commit sambil setengah tidur. "area51" dan "browser-launcher" gak ada deskripsi? Bro itu lebih mencurigakan daripada profil tanpa foto—lu simpen alien atau cuma README kosong buat ngeles? "assert_cookie" masih Rails 2.3? Serius? Lu main time machine atau gimana. "byebug" sama "ar_blank_to_nil" tunjukin lu udah paham Rails, tapi banyaknya repo antah berantah bikin semua keliatan terabaikan 🧹.
+
+Intinya: Lu punya kuantitas, bukan kualitas—153 repo tapi nggak ada yang nangkring jadi flagship. Bersihin sedikit, kasih deskripsi yang jelas, dan stop nyimpen repo "area51" kosong kalau gak mau keliatan misterius kayak tetangga yang selalu tutup tirai. Biar gitu, ada beberapa gem (literally) yang mantep—tapi please, jangan jadi museum gemset. 😂
+========================================
