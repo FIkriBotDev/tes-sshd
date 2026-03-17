@@ -35,7 +35,7 @@ app.post("/roast", async (req, res) => {
     const topLang = getTopLanguage(repos);
 
     const prompt = `
-Roast profil GitHub ini dengan gaya bahasa santai, tidak formal, sedikit toxic tapi tetap lucu dan kreatif. Gunakan bahasa Indonesia gaul seperti anak tongkrongan programmer. Tambahkan emoji secukupnya (jangan berlebihan).
+Roast profil GitHub ini dengan gaya bahasa santai, tidak formal, sedikit toxic tapi tetap lucu dan kreatif. Gunakan bahasa Indonesia gaul seperti anak tongkrongan. Tambahkan emoji secukupnya (jangan berlebihan).
 
 Buat roast yang terasa personal berdasarkan data, bukan generik. Kalau datanya jelek, roasting lebih pedas. Kalau bagus, tetap roasting tapi dengan cara yang halus dan menyindir.
 
@@ -54,7 +54,7 @@ Langsung kasih hasil roasting dalam 1-3 paragraf pendek. Jangan pakai penjelasan
     const aiRes = await axios.post(
       "https://gen.pollinations.ai/v1/chat/completions",
       {
-        model: "openai",
+        model: "gemini-fast",
         messages: [
           { role: "user", content: prompt }
         ]
