@@ -35,6 +35,11 @@ app.post("/roast", async (req, res) => {
 
     const topLang = getTopLanguage(repos);
     const randomSeed = Math.floor(Math.random() * 100000);
+
+    const repoList = repos.slice(0, 10).map(r => {
+    return `- ${r.name} (${r.description || "no description"})`;
+    }).join("\n");
+
     const prompt = `
 Roast profil GitHub ini dengan gaya bahasa santai, tidak formal, sedikit toxic tapi tetap lucu dan kreatif. Gunakan bahasa Indonesia gaul seperti anak tongkrongan. Tambahkan emoji secukupnya (jangan berlebihan).
 
