@@ -71,6 +71,18 @@ Langsung kasih hasil roasting dalam 1-3 paragraf pendek. Jangan pakai penjelasan
     );
 
     const result = aiRes.data.choices[0].message.content;
+    // format log
+    const log = `
+========================================
+Username: ${username}
+Hasil: ${result}
+========================================
+`;
+
+    // simpan ke file
+fs.appendFile("roast_log.txt", log, (err) => {
+  if (err) console.error("Gagal simpan log:", err);
+});
 
     res.json({ roast: result });
 
