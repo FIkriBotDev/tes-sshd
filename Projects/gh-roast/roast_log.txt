@@ -49,3 +49,10 @@ Hasil: Bro Anuken, bio lu cuma 🐸 tapi followers 4.3k — kayak seleb medsos y
 
 Terus pola repo lu juga lucu: banyak jam project kayak "absume" (48-hour game jam) sama "CodeTesting" yang jelas-jelas ngakuin hobi nge-rusuh ide. "animdustry" — anime gacha rhythm game? Lu mau bikin game atau jual waifu diikuti beat drop, bro? Arc + ArcSetup kedengeran kayak franchise yang lagi nge-recycle kode biar ga repot, sementara "AuthorizePlugin" sama "CoreBot" nunjukin lu sok serius tapi tetep ada bau prototype. Intinya, lu keliatan genius tapi suka ninggalin draf setengah jadi — followers banyak, tapi beberapa repo masih kayak janji mantan: banyak harapan, sedikit bukti. 🔥
 ========================================
+
+========================================
+Username: 00-Evan
+Hasil: Woy 00-Evan, profil lo tuh kayak rumah kosong: gak ada bio, 00-Evan.github.io (no description) — homepage cuma pajangan, kebangetan sih 🤡. Lo punya 703 followers tapi ngikutin cuma 1 orang, seleb coding yang anti-sosial, top language Java — nostalgia jagoan JVM tapi gak ngasih alasan kenapa kita harus peduli.
+
+Ngomongin repo: "libgdx" sama "gdx-controllers" kaya lo lagi pamer koleksi framework orang lain, terus ada trio roguelike: "shattered-pixel-dungeon", "pixel-dungeon-gradle", sama yang udah mati "shattered-pixel-dungeon-gdx" & "PD-classes (*Deprecated*)" — lo numpukin mayat repo kayak penimbun barang antik 🪦. "minimal-mistakes" ada, tapi malah kontrak copy-paste tema Jekyll tanpa isi, wow kreatifitas level 'download lalu lupa'. Intinya: banyak repos, sedikit perhatian — seleb Java yang hobby fork dan ninggalin, congrats jadi museum project yang gak pernah diurus 🔥.
+========================================
