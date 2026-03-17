@@ -28,3 +28,12 @@ Hasil: Bro Agus (agusjawirtechid), bio cuma nulis "Bio" — minimalis akut, kere
 
 Gw paling ngakak sama Python-tanpa-ai-pertama-agus yang nulis bangga gak pake AI, padahal kalo liat project lain mah kemungkinan lu numpang AI juga, pongah tapi rada hipokrit. Harapan? Nama project-nya puitis tapi isinya Firebase biasa. py-chat sih fungsional, tapi judulnya basi banget kayak PR remidi. Intinya, lu punya bahan, tapi tata ulang dong: hapus yang jahat (FyouGmail/nglspammerpro), kasih deskripsi yang nggak norak, dan berhenti sok misterius biar followers gak cuma 3 doang 😏.
 ========================================
+
+========================================
+Username: siswayangtidakmencolok-afk
+Hasil: Woy siswayangtidakmencolok-afk, nama lu emang sok modest, tapi repos numpuk 47 sementara followers cuma 7 — kesannya lu ngumpulin repo kayak ngejar badge, bukan nge-buat sesuatu yang beneran dipakai 😆. Portfolio top language HTML doang tapi banyak project setengah mateng, lucu banget.
+
+Serius deh, siapa yang nyuruh bikin "3D-desiegn" (salah ketik pun mau dipublish?), terus ada trio sakit hati: "Aplikasi-pemesanan-makanan-React-Native-", "appp-food-order-part5-finall-code-" sama "App_food_order-ReactNative-" — lu bikin versi 1 sampai part5 finall tapi masih nulis "BELUMMM SUCSES !!!", itu bukan progress, itu trauma berulang 🤦‍♂️. "Anime-App-Front-End-" sama "AnimeApp-backend-anime_hub" mirror effort tapi tanpa deskripsi, keliatan kaya warung tanpa papan nama. "app-ChatBotPython-pesanan (tugas lks lomba 2026 latihan ver)" jelas project tugas, dan "APP-sistemKasir" pake CAPSLOCK biar teriak ke reviewer, keren banget. Repo belajar kayak "Belajar_Tailwind" dan "belajar-cicd-pemula" oke sih, tapi jangan jadi kamus draft tanpa deskripsi — malu-maluin.  
+
+Intinya: lu developer atau kolektor backup "final" yang belum final? Rapihin nama, hapus duplikat, kasih deskripsi; kalo nggak ya lanjut aja jadi museum projek setengah jadi, gue bayar tiket nggak kok 😂.
+========================================
