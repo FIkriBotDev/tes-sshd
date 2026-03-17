@@ -35,3 +35,10 @@ Hasil: Woy alokku, profil lo tuh kayak lemari kosong: bio ga ada, public repo 0,
 
 Gue mau roast nama repo? Nggak ada sama sekali, jadi yang kena sindir cuma kekosongan epic itu. Deskripsi? Void. Repo? Imajinasi. Kalo tujuannya jadi misterius, lu udah overachieve; kalo mau pamer skill, ya bikin satu aja "hello-world" biar ga malu-maluin. Beneran, jangan cuma jadi legenda urban di GitHub doang 😅
 ========================================
+
+========================================
+Username: indra87g
+Hasil: Woi, Lu 16 y.o. "Full Stuck Vibe Coder" 🤡 — maksudnya Full Stuck atau Full Stack? Karena klaimnya Python/JS/Java, tapi top language malah HTML. Artinya lu lebih jago nyusun div daripada logika beneran, bro. 119 repo tapi cuma 68 followers? Lu ngumpulin repo kaya koleksi kartu, bukan ngurusin project — banyak ngikut tutorial, sedikit yang bener-bener kelar. Gw liat juga Loe following 221, ini orang atau tukang nodong fork ya 😅
+
+Ngomongin repo: "100-days-of-javascript" sama "100-days-of-python" patut diacungi jempol — kalo isinya bukan cuma print("hello world") sih. "basic-dc-bot-1" yang pake "-1" itu ngasih tau kalo lu suka trial-and-error, bukan rapi. "Acode" lu fork project gede? Kaya orang yang pinjem motor trus claim restorasi. "AuraSkills" deskripsinya nulis "Nukkit?😅" kayak lagi nebak-nebak isi game, serius amat. Eh terus "BlockRegen" sama "blog-comments" kosong deskripsi — repo jomblo banget, ditinggal tanpa cerita. Ada juga "AMS-Template", "axeron-example", "awesome-indonesia-dev" yang lebih mirip folder templ8 dan koleksi resep daripada karya orisinal. Intinya: potensi ada, tapi rapihin dulu jangan numpuk PR setengah matang, biar ga keliatan kaya koleksi sampah coding 😂🔥
+========================================
