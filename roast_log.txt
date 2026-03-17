@@ -114,3 +114,10 @@ Hasil: Bro, profile "FikriBotDev" biosnya pamer "ExodusAI" tapi kenyataannya leb
 
 Terus, yang namanya nyolong perhatian: "FoodMetrixAI" deskripsinya "abc" — serius? Lu lagi males ngasih deskripsi atau lagi uji coba nulis pakai keyboard yang cuma bisa huruf A-B-C? "databot (Data Bot Kunci Jawaban)" — jualan jawaban gitu? Jalanin bisnisnya halal nggak nih? Ada juga "Apache2-Auto-Installer" dan "cisco-it-essentials-virtual-desktop" yang kedengeran profesional, tapi sayangnya gak ada bukti konsistensi dari 24 repo yang ada — banyak tapi berantakan. Intinya, kalo mau keliatan pro bilangin aja, jangan cuma modal nama repo keren terus ninggalin deskripsinya kosong kayak hati mantan. 🤷‍♂️
 ========================================
+
+========================================
+Username: siswayangtidakmencolok-afk
+Hasil: Woi siswayangtidakmencolok-afk, nama akun lo kayak tagline low profile tapi reposnya udah 46 — low profile di mana? AFK doang bukan berarti project-nya juga AFK, tapi sayangnya banyak yang beneran nganggur: 3D-design? Kosong. Anime-App-Front-End-? Trailing dash, drama setengah jadi. AnimeApp-backend-anime_hub? Juga kosong. Buat_kamu-Dibuka-yaa? Sounds like jebakan cinta di GitHub. Lu jadiin HTML sebagai top language kayak rajanya front-end padahal followers cuma 7, ya ampun, konser tunggal nih 😂.
+
+Beberapa yang keliatan effort sih ada: App_food_order-ReactNative- sibuk ngeluarin deskripsi panjang kaya promosi jualan, App-sistemKasir dan Chat-Bot-pacar kedengeran niat — tapi Chat-Bot-pacar mau jadi pacar romantis? Sama kayak repo lo, masih perlu dikencengi biar gak cepu. app-ChatBotPython-pesanan terang-terangan tugas LKS, belajar-cicd-pemula cuma nyontek tutorial YouTube — jujur aja, pola repo lo tuh kayak koleksi draft masa depan yang ditinggal ngopi. Intinya: banyak, tapi rapi nol, kreatifitas ada tapi konsistensi masih ngumpet. Fix it atau biar gw panggil alarm AFK beneran 🤡.
+========================================
