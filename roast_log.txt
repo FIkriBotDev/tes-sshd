@@ -221,3 +221,10 @@ Hasil: Woi Khannedy, "Orang Ganteng & Intelek" katanya — followers 4001, follo
 
 Trus yang lebih lucu: beberapa repo cuma nama doang tanpa deskripsi kaya belajargolang, belajar-nodejs-npm-library, belajar_dart_packages_library — nama repo tapi isinya misteri kayak harta karun palsu. Ada juga tumpukan buku-repo (buku-java, buku-javascript, buku-devops) yang kayak perpustakaan mati. Lu bangga jadi Raja Java? Yaudah, jadi raja di repo museum itu — minimal kasih README, kasih contekan, jangan biarin repo "khannedy" sendiri kayak rekening tabungan yang nggak pernah dibuka. 🔥🤡
 ========================================
+
+========================================
+Username: z4phrine
+Hasil: Woy z4phrine, profile lo tuh kayak janji gebetan—manis di bio ("I will do something I like") tapi kosong real action. Cuma 2 repo: baileys sama z4phrine, dua-duanya gak dicomplete, gak ada description, kayak tugas yang dikerjain setengah jam sebelum deadlinenya. Nama "baileys" juga generic parah, bro, nyomot nama library orang doang, sedangkan repo bernama self-titled (z4phrine) malah nggak ngejelasin apapun — flex tapi nol fungsi. 😅
+
+Readme lo makin lucu: "WhatsApp Baileys is an open-source libr" berhenti tiba-tiba, terus gambar yang dipanggil nyindir banget karena ngarah ke user lain (zephyrineex) — copy-paste murah, kerjaan setengah jadi. Followers 3, following 18, top language JavaScript — keliatan lo baru coba-coba mainan bot/WA dan bingung mau serius apa enggak. Saran santai: isi description, rapihin README, jangan ngirim setengah cerita; kalo niatnya cuma eksis, ya setidaknya jangan bikin orang mikir lo lagi tidur siang pas nge-push. 🔥
+========================================
