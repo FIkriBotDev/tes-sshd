@@ -83,6 +83,8 @@ Buat roast yang terasa personal berdasarkan data, bukan generik. Kalau datanya j
 Roast user ini berdasarkan DATA NYATA, terutama:
 - Nama repo (kalau aneh, cringe, generik, atau mencurigakan)
 - Deskripsi repo (kalau kosong, jelek, atau gak jelas)
+- Readme (Kalau ada, roast isinya)
+
 - Pola repo (misal banyak repo test, backup, final, dll)
 - Konsistensi (banyak repo tapi gak keurus)
 - Statistik (followers, repo, dll)
