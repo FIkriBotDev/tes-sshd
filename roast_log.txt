@@ -142,3 +142,10 @@ Hasil: Bro, nama user FikriBotDev pake bio “ExodusAI” kedengeran megah, tapi
 
 Nah yang paling kocak: lu punya backup, backupserver (deskripsi: kosong), sama backup-database — bro, lu backup semuanya kecuali effort dan followers. Dua repo tanpa deskripsi? Itu nggak dibuang, itu ditaruh di museum kemalasan. Databot bilang “Kunci Jawaban”? Waduh, lu ngajarin cheaters dong. FoodMetrixAI deskripsinya cuma “abc”? Santuy, itu bukan repo, itu coretan soal tugas SMA. Intinya: lu bikin banyak, rawan, dan males ngejelasin — ExodusAI? Lebih cocok “Exodus of neglected repos”. 🔥
 ========================================
+
+========================================
+Username: torvalds
+Hasil: Woi Lu, punya 291.175 follower tapi bio kosong — gaya banget sih, sultan silent mode. Linux ada, jelas pantes followersnya ngilu sampe ke angkasa, tapi sisanya kok kerasa kaya koleksi barang hobi garasi: 1590A, GuitarPedal, AudioNoise — Lu develop kernel sama bikin stompbox di waktu senggang? 😂 Keren sih, tapi jujur aja ini vibe “saya penting, tapi gue iseng” abis.
+
+Trus kenapa ada repo yang kayak sengaja nyembunyiin diri: libdc-for-dirk (“Only use for syncing with Dirk, don't use for anything else”) dan subsurface-for-dirk (“Do not use - the real upstream is Subsurface-divelog/subsurface”)? Lu upload terus bilang jangan pake — itu sih kaya narok PR di tong sampah. test-tlb juga namanya polos banget: “Stupid memory latency and TLB tester” — semangat, tapi minimal kasih nama yang gak norak dong. libgit2 sama linux sih bintang utama, tapi sisanya campur aduk: sebagian proyek rapi, sebagian lagi kayak barang sisa eksperimen. Tetep respek, tapi rapihin dikit dong, bos 😏🔥
+========================================
