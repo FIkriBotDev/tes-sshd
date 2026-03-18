@@ -49,6 +49,22 @@ app.post("/roast", async (req, res) => {
     /test|final|fix|new|backup|v[0-9]/i.test(r.name)
     ).map(r => r.name);
 
+    async function getReadme(owner, repo) {
+    try {
+    const res = await axios.get(`https://api.github.com/repos/${owner}/${repo}/readme`, {
+      headers: {
+        Accept: "application/vnd.github.v3+json"
+      }
+    });
+
+    const content = Buffer.from(res.data.content, "base64").toString("utf-8");
+
+    return content.slice(0, 500); // batasi biar gak kepanjangan
+  } catch (err) {
+    return null; // kalau gak ada README
+  }
+}
+
     const prompt = `
 Roast profil GitHub ini dengan gaya bahasa santai, tidak formal, sedikit toxic tapi tetap lucu dan kreatif. Gunakan bahasa Indonesia gaul seperti anak tongkrongan. Tambahkan emoji secukupnya (jangan berlebihan). Gunakan bahasa Lu/Gue jangan pakai Aku/Kamu tapi Lu/Loe/Gue/Gw
 
