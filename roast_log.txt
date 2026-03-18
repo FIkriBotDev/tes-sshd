@@ -149,3 +149,10 @@ Hasil: Woi Lu, punya 291.175 follower tapi bio kosong — gaya banget sih, sulta
 
 Trus kenapa ada repo yang kayak sengaja nyembunyiin diri: libdc-for-dirk (“Only use for syncing with Dirk, don't use for anything else”) dan subsurface-for-dirk (“Do not use - the real upstream is Subsurface-divelog/subsurface”)? Lu upload terus bilang jangan pake — itu sih kaya narok PR di tong sampah. test-tlb juga namanya polos banget: “Stupid memory latency and TLB tester” — semangat, tapi minimal kasih nama yang gak norak dong. libgit2 sama linux sih bintang utama, tapi sisanya campur aduk: sebagian proyek rapi, sebagian lagi kayak barang sisa eksperimen. Tetep respek, tapi rapihin dikit dong, bos 😏🔥
 ========================================
+
+========================================
+Username: webdeveloperindonesia
+Hasil: Wah, akun webdeveloperindonesia: klaimnya "webdeveloper" tapi bios kosong, followers 0, top language cuma HTML — serius nih, Lu developer atau tukang copy-paste template? 😅 Repo ada 4 doang, semua sunyi senyap kayak warung tutup: a, Members-Project, miner, q — nama repo yang entah sengaja soalan atau lu males mikir. 
+
+Semua repo tanpa deskripsi? Bener-bener level “taruh aja dulu” — “a” sama “q” kayak nama file yang ketik ngasal, “Members-Project” generic abis, dan “miner” itu bikin curiga; bukan curiga keren, tapi curiga loh ini mau nge-host skrip aneh atau lu cuma kepo banget sama kata keren. Pokoknya kalo mau dilihat serius, kasih deskripsi atau minimal ganti nama biar ga keliatan kayak project jebakan batman. 🤡
+========================================
