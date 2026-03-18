@@ -100,6 +100,9 @@ Top language: ${topLang}
 DATA REPO:
 ${repoList}
 
+DATA README:
+${readmeSummary}
+
 Inactive repos: ${inactiveRepos.map(r => r.name).join(", ")}
 
 Weird repo names: ${weirdNames.join(", ")}
