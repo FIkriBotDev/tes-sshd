@@ -214,3 +214,10 @@ Lihat repo "codespaces" — README cuma "# codespaces" terus isinya "codespaces"
 
 Terus "skills-copilot-codespaces-vscode" — nama kayak franchise, isinya cuma "My clone repository". Waduh, bukan skill, itu lyric copy-paste. Kalo niatnya ngumpulin "clone" atau "backup" gue udah tahu levelnya: males ngembangin, rajin nge-dup. Ayok lah, buang sedikit gengsi, bikin satu project beneran biar profil lo nggak cuma pajangan kosong 🤡
 ========================================
+
+========================================
+Username: khannedy
+Hasil: Woi Khannedy, "Orang Ganteng & Intelek" katanya — followers 4001, following 2, padahal kerennya cuma di bio doang. Lu punya 45 repo tapi 90% adalah stiker niat: banyak banget "belajar-*" (belajar-javascript-async, belajar-kubernetes, belajar-microservices, dsb) yang ujungnya jadi kuburan code. Bahkan yang keliatan effort malah nggak keurus: api-gateway-research? README: nihil. belajar-git-remote? README: nihil. belajar-git-submodule? README: nihil. Serius, lu koleksi repo tanpa README itu kaya koleksi foto mantan tanpa cerita — creepy. 😂
+
+Trus yang lebih lucu: beberapa repo cuma nama doang tanpa deskripsi kaya belajargolang, belajar-nodejs-npm-library, belajar_dart_packages_library — nama repo tapi isinya misteri kayak harta karun palsu. Ada juga tumpukan buku-repo (buku-java, buku-javascript, buku-devops) yang kayak perpustakaan mati. Lu bangga jadi Raja Java? Yaudah, jadi raja di repo museum itu — minimal kasih README, kasih contekan, jangan biarin repo "khannedy" sendiri kayak rekening tabungan yang nggak pernah dibuka. 🔥🤡
+========================================
