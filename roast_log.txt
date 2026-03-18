@@ -156,3 +156,10 @@ Hasil: Wah, akun webdeveloperindonesia: klaimnya "webdeveloper" tapi bios kosong
 
 Semua repo tanpa deskripsi? Bener-bener level “taruh aja dulu” — “a” sama “q” kayak nama file yang ketik ngasal, “Members-Project” generic abis, dan “miner” itu bikin curiga; bukan curiga keren, tapi curiga loh ini mau nge-host skrip aneh atau lu cuma kepo banget sama kata keren. Pokoknya kalo mau dilihat serius, kasih deskripsi atau minimal ganti nama biar ga keliatan kayak project jebakan batman. 🤡
 ========================================
+
+========================================
+Username: jjhaane
+Hasil: Wahhh profilnya nih, @jjhaane — cuma 2 repo doang, followers 0, following 3. Top language Shell, berarti lebih jago nge-sh alias nge-klik terminal daripada dapet stars, ya? 😏 Bio-nya manis: "a girl who codes and sometimes cries over bugs" — kedengeran relatable, cuma sayangnya repository-nya kayak bekas tisu dipak: ada tapi ga jelas guna. Gw bisa bayangin Lu ngetik 2 repo terus minggir, tinggalkan proyek setengah mateng buat nangis ke bug.
+
+Ngomongin repo: "channelid" — satu kata doang, tanpa deskripsi, bro itu apa? ID channel, file temporer, atau catatan DM yang kebuang? Terlalu syarat sketchy 🤡 Terus "Nebula-theme" juga kosong deskripsi, berarti theme setengah jadi yang belum kebangun atau lu cuma pengin pamer nama aesthetic tanpa kerja keras. Dua repo tanpa konteks = sinyal merah: either Lu developer misterius, atau Lu cuma suka nge-generate nama keren doang biar feed keliatan produktif. Pokoknya, jangan malu-malu lagi: jelasin kerjaan Lu, biar temen tongkrongan tahu kalo Lu bukan cuma ekspresif di bio doang. 🚀
+========================================
