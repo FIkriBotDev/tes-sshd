@@ -184,3 +184,10 @@ Hasil: Ow jundy779, gue liat bio lu "Hanya pemula" tapi GitHub lu kaya pasar loa
 
 Trus ada yang makin curigous: Auto_Order_BOT (BOT AUTO ORDER TELEGRAM produk digital, Panel Pterodactyl) sama AutoScriptXray (Installer Netz-Xray Multi Port) — lu lagi nyiapin jasa otomatisasi legit atau startup underground, bro? AndroidIDE jelas ambisius dan cakep di paper, tapi top language lu HTML — kebanyakan readme doang kali ya 😏. Ada juga Class-Gempa.py yang polos: tugas mahasiswa, respek sih, tapi intinya: banyak ide, minim kurasi. Rapihin repo lu, kasih deskripsi, atau gw bakal nganggep ini semua cuma koleksi 'nanti aja' dan bukan portfolio beneran. 👀
 ========================================
+
+========================================
+Username: syam15
+Hasil: Bro Syam15, lu kaya pabrik bot tapi ngeluh sendirian: 50 repo tapi followers cuma 6, bio hilang entah kemana — congrats, lu ngumpulin repo kayak ngumpulin panci bekas. Banyak yang cuma nama doang: ambil-data (no description) — ambil apaan bro, hati aku juga kosong kayak README lu; AntiVirus (no description) — antivirus tapi nggak ngasih instruksi, virus README-nya malah ngeracun; Botbarunich & cartelnich sih silent assassin, cuma ngendon tanpa jelasin diri. JavaScript jadi top language tapi dokumentasi? zzz 🧟‍♂️
+
+Ada juga yang lucu: Alphabot-Md bilang "Yg kasi star makasih 😇 yg make doang juga makasih 🗿" — udah minta perhatian kaya anak tongkrongan; Ayiin-Userbot nyuruh "Tetaplah Mengeluh Dan Putus Asa" — motivasi level rendah, bro; cartelnulis.github.io bilang "Mager mau nulis? Pakai Bot Nulis" — jujur banget, mager sampai bikin website untuk mager. Honorable mention: Asta-Md & BlueDucky keliatan niat (CVE flex), tapi sisanya banyak yang kayak repo hantu. Intinya: banyak ide, sedikit finishing — rapihin dikit biar followers lo gak cuma keluarga sendiri. 😂
+========================================
