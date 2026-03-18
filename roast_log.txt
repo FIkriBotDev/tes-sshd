@@ -198,3 +198,10 @@ Hasil: Wah, liand-fullstack-dev bilang "fullstack" tapi top language nya HTML do
 
 Ngomongin repo: "liand-fullstack-dev" isinya cuma salam "Hi everyyone👋 ..." — typo plus README kayak greeting terminal, seriusan itu kerjaan? 😅 Terus "Liand_portofolio" cuma nulis "Ini adalah project portofolio pertamaku." Bro, portfolio bukan sekadar ngasih label, jangan sok mystery — code-nya mana? Kalau mau klaim fullstack, mulai dari nol: belajarin backend, bikin project yang keliatan effort, dan buang gaya-gaya placeholder. Lo masih di fase "aspiring", tapi malu-maluin juga kalo gini terus.
 ========================================
+
+========================================
+Username: liand-fullstack-dev
+Hasil: Woi Liand, ngaku "fullstack-dev" tapi top language cuma HTML doang? Nama akun liand-fullstack-dev kayak lagi pasang LinkedIn level overconfident, padahal repos cuma 2, followers 0 — prestasi paling ngena: zero audience, full ego. 😂
+
+Trus repo "liand-fullstack-dev" isinya cuma sapaan basi "Hi everyyone👋..." Bro, itu README apa kartu nama? "Liand_portofolio" malah makin kocak: deskripsi "Ini adalah project portofolio pertamaku." — men, 'portofolio' ejaannya error, deskripsinya generik kayak status Facebook, kayaknya projectnya masih di mode tidur siang. Kalau mau beneran fullstack, kerja dikit dong, jangan cuma ngaku. 🙃💀
+========================================
