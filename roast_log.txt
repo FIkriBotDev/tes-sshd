@@ -228,3 +228,10 @@ Hasil: Woy z4phrine, profile lo tuh kayak janji gebetan—manis di bio ("I will 
 
 Readme lo makin lucu: "WhatsApp Baileys is an open-source libr" berhenti tiba-tiba, terus gambar yang dipanggil nyindir banget karena ngarah ke user lain (zephyrineex) — copy-paste murah, kerjaan setengah jadi. Followers 3, following 18, top language JavaScript — keliatan lo baru coba-coba mainan bot/WA dan bingung mau serius apa enggak. Saran santai: isi description, rapihin README, jangan ngirim setengah cerita; kalo niatnya cuma eksis, ya setidaknya jangan bikin orang mikir lo lagi tidur siang pas nge-push. 🔥
 ========================================
+
+========================================
+Username: siswayangtidakmencolok-afk
+Hasil: Bro, nama username "siswayangtidakmencolok-afk" udah ngasih sinyal: niat nyamar jadi kalem tapi repo numpuk 46 kayak lagi reset hidup. Followers cuma 8? Waduh, lu kayak influencer ghost town — banyak barang pameran tapi penontonnya cuma keluarga. Top language HTML doang juga ngasih vibe: banyak mainan front-end sederhana, tapi karya yang ngena? Nol koma nol 😅.
+
+Ngomongin repo, ini lucu banget: "3D-design" nggak ada README, sama kayak janji gebetan; kosong. "Anime-App-Front-End-" masih pake README default React Native — copy-paste level: newbie-on-the-go. "AnimeApp-backend-anime_hub" cuma ada logo Laravel di README, seriusan? Backend-nya disimpen di lemari? "Buat_kamu-Dibuka-yaa" dan puluhan repo tanpa deskripsi: romantis tapi sterilis, kagak jelas mau nunjukin apa. "app-ChatBotPython-pesanan" bilang tugas lomba 2026 — selamat ya, lu udah ngerencanain masa depan sambil AFK. Sedikit pro: "App_food_order-ReactNative-" keliatan rapi dan deskripsinya OK, tapi itu cuma oase kecil di padang pasir draft yang lu tinggalkan. Intinya, kerjaan banyak tapi konsistensi ngilang — kalo mau keliatan menonjol, mending bersihin stok proyek zombie dulu, jangan cuma numpuk README setengah jadi 😂🔥.
+========================================
