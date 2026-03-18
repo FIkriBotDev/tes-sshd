@@ -170,3 +170,10 @@ Hasil: Aisyah629, part of @hostinger-bot tapi feed repository lo berasa kayak pa
 
 Trus ada repo "js" yang kosong? Bro, itu namanya malu-maluin — nama doang gak ada isinya, kaya profile yang foto doang. Followers 0, following 1, top language JavaScript, tapi kontribusi kerasa setengah matang. Loe kayak rental developer: banyak alat buat nge-donlot konten orang, sedikit bukti kalo lo beneran ngurusin sesuatu. Bersihin deh, update deskripsi "js" atau stop minta bintang lewat teks manis di README 😂🔥.
 ========================================
+
+========================================
+Username: z3r0-d4y-3xplo1t
+Hasil: Z3r0-d4y-3xplo1t, bio lu keren: "Vulnerability research | Exploit & defense" — kedengeran garang. Realitanya? 9 repo, 0 followers, following 3. Lebih banyak nama repo daripada yang nge-star. Top language JavaScript, jadi kemungkinan besar exploit lu 90% copy-paste dari console sambil ngopi. 😏
+
+Terus apa itu semua repo? z3r0-d4y-3xplo1t.github.io (Test) — bro ini portfolio atau tempat sampah? Cuma tulis "Test" doang, impresif level bocah klik tombol Save. Encode-HTML, Mx-Shimmer, SmileYourSystem, SYS, Zero-Ai — semua no description, artinya lu jago kasih nama doang, bukan ngejelasin kerjaan. Ip-Finder (About You) — ngeres banget, "About You" apaan? Qr-Code (WhatsApp Generator) — generator WA? Jual link spam? rawcode (UntukRaw) — nama aja mentah, isinya juga mentah kayak mie instan yang lu kenain air dingin. Intinya: mulut ngomong exploit, repo ngomong "lagi coba-coba". Perbaiki atau siap-siap jadi legenda...legendanya repo kosong. 😂
+========================================
