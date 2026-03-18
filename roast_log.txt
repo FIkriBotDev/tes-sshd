@@ -191,3 +191,10 @@ Hasil: Bro Syam15, lu kaya pabrik bot tapi ngeluh sendirian: 50 repo tapi follow
 
 Ada juga yang lucu: Alphabot-Md bilang "Yg kasi star makasih 😇 yg make doang juga makasih 🗿" — udah minta perhatian kaya anak tongkrongan; Ayiin-Userbot nyuruh "Tetaplah Mengeluh Dan Putus Asa" — motivasi level rendah, bro; cartelnulis.github.io bilang "Mager mau nulis? Pakai Bot Nulis" — jujur banget, mager sampai bikin website untuk mager. Honorable mention: Asta-Md & BlueDucky keliatan niat (CVE flex), tapi sisanya banyak yang kayak repo hantu. Intinya: banyak ide, sedikit finishing — rapihin dikit biar followers lo gak cuma keluarga sendiri. 😂
 ========================================
+
+========================================
+Username: liand-fullstack-dev
+Hasil: Wah, liand-fullstack-dev bilang "fullstack" tapi top language nya HTML doang — artinya Lo jago nge-style doang, belum nyentuh server sama sekali. Cuma 2 repo, 0 followers, 0 following? Kayak warung sepi, cuma Lo yang mampir buat naro piring kotor 😂. Nama user keren, tapi faktanya lebih mirip liand-html-noob, bukan fullstack, bro.
+
+Ngomongin repo: "liand-fullstack-dev" isinya cuma salam "Hi everyyone👋 ..." — typo plus README kayak greeting terminal, seriusan itu kerjaan? 😅 Terus "Liand_portofolio" cuma nulis "Ini adalah project portofolio pertamaku." Bro, portfolio bukan sekadar ngasih label, jangan sok mystery — code-nya mana? Kalau mau klaim fullstack, mulai dari nol: belajarin backend, bikin project yang keliatan effort, dan buang gaya-gaya placeholder. Lo masih di fase "aspiring", tapi malu-maluin juga kalo gini terus.
+========================================
