@@ -59,7 +59,7 @@ app.post("/roast", async (req, res) => {
 
     const content = Buffer.from(res.data.content, "base64").toString("utf-8");
 
-    return content.slice(0, 500); // batasi biar gak kepanjangan
+    return content.slice(0, 200); // batasi biar gak kepanjangan
   } catch (err) {
     return null; // kalau gak ada README
   }
