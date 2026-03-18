@@ -45,6 +45,10 @@ app.post("/roast", async (req, res) => {
     return (Date.now() - last) > 1000 * 60 * 60 * 24 * 60; // 60 hari
     });
 
+    const weirdNames = repos.filter(r => 
+    /test|final|fix|new|backup|v[0-9]/i.test(r.name)
+    ).map(r => r.name);
+
     const prompt = `
 Roast profil GitHub ini dengan gaya bahasa santai, tidak formal, sedikit toxic tapi tetap lucu dan kreatif. Gunakan bahasa Indonesia gaul seperti anak tongkrongan. Tambahkan emoji secukupnya (jangan berlebihan). Gunakan bahasa Lu/Gue jangan pakai Aku/Kamu tapi Lu/Loe/Gue/Gw
 
@@ -70,6 +74,8 @@ DATA REPO:
 ${repoList}
 
 Inactive repos: ${inactiveRepos.map(r => r.name).join(", ")}
+
+Weird repo names: ${weirdNames.join(", ")}
 
 Langsung kasih hasil roasting dalam 1-3 paragraf pendek. Jangan pakai penjelasan tambahan.
 `;
