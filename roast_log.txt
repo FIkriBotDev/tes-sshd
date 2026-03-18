@@ -205,3 +205,12 @@ Hasil: Woi Liand, ngaku "fullstack-dev" tapi top language cuma HTML doang? Nama 
 
 Trus repo "liand-fullstack-dev" isinya cuma sapaan basi "Hi everyyone👋..." Bro, itu README apa kartu nama? "Liand_portofolio" malah makin kocak: deskripsi "Ini adalah project portofolio pertamaku." — men, 'portofolio' ejaannya error, deskripsinya generik kayak status Facebook, kayaknya projectnya masih di mode tidur siang. Kalau mau beneran fullstack, kerja dikit dong, jangan cuma ngaku. 🙃💀
 ========================================
+
+========================================
+Username: fikrifahrezi25
+Hasil: Loe ini profilnya kayak warung tutup: bio nggak ada, follower 0, following 0 — pantesan sunyi, sepi kayak malem Minggu. Top language "Unknown"? Maksudnya lo ngerjain proyek pake telepati atau Lo cuma numpuk repo buat pamer doang? 😅
+
+Lihat repo "codespaces" — README cuma "# codespaces" terus isinya "codespaces". Bro, itu bukan README, itu mantra. Minimalis level ekstrem sampai nggak keliatan effort-nya. Kalau mau sok rapi, ya tulis dikit penjelasan, jangan cuma ulangin nama repo kaya robot ngulang hafalan.
+
+Terus "skills-copilot-codespaces-vscode" — nama kayak franchise, isinya cuma "My clone repository". Waduh, bukan skill, itu lyric copy-paste. Kalo niatnya ngumpulin "clone" atau "backup" gue udah tahu levelnya: males ngembangin, rajin nge-dup. Ayok lah, buang sedikit gengsi, bikin satu project beneran biar profil lo nggak cuma pajangan kosong 🤡
+========================================
