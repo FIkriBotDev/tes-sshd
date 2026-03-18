@@ -73,9 +73,8 @@ app.post("/roast", async (req, res) => {
 
     const readmeSummary = sampleRepos.map((r, i) => {
     return `Repo: ${r.name}
-README:
-${readmeResults[i] || "Tidak ada README"}`;
-}).join("\n\n");
+    README: ${readmeResults[i] || "Tidak ada README"}`;
+    }).join("\n\n");
 
     const prompt = `
 Roast profil GitHub ini dengan gaya bahasa santai, tidak formal, sedikit toxic tapi tetap lucu dan kreatif. Gunakan bahasa Indonesia gaul seperti anak tongkrongan. Tambahkan emoji secukupnya (jangan berlebihan). Gunakan bahasa Lu/Gue jangan pakai Aku/Kamu tapi Lu/Loe/Gue/Gw
