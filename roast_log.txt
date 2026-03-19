@@ -263,3 +263,10 @@ Hasil: Bro Cebel, Lu kerja di Fraunhofer dari 2008 tapi GitHub Lu kayak museum y
 
 Trus serius deh, README-nya ngerasa diseleksi: atom-bel-language cuma “Adds syntax highlighting”, dotfiles README tabelnya setengah jalan kaya ngetik sambil ngantuk, neo4j-tools README ke-cut di tengah baris "neo4j_tools set-neo4j-config -u us"—lu ninggalin kalimat gitu aja? pyctd_notebooks nulis "Ipythin" — typo lecture? Dan yang paling ngenes: SOAPpy. Nama meyakinkan, deskripsi nol. SOAPpy kayak orang bilang "percaya sama gue" tapi enggak ngasih bukti — shame 😭 Lu keren di dunia nyata, tapi di GitHub mending upgrade dari mode hibernasi atau setidaknya kasih README yang ngerti, bukan obituari proyek.
 ========================================
+
+========================================
+Username: hacker
+Hasil: Woi hacker, profil GitHub lu kaya mantan yang ghosting: bio kosong, 6 repo doang tapi followers 178 – sok viral tapi follow cuma 1, sombong amat 🤡. Klaim top language Rust tapi mayoritas repo kayak x-go4, x-micromdm, x-promscale itu murni vibe Go/infra—lu mau jadi Rustacean atau cuma kolektor label "x-"? Semua repo pada mati suri, keliatan lu pamer banyak tapi gak ada yang bener-bener keurus.  
+
+Ngomongin repo: mungo? README gue baca setengah terus berhenti, kayak lu nulis terus keburu ngantuk — DOCKER_HOST ngambang, bro. x-apcupsd: penuh badge biar kelihatan pro, padahal kayak fork yang dibawa tidur; gaya doang. x-clipperz mau jualan password manager tapi README ke-potong di kata "secu..." — serius, itu lucu sekaligus serem, jangan sampe orang nitip password di repo yang setengah jadi. x-go4, x-micromdm, x-promscale : nama "x-" cringe parah, keliatan mirror/packaging, semua inactive, banyak omong dikit action 😴. Intinya: lu jago ngumpulin nama repo, kalah jago ngurusin yang satu pun — bangun dikit, jangan cuma pamer emoji 🚀 kalau isi gak ada.
+========================================
