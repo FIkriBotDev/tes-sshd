@@ -249,3 +249,10 @@ Hasil: Bro RIFKIror, akun lu tuh kayak gudang barang sisa tongkrongan: 27 repo t
 
 Grok-jailbreak? nebl-tools-v1? Kedengeran suspicious plus misterius, kaya orang yang bilang "nanti aja" terus nggak pernah buktiin. Kalau tujuan lu nyimpen backup, jangan pake nama generik macam "final" atau "backup" — oh wait, lu udah pakai gaya bego itu: domain-, WebCoba, Website-Utama- — kocak. Singkatnya: rapihin nama repo, kasih deskripsi yang nyata, dan berhenti bikin clone toko yang sama 4x. Biar followers pada bangga, bukan bingung 😏🔥
 ========================================
+
+========================================
+Username: liand-fullstack-dev
+Hasil: Wah, "liand-fullstack-dev" — nama gede, ambisi gede, tapi kenyataannya cuma HTML doang dan 2 repo + 0 followers. Repo "liand-fullstack-dev" nggak ada README, inactive pula, jadi GitHub Lu lebih mirip etalase kosong yang lagi tutup 😅. Klaim fullstack tapi kerjaan masih di level "Hello World" alias pajangan doang, lol.
+
+Terus "Liand_portofolio" nulis "project portofolio pertamaku sepenuh hati..." tapi tetep nggak ada README juga — sepenuh hati ngapain kalo isinya raib? Portofolio tanpa README itu kayak warung tanpa menu, pembeli bingung. Saran santai: mending hapus kata "fullstack" kalo belum siap, atau tambahin README biar klaim Lu nggak cuma angan-angan 🤡🔧
+========================================
