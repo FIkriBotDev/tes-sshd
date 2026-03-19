@@ -270,3 +270,10 @@ Hasil: Woi hacker, profil GitHub lu kaya mantan yang ghosting: bio kosong, 6 rep
 
 Ngomongin repo: mungo? README gue baca setengah terus berhenti, kayak lu nulis terus keburu ngantuk — DOCKER_HOST ngambang, bro. x-apcupsd: penuh badge biar kelihatan pro, padahal kayak fork yang dibawa tidur; gaya doang. x-clipperz mau jualan password manager tapi README ke-potong di kata "secu..." — serius, itu lucu sekaligus serem, jangan sampe orang nitip password di repo yang setengah jadi. x-go4, x-micromdm, x-promscale : nama "x-" cringe parah, keliatan mirror/packaging, semua inactive, banyak omong dikit action 😴. Intinya: lu jago ngumpulin nama repo, kalah jago ngurusin yang satu pun — bangun dikit, jangan cuma pamer emoji 🚀 kalau isi gak ada.
 ========================================
+
+========================================
+Username: RamdonnaKamaliah
+Hasil: Woy RamdonnaKamaliah, profil Lu tuh kayak mall tutup malem: 28 toko tapi pengunjung cuma 7 followers, top language HTML doang — artinya mayoritas proyek cuma template HTML yang belum dimodif sama sekali. Repo nama-nama kayak apa-aja (README ga ada), API_SILALA & arsa (README cuma nempel logo Laravel, copy-paste level pemula), sama porto-belum-beres.io (nama ngaku blak-blakan: *iya, emang belum beres*) — cringe parah. 😏
+
+Terus ada kopikenangan.github.io yang sombong nulis "web for business" padahal koleksi repo inactive lu numpuk lebih banyak dari sales, sama porto-new.github.io & test.gihun.io yang namanya suspicious banget (test? serio?). Intinya: Lu punya banyak repo, tapi mayoritas kosong, setengah jadi, atau tinggal nama. Bersihin deh, isi README, bikin bio, atau jangan sok pamer puluhan repo kalo isinya cuma kenangan doang. ☕️
+========================================
