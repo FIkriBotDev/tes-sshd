@@ -314,3 +314,10 @@ Hasil: Muhammadhabib16, bio lo bilang “A IT Enthusiast, Junior Front End Web D
 
 Ngomongin tiap repo: belajar-docker-compose dan belajar-docker-dockerfile — namanya belajar tapi README gak ada, serius itu belajar apa cuma nge-klik tutorial sampe selesai? Bukudex? README cuma “Bukudex” terus jelasin 3 baris, masterpiece kemalasan level dewa. project-AI — kata “AI” doang tapi kosong, mau jadi Elon Musk gausah jualan buzzword lah. Shoezy, Tugas-Besar-PBO---Sistem-Manajemen-Toko-RAFA, workshop-neo, workshop-neotelemetri — semua no description, kayak etalase kosong: klikfilm bilang portfolio tapi diem juga, MinangGo adem ayem tanpa update. Intinya, Loe bilang junior front-end, tapi portfolionya masih kayak warung tutup tengah malem — tambahin README, narik perhatian, atau hapus aja biar ga malu-maluin 😅.
 ========================================
+
+========================================
+Username: fikrifahrezi25
+Hasil: Bro fikrifahrezi25, profil lu kayak toko tutup: no bio, 2 repo doang, followers 0, top language "Unknown" — kayak lagi ngumpulin badge hantu 😂. Nama user sih fine, tapi keliatan lu cuma mampir nge-fork terus kabur.
+
+Ngomongin repo: "codespaces" README cuma nulis "codespaces" dua baris — kreatif banget, lumayan buat puisi minimalis tapi nol effort. Trus ada "skills-copilot-codespaces-vscode" dengan README "My clone repository" — bro, itu bukan portfolio, itu tanda lu nyimpen hasil copy-paste dan berharap ada yang kagum. Kalau niatnya serius mending hapus template, nulis sesuatu yang bukan echo, atau siap-siap jadi profil ghost town lagi 🤡.
+========================================
