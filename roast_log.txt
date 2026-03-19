@@ -300,3 +300,10 @@ Ngomongin repo: BaikaStore, birthday, iphone14, Spesial, Game_tangkap_hadiah —
 
 Singkat: lu lebih jago namain file random daripada ngerapihin proyek. Kalau mau dibilang developer, jangan cuma taruh nama cringe dan "no description" — nulis README, jelasin, dan rawat repo dong. Kalo enggak, ya tetep jadi kolektor folder kosong aja 🤡.
 ========================================
+
+========================================
+Username: pojitzyy
+Hasil: Bro Poji (pojitzyy), lu nge-flex “Fullstack Next.js & MERN” di bio tapi GitHub? Hampa banget. Repo cuma 1: "pojitzyy" — isinya cuma gif keren terus README ke-*stop* di “focused on bu” kaya lagi ngetik sambil makan gorengan trus lupa. Top language Unknown, followers 0, following 1 — serius deh, clean code-nya bersih dari kode, cuma bersih doang. 😂
+
+Lu mau dibilang developer? Buktiin dong, jangan cuma selfie di README. Repo profil setengah jadi itu keliatan kayak CV yang ditinggal sinyal, bukan portofolio. Upload project, kasih contoh code, atau minimal tulisin README yang lengkap — kalo gak, mending ganti nama repo jadi “coming-soon-forever” biar jujur. 🤡
+========================================
