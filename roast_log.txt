@@ -277,3 +277,10 @@ Hasil: Woy RamdonnaKamaliah, profil Lu tuh kayak mall tutup malem: 28 toko tapi 
 
 Terus ada kopikenangan.github.io yang sombong nulis "web for business" padahal koleksi repo inactive lu numpuk lebih banyak dari sales, sama porto-new.github.io & test.gihun.io yang namanya suspicious banget (test? serio?). Intinya: Lu punya banyak repo, tapi mayoritas kosong, setengah jadi, atau tinggal nama. Bersihin deh, isi README, bikin bio, atau jangan sok pamer puluhan repo kalo isinya cuma kenangan doang. ☕️
 ========================================
+
+========================================
+Username: rayhan-creator
+Hasil: Rayhan-creator, Lu nulis di bio "Flutter Junior Developer | UI/UX Designer" tapi GitHub Lu ngebuktiin kalau Lu jagonya: bikin starter template terus ninggalin, bro 😏. Cuma 4 repo, follower 2, following 3 — portofolio atau etalase barang bekas? Reposnya juga ngambang: semua inactive, seakan lu cuma nge-stash proyek yang nggak kelar.
+
+Ngomongin satu-satu: "install-react" — namanya sok keren tapi gak ada deskripsi, apalagi README. Lucu banget: nulis "install-react" padahal top language Dart, repo impostor banget 😂. "Mtrack" sama "PWM_Mobile" README-nya jelas Google Flutter template copy-paste: # mtrack_app, "A new Flutter project" — bro, itu README starter kit, bukan portofolio. "to_do_app" nih paling cringe: nama paling generik sedunia, tanpa deskripsi, kemungkinan hasil 15 menit tutorial. Singkatnya, kalau Lu pengen dianggap serius, selesaiin salah satu sebelum koleksi starter template jadi museum, atau setidaknya kasih README yang nggak malu-maluin.
+========================================
