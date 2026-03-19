@@ -284,3 +284,10 @@ Hasil: Rayhan-creator, Lu nulis di bio "Flutter Junior Developer | UI/UX Designe
 
 Ngomongin satu-satu: "install-react" — namanya sok keren tapi gak ada deskripsi, apalagi README. Lucu banget: nulis "install-react" padahal top language Dart, repo impostor banget 😂. "Mtrack" sama "PWM_Mobile" README-nya jelas Google Flutter template copy-paste: # mtrack_app, "A new Flutter project" — bro, itu README starter kit, bukan portofolio. "to_do_app" nih paling cringe: nama paling generik sedunia, tanpa deskripsi, kemungkinan hasil 15 menit tutorial. Singkatnya, kalau Lu pengen dianggap serius, selesaiin salah satu sebelum koleksi starter template jadi museum, atau setidaknya kasih README yang nggak malu-maluin.
 ========================================
+
+========================================
+Username: sahrulromadlon
+Hasil: Lu ngaku "Anak sastra yang belajar ngoding" terus bukti nyatanya cuma satu repo: game-suit — masterpiece epik tentang batu-gunting-kertas yang pake random choice. Keren sih, dari puisi ke RNG, transformasi dramatis bener 😂. Tapi serius, cuma 1 repo, 4 followers (mungkin 3 keluarga + 1 bot), dan gak ada README? Repo lo kayak buku puisi yang halaman tengahnya ilang — kreatif tapi careless. 😏
+
+Nama repo jelas dan gak cringe, tapi deskripsinya basic banget dan README: HILANG. Jadi kalo ada yang mau nge-clone, mereka bakal ngerasa diajak ikut open-mic tanpa lirik. Lu mau jadi dev atau ghost writer? Update dikit lah, tambahin README biar orang paham, bukan cuma nebak-nebak sama komputer random lu. 👀🔥
+========================================
