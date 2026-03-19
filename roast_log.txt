@@ -256,3 +256,10 @@ Hasil: Wah, "liand-fullstack-dev" — nama gede, ambisi gede, tapi kenyataannya 
 
 Terus "Liand_portofolio" nulis "project portofolio pertamaku sepenuh hati..." tapi tetep nggak ada README juga — sepenuh hati ngapain kalo isinya raib? Portofolio tanpa README itu kayak warung tanpa menu, pembeli bingung. Saran santai: mending hapus kata "fullstack" kalo belum siap, atau tambahin README biar klaim Lu nggak cuma angan-angan 🤡🔧
 ========================================
+
+========================================
+Username: cebel
+Hasil: Bro Cebel, Lu kerja di Fraunhofer dari 2008 tapi GitHub Lu kayak museum yang lampunya padam—10 repo, 20 follower, 11 following, top language Python, semua "py" kayak koleksi perangko: pyctd, pyhgnc, pyuniprot, pyvis, pyocclient... Lu ngumpulin package bioinfo kayak orang ngumpulin stiker bekas. Repo aktif? Inactive semua. Kerja di institut gede, tapi GitHub-nya resign dini, kecewa sih 😅
+
+Trus serius deh, README-nya ngerasa diseleksi: atom-bel-language cuma “Adds syntax highlighting”, dotfiles README tabelnya setengah jalan kaya ngetik sambil ngantuk, neo4j-tools README ke-cut di tengah baris "neo4j_tools set-neo4j-config -u us"—lu ninggalin kalimat gitu aja? pyctd_notebooks nulis "Ipythin" — typo lecture? Dan yang paling ngenes: SOAPpy. Nama meyakinkan, deskripsi nol. SOAPpy kayak orang bilang "percaya sama gue" tapi enggak ngasih bukti — shame 😭 Lu keren di dunia nyata, tapi di GitHub mending upgrade dari mode hibernasi atau setidaknya kasih README yang ngerti, bukan obituari proyek.
+========================================
