@@ -291,3 +291,12 @@ Hasil: Lu ngaku "Anak sastra yang belajar ngoding" terus bukti nyatanya cuma sat
 
 Nama repo jelas dan gak cringe, tapi deskripsinya basic banget dan README: HILANG. Jadi kalo ada yang mau nge-clone, mereka bakal ngerasa diajak ikut open-mic tanpa lirik. Lu mau jadi dev atau ghost writer? Update dikit lah, tambahin README biar orang paham, bukan cuma nebak-nebak sama komputer random lu. 👀🔥
 ========================================
+
+========================================
+Username: Ubaidillah-cmd
+Hasil: Woy Ubaidillah-cmd, klaimnya "Informatics Student / Web Developer / Java / DB" tapi GitHub-nya freezing di 9 repo, top language HTML doang, followers cuma 1 — satu follower itu siapa, ibunya? 😂 Lu konsisten sih: konsisten ninggalin repo begitu aja.  
+
+Ngomongin repo: BaikaStore, birthday, iphone14, Spesial, Game_tangkap_hadiah — semua gak ada deskripsi sama sekali, kayak lembar kosong yang lo kira udah jadi proyek. portofolio-ubai cuma "biodata"? Bro, itu namanya CV, bukan portfolio. buka_bersama punya README cuma "Undangan Bukber\nJum'at-13-maret-2026" — serius lu ngoding buat undangan masa depan sambil ninggalin sisanya berserakan? Happy (Ulang Tahun), ubedwedding, BaikaStore juga masuk kategori reposi-tori mayat: ada tapi mati rasa.  
+
+Singkat: lu lebih jago namain file random daripada ngerapihin proyek. Kalau mau dibilang developer, jangan cuma taruh nama cringe dan "no description" — nulis README, jelasin, dan rawat repo dong. Kalo enggak, ya tetep jadi kolektor folder kosong aja 🤡.
+========================================
