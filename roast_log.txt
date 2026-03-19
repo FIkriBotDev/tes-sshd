@@ -307,3 +307,10 @@ Hasil: Bro Poji (pojitzyy), lu nge-flex “Fullstack Next.js & MERN” di bio ta
 
 Lu mau dibilang developer? Buktiin dong, jangan cuma selfie di README. Repo profil setengah jadi itu keliatan kayak CV yang ditinggal sinyal, bukan portofolio. Upload project, kasih contoh code, atau minimal tulisin README yang lengkap — kalo gak, mending ganti nama repo jadi “coming-soon-forever” biar jujur. 🤡
 ========================================
+
+========================================
+Username: muhammadhabib16
+Hasil: Muhammadhabib16, bio lo bilang “A IT Enthusiast, Junior Front End Web Developer” — keren sih, tapi profil lo lebih keliatan kayak museum proyek yang ditinggalin. 10 repo, follower 4, top language JavaScript, tapi mayoritas reposnya nganggur dan README absen; itu namanya ngejual image, bukan kerja bener 😏.
+
+Ngomongin tiap repo: belajar-docker-compose dan belajar-docker-dockerfile — namanya belajar tapi README gak ada, serius itu belajar apa cuma nge-klik tutorial sampe selesai? Bukudex? README cuma “Bukudex” terus jelasin 3 baris, masterpiece kemalasan level dewa. project-AI — kata “AI” doang tapi kosong, mau jadi Elon Musk gausah jualan buzzword lah. Shoezy, Tugas-Besar-PBO---Sistem-Manajemen-Toko-RAFA, workshop-neo, workshop-neotelemetri — semua no description, kayak etalase kosong: klikfilm bilang portfolio tapi diem juga, MinangGo adem ayem tanpa update. Intinya, Loe bilang junior front-end, tapi portfolionya masih kayak warung tutup tengah malem — tambahin README, narik perhatian, atau hapus aja biar ga malu-maluin 😅.
+========================================
