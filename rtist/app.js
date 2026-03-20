@@ -325,6 +325,7 @@ app.get('/get/image-generator/:prompt', async (req, res) => {
             width = 1920,
             height = 1920,
             model = 'zimage'
+            
         } = req.query;
         const encodedPrompt = encodeURIComponent(prompt);
         const imageUrl = `https://gen.pollinations.ai/image/${encodedPrompt}?model=${model}&width=${width}&height=${height}`;
