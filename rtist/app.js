@@ -322,13 +322,13 @@ app.get('/get/image-generator/:prompt', async (req, res) => {
     try {
         const { prompt } = req.params;
         const {
-            width = 1920,
-            height = 1920,
+            width = 1024,
+            height = 1024,
             model = 'zimage'
-            
+            quality = 'medium'
         } = req.query;
         const encodedPrompt = encodeURIComponent(prompt);
-        const imageUrl = `https://gen.pollinations.ai/image/${encodedPrompt}?model=${model}&width=${width}&height=${height}`;
+        const imageUrl = `https://gen.pollinations.ai/image/${encodedPrompt}?model=${model}&width=${width}&height=${height}&quality={}`;
         const response = await axios.get(imageUrl, {
             responseType: 'arraybuffer',
             headers: {
