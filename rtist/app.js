@@ -327,7 +327,7 @@ app.get('/get/image-generator/:prompt', async (req, res) => {
             model = 'grok-imagine'
         } = req.query;
         const encodedPrompt = encodeURIComponent(prompt);
-        const imageUrl = `https://gen.pollinations.ai/image/${encodedPrompt}?model=${model}`;
+        const imageUrl = `https://gen.pollinations.ai/image/${encodedPrompt}?model=${model}&width=${width}&height=${height}`;
         const response = await axios.get(imageUrl, {
             responseType: 'arraybuffer',
             headers: {
