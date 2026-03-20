@@ -257,3 +257,4 @@
 [2026-03-20 13:20:34] GET /get/image-generator/pantai
 [2026-03-20 13:32:05] GET /get/image-generator/pantai
 [2026-03-20 13:32:28] POST /post/rtist
+[2026-03-20 13:32:40] GET /get/image-generator/rumah?width=1920&height=1920&nologo=true
