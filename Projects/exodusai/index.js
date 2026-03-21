@@ -404,8 +404,105 @@ ${parsed.text}`
     return;
 }
 
-        // === VOICE MODE ===
-        if
+// === VOICE MODE ===
+if (currentMode === 'voice' && m.message.audioMessage) {
+    try {
+        await sock.sendMessage(sender, { text: '🎧 Lagi dengerin suara lo...' });
+
+        // 1. download audio dari WA
+        const buffer = await downloadMediaMessage(
+            m,
+            'buffer',
+            {},
+            { logger: P({ level: 'silent' }), reuploadRequest: sock.updateMediaMessage }
+        );
+
+        // 2. upload ke server kamu
+        const uploadedUrl = await uploadFile(buffer);
+
+        // 3. download lagi sebagai file (biar bisa kirim ke STT)
+        const audioFile = await axios.get(uploadedUrl, { responseType: 'arraybuffer' });
+
+        // 4. kirim ke STT (Pollinations)
+        const form = new FormData();
+        form.append('file', Buffer.from(audioFile.data), 'audio.wav');
+        form.append('model', 'whisper-large-v3');
+        form.append('response_format', 'json');
+
+        const sttRes = await axios.post(
+            'https://gen.pollinations.ai/v1/audio/transcriptions',
+            form,
+            {
+                headers: {
+                    ...form.getHeaders(),
+                    Authorization: 'Bearer sk_xxxxx', // GANTI TOKEN
+                }
+            }
+        );
+
+        const userText = sttRes.data.text;
+        console.log('Transcribed:', userText);
+
+        if (!userText) {
+            await sock.sendMessage(sender, { text: '❌ Gagal membaca suara.' });
+            return;
+        }
+
+        await sock.sendMessage(sender, { text: `🧠 "${userText}"` });
+
+        // 5. ambil conversation
+        let conversation = getConversation(sender);
+        conversation.push({ role: "user", content: userText });
+
+        // 6. kirim ke text generation (Pollinations POST biar memory)
+        const aiRes = await axios.post(
+            'https://gen.pollinations.ai/v1/chat/completions',
+            {
+                model: 'openai', // atau model lain
+                messages: conversation
+            },
+            {
+                headers: {
+                    Authorization: 'Bearer sk_xxxxx', // GANTI TOKEN
+                    'Content-Type': 'application/json'
+                }
+            }
+        );
+
+        let aiText = aiRes.data.choices[0].message.content;
+        console.log('AI:', aiText);
+
+        conversation.push({ role: "assistant", content: aiText });
+        saveConversation(sender, conversation);
+
+        await sock.sendMessage(sender, { text: '🔊 Lagi ngomong nih...' });
+
+        // 7. generate audio (TTS)
+        const ttsUrl = `https://gen.pollinations.ai/audio/${encodeURIComponent(aiText)}`;
+
+        const ttsAudio = await axios.get(ttsUrl, {
+            responseType: 'arraybuffer',
+            headers: {
+                Accept: 'audio/mpeg',
+                Authorization: 'Bearer sk_xxxxx' // GANTI TOKEN
+            }
+        });
+
+        // 8. kirim ke user
+        await sock.sendMessage(sender, {
+            audio: Buffer.from(ttsAudio.data),
+            mimetype: 'audio/mpeg',
+            ptt: true // biar jadi VN
+        });
+
+    } catch (err) {
+        console.error('[VOICE MODE ERROR]', err);
+        await sock.sendMessage(sender, {
+            text: '❌ Error di voice mode.'
+        });
+    }
+    return;
+}
 
         // === Media (image/video/audio/document) ===
         if (m.message.imageMessage || m.message.videoMessage || m.message.audioMessage || m.message.documentMessage) {
