@@ -174,7 +174,9 @@ async function startBot() {
         }
         if (userMessage === '/mode voice') {
             setMode(sender, 'voice');
-            
+            await sock.sendMessage(sender, {
+                text: '🎙️ Mode *Voice AI* aktif\n\n'
+            })
         }
         if (userMessage === '/mode websearch') {
             setMode(sender, 'websearch');
