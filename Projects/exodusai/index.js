@@ -151,7 +151,7 @@ async function startBot() {
                 text: "*Berikut adalah mode yang tersedia di ExodusAI*\n\n" +
                       "=> AI ChatBot [/mode chatbot]\n" +
                       "=> AI Search [/mode websearch]\n" +
-                      "=> AI Voice"
+                      "=> AI Voice [/mode voice]"
             });
             return;
         }
