@@ -435,7 +435,7 @@ if (currentMode === 'voice' && m.message.audioMessage) {
             {
                 headers: {
                     ...form.getHeaders(),
-                    Authorization: 'Bearer sk_xxxxx', // GANTI TOKEN
+                    Authorization: 'Bearer sk_x4Ooo55xH8WozPTwFvBMjB5mozB2t3NB', // GANTI TOKEN
                 }
             }
         );
