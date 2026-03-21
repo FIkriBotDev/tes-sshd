@@ -150,7 +150,8 @@ async function startBot() {
             await sock.sendMessage(sender, {
                 text: "*Berikut adalah mode yang tersedia di ExodusAI*\n\n" +
                       "=> AI ChatBot [/mode chatbot]\n" +
-                      "=> AI Search [/mode websearch]"
+                      "=> AI Search [/mode websearch]\n" +
+                      "=> AI Voice"
             });
             return;
         }
@@ -176,13 +177,13 @@ async function startBot() {
             setMode(sender, 'voice');
             await sock.sendMessage(sender, {
                 text: '🎙️ Mode *Voice AI* aktif.\n\nKirim VN (voice note), nanti gue jawab pakai suara juga.'
-            })
+            });
         }
         if (userMessage === '/mode websearch') {
             setMode(sender, 'websearch');
             userConversations[sender] = [];
             await sock.sendMessage(sender, { text: '🌐 Mode *Web Search* aktif.\n\nKetikkan apa yang ingin kamu cari.\nContoh:\n• Berita hari ini\n• Loker cybersecurity 2026\n\nUntuk kembali ke mode chatbot, ketik *`/mode chatbot`*.'
-        });
+            });
             return;
         }
         if (userMessage === '/mode photoeditor') {
