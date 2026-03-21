@@ -172,7 +172,10 @@ async function startBot() {
             await sock.sendMessage(sender, { text: '📄 Mode *AI Ringkas Materi* aktif.\n\nSilakan kirim file PDF atau DOCX untuk diringkas.' });   
             return;
         }
-        
+        if (userMessage === '/mode voice') {
+            setMode(sender, 'voice');
+            
+        }
         if (userMessage === '/mode websearch') {
             setMode(sender, 'websearch');
             userConversations[sender] = [];
