@@ -176,8 +176,8 @@ async function startBot() {
             setMode(sender, 'websearch');
             userConversations[sender] = [];
             await sock.sendMessage(sender, { text: '🌐 Mode *Web Search* aktif.\n\nKetikkan apa yang ingin kamu cari.\nContoh:\n• Berita hari ini\n• Loker cybersecurity 2026\n\nUntuk kembali ke mode chatbot, ketik *`/mode chatbot`*.'
-    });
-    return;
+            });
+            return;
 }
         if (userMessage === '/mode photoeditor') {
             setMode(sender, 'photoeditor');
