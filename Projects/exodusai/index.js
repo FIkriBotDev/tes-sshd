@@ -404,6 +404,8 @@ ${parsed.text}`
     return;
 }
 
+        // === VOICE MODE ===
+        if
 
         // === Media (image/video/audio/document) ===
         if (m.message.imageMessage || m.message.videoMessage || m.message.audioMessage || m.message.documentMessage) {
