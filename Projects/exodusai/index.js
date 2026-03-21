@@ -463,7 +463,7 @@ if (currentMode === 'voice' && m.message.audioMessage) {
             },
             {
                 headers: {
-                    Authorization: 'Bearer sk_xxxxx', // GANTI TOKEN
+                    Authorization: 'Bearer sk_RM9sUErPNlaj7kFenSIMljnIVvAyssUk', // GANTI TOKEN
                     'Content-Type': 'application/json'
                 }
             }
