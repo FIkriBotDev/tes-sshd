@@ -492,7 +492,7 @@ if (currentMode === 'voice' && m.message.audioMessage) {
         await sock.sendMessage(sender, {
             audio: Buffer.from(ttsAudio.data),
             mimetype: 'audio/mpeg',
-            ptt: true // biar jadi VN
+            ptt: false // biar jadi VN
         });
 
     } catch (err) {
