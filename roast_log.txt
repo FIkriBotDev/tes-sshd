@@ -349,3 +349,10 @@ Hasil: Wah, profil FikriBotDev ini kayak kosan yang penuh kardus bertuliskan “
 
 Trus ada FikriBot (Source Code), exodusapi (web), FIkriBotDev.github.io (Web) — semuanya kayak janji gebetan yang selalu "kapan-kapan kita update". Databot tertulis “Data Bot Kunci Jawaban” — ngikutin siapa nih, guru atau tukang nyontek? Banyak repo ngrok-rdp, RDPWindows, serverpro, templates — pola eksperimen random tanpa follow-through. Intinya: banyak nama keren, sedikit kerjaan nyata. Rapikan, kasih README yang jelas, atau terus jadi kolektor repo "backup" corny itu biar orang bisa pamerin trophy kesia-siaan lu 😂🔥
 ========================================
+
+========================================
+Username: FikriBotDev
+Hasil: Bro, FikriBotDev alias ExodusAI nih kayak tukang numpuk barang rongsokan: 24 repo tapi followers cuma 1 dan following 0 — pamer koleksi gak ada yang nonton. Repo Lu ngeramein banget sama paket-paket backup: "backup", "backup-database", "backupserver", "serverbackup" — serius? Lu lagi buka toko penyimpanan atau lagi nyimpen trauma masa kecil? 😂 "backup" aja README-nya gak ada, kayak warung yang tutup permanen tapi masih naro papan nama. Terus "Apache2-Auto-Installer" readme cuma bilang "clone this repository" terus ubah port? Bro, itu README buat yang baru lahir di Linux, minimal jangan gitu lah. "FoodMetrixAI" deskripsinya cuma "abc" — itu bukan AI, itu emang sibuk banget nulis tugas sambil tidur ya. "databot" nulis "Data Bot Kunci Jawaban" — semoga gak diproses sama guru ya, modus cheat kentara 👀
+
+Gue liat juga ada "FikriBot" sama "FIkriBotDev.github.io" (kebetulan kapitalisasi kacau), "exodusapi (web)" sama beberapa repo yang keliatan promising tapi inactive semua — kayak janji gebetan yang cuma DM doang. Intinya: rapihin nama repo, hapus yang nyimpen sampah, tulis README yang bener, dan jangan cuma numpuk backup kayak zombie. Klo mau serius, buktiin — bukan sekadar koleksi folder nostalgia. 🧹🔥
+========================================
