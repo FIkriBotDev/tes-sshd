@@ -34677,3 +34677,42 @@ Saran tindak lanjut
 
 Mau saya bantu verifikasi ke sumber resmi sekarang atau buatkan teks ringkasan untuk dibagikan?
 
+
+[2026-03-24T14:56:53.366Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/5586c3-1774364186455.jpg
+Response  : Berikut ringkasan dan hal penting dari gambar itu:
+
+Deskripsi singkat
+- Poster bergaya ilustrasi tentang kebijakan “WFA & Belajar Daring Mulai April 2026”.
+- Menampilkan slogan penghematan BBM untuk ASN dan beberapa ikon/ilustrasi strategi (kantor, laptop, mobil, sekolah, makan, internet).
+- Wajah beberapa tokoh pada gambar tampak diblur/ditutupi.
+- Teks besar di bagian bawah menyebut “Dilaporkan ke Presiden Prabowo 2026”.
+
+Transkripsi teks utama yang terlihat
+- WFA & Belajar Daring Mulai April 2026!
+- Work From Anywhere (WFA)
+- Program Hemat BBM Untuk ASN Mulai April 2026
+- 5 Strategi Utama Pemerintah
+  - WFA Fleksibel
+  - Penguatan Digital
+  - Batasi Perjalanan Dinas
+  - Hemat Energi Kantor
+  - Daring & Luring
+- Sekolah: Belajar Online & Praktikum Tatap Muka
+  - E-Learning
+  - Program Makan Bergizi Gratis
+  - Dukungan Akses Internet
+- Dilaporkan ke Presiden Prabowo 2026
+- Hemat BBM, Layanan Publik Tetap Efektif!
+
+Ringkasan makna
+- Poster ini mengusulkan atau menginformasikan kebijakan penghematan BBM dengan menerapkan WFA untuk ASN dan pembelajaran daring di sekolah mulai April 2026, disertai lima strategi utama dan dukungan untuk sekolah (makan bergizi gratis, akses internet).
+- Teks menyatakan informasi dilaporkan ke Presiden (nama disebutkan dalam gambar), tetapi poster sendiri tidak otomatis menjamin keaslian kebijakan.
+
+Saran
+- Jika Anda ingin memastikan apakah kebijakan ini resmi: periksa pengumuman di situs/akun resmi pemerintah terkait (mis. situs/pengumuman kementerian terkait, kantor presiden, atau kantor pemerintahan daerah).
+- Hati-hati terhadap konten yang beredar di media sosial — gambar seperti ini bisa berupa kampanye resmi, bahan sosialisasi, atau juga materi yang dibuat pihak lain tanpa otorisasi.
+
+Mau saya terjemahkan seluruh teks ini ke bahasa Inggris, atau bantu cek apakah ada sumber resmi yang memuat kebijakan serupa?
+
