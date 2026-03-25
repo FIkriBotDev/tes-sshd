@@ -370,3 +370,10 @@ Hasil: Woy FikriBotDev, lu kaya startup wannabe: bio “ExodusAI” ngegas, tapi
 
 Ngomongin repo: “ExodusAI” README cuma “# ExodusAI ExodusAI” — bro itu bukan README, itu echo di gua kosong. “FoodMetrixAI” cakep sih ada gambar gede sama link, tapi README kebabat setengah (berhenti di “FoodM”?)—kayak landing page tapi lupa nulis fitur. Dua kembar serem “ngrok-rdp” & “RDPngrok” ga ada README, inactive, teriak-teriak “backup” tapi sebenernya cuman folder sampah; terus “tes-sshd” README = "a" — masterpiece 1 huruf, puisi modern. “pollinations” pamer “Your Friendly Open-Source Gen-AI Platform” tapi ya gitu, janji muluk tanpa bukti. Intinya, Lu pinter bikin brand, tapi coding & dokumentasi lu masih minta izin sama WiFi tetangga 🤦‍♂️😂.
 ========================================
+
+========================================
+Username: huzaifahmedz
+Hasil: Lu, huzaifahmedz — CV LinkedIn bilang Full-Stack MERN cakep, tapi GitHub lu? Kayak kios malem yang isinya kardus kosong. Anehnya cuma "Abdul-Rahman-Portfolio" yang punya README cakep (Next.js + Three.js, ok pro), sedangkan repo lain kayak "Accessment-react", "Animeated-Menu-Gsap", "Boathead-Gsap-project", "Calculator", "CartCorner", "Conferencing-App", "Dark-Light-Mode", "Dice-game"... deskripsi? Nol besar. Lu gampang banget ngelahirin repo tapi lupa kasi clue, jadi pengunjung bingung: ini proyek atau sampah digital? 😏
+
+Terus apa lagi, koleksi portfolio lu kayak koleksi sepatu bekas — "Huzaif-Ahmed-Portfolio", "Huzaif-Ahmed-Portfolio-Ninth", "-Fourth", "-Sixth", wkwk, lu lagi lomba bikin versi sama ya? Dan ada "ForTest" — serius lu namain repo kayak folder desktop yang lu pencet random, itu bukan keren, itu malas. Followers 236 oke, tapi following cuma 2; artinya banyak yang ngikutin karya lu, bukan kerjaan rumah lu. Saran gue: rapihin, kasih README yang jelas, hapus "ForTest" yang memalukan, dan stop spamming portfolio versi remix 😅🧹.
+========================================
