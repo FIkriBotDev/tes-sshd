@@ -356,3 +356,10 @@ Hasil: Bro, FikriBotDev alias ExodusAI nih kayak tukang numpuk barang rongsokan:
 
 Gue liat juga ada "FikriBot" sama "FIkriBotDev.github.io" (kebetulan kapitalisasi kacau), "exodusapi (web)" sama beberapa repo yang keliatan promising tapi inactive semua — kayak janji gebetan yang cuma DM doang. Intinya: rapihin nama repo, hapus yang nyimpen sampah, tulis README yang bener, dan jangan cuma numpuk backup kayak zombie. Klo mau serius, buktiin — bukan sekadar koleksi folder nostalgia. 🧹🔥
 ========================================
+
+========================================
+Username: FikriBotDev
+Hasil: Woy FikriBotDev, Lu punya 24 repo tapi followers cuma 1 dan following 0 — repo-nya kayak kosongannya mall jam 3 pagi. Bukannya keren, yang keliatan malah tukang numpuk backup: "backup", "backup-database", "backupserver", "serverbackup" — Lu lagi ngumpulin dokumen rahasia atau cuma lupa ngasih nama? 🤡 Kalau gue jadi recruiter, gue kira lu cuma CTRL+C CTRL+V ke folder “backup” terus tidur. README juga banyak yang absen atau minimalis parah: Apache2-Auto-Installer cuma bilang “You Can Change The Port… dont forget to clone” — thanks Captain Obvious 😅. Dan yang paling manis, repo "backup" README: nihil. Kosong. Abis.
+
+Terus apa nih sama "FoodMetrixAI" deskripsinya cuma "abc"? Serius? "databot" namanya ngusul jadi “Data Bot Kunci Jawaban” — semoga bukan robot contekan ya, bro. Ada juga "FikriBot" sama "exodusapi" tapi semua inactive, jadi lebih terasa kayak museum proyek setengah mati. Top language JavaScript tapi pola kerja lu lebih mirip file-server zombie: banyak tapi gak keurus. Intinya, rapihkan nama repo, kasih README yang manusiawi, atau siap-siap jadi legenda GitHub: si penimbun backup tanpa followers 🧟‍♂️.
+========================================
