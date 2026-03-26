@@ -18,7 +18,7 @@ Kalau mau naik level, kita mulai.
     `);
   });
 bot.onText(/\/send/, async (msg) => {
-    const chatIdd = 5349888372;
-    bot.sendMessage(chatIdd, 'test');
+    const chatIdd = 8084800390;
+    bot.sendMessage(chatIdd, 'haloooooooo');
   });
 }
