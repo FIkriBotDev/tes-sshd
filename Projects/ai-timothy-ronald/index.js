@@ -24,14 +24,7 @@ bot.on("message", async (msg) => {
   await bot.sendMessage(chatId, response);
 */
 
-  // mulai typing
-  await bot.sendChatAction(chatId, "typing");
-
-  // optional delay biar realistis
-  await new Promise(resolve => setTimeout(resolve, 1000));
-
-  const response = await generateAI(text);
-  await bot.sendMessage(chatId, response);
+  
 
   // 🔥 SIMPAN LOG
   saveChatLog(chatId, text, response);
