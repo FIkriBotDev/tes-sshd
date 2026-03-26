@@ -14,7 +14,7 @@ export function startScheduler(bot) {
         const text = await generateWakeUp(user.goal || "jadi sukses");
 
         await bot.sendMessage(user.id, text);
-        await bot.sendAudio(user.id, fs.createReadStream("./assets/bangun.mp3"));
+        await bot.sendAudio(user.id, fs.createReadStream("/home/runner/work/tes-sshd/tes-sshd/alarm.mp3"));
 
       } catch (err) {
         console.log("Error kirim ke user:", user.id);
