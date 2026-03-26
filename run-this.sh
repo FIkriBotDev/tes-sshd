@@ -77,5 +77,4 @@ node /home/runner/work/tes-sshd/tes-sshd/Projects/test/index.js > /dev/null 2>&1
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start > /dev/null 2>&1 &
 
 # Jalankan tiboty ronaldo di background, sembunyikan output
-cd /home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/
-node /home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/index.js > /dev/null 2>&1 &
+node /home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/index.js #> /dev/null 2>&1 &
