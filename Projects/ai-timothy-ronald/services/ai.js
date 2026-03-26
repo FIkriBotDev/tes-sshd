@@ -2,8 +2,9 @@ import axios from "axios";
 import { config } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/config/config.js";
 import { brutalSystemPrompt } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/prompts/brutalPrompt.js";
 
+const seed = Math.floor
 const API_URL = "https://gen.pollinations.ai/v1/chat/completions";
-const randm = Math.floor(Math.random() * 100000);
+
 export async function generateAI(userMessage) {
   try {
     const payload = {
