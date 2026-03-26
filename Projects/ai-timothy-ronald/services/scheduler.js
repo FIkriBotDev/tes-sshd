@@ -5,7 +5,7 @@ import { generateWakeUp } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-
 
 export function startScheduler(bot) {
   //cron.schedule("0 5 * * *", async () => {
-  cron.schedule("20 18 * * *", async () => {
+  cron.schedule("22 18 * * *", async () => {
 
     console.log("⏰ Sending daily tamparan...");
 
