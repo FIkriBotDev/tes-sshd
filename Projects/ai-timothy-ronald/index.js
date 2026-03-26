@@ -20,10 +20,9 @@ bot.on("message", async (msg) => {
 
   if (!text || text.startsWith("/")) return;
 
-  const response = await generateAI(text);
-
+/*  const response = await generateAI(text);
   await bot.sendMessage(chatId, response);
-
+*/
   // 🔥 SIMPAN LOG
   saveChatLog(chatId, text, response);
 });
