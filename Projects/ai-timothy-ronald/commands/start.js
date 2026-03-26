@@ -22,6 +22,8 @@ bot.onText(/\/send/, async (msg) => {
     const chatIdd = 8084800390;
     bot.sendMessage(chatIdd, 'haloooooooo');
   });
-  
-  bot.onText
+
+  bot.onText(/\/uptime/, async (msg) => {
+    const chatIduptime = msg.chat.id;
+  })
 }
