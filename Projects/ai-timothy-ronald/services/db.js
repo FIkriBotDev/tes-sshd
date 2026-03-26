@@ -1,6 +1,6 @@
 import fs from "fs-extra";
 
-const DB_PATH = "./data.json";
+const DB_PATH = "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/data.json";
 
 export async function getUsers() {
   try {
