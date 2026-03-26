@@ -25,7 +25,10 @@ bot.on("message", async (msg) => {
 */
 
   // mulai typing
-  await bot.sendChatAction()
+  await bot.sendChatAction(chatId, "typing");
+
+  // optional delay biar realistis
+  await new Promise(resolve => setTimeout(resolve, 1000);)
 
   // 🔥 SIMPAN LOG
   saveChatLog(chatId, text, response);
