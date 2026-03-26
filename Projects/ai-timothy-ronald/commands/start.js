@@ -20,5 +20,7 @@ Kalau mau naik level, kita mulai.
 }
 
 export default function startCommand(bot) {
-  bot.onText(/\/)
+  bot.onText(/\/send/, async (msg) => {
+    const chatId = 
+  })
 }
