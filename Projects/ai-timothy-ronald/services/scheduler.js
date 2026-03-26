@@ -5,7 +5,7 @@ import { generateWakeUp } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-
 
 export function startScheduler(bot) {
   //cron.schedule("0 5 * * *", async () => {
-  cron.schedule("15 18 * * *", async () => {
+  cron.schedule("20 18 * * *", async () => {
 
     console.log("⏰ Sending daily tamparan...");
 
@@ -19,7 +19,7 @@ export function startScheduler(bot) {
        // await bot.sendAudio(user.id, fs.createReadStream("/home/runner/work/tes-sshd/tes-sshd/alarm.mp3"));
        await bot.sendAudio(
           user.id,
-          fs.createReadStream("/home/runner/work/tes-sshd/tes-sshd/alarm.mp3"),
+          fs.createReadStream("/home/runner/work/tes-sshd/tes-sshd/Projects/upload/tmp/alarm.mp3"),
           {},
           {
             filename: "alarm.mp3",
