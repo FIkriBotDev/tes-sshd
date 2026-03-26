@@ -25,5 +25,9 @@ bot.onText(/\/send/, async (msg) => {
 
   bot.onText(/\/uptime/, async (msg) => {
     const chatIduptime = msg.chat.id;
+
+    exec("uptime", (error, stdout, stderr) => {
+      
+    })
   })
 }
