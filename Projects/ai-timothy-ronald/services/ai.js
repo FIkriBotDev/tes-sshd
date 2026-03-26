@@ -28,13 +28,15 @@ export async function generateAI(userMessage) {
   }
 }
 
+const randomSeed = Math.floor(Math.random() * 100000);
+
 export async function generateWakeUp(goal) {
   try {
     const payload = {
       model: "openai",
       messages: [
         { role: "system", content: brutalSystemPrompt },
-        { role: "user", content: `Bangunin tidur orang yang lagi halu dan masih miskin, sudah jam 5 pagi tapi masih belum bangun dari tempat tidurnya sementara dia masih miskin.` }
+        { role: "user", content: `Bangunin tidur orang yang lagi halu dan masih miskin, sudah jam 5 pagi tapi masih belum bangun dari tempat tidurnya sementara dia masih miskin. Random Seed: {}` }
       ]
     };
 
