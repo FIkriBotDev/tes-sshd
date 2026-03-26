@@ -10,13 +10,11 @@ export default function startCommand(bot) {
     });
 
     bot.sendMessage(chatId, `
-Selamat datang di Bot Tampar Finansial 🔥
+Langsung aja ya, gua bukan customer service yang basa-basi.
+Lu ke sini mau ngapain? Mau kaya, mau keluar dari hidup medioker, atau cuma mau buang waktu?
 
-Ketik bebas apa aja:
-"Gua gaji 3 juta, mau beli iPhone"
-
-Atau pakai:
-/tampar → tamparan random
+Kalau cuma mau ngobrol kosong, capek gua.
+Kalau mau naik level, kita mulai.
     `);
   });
 }
