@@ -14,18 +14,6 @@ const bot = new TelegramBot(config.telegramToken, { polling: true });
 startCommand(bot);
 tamparCommand(bot);
 
-// CHAT HANDLER (AI bebas)
-/*bot.on("message", async (msg) => {
-  const chatId = msg.chat.id;
-  const text = msg.text;
-
-  if (!text || text.startsWith("/")) return;
-
-  const response = await generateAI(text);
-
-  bot.sendMessage(chatId, response);
-});*/
-
 bot.on("message", async (msg) => {
   const chatId = msg.chat.id;
   const text = msg.text;
