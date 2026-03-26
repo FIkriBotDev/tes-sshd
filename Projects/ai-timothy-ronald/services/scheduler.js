@@ -1,7 +1,7 @@
 import cron from "node-cron";
 import fs from "fs";
-import { getUsers } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/servi/db.js";
-import { generateWakeUp } from "./ai.js";
+import { getUsers } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/services/db.js";
+import { generateWakeUp } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/services/ai.js";
 
 export function startScheduler(bot) {
   cron.schedule("0 5 * * *", async () => {
