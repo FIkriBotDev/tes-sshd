@@ -1,12 +1,12 @@
 {
   "name": "ai-timothy-ronald",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "type": "module",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.66.0",
+    "dotenv": "^16.4.0",
+    "axios": "^1.6.8",
+    "node-cron": "^3.0.3",
+    "fs-extra": "^11.2.0"
+  }
 }
