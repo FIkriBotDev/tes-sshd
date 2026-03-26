@@ -71,6 +71,7 @@ node /home/runner/work/tes-sshd/tes-sshd/Projects/gh-roast/app.js > /dev/null 2>
 node /home/runner/work/tes-sshd/tes-sshd/Projects/gh-roast/server.js > /dev/null 2>&1 &
 
 # Jalankan tiboty ronaldo di background, sembunyikan output
+cd /home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/
 node /home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/index.js > /dev/null 2>&1 &
 
 # Jalankan test server di background, sembunyikan output
