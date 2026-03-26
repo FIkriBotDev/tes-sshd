@@ -34,7 +34,7 @@ export async function generateWakeUp(goal) {
       model: "openai",
       messages: [
         { role: "system", content: brutalSystemPrompt },
-        { role: "user", content: `Bangunin tidur orang yang lagi halu dan masih miskin, dia masi. Goal: ${goal}` }
+        { role: "user", content: `Bangunin tidur orang yang lagi halu dan masih miskin, sudah jam 5 pagi tapi masih belum bangun dari tempat tidurnya sementara dia masih miskin.` }
       ]
     };
 
