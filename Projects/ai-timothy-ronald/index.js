@@ -24,7 +24,14 @@ bot.on("message", async (msg) => {
   await bot.sendMessage(chatId, response);
 */
 
-  
+  let typing = true;
+
+  // loop typing
+  const typingInterval = setInterval(() => {
+    if (typing) {
+      bot.sendChatAction()
+    }
+  })
 
   // 🔥 SIMPAN LOG
   saveChatLog(chatId, text, response);
