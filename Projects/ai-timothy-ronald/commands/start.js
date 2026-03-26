@@ -28,9 +28,9 @@ bot.onText(/\/send/, async (msg) => {
 
     exec("uptime", (error, stdout, stderr) => {
       if (error) {
-        return bot.sendMessage(chatId, "Gagal ambil uptime system.");
+        return bot.sendMessage(chatIduptime, "Gagal ambil uptime system.");
       }
-      bot.sendMessage(chatId, `🖥️ Uptime Server:\n${stdout}`);
+      bot.sendMessage(chatIduptime, `🖥️ Uptime Server:\n${stdout}`);
     });
   });
 }
