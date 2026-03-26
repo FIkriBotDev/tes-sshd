@@ -3,7 +3,7 @@ import { config } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-
 import { brutalSystemPrompt } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/prompts/brutalPrompt.js";
 
 const API_URL = "https://gen.pollinations.ai/v1/chat/completions";
-
+const randomSeed = Math.floor(Math.random() * 100000);
 export async function generateAI(userMessage) {
   try {
     const payload = {
