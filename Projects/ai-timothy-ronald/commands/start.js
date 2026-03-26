@@ -1,3 +1,4 @@
+import { exec } from "child_process";
 import { saveUser } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/services/db.js";
 
 export default function startCommand(bot) {
@@ -21,4 +22,6 @@ bot.onText(/\/send/, async (msg) => {
     const chatIdd = 8084800390;
     bot.sendMessage(chatIdd, 'haloooooooo');
   });
+  
+  bot.onText
 }
