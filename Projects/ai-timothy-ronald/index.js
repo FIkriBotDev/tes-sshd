@@ -14,7 +14,7 @@ startCommand(bot);
 tamparCommand(bot);
 
 // CHAT HANDLER (AI bebas)
-bot.on("message", async (msg) => {
+/*bot.on("message", async (msg) => {
   const chatId = msg.chat.id;
   const text = msg.text;
 
@@ -23,6 +23,21 @@ bot.on("message", async (msg) => {
   const response = await generateAI(text);
 
   bot.sendMessage(chatId, response);
+});*/
+
+
+bot.on("message", async (msg) => {
+  const chatId = msg.chat.id;
+  const text = msg.text;
+
+  if (!text || text.startsWith("/")) return;
+
+  const response = await generateAI(text);
+
+  await bot.sendMessage(chatId, response);
+
+  // 🔥 SIMPAN LOG
+  saveChatLog(chatId, text, response);
 });
 
 // START SCHEDULER
