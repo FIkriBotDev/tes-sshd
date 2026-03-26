@@ -20,21 +20,17 @@ bot.on("message", async (msg) => {
 
   if (!text || text.startsWith("/")) return;
 
-/*  const response = await generateAI(text);
-  await bot.sendMessage(chatId, response);
-*/
-
   let typing = true;
+  let response = ""; // 🔥 pindahin ke sini
 
-  // loop typing
   const typingInterval = setInterval(() => {
     if (typing) {
       bot.sendChatAction(chatId, "typing");
     }
-  }, 4000); // kirim tiap 4 detik
+  }, 4000);
 
   try {
-    const response = await generateAI(text);
+    response = await generateAI(text); // ✅ isi variabel luar
 
     typing = false;
     clearInterval(typingInterval);
@@ -44,10 +40,12 @@ bot.on("message", async (msg) => {
     typing = false;
     clearInterval(typingInterval);
 
-    await bot.sendMessage(chatId, "Error.");
+    response = "Error."; // 🔥 biar tetap ke-log
+
+    await bot.sendMessage(chatId, response);
   }
 
-  // 🔥 SIMPAN LOG
+  // 🔥 sekarang aman
   saveChatLog(chatId, text, response);
 });
 
