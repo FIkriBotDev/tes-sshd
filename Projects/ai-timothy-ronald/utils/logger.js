@@ -1,6 +1,6 @@
 import fs from "fs";
 
-const LOG_FILE = "./log_tiboty.txt";
+const LOG_FILE = "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/log_tiboty.txt";
 
 export function saveChatLog(userId, userMessage, aiResponse) {
   const log = `

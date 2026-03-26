@@ -5,8 +5,8 @@ import startCommand from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timoth
 import tamparCommand from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/commands/tampar.js";
 
 import { generateAI } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/services/ai.js";
-import { startScheduler } from "./services/scheduler.js";
-import { saveChatLog } from "./utils/logger.js";
+import { startScheduler } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/services/scheduler.js";
+import { saveChatLog } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/utils/logger.js";
 
 const bot = new TelegramBot(config.telegramToken, { polling: true });
 

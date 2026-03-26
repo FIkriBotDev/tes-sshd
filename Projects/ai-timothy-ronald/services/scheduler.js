@@ -1,6 +1,6 @@
 import cron from "node-cron";
 import fs from "fs";
-import { getUsers } from "./db.js";
+import { getUsers } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/servi/db.js";
 import { generateWakeUp } from "./ai.js";
 
 export function startScheduler(bot) {
