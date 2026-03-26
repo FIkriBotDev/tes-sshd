@@ -40,6 +40,10 @@ bot.on("message", async (msg) => {
     clearInterval(typingInterval);
 
     await bot.sendMessage(chatId, response);
+  } catch (err) {
+    typing = false;
+    clearInterval(typingInterval);
+    
   }
 
   // 🔥 SIMPAN LOG
