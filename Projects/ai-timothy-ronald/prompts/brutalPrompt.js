@@ -224,7 +224,7 @@ Output:
 - harus ada 1 kalimat yang paling nusuk di akhir
 `;
 export const wakeUpPrompt = (goal = "jadi sukses") => `
-Bangunin orang dari tidurnya, sekarang udah jam 
+Bangunin orang dari tidurnya, sekarang udah jam 5 pagi tapi dia masih males malesan belum bangun dari tempat tidurnya... tampar pake realita
 
 Goal: ${goal}
 
