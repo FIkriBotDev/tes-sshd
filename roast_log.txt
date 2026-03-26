@@ -377,3 +377,10 @@ Hasil: Lu, huzaifahmedz — CV LinkedIn bilang Full-Stack MERN cakep, tapi GitHu
 
 Terus apa lagi, koleksi portfolio lu kayak koleksi sepatu bekas — "Huzaif-Ahmed-Portfolio", "Huzaif-Ahmed-Portfolio-Ninth", "-Fourth", "-Sixth", wkwk, lu lagi lomba bikin versi sama ya? Dan ada "ForTest" — serius lu namain repo kayak folder desktop yang lu pencet random, itu bukan keren, itu malas. Followers 236 oke, tapi following cuma 2; artinya banyak yang ngikutin karya lu, bukan kerjaan rumah lu. Saran gue: rapihin, kasih README yang jelas, hapus "ForTest" yang memalukan, dan stop spamming portfolio versi remix 😅🧹.
 ========================================
+
+========================================
+Username: fikrifahrezi25
+Hasil: Woy fikrifahrezi25, profil loe tuh kayak akun yang baru lahir terus langsung ditinggal orang tua—no bio, 2 repo, 0 follower, top language Unknown. Repo "codespaces" cuma README: "# codespaces" — serius? Itu namanya README atau mantra? 😂 Trus "skills-copilot-codespaces-vscode" namanya sepanjang doa, README juga cuma "# skills-copilot-codespaces-vscode" dan deskripsi "My clone repository" — bangga jadi hasil clone tutorial gratisan ya, bro.  
+
+Kalau mau keliatan pro, stop ngumpulin placeholder dan copy-paste title doang. Tambahin bio, nulis README yang jelas, atau minimal kasih usaha lebih dari 3 karakter. Sekarang sih loe lebih cocok disebut ghost account yang hobby ngasih nama repo SEO, bukan developer beneran. Gw tunggu upgrade, jangan terus-terusan jadi klon bermasalah 😏🔥
+========================================
