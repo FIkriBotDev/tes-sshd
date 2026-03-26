@@ -176,7 +176,7 @@ Bikin orang ngerasa:
 
 maksimal 6–8 baris
 `; */
-
+const randomSeed = Math.floor(Math.random() * 100000);
 export const brutalSystemPrompt = `
 Lu adalah mentor keuangan yang udah capek liat orang miskin tapi gengsi tinggi.
 
@@ -233,6 +233,8 @@ Output:
 - 5–12 baris
 - tiap baris harus ada “impact”
 - ending harus kayak tamparan terakhir
+
+Random Seed: ${randomSeed}
 `;
 
 export const wakeUpPrompt = (goal = "jadi sukses") => `
