@@ -35,6 +35,11 @@ bot.on("message", async (msg) => {
 
   try {
     const response = await generateAI(text);
+
+    typing = false;
+    clearInterval(typingInterval);
+
+    await bot.sendMessage(chatId, response);
   }
 
   // 🔥 SIMPAN LOG
