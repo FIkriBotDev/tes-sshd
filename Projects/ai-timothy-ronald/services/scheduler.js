@@ -17,7 +17,15 @@ export function startScheduler(bot) {
 
         await bot.sendMessage(user.id, text);
        // await bot.sendAudio(user.id, fs.createReadStream("/home/runner/work/tes-sshd/tes-sshd/alarm.mp3"));
-       
+       await bot.sendAudio(
+          user.id,
+          fs.createReadStream("/home/runner/work/tes-sshd/tes-sshd/alarm.mp3"),
+          {},
+          {
+            filename: "alarm.mp3",
+            contentType: "audio/mpeg"
+          }
+        );
 
       } catch (err) {
         console.log("Error kirim ke user:", user.id);
