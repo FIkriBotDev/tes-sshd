@@ -18,19 +18,20 @@ Kalau cuma mau ngobrol kosong, capek gua.
 Kalau mau naik level, kita mulai.
     `);
   });
-bot.onText(/\/send/, async (msg) => {
-    const chatIdd = 8084800390;
-    bot.sendMessage(chatIdd, 'haloooooooo');
-  });
 
   bot.onText(/\/uptime/, async (msg) => {
     const chatIduptime = msg.chat.id;
 
-    exec("uptime", (error, stdout, stderr) => {
-      if (error) {
-        return bot.sendMessage(chatIduptime, "Gagal ambil uptime system.");
-      }
-      bot.sendMessage(chatIduptime, `🖥️ Uptime Server:\n${stdout}`);
-    });
+    try {
+      const data = fs.readFileSync("/proc/uptime", "utf-8");
+      const seconds = parseFloat(data.split(" ")[0]);
+
+      const hours = Math.floor(seconds / 3600);
+      const minutes = Math.floor((seconds % 3600) / 60);
+
+      bot.sendMessage(chatIduptime, `🖥️ Uptime: ${hours} jam ${minutes} menit`);
+    } catch (err) {
+      bot.sendMessage(chatIduptime, "Gagal ambil uptime.");
+    }
   });
 }
