@@ -43,7 +43,8 @@ bot.on("message", async (msg) => {
   } catch (err) {
     typing = false;
     clearInterval(typingInterval);
-    
+
+    await bot.sendMessage(chatId, "Error.");
   }
 
   // 🔥 SIMPAN LOG
