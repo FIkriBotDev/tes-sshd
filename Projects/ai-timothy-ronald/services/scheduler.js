@@ -4,7 +4,9 @@ import { getUsers } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timoth
 import { generateWakeUp } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/services/ai.js";
 
 export function startScheduler(bot) {
-  cron.schedule("0 5 * * *", async () => {
+  //cron.schedule("0 5 * * *", async () => {
+  cron.schedule("15 18 * * *", async () => {
+
     console.log("⏰ Sending daily tamparan...");
 
     const users = await getUsers();
