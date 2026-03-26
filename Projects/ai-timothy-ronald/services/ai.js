@@ -1,6 +1,6 @@
 import axios from "axios";
-import { config } from "../config/config.js";
-import { brutalSystemPrompt } from "../prompts/brutalPrompt.js";
+import { config } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/config/config.js";
+import { brutalSystemPrompt } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/prompts/brutalPrompt.js";
 
 const API_URL = "https://gen.pollinations.ai/v1/chat/completions";
 
@@ -34,7 +34,7 @@ export async function generateWakeUp(goal) {
       model: "openai",
       messages: [
         { role: "system", content: brutalSystemPrompt },
-        { role: "user", content: `Bangunin tidur brutal. Goal: ${goal}` }
+        { role: "user", content: `Bangunin tidur . Goal: ${goal}` }
       ]
     };
 
