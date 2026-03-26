@@ -6,6 +6,7 @@ import tamparCommand from "./commands/tampar.js";
 
 import { generateAI } from "./services/ai.js";
 import { startScheduler } from "./services/scheduler.js";
+import { saveChatLog } from "./utils/logger.js";
 
 const bot = new TelegramBot(config.telegramToken, { polling: true });
 
@@ -24,7 +25,6 @@ tamparCommand(bot);
 
   bot.sendMessage(chatId, response);
 });*/
-
 
 bot.on("message", async (msg) => {
   const chatId = msg.chat.id;
