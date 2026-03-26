@@ -1,4 +1,4 @@
-import { saveUser } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/services/db.js";
+import { saveUser } from "/home/runner/work/tes-sshd/tes/services/db.js";
 
 export default function startCommand(bot) {
   bot.onText(/\/start/, async (msg) => {

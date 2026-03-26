@@ -1,10 +1,10 @@
 import TelegramBot from "node-telegram-bot-api";
-import { config } from "./config/config.js";
+import { config } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/config/config.js";
 
-import startCommand from "./commands/start.js";
-import tamparCommand from "./commands/tampar.js";
+import startCommand from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/commands/start.js";
+import tamparCommand from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/commands/tampar.js";
 
-import { generateAI } from "./services/ai.js";
+import { generateAI } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/services/ai.js";
 import { startScheduler } from "./services/scheduler.js";
 import { saveChatLog } from "./utils/logger.js";
 
