@@ -12,6 +12,7 @@ export async function generateAI(userMessage) {
       seed: seed,
       messages: [
         { role: "system", content: brutalSystemPrompt },
+//        { role: "user", content: userMessage }
         { role: "user", content: userMessage }
       ]
     };
