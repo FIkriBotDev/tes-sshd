@@ -8,6 +8,7 @@ export async function generateAI(userMessage) {
   try {
     const payload = {
       model: "openai",
+      seed: 
       messages: [
         { role: "system", content: brutalSystemPrompt },
         { role: "user", content: userMessage }
