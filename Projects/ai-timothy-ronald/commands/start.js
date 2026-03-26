@@ -30,7 +30,7 @@ bot.onText(/\/send/, async (msg) => {
       if (error) {
         return bot.sendMessage(chatId, "Gagal ambil uptime system.");
       }
-      bot.sendMessage()
-    })
-  })
+      bot.sendMessage(chatId, `🖥️ Uptime Server:\n${stdout}`);
+    });
+  });
 }
