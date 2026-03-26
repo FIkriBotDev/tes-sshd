@@ -4,9 +4,9 @@ const LOG_FILE = "./log_tiboty.txt";
 
 export function saveChatLog(userId, userMessage, aiResponse) {
   const log = `
-id: ${userId}
-user: ${userMessage}
-ai: ${aiResponse}
+ID: ${userId}
+User: ${userMessage}
+AI: ${aiResponse}
 ----------------------------------------
 `;
 
