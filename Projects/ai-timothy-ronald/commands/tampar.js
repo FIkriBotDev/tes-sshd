@@ -1,4 +1,4 @@
-import { generateAI } from "../services/ai.js";
+import { generateAI } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/services/ai.js";
 
 export default function tamparCommand(bot) {
   bot.onText(/\/tampar/, async (msg) => {
