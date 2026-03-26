@@ -23,6 +23,10 @@ bot.on("message", async (msg) => {
 /*  const response = await generateAI(text);
   await bot.sendMessage(chatId, response);
 */
+
+  // mulai typing
+  await bot.sendChatAction()
+
   // 🔥 SIMPAN LOG
   saveChatLog(chatId, text, response);
 });
