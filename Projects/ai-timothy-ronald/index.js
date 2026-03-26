@@ -29,9 +29,13 @@ bot.on("message", async (msg) => {
   // loop typing
   const typingInterval = setInterval(() => {
     if (typing) {
-      bot.sendChatAction()
+      bot.sendChatAction(chatId, "typing");
     }
-  })
+  }, 4000); // kirim tiap 4 detik
+
+  try {
+    const response = await generateAI(text);
+  }
 
   // 🔥 SIMPAN LOG
   saveChatLog(chatId, text, response);
