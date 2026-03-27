@@ -28,7 +28,10 @@ export async function generateAI(userId, userMessage) {
     });
 
     const aiReply =
-      response.data?.choices.[0]?.message?.content || "Error AI"
+      response.data?.choices.[0]?.message?.content || "Error AI";
+    
+    // simpan jawaban AI
+    addMessage(userId, "assistant", aiReply);
 
     return response.data?.choices?.[0]?.message?.content || "Error AI";
   } catch (err) {
