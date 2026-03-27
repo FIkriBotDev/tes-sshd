@@ -33,7 +33,9 @@ export async function generateAI(userId, userMessage) {
     // simpan jawaban AI
     addMessage(userId, "assistant", aiReply);
 
-    return response.data?.choices?.[0]?.message?.content || "Error AI";
+
+    //return response.data?.choices?.[0]?.message?.content || "Error AI";
+    return aiReply;
   } catch (err) {
     console.error("AI ERROR:", err.message);
     return "AI lagi error, coba lagi.";
