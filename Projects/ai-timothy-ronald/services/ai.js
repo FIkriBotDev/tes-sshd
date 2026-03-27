@@ -8,7 +8,7 @@ const API_URL = "https://gen.pollinations.ai/v1/chat/completions";
 export async function generateAI(userMessage) {
   try {
     const payload = {
-      model: "openai-fast",
+      model: "gemini-fast",
       seed: seed,
       messages: [
         { role: "system", content: brutalSystemPrompt },
