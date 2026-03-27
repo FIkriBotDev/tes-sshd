@@ -8,7 +8,7 @@ const API_URL = "https://gen.pollinations.ai/v1/chat/completions";
 export async function generateAI(userMessage) {
   try {
     const payload = {
-      model: "openai",
+      model: "openai-fast",
       seed: seed,
       messages: [
         { role: "system", content: brutalSystemPrompt },
@@ -36,7 +36,7 @@ const randomSeed = Math.floor(Math.random() * 100000);
 export async function generateWakeUp(goal) {
   try {
     const payload = {
-      model: "openai",
+      model: "openai-fast",
       messages: [
         { role: "system", content: brutalSystemPrompt },
         { role: "user", content: `Bangunin tidur orang yang lagi halu dan masih miskin, sudah jam 5 pagi tapi masih belum bangun dari tempat tidurnya sementara dia masih miskin. Random Seed: ${randomSeed}` }
