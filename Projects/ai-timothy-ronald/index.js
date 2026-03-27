@@ -30,7 +30,7 @@ bot.on("message", async (msg) => {
   }, 4000);
 
   try {
-    response = await generateAI(text); // ✅ isi variabel luar
+    response = await generateAI(chatId, text); // ✅ isi variabel luar
 
     typing = false;
     clearInterval(typingInterval);
