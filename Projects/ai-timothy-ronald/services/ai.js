@@ -1,14 +1,14 @@
 import axios from "axios";
 import { config } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/config/config.js";
 import { brutalSystemPrompt } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/prompts/brutalPrompt.js";
-import { getUserMessage, addMessage } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/services/memory.js";
+import { getUserMessages, addMessage } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/services/memory.js";
 
 const seed = Math.floor(Math.random() * 100000);
 const API_URL = "https://gen.pollinations.ai/v1/chat/completions";
 
 export async function generateAI(userId, userMessage) {
   try {
-    const history = getUserMessage(userId);
+    const history = getUserMessages(userId);
     addMessage(userId, "user", userMessage); // simpan user message
     const payload = {
       model: "openai",
