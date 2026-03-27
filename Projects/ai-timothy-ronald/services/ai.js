@@ -8,7 +8,8 @@ const API_URL = "https://gen.pollinations.ai/v1/chat/completions";
 
 export async function generateAI(userId, userMessage) {
   try {
-    const history = getUserMessage(userId)
+    const history = getUserMessage(userId);
+    addMessage(userId, "user", userMessage); // simpan user message
     const payload = {
       model: "openai",
       seed: seed,
