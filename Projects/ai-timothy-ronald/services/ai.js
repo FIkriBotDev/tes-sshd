@@ -15,8 +15,8 @@ export async function generateAI(userId, userMessage) {
       seed: seed,
       messages: [
         { role: "system", content: brutalSystemPrompt },
-//        { role: "user", content: userMessage }
-        { role: "user", content: `${userMessage}\n\nRandom Seed: ${seed}` }
+        { role: "user", content: userMessage }
+        //{ role: "user", content: `${userMessage}\n\nRandom Seed: ${seed}` }
       ]
     };
 
@@ -26,6 +26,8 @@ export async function generateAI(userId, userMessage) {
         "Content-Type": "application/json"
       }
     });
+
+    const ai
 
     return response.data?.choices?.[0]?.message?.content || "Error AI";
   } catch (err) {
