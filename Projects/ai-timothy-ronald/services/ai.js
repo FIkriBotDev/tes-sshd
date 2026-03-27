@@ -6,8 +6,9 @@ import { getUserMessage, addMessage } from "/home/runner/work/tes-sshd/tes-sshd/
 const seed = Math.floor(Math.random() * 100000);
 const API_URL = "https://gen.pollinations.ai/v1/chat/completions";
 
-export async function generateAI(userMessage) {
+export async function generateAI(userId, userMessage) {
   try {
+    const history = getUserMessage(userId)
     const payload = {
       model: "openai",
       seed: seed,
