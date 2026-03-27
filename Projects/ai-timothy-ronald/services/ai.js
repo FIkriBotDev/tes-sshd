@@ -1,7 +1,7 @@
 import axios from "axios";
 import { config } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/config/config.js";
 import { brutalSystemPrompt } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/prompts/brutalPrompt.js";
-import {  }
+import { getUserMessage, addMessage } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/services/memory.js";
 
 const seed = Math.floor(Math.random() * 100000);
 const API_URL = "https://gen.pollinations.ai/v1/chat/completions";
