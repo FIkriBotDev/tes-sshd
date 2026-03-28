@@ -6,7 +6,7 @@ import { getUserMessages, addMessage } from "/home/runner/work/tes-sshd/tes-sshd
 const seed = Math.floor(Math.random() * 100000);
 const API_URL = "https://gen.pollinations.ai/v1/chat/completions";
 
-export async function generateAI(userId, userMessage) {
+/*export async function generateAI(userId, userMessage) {
   try {
     const history = getUserMessages(userId);
     addMessage(userId, "user", userMessage); // simpan user message
@@ -34,6 +34,41 @@ export async function generateAI(userId, userMessage) {
 
 
     //return response.data?.choices?.[0]?.message?.content || "Error AI";
+    return aiReply;
+  } catch (err) {
+    console.error("AI ERROR:", err.message);
+    return "AI lagi error, coba lagi.";
+  }
+} */
+
+export async function generateAI(userId, userMessage) {
+  try {
+    const history = getUserMessages(userId);
+
+    // simpan pesan user dulu
+    addMessage(userId, "user", userMessage);
+
+    const payload = {
+      model: "openai",
+      seed: seed,
+      messages: [
+        { role: "system", content: brutalSystemPrompt },
+        ...history, // 🔥 pakai memory di sini
+      ]
+    };
+
+    const response = await axios.post(API_URL, payload, {
+      headers: {
+        Authorization: `Bearer ${config.pollinationsKey}`,
+        "Content-Type": "application/json"
+      }
+    });
+
+    const aiReply = response.data?.choices?.[0]?.message?.content || "Error AI";
+
+    // simpan balasan AI
+    addMessage(userId, "assistant", aiReply);
+
     return aiReply;
   } catch (err) {
     console.error("AI ERROR:", err.message);
