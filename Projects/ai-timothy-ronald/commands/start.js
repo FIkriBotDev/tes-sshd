@@ -35,4 +35,9 @@ Kalau mau naik level, kita mulai.
       bot.sendMessage(chatIduptime, "Gagal ambil uptime.");
     }
   });
+
+  bot.onText(/\/reset/, (msg) => {
+  clearMemory(msg.chat.id);
+  bot.sendMessage(msg.chat.id, "Memory direset.");
+});
 }
