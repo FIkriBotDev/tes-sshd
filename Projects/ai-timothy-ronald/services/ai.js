@@ -6,9 +6,41 @@ import { getUserMessages, addMessage } from "/home/runner/work/tes-sshd/tes-sshd
 const seed = Math.floor(Math.random() * 100000);
 const API_URL = "https://gen.pollinations.ai/v1/chat/completions";
 
-/* =========================
-   NORMAL (NON-STREAM) AI
-========================= */
+/*export async function generateAI(userId, userMessage) {
+  try {
+    const history = getUserMessages(userId);
+    addMessage(userId, "user", userMessage); // simpan user message
+    const payload = {
+      model: "openai",
+      seed: seed,
+      messages: [
+        { role: "system", content: brutalSystemPrompt },
+        { role: "user", content: userMessage }
+        //{ role: "user", content: `${userMessage}\n\nRandom Seed: ${seed}` }
+      ]
+    };
+
+    const response = await axios.post(API_URL, payload, {
+      headers: {
+        Authorization: `Bearer ${config.pollinationsKey}`,
+        "Content-Type": "application/json"
+      }
+    });
+
+    const aiReply = response.data?.choices?.[0]?.message?.content || "Error AI";
+    
+    // simpan jawaban AI
+    addMessage(userId, "assistant", aiReply);
+
+
+    //return response.data?.choices?.[0]?.message?.content || "Error AI";
+    return aiReply;
+  } catch (err) {
+    console.error("AI ERROR:", err.message);
+    return "AI lagi error, coba lagi.";
+  }
+} */
+
 export async function generateAI(userId, userMessage) {
   try {
     const history = getUserMessages(userId);
@@ -21,7 +53,7 @@ export async function generateAI(userId, userMessage) {
       seed: seed,
       messages: [
         { role: "system", content: brutalSystemPrompt },
-        ...history,
+        ...history, // 🔥 pakai memory di sini
       ]
     };
 
@@ -44,68 +76,6 @@ export async function generateAI(userId, userMessage) {
   }
 }
 
-/* =========================
-   STREAMING AI (BARU)
-========================= */
-export async function generateAIStream(messages, onChunk) {
-  try {
-    const response = await axios({
-      method: "post",
-      url: API_URL,
-      responseType: "stream",
-      headers: {
-        Authorization: `Bearer ${config.pollinationsKey}`,
-        "Content-Type": "application/json"
-      },
-      data: {
-        model: "openai",
-        seed: seed,
-        stream: true,
-        messages
-      }
-    });
-
-    return new Promise((resolve, reject) => {
-      let fullText = "";
-
-      response.data.on("data", (chunk) => {
-        const lines = chunk.toString().split("\n");
-
-        for (let line of lines) {
-          if (line.startsWith("data: ")) {
-            const jsonStr = line.replace("data: ", "").trim();
-
-            if (jsonStr === "[DONE]") {
-              resolve(fullText);
-              return;
-            }
-
-            try {
-              const parsed = JSON.parse(jsonStr);
-              const content = parsed.choices?.[0]?.delta?.content;
-
-              if (content) {
-                fullText += content;
-                onChunk(fullText); // kirim ke index.js
-              }
-            } catch (err) {}
-          }
-        }
-      });
-
-      response.data.on("end", () => resolve(fullText));
-      response.data.on("error", reject);
-    });
-
-  } catch (err) {
-    console.error("STREAM ERROR:", err.message);
-    return "AI lagi error, coba lagi.";
-  }
-}
-
-/* =========================
-   WAKE UP MESSAGE
-========================= */
 const randomSeed = Math.floor(Math.random() * 100000);
 
 export async function generateWakeUp(goal) {
