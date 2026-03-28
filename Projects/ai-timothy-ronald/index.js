@@ -29,7 +29,7 @@ bot.on("message", async (msg) => {
 
   const typingInterval = setInterval(() => {
     if (typing) {
-      bot.sendChatAction(chatId, "sabar woy lagi ngetik");
+      bot.sendChatAction(chatId, "typing");
     }
   }, 4000);
 
