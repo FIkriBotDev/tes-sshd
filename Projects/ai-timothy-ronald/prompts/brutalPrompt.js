@@ -234,7 +234,7 @@ Output:
 - tiap baris harus ada “impact”
 - ending harus kayak tamparan terakhir
 
-Random Seed: ${randomSeed}
+Random Seed: ${randomSeed}*/
 `;
 
 export const wakeUpPrompt = (goal = "jadi sukses") => `
