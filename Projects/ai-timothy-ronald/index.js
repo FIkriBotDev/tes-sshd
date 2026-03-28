@@ -4,15 +4,14 @@ import { config } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-
 import startCommand from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/commands/start.js";
 import tamparCommand from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/commands/tampar.js";
 
-import { generateAI } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/services/ai.js";
+import { generateAIStream } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/services/ai.js";
 import { startScheduler } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/services/scheduler.js";
 import { saveChatLog } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/utils/logger.js";
 
-const bot = new TelegramBot(config.telegramToken, { polling: true });
+import { getUserMessages, addMessage } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/services/memory.js";
+import { brutalSystemPrompt } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/prompts/brutalPrompt.js";
 
-export function clearMemory(userId) {
-  userMemory[userId] = [];
-}
+const bot = new TelegramBot(config.telegramToken, { polling: true });
 
 // COMMANDS
 startCommand(bot);
@@ -25,7 +24,7 @@ bot.on("message", async (msg) => {
   if (!text || text.startsWith("/")) return;
 
   let typing = true;
-  let response = ""; // 🔥 pindahin ke sini
+  let response = "";
 
   const typingInterval = setInterval(() => {
     if (typing) {
@@ -34,22 +33,55 @@ bot.on("message", async (msg) => {
   }, 4000);
 
   try {
-    response = await generateAI(chatId, text); // ✅ isi variabel luar
+    const history = getUserMessages(chatId);
+
+    // simpan user message
+    addMessage(chatId, "user", text);
+
+    const messages = [
+      { role: "system", content: brutalSystemPrompt },
+      ...history
+    ];
+
+    // kirim placeholder
+    const sentMsg = await bot.sendMessage(chatId, "💬 ...");
+
+    let lastEdit = Date.now();
+
+    response = await generateAIStream(messages, async (chunkText) => {
+      // throttle biar gak kena limit telegram
+      if (Date.now() - lastEdit < 1000) return;
+      lastEdit = Date.now();
+
+      try {
+        await bot.editMessageText(chunkText || "...", {
+          chat_id: chatId,
+          message_id: sentMsg.message_id
+        });
+      } catch (err) {}
+    });
 
     typing = false;
     clearInterval(typingInterval);
 
-    await bot.sendMessage(chatId, response);
+    // simpan jawaban AI ke memory
+    addMessage(chatId, "assistant", response);
+
+    // final update (biar full text masuk)
+    await bot.editMessageText(response, {
+      chat_id: chatId,
+      message_id: sentMsg.message_id
+    });
+
   } catch (err) {
     typing = false;
     clearInterval(typingInterval);
 
-    response = "Error."; // 🔥 biar tetap ke-log
+    response = "Error.";
 
     await bot.sendMessage(chatId, response);
   }
 
-  // 🔥 sekarang aman
   saveChatLog(chatId, text, response);
 });
 
