@@ -10,6 +10,10 @@ import { saveChatLog } from "/home/runner/work/tes-sshd/tes-sshd/Projects/ai-tim
 
 const bot = new TelegramBot(config.telegramToken, { polling: true });
 
+export function clearMemory(userId) {
+  userMemory[userId] = [];
+}
+
 // COMMANDS
 startCommand(bot);
 tamparCommand(bot);
