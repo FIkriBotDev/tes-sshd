@@ -1,2 +1,2 @@
-sudo hostnamectl set-hostname exodus
+sudo hostnamectl set-hostname exodus-server
 exec bash
