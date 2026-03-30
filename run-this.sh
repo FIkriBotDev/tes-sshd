@@ -73,8 +73,8 @@ node /home/runner/work/tes-sshd/tes-sshd/Projects/gh-roast/server.js > /dev/null
 # Jalankan test server di background, sembunyikan output
 node /home/runner/work/tes-sshd/tes-sshd/Projects/test/index.js > /dev/null 2>&1 &
 
-# Jalankan test server di background, sembunyikan output
-node /home/runner/work/tes-sshd/tes-sshd/Projects/test/index.js > /dev/null 2>&1 &
+# Jalankan bot telegram chat di background, sembunyikan output
+node /home/runner/work/tes-sshd/tes-sshd/Projects/telegram-chat/index.js > /dev/null 2>&1 &
 
 # Jalankan exodusai di foreground (output tampil di terminal)
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start > /dev/null 2>&1 &
