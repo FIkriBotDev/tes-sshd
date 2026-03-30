@@ -1,7 +1,7 @@
 const TelegramBot = require("node-telegram-bot-api");
 
-const TOKEN = "8560122548:AAHtx9-O-73Wsbbw8IQZneOh-UguHk1KdSY";
-const OWNER_ID = 8084800390;
+const TOKEN = "TOKEN_BOT_LO";
+const OWNER_ID = 123456789;
 
 const bot = new TelegramBot(TOKEN, { polling: true });
 
@@ -17,7 +17,34 @@ bot.onText(/\/start/, (msg) => {
   if (chatId === OWNER_ID) {
     bot.sendMessage(chatId, "Halo! kamu adalah owner saya");
   } else {
-    bot.sendMessage(chatId, "Halo!");
+    bot.sendMessage(chatId, "Halo! silahkan chat fikri dari sini.");
+  }
+});
+
+// =======================
+// REPLY TEXT (TETAP ADA)
+// =======================
+bot.onText(/\/reply (.+)/, async (msg, match) => {
+  const chatId = msg.chat.id;
+
+  if (chatId !== OWNER_ID) {
+    return bot.sendMessage(chatId, "Lu bukan owner.");
+  }
+
+  const args = match[1].split(" ");
+  const targetId = args.shift();
+  const text = args.join(" ");
+
+  if (!targetId || !text) {
+    return bot.sendMessage(chatId, "Format salah. Contoh:\n/reply USER_ID pesan");
+  }
+
+  try {
+    await bot.sendMessage(targetId, text);
+    bot.sendMessage(chatId, "Pesan terkirim✔️");
+  } catch (err) {
+    bot.sendMessage(chatId, "Gagal kirim.");
+    console.log(err);
   }
 });
 
@@ -27,11 +54,9 @@ bot.onText(/\/start/, (msg) => {
 bot.onText(/\/reply-foto (.+)/, (msg, match) => {
   if (msg.chat.id !== OWNER_ID) return;
 
-  const targetId = match[1];
-
   pendingReply[OWNER_ID] = {
     type: "photo",
-    targetId,
+    targetId: match[1],
   };
 
   bot.sendMessage(OWNER_ID, "Silahkan kirim fotonya (1 foto saja)");
@@ -40,11 +65,9 @@ bot.onText(/\/reply-foto (.+)/, (msg, match) => {
 bot.onText(/\/reply-video (.+)/, (msg, match) => {
   if (msg.chat.id !== OWNER_ID) return;
 
-  const targetId = match[1];
-
   pendingReply[OWNER_ID] = {
     type: "video",
-    targetId,
+    targetId: match[1],
   };
 
   bot.sendMessage(OWNER_ID, "Silahkan kirim videonya");
@@ -53,11 +76,9 @@ bot.onText(/\/reply-video (.+)/, (msg, match) => {
 bot.onText(/\/reply-audio (.+)/, (msg, match) => {
   if (msg.chat.id !== OWNER_ID) return;
 
-  const targetId = match[1];
-
   pendingReply[OWNER_ID] = {
     type: "audio",
-    targetId,
+    targetId: match[1],
   };
 
   bot.sendMessage(OWNER_ID, "Silahkan kirim audionya");
@@ -66,11 +87,9 @@ bot.onText(/\/reply-audio (.+)/, (msg, match) => {
 bot.onText(/\/reply-file (.+)/, (msg, match) => {
   if (msg.chat.id !== OWNER_ID) return;
 
-  const targetId = match[1];
-
   pendingReply[OWNER_ID] = {
     type: "document",
-    targetId,
+    targetId: match[1],
   };
 
   bot.sendMessage(OWNER_ID, "Silahkan kirim filenya");
@@ -86,7 +105,7 @@ bot.on("message", async (msg) => {
   if (msg.text && msg.text.startsWith("/")) return;
 
   // =======================
-  // OWNER KIRIM MEDIA (STATE)
+  // OWNER MODE (KIRIM MEDIA)
   // =======================
   if (chatId === OWNER_ID && pendingReply[OWNER_ID]) {
     const { type, targetId } = pendingReply[OWNER_ID];
@@ -120,8 +139,6 @@ bot.on("message", async (msg) => {
       }
 
       bot.sendMessage(chatId, "Pesan terkirim✔️");
-
-      // reset state
       delete pendingReply[OWNER_ID];
 
     } catch (err) {
