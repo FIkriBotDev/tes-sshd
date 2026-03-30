@@ -17,7 +17,7 @@ bot.onText(/\/start/, (msg) => {
   if (chatId === OWNER_ID) {
     bot.sendMessage(chatId, "Halo! kamu adalah owner saya");
   } else {
-    bot.sendMessage(chatId, "Halo! silahkan chat fikri dari sini.");
+    bot.sendMessage(chatId, "Halo!");
   }
 });
 
