@@ -1,77 +1,66 @@
-const { google } = require("googleapis");
+const TelegramBot = require("node-telegram-bot-api");
 
-const SPREADSHEET_ID = "ISI_SPREADSHEET_ID_KAMU";
-const RANGE = "Sheet1!A1:C100";
+// Ganti dengan token bot lu
+const TOKEN = "TOKEN_BOT_LO";
 
-// Setup auth
-const auth = new google.auth.GoogleAuth({
-  keyFile: "credentials.json",
-  scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+// Ganti dengan user ID telegram lu
+const OWNER_ID = 123456789;
+
+const bot = new TelegramBot(TOKEN, { polling: true });
+
+// /start handler
+bot.onText(/\/start/, (msg) => {
+  const chatId = msg.chat.id;
+
+  if (chatId === OWNER_ID) {
+    bot.sendMessage(chatId, "Halo! kamu adalah owner saya");
+  } else {
+    bot.sendMessage(chatId, "Halo! silahkan chat fikri dari sini.");
+  }
 });
 
-async function getSheets() {
-  const client = await auth.getClient();
-  return google.sheets({ version: "v4", auth: client });
-}
+// Handler semua pesan
+bot.on("message", (msg) => {
+  const chatId = msg.chat.id;
 
-// ======================
-// 📖 READ DATA
-// ======================
-async function readData() {
-  const sheets = await getSheets();
+  // skip command
+  if (msg.text && msg.text.startsWith("/")) return;
 
-  const res = await sheets.spreadsheets.values.get({
-    spreadsheetId: SPREADSHEET_ID,
-    range: RANGE,
-  });
+  // kalau dari user (bukan owner)
+  if (chatId !== OWNER_ID) {
+    const username = msg.from.username
+      ? "@" + msg.from.username
+      : msg.from.first_name;
 
-  console.log("📖 Data:");
-  console.log(res.data.values);
-}
+    const text = msg.text || "[non-text message]";
 
-// ======================
-// ➕ ADD DATA
-// ======================
-async function addData() {
-  const sheets = await getSheets();
+    const forwardText = `Pesan dari ${username} [${chatId}]\n\n${text}`;
 
-  await sheets.spreadsheets.values.append({
-    spreadsheetId: SPREADSHEET_ID,
-    range: "Sheet1!A1",
-    valueInputOption: "USER_ENTERED",
-    requestBody: {
-      values: [["Fikri", "20", "Indonesia"]],
-    },
-  });
+    bot.sendMessage(OWNER_ID, forwardText);
+  }
+});
 
-  console.log("✅ Data berhasil ditambahkan");
-}
+// Command reply
+bot.onText(/\/reply (.+)/, (msg, match) => {
+  const chatId = msg.chat.id;
 
-// ======================
-// ✏️ UPDATE DATA
-// ======================
-async function updateData() {
-  const sheets = await getSheets();
+  if (chatId !== OWNER_ID) {
+    return bot.sendMessage(chatId, "Lu bukan owner.");
+  }
 
-  await sheets.spreadsheets.values.update({
-    spreadsheetId: SPREADSHEET_ID,
-    range: "Sheet1!A2",
-    valueInputOption: "USER_ENTERED",
-    requestBody: {
-      values: [["Budi", "21", "Jakarta"]],
-    },
-  });
+  const args = match[1].split(" ");
+  const targetId = args.shift();
+  const message = args.join(" ");
 
-  console.log("✏️ Data berhasil diupdate");
-}
+  if (!targetId || !message) {
+    return bot.sendMessage(chatId, "Format salah. Contoh:\n/reply USER_ID pesan");
+  }
 
-// ======================
-// 🚀 RUN
-// ======================
-async function main() {
-  await readData();   // baca data
-  await addData();    // tambah data
-  await updateData(); // edit data
-}
-
-main();
+  bot.sendMessage(targetId, message)
+    .then(() => {
+      bot.sendMessage(chatId, "Pesan terkirim✔️");
+    })
+    .catch(() => {
+      bot.sendMessage(chatId, "Gagal kirim pesan.");
+    });
+});
