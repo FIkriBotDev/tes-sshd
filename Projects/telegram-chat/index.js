@@ -1,66 +1,179 @@
 const TelegramBot = require("node-telegram-bot-api");
 
-// Ganti dengan token bot lu
-const TOKEN = "8560122548:AAHtx9-O-73Wsbbw8IQZneOh-UguHk1KdSY";
-
-// Ganti dengan user ID telegram lu
-const OWNER_ID = 8084800390;
+const TOKEN = "TOKEN_BOT_LO";
+const OWNER_ID = 123456789;
 
 const bot = new TelegramBot(TOKEN, { polling: true });
 
-// /start handler
+// state sementara
+let pendingReply = {};
+
+// =======================
+// START
+// =======================
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
 
   if (chatId === OWNER_ID) {
     bot.sendMessage(chatId, "Halo! kamu adalah owner saya");
   } else {
-    bot.sendMessage(chatId, "Halo!");
+    bot.sendMessage(chatId, "Halo! silahkan chat fikri dari sini.");
   }
 });
 
-// Handler semua pesan
-bot.on("message", (msg) => {
+// =======================
+// COMMAND MEDIA OWNER
+// =======================
+bot.onText(/\/reply-foto (.+)/, (msg, match) => {
+  if (msg.chat.id !== OWNER_ID) return;
+
+  const targetId = match[1];
+
+  pendingReply[OWNER_ID] = {
+    type: "photo",
+    targetId,
+  };
+
+  bot.sendMessage(OWNER_ID, "Silahkan kirim fotonya (1 foto saja)");
+});
+
+bot.onText(/\/reply-video (.+)/, (msg, match) => {
+  if (msg.chat.id !== OWNER_ID) return;
+
+  const targetId = match[1];
+
+  pendingReply[OWNER_ID] = {
+    type: "video",
+    targetId,
+  };
+
+  bot.sendMessage(OWNER_ID, "Silahkan kirim videonya");
+});
+
+bot.onText(/\/reply-audio (.+)/, (msg, match) => {
+  if (msg.chat.id !== OWNER_ID) return;
+
+  const targetId = match[1];
+
+  pendingReply[OWNER_ID] = {
+    type: "audio",
+    targetId,
+  };
+
+  bot.sendMessage(OWNER_ID, "Silahkan kirim audionya");
+});
+
+bot.onText(/\/reply-file (.+)/, (msg, match) => {
+  if (msg.chat.id !== OWNER_ID) return;
+
+  const targetId = match[1];
+
+  pendingReply[OWNER_ID] = {
+    type: "document",
+    targetId,
+  };
+
+  bot.sendMessage(OWNER_ID, "Silahkan kirim filenya");
+});
+
+// =======================
+// HANDLE SEMUA MESSAGE
+// =======================
+bot.on("message", async (msg) => {
   const chatId = msg.chat.id;
 
   // skip command
   if (msg.text && msg.text.startsWith("/")) return;
 
-  // kalau dari user (bukan owner)
+  // =======================
+  // OWNER KIRIM MEDIA (STATE)
+  // =======================
+  if (chatId === OWNER_ID && pendingReply[OWNER_ID]) {
+    const { type, targetId } = pendingReply[OWNER_ID];
+
+    try {
+      if (type === "photo" && msg.photo) {
+        const fileId = msg.photo[msg.photo.length - 1].file_id;
+        await bot.sendPhoto(targetId, fileId, {
+          caption: msg.caption || "",
+        });
+      }
+
+      else if (type === "video" && msg.video) {
+        await bot.sendVideo(targetId, msg.video.file_id, {
+          caption: msg.caption || "",
+        });
+      }
+
+      else if (type === "audio" && msg.audio) {
+        await bot.sendAudio(targetId, msg.audio.file_id);
+      }
+
+      else if (type === "document" && msg.document) {
+        await bot.sendDocument(targetId, msg.document.file_id, {
+          caption: msg.caption || "",
+        });
+      }
+
+      else {
+        return bot.sendMessage(chatId, "Tipe tidak sesuai. Ulangi command.");
+      }
+
+      bot.sendMessage(chatId, "Pesan terkirim✔️");
+
+      // reset state
+      delete pendingReply[OWNER_ID];
+
+    } catch (err) {
+      bot.sendMessage(chatId, "Gagal kirim.");
+      console.log(err);
+    }
+
+    return;
+  }
+
+  // =======================
+  // USER → OWNER
+  // =======================
   if (chatId !== OWNER_ID) {
     const username = msg.from.username
       ? "@" + msg.from.username
       : msg.from.first_name;
 
-    const text = msg.text || "[non-text message]";
+    const header = `Pesan dari ${username} [${chatId}]`;
 
-    const forwardText = `Pesan dari ${username} [${chatId}]\n\n${text}`;
+    try {
+      if (msg.text) {
+        await bot.sendMessage(OWNER_ID, `${header}\n\n${msg.text}`);
+      }
 
-    bot.sendMessage(OWNER_ID, forwardText);
+      else if (msg.photo) {
+        const fileId = msg.photo[msg.photo.length - 1].file_id;
+        await bot.sendPhoto(OWNER_ID, fileId, {
+          caption: `${header}\n\n${msg.caption || ""}`
+        });
+      }
+
+      else if (msg.video) {
+        await bot.sendVideo(OWNER_ID, msg.video.file_id, {
+          caption: `${header}\n\n${msg.caption || ""}`
+        });
+      }
+
+      else if (msg.audio) {
+        await bot.sendAudio(OWNER_ID, msg.audio.file_id, {
+          caption: header
+        });
+      }
+
+      else if (msg.document) {
+        await bot.sendDocument(OWNER_ID, msg.document.file_id, {
+          caption: header
+        });
+      }
+
+    } catch (err) {
+      console.log(err);
+    }
   }
-});
-
-// Command reply
-bot.onText(/\/reply (.+)/, (msg, match) => {
-  const chatId = msg.chat.id;
-
-  if (chatId !== OWNER_ID) {
-    return bot.sendMessage(chatId, "Lu bukan owner.");
-  }
-
-  const args = match[1].split(" ");
-  const targetId = args.shift();
-  const message = args.join(" ");
-
-  if (!targetId || !message) {
-    return bot.sendMessage(chatId, "Format salah. Contoh:\n/reply USER_ID pesan");
-  }
-
-  bot.sendMessage(targetId, message)
-    .then(() => {
-      bot.sendMessage(chatId, "Pesan terkirim✔️");
-    })
-    .catch(() => {
-      bot.sendMessage(chatId, "Gagal kirim pesan.");
-    });
 });
