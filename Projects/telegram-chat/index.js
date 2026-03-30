@@ -1,10 +1,10 @@
 const TelegramBot = require("node-telegram-bot-api");
 
 // Ganti dengan token bot lu
-const TOKEN = "TOKEN_BOT_LO";
+const TOKEN = "8560122548:AAHtx9-O-73Wsbbw8IQZneOh-UguHk1KdSY";
 
 // Ganti dengan user ID telegram lu
-const OWNER_ID = 123456789;
+const OWNER_ID = 8084800390;
 
 const bot = new TelegramBot(TOKEN, { polling: true });
 
@@ -15,7 +15,7 @@ bot.onText(/\/start/, (msg) => {
   if (chatId === OWNER_ID) {
     bot.sendMessage(chatId, "Halo! kamu adalah owner saya");
   } else {
-    bot.sendMessage(chatId, "Halo! silahkan chat fikri dari sini.");
+    bot.sendMessage(chatId, "Halo!");
   }
 });
 
