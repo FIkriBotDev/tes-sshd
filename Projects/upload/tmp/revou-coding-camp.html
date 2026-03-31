@@ -1,20 +1,33 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Glass UI List</title>
+
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h2>Unordered List (ul)</h2>
-    <ul></ul>
-    <li type="disc">Mangga</li>
-    <li>Pisang</li>
-    <li>Jambu</li></ul>
-<hr/>
-    <h2>Ordered List (ol)</h2>
-    <ol type="1">
-        <li>Step 1</li>
-        <li>Step 2</li>
-    </ol>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500">
+
+    <div class="backdrop-blur-lg bg-white/20 border border-white/30 shadow-xl rounded-2xl p-8 w-96 text-white">
+        
+        <h2 class="text-xl font-bold mb-3">Unordered List (ul)</h2>
+        <ul class="list-disc pl-5 mb-6">
+            <li>Mangga</li>
+            <li>Pisang</li>
+            <li>Jambu</li>
+        </ul>
+
+        <hr class="border-white/30 mb-6"/>
+
+        <h2 class="text-xl font-bold mb-3">Ordered List (ol)</h2>
+        <ol class="list-decimal pl-5">
+            <li>Step 1</li>
+            <li>Step 2</li>
+        </ol>
+
+    </div>
+
 </body>
 </html>
