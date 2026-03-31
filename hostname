@@ -1,2 +1,2 @@
-sudo hostnamectl set-hostname server
+sudo hostnamectl set-hostname vps
 exec bash
