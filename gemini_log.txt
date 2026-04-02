@@ -35532,3 +35532,154 @@ Response  : {
   ]
 }
 
+
+[2026-04-02T12:37:06.286Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/91d6b9-1775133359258.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan untuk dikonsumsi rutin sebagai makanan utama",
+    "alasan": "Mie instan (gambar) umumnya tinggi natrium, mengandung lemak jenuh (jika mie digoreng), karbohidrat olahan dan rendah serat serta mikronutrien esensial. Cocok sekali-kali sebagai makanan praktis jika dimodifikasi, bukan sebagai pengganti makanan seimbang tiap hari."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "≈80 g (kering) / ≈240–300 g setelah dimasak",
+    "jumlahSajian": "1 bungkus (tampak 1 porsi pada gambar)",
+    "kalori": 420,
+    "protein": "9 g",
+    "proteinPersen": "8.6%",
+    "karbohidrat": "58 g",
+    "karbohidratPersen": "55.2%",
+    "gula": "≈5 g",
+    "serat": "≈3 g",
+    "lemakTotal": "18 g",
+    "lemakJenuh": "7 g",
+    "lemakTakJenuh": "≈11 g",
+    "lemakPersen": "38.6%",
+    "kolesterol": "0 mg (atau sangat rendah, tergantung varian dengan telur/daging)",
+    "natrium": "≈1,200 mg",
+    "vitaminDanMineral": [
+      "Vitamin B1 (tiamin) — dari tepung terigu/enriched flour",
+      "Niacin (B3)",
+      "Folat (beberapa produk diperkaya)",
+      "Zat besi (terkadang diperkaya)",
+      "Kalsium (kecil)",
+      "Kalium (rendah sampai sedang tergantung bahan tambahan)"
+    ]
+  },
+  "perbandinganAKG": [
+    {
+      "nama": "Kalori",
+      "persen": "≈21% (berdasarkan AKG 2000 kcal/hari)"
+    },
+    {
+      "nama": "Natrium",
+      "persen": "≈60% (berdasarkan batas 2000 mg/hari)"
+    },
+    {
+      "nama": "Protein",
+      "persen": "≈18% (berdasarkan kebutuhan 50 g/hari)"
+    },
+    {
+      "nama": "Serat",
+      "persen": "≈12% (berdasarkan kebutuhan 25 g/hari)"
+    },
+    {
+      "nama": "Lemak jenuh",
+      "persen": "≈35% (berdasarkan batas ~20 g/hari)"
+    }
+  ],
+  "risikoKesehatan": {
+    "Natrium": "tinggi — berisiko meningkatkan tekanan darah bila dikonsumsi sering",
+    "LemakJenuh": "sedang-tinggi — tergantung proses penggorengan mie",
+    "KarbohidratOlahan": "tinggi — dapat menyebabkan lonjakan gula darah cepat",
+    "Serat": "rendah — kurang mendukung rasa kenyang jangka panjang dan kesehatan pencernaan",
+    "Mikronutrien": "rendah — tidak memenuhi kebutuhan vitamin/mineral bila menjadi makanan utama"
+  },
+  "waktuKenyang": "2–4 jam (kenyang sementara; cepat lapar kembali karena kandungan karbohidrat olahan dan rendah serat/protein)",
+  "frekuensiKonsumsi": "Sebaiknya tidak lebih dari 1–2 kali/minggu; jika sering makan, modifikasi untuk menurunkan garam/lemak dan menambah sayur/protein",
+  "ingredients": [
+    "Tepung terigu",
+    "Minyak nabati (sering kali minyak sawit) — jika mie goreng",
+    "Bumbu bubuk (garam, monosodium glutamate, gula)",
+    "Penyedap rasa dan perisa (ekstrak ragi, hydrolyzed vegetable protein)",
+    "Kecap / saus (pada varian tertentu)",
+    "Sayuran kering (bawang, daun bawang, sayuran kecil) — jumlah kecil",
+    "Pengawet / antioksidan / pewarna (tergantung merk)"
+  ],
+  "tipsSehat": [
+    "Kurangi penggunaan kuah bumbu—buang sebagian atau gunakan hanya sebagian sachet untuk menurunkan natrium.",
+    "Tambahkan sumber serat: sayuran segar/beku (bayam, sawi, wortel, brokoli) untuk meningkatkan kandungan serat dan vitamin.",
+    "Tambahkan sumber protein rendah lemak: telur rebus, tahu, tempe atau ayam tanpa kulit untuk meningkatkan rasa kenyang dan nilai gizi.",
+    "Pilih varian mie 'air-dried' atau non-goreng jika tersedia untuk mengurangi lemak total.",
+    "Gunakan kaldu rendah natrium sebagai pengganti bumbu sachet sepenuhnya atau kombinasikan dengan bumbu rempah alami (bawang putih, jahe, bawang merah)."
+  ],
+  "alternatif": [
+    "Mie gandum utuh dengan sayuran dan dada ayam panggang",
+    "Soba atau bihun beras dengan kaldu sayur, tahu, dan banyak sayur",
+    "Sup sayur dengan kacang-kacangan dan potongan protein (lentil soup dengan roti gandum)",
+    "Nasi merah dengan tumis sayur dan tempe/ikan panggang",
+    "Mie shirataki atau mie kembang kol dengan saus rendah garam dan banyak sayur"
+  ]
+}
+
