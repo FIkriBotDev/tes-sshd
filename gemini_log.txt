@@ -35395,3 +35395,140 @@ Response  : {
   ]
 }
 
+
+[2026-04-02T12:29:02.661Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/3a453f-1775132864827.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Sebagian besar tidak direkomendasikan sebagai makanan utama harian",
+    "alasan": "Berdasarkan penampakan: ini tampak seperti semangkuk mie instan standar (tanpa tambahan sayur/bahan protein). Mie instan umumnya tinggi natrium, mengandung karbohidrat olahan dan lemak yang berasal dari minyak goreng, serta rendah serat dan mikronutrien. Bisa dinikmati sesekali jika dimodifikasi, tetapi tidak ideal sebagai pilihan rutin untuk kesehatan kardiometabolik."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "≈250 g (siap saji) / ≈85 g (kering sebelum dimasak)",
+    "jumlahSajian": "1 porsi (satu mangkuk seperti di foto)",
+    "kalori": 380,
+    "protein": "8 g",
+    "proteinPersen": "8.4%",
+    "karbohidrat": "50 g",
+    "karbohidratPersen": "52.6%",
+    "gula": "4 g",
+    "serat": "3 g",
+    "lemakTotal": "16 g",
+    "lemakJenuh": "6 g",
+    "lemakTakJenuh": "10 g",
+    "lemakPersen": "37.9%",
+    "kolesterol": "0 mg",
+    "natrium": "≈1400 mg",
+    "vitaminDanMineral": [
+      "Vitamin B1 (tiamin) - sedikit (dari tepung gandum yang difortifikasi)",
+      "Niacin (B3) - sedikit",
+      "Folat (B9) - sedikit (jika difortifikasi)",
+      "Zat Besi - sedikit",
+      "Kalsium - sangat sedikit",
+      "Kalium - rendah"
+    ]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori (referensi 2000 kcal/hari)", "persen": "19%" },
+    { "nama": "Protein (referensi 50 g/hari)", "persen": "16%" },
+    { "nama": "Karbohidrat (referensi 300 g/hari)", "persen": "17%" },
+    { "nama": "Lemak total (referensi 67 g/hari)", "persen": "24%" },
+    { "nama": "Lemak jenuh (batas <22 g/hari)", "persen": "27%" },
+    { "nama": "Serat (referensi 25 g/hari)", "persen": "12%" },
+    { "nama": "Gula tambahan (batas ~50 g/hari)", "persen": "8%" },
+    { "nama": "Natrium (batas ~2000 mg/hari)", "persen": "70%" }
+  ],
+  "risikoKesehatan": {
+    "Natrium": "tinggi (dikhawatirkan untuk hipertensi, penyakit jantung/kegagalan ginjal jika sering dikonsumsi)",
+    "LemakJenuh": "sedang-tinggi (jika minyak kelapa/palm oil dipakai)",
+    "KarbohidratOlahan": "tinggi (rendah serat, bisa cepat menaikkan gula darah)",
+    "Mikronutrien": "rendah (kekurangan vitamin/mineral jika menggantikan makanan seimbang)"
+  },
+  "waktuKenyang": "Perkiraan 2-3 jam (karena dominasi karbohidrat olahan; kenyang cepat tapi relatif singkat)",
+  "frekuensiKonsumsi": "Tidak lebih dari 1–2 kali/minggu sebagai pilihan sesekali; jika memiliki kondisi seperti hipertensi/kolesterol tinggi, batasi lebih ketat atau hindari",
+  "ingredients": [
+    "Mie: tepung terigu (gandum), air, garam, emulsifier, kadang difortifikasi dengan vitamin B",
+    "Minyak/lemak (biasanya palm oil atau minyak sawit) — bisa mengandung lemak jenuh",
+    "Bumbu bubuk: garam, monosodium glutamate (MSG), gula, perasa (flavor enhancer), penyedap rasa ayam/sapi/ayam pedas tergantung varian",
+    "Bumbu cair/pasta (jika ada): minyak bumbu beraroma, pasta cabe, bawang, rempah",
+    "Sayuran kering/minim (scallion, wortel kering) dalam jumlah kecil",
+    "Bahan tambahan mungkin: pengawet, pewarna, anti-kempal"
+  ],
+  "tipsSehat": [
+    "Gunakan hanya setengah atau seperempat sachet bumbu untuk mengurangi natrium dan MSG, atau buang seluruh sachet kaldu dan gunakan kaldu rendah garam sendiri.",
+    "Tambahkan sumber protein bergizi: telur rebus/poached, tahu, tempe, atau potongan dada ayam tanpa kulit untuk meningkatkan nilai gizi dan rasa kenyang.",
+    "Tambahkan banyak sayuran segar/matang (bayam, sawi, brokoli, wortel, jagung) untuk meningkatkan serat, vitamin, dan mineral.",
+    "Gunakan minyak sehat (minyak zaitun/kanola) sedikit saja jika perlu menumis bumbu, hindari minyak bumbu dari sachet.",
+    "Jika memungkinkan gunakan mie gandum utuh atau mie berbahan dasar biji-bijian lain sebagai pengganti mie putih.",
+    "Kurangi kuah jika tujuannya menurunkan asupan natrium; minum cukup air untuk bantu kenyang."
+  ],
+  "alternatif": [
+    "Mie gandum utuh dengan kaldu rendah garam, sayuran segar, dan sumber protein (tahu/ayam/ikan).",
+    "Sup sayur berbasis kaldu sayuran + sumber protein + nasi merah atau bihun wholegrain.",
+    "Soba (buckwheat) dengan sayuran kukus dan tahu, dressing rendah natrium.",
+    "Nasi merah atau quinoa dengan tumis sayur dan protein tanpa lemak sebagai pilihan lebih seimbang."
+  ]
+}
+
