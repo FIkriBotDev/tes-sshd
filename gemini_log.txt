@@ -35243,3 +35243,155 @@ Response  : {
   "catatan": "Analisis ini bersifat perkiraan berdasarkan tampilan foto (potongan ayam berbalut tepung digoreng). Tanpa label nutrisi atau timbangan pasti, nilai numerik adalah estimasi rentang yang umum untuk 150 g produk serupa. Jika perlu presisi, kirimkan informasi label gizi atau berat porsi sebenarnya."
 }
 
+
+[2026-04-02T12:27:12.745Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/82815c-1775132766745.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tergantung konteks (sebagai makanan cepat saji: tidak direkomendasikan sering)",
+    "alasan": "Analisis ini merupakan perkiraan karena gambar memperlihatkan gerai bertuliskan 'Pizza Nyantuy' namun tidak menunjukkan porsi makanan yang spesifik. Jika diasumsikan ini adalah satu potong pizza cepat saji biasa, maka porsi tersebut cenderung mengandung kalori sedang-tinggi, natrium tinggi, dan lemak jenuh sedang — sehingga kurang ideal dikonsumsi sering terutama bagi orang dengan hipertensi, kolesterol tinggi, atau risiko kardiometabolik."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "120 gram (perkiraan per 1 slice)",
+    "jumlahSajian": "1 slice (perkiraan)",
+    "kalori": 285,
+    "protein": "12 g",
+    "proteinPersen": "16.8%",
+    "karbohidrat": "36 g",
+    "karbohidratPersen": "50.5%",
+    "gula": "4 g",
+    "serat": "2 g",
+    "lemakTotal": "11 g",
+    "lemakJenuh": "4.5 g",
+    "lemakTakJenuh": "6.5 g",
+    "lemakPersen": "34.7%",
+    "kolesterol": "30 mg",
+    "natrium": "640 mg",
+    "vitaminDanMineral": [
+      "Kalsium (dari keju)",
+      "Fosfor",
+      "Vitamin B12",
+      "Zat Besi (sedikit)",
+      "Vitamin A (sedikit, tergantung saus/keju)",
+      "Sodium (tinggi)"
+    ]
+  },
+  "perbandinganAKG": [
+    {
+      "nama": "Kalori",
+      "persen": "14% (dari asumsi 2000 kcal/hari)"
+    },
+    {
+      "nama": "Protein",
+      "persen": "24% (berdasarkan kebutuhan ~50 g/hari)"
+    },
+    {
+      "nama": "Natrium",
+      "persen": "32% (dari batas 2000 mg/hari)"
+    },
+    {
+      "nama": "Lemak Jenuh",
+      "persen": "20% (dari batas ~22 g/hari sebagai referensi)"
+    },
+    {
+      "nama": "Gula (tambahan)",
+      "persen": "16% (berdasarkan panduan pembatasan gula ~25 g/hari WHO)"
+    }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah-sedang (tergantung saus gula tambahan)",
+    "Lemak": "sedang (lemak total moderat; lemak jenuh perlu diwaspadai)",
+    "Natrium": "tinggi (risiko bagi hipertensi)",
+    "KaloriPerPorsi": "sedang-tinggi (dapat menyebabkan kelebihan asupan jika dimakan berlebih)",
+    "BahanOlahan": "jika mengandung daging olahan (pepperoni, sosis) ada risiko konsumsi zat tambahan/pengawet bila dikonsumsi sering"
+  },
+  "waktuKenyang": "2-4 jam (bergantung metabolisme individu dan ukuran porsi)",
+  "frekuensiKonsumsi": "1-2x/minggu jika sehat; kurangi frekuensi untuk individu dengan hipertensi/kolesterol/obesitas (maks 1x/minggu atau lebih jarang)",
+  "ingredients": [
+    "Tepung terigu (kulit/pizza dough)",
+    "Saus tomat (tomat, gula, garam, bumbu)",
+    "Keju (mozzarella atau campuran)",
+    "Minyak/gemuk (untuk adonan/penumis)",
+    "Daging olahan (pepperoni/sosis) — jika ada",
+    "Garam, ragi, bahan pengembang",
+    "Pengawet/pemanis (tergantung produsen)"
+  ],
+  "tipsSehat": [
+    "Pilih crust tipis untuk mengurangi karbohidrat/kalori dari adonan",
+    "Minta lebih banyak sayuran (paprika, jamur, bayam, tomat) untuk serat dan mikronutrien",
+    "Kurangi jumlah keju atau pilih keju rendah lemak",
+    "Hindari atau kurangi topping daging olahan; pilih ayam panggang tanpa kulit atau sayuran sebagai gantinya",
+    "Konsumsi bersama salad segar dan air putih untuk meningkatkan rasa kenyang dan menurunkan densitas energi",
+    "Batasi ukuran porsi (1-2 potong tergantung kebutuhan kalori)"
+  ],
+  "alternatif": [
+    "Pizza rumahan dengan tepung gandum utuh, sedikit keju, dan banyak sayuran",
+    "Wrap gandum isi ayam panggang dan sayuran segar",
+    "Salad besar dengan protein tanpa lemak (ikan/ayam) dan saus rendah lemak",
+    "Flatbread panggang dengan hummus dan sayuran",
+    "Sushi atau bowl biji-bijian dengan sayuran dan ikan tanpa digoreng"
+  ]
+}
+
