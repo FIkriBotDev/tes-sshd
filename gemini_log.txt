@@ -35079,3 +35079,167 @@ Response  : Saya lihat gambarnya. Beberapa hal yang tampak:
 
 Saya tidak bisa mengidentifikasi atau menamai orang pada foto ini. Mau saya bantu apa dengan gambar ini? Misalnya: memperbaiki kualitas, menghapus stiker/emoji, mengganti latar, membuat versi anonim (lebih diburamkan), atau memberi saran editing lainnya.
 
+
+[2026-04-02T08:27:29.127Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/b0ec46-1775118395843.jpg
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan untuk konsumsi rutin",
+    "alasan": "Berdasarkan tampilan, ini nampak seperti potongan ayam berbalut tepung yang digoreng (nugget/tender). Makanan gorengan tepung umumnya tinggi kalori, lemak (terutama lemak total dari minyak goreng), dan natrium karena bumbu/pengepakan. Cocok sebagai makanan sesekali sebagai camilan/pendamping, tetapi tidak ideal untuk konsumsi harian."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "150 g (perkiraan satu porsi kecil/medium)",
+    "jumlahSajian": "≈1 porsi (~6–8 potong) (perkiraan dari foto)",
+    "kalori": 420,
+    "protein": "22 g",
+    "proteinPersen": "21% (dari total kalori)",
+    "karbohidrat": "25 g",
+    "karbohidratPersen": "24% (dari total kalori)",
+    "gula": "3 g",
+    "serat": "1.5 g",
+    "lemakTotal": "25 g",
+    "lemakJenuh": "5 g",
+    "lemakTakJenuh": "20 g (mono+poli, perkiraan)",
+    "lemakPersen": "54% (dari total kalori)",
+    "kolesterol": "80 mg",
+    "natrium": "900 mg",
+    "vitaminDanMineral": [
+      "Vitamin B3 (Niacin)",
+      "Vitamin B6",
+      "Vitamin B12",
+      "Zat Besi (Fe)",
+      "Zinc (Zn)",
+      "Fosfor",
+      "Selenium",
+      "Kalsium (sedikit, tergantung tepung/breading)"
+    ]
+  },
+  "perbandinganAKG": [
+    {
+      "nama": "Kalori (asumsi AKG 2000 kkal)",
+      "persen": "21%"
+    },
+    {
+      "nama": "Protein (asumsi rekomendasi ~50 g/hari)",
+      "persen": "44%"
+    },
+    {
+      "nama": "Lemak total (asumsi batas 70 g/hari)",
+      "persen": "36%"
+    },
+    {
+      "nama": "Lemak jenuh (asumsi batas <20 g/hari)",
+      "persen": "25%"
+    },
+    {
+      "nama": "Natrium (asumsi batas 2000 mg/hari)",
+      "persen": "45%"
+    },
+    {
+      "nama": "Serat (asumsi kebutuhan 25 g/hari)",
+      "persen": "6%"
+    },
+    {
+      "nama": "Kolesterol (asumsi batas 300 mg/hari)",
+      "persen": "27%"
+    }
+  ],
+  "risikoKesehatan": {
+    "Gula": "rendah",
+    "Lemak": "sedang-tinggi (tergantung minyak & jumlah)",
+    "LemakJenuh": "sedang",
+    "Natrium": "tinggi",
+    "Kalori": "sedang-tinggi (padat energi)",
+    "Proses": "kemungkinan mengandung bahan pengawet/penambah rasa (MSG) jika produk olahan"
+  },
+  "waktuKenyang": "2-3 jam (perkiraan; tergantung metabolisme dan apakah dikonsumsi bersama karbohidrat/lemak lain)",
+  "frekuensiKonsumsi": "Sebaiknya hanya sesekali: 1 kali/minggu atau kurang untuk pola makan seimbang. Jika dikonsumsi sering, batasi porsi dan pilih versi dipanggang/air-fryer.",
+  "ingredients": [
+    "Daging ayam (atau campuran daging olahan)",
+    "Tepung terigu / tepung roti (breading)",
+    "Pati / tepung jagung",
+    "Garam dan bumbu (bawang putih, lada, rempah)",
+    "Minyak goreng (minyak nabati/olah)",
+    "Pengembang (baking powder) dan/atau bahan pengikat (telur, susu bubuk)",
+    "Gula (sedikit, pada bumbu)",
+    "Penguat rasa (monosodium glutamate) dan/atau pengawet (tergantung produk)"
+  ],
+  "tipsSehat": [
+    "Panggang atau gunakan air-fryer daripada deep-fry untuk mengurangi minyak.",
+    "Gunakan breading dari tepung gandum utuh atau remah roti gandum untuk menambah serat.",
+    "Kurangi garam pada bumbu dan sajikan dengan sayuran segar (salad, timun, wortel) untuk menambah serat dan vitamin.",
+    "Pilih saus rendah gula dan rendah garam (mis. yoghurt-based dip) daripada saus manis/berlemak tinggi.",
+    "Batasi porsi dan kombinasikan dengan sumber karbohidrat kompleks (nasi merah/roti gandum) dan sayur."
+  ],
+  "alternatif": [
+    "Dada ayam panggang tanpa kulit atau ayam bakar tanpa banyak minyak",
+    "Fillet ikan panggang/bakar",
+    "Tofu atau tempe panggang / goreng ringan sebagai sumber protein nabati",
+    "Nugget homemade dari dada ayam tanpa kulit dengan tepung gandum dan dipanggang",
+    "Salad protein tinggi (ayam panggang, sayur segar, quinoa atau kacang-kacangan)"
+  ],
+  "catatan": "Analisis ini bersifat perkiraan berdasarkan tampilan foto (potongan ayam berbalut tepung digoreng). Tanpa label nutrisi atau timbangan pasti, nilai numerik adalah estimasi rentang yang umum untuk 150 g produk serupa. Jika perlu presisi, kirimkan informasi label gizi atau berat porsi sebenarnya."
+}
+
