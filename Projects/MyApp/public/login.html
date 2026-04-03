@@ -96,7 +96,8 @@
           ) {
             userFound = true;
 
-            
+            // simpan user
+            localStorage.setItem("loggedInUser", JSON.stringify(users[i]));
 
             break;
           }
