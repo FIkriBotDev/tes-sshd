@@ -35754,3 +35754,143 @@ Kalau mau, saya bisa:
 - Memberi saran keselamatan di peron atau informasi stasiun (jadwal, rute) bila diperlukan.
 Mau saya bantu apa lagi dengan gambar ini?
 
+
+[2026-04-04T07:28:55.288Z]
+Prompt    : 
+Beri saya analisis lengkap tentang makanan pada gambar ini:
+
+1. Deskripsi atau skor kesehatan keseluruhan
+2. Apakah direkomendasikan atau tidak dan alasannya
+3. Rincian nutrisi:
+   - kalori
+   - takaran saji (dalam gram)
+   - jumlah sajian (jika tampak)
+   - protein & persentase terhadap kalori
+   - karbohidrat total, gula, serat & persentase terhadap kalori
+   - lemak total, lemak jenuh, lemak tak jenuh & persentase terhadap kalori
+   - kolesterol
+   - natrium (garam)
+4. Vitamin dan mineral yang terkandung
+5. Perbandingan terhadap AKG (Angka Kecukupan Gizi)
+6. Indikator Risiko Kesehatan (misalnya: tinggi gula, lemak berlebih, dsb)
+7. Perkiraan waktu pencernaan atau kenyang
+8. Rekomendasi frekuensi konsumsi
+9. Analisis bahan/ingredients
+10. Tips penyajian yang lebih sehat
+11. Alternatif makanan yang lebih sehat
+
+Balas dalam format JSON:
+{
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "...",
+    "alasan": "..."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "gram",
+    "jumlahSajian": "jika tersedia",
+    "kalori": 0,
+    "protein": "25g",
+    "proteinPersen": "16.67%",
+    "karbohidrat": "70g",
+    "karbohidratPersen": "46.67%",
+    "gula": "12g",
+    "serat": "5g",
+    "lemakTotal": "20g",
+    "lemakJenuh": "7g",
+    "lemakTakJenuh": "13g",
+    "lemakPersen": "30%",
+    "kolesterol": "60mg",
+    "natrium": "780mg",
+    "vitaminDanMineral": ["Vitamin A", "Vitamin C", "Zat Besi", "Kalsium", "..."]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "30%" },
+    { "nama": "Gula", "persen": "50%" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi",
+    "Lemak": "sedang"
+  },
+  "waktuKenyang": "3 jam",
+  "frekuensiKonsumsi": "Tidak lebih dari 1x/minggu",
+  "ingredients": ["...", "..."],
+  "tipsSehat": ["...", "..."],
+  "alternatif": ["...", "..."]
+}
+
+Image URL : https://uploader.exodusai.biz.id/tmp/930313-1775287690277.webp
+Response  : {
+  "skorKesehatan": {
+    "direkomendasikanAtauTidak": "Tidak direkomendasikan sebagai makanan rutin; boleh dikonsumsi sesekali",
+    "alasan": "Menu terlihat seperti donat berlapis cokelat (donut glazed). Makanan ini tinggi gula sederhana, karbohidrat olahan, dan lemak (termasuk lemak jenuh). Kandungan protein dan serat rendah sehingga tidak ideal sebagai pilihan harian untuk menjaga berat badan atau kontrol glukosa darah."
+  },
+  "rincianNutrisi": {
+    "takaranSaji": "sekitar 70 g (1 buah donat ukuran biasa)",
+    "jumlahSajian": "1",
+    "kalori": 300,
+    "protein": "4 g",
+    "proteinPersen": "5.3%",
+    "karbohidrat": "34 g",
+    "karbohidratPersen": "45.3%",
+    "gula": "14 g (termasuk gula tambahan)",
+    "serat": "1 g",
+    "lemakTotal": "16 g",
+    "lemakJenuh": "6 g",
+    "lemakTakJenuh": "10 g (perkiraan gabungan mono & poli tak jenuh)",
+    "lemakPersen": "48.0%",
+    "kolesterol": "30 mg",
+    "natrium": "300 mg",
+    "vitaminDanMineral": [
+      "Zat Besi (kecil)",
+      "Kalsium (kecil)",
+      "Vitamin B (tiamin, niasin, folat) dari tepung yang diperkaya",
+      "Mineral lain dalam jumlah kecil (fosfor, sedikit magnesium)"
+    ]
+  },
+  "perbandinganAKG": [
+    { "nama": "Kalori", "persen": "15% (dari 2000 kcal/hari)" },
+    { "nama": "Protein", "persen": "8% (dari 50 g/hari)" },
+    { "nama": "Karbohidrat", "persen": "12% (dari 275 g/hari)" },
+    { "nama": "Gula (added sugar)", "persen": "56% (jika batas harian ~25 g WHO)" },
+    { "nama": "Lemak total", "persen": "23% (dari 70 g/hari)" },
+    { "nama": "Lemak jenuh", "persen": "30% (perkiraan dari batas ~20 g/hari)" },
+    { "nama": "Natrium", "persen": "15% (dari 2000 mg/hari)" },
+    { "nama": "Serat", "persen": "4% (dari ~25 g/hari)" }
+  ],
+  "risikoKesehatan": {
+    "Gula": "tinggi — kontribusi gula tambahan signifikan terhadap batas harian",
+    "LemakJenuh": "sedang-tinggi — dapat meningkatkan risiko penyakit kardiovaskular jika sering dikonsumsi",
+    "KarbohidratOlahan": "tinggi — cepat menaikkan gula darah",
+    "Sodium": "sedang — dapat berkontribusi pada asupan natrium harian",
+    "KekuranganProteinSerat": "ya — rendah protein dan serat sehingga kurang mengenyangkan dan kurang menyehatkan bagi komposisi makanan"
+  },
+  "waktuKenyang": "sekitar 1.5–3 jam (bergantung pada individu dan apakah dipadu protein/serat lain)",
+  "frekuensiKonsumsi": "Sebaiknya tidak lebih dari 1x/minggu untuk orang sehat; lebih jarang bagi yang memiliki risiko obesitas, diabetes, atau penyakit jantung",
+  "ingredients": [
+    "Tepung terigu (tepung putih/refined wheat flour)",
+    "Gula (gula pasir / sirup gula dalam glasir)",
+    "Minyak goreng / lemak (minyak nabati atau lemak terhidrogenasi/penyusun lemak setempat)",
+    "Telur",
+    "Susu atau produk susu (susu bubuk atau cair)",
+    "Ragi atau bahan pengembang (untuk donat jenis ragi atau baking powder untuk cake donut)",
+    "Garam",
+    "Cokelat atau lapisan glasir cokelat (cocoa, gula, lemak kakao / bahan pengemulsi seperti lecithin)",
+    "Perisa, pewarna, dan kemungkinan pengawet"
+  ],
+  "tipsSehat": [
+    "Batasi porsi: pilih setengah porsi atau potong donat jadi dua untuk mengurangi kalori/gula.",
+    "Padukan dengan sumber protein/serat (mis. yogurt tanpa gula, segenggam kacang) untuk memperlambat kenaikan gula darah dan meningkatkan rasa kenyang.",
+    "Pilih donat panggang (baked) daripada digoreng bila memungkinkan untuk mengurangi lemak. Namun tetap perhatikan gula pada lapisan.",
+    "Gunakan lapisan cokelat dark dengan persentase kakao tinggi dan lebih sedikit gula, atau glasir tipis.",
+    "Jika membuat sendiri: kurangi gula pada adonan dan glasir, gunakan minyak nabati sehat dan tepung gandum sebagian (whole wheat) untuk menambah serat."
+  ],
+  "alternatif": [
+    "Roti gandum panggang dengan selai kacang alami (lebih banyak protein & serat)",
+    "Greek yogurt dengan potongan buah dan sedikit madu (protein tinggi, lebih puas lama)",
+    "Smoothie buah dengan sayur bayam dan protein bubuk (kontrol gula lebih baik)",
+    "Oat muffin rendah gula berbahan gandum utuh dan buah kering secukupnya",
+    "Buah segar atau potongan apel dengan selai kacang (alternatif manis yang lebih bergizi)"
+  ],
+  "catatan": "Estimasi nutrisi di atas adalah perkiraan berdasarkan penampilan (donat berlapis cokelat). Jumlah pasti dapat berbeda tergantung resep, ukuran, metode pembuatan (digoreng vs dipanggang), dan bahan yang digunakan. Untuk angka akurat, diperlukan label nutrisi atau analisis resep lengkap."
+}
+
