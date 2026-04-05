@@ -1,12 +1,10 @@
 const fs = require("fs");
 
-// Ambil command dari terminal
 const command = process.argv[2];
 const input = process.argv.slice(3).join(" ");
-
 const file = "to-do_list.txt";
 
-// Pastikan file ada
+// pastikan file ada
 if (!fs.existsSync(file)) {
   fs.writeFileSync(file, "");
 }
@@ -33,7 +31,7 @@ if (command === "add") {
   todos.push(input);
   saveTodos(todos);
 
-  console.log("✅ Tugas ditambahkan!");
+  console.log("Tugas ditambahkan!");
 }
 
 // list
@@ -41,11 +39,11 @@ else if (command === "list") {
   const todos = getTodos();
 
   if (todos.length === 0) {
-    console.log("📭 Tidak ada tugas.");
+    console.log("Tidak ada tugas.");
     return;
   }
 
-  console.log("📋 Daftar To-Do:");
+  console.log("Daftar To-Do:");
   todos.forEach((todo, index) => {
     console.log(`${index + 1}. ${todo}`);
   });
@@ -56,21 +54,21 @@ else if (command === "delete") {
   const index = parseInt(process.argv[3]);
 
   if (isNaN(index)) {
-    console.log("❌ Masukkan nomor tugas yang valid!");
+    console.log("Masukkan nomor tugas yang valid!");
     return;
   }
 
   const todos = getTodos();
 
   if (index < 1 || index > todos.length) {
-    console.log("❌ Nomor tidak ditemukan!");
+    console.log("Nomor tidak ditemukan!");
     return;
   }
 
   const deleted = todos.splice(index - 1, 1);
   saveTodos(todos);
 
-  console.log(`🗑️ Tugas dihapus: ${deleted}`);
+  console.log(`Tugas dihapus: ${deleted}`);
 }
 
 // command tidak dikenal
