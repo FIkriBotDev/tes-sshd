@@ -8,7 +8,10 @@ if (!fs.existsSync(file)) {
     fs.writeFileSync(file, "");
 }
 
+// function untuk mengambil data
 function getTodos() {
     const data = fs.readFileSync(file, "utf-8");
-    return data.split("\n").filter(todo => todo)
+    return data.split("\n").filter(todo => todo !== "");
 }
+
+// function untuk 
