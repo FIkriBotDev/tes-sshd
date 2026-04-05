@@ -45,26 +45,26 @@
 </div>
 
 <script>
-let currentFile = "";
-
 async function login() {
+  const username = document.getElementById('user').value;
+  const password = document.getElementById('pass').value;
+
   const res = await fetch('/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ username: user.value, password: pass.value })
+    body: JSON.stringify({ username, password })
   });
+
   const data = await res.json();
+
   if (data.success) {
-    loginPage.style.display = 'none';
-    dashboard.style.display = 'flex';
+    document.getElementById('loginPage').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'flex';
     loadFiles();
     checkStatus();
+  } else {
+    alert('Login gagal');
   }
 }
-
-async function loadFiles() {
-  const res = await fetch('/files');
-  const files = await res.json();
-  fileList.innerHTML = files.map(f => `<div class='cursor-pointer' onclick="openFile('${f}')">${f}</div>`).join('');
-}
+</script>
 </html>
