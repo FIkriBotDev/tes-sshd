@@ -22,7 +22,7 @@ let processStatus = 'stopped'; // 'running' | 'stopped'
 let processLogs = [];
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/home/runner/work/tes-sshd/tes-sshd/Projects/cpanel/public')));
 app.use(session({
   secret: 'cp-secret-x9k2',
   resave: false,
