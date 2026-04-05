@@ -26,4 +26,6 @@ if (command === "add") {
         console.log("Masukkan tugas!");
         process.exit();
     }
+    const todos = getTodos();
+    todos.push()
 }
