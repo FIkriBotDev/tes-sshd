@@ -65,5 +65,7 @@ else if (command === "delete") {
     const deleted = todos.splice(index - 1, 1);
     saveTodos(todos);
 
-    console.log()
+    console.log(`Tugas dihapus: ${deleted}`);
 }
+
+// command tidak dikenal
