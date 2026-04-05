@@ -14,4 +14,7 @@ function getTodos() {
     return data.split("\n").filter(todo => todo !== "");
 }
 
-// function untuk 
+// function untuk menyimpan data
+function saveTodos() {
+    fs.writeFileSync(file, todos.)
+}
