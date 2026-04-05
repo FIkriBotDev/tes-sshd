@@ -1,70 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Control Panel</title>
 </head>
-<body class="bg-black text-green-400">
 
-<div id="login" class="flex items-center justify-center h-screen">
-  <div>
-    <input id="user" placeholder="Username" class="block mb-2 text-black">
-    <input id="pass" type="password" placeholder="Password" class="block mb-2 text-black">
-    <button onclick="login()" class="bg-green-500 px-4 py-2">Login</button>
+<body class="bg-gray-900 text-white">
+
+<div id="loginPage" class="flex h-screen items-center justify-center">
+  <div class="bg-gray-800 p-6 rounded-xl w-80">
+    <h1 class="text-xl mb-4">Login</h1>
+    <input id="user" class="w-full mb-2 p-2 text-black" placeholder="Username" />
+    <input id="pass" type="password" class="w-full mb-4 p-2 text-black" placeholder="Password" />
+    <button onclick="login()" class="w-full bg-green-500 p-2 rounded">Login</button>
   </div>
 </div>
 
-<div id="panel" class="hidden p-4">
-  <h1 class="text-xl mb-4">Control Panel</h1>
+<div id="dashboard" class="hidden flex h-screen">
 
-  <button onclick="start()">Start</button>
-  <button onclick="stop()">Stop</button>
-  <button onclick="restart()">Restart</button>
+  <!-- Sidebar -->
+  <div class="w-64 bg-gray-800 p-4">
+    <h2 class="mb-4 font-bold">Files</h2>
+    <div id="fileList"></div>
+  </div>
 
-  <div id="files" class="mt-4"></div>
-  <textarea id="editor" class="w-full h-40 text-black"></textarea>
-  <button onclick="save()">Save</button>
+  <!-- Main -->
+  <div class="flex-1 p-4 flex flex-col">
+
+    <!-- Controls -->
+    <div class="mb-4">
+      <button onclick="start()" class="bg-green-600 px-3 py-1 mr-2">Start</button>
+      <button onclick="stop()" class="bg-red-600 px-3 py-1 mr-2">Stop</button>
+      <button onclick="restart()" class="bg-yellow-600 px-3 py-1">Restart</button>
+      <span id="status" class="ml-4"></span>
+    </div>
+
+    <!-- Editor -->
+    <textarea id="editor" class="flex-1 bg-black text-green-400 p-2"></textarea>
+    <button onclick="save()" class="bg-blue-600 p-2 mt-2">Save</button>
+
+  </div>
 </div>
 
 <script>
+let currentFile = "";
+
 async function login() {
   const res = await fetch('/login', {
     method: 'POST',
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({username: user.value, password: pass.value})
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username: user.value, password: pass.value })
   });
   const data = await res.json();
   if (data.success) {
-    login.style.display='none';
-    panel.style.display='block';
+    loginPage.style.display = 'none';
+    dashboard.style.display = 'flex';
     loadFiles();
+    checkStatus();
   }
 }
 
 async function loadFiles() {
   const res = await fetch('/files');
   const files = await res.json();
-  filesDiv.innerHTML = files.map(f=>`<div onclick="openFile('${f}')">${f}</div>`).join('');
+  fileList.innerHTML = files.map(f => `<div class='cursor-pointer' onclick="openFile('${f}')">${f}</div>`).join('');
 }
-
-async function openFile(name) {
-  window.current = name;
-  const res = await fetch('/file?name='+name);
-  const data = await res.json();
-  editor.value = data.content;
-}
-
-async function save() {
-  await fetch('/file', {
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({name: current, content: editor.value})
-  });
-}
-
-async function start(){await fetch('/start',{method:'POST'})}
-async function stop(){await fetch('/stop',{method:'POST'})}
-async function restart(){await fetch('/restart',{method:'POST'})}
-</script>
-
-</body>
 </html>
