@@ -1,76 +1,81 @@
 const fs = require("fs");
 
+// Ambil command dari terminal
 const command = process.argv[2];
 const input = process.argv.slice(3).join(" ");
+
 const file = "to-do_list.txt";
 
+// Pastikan file ada
 if (!fs.existsSync(file)) {
-    fs.writeFileSync(file, "");
+  fs.writeFileSync(file, "");
 }
 
-// function untuk mengambil data
+// 🔹 Ambil semua data
 function getTodos() {
-    const data = fs.readFileSync(file, "utf-8");
-    return data.split("\n").filter(todo => todo !== "");
+  const data = fs.readFileSync(file, "utf-8");
+  return data.split("\n").filter(todo => todo !== "");
 }
 
-// function untuk menyimpan data
-function saveTodos() {
-    fs.writeFileSync(file, todos.join("\n"));
+// 🔹 Simpan data
+function saveTodos(todos) {
+  fs.writeFileSync(file, todos.join("\n"));
 }
 
-// COMMAND
-// add
+// 🔹 ADD
 if (command === "add") {
-    if(!input) {
-        console.log("Masukkan tugas!");
-        process.exit();
-    }
-    const todos = getTodos();
-    todos.push(input);
-    saveTodos(todos);
-    console.log("Tugas berhasil ditambahkan");
+  if (!input) {
+    console.log("❌ Masukkan tugas!");
+    process.exit();
+  }
+
+  const todos = getTodos();
+  todos.push(input);
+  saveTodos(todos);
+
+  console.log("✅ Tugas ditambahkan!");
 }
 
-// list
+// 🔹 LIST
 else if (command === "list") {
-    const todos = getTodos();
+  const todos = getTodos();
 
-    if (todos.length === 0) {
-        console.log("Tidak ada tugas");
-        return;
-    }
-    console.log("Daftar To-Do:");
-    todos.forEach((todo, index) => {
-        console.log(`${index + 1}. ${todo}`);
-    });
+  if (todos.length === 0) {
+    console.log("📭 Tidak ada tugas.");
+    return;
+  }
+
+  console.log("📋 Daftar To-Do:");
+  todos.forEach((todo, index) => {
+    console.log(`${index + 1}. ${todo}`);
+  });
 }
 
-// delete
+// 🔹 DELETE
 else if (command === "delete") {
-    const index = parseInt(process.agrv[3]);
+  const index = parseInt(process.argv[3]);
 
-    if (isNaN(index)) {
-        console.log("Masukkan nomor tugas yang valid!");
-        return;
-    }
+  if (isNaN(index)) {
+    console.log("❌ Masukkan nomor tugas yang valid!");
+    return;
+  }
 
-    const todos = getTodos();
+  const todos = getTodos();
 
-    if (index < 1 || index > todos.length) {
-        console.log("Nomor tidak ditemukan");
-        return;
-    }
+  if (index < 1 || index > todos.length) {
+    console.log("❌ Nomor tidak ditemukan!");
+    return;
+  }
 
-    const deleted = todos.splice(index - 1, 1);
-    saveTodos(todos);
+  const deleted = todos.splice(index - 1, 1);
+  saveTodos(todos);
 
-    console.log(`Tugas dihapus: ${deleted}`);
+  console.log(`🗑️ Tugas dihapus: ${deleted}`);
 }
 
-// command tidak dikenal
+// 🔹 COMMAND TIDAK DIKENAL
 else {
-    console.log(`
+  console.log(`
 Gunakan perintah:
 node app.js add "Tugas baru"
 node app.js list
