@@ -41,4 +41,7 @@ else if (command === "list") {
         return;
     }
     console.log("Daftar To-Do:");
+    todos.forEach((todo, index) => {
+        console.log(`${index}`)
+    })
 }
