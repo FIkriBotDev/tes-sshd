@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 const PORT = 5526;
-const TARGET_BASE = "tmp/ok.html";
+const TARGET_BASE = "https://uploader.exodusai.biz.id/tmp/ok.html";
 
 app.get("/", (req, res) => {
     const targetUrl = `${TARGET_BASE}`;
