@@ -96,6 +96,28 @@ app.post('/api/file', requireAuth, (req, res) => {
   });
 });
 
+app.post('/api/mkdir', requireAuth, (req, res) => {
+  const { path: rel } = req.body;
+  const target = path.join(WORK_DIR, rel);
+  if (!target.startsWith(WORK_DIR)) return res.status(403).json({ error: 'Forbidden' });
+
+  fs.mkdir(target, { recursive: true }, (err) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json({ success: true });
+  });
+});
+
+app.delete('/api/file', requireAuth, (req, res) => {
+  const rel = req.query.path || '';
+  const target = path.join(WORK_DIR, rel);
+  if (!target.startsWith(WORK_DIR)) return res.status(403).json({ error: 'Forbidden' });
+
+  fs.rm(target, { recursive: true, force: true }, (err) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json({ success: true });
+  });
+});
+
 // ─── Process Control ─────────────────────────────────────────────────────────
 
 function broadcastStatus() {
