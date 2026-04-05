@@ -73,7 +73,7 @@ else if (command === "delete") {
   console.log(`🗑️ Tugas dihapus: ${deleted}`);
 }
 
-// 🔹 COMMAND TIDAK DIKENAL
+// co DIKENAL
 else {
   console.log(`
 Gunakan perintah:
