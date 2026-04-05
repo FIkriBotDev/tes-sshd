@@ -11,18 +11,18 @@ if (!fs.existsSync(file)) {
   fs.writeFileSync(file, "");
 }
 
-// 🔹 Ambil semua data
+// ambil data
 function getTodos() {
   const data = fs.readFileSync(file, "utf-8");
   return data.split("\n").filter(todo => todo !== "");
 }
 
-// 🔹 Simpan data
+// simpan data
 function saveTodos(todos) {
   fs.writeFileSync(file, todos.join("\n"));
 }
 
-// 🔹 ADD
+// add
 if (command === "add") {
   if (!input) {
     console.log("❌ Masukkan tugas!");
@@ -36,7 +36,7 @@ if (command === "add") {
   console.log("✅ Tugas ditambahkan!");
 }
 
-// 🔹 LIST
+// list
 else if (command === "list") {
   const todos = getTodos();
 
@@ -51,7 +51,7 @@ else if (command === "list") {
   });
 }
 
-// 🔹 DELETE
+// delete
 else if (command === "delete") {
   const index = parseInt(process.argv[3]);
 
@@ -73,7 +73,7 @@ else if (command === "delete") {
   console.log(`🗑️ Tugas dihapus: ${deleted}`);
 }
 
-// co DIKENAL
+// command tidak dikenal
 else {
   console.log(`
 Gunakan perintah:
