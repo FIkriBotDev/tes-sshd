@@ -61,4 +61,9 @@ else if (command === "delete") {
         console.log("Nomor tidak ditemukan");
         return;
     }
+
+    const deleted = todos.splice(index - 1, 1);
+    saveTodos(todos);
+
+    console.log()
 }
