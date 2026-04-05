@@ -42,6 +42,8 @@ else if (command === "list") {
     }
     console.log("Daftar To-Do:");
     todos.forEach((todo, index) => {
-        console.log(`${index}`)
-    })
+        console.log(`${index + 1}. ${todo}`);
+    });
 }
+
+// dele
