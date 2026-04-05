@@ -1,28 +1,27 @@
-// Simple VPS Control Panel (Node.js + Express + WebSocket + xterm.js)
-// WARNING: This is a simplified version for learning. Secure before production.
+// ================= BACKEND: server.js =================
 
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
-const { exec, spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const { spawn } = require('child_process');
 
 const app = express();
 const PORT = 8811;
 
 const BASE_DIR = "/home/runner/work/tes-sshd/tes-sshd/techsprint/";
-let processRef = null;
+let proc = null;
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use(session({
-  secret: 'secret123',
+  secret: 'supersecret',
   resave: false,
   saveUninitialized: true
 }));
 
-// Auth
+// AUTH
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
   if (username === 'server' && password === 'oH6$.P6J92Ls') {
@@ -32,132 +31,168 @@ app.post('/login', (req, res) => {
   res.json({ success: false });
 });
 
-function auth(req, res, next) {
+const auth = (req, res, next) => {
   if (!req.session.auth) return res.status(401).send('Unauthorized');
   next();
-}
+};
 
-// File list
+// FILES
 app.get('/files', auth, (req, res) => {
-  const files = fs.readdirSync(BASE_DIR);
-  res.json(files);
+  res.json(fs.readdirSync(BASE_DIR));
 });
 
-// Read file
 app.get('/file', auth, (req, res) => {
-  const filePath = path.join(BASE_DIR, req.query.name);
-  const content = fs.readFileSync(filePath, 'utf-8');
-  res.json({ content });
+  const file = path.join(BASE_DIR, req.query.name);
+  res.json({ content: fs.readFileSync(file, 'utf-8') });
 });
 
-// Save file
 app.post('/file', auth, (req, res) => {
-  const filePath = path.join(BASE_DIR, req.body.name);
-  fs.writeFileSync(filePath, req.body.content);
+  const file = path.join(BASE_DIR, req.body.name);
+  fs.writeFileSync(file, req.body.content);
   res.json({ success: true });
 });
 
-// Start app
-app.post('/start', auth, (req, res) => {
-  if (processRef) return res.json({ status: 'already running' });
-  processRef = spawn('node', ['index.js'], { cwd: BASE_DIR });
-  res.json({ status: 'started' });
-});
-
-// Stop app
-app.post('/stop', auth, (req, res) => {
-  if (processRef) {
-    processRef.kill();
-    processRef = null;
-  }
-  res.json({ status: 'stopped' });
-});
-
-// Restart
-app.post('/restart', auth, (req, res) => {
-  if (processRef) processRef.kill();
-  setTimeout(() => {
-    processRef = spawn('node', ['index.js'], { cwd: BASE_DIR });
-  }, 3000);
-  res.json({ status: 'restarted' });
-});
-
-// Status
+// PROCESS CONTROL
 app.get('/status', auth, (req, res) => {
-  res.json({ running: !!processRef });
+  res.json({ running: !!proc });
 });
 
-app.listen(PORT, () => console.log(`Panel running on http://localhost:${PORT}`));
+app.post('/start', auth, (req, res) => {
+  if (proc) return res.json({ msg: 'already running' });
+  proc = spawn('node', ['index.js'], { cwd: BASE_DIR });
+  res.json({ msg: 'started' });
+});
 
-/* ================= FRONTEND (public/index.html) ================= */
+app.post('/stop', auth, (req, res) => {
+  if (proc) {
+    proc.kill();
+    proc = null;
+  }
+  res.json({ msg: 'stopped' });
+});
+
+app.post('/restart', auth, (req, res) => {
+  if (proc) proc.kill();
+  setTimeout(() => {
+    proc = spawn('node', ['index.js'], { cwd: BASE_DIR });
+  }, 3000);
+  res.json({ msg: 'restarted' });
+});
+
+app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+
+
+// ================= FRONTEND: public/index.html =================
 
 /*
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Control Panel</title>
 </head>
-<body class="bg-black text-green-400">
 
-<div id="login" class="flex items-center justify-center h-screen">
-  <div>
-    <input id="user" placeholder="Username" class="block mb-2 text-black">
-    <input id="pass" type="password" placeholder="Password" class="block mb-2 text-black">
-    <button onclick="login()" class="bg-green-500 px-4 py-2">Login</button>
+<body class="bg-gray-900 text-white">
+
+<div id="loginPage" class="flex h-screen items-center justify-center">
+  <div class="bg-gray-800 p-6 rounded-xl w-80">
+    <h1 class="text-xl mb-4">Login</h1>
+    <input id="user" class="w-full mb-2 p-2 text-black" placeholder="Username" />
+    <input id="pass" type="password" class="w-full mb-4 p-2 text-black" placeholder="Password" />
+    <button onclick="login()" class="w-full bg-green-500 p-2 rounded">Login</button>
   </div>
 </div>
 
-<div id="panel" class="hidden p-4">
-  <h1 class="text-xl mb-4">Control Panel</h1>
+<div id="dashboard" class="hidden flex h-screen">
 
-  <button onclick="start()">Start</button>
-  <button onclick="stop()">Stop</button>
-  <button onclick="restart()">Restart</button>
+  <!-- Sidebar -->
+  <div class="w-64 bg-gray-800 p-4">
+    <h2 class="mb-4 font-bold">Files</h2>
+    <div id="fileList"></div>
+  </div>
 
-  <div id="files" class="mt-4"></div>
-  <textarea id="editor" class="w-full h-40 text-black"></textarea>
-  <button onclick="save()">Save</button>
+  <!-- Main -->
+  <div class="flex-1 p-4 flex flex-col">
+
+    <!-- Controls -->
+    <div class="mb-4">
+      <button onclick="start()" class="bg-green-600 px-3 py-1 mr-2">Start</button>
+      <button onclick="stop()" class="bg-red-600 px-3 py-1 mr-2">Stop</button>
+      <button onclick="restart()" class="bg-yellow-600 px-3 py-1">Restart</button>
+      <span id="status" class="ml-4"></span>
+    </div>
+
+    <!-- Editor -->
+    <textarea id="editor" class="flex-1 bg-black text-green-400 p-2"></textarea>
+    <button onclick="save()" class="bg-blue-600 p-2 mt-2">Save</button>
+
+  </div>
 </div>
 
 <script>
+let currentFile = "";
+
 async function login() {
   const res = await fetch('/login', {
     method: 'POST',
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({username: user.value, password: pass.value})
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username: user.value, password: pass.value })
   });
   const data = await res.json();
   if (data.success) {
-    login.style.display='none';
-    panel.style.display='block';
+    loginPage.style.display = 'none';
+    dashboard.style.display = 'flex';
     loadFiles();
+    checkStatus();
   }
 }
 
 async function loadFiles() {
   const res = await fetch('/files');
   const files = await res.json();
-  filesDiv.innerHTML = files.map(f=>`<div onclick="openFile('${f}')">${f}</div>`).join('');
+  fileList.innerHTML = files.map(f => `<div class='cursor-pointer' onclick="openFile('${f}')">${f}</div>`).join('');
 }
 
 async function openFile(name) {
-  window.current = name;
-  const res = await fetch('/file?name='+name);
+  currentFile = name;
+  const res = await fetch('/file?name=' + name);
   const data = await res.json();
   editor.value = data.content;
 }
 
 async function save() {
   await fetch('/file', {
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({name: current, content: editor.value})
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: currentFile, content: editor.value })
   });
+  alert('Saved');
 }
 
-async function start(){await fetch('/start',{method:'POST'})}
-async function stop(){await fetch('/stop',{method:'POST'})}
-async function restart(){await fetch('/restart',{method:'POST'})}
+async function start() {
+  await fetch('/start', { method: 'POST' });
+  checkStatus();
+}
+
+async function stop() {
+  await fetch('/stop', { method: 'POST' });
+  checkStatus();
+}
+
+async function restart() {
+  await fetch('/restart', { method: 'POST' });
+  checkStatus();
+}
+
+async function checkStatus() {
+  const res = await fetch('/status');
+  const data = await res.json();
+  status.innerText = data.running ? 'Running' : 'Stopped';
+}
+
+setInterval(checkStatus, 3000);
 </script>
 
 </body>
