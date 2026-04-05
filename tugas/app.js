@@ -5,5 +5,9 @@ const input = process.agrv.slice(3).join(" ");
 const file = "to-do_list.txt";
 
 if (!fs.existsSync(file)) {
-    fs.writeFileSync(fil)
+    fs.writeFileSync(file, "");
+}
+
+function getTodos() {
+    const data = fs.re
 }
