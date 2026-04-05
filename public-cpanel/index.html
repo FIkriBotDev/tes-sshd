@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Server Control Panel</title>
+<script src="https://cdn.jsdelivr.net/npm/@xterm/xterm@5.3.0/lib/xterm.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xterm/xterm@5.3.0/css/xterm.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/@xterm/addon-fit@0.10.0/lib/addon-fit.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { mono: ['JetBrains Mono', 'monospace'], sans: ['Inter', 'sans-serif'] },
+      colors: {
+        cyber: { 50:'#f0fdf9',100:'#ccfbef',200:'#99f6e0',300:'#5eead4',400:'#2dd4bf',500:'#14b8a6',600:'#0d9488',700:'#0f766e',800:'#115e59',900:'#134e4a' },
+        dark: { 900:'#0a0e1a',800:'#0f1629',700:'#141d35',600:'#1a2540',500:'#1e2d4a',400:'#243356',300:'#2d3f6b' }
+      }
+    }
+  }
+}
+</script>
+<style>
+* { box-sizing: border-box; }
+body { background: #0a0e1a; font-family: 'Inter', sans-serif; overflow: hidden; }
+.glow { box-shadow: 0 0 20px rgba(20,184,166,0.3); }
+.glow-sm { box-shadow: 0 0 10px rgba(20,184,166,0.2); }
+.border-cyber { border-color: rgba(20,184,166,0.3); }
+.bg-grid {
+  background-image: linear-gradient(rgba(20,184,166,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20,184,166,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.tab-active { background: rgba(20,184,166,0.15); border-bottom: 2px solid #14b8a6; color: #5eead4; }
+.tab-inactive { color: #64748b; border-bottom: 2px solid transparent; }
+.tab-inactive:hover { color: #94a3b8; background: rgba(255,255,255,0.03); }
+.btn-cyber {
+  background: linear-gradient(135deg, rgba(20,184,166,0.2), rgba(13,148,136,0.1));
+  border: 1px solid rgba(20,184,166,0.4);
+  color: #5eead4;
+  transition: all 0.2s;
+}
+.btn-cyber:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(20,184,166,0.35), rgba(13,148,136,0.2));
+  box-shadow: 0 0 15px rgba(20,184,166,0.3);
+}
+.btn-cyber:disabled { opacity: 0.3; cursor: not-allowed; }
+.btn-danger { background: linear-gradient(135deg, rgba(239,68,68,0.2), rgba(185,28,28,0.1)); border: 1px solid rgba(239,68,68,0.4); color: #fca5a5; }
+.btn-danger:hover:not(:disabled) { background: linear-gradient(135deg, rgba(239,68,68,0.35), rgba(185,28,28,0.2)); box-shadow: 0 0 15px rgba(239,68,68,0.3); }
+.btn-danger:disabled { opacity: 0.3; cursor: not-allowed; }
+.btn-warn { background: linear-gradient(135deg, rgba(234,179,8,0.2), rgba(161,98,7,0.1)); border: 1px solid rgba(234,179,8,0.4); color: #fde047; }
+.btn-warn:hover:not(:disabled) { background: linear-gradient(135deg, rgba(234,179,8,0.35), rgba(161,98,7,0.2)); box-shadow: 0 0 15px rgba(234,179,8,0.3); }
+.btn-warn:disabled { opacity: 0.3; cursor: not-allowed; }
+.file-item:hover { background: rgba(20,184,166,0.08); }
+.file-item.selected { background: rgba(20,184,166,0.15); border-left: 2px solid #14b8a6; }
+.scrollbar::-webkit-scrollbar { width: 4px; height: 4px; }
+.scrollbar::-webkit-scrollbar-track { background: transparent; }
+.scrollbar::-webkit-scrollbar-thumb { background: rgba(20,184,166,0.3); border-radius: 2px; }
+.pulse-dot { animation: pulse-anim 2s infinite; }
+@keyframes pulse-anim { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+#login-screen { transition: opacity 0.4s; }
+.editor-area { font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.6; resize: none; outline: none; }
+.xterm-viewport { overflow-y: auto !important; }
+#terminal-container .xterm { height: 100%; }
+.status-badge-running { background: rgba(20,184,166,0.15); border: 1px solid rgba(20,184,166,0.4); color: #5eead4; }
+.status-badge-stopped { background: rgba(100,116,139,0.15); border: 1px solid rgba(100,116,139,0.3); color: #94a3b8; }
+.log-line { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #94a3b8; line-height: 1.5; }
+.log-line.err { color: #fca5a5; }
+@media (max-width: 768px) {
+  #sidebar { width: 100% !important; position: fixed; z-index: 50; transform: translateX(-100%); transition: transform 0.3s; }
+  #sidebar.open { transform: translateX(0); }
+  #main-content { margin-left: 0 !important; }
+}
+</style>
+</head>
+<body class="bg-grid min-h-screen text-slate-200">
+
+<!-- LOGIN SCREEN -->
+<div id="login-screen" class="fixed inset-0 flex items-center justify-center z-50" style="background:#0a0e1a;">
+  <div class="relative w-full max-w-md mx-4">
+    <div class="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-60"></div>
+    <div class="absolute -bottom-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-60"></div>
+    <div class="border border-cyber rounded-xl p-8 glow" style="background:rgba(15,22,41,0.95);">
+      <div class="text-center mb-8">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style="background:rgba(20,184,166,0.1);border:1px solid rgba(20,184,166,0.3);">
+          <svg class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+        <h1 class="text-2xl font-bold text-white font-mono tracking-wider">SERVER<span class="text-cyan-400">_</span>PANEL</h1>
+        <p class="text-slate-500 text-sm mt-1 font-mono">v1.0.0 // SECURE ACCESS</p>
+      </div>
+      <div class="space-y-4">
+        <div>
+          <label class="block text-xs font-mono text-cyan-600 mb-1 uppercase tracking-widest">Username</label>
+          <input id="login-user" type="text" autocomplete="username"
+            class="w-full border border-cyber rounded-lg px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-cyan-400 transition-all"
+            style="background:rgba(10,14,26,0.8);" placeholder="enter username"/>
+        </div>
+        <div>
+          <label class="block text-xs font-mono text-cyan-600 mb-1 uppercase tracking-widest">Password</label>
+          <div class="relative">
+            <input id="login-pass" type="password" autocomplete="current-password"
+              class="w-full border border-cyber rounded-lg px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-cyan-400 transition-all pr-12"
+              style="background:rgba(10,14,26,0.8);" placeholder="enter password"/>
+            <button onclick="togglePass()" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-cyan-400 transition-colors">
+              <svg id="eye-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="login-error" class="hidden text-red-400 text-xs font-mono text-center py-2 px-3 rounded-lg" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2);">
+          Invalid credentials
+        </div>
+        <button onclick="doLogin()" id="login-btn"
+          class="w-full btn-cyber rounded-lg py-3 font-mono font-semibold text-sm uppercase tracking-widest transition-all mt-2">
+          <span id="login-btn-text">AUTHENTICATE</span>
+        </button>
+      </div>
+      <p class="text-center text-slate-600 text-xs font-mono mt-6">AUTHORIZED ACCESS ONLY</p>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN DASHBOARD -->
+<div id="dashboard" class="hidden fixed inset-0 flex flex-col">
+  <!-- Top Bar -->
+  <header class="flex items-center justify-between px-4 py-3 border-b border-cyber flex-shrink-0" style="background:rgba(10,14,26,0.95);backdrop-filter:blur(10px);">
+    <div class="flex items-center gap-3">
+      <button class="md:hidden text-slate-400 hover:text-cyan-400 p-1" onclick="toggleSidebar()">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <div class="flex items-center gap-2">
+        <div class="w-2 h-2 rounded-full bg-cyan-400 pulse-dot"></div>
+        <span class="font-mono font-bold text-white text-sm tracking-wider">SERVER<span class="text-cyan-400">_</span>PANEL</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <div id="status-badge" class="status-badge-stopped flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono">
+        <div id="status-dot" class="w-2 h-2 rounded-full bg-slate-500"></div>
+        <span id="status-text">STOPPED</span>
+      </div>
+      <button onclick="doLogout()" class="text-slate-500 hover:text-red-400 transition-colors p-1" title="Logout">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="flex flex-1 overflow-hidden">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="w-64 flex-shrink-0 border-r border-cyber flex flex-col" style="background:rgba(10,14,26,0.9);">
+      <div class="px-3 py-3 border-b border-cyber flex items-center justify-between">
+        <span class="text-xs font-mono text-cyan-600 uppercase tracking-widest">File Manager</span>
+        <button onclick="refreshFiles()" class="text-slate-500 hover:text-cyan-400 transition-colors" title="Refresh">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+        </button>
+      </div>
+      <div id="breadcrumb" class="px-3 py-2 text-xs font-mono text-slate-500 border-b border-cyber truncate">~/techsprint</div>
+      <div id="file-list" class="flex-1 overflow-y-auto scrollbar py-1"></div>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content" class="flex-1 flex flex-col overflow-hidden">
+      <!-- Tabs -->
+      <div class="flex border-b border-cyber flex-shrink-0" style="background:rgba(10,14,26,0.8);">
+        <button onclick="switchTab('editor')" id="tab-editor" class="tab-active px-5 py-3 text-sm font-mono transition-all">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            Editor
+          </span>
+        </button>
+        <button onclick="switchTab('terminal')" id="tab-terminal" class="tab-inactive px-5 py-3 text-sm font-mono transition-all">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Terminal
+          </span>
+        </button>
+        <button onclick="switchTab('status')" id="tab-status" class="tab-inactive px-5 py-3 text-sm font-mono transition-all">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            Status
+          </span>
+        </button>
+      </div>
+
+      <!-- EDITOR TAB -->
+      <div id="panel-editor" class="flex-1 flex flex-col overflow-hidden">
+        <div class="flex items-center justify-between px-4 py-2 border-b border-cyber flex-shrink-0" style="background:rgba(15,22,41,0.6);">
+          <div class="flex items-center gap-2">
+            <span id="editor-filename" class="text-xs font-mono text-slate-400">No file selected</span>
+            <span id="editor-modified" class="hidden text-xs font-mono text-yellow-400">&#9679; unsaved</span>
+          </div>
+          <button onclick="saveFile()" id="save-btn" class="btn-cyber px-4 py-1.5 rounded-lg text-xs font-mono font-semibold uppercase tracking-wider" disabled>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/></svg>
+              Save
+            </span>
+          </button>
+        </div>
+        <div class="flex-1 overflow-hidden relative">
+          <div id="editor-placeholder" class="absolute inset-0 flex flex-col items-center justify-center text-slate-600">
+            <svg class="w-16 h-16 mb-4 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <p class="font-mono text-sm">Select a file to edit</p>
+          </div>
+          <textarea id="code-editor" class="editor-area hidden w-full h-full bg-transparent text-slate-200 p-4 scrollbar"
+            style="background:rgba(10,14,26,0.5);" spellcheck="false"
+            oninput="onEditorChange()"></textarea>
+        </div>
+      </div>
+
+      <!-- TERMINAL TAB -->
+      <div id="panel-terminal" class="hidden flex-1 flex flex-col overflow-hidden">
+        <div class="flex items-center justify-between px-4 py-2 border-b border-cyber flex-shrink-0" style="background:rgba(15,22,41,0.6);">
+          <span class="text-xs font-mono text-slate-400 flex items-center gap-2">
+            <div class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></div>
+            runner@server
+          </span>
+          <button onclick="clearTerminal()" class="text-slate-500 hover:text-cyan-400 text-xs font-mono transition-colors">clear</button>
+        </div>
+        <div id="terminal-container" class="flex-1 overflow-hidden p-2" style="background:#0a0e1a;"></div>
+      </div>
+
+      <!-- STATUS TAB -->
+      <div id="panel-status" class="hidden flex-1 flex flex-col overflow-hidden p-4 gap-4">
+        <div class="border border-cyber rounded-xl p-5 glow-sm" style="background:rgba(15,22,41,0.7);">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-sm font-mono font-semibold text-white uppercase tracking-widest mb-1">Process Control</h2>
+              <div class="flex items-center gap-2">
+                <div id="proc-dot" class="w-3 h-3 rounded-full bg-slate-500"></div>
+                <span id="proc-status-text" class="font-mono text-sm text-slate-400">STOPPED</span>
+              </div>
+              <p class="text-xs font-mono text-slate-600 mt-1">node index.js</p>
+            </div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <button id="btn-start" onclick="ctrlStart()" class="btn-cyber px-4 py-2 rounded-lg text-xs font-mono font-semibold uppercase tracking-wider transition-all">
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  Start
+                </span>
+              </button>
+              <button id="btn-restart" onclick="ctrlRestart()" class="btn-warn px-4 py-2 rounded-lg text-xs font-mono font-semibold uppercase tracking-wider transition-all" disabled>
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                  Restart
+                </span>
+              </button>
+              <button id="btn-stop" onclick="ctrlStop()" class="btn-danger px-4 py-2 rounded-lg text-xs font-mono font-semibold uppercase tracking-wider transition-all" disabled>
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h12v12H6z"/></svg>
+                  Stop
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="border border-cyber rounded-xl p-4" style="background:rgba(15,22,41,0.7);">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <div>
+              <p class="text-xs font-mono text-cyan-600 uppercase tracking-widest mb-1">Project URL</p>
+              <a href="https://techsprint.exodusai.biz.id" target="_blank" class="font-mono text-sm text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-1.5">
+                https://techsprint.exodusai.biz.id
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+            <div id="url-status" class="text-xs font-mono text-slate-500 px-3 py-1 rounded-full border border-slate-700">UNKNOWN</div>
+          </div>
+        </div>
+
+        <div class="border border-cyber rounded-xl flex flex-col flex-1 overflow-hidden" style="background:rgba(10,14,26,0.8);">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-cyber flex-shrink-0">
+            <span class="text-xs font-mono text-cyan-600 uppercase tracking-widest">Process Logs</span>
+            <button onclick="clearLogs()" class="text-slate-500 hover:text-cyan-400 text-xs font-mono transition-colors">clear</button>
+          </div>
+          <div id="log-container" class="flex-1 overflow-y-auto scrollbar p-3 space-y-0.5"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ── State ──────────────────────────────────────────────────────────────────
+  var ws = null;
+  var term = null;
+  var fitAddon = null;
+  var currentFile = null;
+  var editorDirty = false;
+  var currentPath = '';
+
+  // ── Init ───────────────────────────────────────────────────────────────────
+  window.addEventListener('DOMContentLoaded', function () {
+    fetch('/api/check-auth')
+      .then(function (r) { return r.json(); })
+      .then(function (d) { if (d.authenticated) showDashboard(); });
+
+    document.getElementById('login-pass').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') doLogin();
+    });
+    document.getElementById('login-user').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') document.getElementById('login-pass').focus();
+    });
+  });
+
+  // ── Auth ───────────────────────────────────────────────────────────────────
+  window.togglePass = function () {
+    var inp = document.getElementById('login-pass');
+    inp.type = inp.type === 'password' ? 'text' : 'password';
+  };
+
+  window.doLogin = function () {
+    var btn = document.getElementById('login-btn');
+    var errEl = document.getElementById('login-error');
+    var u = document.getElementById('login-user').value.trim();
+    var p = document.getElementById('login-pass').value;
+    errEl.classList.add('hidden');
+    btn.disabled = true;
+    document.getElementById('login-btn-text').textContent = 'AUTHENTICATING...';
+
+    fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username: u, password: p })
+    })
+      .then(function (r) {
+        if (r.ok) { showDashboard(); return; }
+        errEl.classList.remove('hidden');
+        btn.disabled = false;
+        document.getElementById('login-btn-text').textContent = 'AUTHENTICATE';
+      })
+      .catch(function () {
+        errEl.textContent = 'Connection error';
+        errEl.classList.remove('hidden');
+        btn.disabled = false;
+        document.getElementById('login-btn-text').textContent = 'AUTHENTICATE';
+      });
+  };
+
+  window.doLogout = function () {
+    fetch('/api/logout', { method: 'POST' }).finally(function () {
+      if (ws) { ws.close(); ws = null; }
+      term = null; fitAddon = null; currentFile = null; editorDirty = false; currentPath = '';
+      document.getElementById('dashboard').classList.add('hidden');
+      var ls = document.getElementById('login-screen');
+      ls.style.opacity = '1';
+      ls.style.pointerEvents = '';
+      ls.classList.remove('hidden');
+      document.getElementById('login-user').value = '';
+      document.getElementById('login-pass').value = '';
+    });
+  };
+
+  // ── Dashboard ──────────────────────────────────────────────────────────────
+  function showDashboard() {
+    var ls = document.getElementById('login-screen');
+    ls.style.opacity = '0';
+    ls.style.pointerEvents = 'none';
+    setTimeout(function () { ls.classList.add('hidden'); }, 400);
+    document.getElementById('dashboard').classList.remove('hidden');
+    initWebSocket();
+    refreshFiles();
+    loadStatus();
+  }
+
+  // ── WebSocket ──────────────────────────────────────────────────────────────
+  function initWebSocket() {
+    var proto = location.protocol === 'https:' ? 'wss' : 'ws';
+    ws = new WebSocket(proto + '://' + location.host);
+
+    ws.onopen = function () {
+      ws.send(JSON.stringify({ type: 'auth', token: 'cp-auth-ok' }));
+      ws.send(JSON.stringify({ type: 'subscribe-status' }));
+    };
+
+    ws.onmessage = function (e) {
+      var msg = JSON.parse(e.data);
+      if (msg.type === 'status') updateStatus(msg.status);
+      if (msg.type === 'log') appendLog(msg.line);
+      if (msg.type === 'terminal-data' && term) term.write(msg.data);
+      if (msg.type === 'terminal-exit' && term) term.write('\r\n[Terminal closed]\r\n');
+    };
+
+    ws.onclose = function () {
+      var dash = document.getElementById('dashboard');
+      if (dash && !dash.classList.contains('hidden')) {
+        setTimeout(initWebSocket, 3000);
+      }
+    };
+  }
+
+  // ── Tabs ───────────────────────────────────────────────────────────────────
+  window.switchTab = function (tab) {
+    ['editor', 'terminal', 'status'].forEach(function (t) {
+      var panel = document.getElementById('panel-' + t);
+      panel.classList.toggle('hidden', t !== tab);
+      panel.classList.toggle('flex', t === tab);
+      var btn = document.getElementById('tab-' + t);
+      btn.className = (t === tab ? 'tab-active' : 'tab-inactive') + ' px-5 py-3 text-sm font-mono transition-all';
+    });
+    if (tab === 'terminal') initTerminal();
+    if (tab === 'status') loadStatus();
+  };
+
+  // ── Sidebar ────────────────────────────────────────────────────────────────
+  window.toggleSidebar = function () {
+    document.getElementById('sidebar').classList.toggle('open');
+  };
+
+  // ── File Manager ───────────────────────────────────────────────────────────
+  window.refreshFiles = function (subPath) {
+    if (subPath !== undefined) currentPath = subPath;
+    fetch('/api/files?path=' + encodeURIComponent(currentPath))
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        document.getElementById('breadcrumb').textContent =
+          '~/' + (currentPath ? 'techsprint/' + currentPath : 'techsprint');
+        var list = document.getElementById('file-list');
+        list.innerHTML = '';
+
+        if (currentPath) {
+          var up = document.createElement('div');
+          up.className = 'file-item flex items-center gap-2 px-3 py-2 cursor-pointer text-slate-400 hover:text-cyan-400 transition-colors';
+          up.innerHTML = '<svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg><span class="text-xs font-mono">..</span>';
+          up.onclick = function () {
+            refreshFiles(currentPath.includes('/') ? currentPath.substring(0, currentPath.lastIndexOf('/')) : '');
+          };
+          list.appendChild(up);
+        }
+
+        d.items.sort(function (a, b) {
+          if (a.type !== b.type) return a.type === 'dir' ? -1 : 1;
+          return a.name.localeCompare(b.name);
+        }).forEach(function (item) {
+          var el = document.createElement('div');
+          el.className = 'file-item flex items-center gap-2 px-3 py-2 cursor-pointer transition-colors' +
+            (currentFile === item.path ? ' selected' : '');
+          var icon = item.type === 'dir'
+            ? '<svg class="w-4 h-4 flex-shrink-0 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/></svg>'
+            : '<svg class="w-4 h-4 flex-shrink-0 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>';
+          el.innerHTML = icon + '<span class="text-xs font-mono text-slate-300 truncate">' + item.name + '</span>';
+          el.onclick = (function (i) {
+            return function () {
+              if (i.type === 'dir') { refreshFiles(i.path); }
+              else { openFile(i.path, i.name, el); }
+            };
+          }(item));
+          list.appendChild(el);
+        });
+      })
+      .catch(function (err) { console.error('refreshFiles error', err); });
+  };
+
+  // ── Editor ─────────────────────────────────────────────────────────────────
+  function openFile(filePath, fileName, elClicked) {
+    if (editorDirty && !confirm('Discard unsaved changes?')) return;
+    fetch('/api/file?path=' + encodeURIComponent(filePath))
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        currentFile = filePath;
+        editorDirty = false;
+        document.getElementById('editor-filename').textContent = fileName;
+        document.getElementById('editor-modified').classList.add('hidden');
+        document.getElementById('editor-placeholder').classList.add('hidden');
+        var ta = document.getElementById('code-editor');
+        ta.classList.remove('hidden');
+        ta.value = d.content;
+        document.getElementById('save-btn').disabled = false;
+        switchTab('editor');
+        document.querySelectorAll('.file-item').forEach(function (el) { el.classList.remove('selected'); });
+        if (elClicked) elClicked.classList.add('selected');
+      })
+      .catch(function (err) { console.error('openFile error', err); });
+  }
+
+  window.onEditorChange = function () {
+    if (!editorDirty) {
+      editorDirty = true;
+      document.getElementById('editor-modified').classList.remove('hidden');
+    }
+  };
+
+  window.saveFile = function () {
+    if (!currentFile) return;
+    var content = document.getElementById('code-editor').value;
+    fetch('/api/file', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ path: currentFile, content: content })
+    })
+      .then(function (r) {
+        if (r.ok) {
+          editorDirty = false;
+          document.getElementById('editor-modified').classList.add('hidden');
+        }
+      })
+      .catch(function (err) { console.error('saveFile error', err); });
+  };
+
+  document.addEventListener('keydown', function (e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); window.saveFile(); }
+  });
+
+  // ── Terminal ───────────────────────────────────────────────────────────────
+  function initTerminal() {
+    if (term) { fitAddon.fit(); return; }
+    term = new Terminal({
+      theme: { background: '#0a0e1a', foreground: '#e2e8f0', cursor: '#14b8a6', selectionBackground: 'rgba(20,184,166,0.3)' },
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: 13,
+      lineHeight: 1.4,
+      cursorBlink: true,
+      scrollback: 1000
+    });
+    fitAddon = new FitAddon.FitAddon();
+    term.loadAddon(fitAddon);
+    term.open(document.getElementById('terminal-container'));
+    fitAddon.fit();
+
+    function sendTermInit() {
+      ws.send(JSON.stringify({ type: 'terminal-init', cols: term.cols, rows: term.rows }));
+    }
+
+    if (ws && ws.readyState === WebSocket.OPEN) {
+      sendTermInit();
+    } else if (ws) {
+      ws.addEventListener('open', sendTermInit, { once: true });
+    }
+
+    term.onData(function (data) {
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        ws.send(JSON.stringify({ type: 'terminal-input', data: data }));
+      }
+    });
+
+    var ro = new ResizeObserver(function () {
+      if (!fitAddon) return;
+      fitAddon.fit();
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        ws.send(JSON.stringify({ type: 'terminal-resize', cols: term.cols, rows: term.rows }));
+      }
+    });
+    ro.observe(document.getElementById('terminal-container'));
+  }
+
+  window.clearTerminal = function () {
+    if (term) term.clear();
+  };
+
+  // ── Status / Process Control ───────────────────────────────────────────────
+  function loadStatus() {
+    fetch('/api/status')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        updateStatus(d.status);
+        document.getElementById('log-container').innerHTML = '';
+        d.logs.forEach(function (l) { appendLog(l); });
+      })
+      .catch(function (err) { console.error('loadStatus error', err); });
+  }
+
+  function updateStatus(status) {
+    var running = status === 'running';
+    document.getElementById('status-badge').className =
+      (running ? 'status-badge-running' : 'status-badge-stopped') +
+      ' flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono';
+    document.getElementById('status-dot').className =
+      running ? 'w-2 h-2 rounded-full bg-cyan-400 pulse-dot' : 'w-2 h-2 rounded-full bg-slate-500';
+    document.getElementById('status-text').textContent = running ? 'RUNNING' : 'STOPPED';
+    document.getElementById('proc-dot').className =
+      running ? 'w-3 h-3 rounded-full bg-cyan-400 pulse-dot' : 'w-3 h-3 rounded-full bg-slate-500';
+    document.getElementById('proc-status-text').textContent = running ? 'RUNNING' : 'STOPPED';
+    document.getElementById('proc-status-text').className =
+      running ? 'font-mono text-sm text-cyan-400' : 'font-mono text-sm text-slate-400';
+    document.getElementById('btn-start').disabled = running;
+    document.getElementById('btn-restart').disabled = !running;
+    document.getElementById('btn-stop').disabled = !running;
+  }
+
+  function appendLog(line) {
+    var container = document.getElementById('log-container');
+    var el = document.createElement('div');
+    el.className = 'log-line' + (/error|err|exception|fatal/i.test(line) ? ' err' : '');
+    el.textContent = line.trimEnd ? line.trimEnd() : line.replace(/\s+$/, '');
+    container.appendChild(el);
+    container.scrollTop = container.scrollHeight;
+  }
+
+  window.clearLogs = function () {
+    document.getElementById('log-container').innerHTML = '';
+  };
+
+  window.ctrlStart = function () { fetch('/api/start', { method: 'POST' }); };
+  window.ctrlStop = function () { fetch('/api/stop', { method: 'POST' }); };
+  window.ctrlRestart = function () { fetch('/api/restart', { method: 'POST' }); };
+
+}());
+</script>
+</body>
+</html>
