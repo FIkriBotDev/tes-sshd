@@ -36,5 +36,9 @@ if (command === "add") {
 else if (command === "list") {
     const todos = getTodos();
 
-    if (todos)
+    if (todos.length === 0) {
+        console.log("Tidak ada tugas");
+        return;
+    }
+    console.log("Daftar To-Do:");
 }
