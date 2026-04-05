@@ -3,7 +3,7 @@ const { ifError } = require("assert");
 const express = require("express");
 const app = express();
 
-const PORT = 1124;
+const PORT = 1231;
 const TARGET_BASE = "https://uploader.exodusai.biz.id/tmp/ok.html";
 
 // redirect otomatis (0 detik)
