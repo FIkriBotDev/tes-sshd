@@ -74,5 +74,5 @@ else {
         Gunakan perintah:
         node app.js add "Tugas baru"
         node app.js list
-        node app.js delete`)
+        node app.js delete 1`);
 }
