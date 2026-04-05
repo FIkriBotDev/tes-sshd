@@ -21,4 +21,9 @@ function saveTodos() {
 
 // COMMAND
 // add
-if
+if (command === "add") {
+    if(!input) {
+        console.log("Masukkan tugas!");
+        process.exit();
+    }
+}
