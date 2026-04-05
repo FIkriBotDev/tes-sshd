@@ -33,4 +33,8 @@ if (command === "add") {
 }
 
 // list
+else if (command === "list") {
+    const todos = getTodos();
 
+    if (todos)
+}
