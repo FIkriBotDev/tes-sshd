@@ -57,5 +57,8 @@ else if (command === "delete") {
 
     const todos = getTodos();
 
-    if (index < 1 )
+    if (index < 1 || index > todos.length) {
+        console.log("Nomor tidak ditemukan");
+        return;
+    }
 }
