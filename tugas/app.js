@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const command = process.argv[2];
-const input = process.agrv.slice(3).join(" ");
+const input = process.argv.slice(3).join(" ");
 const file = "to-do_list.txt";
 
 if (!fs.existsSync(file)) {
@@ -71,8 +71,9 @@ else if (command === "delete") {
 // command tidak dikenal
 else {
     console.log(`
-        Gunakan perintah:
-        node app.js add "Tugas baru"
-        node app.js list
-        node app.js delete 1`);
+Gunakan perintah:
+node app.js add "Tugas baru"
+node app.js list
+node app.js delete 1
+`);
 }
