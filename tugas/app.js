@@ -69,3 +69,10 @@ else if (command === "delete") {
 }
 
 // command tidak dikenal
+else {
+    console.log(`
+        Gunakan perintah:
+        node app.js add "Tugas baru"
+        node app.js list
+        node app.js delete`)
+}
