@@ -51,6 +51,11 @@ else if (command === "delete") {
     const index = parseInt(process.agrv[3]);
 
     if (isNaN(index)) {
-        co
+        console.log("Masukkan nomor tugas yang valid!");
+        return;
     }
+
+    const todos = getTodos();
+
+    if (index < 1 )
 }
