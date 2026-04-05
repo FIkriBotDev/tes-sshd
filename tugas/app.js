@@ -27,5 +27,10 @@ if (command === "add") {
         process.exit();
     }
     const todos = getTodos();
-    todos.push()
+    todos.push(input);
+    saveTodos(todos);
+    console.log("Tugas berhasil ditambahkan");
 }
+
+// list
+
