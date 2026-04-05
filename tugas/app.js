@@ -9,5 +9,6 @@ if (!fs.existsSync(file)) {
 }
 
 function getTodos() {
-    const data = fs.re
+    const data = fs.readFileSync(file, "utf-8");
+    return data.split("\n").filter(todo => todo)
 }
