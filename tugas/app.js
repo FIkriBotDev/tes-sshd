@@ -46,4 +46,4 @@ else if (command === "list") {
     });
 }
 
-// dele
+// delete
