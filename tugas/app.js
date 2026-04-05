@@ -47,3 +47,10 @@ else if (command === "list") {
 }
 
 // delete
+else if (command === "delete") {
+    const index = parseInt(process.agrv[3]);
+
+    if (isNaN(index)) {
+        co
+    }
+}
