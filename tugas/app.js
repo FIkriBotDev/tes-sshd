@@ -16,5 +16,9 @@ function getTodos() {
 
 // function untuk menyimpan data
 function saveTodos() {
-    fs.writeFileSync(file, todos.)
+    fs.writeFileSync(file, todos.join("\n"));
 }
+
+// COMMAND
+// add
+if
