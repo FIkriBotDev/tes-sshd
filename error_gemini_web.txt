@@ -2325,3 +2325,14 @@ b.send(JSON.stringify(a));c.classList.add("feedback-hidden");d.classList.remove(
   "status": 400
 }
 
+[2026-04-06T13:38:58.363Z] API Error:
+{
+  "success": false,
+  "error": {
+    "message": "azure-openai error: You uploaded an unsupported image. Please make sure your image has of one the following formats: ['png', 'webp', 'jpeg', 'gif'].",
+    "code": "BAD_REQUEST",
+    "timestamp": "2026-04-06T13:38:58.352Z"
+  },
+  "status": 400
+}
+
