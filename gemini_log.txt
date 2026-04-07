@@ -36119,3 +36119,33 @@ Mau saya lakukan apa dengan gambar ini? Contoh yang bisa saya bantu:
 
 Katakan mana yang Anda inginkan.
 
+
+[2026-04-07T04:33:21.579Z]
+Prompt    : Mode Rapat sambil ngopi²
+Image URL : https://uploader.exodusai.biz.id/tmp/f61529-1775536382783.jpg
+Response  : Keren — suasana rapat santai tapi produktif! Berikut beberapa ide singkat yang bisa kamu pakai (caption, tips rapat, dan saran foto):
+
+Caption / teks untuk posting:
+- "Mode rapat: fokus + kopi = solusi."  
+- "Rapat pagi, kopi mantap. Langsung tuntas!"  
+- "Ngopi sambil bahas rencana besar. #Teamwork"  
+- "Brainstorming + caffeine = ide meledak."  
+- "Rapat hybrid: serius tapi santai."  
+- "Kerja bareng, kopi bareng. Produktif!"  
+- "Meeting minutes: kopi di cangkir, ide di papan."  
+- "Diskusi strategi sambil ngopi — #WorkAndCoffee"
+
+Tips singkat supaya rapat lebih efektif:
+- Tetapkan agenda singkat (3–5 poin) sebelum rapat dan bagikan kepada peserta.  
+- Batasi waktu tiap poin (mis. 10–15 menit) supaya tidak melebar.  
+- Tugaskan notulen/penanggung jawab action item agar hasilnya nyata.  
+- Gunakan check-in 1 menit di awal: siapa fokus pada apa hari ini.  
+- Sisipkan coffee break singkat kalau rapat >60 menit supaya otak segar.
+
+Saran kecil untuk foto/visual:
+- Hilangkan stiker jam/grafik yang menutupi orang agar tampak lebih rapi.  
+- Tambah pencahayaan atau naikkan kontras sedikit agar gambar lebih tajam.  
+- Crop sedikit dari sisi kanan kalau ingin fokus ke meja dan peserta, bukan selfie.
+
+Mau aku buat caption yang lebih panjang atau formal untuk LinkedIn?
+
