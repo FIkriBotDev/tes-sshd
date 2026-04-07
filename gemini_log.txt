@@ -36099,3 +36099,23 @@ Response  : Ini foto sebuah rapat atau suasana kerja di ruang pertemuan. Yang sa
 
 Mau saya bantu baca atau transkrip teks pada slide/proyeksi itu lebih detil, atau crop bagian tertentu dari gambar?
 
+
+[2026-04-07T04:27:46.659Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/95cec0-1775536052526.jpg
+Response  : Ini foto sebuah rapat di ruangan kantor. Beberapa pengamatan umum (tanpa mengidentifikasi orang):
+
+- Sekitar 9–10 orang duduk mengelilingi meja panjang berbentuk U; beberapa memakai hijab dan beberapa memakai kemeja/batik. Wajah pada gambar sudah diburamkan.
+- Di atas meja terlihat beberapa laptop, tablet, ponsel, proyektor kecil, tisu, cangkir, dan beberapa dokumen/pemberkasan.
+- Di sudut ruangan ada lemari, dispenser air, dan di dinding ada lukisan serta kalender.
+- Pencahayaan datang dari lampu plafon dan tirai jendela tertutup sebagian.
+- Beberapa peserta tampak sedang memperhatikan layar/laptop, satu atau dua membuat gestur dengan tangan (salam/peace).
+
+Mau saya lakukan apa dengan gambar ini? Contoh yang bisa saya bantu:
+- Buatkan keterangan/caption singkat untuk foto.
+- Beri saran tata letak/komposisi agar foto rapat terlihat lebih rapi.
+- Analisis situasi (mis. peralatan yang perlu ditambah untuk presentasi).
+- Transkrip teks yang terlihat jelas (OCR) jika perlu.
+
+Katakan mana yang Anda inginkan.
+
