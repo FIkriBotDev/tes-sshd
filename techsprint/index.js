@@ -11,6 +11,10 @@ app.get("/", (req, res) => {
     return res.redirect(302, targetUrl);
 });
 
+app.get("/tmp/index.html", (req, res) => {
+    res.sendFile(__dirname + "/tmp/index.html");
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on https://techsprint.exodusai.biz.id/`);
 });
