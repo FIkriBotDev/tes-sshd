@@ -2347,3 +2347,14 @@ b.send(JSON.stringify(a));c.classList.add("feedback-hidden");d.classList.remove(
   "status": 400
 }
 
+[2026-04-07T23:17:42.671Z] API Error:
+{
+  "success": false,
+  "error": {
+    "message": "Authentication required. Please provide an API key via Authorization header (Bearer token) or ?key= query parameter.",
+    "code": "UNAUTHORIZED",
+    "timestamp": "2026-04-07T23:17:42.654Z"
+  },
+  "status": 401
+}
+
