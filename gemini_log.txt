@@ -36149,3 +36149,10 @@ Saran kecil untuk foto/visual:
 
 Mau aku buat caption yang lebih panjang atau formal untuk LinkedIn?
 
+
+[2026-04-07T08:10:19.237Z]
+Prompt    : Salin Teks
+Image URL : https://uploader.exodusai.biz.id/tmp/8e8078-1775549410192.jpg
+Response  : Nya sok no wa
+082219297466
+
