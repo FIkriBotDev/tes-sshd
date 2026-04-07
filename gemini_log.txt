@@ -36048,3 +36048,23 @@ CTA: DM atau WhatsApp sekarang untuk foto lebih detail & jadwal lihat rumah.
 
 Butuh saya susun versi poster singkat/teks untuk story (ukuran pendek) atau membuat caption versi Bahasa Inggris juga? Atau kirimkan nomor/tautan kontak yang mau ditampilkan supaya saya tambahkan ke teks promosi?
 
+
+[2026-04-07T04:19:58.583Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/e6ce68-1775535582816.jpg
+Response  : Ini foto sebuah rapat kecil di ruang pertemuan. Ringkasan yang bisa saya lihat:
+
+- Terlihat sekitar 7–9 orang duduk mengelilingi meja rapat. Wajah-wajah sudah diburamkan sehingga identitas orang tidak dapat dikenali.
+- Beberapa orang menggunakan laptop, ada pula buku/nota, kotak tisu, piring kecil (makanan), dan tas/etui di atas meja.
+- Di dinding ada lukisan, kalender, dan tirai vertikal menutup jendela.
+- Ada label teks di gambar: "Rapat LPPM Bersama Dekan & Koordinator Prodi" dan lokasi "Universitas LIA".
+- Jam di bagian atas menunjukkan sekitar pukul 10:10.
+
+Kalau Anda mau, saya bisa:
+- Membacakan atau menyalin teks pada gambar (OCR).
+- Menerjemahkan teks ke bahasa lain.
+- Memberi saran pengambilan foto (pencahayaan, komposisi) atau meng-crop agar fokus ke bagian tertentu.
+- Membuat ringkasan hasil rapat dari foto jika Anda berikan catatan.
+
+Mau saya bantu apa selanjutnya?
+
