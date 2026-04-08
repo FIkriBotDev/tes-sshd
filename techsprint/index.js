@@ -14,7 +14,7 @@ app.get("/about", (req, res) => {
     res.sendFile(__dirname + "/jadikelas/about/index.html");
 });
 
-app.get("index.html", (req, res) => {
+app.get("/index.html", (req, res) => {
     res.sendFile(__dirname + "/jadikelas/index.html");
 });
 
