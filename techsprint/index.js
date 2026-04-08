@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/jadikelas/index.html");
 });
 
-app.get("/jadikelas/about", (req, res) => {
+app.get("/about", (req, res) => {
     res.sendFile(__dirname + "/jadikelas/about/index.html");
 });
 
