@@ -14,8 +14,8 @@ app.get("/about", (req, res) => {
     res.sendFile(__dirname + "/jadikelas/about/index.html");
 });
 
-app.get("/about", (req, res) => {
-    res.sendFile(__dirname + "/jadikelas/about/index.html");
+app.get("index.html", (req, res) => {
+    res.sendFile(__dirname + "/jadikelas/index.html");
 });
 
 app.listen(PORT, () => {
