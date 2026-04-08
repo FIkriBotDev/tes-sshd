@@ -593,8 +593,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- LIGHTWEIGHT JAVASCRIPT -->
     <script>
         // 1. Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
@@ -616,7 +614,7 @@
             }
         });
 
-        // 3. Scroll Reveal Animation (Intersection Observer)
+        // 3. Scroll Reveal Animation
         const observerOptions = {
             root: null,
             rootMargin: '0px',
@@ -627,7 +625,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Stop observing once visible
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
