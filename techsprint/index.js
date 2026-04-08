@@ -15,6 +15,10 @@ app.get("/jadikelas/index.html", (req, res) => {
     res.sendFile(__dirname + "/jadikelas/index.html");
 });
 
+app.get("/jadikelas/about", (req, res) => {
+    res.sendFile(__dirname + "/jadikelas/index.html");
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on https://techsprint.exodusai.biz.id/`);
 });
