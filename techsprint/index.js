@@ -11,6 +11,10 @@ app.get("/", (req, res) => {
     return res.redirect(302, targetUrl);
 });
 
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/jadikelas/index.html");
+});
+
 app.get("/jadikelas/index.html", (req, res) => {
     res.sendFile(__dirname + "/jadikelas/index.html");
 });
