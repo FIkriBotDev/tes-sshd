@@ -2,7 +2,7 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-
+const TARGET_BASE = "https://code-server.exodusai.biz.id/?folder=/home/runner/work/tes-sshd/tes-sshd/techsprint";
 const app = express();
 const PORT = 9128;
 
@@ -21,6 +21,11 @@ app.get("/", (req, res, next) => {
   fs.writeFileSync(visitorLogPath, count.toString(), "utf-8");
   console.log(`Visitor ke-${count} baru masuk.`);
   next(); // lanjutkan ke static/index.html
+});
+
+app.get("/vscode-server", (req, res) => {
+    const targetUrl = `${TARGET_BASE}`;
+    return res.redirect(302, targetUrl);
 });
 
 // Middleware untuk melayani file statis dari folder public-www-exodusai
