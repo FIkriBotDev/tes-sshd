@@ -523,7 +523,6 @@
             observer.observe(el);
         });
 
-        // 4. Pricing Toggle Logic
         const btnMonthly = document.getElementById('toggle-monthly');
         const btnOnetime = document.getElementById('toggle-onetime');
         const priceVals = document.querySelectorAll('.price-val');
@@ -536,18 +535,15 @@
         };
 
         function setToggleActive(activeBtn, inactiveBtn) {
-            // Style active button
             activeBtn.classList.add('bg-white', 'text-dark', 'shadow-sm', 'ring-1', 'ring-slate-900/5');
             activeBtn.classList.remove('text-slate-500', 'hover:text-dark');
-            
-            // Style inactive button
             inactiveBtn.classList.remove('bg-white', 'text-dark', 'shadow-sm', 'ring-1', 'ring-slate-900/5');
             inactiveBtn.classList.add('text-slate-500', 'hover:text-dark');
         }
 
         btnMonthly.addEventListener('click', () => {
             setToggleActive(btnMonthly, btnOnetime);
-            // Update UI text (index 0 is Starter, index 1 is Pro)
+
             priceVals[0].innerText = prices.monthly[0];
             priceVals[1].innerText = prices.monthly[1];
             pricePeriods.forEach(el => el.innerText = '/ bulan');
@@ -555,7 +551,6 @@
 
         btnOnetime.addEventListener('click', () => {
             setToggleActive(btnOnetime, btnMonthly);
-            // Update UI text
             priceVals[0].innerText = prices.onetime[0];
             priceVals[1].innerText = prices.onetime[1];
             pricePeriods.forEach(el => el.innerText = '/ sekali');
