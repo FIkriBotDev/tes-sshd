@@ -2446,3 +2446,14 @@ b.send(JSON.stringify(a));c.classList.add("feedback-hidden");d.classList.remove(
   "status": 400
 }
 
+[2026-04-10T01:26:16.694Z] API Error:
+{
+  "success": false,
+  "error": {
+    "message": "azure-openai error: The server had an error while processing your request. Sorry about that!",
+    "code": "UNKNOWN_ERROR",
+    "timestamp": "2026-04-10T01:26:16.688Z"
+  },
+  "status": 504
+}
+
