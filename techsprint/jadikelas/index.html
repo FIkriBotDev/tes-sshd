@@ -739,6 +739,33 @@
         document.querySelectorAll('.fade-up').forEach((el) => {
             observer.observe(el);
         });
+        // Auth Toggle Logic
+        function toggleAuth(type) {
+            const loginSection = document.getElementById('login-section');
+            const registerSection = document.getElementById('register-section');
+            const body = document.body;
+
+            if (type === 'login') {
+                loginSection.classList.toggle('hidden');
+                body.classList.toggle('overflow-hidden');
+            } else if (type === 'register') {
+                registerSection.classList.toggle('hidden');
+                body.classList.toggle('overflow-hidden');
+            }
+        }
+
+        function switchAuth(target) {
+            const loginSection = document.getElementById('login-section');
+            const registerSection = document.getElementById('register-section');
+
+            if (target === 'register') {
+                loginSection.classList.add('hidden');
+                registerSection.classList.remove('hidden');
+            } else {
+                registerSection.classList.add('hidden');
+                loginSection.classList.remove('hidden');
+            }
+        }
     </script>
 </body>
 </html>
