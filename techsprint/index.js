@@ -22,8 +22,8 @@ app.get("/pricing", (req, res) => {
     res.sendFile(__dirname + "/jadikelas/pricing/index.html");
 });
 
-app.get("/pricing", (req, res) => {
-    res.sendFile(__dirname + "/jadikelas/pricing/index.html");
+app.get("/auth", (req, res) => {
+    res.sendFile(__dirname + "/jadikelas/auth/index.html");
 });
 
 app.listen(PORT, () => {
