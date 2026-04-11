@@ -26,7 +26,9 @@ Fungsi utama:
 
 ## 👨‍💻 Founder JadiKelas.tech
 Orang-Orang di Balik JadiKelas.tech:
-- Muhammad Fikri Fahrezi 
+1. Muhammad Fikri Fahrezi
+   → Founder JadiKelas.tech
+2. Muh Reski Ramadhani
 
 ## 🚀 Fitur Utama
 
