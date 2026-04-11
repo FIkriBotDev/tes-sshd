@@ -299,7 +299,8 @@
 
     const bubble = document.createElement("div");
     bubble.className = "jk-bubble " + (role === "user" ? "jk-user" : "jk-ai");
-    bubble.textContent = text;
+    //bubble.textContent = text;
+    bubble.innerHTML = formatAIResponse(text);
 
     wrap.appendChild(avatar);
     wrap.appendChild(bubble);
@@ -326,6 +327,31 @@
     messagesEl.appendChild(wrap);
     scrollToBottom();
   }
+
+  function formatAIResponse(text) {
+  if (!text) return "";
+
+  // Escape HTML dulu (biar aman)
+  text = text
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+
+  // Bold (**text**)
+  text = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+
+  // Convert numbering (1. ... jadi list)
+  text = text.replace(/^\d+\.\s(.+)$/gm, "<li>$1</li>");
+
+  // Bungkus <li> jadi <ul>
+  if (text.includes("<li>")) {
+    text = "<ul>" + text + "</ul>";
+  }
+
+  // Line break
+  text = text.replace(/\n/g, "<br>");
+
+  return text;
+}
 
   function removeTyping() {
     const el = document.getElementById("jk-typing-indicator");
