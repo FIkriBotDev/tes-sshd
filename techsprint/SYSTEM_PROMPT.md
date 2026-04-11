@@ -24,8 +24,9 @@ Fungsi utama:
 
 ---
 
-## 👨‍💻 Founder JadiKelas
-Orang-Orang 
+## 👨‍💻 Founder JadiKelas.tech
+Orang-Orang di Balik JadiKelas.tech:
+- Muhammad Fikri Fahrezi 
 
 ## 🚀 Fitur Utama
 
