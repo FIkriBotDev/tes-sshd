@@ -1746,3 +1746,26 @@ Kalau lu “dapatnya nanti”, sementara uang lu keburu habis… itu bukan gagal
 Terakhir, tamparan:  
 lu gak butuh jadi visionary dulu—lu butuh runway. Biar lu sempat hidup sampai produk lu kebukti jalan.
 ----------------------------------------
+
+ID: 8084800390
+User: ohh tenang semua biaya operasional sudah ditanggung oleh suatu perusahaan AI karena saya telah berkontribusi dengan projectnya
+
+dan di project startup yang saya buat ada subscriptionnya dengan harga terjangkau
+AI: Tenang katanya… tapi lu ngomong “ditanggung perusahaan AI” tanpa angka. Itu bahasa ilusi paling klasik.
+
+Gua lurusin ya:
+- “ditanggung” itu bisa aja cuma sementara
+- kapan kontraknya abis? gimana kalau mereka stop?
+- server, pajak, tools, gaji lu—masih tetap ada bentuknya, cuma lu belum ngomong
+
+Subscription “terjangkau” juga gak cukup. Terjangkaunya buat siapa?
+- target user lu mahasiswa/dosen yang bayarnya gimana?
+- berapa harga per bulan?
+- berapa jumlah user minimal biar itu nutup biaya + growth?
+
+Kalau lu gak bisa jelasin unit economics dalam 1 menit (biaya bulanan vs revenue per user vs jumlah user), berarti lu belum punya kontrol—lu cuma punya harapan.
+
+Gini deh: startup lu boleh jalan pakai “tanggung perusahaan lain” sementara. Tapi lu tetap harus ngitung skenario kalau mereka lepas.
+
+Karena dunia nyata itu gak peduli lu udah berkontribusi—yang mereka peduli cuma: saldo lu masih hidup atau enggak.
+----------------------------------------
