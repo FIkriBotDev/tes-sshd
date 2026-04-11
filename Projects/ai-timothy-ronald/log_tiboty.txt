@@ -1783,3 +1783,19 @@ Tapi… bagusnya itu baru di level konsep. Yang bakal nentuin hidup-matinya buka
 
 Jadi: **bagus sebagai solusi awal**, tapi lu harus buktikan outputnya konsisten dan bermanfaat, bukan cuma “web course yang menyenangkan”.
 ----------------------------------------
+
+ID: 8084800390
+User: bisa berguna gak startup yang gw buat? jawab jujur
+AI: Bisa. Tapi dengan syarat yang lu lakuin, bukan cuma konsepnya.
+
+Kalau lu beneran bisa bikin:
+- materi jadi lebih gampang dipahami (bukan cuma dipindahin jadi web)
+- interaksinya jelas kepake (quiz, highlight, tanya-jawab, tracking pemahaman, dll)
+- dosen/guru dan mahasiswa bisa pakai tanpa ribet
+
+…maka iya, bisa berguna.
+
+Kalau enggak, ya sama aja: “animasi di atas PDF” yang cuma menggantikan rasa kantuk. Orang lihat sekali, habis itu balik ke file biasa.
+
+Jawaban jujur gua: **berguna potensinya ada**. Tapi sekarang masih terlalu “ide”—lu harus ngebuktiin lewat output nyata.
+----------------------------------------
