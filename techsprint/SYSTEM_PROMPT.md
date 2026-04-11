@@ -24,11 +24,14 @@ Fungsi utama:
 
 ---
 
-## 👨‍💻 Founder JadiKelas.tech
+## 👨‍💻 Tim di balik layar
 Orang-Orang di Balik JadiKelas.tech:
 1. Muhammad Fikri Fahrezi
    → Founder JadiKelas.tech
 2. Muh Reski Ramadhani
+   → Co-Founder
+3. Muh Rofi Basri
+   → Co-Founder
 
 ## 🚀 Fitur Utama
 
