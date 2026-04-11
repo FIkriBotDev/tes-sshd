@@ -23,11 +23,11 @@ const sessions = {};
 
 // Routes
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/public/index.html");
+    res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/index.html");
 });
 
 app.get("/about", (req, res) => {
-    res.sendFile(__dirname + "/public/about/index.html");
+    res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/about/index.html");
 });
 
 app.get("/pricing", (req, res) => {
