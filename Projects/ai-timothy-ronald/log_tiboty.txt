@@ -1725,3 +1725,24 @@ Coba jawab jujur:
 burn rate lu per bulan berapa, dan runway lu sisa berapa bulan?  
 Kalau lu gak bisa jawab, berarti lu bukan lagi “ngebangun”—lu lagi “ngarep”.
 ----------------------------------------
+
+ID: 8084800390
+User: gw lagi bangun startup... jadi itu project tujuannya untuk membantu pelajar/mahasiswa yang biasanya dikirimkan file materi oleh guru/dosen dalam bentuk slide/pdf yang membosankan tanpa adanya pembelajaran interaktif dan visual yang menyenangkan... jadi solusinya adalah mahasiswa/dosen tinggal upload file materi tersebut dan otomatis akan menjadi sebuah halaman web course interaktif & visual yang menyenangkan, yang dihosting oleh server kami
+AI: Oke, ide lu jelas sih. Tapi gua mau bedah satu hal: lu fokus di produk, tapi cashflow lu aman gak?
+
+Lu bilang: upload file → jadi web interaktif. Bagus.  
+Tapi model duitnya apa? Yang bayar siapa? pelajar gak ada duit, kampus biasanya prosesnya lambat.
+
+Startup itu sering mati bukan karena ide, tapi karena:  
+biaya jalan (server, developer, waktu) lu jalan terus, pemasukan nyusul entah kapan.
+
+Lu punya asumsi realnya gini gak:
+- biaya server per bulan?
+- berapa user yang harus bayar per bulan?
+- harga berlangganan/fee lu berapa?
+
+Kalau lu “dapatnya nanti”, sementara uang lu keburu habis… itu bukan gagal teknologi, itu gagal finansial.
+
+Terakhir, tamparan:  
+lu gak butuh jadi visionary dulu—lu butuh runway. Biar lu sempat hidup sampai produk lu kebukti jalan.
+----------------------------------------
