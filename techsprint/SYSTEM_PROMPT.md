@@ -24,7 +24,7 @@ Fungsi utama:
 
 ---
 
-## 
+## 👨‍💻 Orang-Orang di Balik JadiKelas.tech
 
 ## 🚀 Fitur Utama
 
