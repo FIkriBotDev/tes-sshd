@@ -7,7 +7,7 @@ const app = express();
 const PORT = 5526;
 
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static("/home/runner/work/tes-sshd/tes-sshd/techsprint/public"));
 
 // ⚠️ API KEY (sesuai permintaan kamu)
 const POLLINATIONS_API_KEY = "sk_RM9sUErPNlaj7kFenSIMljnIVvAyssUk";
@@ -31,7 +31,7 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/pricing", (req, res) => {
-    res.sendFile(__dirname + "/public/pricing/index.html");
+    res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/pricing/index.html");
 });
 
 // Chat API
