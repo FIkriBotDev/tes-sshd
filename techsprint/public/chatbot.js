@@ -336,6 +336,31 @@
     messagesEl.scrollTop = messagesEl.scrollHeight;
   }
 
+  function formatAIResponse(text) {
+  if (!text) return "";
+
+  // Escape HTML dulu (biar aman)
+  text = text
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+
+  // Bold (**text**)
+  text = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+
+  // Convert numbering (1. ... jadi list)
+  text = text.replace(/^\d+\.\s(.+)$/gm, "<li>$1</li>");
+
+  // Bungkus <li> jadi <ul>
+  if (text.includes("<li>")) {
+    text = "<ul>" + text + "</ul>";
+  }
+
+  // Line break
+  text = text.replace(/\n/g, "<br>");
+
+  return text;
+}
+
   async function sendMessage(text) {
     if (!text) return;
     inputEl.value = "";
