@@ -336,8 +336,6 @@
     messagesEl.scrollTop = messagesEl.scrollHeight;
   }
 
-  
-
   async function sendMessage(text) {
     if (!text) return;
     inputEl.value = "";
