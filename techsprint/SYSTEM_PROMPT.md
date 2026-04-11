@@ -24,7 +24,8 @@ Fungsi utama:
 
 ---
 
-## 👨‍💻 Orang-Orang di Balik JadiKelas.tech
+## 👨‍💻 Founder JadiKelas
+Orang-Orang 
 
 ## 🚀 Fitur Utama
 
