@@ -36338,3 +36338,22 @@ Response  : Teks yang terlihat di gambar:
 - **Cloud Host…**
 - **…a lightning-fast Remote De…**
 
+
+[2026-04-11T14:13:40.895Z]
+Prompt    : Ini apa?
+Image URL : https://uploader.exodusai.biz.id/tmp/d3eb08-1775916815500.jpg
+Response  : Itu adalah **hasil “cek IP & lokasi website”** (pakai layanan **DB-IP**).
+
+Dari gambar, yang terdeteksi:
+
+- **IP address:** `185.225.40.184`  
+- **Host name:** `185.225.40.184` (sama)
+- **ASN / ISP:** `29256` / `sy-samaweb`
+- **Lokasi (perkiraan):** **Syria (SY)**  
+  - **Region:** Rif-dimashq  
+  - **City:** Zákíyah  
+- **Time zone:** Asia/Damascus (GMT+03:00)
+- **Tanggal data:** **01-04-2026** (DB-IP update)
+
+Catatan: lokasi IP biasanya **perkiraan** (bisa beda dari lokasi fisik sebenarnya, karena data geolocation IP kadang tidak akurat).
+
