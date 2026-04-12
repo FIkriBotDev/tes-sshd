@@ -34,6 +34,10 @@ app.get("/pricing", (req, res) => {
     res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/pricing/index.html");
 });
 
+app.get("/favicon.ico", (req, res) => {
+    res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/favicon.ico");
+});
+
 // Chat API
 app.post("/api/chat", async (req, res) => {
     const { sessionId, message } = req.body;
