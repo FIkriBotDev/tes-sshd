@@ -81,9 +81,19 @@ bot.onText(/\/reply-audio (.+)/, (msg, match) => {
     targetId: match[1],
   };
 
-  
-
   bot.sendMessage(OWNER_ID, "Silahkan kirim audionya");
+});
+
+// ✅ COMMAND VN
+bot.onText(/\/reply-vn (.+)/, (msg, match) => {
+  if (msg.chat.id !== OWNER_ID) return;
+
+  pendingReply[OWNER_ID] = {
+    type: "voice",
+    targetId: match[1],
+  };
+
+  bot.sendMessage(OWNER_ID, "Silahkan kirim voice note (VN)");
 });
 
 bot.onText(/\/reply-file (.+)/, (msg, match) => {
