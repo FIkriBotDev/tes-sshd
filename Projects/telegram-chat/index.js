@@ -189,6 +189,13 @@ bot.on("message", async (msg) => {
         });
       }
 
+            // ✅ VN dari user
+      else if (msg.voice) {
+        await bot.sendVoice(OWNER_ID, msg.voice.file_id, {
+          caption: `🎤 ${header}`
+        });
+      }
+
     } catch (err) {
       console.log(err);
     }
