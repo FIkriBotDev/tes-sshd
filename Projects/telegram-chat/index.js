@@ -81,6 +81,8 @@ bot.onText(/\/reply-audio (.+)/, (msg, match) => {
     targetId: match[1],
   };
 
+  
+
   bot.sendMessage(OWNER_ID, "Silahkan kirim audionya");
 });
 
@@ -126,6 +128,10 @@ bot.on("message", async (msg) => {
 
       else if (type === "audio" && msg.audio) {
         await bot.sendAudio(targetId, msg.audio.file_id);
+      }
+
+      else if (type === "voice" && msg.voice) {
+        await bot.sendVoice(targetId, msg.voice.file_id);
       }
 
       else if (type === "document" && msg.document) {
