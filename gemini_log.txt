@@ -36494,3 +36494,14 @@ Response  : Gambar itu berisi soal “**kartu apaaan?**” dengan jawaban yang t
 
 Kalau yang kamu mau adalah **menebak jawabannya**, maka jawabannya: **kartu Telkomsel**.
 
+
+[2026-04-13T11:44:09.289Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/a666f2-1776080643380.jpg
+Response  : Saya sudah melihat gambar yang kamu kirim. Itu cuplikan **YouTube Shorts** dengan judul/thumbnail yang berisi klaim “**Aku Diburu oleh Polri**” (konten berhubungan dengan polisi), dan di bagian video tampak beberapa orang dengan **wajah disensor (blur)**.
+
+Kalau kamu mau, bilang ya—kamu ingin saya bantu **apa** dari gambar ini?
+- cek apakah itu **asli/hoaks**,
+- jelaskan **apa yang terlihat** di tiap bagian thumbnail,
+- atau bantu **tulis caption/ide** untuk analisis/komentar.
+
