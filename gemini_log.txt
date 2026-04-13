@@ -36371,3 +36371,31 @@ Gambar menunjukkan kegiatan belajar/ibadah di dalam **vihara**: ada siswa duduk 
 
 Kalau kamu mau, bilang kamu ingin saya bantu **membuat caption**, **meringkas isi**, atau **menganalisis tema sikap di vihara** berdasarkan konteks fotonya.
 
+
+[2026-04-13T11:06:03.794Z]
+Prompt    : Bro ini scam atau bohongan
+Image URL : https://uploader.exodusai.biz.id/tmp/73057e-1776078357625.jpg
+Response  : Bisa jadi **scam / scam kemungkinan besar**.
+
+Dari screenshot terlihat domain-nya **netlify.app** (mis. `...netlify.app`) dan judulnya “Free Windows RDP…”. Penyedia RDP Windows gratis dengan klaim “high performance” biasanya **nggak realistis** dan sering dipakai buat:
+
+- ngarahin ke halaman yang minta data (login/OTP),
+- instal skrip/extension berbahaya,
+- atau cuma iklan/redirect.
+
+**Yang bikin red flag:**
+- “Free Windows RDP” + promosi berlebihan
+- Link di host seperti netlify/app (sering dipakai untuk landing page redirect)
+- Tidak terlihat jelas identitas perusahaan/terms yang kredibel (dari screenshot)
+
+### Saran biar aman
+1. **Jangan input akun/password** atau OTP ke situs itu.
+2. **Jangan download/install** apa pun dari situ.
+3. Kalau mau cek, coba buka lewat **browser biasa tanpa login** dan lihat apakah ada:
+   - permintaan login mencurigakan,
+   - redirect terus-menerus,
+   - permintaan izin aneh (notifikasi, install, dll).
+4. Cek juga domain yang lengkapnya pakai **VirusTotal** (kalau ada).
+
+Kalau kamu mau, kirim **link lengkapnya** (URL) dan teks yang diminta (mis. “login / bayar / isi data”), nanti aku bantu nilai lebih pasti.
+
