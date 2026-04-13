@@ -36467,3 +36467,14 @@ Di screenshot juga keliatan akun: **maddox.page** dan ada CTA dari video.
 
 Kalau kamu mau, kirim **link/teks caption yang lengkap** atau screenshot lanjutan—nanti aku bantu jelasin itu instruksinya buat apa.
 
+
+[2026-04-13T11:42:33.708Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/45f23c-1776080547183.jpg
+Response  : Saya lihat gambarnya: itu tangkapan layar postingan bertema “Info lagu galau yg enak … didengar pas lagi ga punya duit”. Teksnya kira-kira berbunyi:
+
+**“Info lagu galau yg enak didenger pas lagi ga punya duit”**  
+Terlihat juga ada bagian **“Anda dan lainnya”**, **393 komentar**, serta tombol like/reaksi.
+
+Kalau kamu mau, bilang aja: kamu ingin **diambil judul/teksnya**, atau **ditolong cari rekomendasi lagu galau** yang cocok buat kondisi “lagi ga punya duit”.
+
