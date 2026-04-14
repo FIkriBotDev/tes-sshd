@@ -15,5 +15,13 @@
     "plan": 1,
     "creditLeft": 10,
     "courseCreated": 0
+  },
+  {
+    "namaLengkap": "Reski Ramadani",
+    "email": "rramadanil953@gmail.com",
+    "password": "$2b$10$3Y4WjjqKY8SixjbMzogVcufWSuq82ybc4C4l6fsfA/nqmjQY/7wHy",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
