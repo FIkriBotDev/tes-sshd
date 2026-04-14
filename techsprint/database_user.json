@@ -7,5 +7,13 @@
     "creditLeft": 300,
     "courseCreated": 0,
     "sekolah": ""
+  },
+  {
+    "namaLengkap": "test",
+    "email": "test@gmail.com",
+    "password": "$2b$10$wYn/ETaH2iryIFIoQA0ZyuFk6avFEoEBunzC96i4libDr6RpVwqQ6",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
