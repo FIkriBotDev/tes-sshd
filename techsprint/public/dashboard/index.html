@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - JadiKelas.tech</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#4F46E5', // Indigo 600
+                        secondary: '#9333EA', // Purple 600
+                        dark: '#0F172A', // Slate 900
+                        darker: '#0B1120', // Slate 950
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 1, boxShadow: '0 0 0 0 rgba(79, 70, 229, 0.4)' },
+                            '50%': { opacity: .8, boxShadow: '0 0 0 10px rgba(79, 70, 229, 0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar for Main Content */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        /* Highlight Tour Class */
+        .tour-highlight {
+            position: relative;
+            z-index: 60 !important;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 0 0 4px white, 0 0 0 8px #4F46E5;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-600 bg-slate-50 h-screen overflow-hidden flex">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="w-72 bg-darker text-slate-300 flex flex-col transition-all duration-300 shadow-2xl z-20 hidden md:flex">
+        <!-- Logo -->
+        <div class="h-24 flex items-center px-8 border-b border-slate-800/50">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                    <i class="ph-bold ph-graduation-cap text-2xl"></i>
+                </div>
+                <span class="font-bold text-2xl text-white tracking-tight">JadiKelas</span>
+            </div>
+        </div>
+
+        <!-- Menu -->
+        <nav class="flex-1 px-4 py-8 space-y-2 overflow-y-auto">
+            <!-- Active Menu -->
+            <a href="#" class="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-xl font-semibold shadow-md shadow-primary/20 transition-all">
+                <i class="ph-fill ph-squares-four text-xl"></i> Dashboard
+            </a>
+            
+            <!-- Inactive Menus -->
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl font-medium transition-all group">
+                <i class="ph-fill ph-books text-xl group-hover:text-primary transition-colors"></i> My Courses
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl font-medium transition-all group">
+                <i class="ph-fill ph-rocket-launch text-xl group-hover:text-yellow-400 transition-colors"></i> Upgrade Plan
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl font-medium transition-all group">
+                <i class="ph-fill ph-user text-xl group-hover:text-emerald-400 transition-colors"></i> Profile
+            </a>
+        </nav>
+
+        <!-- Bottom User Section -->
+        <div class="p-4 border-t border-slate-800/50">
+            <div class="flex items-center gap-3 px-4 py-3 mb-2">
+                <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-white font-bold border-2 border-slate-600">
+                    UD
+                </div>
+                <div class="overflow-hidden">
+                    <p class="text-sm font-semibold text-white truncate">User Demo</p>
+                    <p class="text-xs text-slate-400 truncate">user@email.com</p>
+                </div>
+            </div>
+            <!-- Logout Button -->
+            <button class="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-lg font-medium transition-all">
+                <i class="ph-bold ph-sign-out"></i> Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="flex-1 flex flex-col h-full relative overflow-y-auto overflow-x-hidden bg-slate-50">
+        
+        <!-- Mobile Header (Visible only on small screens) -->
+        <header class="md:hidden bg-white h-16 border-b border-slate-200 flex items-center justify-between px-4 sticky top-0 z-20">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+                    <i class="ph-bold ph-graduation-cap text-xl"></i>
+                </div>
+                <span class="font-bold text-lg text-dark">JadiKelas</span>
+            </div>
+            <button class="text-slate-500 hover:text-dark">
+                <i class="ph-bold ph-list text-2xl"></i>
+            </button>
+        </header>
+
+        <!-- Dashboard Content Area -->
+        <div class="p-6 lg:p-10 max-w-6xl mx-auto w-full space-y-8">
+            
+            <!-- Header Greeting -->
+            <div class="flex justify-between items-end">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-dark mb-1">Selamat datang kembali, User 👋</h1>
+                    <p class="text-slate-500 text-sm">Mari buat kelas interaktif baru hari ini.</p>
+                </div>
+            </div>
+
+            <!-- 1. STATS / USAGE ROW -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="target-stats">
+                <!-- Stat 1: Plan -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 text-2xl">
+                        <i class="ph-fill ph-paper-plane-tilt"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-slate-500 mb-0.5">Current Plan</p>
+                        <p class="text-xl font-bold text-dark">Free Plan</p>
+                    </div>
+                </div>
+                <!-- Stat 2: Course Used -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-full bg-indigo-50 flex items-center justify-center text-primary text-2xl">
+                        <i class="ph-fill ph-books"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-slate-500 mb-0.5">Course Dibuat</p>
+                        <p class="text-xl font-bold text-dark">1 <span class="text-sm text-slate-400 font-normal">/ 2 Maks</span></p>
+                    </div>
+                </div>
+                <!-- Stat 3: Credits -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-full bg-yellow-50 flex items-center justify-center text-yellow-600 text-2xl">
+                        <i class="ph-fill ph-coin"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-slate-500 mb-0.5">Sisa Credit AI</p>
+                        <p class="text-xl font-bold text-dark">10 <span class="text-sm text-slate-400 font-normal">Credit</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. UPLOAD SECTION (HERO) -->
+            <div id="target-upload" class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 md:p-12 text-center transition-all duration-300">
+                <div class="max-w-xl mx-auto">
+                    <h2 class="text-2xl font-bold text-dark mb-2">Ubah Materi Jadi Course Interaktif</h2>
+                    <p class="text-slate-500 text-sm mb-8">Upload file PDF materi Anda, dan AI kami akan menyulapnya menjadi modul belajar, kuis, dan AI mentor dalam hitungan detik.</p>
+                    
+                    <!-- Drag & Drop Area -->
+                    <div class="border-2 border-dashed border-indigo-300 bg-indigo-50/30 hover:bg-indigo-50/80 rounded-2xl p-10 cursor-pointer transition-colors group mb-6 relative overflow-hidden">
+                        <!-- Decorative background icon -->
+                        <i class="ph-fill ph-cloud-arrow-up absolute -bottom-10 -right-10 text-9xl text-indigo-100/50 group-hover:scale-110 transition-transform duration-500"></i>
+                        
+                        <div class="relative z-10 flex flex-col items-center">
+                            <div class="w-16 h-16 bg-white rounded-full shadow-md flex items-center justify-center text-primary text-3xl mb-4 group-hover:-translate-y-1 transition-transform">
+                                <i class="ph-bold ph-upload-simple"></i>
+                            </div>
+                            <p class="text-base font-semibold text-dark mb-1">Klik atau Drag & Drop file di sini</p>
+                            <p class="text-xs text-slate-500">Support format: PDF (Max. 20 halaman / 10MB)</p>
+                        </div>
+                    </div>
+
+                    <!-- Generate Button -->
+                    <button class="px-8 py-3.5 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-xl shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:scale-[1.02] transform transition-all duration-300 flex items-center justify-center gap-2 mx-auto disabled:opacity-50">
+                        <i class="ph-bold ph-magic-wand"></i> Generate Course
+                    </button>
+                </div>
+            </div>
+
+            <!-- 3. COURSE LIST -->
+            <div id="target-courses" class="pt-4 pb-10 transition-all duration-300">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold text-dark">Course Anda</h3>
+                    <a href="#" class="text-sm font-semibold text-primary hover:text-indigo-800">Lihat Semua</a>
+                </div>
+
+                <!-- Grid List -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Card 1 (Selesai) -->
+                    <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition-shadow group flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-red-50 text-red-500 flex items-center justify-center text-xl">
+                                <i class="ph-fill ph-file-pdf"></i>
+                            </div>
+                            <!-- Badge Status -->
+                            <span class="px-2.5 py-1 bg-green-50 text-green-600 text-xs font-bold rounded-full border border-green-100 flex items-center gap-1">
+                                <i class="ph-fill ph-check-circle"></i> Selesai
+                            </span>
+                        </div>
+                        <h4 class="font-bold text-dark text-lg mb-1 truncate">Pengantar AI Dasar.pdf</h4>
+                        <p class="text-xs text-slate-400 mb-6 flex-1">Dibuat 2 jam yang lalu • 12 Halaman</p>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex items-center gap-2 mt-auto pt-4 border-t border-slate-100">
+                            <button class="flex-1 bg-indigo-50 text-primary hover:bg-primary hover:text-white font-semibold py-2 rounded-lg text-sm transition-colors">
+                                Lihat Course
+                            </button>
+                            <button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors" title="Copy Link">
+                                <i class="ph-bold ph-link text-lg"></i>
+                            </button>
+                            <button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors" title="Hapus">
+                                <i class="ph-bold ph-trash text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 (Processing) -->
+                    <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition-shadow group flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-red-50 text-red-500 flex items-center justify-center text-xl">
+                                <i class="ph-fill ph-file-pdf"></i>
+                            </div>
+                            <!-- Badge Status (Loading) -->
+                            <span class="px-2.5 py-1 bg-yellow-50 text-yellow-600 text-xs font-bold rounded-full border border-yellow-100 flex items-center gap-1">
+                                <i class="ph-bold ph-spinner animate-spin"></i> Processing
+                            </span>
+                        </div>
+                        <h4 class="font-bold text-dark text-lg mb-1 truncate">Biologi Bab 3 Sel.pdf</h4>
+                        <p class="text-xs text-slate-400 mb-6 flex-1">Sedang men-generate kuis...</p>
+                        
+                        <!-- Progress Bar (Fake) -->
+                        <div class="w-full bg-slate-100 rounded-full h-1.5 mb-2 mt-auto">
+                            <div class="bg-gradient-to-r from-yellow-400 to-orange-400 h-1.5 rounded-full w-[60%]"></div>
+                        </div>
+                        
+                        <!-- Action Buttons (Disabled) -->
+                        <div class="flex items-center gap-2 pt-2">
+                            <button disabled class="flex-1 bg-slate-100 text-slate-400 font-semibold py-2 rounded-lg text-sm cursor-not-allowed">
+                                Sedang Diproses
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 (Empty State for New Upload) -->
+                    <div class="bg-slate-50 rounded-2xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center h-full min-h-[220px] text-slate-400 hover:text-primary hover:border-indigo-300 hover:bg-indigo-50/30 transition-colors cursor-pointer" onclick="document.getElementById('target-upload').scrollIntoView({behavior:'smooth'})">
+                        <i class="ph-bold ph-plus text-3xl mb-2"></i>
+                        <span class="font-medium text-sm">Buat Course Baru</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ================= 🎬 ONBOARDING MODAL ================= -->
+    <div id="onboarding-overlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500">
+        <!-- Slider Card -->
+        <div class="bg-white w-[90%] max-w-md rounded-3xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-500" id="onboarding-card">
+            
+            <!-- Dynamic Content Area -->
+            <div class="p-8 text-center" id="onboarding-content">
+                <!-- Icon container -->
+                <div id="ob-icon-bg" class="w-20 h-20 mx-auto rounded-2xl bg-indigo-100 text-primary flex items-center justify-center text-4xl mb-6 shadow-inner relative">
+                    <i id="ob-icon" class="ph-fill ph-sparkle"></i>
+                    <!-- Decorative element -->
+                    <div class="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full border-2 border-white animate-pulse"></div>
+                </div>
+                
+                <h3 id="ob-title" class="text-2xl font-extrabold text-dark mb-3">Selamat Datang di JadiKelas!</h3>
+                <p id="ob-desc" class="text-slate-500 text-sm leading-relaxed">
+                    Ubah tumpukan PDF membosankan menjadi course interaktif layaknya startup edutech top, hanya dalam hitungan detik.
+                </p>
+            </div>
+
+            <!-- Bottom Controls -->
+            <div class="bg-slate-50 border-t border-slate-100 p-6">
+                <!-- Progress Dots -->
+                <div class="flex justify-center gap-2 mb-6" id="ob-dots">
+                    <!-- Dots generated by JS -->
+                </div>
+                
+                <!-- Buttons -->
+                <div class="flex gap-3">
+                    <button id="btn-ob-skip" class="flex-1 py-3 font-semibold text-slate-500 hover:text-dark hover:bg-slate-200 rounded-xl transition-colors">
+                        Lewati
+                    </button>
+                    <button id="btn-ob-next" class="flex-1 py-3 bg-dark text-white font-semibold rounded-xl shadow-md hover:bg-slate-800 hover:-translate-y-0.5 transition-all">
+                        Lanjut
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 🧭 FEATURE TOUR TOOLTIP ================= -->
+    <!-- Dark background to dim unhighlighted elements -->
+    <div id="tour-backdrop" class="fixed inset-0 bg-slate-900/70 backdrop-blur-[2px] z-50 hidden opacity-0 transition-opacity duration-300"></div>
+    
+    <!-- Floating Tooltip Box -->
+    <div id="tour-tooltip" class="fixed z-[70] bg-white rounded-2xl shadow-2xl w-72 p-5 hidden opacity-0 transition-opacity duration-300 transform scale-95 border border-slate-100">
+        <!-- Pointer arrow (CSS triangle) -->
+        <div id="tour-arrow" class="absolute w-4 h-4 bg-white transform rotate-45 border-l border-t border-slate-100 -top-2 left-1/2 -translate-x-1/2"></div>
+        
+        <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1">Langkah <span id="tour-step-num">1</span>/2</p>
+        <h4 id="tour-title" class="text-lg font-bold text-dark mb-2">Area Upload Utama</h4>
+        <p id="tour-desc" class="text-sm text-slate-500 mb-4">Mulai keajaiban di sini. Cukup drag & drop PDF materi Anda, sistem akan otomatis memprosesnya.</p>
+        
+        <div class="flex justify-end">
+            <button id="btn-tour-next" class="px-5 py-2 bg-gradient-to-r from-primary to-secondary text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                Mengerti
+            </button>
+        </div>
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        // --- 1. DATA ONBOARDING SLIDER ---
+        const onboardingSteps = [
+            {
+                title: "Selamat Datang di JadiKelas!",
+                desc: "Platform berbasis AI yang akan menyulap PDF materi membosankan Anda menjadi course interaktif dalam hitungan detik.",
+                icon: "ph-sparkle",
+                color: "text-primary", bg: "bg-indigo-100"
+            },
+            {
+                title: "1. Upload File Anda",
+                desc: "Tidak perlu coding atau design. Cukup upload materi PDF Anda ke sistem kami.",
+                icon: "ph-upload-simple",
+                color: "text-blue-600", bg: "bg-blue-100"
+            },
+            {
+                title: "2. AI Bekerja Cerdas",
+                desc: "Sistem kami membaca konteks, membuat struktur bab, dan merangkum inti materi secara otomatis.",
+                icon: "ph-brain",
+                color: "text-purple-600", bg: "bg-purple-100"
+            },
+            {
+                title: "3. Kuis Otomatis",
+                desc: "Di setiap akhir materi, AI membuatkan soal latihan interaktif untuk menguji pemahaman.",
+                icon: "ph-list-checks",
+                color: "text-emerald-600", bg: "bg-emerald-100"
+            },
+            {
+                title: "4. AI Mentor Pribadi",
+                desc: "Course Anda dilengkapi asisten chat yang siap menjawab pertanyaan spesifik tentang materi tersebut.",
+                icon: "ph-robot",
+                color: "text-orange-500", bg: "bg-orange-100"
+            },
+            {
+                title: "Siap Dibagikan!",
+                desc: "Dapatkan link website khusus. Bagikan ke murid/peserta tanpa mereka harus download aplikasi apapun.",
+                icon: "ph-share-network",
+                color: "text-pink-600", bg: "bg-pink-100"
+            }
+        ];
+
+        let currentObStep = 0;
+
+        // Elements Onboarding
+        const obOverlay = document.getElementById('onboarding-overlay');
+        const obCard = document.getElementById('onboarding-card');
+        const obIconBg = document.getElementById('ob-icon-bg');
+        const obIcon = document.getElementById('ob-icon');
+        const obTitle = document.getElementById('ob-title');
+        const obDesc = document.getElementById('ob-desc');
+        const obDotsContainer = document.getElementById('ob-dots');
+        const btnObNext = document.getElementById('btn-ob-next');
+        const btnObSkip = document.getElementById('btn-ob-skip');
+
+        // Render step
+        function renderObStep(index) {
+            const step = onboardingSteps[index];
+            
+            // Animasi transisi konten
+            obIconBg.className = `w-20 h-20 mx-auto rounded-2xl flex items-center justify-center text-4xl mb-6 shadow-inner relative ${step.bg} ${step.color}`;
+            obIcon.className = `ph-fill ${step.icon}`;
+            obTitle.innerText = step.title;
+            obDesc.innerText = step.desc;
+
+            // Render Dots
+            obDotsContainer.innerHTML = '';
+            for(let i = 0; i < onboardingSteps.length; i++) {
+                const dot = document.createElement('div');
+                dot.className = `h-2 rounded-full transition-all duration-300 ${i === index ? 'w-6 bg-primary' : 'w-2 bg-slate-300'}`;
+                obDotsContainer.appendChild(dot);
+            }
+
+            // Update button text
+            btnObNext.innerText = index === onboardingSteps.length - 1 ? 'Mulai Sekarang' : 'Lanjut';
+        }
+
+        function closeOnboarding() {
+            obOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+            obCard.classList.remove('scale-100');
+            obCard.classList.add('scale-95');
+            
+            // Setelah onboarding tertutup, mulai Feature Tour
+            setTimeout(startFeatureTour, 500);
+        }
+
+        // Event Listeners Onboarding
+        btnObNext.addEventListener('click', () => {
+            if(currentObStep < onboardingSteps.length - 1) {
+                currentObStep++;
+                renderObStep(currentObStep);
+            } else {
+                closeOnboarding();
+            }
+        });
+
+        btnObSkip.addEventListener('click', closeOnboarding);
+
+        // Simulasi muncul onboarding saat pertama buka web
+        window.onload = () => {
+            renderObStep(0);
+            setTimeout(() => {
+                obOverlay.classList.add('opacity-100', 'pointer-events-auto');
+                obCard.classList.remove('scale-95');
+                obCard.classList.add('scale-100');
+            }, 500); // delay dikit biar mulus
+        };
+
+
+        // --- 2. DATA FEATURE TOUR (HIGHLIGHT) ---
+        const tourSteps = [
+            {
+                targetId: 'target-upload',
+                title: 'Area Upload Utama',
+                desc: 'Mulai keajaiban di sini. Cukup drag & drop PDF materi Anda, AI akan langsung memprosesnya menjadi course.',
+                position: 'bottom' // Tooltip di bawah elemen
+            },
+            {
+                targetId: 'target-courses',
+                title: 'Daftar Course',
+                desc: 'Semua file yang sedang diproses atau sudah selesai akan muncul di sini. Anda bisa lihat, edit, atau share link-nya.',
+                position: 'top' // Tooltip di atas elemen
+            }
+        ];
+
+        let currentTourStep = 0;
+        const tourBackdrop = document.getElementById('tour-backdrop');
+        const tourTooltip = document.getElementById('tour-tooltip');
+        const btnTourNext = document.getElementById('btn-tour-next');
+        let currentHighlightedEl = null;
+
+        function startFeatureTour() {
+            currentTourStep = 0;
+            tourBackdrop.classList.remove('hidden');
+            tourTooltip.classList.remove('hidden');
+            
+            // Fade in
+            setTimeout(() => {
+                tourBackdrop.classList.add('opacity-100');
+                showTourStep(0);
+            }, 50);
+        }
+
+        function showTourStep(index) {
+            // Hapus highlight sebelumnya
+            if (currentHighlightedEl) {
+                currentHighlightedEl.classList.remove('tour-highlight');
+            }
+
+            const step = tourSteps[index];
+            const targetEl = document.getElementById(step.targetId);
+            
+            if (!targetEl) return endTour();
+
+            currentHighlightedEl = targetEl;
+            
+            // Scroll ke elemen
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Tambahkan class highlight (z-index tinggi, border, putih)
+            targetEl.classList.add('tour-highlight');
+
+            // Update teks tooltip
+            document.getElementById('tour-step-num').innerText = index + 1;
+            document.getElementById('tour-title').innerText = step.title;
+            document.getElementById('tour-desc').innerText = step.desc;
+            btnTourNext.innerText = index === tourSteps.length - 1 ? 'Selesai' : 'Lanjut';
+
+            // Positioning Tooltip (Mockup Logic sederhana)
+            // Dalam real apps, gunakan Popper.js. Di sini kita hitung posisi relatif ke viewport
+            setTimeout(() => {
+                const rect = targetEl.getBoundingClientRect();
+                const tooltipArrow = document.getElementById('tour-arrow');
+                
+                tourTooltip.classList.add('opacity-100', 'scale-100');
+                
+                // Set fixed posisi box tooltip
+                tourTooltip.style.left = `${Math.max(16, rect.left + (rect.width / 2) - 144)}px`; // Center align, 144 is half of w-72 (288px)
+                
+                if (step.position === 'bottom') {
+                    tourTooltip.style.top = `${rect.bottom + 20}px`;
+                    tooltipArrow.className = "absolute w-4 h-4 bg-white transform rotate-45 border-l border-t border-slate-100 -top-2 left-1/2 -translate-x-1/2";
+                } else {
+                    tourTooltip.style.top = `${rect.top - tourTooltip.offsetHeight - 20}px`;
+                    tooltipArrow.className = "absolute w-4 h-4 bg-white transform rotate-45 border-r border-b border-slate-100 -bottom-2 left-1/2 -translate-x-1/2";
+                }
+            }, 300); // tunggu scroll selesai
+        }
+
+        function endTour() {
+            if (currentHighlightedEl) {
+                currentHighlightedEl.classList.remove('tour-highlight');
+            }
+            tourTooltip.classList.remove('opacity-100', 'scale-100');
+            tourBackdrop.classList.remove('opacity-100');
+            
+            setTimeout(() => {
+                tourTooltip.classList.add('hidden');
+                tourBackdrop.classList.add('hidden');
+            }, 300);
+        }
+
+        btnTourNext.addEventListener('click', () => {
+            tourTooltip.classList.remove('opacity-100', 'scale-100'); // fade out animasi
+            
+            setTimeout(() => {
+                if(currentTourStep < tourSteps.length - 1) {
+                    currentTourStep++;
+                    showTourStep(currentTourStep);
+                } else {
+                    endTour();
+                }
+            }, 200);
+        });
+
+    </script>
+</body>
+</html>
