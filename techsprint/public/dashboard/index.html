@@ -127,13 +127,13 @@
 
         <div class="p-4 border-t border-slate-800/50">
             <div class="flex items-center gap-3 px-4 py-3 mb-2">
-                <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-white font-bold">UN</div>
+                <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-white font-bold" data-user-initials>UN</div>
                 <div class="overflow-hidden">
-                    <p class="text-sm font-semibold text-white truncate">User Name</p>
-                    <p class="text-xs text-slate-400 truncate">user@email.com</p>
+                    <p class="text-sm font-semibold text-white truncate" data-user-name>User Name</p>
+                    <p class="text-xs text-slate-400 truncate" data-user-email>user@email.com</p>
                 </div>
             </div>
-            <button class="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-lg font-medium transition-all">
+            <button data-logout class="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-lg font-medium transition-all">
                 <i class="ph-bold ph-sign-out"></i> Logout
             </button>
         </div>
@@ -191,22 +191,22 @@
                 <!-- 1. DASHBOARD PAGE -->
                 <div id="page-dashboard" class="page-content active space-y-8">
                     <div>
-                        <h1 class="text-2xl md:text-3xl font-bold text-dark mb-1">Halo, User 👋</h1>
+                        <h1 class="text-2xl md:text-3xl font-bold text-dark mb-1">Halo, <span data-user-name></span></span> 👋</h1>
                         <p class="text-slate-500 text-sm">Sudah siap belajar materi baru hari ini?</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                         <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4" id="step-token">
                             <div class="w-14 h-14 rounded-full bg-indigo-50 flex items-center justify-center text-primary text-2xl"><i class="ph-fill ph-paper-plane-tilt"></i></div>
-                            <div><p class="text-xs font-medium text-slate-500">Current Plan</p><p class="text-xl font-bold text-dark">Free</p></div>
+                            <div><p class="text-xs font-medium text-slate-500">Current Plan</p><p class="text-xl font-bold text-dark" data-user-plan>Free</p></div>
                         </div>
                         <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4">
                             <div class="w-14 h-14 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 text-2xl"><i class="ph-fill ph-book-open"></i></div>
-                            <div><p class="text-xs font-medium text-slate-500">Course Dibuat</p><p class="text-lg md:text-xl font-bold text-dark">1 <span class="text-xs text-slate-400 font-normal">/ 2 Maks</span></p></div>
+                            <div><p class="text-xs font-medium text-slate-500">Course Dibuat</p><p class="text-lg md:text-xl font-bold text-dark" data-user-course>0 / 2 Maks</p></div>
                         </div>
                         <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4">
                             <div class="w-14 h-14 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 text-2xl"><i class="ph-fill ph-coin"></i></div>
-                            <div><p class="text-xs font-medium text-slate-500">Sisa Credit</p><p class="text-xl font-bold text-dark">10</p></div>
+                            <div><p class="text-xs font-medium text-slate-500">Sisa Credit</p><p class="text-xl font-bold text-dark" data-user-credit>10</p></div>
                         </div>
                     </div>
 
@@ -323,29 +323,30 @@
                             </button>
                         </div>
                         <div>
-                            <h1 class="text-2xl md:text-3xl font-extrabold text-dark mb-1">User Name</h1>
-                            <span class="inline-block mt-2 px-3 py-1 bg-indigo-100 text-primary text-xs font-bold rounded-full">Free Plan</span>
+                            <h1 class="text-2xl md:text-3xl font-extrabold text-dark mb-1" data-user-name>User Name</h1>
+                            <span class="inline-block mt-2 px-3 py-1 bg-indigo-100 text-primary text-xs font-bold rounded-full" data-user-plan-badge>Free Plan</span>
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6">
                             <h3 class="text-lg font-bold text-dark">Informasi Pribadi</h3>
-                            <div class="space-y-4">
+                            <form id="profile-form" class="space-y-4">
                                 <div>
                                     <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Nama Lengkap</label>
-                                    <input type="text" value="User Name" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 outline-none">
+                                    <input type="text" id="profile-name" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 outline-none">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Email</label>
-                                    <input type="email" value="user@email.com" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 outline-none">
+                                    <input type="email" id="profile-email" disabled class="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-xl outline-none text-slate-400 cursor-not-allowed">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Sekolah / Instansi</label>
-                                    <input type="text" value="Universitas ABC" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 outline-none">
+                                    <input type="text" id="profile-sekolah" placeholder="Universitas / Sekolah" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 outline-none">
                                 </div>
-                            </div>
-                            <button class="px-6 py-3 bg-dark text-white font-bold rounded-xl hover:opacity-90 transition-all">Simpan Perubahan</button>
+                                <p id="profile-msg" class="text-sm font-medium hidden"></p>
+                                <button type="submit" class="px-6 py-3 bg-dark text-white font-bold rounded-xl hover:opacity-90 transition-all">Simpan Perubahan</button>
+                            </form>
                         </div>
 
                         <div class="space-y-6">
@@ -551,9 +552,10 @@
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
                 card.classList.remove('scale-95');
-            }, 500);
-        };
+            }, 500)};
     </script>
     <script src="/chatbot.js"></script>
+    <script src="/dashboard/dashboard.js"></script>
+</body>
 </body>
 </html>
