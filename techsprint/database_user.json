@@ -31,5 +31,13 @@
     "plan": 1,
     "creditLeft": 10,
     "courseCreated": 0
+  },
+  {
+    "namaLengkap": "test2",
+    "email": "test2user@gmail.com",
+    "password": "$2b$10$y7/LRT2vRlzOYh6wXA7hnOtegvSosvgyZHYZTlqAs6NqRSMzFH1Na",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
