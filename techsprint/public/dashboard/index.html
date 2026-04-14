@@ -510,24 +510,61 @@
             document.getElementById('tour-desc').innerText = step.desc;
             btnTourNext.innerText = index === tourSteps.length - 1 ? 'Selesai' : 'Lanjut';
 
-            // Positioning Tooltip (Mockup Logic sederhana)
-            // Dalam real apps, gunakan Popper.js. Di sini kita hitung posisi relatif ke viewport
+            // Positioning Tooltip yang lebih pintar & responsif
             setTimeout(() => {
                 const rect = targetEl.getBoundingClientRect();
                 const tooltipArrow = document.getElementById('tour-arrow');
                 
+                // Set visible dulu (tapi transparent) untuk mendapatkan height aslinya
+                tourTooltip.classList.remove('hidden');
+                
+                const tooltipWidth = tourTooltip.offsetWidth;
+                const tooltipHeight = tourTooltip.offsetHeight;
+                
+                // 1. Hitung Posisi Horizontal (X) agar tidak keluar layar
+                let leftPos = rect.left + (rect.width / 2) - (tooltipWidth / 2);
+                leftPos = Math.max(16, leftPos); // Jangan nabrak kiri layar
+                leftPos = Math.min(leftPos, window.innerWidth - tooltipWidth - 16); // Jangan nabrak kanan layar
+                tourTooltip.style.left = `${leftPos}px`;
+                
+                // Sesuaikan panah penunjuk (arrow) agar tetap menunjuk ke target meskipun tooltip geser
+                let arrowLeftOffset = rect.left + (rect.width / 2) - leftPos;
+                arrowLeftOffset = Math.max(16, Math.min(arrowLeftOffset, tooltipWidth - 16));
+                
+                // 2. Hitung Posisi Vertikal (Y) dengan Smart Flip (Atas/Bawah)
+                let desiredPos = step.position;
+                let topPos;
+                
+                // Deteksi ruang: jika ditaruh di bawah mentok layar, pindah ke atas (dan sebaliknya)
+                if (desiredPos === 'bottom' && (rect.bottom + tooltipHeight + 20 > window.innerHeight)) {
+                    desiredPos = 'top';
+                } else if (desiredPos === 'top' && (rect.top - tooltipHeight - 20 < 0)) {
+                    desiredPos = 'bottom';
+                }
+                
+                // Terapkan posisi & sesuaikan panah
+                if (desiredPos === 'bottom') {
+                    topPos = rect.bottom + 15;
+                    // Fallback jika tinggi elemen melebihi tinggi layar
+                    if (topPos + tooltipHeight > window.innerHeight) topPos = window.innerHeight - tooltipHeight - 16;
+                    
+                    tooltipArrow.className = "absolute w-4 h-4 bg-white transform rotate-45 border-l border-t border-slate-100 -top-2";
+                } else {
+                    topPos = rect.top - tooltipHeight - 15;
+                    // Fallback jika kelewatan di atas
+                    if (topPos < 0) topPos = 16;
+                    
+                    tooltipArrow.className = "absolute w-4 h-4 bg-white transform rotate-45 border-r border-b border-slate-100 -bottom-2";
+                }
+                
+                // Set posisi panah & tooltip fix
+                tooltipArrow.style.left = `${arrowLeftOffset}px`;
+                tooltipArrow.style.marginLeft = '-8px';
+                tourTooltip.style.top = `${topPos}px`;
+                
+                // Tampilkan tooltip secara penuh dengan animasi
                 tourTooltip.classList.add('opacity-100', 'scale-100');
                 
-                // Set fixed posisi box tooltip
-                tourTooltip.style.left = `${Math.max(16, rect.left + (rect.width / 2) - 144)}px`; // Center align, 144 is half of w-72 (288px)
-                
-                if (step.position === 'bottom') {
-                    tourTooltip.style.top = `${rect.bottom + 20}px`;
-                    tooltipArrow.className = "absolute w-4 h-4 bg-white transform rotate-45 border-l border-t border-slate-100 -top-2 left-1/2 -translate-x-1/2";
-                } else {
-                    tourTooltip.style.top = `${rect.top - tourTooltip.offsetHeight - 20}px`;
-                    tooltipArrow.className = "absolute w-4 h-4 bg-white transform rotate-45 border-r border-b border-slate-100 -bottom-2 left-1/2 -translate-x-1/2";
-                }
             }, 300); // tunggu scroll selesai
         }
 
