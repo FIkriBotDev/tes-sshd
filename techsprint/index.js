@@ -2,51 +2,47 @@ const express = require("express");
 const axios = require("axios");
 const fs = require("fs");
 const path = require("path");
-const session = require("express-session");
-const authRoutes = require("./auth");
 
 const app = express();
 const PORT = 5526;
 
 app.use(express.json());
-app.use(session({
-    secret: "jadikelas_secret_key_2024",
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: false, maxAge: 7 * 24 * 60 * 60 * 1000 } // 7 hari
-}));
-app.use(express.static("public"));
-app.use("/api", authRoutes);
+app.use(express.static("/home/runner/work/tes-sshd/tes-sshd/techsprint/public"));
 
-const POLLINATIONS_API_KEY = "YOUR_API_KEY";
+// ⚠️ API KEY (sesuai permintaan kamu)
+const POLLINATIONS_API_KEY = "sk_RM9sUErPNlaj7kFenSIMljnIVvAyssUk";
 
+// Load system prompt
 const SYSTEM_PROMPT = fs.readFileSync(
     path.join(__dirname, "SYSTEM_PROMPT.md"),
     "utf-8"
 );
 
+// In-memory session store
 const sessions = {};
 
+// Routes
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/public/index.html");
+    res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/index.html");
 });
 
 app.get("/about", (req, res) => {
-    res.sendFile(__dirname + "/public/about/index.html");
+    res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/about/index.html");
 });
 
 app.get("/pricing", (req, res) => {
-    res.sendFile(__dirname + "/public/pricing/index.html");
+    res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/pricing/index.html");
 });
 
 app.get("/favicon.ico", (req, res) => {
-    res.sendFile(__dirname + "/public/favicon.ico");
+    res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/favicon.ico");
 });
 
 app.get("/dashboard", (req, res) => {
-    res.sendFile(__dirname + "/public/dashboard/index.html");
+    res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/dashboard/index.html");
 });
 
+// Chat API
 app.post("/api/chat", async (req, res) => {
     const { sessionId, message } = req.body;
 
@@ -55,7 +51,8 @@ app.post("/api/chat", async (req, res) => {
             error: "sessionId and message are required"
         });
     }
-    
+
+    // Init session
     if (!sessions[sessionId]) {
         sessions[sessionId] = [
             { role: "system", content: SYSTEM_PROMPT }
@@ -64,6 +61,7 @@ app.post("/api/chat", async (req, res) => {
 
     const messages = sessions[sessionId];
 
+    // Tambahkan pesan user
     messages.push({
         role: "user",
         content: message
@@ -89,6 +87,7 @@ app.post("/api/chat", async (req, res) => {
             response.data.choices?.[0]?.message?.content ||
             "Maaf, saya tidak bisa menjawab saat ini.";
 
+        // Simpan ke memory
         messages.push({
             role: "assistant",
             content: aiReply
