@@ -38,6 +38,10 @@ app.get("/favicon.ico", (req, res) => {
     res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/favicon.ico");
 });
 
+app.get("/dashboard", (req, res) => {
+    res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/dashboard/index.html");
+});
+
 // Chat API
 app.post("/api/chat", async (req, res) => {
     const { sessionId, message } = req.body;
