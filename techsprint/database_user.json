@@ -23,5 +23,13 @@
     "plan": 1,
     "creditLeft": 10,
     "courseCreated": 0
+  },
+  {
+    "namaLengkap": "Muhammad Rofi Basri",
+    "email": "muhrofibasri@gmail.com",
+    "password": "$2b$10$1GSgG1AKqU3fvZIZXqiZCOAeYfcFhtSzv/9gtSQPcdWmZnAhdkL.u",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
