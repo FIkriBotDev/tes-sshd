@@ -379,13 +379,20 @@
                             <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm">
                                 <h3 class="text-lg font-bold text-dark mb-4">Pengaturan Akun</h3>
                                 <div class="space-y-4">
-                                    <button class="w-full flex items-center justify-between p-4 hover:bg-slate-50 rounded-2xl transition-all group">
+                                    <!-- <button class="w-full flex items-center justify-between p-4 hover:bg-slate-50 rounded-2xl transition-all group">
                                         <div class="flex items-center gap-3">
                                             <i class="ph ph-lock-key text-xl text-slate-400 group-hover:text-primary"></i>
                                             <span class="font-medium text-slate-700">Ubah Kata Sandi</span>
                                         </div>
                                         <i class="ph ph-caret-right"></i>
                                     </button> -->
+                                    <button onclick="switchPage('password')" class="w-full flex items-center justify-between p-4 hover:bg-slate-50 rounded-2xl transition-all group">
+                                        <div class="flex items-center gap-3">
+                                            <i class="ph ph-lock-key text-xl text-slate-400 group-hover:text-primary"></i>
+        <span class="font-medium text-slate-700">Ubah Kata Sandi</span>
+    </div>
+    <i class="ph ph-caret-right"></i>
+</button>
                                     <button class="w-full flex items-center justify-between p-4 hover:bg-red-50 rounded-2xl transition-all group">
                                         <div class="flex items-center gap-3">
                                             <i class="ph ph-trash text-xl text-red-400"></i>
