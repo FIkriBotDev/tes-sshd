@@ -405,7 +405,37 @@
                     </div>
                 </div>
 
-                <!---->
+                <!-- Ubah Kata Sandi -->
+                 <div id="page-password" class="page-content space-y-8">
+    <button onclick="switchPage('profile')" class="flex items-center gap-2 text-slate-500 hover:text-primary transition-all font-medium">
+        <i class="ph-bold ph-arrow-left"></i> Kembali ke Profile
+    </button>
+    
+    <div class="max-w-xl bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+        <h2 class="text-2xl font-bold text-dark mb-2">Ubah Kata Sandi</h2>
+        <p class="text-slate-500 text-sm mb-8">Pastikan kata sandi baru Anda unik dan mudah diingat.</p>
+        
+        <form id="password-form" class="space-y-4">
+            <div>
+                <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Kata Sandi Saat Ini</label>
+                <input type="password" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 outline-none">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Kata Sandi Baru</label>
+                <input type="password" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 outline-none">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Konfirmasi Kata Sandi Baru</label>
+                <input type="password" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 outline-none">
+            </div>
+            <div class="pt-4">
+                <button type="submit" class="w-full py-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:opacity-90 transition-all">
+                    Simpan Kata Sandi Baru
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
                     <!-- Form Profile... -->
                 </div>
 
