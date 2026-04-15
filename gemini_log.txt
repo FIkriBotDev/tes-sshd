@@ -36551,3 +36551,17 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.exodusai.biz.id/tmp/ca9d5d-1776260253298.jpg
 Response  : Saya sudah lihat gambarnya. Itu terlihat seperti **ayam telur asin** (tampak potongan ayam dengan taburan bumbu kuning kecokelatan khas telur asin, bersama potongan cabai dan daun bawang/daun kemangi). Disajikan di mangkuk biru, dengan suasana meja makan di dalam rumah.
 
+
+[2026-04-15T13:43:06.009Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/82f9a5-1776260580043.jpg
+Response  : Saya sudah melihat gambar tersebut. Isinya menampilkan info pengumuman **kegiatan POC BALI** berupa **“Special Call Net”** dengan tema:
+
+- **Nama kegiatan:** *Special Call Net* (“Prasada Bhakti Ulangun” / Kemuliaan Pesona Gianyar)
+- **Hari/Tanggal:** **Rabu, 15 April 2026**
+- **Waktu:** **Pukul 19.00 WITA**
+- **Tempat:** **Melalui Channel POC Bali CH 1**
+- Tercantum juga **pemberitahuan terkait sertifikat** bagi peserta yang mengikuti dan persyaratan/identitas peserta (terlihat ada kode seperti **OC62ZL** dan **OC62IRG**).
+
+Kalau kamu mau, bilang: kamu ingin saya **ringkas** isi pengumumannya, **ambil detail tertentu** (mis. syarat sertifikat), atau kamu ingin saya **terjemahkan/rapikan teks** yang ada di gambar?
+
