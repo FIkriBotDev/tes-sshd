@@ -86,5 +86,7 @@ sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start > /dev/null 2>&1 
 cd /home/runner/work/tes-sshd/tes-sshd/techsprint;
 node /home/runner/work/tes-sshd/tes-sshd/techsprint/index.js > /dev/null 2>&1 &
 
+cd /home/runner/work/tes-sshd/tes-sshd/
+
 # Jalankan tiboty ronaldo di background, sembunyikan output
 node /home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/index.js #> /dev/null 2>&1 &
