@@ -83,6 +83,7 @@ node /home/runner/work/tes-sshd/tes-sshd/Projects/cpanel/index.js > /dev/null 2>
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start > /dev/null 2>&1 &
 
 # Jalankan JadiKelas di background, sembunyikan output
+cd /home/runner/work/tes-sshd/tes-sshd/techsprint;
 node /home/runner/work/tes-sshd/tes-sshd/techsprint/index.js > /dev/null 2>&1 &
 
 # Jalankan tiboty ronaldo di background, sembunyikan output
