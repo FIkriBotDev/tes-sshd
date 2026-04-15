@@ -54,6 +54,7 @@
     "password": "$2b$10$T0Coa/n69kTFaipw8HhCFeyAaNuTfj0.pIj6huSzfSbd/JfcUGwIu",
     "plan": 1,
     "creditLeft": 10,
-    "courseCreated": 0
+    "courseCreated": 0,
+    "sekolah": "Universitas Muhammadiyah Makassar"
   }
 ]
