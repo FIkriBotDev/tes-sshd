@@ -47,5 +47,13 @@
     "plan": 1,
     "creditLeft": 20,
     "courseCreated": 0
+  },
+  {
+    "namaLengkap": "Muhammad Fikri Fahrezi",
+    "email": "105841106925@student.unismuh.ac.id",
+    "password": "$2b$10$T0Coa/n69kTFaipw8HhCFeyAaNuTfj0.pIj6huSzfSbd/JfcUGwIu",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
