@@ -418,17 +418,16 @@
         <form id="password-form" class="space-y-4">
             <div>
                 <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Kata Sandi Saat Ini</label>
-                <input type="password" id="pw-current" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 outline-none">
+                <input type="password" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 outline-none">
             </div>
             <div>
                 <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Kata Sandi Baru</label>
-                <input type="password" id="pw-new" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 outline-none">
+                <input type="password" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 outline-none">
             </div>
             <div>
                 <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Konfirmasi Kata Sandi Baru</label>
-                <input type="password" id="pw-confirm" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 outline-none">
+                <input type="password" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 outline-none">
             </div>
-            <p id="password-msg" class="text-sm font-medium"></p>
             <div class="pt-4">
                 <button type="submit" class="w-full py-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:opacity-90 transition-all">
                     Simpan Kata Sandi Baru
