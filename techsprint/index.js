@@ -28,23 +28,23 @@ const SYSTEM_PROMPT = fs.readFileSync(
 const sessions = {};
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/index.html");
+    res.sendFile(__dirname + "/public/index.html");
 });
 
 app.get("/about", (req, res) => {
-    res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/about/index.html");
+    res.sendFile(__dirname + "/public/about/index.html");
 });
 
 app.get("/pricing", (req, res) => {
-    res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/pricing/index.html");
+    res.sendFile(__dirname + "/public/pricing/index.html");
 });
 
 app.get("/favicon.ico", (req, res) => {
-    res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/favicon.ico");
+    res.sendFile(__dirname + "/public/favicon.ico");
 });
 
 app.get("/dashboard", (req, res) => {
-    res.sendFile(__dirname + "/home/runner/work/tes-sshd/tes-sshd/techsprint/public/dashboard/index.html");
+    res.sendFile(__dirname + "/public/dashboard/index.html");
 });
 
 app.post("/api/chat", async (req, res) => {
