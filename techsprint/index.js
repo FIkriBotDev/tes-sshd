@@ -21,7 +21,7 @@ app.use("/api", authRoutes);
 const POLLINATIONS_API_KEY = "sk_RM9sUErPNlaj7kFenSIMljnIVvAyssUk";
 
 const SYSTEM_PROMPT = fs.readFileSync(
-    path.join(__dirname, "/home/runner/work/tes-sshd/tes-sshd/techsprint/SYSTEM_PROMPT.md"),
+    path.join(__dirname, "SYSTEM_PROMPT.md"),
     "utf-8"
 );
 
