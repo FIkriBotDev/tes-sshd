@@ -46,7 +46,8 @@
     "password": "$2b$10$Z3c8SXIOas69dW9IDmqAv.mK21uO2lXf8EDHQR7o5McVgI4qfimJi",
     "plan": 1,
     "creditLeft": 20,
-    "courseCreated": 0
+    "courseCreated": 0,
+    "sekolah": ""
   },
   {
     "namaLengkap": "Muhammad Fikri Fahrezi",
