@@ -2,7 +2,7 @@
 // dashboard.js — Logic dashboard, load data dari /api/me
 // ============================================================
 
-const PLAN_NAMES = { 1: "Free", 2: "Starter", 3: "Pro" };
+const PLAN_NAMES = { 1: "Free", 2: "Starter Boost", 3: "Creator Pack", 4: "Campus Pro" };
 const PLAN_LIMITS = { 1: 2, 2: 10, 3: 50 };
 
 async function loadDashboard() {
