@@ -24,7 +24,8 @@ async function loadDashboard() {
         document.querySelectorAll("[data-user-email]").forEach(el => el.textContent = user.email);
         document.querySelectorAll("[data-user-plan]").forEach(el => el.textContent = planName);
         document.querySelectorAll("[data-user-credit]").forEach(el => el.textContent = user.creditLeft);
-        document.querySelectorAll("[data-user-course]").forEach(el => el.textContent = `${user.courseCreated} / ${planLimit} Maks`);
+//        document.querySelectorAll("[data-user-course]").forEach(el => el.textContent = `${user.courseCreated} / ${planLimit} Maks`);
+        document.querySelectorAll("[data-user-course]").forEach(el => el.textContent = `${user.courseCreated}`);
 
         // Avatar initials
         const initials = user.namaLengkap.split(" ").map(w => w[0]).slice(0, 2).join("").toUpperCase();
