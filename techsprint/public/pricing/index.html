@@ -495,56 +495,164 @@
         </div>
     </section>
 
-    <!-- COMPARISON TABLE SECTION -->
-    <section class="py-20 bg-slate-50" id="compare">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 fade-up">
-                <h2 class="text-3xl font-bold text-dark mb-4">Perbandingan Fitur Lengkap</h2>
-                <p class="text-slate-600">Lihat lebih detail apa saja yang Anda dapatkan di setiap paket.</p>
-            </div>
+<!-- CREDIT TOPUP PRICING SECTION -->
+<section class="py-20 bg-slate-50" id="pricing-credit">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden fade-up">
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse">
-                        <thead>
-                            <tr class="bg-slate-50/50 border-b border-slate-200">
-                                <th class="p-6 font-bold text-dark w-1/3">Fitur</th>
-                                <th class="p-6 font-bold text-dark text-center w-1/5">Free</th>
-                                <th class="p-6 font-bold text-primary text-center w-1/5 bg-indigo-50/30">Starter <i class="ph-fill ph-fire text-yellow-500"></i></th>
-                                <th class="p-6 font-bold text-purple-600 text-center w-1/5">Pro</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-sm">
-                            <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                                <td class="p-4 pl-6 text-slate-600 font-medium">Batas Pembuatan Course</td>
-                                <td class="p-4 text-center text-slate-500">2 Course</td>
-                                <td class="p-4 text-center text-dark font-bold bg-indigo-50/30">10 Course</td>
-                                <td class="p-4 text-center text-dark font-bold">50 Course</td>
-                            </tr>
-                            <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                                <td class="p-4 pl-6 text-slate-600 font-medium">Credit AI (Estimasi)</td>
-                                <td class="p-4 text-center text-slate-500">Terbatas</td>
-                                <td class="p-4 text-center text-dark font-bold bg-indigo-50/30">±50 Credit</td>
-                                <td class="p-4 text-center text-dark font-bold">±300 Credit</td>
-                            </tr>
-                            <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                                <td class="p-4 pl-6 text-slate-600 font-medium">Maks. Halaman per Dokumen</td>
-                                <td class="p-4 text-center text-slate-500">20 Halaman</td>
-                                <td class="p-4 text-center text-dark font-bold bg-indigo-50/30">50 Halaman</td>
-                                <td class="p-4 text-center text-dark font-bold">150 Halaman</td>
-                            </tr>
-                            <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                                <td class="p-4 pl-6 text-slate-600 font-medium">Kualitas AI Mentor</td>
-                                <td class="p-4 text-center text-slate-500">Basic (GPT-3.5)</td>
-                                <td class="p-4 text-center text-dark font-bold bg-indigo-50/30">Standar</td>
-                                <td class="p-4 text-center text-dark font-bold">Advanced (GPT-4)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+    <!-- Heading -->
+    <div class="text-center mb-14 fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">
+        Paket Top Up Credit JadiKelas
+      </h2>
+      <p class="text-slate-600 max-w-2xl mx-auto">
+        Tambah credit kapan saja sesuai kebutuhanmu. 
+        1 Course = <span class="font-semibold text-primary">5 Credit</span>
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Paket 1 -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 hover:shadow-lg transition-all duration-300 fade-up">
+        <div class="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center mb-5">
+          <i class="ph-fill ph-rocket-launch text-primary text-xl"></i>
         </div>
-    </section>
+
+        <h3 class="text-xl font-bold text-dark mb-1">Starter Boost</h3>
+        <p class="text-sm text-slate-500 mb-5">Untuk coba pertama kali</p>
+
+        <div class="mb-4">
+          <span class="text-3xl font-bold text-dark">Rp9.000</span>
+        </div>
+
+        <div class="space-y-3 text-sm text-slate-600 mb-6">
+          <div class="flex items-center gap-2">
+            <i class="ph-bold ph-check text-green-500"></i>
+            <span>10 Credit</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="ph-bold ph-check text-green-500"></i>
+            <span>Bisa buat 2 Course</span>
+          </div>
+        </div>
+
+        <button class="w-full py-3 rounded-xl border border-primary text-primary font-semibold hover:bg-primary hover:text-white transition">
+          Pilih Paket
+        </button>
+      </div>
+
+      <!-- Paket 2 -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 hover:shadow-lg transition-all duration-300 fade-up">
+        <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-5">
+          <i class="ph-fill ph-student text-blue-600 text-xl"></i>
+        </div>
+
+        <h3 class="text-xl font-bold text-dark mb-1">Smart Learner</h3>
+        <p class="text-sm text-slate-500 mb-5">Cocok untuk mahasiswa aktif</p>
+
+        <div class="mb-4">
+          <span class="text-3xl font-bold text-dark">Rp19.000</span>
+        </div>
+
+        <div class="space-y-3 text-sm text-slate-600 mb-6">
+          <div class="flex items-center gap-2">
+            <i class="ph-bold ph-check text-green-500"></i>
+            <span>25 Credit</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="ph-bold ph-check text-green-500"></i>
+            <span>Bisa buat 5 Course</span>
+          </div>
+        </div>
+
+        <button class="w-full py-3 rounded-xl border border-primary text-primary font-semibold hover:bg-primary hover:text-white transition">
+          Pilih Paket
+        </button>
+      </div>
+
+      <!-- Paket 3 Highlight -->
+      <div class="relative bg-white rounded-2xl border-2 border-primary shadow-xl p-6 hover:shadow-2xl transition-all duration-300 fade-up scale-105">
+
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-xs px-4 py-1 rounded-full font-semibold shadow">
+          PALING POPULER 🔥
+        </div>
+
+        <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center mb-5">
+          <i class="ph-fill ph-crown text-purple-600 text-xl"></i>
+        </div>
+
+        <h3 class="text-xl font-bold text-dark mb-1">Creator Pack</h3>
+        <p class="text-sm text-slate-500 mb-5">Pilihan terbaik kreator</p>
+
+        <div class="mb-4">
+          <span class="text-3xl font-bold text-dark">Rp35.000</span>
+        </div>
+
+        <div class="space-y-3 text-sm text-slate-600 mb-6">
+          <div class="flex items-center gap-2">
+            <i class="ph-bold ph-check text-green-500"></i>
+            <span>50 Credit</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="ph-bold ph-check text-green-500"></i>
+            <span>Bisa buat 10 Course</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="ph-bold ph-check text-green-500"></i>
+            <span>Priority Processing</span>
+          </div>
+        </div>
+
+        <button class="w-full py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:opacity-90 transition">
+          Pilih Paket
+        </button>
+      </div>
+
+      <!-- Paket 4 -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 hover:shadow-lg transition-all duration-300 fade-up">
+        <div class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center mb-5">
+          <i class="ph-fill ph-buildings text-orange-500 text-xl"></i>
+        </div>
+
+        <h3 class="text-xl font-bold text-dark mb-1">Campus Pro</h3>
+        <p class="text-sm text-slate-500 mb-5">Untuk kelas & organisasi</p>
+
+        <div class="mb-4">
+          <span class="text-3xl font-bold text-dark">Rp59.000</span>
+        </div>
+
+        <div class="space-y-3 text-sm text-slate-600 mb-6">
+          <div class="flex items-center gap-2">
+            <i class="ph-bold ph-check text-green-500"></i>
+            <span>100 Credit</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="ph-bold ph-check text-green-500"></i>
+            <span>Bisa buat 20 Course</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="ph-bold ph-check text-green-500"></i>
+            <span>Faster AI Processing</span>
+          </div>
+        </div>
+
+        <button class="w-full py-3 rounded-xl border border-primary text-primary font-semibold hover:bg-primary hover:text-white transition">
+          Pilih Paket
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Note -->
+    <div class="text-center mt-10 fade-up">
+      <p class="text-sm text-slate-500">
+        Credit tidak hangus dan dapat digunakan kapan saja.
+      </p>
+    </div>
+
+  </div>
+</section>
 
     <!-- CTA SECTION -->
     <section class="py-20 relative overflow-hidden">
