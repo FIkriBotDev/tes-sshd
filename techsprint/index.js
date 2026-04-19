@@ -47,8 +47,8 @@ app.get("/dashboard", (req, res) => {
     res.sendFile(__dirname + "/public/dashboard/index.html");
 });
 
-app.get("/dashboard", (req, res) => {
-    res.sendFile(__dirname + "/public/dashboard/index.html");
+app.get("/index.html", (req, res) => {
+    res.sendFile(__dirname + "/public/index.html");
 });
 
 app.post("/api/chat", async (req, res) => {
