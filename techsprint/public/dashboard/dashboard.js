@@ -2,7 +2,7 @@
 // dashboard.js — Logic dashboard, load data dari /api/me
 // ============================================================
 
-const PLAN_NAMES = { 1: "Free", 2: "Starter Boost", 3: "Smart Learner", 4: "Creator", 5: "Campus Pro" };
+const PLAN_NAMES = { 1: "Free", 2: "Starter", 3: "Pro" };
 const PLAN_LIMITS = { 1: 2, 2: 10, 3: 50 };
 
 async function loadDashboard() {
@@ -24,8 +24,7 @@ async function loadDashboard() {
         document.querySelectorAll("[data-user-email]").forEach(el => el.textContent = user.email);
         document.querySelectorAll("[data-user-plan]").forEach(el => el.textContent = planName);
         document.querySelectorAll("[data-user-credit]").forEach(el => el.textContent = user.creditLeft);
-//        document.querySelectorAll("[data-user-course]").forEach(el => el.textContent = `${user.courseCreated} / ${planLimit} Maks`);
-        document.querySelectorAll("[data-user-course]").forEach(el => el.textContent = `${user.courseCreated}`);
+        document.querySelectorAll("[data-user-course]").forEach(el => el.textContent = `${user.courseCreated} / ${planLimit} Maks`);
 
         // Avatar initials
         const initials = user.namaLengkap.split(" ").map(w => w[0]).slice(0, 2).join("").toUpperCase();
@@ -173,3 +172,147 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("click", logoutUser);
     });
 });
+// ============================================================
+// PAYMENT GATEWAY SIMULATION
+// ============================================================
+
+const PACKAGES = [
+    { id: 1, name: "Starter Boost", price: 9000,  credit: 10,  tier: 2, desc: "Untuk coba pertama kali" },
+    { id: 2, name: "Smart Learner", price: 19000, credit: 25,  tier: 2, desc: "Cocok untuk mahasiswa aktif" },
+    { id: 3, name: "Creator Pack",  price: 35000, credit: 50,  tier: 3, desc: "Pilihan terbaik kreator" },
+    { id: 4, name: "Campus Pro",    price: 59000, credit: 100, tier: 3, desc: "Untuk kelas & organisasi" }
+];
+
+let selectedPackageId = null;
+
+function formatRupiah(n) {
+    return "Rp " + n.toLocaleString("id-ID");
+}
+
+function openPaymentModal(pkgId) {
+    const pkg = PACKAGES.find(p => p.id === pkgId);
+    if (!pkg) return;
+    selectedPackageId = pkgId;
+
+    document.getElementById("pm-pkg-name").textContent = pkg.name;
+    document.getElementById("pm-pkg-desc").textContent = pkg.desc;
+    document.getElementById("pm-pkg-credit").textContent = `+${pkg.credit} Credit`;
+    document.getElementById("pm-pkg-price").textContent = formatRupiah(pkg.price);
+
+    // Reset steps
+    document.getElementById("pm-step-1").classList.remove("hidden");
+    document.getElementById("pm-step-2").classList.add("hidden");
+    document.getElementById("pm-step-3").classList.add("hidden");
+
+    const modal = document.getElementById("payment-modal");
+    const card = document.getElementById("payment-modal-card");
+    modal.classList.remove("hidden");
+    setTimeout(() => {
+        modal.classList.remove("opacity-0");
+        card.classList.remove("translate-y-8");
+    }, 10);
+}
+
+function closePaymentModal() {
+    const modal = document.getElementById("payment-modal");
+    const card = document.getElementById("payment-modal-card");
+    modal.classList.add("opacity-0");
+    card.classList.add("translate-y-8");
+    setTimeout(() => modal.classList.add("hidden"), 280);
+}
+
+async function processPayment() {
+    if (!selectedPackageId) return;
+
+    // Show loading
+    document.getElementById("pm-step-1").classList.add("hidden");
+    document.getElementById("pm-step-2").classList.remove("hidden");
+
+    // Simulate 2s processing
+    await new Promise(r => setTimeout(r, 2000));
+
+    try {
+        const res = await fetch("/api/payment/pay", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ packageId: selectedPackageId })
+        });
+        const data = await res.json();
+
+        if (!data.success) {
+            alert("Pembayaran gagal: " + data.message);
+            closePaymentModal();
+            return;
+        }
+
+        const pkg = PACKAGES.find(p => p.id === selectedPackageId);
+
+        // Show success
+        document.getElementById("pm-step-2").classList.add("hidden");
+        document.getElementById("pm-step-3").classList.remove("hidden");
+        document.getElementById("pm-success-msg").textContent = `${pkg.credit} Credit berhasil ditambahkan`;
+        document.getElementById("pm-invoice-id").textContent = data.invoiceId;
+        document.getElementById("pm-success-pkg").textContent = pkg.name;
+        document.getElementById("pm-new-credit").textContent = data.creditLeft;
+        document.getElementById("pm-new-plan").textContent = data.newPlan;
+
+        // Refresh dashboard data tanpa reload
+        loadDashboard();
+
+    } catch (err) {
+        console.error("Payment error:", err);
+        alert("Terjadi kesalahan. Coba lagi.");
+        closePaymentModal();
+    }
+}
+
+// Close modal on backdrop click
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("payment-modal");
+    if (modal) {
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) closePaymentModal();
+        });
+    }
+});
+
+// Load payment history
+async function loadPaymentHistory() {
+    try {
+        const res = await fetch("/api/payment/history");
+        const data = await res.json();
+        const container = document.getElementById("history-container");
+        if (!container) return;
+
+        if (!data.success || data.history.length === 0) {
+            container.innerHTML = `
+                <div class="text-center py-16 text-slate-400">
+                    <i class="ph ph-receipt text-5xl mb-3 block"></i>
+                    <p class="font-medium">Belum ada transaksi</p>
+                    <button onclick="switchPage('topup')" class="mt-4 px-6 py-2.5 bg-primary text-white font-bold rounded-xl text-sm hover:opacity-90 transition-all">Top Up Sekarang</button>
+                </div>`;
+            return;
+        }
+
+        container.innerHTML = data.history.map(h => `
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 flex items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-500 text-2xl shrink-0">
+                        <i class="ph-fill ph-check-circle"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-dark">${h.packageName}</p>
+                        <p class="text-xs text-slate-400 mt-0.5">${h.invoiceId} · ${h.date}</p>
+                    </div>
+                </div>
+                <div class="text-right shrink-0">
+                    <p class="font-extrabold text-dark">${formatRupiah(h.price)}</p>
+                    <p class="text-xs text-emerald-600 font-semibold mt-0.5">+${h.creditAdded} Credit</p>
+                    <span class="inline-block mt-1 px-2 py-0.5 bg-emerald-50 text-emerald-600 text-[10px] font-bold rounded-full">${h.status}</span>
+                </div>
+            </div>
+        `).join("");
+    } catch (err) {
+        console.error("Gagal load history:", err);
+    }
+}
