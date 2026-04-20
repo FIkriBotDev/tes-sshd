@@ -156,4 +156,14 @@ router.post("/change-password", async (req, res) => {
     return res.json({ success: true, message: "Kata sandi berhasil diperbarui." });
 });
 
+// GET /api/payment/history — riwayat transaksi user
+router.get("/payment/history", (req, res) => {
+    if (!req.session.user)
+        return res.status(401).json({ success: false, message: "Belum login." });
+
+    const history = readPaymentHistory();
+    const userHistory = history.filter(h => h.email === req.session.user.email);
+    return res.json({ success: true, history: userHistory.reverse() });
+});
+
 module.exports = router;
