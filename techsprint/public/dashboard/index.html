@@ -495,6 +495,112 @@
         </form>
     </div>
 </div>
+
+                <!-- 5. TOP UP CREDIT PAGE -->
+                <div id="page-topup" class="page-content space-y-8">
+                    <div class="text-center max-w-2xl mx-auto">
+                        <h1 class="text-2xl md:text-4xl font-extrabold text-dark mb-3">Top Up Credit 💰</h1>
+                        <p class="text-slate-500">Pilih paket yang sesuai kebutuhanmu dan langsung aktif setelah pembayaran.</p>
+                    </div>
+
+                    <!-- Info credit saat ini -->
+                    <div class="max-w-2xl mx-auto bg-gradient-to-r from-primary to-secondary rounded-2xl p-6 text-white flex items-center justify-between shadow-lg shadow-primary/20">
+                        <div>
+                            <p class="text-white/70 text-sm font-medium">Credit Saat Ini</p>
+                            <p class="text-4xl font-extrabold" data-user-credit>—</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-white/70 text-sm font-medium">Plan Aktif</p>
+                            <p class="text-xl font-bold" data-user-plan>—</p>
+                        </div>
+                    </div>
+
+                    <!-- Paket cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Starter Boost -->
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col gap-4 hover:shadow-lg hover:border-primary/30 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center text-primary text-2xl group-hover:bg-primary group-hover:text-white transition-all">
+                                <i class="ph-fill ph-lightning"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark text-lg">Starter Boost</h3>
+                                <p class="text-xs text-slate-400 mt-1">Untuk coba pertama kali</p>
+                            </div>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-2xl font-extrabold text-dark">Rp 9.000</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-emerald-600 font-semibold">
+                                <i class="ph-fill ph-coin"></i> +10 Credit
+                            </div>
+                            <button onclick="openPaymentModal(1)" class="mt-auto w-full py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-xl hover:opacity-90 transition-all shadow-md shadow-primary/20">
+                                Beli Sekarang
+                            </button>
+                        </div>
+
+                        <!-- Smart Learner -->
+                        <div class="bg-white rounded-2xl border-2 border-primary shadow-xl shadow-primary/10 p-6 flex flex-col gap-4 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-widest">Popular</div>
+                            <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white text-2xl">
+                                <i class="ph-fill ph-student"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark text-lg">Smart Learner</h3>
+                                <p class="text-xs text-slate-400 mt-1">Cocok untuk mahasiswa aktif</p>
+                            </div>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-2xl font-extrabold text-dark">Rp 19.000</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-emerald-600 font-semibold">
+                                <i class="ph-fill ph-coin"></i> +25 Credit
+                            </div>
+                            <button onclick="openPaymentModal(2)" class="mt-auto w-full py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-xl hover:opacity-90 transition-all shadow-md shadow-primary/20">
+                                Beli Sekarang
+                            </button>
+                        </div>
+
+                        <!-- Creator Pack -->
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col gap-4 hover:shadow-lg hover:border-secondary/30 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-secondary text-2xl group-hover:bg-secondary group-hover:text-white transition-all">
+                                <i class="ph-fill ph-paint-brush"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark text-lg">Creator Pack</h3>
+                                <p class="text-xs text-slate-400 mt-1">Pilihan terbaik kreator</p>
+                            </div>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-2xl font-extrabold text-dark">Rp 35.000</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-emerald-600 font-semibold">
+                                <i class="ph-fill ph-coin"></i> +50 Credit
+                            </div>
+                            <button onclick="openPaymentModal(3)" class="mt-auto w-full py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-xl hover:opacity-90 transition-all shadow-md shadow-primary/20">
+                                Beli Sekarang
+                            </button>
+                        </div>
+
+                        <!-- Campus Pro -->
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col gap-4 hover:shadow-lg hover:border-dark/20 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-dark text-2xl group-hover:bg-dark group-hover:text-white transition-all">
+                                <i class="ph-fill ph-buildings"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark text-lg">Campus Pro</h3>
+                                <p class="text-xs text-slate-400 mt-1">Untuk kelas & organisasi</p>
+                            </div>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-2xl font-extrabold text-dark">Rp 59.000</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-emerald-600 font-semibold">
+                                <i class="ph-fill ph-coin"></i> +100 Credit
+                            </div>
+                            <button onclick="openPaymentModal(4)" class="mt-auto w-full py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-xl hover:opacity-90 transition-all shadow-md shadow-primary/20">
+                                Beli Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
                     <!-- Form Profile... -->
                 </div>
 
