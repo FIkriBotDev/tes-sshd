@@ -36571,3 +36571,17 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.exodusai.biz.id/tmp/aa54c6-1776378918396.jpg
 Response  : Saya melihat foto sebuah tiang/kolom di area stasiun dengan papan penanda **“Cisauk”** dan overlay waktu **05:34** serta lokasi bertuliskan **“Stasiun Cisauk”**.
 
+
+[2026-04-21T01:02:58.402Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/305e6c-1776733373582.jpg
+Response  : Saya sudah melihat gambarnya. Itu adalah poster bertema **Hari Kartini (Kartini Day)**.
+
+Yang terlihat di poster:
+- Ilustrasi profil perempuan dengan bunga di bagian kepala.
+- Teks utama: **“KARTINI DAY”**
+- Tanggal: **“21 APRIL 2026”**
+- Pesan: *“Kartini taught us that there are no limits for women. May her spirit always live within us!”*
+- Website: **www.ariya.my.id**
+- Di bagian atas ada beberapa logo/instansi (termasuk tulisan seperti “TPPM”, “UL”, dan “Universitas …”).
+
