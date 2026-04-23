@@ -36612,3 +36612,19 @@ Response  : Saya lihat di gambar itu ada mobil putih. Tanda **“Ini Mobil”** 
 
 Kalau yang kamu maksud “moding” itu sebenarnya **maksud lain** (mis. “molding”), bilang ya—nanti saya bantu tunjuk lebih tepat.
 
+
+[2026-04-23T12:33:38.354Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/89aec5-1776947609736.jpg
+Response  : Gambar itu adalah **infografik “Jangan Bayar Mahal Sebelum Tahu Ini”** berisi beberapa pengingat agar tidak buru-buru bayar layanan/barang dengan biaya besar. Isinya kira-kira:
+
+1. **Jangan bayar tukang servis HP** — coba **restart** dulu, katanya 80% masalah selesai.
+2. **Jangan bayar laundry kiloan** — **cuci tangan 15 menit**, klaim bisa hemat Rp50.000/bulan.
+3. **Jangan bayar manai ke bengkel** — **cek ban & ganti oli sendiri**, klaim hemat ratusan ribu.
+4. **Jangan bayar vitamin mahal** — tidur **7 jam + 2 liter air sehari**, katanya hasilnya sama.
+5. **Jangan bayar jasa desain** — **Canva gratis** bisa buat kebutuhan desain.
+6. **Jangan bayar kursus Inggris** — **Duolingo gratis 15 menit/hari** cukup.
+7. **Jangan bayar jasa print jauh-jauh** — di **Alfamart & Indomaret** ada mesin print yang lebih murah.
+
+Kalau kamu mau, aku bisa bantu **meringkas** versi lebih pendek atau **menilai mana yang realistis vs sekadar klaim**.
+
