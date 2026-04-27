@@ -36765,3 +36765,16 @@ Response  : Saya melihat gambar poster bertema **“SEKJEN KEMENDIKTISAINTEK”*
 
 Kamu mau saya **ringkas**, **jelaskan isi teksnya**, atau **bantu menilai/manafsirkan pesannya**?
 
+
+[2026-04-27T10:15:27.583Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/ef0edb-1777284920917.jpg
+Response  : Saya sudah melihat gambar yang Anda kirim. Itu tampak seperti tangkapan layar unggahan dari **kabarmahasiswa.id** yang menampilkan foto **Wamen Kemenristekdikti/ Kemdikti Prof. Stella** dan cuplikan teks berita/komentar yang membahas **gaji dosen rendah** serta menyebut **syarat pendidikan (SMA vs S2)**.
+
+Kalau Anda mau, saya bisa bantu:
+1) merangkum isi beritanya,  
+2) memeriksa kebenaran klaim soal syarat pendidikan/gaji, atau  
+3) menjelaskan apakah klaim tersebut logis/berdasarkan aturan yang berlaku.
+
+Anda ingin yang nomor berapa?
+
