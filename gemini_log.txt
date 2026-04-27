@@ -36778,3 +36778,35 @@ Kalau Anda mau, saya bisa bantu:
 
 Anda ingin yang nomor berapa?
 
+
+[2026-04-27T10:16:54.420Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/97ec71-1777285006808.jpg
+Response  : Ini gambar brosur acara **“Candra Tour – Explore Pandegeulang”**.
+
+**Ringkasan isi gambar:**
+- **Tanggal:** **21 Juni 2026**
+- **Tempat terebatas:** (ada badge “TEMAPAT TERBATAS”)
+- **Tujuan:**
+  - **Curug Goon(g)**
+  - **D’Mangku Farm**
+  - **Oleh-oleh khas Pandegeulang/Pandegeulang**
+- **Fasilitas:**
+  - **Bus pariwisata AC** (seat 2-2)
+  - **Sarana pagi**
+  - **Makan siang**
+  - **Es buah**
+  - **Tiket wisata**
+  - **Air minum + kopi + teh**
+- **Biaya:**
+  - **Rp 365.000/org**
+  - **DP Rp 100.000/org**
+- **Catatan:** **Bawa baju ganti**
+- **Keberangkatan:**
+  - **Berangkat:** 21 Juni 2026
+  - **Kumpul:** **Pom Bensin Taman Cibodas**
+  - **Jam:** **04.00 pagi**
+- **Kontak/WA:** **Yana Budi** — **0852 1248 0148**
+
+Kalau kamu mau, aku bisa bantu **cek teksnya lebih rapi** atau **buat versi rangkuman/promosi** untuk diketik ulang.
+
