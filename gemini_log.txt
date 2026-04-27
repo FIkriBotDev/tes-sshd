@@ -36751,3 +36751,17 @@ Response  : Saya sudah melihat gambarnya. Terlihat sebuah ruangan rapat/kelas di
 
 Kalau kamu mau, bilang: kamu ingin saya **menjelaskan isi/aktivitasnya**, **membaca teks yang ada di slide**, atau **membantu membuat caption/laporan** dari gambar ini.
 
+
+[2026-04-27T10:12:25.637Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/2a6dfa-1777284739666.jpg
+Response  : Saya melihat gambar poster bertema **“SEKJEN KEMENDIKTISAINTEK”** (Kementerian Pendidikan Tinggi, Sains, dan Teknologi). Di dalamnya ada:
+
+- Foto seorang pria berjas (wajahnya diblur/ditutup).
+- Kutipan/teks utama yang berbunyi kira-kira:  
+  **“Pemerintah akan tutup prodi yang tidak relevan dengan lapangan kerja, salah satu yang jadi sorotan adalah keguruan.”**
+- Tiga poin ikon: **Peningkatan Kualitas Pendidikan Tinggi**, **Penguatan Riset dan Inovasi**, **Kolaborasi untuk Indonesia Maju**.
+- Teks bawah: kutipan tentang pentingnya **Pimpinan PT** memastikan kurikulum yang lentur dan menjaga keilmuan (disebut juga soal “sepi pembeli di pasar pendidikan tinggi”).
+
+Kamu mau saya **ringkas**, **jelaskan isi teksnya**, atau **bantu menilai/manafsirkan pesannya**?
+
