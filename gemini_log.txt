@@ -36831,3 +36831,20 @@ Info yang terbaca di poster:
 
 Kalau kamu mau, bilang kamu butuh saya bantu **ringkas isi**, **buat caption**, atau **cek bagian yang kurang jelas/typo** dari teksnya.
 
+
+[2026-04-27T10:27:55.831Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/5eb347-1777285671149.jpg
+Response  : Saya lihat gambar tersebut. Isinya berupa poster promosi webinar bertema:
+
+**“Siap Upgrade Cara Ngerjain Skripsi?”**  
+dengan keterangan bahwa akan ada **Seminar Metode Penelitian** yang lebih praktis dan aplikatif, dipandu oleh **Sugiyono** (pakar metodologi penelitian).  
+
+Bagian “Yang akan kamu dapat” mencantumkan:
+- Cara mudah menyusun skripsi, tesis, & disertasi  
+- Pemahaman metode penelitian yang sistematis  
+- Insight agar riset lebih cepat & terarah  
+
+Tertulis juga **Link Pendaftaran**:  
+**s.id/WebinarAsad052026**
+
