@@ -57,5 +57,13 @@
     "creditLeft": 0,
     "courseCreated": 2,
     "sekolah": "Universitas Muhammadiyah Makassar"
+  },
+  {
+    "namaLengkap": "hamida yanti",
+    "email": "hamidayanti.01@gmail.com",
+    "password": "$2b$10$7O/oFOjrpML8kR2k7.0ji.iGzt1P7mQR2kmhosTgPZhiTHVnYyKTq",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
