@@ -68,5 +68,15 @@
     "courseUrl": "/course/c181f4633a6dbb4d2662e0a9b15aabb6",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "33794d2f54d04d98da5e0155afbc3173",
+    "courseName": "Course Logika Matematika Diskrit: Proposisi, Operator, Tabel Kebenaran, Tautologi, Kontradiksi, dan Ekivalensi",
+    "courseFileName": "Bab-01 Logika_edisi 3.pdf",
+    "courseOwner": "frwe73175@gmail.com",
+    "courseCreated": "16-05-2026, 13.05.55",
+    "courseUrl": "/course/33794d2f54d04d98da5e0155afbc3173",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
