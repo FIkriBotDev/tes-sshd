@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "courseId": "36fb80416aacfead22d11085c2b081b1",
+    "courseName": "Course Interaktif: Fondasi Pemrograman Python untuk Pemula",
+    "courseFileName": "Materi_Dasar_Python.pdf",
+    "courseOwner": "105841106925@student.unismuh.ac.id",
+    "courseCreated": "16-05-2026, 04.47.27",
+    "courseUrl": "/course/36fb80416aacfead22d11085c2b081b1",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
+  }
+]
