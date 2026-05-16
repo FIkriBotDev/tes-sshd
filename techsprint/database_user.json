@@ -65,5 +65,13 @@
     "plan": 1,
     "creditLeft": 10,
     "courseCreated": 0
+  },
+  {
+    "namaLengkap": "user_gratis",
+    "email": "usergratisan@gmail.com",
+    "password": "$2b$10$3tMS/UyVRuYv3QVpp8OlCuK9bDjdgjCx5ytozz982knafjkCTVBw2",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
