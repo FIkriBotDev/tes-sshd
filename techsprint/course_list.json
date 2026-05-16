@@ -8,5 +8,15 @@
     "courseUrl": "/course/36fb80416aacfead22d11085c2b081b1",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "b358631eed4d34b6c2bb234d70e82a1a",
+    "courseName": "Evaluasi Kinerja Agen AI Menggunakan MLflow (Lab TechMart)",
+    "courseFileName": "Lab 2 Evaluate the performance of an AI Agent using IBM Granite and MLflow_IDID.pdf",
+    "courseOwner": "105841106925@student.unismuh.ac.id",
+    "courseCreated": "16-05-2026, 04.49.44",
+    "courseUrl": "/course/b358631eed4d34b6c2bb234d70e82a1a",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
