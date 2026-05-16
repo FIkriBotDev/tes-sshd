@@ -1,0 +1,22 @@
+[
+  {
+    "courseId": "240807699b42ab05a301003e0db75e96",
+    "courseName": "Dasar AI dan Pemrograman Python: Pondasi untuk Machine Learning",
+    "courseFileName": "materi_dasar_ai_python_5_halaman.pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "16-05-2026, 12.24.51",
+    "courseUrl": "/course/240807699b42ab05a301003e0db75e96",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
+  },
+  {
+    "courseId": "77d1a7d9b08b1c6e3be7c78e8c92709f",
+    "courseName": "Course Interaktif: Fondasi Pemrograman Python untuk Pemula",
+    "courseFileName": "Materi_Dasar_Python.pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "16-05-2026, 12.31.59",
+    "courseUrl": "/course/77d1a7d9b08b1c6e3be7c78e8c92709f",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
+  }
+]
