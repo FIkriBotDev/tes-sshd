@@ -316,3 +316,125 @@ async function loadPaymentHistory() {
         console.error("Gagal load history:", err);
     }
 }
+
+// ============================================================
+// COURSE UPLOAD & GENERATION
+// ============================================================
+
+let selectedFile = null;
+
+function handleDragOver(e) {
+    e.preventDefault();
+    document.getElementById('upload-dropzone').classList.add('border-primary', 'bg-indigo-50/60');
+}
+
+function handleDragLeave(e) {
+    document.getElementById('upload-dropzone').classList.remove('border-primary', 'bg-indigo-50/60');
+}
+
+function handleDrop(e) {
+    e.preventDefault();
+    handleDragLeave(e);
+    const file = e.dataTransfer.files[0];
+    if (file) setSelectedFile(file);
+}
+
+function handleFileSelect(e) {
+    const file = e.target.files[0];
+    if (file) setSelectedFile(file);
+}
+
+function setSelectedFile(file) {
+    if (file.type !== 'application/pdf') {
+        alert('Hanya file PDF yang diizinkan.');
+        return;
+    }
+    if (file.size > 20 * 1024 * 1024) {
+        alert('Ukuran file maksimal 20 MB.');
+        return;
+    }
+    selectedFile = file;
+    document.getElementById('upload-dropzone').classList.add('hidden');
+    document.getElementById('upload-preview').classList.remove('hidden');
+    document.getElementById('upload-filename').textContent = file.name;
+    document.getElementById('upload-filesize').textContent = (file.size / 1024).toFixed(1) + ' KB';
+}
+
+function clearFile() {
+    selectedFile = null;
+    document.getElementById('pdf-input').value = '';
+    document.getElementById('upload-dropzone').classList.remove('hidden');
+    document.getElementById('upload-preview').classList.add('hidden');
+    document.getElementById('upload-processing').classList.add('hidden');
+}
+
+function setStep(stepId, done = false) {
+    const el = document.getElementById(stepId);
+    if (!el) return;
+    const icon = el.querySelector('.step-icon');
+    const text = el.querySelector('span');
+    if (done) {
+        icon.innerHTML = '<i class="ph-fill ph-check-circle text-emerald-500 text-base"></i>';
+        icon.className = 'step-icon w-6 h-6 flex items-center justify-center shrink-0';
+        text.className = 'text-dark font-semibold';
+    } else {
+        icon.innerHTML = '<div class="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>';
+        icon.className = 'step-icon w-6 h-6 flex items-center justify-center shrink-0';
+        text.className = 'text-primary font-medium';
+    }
+}
+
+async function generateCourse() {
+    if (!selectedFile) return;
+
+    // Show processing UI
+    document.getElementById('upload-preview').classList.add('hidden');
+    document.getElementById('upload-processing').classList.remove('hidden');
+
+    const steps = ['step-read', 'step-ai', 'step-fc', 'step-quiz', 'step-done'];
+    const delays = [0, 3000, 8000, 14000, 20000];
+
+    // Animate steps progressively
+    steps.forEach((s, i) => {
+        setTimeout(() => setStep(s, false), delays[i]);
+        if (i > 0) setTimeout(() => setStep(steps[i - 1], true), delays[i]);
+    });
+
+    const formData = new FormData();
+    formData.append('pdf', selectedFile);
+
+    try {
+        const res  = await fetch('/api/course/upload', { method: 'POST', body: formData });
+        const data = await res.json();
+
+        // Mark all steps done
+        steps.forEach(s => setStep(s, true));
+
+        if (!data.success) {
+            if (data.insufficientCredit) {
+                document.getElementById('upload-processing').classList.add('hidden');
+                document.getElementById('upload-dropzone').classList.remove('hidden');
+                document.getElementById('no-credit-modal').classList.remove('hidden');
+                selectedFile = null;
+            } else {
+                alert('Gagal: ' + data.message);
+                clearFile();
+            }
+            return;
+        }
+
+        // Refresh dashboard data
+        loadDashboard();
+        loadCourses();
+
+        // Redirect ke course setelah 1 detik
+        setTimeout(() => {
+            window.location.href = data.courseUrl;
+        }, 1200);
+
+    } catch (err) {
+        console.error('Upload error:', err);
+        alert('Terjadi kesalahan saat upload. Coba lagi.');
+        clearFile();
+    }
+}
