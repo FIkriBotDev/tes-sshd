@@ -78,5 +78,15 @@
     "courseUrl": "/course/33794d2f54d04d98da5e0155afbc3173",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "303e51ec27337ec2db99c896afae0d70",
+    "courseName": "Course: REST API dalam Teknologi Rekayasa Internet",
+    "courseFileName": "3 Teori REST API.pdf",
+    "courseOwner": "usergratisan@gmail.com",
+    "courseCreated": "16-05-2026, 13.09.33",
+    "courseUrl": "/course/303e51ec27337ec2db99c896afae0d70",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
