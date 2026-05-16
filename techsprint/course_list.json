@@ -18,5 +18,15 @@
     "courseUrl": "/course/b358631eed4d34b6c2bb234d70e82a1a",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "b8d1b0405c8a2eee54ec7481f044ad7b",
+    "courseName": "Course Mikrotik Fundamental: Networking, IP Addressing, Subnetting, Routing, dan RouterOS",
+    "courseFileName": "e8ef196034d041e159413246638872a9 (1).pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "16-05-2026, 04.51.55",
+    "courseUrl": "/course/b8d1b0405c8a2eee54ec7481f044ad7b",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
