@@ -58,5 +58,15 @@
     "courseUrl": "/course/4e039b62e9ad9566a55e26d8ff9d9b5e",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "c181f4633a6dbb4d2662e0a9b15aabb6",
+    "courseName": "Course Konfigurasi Web Server Apache2, MySQL, dan phpMyAdmin pada Debian",
+    "courseFileName": "4. WEB Server.pdf",
+    "courseOwner": "frwe73175@gmail.com",
+    "courseCreated": "16-05-2026, 13.03.21",
+    "courseUrl": "/course/c181f4633a6dbb4d2662e0a9b15aabb6",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
