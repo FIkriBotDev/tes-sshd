@@ -250,14 +250,96 @@
                     </div>
                     </div>
 
-                    <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 md:p-12 text-center border-2 border-dashed border-indigo-200 bg-indigo-50/20" id="step-upload">
-                        <div class="max-w-md mx-auto">
-                            <div class="w-20 h-20 bg-white rounded-2xl shadow-md flex items-center justify-center text-primary text-4xl mx-auto mb-6"><i class="ph-bold ph-file-pdf"></i></div>
-                            <h2 class="text-2xl font-bold text-dark mb-2">Buat Course dari PDF</h2>
-                            <p class="text-slate-500 text-sm mb-8">AI akan otomatis membuat ringkasan, kuis, dan materi interaktif untuk Anda.</p>
-                            <button class="px-8 py-3.5 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-xl shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2 mx-auto">
-                                <i class="ph-bold ph-plus"></i> Upload Materi Baru
-                            </button>
+                    <!-- Upload Section -->
+                    <div id="step-upload">
+                        <!-- Drop Zone -->
+                        <div id="upload-dropzone" class="bg-white rounded-3xl border-2 border-dashed border-indigo-200 bg-indigo-50/20 p-8 md:p-12 text-center transition-all hover:border-primary hover:bg-indigo-50/40 cursor-pointer relative overflow-hidden group"
+                             onclick="document.getElementById('pdf-input').click()"
+                             ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-3xl"></div>
+                            <div class="max-w-md mx-auto relative z-10">
+                                <div class="w-20 h-20 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl shadow-md flex items-center justify-center text-primary text-4xl mx-auto mb-5 group-hover:scale-105 transition-transform">
+                                    <i class="ph-bold ph-file-pdf"></i>
+                                </div>
+                                <h2 class="text-2xl font-bold text-dark mb-2">Buat Course dari PDF</h2>
+                                <p class="text-slate-500 text-sm mb-2">Drag & drop file PDF di sini, atau klik untuk pilih file</p>
+                                <p class="text-xs text-slate-400 mb-6">Hanya PDF • Maks. 20 MB • Biaya: 5 Credit</p>
+                                <input type="file" id="pdf-input" accept=".pdf" class="hidden" onchange="handleFileSelect(event)">
+                                <button type="button" onclick="event.stopPropagation(); document.getElementById('pdf-input').click()" class="px-8 py-3.5 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-105 transition-all flex items-center justify-center gap-2 mx-auto">
+                                    <i class="ph-bold ph-upload-simple"></i> Pilih File PDF
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- File Selected Preview -->
+                        <div id="upload-preview" class="hidden mt-4 bg-white rounded-2xl border border-slate-200 p-5 flex items-center justify-between gap-4 shadow-sm">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center text-red-500 text-2xl shrink-0">
+                                    <i class="ph-fill ph-file-pdf"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-dark text-sm" id="upload-filename">file.pdf</p>
+                                    <p class="text-xs text-slate-400" id="upload-filesize">0 KB</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button onclick="clearFile()" class="px-3 py-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-xl transition-all text-sm font-medium">
+                                    <i class="ph ph-x"></i>
+                                </button>
+                                <button id="generate-btn" onclick="generateCourse()" class="px-6 py-2.5 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-xl shadow-md shadow-primary/20 hover:opacity-90 transition-all text-sm flex items-center gap-2">
+                                    <i class="ph-bold ph-sparkle"></i> Generate Course
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Processing Status -->
+                        <div id="upload-processing" class="hidden mt-4 bg-white rounded-2xl border border-indigo-100 p-6 shadow-sm">
+                            <div class="flex items-center gap-3 mb-5">
+                                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+                                    <i class="ph-fill ph-sparkle text-xl animate-pulse"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-dark">AI sedang memproses materi...</p>
+                                    <p class="text-xs text-slate-400">Mohon tunggu, ini mungkin memakan waktu 30-60 detik</p>
+                                </div>
+                            </div>
+                            <div class="space-y-3" id="processing-steps">
+                                <div class="process-step flex items-center gap-3 text-sm" id="step-read">
+                                    <div class="step-icon w-6 h-6 rounded-full border-2 border-slate-200 flex items-center justify-center shrink-0"><i class="ph ph-circle text-xs text-slate-300"></i></div>
+                                    <span class="text-slate-400">Membaca PDF...</span>
+                                </div>
+                                <div class="process-step flex items-center gap-3 text-sm" id="step-ai">
+                                    <div class="step-icon w-6 h-6 rounded-full border-2 border-slate-200 flex items-center justify-center shrink-0"><i class="ph ph-circle text-xs text-slate-300"></i></div>
+                                    <span class="text-slate-400">AI memahami materi...</span>
+                                </div>
+                                <div class="process-step flex items-center gap-3 text-sm" id="step-fc">
+                                    <div class="step-icon w-6 h-6 rounded-full border-2 border-slate-200 flex items-center justify-center shrink-0"><i class="ph ph-circle text-xs text-slate-300"></i></div>
+                                    <span class="text-slate-400">Membuat flashcards...</span>
+                                </div>
+                                <div class="process-step flex items-center gap-3 text-sm" id="step-quiz">
+                                    <div class="step-icon w-6 h-6 rounded-full border-2 border-slate-200 flex items-center justify-center shrink-0"><i class="ph ph-circle text-xs text-slate-300"></i></div>
+                                    <span class="text-slate-400">Membuat quiz...</span>
+                                </div>
+                                <div class="process-step flex items-center gap-3 text-sm" id="step-done">
+                                    <div class="step-icon w-6 h-6 rounded-full border-2 border-slate-200 flex items-center justify-center shrink-0"><i class="ph ph-circle text-xs text-slate-300"></i></div>
+                                    <span class="text-slate-400">Menyimpan course...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- No Credit Modal -->
+                    <div id="no-credit-modal" class="hidden fixed inset-0 z-[300] flex items-center justify-center p-4 bg-darker/60 backdrop-blur-md">
+                        <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl">
+                            <div class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mx-auto mb-4 text-orange-500 text-3xl">
+                                <i class="ph-fill ph-coin"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark mb-2">Credit Tidak Cukup</h3>
+                            <p class="text-slate-500 text-sm mb-6">Kamu butuh minimal <strong>5 credit</strong> untuk generate course. Top up sekarang!</p>
+                            <div class="flex gap-3">
+                                <button onclick="document.getElementById('no-credit-modal').classList.add('hidden')" class="flex-1 py-3 border-2 border-slate-200 rounded-xl font-bold text-slate-500 hover:bg-slate-50 transition-all text-sm">Nanti</button>
+                                <button onclick="switchPage('topup'); document.getElementById('no-credit-modal').classList.add('hidden')" class="flex-1 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-xl shadow-md hover:opacity-90 transition-all text-sm">Top Up Credit</button>
+                            </div>
                         </div>
                     </div>
                 </div>
