@@ -98,5 +98,15 @@
     "courseUrl": "/course/677adcadd5a3c670a85adf9a329046a8",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "9076e16c93fa501a37cd0ed379ca2d04",
+    "courseName": "Panduan Konfigurasi Lab Router & Switch Cisco (Plus Setup AP dan NMS PRTG)",
+    "courseFileName": "Lintasarta - Panduan Lab Router & Switch Cisco-V2.pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "18-05-2026, 09.09.40",
+    "courseUrl": "/course/9076e16c93fa501a37cd0ed379ca2d04",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]

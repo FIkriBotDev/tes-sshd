@@ -1,0 +1,135 @@
+{
+  "title": "Panduan Konfigurasi Lab Router & Switch Cisco (Plus Setup AP dan NMS PRTG)",
+  "summary": "Materi ini menjelaskan panduan praktikum konfigurasi perangkat jaringan Cisco pada sebuah lab yang terdiri dari router, switch, akses point (AP), serta server uji aplikasi. Topologi lab menekankan bahwa nilai “X” menyesuaikan nomor kelompok, router Cisco 1921 bertindak sebagai gateway ke internet, switch Cisco 2960-C digunakan untuk meneruskan beberapa VLAN, AP Wifi mendistribusikan LAN ke client, dan terdapat server web untuk kebutuhan pengujian aplikasi.\n\nMateri kemudian membahas cara mengakses perangkat menggunakan kabel USB Console dan terminal emulator seperti PuTTY. Setelah akses CLI berhasil, dilakukan konfigurasi router meliputi hostname, pengaturan username/password/secret, pengaktifan remote telnet via line vty, pengaturan SNMP untuk kebutuhan monitoring NMS, konfigurasi interface WAN (ip nat outside), interface trunk, pembuatan sub-interface VLAN (ip nat inside), routing default, access-list untuk NAT, serta pembuatan NAT pool dan rule NAT. Terakhir, materi mengajarkan penyimpanan konfigurasi dan pengujian koneksi termasuk test ping serta pengecekan NAT.\n\nBagian berikutnya menguraikan konfigurasi switch meliputi hostname, hak akses, telnet, SNMP, setup trunk ke router, setup port akses untuk VLAN server/wifi, pembuatan interface VLAN manajemen agar switch dapat diremote, routing default ke gateway manajemen, serta perintah pengecekan status interface dan penyimpanan konfigurasi. Materi juga mencakup konfigurasi akses point lewat web browser (default IP 192.168.0.254, user/password admin), penyesuaian konfigurasi Wireless, penyelarasan IP AP dengan network gateway router, penentuan DHCP pada AP atau disable bila DHCP sudah ada di Cisco, dan pengaktifan SNMP agent untuk monitoring.\n\nSebagai opsional, materi menjelaskan instalasi server Network Monitoring System (NMS) menggunakan PRTG. Proses mencakup persiapan konektivitas PC ke jaringan, download PRTG dari situs resmi, instalasi dengan mode express, penginputan email, pengelolaan lisensi/trial, hingga penambahan group, device, pembuatan sensor (misalnya ping dan SNMP trafik), serta pembuatan dashboard menggunakan fitur Map untuk memvisualisasikan monitoring.",
+  "chapters": [
+    {
+      "title": "Topologi dan Akses Perangkat Lab",
+      "content": "<p>Panduan ini digunakan untuk konfigurasi <strong>lab router dan switch Cisco</strong>. Pada topologi, terdapat beberapa informasi penting: nilai “X” disesuaikan dengan nomor kelompok group lab. <strong>Cisco 1921</strong> berfungsi sebagai <strong>router/gateway ke internet</strong>, sedangkan <strong>Cisco 2960-C</strong> berfungsi sebagai <strong>switch</strong> yang meneruskan <strong>beberapa VLAN</strong>. Terdapat pula <strong>AP Wifi</strong> untuk distribusi LAN ke client dan <strong>Server Web</strong> untuk test aplikasi.</p><p>Untuk mengakses perangkat Cisco (router atau switch), pengguna dapat menggunakan kabel <strong>USB Console</strong>. Prosedur umum: <strong>hubungkan USB console ke laptop</strong>, lalu cek <strong>Device Manager</strong> untuk mengetahui port COM yang dipakai oleh USB console. Pada contoh materi, USB port berada di <strong>COM3</strong>.</p><p>Setelah port diketahui, akses perangkat menggunakan <strong>terminal emulator</strong> seperti <strong>PuTTY</strong>. Bila berhasil, akan tampil <strong>Command Line Interface (CLI) Cisco</strong>. Dari CLI inilah konfigurasi dilakukan, baik pada mode konfigurasi maupun mode privileged sesuai kebutuhan praktikum.</p>"
+    },
+    {
+      "title": "Konfigurasi Router Cisco: Identitas, Akses Remote, VLAN, Routing, dan NAT",
+      "content": "<p>Konfigurasi router dilakukan dengan memastikan perangkat berada pada <strong>mode konfigurasi</strong>. Contoh langkah awal: dari prompt <strong>router#</strong> gunakan perintah <strong>configure terminal</strong> sehingga masuk ke mode konfigurasi. Lalu atur identitas perangkat dengan <strong>hostname</strong> sesuai kelompok, misalnya <strong>hostname ROUTER-GROUP1</strong>.</p><p>Selanjutnya lakukan pengaturan kredensial dan proteksi akses. Materi menyertakan contoh pengaturan: <strong>username admin privilege 15 password admin123</strong>, lalu <strong>service password-encryption</strong> untuk mengenkripsi kata sandi yang tersimpan pada konfigurasi. Gunakan <strong>enable secret admin123</strong> sebagai pengaman mode <strong>privileged exec</strong>. Materi juga menjelaskan <strong>privilege levels</strong> di Cisco dari 0 hingga 15 (0 paling rendah, 15 paling tinggi/superuser), serta fungsi masing-masing perintah terkait keamanan.</p><p>Agar router dapat diakses via telnet, atur <strong>line vty</strong> seperti <strong>line vty 0 4</strong>, lalu gunakan <strong>login local</strong>, <strong>transport input telnet</strong>, dan <strong>transport output telnet</strong>. Materi menjelaskan bahwa <strong>line vty 0 4</strong> berarti maksimal ada <strong>5 koneksi bersamaan</strong> (0-4), sedangkan kapasitas maksimum dapat diperluas hingga <strong>line vty 0 15</strong>.</p><p>Untuk kebutuhan monitoring oleh NMS, setup <strong>SNMP server</strong>, misalnya menggunakan community <strong>public</strong> dengan hak akses <strong>RO (Read Only)</strong> menggunakan perintah <strong>snmp-server community public RO</strong>. Kemudian konfigurasi interface WAN: pada contoh <strong>GigabitEthernet0/0</strong> aktifkan port dengan <strong>no shutdown</strong>, berikan deskripsi, set IP, dan tandai sebagai sisi internet dengan <strong>ip nat outside</strong>.</p><p>Untuk penerusan antar perangkat dan VLAN, konfigurasi trunk pada interface <strong>GigabitEthernet0/1</strong> dengan deskripsi dan <strong>no ip address</strong>. Berikutnya buat <strong>sub-interface berbasis VLAN</strong> untuk setiap kebutuhan LAN: contoh VLAN 10 untuk LAN server, VLAN 20 untuk LAN wifi, dan VLAN 30 untuk LAN manajemen. Setiap sub-interface menggunakan <strong>encapsulation dot1Q</strong> sesuai VLAN, mengatur <strong>description</strong>, memberikan <strong>ip address</strong>, serta menandai sisi LAN sebagai <strong>ip nat inside</strong>.</p><p>Setelah VLAN siap, buat <strong>routing default</strong> agar semua trafik non-lokal diarahkan ke <strong>IP gateway WAN</strong> menggunakan <strong>ip route 0.0.0.0 0.0.0.0 123.231.1.1</strong> (nama routing dapat diberikan). Lalu buat <strong>access-list</strong> yang menentukan range IP LAN mana yang diizinkan untuk NAT ke internet, misalnya beberapa permit untuk subnet LAN wifi dan LAN server.</p><p>Implementasi NAT dilakukan dengan membuat <strong>IP nat pool</strong> sesuai IP WAN dan mengaitkan NAT inside source pada access-list. Materi contoh: <strong>ip nat pool INTERNET 123.231.1.2 123.231.1.2 netmask 255.255.255.248</strong> lalu <strong>ip nat inside source list 1 pool INTERNET overload</strong>. Agar static mapping juga berlaku, contoh perintah <strong>ip nat outside source static 123.231.1.3 10.10.1.2</strong>. Materi juga menyediakan opsi bila ingin NAT hanya port tertentu menggunakan perintah <strong>ip nat outside source static tcp</strong> (contoh untuk port 443) dengan catatan bahwa jika NAT full sudah dijalankan, perintah opsional ini tidak diperlukan.</p><p>Terakhir, jangan lupa <strong>menyimpan konfigurasi</strong> menggunakan <strong>write</strong> atau <strong>write memory</strong>. Lakukan pengujian koneksi: test ping ke gateway dan internet, test koneksi internet dengan <strong>source LAN</strong>, cek status NAT, serta cek IP yang terkoneksi ke Cisco.</p>"
+    },
+    {
+      "title": "Konfigurasi Switch Cisco, Access Point, dan Instalasi NMS PRTG (Opsional)",
+      "content": "<p>Konfigurasi switch dimulai dari pengaturan identitas dan akses. Materi memberi contoh pengaturan <strong>hostname SWITCH-GROUP1</strong>, lalu pengaturan username/privilege serta <strong>service password-encryption</strong> dan <strong>enable secret</strong>. Setelah itu, aktifkan telnet melalui <strong>line vty 0 4</strong> dengan <strong>login local</strong> serta transport input/output telnet.</p><p>Untuk monitoring, setup <strong>SNMP</strong> dengan contoh community <strong>public</strong> dan mode <strong>RO</strong> menggunakan <strong>snmp-server community public RO</strong>. Lalu atur port trunk ke router pada interface <strong>GigabitEthernet0/1</strong>: berikan <strong>no shutdown</strong>, deskripsi TRUNK-ROUTER, tentukan VLAN yang diizinkan dengan <strong>switchport trunk allowed vlan 10,20,30</strong>, dan set mode <strong>switchport mode trunk</strong>.</p><p>Selanjutnya konfigurasi <strong>port akses</strong> yang terhubung ke masing-masing LAN. Materi memberi contoh: interface FastEthernet0/1 sebagai PORT-SERVER masuk ke <strong>switchport access vlan 10</strong>, interface FastEthernet0/2 sebagai PORT-WIFI masuk ke <strong>switchport access vlan 20</strong>. Pastikan port diaktifkan dengan <strong>no shutdown</strong>.</p><p>Untuk memungkinkan switch diremote, buat <strong>VLAN manajemen</strong> pada interface <strong>Vlan30</strong>, aktifkan dengan <strong>no shutdown</strong>, set deskripsi MANAGEMENT, lalu konfigurasikan IP manajemen dan subnet mask (contoh: <strong>ip address 100.100.1.2 255.255.255.248</strong>). Tambahkan juga <strong>routing default</strong> menggunakan <strong>ip default-gateway 100.100.1.1</strong>. Setelah konfigurasi, simpan dengan <strong>write</strong> atau <strong>write memory</strong> dan lakukan pengecekan seperti melihat status IP/interface, deskripsi interface, serta status trunk.</p><p>Bagian <strong>Konfigurasi Access Point</strong> dimulai dengan menghubungkan adaptor (POE) AP: port LAN ke laptop, port POE ke access point. Set IP laptop (contoh <strong>192.168.0.1/24</strong>) atau gunakan DHCP otomatis. Akses AP melalui web browser dengan default IP <strong>192.168.0.254</strong>, dengan user/password default <strong>admin</strong>. Jika diminta, ganti password baru. Materi menekankan konfigurasi dimulai dari menu <strong>Wireless</strong>.</p><p>Setelah pengaturan wireless, konfigurasi <strong>IP Address AP</strong> agar sesuai network <strong>gateway router</strong> sehingga AP dapat terhubung satu sama lain. Catatan penting: <strong>DHCP server diset pada Access Point (AP)</strong>. Bila DHCP sudah ada di Cisco, maka DHCP pada AP harus <strong>disable</strong>. Materi juga menyarankan untuk mengaktifkan <strong>SNMP agent</strong> pada menu Management agar perangkat bisa dimonitor. Setelah itu, lakukan pengetesan koneksi dari <strong>wifi client</strong>.</p><p>Terakhir, <strong>Install Server NMS PRTG (Opsional)</strong>. Materi menggunakan <strong>PRTG (Paessler PRTG)</strong> sebagai Network Monitoring System. PC/laptop instalasi PRTG harus terkoneksi LAN ke mikrotik port ether2 dan setting IP sesuai alokasi (contoh <strong>10.10.X.2/29</strong>). Unduh PRTG dari situs resmi (paessler), kemudian instalasi seperti aplikasi biasa, menerima kebijakan paessler, input email, dan pilih mode instalasi <strong>express</strong>. Setelah instalasi sukses, cek lisensi pada menu PRTG Status; jika trial berakhir, PRTG masih bisa digunakan terbatas 100 sensor.</p><p>PRTG siap memonitor perangkat jaringan/host. Untuk menambahkan monitoring, buka menu <strong>Devices</strong>, buat group (misalnya “Lab KPTK”), pilih group tersebut lalu tambahkan <strong>device</strong> seperti router Cisco dengan IP manajemen. Pada device, tambahkan sensor contohnya <strong>sensor ping</strong> dan sensor <strong>SNMP trafik</strong>. Untuk tampilan dashboard, gunakan fitur <strong>Map</strong> dan lihat contoh map yang telah dibuat.</p>"
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa fungsi utama Cisco 1921 dan Cisco 2960-C pada topologi lab?",
+      "answer": "Cisco 1921 berfungsi sebagai router atau gateway ke internet. Cisco 2960-C berfungsi sebagai switch yang melewatkan/mengelola beberapa VLAN."
+    },
+    {
+      "question": "Bagaimana cara mengakses router atau switch Cisco pada lab ini?",
+      "answer": "Gunakan kabel USB Console untuk mengakses perangkat ke laptop. Setelah dihubungkan, cek Device Manager untuk mengetahui port COM yang dipakai (contoh pada materi: COM3). Lalu akses melalui terminal emulator seperti PuTTY hingga muncul CLI Cisco."
+    },
+    {
+      "question": "Apa peran perintah service password-encryption pada konfigurasi Cisco?",
+      "answer": "service password-encryption berfungsi untuk mengenkripsi (mengacak) kata sandi yang tersimpan dalam konfigurasi perangkat."
+    },
+    {
+      "question": "Apa yang dimaksud privilege level 0 sampai 15 pada Cisco?",
+      "answer": "Privilege levels berkisar dari 0 sampai 15. Level 0 adalah paling rendah (hak akses terbatas) dan level 15 adalah paling tinggi (superuser atau administrator penuh)."
+    },
+    {
+      "question": "Pada konfigurasi telnet, apa arti line vty 0 4?",
+      "answer": "line vty 0 4 berarti maksimal terdapat 5 koneksi bersamaan yang bisa terkoneksi ke perangkat, yaitu menggunakan vty bernomor 0,1,2,3,4."
+    },
+    {
+      "question": "Mengapa interface WAN di router diberi ip nat outside?",
+      "answer": "ip nat outside digunakan untuk menandai interface yang terhubung ke sumber daya jaringan eksternal (internet) sebagai sisi outside dalam proses Network Address Translation (NAT)."
+    },
+    {
+      "question": "Apa fungsi access-list pada konfigurasi NAT router di materi?",
+      "answer": "Access-list berfungsi menentukan subnet atau host LAN mana yang diizinkan untuk dilakukan NAT menuju internet, misalnya subnet untuk LAN wifi dan LAN server yang ditulis dengan perintah permit."
+    },
+    {
+      "question": "Apa yang harus diingat saat menyimpan konfigurasi pada router dan switch?",
+      "answer": "Setelah konfigurasi, jangan lupa menyimpan konfigurasi menggunakan perintah write atau write memory."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Manakah yang benar mengenai fungsi Cisco 1921 dalam topologi lab?",
+      "options": [
+        "Cisco 1921 berfungsi sebagai switch untuk meneruskan VLAN",
+        "Cisco 1921 berfungsi sebagai router/gateway ke internet",
+        "Cisco 1921 berfungsi sebagai access point WiFi",
+        "Cisco 1921 hanya untuk server web pengujian aplikasi"
+      ],
+      "answer": "Cisco 1921 berfungsi sebagai router/gateway ke internet"
+    },
+    {
+      "question": "Perintah service password-encryption pada Cisco digunakan untuk...",
+      "options": [
+        "Mengaktifkan interface trunk",
+        "Mengenkripsi kata sandi yang tersimpan dalam konfigurasi",
+        "Mengatur routing default",
+        "Menonaktifkan SNMP"
+      ],
+      "answer": "Mengenkripsi kata sandi yang tersimpan dalam konfigurasi"
+    },
+    {
+      "question": "Pada materi, line vty 0 4 mengizinkan maksimal berapa koneksi bersamaan?",
+      "options": [
+        "3 koneksi",
+        "4 koneksi",
+        "5 koneksi",
+        "16 koneksi"
+      ],
+      "answer": "5 koneksi"
+    },
+    {
+      "question": "Interface yang terhubung ke internet pada router diberi perintah NAT berupa...",
+      "options": [
+        "ip nat inside",
+        "ip nat outside",
+        "ip route inside",
+        "no ip nat"
+      ],
+      "answer": "ip nat outside"
+    },
+    {
+      "question": "Pada router, routing default untuk semua trafik umumnya menggunakan pola ip route 0.0.0.0 0.0.0.0 ... . Tujuan penulisan tersebut adalah...",
+      "options": [
+        "Menghapus semua rute",
+        "Mengarahakan trafik non-lokal ke gateway berikutnya (WAN gateway)",
+        "Membuat VLAN baru",
+        "Menonaktifkan NAT"
+      ],
+      "answer": "Mengarahakan trafik non-lokal ke gateway berikutnya (WAN gateway)"
+    },
+    {
+      "question": "Untuk konfigurasi switch agar bisa diremote, materi membuat interface ... sebagai VLAN manajemen.",
+      "options": [
+        "Vlan10",
+        "Vlan20",
+        "Vlan30",
+        "Vlan99"
+      ],
+      "answer": "Vlan30"
+    },
+    {
+      "question": "Saat menghubungkan port AP ke jaringan, default IP yang diakses melalui web browser pada materi adalah...",
+      "options": [
+        "192.168.0.1",
+        "192.168.0.254",
+        "10.10.1.1",
+        "100.100.1.2"
+      ],
+      "answer": "192.168.0.254"
+    },
+    {
+      "question": "Pada instalasi PRTG di materi, mode instalasi yang dipilih adalah...",
+      "options": [
+        "Custom",
+        "Express",
+        "Silent Only",
+        "Minimal"
+      ],
+      "answer": "Express"
+    }
+  ],
+  "tutorContext": "Materi panduan ini adalah modul praktikum konfigurasi <strong>router dan switch Cisco</strong> pada sebuah lab jaringan yang juga mencakup konfigurasi <strong>Access Point (AP)</strong> dan <strong>opsional</strong> instalasi <strong>NMS PRTG</strong> untuk monitoring. Fokusnya adalah langkah-langkah praktis agar peserta dapat membangun konektivitas VLAN, melakukan akses remote, menerapkan NAT agar LAN dapat terhubung ke internet, serta menyiapkan mekanisme monitoring.\n\nPada bagian awal, materi menjelaskan topologi lab dan makna parameter “X” (disesuaikan nomor kelompok). Peran perangkat pada topologi: Cisco 1921 dijadikan router/gateway ke internet, sedangkan Cisco 2960-C sebagai switch yang meneruskan beberapa VLAN. AP WiFi bertugas mendistribusikan LAN ke client nirkabel. Terdapat juga server web untuk kebutuhan pengujian aplikasi. Dengan adanya server web, konfigurasi NAT, routing default, dan VLAN diharapkan bekerja sehingga client (baik wired maupun wireless) dapat mengakses layanan yang berada di jaringan internet/target sesuai skenario lab.\n\nSetelah topologi dipahami, materi mengajarkan cara mengakses perangkat. Akses menggunakan <strong>kabel USB Console</strong> ke laptop. Peserta harus memeriksa Device Manager untuk menentukan nomor <strong>COM port</strong> yang terdeteksi pada komputer. Setelah mengetahui COM misalnya COM3, peserta menggunakan terminal emulator seperti PuTTY untuk terhubung ke perangkat. Tujuan bagian ini adalah memastikan CLI Cisco muncul sehingga perintah konfigurasi dapat dilakukan.\n\nKonfigurasi router meliputi beberapa blok besar. Pertama, identitas: masuk ke mode konfigurasi (configure terminal) lalu set hostname misalnya ROUTER-GROUP1. Kedua, keamanan akses: mengatur username dengan privilege tinggi (contoh privilege 15), password, serta enable secret untuk mengamankan mode administrator penuh. Materi menekankan konsep <strong>privilege level</strong> 0-15. Privilege level 15 adalah penuh/superuser. Ketiga, mengenkripsi password yang tersimpan di konfigurasi menggunakan service password-encryption. Keempat, mengaktifkan remote access melalui telnet: line vty 0 4 diberi login local dan transport input/output telnet. Materi menjelaskan kapasitas koneksi bersamaan: vty 0 4 berarti maksimal 5 sesi (0 sampai 4). Kelima, monitoring: SNMP server diset dengan community public RO agar NMS bisa membaca metrik tanpa perubahan.\n\nTahap berikutnya adalah konfigurasi interface dan NAT. Interface WAN (contoh GigabitEthernet0/0) diaktifkan (no shutdown), diberi description, di-set IP sesuai skema WAN, dan diberi ip nat outside. Interface trunk (GigabitEthernet0/1) disiapkan untuk membawa VLAN ke switch. Trunk biasanya tidak diberi ip address agar berfungsi sebagai link layer-2.\n\nAgar beberapa jaringan LAN dapat dipisahkan, router membuat <strong>sub-interface VLAN</strong> pada interface trunk. Contoh yang diberikan: VLAN 10 untuk LAN server (Gi0/1.10 dengan encapsulation dot1Q 10, ip address, dan ip nat inside), VLAN 20 untuk LAN wifi (Gi0/1.20), dan VLAN 30 untuk LAN manajemen (Gi0/1.30). Pemberian ip nat inside menandai bahwa trafik dari subnet-subnet ini adalah kandidat yang akan diterjemahkan (di-NAT-kan) ke sisi internet.\n\nSupaya router bisa mengirim trafik menuju jaringan yang bukan subnet lokal, dibuat <strong>routing default</strong> ip route 0.0.0.0 0.0.0.0 <WAN-GW-IP>. Lalu dibentuk access-list untuk menentukan subnet LAN mana yang boleh NAT. Contoh materi memasukkan rule permit untuk subnet LAN tertentu.\n\nImplementasi NAT melibatkan pembuatan <strong>IP NAT pool</strong> pada IP WAN yang tersedia, lalu mengaitkan pool tersebut ke access-list menggunakan overload agar banyak host LAN bisa berbagi IP NAT pool. Selain dynamic NAT/overload, materi juga memberikan contoh <strong>static mapping</strong> ip nat outside source static untuk memetakan IP publik tertentu ke IP internal tertentu (misalnya untuk kebutuhan layanan khusus). Materi juga menyediakan opsi NAT berdasarkan port menggunakan perintah ip nat outside source static tcp ... <port> untuk kasus spesifik, dengan catatan bahwa jika NAT full sudah berjalan maka perintah port-spesifik mungkin tidak diperlukan.\n\nSetelah konfigurasi, penting untuk menyimpan menggunakan write atau write memory. Pengujian dilakukan dengan ping gateway dan internet, test koneksi internet dari source LAN (memastikan NAT berjalan), pengecekan status NAT, dan pengecekan IP yang terkoneksi ke perangkat Cisco.\n\nKonfigurasi switch bersifat melengkapi router. Switch mengatur hostname, username/password/secret, dan telnet via line vty. SNMP diaktifkan untuk monitoring. Switch kemudian mengonfigurasi port trunk ke router pada interface Gi0/1: menentukan mode trunk, mengaktifkan interface, dan mengizinkan VLAN yang dibutuhkan (contoh allow vlan 10,20,30). Selanjutnya switch menyiapkan port akses untuk perangkat LAN pada interface FastEthernet (contoh Fa0/1 ke VLAN 10 dan Fa0/2 ke VLAN 20). Untuk memungkinkan manajemen switch dari jaringan luar, dibuat interface Vlan30 dengan IP manajemen dan gateway default ke router (ip default-gateway). Setelah konfigurasi, switch disimpan dan dilakukan pengecekan status interface, deskripsi, serta trunk.\n\nBagian AP menjelaskan pengkabelan dengan POE dan cara akses web management AP. Peserta mengatur IP pada laptop agar satu network dengan default management AP (default IP 192.168.0.254). Login default admin/admin, lalu sesuaikan password bila diminta. Materi menyuruh mengonfigurasi terlebih dahulu menu Wireless, kemudian mengatur IP Address AP agar sesuai dengan network gateway router agar AP saling terhubung dengan perangkat jaringan. DHCP server dijelaskan: DHCP di AP diset jika tidak ada DHCP lain di Cisco, tetapi jika DHCP sudah ada di jaringan Cisco maka DHCP pada AP harus disable. SNMP agent pada AP juga perlu diaktifkan untuk memungkinkan monitoring. Setelah itu dilakukan uji koneksi dari wifi client.\n\nBagian opsional instalasi NMS PRTG memandu peserta menyiapkan sistem monitoring. PRTG diinstal pada PC/laptop yang terhubung ke jaringan (contoh terhubung ke mikrotik port ether2) dan IP mengikuti skema (contoh 10.10.X.2/29). Peserta mengunduh PRTG dari situs Paessler, instal menggunakan mode express, menerima kebijakan, menginput email, dan menyelesaikan instalasi sampai muncul halaman setup. Lisensi dapat dicek di menu PRTG Status; jika trial habis, PRTG masih bisa dipakai namun terbatas 100 sensor. PRTG siap memonitor perangkat/host. Penambahan monitoring dilakukan dengan membuat group, menambahkan device (misalnya router dengan IP manajemen), lalu menambahkan sensor seperti ping dan SNMP trafik. Untuk visualisasi, materi menyarankan penggunaan fitur Map untuk membuat dashboard berdasarkan posisi/peran perangkat.\n\nSecara keseluruhan, materi mengikat semua tahap menjadi satu alur: akses perangkat via console → konfigurasi dasar dan keamanan → konfigurasi VLAN trunking → NAT dan routing untuk akses internet → konfigurasi AP untuk klien nirkabel → monitoring via SNMP (router/switch/AP) dan NMS PRTG untuk melihat metrik jaringan."
+}
