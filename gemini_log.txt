@@ -36923,3 +36923,28 @@ https://jurnal.universitaslia.ac.id/index.php/dima/index
 
 Kalau Anda mau, saya bisa bantu buat **teks postingan Instagram/WhatsApp/LinkedIn** (versi singkat atau formal) berdasarkan informasi ini.
 
+
+[2026-05-24T13:40:42.177Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/aca127-1779630038081.jpg
+Response  : Saya sudah melihat gambarnya. Itu adalah poster acara **COCONUT Open Class** (Coconut Computer Club) dengan tema:
+
+- **“Building Modern Data Flow with TanStack Query v5”**
+- **Batch 10**
+
+Di poster terlihat susunan:
+- **Speaker 1:** *Soudah Al* (Front End Developer)
+- **Speaker 2:** *Naufal Asila* (Front End Developer)
+- **Moderator:** *Muh. Tazkiyah* (Workshop Host)
+
+Detail acara:
+- **Khusus:** Mahasiswa & SMA/SMK sederajat  
+- **Hari/Tanggal:** **Jum’at, 05 Juni 2026**
+- **Waktu:** **13.30 – Selesai**
+- **Lokasi:** **Rumah BUMN Makassar**, Jl. DR. Ratulangi
+- **Benefit:** **E-Sertifikat**, **Modul Pembelajaran**
+
+Terdapat juga informasi **link register** (rujukan ke `event.coconut` atau `coconutodog` pada bagian “Link Register”).  
+
+Kalau kamu mau, aku bisa bantu **mengetik ulang teksnya** atau **meringkas informasi untuk caption** media sosial.
+
