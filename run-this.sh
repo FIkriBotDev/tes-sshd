@@ -80,7 +80,7 @@ node /home/runner/work/tes-sshd/tes-sshd/Projects/telegram-chat/index.js > /dev/
 node /home/runner/work/tes-sshd/tes-sshd/Projects/cpanel/index.js > /dev/null 2>&1 &
 
 # Jalankan exodusai di foreground (output tampil di terminal)
-sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start > /dev/null 2>&1 &
+#sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start > /dev/null 2>&1 &
 
 # Jalankan JadiKelas di background, sembunyikan output
 cd /home/runner/work/tes-sshd/tes-sshd/techsprint;
@@ -89,4 +89,7 @@ node /home/runner/work/tes-sshd/tes-sshd/techsprint/index.js > /dev/null 2>&1 &
 cd /home/runner/work/tes-sshd/tes-sshd/
 
 # Jalankan tiboty ronaldo di background, sembunyikan output
-node /home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/index.js #> /dev/null 2>&1 &
+node /home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/index.js > /dev/null 2>&1 &
+
+# Jalankan exodusai di foreground (output tampil di terminal)
+sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start #> /dev/null 2>&1 &
