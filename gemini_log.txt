@@ -36948,3 +36948,41 @@ Terdapat juga informasi **link register** (rujukan ke `event.coconut` atau `coco
 
 Kalau kamu mau, aku bisa bantu **mengetik ulang teksnya** atau **meringkas informasi untuk caption** media sosial.
 
+
+[2026-05-24T20:57:53.221Z]
+Prompt    : asli gak nih? apa perlu hati hati?
+Image URL : https://uploader.exodusai.biz.id/tmp/30c347-1779656264364.jpg
+Response  : Bisa jadi **resmi**, tapi dari gambar saja **nggak bisa dipastikan 100%**. Yang perlu kamu hati-hati: skema beasiswa “besar” seperti ini kadang beneran ada programnya, tapi juga ada yang **tidak transparan**, atau minta pembayaran/akses data yang mencurigakan.
+
+### Cek cepat biar yakin
+1. **Cocokkan sumber resminya**
+   - Buka link/website resmi dari **PT Karir Unggul Nasional / SmartPath** (bukan cuma IG/ads).
+   - Pastikan ada halaman “Program/Beasiswa SmartPath” dan aturan yang sama dengan poster.
+
+2. **Verifikasi link pendaftaran**
+   - Di poster ada: `https://s.id/BeasiswaSP26`  
+   - Pastikan saat diklik, domainnya masuk ke situs resmi penyelenggara (mis. smartpath.id atau subdomain resminya), bukan halaman aneh/redirect ke pihak lain.
+
+3. **Cari bukti pengumuman resmi**
+   - Cek pengumuman batch #4 di akun resmi (IG/LinkedIn) dan apakah ada tanggal, alur seleksi, serta kontak yang jelas.
+
+4. **Waspada hal ini (red flags)**
+   - Diminta **bayar** untuk “pendaftaran/kelulusan” (beasiswa biasanya tidak bayar).
+   - Ada permintaan **OTP, data kartu, atau pembayaran ke rekening pribadi**.
+   - “Benefit” bagus tapi **syarat & metode seleksi** tidak jelas/terlalu longgar.
+   - CTA yang mendesak (“cepat bayar kuota terakhir”) tanpa info resmi.
+
+### Tentang isi poster yang terlihat
+Dari poster:
+- Ada klaim “**Total beasiswa/semester Rp14.000.000**”
+- Ada syarat: “wajib lolos seleksi (online)”, “tidak ada syarat IPK dan prestasi”, dan “tidak ada syarat Motivation Letter”.
+Itu **bisa saja benar**, tapi justru penting dicek: apakah seleksinya jelas (tes apa, interview, tahapan, durasi, penilaian).
+
+### Saran
+Kalau kamu mau daftar, **tunggu info resmi lengkap** (Syarat & Ketentuan + jadwal + pengumuman hasil) dan kalau ada biaya/permintaan yang tidak masuk akal, **jangan lanjut**.
+
+Kalau kamu bisa kirim:
+1) link pendaftaran yang kamu buka (setelah redirect), dan/atau  
+2) akun IG/website resminya,  
+nanti aku bantu cek apakah domain/penyelenggaranya konsisten dan ada tanda-tanda penipuan atau tidak.
+
