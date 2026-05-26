@@ -128,5 +128,15 @@
     "courseUrl": "/course/9c4ef4acec3f66a611b2ff19740e8290",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "519e5696ef10781ccd2e89b840f1520f",
+    "courseName": "Dasar AI & Pemrograman Python: Pengenalan Konsep, Struktur Kode, dan Fondasi Machine Learning",
+    "courseFileName": "materi_dasar_ai_python_5_halaman.pdf",
+    "courseOwner": "pablo@gmail.com",
+    "courseCreated": "26-05-2026, 02.10.02",
+    "courseUrl": "/course/519e5696ef10781ccd2e89b840f1520f",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]

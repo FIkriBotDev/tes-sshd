@@ -1,0 +1,139 @@
+{
+  "title": "Dasar AI & Pemrograman Python: Pengenalan Konsep, Struktur Kode, dan Fondasi Machine Learning",
+  "summary": "Materi ini memperkenalkan Artificial Intelligence (AI) sebagai teknologi yang memungkinkan komputer menjalankan tugas yang biasanya membutuhkan kecerdasan manusia. AI mempelajari pola dari data dalam jumlah besar untuk menghasilkan prediksi atau jawaban. Penerapannya terlihat pada chatbot, image recognition, voice assistant, recommendation system, hingga AI generator, serta digunakan di pendidikan, kesehatan, bisnis, keamanan siber, dan media sosial.\n\nSelain pengenalan AI, materi juga membahas dasar pemrograman Python. Python dipilih karena sintaksnya sederhana dan mudah dipelajari, serta sering dipakai untuk web development, data science, cybersecurity, AI & Machine Learning, dan automasi. Materi mencakup konsep variabel dan tipe data, lalu dilanjutkan dengan percabangan (if-else) dan perulangan (for/while) untuk membangun logika program.\n\nTerakhir, materi menjelaskan konsep dasar Machine Learning sebagai cabang AI. Machine Learning terbagi menjadi supervised learning, unsupervised learning, dan reinforcement learning, dengan dataset sebagai komponen krusial. Materi ditutup dengan gambaran masa depan AI beserta tantangan seperti privasi data, penyalahgunaan, deepfake, dan etika penggunaan, sehingga developer AI perlu memahami teknologi dan tanggung jawab penggunaannya.",
+  "chapters": [
+    {
+      "title": "Pengenalan Artificial Intelligence (AI) dan Contoh Penerapannya",
+      "content": "<p><strong>Artificial Intelligence (AI)</strong> adalah teknologi yang memungkinkan komputer melakukan tugas yang biasanya membutuhkan kecerdasan manusia. Tugas-tugas tersebut mencakup kemampuan seperti memahami percakapan, mengenali gambar, memahami suara, hingga membuat rekomendasi yang relevan.</p><p>Contoh penerapan AI yang banyak dijumpai antara lain <strong>chatbot</strong> (misalnya ChatGPT dan Gemini), <strong>image recognition</strong> pada sistem pengenalan wajah di smartphone, <strong>voice assistant</strong>, serta <strong>recommendation system</strong> seperti rekomendasi video di YouTube. Selain itu, AI juga dipakai untuk <strong>filter spam email</strong> dan pembuatan konten oleh AI generator.</p><p>Secara umum, AI bekerja dengan cara mempelajari data dalam jumlah besar. Sistem AI kemudian mencari pola dari data tersebut untuk menghasilkan <strong>prediksi</strong> atau <strong>jawaban</strong>. Saat ini AI digunakan di berbagai bidang seperti pendidikan, kesehatan, bisnis, keamanan siber, sampai media sosial. Dalam konteks kendaraan modern, AI modern seperti pada mobil self-driving sering memanfaatkan <strong>Machine Learning</strong> dan <strong>Deep Learning</strong>.</p>"
+    },
+    {
+      "title": "Dasar Pemrograman Python: Sintaks, Variabel, dan Tipe Data",
+      "content": "<p><strong>Python</strong> adalah bahasa pemrograman populer karena sintaksnya sederhana dan mudah dipelajari. Python banyak digunakan untuk <strong>web development</strong>, <strong>data science</strong>, <strong>cybersecurity</strong>, <strong>AI & Machine Learning</strong>, serta <strong>automation</strong> (otomatisasi tugas yang berulang).</p><p>Contoh kode paling dasar pada Python adalah penggunaan fungsi <strong>print</strong>, misalnya: <strong>print(\"Hello World\")</strong>. Program Python biasanya berisi instruksi yang dapat menampilkan output, menghitung nilai, menyimpan data, dan menjalankan logika tertentu.</p><p>Python memiliki konsep <strong>variabel</strong> untuk menyimpan data. Contohnya: <strong>nama = \"Fikri\"</strong> dan <strong>umur = 18</strong>. Selain itu, Python mengenal berbagai <strong>tipe data</strong>, seperti <strong>String</strong> (teks), <strong>Integer</strong> (bilangan bulat), <strong>Float</strong> (bilangan desimal), <strong>Boolean</strong> (True/False), dan <strong>List</strong> (kumpulan data).</p>"
+    },
+    {
+      "title": "Percabangan, Perulangan, dan Fondasi Logika Program",
+      "content": "<p><strong>Percabangan</strong> digunakan untuk membuat keputusan pada program. Artinya, program dapat memilih jalur eksekusi yang berbeda berdasarkan kondisi. Contoh yang umum adalah <strong>if-else</strong>, misalnya: jika nilai memenuhi syarat (nilai &gt;= 75) maka program menampilkan “Lulus”, jika tidak maka menampilkan “Tidak Lulus”.</p><p><strong>Perulangan</strong> digunakan untuk menjalankan kode secara berulang. Dua contoh struktur perulangan dasar adalah <strong>for loop</strong> dan <strong>while loop</strong>. Dengan <strong>for</strong>, kita bisa mengulang berdasarkan rentang, contohnya: <strong>for i in range(5): print(i)</strong> untuk mencetak angka dari 0 sampai 4.</p><p>Sementara itu, <strong>while loop</strong> menjalankan kode selama kondisi masih benar. Contoh: <strong>x = 0</strong> lalu <strong>while x &lt; 5:</strong> print(x) dan update nilai <strong>x += 1</strong> agar perulangan berhenti setelah kondisi tidak lagi terpenuhi. Memahami percabangan dan perulangan adalah kunci untuk membangun program yang dinamis dan mampu merespons input atau aturan tertentu.</p>"
+    },
+    {
+      "title": "Dasar Machine Learning dan Masa Depan AI: Tantangan serta Etika",
+      "content": "<p><strong>Machine Learning</strong> adalah cabang AI yang memungkinkan komputer <strong>belajar dari data</strong>. Berbeda dengan program konvensional yang aturan detailnya ditulis secara eksplisit, Machine Learning mempelajari pola dari data untuk kemudian membuat prediksi atau keputusan berdasarkan pola tersebut.</p><p>Machine Learning terbagi menjadi <strong>Supervised Learning</strong>, <strong>Unsupervised Learning</strong>, dan <strong>Reinforcement Learning</strong>. Pada materi ini, fokus utamanya adalah mengenali ketiga kategori tersebut sebagai dasar pemahaman. Contoh penggunaan Machine Learning yang disebutkan meliputi <strong>prediksi harga rumah</strong>, <strong>deteksi spam</strong>, <strong>analisis wajah</strong>, dan <strong>prediksi cuaca</strong>. Pada semua contoh itu, model akan belajar dari data untuk menghasilkan output yang diinginkan.</p><p><strong>Dataset sangat penting</strong> dalam Machine Learning karena kualitas data menentukan kualitas model. Semakin baik kualitas dataset, semakin baik hasil prediksi atau performa sistem AI.</p><p>Di masa depan, AI diprediksi akan terus berkembang. Banyak perusahaan menggunakan AI untuk meningkatkan produktivitas dan efisiensi. Namun terdapat tantangan seperti <strong>privasi data</strong>, <strong>penyalahgunaan AI</strong>, <strong>deepfake</strong>, dan <strong>etika AI</strong>. Karena itu, developer AI perlu memahami teknologi sekaligus tanggung jawab etis dalam penggunaan AI. Kesimpulannya, AI dan Python adalah kombinasi teknologi yang penting dipelajari di era digital modern.</p>"
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa definisi Artificial Intelligence (AI)?",
+      "answer": "Artificial Intelligence (AI) adalah teknologi yang memungkinkan komputer melakukan tugas yang biasanya membutuhkan kecerdasan manusia, seperti memahami percakapan, mengenali gambar, memahami suara, atau membuat rekomendasi."
+    },
+    {
+      "question": "Bagaimana cara kerja AI dalam menghasilkan prediksi atau jawaban?",
+      "answer": "AI bekerja dengan mempelajari data dalam jumlah besar, lalu mencari pola dari data tersebut untuk menghasilkan prediksi atau jawaban."
+    },
+    {
+      "question": "Sebutkan contoh penerapan AI yang disebutkan pada materi!",
+      "answer": "Contoh penerapan AI pada materi meliputi ChatGPT dan Gemini (chatbot), rekomendasi video YouTube (recommendation system), filter spam email, face recognition pada smartphone, serta mobil self-driving yang menggunakan AI."
+    },
+    {
+      "question": "Mengapa Python populer untuk pemrograman?",
+      "answer": "Python populer karena sintaksnya sederhana dan mudah dipelajari, sehingga cocok untuk berbagai kebutuhan seperti web development, data science, cybersecurity, AI & Machine Learning, dan automation."
+    },
+    {
+      "question": "Apa fungsi perintah print pada Python?",
+      "answer": "Perintah print digunakan untuk menampilkan output ke layar, misalnya print(\"Hello World\")."
+    },
+    {
+      "question": "Apa itu variabel dalam Python dan berikan contohnya!",
+      "answer": "Variabel digunakan untuk menyimpan data. Contohnya: nama = \"Fikri\" dan umur = 18."
+    },
+    {
+      "question": "Sebutkan tipe data dasar Python yang disebutkan pada materi!",
+      "answer": "Tipe data dasar Python yang disebutkan adalah String, Integer, Float, Boolean, dan List."
+    },
+    {
+      "question": "Apa yang dimaksud Machine Learning dan mengapa dataset penting?",
+      "answer": "Machine Learning adalah cabang AI yang memungkinkan komputer belajar dari data. Dataset sangat penting karena kualitas data memengaruhi kualitas hasil model AI: dataset yang lebih baik menghasilkan model yang lebih baik."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "AI bekerja dengan cara mempelajari…",
+      "options": [
+        "aturan yang ditulis manual saja",
+        "data dalam jumlah besar untuk menemukan pola",
+        "hanya pengalaman pengguna tanpa data",
+        "teks tanpa memerlukan proses pelatihan"
+      ],
+      "answer": "data dalam jumlah besar untuk menemukan pola"
+    },
+    {
+      "question": "Contoh penerapan AI yang sesuai adalah…",
+      "options": [
+        "print(\"Hello\")",
+        "filter spam email",
+        "for i in range(5)",
+        "x += 1"
+      ],
+      "answer": "filter spam email"
+    },
+    {
+      "question": "Python paling sering digunakan untuk tujuan berikut, kecuali…",
+      "options": [
+        "Web Development",
+        "Data Science",
+        "Cybersecurity",
+        "hanya untuk perangkat keras elektronik"
+      ],
+      "answer": "hanya untuk perangkat keras elektronik"
+    },
+    {
+      "question": "Dalam Python, contoh tipe data String adalah…",
+      "options": [
+        "18",
+        "3.14",
+        "\"Fikri\"",
+        "True"
+      ],
+      "answer": "\"Fikri\""
+    },
+    {
+      "question": "Percabangan if-else digunakan untuk…",
+      "options": [
+        "menghapus data",
+        "membuat keputusan berdasarkan kondisi",
+        "menjalankan kode secara otomatis selamanya",
+        "mengubah tipe data tanpa syarat"
+      ],
+      "answer": "membuat keputusan berdasarkan kondisi"
+    },
+    {
+      "question": "For loop pada Python cocok digunakan ketika perulangan berdasarkan…",
+      "options": [
+        "rentang yang ditentukan",
+        "kondisi yang harus selalu benar tanpa batas",
+        "satu perintah saja tanpa pengulangan",
+        "hanya untuk mencetak karakter khusus"
+      ],
+      "answer": "rentang yang ditentukan"
+    },
+    {
+      "question": "While loop akan terus berjalan selama kondisi…",
+      "options": [
+        "sudah pasti salah",
+        "masih benar",
+        "selalu bernilai True tanpa batas tanpa pengecekan",
+        "hanya saat nilai integer bernilai 0"
+      ],
+      "answer": "masih benar"
+    },
+    {
+      "question": "Tantangan AI yang disebutkan pada materi mencakup…",
+      "options": [
+        "Privasi data",
+        "Mengurangi kebutuhan data",
+        "Menghapus kemungkinan deepfake",
+        "Tidak ada isu etika dalam AI"
+      ],
+      "answer": "Privasi data"
+    }
+  ],
+  "tutorContext": "Materi ini membahas dasar-dasar AI dan pemrograman Python untuk membentuk landasan berpikir komputasional sekaligus fondasi konsep Machine Learning. Dimulai dari pengertian AI: Artificial Intelligence adalah teknologi yang memungkinkan komputer mengerjakan tugas yang biasanya memerlukan kecerdasan manusia. Penjelasan menekankan bahwa AI tidak sekadar menjalankan instruksi statis, tetapi mempelajari data sehingga mampu menghasilkan prediksi atau jawaban. Materi memberikan contoh nyata seperti chatbot (ChatGPT dan Gemini), image recognition (pengenalan wajah pada smartphone), voice assistant, dan recommendation system (contoh rekomendasi video YouTube). Ada juga contoh sistem yang memanfaatkan AI untuk kebutuhan praktis seperti filter spam email. Pada bagian ini, AI juga dikaitkan dengan banyak bidang penerapan: pendidikan, kesehatan, bisnis, keamanan siber, dan media sosial. Selain itu, untuk kendaraan modern seperti mobil self-driving, materi menyoroti bahwa AI umumnya memanfaatkan Machine Learning dan Deep Learning.\n\nSetelah pengantar AI, materi berpindah ke dasar pemrograman Python. Python dijelaskan sebagai bahasa pemrograman yang populer karena sintaksnya sederhana dan mudah dipelajari. Materi menekankan relevansi Python dengan kebutuhan industri dan riset: Python sering digunakan untuk web development, data science, cybersecurity, AI & Machine Learning, serta automation. Tutor sebaiknya membantu peserta memahami bahwa Python menjadi alat untuk menulis program yang kemudian bisa digunakan untuk eksperimen data maupun membangun sistem berbasis AI.\n\nMateri memperkenalkan contoh kode Python paling dasar, yaitu print(\"Hello World\") untuk menampilkan output. Peserta juga perlu memahami konsep variabel: variabel adalah tempat menyimpan data agar bisa dipakai di bagian lain program. Contoh yang diberikan adalah nama = \"Fikri\" dan umur = 18. Berikutnya adalah tipe data dasar Python yang disebutkan: String (teks), Integer (bilangan bulat), Float (bilangan desimal), Boolean (True/False), dan List (kumpulan data). Tutor dapat menekankan bahwa pemahaman tipe data penting karena banyak operasi dan logika program bergantung pada jenis data yang diproses.\n\nMateri kemudian membahas percabangan dan perulangan sebagai fondasi logika program. Percabangan digunakan untuk membuat keputusan berdasarkan kondisi. Contoh if-else pada materi menjelaskan skenario nilai ujian: jika nilai >= 75 maka output “Lulus”, jika tidak maka “Tidak Lulus”. Ini mengajarkan bahwa program dapat memiliki alur eksekusi berbeda tergantung input. Perulangan adalah mekanisme untuk menjalankan blok kode berulang. Materi memberi dua bentuk utama: for loop dan while loop. For loop ditunjukkan melalui for i in range(5): print(i) yang mencetak nilai dari rentang tertentu. Sedangkan while loop menggunakan kondisi yang dicek sebelum setiap iterasi: x = 0 lalu while x < 5: print(x) dan update x += 1 agar perulangan berhenti saat kondisi tidak terpenuhi lagi. Tutor dapat menekankan bahwa kunci while loop adalah pembaruan variabel agar tidak terjadi infinite loop.\n\nBagian selanjutnya mengarah ke dasar Machine Learning sebagai cabang AI. Machine Learning didefinisikan sebagai kemampuan komputer untuk belajar dari data. Materi menyinggung bahwa Machine Learning terbagi menjadi tiga kategori besar: Supervised Learning, Unsupervised Learning, dan Reinforcement Learning. Walaupun tidak dijelaskan detail algoritma, materi memberikan contoh kegunaan praktis: prediksi harga rumah, deteksi spam, analisis wajah, dan prediksi cuaca. Dalam konteks pembelajaran model, materi menekankan bahwa dataset sangat penting: kualitas data berpengaruh langsung pada hasil model AI. Tutor dapat mengaitkan konsep ini dengan pengalaman pemrograman: jika data input buruk atau tidak representatif, maka output model juga cenderung buruk.\n\nTerakhir, materi membahas masa depan AI dan teknologi. AI diprediksi akan terus berkembang, dan banyak perusahaan menggunakan AI untuk meningkatkan produktivitas serta efisiensi. Namun materi juga menyoroti tantangan serius: privasi data, penyalahgunaan AI, deepfake, dan etika AI. Dengan demikian, materi menekankan bahwa seorang developer AI tidak hanya perlu menguasai teknologi, tetapi juga memahami batasan dan dampak etis dari penerapan AI. Kesimpulan menegaskan bahwa AI dan Python adalah kombinasi penting untuk dipelajari di era digital modern: Python sebagai alat untuk membangun dan mengolah logika, sedangkan AI/Machine Learning sebagai domain untuk mengubah data menjadi keputusan atau prediksi."
+}
