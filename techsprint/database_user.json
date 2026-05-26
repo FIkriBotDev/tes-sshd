@@ -79,7 +79,7 @@
     "email": "pablo@gmail.com",
     "password": "$2b$10$nuoF7NgJuh.wcJDLl1NZWu2Sv2.akmRRWVsaPgIH4j7jkjwQHEpIC",
     "plan": 1,
-    "creditLeft": 10,
-    "courseCreated": 0
+    "creditLeft": 5,
+    "courseCreated": 1
   }
 ]
