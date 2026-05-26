@@ -36986,3 +36986,49 @@ Kalau kamu bisa kirim:
 2) akun IG/website resminya,  
 nanti aku bantu cek apakah domain/penyelenggaranya konsisten dan ada tanda-tanda penipuan atau tidak.
 
+
+[2026-05-26T04:17:16.727Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/85d456-1779769031480.jpg
+Response  : Saya lihat gambar poster rekrutmen dari **Prime** (tagline: *Transforming Visions*) untuk posisi **IT Technical Support** dengan tulisan **“WE ARE HIRING!”**.
+
+**Info yang tertera:**
+- **Kualifikasi:**
+  - Pria, minimal **Bachelor’s Degree** (bidang apa saja)
+  - **Fluent English** (nilai tambah)
+  - **Kemampuan komunikasi** baik
+  - **Pengalaman min. 3 tahun**
+- **Berpengalaman dengan:**
+  - **Telematics** (Dashcam & GPS)
+  - **Networking**
+  - **Telephony Systems** (VoIP, PBX, & Call Center)
+  - **Windows & Linux Server**
+  - **Cloud Instances**
+- **Submit CV:** link **hr@ptdigital.co.id**
+- **Kontak/link di bawah poster:** ada akun media sosial serta nomor **+6221 5080 5297** dan website **ptdigital.co.id**
+
+Kalau kamu mau, aku bisa bantu **ringkas ulang**, atau bantu cek apakah kamu memenuhi kualifikasi untuk posisi ini.
+
+
+[2026-05-26T04:17:18.463Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/2f3b78-1779769032679.jpg
+Response  : Gambar tersebut adalah poster rekrutmen dari **PT Digital (ptdigital.co.id)** dengan brand **Prime** (“Transforming Visions”). Intinya:
+
+- Judul: **WE ARE HIRING!**
+- Posisi: **Marketing & Business Development**
+- **Kualifikasi:**
+  - **Female**
+  - Min. **Bachelor’s degree** (bidang apa saja)
+  - Punya pengetahuan dasar tentang **IT Product (hardware/software/network/… )**
+  - Pengalaman **min. 2 tahun** di **Sales/Business Development/Project** atau yang terkait
+  - **Fluent English** dan/atau paham **e-commerce/fintech** (atau industri terkait)
+  - Mampu **memvisualisasikan & mengomunikasikan strategi/konsep bisnis** ke klien
+  - Menjaga **relasi baik** dengan klien & international principals
+  - **Adaptive & collaborative**
+  - Penempatan: **Tangerang**
+- Cara daftar: **Submit your CV** via **hr@ptdigital.co.id**
+  - (Tertera juga link “Submit your CV at: hr@ptdigital.co.id” pada poster)
+
+Kalau kamu mau, aku bisa bantu ringkas jadi teks lamaran/cover letter atau cek apakah CV kamu sudah cocok dengan poin kualifikasinya.
+
