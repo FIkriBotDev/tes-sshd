@@ -148,5 +148,15 @@
     "courseUrl": "/course/d6bc7196cee31e3982b696ad40ad2eec",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "a7c413a60b32984d36162e14319f7edd",
+    "courseName": "Course Router Server Debian 10.5 dengan Routing Static dan Firewall (iptables) serta Pengujian Client",
+    "courseFileName": "2. Router Server.pdf",
+    "courseOwner": "vscode@gmail.id",
+    "courseCreated": "28-05-2026, 09.59.47",
+    "courseUrl": "/course/a7c413a60b32984d36162e14319f7edd",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
