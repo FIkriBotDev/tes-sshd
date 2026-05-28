@@ -81,5 +81,13 @@
     "plan": 1,
     "creditLeft": 999999989,
     "courseCreated": 3
+  },
+  {
+    "namaLengkap": "vscode",
+    "email": "vscode@gmail.id",
+    "password": "$2b$10$9FFMzIG3ZxWtI3v3eypSiOgNRz4CxoHdTbPHn19dsXw2M3zoRTbDa",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
