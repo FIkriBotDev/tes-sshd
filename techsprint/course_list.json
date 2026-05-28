@@ -158,5 +158,15 @@
     "courseUrl": "/course/a7c413a60b32984d36162e14319f7edd",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "166d6d43e2b794aabf06bcd7fad5d956",
+    "courseName": "Course Interaktif Konfigurasi DNS Server (Bind9) di Debian",
+    "courseFileName": "3. DNS Server.pdf",
+    "courseOwner": "vscode@gmail.id",
+    "courseCreated": "28-05-2026, 13.58.36",
+    "courseUrl": "/course/166d6d43e2b794aabf06bcd7fad5d956",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
