@@ -37046,3 +37046,11 @@ Prompt    : mau ga?
 Image URL : https://uploader.exodusai.biz.id/tmp/5917b3-1779977643923.jpg
 Response  : Mau, tapi fotonya kelihatan ada beberapa kue/isi dalam kemasan. Kamu maunya yang mana—**yang kuning (kue kotak)**, **yang cokelat ber-tabur (kue kering)**, atau **yang di bagian bawah (yang dibungkus plastik bening)**?
 
+
+[2026-05-30T09:57:04.474Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/10b4a9-1780135018572.jpg
+Response  : Saya melihat sebuah bus pariwisata berwarna merah di halaman parkir/area paving. Di bagian sampingnya tertulis **“JOSAL WISATA”** dan terlihat juga logo/ornamen budaya. Di kaca depan ada tulisan **“RM 280”** serta label **“EURO4”**.  
+
+Kalau kamu mau, aku bisa bantu jelaskan bagian tertentu (mis. teks di kaca depan, nomor/identitas bus, atau perkiraan jenis/ukuran bus).
+
