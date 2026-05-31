@@ -37184,3 +37184,22 @@ Response  : Saya lihat gambarnya: terlihat sebuah prosesi/ritual di luar ruangan
 
 Kalau kamu mau, bilang ingin saya bantu **menjelaskan detail tertentu** (mis. pakaian, ornamen emasnya, suasananya) atau **menebak konteks acara** (mis. seperti parade/ritual keagamaan).
 
+
+[2026-05-31T03:48:38.410Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/3b7a38-1780199312203.jpg
+Response  : Saya sudah melihat gambar tersebut. Terlihat seperti suasana **upacara/penampilan marching band**: sekelompok orang berseragam **biru** berjalan berbaris sambil membawa **instrumen musik** (misalnya alat tiup/keyboard/perkusi), di sepanjang halaman rumput dan jalan paving, dengan beberapa **bendera** di sisi kiri-kanan.
+
+Kalau kamu mau, bilang ya:
+1) kamu ingin saya **deskripsikan lebih detail**, atau  
+2) kamu ingin dibuatkan **caption/cerita**, atau  
+3) kamu ingin **identifikasi elemen** tertentu (mis. alat musik, kegiatan, jumlah barisan).
+
+
+[2026-05-31T03:49:01.757Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/39c0c6-1780199336440.jpg
+Response  : Saya melihat gambar tersebut: tampak acara seremonial di luar ruangan. Di sisi kanan ada rombongan orang (sebagian mengenakan pakaian tradisional/seragam) yang berdiri berjajar, sementara di sisi kiri terlihat dua orang sedang membawa perlengkapan/alat (ada yang menggunakan sapu lidi/alat pembersih dan topi tradisional). Suasananya seperti prosesi upacara atau pertunjukan budaya, dengan dekorasi bendera dan ornamen di sekitar lokasi.
+
+Kalau Anda mau, beri tahu saya: Anda ingin saya jelaskan **detail tertentu** dari gambar, atau **menebak konteks acaranya**?
+
