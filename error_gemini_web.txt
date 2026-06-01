@@ -3084,3 +3084,34 @@ b.send(JSON.stringify(a));c.classList.add("feedback-hidden");d.classList.remove(
   "status": 400
 }
 
+[2026-06-01T09:40:18.474Z] API Error:
+{
+  "success": false,
+  "error": {
+    "message": "400 Bad Request: azure-openai error: Your input image may contain content that is not allowed by our content safety system.",
+    "code": "BAD_REQUEST",
+    "timestamp": "2026-06-01T09:40:18.452Z",
+    "details": {
+      "name": "UpstreamError",
+      "upstreamStatus": 400,
+      "upstreamHost": "gen.myceli.ai",
+      "upstreamBody": "{\"error\":{\"message\":\"azure-openai error: Your input image may contain content that is not allowed by our content safety system.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"content_policy_violation\"},\"provider\":\"azure-openai\"}"
+    },
+    "cause": {
+      "status": 400,
+      "upstreamStatus": 400,
+      "details": {
+        "error": {
+          "message": "azure-openai error: Your input image may contain content that is not allowed by our content safety system.",
+          "type": "invalid_request_error",
+          "param": null,
+          "code": "content_policy_violation"
+        },
+        "provider": "azure-openai"
+      },
+      "model": "gpt-5.4-nano"
+    }
+  },
+  "status": 400
+}
+
