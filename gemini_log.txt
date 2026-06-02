@@ -37299,3 +37299,18 @@ Kalau kamu mau, bilang kamu ingin saya:
 3) bantu analisis kualitas foto (cahaya, fokus, komposisi),  
 dan bagian mana yang ingin difokuskan.
 
+
+[2026-06-02T14:26:44.003Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/9be660-1780410398526.jpg
+Response  : Saya melihat gambar **sertifikat penghargaan** berbahasa Indonesia.
+
+- Judul: **SERTIFIKAT PENGHARGAAN**
+- Diberikan kepada: **Muhammad Jamal**
+- Isi penghargaan: atas keberhasilan membuat website untuk **PPTQ AN-NUR INDONESIA**
+- Ada QR code dan tautan: **https://pptqannurindonesia.com/**
+- Tertulis: **Mudir PPTQ AN-NUR INDONESIA**
+- Penandatangan: **KH. Ade Kostaman S.sos.I**
+
+Kalau Anda mau, saya bisa bantu **menyalin teksnya** dengan format rapi atau membantu **membuat versi caption/ucapan** untuk posting sertifikat ini.
+
