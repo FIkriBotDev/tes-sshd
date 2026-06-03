@@ -37322,3 +37322,13 @@ Response  : Gambar yang kamu kirim memperlihatkan **bangunan kubah besar bergaya
 
 Kalau ini yang kamu maksud, bangunannya **mirip dengan Masjid Nabawi (Madinah)**—terutama dari ciri kubah dan bentuk fasadnya.
 
+
+[2026-06-03T04:03:57.030Z]
+Prompt    : Ini di sebut prestasi bukan
+Image URL : https://uploader.exodusai.biz.id/tmp/9d3113-1780459432726.jpg
+Response  : Ya, **itu disebut “prestasi”**—lebih tepatnya **sertifikat penghargaan/sertifikat prestasi** karena isinya adalah apresiasi atas keberhasilan (membuat website).
+
+Kalimat yang bisa dipakai:
+- **“Prestasi: membuat website PPTQ AN-NUR INDONESIA.”**
+- atau **“Sertifikat penghargaan atas prestasi/keberhasilan.”**
+
