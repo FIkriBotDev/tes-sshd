@@ -37388,3 +37388,82 @@ Di sertifikat terlihat:
 
 Kalau kamu mau, aku bisa bantu **menyalin teksnya** lebih lengkap (per bagian) atau **membuat versi yang rapi** untuk diketik ulang.
 
+
+[2026-06-03T04:09:58.810Z]
+Prompt    : Yang ini
+Image URL : https://uploader.exodusai.biz.id/tmp/2ba82e-1780459794459.jpg
+Response  : Bisa—di sertifikat pada gambar tertulis:
+
+- **Nama:** *Muhammad Jamal*  
+- **Skor:** **90/100**  
+- **Tanggal penerbitan:** **07-05-2026**  
+- **Judul/jenis:** *OFFICIAL CERTIFICATE / شهاده نتيجه الاختبار* (hasil ujian/eksaminasi)  
+- **Platform:** *Tasheel Platform (taseel.id)*  
+- **Divisi (Arab):** *The Arabic Language Education Division of the Tasheel.id*  
+- **Keterangan:** sertifikat apresiasi untuk partisipasi dalam **Arab Language Examination** melalui platform Tasheel.
+
+Kalau kamu mau, bilang kamu ingin saya **terjemahkan jadi bahasa Indonesia lebih rapi** atau **cek teks yang spesifik** (mis. nama sekolah/kelas, dll).
+
+
+[2026-06-03T04:09:58.922Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/3c32c3-1780459794497.jpg
+Response  : Saya sudah lihat gambarnya. Itu **sertifikat “Sertifikat Kompetensi Ke lulusan” dari dicoding** dengan nama penerima **Muhammad Jamal**.
+
+Di sertifikatnya tertulis juga:
+- **Kursus:** *Introduction to Financial Literacy*
+- **Tanggal:** *23 Maret 2026*
+- Ada tanda tangan/otorisasi dari **Norendia Wicaksono** dan **kode verifikasi (QR)**.
+
+Kalau kamu mau, bilang tujuanmu apa—misalnya **mau saya bacakan detailnya lebih lengkap**, **ringkas untuk CV**, atau **cek teks penting yang terlihat**.
+
+
+[2026-06-03T04:09:59.233Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/80e753-1780459795378.jpg
+Response  : Saya sudah melihat gambarnya. Itu adalah **sertifikat “Certificate of Completion”** untuk kursus **“Introduction to Information Security Course”** dari **Cyber Academy**.
+
+Detail yang terlihat di sertifikat:
+- **Nama:** Muhammad Jamal  
+- **Tanggal selesai:** **June 29, 2025**  
+- Ada **QR code** untuk **verifikasi**  
+- **Certificate ID:** **PKM01106252783** (terlihat di bagian bawah kanan)
+
+Kalau kamu mau, bilang tujuanmu—misalnya mau **dibaca ulang semua teksnya**, **diringkas**, atau **dibantu buat caption/unggahan**—nanti aku sesuaikan.
+
+
+[2026-06-03T04:09:59.459Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/2ed8ea-1780459794585.jpg
+Response  : Saya sudah melihat gambarnya. Itu adalah **sertifikat kompetensi kelulusan dari dicoding** untuk kelas **“Belajar Dasar AI”**.
+
+Data yang terlihat di sertifikat:
+- **Nama peserta:** Muhammad Jamal  
+- **Tanggal:** 28 April 2026  
+- Ada **kode sertifikat/ID verifikasi**: *RVZWXKQG10ZD5* (terlihat di bagian atas sertifikat)
+- Penandatangan oleh **Narend(a) Wicaksono (Chief Executive Officer, Dicoding Indonesia)**
+- Ada juga **QR untuk verifikasi sertifikat**
+
+Kalau kamu mau, bilang saja kamu ingin:
+1) saya bantu **meringkas isi halaman 2**, atau  
+2) kamu ingin saya **cek apakah tanggal/masa berlaku/nomor sertifikatnya sudah benar**, atau  
+3) kamu mau saya **ambil teksnya** (OCR) dari gambar.
+
+
+[2026-06-03T04:10:00.792Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/19cf34-1780459795229.jpg
+Response  : Saya melihat gambar tersebut: itu adalah **sertifikat “Certificate of Participation”** dengan desain bergaya formal.
+
+Isi yang terlihat:
+- Judul: **CERTIFICATE OF PARTICIPATION**
+- Tertulis: **PROUDLY PRESENTED TO: MUHAMMAD JANAL** (nama di tengah)
+- Keterangan acara: **Sebagai Speaker 2** dalam *Socialization Seminar* bertema **“GAUL ITU BOLEH, KEHILANGAN DIRI JANGAN: SENI MENJAGA JATI DIRI DI TENGAH ARUS PERGAULAN MODERN”**
+- Disebut juga: **Tanggal 20 April 2026** di **SMP Qur’an Ibnu Sina Hall**
+- Tanda tangan/penanggung jawab: **SUCI SINTIA (moderator)** dan **NASEP ZULKARNAIN (speaker 1)**
+
+Kalau kamu mau, saya bisa bantu:
+1) menyalin semua teksnya dengan rapi, atau  
+2) mengecek apakah ada bagian yang kurang/typo, atau  
+3) membantu membuat versi baru (format/edit).
+
