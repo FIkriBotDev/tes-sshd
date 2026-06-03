@@ -37525,3 +37525,33 @@ Beberapa teks/keterangan yang terlihat di sertifikat:
 
 Kalau kamu mau, bilang saja kamu ingin **mengedit teksnya**, **membetulkan ejaan**, atau **membuat versi baru** (mis. untuk nama lain/tanggal lain).
 
+
+[2026-06-03T04:12:50.709Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/ebaeb0-1780459966141.jpg
+Response  : Saya melihat gambar tersebut adalah **sertifikat “Certificate of Completion”** dari **Cyber Academy**.
+
+Info yang terlihat di sertifikat:
+- **Nama penerima:** *Muhammad Jamal*
+- **Keterangan:** telah menyelesaikan **Introducton to Information Security Course**
+- **Tanggal selesai:** *June 29, 2025*
+- Ada **QR code** untuk verifikasi sertifikat
+- **Certificate ID:** *PKM110106252783* (terlihat di bagian bawah kanan)
+
+Kalau kamu mau, bilang ya kamu ingin saya **ringkas isi sertifikat**, **cek teks tertentu**, atau **bantu buat versi kalimat/caption** dari sertifikatnya.
+
+
+[2026-06-03T04:12:54.138Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/a32844-1780459967879.jpg
+Response  : Saya melihat gambar **sertifikat penghargaan** dengan judul **“SERTIFIKAT PENGHARGAAN”**.
+
+Isi yang tertulis di dalamnya:
+- **Diberikan kepada:** *Muhammad Jamal*
+- Keterangan: *atas keberhasilan membuat website untuk PPTQ AN-NUR INDONESIA*
+- Ada **QR code** dan tautan: **https://pptqannurinodonesia.com/** (terlihat seperti itu pada gambar)
+- **Mudir PPTQ AN-NUR INDONESIA**
+- Tanda tangan/nama: **KH. Ade Kostaman S.Sos.I**
+
+Kalau kamu mau, aku bisa bantu **menyalin teksnya dengan rapi** atau **membuat versi yang bisa diedit** (mis. untuk Word/Canva).
+
