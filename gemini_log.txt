@@ -37467,3 +37467,61 @@ Kalau kamu mau, saya bisa bantu:
 2) mengecek apakah ada bagian yang kurang/typo, atau  
 3) membantu membuat versi baru (format/edit).
 
+
+[2026-06-03T04:12:43.560Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/3e669b-1780459958834.jpg
+Response  : Saya lihat gambarnya adalah **sertifikat kompetensi keulusan (Dicoding)**.
+
+Dari yang terbaca di sertifikat:
+- Nama: **Muhammad Jamal**
+- Materi/Kelas: **Introduction to Financial Literacy**
+- Tanggal: **23 Maret 2026**
+- Ada QR code untuk **verifikasi sertifikat**
+
+Kalau kamu mau, bilang saja kamu ingin saya **ringkas isi sertifikat**, **cek detail tertentu**, atau **bantu cara verifikasinya lewat QR code**.
+
+
+[2026-06-03T04:12:44.897Z]
+Prompt    : Ini sertifikat nya masukin situ semua
+Image URL : https://uploader.exodusai.biz.id/tmp/c22eaa-1780459958082.jpg
+Response  : Siap. Saya coba “masukin”/rapihin semua sertifikatnya sesuai yang ada di gambar ya.
+
+Dari gambar ini, datanya:
+- **Nama:** Muhammad Jamal  
+- **Skor:** **90/100**  
+- **Nama program/divisi:** *The Arabic Language Education Division of the Tashdeel.id*  
+- **Judul sertifikat:** *EXAMINATION RESULT CERTIFICATE*  
+- **Tanggal terbit:** **07-05-2026**  
+
+Tinggal kamu mau formatnya dimasukin ke mana?
+1) **Ke CV / Google Docs / Word**  
+2) **Ke chat (langsung list rapi)**  
+3) **Ke template profil/portofolio (mis. tabel)**  
+
+Kalau ada sertifikat lain, kirim aja screenshotnya—nanti saya satukan semuanya.
+
+
+[2026-06-03T04:12:45.185Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/d50280-1780459960561.jpg
+Response  : Saya sudah melihat gambar sertifikat itu. Isinya adalah **Sertifikat Kompetensi Kelulusan dari dicoding** untuk kelas **“Belajar Dasar AI”** atas nama **Muhammad Jamal** (tertera tanggal **28 April 2026**). Di sertifikat juga ada **kode verifikasi/QR** serta **penandatangan (Narendra Wicaksono)**.
+
+Kalau kamu mau, sebutkan kamu ingin saya bantu apa dari sertifikat ini—misalnya **menyalin teksnya**, **menjelaskan isi bagian 2**, atau **cek detail tanggal/berlaku**.
+
+
+[2026-06-03T04:12:49.357Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/4ef11c-1780459961736.jpg
+Response  : Saya sudah melihat gambarnya. Itu terlihat seperti **sertifikat partisipasi** dengan judul besar **“CERTIFICATE OF PARTICIPATION”** untuk seorang **pembicara (speaker)**.
+
+Beberapa teks/keterangan yang terlihat di sertifikat:
+- **Diperuntukkan kepada:** *MUHAMMAD JANAL*  
+- **Posisi:** *Speaker 2*  
+- Acara/tema: *“GAUL ITU BOLEH, KEHILANGAN DIRI JANGAN: SENI MENJAGA JATI DIRI DI TENGAH ARUS PERGAULAN MODERN”*  
+- **Dilaksanakan pada:** *April 20, 2026*  
+- **Tempat:** *SMP Qur’an Ibnu Sina Hall* (tulisan terlihat seperti itu)  
+- Tanda tangan: *SUCI SINTIA (moderator)* dan *NASEP ZULKARNAIN (speaker 1)*
+
+Kalau kamu mau, bilang saja kamu ingin **mengedit teksnya**, **membetulkan ejaan**, atau **membuat versi baru** (mis. untuk nama lain/tanggal lain).
+
