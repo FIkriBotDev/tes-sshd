@@ -37332,3 +37332,59 @@ Kalimat yang bisa dipakai:
 - **“Prestasi: membuat website PPTQ AN-NUR INDONESIA.”**
 - atau **“Sertifikat penghargaan atas prestasi/keberhasilan.”**
 
+
+[2026-06-03T04:06:07.396Z]
+Prompt    : Ini prestasi bukan
+Image URL : https://uploader.exodusai.biz.id/tmp/0b9c02-1780459563104.jpg
+Response  : Iya, itu **prestasi** 😊  
+Dari sertifikat di gambar terlihat kamu mendapat **90/100** pada **Arab Language Education Division – Tasheel** (Tashil.id / Tashil Platform). Skor itu artinya kamu termasuk peserta yang berhasil dengan nilai tinggi.
+
+Kalau mau, aku bisa bantu bikinin caption IG/WA yang bagus (Indonesia/Arab/Inggris) berdasarkan sertifikat ini. Mau yang formal atau santai?
+
+
+[2026-06-03T04:06:08.875Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/f6fefe-1780459563396.jpg
+Response  : Saya sudah melihat gambar tersebut. Itu adalah **sertifikat kompetensi kelulusan dari DICODING**.
+
+Yang terlihat di sertifikat:
+- Nama: **Muhammad Jamal**
+- Materi/kelas: **Introduction to Financial Literacy**
+- Tanggal: **23 Maret 2026**
+- Ada **QR code** untuk verifikasi sertifikat
+- Nama penandatangan: **Norendia Wicaksono** (terlihat di bagian bawah)
+
+Kalau kamu mau, sebutkan kamu ingin saya bantu apa (mis. baca detail yang lebih spesifik, cek elemen tertentu, atau bantu buat teksnya agar bisa dipindahkan ke dokumen).
+
+
+[2026-06-03T04:06:08.969Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/1ec83c-1780459563434.jpg
+Response  : Saya sudah melihat gambar sertifikat Anda.
+
+Yang terlihat di sertifikat:
+- **Penyelenggara/Brand:** dicoding  
+- **Judul kelas:** **Belajar Dasar AI**  
+- **Nama penerima:** **Muhammad Jamal**  
+- **Tanggal:** **28 April 2026**  
+- Ada **kode sertifikat** (terlihat format seperti *RVZ…/…*), serta **QR untuk verifikasi**  
+- Di bagian kanan atas tertulis **“Sertifikat Kompetensi Keulusan”** (teks ini tampak seperti banner/label sertifikat)
+
+Kalau Anda mau, saya bisa bantu:
+1) mengetik ulang seluruh teks pentingnya, atau  
+2) cek apakah masa berlakunya/ketentuannya sesuai (berdasarkan bagian yang terlihat).
+
+
+[2026-06-03T04:06:09.679Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/64d6da-1780459563823.jpg
+Response  : Saya sudah melihat gambar sertifikatnya. Itu adalah **sertifikat “Certificate of Participation”** untuk acara **seminar sosialization bertema “Gau Iitu Boleh, Kehilangan Diri Jangan: Sent Menjaga Iati Diri di Tengah Aarus Pergualan Modern”**.
+
+Di sertifikat terlihat:
+- **Penerima:** *MUHAMMAD JANNAH*  
+- **Posisi:** *Speaker 2*  
+- **Moderator/Tanda tangan:** tertulis **SUCI SINTIA (moderator)** dan **NASEP ZULKARN AIN (speaker 1)**  
+- **Tanggal:** **April 28, 2022** (terlihat di bagian bawah)
+
+Kalau kamu mau, aku bisa bantu **menyalin teksnya** lebih lengkap (per bagian) atau **membuat versi yang rapi** untuk diketik ulang.
+
