@@ -37576,3 +37576,17 @@ Response  : Gambar yang kamu kirim memperlihatkan **kawasan stasiun (terlihat ad
 
 Kalau maksudmu “lihatlah gambar ini” untuk **mengidentifikasi objek/isi teks tertentu** atau **menjelaskan apa itu perangkatnya**, bilang saja bagian mana yang ingin kamu fokuskan (mis. tulisan “CSSAUK”, kotak merah, atau perangkat di bawah).
 
+
+[2026-06-07T06:15:49.985Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/3c840e-1780812946427.jpg
+Response  : Saya lihat gambarnya. Teks pada gambar berisi kutipan:
+
+“Kalau tidak bisa satu aliran setidaknya Samma-Saddha, Samma-Sila, Samma-Caga, Samma-Panna agar Hita Sukhaya.”
+
+Itu merujuk pada **Empat Jalan Benar** dalam ajaran Buddha: **Samma-ditthi (Pandangan Benar), Samma-sankappa (Niat Benar), Samma-vaca (Ucapan Benar),** dst—namun pada gambar yang tertulis adalah **Samma-Saddha (keyakinan/percaya benar), Samma-Sila (etika/perilaku benar), Samma-Caga (pelepasan/derma benar), Samma-Panna (kebijaksanaan benar)**, dengan maksud agar menuju **kesejahteraan dan kebahagiaan (Hita Sukhaya)**.
+
+Kalau Anda mau, saya bisa bantu:
+1) terjemahkan/rapikan bahasanya, atau  
+2) jelaskan maksud tiap istilahnya satu per satu.
+
