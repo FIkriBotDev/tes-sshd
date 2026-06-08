@@ -37650,3 +37650,21 @@ Kalau kamu mau, aku bisa bantu:
 2) menuliskan caption/deskipsi untuk laporan, atau  
 3) membantu membuat narasi kegiatan (mis. presentasi, diskusi kelompok, dll.).
 
+
+[2026-06-08T08:36:07.941Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/727063-1780907760719.jpg
+Response  : Saya sudah melihat gambarnya. Itu adalah **poster “Festival Waisak” 2570 B.E / 2026** untuk **Provinsi Banten**, bertema **“Dharma Menjaga Perdamaian Dunia”**.
+
+**Informasi utama di poster:**
+- **Hari/Tanggal:** **Selasa, 16 Juni 2026**
+- **Waktu:** **10.00 – 21.00 WIB**
+- **Tempat:** **Mall @Alam Sutera, Kota Tangerang – Banten**
+- Dibagi sesi/segmen:
+  - **Vesak for Kids (10.00 – 13.00):** mewarnai, menggambar, kids dance
+  - **Vesak for Youth (18.30 – 21.00):** akustikan musik, seni bela diri
+  - **Vesak for Parents (14.00 – 17.00):** yi fo, pesan waisak, kesenian, sambutan Dirjen Bimas Buddha RI
+- Ada juga informasi **donasi/dana kebijakan** (tercantum rekening Mandiri) dan **kontak person** di bagian bawah.
+
+Kalau kamu mau, bilang saja kamu butuh apa dari poster ini—misalnya **ringkasan**, **teks yang bisa disalin**, atau **menganalisis bagian tertentu**.
+
