@@ -37818,3 +37818,110 @@ Kalau kamu mau, sebutkan **ingin saya bantu apa** dari gambar ini—misalnya:
 2) bandingkan **merek** tertentu, atau  
 3) rangkum semua harga yang terlihat.
 
+
+[2026-06-10T02:20:22.593Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/f9f087-1781058016093.jpg
+Response  : Saya sudah melihat gambar tersebut. Itu adalah poster **“Call For Paper”** untuk jurnal **DIMA (Jurnal Pengabdian Masyarakat)** dari **Universitas LIA**.
+
+Info penting yang terlihat:
+- **Edisi:** Vol. 4 No. 1, **Mei 2026**
+- **Fokus:** artikel/penelitian pengabdian masyarakat pada berbagai bidang
+- **Ruang lingkup:**  
+  1) Bahasa dan kebudayaan  
+  2) Bahasa Inggris  
+  3) Bahasa Jepang  
+  4) Bahasa Indonesia  
+  5) Desain komunikasi visual  
+  6) Sistem informasi  
+  7) Teknologi informasi  
+  8) Bisnis digital
+- **Batas akhir submit:** **30 April 2026**
+- **Submit:** **secara online** (ada **QR code** dan tertulis “submission link”)
+- **Publikasi oleh:** **LPPPM Universitas LIA**
+- Ada alamat sekretariat di bagian bawah dan situs: **https://jurnal.universitaslia.ac.id**
+
+Kalau Anda mau, saya bisa bantu **merangkum jadi poin-poin**, atau **menjelaskan apa yang harus dipersiapkan untuk submit**.
+
+
+[2026-06-10T02:20:22.604Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/f9a0cd-1781058014935.jpg
+Response  : Saya sudah melihat gambar tersebut. Itu adalah **poster “CALL FOR PAPERS – Bit-Tech Journal” (Vol. 9, No. 1, Agustus 2026)**.
+
+Isi utamanya:
+- **Topik yang diterima:**
+  - Web, Information System and Mobile Application Technologies  
+  - e-Business dan Digital Transformation  
+  - IT Governance and IT Management  
+  - Data Mining, Machine Learning, Deep Learning, dan Big Data Analytics  
+  - Internet of Things (IoT)  
+  - Cloud Computing and Virtualization  
+  - Decision Support Systems and Business Intelligence
+- **Proses seleksi:** semua naskah akan melalui **double-blind peer-review**
+- **Important Dates:**
+  - Full Paper Submission: **01 Mei 2026 – 30 Juli 2026**
+  - Review & Decision Notification: **01 Mei 2026 – 30 Juli 2026**
+  - Publication Schedule: **Agustus 2026**
+- **Informasi kontak (di bagian submission information):**
+  - WhatsApp: **wa.me/62859106530012**
+  - Website: **https://jurnal.kdri.or.id/index.php/bt/**
+
+Kalau Anda mau, saya bisa bantu **merangkum untuk kebutuhan pengajuan**, atau **mengetik ulang teksnya** agar mudah disalin.
+
+
+[2026-06-10T02:20:22.690Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/5e7a6c-1781058015223.jpg
+Response  : Gambar tersebut adalah poster **Open Registration Pengabdian kepada Masyarakat Semester Genap 2025/2026** dari **LP3M Universitas LIA** (tema: *“Kolaborasi Langtechpreneur untuk Pengembangan Kompetensi”*).
+
+**Informasi utama yang terlihat:**
+- **Skema/Program:** *PKM Reguler Internal Universitas LIA*
+- **Pendaftaran:** **2–7 Juni 2026**
+- **Tautan pendaftaran:** `https://s.id/pkM_Reguler_Gnp2526`
+- **Peran:** *Narasumber dan/atau Panitia*
+
+**Dua kolaborasi/regional yang dicantumkan:**
+1) **Fakultas Humaniora dan Desain**  
+   - Kerja sama: **Kelurahan Cikoko**  
+   - Tanggal pelaksanaan: **27 Juni 2026**  
+   - Lokasi: **Kelurahan Cikoko**  
+   - Topik:  
+     - Spelling Be (D3 Bahasa Inggris)  
+     - Identifying Objects (S1 Bahasa Inggris)  
+     - Origami (S1 Bahasa Jepang)  
+     - Drawing & Coloring (D3 Desain Komunikasi Visual)
+
+2) **Fakultas Sains dan Bisnis**  
+   - Kerja sama: **Kecamatan Pancoran**  
+   - Tanggal pelaksanaan: **15 Juni 2026**  
+   - Lokasi: **Universitas LIA**  
+   - Topik:  
+     - Data Science (S1 Informatika)  
+     - Business Intelligence (S1 Sistem Informasi)  
+     - Bisnis Digital (S1 Bisnis Digital)
+
+Kalau kamu mau, sebutkan bagian apa yang ingin saya bantu (misalnya ringkasan singkat, ekstraksi teks, atau cek apakah topiknya cocok dengan prodi kamu).
+
+
+[2026-06-10T02:20:23.716Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/87d5d0-1781058016003.jpg
+Response  : Saya sudah melihat gambar tersebut. Itu adalah **poster/infografik “CALL FOR PAPER LINGUA”** (Jurnal Ilmiah) dari **Universitas LIA**.
+
+Informasi penting yang terlihat di poster:
+- **Edisi/Jurnal:** *Vol. 22 No. 2 (2026)*
+- **Fokus & Ruang lingkup:** linguistik terapan & umum, termasuk **fonetik, fonologi, morfologi, sintaksis, semantik, pragmatik**, sosiolinguistik, psikolinguistik, korpus linguistik, **literasi & pembelajaran**, **kebudayaan**, **penerjemahan & interpretasi**, studi bahasa, serta **ICT dalam pengajaran & pembelajaran**.
+- **Akreditasi:** *SINTA S4* (tertera e-ISSN & p-ISSN di banner)
+- **Timeline:**
+  - **Manuscript submission:** 1 Mei – 20 Juli 2026  
+  - **Review process:** 1 Juli – 20 Agustus 2026  
+  - **Published:** Oktober 2026
+- **Kontak/email:** **neneng.sri@universitaslia.ac.id**
+- **Website:** https://jurnal.universitaslia.ac.id/index.php/lingua
+- Ada juga **QR code** untuk informasi lebih lanjut dan daftar indeksasi (mis. Google Scholar, Turnitin, Crossref, dll.)
+
+Kalau kamu mau, saya bisa bantu:
+1) merangkum isi poster jadi teks singkat, atau  
+2) bantu cek/menyiapkan draft abstrak & topik yang cocok dengan scope jurnal.
+
