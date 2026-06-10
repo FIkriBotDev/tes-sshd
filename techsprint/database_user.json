@@ -89,5 +89,13 @@
     "plan": 1,
     "creditLeft": 0,
     "courseCreated": 2
+  },
+  {
+    "namaLengkap": "Amanda Esa Karti",
+    "email": "amandaekarti@apps.ipb.ac.id",
+    "password": "$2b$10$imirym3Rhe15gQoUkx5cG.MEPZ858gQ3GdbAjtvI2unCHPCCD12/.",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
