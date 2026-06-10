@@ -168,5 +168,15 @@
     "courseUrl": "/course/166d6d43e2b794aabf06bcd7fad5d956",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "e79a221aeed0491468e5933d34f219b0",
+    "courseName": "Course: Fauna Tanah—Taxonomi, Ekstraksi, Cacing Tanah, dan Rayap",
+    "courseFileName": "Biotan_UAS.pdf",
+    "courseOwner": "amandaekarti@apps.ipb.ac.id",
+    "courseCreated": "10-06-2026, 06.58.48",
+    "courseUrl": "/course/e79a221aeed0491468e5933d34f219b0",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
