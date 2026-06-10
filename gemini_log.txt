@@ -37787,3 +37787,18 @@ Dana Sukarela dapat ditransfer ke:
 
 Kalau Anda mau, saya juga bisa bantu buatkan **caption Instagram/WhatsApp** yang lebih rapi dan singkat berdasarkan isi poster ini.
 
+
+[2026-06-10T00:05:39.715Z]
+Prompt    : https://ppdb.teknologikartu.com/sign-in/SMA-LIA
+Image URL : https://uploader.exodusai.biz.id/tmp/d76ad2-1781049933771.jpg
+Response  : Saya bisa bantu, tapi saya perlu tahu Anda ingin apa dari gambar itu.
+
+Dari baliho terlihat info **“POSKO PENERIMAAN SISWA BARU TAHUN AJARAN 2026/2027 – SMA LIA”** dan ada jadwal pendaftaran/seleksi untuk **Gelombang 2 & 3**, serta ada **link pendaftaran (PPDB)**.
+
+**Tolong pilih:**
+1) Mau saya **ketik ulang teks/jadwal** yang ada di baliho?  
+2) Mau saya **jelaskan isi jadwal**nya (Gelombang 2 dan 3)?  
+3) Mau saya **cek/menerjemahkan link** yang tertera? (Anda sebutkan tujuan: misalnya pastikan itu resmi atau bukan)  
+
+Kalau opsi (1) atau (2), bilang ya—nanti saya tuliskan jadwalnya lengkap sesuai yang terbaca di gambar.
+
