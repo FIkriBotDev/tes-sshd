@@ -38121,3 +38121,21 @@ Kalau kamu mau, aku bisa bantu lebih “actionable” dengan salah satu ini:
 
 Jawab 5 pertanyaan di atas ya—nanti aku susunkan blueprint yang cocok dengan kondisi project kamu.
 
+
+[2026-06-11T10:24:03.258Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/3f126c-1781173437735.jpg
+Response  : Saya lihat gambar itu: sebuah tangkapan layar halaman web **JadiKelas.tech**.
+
+- Bagian utama/hero bertuliskan: **“Ubah Materi Membosankan Jadi Pembelajaran Interaktif”**
+- Ada teks penjelasan tentang mengunggah **PDF/presentasi** lalu AI membuat materi menjadi **course modern** yang menarik.
+- Tombol yang terlihat: **“Coba Gratis”** dan **“Lihat Demo”**.
+- Di sisi kanan ada cuplikan tampilan **materi/kuis interaktif** (termasuk bagian **Quick Quiz** dan tampilan progress).
+- Bagian bawah menampilkan contoh fitur/halaman:
+  - **Learning page** (teks + ringkasan/point),
+  - **Interactive Quiz**,
+  - **Leaderboard**,
+  - serta contoh **coding/simulasi (Playground)**.
+
+Kalau kamu mau, bilang: kamu ingin saya **jelaskan isi gambar lebih detail**, atau **menilai desainnya**, atau **mengekstrak teks** yang ada di gambar.
+
