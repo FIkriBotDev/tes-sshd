@@ -103,7 +103,7 @@
     "email": "alp@gmail.com",
     "password": "$2b$10$ro.qvm3M7ZJ4h.8Jz9G5QO10/bRQt6Q2ZPIQnsgFAWVR6YEaqH2WK",
     "plan": 1,
-    "creditLeft": 10,
-    "courseCreated": 0
+    "creditLeft": 5,
+    "courseCreated": 1
   }
 ]

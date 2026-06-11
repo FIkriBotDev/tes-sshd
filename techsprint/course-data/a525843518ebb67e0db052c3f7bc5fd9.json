@@ -1,0 +1,367 @@
+{
+  "title": "Web Server TKJ: HTTP vs HTTPS & Setup Apache2 + MySQL + phpMyAdmin (Debian)",
+  "summary": "Kamu akan paham konsep web server, bedanya HTTP dan HTTPS, lalu belajar langkah setup web server di Debian sampai bisa login phpMyAdmin. Materi ini dibuat seperti panduan praktikum dengan kuis dan latihan interaktif.",
+  "emoji": "🌐",
+  "color": "#3b82f6",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Web Server Itu Apa Sih?",
+      "icon": "🖥️",
+      "explanation": "Web server adalah software yang memberikan layanan berbasis data dan menerima permintaan HTTP dari client. Saat kamu buka browser, browser mengirim permintaan, lalu web server merespons dengan mengirimkan berkas seperti HTML, gambar, atau video.",
+      "analogy": "Anggap web server seperti kasir di minimarket: pelanggan datang (request), lalu kasir menyiapkan barang (konten/berkas) dan memberikannya.",
+      "highlight": "HTTP request dan respon konten",
+      "keyPoints": [
+        "Web server menerima permintaan HTTP",
+        "Web server mengirim konten (teks, gambar, video)",
+        "Biasanya berbasis aplikasi seperti Apache2"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Fungsi Web Server dalam Kehidupan Nyata",
+      "icon": "📦",
+      "explanation": "Fungsi utama web server adalah mentransfer data atau berkas atas permintaan client. Karena di sebuah web ada banyak jenis file, web server harus bisa melayani semuanya dengan protokol HTTP/HTTPS.",
+      "analogy": "Sama seperti pengiriman paket: kamu minta alamat rumah (URL), lalu kurir (web server) mengantar paket yang sesuai.",
+      "highlight": "transfer data/berkas melalui HTTP/HTTPS",
+      "keyPoints": [
+        "Mentransfer file saat ada permintaan",
+        "Melayani berbagai format konten",
+        "Berperan saat akses website melalui browser"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "HTTP vs HTTPS (Bedanya yang Penting)",
+      "icon": "🔒",
+      "explanation": "HTTP adalah protokol untuk sistem informasi terdistribusi. HTTPS versi amannya karena menggunakan mekanisme pengamanan, sehingga data lebih terlindungi saat dikirim antara client dan server.",
+      "analogy": "HTTP itu seperti berkirim surat tanpa amplop keamanan, sedangkan HTTPS seperti surat dalam amplop tersegel.",
+      "highlight": "HTTPS = HTTP + pengaman",
+      "keyPoints": [
+        "HTTP: protokol dasar web",
+        "HTTPS: sama seperti HTTP tapi lebih aman",
+        "HTTPS membantu melindungi data saat transmisi"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Langkah Konfigurasi Web Server (Gambaran Alur Praktik)",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Siapkan Router & DNS",
+          "description": "Pastikan konfigurasi router server dan DNS server sudah selesai agar domain bisa mengarah ke server.",
+          "tip": "Kalau domain belum resolve, web server mungkin sudah jalan tapi browser tetap tidak menemukan."
+        },
+        {
+          "number": 2,
+          "title": "Masukkan DVD Debian & Update",
+          "description": "Tambahkan repo CD-ROM lalu jalankan apt-get update.",
+          "tip": "Kalau ada proses DVD, gunakan tahapan Force Unmount sesuai instruksi agar paket bisa kebaca."
+        },
+        {
+          "number": 3,
+          "title": "Install Apache2",
+          "description": "Apache2 dipakai sebagai aplikasi web server untuk menayangkan halaman web.",
+          "tip": "Setelah install, nanti uji dengan browser dan cek default page."
+        },
+        {
+          "number": 4,
+          "title": "Install MySQL",
+          "description": "MySQL dipakai sebagai database yang akan mendukung sistem web.",
+          "tip": "Selalu restart setelah setting tertentu agar perubahan benar-benar aktif."
+        },
+        {
+          "number": 5,
+          "title": "Install PHP",
+          "description": "PHP diperlukan untuk menampilkan konten dinamis (misalnya halaman login phpMyAdmin atau aplikasi web).",
+          "tip": "Tambahkan juga paket pendukung seperti php7.3-zip dan php7.3-curl sesuai kebutuhan."
+        },
+        {
+          "number": 6,
+          "title": "Siapkan akses remote (SSH) & phpMyAdmin",
+          "description": "Buka izin akses SSH (PermitRootLogin) agar bisa pakai WinSCP/PuTTY, lalu salin dan ekstrak phpMyAdmin ke /var/www/html.",
+          "tip": "Hati-hati saat mengubah konfigurasi keamanan; pastikan paham risikonya."
+        },
+        {
+          "number": 7,
+          "title": "Set permission, buat user admin phpMyAdmin, uji port",
+          "description": "Atur permission folder phpmyadmin, set password admin via mysqladmin, lalu cek port menggunakan nmap.",
+          "tip": "Uji web pakai domain: / dan /phpmyadmin."
+        },
+        {
+          "number": 8,
+          "title": "Uji lewat browser sampai login berhasil",
+          "description": "Buka nama domain (contoh tkjclub.info) dan halaman tkjclub.info/phpmyadmin untuk memastikan semuanya bekerja.",
+          "tip": "Kalau halaman tidak muncul, fokus dulu ke DNS, lalu port 80 untuk Apache2 dan port MySQL."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Kuis Kecil: Latih Nalar Perintah Install (Simulasi)",
+      "icon": "🧩",
+      "language": "javascript",
+      "instruction": "Pilih perintah yang paling tepat untuk tujuan: install Apache2. Ubah variabel choice dan lihat output apakah benar. Catatan: ini simulasi untuk melatih pemahaman, bukan benar-benar menginstall.",
+      "fileName": "simulasi-perintah.js",
+      "defaultCode": "const choice = \"apt-get install -y apache2\"; // ubah ke opsi lain bila perlu\nconst correct = \"apt-get install -y apache2\";\nconsole.log(choice === correct ? \"Benar! Apache2 dipakai sebagai web server.\" : \"Belum tepat. Cek lagi perintah instalasi Apache2.\");",
+      "hint": "Perintah Apache2 pada materi menggunakan apt-get install -y apache2 (pakai -y)."
+    },
+    {
+      "type": "code_playground",
+      "title": "Cek HTTP/HTTPS: Bangun URL dari Domain",
+      "icon": "⚡",
+      "language": "javascript",
+      "instruction": "Ubah protocol menjadi \"http\" atau \"https\", lalu lihat hasil URL. Ini latihan memahami perbedaan penulisan link web dan path phpMyAdmin.",
+      "fileName": "url-builder.js",
+      "defaultCode": "const protocol = \"http\"; // coba ubah jadi \"https\"\nconst domain = \"tkjclub.info\";\nconst urlHome = `${protocol}://${domain}/`;\nconst urlPhpMyAdmin = `${protocol}://${domain}/phpmyadmin`;\nconsole.log(\"Home URL:\", urlHome);\nconsole.log(\"phpMyAdmin URL:\", urlPhpMyAdmin);",
+      "hint": "Di materi, uji memakai domain lalu /phpmyadmin. Pastikan path sesuai."
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual: Komponen yang Harus Nyambung",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Browser (Client)",
+          "value": "Mengirim request ke server via HTTP/HTTPS",
+          "icon": "🌐"
+        },
+        {
+          "label": "Apache2 (Web Server)",
+          "value": "Menayangkan halaman web di port HTTP 80",
+          "icon": "🖥️"
+        },
+        {
+          "label": "PHP (Konten Dinamis)",
+          "value": "Menjalankan script untuk kebutuhan aplikasi web",
+          "icon": "🧩"
+        },
+        {
+          "label": "MySQL (Database)",
+          "value": "Menyimpan data aplikasi & mendukung phpMyAdmin",
+          "icon": "🗄️"
+        },
+        {
+          "label": "phpMyAdmin",
+          "value": "Halaman manajemen database lewat browser",
+          "icon": "🧰"
+        },
+        {
+          "label": "SSH + WinSCP",
+          "value": "Untuk akses remote dan copy file ke server",
+          "icon": "🔐"
+        }
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "Analogi: Web Server sebagai Tim Produksi Konten",
+      "icon": "💡",
+      "realWorld": "Kamu punya toko online dan ingin customer bisa lihat katalog serta login admin.",
+      "connection": "Apache2 adalah bagian yang menyajikan konten, PHP adalah bagian yang mengolah data dinamis, MySQL adalah gudang data, dan phpMyAdmin adalah ruang kontrol untuk mengelola gudang.",
+      "insight": "Kalau salah satu komponen tidak siap (misalnya DNS salah, Apache belum jalan, phpmyadmin tidak tersalin), maka halaman tidak bisa diakses atau login gagal."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Web Server",
+          "definition": "Software yang menerima request HTTP dan mengirimkan konten web",
+          "example": "Apache2 melayani halaman saat browser membuka domain"
+        },
+        {
+          "term": "HTTP",
+          "definition": "Protokol dasar transfer data untuk web",
+          "example": "http://tkjclub.info/"
+        },
+        {
+          "term": "HTTPS",
+          "definition": "HTTP dengan pengamanan (secure)",
+          "example": "https://tkjclub.info/"
+        },
+        {
+          "term": "Routing",
+          "definition": "Aturan pengiriman request dari jaringan ke tujuan yang benar",
+          "example": "Request domain diarahkan ke server web yang tepat"
+        },
+        {
+          "term": "DNS Server",
+          "definition": "Layanan yang memetakan domain ke IP",
+          "example": "tkjclub.info mengarah ke IP WAN server"
+        },
+        {
+          "term": "phpMyAdmin",
+          "definition": "Aplikasi web untuk mengelola database MySQL",
+          "example": "tkjclub.info/phpmyadmin"
+        },
+        {
+          "term": "nmap",
+          "definition": "Alat untuk mengecek port yang aktif pada host",
+          "example": "nmap localhost"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Web server berfungsi menerima permintaan apa dari client?",
+      "options": [
+        "FTP",
+        "HTTP",
+        "SMTP",
+        "DHCP"
+      ],
+      "answer": "HTTP",
+      "explanation": "Materi menjelaskan web server menerima permintaan HTTP dari client untuk lalu mengirim konten/berkas.",
+      "xpReward": 50
+    },
+    {
+      "question": "Manakah yang paling tepat menggambarkan fungsi web server?",
+      "options": [
+        "Mencetak dokumen offline",
+        "Mentransfer data/berkas atas permintaan client melalui HTTP/HTTPS",
+        "Mengubah sinyal WiFi menjadi data",
+        "Mengatur listrik agar stabil"
+      ],
+      "answer": "Mentransfer data/berkas atas permintaan client melalui HTTP/HTTPS",
+      "explanation": "Di materi bagian Fungsi Web Server dijelaskan web server mentransfer data atau berkas sesuai permintaan client menggunakan HTTP/HTTPS.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perbedaan utama HTTPS dibanding HTTP adalah menggunakan sistem pengaman. Ini berarti HTTPS adalah…",
+      "options": [
+        "Protocol yang berbeda total",
+        "HTTP tanpa kebutuhan sertifikat",
+        "HTTP + pengamanan/secure",
+        "Hanya untuk jaringan lokal (LAN)"
+      ],
+      "answer": "HTTP + pengamanan/secure",
+      "explanation": "Materi menyebut HTTPS adalah protokol yang sama seperti HTTP, namun membedakan karena HTTPS menggunakan sistem pengaman.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perintah pada materi untuk menginstall Apache2 (web server) adalah…",
+      "options": [
+        "apt-get install -y apache2",
+        "apt-get install -y mysql*",
+        "apt-get install -y php7.3*",
+        "apt install -y nmap"
+      ],
+      "answer": "apt-get install -y apache2",
+      "explanation": "Materi langkah instalasi menyebut apt-get install -y apache2 untuk Apache2.",
+      "xpReward": 50
+    },
+    {
+      "question": "phpMyAdmin disalin ke folder tujuan pada materi yaitu…",
+      "options": [
+        "/etc/phpmyadmin",
+        "/var/www/html",
+        "/home/phpmyadmin",
+        "/opt/phpmyadmin"
+      ],
+      "answer": "/var/www/html",
+      "explanation": "Materi menyebut saat copy file phpMyAdmin ke directory /var/www/html.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perintah untuk membuat user admin phpMyAdmin (via mysqladmin) pada materi menggunakan password 12345678. Bentuk perintah yang benar adalah…",
+      "options": [
+        "mysqladmin -u root password 12345678",
+        "mysqladmin -u admin password 12345678",
+        "mysqladmin -u root pass 12345678",
+        "mysqladmin --root 12345678"
+      ],
+      "answer": "mysqladmin -u root password 12345678",
+      "explanation": "Materi menuliskan mysqladmin -u root password 12345678.",
+      "xpReward": 50
+    },
+    {
+      "question": "Port yang disebut untuk Apache2 adalah…",
+      "options": [
+        "port 20",
+        "port 23",
+        "port 80",
+        "port 443"
+      ],
+      "answer": "port 80",
+      "explanation": "Di materi bagian pengecekan port dengan nmap tertulis http port 80 untuk Apache2.",
+      "xpReward": 50
+    },
+    {
+      "question": "Di materi, cara uji halaman phpMyAdmin pada browser adalah membuka URL…",
+      "options": [
+        "namadomain/admin",
+        "namadomain/phpmyadmin",
+        "namadomain/mysql",
+        "namadomain/ssh"
+      ],
+      "answer": "namadomain/phpmyadmin",
+      "explanation": "Materi instruksikan buka tab baru lalu ketik namadomain/phpmyadmin.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa itu web server?",
+      "answer": "Web server adalah software yang menerima permintaan HTTP dari client dan mengirimkan konten/berkas web (misalnya HTML, gambar, video) untuk ditampilkan di browser.",
+      "emoji": "🖥️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Sebutkan fungsi utama web server.",
+      "answer": "Mentransfer data atau berkas berdasarkan permintaan client melalui HTTP/HTTPS agar konten web bisa diakses.",
+      "emoji": "📦",
+      "difficulty": "easy"
+    },
+    {
+      "question": "HTTP itu apa?",
+      "answer": "HTTP (HyperText Transfer Protocol) adalah protokol jaringan/aplikasi untuk transfer informasi terdistribusi dalam sistem web.",
+      "emoji": "🌐",
+      "difficulty": "easy"
+    },
+    {
+      "question": "HTTPS itu apa bedanya dari HTTP?",
+      "answer": "HTTPS adalah HTTP yang ditambahkan sistem pengamanan (secure), sehingga data yang dikirim lebih terlindungi.",
+      "emoji": "🔒",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apache2 dalam materi berperan sebagai apa?",
+      "answer": "Apache2 berperan sebagai aplikasi web server yang melayani halaman web di browser.",
+      "emoji": "🧱",
+      "difficulty": "easy"
+    },
+    {
+      "question": "MySQL dalam materi berperan sebagai apa?",
+      "answer": "MySQL berperan sebagai database untuk menyimpan data aplikasi web dan mendukung phpMyAdmin.",
+      "emoji": "🗄️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "phpMyAdmin digunakan untuk apa?",
+      "answer": "phpMyAdmin adalah aplikasi web untuk mengelola database MySQL melalui browser (login lalu mengatur database).",
+      "emoji": "🧰",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Perintah nmap pada materi digunakan untuk mengecek apa?",
+      "answer": "Untuk mengecek port aplikasi yang aktif/terpasang pada sistem operasi, contoh: nmap localhost.",
+      "emoji": "📡",
+      "difficulty": "medium"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama: konsep web server, HTTP vs HTTPS, dan alur setup sampai uji browser.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi ini membahas konsep dasar web server, peranannya dalam mengirim konten web, perbedaan HTTP dan HTTPS, lalu panduan langkah-langkah praktikum setup web server di Debian (TKJ). Struktur materi mencakup: pengertian, fungsi, perbedaan protokol, script/perintah instalasi, serta langkah konfigurasi dan pengujian menggunakan browser. Inti konsep: Web server adalah software yang menerima permintaan HTTP dari client. Saat pengguna mengetik URL pada browser, browser mengirim request ke server; server kemudian merespons dengan mengirim berkas konten web. Konten tersebut bisa berupa teks (HTML), gambar, video, dan lain-lain. Karena itu, web server bertugas mentransfer data atau berkas atas permintaan client melalui HTTP/HTTPS. Penekanan penting: web server bukan sekadar “menampilkan”, tapi menangani komunikasi request-response dengan protokol yang sesuai.\n\nBagian protokol: HTTP (HyperText Transfer Protocol) dijelaskan sebagai protokol jaringan dan aplikasi untuk sistem informasi terdistribusi. HTTPS (HyperText Transfer Protocol Secure) dijelaskan sebagai protokol yang sama dengan HTTP, namun yang membedakan adalah adanya sistem pengaman. Untuk siswa, tutor bisa jelaskan bahwa HTTP biasanya tidak seaman HTTPS, sedangkan HTTPS menambah keamanan pada proses pengiriman data. Walaupun materi tidak menyebut detail sertifikat TLS, tutor sebaiknya menyederhanakan: HTTPS = HTTP + pengamanan agar data lebih terlindungi saat diakses.\n\nBagian script dan setup (praktikum): materi memberikan daftar perintah berbasis Debian/Ubuntu untuk menginstal komponen yang diperlukan: Apache2 sebagai web server, MySQL sebagai database, PHP sebagai bahasa/script untuk konten dinamis. Tutor harus menegaskan bahwa sebelum menginstal, pastikan konfigurasi Routing dan DNS Server telah selesai. Ini karena pengujian dilakukan melalui nama domain (contoh tkjclub.info). Jika DNS tidak benar, browser tidak akan menemukan server walaupun service di server sudah terpasang.\n\nUrutan umum sesuai materi: (1) Menambahkan repository dari DVD Debian menggunakan apt-cdrom add (misalnya masukkan DVD-3). (2) apt-get update untuk memperbarui daftar paket. (3) apt-get install -y apache2 untuk menginstal Apache2. (4) apt-get install -y mysql* untuk menginstal paket MySQL, lalu menggunakan DVD Binary-1/2/3 saat diminta (dengan instruksi Force Unmount pada aplikasi virtualisasi). (5) apt-get install -y php7.3* untuk menginstal PHP. (6) apt --fix-broken install ketika terjadi broken packages. (7) apt-get install -y php7.3-zip php7.3-curl untuk paket pendukung (materi menyebut khususnya untuk kebutuhan aplikasi seperti Opencart; tutor bisa menekankan bahwa tidak selalu wajib jika hanya ingin phpMyAdmin, tapi membantu untuk aplikasi berbasis PHP yang memerlukan zip/curl).\n\nBagian remote akses (SSH): materi memerintahkan edit file /etc/ssh/sshd_config menggunakan nano. Tutor menjelaskan tujuan pengubahan: memberikan izin agar root bisa login sehingga aplikasi remote control seperti WinSCP, PuTTY, FileZilla bisa mengakses server. Script yang dicari adalah PermitRootLogin prohibit-password, lalu diubah menjadi PermitRootLogin yes. Setelah itu simpan dengan Ctrl+X lalu Y lalu Enter. Terakhir restart SSH dengan /etc/init.d/ssh restart dan pastikan hasil OK. Untuk konteks tutor, penting menambahkan bahwa perubahan ini meningkatkan risiko keamanan; namun karena materi latihan fokus pada koneksi remote dalam lingkungan praktik, tutor cukup menekankan tetap hati-hati dan gunakan untuk laboratorium.\n\nBagian phpMyAdmin: materi menginstruksikan penggunaan WinSCP untuk menyalin file phpMyAdmin dari client ke server pada folder /var/www/html. Setelah file tersalin, install unzip: apt-get install -y unzip. Lalu masuk ke directory /var/www/html (cd /var/www/html) dan mengekstrak arsip phpMyAdmin dengan unzip php (dengan Tab untuk melengkapi nama file). Setelah unzip, folder phpMyAdmin-5.0.2-all-languages diganti namanya menjadi phpmyadmin menggunakan mv ... phpmyadmin. Kemudian set permission dengan chmod 755 -R /var/www/html/phpmyadmin. Tutor bisa menekankan kenapa permission penting: agar Apache2 bisa membaca file phpMyAdmin dan browser bisa mengakses halaman.\n\nBagian database untuk admin phpMyAdmin: materi memberi perintah mysqladmin -u root password 12345678, lalu restart MySQL /etc/init.d/mysql restart. Tutor perlu mengaitkan ini: saat login phpMyAdmin, kredensial yang digunakan harus sesuai pengaturan password admin root yang dibuat/diperbaharui.\n\nPengujian service: materi menyarankan instal nmap dengan apt-get install -y nmap, lalu cek port aktif menggunakan nmap localhost. Di materi, contoh port yang harus terdaftar: http port 80 untuk Apache2, dan mysql port 336 untuk MySQL. Tutor bisa mengajarkan bahwa nmap digunakan untuk memverifikasi service benar-benar listening pada port yang sesuai.\n\nPengujian via browser: setelah service siap, buka browser dan ketik nama domain (contoh tkjclub.info). Jika berhasil tampil “Apache2 Debian Default Page” yang menandakan Apache2 berjalan. Lalu buka tab baru dengan tkjclub.info/phpmyadmin. Jika berhasil muncul halaman login phpMyAdmin. Login menggunakan username root dan password 12345678, lalu klik Go. Jika halaman manajemen database tampil, berarti konfigurasi web server dan database terhubung dan phpMyAdmin dapat dijalankan.\n\nKesimpulan materi: jika seluruh step dilakukan dan login berhasil, konfigurasi WEB Server dinyatakan selesai dan sukses. Tutor bisa menutup dengan mengaitkan kembali konsep inti: web server menerima HTTP request, Apache2 menyiapkan layanan web, PHP menyiapkan konten dinamis, MySQL menyediakan data, dan phpMyAdmin adalah antarmuka untuk mengelola database."
+}
