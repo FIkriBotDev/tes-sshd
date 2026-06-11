@@ -1,0 +1,135 @@
+{
+  "title": "Course Interaktif: Fondasi Pemrograman Python untuk Pemula",
+  "summary": "Python adalah bahasa pemrograman tingkat tinggi yang dirancang agar mudah dibaca dan dipelajari. Python dibuat oleh Guido van Rossum pada tahun 1991 dan kini populer untuk Ilmu Data (Data Science), Kecerdasan Buatan (AI), serta Pengembangan Web. Keunggulan belajar Python antara lain sintaks yang sederhana, komunitas besar dengan banyak library, serta dukungan multi-platform seperti Windows, Mac, dan Linux.\n\nDalam materi ini, kamu mempelajari dasar-dasar Python mulai dari pengenalan bahasa, variabel dan tipe data (integer, float, string, dan boolean), operator dasar (+, -, *, /, **), struktur kontrol (if, elif, else), perulangan (for dan while), struktur data (list, tuple, dictionary), hingga fungsi (function). Materi ini berfungsi sebagai fondasi sebelum melangkah ke library khusus seperti NumPy, Pandas, dan Django.",
+  "chapters": [
+    {
+      "title": "Bab 1: Pengenalan Python & Mengapa Belajar Python",
+      "content": "<p>Python adalah bahasa pemrograman tingkat tinggi yang dirancang agar mudah dibaca dan dipelajari. Desainnya menekankan keterbacaan kode sehingga cocok bagi pemula maupun praktisi. Python juga dikenal luas dalam berbagai bidang teknologi, terutama karena fleksibel dan kaya fitur.</p><p>Python diciptakan oleh <strong>Guido van Rossum</strong> pada tahun <strong>1991</strong>. Seiring waktu, Python berkembang menjadi salah satu bahasa pemrograman paling populer untuk <strong>Ilmu Data (Data Science)</strong>, <strong>Kecerdasan Buatan (AI)</strong>, dan <strong>Pengembangan Web</strong>. Hal ini didukung oleh ekosistem library yang besar sehingga banyak kebutuhan pemrograman dapat dipenuhi lebih cepat.</p><p>Alasan utama kenapa belajar Python adalah sebagai berikut: <strong>sintaksis sederhana</strong> yang mirip bahasa Inggris, <strong>komunitas besar</strong> beserta <strong>library yang lengkap</strong>, serta kemampuan berjalan di banyak sistem operasi (<strong>Windows, Mac, Linux</strong>). Dengan bekal dasar yang tepat, kamu bisa membangun proyek-proyek praktis di bidang data, AI, maupun web.</p>"
+    },
+    {
+      "title": "Bab 2: Variabel, Tipe Data, dan Operator Dasar",
+      "content": "<p>Variabel merupakan wadah untuk menyimpan data. Di Python, kamu tidak perlu mendeklarasikan tipe data secara eksplisit, karena Python akan menentukan tipe data berdasarkan nilai yang diberikan. Ini membuat proses penulisan kode lebih cepat dan nyaman bagi pemula.</p><p>Tipe data dasar yang dipelajari meliputi: <strong>Integer</strong> (bilangan bulat), misalnya <strong>10</strong> dan <strong>-5</strong>; <strong>Float</strong> (bilangan desimal), misalnya <strong>3.14</strong> dan <strong>2.0</strong>; <strong>String</strong> (teks) yang diapit tanda kutip seperti <strong>\"Halo Dunia\"</strong>; serta <strong>Boolean</strong> yang bernilai logika <strong>True</strong> atau <strong>False</strong>.</p><p>Contoh variabel yang umum: <strong>nama</strong> berisi teks, <strong>umur</strong> berisi bilangan bulat, <strong>tinggi</strong> berisi bilangan desimal, dan <strong>is_student</strong> berisi nilai boolean. Untuk menampilkan data secara rapi, kamu bisa menggunakan <strong>print</strong> bersama format string. Materi juga mengenalkan <strong>operator dasar</strong>: <strong>+</strong> untuk penjumlahan, <strong>-</strong> untuk pengurangan, <strong>*</strong> untuk perkalian, <strong>/</strong> untuk pembagian, dan <strong>**</strong> untuk perpangkatan.</p><p>Dengan memahami tipe data dan operator, kamu bisa mengolah nilai dan menyiapkan data untuk langkah berikutnya seperti pengambilan keputusan dan perulangan.</p>"
+    },
+    {
+      "title": "Bab 3: Struktur Kontrol, Perulangan, Struktur Data, dan Fungsi",
+      "content": "<p>Struktur kontrol digunakan untuk membuat keputusan dalam kode. Python menyediakan <strong>if</strong>, <strong>elif</strong>, dan <strong>else</strong> agar program dapat memilih jalur eksekusi berdasarkan kondisi. Contohnya, nilai ujian dapat diklasifikasikan menjadi grade A, B, atau C menggunakan rangkaian kondisi.</p><p>Perulangan (loops) memungkinkan kode dijalankan berulang. Python memiliki dua jenis perulangan utama: <strong>for</strong> dan <strong>while</strong>. <strong>For loop</strong> sering digunakan ketika kamu tahu jumlah iterasi, contohnya iterasi dari 0 sampai 4 menggunakan <strong>range(5)</strong>. <strong>While loop</strong> cocok ketika kamu ingin perulangan berhenti berdasarkan kondisi tertentu, misalnya selama <strong>count</strong> kurang dari 3.</p><p>Selain kontrol dan perulangan, materi juga membahas struktur data untuk menyimpan koleksi dalam satu variabel. <strong>List</strong> adalah kumpulan data terurut dan <strong>bisa diubah</strong> (contoh: buah = [\"Apel\", \"Jeruk\"]). <strong>Tuple</strong> adalah terurut tetapi <strong>tidak bisa diubah</strong> (contoh: koordinat = (10, 20)). <strong>Dictionary</strong> berisi pasangan <strong>kunci dan nilai</strong> (contoh: user = {\"nama\": \"Andi\", \"usia\": 25}).</p><p>Terakhir, <strong>fungsi (function)</strong> adalah blok kode yang hanya berjalan saat dipanggil. Fungsi didefinisikan dengan <strong>def</strong>. Contoh: fungsi <strong>sapa</strong> menerima parameter <strong>nama</strong> lalu mengembalikan string sapaan. Dengan konsep fungsi, kode menjadi lebih terstruktur, mudah digunakan ulang, dan lebih rapi.</p><p>Materi penutup menekankan bahwa Python sangat luas. Setelah fondasi ini, langkah selanjutnya adalah mempelajari library seperti <strong>NumPy</strong> (matematika), <strong>Pandas</strong> (data), atau <strong>Django</strong> (web) sesuai tujuanmu.</p>"
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Siapa pencipta Python dan kapan Python pertama kali dibuat?",
+      "answer": "Python diciptakan oleh Guido van Rossum pada tahun 1991."
+    },
+    {
+      "question": "Sebutkan minimal tiga bidang yang paling umum menggunakan Python.",
+      "answer": "Python populer untuk Ilmu Data (Data Science), Kecerdasan Buatan (AI), dan Pengembangan Web."
+    },
+    {
+      "question": "Apa yang dimaksud variabel dalam pemrograman Python?",
+      "answer": "Variabel adalah wadah (tempat) untuk menyimpan data. Nilai yang dimasukkan ke variabel menentukan tipe data secara otomatis."
+    },
+    {
+      "question": "Berikan contoh tipe data Integer, Float, dan String dalam Python.",
+      "answer": "Integer: 10 atau -5. Float: 3.14 atau 2.0. String: \"Halo Dunia\" (teks diapit tanda kutip)."
+    },
+    {
+      "question": "Apa perbedaan List dan Tuple?",
+      "answer": "List terurut dan bisa diubah (mutable), sedangkan Tuple terurut tetapi tidak bisa diubah (immutable)."
+    },
+    {
+      "question": "Apa itu Dictionary dalam Python?",
+      "answer": "Dictionary adalah struktur data berisi kumpulan pasangan kunci dan nilai (key-value), misalnya user = {\"nama\": \"Andi\", \"usia\": 25}."
+    },
+    {
+      "question": "Operator apa yang digunakan untuk perpangkatan (x pangkat y) di Python?",
+      "answer": "Operator perpangkatan di Python adalah ** (contoh: 5 ** 2 menghasilkan 25)."
+    },
+    {
+      "question": "Apa fungsi utama dari if, elif, dan else dalam Python?",
+      "answer": "if, elif, dan else digunakan untuk membuat keputusan berdasarkan kondisi. Program memilih blok kode yang sesuai dengan nilai kondisi tersebut."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Python dibuat oleh ... pada tahun ...",
+      "options": [
+        "Steve Jobs pada 2007",
+        "Guido van Rossum pada 1991",
+        "Bill Gates pada 1985",
+        "Mark Zuckerberg pada 2010"
+      ],
+      "answer": "Guido van Rossum pada 1991"
+    },
+    {
+      "question": "Berikut ini yang merupakan tipe data Boolean di Python adalah ...",
+      "options": [
+        "\"True\"",
+        "True",
+        "0.1",
+        "{1,2,3}"
+      ],
+      "answer": "True"
+    },
+    {
+      "question": "Operator yang digunakan untuk penjumlahan adalah ...",
+      "options": [
+        "-",
+        "+",
+        "*",
+        "/"
+      ],
+      "answer": "+"
+    },
+    {
+      "question": "Kode berikut menjalankan iterasi sebanyak berapa kali? for i in range(5): ...",
+      "options": [
+        "3 kali",
+        "4 kali",
+        "5 kali",
+        "6 kali"
+      ],
+      "answer": "5 kali"
+    },
+    {
+      "question": "Struktur kontrol yang tepat untuk pilihan lebih dari dua kondisi adalah ...",
+      "options": [
+        "if saja",
+        "if dan while",
+        "if, elif, else",
+        "switch-case"
+      ],
+      "answer": "if, elif, else"
+    },
+    {
+      "question": "Mana yang termasuk tipe data yang bisa diubah (mutable) sesuai materi?",
+      "options": [
+        "Tuple",
+        "List",
+        "String",
+        "Integer"
+      ],
+      "answer": "List"
+    },
+    {
+      "question": "Jika nilai = 85 dan terdapat logika: if nilai >= 90 => A, elif nilai >= 75 => B, else => C, maka grade yang keluar adalah ...",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "Tidak ada output"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Dalam materi, operator perpangkatan ditulis dengan tanda ...",
+      "options": [
+        "^",
+        "**",
+        "//",
+        "%"
+      ],
+      "answer": "**"
+    }
+  ],
+  "tutorContext": "Materi membahas fondasi pemrograman Python untuk pemula yang mencakup pengenalan bahasa hingga konsep dasar pemrosesan logika dan data. Bagian awal menjelaskan bahwa Python merupakan bahasa pemrograman tingkat tinggi yang mudah dibaca dan dipelajari. Penekanan utama adalah keterbacaan sintaks dan kenyamanan bagi pemula. Materi juga menyebutkan asal-usul Python: diciptakan oleh Guido van Rossum pada tahun 1991. Selanjutnya dijelaskan alasan mengapa Python penting dan banyak dipakai: Python sangat populer untuk Ilmu Data (Data Science), Kecerdasan Buatan (AI), serta Pengembangan Web. Popularitas ini ditopang oleh ekosistem library dan komunitas yang besar. Dari sudut pandang praktis, Python memiliki sintaks yang sederhana dan mirip bahasa Inggris, sehingga lebih cepat dipahami. Python juga dapat dijalankan di berbagai sistem operasi (multi-platform), yaitu Windows, Mac, dan Linux. Ini penting karena memudahkan peserta didik untuk memulai tanpa terikat satu lingkungan tertentu.\n\nBab berikutnya memperkenalkan konsep variabel dan tipe data. Variabel berfungsi sebagai wadah untuk menyimpan data, misalnya nama, umur, tinggi, dan status siswa. Dalam Python, tidak ada kebutuhan untuk mendeklarasikan tipe data secara eksplisit, karena tipe data ditentukan secara dinamis berdasarkan nilai yang dimasukkan. Materi merangkum tipe data dasar: integer untuk bilangan bulat (contoh 10 dan -5), float untuk bilangan desimal (contoh 3.14 dan 2.0), string untuk teks yang diapit kutip (contoh \"Halo Dunia\"), dan boolean untuk nilai logika True atau False. Materi memberikan contoh pembuatan variabel: nama = \"Budi\", umur = 20, tinggi = 175.5, dan is_student = True. Terdapat pula contoh penggunaan print dengan format string f-string untuk menampilkan data: print(f\"Nama: {nama}, Umur: {umur}\"). Poin penting yang perlu ditekankan kepada tutor: jelaskan bahwa f-string memudahkan penyisipan variabel ke dalam output.\n\nSetelah itu materi masuk ke operator dasar. Tutor perlu membantu peserta memahami bahwa operator digunakan untuk melakukan operasi pada nilai atau variabel. Materi memuat tabel operator: + untuk penjumlahan (contoh 5 + 2 = 7), - untuk pengurangan (5 - 2 = 3), * untuk perkalian (5 * 2 = 10), / untuk pembagian (5 / 2 = 2.5), dan ** untuk perpangkatan (5 ** 2 = 25). Dengan pemahaman operator, peserta dapat mengolah angka dan menghasilkan nilai yang akan dipakai pada logika berikutnya.\n\nKemudian materi membahas struktur kontrol (percabangan). Tutor perlu menjelaskan peran if, elif, dan else sebagai mekanisme pengambilan keputusan. Materi contoh menetapkan nilai = 85 dan memetakan ke grade berdasarkan rentang: jika nilai >= 90 maka Grade: A, jika nilai >= 75 maka Grade: B, selain itu Grade: C. Ini mengajarkan bahwa urutan pengecekan penting dan elif digunakan untuk kondisi lanjutan yang tidak memenuhi kondisi sebelumnya.\n\nSelanjutnya materi mengajarkan perulangan (loops) dengan dua jenis utama: for dan while. Tutor perlu menekankan kapan menggunakan masing-masing. Untuk for loop, materi memberi contoh for i in range(5): print(f\"Iterasi ke-{i}\") yang menunjukkan iterasi sebanyak 5 kali (indeks 0 sampai 4). Untuk while loop, materi memberi contoh count = 0; while count < 3: print(\"Halo!\"); count += 1. Di sini, while berjalan selama kondisi masih benar, dan variabel count diubah agar loop berhenti. Penguatan konsep yang baik adalah menjelaskan bahwa while berpotensi infinite loop bila kondisi tidak diubah.\n\nBab berikutnya membahas struktur data: list, tuple, dan dictionary. Tutor perlu menjelaskan fungsi masing-masing dalam menyimpan koleksi. List adalah terurut dan bisa diubah (contoh buah = [\"Apel\", \"Jeruk\"]). Tuple adalah terurut namun tidak bisa diubah (contoh koordinat = (10, 20)). Dictionary berisi pasangan kunci dan nilai (key-value), contohnya user = {\"nama\": \"Andi\", \"usia\": 25}. Tutor sebaiknya menekankan bahwa dictionary cocok untuk data berbasis label (nama bidang sebagai kunci) sehingga akses data lebih jelas.\n\nTerakhir materi membahas fungsi (function). Fungsi adalah blok kode yang hanya berjalan saat dipanggil. Materi memberikan contoh definisi: def sapa(nama): return f\"Halo, {nama}! Selamat belajar Python.\" Lalu fungsi dipanggil dengan sapa(\"Andi\") dan hasilnya dicetak. Tutor perlu menguatkan konsep bahwa fungsi membantu membuat kode modular, mengurangi pengulangan, dan memudahkan pengujian serta penggunaan ulang.\n\nMateri penutup menegaskan bahwa pemrograman Python sangat luas dan materi yang diberikan adalah fondasi penting. Langkah berikutnya diarahkan untuk mempelajari library sesuai kebutuhan: NumPy untuk matematika, Pandas untuk pengolahan data, dan Django untuk pengembangan web. Untuk tutor, konteks ini bisa digunakan untuk memotivasi peserta dan membantu mereka memahami bahwa setelah menguasai konsep dasar (tipe data, operator, kontrol, loop, struktur data, fungsi), barulah mempelajari library akan terasa lebih bermakna karena peserta sudah punya landasan memahami cara kerja kode."
+}

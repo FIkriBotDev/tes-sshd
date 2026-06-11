@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course: Timeline Pengembangan Proyek + Strategi Ide di Bidang Health &amp; Smart Business — JadiKelas.tech</title>
+    <script>const COURSE_ID = "4c0f13c666404389e7d1a46ea5352fa2";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        primary: '#4F46E5', secondary: '#9333EA',
+                        dark: '#0F172A', darker: '#0B1120',
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'typing': 'typing 1.4s infinite ease-in-out both',
+                        'fadeUp': 'fadeUp 0.4s ease-out forwards',
+                    },
+                    keyframes: {
+                        blob: { '0%': {transform:'translate(0,0) scale(1)'}, '33%': {transform:'translate(30px,-50px) scale(1.1)'}, '66%': {transform:'translate(-20px,20px) scale(0.9)'}, '100%': {transform:'translate(0,0) scale(1)'} },
+                        typing: { '0%,80%,100%': {transform:'scale(0)'}, '40%': {transform:'scale(1)'} },
+                        fadeUp: { from:{opacity:'0',transform:'translateY(12px)'}, to:{opacity:'1',transform:'translateY(0)'} }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar{width:6px} ::-webkit-scrollbar-track{background:transparent} ::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:10px}
+        .glass{background:rgba(255,255,255,0.65);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.4);box-shadow:0 8px 32px 0 rgba(31,38,135,0.05)}
+        .text-gradient{background-clip:text;-webkit-background-clip:text;color:transparent;background-image:linear-gradient(to right,#4f46e5,#9333ea)}
+        .view-section{display:none;animation:fadeUp 0.4s ease-out forwards} .view-section.active{display:block}
+        /* Injected content styles */
+        .injected-content .chapter-card{background:white;border-radius:1.5rem;padding:2.5rem;margin-bottom:2rem;box-shadow:0 4px 20px -2px rgba(0,0,0,0.04);border:1px solid rgba(226,232,240,0.6);transition:all 0.3s ease}
+        .injected-content .chapter-card:hover{box-shadow:0 10px 40px -5px rgba(99,102,241,0.12);border-color:rgba(99,102,241,0.25)}
+        .injected-content h2{font-size:1.4rem;font-weight:700;color:#1e293b;margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem}
+        .injected-content h2::before{content:'';display:block;width:10px;height:10px;background:linear-gradient(135deg,#4f46e5,#9333ea);border-radius:50%;flex-shrink:0}
+        .injected-content p{color:#475569;line-height:1.85;margin-bottom:1.25rem;font-size:1rem}
+        .injected-content ul{list-style:none;padding-left:0;margin-bottom:1.25rem}
+        .injected-content ul li{position:relative;padding-left:1.75rem;margin-bottom:.6rem;color:#475569}
+        .injected-content ul li::before{content:'→';position:absolute;left:0;color:#6366f1;font-weight:bold}
+        .injected-content strong{color:#1e293b;font-weight:700}
+        /* Flashcard */
+        .flashcards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+        .flashcard-wrapper{perspective:1000px}
+        .flashcard{position:relative;width:100%;min-height:200px;transform-style:preserve-3d;transition:transform 0.55s cubic-bezier(.4,0,.2,1);cursor:pointer;border-radius:1.25rem}
+        .flashcard.flipped{transform:rotateY(180deg)}
+        .flashcard-front,.flashcard-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:1.25rem;padding:1.75rem;display:flex;flex-direction:column;justify-content:space-between}
+        .flashcard-front{background:linear-gradient(135deg,#4f46e5,#9333ea);color:white;box-shadow:0 8px 30px rgba(79,70,229,0.3)}
+        .flashcard-back{background:white;border:2px solid #e0e7ff;transform:rotateY(180deg);box-shadow:0 8px 30px rgba(0,0,0,0.06)}
+        .fc-badge{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.75;margin-bottom:.75rem}
+        .fc-badge-answer{color:#4f46e5;opacity:1}
+        .fc-text{font-size:1rem;font-weight:600;line-height:1.6;flex:1;color:inherit}
+        .flashcard-back .fc-text{color:#1e293b}
+        .fc-hint{font-size:.7rem;opacity:.6;display:flex;align-items:center;gap:.35rem;margin-top:.75rem}
+        .flashcard-wrapper.done .flashcard-front{background:linear-gradient(135deg,#10b981,#059669)}
+        /* Quiz */
+        .quiz-question{animation:fadeUp 0.35s ease-out}
+        .quiz-q-header{margin-bottom:1.5rem}
+        .quiz-q-num{font-size:.75rem;font-weight:700;color:#6366f1;text-transform:uppercase;letter-spacing:.06em}
+        .quiz-q-progress-wrap{width:100%;background:#e2e8f0;border-radius:9999px;height:6px;margin-top:.5rem;overflow:hidden}
+        .quiz-q-progress-bar{height:6px;background:linear-gradient(to right,#4f46e5,#9333ea);border-radius:9999px;transition:width .4s ease}
+        .quiz-q-text{font-size:1.2rem;font-weight:700;color:#1e293b;margin-bottom:1.5rem;line-height:1.5}
+        .quiz-options{display:flex;flex-direction:column;gap:.75rem}
+        .quiz-option{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:white;border:2px solid #e2e8f0;border-radius:1rem;cursor:pointer;transition:all .2s ease;text-align:left;font-size:.95rem;color:#334155;font-weight:500}
+        .quiz-option:hover:not(:disabled){border-color:#6366f1;background:#eef2ff;color:#4f46e5}
+        .quiz-option.correct{border-color:#10b981;background:#f0fdf4;color:#065f46;pointer-events:none}
+        .quiz-option.wrong{border-color:#ef4444;background:#fef2f2;color:#991b1b;pointer-events:none}
+        .quiz-option:disabled{cursor:not-allowed}
+        .quiz-opt-letter{width:2rem;height:2rem;border-radius:.5rem;background:#f1f5f9;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;flex-shrink:0;transition:all .2s}
+        .quiz-option.correct .quiz-opt-letter{background:#10b981;color:white}
+        .quiz-option.wrong .quiz-opt-letter{background:#ef4444;color:white}
+        .quiz-result-card{text-align:center;padding:3rem 2rem;background:white;border-radius:2rem;border:1px solid #e0e7ff;box-shadow:0 10px 40px rgba(99,102,241,0.1)}
+        .quiz-result-icon{font-size:4rem;margin-bottom:1rem}
+        .quiz-result-title{font-size:1.75rem;font-weight:800;color:#1e293b;margin-bottom:.5rem}
+        .quiz-result-score{font-size:1.1rem;color:#475569;margin-bottom:1.5rem}
+        .quiz-result-bar-wrap{width:100%;max-width:300px;margin:0 auto 1rem;background:#e2e8f0;border-radius:9999px;height:12px;overflow:hidden}
+        .quiz-result-bar{height:12px;background:linear-gradient(to right,#4f46e5,#9333ea);border-radius:9999px;transition:width 1s ease}
+        .quiz-result-pct{font-size:2rem;font-weight:800;color:#4f46e5;margin-bottom:1.5rem}
+        .quiz-retry-btn{display:inline-flex;align-items:center;padding:.875rem 2rem;background:linear-gradient(to right,#4f46e5,#9333ea);color:white;font-weight:700;border-radius:1rem;cursor:pointer;transition:opacity .2s;border:none;font-size:.95rem}
+        .quiz-retry-btn:hover{opacity:.9}
+        /* Sidebar active */
+        .chapter-nav-btn.active{background:#eef2ff;color:#4f46e5;font-weight:600}
+        .chapter-nav-btn.active .chapter-nav-icon::before{content:'\e0c8'}
+        /* Progress bar */
+        #progress-bar{transition:width .5s ease}
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans overflow-hidden antialiased">
+    <!-- Ambient BG -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-indigo-300/20 blur-[120px] animate-blob"></div>
+        <div class="absolute top-[20%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-300/20 blur-[120px] animate-blob" style="animation-delay:2s"></div>
+        <div class="absolute bottom-[-20%] left-[20%] w-[60%] h-[60%] rounded-full bg-blue-300/15 blur-[120px] animate-blob" style="animation-delay:4s"></div>
+    </div>
+
+    <div class="flex h-screen w-full relative">
+        <!-- Mobile Header -->
+        <div class="lg:hidden fixed top-0 left-0 right-0 h-16 glass z-40 flex items-center justify-between px-4">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+                    <i class="ph ph-sparkle text-lg"></i>
+                </div>
+                <span class="font-bold text-lg text-dark">JadiKelas</span>
+            </div>
+            <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 z-50 w-72 glass border-r border-white/40 flex flex-col transition-transform duration-300 transform -translate-x-full lg:translate-x-0 pt-16 lg:pt-0">
+            <!-- Logo -->
+            <div class="hidden lg:flex p-5 items-center gap-3 border-b border-slate-200/50">
+                <a href="/dashboard" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-lg">
+                        <i class="ph ph-sparkle text-xl"></i>
+                    </div>
+                    <span class="font-extrabold text-xl tracking-tight text-dark">JadiKelas<span class="text-primary">.tech</span></span>
+                </a>
+            </div>
+            <!-- Progress -->
+            <div class="p-5 pb-3">
+                <div class="mb-4">
+                    <div class="flex justify-between items-center mb-2 text-sm font-semibold text-slate-600">
+                        <span>Progress Belajar</span>
+                        <span class="text-primary" id="progress-pct">0%</span>
+                    </div>
+                    <div class="w-full bg-slate-200/80 rounded-full h-2.5 overflow-hidden">
+                        <div id="progress-bar" class="bg-gradient-to-r from-primary to-secondary h-2.5 rounded-full" style="width:0%"></div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 mb-3">
+                    <button onclick="switchView('quiz')" class="flex flex-col items-center justify-center gap-1.5 p-3 rounded-2xl bg-white border border-slate-100 shadow-sm hover:border-primary/30 hover:text-primary transition-all group">
+                        <i class="ph ph-brain text-2xl text-slate-400 group-hover:text-primary transition-colors"></i>
+                        <span class="text-xs font-semibold text-slate-600 group-hover:text-primary">Quiz AI</span>
+                    </button>
+                    <button onclick="switchView('flashcards')" class="flex flex-col items-center justify-center gap-1.5 p-3 rounded-2xl bg-white border border-slate-100 shadow-sm hover:border-secondary/30 hover:text-secondary transition-all group">
+                        <i class="ph ph-cards text-2xl text-slate-400 group-hover:text-secondary transition-colors"></i>
+                        <span class="text-xs font-semibold text-slate-600 group-hover:text-secondary">Flashcards</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Chapter Nav -->
+            <div class="flex-1 overflow-y-auto px-4 pb-4">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 px-2">Daftar Chapter</p>
+                <nav class="space-y-1">
+                    <button onclick="switchView('course')" class="w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-xl bg-indigo-50 text-primary font-semibold transition-colors text-sm">
+                        <i class="ph-fill ph-book-open-text text-lg"></i>
+                        <span class="truncate">Materi Utama</span>
+                    </button>
+                    
+<button onclick="scrollToChapter(0)" class="chapter-nav-btn w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 hover:bg-white/60 hover:text-slate-700 transition-colors" data-chapter="0">
+    <i class="ph ph-circle text-lg chapter-nav-icon"></i>
+    <span class="truncate text-sm">Chapter 1: Chapter 1: Riset Ide yang Kuat (Weeks 1: Day 1–7)</span>
+</button>
+
+<button onclick="scrollToChapter(1)" class="chapter-nav-btn w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 hover:bg-white/60 hover:text-slate-700 transition-colors" data-chapter="1">
+    <i class="ph ph-circle text-lg chapter-nav-icon"></i>
+    <span class="truncate text-sm">Chapter 2: Chapter 2: Bangun MVP yang Sudah Jalan (Week 2)</span>
+</button>
+
+<button onclick="scrollToChapter(2)" class="chapter-nav-btn w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 hover:bg-white/60 hover:text-slate-700 transition-colors" data-chapter="2">
+    <i class="ph ph-circle text-lg chapter-nav-icon"></i>
+    <span class="truncate text-sm">Chapter 3: Chapter 3: Pembeda Produk, Penilaian, dan Presentasi (Weeks 3–4)</span>
+</button>
+
+<button onclick="scrollToChapter(3)" class="chapter-nav-btn w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 hover:bg-white/60 hover:text-slate-700 transition-colors" data-chapter="3">
+    <i class="ph ph-circle text-lg chapter-nav-icon"></i>
+    <span class="truncate text-sm">Chapter 4: Chapter 4: Struktur Pitch dan Contoh Ide Produk (Health &amp; Smart Business)</span>
+</button>
+                </nav>
+            </div>
+            <!-- User -->
+            <div class="p-4 border-t border-slate-200/50">
+                <div class="flex items-center gap-3">
+                    <img id="sidebar-avatar" src="https://ui-avatars.com/api/?name=User&background=4F46E5&color=fff&rounded=true" alt="User" class="w-10 h-10 rounded-full border-2 border-white shadow-sm">
+                    <div>
+                        <p class="text-sm font-bold text-slate-700" id="sidebar-name">Loading...</p>
+                        <p class="text-xs text-slate-500" id="sidebar-plan">Free Plan</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Mobile Overlay -->
+        <div id="mobile-overlay" class="fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-40 hidden lg:hidden"></div>
+
+        <!-- MAIN CONTENT -->
+        <main class="flex-1 relative h-full overflow-y-auto overflow-x-hidden pt-16 lg:pt-0 scroll-smooth" id="main-scroll-area">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 pb-32">
+
+                <!-- VIEW: COURSE MATERIAL -->
+                <div id="view-course" class="view-section active">
+                    <div class="mb-8">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-100 text-primary text-sm font-semibold mb-4 border border-indigo-200">
+                            <i class="ph-fill ph-magic-wand"></i> AI Generated Course
+                        </div>
+                        <h1 class="text-3xl lg:text-4xl font-extrabold text-dark mb-4 tracking-tight leading-tight">
+                            <span id="inject-title">Course: Timeline Pengembangan Proyek + Strategi Ide di Bidang Health &amp; Smart Business</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 leading-relaxed max-w-3xl" id="inject-summary">Materi ini menjelaskan alur pengembangan proyek dari tahap riset ide hingga siap dinilai dan dipresentasikan. Fokus utamanya adalah membangun ide yang kuat dan sesuai tema melalui brainstorming, validasi, lalu mengubahnya menjadi konsep dan planning yang jelas sebelum mulai implementasi MVP.
+
+Selain timeline, materi juga memuat contoh struktur pitch dan contoh ide aplikasi di bidang Health &amp; Wellbeing Technology serta Smart Business &amp; Digital Economy. Contoh ide seperti aplikasi kesehatan mental, AI &amp; Digital Twins, nutrisi personal, chatbot CBT (Woebot/Wysa), panduan kesehatan mental di tempat kerja, hingga platform rekomendasi karier dan skill menggunakan AI. Semua ini dapat dipakai sebagai inspirasi untuk menentukan arah produk, target pengguna, dan pembeda proyek.</p>
+                    </div>
+                    <!-- Summary Box -->
+                    <div class="glass p-6 rounded-3xl mb-8 border border-white/60 relative overflow-hidden">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shrink-0 shadow-lg">
+                                <i class="ph-fill ph-lightbulb text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-dark mb-1">Ringkasan Pintar AI</h3>
+                                <p class="text-slate-600 leading-relaxed text-sm">Materi ini telah dianalisis dan disusun ulang oleh AI untuk memaksimalkan pemahaman Anda. Gunakan Quiz dan Flashcard di sidebar untuk menguji pemahaman.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Chapters -->
+                    <div class="injected-content" id="inject-chapters">
+<section class="chapter-card">
+    <h2>Chapter 1: Chapter 1: Riset Ide yang Kuat (Weeks 1: Day 1–7)</h2>
+    <p>Pada awal pengembangan, tim perlu menemukan ide yang kuat dan sesuai tema. Proses dimulai dengan brainstorming pada Day 1–2, di mana semua anggota tim aktif memberikan ide. Fokusnya adalah mencari masalah nyata yang relevan, misalnya dari lingkungan sekitar, bisnis, edukasi, dan pendidikan. Hasil tahap ini adalah kumpulan ide yang berasal dari kebutuhan dan isu yang benar-benar terjadi.</p><p>Setelah banyak ide terkumpul, Day 3–4 digunakan untuk validasi ide. Tim memilih 1 ide terbaik dengan melakukan pengecekan terstruktur: apakah ide sesuai dengan tema, apakah ide memiliki value, dan apakah ide bisa dibuat dalam waktu terbatas. Tahap ini penting agar proyek tidak “terdampar” pada ide yang menarik tetapi sulit dieksekusi atau tidak memberikan manfaat yang jelas.</p><p>Masuk Day 5–7, tim melakukan konsep dan planning. Pada tahap ini ditentukan fitur utama, target user, dan flow aplikasi. Tim juga membuat wireframe sederhana agar struktur produk terlihat sebelum coding. Output akhir Week 1 adalah 1 ide fix beserta blueprint project (rencana besar proyek) sehingga tim punya pegangan yang jelas sebelum mulai mengerjakan versi berjalan.</p>
+</section>
+
+<section class="chapter-card">
+    <h2>Chapter 2: Chapter 2: Bangun MVP yang Sudah Jalan (Week 2)</h2>
+    <p>Week 2 bertujuan membuat project bisa berjalan meskipun masih sementara. Pada tahap ini, tim melakukan setup frontend dan backend. Tujuannya adalah membangun fondasi teknis agar aplikasi bisa menampilkan halaman dan menjalankan logika inti.</p><p>Pembuatan MVP mencakup pembuatan landing page (halaman utama) serta fitur inti yang sesuai dengan ide fix. Di sisi backend, tim membuat logic utama dan API sederhana. API digunakan agar frontend dan backend dapat berkomunikasi untuk menjalankan fungsi utama aplikasi.</p><p>Output Week 2 adalah MVP jadi, yaitu fitur utama sudah berjalan. Dengan MVP yang berjalan, tim bisa mulai menguji alur pengguna, memastikan kebutuhan utama terpenuhi, serta menyiapkan ruang untuk perbaikan di tahap berikutnya. Dengan cara ini, proyek tidak hanya konsep, tetapi sudah memiliki “bentuk nyata” yang dapat dievaluasi.</p>
+</section>
+
+<section class="chapter-card">
+    <h2>Chapter 3: Chapter 3: Pembeda Produk, Penilaian, dan Presentasi (Weeks 3–4)</h2>
+    <p>Week 3 berfokus membuat project terlihat berbeda dari yang lain. Perbaikan diarahkan pada peningkatan UI agar lebih clean dan modern. Tujuannya agar pengalaman pengguna terasa lebih baik dan presentasi produk tampak profesional saat diperlihatkan ke penilai.</p><p>Selain UI, tim menambahkan elemen yang membuat aplikasi lebih “hidup”, seperti visualisasi dan interaksi user. Pada materi disebutkan juga bahwa AI integration bisa menjadi pilihan tambahan (opsional) untuk menambah nilai dan membuat solusi lebih kuat. Dengan peningkatan-peningkatan ini, proyek mulai terlihat sebagai produk yang kompetitif, bukan sekadar MVP sederhana.</p><p>Week 4 adalah tahap siap dinilai dan dipresentasikan. Aktivitas utama adalah testing semua fitur, melakukan bug fixing, serta menyiapkan materi presentasi. Tim membuat slide presentasi, menyusun laporan, merancang alur penjelasan, melakukan latihan presentasi, dan memastikan project stabil serta siap submit. Kesiapan teknis dan kesiapan komunikasi menjadi kunci agar hasil proyek dipahami dengan baik oleh juri/penilai.</p>
+</section>
+
+<section class="chapter-card">
+    <h2>Chapter 4: Chapter 4: Struktur Pitch dan Contoh Ide Produk (Health &amp; Smart Business)</h2>
+    <p>Materi juga memberikan panduan struktur pitch dan contoh slide. Alur pitch meliputi: Pendahuluan, Target pengguna & insight, Solusi kami, Keunggulan & Diferensiasi, serta Rencana Pelaksanaan. Urutan ini membantu tim menyampaikan cerita produk secara runtut, dari masalah dan kebutuhan pengguna sampai rencana eksekusi.</p><p>Untuk tema Health & Wellbeing Technology, contoh ide yang disebut antara lain aplikasi kesehatan mental & mindfulness untuk mengelola stres, meditasi, dan meningkatkan fokus; AI & Digital Twins untuk analisis data kesehatan pribadi serta simulasi fungsi fisiologis (bio-digital twin); nutrisi personal dengan algoritma dan AI untuk rekomendasi nutrisi sesuai kebutuhan individu; serta chatbot berbasis AI seperti Woebot & Wysa menggunakan Cognitive Behavioral Therapy (CBT) untuk membantu mengelola kecemasan dan suasana hati.</p><p>Masih dalam Health & Wellbeing Technology, terdapat juga contoh WHO Mental Health At Work untuk panduan kesehatan mental di lingkungan kerja, dan Employee Wellness Hub (EWH) sebagai aplikasi manajemen kesehatan karyawan. Untuk Smart Business & Digital Economy, contoh ide adalah AI Career & Skill Recommendation Platform: platform web yang membantu pengguna menentukan karier dan skill yang perlu dipelajari. Sistem ini memakai fitur input minat dan skill, lalu AI memberikan rekomendasi karier, roadmap belajar otomatis, dan saran course. Ide-ide ini bisa langsung dijadikan referensi dalam tahap validasi, perencanaan fitur, dan penentuan diferensiasi saat membangun produk.</p>
+</section></div>
+                    <!-- Footer nav -->
+                    <div class="mt-10 flex justify-between items-center py-5 border-t border-slate-200/50">
+                        <a href="/dashboard" class="px-5 py-2.5 rounded-xl font-semibold text-slate-600 hover:bg-slate-200/50 transition-colors flex items-center gap-2">
+                            <i class="ph ph-arrow-left"></i> Dashboard
+                        </a>
+                        <button onclick="switchView('quiz')" class="px-7 py-3 rounded-xl font-bold text-white bg-gradient-to-r from-primary to-secondary shadow-lg hover:opacity-90 transition-all flex items-center gap-2">
+                            Mulai Quiz <i class="ph-bold ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- VIEW: QUIZ -->
+                <div id="view-quiz" class="view-section">
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-extrabold text-dark flex items-center gap-3">
+                            <i class="ph-fill ph-brain text-primary"></i> Interactive Quiz
+                        </h2>
+                        <p class="text-slate-500 mt-1 text-sm">Uji pemahaman Anda dari materi yang telah dipelajari.</p>
+                    </div>
+                    <div class="injected-content" id="inject-quiz">
+<div id="quiz-container" data-course-id="4c0f13c666404389e7d1a46ea5352fa2" data-total="8">
+    
+<div class="quiz-question" id="qq-0" >
+    <div class="quiz-q-header">
+        <span class="quiz-q-num">Soal 1 dari 8</span>
+        <div class="quiz-q-progress-wrap">
+            <div class="quiz-q-progress-bar" style="width:0%"></div>
+        </div>
+    </div>
+    <h3 class="quiz-q-text">Pada timeline Week 1, tahapan manakah yang bertujuan memilih 1 ide terbaik?</h3>
+    <div class="quiz-options">
+        
+        <button class="quiz-option" onclick="selectAnswer(0, 0, 'Day 1–2: Brainstorming', 'Day 3–4: Validasi ide')">
+            <span class="quiz-opt-letter">A</span>
+            <span>Day 1–2: Brainstorming</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(0, 1, 'Day 3–4: Validasi ide', 'Day 3–4: Validasi ide')">
+            <span class="quiz-opt-letter">B</span>
+            <span>Day 3–4: Validasi ide</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(0, 2, 'Day 5–7: Konsep &amp; Planning', 'Day 3–4: Validasi ide')">
+            <span class="quiz-opt-letter">C</span>
+            <span>Day 5–7: Konsep &amp; Planning</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(0, 3, 'Week 4: Testing &amp; presentasi', 'Day 3–4: Validasi ide')">
+            <span class="quiz-opt-letter">D</span>
+            <span>Week 4: Testing &amp; presentasi</span>
+        </button>
+    </div>
+</div>
+
+<div class="quiz-question" id="qq-1" style="display:none">
+    <div class="quiz-q-header">
+        <span class="quiz-q-num">Soal 2 dari 8</span>
+        <div class="quiz-q-progress-wrap">
+            <div class="quiz-q-progress-bar" style="width:12.5%"></div>
+        </div>
+    </div>
+    <h3 class="quiz-q-text">Pada Day 5–7, apa yang biasanya dibuat selain menetapkan fitur dan target user?</h3>
+    <div class="quiz-options">
+        
+        <button class="quiz-option" onclick="selectAnswer(1, 0, 'Wireframe sederhana', 'Wireframe sederhana')">
+            <span class="quiz-opt-letter">A</span>
+            <span>Wireframe sederhana</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(1, 1, 'Slide presentasi final', 'Wireframe sederhana')">
+            <span class="quiz-opt-letter">B</span>
+            <span>Slide presentasi final</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(1, 2, 'Dataset pelatihan AI', 'Wireframe sederhana')">
+            <span class="quiz-opt-letter">C</span>
+            <span>Dataset pelatihan AI</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(1, 3, 'Deployment produksi', 'Wireframe sederhana')">
+            <span class="quiz-opt-letter">D</span>
+            <span>Deployment produksi</span>
+        </button>
+    </div>
+</div>
+
+<div class="quiz-question" id="qq-2" style="display:none">
+    <div class="quiz-q-header">
+        <span class="quiz-q-num">Soal 3 dari 8</span>
+        <div class="quiz-q-progress-wrap">
+            <div class="quiz-q-progress-bar" style="width:25%"></div>
+        </div>
+    </div>
+    <h3 class="quiz-q-text">Output Week 2 dalam materi adalah…</h3>
+    <div class="quiz-options">
+        
+        <button class="quiz-option" onclick="selectAnswer(2, 0, 'Project sudah stabil dan siap submit', 'MVP jadi dengan fitur utama yang sudah jalan')">
+            <span class="quiz-opt-letter">A</span>
+            <span>Project sudah stabil dan siap submit</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(2, 1, 'MVP jadi dengan fitur utama yang sudah jalan', 'MVP jadi dengan fitur utama yang sudah jalan')">
+            <span class="quiz-opt-letter">B</span>
+            <span>MVP jadi dengan fitur utama yang sudah jalan</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(2, 2, 'Slide pitch dan laporan final tanpa implementasi', 'MVP jadi dengan fitur utama yang sudah jalan')">
+            <span class="quiz-opt-letter">C</span>
+            <span>Slide pitch dan laporan final tanpa implementasi</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(2, 3, 'Prototype UI tanpa backend', 'MVP jadi dengan fitur utama yang sudah jalan')">
+            <span class="quiz-opt-letter">D</span>
+            <span>Prototype UI tanpa backend</span>
+        </button>
+    </div>
+</div>
+
+<div class="quiz-question" id="qq-3" style="display:none">
+    <div class="quiz-q-header">
+        <span class="quiz-q-num">Soal 4 dari 8</span>
+        <div class="quiz-q-progress-wrap">
+            <div class="quiz-q-progress-bar" style="width:37.5%"></div>
+        </div>
+    </div>
+    <h3 class="quiz-q-text">Apa tujuan utama Week 3 menurut materi?</h3>
+    <div class="quiz-options">
+        
+        <button class="quiz-option" onclick="selectAnswer(3, 0, 'Menghapus semua fitur agar lebih sederhana', 'Membuat project beda dari yang lain melalui peningkatan UI dan interaksi')">
+            <span class="quiz-opt-letter">A</span>
+            <span>Menghapus semua fitur agar lebih sederhana</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(3, 1, 'Membuat project beda dari yang lain melalui peningkatan UI dan interaksi', 'Membuat project beda dari yang lain melalui peningkatan UI dan interaksi')">
+            <span class="quiz-opt-letter">B</span>
+            <span>Membuat project beda dari yang lain melalui peningkatan UI dan interaksi</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(3, 2, 'Menyelesaikan hanya backend logic tanpa frontend', 'Membuat project beda dari yang lain melalui peningkatan UI dan interaksi')">
+            <span class="quiz-opt-letter">C</span>
+            <span>Menyelesaikan hanya backend logic tanpa frontend</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(3, 3, 'Mengganti ide tanpa validasi sebelumnya', 'Membuat project beda dari yang lain melalui peningkatan UI dan interaksi')">
+            <span class="quiz-opt-letter">D</span>
+            <span>Mengganti ide tanpa validasi sebelumnya</span>
+        </button>
+    </div>
+</div>
+
+<div class="quiz-question" id="qq-4" style="display:none">
+    <div class="quiz-q-header">
+        <span class="quiz-q-num">Soal 5 dari 8</span>
+        <div class="quiz-q-progress-wrap">
+            <div class="quiz-q-progress-bar" style="width:50%"></div>
+        </div>
+    </div>
+    <h3 class="quiz-q-text">Manakah yang termasuk aktivitas Week 4 agar siap dinilai &amp; dipresentasikan?</h3>
+    <div class="quiz-options">
+        
+        <button class="quiz-option" onclick="selectAnswer(4, 0, 'Testing semua fitur dan bug fixing, lalu siapkan slide serta latihan presentasi', 'Testing semua fitur dan bug fixing, lalu siapkan slide serta latihan presentasi')">
+            <span class="quiz-opt-letter">A</span>
+            <span>Testing semua fitur dan bug fixing, lalu siapkan slide serta latihan presentasi</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(4, 1, 'Hanya brainstorming untuk menambah ide baru', 'Testing semua fitur dan bug fixing, lalu siapkan slide serta latihan presentasi')">
+            <span class="quiz-opt-letter">B</span>
+            <span>Hanya brainstorming untuk menambah ide baru</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(4, 2, 'Hanya menentukan target user tanpa coding', 'Testing semua fitur dan bug fixing, lalu siapkan slide serta latihan presentasi')">
+            <span class="quiz-opt-letter">C</span>
+            <span>Hanya menentukan target user tanpa coding</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(4, 3, 'Membuat API tanpa melakukan pengujian', 'Testing semua fitur dan bug fixing, lalu siapkan slide serta latihan presentasi')">
+            <span class="quiz-opt-letter">D</span>
+            <span>Membuat API tanpa melakukan pengujian</span>
+        </button>
+    </div>
+</div>
+
+<div class="quiz-question" id="qq-5" style="display:none">
+    <div class="quiz-q-header">
+        <span class="quiz-q-num">Soal 6 dari 8</span>
+        <div class="quiz-q-progress-wrap">
+            <div class="quiz-q-progress-bar" style="width:62.5%"></div>
+        </div>
+    </div>
+    <h3 class="quiz-q-text">Struktur pitch pada materi diawali dengan bagian…</h3>
+    <div class="quiz-options">
+        
+        <button class="quiz-option" onclick="selectAnswer(5, 0, 'Solusi kami', 'Pendahuluan')">
+            <span class="quiz-opt-letter">A</span>
+            <span>Solusi kami</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(5, 1, 'Keunggulan &amp; Diferensiasi', 'Pendahuluan')">
+            <span class="quiz-opt-letter">B</span>
+            <span>Keunggulan &amp; Diferensiasi</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(5, 2, 'Pendahuluan', 'Pendahuluan')">
+            <span class="quiz-opt-letter">C</span>
+            <span>Pendahuluan</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(5, 3, 'Rencana Pelaksanaan', 'Pendahuluan')">
+            <span class="quiz-opt-letter">D</span>
+            <span>Rencana Pelaksanaan</span>
+        </button>
+    </div>
+</div>
+
+<div class="quiz-question" id="qq-6" style="display:none">
+    <div class="quiz-q-header">
+        <span class="quiz-q-num">Soal 7 dari 8</span>
+        <div class="quiz-q-progress-wrap">
+            <div class="quiz-q-progress-bar" style="width:75%"></div>
+        </div>
+    </div>
+    <h3 class="quiz-q-text">Contoh aplikasi di bidang Health &amp; Wellbeing Technology yang menggunakan teknik CBT melalui chatbot adalah…</h3>
+    <div class="quiz-options">
+        
+        <button class="quiz-option" onclick="selectAnswer(6, 0, 'Employee Wellness Hub (EWH)', 'Woebot &amp; Wysa')">
+            <span class="quiz-opt-letter">A</span>
+            <span>Employee Wellness Hub (EWH)</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(6, 1, 'Woebot &amp; Wysa', 'Woebot &amp; Wysa')">
+            <span class="quiz-opt-letter">B</span>
+            <span>Woebot &amp; Wysa</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(6, 2, 'WHO Mental Health At Work', 'Woebot &amp; Wysa')">
+            <span class="quiz-opt-letter">C</span>
+            <span>WHO Mental Health At Work</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(6, 3, 'AI Career &amp; Skill Recommendation Platform', 'Woebot &amp; Wysa')">
+            <span class="quiz-opt-letter">D</span>
+            <span>AI Career &amp; Skill Recommendation Platform</span>
+        </button>
+    </div>
+</div>
+
+<div class="quiz-question" id="qq-7" style="display:none">
+    <div class="quiz-q-header">
+        <span class="quiz-q-num">Soal 8 dari 8</span>
+        <div class="quiz-q-progress-wrap">
+            <div class="quiz-q-progress-bar" style="width:87.5%"></div>
+        </div>
+    </div>
+    <h3 class="quiz-q-text">Platform yang membantu pengguna menentukan karier dan skill menggunakan input minat/skill serta AI roadmap belajar otomatis termasuk kategori…</h3>
+    <div class="quiz-options">
+        
+        <button class="quiz-option" onclick="selectAnswer(7, 0, 'Smart Business &amp; Digital Economy', 'Smart Business &amp; Digital Economy')">
+            <span class="quiz-opt-letter">A</span>
+            <span>Smart Business &amp; Digital Economy</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(7, 1, 'Health &amp; Wellbeing Technology', 'Smart Business &amp; Digital Economy')">
+            <span class="quiz-opt-letter">B</span>
+            <span>Health &amp; Wellbeing Technology</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(7, 2, 'Hanya aplikasi nutrisi', 'Smart Business &amp; Digital Economy')">
+            <span class="quiz-opt-letter">C</span>
+            <span>Hanya aplikasi nutrisi</span>
+        </button>
+        <button class="quiz-option" onclick="selectAnswer(7, 3, 'Hanya bio-digital twin', 'Smart Business &amp; Digital Economy')">
+            <span class="quiz-opt-letter">D</span>
+            <span>Hanya bio-digital twin</span>
+        </button>
+    </div>
+</div>
+    <div id="quiz-result" style="display:none" class="quiz-result-card">
+        <div class="quiz-result-icon">🎉</div>
+        <h3 class="quiz-result-title">Quiz Selesai!</h3>
+        <p class="quiz-result-score" id="quiz-score-text">Skor: 0 / 8</p>
+        <div class="quiz-result-bar-wrap">
+            <div id="quiz-result-bar" class="quiz-result-bar" style="width:0%"></div>
+        </div>
+        <p id="quiz-result-pct" class="quiz-result-pct">0%</p>
+        <button onclick="retryQuiz()" class="quiz-retry-btn">
+            <i class="ph ph-arrow-counter-clockwise mr-2"></i> Coba Lagi
+        </button>
+    </div>
+</div></div>
+                </div>
+
+                <!-- VIEW: FLASHCARDS -->
+                <div id="view-flashcards" class="view-section">
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-extrabold text-dark flex items-center gap-3">
+                            <i class="ph-fill ph-cards text-secondary"></i> Smart Flashcards
+                        </h2>
+                        <p class="text-slate-500 mt-1 text-sm">Hafalkan konsep penting dengan metode spaced repetition.</p>
+                    </div>
+                    <div class="injected-content" id="inject-flashcards">
+<div class="fc-progress-bar-wrap mb-6">
+    <div class="flex justify-between text-sm font-semibold text-slate-600 mb-2">
+        <span>Progress Flashcard</span>
+        <span id="fc-progress-text">0 / 8</span>
+    </div>
+    <div class="w-full bg-slate-200 rounded-full h-2">
+        <div id="fc-progress-bar" class="bg-gradient-to-r from-purple-500 to-indigo-500 h-2 rounded-full transition-all duration-500" style="width:0%"></div>
+    </div>
+</div>
+<div class="flashcards-grid">
+
+<div class="flashcard-wrapper" data-index="0">
+    <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-front">
+            <div class="fc-badge">Pertanyaan 1</div>
+            <p class="fc-text">Apa output utama dari tahap brainstorming pada Day 1–2?</p>
+            <div class="fc-hint"><i class="ph ph-hand-tap"></i> Klik untuk lihat jawaban</div>
+        </div>
+        <div class="flashcard-back">
+            <div class="fc-badge fc-badge-answer">Jawaban</div>
+            <p class="fc-text">Output tahap brainstorming pada Day 1–2 adalah kumpulan ide yang digali dari masalah nyata, seperti dari lingkungan, bisnis, edukasi, dan pendidikan, yang seluruh anggota tim berkontribusi untuk menemukan ide yang relevan dengan tema.</p>
+            <div class="fc-hint"><i class="ph ph-arrow-counter-clockwise"></i> Klik untuk balik</div>
+        </div>
+    </div>
+</div>
+
+<div class="flashcard-wrapper" data-index="1">
+    <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-front">
+            <div class="fc-badge">Pertanyaan 2</div>
+            <p class="fc-text">Apa saja yang harus dicek saat validasi ide pada Day 3–4?</p>
+            <div class="fc-hint"><i class="ph ph-hand-tap"></i> Klik untuk lihat jawaban</div>
+        </div>
+        <div class="flashcard-back">
+            <div class="fc-badge fc-badge-answer">Jawaban</div>
+            <p class="fc-text">Saat validasi ide pada Day 3–4, tim mengecek apakah ide sesuai dengan tema, apakah ide memiliki value (manfaat), dan apakah ide bisa dibuat dalam waktu terbatas.</p>
+            <div class="fc-hint"><i class="ph ph-arrow-counter-clockwise"></i> Klik untuk balik</div>
+        </div>
+    </div>
+</div>
+
+<div class="flashcard-wrapper" data-index="2">
+    <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-front">
+            <div class="fc-badge">Pertanyaan 3</div>
+            <p class="fc-text">Di tahap konsep &amp; planning (Day 5–7), apa yang ditentukan tim?</p>
+            <div class="fc-hint"><i class="ph ph-hand-tap"></i> Klik untuk lihat jawaban</div>
+        </div>
+        <div class="flashcard-back">
+            <div class="fc-badge fc-badge-answer">Jawaban</div>
+            <p class="fc-text">Pada Day 5–7, tim menentukan fitur utama, target user, flow aplikasi, membuat wireframe sederhana, dan menghasilkan blueprint project setelah ide difinalkan (1 ide fix).</p>
+            <div class="fc-hint"><i class="ph ph-arrow-counter-clockwise"></i> Klik untuk balik</div>
+        </div>
+    </div>
+</div>
+
+<div class="flashcard-wrapper" data-index="3">
+    <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-front">
+            <div class="fc-badge">Pertanyaan 4</div>
+            <p class="fc-text">Apa yang dikerjakan tim saat membuat project bisa jalan di Week 2?</p>
+            <div class="fc-hint"><i class="ph ph-hand-tap"></i> Klik untuk lihat jawaban</div>
+        </div>
+        <div class="flashcard-back">
+            <div class="fc-badge fc-badge-answer">Jawaban</div>
+            <p class="fc-text">Di Week 2, tim melakukan setup frontend dan backend, membuat landing page (halaman utama), membangun fitur inti, membuat backend logic utama, serta membangun API sederhana agar MVP dapat berjalan.</p>
+            <div class="fc-hint"><i class="ph ph-arrow-counter-clockwise"></i> Klik untuk balik</div>
+        </div>
+    </div>
+</div>
+
+<div class="flashcard-wrapper" data-index="4">
+    <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-front">
+            <div class="fc-badge">Pertanyaan 5</div>
+            <p class="fc-text">Apa definisi output Week 2 dalam materi?</p>
+            <div class="fc-hint"><i class="ph ph-hand-tap"></i> Klik untuk lihat jawaban</div>
+        </div>
+        <div class="flashcard-back">
+            <div class="fc-badge fc-badge-answer">Jawaban</div>
+            <p class="fc-text">Output Week 2 adalah MVP jadi, yaitu fitur utama sudah berjalan meskipun masih versi sementara.</p>
+            <div class="fc-hint"><i class="ph ph-arrow-counter-clockwise"></i> Klik untuk balik</div>
+        </div>
+    </div>
+</div>
+
+<div class="flashcard-wrapper" data-index="5">
+    <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-front">
+            <div class="fc-badge">Pertanyaan 6</div>
+            <p class="fc-text">Contoh peningkatan apa yang disebut untuk membuat project berbeda di Week 3?</p>
+            <div class="fc-hint"><i class="ph ph-hand-tap"></i> Klik untuk lihat jawaban</div>
+        </div>
+        <div class="flashcard-back">
+            <div class="fc-badge fc-badge-answer">Jawaban</div>
+            <p class="fc-text">Di Week 3, contoh peningkatan meliputi improve UI agar clean &amp; modern, menambahkan visualisasi dan interaksi user, serta opsi AI integration untuk menambah nilai (opsional).</p>
+            <div class="fc-hint"><i class="ph ph-arrow-counter-clockwise"></i> Klik untuk balik</div>
+        </div>
+    </div>
+</div>
+
+<div class="flashcard-wrapper" data-index="6">
+    <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-front">
+            <div class="fc-badge">Pertanyaan 7</div>
+            <p class="fc-text">Aktivitas inti apa yang dilakukan pada Week 4 agar siap dinilai &amp; dipresentasikan?</p>
+            <div class="fc-hint"><i class="ph ph-hand-tap"></i> Klik untuk lihat jawaban</div>
+        </div>
+        <div class="flashcard-back">
+            <div class="fc-badge fc-badge-answer">Jawaban</div>
+            <p class="fc-text">Week 4 fokus pada testing semua fitur, bug fixing, membuat slide presentasi dan laporan, menyiapkan alur penjelasan, latihan presentasi, serta memastikan project stabil dan siap submit.</p>
+            <div class="fc-hint"><i class="ph ph-arrow-counter-clockwise"></i> Klik untuk balik</div>
+        </div>
+    </div>
+</div>
+
+<div class="flashcard-wrapper" data-index="7">
+    <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-front">
+            <div class="fc-badge">Pertanyaan 8</div>
+            <p class="fc-text">Sebutkan 5 bagian utama struktur pitch yang terdapat dalam materi.</p>
+            <div class="fc-hint"><i class="ph ph-hand-tap"></i> Klik untuk lihat jawaban</div>
+        </div>
+        <div class="flashcard-back">
+            <div class="fc-badge fc-badge-answer">Jawaban</div>
+            <p class="fc-text">Struktur pitch terdiri dari: (1) Pendahuluan, (2) Target pengguna &amp; insight, (3) Solusi kami, (4) Keunggulan &amp; Diferensiasi, dan (5) Rencana Pelaksanaan.</p>
+            <div class="fc-hint"><i class="ph ph-arrow-counter-clockwise"></i> Klik untuk balik</div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="mt-6 text-center">
+    <button onclick="resetFlashcards()" class="px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl transition-all text-sm">
+        <i class="ph ph-arrow-counter-clockwise mr-1"></i> Reset Semua
+    </button>
+</div></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- AI TUTOR BUTTON -->
+        <button id="ai-tutor-btn" class="fixed bottom-6 right-6 lg:bottom-8 lg:right-8 w-14 h-14 rounded-full bg-gradient-to-r from-primary to-secondary text-white shadow-2xl shadow-primary/40 flex items-center justify-center hover:scale-105 transition-transform z-50">
+            <i class="ph-fill ph-robot text-2xl"></i>
+            <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-emerald-400 rounded-full border-2 border-white"></span>
+        </button>
+
+        <!-- AI TUTOR PANEL -->
+        <div id="ai-tutor-panel" class="fixed bottom-24 right-4 lg:bottom-28 lg:right-8 w-[92vw] lg:w-[380px] h-[560px] max-h-[72vh] glass rounded-3xl shadow-2xl z-50 flex flex-col border border-white/60 transform transition-all duration-300 opacity-0 translate-y-10 pointer-events-none">
+            <div class="p-4 border-b border-white/40 bg-white/40 rounded-t-3xl flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+                            <i class="ph-fill ph-robot text-lg"></i>
+                        </div>
+                        <div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 border-2 border-white rounded-full"></div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-dark text-sm">AI Mentor</h4>
+                        <p class="text-xs text-primary font-medium flex items-center gap-1">
+                            <i class="ph-fill ph-circle text-[7px] animate-pulse"></i> Online
+                        </p>
+                    </div>
+                </div>
+                <button id="close-ai-btn" class="w-8 h-8 rounded-full hover:bg-white/50 flex items-center justify-center text-slate-500 transition-colors">
+                    <i class="ph ph-x"></i>
+                </button>
+            </div>
+            <div id="chat-body" class="flex-1 overflow-y-auto p-4 space-y-3">
+                <div class="flex gap-2 max-w-[88%]">
+                    <div class="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shrink-0 text-xs mt-1">
+                        <i class="ph-fill ph-robot text-xs"></i>
+                    </div>
+                    <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 text-sm text-slate-700 leading-relaxed">
+                        Halo! Saya AI Mentor untuk course ini. Tanyakan apa saja tentang materi yang sedang kamu pelajari 😊
+                    </div>
+                </div>
+                <div id="typing-indicator" class="hidden flex gap-2 max-w-[88%]">
+                    <div class="w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center shrink-0 mt-1">
+                        <i class="ph-fill ph-robot text-xs text-slate-500"></i>
+                    </div>
+                    <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 flex gap-1 items-center">
+                        <div class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-typing" style="animation-delay:0s"></div>
+                        <div class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-typing" style="animation-delay:0.2s"></div>
+                        <div class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-typing" style="animation-delay:0.4s"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-3 bg-white/60 border-t border-white/40 rounded-b-3xl">
+                <div class="relative flex items-center">
+                    <input type="text" id="chat-input" placeholder="Tanya AI Mentor..." class="w-full bg-white border border-slate-200 rounded-full py-2.5 pl-4 pr-11 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-shadow shadow-sm">
+                    <button id="send-btn" class="absolute right-1.5 w-8 h-8 bg-primary hover:bg-primary/90 rounded-full text-white flex items-center justify-center shadow-md transition-colors">
+                        <i class="ph-fill ph-paper-plane-right text-sm"></i>
+                    </button>
+                </div>
+                <p class="text-[10px] text-center text-slate-400 mt-1.5">AI fokus pada materi course ini 🔒</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // ── State ──────────────────────────────────────────────────
+    const courseId = typeof COURSE_ID !== 'undefined' ? COURSE_ID : null;
+    let quizScore = 0, quizAnswered = 0, quizTotal = 0, quizCurrent = 0;
+    let fcCompleted = new Set();
+    let progressSaveTimer = null;
+
+    // ── Sidebar Mobile ─────────────────────────────────────────
+    const sidebar = document.getElementById('sidebar');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        mobileOverlay.classList.toggle('hidden');
+    });
+    mobileOverlay.addEventListener('click', () => {
+        sidebar.classList.add('-translate-x-full');
+        mobileOverlay.classList.add('hidden');
+    });
+
+    // ── View Switcher ──────────────────────────────────────────
+    function switchView(viewId) {
+        document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+        document.getElementById('view-' + viewId).classList.add('active');
+        document.getElementById('main-scroll-area').scrollTo(0, 0);
+        if (window.innerWidth < 1024 && !sidebar.classList.contains('-translate-x-full')) {
+            sidebar.classList.add('-translate-x-full');
+            mobileOverlay.classList.add('hidden');
+        }
+    }
+
+    // ── Chapter scroll nav ─────────────────────────────────────
+    function scrollToChapter(idx) {
+        switchView('course');
+        setTimeout(() => {
+            const cards = document.querySelectorAll('.chapter-card');
+            if (cards[idx]) {
+                cards[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+                saveProgress({ lastChapter: idx });
+            }
+            document.querySelectorAll('.chapter-nav-btn').forEach((b, i) => {
+                b.classList.toggle('active', i === idx);
+            });
+        }, 100);
+    }
+
+    // ── Scroll Progress ────────────────────────────────────────
+    document.getElementById('main-scroll-area').addEventListener('scroll', function() {
+        const el = this;
+        const scrolled = el.scrollTop;
+        const total = el.scrollHeight - el.clientHeight;
+        const pct = total > 0 ? Math.round((scrolled / total) * 100) : 0;
+        updateProgressBar(pct);
+        clearTimeout(progressSaveTimer);
+        progressSaveTimer = setTimeout(() => saveProgress({ scrollProgress: pct }), 1500);
+    });
+
+    function updateProgressBar(pct) {
+        document.getElementById('progress-bar').style.width = pct + '%';
+        document.getElementById('progress-pct').textContent = pct + '%';
+    }
+
+    // ── Flashcard Logic ────────────────────────────────────────
+    function flipCard(cardEl) {
+        cardEl.classList.toggle('flipped');
+        const wrapper = cardEl.closest('.flashcard-wrapper');
+        const idx = parseInt(wrapper.dataset.index);
+        if (cardEl.classList.contains('flipped') && !fcCompleted.has(idx)) {
+            fcCompleted.add(idx);
+            wrapper.classList.add('done');
+            updateFcProgress();
+            saveProgress({ flashcardsCompleted: fcCompleted.size });
+        }
+    }
+
+    function updateFcProgress() {
+        const total = document.querySelectorAll('.flashcard-wrapper').length;
+        const done  = fcCompleted.size;
+        const pct   = total > 0 ? Math.round((done / total) * 100) : 0;
+        const bar   = document.getElementById('fc-progress-bar');
+        const txt   = document.getElementById('fc-progress-text');
+        if (bar) bar.style.width = pct + '%';
+        if (txt) txt.textContent = `${done} / ${total}`;
+    }
+
+    function resetFlashcards() {
+        fcCompleted.clear();
+        document.querySelectorAll('.flashcard').forEach(c => c.classList.remove('flipped'));
+        document.querySelectorAll('.flashcard-wrapper').forEach(w => w.classList.remove('done'));
+        updateFcProgress();
+    }
+
+    // ── Quiz Logic ─────────────────────────────────────────────
+    function initQuiz() {
+        const container = document.getElementById('quiz-container');
+        if (!container) return;
+        quizTotal   = parseInt(container.dataset.total) || 0;
+        quizCurrent = 0;
+        quizScore   = 0;
+        quizAnswered = 0;
+    }
+
+    function selectAnswer(qIdx, optIdx, selected, correct) {
+        const qEl = document.getElementById(`qq-${qIdx}`);
+        const opts = qEl.querySelectorAll('.quiz-option');
+        opts.forEach(btn => { btn.disabled = true; });
+
+        const isCorrect = selected === correct;
+        opts[optIdx].classList.add(isCorrect ? 'correct' : 'wrong');
+
+        // Highlight correct answer if wrong
+        if (!isCorrect) {
+            opts.forEach(btn => {
+                if (btn.querySelector('span:last-child').textContent === correct) {
+                    btn.classList.add('correct');
+                }
+            });
+        }
+
+        if (isCorrect) quizScore++;
+        quizAnswered++;
+
+        setTimeout(() => {
+            qEl.style.display = 'none';
+            const next = document.getElementById(`qq-${qIdx + 1}`);
+            if (next) {
+                next.style.display = 'block';
+                // Update progress bar in next question
+                const bar = next.querySelector('.quiz-q-progress-bar');
+                if (bar) bar.style.width = `${((qIdx + 1) / quizTotal) * 100}%`;
+            } else {
+                showQuizResult();
+            }
+        }, 900);
+    }
+
+    function showQuizResult() {
+        const resultEl = document.getElementById('quiz-result');
+        if (!resultEl) return;
+        resultEl.style.display = 'block';
+        const pct = quizTotal > 0 ? Math.round((quizScore / quizTotal) * 100) : 0;
+        document.getElementById('quiz-score-text').textContent = `Skor: ${quizScore} / ${quizTotal}`;
+        document.getElementById('quiz-result-pct').textContent = pct + '%';
+        setTimeout(() => {
+            document.getElementById('quiz-result-bar').style.width = pct + '%';
+        }, 100);
+        saveProgress({ quizCompleted: true, quizScore: pct });
+    }
+
+    function retryQuiz() {
+        document.getElementById('quiz-result').style.display = 'none';
+        quizScore = 0; quizAnswered = 0;
+        const questions = document.querySelectorAll('.quiz-question');
+        questions.forEach((q, i) => {
+            q.style.display = i === 0 ? 'block' : 'none';
+            q.querySelectorAll('.quiz-option').forEach(btn => {
+                btn.disabled = false;
+                btn.classList.remove('correct', 'wrong');
+            });
+            const bar = q.querySelector('.quiz-q-progress-bar');
+            if (bar) bar.style.width = i === 0 ? '0%' : '0%';
+        });
+    }
+
+    // ── Progress Save/Load ─────────────────────────────────────
+    async function saveProgress(data) {
+        if (!courseId) return;
+        try {
+            await fetch('/api/course/progress', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ courseId, ...data })
+            });
+        } catch(e) { /* silent */ }
+    }
+
+    async function loadProgress() {
+        if (!courseId) return;
+        try {
+            const res  = await fetch(`/api/course/progress/${courseId}`);
+            const data = await res.json();
+            if (!data.success || !data.progress) return;
+            const p = data.progress;
+            if (p.scrollProgress) {
+                updateProgressBar(p.scrollProgress);
+                const area = document.getElementById('main-scroll-area');
+                const total = area.scrollHeight - area.clientHeight;
+                area.scrollTop = (p.scrollProgress / 100) * total;
+            }
+        } catch(e) { /* silent */ }
+    }
+
+    // ── AI Tutor Chat ──────────────────────────────────────────
+    const aiBtn   = document.getElementById('ai-tutor-btn');
+    const aiPanel = document.getElementById('ai-tutor-panel');
+    const closeAi = document.getElementById('close-ai-btn');
+    const chatInput = document.getElementById('chat-input');
+    const sendBtn   = document.getElementById('send-btn');
+    const chatBody  = document.getElementById('chat-body');
+    const typingInd = document.getElementById('typing-indicator');
+
+    function toggleChat() {
+        const closed = aiPanel.classList.contains('opacity-0');
+        if (closed) {
+            aiPanel.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+            chatInput.focus();
+        } else {
+            aiPanel.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+        }
+    }
+    aiBtn.addEventListener('click', toggleChat);
+    closeAi.addEventListener('click', toggleChat);
+
+    function appendMsg(text, isUser) {
+        const html = isUser
+            ? `<div class="flex gap-2 max-w-[88%] ml-auto justify-end animate-fadeUp">
+                <div class="bg-primary p-3 rounded-2xl rounded-tr-none shadow-md text-sm text-white leading-relaxed">${text}</div>
+               </div>`
+            : `<div class="flex gap-2 max-w-[88%] animate-fadeUp">
+                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shrink-0 text-xs mt-1"><i class="ph-fill ph-robot text-xs"></i></div>
+                <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 text-sm text-slate-700 leading-relaxed">${text.replace(/\n/g,'<br>')}</div>
+               </div>`;
+        typingInd.insertAdjacentHTML('beforebegin', html);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    async function handleSend() {
+        const text = chatInput.value.trim();
+        if (!text) return;
+        appendMsg(text, true);
+        chatInput.value = '';
+        typingInd.classList.remove('hidden');
+        chatBody.scrollTop = chatBody.scrollHeight;
+        try {
+            const res  = await fetch('/api/course/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ courseId, message: text })
+            });
+            const data = await res.json();
+            typingInd.classList.add('hidden');
+            appendMsg(data.reply || 'Maaf, tidak bisa menjawab saat ini.', false);
+        } catch(e) {
+            typingInd.classList.add('hidden');
+            appendMsg('Terjadi kesalahan. Coba lagi.', false);
+        }
+    }
+    sendBtn.addEventListener('click', handleSend);
+    chatInput.addEventListener('keypress', e => { if (e.key === 'Enter') handleSend(); });
+
+    // ── Load user info for sidebar ─────────────────────────────
+    async function loadUserInfo() {
+        try {
+            const res  = await fetch('/api/me');
+            const data = await res.json();
+            if (data.success) {
+                const u = data.user;
+                document.getElementById('sidebar-name').textContent = u.namaLengkap;
+                document.getElementById('sidebar-plan').textContent = ['','Free','Starter','Pro'][u.plan] || 'Free';
+                document.getElementById('sidebar-avatar').src = `https://ui-avatars.com/api/?name=${encodeURIComponent(u.namaLengkap)}&background=4F46E5&color=fff&rounded=true`;
+            }
+        } catch(e) { /* silent */ }
+    }
+
+    // ── Init ───────────────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', () => {
+        initQuiz();
+        loadProgress();
+        loadUserInfo();
+    });
+    </script>
+</body>
+</html>
