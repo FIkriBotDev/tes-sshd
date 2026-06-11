@@ -37925,3 +37925,125 @@ Kalau kamu mau, saya bisa bantu:
 1) merangkum isi poster jadi teks singkat, atau  
 2) bantu cek/menyiapkan draft abstrak & topik yang cocok dengan scope jurnal.
 
+
+[2026-06-11T04:10:29.367Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/15a84d-1781151023052.jpg
+Response  : Saya sudah melihat gambar poster tersebut. Isinya tentang **Open Registration Pengabdian kepada Masyarakat (PKM) Reguler Internal Universitas LIA** untuk **Semester Genap 2025/2026**.
+
+Ringkasan utama dari poster:
+- **Tema:** “Kolaborasi Lngtechpreneur untuk pengembangan kompetensi”
+- **Fakultas Humaniora dan Desain**
+  - Kerja sama: **Kelurahan Cikokop**
+  - Tanggal pelaksanaan: **27 Juni 2026**
+  - Lokasi: **Kelurahan Cikokop**
+  - Peran: **Narasumber dan/atau Panitia (Topik: D3 Bahasa Inggris, S1 Bahasa Inggris, S1 Bahasa Jepang, S1 Desain Komunikasi Visual)**
+- **Fakultas Sains dan Bisnis**
+  - Kerja sama: **Kecamatan Pancoran**
+  - Tanggal pelaksanaan: **15 Juni 2026**
+  - Lokasi: **Universitas LIA**
+  - Peran: **Narasumber dan/atau Panitia (Topik: S1 Informatika, S1 Sistem Informasi, S1 Bisnis Digital, S1 Manajemen/ekonomi—sesuai yang tertulis di poster)**
+- **Info pendaftaran:**
+  - Terbuka untuk **Dosen dan Mahasiswa Universitas LIA**
+  - **Pendaftaran: 2–7 Juni 2026**
+  - Link: **https://s.id/pkM_Reguler_Gnp2526**
+  - Terdapat **QR code** juga untuk akses pendaftaran
+
+Kalau kamu mau, bilang ya—kamu ingin saya bantu **mengekstrak semua detail per bagian** (mis. daftar topik/Prodi yang tercantum) atau cukup **dibuatkan versi singkat** untuk diumumkan?
+
+
+[2026-06-11T04:10:30.459Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/b1f186-1781151025169.jpg
+Response  : Saya sudah melihat gambarnya. Itu poster **KRL Commuter Line** bertema: **“KRL akan sampai ke Sukabumi!”** dengan klaim layanan seperti perjalanan **lebih mudah, cepat, nyaman**, serta info fitur (waktu tempuh lebih cepat, tarif terjangkau, ramah lingkungan, dsb.).
+
+Di poster juga ada bagian:
+- **Tahap pengembangan menuju Sukabumi** (ada pembangunan/perluasan jalur) dan ajakan menunggu info resmi.
+- **Rute KRL menuju Sukabumi** yang mencantumkan stasiun: **Stasiun Bogor, Paledang, Batu Tulis, Maseng, Cigombong, Cicurug, Parungkuda, Cibadak, hingga stasiun Cisaat**, lalu **Stasiun Sukabumi**.
+
+Kalau kamu mau, bilang saja: kamu ingin saya **jelaskan isi posternya lebih detail**, atau **cek teks/daftar rutenya** saja.
+
+
+[2026-06-11T04:10:30.629Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/dfa8c0-1781151025946.jpg
+Response  : Saya sudah melihat gambar infografisnya. Isinya tentang **rencana pengoperasian KRL “Jalur GreenLine” – 12 gerbong (KRL 12 GERBONG / SF12)**.
+
+Poin penting yang terlihat di gambar:
+- Judul: **“KRL JALUR GREENLINE 12 GERBONG”**  
+- Tagline: *“Lebih Banyak, Lebih Nyaman, Lebih Terhubung”*
+- Target tahun pengoperasian: **2027**
+- Rute/linimasa “Green Line” terlihat menghubungkan beberapa stasiun (di bagian bawah infografis ada deretan nama stasiun).
+- Kapasitas: disebut **1 rangkaian = 12 gerbong** dan **kapasitas lebih besar ±20%**.
+- Bagian manfaat: peningkatan kapasitas, pengurangan kepadatan saat jam sibuk, peningkatan kenyamanan, dan dukungan perjalanan commuter.
+- Bagian persiapan infrastruktur: penambahan/penyesuaian sarana-prasarana serta penguatan/penyesuaian untuk layanan **SF12**.
+- Alasan penambahan kapasitas ditunjukkan lewat angka **161% okupansi jam sibuk** dan upaya menurunkannya.
+- Ada skema/penjelasan “lintas Green Line” serta penegasan “KRL 12 gerbong untuk perjalanan lebih nyaman dan masa depan transportasi yang lebih baik.”
+
+Kalau kamu mau, aku bisa bantu **merangkum** secara lebih singkat, atau **menjelaskan bagian tertentu** (misalnya rute stasiun mana saja, target tahun 2027, atau detail manfaat & alasan kapasitas).
+
+
+[2026-06-11T04:10:32.131Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/b87362-1781151026448.jpg
+Response  : Saya sudah melihat gambarnya. Itu adalah **poster kegiatan “PKM Kolaborasi ke-8 dan Pelatihan Teknologi Pangan” di Desa Wisata Hanjeli**.
+
+Informasi yang terlihat di poster (ringkas):
+- **Waktu:** **4–5 September 2026**
+- **Tempat:** **Desa Wisata Hanjeli** (di area pegunungan; detail lokasi tertulis “Hanjeli West Java”)
+- **Tema tagline:** *Belajar • Berkolaborasi • Berdampak*
+- **Benefit:** ada **sertifikat 20 JP** untuk peserta
+- **Biaya:** **Rp 800.000** (terlihat juga info pendaftaran & pengiriman berkas)
+- **Fasilitas:** transport bus besar, homestay & makan 5x, topi/adsinya “PM” dan suvenir, wisata edukasi & bantuan dokumentasi/publikasi (sebagian detail ada dalam ikon-ikon)
+- **Kenapa harus Hanjeli?:** menonjolkan desa wisata berkelanjutan, destinasi, dan edukasi/produk lokal
+- **Kontak/CP:** **Jafar – 0812-1850-1558**
+- **Terdapat bagian “Tentukan/Topik PKM (contoh)”** serta daftar topik seperti UMKM & Pokdarwis, Homestay, Pangan & Kesehatan, Literasi & Edukasi, Lingkungan & Keberlanjutan, Sosial & Budaya, dan lainnya.
+
+Kalau kamu mau, bilang ya—kamu ingin saya **menyalin semua teksnya**, **meringkas jadi versi caption**, atau **membuat rundown/format promosi** dari isi poster ini?
+
+
+[2026-06-11T04:10:32.627Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/2c5470-1781151027413.jpg
+Response  : Saya sudah melihat gambar tersebut. Itu adalah **poster “Call for Paper Lingua (Jurnal Ilmiah)” Vol. 22 No. 2 (2026)** dari **Universitas LIA**.
+
+Isi penting yang terlihat:
+- **Fokus & Ruang Lingkup**: applied linguistics, general linguistics, micro/macro linguistics (phonetics–syntax–semantics–sosiolinguistics, dll), culture, literature, translation & interpreting, language studies, serta IT dalam pengajaran dan pembelajaran.
+- **Tentang Jurnal**: menyambut artikel yang memberi wawasan/ide baru di bidang ilmu bahasa.
+- **Timeline**:
+  - **Submission**: 1 Mei – 20 Juli 2026  
+  - **Review process**: 1 Juli – 20 Agustus 2026  
+  - **Published**: Oktober 2026
+- **Arah pengiriman/Info** (terlihat):  
+  - Email: **neneng.sri@universitaslia.ac.id**  
+  - Website jurnal: **https://jurnal.universitaslia.ac.id/index.php/lingua**  
+- Ada info **akreditasi Sinta S4** (tertera SINTA dan nomor e-ISSN/p-ISSN).
+- Terdapat **QR code** dan logo indeksing (mis. Garuda, Google Scholar, Turnitin, Crossref).
+
+Kalau kamu mau, saya bisa bantu **merangkum jadi teks**, atau **mengecek bagian tertentu** (mis. format penulisan/ketentuan artikel—kalau ada di poster lain).
+
+
+[2026-06-11T04:10:33.188Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/5cf37f-1781151027358.jpg
+Response  : Saya melihat gambar tersebut—itu adalah poster **“Call For Paper”** untuk jurnal **DIM A (Jurnal Pengabdian Masyarakat)** dari **Universitas LIA**.
+
+Info utamanya:
+- **Edisi:** Vol. 4 No. 1 (Mei 2026)  
+- **Fokus/Ruang lingkup bidang:**
+  - Bahasa dan kebudayaan
+  - Bahasa Inggris
+  - Bahasa Jepang
+  - Bahasa Indonesia
+  - Desain Komunikasi Visual
+  - Sistem Informasi
+  - Teknologi Informasi
+  - Bisnis Digital
+- **Batas akhir submit:** **30 April 2026**
+- Ada **QR code** dan tulisan **“Submission link”** untuk pengiriman naskah
+- Tertulis **“GRATIS – Submit secara online”**
+- **Publikasi oleh:** LPPM Universitas LIA
+- URL: **https://jurnal.universitassia.ac.id** (terlihat di bagian bawah poster)
+
+Kalau Anda mau, saya bisa bantu **menyusun draft email/cover letter**, atau **merangkum syarat/format penulisan**—tetapi saya perlu teks persyaratan lengkapnya (biasanya ada di halaman submission link).
+
