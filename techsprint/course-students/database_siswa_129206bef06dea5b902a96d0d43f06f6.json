@@ -24,19 +24,20 @@
     "email": "cayang@gmail.com",
     "password": "$2b$10$9yHxAL8qRK5nFNh04/Pnz.pON3UNK5Fj06HvsUh6d6C27WrluqJly",
     "profilePicture": "",
-    "xp": 125,
-    "coin": 50,
+    "xp": 155,
+    "coin": 60,
     "level": 1,
     "streak": 0,
     "lastLogin": "11-06-2026, 10.58.02",
     "quizScore": 0,
     "completedBlocks": [
       "block-0",
-      "block-9"
+      "block-9",
+      "block-1"
     ],
     "completedChapter": [],
     "flashcardsViewed": 0,
-    "leaderboardPoint": 60,
+    "leaderboardPoint": 90,
     "achievements": [
       "first_block"
     ],
