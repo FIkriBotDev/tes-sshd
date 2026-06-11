@@ -5,17 +5,24 @@
     "email": "fikri@gmail.com",
     "password": "$2b$10$tRE9sVk6gslZUTYZHaaLyO/ZVLN5X850/aLW90tKiHWUj7xuRXvgO",
     "profilePicture": "",
-    "xp": 0,
-    "coin": 0,
+    "xp": 170,
+    "coin": 65,
     "level": 1,
     "streak": 0,
     "lastLogin": "11-06-2026, 05.46.27",
     "quizScore": 0,
-    "completedBlocks": [],
+    "completedBlocks": [
+      "block-0",
+      "block-1",
+      "block-2",
+      "block-3"
+    ],
     "completedChapter": [],
     "flashcardsViewed": 0,
-    "leaderboardPoint": 0,
-    "achievements": [],
+    "leaderboardPoint": 120,
+    "achievements": [
+      "first_block"
+    ],
     "joinedAt": "11-06-2026, 05.46.27"
   }
 ]
