@@ -37,5 +37,24 @@
     "lastAiDate": "Thu Jun 11 2026",
     "quizCorrectCount": 12,
     "perfectQuizCount": 1
+  },
+  {
+    "studentId": "cf1b40d9c4961e6a",
+    "username": "Other_user",
+    "email": "otheruser@gmail.com",
+    "password": "$2b$10$xOXFsJ/xTSHF8UHlfJPtKedUlyviWRCMNcEIhxvlu5TJ.2UPYs.Pi",
+    "profilePicture": "",
+    "xp": 0,
+    "coin": 0,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "11-06-2026, 04.46.03",
+    "quizScore": 0,
+    "completedBlocks": [],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 0,
+    "achievements": [],
+    "joinedAt": "11-06-2026, 04.46.03"
   }
 ]
