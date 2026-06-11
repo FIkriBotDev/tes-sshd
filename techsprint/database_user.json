@@ -105,5 +105,13 @@
     "plan": 1,
     "creditLeft": 5,
     "courseCreated": 1
+  },
+  {
+    "namaLengkap": "Fikri fahrezi",
+    "email": "aprilianiprahasti0104@gmail.com",
+    "password": "$2b$10$0Lja7Xg0HxaXAp..pd6TeeYLNSovIIQAZTNS5mtZh2F4a3sv5ysvC",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
