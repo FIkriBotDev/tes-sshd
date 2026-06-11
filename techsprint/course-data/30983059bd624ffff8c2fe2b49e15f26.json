@@ -1,0 +1,455 @@
+{
+  "title": "JavaScript Dasar: Dari Interaktif Website sampai DOM",
+  "summary": "Kamu akan belajar fondasi JavaScript: cara menjalankannya di HTML, variabel dan tipe data, operator, percabangan, perulangan, function, sampai DOM dasar. Materinya dibuat interaktif supaya kamu langsung praktik dan paham konsepnya lewat contoh.",
+  "emoji": "⚡",
+  "color": "#f59e0b",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "JavaScript itu Mesin Interaksi Web",
+      "icon": "⚡",
+      "explanation": "JavaScript adalah bahasa pemrograman yang membuat website bisa bereaksi terhadap pengguna. Misalnya saat kamu klik tombol, memasukkan data, atau melihat animasi yang berubah-ubah, biasanya di baliknya ada JavaScript.",
+      "analogy": "Kalau HTML itu seperti kerangka bangunan, JavaScript itu seperti sistem kontrol dan otak yang mengatur apa yang terjadi saat kamu bergerak di dalamnya.",
+      "highlight": "interaktif, respons pengguna, dinamis",
+      "keyPoints": [
+        "JavaScript membuat halaman merespons aksi pengguna",
+        "Mendukung fitur dinamis seperti input, animasi, dan logika",
+        "Pakai JavaScript untuk mengubah perilaku website"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Jalankan JavaScript di HTML (Paling Dasar)",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Buat file HTML",
+          "description": "Siapkan halaman HTML kamu, misalnya index.html.",
+          "tip": "Kalau belum ada, buat file baru bernama index.html."
+        },
+        {
+          "number": 2,
+          "title": "Tambahkan tag <script>",
+          "description": "Tulis JavaScript di dalam tag <script> di dalam HTML.",
+          "tip": "Kamu bisa taruh di bagian bawah body agar elemen HTML sudah siap."
+        },
+        {
+          "number": 3,
+          "title": "Coba output sederhana",
+          "description": "Gunakan alert atau console.log untuk melihat hasil.",
+          "tip": "Untuk cek cepat, console.log biasanya lebih enak daripada alert berulang."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Coba Jalankan JavaScript Sederhana",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode ini. Lalu ubah teks di console.log dan nilai variabel untuk melihat perubahan. Pastikan output terlihat di console.",
+      "fileName": "script.js",
+      "defaultCode": "// Ubah pesan berikut untuk latihan\nconst nama = 'Budi';\nlet umur = 18;\nconsole.log('Halo, ' + nama + '!');\nconsole.log('Umur awal: ' + umur);\numur = umur + 1;\nconsole.log('Umur setelah tambah 1: ' + umur);",
+      "hint": "Ganti nama dan coba ubah umur. Perhatikan bagaimana console mencetak urutan eksekusi."
+    },
+    {
+      "type": "concept_card",
+      "title": "Variabel & Tipe Data: Simpan Info dengan Benar",
+      "icon": "🧠",
+      "explanation": "Variabel dipakai untuk menyimpan data. Di JavaScript kamu sering melihat let dan const. Tipe data dasar meliputi String, Number, Boolean, Array, dan Object, yang menentukan jenis nilai yang kamu pegang.",
+      "analogy": "Anggap variabel itu seperti kotak penyimpanan: const itu kotak yang isinya tidak boleh diganti jenis angkanya, sedangkan let itu kotak yang bisa kamu ubah isinya.",
+      "highlight": "let, const, String, Number, Boolean, Array, Object",
+      "keyPoints": [
+        "Variabel menyimpan data untuk dipakai ulang",
+        "let untuk nilai yang bisa berubah, const untuk yang tetap",
+        "Tipe data membantu JavaScript memahami jenis data"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Peta Cepat Tipe Data JavaScript",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "String",
+          "value": "Teks seperti 'Budi'",
+          "icon": "✍️"
+        },
+        {
+          "label": "Number",
+          "value": "Angka seperti 18",
+          "icon": "🔢"
+        },
+        {
+          "label": "Boolean",
+          "value": "True/False untuk keputusan",
+          "icon": "✅"
+        },
+        {
+          "label": "Array",
+          "value": "Kumpulan nilai: [1,2,3]",
+          "icon": "📚"
+        },
+        {
+          "label": "Object",
+          "value": "Data berstruktur: {nama: 'Budi'}",
+          "icon": "🗂️"
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Operator: Hitung dan Bandingkan",
+      "icon": "🧮",
+      "explanation": "Operator membantu kamu melakukan operasi matematika dan logika. Misalnya + untuk penjumlahan, lalu == untuk membandingkan nilai. Dengan operator, kamu bisa membuat keputusan dan perhitungan otomatis.",
+      "analogy": "Operator itu seperti tombol kalkulator dan tombol 'cek cocok atau tidak'. Kamu tekan, hasilnya keluar, lalu program bergerak sesuai hasilnya.",
+      "highlight": "+, -, *, /, ==",
+      "keyPoints": [
+        "Operator matematika: + - * /",
+        "Operator logika/perbandingan seperti == untuk cek kesamaan",
+        "Hasil operator sering dipakai di if dan perulangan"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Latihan Operator & Percabangan (if/else)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode. Ubah nilai score agar melihat cabang if/else berubah. Tujuan: pahami bagaimana kondisi menentukan output.",
+      "fileName": "conditions.js",
+      "defaultCode": "let score = 72;\nif (score >= 80) {\n  console.log('Lulus dengan kategori A');\n} else if (score >= 60) {\n  console.log('Lulus dengan kategori B');\n} else {\n  console.log('Belum lulus');\n}\n\n// Coba juga operator ==\nconst benar = (score == 72);\nconsole.log('Apakah score sama dengan 72? ' + benar);",
+      "hint": "Coba ubah score menjadi 85, 60, atau 40 untuk melihat output yang berbeda."
+    },
+    {
+      "type": "concept_card",
+      "title": "Percabangan & Perulangan: Program Punya Pilihan & Rutinitas",
+      "icon": "🧩",
+      "explanation": "Percabangan (if dan else) membuat program memilih jalur berdasarkan kondisi. Perulangan (for dan while) membuat program mengulang kode berkali-kali untuk tugas rutin seperti menghitung total atau memproses daftar data.",
+      "analogy": "Percabangan itu seperti memilih jalan saat di persimpangan. Perulangan itu seperti mengulang langkah yang sama berkali-kali, misalnya menulis nama pada banyak kertas.",
+      "highlight": "if/else, for, while, kondisi, pengulangan",
+      "keyPoints": [
+        "if/else menentukan aksi berdasarkan kondisi",
+        "for cocok untuk pengulangan dengan hitungan jelas",
+        "while cocok saat pengulangan berdasarkan kondisi yang berubah"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Latihan Perulangan: Hitung Total dengan for",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode untuk menjumlahkan angka. Ubah batas iterasi dan lihat total berubah.",
+      "fileName": "loop.js",
+      "defaultCode": "// Hitung jumlah 1 sampai N\nlet N = 5;\nlet total = 0;\n\nfor (let i = 1; i <= N; i++) {\n  total = total + i;\n}\n\nconsole.log('N = ' + N);\nconsole.log('Total dari 1 sampai ' + N + ' = ' + total);\n\n// Bandingkan dengan while sederhana\nlet x = 1;\nlet totalWhile = 0;\nwhile (x <= N) {\n  totalWhile = totalWhile + x;\n  x = x + 1;\n}\nconsole.log('Total (while) = ' + totalWhile);",
+      "hint": "Coba N = 10 atau N = 1. Pastikan total sesuai."
+    },
+    {
+      "type": "concept_card",
+      "title": "Function: Bikin Kode Rapi dan Bisa Dipanggil Ulang",
+      "icon": "🔁",
+      "explanation": "Function adalah blok kode yang bisa kamu panggil kapan saja. Dengan function, kamu tidak perlu menulis ulang kode yang sama, sehingga program lebih rapi, efisien, dan mudah di-maintain.",
+      "analogy": "Function itu seperti resep masakan. Kamu buat resep sekali, lalu tinggal masak lagi kapan pun dibutuhkan tanpa mengulang instruksi dari awal.",
+      "highlight": "function, parameter, return",
+      "keyPoints": [
+        "Function bisa dipanggil ulang",
+        "Parameter membantu mengirim input berbeda ke function",
+        "return mengembalikan hasil ke pemanggil"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Function: Buat Kalkulator Mini",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode. Ubah angka a dan b. Pastikan output sesuai dengan hasil function yang memproses input.",
+      "fileName": "functions.js",
+      "defaultCode": "function tambah(a, b) {\n  return a + b;\n}\n\nfunction kali(a, b) {\n  return a * b;\n}\n\nconst a = 7;\nconst b = 3;\nconsole.log('a = ' + a + ', b = ' + b);\nconsole.log('a + b = ' + tambah(a, b));\nconsole.log('a * b = ' + kali(a, b));",
+      "hint": "Coba ganti a=10 dan b=2, lalu cek apakah hasil berubah sesuai."
+    },
+    {
+      "type": "concept_card",
+      "title": "DOM Dasar: Ubah Halaman HTML Pakai JavaScript",
+      "icon": "🌐",
+      "explanation": "DOM (Document Object Model) adalah cara JavaScript berinteraksi dengan HTML. Kamu bisa mengubah isi teks, mengatur atribut, atau membaca input user. Intinya: DOM membuat JavaScript bisa mengubah tampilan halaman.",
+      "analogy": "DOM itu seperti peta gedung: HTML adalah bangunannya, sedangkan DOM adalah cara kamu menunjuk ruangan tertentu (elemen) untuk diubah.",
+      "highlight": "DOM, document, element, innerText/innerHTML",
+      "keyPoints": [
+        "DOM merepresentasikan HTML sebagai objek",
+        "JavaScript bisa memilih elemen HTML lalu mengubahnya",
+        "Perubahan DOM akan terlihat di halaman"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "DOM Playground: Ubah Teks Saat Tombol Diklik",
+      "icon": "💻",
+      "language": "html",
+      "instruction": "Buka preview HTML. Klik tombol untuk mengubah teks di halaman. Ubah teks default dan lihat efeknya.",
+      "fileName": "dom.html",
+      "defaultCode": "<!DOCTYPE html> <html lang=\"id\"> <head> <meta charset=\"UTF-8\" /> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /> <title>DOM Dasar</title> </head> <body> <h2 id=\"judul\">Belajar JavaScript</h2> <p id=\"pesan\">Klik tombol untuk mengubah pesan.</p> <button id=\"btnGanti\">Ganti Pesan</button> <script> const judul = document.getElementById('judul'); const pesan = document.getElementById('pesan'); const tombol = document.getElementById('btnGanti'); let sudah = false; tombol.addEventListener('click', () => { sudah = !sudah; if (sudah) { judul.innerText = 'DOM sudah aktif!'; pesan.innerText = 'Mantap! JavaScript mengubah halaman.'; } else { judul.innerText = 'Belajar JavaScript'; pesan.innerText = 'Klik tombol untuk mengubah pesan.'; } }); </script> </body> </html>",
+      "hint": "Ganti teks pada innerText, atau ubah logika supaya warnanya berubah juga."
+    },
+    {
+      "type": "analogy_card",
+      "title": "JavaScript vs Web Lain: Siapa Kerjanya Apa?",
+      "icon": "💡",
+      "realWorld": "Bayangkan kamu bikin stan bazar untuk sekolah.",
+      "connection": "HTML membentuk stan, JavaScript mengatur interaksi dan respon, DOM adalah cara mengutak-atik komponen stan dari kode.",
+      "insight": "Saat kamu butuh website yang 'bernyawa', JavaScript dan DOM adalah bagian yang membuatnya terasa hidup."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini JavaScript",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "JavaScript",
+          "definition": "Bahasa pemrograman untuk membuat website interaktif",
+          "example": "Menampilkan hasil klik tombol"
+        },
+        {
+          "term": "Variabel (let/const)",
+          "definition": "Wadah untuk menyimpan data",
+          "example": "let nama = 'Budi'"
+        },
+        {
+          "term": "Tipe data",
+          "definition": "Jenis nilai yang disimpan, seperti String atau Number",
+          "example": "const umur = 18 (Number)"
+        },
+        {
+          "term": "Operator",
+          "definition": "Simbol untuk operasi hitung atau perbandingan",
+          "example": "score >= 80 dengan == atau >="
+        },
+        {
+          "term": "Percabangan",
+          "definition": "Membuat keputusan dengan kondisi if/else",
+          "example": "Jika nilai tinggi maka tampilkan 'Lulus A'"
+        },
+        {
+          "term": "Perulangan",
+          "definition": "Menjalankan kode berulang dengan for/while",
+          "example": "Menjumlahkan angka 1 sampai N"
+        },
+        {
+          "term": "Function",
+          "definition": "Blok kode yang bisa dipanggil ulang",
+          "example": "function tambah(a,b) { return a+b; }"
+        },
+        {
+          "term": "DOM",
+          "definition": "Representasi HTML agar bisa dimanipulasi oleh JavaScript",
+          "example": "document.getElementById('pesan').innerText = '...' "
+        }
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Urutan Belajar yang Masuk Akal",
+      "icon": "📚",
+      "items": [
+        {
+          "label": "1",
+          "value": "JavaScript & cara menjalankan",
+          "icon": "▶️"
+        },
+        {
+          "label": "2",
+          "value": "Variabel dan tipe data",
+          "icon": "🧠"
+        },
+        {
+          "label": "3",
+          "value": "Operator, if/else",
+          "icon": "⚖️"
+        },
+        {
+          "label": "4",
+          "value": "for/while untuk ulang",
+          "icon": "🔁"
+        },
+        {
+          "label": "5",
+          "value": "Function untuk rapikan kode",
+          "icon": "🧰"
+        },
+        {
+          "label": "6",
+          "value": "DOM untuk ubah halaman",
+          "icon": "🧩"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Apa fungsi utama JavaScript dalam pengembangan website?",
+      "options": [
+        "Membuat struktur halaman saja",
+        "Membuat website menjadi interaktif dan dinamis",
+        "Mengganti CSS sepenuhnya",
+        "Menyimpan data permanen di server"
+      ],
+      "answer": "Membuat website menjadi interaktif dan dinamis",
+      "explanation": "JavaScript membuat website bisa merespons klik, input pengguna, animasi, dan logika dinamis.",
+      "xpReward": 50
+    },
+    {
+      "question": "Bagaimana cara mengeksekusi JavaScript di HTML?",
+      "options": [
+        "Menggunakan tag <js> di HTML",
+        "Menggunakan tag <script> di dalam HTML",
+        "Menggunakan tag <style> untuk JavaScript",
+        "JavaScript selalu harus di file terpisah"
+      ],
+      "answer": "Menggunakan tag <script> di dalam HTML",
+      "explanation": "JavaScript dapat ditulis di dalam tag <script> pada HTML.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perintah alert('Hello World'); akan menampilkan apa?",
+      "options": [
+        "Konsol log di browser",
+        "Popup/alert berisi teks",
+        "Gambar 'Hello World'",
+        "Mengubah warna background menjadi kuning"
+      ],
+      "answer": "Popup/alert berisi teks",
+      "explanation": "alert menampilkan popup pesan di browser.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa peran variabel dalam JavaScript?",
+      "options": [
+        "Mengeksekusi HTML",
+        "Menyimpan data agar bisa digunakan ulang",
+        "Menghapus data otomatis",
+        "Mengganti tipe data menjadi String"
+      ],
+      "answer": "Menyimpan data agar bisa digunakan ulang",
+      "explanation": "Variabel digunakan untuk menyimpan data seperti nama, umur, atau nilai lain.",
+      "xpReward": 50
+    },
+    {
+      "question": "Manakah yang termasuk tipe data dasar JavaScript?",
+      "options": [
+        "Character",
+        "String",
+        "Integer (sebagai tipe khusus JavaScript)",
+        "File"
+      ],
+      "answer": "String",
+      "explanation": "Tipe data dasar JavaScript meliputi String, Number, Boolean, Array, dan Object.",
+      "xpReward": 50
+    },
+    {
+      "question": "Operator + digunakan untuk apa?",
+      "options": [
+        "Perkalian",
+        "Penjumlahan",
+        "Pembagian",
+        "Perbandingan kesamaan"
+      ],
+      "answer": "Penjumlahan",
+      "explanation": "Operator + berarti penjumlahan (atau penggabungan string).",
+      "xpReward": 50
+    },
+    {
+      "question": "if dan else digunakan untuk melakukan apa?",
+      "options": [
+        "Mengulang kode",
+        "Mengambil keputusan berdasarkan kondisi",
+        "Mengatur DOM saja",
+        "Menjalankan function secara otomatis"
+      ],
+      "answer": "Mengambil keputusan berdasarkan kondisi",
+      "explanation": "if/else memilih jalur eksekusi berdasarkan kondisi tertentu.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perulangan for paling cocok digunakan saat kamu ingin mengulang berdasarkan apa?",
+      "options": [
+        "Jumlah pengulangan yang jelas",
+        "Nama HTML elemen",
+        "Hanya kondisi random",
+        "Tidak perlu kondisi sama sekali"
+      ],
+      "answer": "Jumlah pengulangan yang jelas",
+      "explanation": "for biasanya dipakai ketika kamu tahu berapa kali loop dilakukan (ada inisialisasi dan batas).",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa itu JavaScript?",
+      "answer": "JavaScript adalah bahasa pemrograman untuk membuat website menjadi interaktif dan dinamis.",
+      "emoji": "⚡",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Tag apa yang digunakan untuk menulis JavaScript di HTML?",
+      "answer": "Tag <script>.",
+      "emoji": "🧩",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Contoh kode untuk menampilkan popup sederhana?",
+      "answer": "alert('Hello World');",
+      "emoji": "🔔",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa bedanya let dan const secara dasar?",
+      "answer": "let bisa nilai berubah, sedangkan const nilainya tetap.",
+      "emoji": "📦",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Sebutkan 3 tipe data dasar JavaScript!",
+      "answer": "String, Number, Boolean (bisa juga Array dan Object).",
+      "emoji": "🧠",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Operator mana yang digunakan untuk penjumlahan?",
+      "answer": "+",
+      "emoji": "➕",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Kapan kamu memakai if/else?",
+      "answer": "Saat ingin mengambil keputusan berdasarkan kondisi tertentu.",
+      "emoji": "⚖️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa kegunaan function?",
+      "answer": "Untuk membuat blok kode yang bisa dipanggil ulang agar program lebih rapi dan efisien.",
+      "emoji": "🔁",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa itu DOM dalam konteks JavaScript?",
+      "answer": "DOM adalah cara JavaScript mengubah dan berinteraksi dengan elemen HTML di halaman.",
+      "emoji": "🌐",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Contoh perulangan yang umum di JavaScript?",
+      "answer": "for dan while.",
+      "emoji": "🌀",
+      "difficulty": "easy"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi blok pengantar JavaScript hingga DOM dasar.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi membahas dasar JavaScript 1 sampai 10. Mulai dari pengenalan: JavaScript adalah bahasa pemrograman untuk membuat website interaktif dan dinamis. Tekankan bahwa JavaScript memberi kemampuan respons terhadap klik, input pengguna, animasi, dan perilaku dinamis lain. Lanjut ke cara menjalankan JavaScript: bisa menggunakan tag <script> di dalam HTML. Beri contoh paling sederhana alert('Hello World'); yang menampilkan popup di browser. Ini penting untuk pemula karena menunjukkan bahwa kode benar-benar dieksekusi. Berikutnya variabel: variabel digunakan untuk menyimpan data. Materi memberi contoh let nama = 'Budi'; dan const umur = 18; jelaskan perbedaan konsep let vs const secara umum: let dapat diubah nilainya nanti, sedangkan const biasanya tidak diubah setelah diberi nilai awal. Selanjutnya tipe data dasar: String untuk teks, Number untuk angka, Boolean untuk true/false, Array untuk kumpulan nilai, dan Object untuk data berstruktur (misalnya pasangan kunci-nilai). Arahkan siswa agar paham bahwa tipe data mempengaruhi cara data digunakan dan cara program mengevaluasi logika. Materi kemudian membahas operator: operator untuk operasi matematika dan logika seperti +, -, *, /, dan ==. Jelaskan secara friendly bahwa + bisa penjumlahan angka atau penggabungan string, sedangkan == dipakai untuk membandingkan kesamaan nilai (sebagai dasar percabangan). Setelah itu percabangan: if dan else untuk mengambil keputusan berdasarkan kondisi. Tekankan pola pikir: program mengecek kondisi lalu mengeksekusi blok yang sesuai. Materi membahas perulangan: for dan while untuk menjalankan kode berulang kali. Tekankan tujuan perulangan: menyelesaikan tugas rutin tanpa menulis ulang kode berkali-kali. Jelaskan bahwa for biasanya cocok jika jumlah pengulangan diketahui, sedangkan while cocok jika pengulangan bergantung pada kondisi yang berubah selama proses berjalan. Lalu function: function adalah blok kode yang bisa dipanggil kembali sehingga program lebih rapi dan efisien. Jelaskan konsep parameter dan return sebagai gagasan umum: function menerima input, memproses, lalu mengembalikan hasil bila diperlukan. Masuk ke DOM dasar: DOM digunakan untuk mengubah isi halaman HTML menggunakan JavaScript. Jelaskan bahwa DOM menyediakan cara untuk mengakses elemen HTML (misalnya berdasarkan id) lalu mengubah tampilan seperti mengubah teks. Hubungkan juga ke konsep interaktif: tanpa DOM, JavaScript sulit mengubah apa yang terlihat pengguna; dengan DOM, klik/tindakan pengguna bisa langsung mengubah halaman. Akhiri dengan kesimpulan bahwa JavaScript adalah dasar penting dalam pengembangan web modern dan berguna untuk membuat website interaktif. Untuk AI tutor, gunakan pendekatan seperti guru: berikan contoh konkret, gunakan analogi sederhana (web sebagai panggung, JavaScript sebagai sutradara/otak, DOM sebagai cara sutradara mengubah properti di panggung), lalu ajak siswa praktik lewat perubahan nilai/ kondisi pada latihan. Pastikan setiap konsep dihubungkan ke tujuan: dari eksekusi kode, penyimpanan data, pengambilan keputusan, pengulangan, pengorganisasian kode melalui function, hingga perubahan tampilan melalui DOM."
+}

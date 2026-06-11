@@ -1,0 +1,370 @@
+{
+  "title": "AI & Python Dasar: Mulai dari Konsep sampai Ngoding!",
+  "summary": "Kamu akan belajar apa itu Artificial Intelligence, lalu dasar Python (variabel, tipe data, percabangan, perulangan). Setelah itu, kamu masuk ke konsep Machine Learning dan tantangan etika AI. Di akhir, kamu akan coba praktek kode Python mini untuk memperkuat pemahaman.",
+  "emoji": "🤖🐍",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "AI Itu Apa Sih?",
+      "icon": "🤖",
+      "explanation": "AI adalah teknologi yang membantu komputer mengerjakan tugas yang biasanya butuh kecerdasan manusia. AI belajar dari data besar, lalu mencari pola untuk menghasilkan prediksi atau jawaban.",
+      "analogy": "Bayangin AI seperti murid yang belajar dari banyak contoh soal. Makin banyak contoh (data) yang dilihat, makin jago dia menebak jawaban baru.",
+      "highlight": "belajar dari data → cari pola → prediksi/jawaban",
+      "keyPoints": [
+        "AI melakukan tugas “pintar” seperti chatbot & image recognition",
+        "AI belajar dari data dalam jumlah besar",
+        "Hasil AI berupa prediksi, rekomendasi, atau keputusan"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "AI Dipakai di Mana?",
+      "icon": "🌍",
+      "explanation": "AI sudah dipakai di banyak bidang, dari pendidikan sampai keamanan siber. Contohnya seperti rekomendasi video, filter spam, face recognition, sampai mobil self-driving.",
+      "analogy": "AI seperti asisten serba guna: dipasang di berbagai bidang, tapi “tugasnya” menyesuaikan kebutuhan tempat itu.",
+      "highlight": "chatbot, rekomendasi, spam filter, face recognition, self-driving",
+      "keyPoints": [
+        "AI ada di pendidikan, kesehatan, bisnis, keamanan siber, media sosial",
+        "Contoh produk: ChatGPT/Gemini, rekomendasi YouTube, spam filter",
+        "Mobil self-driving memakai Machine Learning & Deep Learning"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Coba Praktek Python: Hello + Variabel",
+      "icon": "💻",
+      "language": "python",
+      "instruction": "Jalankan kode di bawah ini. Lalu ubah nilai variabel nama dan umur, pastikan output berubah sesuai input yang kamu edit.",
+      "fileName": "python_hello_variabel.py",
+      "defaultCode": "# Code Playground Python (edit sesukamu)\nprint('Hello World')\n\nnama = 'Fikri'\numur = 18\n\nprint('Nama:', nama)\nprint('Umur:', umur)\n\n# Challenge kecil:\n# Ganti nilai nama dan umur, lalu jalankan lagi.",
+      "hint": "Kalau kamu ganti 'nama' dan 'umur', teks yang tercetak setelah 'Nama:' dan 'Umur:' harus mengikuti."
+    },
+    {
+      "type": "concept_card",
+      "title": "Tipe Data Python: Biar Programmu Paham Datanya",
+      "icon": "🧠",
+      "explanation": "Tipe data adalah jenis data yang disimpan dalam variabel. Python umum punya String, Integer, Float, Boolean, dan List. Tipe data penting supaya operasi yang kamu lakukan sesuai jenis datanya.",
+      "analogy": "Tipe data itu seperti label di kotak penyimpanan: kotak A untuk baju (string), kotak B untuk angka umur (integer), dan seterusnya. Kalau salah label, kamu bisa salah ambil barang.",
+      "highlight": "String, Integer, Float, Boolean, List",
+      "keyPoints": [
+        "String: teks (contoh: 'Fikri')",
+        "Integer/Float: angka bulat/pecahan (18 vs 18.5)",
+        "Boolean: True/False, List: kumpulan data"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Percabangan & Perulangan: Buat Program Punya Aksi Otak dan Rutinitas",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Pakai if-else untuk keputusan",
+          "description": "Gunakan if untuk kondisi benar, dan else untuk kondisi selain itu.",
+          "tip": "Pastikan indentasi (spasi) rapi, karena Python sangat peduli format."
+        },
+        {
+          "number": 2,
+          "title": "Pakai for loop untuk iterasi jumlah tertentu",
+          "description": "for biasanya dipakai saat kamu tahu berapa kali mengulang, misalnya range(5).",
+          "tip": "range(5) berarti mulai 0 sampai 4."
+        },
+        {
+          "number": 3,
+          "title": "Pakai while loop untuk pengulangan berbasis kondisi",
+          "description": "while mengulang selama kondisinya masih benar.",
+          "tip": "Selalu update variabel di dalam while (contoh x += 1) biar tidak infinite loop."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Mini Game: Nilai Lulus/Tidak Lulus + Hitung Angka",
+      "icon": "💻",
+      "language": "python",
+      "instruction": "Jalankan program. Ubah nilai 'nilai' dan lihat outputnya berubah. Lalu coba ubah batas perulangan untuk melihat angka yang dicetak.",
+      "fileName": "python_if_for_while.py",
+      "defaultCode": "# Playground Python: if-else, for, dan while\n\nnilai = 78\n\nif nilai >= 75:\n    print('Lulus')\nelse:\n    print('Tidak Lulus')\n\nprint('--- for loop ---')\nfor i in range(5):\n    print(i)\n\nprint('--- while loop ---')\nx = 0\nwhile x < 5:\n    print(x)\n    x += 1\n\n# Challenge:\n# 1) Ubah nilai = 78 jadi 74 atau 75 untuk lihat perubahannya.\n# 2) Ubah range(5) dan while x < 5 jadi angka lain (misal 3 atau 8).",
+      "hint": "Kalau nilai 75 atau lebih → 'Lulus', selain itu → 'Tidak Lulus'."
+    },
+    {
+      "type": "concept_card",
+      "title": "Machine Learning: AI yang Belajar dari Data",
+      "icon": "📈",
+      "explanation": "Machine Learning adalah bagian dari AI yang memungkinkan komputer belajar dari data. Model dibuat dari data, lalu bisa dipakai untuk prediksi atau klasifikasi.",
+      "analogy": "Kalau AI itu “otak besar”, Machine Learning itu cara “melatih otaknya” pakai contoh-contoh data.",
+      "highlight": "supervised, unsupervised, reinforcement",
+      "keyPoints": [
+        "Supervised Learning: belajar dari label (jawaban benar)",
+        "Unsupervised Learning: menemukan pola tanpa label",
+        "Reinforcement Learning: belajar lewat reward dan trial-error"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual: Alur Besar AI sampai ML",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "AI",
+          "value": "Teknologi yang meniru kecerdasan manusia",
+          "icon": "🤖"
+        },
+        {
+          "label": "Belajar dari Data",
+          "value": "Makin banyak & berkualitas, makin bagus hasil",
+          "icon": "🧾"
+        },
+        {
+          "label": "Pola → Prediksi",
+          "value": "AI mencari pola untuk menjawab kebutuhan",
+          "icon": "🧠"
+        },
+        {
+          "label": "Machine Learning",
+          "value": "Cabang AI yang melatih model dari data",
+          "icon": "📈"
+        },
+        {
+          "label": "Tipe ML",
+          "value": "Supervised / Unsupervised / Reinforcement",
+          "icon": "🧩"
+        }
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "Kenapa Dataset Penting?",
+      "icon": "💡",
+      "realWorld": "Bayangkan kamu ingin belajar masak. Kalau resep yang kamu baca banyak tapi salah-salah, hasil masakanmu juga akan jelek.",
+      "connection": "Machine Learning sangat tergantung pada dataset.",
+      "insight": "Dataset yang berkualitas membuat model lebih akurat; dataset yang buruk bisa menurunkan performa dan bahkan membuat prediksi salah."
+    },
+    {
+      "type": "concept_card",
+      "title": "Masa Depan AI + Tantangan Etika",
+      "icon": "⚖️",
+      "explanation": "AI diprediksi terus berkembang dan makin banyak dipakai untuk produktivitas serta efisiensi. Tapi AI juga membawa tantangan seperti privasi data, penyalahgunaan, deepfake, dan etika.",
+      "analogy": "AI itu seperti pisau: sangat berguna untuk memasak, tapi harus dipakai dengan benar dan bertanggung jawab.",
+      "highlight": "privasi, penyalahgunaan, deepfake, etika AI",
+      "keyPoints": [
+        "AI akan makin dipakai di perusahaan dan layanan publik",
+        "Tantangan utama: privasi data & penyalahgunaan",
+        "Deepfake dan etika membuat developer perlu berpikir bertanggung jawab"
+      ]
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini AI & Python",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Artificial Intelligence (AI)",
+          "definition": "Teknologi agar komputer melakukan tugas yang biasanya butuh kecerdasan manusia.",
+          "example": "Chatbot yang bisa menjawab pertanyaan."
+        },
+        {
+          "term": "Dataset",
+          "definition": "Kumpulan data yang dipakai untuk melatih model.",
+          "example": "Data email untuk mendeteksi spam."
+        },
+        {
+          "term": "Machine Learning",
+          "definition": "Bagian dari AI yang belajar dari data untuk membuat prediksi/pola.",
+          "example": "Memprediksi harga rumah dari data harga sebelumnya."
+        },
+        {
+          "term": "Supervised Learning",
+          "definition": "Belajar dari data yang punya label/jawaban benar.",
+          "example": "Klasifikasi spam vs bukan spam."
+        },
+        {
+          "term": "if-else",
+          "definition": "Percabangan untuk memilih aksi berdasarkan kondisi.",
+          "example": "Jika nilai >= 75 cetak 'Lulus'."
+        },
+        {
+          "term": "for loop",
+          "definition": "Perulangan yang biasanya dipakai untuk jumlah iterasi tertentu.",
+          "example": "for i in range(5): print(i)"
+        },
+        {
+          "term": "while loop",
+          "definition": "Perulangan selama kondisi masih benar.",
+          "example": "while x < 5: print(x)"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "AI bekerja dengan cara mempelajari data untuk menemukan pola, lalu menghasilkan ...",
+      "options": [
+        "A. Jawaban atau prediksi",
+        "B. Hanya bilangan acak",
+        "C. Hanya gambar tanpa proses",
+        "D. Tidak ada output apapun"
+      ],
+      "answer": "A. Jawaban atau prediksi",
+      "explanation": "Inti AI adalah mencari pola dari data untuk menghasilkan prediksi/jawaban pada kasus baru.",
+      "xpReward": 50
+    },
+    {
+      "question": "Manakah yang termasuk contoh penerapan AI?",
+      "options": [
+        "A. Filter spam email",
+        "B. Menghapus file komputer",
+        "C. Mengubah warna layar secara manual",
+        "D. Membuat tabel tanpa data"
+      ],
+      "answer": "A. Filter spam email",
+      "explanation": "Filter spam email menggunakan AI untuk mengenali pola email yang mencurigakan.",
+      "xpReward": 50
+    },
+    {
+      "question": "Python sering dipakai untuk bidang: ...",
+      "options": [
+        "A. Hanya game jadul",
+        "B. Web Development, Data Science, Cybersecurity, AI/ML, Automation",
+        "C. Hanya membuat presentasi",
+        "D. Hanya desain grafis 3D"
+      ],
+      "answer": "B. Web Development, Data Science, Cybersecurity, AI/ML, Automation",
+      "explanation": "Materi menyebut Python populer untuk berbagai bidang termasuk web, data science, cybersecurity, AI/ML, dan automation.",
+      "xpReward": 50
+    },
+    {
+      "question": "Tipe data Boolean pada Python adalah ...",
+      "options": [
+        "A. Daftar angka",
+        "B. Teks panjang",
+        "C. True atau False",
+        "D. Bilangan desimal saja"
+      ],
+      "answer": "C. True atau False",
+      "explanation": "Boolean hanya punya dua nilai: True dan False.",
+      "xpReward": 50
+    },
+    {
+      "question": "Berikut ini yang benar tentang if-else adalah ...",
+      "options": [
+        "A. Digunakan untuk mengulang terus tanpa kondisi",
+        "B. Digunakan untuk membuat keputusan berdasarkan kondisi",
+        "C. Hanya bekerja pada angka negatif",
+        "D. Tidak memerlukan indentasi di Python"
+      ],
+      "answer": "B. Digunakan untuk membuat keputusan berdasarkan kondisi",
+      "explanation": "if-else dipakai untuk mengeksekusi kode berbeda sesuai kondisi (benar/salah).",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa output dari potongan kode berikut?\nfor i in range(5): print(i)",
+      "options": [
+        "A. 1 2 3 4 5",
+        "B. 0 1 2 3 4",
+        "C. 5 4 3 2 1",
+        "D. Tidak ada output"
+      ],
+      "answer": "B. 0 1 2 3 4",
+      "explanation": "range(5) menghasilkan 0 sampai 4.",
+      "xpReward": 50
+    },
+    {
+      "question": "Manakah yang menggambarkan while loop?",
+      "options": [
+        "A. Mengulang selama kondisi masih benar",
+        "B. Mengulang sebanyak huruf pada nama variabel",
+        "C. Tidak memakai kondisi",
+        "D. Selalu berhenti setelah 1 iterasi"
+      ],
+      "answer": "A. Mengulang selama kondisi masih benar",
+      "explanation": "while loop mengulang selama kondisi bernilai True.",
+      "xpReward": 50
+    },
+    {
+      "question": "Machine Learning terbagi menjadi: ...",
+      "options": [
+        "A. Supervised, Unsupervised, Reinforcement",
+        "B. Offline, Online, Hybrid",
+        "C. Ringan, Sedang, Berat",
+        "D. Ukuran kecil, sedang, besar tanpa label"
+      ],
+      "answer": "A. Supervised, Unsupervised, Reinforcement",
+      "explanation": "Materi menyebut tiga kategori utama Machine Learning: supervised, unsupervised, reinforcement.",
+      "xpReward": 50
+    },
+    {
+      "question": "Tantangan etika AI yang disebut di materi adalah ...",
+      "options": [
+        "A. Privasi data, penyalahgunaan AI, deepfake, etika AI",
+        "B. Hanya kecepatan internet",
+        "C. Hanya warna UI",
+        "D. Tidak ada tantangan sama sekali"
+      ],
+      "answer": "A. Privasi data, penyalahgunaan AI, deepfake, etika AI",
+      "explanation": "Materi secara jelas menyebut tantangan-tantangan tersebut sebagai aspek penting yang harus dipahami developer AI.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Definisi AI singkatnya apa?",
+      "answer": "AI adalah teknologi yang membuat komputer melakukan tugas yang biasanya butuh kecerdasan manusia, dengan belajar dari data untuk menemukan pola.",
+      "emoji": "🤖",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Kenapa dataset itu penting dalam Machine Learning?",
+      "answer": "Karena kualitas data menentukan kualitas pola yang dipelajari model; dataset yang baik biasanya menghasilkan model yang lebih akurat.",
+      "emoji": "🧾",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa itu Supervised Learning?",
+      "answer": "Machine Learning yang belajar dari data yang punya label/jawaban benar.",
+      "emoji": "🎯",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa itu Unsupervised Learning?",
+      "answer": "Machine Learning yang menemukan pola dari data tanpa label/jawaban benar.",
+      "emoji": "🧩",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa yang dilakukan if-else?",
+      "answer": "Membuat keputusan: jika kondisi benar jalankan blok if, jika tidak jalankan blok else.",
+      "emoji": "🔀",
+      "difficulty": "easy"
+    },
+    {
+      "question": "range(5) di Python menghasilkan urutan apa?",
+      "answer": "Menghasilkan 0, 1, 2, 3, 4.",
+      "emoji": "🔢",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Perbedaan umum for vs while?",
+      "answer": "for biasanya untuk iterasi jumlah tertentu, sedangkan while mengulang selama kondisi tetap benar.",
+      "emoji": "🪜",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Tantangan etika AI yang disebut di materi ada apa saja (sebutkan 2+)?",
+      "answer": "Privasi data, penyalahgunaan AI, deepfake, dan etika AI.",
+      "emoji": "⚖️",
+      "difficulty": "medium"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama: pengenalan AI dan dasar Python.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi yang diberikan membahas fondasi Artificial Intelligence (AI) dan dasar pemrograman Python, lalu mengaitkannya dengan Machine Learning serta tantangan etika AI.\n\nPertama, jelaskan bahwa AI adalah teknologi yang memungkinkan komputer melakukan tugas yang biasanya membutuhkan kecerdasan manusia. Tekankan bahwa “cerdas” di sini berarti AI dapat mengerjakan pekerjaan seperti chatbot yang menjawab pertanyaan, image recognition yang mengidentifikasi objek pada gambar, voice assistant yang memahami suara, recommendation system yang menyarankan konten berdasarkan preferensi, dan AI generator yang membuat konten baru. Bagian penting dari AI adalah proses belajar dari data: AI mempelajari data dalam jumlah besar, kemudian mencari pola dari data tersebut. Dari pola itulah AI menghasilkan prediksi atau jawaban untuk kasus baru. Sertakan contoh penerapan: ChatGPT dan Gemini (chatbot), rekomendasi video YouTube (recommendation), filter spam email (klasifikasi), face recognition pada smartphone (pengenalan wajah), serta mobil self-driving yang menggunakan Machine Learning dan Deep Learning.\n\nKedua, materi masuk ke dasar Python. Tekankan bahwa Python populer karena sintaksnya sederhana dan mudah dipelajari oleh pemula. Python sering dipakai untuk web development, data science, cybersecurity, AI & Machine Learning, serta automation. Beri contoh paling dasar: print(\"Hello World\"). Lalu jelaskan konsep variabel: variabel digunakan untuk menyimpan data, misalnya nama = \"Fikri\" dan umur = 18. Penting juga memahami tipe data Python: String untuk teks, Integer untuk bilangan bulat, Float untuk bilangan desimal, Boolean untuk True/False, dan List untuk kumpulan data. Ajarkan bahwa memahami tipe data membantu saat melakukan operasi dan saat membuat keputusan di program.\n\nKetiga, materi membahas percabangan dan perulangan. Percabangan digunakan untuk membuat program mengambil keputusan. Contoh yang diberikan: if nilai >= 75: print(\"Lulus\") else: print(\"Tidak Lulus\"). Jelaskan bahwa Python mengeksekusi blok yang sesuai kondisi, sehingga program bisa berperilaku berbeda tergantung input. Setelah itu, jelaskan perulangan sebagai cara menjalankan kode berulang. Contoh for loop: for i in range(5): print(i). Jelaskan bahwa range(5) menghasilkan angka mulai dari 0 sampai 4, sehingga output berurutan. Lalu jelaskan while loop: x = 0 lalu while x < 5: print(x) dan x += 1. Tekankan bahwa while mengulang selama kondisi masih benar, dan variabel harus diperbarui di dalam loop supaya tidak terjadi infinite loop.\n\nKeempat, materi memperkenalkan Machine Learning sebagai cabang AI yang memungkinkan komputer belajar dari data. Jelaskan bahwa Machine Learning terbagi menjadi tiga jenis: Supervised Learning, Unsupervised Learning, dan Reinforcement Learning. Berikan interpretasi sederhana: supervised belajar dari data berlabel (ada jawaban benar), unsupervised menemukan pola tanpa label, dan reinforcement belajar melalui reward dan trial-error (coba-coba dengan umpan balik). Contoh penggunaan Machine Learning dari materi: prediksi harga rumah, deteksi spam, analisis wajah, dan prediksi cuaca. Tekankan bahwa dataset sangat penting: semakin baik kualitas data, semakin baik hasil model AI.\n\nKelima, materi membahas masa depan AI dan tantangannya. Jelaskan bahwa AI diprediksi terus berkembang dalam beberapa tahun ke depan. Banyak perusahaan mulai menggunakan AI untuk meningkatkan produktivitas dan efisiensi. Namun ada tantangan serius: privasi data (data pengguna harus dilindungi), penyalahgunaan AI (AI bisa digunakan untuk hal yang merugikan), deepfake (konten palsu yang meyakinkan), dan etika AI. Tekankan bahwa developer AI harus memahami teknologi sekaligus etika penggunaan. Tutup dengan kesimpulan bahwa AI dan Python adalah kombinasi teknologi yang penting untuk dipelajari di era digital modern.\n\nUntuk tutor, gunakan pendekatan friendly dan bertahap: mulai dari konsep AI yang mudah dibayangkan, lanjutkan ke dasar Python yang membangun fondasi, lalu hubungkan ke Machine Learning dengan menegaskan peran data dan pola, serta akhiri dengan refleksi tantangan etika agar siswa tidak hanya mampu teknis tetapi juga paham tanggung jawab penggunaan AI."
+}

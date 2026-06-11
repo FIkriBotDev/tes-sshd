@@ -1,0 +1,70 @@
+[
+  {
+    "studentId": "2f3a2102903bbb66",
+    "username": "Fikri",
+    "email": "fikri@gmail.com",
+    "password": "$2b$10$WEdPKkg.GxQUn3yB7xUflu3Vjcco1A8HdIk.QHLn.DaG9yCltXiga",
+    "profilePicture": "",
+    "xp": 600,
+    "coin": 240,
+    "level": 3,
+    "streak": 0,
+    "lastLogin": "11-06-2026, 09.58.04",
+    "quizScore": 0,
+    "completedBlocks": [
+      "block_0",
+      "block_1",
+      "block_2",
+      "block_3",
+      "block_4",
+      "block_5"
+    ],
+    "completedChapter": [],
+    "flashcardsViewed": 2,
+    "leaderboardPoint": 500,
+    "achievements": [
+      "first_block",
+      "coin_100"
+    ],
+    "joinedAt": "11-06-2026, 09.58.04",
+    "quizCorrectCount": 4
+  },
+  {
+    "studentId": "33954d1b2ff43247",
+    "username": "Budi",
+    "email": "budi@gmail.com",
+    "password": "$2b$10$9hRYmdYk0tz.DvfEtYov2.0IVIV0sv18jpZPoUMwbVbC37PnzsxP2",
+    "profilePicture": "",
+    "xp": 0,
+    "coin": 0,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "11-06-2026, 10.00.47",
+    "quizScore": 0,
+    "completedBlocks": [],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 0,
+    "achievements": [],
+    "joinedAt": "11-06-2026, 10.00.47"
+  },
+  {
+    "studentId": "f2c8b21618e9f9df",
+    "username": "Fikri",
+    "email": "muhammadfikrifahrezi2@gmail.com",
+    "password": "$2b$10$kMk.wR4dl23z7NGGsOccZuZ12rTw..MfM4AJLUfGfKlAJSztJWtaS",
+    "profilePicture": "",
+    "xp": 0,
+    "coin": 0,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "11-06-2026, 11.44.54",
+    "quizScore": 0,
+    "completedBlocks": [],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 0,
+    "achievements": [],
+    "joinedAt": "11-06-2026, 11.44.54"
+  }
+]

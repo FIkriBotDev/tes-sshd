@@ -1,0 +1,444 @@
+{
+  "title": "Python Dasar 1: Dari Hello World sampai If-Else & Function",
+  "summary": "Kamu akan belajar fondasi Python: cara instal, menjalankan program, variabel & tipe data, input-output, operator, percabangan, perulangan, sampai function. Yuk bangun “otot coding” dengan latihan interaktif yang seru!",
+  "emoji": "🐍",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Python Itu Apa dan Kenapa Asyik?",
+      "icon": "🐍",
+      "explanation": "Python adalah bahasa pemrograman yang relatif mudah dipelajari dan sangat populer. Python dipakai untuk web development, data science, AI, automation, sampai cybersecurity.",
+      "analogy": "Kalau pemrograman adalah “mengemudi”, Python itu seperti mobil yang setirnya ringan—awal belajar jadi lebih cepat terasa nyaman.",
+      "highlight": "mudah dipelajari • populer • banyak bidang",
+      "keyPoints": [
+        "Python cocok untuk pemula karena sintaksnya sederhana",
+        "Dipakai di berbagai industri: web, data, AI, otomasi",
+        "Satu bahasa bisa digunakan untuk banyak tujuan"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Instal & Cek Python (Biar Kamu Siap Nge-Code)",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Download Python",
+          "description": "Instal Python dari website resmi python.org agar versi yang dipasang terpercaya.",
+          "tip": "Kalau ada opsi centang saat instal, pilih yang memudahkan penggunaan dari command line (tergantung installer OS)."
+        },
+        {
+          "number": 2,
+          "title": "Cek versi Python",
+          "description": "Buka terminal lalu jalankan: python --version.",
+          "tip": "Kalau perintah python tidak dikenali, coba “py --version” (tergantung OS)."
+        },
+        {
+          "number": 3,
+          "title": "Siapkan file .py",
+          "description": "Buat file dengan ekstensi .py, misalnya hello.py.",
+          "tip": "Nama file bebas, tapi pastikan berakhiran .py."
+        },
+        {
+          "number": 4,
+          "title": "Jalankan program",
+          "description": "Jalankan file Python kamu lewat terminal sesuai lingkungan yang kamu pakai.",
+          "tip": "Umumnya: python nama_file.py."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Coba: Hello World & Ekspresi Sederhana",
+      "icon": "💻",
+      "language": "python",
+      "instruction": "Jalankan kode di bawah. Ubah teks output sesuai keinginanmu. Lalu tambahkan 1 ekspresi matematika sederhana dan print hasilnya.",
+      "fileName": "hello_playground.py",
+      "defaultCode": "# Coba jalankan dulu!\nprint('Hello World')\n\n# Challenge: ubah teks ini ya\nnama = 'Budi'\nprint('Halo,', nama)\n\n# Challenge tambahan: hitung cepat\nhasil = 7 + 5\nprint('7 + 5 =', hasil)\n",
+      "hint": "Ingat: gunakan print() untuk melihat output di console."
+    },
+    {
+      "type": "concept_card",
+      "title": "Variabel & Tipe Data: Simpan Data dengan Benar",
+      "icon": "🧠",
+      "explanation": "Variabel dipakai untuk menyimpan data. Python punya tipe data umum seperti string (teks), integer (bilangan bulat), float (bilangan desimal), dan boolean (True/False).",
+      "analogy": "Variabel itu seperti kotak penyimpanan di meja. Isi kotak menentukan jenisnya: kotak teks, kotak angka, atau kotak “ya/tidak”.",
+      "highlight": "string • integer • float • boolean",
+      "keyPoints": [
+        "string contoh: nama = 'Budi'",
+        "integer contoh: umur = 18",
+        "boolean hanya: True atau False"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Input & Output: Tanya Nama, Cetak Sapaan",
+      "icon": "💻",
+      "language": "python",
+      "instruction": "Jalankan kode. Masukkan nama saat diminta. Pastikan outputnya menampilkan sapaan yang sesuai.",
+      "fileName": "input_output_playground.py",
+      "defaultCode": "# Input: ambil data dari pengguna\nnama = input('Masukkan nama: ')\n\n# Output: tampilkan hasil\nprint('Halo!', nama)\n\n# Challenge: tambah umur dan cetak ringkas\n# umur = input('Masukkan umur: ')\n# print('Nama:', nama, '| Umur:', umur)\n",
+      "hint": "input() selalu mengembalikan string. Kalau butuh angka, kamu perlu konversi (misalnya int())."
+    },
+    {
+      "type": "concept_card",
+      "title": "Operator: Matematika + Logika",
+      "icon": "⚙️",
+      "explanation": "Operator matematika di Python seperti +, -, *, /. Selain itu ada operator logika: and, or, dan not untuk menggabungkan atau membalik kondisi.",
+      "analogy": "Matematika itu seperti menghitung uang. Logika itu seperti aturan: jika belanja sudah cukup (and) dan kartu tersedia (and), maka boleh bayar.",
+      "highlight": "+ - * / • and or not",
+      "keyPoints": [
+        "Gunakan +, -, *, / untuk operasi angka",
+        "and bernilai True jika semua kondisi benar",
+        "or bernilai True jika minimal satu kondisi benar; not membalik True/False"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Percabangan: if, elif, else untuk Keputusan",
+      "icon": "🧩",
+      "explanation": "Percabangan menentukan alur program berdasarkan kondisi. if mengecek kondisi pertama, elif untuk kondisi tambahan, dan else sebagai penampung jika semuanya tidak cocok.",
+      "analogy": "Seperti memilih jalur di sekolah: jika nilai bagus masuk A, elif nilai sedang masuk B, else masuk C.",
+      "highlight": "if • elif • else",
+      "keyPoints": [
+        "if mengeksekusi blok saat kondisi True",
+        "elif dipakai untuk beberapa pilihan bertingkat",
+        "else jalan kalau semua kondisi sebelumnya False"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Perulangan: for & while agar Kerja Otomatis",
+      "icon": "🔁",
+      "explanation": "Perulangan menjalankan kode berulang kali. for biasanya dipakai untuk iterasi jumlah/daftar, sedangkan while berjalan selama kondisi masih True.",
+      "analogy": "for itu seperti menyiram tanaman satu per satu sesuai daftar. while itu seperti menyiram terus sampai tanah benar-benar basah.",
+      "highlight": "for • while • kondisi",
+      "keyPoints": [
+        "for cocok untuk pengulangan yang terukur",
+        "while cocok untuk pengulangan berbasis kondisi",
+        "Hati-hati agar tidak infinite loop (berputar terus)"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Percabangan Mini: Nilai Kelulusan dengan if",
+      "icon": "💻",
+      "language": "python",
+      "instruction": "Jalankan kode. Ubah nilai nilai_uji lalu lihat output apakah termasuk lulus atau tidak. (Gunakan integer sederhana agar gampang.)",
+      "fileName": "if_playground.py",
+      "defaultCode": "nilai_uji = 75  # coba ubah ke 60, 75, 90, dll\n\nif nilai_uji >= 75:\n    print('Lulus!')\nelse:\n    print('Belum lulus, coba lagi ya!')\n",
+      "hint": "Coba buat versi dengan elif untuk kategori: A (>=90), B (>=75), C (lainnya)."
+    },
+    {
+      "type": "concept_card",
+      "title": "Function: def untuk Kode yang Rapi dan Bisa Dipakai Ulang",
+      "icon": "🧱",
+      "explanation": "Function dibuat dengan kata kunci def. Function membantu membuat kode lebih terstruktur, mengurangi pengulangan, dan mudah dipakai ulang.",
+      "analogy": "Function itu seperti resep masakan. Kamu tidak perlu menulis langkah yang sama tiap masak—tinggal panggil resepnya.",
+      "highlight": "def • parameter • return (konsep dasar)",
+      "keyPoints": [
+        "def membuat blok fungsi",
+        "Parameter membuat fungsi fleksibel menerima input",
+        "Function membuat proyek lebih terorganisir"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Langkah mulai",
+          "value": "Instal Python → cek versi → jalankan file .py",
+          "icon": "🚀"
+        },
+        {
+          "label": "Data tersimpan",
+          "value": "Variabel + tipe data (string/int/float/bool)",
+          "icon": "🗃️"
+        },
+        {
+          "label": "Interaksi",
+          "value": "input() untuk masukin data, print() untuk tampilkan",
+          "icon": "🗣️"
+        },
+        {
+          "label": "Keputusan",
+          "value": "if / elif / else untuk kondisi",
+          "icon": "🧠"
+        },
+        {
+          "label": "Ulangi kerja",
+          "value": "for dan while untuk pengulangan",
+          "icon": "🔁"
+        },
+        {
+          "label": "Rapikan kode",
+          "value": "def untuk function agar bisa dipakai ulang",
+          "icon": "🧩"
+        }
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "Analogi: Memasak dari Bahan sampai Resep",
+      "icon": "🍳",
+      "realWorld": "Kamu mau bikin mie goreng: butuh bahan (data), perintah masak (code), keputusan saat panas (if), pengulangan aduk (loop), dan resep standar (function).",
+      "connection": "Konsep Python seperti: variabel = bahan, input/print = tanya & sajikan, operator = aturan hitung, if/loop = proses kontrol, def = resep.",
+      "insight": "Kalau kamu bisa menjelaskan proses masak dengan langkah jelas, berarti kamu juga sedang belajar cara berpikir algoritmik."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Python",
+          "definition": "Bahasa pemrograman yang mudah dipelajari dan populer.",
+          "example": "Dipakai untuk web, data science, AI, automation."
+        },
+        {
+          "term": "Variabel",
+          "definition": "Wadah untuk menyimpan data.",
+          "example": "nama = 'Budi', umur = 18"
+        },
+        {
+          "term": "Tipe Data",
+          "definition": "Jenis data yang disimpan variabel.",
+          "example": "string, integer, float, boolean"
+        },
+        {
+          "term": "input()",
+          "definition": "Fungsi untuk menerima data dari pengguna.",
+          "example": "nama = input('Masukkan nama: ')"
+        },
+        {
+          "term": "print()",
+          "definition": "Fungsi untuk menampilkan output ke layar.",
+          "example": "print('Hello World')"
+        },
+        {
+          "term": "Operator",
+          "definition": "Simbol untuk operasi (matematika/logika).",
+          "example": "+, -, *, / dan and, or, not"
+        },
+        {
+          "term": "if / elif / else",
+          "definition": "Struktur percabangan untuk memilih alur program.",
+          "example": "if nilai >= 75: ... else: ..."
+        },
+        {
+          "term": "for / while",
+          "definition": "Struktur perulangan untuk mengulang kode.",
+          "example": "for i in range(5): ... atau while kondisi: ..."
+        },
+        {
+          "term": "def",
+          "definition": "Kata kunci untuk membuat function.",
+          "example": "def sapa(nama): ..."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Python sering digunakan untuk pengembangan apa saja?",
+      "options": [
+        "Hanya untuk desktop game",
+        "Web development, data science, AI, automation, dan cybersecurity",
+        "Hanya untuk desain grafis",
+        "Hanya untuk robotika"
+      ],
+      "answer": "Web development, data science, AI, automation, dan cybersecurity",
+      "explanation": "Materi menyebut Python dipakai di banyak bidang: web development, data science, AI, automation, dan cybersecurity.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perintah untuk mengecek versi Python adalah…",
+      "options": [
+        "python version",
+        "python --version",
+        "py -ver",
+        "check-python"
+      ],
+      "answer": "python --version",
+      "explanation": "Untuk cek versi, gunakan perintah python --version seperti yang ada di materi.",
+      "xpReward": 50
+    },
+    {
+      "question": "File program Python biasanya memiliki ekstensi…",
+      "options": [
+        ".py",
+        ".ppt",
+        ".java",
+        ".txt"
+      ],
+      "answer": ".py",
+      "explanation": "Materi menyebut program Python dijalankan dari file .py.",
+      "xpReward": 50
+    },
+    {
+      "question": "Kode berikut termasuk output karena menggunakan fungsi…",
+      "options": [
+        "input()",
+        "print()",
+        "def",
+        "elif"
+      ],
+      "answer": "print()",
+      "explanation": "print() digunakan untuk menampilkan hasil/output ke layar.",
+      "xpReward": 50
+    },
+    {
+      "question": "Variabel yang menyimpan teks menggunakan tipe data…",
+      "options": [
+        "integer",
+        "string",
+        "boolean",
+        "float"
+      ],
+      "answer": "string",
+      "explanation": "Teks seperti 'Budi' adalah tipe data string.",
+      "xpReward": 50
+    },
+    {
+      "question": "Operator logika yang berfungsi untuk membalik kondisi adalah…",
+      "options": [
+        "and",
+        "or",
+        "not",
+        "/"
+      ],
+      "answer": "not",
+      "explanation": "not digunakan untuk membalik True menjadi False atau sebaliknya.",
+      "xpReward": 50
+    },
+    {
+      "question": "Struktur percabangan untuk beberapa kondisi bertingkat menggunakan…",
+      "options": [
+        "if saja",
+        "elif dan else",
+        "if, elif, else",
+        "for dan while"
+      ],
+      "answer": "if, elif, else",
+      "explanation": "Materi menjelaskan percabangan memakai if, elif, dan else untuk menentukan alur berdasarkan kondisi.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perulangan yang menjalankan kode selama kondisi True adalah…",
+      "options": [
+        "for",
+        "while",
+        "def",
+        "print"
+      ],
+      "answer": "while",
+      "explanation": "while berjalan selama kondisinya masih True.",
+      "xpReward": 50
+    },
+    {
+      "question": "Function dalam Python dibuat menggunakan kata kunci…",
+      "options": [
+        "class",
+        "def",
+        "var",
+        "func"
+      ],
+      "answer": "def",
+      "explanation": "Materi menyebut function dibuat dengan kata kunci def.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika nilai_uji = 70, dan kode memakai if nilai_uji >= 75: print('Lulus!') else: print('Belum lulus'), maka outputnya adalah…",
+      "options": [
+        "Lulus!",
+        "Belum lulus",
+        "Tidak ada output",
+        "Error syntax"
+      ],
+      "answer": "Belum lulus",
+      "explanation": "70 tidak memenuhi syarat >= 75, jadi masuk blok else dan mencetak 'Belum lulus'.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa fungsi dari print() di Python?",
+      "answer": "print() menampilkan output ke layar/console.",
+      "emoji": "🖨️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa fungsi dari input() di Python?",
+      "answer": "input() menerima data yang dimasukkan pengguna melalui console.",
+      "emoji": "⌨️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Sebutkan 4 tipe data yang disebut di materi!",
+      "answer": "string, integer, float, boolean.",
+      "emoji": "🧩",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Untuk mengecek versi Python, perintahnya apa?",
+      "answer": "python --version.",
+      "emoji": "🔍",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa itu variabel dalam pemrograman?",
+      "answer": "Variabel adalah tempat/wadah untuk menyimpan data.",
+      "emoji": "🗃️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Operator logika untuk dan adalah…",
+      "answer": "and.",
+      "emoji": "🤝",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Operator logika untuk atau adalah…",
+      "answer": "or.",
+      "emoji": "🟠",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Operator logika yang membalik True/False adalah…",
+      "answer": "not.",
+      "emoji": "🔁",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Struktur percabangan yang digunakan bertingkat adalah…",
+      "answer": "if, elif, else.",
+      "emoji": "🧭",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Struktur perulangan yang umum untuk mengulang selama kondisi benar adalah…",
+      "answer": "while.",
+      "emoji": "🔄",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Kata kunci untuk membuat function adalah…",
+      "answer": "def.",
+      "emoji": "🧱",
+      "difficulty": "easy"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama: dari pengenalan Python sampai dasar input-output.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi ini membahas dasar-dasar Python 1 untuk pemula. Pertama, jelaskan apa itu Python: Python adalah bahasa pemrograman yang mudah dipelajari dan sering digunakan di banyak bidang. Kamu bisa menekankan bahwa karena sintaksnya relatif sederhana, Python populer untuk berbagai jalur karier. Dari materi, Python dipakai untuk web development, data science, AI, automation, dan cybersecurity. Jelaskan bahwa “mudah dipelajari” bukan berarti “tidak serius”, melainkan Python memang ramah untuk pemula namun tetap powerful dan fleksibel untuk proyek besar.\n\nBerikutnya, materi mengajarkan instalasi Python. Siswa sebaiknya paham bahwa Python dapat diinstal dari situs resmi python.org agar terhindar dari versi yang tidak terpercaya. Setelah instalasi, langkah penting adalah mengecek versi Python dengan perintah python --version. Ini perlu dijadikan kebiasaan agar siswa tahu environment-nya sudah benar.\n\nLalu, cara menjalankan program Python. Materi menyebut program Python dapat dijalankan menggunakan file berekstensi .py. Contoh program sederhana yang harus dipahami adalah print('Hello World'). Maknanya: print() adalah cara menampilkan teks ke console. Pada tahap ini tutor bisa membimbing siswa agar memahami konsep “program = file kode” dan “eksekusi = menjalankan file tersebut”. Jelaskan bahwa biasanya siswa membuat file, misalnya hello.py, lalu menjalankannya melalui terminal.\n\nSetelah itu, materi membahas variabel dan tipe data. Variabel digunakan untuk menyimpan data. Contoh yang diberikan: nama = 'Budi' (string) dan umur = 18 (integer). Tutor perlu menekankan bahwa variabel adalah nama yang merujuk ke data. Siswa juga perlu tahu tipe data yang disebut: string, integer, float, boolean. Sertakan contoh sederhana: string untuk teks, integer untuk bilangan bulat, float untuk bilangan desimal (mis. 3.14), dan boolean bernilai True/False (misalnya sudah_lulus = True). Tujuan bagian ini adalah membangun pondasi: mengapa Python kadang berbeda perlakuannya berdasarkan tipe data (misalnya string vs angka).\n\nSelanjutnya, materi tentang input dan output. Input digunakan untuk menerima data dari pengguna. Contoh: nama = input('Masukkan nama: '). Tutor jelaskan bahwa input() akan meminta pengguna mengetik sesuatu, lalu nilai yang dimasukkan tersimpan ke variabel. Output menggunakan fungsi print(). Contoh: print('Hello World') atau print('Halo!', nama). Penting untuk menekankan bahwa input() secara konsep menghasilkan “nilai dari pengguna” dan umumnya berbentuk string; bila suatu saat siswa ingin menghitung umur sebagai angka, biasanya perlu konversi (misalnya int()). Walau materi tidak menyebut konversi secara eksplisit, tutor bisa menyiapkan pemahaman sebagai “catatan kecil” agar tidak bingung saat langkah berikutnya.\n\nMateri berikutnya operator. Python memiliki operator matematika seperti +, -, *, /. Jelaskan fungsi masing-masing: penjumlahan, pengurangan, perkalian, dan pembagian. Selain itu ada operator logika: and, or, dan not. Tutor harus menerangkan cara kerja logika dalam bahasa sehari-hari: and berarti semua kondisi harus benar, or berarti salah satu kondisi cukup benar, not berarti membalik keadaan True/False. Misalnya, kondisi “lulus dan hadir” harus benar pada keduanya; “lulus atau hadir” cukup salah satunya.\n\nKemudian percabangan. Materi menyebut if, elif, else untuk menentukan alur program berdasarkan kondisi. Tutor bisa menyajikan contoh: jika nilai_uji >= 75 maka print('Lulus!'), jika tidak maka print('Belum lulus'). Lalu perluasan: elif untuk kategori bertingkat misalnya nilai tinggi mendapat A, nilai menengah mendapat B, dan sisanya C. Tekankan bahwa Python mengeksekusi blok sesuai urutan evaluasi kondisi.\n\nSelanjutnya perulangan. Materi menyebut for dan while. Tutor perlu menjelaskan bahwa perulangan digunakan untuk menjalankan kode berulang kali. while berjalan selama kondisi bernilai True. for biasanya digunakan untuk iterasi terukur (misalnya mengulang sejumlah kali atau pada tiap elemen). Karena materi tidak menampilkan contoh spesifik, tutor bisa membuat contoh umum: misalnya mencetak angka 1 sampai 5 memakai for, atau mengulang sampai pengguna memasukkan nilai yang benar memakai while. Penting juga menyebut potensi infinite loop: pada while, jika kondisi tidak pernah berubah, program bisa berjalan terus.\n\nTerakhir, materi tentang function. Function dibuat menggunakan kata kunci def. Tutor bisa menjelaskan bahwa function adalah blok kode yang diberi nama, dibuat untuk dipakai ulang. Function membantu struktur program menjadi rapi, mengurangi duplikasi kode, dan memudahkan pengembangan. Contoh yang bisa dijelaskan secara konseptual: def sapa(nama): print('Halo', nama). Saat dipanggil, function akan menerima input nama dan melakukan tugas yang sama.\n\nKesimpulan materi menegaskan bahwa Python itu powerful dan fleksibel. Dengan memahami dasar-dasarnya—instalasi, menjalankan program, variabel & tipe data, input-output, operator, percabangan, perulangan, dan function—siswa bisa mulai membuat aplikasi sederhana hingga sistem yang kompleks. Tutor sebaiknya menutup dengan ajakan praktik: setiap konsep lebih cepat dipahami jika langsung dicoba lewat console."
+}

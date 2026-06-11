@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course: REST API dalam Teknologi Rekayasa Internet — JadiKelas.tech</title>
+    <script>const COURSE_ID = "303e51ec27337ec2db99c896afae0d70"; const COURSE_DATA = {"title":"Course: REST API dalam Teknologi Rekayasa Internet","summary":"Materi membahas perbandingan antara traditional web applications yang dibangun di atas HTML dan HTTP, dengan pendekatan API, khususnya Web API berbasis HTTP. Traditional web applications cenderung kurang optimal karena client harus memahami HTML/HTTP, halaman biasanya diganti seluruhnya, transisi antar halaman sulit dianimasikan, dan data yang sama dapat dikirim berulang kali dalam beberapa respons.\n\nSelanjutnya materi memperkenalkan konsep REST sebagai gaya arsitektur untuk sistem hypermedia terdistribusi. REST dijelaskan melalui batasan arsitektur (client-server, stateless, cache, uniform interface, layered system, code-on-demand) serta makna nama REST (Representational State Transfer). Materi juga menguraikan konsep dasar REST berupa resources (Nouns), penggunaan URI untuk mengidentifikasi resource, dan relasi verb berbasis metode HTTP (CRUD) dengan representasi data (misalnya XML/JSON) yang ditentukan oleh header Accept dan Content-Type.\n\nBagian akhir materi memberi contoh penerapan REST pada layanan (online shopping, search, dictionary, hingga contoh seperti Google Maps atau API pencarian), menjelaskan pola penggunaan metode HTTP (GET, POST, PUT, DELETE, PATCH) beserta kode status HTTP (misalnya 200 OK, 201 Created, 204 No Content, 404 Not Found), serta menyinggung prinsip mendesain REST API agar mudah digunakan programmer lain (misalnya konsistensi endpoint, dan praktik pada contoh Facebook/Twitter).","emoji":"📚","color":"#6366f1","learningBlocks":[{"type":"concept_card","title":"Traditional Web Applications vs API (Web API) dan Jenis Web API","icon":"📘","explanation":"Traditional web applications membangun antarmuka di atas HTML dan HTTP. Alur umum dimulai dari browser/client yang mengirim request menggunakan metode GET ke sebuah resource, server merespons dengan status seperti 200 OK serta isi berupa HTML (misalnya &lt;html&gt;Code...&lt;/html&gt;). Lalu pengguna mengklik link dan client kembali mengirim request ke halaman/resource lain untuk menampilkan halaman berikutnya.\nDengan pendekatan ini, terdapat beberapa kekurangan. Pertama, client harus memahami H","keyPoints":["HTTP dan HTML"]},{"type":"concept_card","title":"Konsep REST: Apa itu REST, Batasan Arsitektur, dan Resource/URI","icon":"📗","explanation":"REST (Representational State Transfer) adalah gaya arsitektur untuk sistem hypermedia terdistribusi yang dijelaskan oleh Roy Thomas Fielding dalam disertasi doktoralnya tahun 2000. REST terdiri dari batasan arsitektur, yaitu: Client-Server, Stateless, Cache, Uniform Interface, Layered System, dan Code-On-Demand. Bersama-sama, batasan-batasan ini membentuk cara kerja sistem web terdistribusi yang konsisten dan mudah diintegrasikan.\nNama REST dimaksudkan untuk menggambarkan bagaimana aplikasi web ","keyPoints":["hypermedia terdistribusi","Client-Server"]},{"type":"concept_card","title":"Menggunakan HTTP untuk CRUD dalam REST API + Desain Endpoint","icon":"📙","explanation":"REST based web services dapat digunakan pada berbagai skenario seperti online shopping, search services, dan dictionary services. Materi mencontohkan REST pada layanan seperti Google Maps dan beberapa API pencarian (misalnya Google AJAX Search API, Yahoo Search API, serta Amazon Web Services). Inti penggunaannya adalah memanfaatkan HTTP sebagai interface yang seragam.\nDalam REST, gunakan URI untuk mengidentifikasi resource. Lalu gunakan metode HTTP untuk menentukan operasi CRUD: Create menggunak","keyPoints":["Google Maps","interface yang seragam"]}],"flashcards":[{"question":"Traditional web applications dibangun di atas teknologi apa?","answer":"Traditional web applications dibangun di atas <strong>HTML</strong> dan <strong>HTTP</strong>, dengan antarmuka (interface) yang umumnya merender halaman HTML dari respons server.","emoji":"💡","difficulty":"medium"},{"question":"Sebutkan minimal dua kekurangan traditional web applications menurut materi.","answer":"Kekurangan yang disebutkan antara lain: (1) client harus memahami <strong>HTTP dan HTML</strong>; (2) seluruh halaman web diganti dengan yang lain sehingga transisi antar halaman sulit dianimasikan; (3) tidak ada cara yang baik untuk menganimasikan transisi antar halaman web; (4) data yang sama biasanya dikirim dalam beberapa tanggapan.","emoji":"💡","difficulty":"medium"},{"question":"Apa itu API dan apa bedanya dengan GUI (menurut materi)?","answer":"API adalah antarmuka untuk komunikasi <strong>Mesin ↔ Mesin</strong>. Jika API memakai HTTP disebut <strong>Web API</strong>. Sedangkan GUI adalah interface untuk komunikasi <strong>Manusia ↔ Mesin</strong>.","emoji":"💡","difficulty":"medium"},{"question":"Sebutkan tiga jenis Web API yang disebutkan materi.","answer":"Tiga jenis Web API yang disebutkan adalah: <strong>RPC (Remote Procedure Call)</strong>, <strong>RMI (Remote Method Invocation)</strong>, dan <strong>REST (Representational State Transfer)</strong>.","emoji":"💡","difficulty":"medium"},{"question":"Apa yang dimaksud REST (singkat) dan siapa yang mempopulerkannya di materi?","answer":"REST adalah gaya arsitektur untuk sistem hypermedia terdistribusi. Nama REST merupakan kependekan dari <strong>Representational State Transfer</strong>, dan materi menyebut Roy Thomas Fielding (disertasi doktoral tahun <strong>2000</strong>) sebagai penggagas/bahan rujukan konsep REST.","emoji":"💡","difficulty":"medium"},{"question":"Sebutkan batasan arsitektur utama REST yang disebutkan materi.","answer":"Batasan arsitektur REST yang disebutkan: <strong>Client-Server</strong>, <strong>Stateless</strong>, <strong>Cache</strong>, <strong>Uniform Interface</strong>, <strong>Layered System</strong>, dan <strong>Code-On-Demand</strong>.","emoji":"💡","difficulty":"medium"},{"question":"Dalam REST, bagaimana cara menentukan format data response/representation?","answer":"Format data ditentukan oleh header HTTP <strong>Accept</strong> (format representasi yang diminta client) dan untuk data yang dikirim ditentukan oleh <strong>Content-Type</strong>. Server merespons sesuai format yang diminta dan ditunjukkan dengan <strong>Content-Type</strong> pada respons.","emoji":"💡","difficulty":"medium"},{"question":"Pemetaan CRUD dengan metode HTTP menurut materi: Retrieve, Create, Update, Delete menggunakan metode apa?","answer":"Menurut materi: <strong>Retrieve</strong> = <strong>GET</strong>; <strong>Create</strong> = <strong>POST</strong> (atau <strong>PUT</strong>); <strong>Update</strong> = <strong>PUT</strong> (atau <strong>PATCH</strong>); <strong>Delete</strong> = <strong>DELETE</strong>.","emoji":"💡","difficulty":"medium"}],"quiz":[{"question":"Dalam konteks REST, operasi Retrieve pada resource menggunakan metode HTTP apa?","options":["POST","GET","PUT","DELETE"],"answer":"GET","explanation":"Jawaban ini benar berdasarkan materi yang telah dipelajari.","xpReward":50},{"question":"Header HTTP mana yang digunakan untuk menentukan format representasi yang diminta client (response) pada REST?","options":["Authorization","Accept","Content-Length","User-Agent"],"answer":"Accept","explanation":"Jawaban ini benar berdasarkan materi yang telah dipelajari.","xpReward":50},{"question":"Metode HTTP apa yang digunakan untuk membuat resource baru dalam REST (Create) menurut materi?","options":["DELETE","PATCH","POST","GET"],"answer":"POST","explanation":"Jawaban ini benar berdasarkan materi yang telah dipelajari.","xpReward":50},{"question":"Metode HTTP apa yang digunakan untuk memperbarui seluruh resource dalam REST (Update) menurut materi?","options":["PUT","OPTIONS","TRACE","HEAD"],"answer":"PUT","explanation":"Jawaban ini benar berdasarkan materi yang telah dipelajari.","xpReward":50},{"question":"Metode HTTP apa yang digunakan untuk memperbarui sebagian resource dalam REST menurut materi?","options":["PATCH","PUT","GET","DELETE"],"answer":"PATCH","explanation":"Jawaban ini benar berdasarkan materi yang telah dipelajari.","xpReward":50},{"question":"Kode status HTTP yang umum untuk resource baru berhasil dibuat (Create) adalah ...","options":["200 OK","201 Created","204 No Content","404 Not Found"],"answer":"201 Created","explanation":"Jawaban ini benar berdasarkan materi yang telah dipelajari.","xpReward":50},{"question":"Jika resource yang diminta tidak ditemukan, kode status HTTP yang digunakan adalah ...","options":["404 Not Found","301 Moved Permanently","500 Internal Server Error","409 Conflict"],"answer":"404 Not Found","explanation":"Jawaban ini benar berdasarkan materi yang telah dipelajari.","xpReward":50},{"question":"Prinsip desain REST API yang disinggung materi adalah agar API ...","options":["Sulit digunakan programmer lain","Tidak konsisten pada endpoint","Semudah mungkin untuk digunakan oleh programmer lain","Menghindari penggunaan URI"],"answer":"Semudah mungkin untuk digunakan oleh programmer lain","explanation":"Jawaban ini benar berdasarkan materi yang telah dipelajari.","xpReward":50}],"achievements":[],"tutorContext":"Materi ini membahas REST API dalam konteks “Teknologi Rekayasa Internet”. Awalnya materi menempatkan traditional web applications sebagai pendekatan lama: antarmuka dibangun di atas HTML dan HTTP. Pola interaksi yang dijelaskan mirip alur browser tradisional: client mengirim request (umumnya menggunakan GET) ke sebuah endpoint resource, server merespons dengan status seperti 200 OK dan mengembalikan dokumen HTML. Pengguna kemudian mengklik link sehingga terjadi request berikutnya untuk halaman resource lain. Hal ini membentuk “navigasi berbasis halaman”, di mana setiap perpindahan link memicu penggantian halaman.\n\nMateri kemudian menyoroti sejumlah kekurangan pendekatan tersebut. Client harus memahami detail HTTP dan HTML; pada banyak kasus seluruh halaman harus diganti setiap kali navigasi terjadi, sehingga transisi antar halaman tidak mudah dianimasikan; data yang sama (misalnya komponen layout) dapat dikirim berulang dalam beberapa respons. Materi juga menekankan ketidakefisienan untuk perangkat dengan GUI yang tidak berbasis HTML (contohnya smartphone), sehingga walaupun HTTP & HTML bisa dipakai, implementasinya tidak optimal untuk kebutuhan integrasi “mesin ke mesin”. Dari sini materi mengarah pada penggunaan API sebagai antarmuka komunikasi antar sistem.\n\nAPI didefinisikan sebagai antarmuka untuk komunikasi Mesin ↔ Mesin. Jika API menggunakan HTTP, maka disebut Web API. Materi membandingkan juga peran GUI (Manusia ↔ Mesin) dengan API (Mesin ↔ Mesin), dengan ilustrasi konsep: server menyediakan API, client memanggil API, dan user berinteraksi lewat GUI. Setelah itu materi mengenalkan berbagai jenis Web API: RPC (Remote Procedure Call) di mana client memanggil fungsi pada server; RMI (Remote Method Invocation) di mana client memanggil metode pada objek di server; serta REST (Representational State Transfer) di mana client menerapkan operasi CRUD pada resources di server.\n\nBagian penting berikutnya menjelaskan definisi REST. REST adalah gaya arsitektur untuk sistem hypermedia terdistribusi; sumber rujukannya adalah Roy Thomas Fielding (disertasi 2000). Materi menyebut batasan arsitektur REST: Client-Server (pemisahan peran client dan server), Stateless (setiap request independen, tidak menyimpan state di server), Cache (respons seharusnya dapat di-cache), Uniform Interface (antarmuka operasi seragam), Layered System (sistem dapat tersusun berlapis), dan Code-On-Demand (opsional: server dapat mengirim kode yang dijalankan client). Materi menjelaskan juga makna nama REST: Representational State Transfer—menggambarkan perilaku aplikasi web terdistribusi seperti state machine virtual. Pengguna memilih link sebagai state transition; halaman berikutnya mewakili status aplikasi baru dan ditransfer serta dirender untuk digunakan. Ini memberi landasan bahwa state perubahan terkait dengan representasi resource dan transisi yang dihasilkan melalui interaksi client.\n\nMateri lalu memperkenalkan konsep noun-verb dalam REST. Nouns merepresentasikan resources (contoh struktur URI seperti /employees/12345). Verbs (operasi) dibatasi dan diwujudkan melalui metode HTTP, sedangkan representasi dibatasi pada format seperti XML/JSON. Di sini materi menekankan resource diidentifikasi oleh URI (Uniform Resource Identifier, sering dipraktikkan sebagai URL). Contoh weather resource dan mapping ke halaman yang dirender diberikan untuk menggambarkan relasi resource ↔ representasi. Materi juga menggambarkan contoh interaksi user: GET /users/2 mengembalikan JSON representasi user, lalu PUT /users/2 mengubah representasi/state user dengan data baru.\n\nSetelah fondasi konsep, materi beralih pada praktik: bagaimana menggunakan HTTP sebagai interface seragam untuk REST API. Prinsipnya: gunakan URI untuk resource; gunakan metode HTTP untuk CRUD (Create: POST atau PUT; Retrieve: GET; Update: PUT atau PATCH; Delete: DELETE). Untuk format data, materi menekankan peran header Content-Type dan Accept. Accept mengatur format representasi yang client inginkan dari server. Content-Type menyatakan format data yang dikirim client ke server. Server menggunakan kode status HTTP untuk menunjukkan keberhasilan/kegagalan. Materi menekankan pula bahwa REST adalah gaya arsitektur, bukan spesifikasi ketat; dalam praktik, bisa ada variasi implementasi, tetapi beberapa praktik lebih baik daripada yang lain. Materi mengarahkan referensi “Web API Design - Crafting Interfaces that Developers Love” sebagai panduan desain API yang baik.\n\nBagian praktik REST menggunakan contoh “server dengan informasi pengguna”. Untuk operasi retrieval, materi mencontohkan endpoint seperti GET /users, GET /users/2, serta bentuk pencarian/filter melalui query parameters (page, gender, age). Materi menunjukkan bahwa format data respons tergantung Accept; contoh jika Accept: application/json maka server merespons JSON berisi array objek user. Dengan pola serupa, materi menjelaskan operasi POST untuk membuat resource baru: POST /users, dengan contoh pengiriman XML (Content-Type: application/xml) dan permintaan respons JSON (Accept: application/json). Respons pembuatan lazimnya 201 Created dan dapat menyertakan Location header ke URI resource baru (misalnya /users/3). Untuk PUT, materi menunjukkan pembaruan seluruh resource pada URI spesifik (misalnya PUT /users/3) dan server bisa mengembalikan 204 No Content jika tidak perlu body. Materi juga menambahkan bahwa PUT bisa dipakai untuk membuat sumber daya bila URI target sudah diketahui.\n\nUntuk penghapusan, materi mencontohkan DELETE /users/2 dengan respons 204 No Content. Untuk pembaruan parsial, materi menunjukkan PATCH /users/1 dengan contoh payload parsial dan respons 204 No Content; materi mencatat PATCH adalah standar yang diusulkan (sesuai wording materi). Penanganan error juga dijelaskan: gunakan kode status HTTP seperti 404 Not Found ketika resource tidak ada (misalnya GET /users/999). Materi juga menyarankan membaca daftar kode status HTTP untuk rujukan lebih lengkap dan menyebut bahwa pesan kesalahan dalam body adalah opsional.\n\nTerakhir, materi mengulas mendesain REST API. Prinsip utama: buat API semudah mungkin untuk digunakan programmer lain. Materi memberikan contoh praktik seperti konsistensi pada status sukses (contoh “selalu return 200 OK” sebagai rekomendasi dalam materi) dan penggunaan endpoint yang rapi serta mengikuti pola resource. Contoh gaya Facebook menunjukkan versioning pada path (/v2.7/) dan struktur resource-relasi (user/friends, object/likes). Contoh gaya Twitter menekankan pembatasan metode (hanya GET dan POST) serta struktur endpoint yang membawa parameter (misalnya show.json?user_id=..., dan favorites/destroy.json?id=...). Keseluruhan materi menekankan bahwa REST dapat diterapkan secara praktis dengan memadukan konsep resources, URI, metode HTTP, representasi data (XML/JSON via Accept/Content-Type), serta kode status HTTP untuk membangun layanan yang jelas dan terstruktur."};</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.2/ace.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"Fira Code"', 'monospace']
+                    },
+                    colors: {
+                        primary: '#6366f1', secondary: '#8b5cf6',
+                        dark: '#0F172A', darker: '#0B1120',
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'typing': 'typing 1.4s infinite ease-in-out both',
+                        'fadeUp': 'fadeUp 0.4s ease-out forwards',
+                        'slideIn': 'slideIn 0.3s ease-out forwards',
+                        'bounce': 'bounce 0.6s ease-in-out',
+                        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin': 'spin 1s linear infinite',
+                    },
+                    keyframes: {
+                        blob: { 
+                            '0%': {transform:'translate(0,0) scale(1)'}, 
+                            '33%': {transform:'translate(30px,-50px) scale(1.1)'}, 
+                            '66%': {transform:'translate(-20px,20px) scale(0.9)'}, 
+                            '100%': {transform:'translate(0,0) scale(1)'} 
+                        },
+                        typing: { 
+                            '0%,80%,100%': {transform:'scale(0)'}, 
+                            '40%': {transform:'scale(1)'} 
+                        },
+                        fadeUp: { 
+                            from:{opacity:'0',transform:'translateY(12px)'}, 
+                            to:{opacity:'1',transform:'translateY(0)'} 
+                        },
+                        slideIn: {
+                            from:{opacity:'0',transform:'translateX(-20px)'},
+                            to:{opacity:'1',transform:'translateX(0)'}
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar{width:8px;height:8px} 
+        ::-webkit-scrollbar-track{background:transparent} 
+        ::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:10px}
+        ::-webkit-scrollbar-thumb:hover{background:#94a3b8}
+        
+        .glass{
+            background:rgba(255,255,255,0.7);
+            backdrop-filter:blur(20px);
+            -webkit-backdrop-filter:blur(20px);
+            border:1px solid rgba(255,255,255,0.5);
+            box-shadow:0 8px 32px 0 rgba(31,38,135,0.07);
+        }
+        
+        .text-gradient{
+            background-clip:text;
+            -webkit-background-clip:text;
+            color:transparent;
+            background-image:linear-gradient(135deg, var(--primary-color, #6366f1), var(--secondary-color, #8b5cf6));
+        }
+        
+        .view-section{display:none;animation:fadeUp 0.4s ease-out forwards} 
+        .view-section.active{display:block}
+        
+        /* Learning Blocks */
+        .learning-block{
+            background:white;
+            border-radius:1.5rem;
+            padding:2rem;
+            margin-bottom:1.5rem;
+            box-shadow:0 4px 20px -2px rgba(0,0,0,0.06);
+            border:2px solid rgba(226,232,240,0.8);
+            transition:all 0.3s ease;
+            position:relative;
+            overflow:hidden;
+        }
+        
+        .learning-block::before{
+            content:'';
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            height:4px;
+            background:linear-gradient(90deg, var(--primary-color, #6366f1), var(--secondary-color, #8b5cf6));
+            transform:scaleX(0);
+            transition:transform 0.3s ease;
+        }
+        
+        .learning-block:hover{
+            box-shadow:0 12px 40px -5px rgba(99,102,241,0.15);
+            border-color:rgba(99,102,241,0.3);
+            transform:translateY(-2px);
+        }
+        
+        .learning-block:hover::before{transform:scaleX(1)}
+        
+        .learning-block.completed{
+            border-color:#10b981;
+            background:linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+        }
+        
+        .block-icon{
+            width:3.5rem;
+            height:3.5rem;
+            border-radius:1rem;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:1.8rem;
+            background:linear-gradient(135deg, var(--primary-color, #6366f1), var(--secondary-color, #8b5cf6));
+            box-shadow:0 8px 20px -4px rgba(99,102,241,0.4);
+            margin-bottom:1rem;
+        }
+        
+        .analogy-box{
+            background:linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left:4px solid #f59e0b;
+            padding:1rem 1.25rem;
+            border-radius:0.75rem;
+            margin:1rem 0;
+        }
+        
+        .key-point{
+            display:flex;
+            align-items:start;
+            gap:0.75rem;
+            padding:0.75rem;
+            background:#f8fafc;
+            border-radius:0.75rem;
+            margin-bottom:0.5rem;
+            transition:all 0.2s;
+        }
+        
+        .key-point:hover{
+            background:#f1f5f9;
+            transform:translateX(4px);
+        }
+        
+        /* Code Playground */
+        .code-playground{
+            background:#1e293b;
+            border-radius:1rem;
+            overflow:hidden;
+            margin:1rem 0;
+            box-shadow:0 10px 40px -10px rgba(0,0,0,0.3);
+        }
+        
+        .playground-header{
+            background:#334155;
+            padding:0.75rem 1rem;
+            display:flex;
+            align-items:center;
+            gap:0.5rem;
+            border-bottom:1px solid #475569;
+        }
+        
+        .playground-dot{
+            width:12px;
+            height:12px;
+            border-radius:50%;
+        }
+        
+        .playground-editor{
+            position:relative;
+            min-height:250px;
+        }
+        
+        .playground-output{
+            background:#0f172a;
+            border-top:2px solid #334155;
+            padding:1rem;
+            min-height:100px;
+            max-height:300px;
+            overflow-y:auto;
+            font-family:'Fira Code',monospace;
+            font-size:0.875rem;
+            color:#e2e8f0;
+        }
+        
+        .run-button{
+            background:linear-gradient(135deg, #10b981, #059669);
+            color:white;
+            padding:0.5rem 1.25rem;
+            border-radius:0.5rem;
+            border:none;
+            font-weight:600;
+            cursor:pointer;
+            display:flex;
+            align-items:center;
+            gap:0.5rem;
+            transition:all 0.2s;
+            box-shadow:0 4px 12px -2px rgba(16,185,129,0.4);
+        }
+        
+        .run-button:hover{
+            background:linear-gradient(135deg, #059669, #047857);
+            transform:translateY(-2px);
+            box-shadow:0 6px 20px -2px rgba(16,185,129,0.5);
+        }
+        
+        /* Flashcard */
+        .flashcards-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+            gap:1.5rem;
+        }
+        
+        .flashcard-wrapper{perspective:1000px}
+        
+        .flashcard{
+            position:relative;
+            width:100%;
+            min-height:220px;
+            transform-style:preserve-3d;
+            transition:transform 0.6s cubic-bezier(.4,0,.2,1);
+            cursor:pointer;
+            border-radius:1.25rem;
+        }
+        
+        .flashcard.flipped{transform:rotateY(180deg)}
+        
+        .flashcard-front,.flashcard-back{
+            position:absolute;
+            inset:0;
+            backface-visibility:hidden;
+            -webkit-backface-visibility:hidden;
+            border-radius:1.25rem;
+            padding:2rem;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+        }
+        
+        .flashcard-front{
+            background:linear-gradient(135deg, var(--primary-color, #6366f1), var(--secondary-color, #8b5cf6));
+            color:white;
+            box-shadow:0 10px 40px rgba(99,102,241,0.4);
+        }
+        
+        .flashcard-back{
+            background:white;
+            border:2px solid #e0e7ff;
+            transform:rotateY(180deg);
+            box-shadow:0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .fc-emoji{font-size:2.5rem;margin-bottom:1rem}
+        .fc-text{font-size:1.05rem;font-weight:600;line-height:1.6;flex:1}
+        .flashcard-back .fc-text{color:#1e293b}
+        .fc-hint{font-size:0.75rem;opacity:0.7;display:flex;align-items:center;gap:0.4rem}
+        
+        .flashcard-wrapper.viewed .flashcard-front{
+            background:linear-gradient(135deg, #10b981, #059669);
+        }
+        
+        /* Quiz */
+        .quiz-question{animation:fadeUp 0.35s ease-out}
+        .quiz-q-header{margin-bottom:1.5rem}
+        .quiz-q-num{font-size:0.8rem;font-weight:700;color:#6366f1;text-transform:uppercase;letter-spacing:0.06em}
+        .quiz-q-progress-wrap{width:100%;background:#e2e8f0;border-radius:9999px;height:8px;margin-top:0.75rem;overflow:hidden}
+        .quiz-q-progress-bar{height:8px;background:linear-gradient(to right, var(--primary-color, #6366f1), var(--secondary-color, #8b5cf6));border-radius:9999px;transition:width 0.4s ease}
+        .quiz-q-text{font-size:1.25rem;font-weight:700;color:#1e293b;margin-bottom:1.5rem;line-height:1.5}
+        .quiz-options{display:flex;flex-direction:column;gap:0.75rem}
+        
+        .quiz-option{
+            display:flex;
+            align-items:center;
+            gap:1rem;
+            padding:1.25rem 1.5rem;
+            background:white;
+            border:2px solid #e2e8f0;
+            border-radius:1rem;
+            cursor:pointer;
+            transition:all 0.2s ease;
+            text-align:left;
+            font-size:1rem;
+            color:#334155;
+            font-weight:500;
+        }
+        
+        .quiz-option:hover:not(:disabled){
+            border-color:#6366f1;
+            background:#eef2ff;
+            color:#4f46e5;
+            transform:translateX(4px);
+        }
+        
+        .quiz-option.correct{
+            border-color:#10b981;
+            background:#f0fdf4;
+            color:#065f46;
+            pointer-events:none;
+        }
+        
+        .quiz-option.wrong{
+            border-color:#ef4444;
+            background:#fef2f2;
+            color:#991b1b;
+            pointer-events:none;
+        }
+        
+        .quiz-opt-letter{
+            width:2.5rem;
+            height:2.5rem;
+            border-radius:0.75rem;
+            background:#f1f5f9;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-weight:700;
+            font-size:0.9rem;
+            flex-shrink:0;
+            transition:all 0.2s;
+        }
+        
+        .quiz-option.correct .quiz-opt-letter{background:#10b981;color:white}
+        .quiz-option.wrong .quiz-opt-letter{background:#ef4444;color:white}
+        
+        .quiz-explanation{
+            margin-top:1rem;
+            padding:1rem;
+            background:#f0f9ff;
+            border-left:4px solid #3b82f6;
+            border-radius:0.5rem;
+            color:#1e3a8a;
+            font-size:0.95rem;
+            animation:fadeUp 0.3s ease-out;
+        }
+        
+        /* Achievement popup */
+        .achievement-popup{
+            position:fixed;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%) scale(0.8);
+            background:white;
+            border-radius:2rem;
+            padding:2.5rem;
+            box-shadow:0 20px 60px rgba(0,0,0,0.3);
+            z-index:9999;
+            text-align:center;
+            opacity:0;
+            pointer-events:none;
+            transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .achievement-popup.show{
+            opacity:1;
+            transform:translate(-50%, -50%) scale(1);
+            pointer-events:auto;
+        }
+        
+        .achievement-icon{font-size:5rem;margin-bottom:1rem;animation:bounce 0.6s ease-in-out}
+        
+        /* XP Notification */
+        .xp-notification{
+            position:fixed;
+            top:5rem;
+            right:1.5rem;
+            background:linear-gradient(135deg, #fbbf24, #f59e0b);
+            color:white;
+            padding:1rem 1.5rem;
+            border-radius:1rem;
+            box-shadow:0 10px 30px rgba(245,158,11,0.4);
+            font-weight:700;
+            font-size:1.1rem;
+            z-index:9998;
+            transform:translateX(400px);
+            transition:transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .xp-notification.show{transform:translateX(0)}
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans overflow-hidden antialiased">
+    <!-- Ambient BG -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full opacity-30 blur-[120px] animate-blob" 
+             style="background:var(--primary-color, #6366f1)"></div>
+        <div class="absolute top-[20%] right-[-10%] w-[40%] h-[40%] rounded-full opacity-20 blur-[120px] animate-blob" 
+             style="background:var(--secondary-color, #8b5cf6);animation-delay:2s"></div>
+        <div class="absolute bottom-[-20%] left-[20%] w-[60%] h-[60%] rounded-full opacity-15 blur-[120px] animate-blob" 
+             style="background:#3b82f6;animation-delay:4s"></div>
+    </div>
+
+    <!-- XP Notification -->
+    <div id="xp-notification" class="xp-notification">
+        <div class="flex items-center gap-2">
+            <i class="ph-fill ph-star text-2xl"></i>
+            <span id="xp-text">+50 XP</span>
+        </div>
+    </div>
+
+    <!-- Achievement Popup -->
+    <div id="achievement-popup" class="achievement-popup">
+        <div class="achievement-icon" id="achievement-icon">🏆</div>
+        <h3 class="text-2xl font-bold text-slate-800 mb-2" id="achievement-title">Achievement Unlocked!</h3>
+        <p class="text-slate-600" id="achievement-desc">Kamu berhasil mendapatkan achievement baru!</p>
+        <button onclick="closeAchievement()" class="mt-4 px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-bold">
+            Keren! 🎉
+        </button>
+    </div>
+
+    <div class="flex h-screen w-full relative">
+        <!-- Mobile Header -->
+        <div class="lg:hidden fixed top-0 left-0 right-0 h-16 glass z-40 flex items-center justify-between px-4">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-xl">
+                    <span id="mobile-emoji">📚</span>
+                </div>
+                <span class="font-bold text-lg text-dark">JadiKelas</span>
+            </div>
+            <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 z-50 w-80 glass border-r border-white/40 flex flex-col transition-transform duration-300 transform -translate-x-full lg:translate-x-0 pt-16 lg:pt-0">
+            <!-- Logo -->
+            <div class="hidden lg:flex p-5 items-center gap-3 border-b border-slate-200/50">
+                <a href="/dashboard" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-lg text-2xl" id="sidebar-emoji">
+                        📚
+                    </div>
+                    <span class="font-extrabold text-xl tracking-tight text-dark">JadiKelas<span class="text-primary">.tech</span></span>
+                </a>
+            </div>
+            
+            <!-- Student Stats -->
+            <div class="p-5 border-b border-slate-200/50">
+                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-4 mb-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div>
+                            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Level</p>
+                            <p class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600" id="student-level">1</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="flex items-center gap-2 text-yellow-600 font-bold mb-1">
+                                <i class="ph-fill ph-coin text-xl"></i>
+                                <span id="student-coin">0</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-indigo-600 font-bold">
+                                <i class="ph-fill ph-lightning text-xl"></i>
+                                <span id="student-xp">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 text-orange-600 font-semibold text-sm">
+                        <i class="ph-fill ph-fire text-lg"></i>
+                        <span id="student-streak">0</span> hari streak 🔥
+                    </div>
+                </div>
+                
+                <!-- Progress Bar -->
+                <div class="mb-4">
+                    <div class="flex justify-between items-center mb-2 text-sm font-semibold text-slate-600">
+                        <span>Progress Belajar</span>
+                        <span class="text-primary" id="progress-pct">0%</span>
+                    </div>
+                    <div class="w-full bg-slate-200/80 rounded-full h-3 overflow-hidden">
+                        <div id="progress-bar" class="bg-gradient-to-r from-primary to-secondary h-3 rounded-full transition-all duration-500" style="width:0%"></div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="grid grid-cols-3 gap-2">
+                    <button onclick="switchView('learn')" class="flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-white border border-slate-100 shadow-sm hover:border-primary/30 hover:scale-105 transition-all group">
+                        <i class="ph-fill ph-book-open text-2xl text-indigo-500"></i>
+                        <span class="text-xs font-semibold text-slate-600">Belajar</span>
+                    </button>
+                    <button onclick="switchView('quiz')" class="flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-white border border-slate-100 shadow-sm hover:border-purple/30 hover:scale-105 transition-all group">
+                        <i class="ph-fill ph-brain text-2xl text-purple-500"></i>
+                        <span class="text-xs font-semibold text-slate-600">Quiz</span>
+                    </button>
+                    <button onclick="switchView('flashcards')" class="flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl bg-white border border-slate-100 shadow-sm hover:border-pink-300 hover:scale-105 transition-all group">
+                        <i class="ph-fill ph-cards text-2xl text-pink-500"></i>
+                        <span class="text-xs font-semibold text-slate-600">Cards</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Leaderboard Preview -->
+            <div class="px-5 pt-3 pb-2 border-b border-slate-200/50">
+                <button onclick="switchView('leaderboard')" class="w-full text-left flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/60 transition-all group">
+                    <div class="flex items-center gap-2">
+                        <i class="ph-fill ph-trophy text-yellow-500 text-xl"></i>
+                        <span class="font-semibold text-slate-700 text-sm">Leaderboard</span>
+                    </div>
+                    <i class="ph ph-caret-right text-slate-400 group-hover:text-slate-600"></i>
+                </button>
+            </div>
+            
+            <!-- Learning Blocks Nav -->
+            <div class="flex-1 overflow-y-auto px-4 pb-4 pt-3">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 px-2">Learning Path</p>
+                <nav class="space-y-1" id="blocks-nav">
+                    <!-- Dynamically filled -->
+                </nav>
+            </div>
+            
+            <!-- Student Profile -->
+            <div class="p-4 border-t border-slate-200/50">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">
+                            <span id="student-initial">S</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-slate-700" id="student-name">Student</p>
+                            <p class="text-xs text-slate-500" id="student-email">student@email.com</p>
+                        </div>
+                    </div>
+                    <button onclick="logout()" class="text-slate-400 hover:text-red-500 transition-colors">
+                        <i class="ph ph-sign-out text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Mobile Overlay -->
+        <div id="mobile-overlay" class="fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-40 hidden lg:hidden"></div>
+
+        <!-- MAIN CONTENT -->
+        <main class="flex-1 relative h-full overflow-y-auto overflow-x-hidden pt-16 lg:pt-0 scroll-smooth" id="main-scroll-area">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 pb-32">
+
+                <!-- VIEW: LEARNING -->
+                <div id="view-learn" class="view-section active">
+                    <div class="mb-8">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 text-primary text-sm font-bold mb-4 border border-indigo-200">
+                            <i class="ph-fill ph-magic-wand"></i> AI Generated Interactive Course
+                        </div>
+                        <h1 class="text-4xl lg:text-5xl font-black text-dark mb-4 tracking-tight leading-tight flex items-center gap-3">
+                            <span id="course-emoji" class="text-5xl">📚</span>
+                            <span id="course-title">Loading...</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 leading-relaxed max-w-3xl" id="course-summary">Loading course summary...</p>
+                    </div>
+                    
+                    <!-- Welcome Card -->
+                    <div class="glass p-6 rounded-3xl mb-8 border border-white/60 relative overflow-hidden">
+                        <div class="flex items-start gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shrink-0 shadow-xl text-3xl">
+                                ✨
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-dark mb-2">Selamat Datang di Pengalaman Belajar Interaktif!</h3>
+                                <p class="text-slate-600 leading-relaxed text-sm mb-3">
+                                    Course ini dirancang seperti game belajar modern. Kamu akan mendapat <strong>XP</strong>, <strong>Coin</strong>, dan <strong>Achievement</strong> saat belajar! 🎮
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">🪙 Kumpulkan Coin</span>
+                                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">⚡ Raih XP</span>
+                                    <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-semibold">🏆 Unlock Achievement</span>
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">🤖 Tanya AI Tutor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Learning Blocks Container -->
+                    <div id="learning-blocks-container">
+                        <!-- Dynamically filled by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- VIEW: QUIZ -->
+                <div id="view-quiz" class="view-section">
+                    <div class="mb-8">
+                        <h2 class="text-4xl font-black text-dark flex items-center gap-3 mb-2">
+                            <i class="ph-fill ph-brain text-primary text-5xl"></i> 
+                            <span>Interactive Quiz</span>
+                        </h2>
+                        <p class="text-slate-500 text-lg">Uji pemahaman dan raih XP bonus! 🎯</p>
+                    </div>
+                    <div id="quiz-container">
+                        <!-- Dynamically filled -->
+                    </div>
+                </div>
+
+                <!-- VIEW: FLASHCARDS -->
+                <div id="view-flashcards" class="view-section">
+                    <div class="mb-8">
+                        <h2 class="text-4xl font-black text-dark flex items-center gap-3 mb-2">
+                            <i class="ph-fill ph-cards text-secondary text-5xl"></i>
+                            <span>Smart Flashcards</span>
+                        </h2>
+                        <p class="text-slate-500 text-lg">Hafalkan konsep dengan cara yang fun! 🃏</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-5 mb-6 border border-slate-200 shadow-sm">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm font-bold text-slate-600">Progress Flashcard</span>
+                            <span id="fc-progress-text" class="text-lg font-black text-primary">0 / 0</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-3">
+                            <div id="fc-progress-bar" class="bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full transition-all duration-500" style="width:0%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="flashcards-grid" id="flashcards-container">
+                        <!-- Dynamically filled -->
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <button onclick="resetFlashcards()" class="px-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl transition-all text-sm inline-flex items-center gap-2">
+                            <i class="ph ph-arrow-counter-clockwise"></i>
+                            Reset Semua Flashcard
+                        </button>
+                    </div>
+                </div>
+
+                <!-- VIEW: LEADERBOARD -->
+                <div id="view-leaderboard" class="view-section">
+                    <div class="mb-8">
+                        <h2 class="text-4xl font-black text-dark flex items-center gap-3 mb-2">
+                            <i class="ph-fill ph-trophy text-yellow-500 text-5xl"></i>
+                            <span>Leaderboard</span>
+                        </h2>
+                        <p class="text-slate-500 text-lg">Kompetisi sehat untuk motivasi belajar! 🚀</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-3xl p-6 mb-6 border-2 border-yellow-200">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-semibold text-yellow-700 mb-1">Ranking Kamu</p>
+                                <p class="text-4xl font-black text-yellow-600" id="my-rank">#-</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm font-semibold text-yellow-700 mb-1">Total XP</p>
+                                <p class="text-3xl font-black text-yellow-600" id="my-total-xp">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3" id="leaderboard-list">
+                        <!-- Dynamically filled -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- AI TUTOR BUTTON -->
+        <button id="ai-tutor-btn" class="fixed bottom-6 right-6 lg:bottom-8 lg:right-8 w-16 h-16 rounded-full bg-gradient-to-r from-primary to-secondary text-white shadow-2xl shadow-primary/40 flex items-center justify-center hover:scale-110 transition-transform z-50 group">
+            <i class="ph-fill ph-robot text-3xl group-hover:animate-bounce"></i>
+            <span class="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-white animate-pulse"></span>
+        </button>
+
+        <!-- AI TUTOR PANEL -->
+        <div id="ai-tutor-panel" class="fixed bottom-28 right-6 lg:bottom-32 lg:right-8 w-[92vw] lg:w-[420px] h-[600px] max-h-[75vh] glass rounded-3xl shadow-2xl z-50 flex flex-col border-2 border-white/60 transform transition-all duration-300 opacity-0 translate-y-10 pointer-events-none">
+            <div class="p-5 border-b border-white/40 bg-white/50 rounded-t-3xl flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-lg">
+                            <i class="ph-fill ph-robot text-2xl"></i>
+                        </div>
+                        <div class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-white rounded-full animate-pulse"></div>
+                    </div>
+                    <div>
+                        <h4 class="font-black text-dark text-base">Kela AI Tutor</h4>
+                        <p class="text-xs text-primary font-semibold flex items-center gap-1">
+                            <i class="ph-fill ph-circle text-[8px] animate-pulse"></i> Siap Membantu
+                        </p>
+                    </div>
+                </div>
+                <button id="close-ai-btn" class="w-10 h-10 rounded-full hover:bg-white/70 flex items-center justify-center text-slate-500 transition-all">
+                    <i class="ph ph-x text-xl"></i>
+                </button>
+            </div>
+            
+            <div id="chat-body" class="flex-1 overflow-y-auto p-5 space-y-3 bg-gradient-to-b from-white/30 to-white/10">
+                <div class="flex gap-2 max-w-[88%] animate-fadeUp">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shrink-0 text-sm shadow-md">
+                        <i class="ph-fill ph-robot"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-2xl rounded-tl-md shadow-md border border-slate-100 text-sm text-slate-700 leading-relaxed">
+                        Hai! Aku Kela, AI Tutor kamu 👋<br><br>
+                        Tanyakan apa saja tentang materi yang sedang kamu pelajari. Aku siap bantu dengan bahasa yang mudah dipahami! 😊
+                    </div>
+                </div>
+                <div id="typing-indicator" class="hidden flex gap-2 max-w-[88%]">
+                    <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center shrink-0">
+                        <i class="ph-fill ph-robot text-sm text-slate-500"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-2xl rounded-tl-md shadow-sm border border-slate-100 flex gap-1.5 items-center">
+                        <div class="w-2 h-2 bg-slate-400 rounded-full animate-typing" style="animation-delay:0s"></div>
+                        <div class="w-2 h-2 bg-slate-400 rounded-full animate-typing" style="animation-delay:0.2s"></div>
+                        <div class="w-2 h-2 bg-slate-400 rounded-full animate-typing" style="animation-delay:0.4s"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-4 bg-white/70 border-t border-white/40 rounded-b-3xl">
+                <div class="relative flex items-center">
+                    <input type="text" id="chat-input" placeholder="Tanya Kela AI..." 
+                           class="w-full bg-white border-2 border-slate-200 rounded-2xl py-3 pl-5 pr-14 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all shadow-sm font-medium">
+                    <button id="send-btn" class="absolute right-2 w-10 h-10 bg-gradient-to-r from-primary to-secondary hover:opacity-90 rounded-xl text-white flex items-center justify-center shadow-lg transition-all">
+                        <i class="ph-fill ph-paper-plane-right text-lg"></i>
+                    </button>
+                </div>
+                <p class="text-[10px] text-center text-slate-400 mt-2">AI fokus pada materi course ini 🎯</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // ══════════════════════════════════════════════════════════
+    // STATE & GLOBALS
+    // ══════════════════════════════════════════════════════════
+    // COURSE_ID and COURSE_DATA are injected by server above this script
+    let studentData = { xp: 0, coin: 0, level: 1, streak: 0 };
+    let completedBlocks = new Set();
+    let viewedFlashcards = new Set();
+    let quizState = { current: 0, correct: 0, total: 0 };
+    let progressSaveTimer = null;
+    let codeEditors = {}; // Store Ace editor instances
+
+    // ══════════════════════════════════════════════════════════
+    // INIT
+    // ══════════════════════════════════════════════════════════
+    document.addEventListener('DOMContentLoaded', async () => {
+        // Check if COURSE_ID and COURSE_DATA exist (injected by server)
+        if (typeof COURSE_ID === 'undefined' || typeof COURSE_DATA === 'undefined') {
+            console.error('FATAL: COURSE_ID or COURSE_DATA not injected by server!');
+            document.body.innerHTML = `
+                <div style="display:flex;align-items:center;justify-content:center;height:100vh;flex-direction:column;gap:1rem;font-family:sans-serif;">
+                    <div style="font-size:4rem;">⚠️</div>
+                    <h1 style="color:#ef4444;font-size:1.5rem;font-weight:bold;">Error: Course Data Missing</h1>
+                    <p style="color:#64748b;max-width:400px;text-align:center;">
+                        Data course tidak ditemukan. Silakan kembali ke dashboard dan coba lagi.
+                    </p>
+                    <a href="/dashboard" style="padding:0.75rem 1.5rem;background:#6366f1;color:white;border-radius:0.5rem;text-decoration:none;font-weight:600;">
+                        Kembali ke Dashboard
+                    </a>
+                </div>
+            `;
+            return;
+        }
+
+        // Check auth
+        await checkAuth();
+        await loadStudentData();
+        loadCourseData();
+        setupEventListeners();
+        updateTheme();
+    });
+
+    async function checkAuth() {
+        try {
+            const res = await fetch(`/api/course/student/me/${COURSE_ID}`);
+            const data = await res.json();
+            if (!data.success) {
+                window.location.href = `/course-auth/${COURSE_ID}`;
+            }
+        } catch (e) {
+            console.error('Auth check error:', e);
+            window.location.href = `/course-auth/${COURSE_ID}`;
+        }
+    }
+
+    async function loadStudentData() {
+        try {
+            const res = await fetch(`/api/course/student/me/${COURSE_ID}`);
+            const data = await res.json();
+            if (data.success) {
+                const s = data.student;
+                studentData = {
+                    studentId: s.studentId,
+                    username: s.username,
+                    email: s.email,
+                    xp: s.xp || 0,
+                    coin: s.coin || 0,
+                    level: s.level || 1,
+                    streak: s.streak || 0
+                };
+                completedBlocks = new Set(s.completedBlocks || []);
+                updateStudentUI();
+            }
+        } catch (e) {
+            console.error('Load student error:', e);
+        }
+    }
+
+    function updateStudentUI() {
+        document.getElementById('student-level').textContent = studentData.level;
+        document.getElementById('student-xp').textContent = studentData.xp;
+        document.getElementById('student-coin').textContent = studentData.coin;
+        document.getElementById('student-streak').textContent = studentData.streak;
+        document.getElementById('student-name').textContent = studentData.username;
+        document.getElementById('student-email').textContent = studentData.email;
+        document.getElementById('student-initial').textContent = (studentData.username || 'S')[0].toUpperCase();
+    }
+
+    function loadCourseData() {
+        if (!COURSE_DATA) {
+            console.error('COURSE_DATA not found');
+            alert('Error: Data course tidak dapat dimuat. Silakan refresh halaman atau hubungi admin.');
+            return;
+        }
+        
+        console.log('Loading course data:', COURSE_DATA.title);
+        
+        // Update basic info
+        try {
+            document.getElementById('course-title').textContent = COURSE_DATA.title || 'Course';
+            document.getElementById('course-summary').textContent = COURSE_DATA.summary || '';
+            document.getElementById('course-emoji').textContent = COURSE_DATA.emoji || '📚';
+            document.getElementById('sidebar-emoji').textContent = COURSE_DATA.emoji || '📚';
+            document.getElementById('mobile-emoji').textContent = COURSE_DATA.emoji || '📚';
+            document.title = (COURSE_DATA.title || 'Course') + ' — JadiKelas.tech';
+        } catch (e) {
+            console.error('Error updating course info:', e);
+        }
+        
+        // Render learning blocks
+        try {
+            renderLearningBlocks();
+            renderBlocksNav();
+        } catch (e) {
+            console.error('Error rendering learning blocks:', e);
+        }
+        
+        // Render quiz and flashcards
+        try {
+            renderQuiz();
+            renderFlashcards();
+        } catch (e) {
+            console.error('Error rendering quiz/flashcards:', e);
+        }
+        
+        // Load leaderboard
+        try {
+            loadLeaderboard();
+        } catch (e) {
+            console.error('Error loading leaderboard:', e);
+        }
+    }
+
+    function updateTheme() {
+        const color = COURSE_DATA?.color || '#6366f1';
+        const secondary = COURSE_DATA?.secondaryColor || '#8b5cf6';
+        document.documentElement.style.setProperty('--primary-color', color);
+        document.documentElement.style.setProperty('--secondary-color', secondary);
+    }
+
+    // ══════════════════════════════════════════════════════════
+    // LEARNING BLOCKS RENDERING
+    // ══════════════════════════════════════════════════════════
+    function renderLearningBlocks() {
+        const container = document.getElementById('learning-blocks-container');
+        if (!container) {
+            console.error('learning-blocks-container not found');
+            return;
+        }
+        
+        if (!COURSE_DATA.learningBlocks || !Array.isArray(COURSE_DATA.learningBlocks)) {
+            console.error('No learningBlocks found in COURSE_DATA');
+            container.innerHTML = `
+                <div class="bg-yellow-50 border-2 border-yellow-200 rounded-2xl p-6 text-center">
+                    <div class="text-5xl mb-3">⚠️</div>
+                    <h3 class="font-bold text-lg text-yellow-800 mb-2">Belum Ada Materi</h3>
+                    <p class="text-yellow-700">Course ini belum memiliki learning blocks.</p>
+                </div>
+            `;
+            return;
+        }
+        
+        console.log(`Rendering ${COURSE_DATA.learningBlocks.length} learning blocks`);
+        
+        COURSE_DATA.learningBlocks.forEach((block, idx) => {
+            try {
+                const blockEl = createBlockElement(block, idx);
+                container.appendChild(blockEl);
+            } catch (e) {
+                console.error(`Error rendering block ${idx}:`, e);
+            }
+        });
+    }
+
+    function createBlockElement(block, idx) {
+        const blockId = `block-${idx}`;
+        const isCompleted = completedBlocks.has(blockId);
+        
+        const div = document.createElement('div');
+        div.className = `learning-block ${isCompleted ? 'completed' : ''}`;
+        div.id = blockId;
+        div.dataset.blockIndex = idx;
+        
+        let content = '';
+        
+        // Header dengan icon
+        content += `
+            <div class="flex items-start justify-between mb-4">
+                <div class="flex items-center gap-3 flex-1">
+                    <div class="block-icon">${block.icon || '📘'}</div>
+                    <h3 class="text-2xl font-black text-slate-800">${escapeHtml(block.title)}</h3>
+                </div>
+                ${isCompleted ? '<div class="text-green-500 text-3xl">✓</div>' : ''}
+            </div>
+        `;
+        
+        // Render berdasarkan type
+        switch (block.type) {
+            case 'concept_card':
+                content += renderConceptCard(block);
+                break;
+            case 'visual_summary':
+                content += renderVisualSummary(block);
+                break;
+            case 'step_by_step':
+                content += renderStepByStep(block);
+                break;
+            case 'analogy_card':
+                content += renderAnalogyCard(block);
+                break;
+            case 'key_terms':
+                content += renderKeyTerms(block);
+                break;
+            case 'code_playground':
+                content += renderCodePlayground(block, blockId);
+                break;
+            default:
+                content += `<p class="text-slate-600">${escapeHtml(block.explanation || '')}</p>`;
+        }
+        
+        // Complete button
+        if (!isCompleted) {
+            content += `
+                <div class="mt-6 pt-6 border-t border-slate-200">
+                    <button onclick="completeBlock('${blockId}')" 
+                            class="px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl font-bold hover:shadow-lg transition-all inline-flex items-center gap-2">
+                        <i class="ph-fill ph-check-circle text-xl"></i>
+                        Tandai Selesai & Raih XP
+                    </button>
+                </div>
+            `;
+        }
+        
+        div.innerHTML = content;
+        
+        // Init code editor if playground
+        if (block.type === 'code_playground') {
+            setTimeout(() => initCodeEditor(blockId, block), 100);
+        }
+        
+        return div;
+    }
+
+    function renderConceptCard(block) {
+        return `
+            <div class="space-y-4">
+                <p class="text-lg text-slate-700 leading-relaxed">${escapeHtml(block.explanation)}</p>
+                
+                ${block.analogy ? `
+                    <div class="analogy-box">
+                        <div class="flex items-center gap-2 font-bold text-yellow-800 mb-2">
+                            <i class="ph-fill ph-lightbulb text-xl"></i>
+                            Analogi Mudah
+                        </div>
+                        <p class="text-yellow-900 leading-relaxed">${escapeHtml(block.analogy)}</p>
+                    </div>
+                ` : ''}
+                
+                ${block.highlight ? `
+                    <div class="inline-block px-4 py-2 bg-indigo-50 text-indigo-700 rounded-lg font-mono font-semibold border-2 border-indigo-200">
+                        ${escapeHtml(block.highlight)}
+                    </div>
+                ` : ''}
+                
+                ${block.keyPoints && block.keyPoints.length ? `
+                    <div class="mt-4">
+                        <p class="font-bold text-slate-700 mb-3 flex items-center gap-2">
+                            <i class="ph-fill ph-check-circle text-green-500"></i>
+                            Poin Penting:
+                        </p>
+                        ${block.keyPoints.map(point => `
+                            <div class="key-point">
+                                <i class="ph-fill ph-caret-right text-primary text-xl"></i>
+                                <span class="text-slate-700">${escapeHtml(point)}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : ''}
+            </div>
+        `;
+    }
+
+    function renderVisualSummary(block) {
+        if (!block.items || !block.items.length) return '';
+        return `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                ${block.items.map(item => `
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-5 rounded-2xl border-2 border-blue-100 hover:shadow-lg transition-all">
+                        <div class="text-3xl mb-2">${item.icon || '📌'}</div>
+                        <div class="font-bold text-slate-800 mb-1">${escapeHtml(item.label)}</div>
+                        <div class="text-slate-600 text-sm">${escapeHtml(item.value)}</div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    function renderStepByStep(block) {
+        if (!block.steps || !block.steps.length) return '';
+        return `
+            <div class="space-y-4">
+                ${block.steps.map((step, i) => `
+                    <div class="flex gap-4 p-4 bg-gradient-to-r from-slate-50 to-transparent rounded-xl border-l-4 border-primary hover:shadow-md transition-all">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary text-white font-black flex items-center justify-center text-lg shadow-lg">
+                            ${step.number || i + 1}
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-slate-800 mb-1">${escapeHtml(step.title)}</h4>
+                            <p class="text-slate-600 text-sm mb-2">${escapeHtml(step.description)}</p>
+                            ${step.tip ? `
+                                <div class="text-xs bg-yellow-50 text-yellow-800 px-3 py-1.5 rounded-lg inline-flex items-center gap-1.5">
+                                    <i class="ph-fill ph-star"></i>
+                                    <span>${escapeHtml(step.tip)}</span>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    function renderAnalogyCard(block) {
+        return `
+            <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl border-2 border-purple-200">
+                <div class="flex items-center gap-2 text-purple-700 font-bold mb-4">
+                    <i class="ph-fill ph-lightbulb text-2xl"></i>
+                    <span>Bayangkan Seperti Ini:</span>
+                </div>
+                <p class="text-slate-700 text-lg mb-4">${escapeHtml(block.realWorld)}</p>
+                <div class="bg-white p-4 rounded-xl border border-purple-200 mb-3">
+                    <p class="text-slate-600"><strong>Koneksi:</strong> ${escapeHtml(block.connection)}</p>
+                </div>
+                <div class="text-sm text-purple-700 font-semibold">
+                    💡 ${escapeHtml(block.insight)}
+                </div>
+            </div>
+        `;
+    }
+
+    function renderKeyTerms(block) {
+        if (!block.terms || !block.terms.length) return '';
+        return `
+            <div class="space-y-3">
+                ${block.terms.map(term => `
+                    <div class="bg-white p-5 rounded-xl border-2 border-slate-200 hover:border-indigo-300 transition-all">
+                        <div class="font-mono font-bold text-lg text-indigo-600 mb-2">${escapeHtml(term.term)}</div>
+                        <p class="text-slate-700 mb-2">${escapeHtml(term.definition)}</p>
+                        ${term.example ? `
+                            <div class="text-sm text-slate-500 bg-slate-50 px-3 py-2 rounded-lg">
+                                <strong>Contoh:</strong> ${escapeHtml(term.example)}
+                            </div>
+                        ` : ''}
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    // ══════════════════════════════════════════════════════════
+    // INTERACTIVE CODE PLAYGROUND 🚀
+    // ══════════════════════════════════════════════════════════
+    function renderCodePlayground(block, blockId) {
+        const editorId = `editor-${blockId}`;
+        const outputId = `output-${blockId}`;
+        const language = (block.language || 'javascript').toLowerCase();
+        
+        return `
+            <div class="my-6">
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-xl border-2 border-green-200 mb-4">
+                    <div class="flex items-center gap-2 text-green-700 font-bold mb-2">
+                        <i class="ph-fill ph-code text-xl"></i>
+                        Interactive Playground - ${escapeHtml(language.toUpperCase())}
+                    </div>
+                    <p class="text-sm text-green-700">
+                        ${block.instruction || 'Edit code di bawah dan klik "Run Code" untuk melihat hasilnya! 🎮'}
+                    </p>
+                </div>
+                
+                <div class="code-playground">
+                    <div class="playground-header">
+                        <div class="playground-dot bg-red-500"></div>
+                        <div class="playground-dot bg-yellow-500"></div>
+                        <div class="playground-dot bg-green-500"></div>
+                        <span class="text-slate-300 text-sm font-mono ml-2">${escapeHtml(block.fileName || 'playground.' + (language === 'python' ? 'py' : language === 'html' ? 'html' : 'js'))}</span>
+                        <div class="flex-1"></div>
+                        <button onclick="runCode('${blockId}', '${language}')" class="run-button">
+                            <i class="ph-fill ph-play"></i>
+                            Run Code
+                        </button>
+                    </div>
+                    <div class="playground-editor" id="${editorId}">${escapeHtml(block.defaultCode || getDefaultCode(language))}</div>
+                    <div class="playground-output">
+                        <div class="text-xs text-slate-400 mb-2 flex items-center gap-2">
+                            <i class="ph-fill ph-terminal"></i>
+                            <span>Output:</span>
+                        </div>
+                        <div id="${outputId}" class="text-green-400 font-mono"></div>
+                    </div>
+                </div>
+                
+                ${block.hint ? `
+                    <div class="mt-4 bg-blue-50 p-4 rounded-xl border-2 border-blue-200">
+                        <div class="flex items-center gap-2 text-blue-700 font-bold mb-2">
+                            <i class="ph-fill ph-info"></i>
+                            Hint:
+                        </div>
+                        <p class="text-sm text-blue-700">${escapeHtml(block.hint)}</p>
+                    </div>
+                ` : ''}
+            </div>
+        `;
+    }
+
+    function getDefaultCode(language) {
+        const defaults = {
+            javascript: `// Coba edit code ini!\nconsole.log("Hello, JadiKelas! 🚀");\n\nconst nama = "Student";\nconsole.log("Selamat belajar, " + nama);`,
+            python: `# Coba edit code ini!\nprint("Hello, JadiKelas! 🚀")\n\nnama = "Student"\nprint(f"Selamat belajar, {nama}")`,
+            html: `<!DOCTYPE html>\n<html>\n<head>\n  <title>Playground</title>\n</head>\n<body>\n  <h1>Hello, JadiKelas! 🚀</h1>\n  <p>Edit HTML ini sesuka hati!</p>\n</body>\n</html>`,
+            css: `.container {\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  padding: 20px;\n  border-radius: 10px;\n  color: white;\n}`
+        };
+        return defaults[language] || `// Code playground for ${language}\nconsole.log("Start coding!");`;
+    }
+
+    function initCodeEditor(blockId, block) {
+        const editorId = `editor-${blockId}`;
+        const editorEl = document.getElementById(editorId);
+        if (!editorEl) return;
+        
+        const language = (block.language || 'javascript').toLowerCase();
+        const modeMap = {
+            javascript: 'javascript',
+            python: 'python',
+            html: 'html',
+            css: 'css',
+            java: 'java',
+            cpp: 'c_cpp',
+            sql: 'sql'
+        };
+        
+        const editor = ace.edit(editorId);
+        editor.setTheme('ace/theme/monokai');
+        editor.session.setMode(`ace/mode/${modeMap[language] || 'javascript'}`);
+        editor.setOptions({
+            fontSize: '14px',
+            showPrintMargin: false,
+            showGutter: true,
+            highlightActiveLine: true,
+            enableBasicAutocompletion: true,
+            enableLiveAutocompletion: true
+        });
+        
+        codeEditors[blockId] = editor;
+    }
+
+    function runCode(blockId, language) {
+        const editor = codeEditors[blockId];
+        if (!editor) return;
+        
+        const code = editor.getValue();
+        const outputEl = document.getElementById(`output-${blockId}`);
+        
+        outputEl.innerHTML = '<div class="text-yellow-400 mb-2">⚡ Running code...</div>';
+        
+        try {
+            if (language === 'javascript') {
+                runJavaScript(code, outputEl);
+            } else if (language === 'python') {
+                outputEl.innerHTML = '<div class="text-yellow-400">⚠️ Python playground coming soon! Saat ini hanya support JavaScript.</div>';
+            } else if (language === 'html') {
+                runHTML(code, outputEl);
+            } else {
+                outputEl.innerHTML = `<div class="text-yellow-400">⚠️ ${language.toUpperCase()} playground coming soon!</div>`;
+            }
+            
+            // Award XP for running code
+            awardXP(10, 'Eksekusi code');
+            
+        } catch (error) {
+            outputEl.innerHTML = `<div class="text-red-400">❌ Error: ${escapeHtml(error.message)}</div>`;
+        }
+    }
+
+    function runJavaScript(code, outputEl) {
+        const logs = [];
+        const originalConsoleLog = console.log;
+        
+        console.log = (...args) => {
+            logs.push(args.map(arg => 
+                typeof arg === 'object' ? JSON.stringify(arg, null, 2) : String(arg)
+            ).join(' '));
+        };
+        
+        try {
+            eval(code);
+            console.log = originalConsoleLog;
+            
+            if (logs.length === 0) {
+                outputEl.innerHTML = '<div class="text-slate-400">✓ Code dijalankan tanpa output</div>';
+            } else {
+                outputEl.innerHTML = '<div class="text-green-400">✓ Output:</div>' + 
+                    logs.map(log => `<div class="mt-1 text-slate-200">${escapeHtml(log)}</div>`).join('');
+            }
+        } catch (error) {
+            console.log = originalConsoleLog;
+            throw error;
+        }
+    }
+
+    function runHTML(code, outputEl) {
+        const iframe = document.createElement('iframe');
+        iframe.style.cssText = 'width:100%;height:300px;border:2px solid #334155;border-radius:8px;background:white';
+        outputEl.innerHTML = '<div class="text-green-400 mb-2">✓ HTML Preview:</div>';
+        outputEl.appendChild(iframe);
+        
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        iframeDoc.open();
+        iframeDoc.write(code);
+        iframeDoc.close();
+    }
+
+    // ══════════════════════════════════════════════════════════
+    // GAMIFICATION
+    // ══════════════════════════════════════════════════════════
+    async function completeBlock(blockId) {
+        if (completedBlocks.has(blockId)) return;
+        
+        completedBlocks.add(blockId);
+        const blockEl = document.getElementById(blockId);
+        blockEl.classList.add('completed');
+        blockEl.querySelector('.mt-6').remove();
+        
+        // Add checkmark
+        const header = blockEl.querySelector('.flex.items-start');
+        header.innerHTML += '<div class="text-green-500 text-3xl animate-bounce">✓</div>';
+        
+        // Call backend
+        try {
+            const res = await fetch('/api/course/gamification/reward', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    courseId: COURSE_ID,
+                    action: 'complete_block',
+                    blockId
+                })
+            });
+            
+            const data = await res.json();
+            if (data.success) {
+                studentData.xp   = data.totalXp;
+                studentData.coin = data.totalCoin;
+                studentData.level = data.level;
+                updateStudentUI();
+                
+                showXPNotification(data.xpGained, data.coinGained);
+                
+                if (data.leveledUp) {
+                    showLevelUp(data.level);
+                }
+                
+                if (data.newAchievements && data.newAchievements.length > 0) {
+                    data.newAchievements.forEach((ach, i) => {
+                        setTimeout(() => showAchievement(ach), i * 1000);
+                    });
+                }
+                
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            }
+        } catch (e) {
+            console.error('Complete block error:', e);
+        }
+        
+        saveProgress();
+    }
+
+    function showXPNotification(xp, coin) {
+        const notif = document.getElementById('xp-notification');
+        const text = `+${xp} XP  •  +${coin} 🪙`;
+        document.getElementById('xp-text').textContent = text;
+        notif.classList.add('show');
+        setTimeout(() => notif.classList.remove('show'), 3000);
+    }
+
+    function showAchievement(achievement) {
+        const popup = document.getElementById('achievement-popup');
+        document.getElementById('achievement-icon').textContent = achievement.icon;
+        document.getElementById('achievement-title').textContent = achievement.title;
+        document.getElementById('achievement-desc').textContent = achievement.description;
+        popup.classList.add('show');
+        
+        confetti({
+            particleCount: 150,
+            spread: 100,
+            origin: { y: 0.5 }
+        });
+    }
+
+    function closeAchievement() {
+        document.getElementById('achievement-popup').classList.remove('show');
+    }
+
+    function showLevelUp(newLevel) {
+        showAchievement({
+            icon: '🎉',
+            title: `Level ${newLevel} Unlocked!`,
+            description: 'Kamu semakin hebat! Terus belajar!'
+        });
+    }
+
+    async function awardXP(amount, reason) {
+        studentData.xp += amount;
+        updateStudentUI();
+        showXPNotification(amount, 0);
+    }
+
+    // ══════════════════════════════════════════════════════════
+    // QUIZ
+    // ══════════════════════════════════════════════════════════
+    function renderQuiz() {
+        const container = document.getElementById('quiz-container');
+        if (!COURSE_DATA.quiz || !COURSE_DATA.quiz.length) {
+            container.innerHTML = '<p class="text-slate-400 text-center py-10">Belum ada quiz untuk course ini.</p>';
+            return;
+        }
+        
+        quizState.total = COURSE_DATA.quiz.length;
+        let html = '';
+        
+        COURSE_DATA.quiz.forEach((q, i) => {
+            html += `
+                <div class="quiz-question bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-200" id="quiz-q-${i}" ${i > 0 ? 'style="display:none"' : ''}>
+                    <div class="quiz-q-header">
+                        <span class="quiz-q-num">Soal ${i + 1} dari ${quizState.total}</span>
+                        <div class="quiz-q-progress-wrap">
+                            <div class="quiz-q-progress-bar" style="width:${(i / quizState.total) * 100}%"></div>
+                        </div>
+                    </div>
+                    <h3 class="quiz-q-text">${escapeHtml(q.question)}</h3>
+                    <div class="quiz-options">
+                        ${q.options.map((opt, oi) => `
+                            <button class="quiz-option" onclick="answerQuiz(${i}, '${escapeHtml(opt).replace(/'/g, "\\'")}', '${escapeHtml(q.answer).replace(/'/g, "\\'")}', '${escapeHtml(q.explanation || '').replace(/'/g, "\\'")}', ${q.xpReward || 50})">
+                                <span class="quiz-opt-letter">${String.fromCharCode(65 + oi)}</span>
+                                <span>${escapeHtml(opt)}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div id="quiz-exp-${i}" class="hidden"></div>
+                </div>
+            `;
+        });
+        
+        // Result screen
+        html += `
+            <div id="quiz-result" class="bg-white rounded-3xl p-10 text-center shadow-2xl border-2 border-indigo-200" style="display:none">
+                <div id="quiz-result-emoji" class="text-8xl mb-4">🎉</div>
+                <h3 class="text-4xl font-black text-slate-800 mb-3">Quiz Selesai!</h3>
+                <p class="text-xl text-slate-600 mb-6">Skor kamu: <span id="quiz-final-score" class="font-black text-primary">0</span></p>
+                <div class="w-full max-w-md mx-auto mb-6">
+                    <div class="w-full bg-slate-200 rounded-full h-4">
+                        <div id="quiz-result-bar" class="bg-gradient-to-r from-primary to-secondary h-4 rounded-full transition-all duration-1000" style="width:0%"></div>
+                    </div>
+                </div>
+                <p id="quiz-result-xp" class="text-2xl font-bold text-green-600 mb-6">+0 XP  •  +0 🪙</p>
+                <button onclick="retryQuiz()" class="px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-2xl font-bold text-lg hover:opacity-90 transition-all inline-flex items-center gap-3 shadow-lg">
+                    <i class="ph ph-arrow-counter-clockwise text-2xl"></i>
+                    Coba Lagi
+                </button>
+            </div>
+        `;
+        
+        container.innerHTML = html;
+    }
+
+    async function answerQuiz(qIdx, selected, correct, explanation, xpReward) {
+        const qEl = document.getElementById(`quiz-q-${qIdx}`);
+        const opts = qEl.querySelectorAll('.quiz-option');
+        opts.forEach(btn => btn.disabled = true);
+        
+        const isCorrect = selected === correct;
+        
+        // Highlight answer
+        opts.forEach(btn => {
+            const btnText = btn.querySelector('span:last-child').textContent;
+            if (btnText === selected) {
+                btn.classList.add(isCorrect ? 'correct' : 'wrong');
+            }
+            if (btnText === correct && !isCorrect) {
+                btn.classList.add('correct');
+            }
+        });
+        
+        // Show explanation
+        if (explanation) {
+            const expEl = document.getElementById(`quiz-exp-${qIdx}`);
+            expEl.className = 'quiz-explanation';
+            expEl.innerHTML = `
+                <div class="flex items-start gap-2">
+                    <i class="ph-fill ph-info text-blue-500 text-xl"></i>
+                    <div><strong>Penjelasan:</strong> ${escapeHtml(explanation)}</div>
+                </div>
+            `;
+        }
+        
+        if (isCorrect) {
+            quizState.correct++;
+            confetti({ particleCount: 50, angle: 90, spread: 45, origin: { x: 0.5, y: 0.8 } });
+            
+            // Award XP
+            await fetch('/api/course/gamification/reward', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    courseId: COURSE_ID,
+                    action: 'quiz_correct'
+                })
+            });
+        }
+        
+        setTimeout(() => {
+            qEl.style.display = 'none';
+            const nextQ = document.getElementById(`quiz-q-${qIdx + 1}`);
+            if (nextQ) {
+                nextQ.style.display = 'block';
+                const bar = nextQ.querySelector('.quiz-q-progress-bar');
+                if (bar) bar.style.width = `${((qIdx + 1) / quizState.total) * 100}%`;
+            } else {
+                showQuizResult();
+            }
+        }, 2500);
+    }
+
+    async function showQuizResult() {
+        const pct = Math.round((quizState.correct / quizState.total) * 100);
+        const isPerfect = pct === 100;
+        
+        document.getElementById('quiz-result').style.display = 'block';
+        document.getElementById('quiz-final-score').textContent = `${quizState.correct} / ${quizState.total} (${pct}%)`;
+        document.getElementById('quiz-result-emoji').textContent = isPerfect ? '🏆' : pct >= 70 ? '🎉' : pct >= 50 ? '👍' : '💪';
+        
+        setTimeout(() => {
+            document.getElementById('quiz-result-bar').style.width = pct + '%';
+        }, 100);
+        
+        // Award completion XP
+        try {
+            const res = await fetch('/api/course/gamification/reward', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    courseId: COURSE_ID,
+                    action: isPerfect ? 'perfect_quiz' : 'quiz_complete'
+                })
+            });
+            
+            const data = await res.json();
+            if (data.success) {
+                studentData.xp   = data.totalXp;
+                studentData.coin = data.totalCoin;
+                studentData.level = data.level;
+                updateStudentUI();
+                
+                document.getElementById('quiz-result-xp').textContent = `+${data.xpGained} XP  •  +${data.coinGained} 🪙`;
+                
+                if (isPerfect) {
+                    setTimeout(() => showAchievement({
+                        icon: '💯',
+                        title: 'Perfect Score!',
+                        description: 'Kamu menjawab semua soal dengan benar!'
+                    }), 500);
+                }
+            }
+        } catch (e) {
+            console.error('Quiz complete error:', e);
+        }
+    }
+
+    function retryQuiz() {
+        quizState = { current: 0, correct: 0, total: COURSE_DATA.quiz.length };
+        document.getElementById('quiz-result').style.display = 'none';
+        
+        const questions = document.querySelectorAll('.quiz-question');
+        questions.forEach((q, i) => {
+            q.style.display = i === 0 ? 'block' : 'none';
+            q.querySelectorAll('.quiz-option').forEach(btn => {
+                btn.disabled = false;
+                btn.classList.remove('correct', 'wrong');
+            });
+            const exp = document.getElementById(`quiz-exp-${i}`);
+            if (exp) exp.className = 'hidden';
+        });
+    }
+
+    // ══════════════════════════════════════════════════════════
+    // FLASHCARDS
+    // ══════════════════════════════════════════════════════════
+    function renderFlashcards() {
+        const container = document.getElementById('flashcards-container');
+        if (!COURSE_DATA.flashcards || !COURSE_DATA.flashcards.length) {
+            container.innerHTML = '<p class="text-slate-400 text-center py-10">Belum ada flashcard.</p>';
+            return;
+        }
+        
+        const total = COURSE_DATA.flashcards.length;
+        document.getElementById('fc-progress-text').textContent = `0 / ${total}`;
+        
+        const html = COURSE_DATA.flashcards.map((fc, i) => `
+            <div class="flashcard-wrapper" data-index="${i}">
+                <div class="flashcard" onclick="flipFlashcard(this, ${i})">
+                    <div class="flashcard-front">
+                        <div class="fc-emoji">${fc.emoji || '💡'}</div>
+                        <div class="fc-text">${escapeHtml(fc.question)}</div>
+                        <div class="fc-hint">
+                            <i class="ph ph-hand-tap"></i>
+                            Tap untuk jawaban
+                        </div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="text-xs font-bold text-slate-400 uppercase mb-3">Jawaban</div>
+                        <div class="fc-text">${escapeHtml(fc.answer)}</div>
+                        <div class="fc-hint">
+                            <i class="ph ph-arrow-counter-clockwise"></i>
+                            Tap untuk balik
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+        
+        container.innerHTML = html;
+    }
+
+    async function flipFlashcard(cardEl, idx) {
+        cardEl.classList.toggle('flipped');
+        
+        const wrapper = cardEl.closest('.flashcard-wrapper');
+        if (cardEl.classList.contains('flipped') && !viewedFlashcards.has(idx)) {
+            viewedFlashcards.add(idx);
+            wrapper.classList.add('viewed');
+            updateFlashcardProgress();
+            
+            // Award XP
+            await fetch('/api/course/gamification/reward', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    courseId: COURSE_ID,
+                    action: 'flashcard_viewed'
+                })
+            });
+            
+            if (viewedFlashcards.size === COURSE_DATA.flashcards.length) {
+                setTimeout(async () => {
+                    await fetch('/api/course/gamification/reward', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            courseId: COURSE_ID,
+                            action: 'all_flashcards'
+                        })
+                    });
+                    confetti({ particleCount: 100, spread: 70 });
+                }, 300);
+            }
+        }
+    }
+
+    function updateFlashcardProgress() {
+        const total = COURSE_DATA.flashcards.length;
+        const done  = viewedFlashcards.size;
+        const pct   = Math.round((done / total) * 100);
+        
+        document.getElementById('fc-progress-bar').style.width = pct + '%';
+        document.getElementById('fc-progress-text').textContent = `${done} / ${total}`;
+    }
+
+    function resetFlashcards() {
+        viewedFlashcards.clear();
+        document.querySelectorAll('.flashcard').forEach(c => c.classList.remove('flipped'));
+        document.querySelectorAll('.flashcard-wrapper').forEach(w => w.classList.remove('viewed'));
+        updateFlashcardProgress();
+    }
+
+    // ══════════════════════════════════════════════════════════
+    // LEADERBOARD
+    // ══════════════════════════════════════════════════════════
+    async function loadLeaderboard() {
+        try {
+            const res = await fetch(`/api/course/leaderboard/${COURSE_ID}`);
+            const data = await res.json();
+            if (data.success) {
+                renderLeaderboard(data.leaderboard);
+            }
+        } catch (e) {
+            console.error('Load leaderboard error:', e);
+        }
+    }
+
+    function renderLeaderboard(leaderboard) {
+        const myRank = leaderboard.find(l => l.studentId === studentData.studentId);
+        if (myRank) {
+            document.getElementById('my-rank').textContent = `#${myRank.rank}`;
+            document.getElementById('my-total-xp').textContent = myRank.xp;
+        }
+        
+        const html = leaderboard.slice(0, 10).map((student, i) => {
+            const isMe = student.studentId === studentData.studentId;
+            const medals = ['🥇', '🥈', '🥉'];
+            const medal = i < 3 ? medals[i] : '';
+            
+            return `
+                <div class="bg-white rounded-2xl p-5 border-2 ${isMe ? 'border-primary bg-indigo-50' : 'border-slate-200'} hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="text-3xl font-black ${i < 3 ? 'text-yellow-500' : 'text-slate-400'}">
+                                ${medal || '#' + student.rank}
+                            </div>
+                            <div>
+                                <div class="font-bold text-slate-800 ${isMe ? 'text-primary' : ''}">${escapeHtml(student.username)} ${isMe ? '(Kamu)' : ''}</div>
+                                <div class="text-sm text-slate-500">Level ${student.level} • ${student.streak}🔥 streak</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-black text-primary">${student.xp}</div>
+                            <div class="text-xs text-slate-500">XP</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+        
+        document.getElementById('leaderboard-list').innerHTML = html;
+    }
+
+    // ══════════════════════════════════════════════════════════
+    // AI TUTOR CHAT
+    // ══════════════════════════════════════════════════════════
+    function setupEventListeners() {
+        // Mobile menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('-translate-x-full');
+            document.getElementById('mobile-overlay').classList.toggle('hidden');
+        });
+        
+        document.getElementById('mobile-overlay').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.add('-translate-x-full');
+            document.getElementById('mobile-overlay').classList.add('hidden');
+        });
+        
+        // AI Tutor
+        document.getElementById('ai-tutor-btn').addEventListener('click', toggleAITutor);
+        document.getElementById('close-ai-btn').addEventListener('click', toggleAITutor);
+        document.getElementById('send-btn').addEventListener('click', sendAIMessage);
+        document.getElementById('chat-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendAIMessage();
+        });
+        
+        // Scroll progress
+        document.getElementById('main-scroll-area').addEventListener('scroll', handleScroll);
+    }
+
+    function toggleAITutor() {
+        const panel = document.getElementById('ai-tutor-panel');
+        panel.classList.toggle('opacity-0');
+        panel.classList.toggle('translate-y-10');
+        panel.classList.toggle('pointer-events-none');
+        
+        if (!panel.classList.contains('opacity-0')) {
+            document.getElementById('chat-input').focus();
+        }
+    }
+
+    async function sendAIMessage() {
+        const input = document.getElementById('chat-input');
+        const message = input.value.trim();
+        if (!message) return;
+        
+        input.value = '';
+        appendChatMessage(message, true);
+        
+        const typingInd = document.getElementById('typing-indicator');
+        typingInd.classList.remove('hidden');
+        
+        try {
+            const res = await fetch('/api/course/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ courseId: COURSE_ID, message })
+            });
+            
+            const data = await res.json();
+            typingInd.classList.add('hidden');
+            
+            if (data.success) {
+                appendChatMessage(data.reply, false);
+            } else {
+                appendChatMessage('Maaf, terjadi kesalahan. Coba lagi ya! 😊', false);
+            }
+        } catch (e) {
+            typingInd.classList.add('hidden');
+            appendChatMessage('Gagal terhubung. Cek koneksi internet kamu! 🌐', false);
+        }
+    }
+
+    function appendChatMessage(text, isUser) {
+        const chatBody = document.getElementById('chat-body');
+        const typingInd = document.getElementById('typing-indicator');
+        
+        const html = isUser ? `
+            <div class="flex gap-2 max-w-[88%] ml-auto justify-end animate-fadeUp">
+                <div class="bg-gradient-to-r from-primary to-secondary p-4 rounded-2xl rounded-tr-md shadow-lg text-sm text-white leading-relaxed">
+                    ${escapeHtml(text)}
+                </div>
+            </div>
+        ` : `
+            <div class="flex gap-2 max-w-[88%] animate-fadeUp">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shrink-0 text-sm shadow-md">
+                    <i class="ph-fill ph-robot"></i>
+                </div>
+                <div class="bg-white p-4 rounded-2xl rounded-tl-md shadow-md border border-slate-100 text-sm text-slate-700 leading-relaxed">
+                    ${text.replace(/\n/g, '<br>')}
+                </div>
+            </div>
+        `;
+        
+        typingInd.insertAdjacentHTML('beforebegin', html);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    // ══════════════════════════════════════════════════════════
+    // NAVIGATION & UI
+    // ══════════════════════════════════════════════════════════
+    function switchView(viewId) {
+        document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+        document.getElementById('view-' + viewId).classList.add('active');
+        document.getElementById('main-scroll-area').scrollTo(0, 0);
+        
+        if (window.innerWidth < 1024) {
+            document.getElementById('sidebar').classList.add('-translate-x-full');
+            document.getElementById('mobile-overlay').classList.add('hidden');
+        }
+        
+        if (viewId === 'leaderboard') {
+            loadLeaderboard();
+        }
+    }
+
+    function renderBlocksNav() {
+        const nav = document.getElementById('blocks-nav');
+        if (!COURSE_DATA.learningBlocks) return;
+        
+        const html = COURSE_DATA.learningBlocks.map((block, i) => {
+            const blockId = `block-${i}`;
+            const isCompleted = completedBlocks.has(blockId);
+            
+            return `
+                <button onclick="scrollToBlock(${i})" 
+                        class="w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/60 transition-all text-sm group"
+                        data-block="${i}">
+                    <div class="w-8 h-8 rounded-lg ${isCompleted ? 'bg-green-500' : 'bg-slate-200'} flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
+                        ${isCompleted ? '✓' : block.icon || '📘'}
+                    </div>
+                    <span class="flex-1 text-slate-700 font-medium truncate">${escapeHtml(block.title)}</span>
+                </button>
+            `;
+        }).join('');
+        
+        nav.innerHTML = html;
+    }
+
+    function scrollToBlock(idx) {
+        switchView('learn');
+        setTimeout(() => {
+            const blockEl = document.getElementById(`block-${idx}`);
+            if (blockEl) {
+                blockEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 100);
+    }
+
+    function handleScroll() {
+        const el = document.getElementById('main-scroll-area');
+        const scrolled = el.scrollTop;
+        const total = el.scrollHeight - el.clientHeight;
+        const pct = total > 0 ? Math.round((scrolled / total) * 100) : 0;
+        
+        document.getElementById('progress-bar').style.width = pct + '%';
+        document.getElementById('progress-pct').textContent = pct + '%';
+        
+        clearTimeout(progressSaveTimer);
+        progressSaveTimer = setTimeout(() => saveProgress(), 2000);
+    }
+
+    // ══════════════════════════════════════════════════════════
+    // PROGRESS & AUTH
+    // ══════════════════════════════════════════════════════════
+    async function saveProgress() {
+        const el = document.getElementById('main-scroll-area');
+        const scrolled = el.scrollTop;
+        const total = el.scrollHeight - el.clientHeight;
+        const pct = total > 0 ? Math.round((scrolled / total) * 100) : 0;
+        
+        try {
+            await fetch('/api/course/progress', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    courseId: COURSE_ID,
+                    scrollProgress: pct,
+                    flashcardsCompleted: viewedFlashcards.size,
+                    quizCompleted: quizState.current >= quizState.total,
+                    quizScore: quizState.correct,
+                    completedBlocks: Array.from(completedBlocks)
+                })
+            });
+        } catch (e) {
+            console.error('Save progress error:', e);
+        }
+    }
+
+    async function logout() {
+        if (!confirm('Yakin mau logout?')) return;
+        
+        try {
+            await fetch('/api/course/student/logout', { method: 'POST' });
+            window.location.href = `/course-auth/${COURSE_ID}`;
+        } catch (e) {
+            window.location.href = `/course-auth/${COURSE_ID}`;
+        }
+    }
+
+    // ══════════════════════════════════════════════════════════
+    // UTILITIES
+    // ══════════════════════════════════════════════════════════
+    function escapeHtml(str) {
+        if (!str) return '';
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
+    // Auto-save on page leave
+    window.addEventListener('beforeunload', () => {
+        saveProgress();
+    });
+    
+    </script>
+</body>
+</html>

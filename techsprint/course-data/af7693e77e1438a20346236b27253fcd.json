@@ -1,0 +1,329 @@
+{
+  "title": "Akses FTP Pakai FileZilla: Dari Nmap sampai Upload File",
+  "summary": "Kamu akan belajar cara mengakses FTP server menggunakan FileZilla dari langkah persiapan (scanning port dengan Nmap) sampai pengetesan membuat folder dan mengirim file. Materi ini fokus ke alur yang rapi dan praktis biar kamu bisa langsung coba sendiri.",
+  "emoji": "📦",
+  "color": "#3b82f6",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Gambaran Besar: Alur Akses FTP",
+      "icon": "🧭",
+      "explanation": "Akses FTP server itu sebenarnya berurutan: cek dulu port FTP server (biasanya 21), lalu login menggunakan kredensial yang tersedia, kemudian lakukan aksi seperti membuat folder dan mengirim file. Di materi ini, kita pakai IP 10.1.2.5 dan login “Anonymous” tanpa password.",
+      "analogy": "Bayangkan FTP itu seperti pintu gudang. Nmap memastikan pintu (port 21) benar-benar kebuka. Setelah pintunya kebuka, FileZilla jadi “kunci” untuk masuk dan menaruh barang (file).",
+      "highlight": "Port 21 • FTP • FileZilla • Anonymous",
+      "keyPoints": [
+        "FTP umumnya memakai port 21",
+        "Login anonymous bisa dilakukan jika server mengizinkan",
+        "Setelah terhubung, kamu bisa mengelola folder dan upload file"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Langkah 1: Scanning Port FTP dengan Nmap",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Siapkan IP target",
+          "description": "Gunakan IP server yang diberikan, yaitu 10.1.2.5.",
+          "tip": "Pastikan kamu punya izin akses ke server/lingkungan lab sebelum scanning."
+        },
+        {
+          "number": 2,
+          "title": "Jalankan perintah Nmap",
+          "description": "Scan port FTP (21) dengan service/version detection dan default scripts.",
+          "tip": "Perintah ini membantu memvalidasi layanan apa yang berjalan di port tersebut."
+        },
+        {
+          "number": 3,
+          "title": "Baca hasil scan",
+          "description": "Jika terlihat port 21/tcp terbuka dan menunjukkan opsi Anonymous login, kamu bisa lanjut ke FileZilla.",
+          "tip": "Kalau port 21 tertutup, kamu belum bisa mengakses FTP lewat FileZilla."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Coba Nmap Scan (Simulasi Output)",
+      "icon": "🧪",
+      "language": "javascript",
+      "instruction": "Jalankan skrip ini untuk mensimulasikan “hasil pembacaan” scan Nmap. Ubah variabel ipTarget dan portFtp, lalu jalankan. Output akan memberi tahu kamu apakah skenario mengarah ke “Anonymous bisa lanjut”.",
+      "fileName": "nmap-sim.js",
+      "defaultCode": "// Simulasi pembacaan hasil scan Nmap (untuk latihan logika)\n// Ubah nilai di bawah ini untuk mencoba skenario lain.\n\nconst ipTarget = '10.1.2.5';\nconst portFtp = 21;\nconst anonymousLoginAllowed = true; // coba ubah: false\n\nconsole.log(`Target: ${ipTarget}`);\nconsole.log(`Menguji port FTP: ${portFtp}/tcp`);\n\nif (anonymousLoginAllowed) {\n  console.log(`Port ${portFtp}/tcp terbuka. Anonymous login: tersedia. Lanjut ke FileZilla ✅`);\n} else {\n  console.log(`Port ${portFtp}/tcp terbuka. Anonymous login: tidak tersedia. Perlu kredensial lain ❌`);\n}\n",
+      "hint": "Challenge: buat logic tambahan yang juga mengecek kondisi port 'tertutup' (misalnya portFtp = 22)."
+    },
+    {
+      "type": "concept_card",
+      "title": "Langkah 2: Login FTP dengan FileZilla",
+      "icon": "📂",
+      "explanation": "Setelah port FTP terbukti terbuka, kamu membuka FileZilla. Masukkan IP server, user “Anonymous”, password dikosongkan, dan port 21. Lalu klik Quickconnect untuk mencoba koneksi.",
+      "analogy": "Ini seperti memasukkan alamat restoran di aplikasi pengantaran. IP = alamat, port = “jalur” masuknya, dan Anonymous = cara kamu mulai pesanan tanpa login detail.",
+      "highlight": "IP 10.1.2.5 • User Anonymous • Port 21 • Quickconnect",
+      "keyPoints": [
+        "Host/IP: 10.1.2.5",
+        "User: Anonymous",
+        "Password kosong, Port: 21"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Langkah 3 & 4: Buat Folder dan Upload File",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Membuat folder baru",
+          "description": "Setelah terhubung, pilih direktori tujuan. Klik kanan lalu pilih “Create Directory” dan beri nama folder (mis. “test”).",
+          "tip": "Pilih folder tujuan yang memang kamu punya izin untuk menulis."
+        },
+        {
+          "number": 2,
+          "title": "Mengirim file ke server",
+          "description": "Di FileZilla biasanya ada dua panel: local (kiri) dan server (kanan). Seret file dari panel kiri ke panel kanan, lalu tunggu proses selesai.",
+          "tip": "Pastikan file yang kamu seret sesuai dan tidak terlalu besar untuk koneksi lab."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Upload Folder & File (Simulasi Workflow)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan skrip ini untuk mensimulasikan workflow: membuat folder “test” lalu mengupload file. Ubah daftar files untuk melihat prosesnya.",
+      "fileName": "ftp-workflow-sim.js",
+      "defaultCode": "// Simulasi workflow FTP: create directory lalu upload file\n\nconst server = {\n  ip: '10.1.2.5',\n  user: 'Anonymous',\n  port: 21\n};\n\nconst remoteDirectory = 'test';\nconst filesToUpload = ['foto.jpg', 'tugas.txt', 'laporan.pdf'];\n\nconsole.log(`Koneksi FTP ke ${server.ip}:${server.port} sebagai ${server.user}...`);\nconsole.log(`Membuat folder remote: ${remoteDirectory} ...`);\n\nif (!remoteDirectory) {\n  console.log('Gagal: nama folder tidak boleh kosong');\n} else {\n  console.log(`Folder ${remoteDirectory} dibuat ✅`);\n  console.log('Mulai upload file:');\n  filesToUpload.forEach((f, i) => {\n    console.log(`  ${i + 1}. ${f} -> /${remoteDirectory}/${f}`);\n  });\n  console.log('Semua upload selesai ✅');\n}\n",
+      "hint": "Challenge: tambahkan validasi ekstensi file (mis. hanya txt/pdf/jpg)."
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Persiapan",
+          "value": "Nmap scan port 21 di IP 10.1.2.5",
+          "icon": "🧠"
+        },
+        {
+          "label": "Koneksi",
+          "value": "FileZilla: Host IP + User Anonymous + Port 21",
+          "icon": "🔌"
+        },
+        {
+          "label": "Aksi",
+          "value": "Create Directory (contoh: test)",
+          "icon": "📁"
+        },
+        {
+          "label": "Aksi",
+          "value": "Drag & Drop file dari local (kiri) ke server (kanan)",
+          "icon": "📤"
+        }
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "Analogi Mudah: Pos & Paket",
+      "icon": "💡",
+      "realWorld": "Kamu ingin mengirim paket ke gudang orang. Kamu harus memastikan alamat dan jalur pengirimannya benar.",
+      "connection": "Nmap seperti mengecek “jalur resmi” ke gudang (port 21). FileZilla adalah aplikasi pengirim yang mengurus proses paket sampai masuk gudang.",
+      "insight": "Kalau port 21 tidak terbuka atau anonymous tidak diizinkan, FileZilla tidak akan berhasil konek/unggah."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "FTP",
+          "definition": "Protokol untuk transfer file antara komputer dan server.",
+          "example": "Upload dokumen ke server menggunakan FileZilla."
+        },
+        {
+          "term": "Port 21",
+          "definition": "Port standar untuk layanan FTP.",
+          "example": "FileZilla memakai port 21 saat konek ke FTP."
+        },
+        {
+          "term": "Nmap",
+          "definition": "Tools untuk memindai port dan mendeteksi layanan.",
+          "example": "Perintah nmap -sC -sV 10.1.2.5 untuk melihat port yang terbuka."
+        },
+        {
+          "term": "Anonymous login",
+          "definition": "Mode login tanpa akun khusus (biasanya tanpa password).",
+          "example": "User: Anonymous, password dikosongkan."
+        },
+        {
+          "term": "Quickconnect",
+          "definition": "Tombol untuk langsung mencoba koneksi berdasarkan data yang diisi.",
+          "example": "Klik Quickconnect setelah mengisi host, user, dan port."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Port standar yang digunakan FTP biasanya adalah ....",
+      "options": [
+        "20",
+        "21",
+        "22",
+        "23"
+      ],
+      "answer": "21",
+      "explanation": "FTP umumnya berjalan pada port 21 untuk kontrol/koneksi awal.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika hasil scan menunjukkan port 21/tcp terbuka dan mendukung Anonymous login, langkah berikutnya adalah ....",
+      "options": [
+        "Langsung membuka FileZilla",
+        "Menghapus folder di server",
+        "Mengubah port ke 22",
+        "Menutup semua koneksi firewall"
+      ],
+      "answer": "Langsung membuka FileZilla",
+      "explanation": "Karena port FTP terbuka dan cara login anonymous tersedia, kamu bisa lanjut konek menggunakan FileZilla.",
+      "xpReward": 50
+    },
+    {
+      "question": "Di FileZilla, saat login anonymous pada materi ini, password diisi ....",
+      "options": [
+        "Password default: 1234",
+        "Diketik sembarang",
+        "Dibiarkan kosong",
+        "Harus diisi dengan IP server"
+      ],
+      "answer": "Dibiarkan kosong",
+      "explanation": "Materi menyebut user “Anonymous” tanpa password.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perintah Nmap pada materi untuk scanning dengan script dan versi adalah ....",
+      "options": [
+        "nmap -sC -sV 10.1.2.5",
+        "nmap -p 20 10.1.2.5",
+        "nmap -sT 10.1.2.5 21",
+        "ftp 10.1.2.5"
+      ],
+      "answer": "nmap -sC -sV 10.1.2.5",
+      "explanation": "Itulah perintah yang tertulis pada langkah pertama di materi.",
+      "xpReward": 50
+    },
+    {
+      "question": "Untuk membuat folder baru di FTP menggunakan FileZilla, kamu perlu ....",
+      "options": [
+        "Klik kanan di panel local lalu pilih Create Directory",
+        "Klik kanan di direktori tujuan (server) lalu pilih “Create Directory”",
+        "Ketik password lalu tekan Quickconnect",
+        "Menghapus folder bernama test secara otomatis"
+      ],
+      "answer": "Klik kanan di direktori tujuan (server) lalu pilih “Create Directory”",
+      "explanation": "Langkah materi: pilih direktori tujuan, klik kanan, lalu “Create Directory”.",
+      "xpReward": 50
+    },
+    {
+      "question": "Saat mengirim file di FileZilla, file diambil dari panel ....",
+      "options": [
+        "Kanan (server)",
+        "Kiri (local)",
+        "Tengah",
+        "Tidak ada panel"
+      ],
+      "answer": "Kiri (local)",
+      "explanation": "Materi menyebut menyeret file dari panel local (kiri) ke panel server (kanan).",
+      "xpReward": 50
+    },
+    {
+      "question": "Port yang discan untuk FTP pada materi ini adalah ....",
+      "options": [
+        "80",
+        "110",
+        "21",
+        "443"
+      ],
+      "answer": "21",
+      "explanation": "Materi secara spesifik menekankan scanning port FTP(21).",
+      "xpReward": 50
+    },
+    {
+      "question": "Tujuan utama penggunaan FileZilla dalam materi ini adalah ....",
+      "options": [
+        "Membuat wallpaper server",
+        "Transfer data/file ke server FTP",
+        "Menghentikan layanan Nmap",
+        "Mengubah IP server secara otomatis"
+      ],
+      "answer": "Transfer data/file ke server FTP",
+      "explanation": "Penutup materi menyatakan berhasil mengakses FTP, membuat folder, dan mengirim file.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa port standar FTP?",
+      "answer": "Port standar FTP adalah 21.",
+      "emoji": "🔑",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa yang harus dicek dulu sebelum akses FTP dengan FileZilla?",
+      "answer": "Cek apakah port FTP (21) terbuka dan apakah mendukung Anonymous login (pakai Nmap).",
+      "emoji": "🧭",
+      "difficulty": "easy"
+    },
+    {
+      "question": "User yang digunakan untuk login anonymous pada materi ini adalah siapa?",
+      "answer": "User: Anonymous.",
+      "emoji": "👤",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Pada materi ini, password untuk Anonymous login perlu diisi apa?",
+      "answer": "Kosong (tidak diisi).",
+      "emoji": "🫥",
+      "difficulty": "easy"
+    },
+    {
+      "question": "IP server target pada materi adalah berapa?",
+      "answer": "10.1.2.5.",
+      "emoji": "🌐",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Di FileZilla, menu apa yang dipakai untuk mencoba koneksi cepat?",
+      "answer": "Quickconnect.",
+      "emoji": "⚡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Bagaimana cara membuat folder baru pada FTP di FileZilla?",
+      "answer": "Klik kanan pada direktori tujuan (server) → Create Directory → isi nama folder.",
+      "emoji": "📁",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Bagaimana cara upload file di FileZilla?",
+      "answer": "Drag & drop dari panel local (kiri) ke panel server (kanan), lalu tunggu sampai selesai.",
+      "emoji": "📤",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Jika hasil scan tidak menunjukkan Anonymous login, kamu seharusnya ....",
+      "answer": "Tidak mengandalkan login Anonymous; perlu kredensial/akun yang sesuai (atau pengaturan akses).",
+      "emoji": "🧩",
+      "difficulty": "hard"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama: memahami alur akses FTP dari Nmap sampai FileZilla.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi ini membahas cara mengakses FTP server menggunakan aplikasi FileZilla, dimulai dari tahap pengecekan konektivitas dan layanan yang berjalan di server. Konteks yang digunakan adalah sebuah IP server 10.1.2.5. Karena FTP adalah layanan jaringan yang berjalan pada port tertentu, langkah awal yang dilakukan adalah scanning port menggunakan Nmap. Pada langkah pertama, peserta diminta menjalankan perintah Nmap: nmap -sC -sV 10.1.2.5. Penjelasan logis yang perlu dipahami tutor: opsi -sC (default scripts) menjalankan kumpulan script bawaan yang membantu mendeteksi informasi tambahan, sedangkan -sV (service/version detection) mendeteksi layanan dan versi yang berjalan. Setelah perintah dijalankan, peserta harus membaca hasil scan dan memastikan bahwa port FTP (21/tcp) terbuka. Materi menyebutkan bahwa hasil scan menampilkan port 21/tcp terbuka dengan opsi Anonymous login. Ini adalah kunci untuk tahap berikutnya: jika server mengizinkan anonymous login, maka kamu bisa mengakses FTP tanpa akun khusus. Tutor sebaiknya menekankan bahwa jika port 21 tidak terbuka atau anonymous tidak diizinkan, maka proses koneksi menggunakan username Anonymous akan gagal atau tidak mendapat izin yang diperlukan.\n\nTahap kedua adalah mengakses FTP server menggunakan FileZilla. Tutor harus menjelaskan alur UI FileZilla secara friendly: buka aplikasi FileZilla, lalu isi kolom Host/IP dengan 10.1.2.5, isi User dengan “Anonymous”, biarkan kolom Password kosong (sesuai materi), dan isi Port dengan 21. Setelah itu klik tombol Quickconnect. Dari sini, peserta diharapkan berhasil terhubung ke server. Tutor juga dapat mengingatkan dua panel yang biasanya terlihat di FileZilla: panel kiri adalah local (folder/file di komputer pengguna) dan panel kanan adalah remote/server (isi di FTP server). Perbedaan panel ini penting karena semua operasi seperti upload dan pembuatan folder dilakukan berdasarkan lokasi panel.\n\nTahap ketiga adalah pengetesan membuat folder baru di FTP server. Tutor perlu membimbing peserta setelah terhubung, memilih direktori tujuan di panel server (kanan). Lalu klik kanan pada direktori tersebut dan pilih “Create Directory”. Setelah itu, masukkan nama folder, misalnya “test”. Pastikan tutor menekankan bahwa operasi ini terjadi di sisi server, jadi harus dilakukan di panel yang benar (server). Jika server mengizinkan write permission untuk anonymous, maka folder akan muncul di sisi remote.\n\nTahap keempat adalah pengetesan mengirim file. Tutor menjelaskan bahwa untuk upload file, peserta cukup melakukan drag and drop dari panel local (kiri) menuju panel server (kanan). Peserta menyeret file dari komputer mereka ke direktori remote yang sesuai (misalnya folder test bila ingin menguji ke dalam folder tersebut). Proses upload biasanya akan menunjukkan progress bar/riwayat transfer. Tutor perlu menekankan agar peserta menunggu sampai proses pengiriman file selesai sebelum menganggap upload berhasil. Setelah file terkirim, file tersebut akan muncul di panel remote/server.\n\nPenutup materi menyatakan bahwa melalui langkah-langkah di atas, peserta telah berhasil mengakses FTP server menggunakan FileZilla, membuat folder baru, dan mengirim file ke server. Untuk tutor, poin penting yang harus ditegaskan adalah: (1) koneksi FTP dimulai dari pengecekan port 21 yang terbuka menggunakan Nmap, (2) login menggunakan “Anonymous” tanpa password karena server mengizinkan itu, (3) di FileZilla kamu bisa membuat folder dan mengunggah file dengan memanfaatkan dua panel local vs server, serta (4) verifikasi keberhasilan dilakukan dengan melihat folder/file yang muncul di remote dan memastikan transfer selesai.\n\nCatatan untuk sesi belajar interaktif: tutor bisa memicu pemahaman konseptual dengan pertanyaan “kalau port 21 tidak terbuka, apa yang terjadi?”, “jika anonymous login tidak ada, apa alternatifnya?”, dan “kenapa upload harus dari panel kiri ke kanan?”. Tutor juga bisa mengaitkan ke keamanan dan etika: scanning dan akses server harus dilakukan pada lingkungan yang memang kamu punya izin (misalnya lab/ujicoba). Dengan cara itu, peserta tidak hanya hafal langkah, tapi juga paham alasan di balik setiap tahapan."
+}

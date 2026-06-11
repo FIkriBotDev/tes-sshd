@@ -1,0 +1,188 @@
+{
+  "title": "Lumina Course AI: Inovasi Digital Education untuk Mengubah Dokumen Statis Jadi Micro-Learning Interaktif",
+  "summary": "Materi proposal inovasi digital ini membahas masalah utama pendidikan saat ini yang dikenal sebagai “Death by PowerPoint”. Pembelajaran yang hanya mengandalkan dokumen statis seperti PDF, Word, dan PPT cenderung membuat mahasiswa atau pelajar melakukan skimming tanpa benar-benar memahami konsep secara mendalam. Dampak lanjutnya adalah rendahnya retensi belajar, serta meningkatnya kebosanan karena format yang kurang dinamis.\n\nProposal juga menyoroti beban administrasi pengajar yang harus menghabiskan waktu berjam-jam untuk mengubah modul teks menjadi konten digital yang menarik. Selain itu, pada pembelajaran mandiri (e-learning), pelajar sering bingung tetapi tidak memiliki asisten yang dapat menjawab pertanyaan secara instan terkait materi spesifik yang sedang dibaca. Kesenjangan kualitas konten menjadi masalah tambahan karena tidak semua pengajar memiliki keahlian desain grafis atau instruksional.\n\nSebagai solusi, Lumina Course AI menghadirkan platform Web-to-Course berbasis AI yang dapat mengonversi dokumen statis menjadi pengalaman belajar interaktif dalam hitungan detik. AI mengekstraksi poin kunci menjadi micro-learning, menambah visual yang estetik, mengintegrasikan AI mentor berbasis materi dokumen untuk menjawab pertanyaan, serta membuat gamified quiz untuk menguji pemahaman. Dampaknya mencakup efisiensi besar bagi pengajar (hingga 90%), peningkatan engagement dan daya serap bagi pelajar, serta standarisasi kualitas konten untuk institusi. Model bisnis menggunakan pay-as-you-go melalui Lumina Credits, opsi white-label, dan paket enterprise dengan integrasi LMS.",
+  "emoji": "📚",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Chapter 1: Memahami Masalah Utama dalam Digital Education (Death by PowerPoint)",
+      "icon": "📘",
+      "explanation": "Dunia pendidikan saat ini menghadapi fenomena “Death by PowerPoint”, yaitu pembelajaran yang terasa monoton karena terlalu bergantung pada presentasi dan dokumen statis.Masalah utamanya mencakup rendahnya retensi belajar. Materi ajar yang hanya berbasis PDF/Word/PPT sering membosankan, membuat mahasiswa cenderung melakukan skimming tanpa memahami konsep secara mendalam.Selain itu, ada beban administrasi pengajar. Guru dan dosen perlu waktu berjam-jam untuk mengubah modul teks menjadi konten digi",
+      "keyPoints": [
+        "“Death by PowerPoint”",
+        "rendahnya retensi belajar"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Chapter 2: Solusi Lumina Course AI—Web-to-Course Berbasis AI",
+      "icon": "📗",
+      "explanation": "Lumina Course AI adalah platform Web-to-Course berbasis AI yang mengubah dokumen statis menjadi pengalaman belajar interaktif dalam hitungan detik.Prosesnya dimulai dari Instant Conversion: AI mengekstraksi poin-poin kunci dari file PDF/PPT lalu menyusunnya menjadi struktur micro-learning (modul pendek) agar materi lebih mudah dicerna.Untuk meningkatkan daya tarik visual, Lumina juga memiliki Visual Enhancer. AI secara otomatis mencari ilustrasi, ikon, dan layout estetik sehingga materi tidak la",
+      "keyPoints": [
+        "Lumina Course AI",
+        "Web-to-Course",
+        "Instant Conversion"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Chapter 3: Dampak, Target Pengguna, dan Model Bisnis Lumina Credits",
+      "icon": "📙",
+      "explanation": "Dari sisi dampak, Lumina Course AI tidak hanya sekadar mengonversi dokumen, tetapi meningkatkan kualitas proses belajar dan produksi materi ajar.Bagi pengajar, efisiensi waktu bisa mencapai hingga 90% dalam pembuatan materi ajar digital karena proses pembuatan konten interaktif dilakukan otomatis oleh AI.Bagi pelajar, terjadi peningkatan engagement dan daya serap materi karena format lebih dinamis, ada bantuan AI Mentor 24/7, serta evaluasi melalui gamified quiz.Bagi institusi: Lumina mendukung ",
+      "keyPoints": [
+        "Poin penting dari materi"
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa yang dimaksud dengan fenomena “Death by PowerPoint” dalam konteks proposal ini?",
+      "answer": "“Death by PowerPoint” merujuk pada pembelajaran yang terasa monoton karena terlalu bergantung pada materi statis seperti PPT dan dokumen lain, sehingga siswa/mahasiswa cenderung tidak terlibat secara mendalam dan hanya melakukan skimming.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Sebutkan dampak utama dari rendahnya retensi belajar pada metode pembelajaran berbasis dokumen statis.",
+      "answer": "Rendahnya retensi belajar menyebabkan materi ajar membosankan, membuat mahasiswa lebih sering skimming tanpa memahami konsep secara mendalam, yang pada akhirnya menurunkan daya serap dan kualitas pemahaman.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Mengapa beban administrasi pengajar menjadi masalah dalam digital education?",
+      "answer": "Karena guru dan dosen membutuhkan waktu berjam-jam untuk mengubah modul teks menjadi konten digital yang menarik. Akibatnya, banyak pengajar tetap memakai cara lama yang kurang interaktif.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa kelemahan pembelajaran mandiri (e-learning) yang disebutkan dalam proposal?",
+      "answer": "Pelajar sering bingung tetapi tidak memiliki asisten yang bisa menjawab pertanyaan secara instan terkait materi spesifik yang sedang dibaca.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Komponen utama apa saja yang dimiliki Lumina Course AI untuk membuat course interaktif?",
+      "answer": "Lumina Course AI mencakup Instant Conversion (ekstraksi poin penting menjadi micro-learning), Visual Enhancer (ilustrasi/ikon/layout estetik), AI Mentor Integration (chatbot terlatih dari materi dokumen), dan Gamified Quiz (kuis interaktif untuk evaluasi pemahaman).",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa fungsi AI Mentor Integration di setiap modul Lumina Course AI?",
+      "answer": "AI Mentor Integration menyediakan chatbot AI yang “dilatih” khusus menggunakan materi dokumen tersebut, sehingga pelajar bisa bertanya apa pun dan mendapatkan jawaban yang akurat sesuai bahan ajar.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Bagaimana cara kerja Gamified Quiz yang dibuat oleh Lumina Course AI?",
+      "answer": "AI secara otomatis menciptakan kuis interaktif (pilihan ganda/permainan logika) untuk menguji pemahaman di akhir sesi.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Sebutkan paket Lumina Credits beserta contoh benefit utamanya.",
+      "answer": "Starter (Rp 30.000) memberi 10 kredit; Pro (Rp 100.000) memberi 50 kredit serta fitur kustomisasi tema visual; Enterprise (Custom) berupa langganan bulanan dengan user tak terbatas dan integrasi LMS (Moodle/Canvas).",
+      "emoji": "💡",
+      "difficulty": "medium"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Manakah yang paling tepat menggambarkan penyebab rendahnya retensi belajar pada metode pembelajaran dokumen statis?",
+      "options": [
+        "Materi terlalu dinamis sehingga siswa tidak sempat membaca",
+        "Materi hanya berbasis dokumen statis sehingga membosankan dan membuat siswa skimming",
+        "Materi selalu berbentuk video interaktif yang otomatis menjawab pertanyaan",
+        "Materi tidak memiliki struktur micro-learning"
+      ],
+      "answer": "Materi hanya berbasis dokumen statis sehingga membosankan dan membuat siswa skimming",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Fitur “Instant Conversion” pada Lumina Course AI berfokus pada apa?",
+      "options": [
+        "Menghapus semua teks dari dokumen agar hanya visual yang tersisa",
+        "Mengekstraksi poin-poin kunci dari PDF/PPT menjadi struktur micro-learning",
+        "Menyediakan hanya gamified quiz tanpa materi pembelajaran",
+        "Menggantikan seluruh modul dengan video buatan eksternal"
+      ],
+      "answer": "Mengekstraksi poin-poin kunci dari PDF/PPT menjadi struktur micro-learning",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa peran “Visual Enhancer” di Lumina Course AI?",
+      "options": [
+        "Membuat layout estetik dengan mencarikan ilustrasi, ikon, dan susunan visual",
+        "Mengubah semua soal menjadi esai panjang otomatis",
+        "Membatasi interaksi mentor agar pengguna tidak terlalu banyak bertanya",
+        "Mengunci akses ke materi hanya untuk pengajar"
+      ],
+      "answer": "Membuat layout estetik dengan mencarikan ilustrasi, ikon, dan susunan visual",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "AI Mentor Integration pada Lumina Course AI seharusnya menjawab pertanyaan berdasarkan apa?",
+      "options": [
+        "Bahan ajar generik yang tidak berhubungan dengan dokumen",
+        "Materi dokumen yang digunakan untuk membuat modul (terlatih khusus dari dokumen tersebut)",
+        "Konten media sosial yang paling populer",
+        "Jawaban acak agar terlihat kreatif"
+      ],
+      "answer": "Materi dokumen yang digunakan untuk membuat modul (terlatih khusus dari dokumen tersebut)",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Gamified Quiz pada proposal ditujukan untuk tujuan utama apa?",
+      "options": [
+        "Mengganti seluruh materi menjadi gambar tanpa teks",
+        "Menguji pemahaman di akhir sesi melalui kuis interaktif",
+        "Mencegah pelajar mengevaluasi diri",
+        "Mengurangi keterlibatan pengguna dengan menghilangkan interaksi"
+      ],
+      "answer": "Menguji pemahaman di akhir sesi melalui kuis interaktif",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Dampak paling spesifik bagi pengajar yang disebutkan dalam proposal adalah…",
+      "options": [
+        "Efisiensi waktu pembuatan materi digital hingga 90%",
+        "Semua pengajar wajib menghapus modul teks",
+        "Pengajar tidak perlu lagi memahami materi",
+        "Tidak ada perubahan pada waktu pembuatan materi"
+      ],
+      "answer": "Efisiensi waktu pembuatan materi digital hingga 90%",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Integrasi LMS yang disebutkan pada paket Enterprise Lumina adalah…",
+      "options": [
+        "Hanya Google Classroom tanpa integrasi lain",
+        "Moodle/Canvas",
+        "Zoom Learning dan Microsoft Teams saja",
+        "Tidak ada integrasi LMS yang disebutkan"
+      ],
+      "answer": "Moodle/Canvas",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa manfaat white-label option pada Lumina Course AI?",
+      "options": [
+        "Menghapus seluruh fitur chatbot mentor",
+        "Menghapus watermark Lumina dan memungkinkan penggunaan domain pengajar sendiri",
+        "Mengganti kuis gamified menjadi esai tanpa pilihan ganda",
+        "Mengurangi jumlah kredit yang bisa digunakan"
+      ],
+      "answer": "Menghapus watermark Lumina dan memungkinkan penggunaan domain pengajar sendiri",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    }
+  ],
+  "achievements": [],
+  "tutorContext": "Materi proposal inovasi digital ini berfokus pada subtema <strong>Digital Education Innovation</strong> dan mengangkat masalah utama di dunia pendidikan yang sering terjadi pada pembelajaran modern, yaitu fenomena <strong>“Death by PowerPoint”</strong>. Inti persoalannya adalah pembelajaran menjadi kurang efektif karena penggunaan materi yang cenderung statis. Bentuk statis yang dimaksud meliputi dokumen <strong>PDF</strong>, <strong>Word</strong>, dan <strong>PPT</strong>. Ketika materi hanya disajikan sebagai teks atau slide, proses belajar cenderung tidak interaktif: mahasiswa atau pelajar sering tidak mendalami konsep. Mereka melakukan <strong>skimming</strong>, yaitu membaca sekilas untuk menangkap poin permukaan tanpa memahami secara mendalam. Dampak langsung dari pola ini adalah <strong>rendahnya retensi belajar</strong> dan meningkatnya kebosanan selama sesi pembelajaran.\n\nDi sisi lain, proposal menekankan bahwa masalah tidak hanya ada pada pelajar, tetapi juga pada pengajar. Pengajar (guru dan dosen) menghadapi <strong>beban administrasi</strong> yang besar saat ingin memindahkan modul teks menjadi konten digital yang menarik. Mereka perlu waktu berjam-jam untuk menyusun materi menjadi format yang estetik dan interaktif. Karena waktu dan kemampuan desain/instruksional tidak selalu tersedia, banyak pengajar akhirnya tetap menggunakan cara lama yang kurang interaktif. Akibatnya, digitalisasi tidak benar-benar meningkatkan kualitas belajar.\n\nSelain dua masalah tersebut, proposal menyebut adanya <strong>kurangnya interaksi personal</strong> pada pembelajaran mandiri (e-learning). Pada situasi ini, pelajar bisa saja bingung ketika membaca atau mempelajari materi, namun tidak memiliki asisten yang bisa menjawab pertanyaan secara instan dan spesifik terkait konten yang sedang dipelajari. Hal ini membuat hambatan belajar tidak terselesaikan secara cepat dan dapat menurunkan motivasi. Terakhir, terdapat <strong>kesenjangan kualitas konten</strong>: tidak semua pengajar memiliki keahlian desain grafis atau instruksional untuk membuat course yang rapi, estetik, dan terstruktur. Ketidaksamaan kualitas ini menyebabkan pengalaman belajar antar-kelas/antar-institusi tidak konsisten.\n\nUntuk menjawab masalah tersebut, proposal mengusulkan <strong>Lumina Course AI</strong>, sebuah platform <strong>Web-to-Course</strong> berbasis AI yang bertujuan mengubah dokumen statis menjadi pengalaman belajar interaktif dalam hitungan detik. Solusi ini dibangun dengan beberapa komponen kunci. Pertama, <strong>Instant Conversion</strong> menjelaskan kemampuan AI mengekstraksi poin-poin penting dari file PDF/PPT, kemudian menyusunnya menjadi struktur <strong>micro-learning</strong>, yaitu modul pendek. Pendekatan micro-learning membantu materi lebih mudah dipahami karena terpecah menjadi bagian yang lebih kecil dan relevan, bukan blok besar teks.\n\nKedua, <strong>Visual Enhancer</strong> berperan untuk mengatasi kebosanan yang muncul dari tampilan statis. AI secara otomatis mencari <strong>ilustrasi, ikon, dan layout</strong> yang estetik agar materi tidak lagi terasa monoton. Ketiga, <strong>AI Mentor Integration</strong> menyediakan chatbot AI di dalam setiap modul yang “dilatih” khusus menggunakan materi dokumen tersebut. Dengan demikian, pelajar dapat bertanya apa pun, dan jawaban yang diberikan diharapkan akurat serta relevan dengan bahan ajar yang sedang dibaca. Inilah penyelesaian langsung untuk masalah <strong>interaksi personal</strong> dan dukungan belajar 24/7.\n\nKeempat, proposal menambahkan <strong>Gamified Quiz</strong>. AI secara otomatis membuat kuis interaktif (pilihan ganda atau permainan logika) yang berfungsi menguji pemahaman di akhir sesi. Elemen gamifikasi diharapkan meningkatkan keterlibatan dan memastikan pelajar mengevaluasi pemahaman secara terstruktur.\n\nDari aspek dampak, proposal mengklaim tiga manfaat utama. Bagi pengajar, terjadi <strong>efisiensi waktu hingga 90%</strong> dalam pembuatan materi digital. Bagi pelajar, terjadi peningkatan <strong>engagement</strong> dan daya serap karena materi lebih dinamis dan ada dukungan <strong>AI Mentor 24/7</strong>. Bagi institusi, solusi ini membantu <strong>standarisasi kualitas bahan ajar digital</strong> di seluruh departemen atau sekolah, sehingga kualitas pembelajaran lebih konsisten.\n\nProposal juga menyertakan target pengguna yang spesifik: (1) <strong>dosen dan guru</strong> untuk digital transformation materi kelas; (2) <strong>instruktur kursus online</strong> yang ingin menjual keahlian tetapi tidak punya waktu untuk mendesain platform kursus dari nol; (3) <strong>departemen HRD perusahaan</strong> untuk mengubah SOP/dokumen pelatihan internal menjadi modul pelatihan karyawan yang lebih efektif; dan (4) <strong>mahasiswa</strong> untuk belajar mandiri, misalnya merangkum buku teks tebal menjadi modul kuis pribadi.\n\nPada bagian model bisnis, proposal menggunakan pola <strong>Pay-as-you-go</strong> berbasis kredit bernama <strong>Lumina Credits</strong>, mirip dengan mekanisme akses cepat yang memudahkan pelanggan memilih skala penggunaan. Paket <strong>Starter</strong> (Rp 30.000) menyediakan 10 kredit, dengan definisi 1 kredit = 1 dokumen yang dikonversi menjadi 1 course. Paket <strong>Pro</strong> (Rp 100.000) menyediakan 50 kredit dan fitur kustomisasi tema visual. Paket <strong>Enterprise</strong> (custom) berupa langganan bulanan untuk sekolah/universitas dengan jumlah user tak terbatas serta integrasi LMS seperti <strong>Moodle</strong> dan <strong>Canvas</strong>. Selain itu terdapat <strong>white-label option</strong> yang memungkinkan pengajar membayar biaya tambahan untuk menghapus watermark Lumina dan menggunakan domain mereka sendiri.\n\nKesimpulan proposal menegaskan bahwa Lumina Course AI bukan hanya alat konversi dokumen, tetapi jembatan menuju masa depan pendidikan digital yang lebih inklusif dan menarik. Dengan AI sebagai “penerjemah” teks kaku menjadi pengalaman interaktif, Lumina menargetkan masalah fundamental berupa <strong>kebosanan</strong> dan <strong>inefisiensi</strong> yang selama ini menghambat proses belajar dan pembuatan konten pembelajaran."
+}

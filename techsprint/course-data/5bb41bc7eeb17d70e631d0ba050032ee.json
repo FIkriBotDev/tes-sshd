@@ -1,0 +1,371 @@
+{
+  "title": "Belajar Administrasi Debian 10 Server: dari Instalasi sampai Layanan",
+  "summary": "Kamu akan belajar membangun server Debian 10 (Buster) di VirtualBox, mulai dari struktur Linux, instalasi, cloning VM, sampai konfigurasi jaringan dan fondasi perintah dasar. Materinya juga mengarahkan ke layanan server populer seperti web (LAMP/LEMP), DNS, CA, mail, file sharing, FTP, dan monitoring.",
+  "emoji": "🛠️",
+  "color": "#3b82f6",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Linux & GNU/Linux: Dasarnya Server Modern",
+      "icon": "🐧",
+      "explanation": "Linux adalah sistem operasi berbasis kernel Linux. Linux biasanya disebut juga GNU/Linux karena agar jadi sistem operasi utuh, kernel Linux dipasangkan dengan komponen GNU (misalnya tools dan utilitas). Linux juga dirilis dengan lisensi open source (GNU GPL v2), jadi banyak orang bisa mengembangkan dan memakainya sesuai aturan lisensi.",
+      "analogy": "Anggap kernel Linux itu ‘mesin mobil’, sedangkan GNU dan komponen lain itu ‘komponen mobil’ agar bisa dipakai jalan. Kernel saja belum cukup untuk jadi mobil yang siap digunakan.",
+      "highlight": "kernel Linux + GNU/Linux + GNU GPL v2",
+      "keyPoints": [
+        "Linux dibangun dari kernel Linux yang dikembangkan oleh Linus Torvalds (1991)",
+        "GNU/Linux = kernel + tools GNU agar jadi sistem operasi lengkap",
+        "Linux populer untuk server, tapi juga dipakai di desktop, smartphone (Android), dan perangkat embedded"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Peta Cepat Topik (Apa yang Akan Kamu Bangun?)",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Fondasi",
+          "value": "Pengenalan Linux, struktur direktori, distro",
+          "icon": "🏗️"
+        },
+        {
+          "label": "Lingkungan Praktik",
+          "value": "VirtualBox dengan 3 VM Debian",
+          "icon": "🖥️"
+        },
+        {
+          "label": "Langkah Server",
+          "value": "Instalasi Debian 10 + konfigurasi dasar",
+          "icon": "⚙️"
+        },
+        {
+          "label": "Layanan",
+          "value": "DNS, Web (LAMP/LEMP), Mail, File Sharing, FTP, Monitoring",
+          "icon": "🌐"
+        }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Langkah Instalasi Debian 10 di VirtualBox (Versi Ringkas)",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Buat VM Baru",
+          "description": "Buka VirtualBox → klik New → isi nama VM (misal Debian) → next.",
+          "tip": "Pilih nama yang konsisten supaya saat konfigurasi topologi kamu tidak bingung."
+        },
+        {
+          "number": 2,
+          "title": "Atur RAM dan Harddisk Virtual",
+          "description": "Atur RAM untuk instalasi (materi memakai 1 GB, lalu base VM diubah jadi 512 MB) → Create a virtual hard disk now.",
+          "tip": "Pakai VDI dan Dynamic Allocated, harddisk minimal 8 GB."
+        },
+        {
+          "number": 3,
+          "title": "Tambahkan ISO Debian",
+          "description": "Settings → Storage → Controller: IDE > Empty → pilih icon disk → Choose a disk file → masukkan file ISO Debian.",
+          "tip": "Pastikan ISO benar (Debian 10 Buster) agar proses instalasi sesuai."
+        },
+        {
+          "number": 4,
+          "title": "Mulai VM dan Mulai Instalasi",
+          "description": "Klik Start → pilih Install → pilih bahasa (misal English) → pilih Country/Other → Asia → Indonesia.",
+          "tip": "Di bagian keyboard, pilih American English sesuai materi."
+        },
+        {
+          "number": 5,
+          "title": "Hostname, Root Password, dan User Baru",
+          "description": "Isi hostname (misal debian), set password root, lalu buat user baru: nama lengkap, username, dan password.",
+          "tip": "Catat username/password untuk latihan awal (nanti bisa diganti setelah paham)."
+        },
+        {
+          "number": 6,
+          "title": "Zona Waktu & Partisi Otomatis",
+          "description": "Pilih timezone (materi: Western untuk WIB) → partisi Guided – use entire disk → All files in one partition.",
+          "tip": "Untuk pemula, one partition lebih mudah. Nanti belajar partisi manual."
+        },
+        {
+          "number": 7,
+          "title": "Network Mirror dan Pilih Paket",
+          "description": "Use a network mirror? pilih sesuai kebutuhan repo (materi memilih Yes lalu Indonesia) → pilih paket: centang SSH Server dan standard utilities (server CLI).",
+          "tip": "Jika tujuanmu administrasi server, SSH Server itu wajib."
+        },
+        {
+          "number": 8,
+          "title": "GRUB dan Restart",
+          "description": "Install GRUB ke master boot record → pilih /dev/sda → Finish → reboot dengan Continue.",
+          "tip": "Setelah reboot, coba login untuk memastikan instalasi sukses."
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Struktur Direktori Linux: Navigasi ‘Rumah’ Sistem",
+      "icon": "🗂️",
+      "explanation": "Linux punya hirarki direktori standar. Tiap folder punya fungsi: misalnya /etc untuk konfigurasi, /home untuk direktori user, /var untuk data berubah seperti log, dan /tmp untuk file sementara. Dengan memahami struktur ini, kamu lebih cepat menemukan file yang tepat saat troubleshooting.",
+      "analogy": "Bayangkan komputer seperti apartemen: /etc itu ruang administrasi, /home itu kamar masing-masing penghuni, /var itu lemari catatan harian, dan /tmp itu laci barang sementara.",
+      "highlight": "/etc /home /var /tmp /usr /var",
+      "keyPoints": [
+        "/etc berisi konfigurasi sistem",
+        "/home berisi direktori user",
+        "/var menyimpan data yang sering berubah (log, mail, print, dll)",
+        "/tmp tempat file sementara (umumnya hilang saat restart)",
+        "/proc dan /sys adalah filesystem virtual yang berisi informasi kernel/perangkat"
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "Cloning VM: ‘Duplikat’ yang Hemat Storage",
+      "icon": "💡",
+      "realWorld": "Kamu butuh 3 server (Router, Server1, Server2) tetapi base instalasi Debian sudah jadi dan tidak mau install ulang dari nol.",
+      "connection": "Materi menggunakan cloning VM dengan linked clone untuk membuat VM baru dari base VM tanpa menghabiskan storage berlebihan.",
+      "insight": "Linked clone itu seperti fotokopi berlapis: halaman yang sama bisa dipakai bersama, sementara bagian yang berbeda dibuat untuk VM masing-masing. Hasilnya hemat storage dan lebih cepat."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini untuk Administrasi Debian",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Kernel",
+          "definition": "Inti sistem operasi yang mengatur komunikasi hardware dan proses dasar.",
+          "example": "Linux yang kita kenal sering merujuk ke kernel Linux."
+        },
+        {
+          "term": "GNU/Linux",
+          "definition": "Istilah untuk sistem operasi Linux yang dilengkapi komponen GNU agar lengkap.",
+          "example": "Kernel Linux + tools GNU = sistem operasi utuh."
+        },
+        {
+          "term": "Distro Linux",
+          "definition": "Distribusi Linux: kernel Linux + paket aplikasi/service sesuai tujuan.",
+          "example": "Debian, Ubuntu, Fedora, Red Hat."
+        },
+        {
+          "term": "VirtualBox",
+          "definition": "Software virtualisasi untuk menjalankan OS tambahan di dalam OS utama.",
+          "example": "Menjalankan 3 VM Debian sekaligus dari satu PC."
+        },
+        {
+          "term": "Linked Clone",
+          "definition": "Metode cloning VM yang berbagi base image sehingga lebih hemat storage.",
+          "example": "Base VM Debian yang sama dijadikan Router, Server1, Server2."
+        },
+        {
+          "term": "Host-Only Adapter",
+          "definition": "Mode jaringan yang menghubungkan VM dengan host (PC) dan antar-VM, tidak langsung ke internet (tergantung setting).",
+          "example": "Dipakai pada Server1/Server2 sesuai topologi."
+        },
+        {
+          "term": "Bridged / NAT (Adapter1)",
+          "definition": "Mode agar VM memiliki akses jaringan sesuai koneksi host (bridged/NAT).",
+          "example": "Dipakai untuk Router-Debian pada Adapter 1 (pilih salah satu)."
+        }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Konfigurasi Network Adapter & Topologi VM (Sesuaikan Materi)",
+      "icon": "🧭",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Atur Host-Only Network di Host",
+          "description": "File → Host Network Manager → atur IP sesuai topologi dan pastikan tidak bentrok → uncentang DHCP Server.",
+          "tip": "Bentrok IP bisa bikin VM tidak saling komunikasi."
+        },
+        {
+          "number": 2,
+          "title": "Network Adapter Router-Debian",
+          "description": "VM Router → Settings → Network → Adapter 1 pilih Bridged Adapter atau NAT → Adapter 2 centang Enable → Host-Only Adapter.",
+          "tip": "Adapter 2 biasanya dipakai untuk jaringan internal (host-only)."
+        },
+        {
+          "number": 3,
+          "title": "Network Adapter Server1",
+          "description": "VM Server1 → Adapter 1 pilih Host-only Adapter.",
+          "tip": "Pastikan Adapter yang benar (Adapter 1) supaya IP assignment sesuai."
+        },
+        {
+          "number": 4,
+          "title": "Network Adapter Server2",
+          "description": "VM Server2 → Adapter 1 pilih Host-only Adapter.",
+          "tip": "Dengan host-only, Server1 dan Server2 lebih mudah diuji konektivitasnya."
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Perintah Dasar Linux: Cepat Paham Shell",
+      "icon": "⌨️",
+      "explanation": "Di Debian, prompt shell memberi petunjuk status: user biasa memakai $ sedangkan root memakai #. Tanda ~ menunjukkan kamu berada di folder home. Kamu juga akan memakai perintah dasar seperti su, whoami, dan ls untuk mengecek user dan isi folder.",
+      "analogy": "Prompt itu seperti label ‘kartu akses’ di laci. Kamu tahu sedang pegang akses user biasa atau root hanya dari simbol yang tampil.",
+      "highlight": "$ vs #, ~, su, whoami, ls",
+      "keyPoints": [
+        "Struktur prompt: username@hostname:~$ untuk user biasa, root@hostname:~# untuk root",
+        "su untuk beralih ke root",
+        "whoami untuk melihat user aktif",
+        "ls, ls -l, ls -a untuk melihat isi folder dengan detail/termasuk hidden"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Istilah GNU/Linux biasanya dipakai karena...",
+      "options": [
+        "Kernel Linux saja sudah cukup menjadi sistem operasi lengkap",
+        "Linux digabungkan dengan komponen GNU supaya menjadi sistem operasi utuh",
+        "GNU adalah nama distro resmi Debian",
+        "Kernel Linux hanya bekerja di Android"
+      ],
+      "answer": "Linux digabungkan dengan komponen GNU supaya menjadi sistem operasi utuh",
+      "explanation": "Materi menjelaskan bahwa agar jadi sistem operasi utuh, Linux perlu komponen perangkat lunak dari GNU sehingga disebut GNU/Linux.",
+      "xpReward": 50
+    },
+    {
+      "question": "Pada struktur direktori Linux, folder /etc berfungsi untuk...",
+      "options": [
+        "Tempat file konfigurasi sistem",
+        "Home untuk user root",
+        "Data log dan informasi berubah",
+        "File eksekusi sistem"
+      ],
+      "answer": "Tempat file konfigurasi sistem",
+      "explanation": "/etc berisi file konfigurasi system, jadi pengaturan layanan biasanya ada di sini.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perintah yang tepat untuk mengetahui user yang sedang kamu pakai adalah...",
+      "options": [
+        "whoami",
+        "pwd",
+        "df -h",
+        "hostnamectl"
+      ],
+      "answer": "whoami",
+      "explanation": "whoami digunakan untuk mengetahui user aktif saat itu (sesuai materi).",
+      "xpReward": 50
+    },
+    {
+      "question": "Simbol pada prompt shell $ dan # menandakan...",
+      "options": [
+        "$ = root, # = user biasa",
+        "$ = user biasa, # = root",
+        "$ = folder home, # = direktori root",
+        "$ dan # tidak ada hubungannya dengan level user"
+      ],
+      "answer": "$ = user biasa, # = root",
+      "explanation": "Materi menyebutkan: $ untuk user biasa, # untuk user root.",
+      "xpReward": 50
+    },
+    {
+      "question": "Dalam materi instalasi Debian di VirtualBox, untuk partisi otomatis pemula dipilih opsi...",
+      "options": [
+        "Manual partitioning",
+        "Guided – use entire disk",
+        "Use a separate /boot partition saja",
+        "No partitioning"
+      ],
+      "answer": "Guided – use entire disk",
+      "explanation": "Langkah partisi pada materi menggunakan Guided – use entire disk.",
+      "xpReward": 50
+    },
+    {
+      "question": "Linked clone dipilih karena...",
+      "options": [
+        "Selalu menghasilkan VM dengan performa lebih cepat dibanding clone lain",
+        "Hemat storage dengan berbagi base VM",
+        "Tidak membutuhkan base VM",
+        "Hanya bisa dipakai untuk Router, bukan server"
+      ],
+      "answer": "Hemat storage dengan berbagi base VM",
+      "explanation": "Materi menekankan linked clone lebih hemat storage karena VM baru menduplikasi dari basis VM yang sudah ada.",
+      "xpReward": 50
+    },
+    {
+      "question": "Folder /tmp pada Linux digunakan untuk...",
+      "options": [
+        "File konfigurasi permanen",
+        "File sementara (umumnya terhapus saat restart)",
+        "Library yang berhubungan dengan kernel",
+        "Data layanan sistem yang spesifik"
+      ],
+      "answer": "File sementara (umumnya terhapus saat restart)",
+      "explanation": "Materi menjelaskan /tmp sebagai tempat menyimpan sementara dan umumnya terhapus saat restart.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perintah untuk melihat isi folder secara detail termasuk permission adalah...",
+      "options": [
+        "ls",
+        "ls -a",
+        "ls -l",
+        "ls -la /etc"
+      ],
+      "answer": "ls -l",
+      "explanation": "Materi menyebut ls -l seperti ls namun dalam bentuk list dan bisa melihat permission.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa perbedaan simbol $ dan # pada prompt shell?",
+      "answer": "$ menandakan user biasa, # menandakan user root.",
+      "emoji": "💠",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Perintah apa untuk mengetahui user aktif saat ini?",
+      "answer": "whoami",
+      "emoji": "🧑‍💻",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Perintah apa untuk berpindah ke user root dari user biasa?",
+      "answer": "su",
+      "emoji": "🔑",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Folder mana yang biasanya berisi file konfigurasi sistem?",
+      "answer": "/etc",
+      "emoji": "🧩",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Folder mana untuk direktori user (home) selain root?",
+      "answer": "/home",
+      "emoji": "🏠",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Di mana home untuk user root berada?",
+      "answer": "/root (bukan /home/root)",
+      "emoji": "👑",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Perintah yang tepat untuk melihat isi folder beserta permission adalah apa?",
+      "answer": "ls -l",
+      "emoji": "🧾",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa fungsi /tmp secara umum?",
+      "answer": "Tempat menyimpan file sementara, umumnya akan terhapus saat restart.",
+      "emoji": "🧼",
+      "difficulty": "medium"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama: pengenalan Linux, struktur direktori, dan dasar perintah.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi ini adalah panduan Administrasi Debian 10 Server yang membimbing peserta dari pemahaman dasar Linux sampai praktik instalasi dan konfigurasi server menggunakan VirtualBox. Bagian awal membahas pengenalan Linux: Linux merupakan keluarga sistem operasi bebas dan sumber terbuka yang dibangun di atas kernel Linux. Kernel ini pertama kali dikembangkan oleh Linus Torvalds pada tahun 1991. Linux dirilis di bawah lisensi GNU GPL v2. Penting dipahami bahwa secara teknis kata “Linux” bisa merujuk pada kernel-nya saja, namun agar menjadi sistem operasi utuh, kernel tersebut dilengkapi komponen perangkat lunak dari proyek GNU. Karena itulah istilah yang lebih tepat adalah GNU/Linux: kernel Linux + komponen GNU (misalnya utilitas dan tools) sehingga membentuk sistem operasi lengkap.\n\nMateri juga menjelaskan bahwa Linux bukan hanya untuk server. Saat ini Linux digunakan luas untuk desktop dan perangkat smartphone seperti Android, serta perangkat embedded seperti router, televisi, dan bahkan kendaraan (contoh Tesla). Keunikan Linux adalah hasil kolaborasi perangkat lunak bebas dan open source, di mana kode sumber bisa digunakan, dimodifikasi, dan didistribusikan baik komersial maupun non-komersial sesuai ketentuan lisensi. Tutor dapat menekankan bahwa konsep open source ini penting untuk cara kerja komunitas Linux: peserta belajar karena ekosistemnya besar, dokumentasinya luas, dan banyak contoh.\n\nSelanjutnya masuk ke struktur direktori Linux (hirarki filesystem). Tutor perlu menjelaskan fungsi direktori yang sering muncul dalam praktik server. Direktori / adalah root, direktori dasar. /bin berisi file yang dapat dieksekusi. /boot berisi file untuk proses booting. /dev berisi device files (contoh penyimpanan seperti /dev/sda). /etc menyimpan konfigurasi sistem. /home adalah direktori home untuk user. /lib adalah library yang berhubungan dengan kernel. /media berisi media yang terpasang (cdrom, flashdisk, harddisk eksternal, dll). /mnt dipakai untuk pengaitan sistem sementara. /opt adalah tempat paket aplikasi tambahan. /proc adalah filesystem virtual yang berisi dokumentasi kernel dan status proses. Selain itu, materi menyebut /root sebagai home untuk user root (bukan di /home/root). /sbin berisi biner esensial untuk menjalankan dan memperbaiki sistem, biasanya dipakai administrator; contoh yang disebut materi mencakup fastboot, halt, fdisk, fsck, getty, reboot, route, swapon, swapoff, mkfs, dan lainnya. /srv menyimpan data untuk layanan (contoh /srv/ftp, /srv/www). /sys berisi informasi perangkat keras seperti yang terlihat dari Linux. /tmp untuk file sementara yang biasanya terhapus saat restart. /usr berisi file yang dibagi untuk semua user sistem dan umumnya read-only. /var berisi file-file variable, contohnya log, mail, print, dan lainnya. Karena peserta masih pemula, tutor sebaiknya menekankan cara berpikir: jika ingin cari konfigurasi, cek /etc; jika cari data log dan yang sering berubah, cek /var; jika cari file sementara, cek /tmp; jika butuh executables umum, cek /bin dan /usr/bin (walau di materi hanya menyebut /bin dan /usr, tutor bisa mengaitkan).\n\nBagian berikutnya adalah “distro Linux”. Materi menjelaskan distro Linux adalah sistem operasi yang dibangun dari kernel Linux dengan penambahan modul, aplikasi, service, atau package lain agar menjadi sistem yang spesifik sesuai tujuan pengembang. Distro adalah singkatan dari Linux DISTRibutiOn. Contoh distro yang diberikan: Debian, Ubuntu, Fedora, Red Hat. Materi fokus pada Debian 10 (Buster) dan mengarahkan peserta untuk mendownload ISO Debian dari situs resmi Debian installer pada rilis Buster.\n\nLalu masuk BAB 2: instalasi dan konfigurasi server Debian 10.x (Buster). Pertama, materi menjelaskan topologi praktik menggunakan 3 virtual machine Debian di VirtualBox. Tutor perlu menerangkan bahwa VirtualBox adalah software virtualisasi untuk menjalankan OS “tambahan” di dalam OS utama. RAM VirtualBox dialokasikan dari RAM laptop/PC, jadi performa bergantung pada RAM yang tersedia. Materi merekomendasikan minimal RAM laptop 4GB. Contohnya, jika dibuat 3 VM Debian dengan RAM 512 MB, total RAM terpakai 1,5 GB; namun untuk instalasi awal, materi mencontohkan RAM 1GB.\n\nLangkah membuat VM dan instalasi Debian di VirtualBox dijelaskan secara urut. Tutor harus membimbing peserta: buka VirtualBox → New → isi nama → next → atur RAM → create a virtual harddisk now. Pilih VDI dan Dynamic Allocated. Buat harddisk minimal 8GB. Setelah VM dibuat, masuk ke Settings → Storage. Di Controller: IDE, pilih Empty lalu pilih disk icon dan masukkan file ISO Debian. Klik Start untuk menjalankan VM dan lakukan instalasi. Proses instalasi mencakup pemilihan bahasa (English), pemilihan Country/region (karena Indonesia tidak ada di daftar langsung, peserta memilih Other → Asia → Indonesia), keyboard layout (American English), pengaturan hostname (contoh “debian”), domain name (boleh dikosongkan karena nanti dikonfigurasi), set password user root, lalu membuat user baru: nama lengkap, username, dan password. Tentukan zona waktu; materi memilih Western untuk WIB. Partisi dilakukan menggunakan Guided – use entire disk, dengan opsi All files in one partition (recommended untuk pemula). Pilih Finish partitioning and write changes to disk dan konfirmasi Write changes to disks? Yes. Selanjutnya menunggu instalasi base system selesai.\n\nUntuk repo, materi menampilkan pilihan “Use a network mirror?”. Jika ingin menambah repo, pilih Yes dan pilih Indonesia. Materi juga menjelaskan pilihan survei penggunaan paket: Participate in the package usage survey? dipilih No. Lalu pilih paket yang akan diinstal. Untuk server berbasis CLI, centang SSH Server dan standard system utilities. Jika server berbasis GUI, bisa centang Debian desktop environment, namun dalam materi konteksnya server. Kemudian pada pengaturan GRUB boot loader, pilih Install the GRUB boot loader to master boot record? Yes, dan pilih perangkat target /dev/sda. Setelah selesai, pilih Continue dan restart. Tutor perlu memandu peserta untuk login setelah reboot (menggunakan user root dan password yang diinput saat instalasi).\n\nSetelah VM terpasang, materi masuk ke setup topologi di VirtualBox dengan fokus pada cloning VM. Tutor perlu menjelaskan konsep cloning: menduplikasi VM yang sudah ada menjadi VM yang berbeda. Karena topologi butuh 3 VM Debian (Router, Server1, Server2), maka digunakan cloning. Materi memilih linked clone berbasis VM Debian yang sudah diinstal agar hemat storage dibanding clone penuh. Langkahnya: siapkan base VM, ubah RAM base VM jadi 512MB melalui Settings > System > RAM. Kemudian untuk Router Debian: klik kanan base VM → Clone → ubah nama menjadi Debian-Router → MAC Address Policy pilih Generate new MAC addresses → pilih linked clone → Clone. Lakukan hal sama untuk Server1 dan Server2 dengan nama dan linked clone, serta MAC address policy generate new.\n\nKonfigurasi network adapter dijelaskan untuk menyesuaikan topologi. Tutor sebaiknya mengajari peserta terlebih dahulu mengatur alamat IP Host-Only Adapter melalui File → Host Network Manager. Jika IP host-only yang dipakai (misal 192.168.101.x) bentrok dengan LAN, maka ganti ke IP yang berbeda. Pastikan DHCP Server di host-only tidak dicentang supaya konfigurasi IP dilakukan manual sesuai rencana topologi. Setelah itu, untuk Router Debian: pilih Settings → Network. Adapter 1 bisa dipilih Bridged Adapter atau NAT (pilih salah satu sesuai kebutuhan akses jaringan). Lalu Adapter 2: enable dan pilih Host-Only Adapter. Untuk Server1 dan Server2, pada Adapter 1 pilih Host-only Adapter. Tutor perlu menegaskan tujuan pemisahan ini: router menghubungkan dua sisi jaringan (internal host-only dan sisi lain melalui bridged/NAT), sedangkan server cukup ada di jaringan internal host-only agar konektivitas bisa diuji dalam topologi.\n\nMateri juga mulai BAB 2 pada subbagian “Konfigurasi Dasar Debian” dan memperkenalkan perintah dasar Linux. Tutor perlu menjelaskan bentuk shell prompt: username@hostname: ~ $ untuk user biasa, dan root@hostname:~# untuk root. Simbol $ menunjukkan user biasa, # menunjukkan root. Tanda ~ menunjukkan kamu berada di folder home. Perintah su digunakan untuk beralih ke root dari user biasa. Perintah whoami untuk mengetahui user yang sedang digunakan. Perintah ls untuk melihat isi folder; contoh ls Downloads/ untuk melihat isi folder Downloads. Variasi ls -l untuk melihat detail termasuk permission; dan ls -a untuk menampilkan file/folder hidden.\n\nWalaupun materi yang kamu kirim berhenti detail di bagian perintah ls -a, daftar isi PDF menegaskan bab-bab lanjutannya mencakup: konfigurasi hostname dan hosts, repository, sudo, remote login SSH, konfigurasi Debian-router, DNS caching & forwarding serta DNS authoritative, pembuatan Certificate Authority (CA), konfigurasi web dan database melalui LAMP dan LEMP, konfigurasi mail server dan webmail, file sharing (Samba dan NFS), FTP server, serta monitoring server. Tutor sebaiknya mengaitkan bahwa semua bagian lanjutan biasanya butuh fondasi: pemahaman filesystem (/etc, /var, etc.), pemahaman jaringan (adapter, IP, host-only), serta kemampuan menjalankan perintah dasar Linux dengan benar (berpindah user, mengecek isi folder, dan membaca permission)."
+}

@@ -1,0 +1,190 @@
+{
+  "title": "Course Interaktif Konfigurasi DNS Server (Bind9) di Debian",
+  "summary": "DNS Server (Domain Name System) adalah server yang berfungsi menerjemahkan alamat IP menjadi nama domain, atau sebaliknya. Dengan DNS, pengguna (client) tidak perlu menghafal angka IP, karena nama domain seperti google.com umumnya lebih mudah diingat daripada deretan alamat IP.\n\nMateri juga menjelaskan langkah konfigurasi DNS Server menggunakan Bind9 pada Debian. Proses mencakup penambahan DVD image untuk paket, instalasi bind9 dan dnsutils, konfigurasi zone forward dan reverse pada named.conf.local, pembuatan serta pengeditan file zona db.name dan db.ip, kemudian restart layanan dan pengujian menggunakan nslookup serta ping dari server maupun client.",
+  "emoji": "📚",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Pengertian dan Fungsi DNS Server",
+      "icon": "📘",
+      "explanation": "DNS Server (Domain Name System) adalah server yang ditujukan untuk menerjemahkan alamat IP menjadi nama domain serta nama domain menjadi alamat IP. Artinya, ketika client meminta akses menggunakan nama domain, DNS akan menjawab dengan IP yang sesuai, atau sebaliknya.Fungsi utama DNS Server adalah: (a) menerjemahkan alamat IP menjadi nama domain, dan (b) menerjemahkan nama domain menjadi alamat IP. Selain itu, DNS dibuat agar client lebih mudah mengakses suatu alamat karena lebih praktis menginga",
+      "keyPoints": [
+        "DNS Server (Domain Name System)",
+        "alamat IP menjadi nama domain",
+        "nama domain menjadi alamat IP"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Persiapan Instalasi Bind9 dan Pemasangan Paket",
+      "icon": "📗",
+      "explanation": "Langkah konfigurasi dimulai dari memastikan konfigurasi routing router server telah selesai dan berhasil. Tujuannya agar jaringan/akses dari server DNS dan client dapat berjalan dengan baik sebelum layanan DNS dikonfigurasi.Selanjutnya, pastikan DVD-2 Debian ditambahkan karena paket aplikasi DNS Server (Bind9) tersedia di DVD-2. Perintah yang digunakan adalah apt-cdrom add untuk menambahkan cd-rom/DVD repo, kemudian sistem perlu di-update dengan apt-get update.Setelah itu, lakukan instalasi pake",
+      "keyPoints": [
+        "konfigurasi routing router server telah selesai dan berhasil",
+        "DVD-2 Debian",
+        "DNS Server (Bind9)"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Konfigurasi Zone Forward-Reverse, Restart, dan Pengujian",
+      "icon": "📙",
+      "explanation": "Konfigurasi DNS dilakukan di direktori /etc/bind. Masuk ke folder tersebut dengan cd /etc/bind, lalu edit named.conf.local menggunakan nano named.conf.local. Di bagian paling bawah, tambahkan script zone untuk forward (nama domain ke IP) dan reverse (IP ke nama domain).Contoh zone yang ditambahkan pada materi adalah: zone tkjclub.info bertipe master dengan file /etc/bind/db.name, serta zone reverse 218.98.118.in-addr.arpa bertipe master dengan file /etc/bind/db.ip. Setelah itu, simpan perubahan ",
+      "keyPoints": [
+        "cd /etc/bind",
+        "named.conf.local"
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa definisi DNS Server?",
+      "answer": "DNS Server (Domain Name System) adalah server yang ditujukan untuk menerjemahkan alamat IP menjadi nama domain, dan juga menerjemahkan nama domain menjadi alamat IP.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Sebutkan fungsi utama DNS Server menurut materi.",
+      "answer": "Fungsi utama DNS Server adalah (1) menerjemahkan alamat IP menjadi nama domain, dan (2) menerjemahkan nama domain menjadi alamat IP.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Mengapa DNS membuat akses ke server lebih mudah bagi client?",
+      "answer": "Karena client tidak perlu menghafal alamat IP yang berupa angka. Client cukup mengingat nama domain, yang umumnya lebih mudah diingat dibandingkan angka IP.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Berikan contoh nama domain dan hubungannya dengan IP pada materi.",
+      "answer": "Contoh pada materi: google.com adalah nama domain yang diterjemahkan ke IP publik Google seperti 8.8.8.8 atau 8.8.4.4. Jadi ping google.com akan sama dengan ping ke IP tersebut.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Langkah awal sebelum instalasi bind9 apa yang harus dipastikan?",
+      "answer": "Pastikan konfigurasi routing pada router server telah selesai dan berhasil, sehingga konektivitas jaringan mendukung proses konfigurasi DNS.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Perintah apa untuk menambahkan repository dari DVD pada materi?",
+      "answer": "Gunakan perintah apt-cdrom add lalu tekan Enter.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Perintah apa untuk instalasi bind9 pada materi?",
+      "answer": "apt-get install –y bind9",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Bagaimana cara menguji DNS setelah konfigurasi selesai menurut materi?",
+      "answer": "Gunakan nslookup untuk mengecek nama domain dan IP, lalu lakukan ping untuk memastikan resolusi bekerja. Pengujian dari client Windows juga dilakukan dengan menjalankan CMD dan mengetik ping nama domain (misalnya ping tkjclub.info).",
+      "emoji": "💡",
+      "difficulty": "medium"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "DNS Server berfungsi untuk…",
+      "options": [
+        "Menerjemahkan nama domain menjadi IP dan IP menjadi nama domain",
+        "Mengubah port layanan secara otomatis",
+        "Menghitung bandwidth jaringan secara periodik",
+        "Membuat akun pengguna baru pada server"
+      ],
+      "answer": "Menerjemahkan nama domain menjadi IP dan IP menjadi nama domain",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Tujuan utama penggunaan DNS agar client…",
+      "options": [
+        "Lebih sulit mengakses alamat karena harus menghafal IP",
+        "Lebih mudah mengakses alamat tanpa menghafal IP",
+        "Hanya bisa akses menggunakan IP public saja",
+        "Tidak perlu koneksi internet sama sekali"
+      ],
+      "answer": "Lebih mudah mengakses alamat tanpa menghafal IP",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Pada materi, sebelum instalasi DNS Server, hal yang harus dipastikan adalah…",
+      "options": [
+        "Routing router server sudah selesai dan berhasil",
+        "Password root diubah",
+        "Firewall dimatikan total",
+        "Menghapus semua file db.* terlebih dahulu"
+      ],
+      "answer": "Routing router server sudah selesai dan berhasil",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perintah yang digunakan untuk meng-update setelah menambahkan DVD repo adalah…",
+      "options": [
+        "apt-get update",
+        "apt-get upgrade",
+        "systemctl restart bind9",
+        "nslookup tkjclub.info"
+      ],
+      "answer": "apt-get update",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Paket dnsutils diinstal pada materi untuk…",
+      "options": [
+        "Menambah kemampuan editing file named.conf.local",
+        "Memungkinkan penggunaan perintah nslookup",
+        "Menggantikan fungsi bind9",
+        "Mengaktifkan NAT pada router"
+      ],
+      "answer": "Memungkinkan penggunaan perintah nslookup",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Nama file yang digunakan untuk zone forward (nama domain ke IP) pada contoh materi adalah…",
+      "options": [
+        "/etc/bind/db.ip",
+        "/etc/bind/db.name",
+        "/etc/bind/named.conf",
+        "/etc/bind/db.local"
+      ],
+      "answer": "/etc/bind/db.name",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perintah untuk restart bind9 pada materi menggunakan…",
+      "options": [
+        "/etc/init.d/bind9 restart",
+        "/etc/init.d/dns restart",
+        "service bind9 start",
+        "systemctl reload bind9"
+      ],
+      "answer": "/etc/init.d/bind9 restart",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Untuk menghentikan proses ping saat pengujian pada materi digunakan…",
+      "options": [
+        "Ctrl + C",
+        "Ctrl + Z",
+        "Alt + F4",
+        "Shift + Esc"
+      ],
+      "answer": "Ctrl + C",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    }
+  ],
+  "achievements": [],
+  "tutorContext": "Materi membahas topik “DNS Server” (Domain Name System) pada konteks pembelajaran administrasi jaringan (TKJ). Inti materi adalah memahami peran DNS dalam komunikasi jaringan, lalu mempraktikkan konfigurasi DNS Server menggunakan Bind9 pada sistem Debian melalui tahapan instalasi, konfigurasi file zona, dan pengujian.\n\nPertama, tutor perlu menjelaskan definisi DNS Server: DNS adalah server yang menerjemahkan alamat IP menjadi nama domain, maupun nama domain menjadi alamat IP. Ini penting karena saat pengguna mengetik nama domain (misalnya google.com), komputer tidak akan langsung tahu IP-nya. DNS menjadi “penerjemah” sehingga aplikasi dan browser bisa mengakses tujuan jaringan menggunakan nama yang mudah diingat.\n\nLalu, tutor menekankan fungsi DNS Server sebagaimana tertulis pada materi: (a) menerjemahkan IP ↔ nama domain, dan (b) membuat client lebih mudah mengakses suatu alamat. Materi menggarisbawahi bahwa manusia cenderung lebih mudah mengingat kata/teks daripada angka IP. Contoh yang diberikan: google.com berhubungan dengan IP publik seperti 8.8.8.8 dan 8.8.4.4. Dengan demikian, jika seseorang melakukan ping ke google.com hasilnya setara dengan ping ke salah satu IP yang direferensikan DNS tersebut. Materi juga menyebutkan perbedaan kemudahan mengingat: www.google.com lebih mudah dibanding menghafal 8.8.8.8.\n\nBagian berikutnya adalah langkah konfigurasi. Materi dimulai dari prasyarat: routing pada router server harus sudah selesai dan berhasil. Ini krusial karena DNS akan melayani permintaan dari client; bila jaringan dasar belum benar, pengujian nslookup/ping akan gagal.\n\nSetelah prasyarat, materi menjelaskan penggunaan media instalasi Debian (DVD-2). Tutor perlu mengingatkan bahwa paket Bind9 tersedia di DVD-2, sehingga administrator harus menambahkan DVD repo menggunakan apt-cdrom add, kemudian melakukan apt-get update agar sistem mengenali paket dari DVD.\n\nInstalasi Bind9 dilakukan dengan apt-get install –y bind9. Materi juga mengantisipasi kondisi “broken packages” dengan perintah apt --fix-broken install. Jika diminta konfirmasi, instruksi materi menyebut menekan Y dan Enter. Setelah Bind9 terpasang, materi menginstal dnsutils agar ada tool seperti nslookup untuk pengujian. Perintahnya apt-get install –y dnsutils.\n\nTahap konfigurasi file DNS dimulai dengan pindah ke direktori /etc/bind melalui cd /etc/bind. Kemudian tutor mengarahkan edit named.conf.local menggunakan nano named.conf.local. Di file itu, ditambahkan zone forward dan zone reverse. Materi mencontohkan: zone “tkjclub.info” type master dengan file “/etc/bind/db.name”, dan zone reverse “218.98.118.in-addr.arpa” type master dengan file “/etc/bind/db.ip”. Tutor harus menekankan konsep forward/reverse: forward digunakan untuk memetakan nama domain ke IP (A record), sedangkan reverse digunakan untuk memetakan IP ke nama domain (PTR record) berdasarkan arpa.\n\nSetelah menambahkan deklarasi zone, materi menjelaskan pembuatan file zona dengan cara menyalin template: db.local menjadi db.name (cp db.local db.name), lalu db.name diedit (nano db.name) sesuai konfigurasi yang diinginkan. Hal yang sama dilakukan untuk reverse: db.127 menjadi db.ip (cp db.127 db.ip) lalu edit db.ip (nano db.ip). Walaupun materi tidak menuliskan detail record per baris di transkrip, tutor perlu memastikan peserta mengisi record yang sesuai untuk domain dan alamat yang akan diuji.\n\nSetelah semua file zona siap, bind9 direstart menggunakan /etc/init.d/bind9 restart dan pastikan hasilnya OK. Materi kemudian memberi langkah pengujian. Pertama, cek resolusi nama domain dengan nslookup namadomain (contoh: nslookup tkjclub.info). Kedua, cek resolusi IP ke nama dengan nslookup IP Address (contoh: nslookup 118.98.218.2). Ketiga, lakukan ping namadomain untuk melihat apakah resolusi dan konektivitas berjalan. Materi juga menyebut bahwa untuk menghentikan ping tekan Ctrl + C.\n\nTerakhir, materi meminta pengujian dari sisi client (Windows). Tutor perlu menjelaskan bahwa client melakukan tes dari CMD menggunakan ping tkjclub.info setelah membuka CMD lewat Windows + R → Run → CMD → OK. Keberhasilan ditandai dengan adanya Reply seperti pada gambar materi.\n\nKesimpulan materi: jika semua step instalasi, konfigurasi zone, restart bind9, serta pengujian nslookup dan ping telah berhasil, maka konfigurasi DNS Server dinyatakan selesai. Tutor sebaiknya menegaskan alur logis dari definisi → fungsi → prasyarat jaringan → instalasi paket → deklarasi zone → pembuatan file db → restart layanan → pengujian dari server dan client."
+}

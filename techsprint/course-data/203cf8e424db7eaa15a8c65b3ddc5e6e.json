@@ -1,0 +1,336 @@
+{
+  "title": "Setup FTP Server Pakai XAMPP: Upload-Download yang Gampang",
+  "summary": "Belajar konsep FTP Server dan cara menyalakannya di XAMPP sampai bisa diuji lewat FileZilla. Kamu akan paham port 21, cara memastikan layanan ProFTPD berjalan, dan izin folder agar upload/download sukses.",
+  "emoji": "📁",
+  "color": "#3b82f6",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "FTP Server Itu Apa, Sih?",
+      "icon": "📦",
+      "explanation": "FTP Server adalah layanan (software/komponen) yang khusus untuk transfer file lewat protokol FTP. Dengan FTP, pengguna bisa upload file ke server atau download file dari server melalui jaringan seperti internet.",
+      "analogy": "Bayangin FTP itu seperti “resepsionis pengantar barang” antara dua orang: server jadi tempat penerimaan dan pengiriman paket file, sementara klien (misalnya FileZilla) yang mengantar permintaan upload/download.",
+      "highlight": "FTP, Upload, Download, Protokol FTP",
+      "keyPoints": [
+        "FTP mentransfer file antar komputer lewat jaringan",
+        "FTP Server menyediakan layanan upload dan download",
+        "FTP biasanya menggunakan port standar yaitu 21"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Alur Setup FTP Server di XAMPP",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Unduh XAMPP",
+          "description": "Buka situs resmi XAMPP lalu download versi yang sesuai.",
+          "tip": "Pastikan versinya cocok dengan sistem operasi kamu."
+        },
+        {
+          "number": 2,
+          "title": "Jalankan installer",
+          "description": "Jalankan proses instalasi dari terminal menggunakan perintah installer.",
+          "tip": "Biasakan cek nama file installer biar tidak salah ketik."
+        },
+        {
+          "number": 3,
+          "title": "Tunggu sampai selesai",
+          "description": "Pastikan instalasi berjalan tanpa error.",
+          "tip": "Kalau ada error, catat pesannya untuk ditelusuri."
+        },
+        {
+          "number": 4,
+          "title": "Start ProFTPD di XAMPP",
+          "description": "Aktifkan service ProFTPD lewat tombol Start di panel XAMPP.",
+          "tip": "Tanpa start ProFTPD, FTP server belum benar-benar jalan."
+        },
+        {
+          "number": 5,
+          "title": "Cek port 21 pakai nmap",
+          "description": "Lakukan pemindaian port localhost TCP 21 untuk memastikan FTP aktif.",
+          "tip": "Kalau port belum terbuka, ulangi cek status ProFTPD."
+        },
+        {
+          "number": 6,
+          "title": "Beri izin folder htdocs",
+          "description": "Berikan izin read, write, execute supaya server bisa akses folder untuk transfer file.",
+          "tip": "Perintah chmod 777 membuat akses sangat lebar; pakai seperlunya sesuai kebutuhan."
+        },
+        {
+          "number": 7,
+          "title": "Uji koneksi via FileZilla",
+          "description": "Buka FileZilla, isi IP server, username, password, dan port 21 lalu klik Quickconnect.",
+          "tip": "Kalau gagal koneksi, fokus ke port dan kredensial (user/pass)."
+        }
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual: Dari XAMPP ke FileZilla",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "XAMPP",
+          "value": "Paket yang menjalankan layanan termasuk ProFTPD",
+          "icon": "🧩"
+        },
+        {
+          "label": "ProFTPD",
+          "value": "Service untuk FTP server",
+          "icon": "🚪"
+        },
+        {
+          "label": "Port FTP",
+          "value": "TCP 21 (standar FTP)",
+          "icon": "🔌"
+        },
+        {
+          "label": "Izin Folder",
+          "value": "Akses untuk upload/download (read-write-execute)",
+          "icon": "🗂️"
+        },
+        {
+          "label": "FileZilla",
+          "value": "Aplikasi client untuk uji koneksi dan transfer file",
+          "icon": "📤"
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Cek Port FTP 21 (Simulasi Perintah nmap)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Ketik/ubah logika pada kode untuk membuat contoh hasil status port (misal: open/closed). Tujuannya supaya kamu paham bahwa langkah verifikasi FTP itu terkait port TCP 21.",
+      "fileName": "cek-port-sim.js",
+      "defaultCode": "// Simulasi hasil pemeriksaan port TCP 21 (nmap) untuk localhost\n// Tujuan: memahami konsep verifikasi FTP lewat port.\n\nconst port = 21;\nconst host = 'localhost';\n\n// Ubah nilai ini untuk mencoba skenario\nconst isOpen = true;\n\nif (isOpen) {\n  console.log(`nmap: Port ${port}/tcp on ${host} is OPEN (FTP aktif)`);\n} else {\n  console.log(`nmap: Port ${port}/tcp on ${host} is CLOSED (FTP belum aktif)`);\n}",
+      "hint": "Coba ubah isOpen jadi false untuk melihat pesan saat FTP belum aktif."
+    },
+    {
+      "type": "code_playground",
+      "title": "Generator Langkah Uji FileZilla (Simulasi)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Isi nilai IP/port/username/password lalu generate ringkasan koneksi. Ini membantu kamu mengingat format pengujian FileZilla: IP, username, password, port 21.",
+      "fileName": "filezilla-test-sim.js",
+      "defaultCode": "const ipServer = '127.0.0.1';\nconst port = 21;\nconst username = 'admin';\nconst password = '1234';\n\nconsole.log('=== Ringkasan Uji Koneksi FTP (FileZilla) ===');\nconsole.log(`Host/Server: ${ipServer}`);\nconsole.log(`Port: ${port}`);\nconsole.log(`Username: ${username}`);\nconsole.log(`Password: ${password}`);\nconsole.log('Aksi: klik \"Quickconnect\" lalu amati apakah koneksi berhasil.');",
+      "hint": "Ganti ipServer jadi IP komputer lain (contoh '192.168.1.10') untuk membayangkan koneksi jaringan."
+    },
+    {
+      "type": "analogy_card",
+      "title": "Izin Folder Itu Kunci Pintu",
+      "icon": "🔑",
+      "realWorld": "Kamu sudah menyalakan FTP, tapi upload/download tetap gagal. Biasanya penyebabnya karena folder tempat file disimpan tidak punya izin yang cukup.",
+      "connection": "Langkah chmod memberikan read, write, execute supaya ProFTPD bisa membaca dan menulis file di direktori yang dituju.",
+      "insight": "Walaupun FTP Server aktif, tanpa izin folder yang tepat, proses transfer file akan seperti orang punya akses masuk gedung tapi tidak diberi izin untuk memakai lemari/ruangan."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini FTP & Setup XAMPP",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "FTP Server",
+          "definition": "Layanan yang menyediakan transfer file menggunakan protokol FTP.",
+          "example": "ProFTPD yang diaktifkan di XAMPP."
+        },
+        {
+          "term": "FTP",
+          "definition": "Protokol standar untuk mentransfer file antar komputer dalam jaringan.",
+          "example": "Upload dan download file lewat jaringan."
+        },
+        {
+          "term": "ProFTPD",
+          "definition": "Service/komponen FTP server yang berjalan di XAMPP.",
+          "example": "Ditekan tombol Start agar FTP aktif."
+        },
+        {
+          "term": "Port 21",
+          "definition": "Port standar yang digunakan FTP untuk komunikasi.",
+          "example": "Dicek menggunakan nmap TCP 21."
+        },
+        {
+          "term": "FileZilla",
+          "definition": "Software client untuk menghubungkan diri ke FTP server dan melakukan transfer file.",
+          "example": "Klik Quickconnect setelah mengisi host, username, password, port."
+        },
+        {
+          "term": "chmod 777",
+          "definition": "Perintah Linux untuk memberi izin read/write/execute ke semua pengguna pada suatu folder.",
+          "example": "Diberikan pada direktori htdocs agar FTP bisa akses."
+        },
+        {
+          "term": "htdocs",
+          "definition": "Direktori web di XAMPP yang sering dipakai sebagai lokasi file.",
+          "example": "/opt/lampp/htdocs sebagai tempat izin diberikan."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "FTP Server berfungsi untuk apa?",
+      "options": [
+        "Menyediakan layanan transfer file",
+        "Menyediakan layanan browsing web",
+        "Menyediakan layanan email",
+        "Menyediakan layanan database saja"
+      ],
+      "answer": "Menyediakan layanan transfer file",
+      "explanation": "FTP Server memang tugasnya mentransfer file menggunakan protokol FTP: mendukung upload dan download.",
+      "xpReward": 50
+    },
+    {
+      "question": "Protokol apa yang digunakan oleh FTP Server untuk transfer file?",
+      "options": [
+        "HTTP",
+        "FTP",
+        "SMTP",
+        "SSH"
+      ],
+      "answer": "FTP",
+      "explanation": "FTP adalah protokol standar untuk transfer file antar komputer di jaringan.",
+      "xpReward": 50
+    },
+    {
+      "question": "Port standar FTP yang biasanya dicek adalah …",
+      "options": [
+        "Port 22",
+        "Port 53",
+        "Port 21",
+        "Port 80"
+      ],
+      "answer": "Port 21",
+      "explanation": "Langkah verifikasi pada materi menyebut pemindaian port TCP 21 (localhost) untuk memastikan FTP aktif.",
+      "xpReward": 50
+    },
+    {
+      "question": "Aplikasi apa yang digunakan pada materi untuk menguji koneksi FTP?",
+      "options": [
+        "FileZilla",
+        "Wireshark",
+        "Notepad++",
+        "VLC Media Player"
+      ],
+      "answer": "FileZilla",
+      "explanation": "Materi menyuruh uji koneksi dengan mengakses FTP server menggunakan FileZilla dan tombol Quickconnect.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa yang harus dilakukan sebelum pengujian koneksi FTP di FileZilla?",
+      "options": [
+        "Start ProFTPD di XAMPP",
+        "Menonaktifkan XAMPP",
+        "Menghapus folder htdocs",
+        "Mengubah port selain 21 tanpa alasan"
+      ],
+      "answer": "Start ProFTPD di XAMPP",
+      "explanation": "Kalau ProFTPD belum di-Start, layanan FTP tidak akan benar-benar aktif sehingga koneksi gagal.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perintah chmod 777 pada materi diberikan untuk apa?",
+      "options": [
+        "Mengubah port FTP",
+        "Memberi izin read, write, execute pada direktori agar FTP bisa akses",
+        "Mengubah username FTP",
+        "Memperbarui installer XAMPP"
+      ],
+      "answer": "Memberi izin read, write, execute pada direktori agar FTP bisa akses",
+      "explanation": "Materi menyebut langkah memberikan izin pada /opt/lampp/htdocs dengan chmod 777 agar transfer file bisa berjalan.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika hasil nmap menunjukkan port 21 closed, kemungkinan besar apa yang terjadi?",
+      "options": [
+        "FTP server tidak aktif atau ProFTPD belum berjalan",
+        "FileZilla salah ejaan",
+        "Port 21 berubah menjadi port 20 secara otomatis",
+        "FTP hanya bekerja jika memakai HTTP"
+      ],
+      "answer": "FTP server tidak aktif atau ProFTPD belum berjalan",
+      "explanation": "Port closed mengindikasikan layanan FTP di port tersebut belum terbuka (biasanya karena ProFTPD belum start).",
+      "xpReward": 50
+    },
+    {
+      "question": "Saat di FileZilla, data apa saja yang diisi sesuai materi?",
+      "options": [
+        "IP server, username, password, dan port 21",
+        "URL web, email, dan password email",
+        "Nama file lokal, ukuran file, dan tanggal",
+        "Latitude, longitude, dan jam"
+      ],
+      "answer": "IP server, username, password, dan port 21",
+      "explanation": "Materi jelas menyebut IP server, username, password, serta port 21 untuk Quickconnect.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa fungsi utama FTP Server?",
+      "answer": "Mentransfer file lewat protokol FTP, mendukung upload dan download antara klien dan server.",
+      "emoji": "📤",
+      "difficulty": "easy"
+    },
+    {
+      "question": "FTP menggunakan protokol apa?",
+      "answer": "FTP (File Transfer Protocol).",
+      "emoji": "🔁",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Port standar FTP itu berapa?",
+      "answer": "21 (TCP 21).",
+      "emoji": "🧷",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Service apa di XAMPP yang digunakan untuk FTP?",
+      "answer": "ProFTPD.",
+      "emoji": "🧱",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Langkah verifikasi FTP pada materi menggunakan perintah apa secara konsep?",
+      "answer": "Pemindaian port localhost TCP 21 menggunakan nmap.",
+      "emoji": "🕵️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Untuk apa chmod 777 pada direktori htdocs?",
+      "answer": "Memberi izin read, write, execute agar server bisa mengakses folder untuk transfer file.",
+      "emoji": "🔧",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Aplikasi apa yang dipakai untuk uji koneksi FTP ke XAMPP?",
+      "answer": "FileZilla.",
+      "emoji": "🧰",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Tombol apa yang diklik di FileZilla setelah mengisi data koneksi?",
+      "answer": "Quickconnect.",
+      "emoji": "⚡",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa yang paling mungkin jika FTP tidak bisa diakses padahal XAMPP sudah terpasang?",
+      "answer": "ProFTPD belum di-Start atau izin direktori belum sesuai.",
+      "emoji": "🚦",
+      "difficulty": "hard"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama tentang konsep FTP dan setup dasar FTP Server di XAMPP.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi PDF ini membahas cara setup FTP Server menggunakan XAMPP pada konteks perangkat yang menjalankan XAMPP (umumnya Linux/lingkungan yang memiliki path /opt/lampp/htdocs seperti pada materi). Bagian awal menjelaskan konsep FTP Server: FTP adalah protokol standar untuk mentransfer file antar komputer di jaringan (contoh: internet atau jaringan lokal). FTP Server adalah komponen/perangkat lunak/komponen layanan yang menyediakan fasilitas upload (mengunggah) dan download (mengunduh) file antara komputer klien dan server melalui koneksi jaringan. Jadi, peran server adalah “tempat” file dikelola, sedangkan klien menggunakan software client (misalnya FileZilla) untuk terhubung.\n\nSetelah konsep dipahami, materi masuk ke langkah instalasi dan aktivasi FTP Server menggunakan XAMPP. Langkah 1: pengguna diminta membuka browser dan mengunduh XAMPP dari situs resmi. Di sini tujuannya memastikan instalasi benar dari sumber tepercaya dan versi yang sesuai dengan sistem operasi. Langkah 2: setelah file installer terunduh, pengguna menjalankan instalasi dari terminal menggunakan perintah seperti ./nama_file_installer.run. Ini memulai proses instalasi XAMPP. Langkah 3: pengguna menunggu sampai instalasi selesai, lalu memastikan tidak muncul pesan kesalahan. Penekanan “tidak ada pesan kesalahan” penting karena jika ada error saat instalasi, service yang diperlukan (termasuk ProFTPD) bisa gagal berjalan.\n\nLangkah 4 adalah mengaktifkan FTP server dengan mengklik tombol Start pada service ProFTPD di panel XAMPP. ProFTPD adalah implementasi server FTP yang terpasang/terintegrasi dalam ekosistem XAMPP. Jika ProFTPD tidak di-start, maka FTP server tidak akan membuka layanan, sehingga koneksi dari client akan gagal.\n\nLangkah 5 adalah verifikasi bahwa FTP server benar-benar aktif. Materi menyarankan melakukan pemindaian port ke localhost menggunakan nmap pada tcp 21. Konsep penting di sini: FTP standar memakai port 21, sehingga saat service FTP berjalan, port tersebut akan terdeteksi sebagai terbuka. Jika port 21 tidak terbuka, berarti layanan FTP belum aktif atau ada masalah konfigurasi/firewall.\n\nLangkah 6 mengatur izin direktori agar FTP bisa melakukan operasi file. Materi menyebut direktori XAMPP yaitu /opt/lampp/htdocs dan memberikan izin read, write, dan execute menggunakan perintah chmod 777. Inti konsepnya adalah permission (hak akses) pada sistem operasi: server perlu izin untuk membaca file yang akan diunduh dan menulis file yang akan diunggah. Tanpa izin yang cukup, meski ProFTPD aktif, transfer file bisa gagal.\n\nLangkah 7 adalah pengujian koneksi menggunakan software FileZilla. Pengguna diminta mengakses FTP server XAMPP dengan memasukkan IP server, username, password, serta port 21. Setelah data diisi, klik Quickconnect. Jika koneksi berhasil, biasanya pengguna akan bisa melihat daftar folder dan melakukan upload/download. Jika gagal, troubleshooting umumnya mengarah ke (1) ProFTPD belum start, (2) port 21 tidak terbuka, (3) kredensial salah, atau (4) permission folder belum sesuai.\n\nUntuk AI tutor, berikan penekanan pada hubungan sebab-akibat: “Start ProFTPD” membuat layanan FTP berjalan; “nmap port 21” memastikan layanan benar-benar listening; “chmod izin pada htdocs” memastikan sistem file dapat diakses oleh FTP; dan “FileZilla Quickconnect” memvalidasi dari sisi user/client bahwa upload-download berfungsi. Jelaskan juga istilah upload/download, port, dan alasan folder htdocs dipakai sebagai lokasi file. Tutor sebaiknya mengajak siswa membayangkan alur kerja: server menunggu di port 21, client menghubungi port itu, lalu izin folder menentukan apakah file dapat dipindahkan. Contoh troubleshooting singkat bisa diberikan: jika port closed, cek service; jika port open tapi login gagal, cek username/password; jika login sukses tapi upload gagal, cek izin folder."
+}

@@ -1,0 +1,186 @@
+{
+  "title": "Course Interaktif: Fondasi Pemrograman Python untuk Pemula",
+  "summary": "Python adalah bahasa pemrograman tingkat tinggi yang dirancang agar mudah dibaca dan dipelajari. Python dibuat oleh Guido van Rossum pada tahun 1991 dan kini populer untuk Ilmu Data (Data Science), Kecerdasan Buatan (AI), serta Pengembangan Web. Keunggulan belajar Python antara lain sintaks yang sederhana, komunitas besar dengan banyak library, serta dukungan multi-platform seperti Windows, Mac, dan Linux.\n\nDalam materi ini, kamu mempelajari dasar-dasar Python mulai dari pengenalan bahasa, variabel dan tipe data (integer, float, string, dan boolean), operator dasar (+, -, *, /, **), struktur kontrol (if, elif, else), perulangan (for dan while), struktur data (list, tuple, dictionary), hingga fungsi (function). Materi ini berfungsi sebagai fondasi sebelum melangkah ke library khusus seperti NumPy, Pandas, dan Django.",
+  "emoji": "📚",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Bab 1: Pengenalan Python & Mengapa Belajar Python",
+      "icon": "📘",
+      "explanation": "Python adalah bahasa pemrograman tingkat tinggi yang dirancang agar mudah dibaca dan dipelajari. Desainnya menekankan keterbacaan kode sehingga cocok bagi pemula maupun praktisi. Python juga dikenal luas dalam berbagai bidang teknologi, terutama karena fleksibel dan kaya fitur.Python diciptakan oleh Guido van Rossum pada tahun 1991. Seiring waktu, Python berkembang menjadi salah satu bahasa pemrograman paling populer untuk Ilmu Data (Data Science), Kecerdasan Buatan (AI), dan Pengembangan Web. H",
+      "keyPoints": [
+        "Guido van Rossum",
+        "Ilmu Data (Data Science)"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Bab 2: Variabel, Tipe Data, dan Operator Dasar",
+      "icon": "📗",
+      "explanation": "Variabel merupakan wadah untuk menyimpan data. Di Python, kamu tidak perlu mendeklarasikan tipe data secara eksplisit, karena Python akan menentukan tipe data berdasarkan nilai yang diberikan. Ini membuat proses penulisan kode lebih cepat dan nyaman bagi pemula.Tipe data dasar yang dipelajari meliputi: Integer (bilangan bulat), misalnya 10 dan -5; Float (bilangan desimal), misalnya 3.14 dan 2.0; String (teks) yang diapit tanda kutip seperti \"Halo Dunia\"; serta Boolean yang bernilai logika True a",
+      "keyPoints": [
+        "Poin penting dari materi"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Bab 3: Struktur Kontrol, Perulangan, Struktur Data, dan Fungsi",
+      "icon": "📙",
+      "explanation": "Struktur kontrol digunakan untuk membuat keputusan dalam kode. Python menyediakan if, elif, dan else agar program dapat memilih jalur eksekusi berdasarkan kondisi. Contohnya, nilai ujian dapat diklasifikasikan menjadi grade A, B, atau C menggunakan rangkaian kondisi.Perulangan (loops) memungkinkan kode dijalankan berulang. Python memiliki dua jenis perulangan utama: for dan while. For loop sering digunakan ketika kamu tahu jumlah iterasi, contohnya iterasi dari 0 sampai 4 menggunakan range(5). W",
+      "keyPoints": [
+        "Poin penting dari materi"
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Siapa pencipta Python dan kapan Python pertama kali dibuat?",
+      "answer": "Python diciptakan oleh Guido van Rossum pada tahun 1991.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Sebutkan minimal tiga bidang yang paling umum menggunakan Python.",
+      "answer": "Python populer untuk Ilmu Data (Data Science), Kecerdasan Buatan (AI), dan Pengembangan Web.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa yang dimaksud variabel dalam pemrograman Python?",
+      "answer": "Variabel adalah wadah (tempat) untuk menyimpan data. Nilai yang dimasukkan ke variabel menentukan tipe data secara otomatis.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Berikan contoh tipe data Integer, Float, dan String dalam Python.",
+      "answer": "Integer: 10 atau -5. Float: 3.14 atau 2.0. String: \"Halo Dunia\" (teks diapit tanda kutip).",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa perbedaan List dan Tuple?",
+      "answer": "List terurut dan bisa diubah (mutable), sedangkan Tuple terurut tetapi tidak bisa diubah (immutable).",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa itu Dictionary dalam Python?",
+      "answer": "Dictionary adalah struktur data berisi kumpulan pasangan kunci dan nilai (key-value), misalnya user = {\"nama\": \"Andi\", \"usia\": 25}.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Operator apa yang digunakan untuk perpangkatan (x pangkat y) di Python?",
+      "answer": "Operator perpangkatan di Python adalah ** (contoh: 5 ** 2 menghasilkan 25).",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa fungsi utama dari if, elif, dan else dalam Python?",
+      "answer": "if, elif, dan else digunakan untuk membuat keputusan berdasarkan kondisi. Program memilih blok kode yang sesuai dengan nilai kondisi tersebut.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Python dibuat oleh ... pada tahun ...",
+      "options": [
+        "Steve Jobs pada 2007",
+        "Guido van Rossum pada 1991",
+        "Bill Gates pada 1985",
+        "Mark Zuckerberg pada 2010"
+      ],
+      "answer": "Guido van Rossum pada 1991",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Berikut ini yang merupakan tipe data Boolean di Python adalah ...",
+      "options": [
+        "\"True\"",
+        "True",
+        "0.1",
+        "{1,2,3}"
+      ],
+      "answer": "True",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Operator yang digunakan untuk penjumlahan adalah ...",
+      "options": [
+        "-",
+        "+",
+        "*",
+        "/"
+      ],
+      "answer": "+",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Kode berikut menjalankan iterasi sebanyak berapa kali? for i in range(5): ...",
+      "options": [
+        "3 kali",
+        "4 kali",
+        "5 kali",
+        "6 kali"
+      ],
+      "answer": "5 kali",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Struktur kontrol yang tepat untuk pilihan lebih dari dua kondisi adalah ...",
+      "options": [
+        "if saja",
+        "if dan while",
+        "if, elif, else",
+        "switch-case"
+      ],
+      "answer": "if, elif, else",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Mana yang termasuk tipe data yang bisa diubah (mutable) sesuai materi?",
+      "options": [
+        "Tuple",
+        "List",
+        "String",
+        "Integer"
+      ],
+      "answer": "List",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika nilai = 85 dan terdapat logika: if nilai >= 90 => A, elif nilai >= 75 => B, else => C, maka grade yang keluar adalah ...",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "Tidak ada output"
+      ],
+      "answer": "B",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Dalam materi, operator perpangkatan ditulis dengan tanda ...",
+      "options": [
+        "^",
+        "**",
+        "//",
+        "%"
+      ],
+      "answer": "**",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    }
+  ],
+  "achievements": [],
+  "tutorContext": "Materi membahas fondasi pemrograman Python untuk pemula yang mencakup pengenalan bahasa hingga konsep dasar pemrosesan logika dan data. Bagian awal menjelaskan bahwa Python merupakan bahasa pemrograman tingkat tinggi yang mudah dibaca dan dipelajari. Penekanan utama adalah keterbacaan sintaks dan kenyamanan bagi pemula. Materi juga menyebutkan asal-usul Python: diciptakan oleh Guido van Rossum pada tahun 1991. Selanjutnya dijelaskan alasan mengapa Python penting dan banyak dipakai: Python sangat populer untuk Ilmu Data (Data Science), Kecerdasan Buatan (AI), serta Pengembangan Web. Popularitas ini ditopang oleh ekosistem library dan komunitas yang besar. Dari sudut pandang praktis, Python memiliki sintaks yang sederhana dan mirip bahasa Inggris, sehingga lebih cepat dipahami. Python juga dapat dijalankan di berbagai sistem operasi (multi-platform), yaitu Windows, Mac, dan Linux. Ini penting karena memudahkan peserta didik untuk memulai tanpa terikat satu lingkungan tertentu.\n\nBab berikutnya memperkenalkan konsep variabel dan tipe data. Variabel berfungsi sebagai wadah untuk menyimpan data, misalnya nama, umur, tinggi, dan status siswa. Dalam Python, tidak ada kebutuhan untuk mendeklarasikan tipe data secara eksplisit, karena tipe data ditentukan secara dinamis berdasarkan nilai yang dimasukkan. Materi merangkum tipe data dasar: integer untuk bilangan bulat (contoh 10 dan -5), float untuk bilangan desimal (contoh 3.14 dan 2.0), string untuk teks yang diapit kutip (contoh \"Halo Dunia\"), dan boolean untuk nilai logika True atau False. Materi memberikan contoh pembuatan variabel: nama = \"Budi\", umur = 20, tinggi = 175.5, dan is_student = True. Terdapat pula contoh penggunaan print dengan format string f-string untuk menampilkan data: print(f\"Nama: {nama}, Umur: {umur}\"). Poin penting yang perlu ditekankan kepada tutor: jelaskan bahwa f-string memudahkan penyisipan variabel ke dalam output.\n\nSetelah itu materi masuk ke operator dasar. Tutor perlu membantu peserta memahami bahwa operator digunakan untuk melakukan operasi pada nilai atau variabel. Materi memuat tabel operator: + untuk penjumlahan (contoh 5 + 2 = 7), - untuk pengurangan (5 - 2 = 3), * untuk perkalian (5 * 2 = 10), / untuk pembagian (5 / 2 = 2.5), dan ** untuk perpangkatan (5 ** 2 = 25). Dengan pemahaman operator, peserta dapat mengolah angka dan menghasilkan nilai yang akan dipakai pada logika berikutnya.\n\nKemudian materi membahas struktur kontrol (percabangan). Tutor perlu menjelaskan peran if, elif, dan else sebagai mekanisme pengambilan keputusan. Materi contoh menetapkan nilai = 85 dan memetakan ke grade berdasarkan rentang: jika nilai >= 90 maka Grade: A, jika nilai >= 75 maka Grade: B, selain itu Grade: C. Ini mengajarkan bahwa urutan pengecekan penting dan elif digunakan untuk kondisi lanjutan yang tidak memenuhi kondisi sebelumnya.\n\nSelanjutnya materi mengajarkan perulangan (loops) dengan dua jenis utama: for dan while. Tutor perlu menekankan kapan menggunakan masing-masing. Untuk for loop, materi memberi contoh for i in range(5): print(f\"Iterasi ke-{i}\") yang menunjukkan iterasi sebanyak 5 kali (indeks 0 sampai 4). Untuk while loop, materi memberi contoh count = 0; while count < 3: print(\"Halo!\"); count += 1. Di sini, while berjalan selama kondisi masih benar, dan variabel count diubah agar loop berhenti. Penguatan konsep yang baik adalah menjelaskan bahwa while berpotensi infinite loop bila kondisi tidak diubah.\n\nBab berikutnya membahas struktur data: list, tuple, dan dictionary. Tutor perlu menjelaskan fungsi masing-masing dalam menyimpan koleksi. List adalah terurut dan bisa diubah (contoh buah = [\"Apel\", \"Jeruk\"]). Tuple adalah terurut namun tidak bisa diubah (contoh koordinat = (10, 20)). Dictionary berisi pasangan kunci dan nilai (key-value), contohnya user = {\"nama\": \"Andi\", \"usia\": 25}. Tutor sebaiknya menekankan bahwa dictionary cocok untuk data berbasis label (nama bidang sebagai kunci) sehingga akses data lebih jelas.\n\nTerakhir materi membahas fungsi (function). Fungsi adalah blok kode yang hanya berjalan saat dipanggil. Materi memberikan contoh definisi: def sapa(nama): return f\"Halo, {nama}! Selamat belajar Python.\" Lalu fungsi dipanggil dengan sapa(\"Andi\") dan hasilnya dicetak. Tutor perlu menguatkan konsep bahwa fungsi membantu membuat kode modular, mengurangi pengulangan, dan memudahkan pengujian serta penggunaan ulang.\n\nMateri penutup menegaskan bahwa pemrograman Python sangat luas dan materi yang diberikan adalah fondasi penting. Langkah berikutnya diarahkan untuk mempelajari library sesuai kebutuhan: NumPy untuk matematika, Pandas untuk pengolahan data, dan Django untuk pengembangan web. Untuk tutor, konteks ini bisa digunakan untuk memotivasi peserta dan membantu mereka memahami bahwa setelah menguasai konsep dasar (tipe data, operator, kontrol, loop, struktur data, fungsi), barulah mempelajari library akan terasa lebih bermakna karena peserta sudah punya landasan memahami cara kerja kode."
+}

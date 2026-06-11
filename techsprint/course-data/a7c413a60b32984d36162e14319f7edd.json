@@ -1,0 +1,187 @@
+{
+  "title": "Course Router Server Debian 10.5 dengan Routing Static dan Firewall (iptables) serta Pengujian Client",
+  "summary": "Materi ini membahas konsep dasar routing, jenis-jenis konfigurasi routing (default, dynamic, dan static), serta pengertian firewall. Firewall berfungsi mengatur lalu lintas data yang keluar-masuk jaringan lokal ke internet maupun sebaliknya. Di Linux, firewall menggunakan packet filtering melalui iptables, dan iptables juga mendukung fungsi NAT untuk menghubungkan jaringan lokal dengan jaringan internet.",
+  "emoji": "📚",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Konsep Dasar Routing dan Firewall (iptables)",
+      "icon": "📘",
+      "explanation": "Routing adalah teknik atau cara untuk menghubungkan dua segmen IP atau lebih yang berbeda, termasuk jaringan yang berbeda network.Secara garis besar konfigurasi routing dibagi menjadi 3 jenis: Routing Default, Routing Dynamic, dan Routing Static. Routing Default umumnya dipakai pada jaringan yang memiliki satu jalur keluar (jaringan lokal) dan menghubungkan perangkat secara manual melalui sistem gateway.Routing Dynamic membuat tabel routing secara otomatis dengan menambahkan IP network pada rout",
+      "keyPoints": [
+        "Routing Default"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Langkah Konfigurasi Router Server Debian 10.5",
+      "icon": "📗",
+      "explanation": "Langkah pertama adalah memastikan Debian 10.5 sudah terinstal pada virtual machine, lalu login sebagai root (superuser). Setelah itu cek konfigurasi nama interfaces menggunakan perintah ip a l.Secara default, pada Debian 10.5 nama interface biasanya menggunakan enp0s3. Materi menyarankan mengubahnya menjadi eth0 agar lebih mudah dipahami dan diingat. Untuk mengubahnya, buka file /etc/default/grub dengan nano /etc/default/grub, lalu cari GRUB_CMDLINE_LINUX dan ubah menjadi:GRUB_CMDLINE_LINUX=\"net",
+      "keyPoints": [
+        "nama interfaces"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Membuat Script Routing (IP Forwarding, iptables, NAT) dan Pengujian",
+      "icon": "📙",
+      "explanation": "Setelah konfigurasi IP dan DNS siap, materi melanjutkan pembuatan tabel routing dan script pengarah (routing) pada file /etc/init.d/routing menggunakan nano /etc/init.d/routing. Script berfungsi mengaktifkan IP forwarding serta mengatur aturan iptables termasuk NAT untuk menerjemahkan alamat jaringan LAN agar bisa mengakses WAN.Di materi, isi script routing mengaktifkan forwarding dengan menulis nilai ke /proc/sys/net/ipv4/ip_forward, lalu melakukan pembersihan rule iptables (flush) dan mengatur",
+      "keyPoints": [
+        "/etc/init.d/routing",
+        "nano /etc/init.d/routing",
+        "IP forwarding"
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa definisi routing?",
+      "answer": "Routing adalah teknik atau cara untuk menghubungkan dua segmen IP atau lebih yang berbeda, termasuk jika network-nya berbeda.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Sebutkan tiga jenis konfigurasi routing yang disebutkan pada materi.",
+      "answer": "Tiga jenis konfigurasi routing pada materi adalah: Routing Default, Routing Dynamic, dan Routing Static.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa itu Routing Default dan kapan biasanya digunakan?",
+      "answer": "Routing Default adalah routing yang digunakan untuk menghubungkan perangkat atau komputer secara manual dengan sistem gateway. Biasanya dipakai pada jaringan yang hanya memiliki satu jalur keluar, sehingga cocok untuk jaringan lokal.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Jelaskan perbedaan Routing Dynamic dan Routing Static.",
+      "answer": "Routing Dynamic membuat tabel routing secara otomatis dengan menambahkan IP network pada router sehingga router mencari rute terbaik sesuai konfigurasi. Sedangkan Routing Static adalah jenis routing dengan tabel routing yang dibuat sendiri oleh administrator jaringan (aturan ditentukan secara manual/berbasis static routing).",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa fungsi firewall pada jaringan?",
+      "answer": "Firewall adalah sistem keamanan jaringan yang mengatur atau mengontrol lalu lintas keluar-masuk informasi dari jaringan lokal ke internet dan sebaliknya.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa itu iptables dan apa perannya di Linux?",
+      "answer": "Iptables adalah aplikasi pada sistem operasi Linux yang berfungsi melakukan filter terhadap trafik pada jaringan (packet filtering). Di materi, firewall Linux dijalankan oleh iptables, dan iptables juga mendukung fungsi NAT.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Dalam materi, untuk apa NAT digunakan?",
+      "answer": "NAT (Network Address Translation) berfungsi sebagai internet gateway yang menghubungkan jaringan lokal dengan jaringan internet.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa tujuan perintah ip_forward dalam script routing?",
+      "answer": "Perintah yang menulis nilai ke /proc/sys/net/ipv4/ip_forward bertujuan mengaktifkan <strong>IP forwarding</strong>, agar server mampu meneruskan paket dari jaringan LAN ke jaringan WAN sesuai aturan routing dan NAT.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Routing adalah... ",
+      "options": [
+        "Cara untuk menghapus rule firewall secara permanen",
+        "Teknik untuk menghubungkan dua segmen IP atau lebih yang berbeda network",
+        "Aplikasi untuk mengganti DNS resolver",
+        "Proses otomatis membuat jaringan Wi-Fi virtual"
+      ],
+      "answer": "Teknik untuk menghubungkan dua segmen IP atau lebih yang berbeda network",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jenis konfigurasi routing yang disebutkan pada materi ada berapa?",
+      "options": [
+        "1 jenis",
+        "2 jenis",
+        "3 jenis",
+        "5 jenis"
+      ],
+      "answer": "3 jenis",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Routing Default biasanya dipakai pada jaringan dengan kondisi berikut...",
+      "options": [
+        "Memiliki banyak jalur keluar",
+        "Memiliki satu jalur keluar",
+        "Tidak membutuhkan gateway",
+        "Hanya cocok untuk jaringan tanpa IP address"
+      ],
+      "answer": "Memiliki satu jalur keluar",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Routing Dynamic membuat tabel routing secara otomatis karena...",
+      "options": [
+        "Administrator menulis tabel secara manual",
+        "Router mencari rute terbaik tanpa konfigurasi tambahan",
+        "Hanya bergantung pada DNS",
+        "Penambahan IP network membuat router mencari jalur terbaik sesuai konfigurasi"
+      ],
+      "answer": "Penambahan IP network membuat router mencari jalur terbaik sesuai konfigurasi",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Firewall pada Linux di materi menggunakan teknologi packet filtering yang dikenal sebagai...",
+      "options": [
+        "iptables",
+        "net.ifnames",
+        "rc.local",
+        "enp0s3"
+      ],
+      "answer": "iptables",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perintah iptables yang digunakan untuk membersihkan rule filter adalah...",
+      "options": [
+        "iptables -t nat -F",
+        "iptables -F",
+        "iptables -P INPUT ACCEPT",
+        "iptables -t nat -nvL"
+      ],
+      "answer": "iptables -F",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Agar rule routing NAT berjalan, script menggunakan target SNAT pada chain...",
+      "options": [
+        "PREROUTING",
+        "POSTROUTING",
+        "OUTPUT",
+        "FORWARD"
+      ],
+      "answer": "POSTROUTING",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Sebelum melakukan tes ping dari Server ke Client, pada materi disebutkan Windows Firewall harus dalam kondisi...",
+      "options": [
+        "tetap aktif (on)",
+        "nonaktif (off)",
+        "hanya aktif untuk ICMPv6",
+        "hanya aktif untuk port TCP 80"
+      ],
+      "answer": "nonaktif (off)",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    }
+  ],
+  "achievements": [],
+  "tutorContext": "Materi ini berfungsi sebagai panduan praktikum pembuatan “Router Server” berbasis Debian 10.5 dengan kombinasi routing (static melalui script) dan firewall/NAT menggunakan iptables. Pada bagian awal dijelaskan konsep dasar routing: routing adalah teknik untuk menghubungkan dua segmen IP atau lebih yang berbeda jaringan (network). Ketika topologi memiliki perbedaan network—misalnya LAN internal di satu subnet dan WAN/Internet di subnet lain—router bertugas merutekan paket agar tujuan dapat tercapai sesuai rute yang benar.\n\nMateri kemudian mengklasifikasikan routing menjadi tiga jenis. Routing Default adalah routing manual yang memanfaatkan gateway; biasanya dipakai pada jaringan dengan satu jalur keluar sehingga paket yang tidak cocok dengan aturan spesifik akan diarahkan ke gateway default. Routing Dynamic adalah routing yang membangun tabel routing otomatis saat administrator menambahkan IP network pada router; router akan menentukan rute terbaik sesuai konfigurasi internal/algoritma yang digunakan oleh sistem. Routing Static berbeda karena tabel routing ditentukan secara manual oleh administrator; tidak ada “penentuan otomatis rute terbaik” oleh protokol routing dinamis.\n\nSetelah konsep routing, materi mengulas firewall. Firewall adalah sistem keamanan jaringan yang mengontrol lalu lintas keluar-masuk jaringan lokal ke internet dan sebaliknya. Di Linux, evolusi firewall disebutkan dari generasi awal (ipfwadm/ipchains) menuju packet filtering yang terkenal yaitu iptables. Iptables dijelaskan sebagai aplikasi Linux untuk memfilter trafik. Selain berperan sebagai firewall, iptables juga digunakan untuk NAT. NAT pada materi disajikan sebagai mekanisme internet gateway yang menerjemahkan alamat jaringan lokal agar dapat berkomunikasi dengan jaringan internet/WAN.\n\nBagian tutorial inti membahas konfigurasi pada Debian 10.5 di Virtual Machine. Praktik dimulai dari instalasi Debian 10.5, login sebagai root, lalu mengecek nama interface melalui perintah “ip a l”. Materi menyatakan bahwa default interface biasanya bernama enp0s3, tetapi demi kemudahan dipilih mengubahnya menjadi eth0. Perubahan nama interface dilakukan lewat pengeditan /etc/default/grub. Konsepnya adalah menonaktifkan penamaan berbasis “net.ifnames” dan “biosdevname” dengan mengubah nilai GRUB_CMDLINE_LINUX menjadi “net.ifnames=0 biosdevname=0”. Setelah edit, perlu menjalankan grub-mkconfig -o /boot/grub/grub.cfg dan kemudian reboot agar perubahan diterapkan permanen. Setelah reboot, dicek kembali menggunakan ip a l untuk memastikan nama interface sudah berubah menjadi eth0.\n\nTahap berikutnya adalah konfigurasi IP. Materi menggunakan dua interface/dua identitas pada interface yang sama: eth0 untuk sisi WAN dan eth0:1 untuk sisi LAN. Ini dilakukan dengan menambahkan konfigurasi static pada file /etc/network/interfaces menggunakan nano. Contoh yang digunakan: eth0 inet static dengan address 118.98.218.2, netmask 255.255.255.252, dan gateway 118.98.218.1 (WAN). Lalu eth0:1 inet static dengan address 192.168.77.1 dan netmask 255.255.255.248 (LAN). Setelah itu dilakukan restart networking dengan /etc/init.d/networking restart. Pengujian dilakukan via ping: ping IP WAN (118.98.218.2) dan ping IP LAN (192.168.77.1) untuk memastikan alamat dan konektivitas jaringan lokal/keluar berjalan.\n\nMateri juga menyinggung konfigurasi DNS melalui /etc/resolv.conf. Tujuannya supaya sistem dapat melakukan resolusi nama domain jika diperlukan. Lalu dibuat script routing pada /etc/init.d/routing untuk mengatur alur firewall dan NAT. Script menonaktifkan/embersihkan rule lama dengan iptables -F (filter) dan iptables -t nat -F (tabel nat). Kebijakan INPUT diatur dengan iptables -P INPUT DROP untuk menolak lalu lintas masuk yang tidak diizinkan. Untuk menjaga layanan tetap berjalan, ditambahkan izin untuk loopback (lo) dan interface eth0. Selain itu ada aturan stateful: iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT sehingga koneksi yang sudah ada atau terkait (misalnya balasan paket) dapat lewat.\n\nUntuk NAT, script menambahkan aturan pada chain POSTROUTING tabel nat: mengubah sumber dari jaringan LAN menjadi alamat WAN agar trafik dari LAN “tampak” berasal dari IP WAN saat keluar menuju eth0. Materi memberi contoh SNAT untuk sumber 192.168.77.1/29 dan output eth0 menjadi SNAT ke 118.98.218.2. Dengan SNAT, komputer client di LAN bisa mengakses jaringan luar menggunakan IP WAN sebagai alamat terjemahan.\n\nAgar script routing dapat dieksekusi, dilakukan chmod 755 /etc/init.d/routing, lalu restart script dengan /etc/init.d/routing restart. Materi menekankan indikator sukses: tidak ada pesan error. Kemudian dibuat agar routing otomatis saat boot dengan menambahkan eksekusi /etc/init.d/routing start ke /etc/rc.local. Setelah memberi izin chmod 755 /etc/rc.local, script dapat diuji dengan menjalankan /etc/rc.local dan melihat apakah hasilnya sama seperti saat restart routing.\n\nTahap akhir adalah konfigurasi client Windows. Di VirtualBox, client diarahkan ke jaringan yang sesuai (VirtualBox Host-Only Network). Client mengisi IPv4: memilih “Use the following IP address” dan memasukkan IP sesuai topologi LAN. Materi lalu menganjurkan pengecekan alamat pada menu Details… dan melakukan ping dari client ke server (ping IP LAN server 192.168.77.1). Setelah itu dilakukan ping dari server ke client (ping IP client 192.168.77.2). Materi memberikan perhatian penting: sebelum ping dari server ke client, Windows Firewall harus off agar blok ICMP tidak mengganggu uji konektivitas.\n\nDengan urutan tersebut, tutor dapat memastikan peserta memahami hubungan antar komponen: routing (forwarding), firewall filtering (INPUT policy dan rule izin), NAT (SNAT POSTROUTING), penamaan interface agar konsisten (eth0), serta verifikasi konektivitas dari kedua arah menggunakan ping di setiap tahap."
+}

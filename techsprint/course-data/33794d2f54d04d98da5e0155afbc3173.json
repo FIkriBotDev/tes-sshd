@@ -1,0 +1,197 @@
+{
+  "title": "Course Logika Matematika Diskrit: Proposisi, Operator, Tabel Kebenaran, Tautologi, Kontradiksi, dan Ekivalensi",
+  "summary": "Logika adalah studi penalaran (reasoning) yang memfokuskan hubungan antar pernyataan (statements) dalam bentuk proposisi. Dalam matematika diskrit, logika tidak menentukan kebenaran suatu kalimat secara empiris, tetapi memformalkan makna pernyataan matematis agar dapat dibedakan antara argumen yang valid dan tidak valid. Di bidang ini, logika juga berperan dalam pembuktian teorema dan memiliki aplikasi luas pada ilmu komputer seperti pemrograman, analisis algoritma, dan kecerdasan buatan.\n\nMateri Bab 1 membahas dasar-dasar logika proposisi: definisi proposisi sebagai kalimat deklaratif yang bernilai benar atau salah, pembedaan antara proposisi atomik dan proposisi majemuk, serta penggunaan operator logika dasar AND (∧), OR (∨), dan NOT (~). Selanjutnya dijelaskan cara membentuk tabel kebenaran untuk menentukan nilai kebenaran ekspresi logika, serta konsep tautologi (selalu benar), kontradiksi (selalu salah), dan ekivalensi logika (memiliki tabel kebenaran identik). Di akhir materi diperkenalkan penggunaan “atau” secara inklusif dan eksklusif pada disjungsi eksklusif.",
+  "emoji": "📚",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Dasar Logika: Penalaran, Proposisi, dan Nilai Kebenaran",
+      "icon": "📘",
+      "explanation": "Logika merupakan studi penalaran (reasoning), yaitu cara berpikir dengan mengembangkan sesuatu berdasarkan akal budi, bukan berdasarkan perasaan atau pengalaman. Dalam konteks matematika diskrit, logika memusatkan perhatian pada hubungan antara pernyataan-pernyataan (statements) untuk membentuk kesimpulan.Logika tidak otomatis menunjukkan apakah pernyataan-pernyataan itu benar atau salah, tetapi jika premis-premisnya benar maka penalaran logis dapat memastikan kesimpulan yang ikut benar. Contoh ",
+      "keyPoints": [
+        "Poin penting dari materi"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Menyusun Proposisi Majemuk: Operator AND, OR, dan NOT",
+      "icon": "📗",
+      "explanation": "Proposisi dapat dikombinasikan untuk membentuk proposisi baru. Operator yang digunakan untuk mengkombinasikan proposisi disebut operator logika. Operator dasar yang dibahas adalah dan (and), atau (or), dan tidak (not).Operator AND dan OR bersifat biner karena mengoperasikan dua proposisi, sedangkan NOT bersifat uner karena hanya membutuhkan satu proposisi. Hasil pengkombinasian dua atau lebih proposisi disebut proposisi majemuk (compound proposition), sedangkan proposisi yang bukan merupakan gab",
+      "keyPoints": [
+        "operator logika"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Tabel Kebenaran, Tautologi/Kontradiksi, Ekivalensi, dan Hukum De Morgan",
+      "icon": "📙",
+      "explanation": "Nilai kebenaran proposisi majemuk ditentukan oleh nilai kebenaran proposisi atomiknya serta cara proposisi dihubungkan oleh operator logika. Untuk memudahkan, digunakan tabel kebenaran (truth table), yaitu tabel yang menampilkan hubungan antara nilai benar/salah dari proposisi atomik dan hasil akhirnya untuk ekspresi logika.Definisi 1.3: Untuk proposisi p dan q, (a) konjungsi p ∧ q benar jika p dan q keduanya benar; selain itu salah. (b) disjungsi p ∨ q salah jika p dan q keduanya salah; selain ",
+      "keyPoints": [
+        "tabel kebenaran (truth table)",
+        "Definisi 1.3:"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Disjungsi Eksklusif: Makna “atau” Inklusif",
+      "icon": "📙",
+      "explanation": "Istilah “atau” (or) dalam logika dapat memiliki dua makna. Pertama adalah penggunaan atau secara inklusif (inclusive or). Dalam inclusive or, pernyataan “p atau q atau keduanya” dianggap benar jika minimal salah satu dari p atau q benar, termasuk kasus keduanya benar.Pada bagian sebelumnya, operator disjungsi yang menggunakan simbol ∨ mengikuti semantik inclusive or: p ∨ q bernilai benar bila p benar atau q benar (atau keduanya benar). Ini konsisten dengan Definisi 1.3 untuk disjungsi: bernilai ",
+      "keyPoints": [
+        "atau secara inklusif (inclusive or)",
+        "Definisi 1.3",
+        "disjungsi eksklusif"
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa definisi proposisi dalam logika?",
+      "answer": "Proposisi adalah kalimat deklaratif yang bernilai benar (true) atau salah (false), tetapi tidak dapat sekaligus keduanya. Nilai kebenaran (truth value) adalah benar/salahnya sebuah kalimat.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Kalimat tanya dan kalimat perintah termasuk proposisi atau bukan? Jelaskan singkat alasannya.",
+      "answer": "Bukan proposisi. Kalimat tanya tidak memiliki nilai kebenaran (benar/salah), dan kalimat perintah juga tidak dinilai benar atau salah dalam kerangka logika proposisi.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Mengapa pernyataan seperti “x + 3 = 8” tidak langsung menjadi proposisi?",
+      "answer": "Karena pernyataan itu mengandung peubah (variabel) x yang belum ditetapkan nilainya, sehingga belum dapat ditentukan apakah kalimatnya bernilai benar atau salah.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Jika p adalah “Hari ini hujan” dan q adalah “Murid-murid diliburkan dari sekolah”, apa arti p ∧ q?",
+      "answer": "p ∧ q menyatakan “Hari ini hujan dan murid-murid diliburkan dari sekolah.” Konjungsi bernilai benar hanya jika p dan q keduanya benar.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Jika p adalah “Hari ini hujan”, apa arti ~p?",
+      "answer": "~p menyatakan “Tidak benar hari ini hujan” atau dalam kalimat lain yang lazim: “Hari ini tidak hujan.” Negasi membalik nilai kebenaran p.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Kapan p ∨ q bernilai salah menurut tabel kebenaran?",
+      "answer": "p ∨ q bernilai salah hanya jika p dan q keduanya salah. Jika minimal salah satu benar, maka p ∨ q bernilai benar.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa itu tautologi dan bagaimana cirinya pada tabel kebenaran?",
+      "answer": "Tautologi adalah proposisi majemuk yang benar untuk semua kasus. Ciri pada tabel kebenaran: kolom hasil akhirnya (kolom terakhir) berisi hanya T (True) untuk semua kombinasi.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa itu ekivalensi logika dan bagaimana cara mengeceknya?",
+      "answer": "Dua proposisi majemuk P dan Q ekivalen secara logika (P ⇔ Q) jika keduanya memiliki tabel kebenaran yang identik untuk semua kombinasi nilai kebenaran proposisi atomiknya.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Proposisi adalah kalimat deklaratif yang bernilai ...",
+      "options": [
+        "Benar atau salah (tidak mungkin sekaligus keduanya)",
+        "Hanya benar saja",
+        "Hanya salah saja",
+        "Tidak ada nilai kebenaran"
+      ],
+      "answer": "Benar atau salah (tidak mungkin sekaligus keduanya)",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Operator AND untuk dua proposisi p dan q dinyatakan dengan simbol ...",
+      "options": [
+        "p ∨ q",
+        "p ∧ q",
+        "~p",
+        "p → q"
+      ],
+      "answer": "p ∧ q",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Negasi ~p bernilai benar jika ...",
+      "options": [
+        "p benar",
+        "p salah",
+        "p bernilai tidak tentu",
+        "p bernilai 0"
+      ],
+      "answer": "p salah",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "p ∨ q bernilai salah hanya jika ...",
+      "options": [
+        "p benar dan q benar",
+        "p salah dan q salah",
+        "p benar atau q benar",
+        "p benar dan q salah"
+      ],
+      "answer": "p salah dan q salah",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Suatu proposisi majemuk disebut tautologi jika ...",
+      "options": [
+        "selalu benar untuk semua kasus",
+        "selalu salah untuk semua kasus",
+        "benar hanya untuk satu kasus",
+        "tidak bisa ditentukan dari tabel kebenaran"
+      ],
+      "answer": "selalu benar untuk semua kasus",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Suatu proposisi majemuk disebut kontradiksi jika ...",
+      "options": [
+        "kolom terakhir pada tabel berisi semuanya T",
+        "kolom terakhir pada tabel berisi semuanya F",
+        "kolom terakhir pada tabel berisi campuran T dan F",
+        "kolom terakhir pada tabel kosong"
+      ],
+      "answer": "kolom terakhir pada tabel berisi semuanya F",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Dua proposisi majemuk P dan Q disebut ekivalen secara logika jika ...",
+      "options": [
+        "P bernilai benar saat Q salah",
+        "P memiliki tabel kebenaran berbeda",
+        "Tabel kebenaran keduanya identik",
+        "P dan Q menggunakan operator yang sama persis"
+      ],
+      "answer": "Tabel kebenaran keduanya identik",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Hukum De Morgan yang diberikan pada materi adalah ...",
+      "options": [
+        "~(p ∧ q) ⇔ ~p ∧ ~q",
+        "~(p ∨ q) ⇔ ~p ∧ ~q",
+        "~(p ∧ q) ⇔ p ∨ q",
+        "~p ⇔ p ∧ q"
+      ],
+      "answer": "~(p ∧ q) ⇔ ~p ∨ ~q",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    }
+  ],
+  "achievements": [],
+  "tutorContext": "Bab 1 memulai pembahasan logika sebagai fondasi matematika diskrit. Logika didefinisikan sebagai studi penalaran (reasoning), yakni cara berpikir yang mengandalkan akal budi. Dalam kamus besar, penalaran dipahami sebagai cara berpikir untuk mengembangkan sesuatu berdasarkan akal budi, bukan berdasarkan perasaan atau pengalaman. Dalam konteks diskrit, logika dipakai untuk menelusuri hubungan antarpremis dan kesimpulan. Materi menekankan bahwa meskipun logika tidak secara langsung menentukan apakah suatu pernyataan matematis benar atau salah, logika dapat memastikan bahwa jika premis-premisnya benar maka kesimpulan yang diturunkan secara logis juga benar. Contoh yang diberikan menggambarkan pola penalaran: seluruh pengendara sepeda motor memakai helm; setiap orang yang memakai helm adalah mahasiswa; maka seluruh pengendara sepeda motor adalah mahasiswa. Intinya, bentuk penalaran yang valid mengawetkan kebenaran dari premis ke kesimpulan.\n\nSelanjutnya materi mengaitkan peran hukum-hukum logika dalam matematika: hukum logika memformalkan makna pernyataan matematis, membantu membedakan argumen yang valid dan tidak valid, dan menjadi alat untuk membuktikan teorema. Secara historis, logika berkembang sejak Aristoteles sekitar 2300 tahun lalu. Kini logika banyak diterapkan dalam ilmu komputer: pemrograman, analisis kebenaran algoritma, kecerdasan buatan, perancangan komputer, dan lain-lain.\n\nBagian inti Bab 1 membahas logika proposisi. Materi menjelaskan proposisi (proposition) sebagai kalimat deklaratif yang nilai kebenarannya jelas: benar atau salah, bukan keduanya sekaligus. Nilai kebenaran (truth value) menjadi konsep penting. Tutor perlu menekankan perbedaan kalimat yang bisa dievaluasi kebenarannya versus kalimat yang tidak. Contoh-contoh menunjukkan: pernyataan faktual seperti “6 adalah bilangan genap” adalah proposisi; pernyataan yang salah karena fakta tidak sesuai juga proposisi; sedangkan kalimat seperti “Kemarin hari hujan” tidak bisa langsung ditetapkan tanpa konteks waktu yang konkret, tetapi tetap dapat diasumsikan benar atau salah (dengan kata lain, ia tetap bisa diberi nilai kebenaran). Sebaliknya, kalimat tanya (“Jam berapa kereta api tiba?”) dan perintah (“Serahkan uangmu sekarang!”) bukan proposisi karena tidak memiliki nilai benar/salah.\n\nMateri juga memperkenalkan bahwa keberadaan variabel dapat membuat pernyataan tidak langsung menjadi proposisi, selama nilai variabel tidak dispesifikasikan. Misal “x + 3 = 8” atau “x > 3” bergantung pada nilai x sehingga tidak dapat ditentukan benar/salahnya secara mutlak. Namun, pernyataan yang menyatakan klaim universal atau hukum matematis tetap menjadi proposisi. Contoh yang diberikan: “Untuk sembarang bilangan bulat n ≥ 0, maka 2^n adalah bilangan genap” selalu bernilai benar karena formulanya menyatakan sifat umum; begitu pula “x + y = y + x untuk setiap x dan y bilangan riil” merupakan proposisi karena merepresentasikan hukum komutatif penjumlahan.\n\nSetelah proposisi dibahas, materi menjelaskan notasi: proposisi biasanya dilambangkan dengan huruf kecil seperti p, q, r. Misal p : “6 adalah bilangan genap”, q : “Soekarno adalah Presiden Indonesia yang pertama”, r : “2 + 2 = 4”. Ini membantu mengubah kalimat menjadi objek formal untuk operasi logika.\n\nBagian berikutnya mengajarkan cara mengkombinasikan proposisi menggunakan operator logika dasar. Operator AND (∧) menggabungkan dua proposisi menjadi konjungsi yang menyatakan “p dan q”. Operator OR (∨) menyatakan “p atau q”. Operator NOT (~) membentuk negasi “tidak p”. Tutor perlu menegaskan konsep operator biner (AND dan OR) versus operator uner (NOT). Materi juga memaparkan bahwa metode pengkombinasian proposisi dipelopori oleh George Boole (1854) dalam “The Laws of Thought”. Selain itu, tutor harus memastikan siswa dapat membaca ekspresi logika simbolik sebagai kalimat bahasa alami, termasuk ketika negasi bersarang dan menggunakan tanda kurung. Contoh-contoh seperti p ∧ ~q, ~ ( ~p ∨ ~q ), sampai translasi kalimat yang “tidak benar bahwa ...” memperlihatkan pentingnya interpretasi yang tepat.\n\nKemudian materi beralih ke tabel kebenaran. Nilai kebenaran proposisi majemuk ditentukan oleh nilai kebenaran proposisi atomik dan aturan operator. Materi memberikan aturan formal: konjungsi benar jika keduanya benar; disjungsi salah hanya jika keduanya salah; negasi membalik nilai. Untuk praktis, tabel kebenaran memetakan semua kombinasi T/F dari atom-atom. Tutor perlu menekankan cara menghitung jumlah kombinasi: jika ada n proposisi atomik, jumlah kombinasi adalah 2^n. Contoh evaluasi ekspresi (p ∧ q) ∨ (~q ∧ r) menunjukkan bagaimana tiap baris kombinasi menghasilkan nilai akhir.\n\nSetelah siswa mampu membuat tabel kebenaran, materi memperkenalkan konsep tautologi dan kontradiksi. Tautologi adalah proposisi majemuk yang benar pada semua kasus; pada tabel, kolom hasil akhir hanya berisi T. Kontradiksi adalah proposisi majemuk yang salah pada semua kasus; pada tabel, kolom hasil akhir hanya berisi F. Materi memberi contoh tautologi: p ∨ ~(p ∧ q), dan kontradiksi: (p ∧ q) ∧ ~(p ∨ q). Tutor sebaiknya menekankan bahwa “semua kasus” berarti semua kemungkinan nilai kebenaran proposisi atomik.\n\nSelanjutnya, materi membahas ekivalensi logika. Dua proposisi majemuk ekivalen secara logika jika tabel kebenarannya identik, dilambangkan P ⇔ Q. Ada catatan bahwa beberapa literatur memakai notasi ≡. Contoh yang paling menonjol adalah Hukum De Morgan: ~(p ∧ q) ekivalen secara logika dengan ~p ∨ ~q, yang dapat dibuktikan lewat kesamaan kolom terakhir pada tabel kebenaran.\n\nTerakhir, materi menyinggung disjungsi eksklusif. Walaupun cuplikan belum memuat definisi operator eksklusif secara lengkap, materi menjelaskan bahwa kata “atau” dapat berarti inclusive or atau exclusive or. Inclusive or dimaknai sebagai “p atau q atau keduanya”, sehingga p ∨ q benar jika minimal satu benar. Ini selaras dengan aturan disjungsi pada tabel kebenaran. Tutor harus membantu siswa memahami bahwa masalah yang sering muncul adalah ambiguitas bahasa alami “atau”; untuk logika simbolik, harus dipastikan apakah yang dimaksud inclusive or (sesuai ∨ pada materi ini) atau exclusive or (yang akan berbeda penanganannya)."
+}

@@ -1,0 +1,194 @@
+{
+  "title": "Course: Timeline Pengembangan Proyek + Strategi Ide di Bidang Health & Smart Business",
+  "summary": "Materi ini menjelaskan alur pengembangan proyek dari tahap riset ide hingga siap dinilai dan dipresentasikan. Fokus utamanya adalah membangun ide yang kuat dan sesuai tema melalui brainstorming, validasi, lalu mengubahnya menjadi konsep dan planning yang jelas sebelum mulai implementasi MVP.\n\nSelain timeline, materi juga memuat contoh struktur pitch dan contoh ide aplikasi di bidang Health & Wellbeing Technology serta Smart Business & Digital Economy. Contoh ide seperti aplikasi kesehatan mental, AI & Digital Twins, nutrisi personal, chatbot CBT (Woebot/Wysa), panduan kesehatan mental di tempat kerja, hingga platform rekomendasi karier dan skill menggunakan AI. Semua ini dapat dipakai sebagai inspirasi untuk menentukan arah produk, target pengguna, dan pembeda proyek.",
+  "emoji": "📚",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Chapter 1: Riset Ide yang Kuat (Weeks 1: Day 1–7)",
+      "icon": "📘",
+      "explanation": "Pada awal pengembangan, tim perlu menemukan ide yang kuat dan sesuai tema. Proses dimulai dengan brainstorming pada Day 1–2, di mana semua anggota tim aktif memberikan ide. Fokusnya adalah mencari masalah nyata yang relevan, misalnya dari lingkungan sekitar, bisnis, edukasi, dan pendidikan. Hasil tahap ini adalah kumpulan ide yang berasal dari kebutuhan dan isu yang benar-benar terjadi.Setelah banyak ide terkumpul, Day 3–4 digunakan untuk validasi ide. Tim memilih 1 ide terbaik dengan melakukan ",
+      "keyPoints": [
+        "Poin penting dari materi"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Chapter 2: Bangun MVP yang Sudah Jalan (Week 2)",
+      "icon": "📗",
+      "explanation": "Week 2 bertujuan membuat project bisa berjalan meskipun masih sementara. Pada tahap ini, tim melakukan setup frontend dan backend. Tujuannya adalah membangun fondasi teknis agar aplikasi bisa menampilkan halaman dan menjalankan logika inti.Pembuatan MVP mencakup pembuatan landing page (halaman utama) serta fitur inti yang sesuai dengan ide fix. Di sisi backend, tim membuat logic utama dan API sederhana. API digunakan agar frontend dan backend dapat berkomunikasi untuk menjalankan fungsi utama ap",
+      "keyPoints": [
+        "Poin penting dari materi"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Chapter 3: Pembeda Produk, Penilaian, dan Presentasi (Weeks 3–4)",
+      "icon": "📙",
+      "explanation": "Week 3 berfokus membuat project terlihat berbeda dari yang lain. Perbaikan diarahkan pada peningkatan UI agar lebih clean dan modern. Tujuannya agar pengalaman pengguna terasa lebih baik dan presentasi produk tampak profesional saat diperlihatkan ke penilai.Selain UI, tim menambahkan elemen yang membuat aplikasi lebih “hidup”, seperti visualisasi dan interaksi user. Pada materi disebutkan juga bahwa AI integration bisa menjadi pilihan tambahan (opsional) untuk menambah nilai dan membuat solusi l",
+      "keyPoints": [
+        "Poin penting dari materi"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Chapter 4: Struktur Pitch dan Contoh Ide Produk (Health & Smart Business)",
+      "icon": "📙",
+      "explanation": "Materi juga memberikan panduan struktur pitch dan contoh slide. Alur pitch meliputi: Pendahuluan, Target pengguna & insight, Solusi kami, Keunggulan & Diferensiasi, serta Rencana Pelaksanaan. Urutan ini membantu tim menyampaikan cerita produk secara runtut, dari masalah dan kebutuhan pengguna sampai rencana eksekusi.Untuk tema Health & Wellbeing Technology, contoh ide yang disebut antara lain aplikasi kesehatan mental & mindfulness untuk mengelola stres, meditasi, dan meningkatkan fokus; AI & Di",
+      "keyPoints": [
+        "Poin penting dari materi"
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa output utama dari tahap brainstorming pada Day 1–2?",
+      "answer": "Output tahap brainstorming pada Day 1–2 adalah kumpulan ide yang digali dari masalah nyata, seperti dari lingkungan, bisnis, edukasi, dan pendidikan, yang seluruh anggota tim berkontribusi untuk menemukan ide yang relevan dengan tema.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa saja yang harus dicek saat validasi ide pada Day 3–4?",
+      "answer": "Saat validasi ide pada Day 3–4, tim mengecek apakah ide sesuai dengan tema, apakah ide memiliki value (manfaat), dan apakah ide bisa dibuat dalam waktu terbatas.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Di tahap konsep & planning (Day 5–7), apa yang ditentukan tim?",
+      "answer": "Pada Day 5–7, tim menentukan fitur utama, target user, flow aplikasi, membuat wireframe sederhana, dan menghasilkan blueprint project setelah ide difinalkan (1 ide fix).",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa yang dikerjakan tim saat membuat project bisa jalan di Week 2?",
+      "answer": "Di Week 2, tim melakukan setup frontend dan backend, membuat landing page (halaman utama), membangun fitur inti, membuat backend logic utama, serta membangun API sederhana agar MVP dapat berjalan.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa definisi output Week 2 dalam materi?",
+      "answer": "Output Week 2 adalah MVP jadi, yaitu fitur utama sudah berjalan meskipun masih versi sementara.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Contoh peningkatan apa yang disebut untuk membuat project berbeda di Week 3?",
+      "answer": "Di Week 3, contoh peningkatan meliputi improve UI agar clean & modern, menambahkan visualisasi dan interaksi user, serta opsi AI integration untuk menambah nilai (opsional).",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Aktivitas inti apa yang dilakukan pada Week 4 agar siap dinilai & dipresentasikan?",
+      "answer": "Week 4 fokus pada testing semua fitur, bug fixing, membuat slide presentasi dan laporan, menyiapkan alur penjelasan, latihan presentasi, serta memastikan project stabil dan siap submit.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Sebutkan 5 bagian utama struktur pitch yang terdapat dalam materi.",
+      "answer": "Struktur pitch terdiri dari: (1) Pendahuluan, (2) Target pengguna & insight, (3) Solusi kami, (4) Keunggulan & Diferensiasi, dan (5) Rencana Pelaksanaan.",
+      "emoji": "💡",
+      "difficulty": "medium"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Pada timeline Week 1, tahapan manakah yang bertujuan memilih 1 ide terbaik?",
+      "options": [
+        "Day 1–2: Brainstorming",
+        "Day 3–4: Validasi ide",
+        "Day 5–7: Konsep & Planning",
+        "Week 4: Testing & presentasi"
+      ],
+      "answer": "Day 3–4: Validasi ide",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Pada Day 5–7, apa yang biasanya dibuat selain menetapkan fitur dan target user?",
+      "options": [
+        "Wireframe sederhana",
+        "Slide presentasi final",
+        "Dataset pelatihan AI",
+        "Deployment produksi"
+      ],
+      "answer": "Wireframe sederhana",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Output Week 2 dalam materi adalah…",
+      "options": [
+        "Project sudah stabil dan siap submit",
+        "MVP jadi dengan fitur utama yang sudah jalan",
+        "Slide pitch dan laporan final tanpa implementasi",
+        "Prototype UI tanpa backend"
+      ],
+      "answer": "MVP jadi dengan fitur utama yang sudah jalan",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa tujuan utama Week 3 menurut materi?",
+      "options": [
+        "Menghapus semua fitur agar lebih sederhana",
+        "Membuat project beda dari yang lain melalui peningkatan UI dan interaksi",
+        "Menyelesaikan hanya backend logic tanpa frontend",
+        "Mengganti ide tanpa validasi sebelumnya"
+      ],
+      "answer": "Membuat project beda dari yang lain melalui peningkatan UI dan interaksi",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Manakah yang termasuk aktivitas Week 4 agar siap dinilai & dipresentasikan?",
+      "options": [
+        "Testing semua fitur dan bug fixing, lalu siapkan slide serta latihan presentasi",
+        "Hanya brainstorming untuk menambah ide baru",
+        "Hanya menentukan target user tanpa coding",
+        "Membuat API tanpa melakukan pengujian"
+      ],
+      "answer": "Testing semua fitur dan bug fixing, lalu siapkan slide serta latihan presentasi",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Struktur pitch pada materi diawali dengan bagian…",
+      "options": [
+        "Solusi kami",
+        "Keunggulan & Diferensiasi",
+        "Pendahuluan",
+        "Rencana Pelaksanaan"
+      ],
+      "answer": "Pendahuluan",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Contoh aplikasi di bidang Health & Wellbeing Technology yang menggunakan teknik CBT melalui chatbot adalah…",
+      "options": [
+        "Employee Wellness Hub (EWH)",
+        "Woebot & Wysa",
+        "WHO Mental Health At Work",
+        "AI Career & Skill Recommendation Platform"
+      ],
+      "answer": "Woebot & Wysa",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    },
+    {
+      "question": "Platform yang membantu pengguna menentukan karier dan skill menggunakan input minat/skill serta AI roadmap belajar otomatis termasuk kategori…",
+      "options": [
+        "Smart Business & Digital Economy",
+        "Health & Wellbeing Technology",
+        "Hanya aplikasi nutrisi",
+        "Hanya bio-digital twin"
+      ],
+      "answer": "Smart Business & Digital Economy",
+      "explanation": "Jawaban ini benar berdasarkan materi yang telah dipelajari.",
+      "xpReward": 50
+    }
+  ],
+  "achievements": [],
+  "tutorContext": "Materi membahas cara tim menyusun pengembangan proyek dari nol hingga siap dipresentasikan, sekaligus memberi contoh ide produk yang relevan untuk tema tertentu (Health & Wellbeing Technology dan Smart Business & Digital Economy). Timeline dibagi menjadi 4 minggu dengan target dan output yang berbeda-beda, sehingga setiap fase memiliki tujuan yang jelas.\n\nWeek 1 adalah fase penemuan ide yang kuat. Tim memulai dengan brainstorming pada Day 1–2. Pada tahap ini tidak langsung mencari jawaban final, tetapi mengumpulkan banyak gagasan melalui diskusi internal. Materi menekankan pentingnya mencari masalah nyata dari berbagai sudut pandang: lingkungan, bisnis, edukasi, hingga pendidikan. Semua anggota tim “mengisi” ide sehingga muncul alternatif solusi yang beragam.\n\nSetelah ide terkumpul, Day 3–4 menjadi fase validasi ide. Tim memilih satu ide terbaik dengan kriteria yang spesifik: kesesuaian ide dengan tema, adanya value (manfaat yang bisa dirasakan oleh pengguna/pihak terkait), serta kelayakan pengembangan dalam waktu terbatas. Ini mencegah tim memilih ide yang menarik secara konsep tetapi tidak bisa dibuat atau tidak relevan.\n\nTahap berikutnya, Day 5–7, fokus pada konsep dan planning. Tim menetapkan fitur utama, menentukan target user, dan merancang flow aplikasi (alur pengalaman pengguna). Agar tim tidak hanya berandai-andai, materi meminta pembuatan wireframe sederhana. Tujuan wireframe adalah mengubah ide menjadi bentuk yang bisa dipahami secara visual. Pada akhir Week 1, “1 ide fix” harus sudah ditetapkan beserta blueprint project sebagai rencana besar.\n\nWeek 2 berfokus pada eksekusi awal agar proyek memiliki bentuk nyata. Materi menyatakan bahwa project sudah bisa jalan meskipun masih sementara. Tim melakukan setup frontend dan backend. Dari sisi produk, tim membuat landing page (halaman utama) dan fitur inti sesuai ide fix. Pada backend, tim membangun logic utama serta API sederhana sehingga komponen aplikasi dapat berfungsi secara end-to-end. Output Week 2 adalah MVP jadi: fitur utama sudah berjalan. Dengan MVP, tim dapat mulai menguji apakah alur yang direncanakan benar-benar bekerja.\n\nWeek 3 bertujuan pembeda: membuat project terlihat berbeda dari kompetitor/yang lain. Materi menyebutkan peningkatan UI supaya clean dan modern. Selain itu, tim menambahkan visualisasi dan interaksi user agar pengalaman pengguna lebih kaya. AI integration disebut sebagai opsi tambahan (tidak wajib), namun bisa memperkuat nilai produk bila sesuai kebutuhan. Output dari fase ini adalah proyek yang mulai “kelihatan” sebagai solusi dengan karakter, bukan sekadar MVP.\n\nWeek 4 adalah fase persiapan penilaian. Aktivitas utama adalah testing semua fitur untuk memastikan tidak ada masalah fungsional. Setelah testing, dilakukan bug fixing. Materi juga menekankan persiapan materi presentasi: membuat slide presentasi, menyusun laporan, menyiapkan alur penjelasan, serta latihan presentasi. Target akhirnya: project stabil dan siap submit.\n\nSelain timeline, materi memberikan struktur pitch yang dapat dipakai untuk menyusun presentasi di depan juri/penilai. Urutannya: Pendahuluan; Target pengguna & insight; Solusi kami; Keunggulan & Diferensiasi; serta Rencana Pelaksanaan. Struktur ini membantu tim menjawab pertanyaan dasar secara berurutan: “Masalahnya apa?”, “Siapa pengguna dan kenapa mereka butuh?”, “Solusi apa yang ditawarkan?”, “Apa yang membuatnya lebih baik/beda?”, dan “Bagaimana rencana implementasinya ke depan?”.\n\nMateri juga memuat contoh ide dalam dua kategori tema. Untuk Health & Wellbeing Technology: (1) aplikasi kesehatan mental & mindfulness untuk mengelola stres, meditasi, dan meningkatkan fokus; (2) AI & Digital Twins untuk analisis data kesehatan pribadi dan pemodelan fungsi fisiologis (bio-digital twin) guna simulasi kesehatan masa depan; (3) nutrisi personal dengan algoritma dan AI untuk rekomendasi sesuai kebutuhan individu; (4) Woebot & Wysa sebagai chatbot berbasis AI yang memakai teknik CBT untuk mengelola kecemasan dan suasana hati; (5) WHO Mental Health At Work sebagai panduan kesehatan mental di lingkungan kerja; dan (6) Employee Wellness Hub (EWH) sebagai aplikasi manajemen kesehatan karyawan. Ide-ide ini dapat menjadi referensi saat tim melakukan brainstorming dan validasi ide.\n\nUntuk Smart Business & Digital Economy: contoh ide adalah AI Career & Skill Recommendation Platform, yaitu web yang membantu orang menentukan karier dan skill melalui input minat dan skill, lalu AI menghasilkan rekomendasi karier, roadmap belajar otomatis, dan saran course. Ide ini relevan karena memanfaatkan input pengguna dan rekomendasi berbasis AI.\n\nKeseluruhan materi dapat dipakai sebagai panduan praktis: mulai dari membentuk ide yang valid dan feasible, membangun MVP yang berfungsi, meningkatkan kualitas serta diferensiasi, lalu menyelesaikan persiapan teknis dan presentasi sampai siap dinilai."
+}

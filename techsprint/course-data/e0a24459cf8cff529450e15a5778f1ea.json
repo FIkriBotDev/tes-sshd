@@ -1,0 +1,399 @@
+{
+  "title": "JavaScript Dasar: dari Console sampai DOM & Async",
+  "summary": "Belajar JavaScript dari nol: mulai dari variabel, tipe data, operator, percabangan, loop, sampai fungsi, array, object, dan interaksi HTML (DOM + event). Di akhir, kamu pengenalan async/await dan roadmap biar tahu langkah berikutnya.",
+  "emoji": "🟨",
+  "color": "#f59e0b",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "JavaScript itu Pengatur Interaksi Web",
+      "icon": "🟨",
+      "explanation": "JavaScript adalah bahasa pemrograman yang membuat halaman web jadi hidup dan interaktif. Kamu bisa menampilkan pesan, memvalidasi formulir, membuat animasi, mengolah data, dan berkomunikasi dengan server via API.",
+      "analogy": "Kalau HTML itu seperti kerangka rumah, JavaScript itu seperti tukang yang bikin rumahnya bisa bergerak, merespons tombol, dan melakukan tugas tertentu.",
+      "highlight": "interaktif, browser, API",
+      "keyPoints": [
+        "Digunakan di web untuk membuat interaksi",
+        "Bisa mengolah data dan merespons input pengguna",
+        "Bisa komunikasi dengan server lewat API"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Coba console.log, Variabel let vs const",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode ini. Ubah nilai variabel dan lihat outputnya di console. Coba ganti let menjadi const pada salah satu baris untuk merasakan bedanya (jika error, balikkan lagi).",
+      "fileName": "main.js",
+      "defaultCode": "console.log(\"=== JavaScript Dasar ===\");\nlet nama = \"Budi\";\nlet umur = 20;\nconst negara = \"Indonesia\";\nconsole.log(\"Nama:\", nama);\nconsole.log(\"Umur:\", umur);\nconsole.log(\"Negara:\", negara);\numur = umur + 1;\nconsole.log(\"Umur setelah update:\", umur);\n// negara = \"Brasil\"; // coba aktifkan ini (akan error karena const)",
+      "hint": "Gunakan console untuk memeriksa perubahan nilai. Ingat: let boleh diubah, const tidak boleh."
+    },
+    {
+      "type": "concept_card",
+      "title": "Tipe Data & Operator Perbandingan",
+      "icon": "🧠",
+      "explanation": "Tipe data menentukan jenis nilai: String (teks), Number (angka), Boolean (true/false), Null (kosong disengaja), Undefined (belum diberi nilai). Operator perbandingan membandingkan nilai, dan operator triple-equals (===) membandingkan nilai dan tipe data agar lebih aman.",
+      "analogy": "Bayangkan kamu mau mencocokkan KTP: hanya cocok “angka”-nya itu belum cukup (==). Triple-equals seperti cek juga jenisnya (===), jadi lebih akurat.",
+      "highlight": "=== lebih aman",
+      "keyPoints": [
+        "String, Number, Boolean, Null, Undefined",
+        "Operator aritmatika: + - * / %",
+        "Gunakan === untuk perbandingan yang aman (nilai+tipe)"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Langkah Cepat Membuat Program Pakai Percabangan",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Tentukan input",
+          "description": "Misalnya nilai ujian atau umur yang akan dicek.",
+          "tip": "Mulai dari satu variabel dulu biar mudah."
+        },
+        {
+          "number": 2,
+          "title": "Tulis aturan kondisi",
+          "description": "Gunakan if untuk kasus sederhana, lalu tambah else jika perlu.",
+          "tip": "Urutkan dari kondisi yang paling spesifik."
+        },
+        {
+          "number": 3,
+          "title": "Gunakan else if untuk banyak pilihan",
+          "description": "Contoh: nilai A/B/C berdasarkan rentang.",
+          "tip": "Pastikan tidak ada rentang yang tumpang tindih."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Loop: for vs while (tampilkan 1–10)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode. Lihat perbedaan output saat memakai for dan while. Coba ubah batasnya (misal sampai 7) dan pastikan output sesuai.",
+      "fileName": "loop.js",
+      "defaultCode": "console.log(\"=== FOR ===\");\nfor (let i = 1; i <= 10; i++) {\n  console.log(i);\n}\n\nconsole.log(\"=== WHILE ===\");\nlet j = 1;\nwhile (j <= 10) {\n  console.log(j);\n  j++;\n}",
+      "hint": "Kalau while terasa “nggak berhenti”, cek kondisi (j <= ... ) dan pastikan ada j++."
+    },
+    {
+      "type": "concept_card",
+      "title": "Fungsi: Biar Kode Kamu Bisa Dipakai Ulang",
+      "icon": "🧩",
+      "explanation": "Fungsi mengelompokkan kode agar bisa dipanggil ulang kapan pun dibutuhkan. Ada fungsi tanpa parameter, fungsi dengan parameter, dan fungsi yang mengembalikan nilai pakai return.",
+      "analogy": "Fungsi itu seperti resep masakan. Kamu tidak memasak dari nol setiap kali, tinggal pakai resepnya dengan bahan (parameter) yang berbeda-beda.",
+      "highlight": "return nilai",
+      "keyPoints": [
+        "Fungsi biasa: function nama() {}",
+        "Parameter: function sapa(nama) {}",
+        "Arrow function versi ringkas: const f = (a,b) => a+b"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual: Data & Struktur",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "String",
+          "value": "Teks, contoh: \"Budi\"",
+          "icon": "🔤"
+        },
+        {
+          "label": "Number",
+          "value": "Angka, contoh: 25 atau 170.5",
+          "icon": "🔢"
+        },
+        {
+          "label": "Boolean",
+          "value": "true / false",
+          "icon": "✅"
+        },
+        {
+          "label": "Array",
+          "value": "Daftar data pakai indeks [0..n]",
+          "icon": "📚"
+        },
+        {
+          "label": "Object",
+          "value": "Key-value, contoh: { nama, umur }",
+          "icon": "🧠"
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Array & Object: simpan, akses, dan ubah",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode. Lihat output akses array & object. Coba ubah nama jurusan dan lihat perubahan pada console.",
+      "fileName": "data.js",
+      "defaultCode": "console.log(\"=== Array & Object ===\");\n\nlet buah = [\"Apel\", \"Mangga\", \"Jeruk\"];\nconsole.log(\"Buah awal:\", buah);\nconsole.log(\"Buah indeks 0:\", buah[0]);\nbuah.push(\"Pisang\");\nconsole.log(\"Buah setelah push:\", buah);\n\nbuah.forEach((item, idx) => {\n  console.log(\"Buah\", idx, \":\", item);\n});\n\nlet mahasiswa = { nama: \"Andi\", umur: 21, jurusan: \"Teknik Informatika\" };\nconsole.log(\"Mahasiswa:\", mahasiswa);\nconsole.log(\"Nama mahasiswa:\", mahasiswa.nama);\nmahasiswa.umur = 22;\nmahasiswa.jurusan = \"Informatika\";\nconsole.log(\"Mahasiswa setelah update:\", mahasiswa);",
+      "hint": "forEach itu nyaman untuk menelusuri array tanpa perlu manual index."
+    },
+    {
+      "type": "concept_card",
+      "title": "DOM & Event: JavaScript Mengubah Halaman",
+      "icon": "🌐",
+      "explanation": "DOM (Document Object Model) membuat HTML bisa diakses dan dimanipulasi oleh JavaScript. Kamu bisa mengubah teks via element id, lalu memakai event untuk menangani aksi seperti klik tombol.",
+      "analogy": "DOM itu seperti peta. HTML yang kamu tulis jadi “objek” yang bisa kamu tarik dan kamu ubah bagian tertentu (misal judul). Event itu seperti perintah “kalau tombol diklik, lakukan ini”.",
+      "highlight": "getElementById, innerText, addEventListener",
+      "keyPoints": [
+        "DOM = representasi HTML di JavaScript",
+        "Event = pemicu aksi (klik, input, dll)",
+        "innerText untuk mengubah teks elemen"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Mini Web: Ubah Teks saat Tombol Diklik",
+      "icon": "💻",
+      "language": "html",
+      "instruction": "Buka preview HTML. Klik tombol untuk mengubah teks judul. Coba ganti teks di fungsi ubahTeks() lalu lihat perubahannya.",
+      "fileName": "index.html",
+      "defaultCode": "<!DOCTYPE html><html lang=\"id\"><head><meta charset=\"UTF-8\" /><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /><title>DOM & Event JS</title><style>body{font-family:Arial,Helvetica,sans-serif;padding:20px;}button{padding:10px 14px;cursor:pointer;}</style></head><body><h1 id=\"judul\">Halo Dunia</h1><button id=\"btn\">Klik Saya</button><script>function ubahTeks(){document.getElementById(\"judul\").innerText=\"Teks Berubah\";}document.getElementById(\"btn\").addEventListener(\"click\", function(){ubahTeks(); alert(\"Tombol diklik!\");});</script></body></html>",
+      "hint": "Kalau tombol tidak bereaksi, pastikan id=\"judul\" dan id=\"btn\" sama dengan yang dipanggil di JavaScript."
+    },
+    {
+      "type": "concept_card",
+      "title": "Template Literal, Destructuring, dan Async/Await",
+      "icon": "⚡",
+      "explanation": "Template literal memudahkan menggabungkan teks dan variabel menggunakan backtick (`...`). Destructuring membuat pengambilan nilai dari object/array jadi lebih ringkas. Async/Await membantu menjalankan proses yang butuh waktu (misal fetch API) tanpa “mengunci” program.",
+      "analogy": "Template literal itu seperti stiker yang bisa kamu tempelkan angka/nama langsung ke kalimat. Destructuring itu seperti mengambil beberapa kotak barang dari kardus tanpa buka satu-satu. Async/Await itu seperti menunggu pesanan makanan: kamu tetap bisa melakukan hal lain sambil menunggu.",
+      "highlight": "async function, await, fetch",
+      "keyPoints": [
+        "Template literal: Nama saya ${nama}",
+        "Destructuring: const { nama } = mahasiswa",
+        "Async/Await untuk proses API yang butuh waktu"
+      ]
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini JavaScript",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "let",
+          "definition": "Menyimpan variabel yang nilainya bisa berubah.",
+          "example": "let umur = 20; umur = 21;"
+        },
+        {
+          "term": "const",
+          "definition": "Variabel yang nilainya tidak boleh berubah setelah diinisialisasi.",
+          "example": "const negara = \"Indonesia\";"
+        },
+        {
+          "term": "===",
+          "definition": "Operator perbandingan yang membandingkan nilai dan tipe data.",
+          "example": "10 === \"10\" // false"
+        },
+        {
+          "term": "Array",
+          "definition": "Kumpulan data berurutan dengan indeks.",
+          "example": "buah[0] = \"Apel\""
+        },
+        {
+          "term": "Object",
+          "definition": "Kumpulan data berupa pasangan key dan value.",
+          "example": "{ nama: \"Budi\", umur: 20 }"
+        },
+        {
+          "term": "DOM",
+          "definition": "Representasi HTML yang bisa dimanipulasi lewat JavaScript.",
+          "example": "document.getElementById(\"judul\").innerText"
+        },
+        {
+          "term": "Event",
+          "definition": "Pemicu aksi ketika pengguna/kejadian terjadi.",
+          "example": "addEventListener(\"click\", ...)"
+        },
+        {
+          "term": "Async/Await",
+          "definition": "Sintaks untuk menangani proses yang butuh waktu seperti fetch API.",
+          "example": "const res = await fetch(url);"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Apa fungsi utama JavaScript dalam konteks halaman web?",
+      "options": [
+        "Membuat struktur halaman statis saja",
+        "Membuat halaman web interaktif dan merespons pengguna",
+        "Mengatur warna tombol hanya lewat HTML",
+        "Menggantikan kebutuhan HTML"
+      ],
+      "answer": "Membuat halaman web interaktif dan merespons pengguna",
+      "explanation": "JavaScript digunakan agar web bisa merespons tindakan pengguna, memproses data, dan berkomunikasi dengan server.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perbedaan mendasar let dan const adalah...",
+      "options": [
+        "let tidak bisa berubah, const bisa berubah",
+        "let nilainya bisa diubah, const tidak bisa diubah",
+        "keduanya sama-sama tidak bisa diubah",
+        "const hanya untuk String"
+      ],
+      "answer": "let nilainya bisa diubah, const tidak bisa diubah",
+      "explanation": "let fleksibel untuk perubahan nilai, sedangkan const nilai yang ditetapkan tidak boleh diubah.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika kamu membandingkan 10 dan \"10\", hasil dari 10 === \"10\" adalah...",
+      "options": [
+        "true",
+        "false",
+        "undefined",
+        "null"
+      ],
+      "answer": "false",
+      "explanation": "=== membandingkan nilai dan tipe data. 10 adalah Number, sedangkan \"10\" adalah String, jadi tidak sama.",
+      "xpReward": 50
+    },
+    {
+      "question": "Operator aritmatika yang memberikan sisa bagi adalah...",
+      "options": [
+        "*",
+        "+",
+        "%",
+        "/"
+      ],
+      "answer": "%",
+      "explanation": "Operator % digunakan untuk modulus (sisa bagi).",
+      "xpReward": 50
+    },
+    {
+      "question": "Potongan kode ini akan mencetak \"Lulus\" jika nilai memenuhi kondisi berikut. Kondisinya adalah...",
+      "options": [
+        "nilai >= 70",
+        "nilai > 70",
+        "nilai == 70",
+        "nilai <= 70"
+      ],
+      "answer": "nilai >= 70",
+      "explanation": "Pada materi: if (nilai >= 70) { console.log(\"Lulus\"); } else { ... }",
+      "xpReward": 50
+    },
+    {
+      "question": "Dalam loop for (let i = 1; i <= 5; i++), nilai i yang dicetak adalah...",
+      "options": [
+        "0,1,2,3,4",
+        "1,2,3,4,5",
+        "1,2,3,4",
+        "2,3,4,5,6"
+      ],
+      "answer": "1,2,3,4,5",
+      "explanation": "Kondisi i <= 5 membuat i berjalan dari 1 sampai 5.",
+      "xpReward": 50
+    },
+    {
+      "question": "Manakah yang merupakan cara membuat fungsi menghitung jumlah dengan return?",
+      "options": [
+        "function tambah(a,b){ console.log(a+b); }",
+        "const tambah = (a,b) => a+b;",
+        "function tambah(a, b) { return a + b; }",
+        "function tambah(a,b) { a+b; }"
+      ],
+      "answer": "function tambah(a, b) { return a + b; }",
+      "explanation": "Return mengembalikan nilai ke variabel pemanggil. Ini sesuai contoh di materi.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa kegunaan utama addEventListener untuk event klik pada tombol?",
+      "options": [
+        "Mengubah warna tombol otomatis tanpa JS",
+        "Menjalankan fungsi ketika tombol diklik",
+        "Menghapus event pada tombol",
+        "Mengganti HTML menjadi CSS"
+      ],
+      "answer": "Menjalankan fungsi ketika tombol diklik",
+      "explanation": "addEventListener(\"click\", function(){ ... }) memanggil callback saat tombol diklik.",
+      "xpReward": 50
+    },
+    {
+      "question": "Dalam async/await, kata kunci await digunakan untuk...",
+      "options": [
+        "membuat loop berhenti",
+        "menunggu hasil Promise sebelum lanjut",
+        "mengubah tipe data otomatis",
+        "menghapus koneksi API"
+      ],
+      "answer": "menunggu hasil Promise sebelum lanjut",
+      "explanation": "await menunggu Promise selesai agar hasilnya bisa dipakai berikutnya.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "JavaScript itu bahasa untuk apa?",
+      "answer": "Bahasa pemrograman untuk membuat halaman web interaktif dan merespons pengguna.",
+      "emoji": "🟨",
+      "difficulty": "easy"
+    },
+    {
+      "question": "let dipakai untuk nilai yang bisa berubah atau tetap?",
+      "answer": "let untuk nilai yang bisa berubah (dinamis).",
+      "emoji": "🧮",
+      "difficulty": "easy"
+    },
+    {
+      "question": "const dipakai untuk nilai yang bisa berubah atau tetap?",
+      "answer": "const untuk nilai yang tidak akan berubah (tetap).",
+      "emoji": "🔒",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa perbedaan == dan === yang dibahas di materi?",
+      "answer": "=== membandingkan nilai dan tipe data (lebih aman).",
+      "emoji": "⚖️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Tulis contoh tipe data Boolean di JavaScript.",
+      "answer": "Boolean berisi true atau false. Contoh: let lulus = true;",
+      "emoji": "✅",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Operator apa untuk sisa bagi (modulus)?",
+      "answer": "Operator %. Contoh: 10 % 5 menghasilkan 0.",
+      "emoji": "➗",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa fungsi return dalam sebuah function?",
+      "answer": "return mengembalikan nilai dari function ke bagian kode yang memanggilnya.",
+      "emoji": "↩️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "DOM itu apa?",
+      "answer": "DOM adalah representasi struktur HTML yang bisa dimanipulasi oleh JavaScript.",
+      "emoji": "🌐",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Template literal menggunakan tanda apa?",
+      "answer": "Template literal menggunakan backtick `...` dan bisa memuat ${variabel}.",
+      "emoji": "🧷",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Kapan kamu pakai async dan await?",
+      "answer": "Untuk operasi yang butuh waktu seperti fetch API, agar bisa menunggu hasil Promise.",
+      "emoji": "⏳",
+      "difficulty": "hard"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama (dasar JavaScript: variabel, tipe data, operator, percabangan, loop).",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi ini membahas JavaScript dasar dengan tujuan membuat siswa memahami bagaimana JavaScript bekerja di web dan bagaimana menyusun program dari potongan kecil. Pertama, jelaskan konsep JavaScript: bahasa pemrograman yang membuat halaman web interaktif. Tekankan bahwa JavaScript dapat digunakan untuk menampilkan pesan (misalnya lewat console), memvalidasi formulir, membuat animasi, mengolah data, serta berkomunikasi dengan server melalui API. Untuk menumbuhkan rasa “langsung bisa”, gunakan contoh sederhana console.log(\"Hello World!\") yang outputnya adalah Hello World!. Setelah itu, masuk ke variabel: jelaskan fungsi variabel sebagai tempat menyimpan data. Materi memperkenalkan let dan const. jelaskan let: nilainya bisa berubah, cocok untuk data dinamis seperti umur yang bisa bertambah. Beri contoh: let nama = \"Budi\"; let umur = 20; console.log(nama); console.log(umur); lalu tunjukkan bahwa umur dapat diubah. Untuk const, tekankan nilainya tidak berubah setelah dideklarasikan, cocok untuk data tetap seperti const negara = \"Indonesia\". Tambahkan penekanan perbedaan let vs const: let untuk dinamis, const untuk tetap, dan const tidak boleh diassign ulang. Setelah variabel, lanjutkan tipe data. Jelaskan kategori yang muncul di materi: String untuk teks (contoh let nama = \"Andi\"), Number untuk angka termasuk desimal (contoh let tinggi = 170.5), Boolean untuk true/false (contoh let lulus = true), Null sebagai “kosong yang disengaja” (let data = null), dan Undefined sebagai “belum diisi” (let nilai;). Penting agar siswa paham bahwa setiap tipe data memengaruhi cara program bekerja, terutama saat dibandingkan. Berikutnya operator. Materi mengajarkan operator aritmatika: +, -, *, /, dan % (modulus). Jelaskan dengan contoh a=10, b=5 lalu tunjukkan output: a+b=15, a-b=5, a*b=50, a/b=2, a%b=0. Lalu operator perbandingan: > dan < untuk menghasilkan boolean, serta perbandingan longgar == dan perbandingan ketat ===. Jelaskan contoh: 10 > 5 true, 10 < 5 false, 10 == \"10\" true (karena == melakukan konversi tipe), sedangkan 10 === \"10\" false (karena tipe berbeda). Tekankan rekomendasi: gunakan === karena lebih aman karena membandingkan nilai dan tipe data. Setelah dasar nilai dan perbandingan, masuk ke percabangan. Materi menunjukkan if untuk satu kondisi: contoh umur >= 18 menghasilkan \"Dewasa\". Lalu if...else untuk dua kemungkinan: contoh nilai >= 70 mencetak \"Lulus\" jika tidak mencetak \"Tidak Lulus\". Terakhir if...else if...else untuk banyak rentang nilai, misalnya A untuk nilai >= 90, B untuk >= 80, selain itu C. Tekankan konsep: urutan kondisi penting karena hanya satu cabang yang dieksekusi. Berikutnya perulangan. Materi menampilkan for untuk pengulangan yang terstruktur: for (let i = 1; i <= 5; i++) console.log(i). Jelaskan bahwa i++ berarti menaikkan nilai i setiap iterasi. Kemudian while: let i = 1; while (i <= 5) { console.log(i); i++; }. Tekankan perbedaan mental model: while mengecek kondisi setiap putaran, sedangkan for biasanya ringkas untuk pola yang jelas. Lanjut ke fungsi (function). Jelaskan bahwa fungsi digunakan untuk mengelompokkan kode agar dapat digunakan kembali, membantu mencegah duplikasi. Materi menunjukkan fungsi biasa: function sapa(){ console.log(\"Halo!\"); } lalu sapa();. Fungsi dengan parameter: function sapa(nama){ console.log(\"Halo \" + nama); } lalu sapa(\"Budi\");. Fungsi yang mengembalikan nilai: function tambah(a,b){ return a+b; } lalu let hasil = tambah(5,3); console.log(hasil);. Setelah itu arrow function sebagai cara modern. Materi menunjukkan versi lengkap dengan return dan versi singkat: const tambah = (a,b) => { return a+b; }; dan const tambah = (a,b) => a+b;. Tekankan bahwa arrow function sering dipakai untuk fungsi sederhana dan singkat. Berikutnya struktur data: array dan object. Array adalah kumpulan data berurutan yang diakses dengan indeks. Contoh buah = [\"Apel\",\"Mangga\",\"Jeruk\"]; console.log(buah); console.log(buah[0]); untuk akses elemen pertama. Menambah elemen dengan buah.push(\"Pisang\");. Untuk iterasi array gunakan forEach: buah.forEach((item) => { console.log(item); }); jelaskan callback item mewakili setiap elemen. Object menyimpan data dalam pasangan key dan value. Contoh mahasiswa = { nama: \"Budi\", umur: 20, jurusan: \"Informatika\" }; akses dengan mahasiswa.nama. Ubah data dengan mahasiswa.umur = 21. Setelah struktur data, materi masuk ke DOM. Jelaskan bahwa HTML memiliki elemen id yang bisa diambil oleh JavaScript. Contoh: <h1 id=\"judul\">Halo Dunia</h1> dan <button onclick=\"ubahTeks()\">Klik Saya</button>. Lalu function ubahTeks(){ document.getElementById(\"judul\").innerText = \"Teks Berubah\"; }. Tekankan konsep: innerText mengubah teks yang terlihat. Lalu event handling dengan addEventListener. Contoh materi: <button id=\"btn\">Klik</button> dan JavaScript: document.getElementById(\"btn\").addEventListener(\"click\", function(){ alert(\"Tombol diklik!\"); });. Tekankan bahwa event listener adalah cara lebih modern daripada inline onclick, karena memisahkan HTML dan logika JavaScript. Selanjutnya template literal untuk menggabungkan string dan variabel: gunakan backtick dan ${}. Contoh: let nama=\"Budi\"; let umur=20; console.log(`Nama saya ${nama}, umur saya ${umur}`);. Lanjut destructuring yang memudahkan pengambilan data dari object/array. Materi menunjukkan: const mahasiswa = { nama: \"Andi\", umur: 22 }; const { nama, umur } = mahasiswa; console.log(nama); jelaskan bahwa ini “mengambil” properti tertentu menjadi variabel baru. Terakhir async dan await pengenalan. Jelaskan bahwa operasi tertentu butuh waktu, misalnya fetch API. Materi menunjukkan: async function getData(){ const response = await fetch(\"https://api.example.com/data\"); const data = await response.json(); console.log(data); }. Tekankan alur: async menandai fungsi boleh memakai await, await menunggu Promise dari fetch, response.json() mengubah body response menjadi data JavaScript. Beri konteks bahwa dalam pembelajaran berikutnya siswa akan masuk ke Promise lebih dalam. Bagian Latihan menekankan praktik: membuat variabel nama/umur dan output format tertentu, fungsi menghitung luas persegi (luas = sisi × sisi), menampilkan angka 1–10 dengan loop, membuat array 5 nama teman dan menampilkannya, membuat object mahasiswa dengan nama/umur/jurusan sesuai contoh. Akhiri dengan roadmap belajar JavaScript: urutan dari dasar (variabel, operator, percabangan, loop) lalu function dan scope, array dan object, DOM manipulation, ES6+ (arrow function, destructuring, spread operator), async JavaScript (Promise, async/await), Fetch API, OOP JavaScript, modular JavaScript, dan framework (React, Vue, Angular). Tegaskan saran untuk pemula: fokus kuasai poin 1–6 dengan latihan membuat program kecil seperti kalkulator, to-do list, dan aplikasi kasir agar konsep benar-benar nempel."
+}

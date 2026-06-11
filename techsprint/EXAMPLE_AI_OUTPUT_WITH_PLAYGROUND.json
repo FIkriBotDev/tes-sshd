@@ -1,0 +1,295 @@
+{
+  "title": "Belajar JavaScript dari Nol - Interactive Edition",
+  "summary": "Pelajari JavaScript dengan cara yang fun dan interaktif! Course ini dilengkapi live code playground untuk praktek langsung.",
+  "emoji": "⚡",
+  "color": "#f59e0b",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Apa itu Variabel?",
+      "icon": "📦",
+      "explanation": "Variabel adalah kotak penyimpanan data di dalam program. Kamu bisa membayangkan variabel seperti kotak yang diberi label, lalu di dalamnya kamu simpan sesuatu.",
+      "analogy": "Bayangkan kamu punya kotak mainan. Kamu kasih label 'LEGO' di kotaknya, terus kamu isi dengan mainan LEGO. Nah, variabel itu sama persis! Labelnya itu nama variabel, isinya itu nilai (value).",
+      "highlight": "let",
+      "keyPoints": [
+        "Variabel menyimpan data yang bisa dipakai berkali-kali",
+        "Pakai kata kunci 'let' atau 'const' untuk membuat variabel",
+        "Nama variabel harus jelas menggambarkan isinya"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Coba Bikin Variabel!",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Edit code di bawah dan klik 'Run Code' untuk melihat hasilnya di console! Coba ganti nama dan umur sesuai data kamu.",
+      "fileName": "variabel.js",
+      "defaultCode": "// Mari coba membuat variabel!\nlet nama = \"Budi\";\nlet umur = 17;\nlet sekolah = \"SMA Negeri 1\";\n\nconsole.log(\"Halo, nama saya \" + nama);\nconsole.log(\"Umur saya \" + umur + \" tahun\");\nconsole.log(\"Saya sekolah di \" + sekolah);\n\n// Coba buat variabel baru untuk hobi kamu!\nlet hobi = \"coding\";\nconsole.log(\"Hobi saya: \" + hobi);",
+      "hint": "Coba tambahkan variabel 'kota' untuk menyimpan kota tempat tinggal kamu, lalu tampilkan dengan console.log!"
+    },
+    {
+      "type": "visual_summary",
+      "title": "Tipe Data JavaScript",
+      "icon": "🎨",
+      "items": [
+        { "label": "String", "value": "Teks / Kata (\"hello\")", "icon": "📝" },
+        { "label": "Number", "value": "Angka (42, 3.14)", "icon": "🔢" },
+        { "label": "Boolean", "value": "true atau false", "icon": "✅" },
+        { "label": "Array", "value": "List data [1,2,3]", "icon": "📋" },
+        { "label": "Object", "value": "Data kompleks {key:value}", "icon": "📦" }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Cara Membuat Function",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Tulis kata kunci 'function'",
+          "description": "Mulai dengan mengetik 'function' untuk memberitahu JavaScript bahwa kamu mau bikin fungsi",
+          "tip": "Atau bisa pakai arrow function (=>) untuk cara modern!"
+        },
+        {
+          "number": 2,
+          "title": "Kasih nama function",
+          "description": "Beri nama yang jelas, misalnya 'hitungLuas' atau 'sapaPengguna'",
+          "tip": "Gunakan camelCase untuk nama function (kata pertama kecil, kata kedua kapital)"
+        },
+        {
+          "number": 3,
+          "title": "Tambahkan parameter dalam ()",
+          "description": "Parameter adalah input yang function terima, misalnya (panjang, lebar)",
+          "tip": "Parameter bersifat opsional, bisa ada bisa tidak"
+        },
+        {
+          "number": 4,
+          "title": "Tulis kode di dalam {}",
+          "description": "Di dalam kurung kurawal, tulis instruksi yang mau dijalankan",
+          "tip": "Jangan lupa 'return' untuk mengembalikan nilai!"
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Praktek Bikin Function",
+      "icon": "⚙️",
+      "language": "javascript",
+      "instruction": "Yuk coba bikin function! Edit dan jalankan code di bawah.",
+      "fileName": "function.js",
+      "defaultCode": "// Function untuk menyapa\nfunction sapa(nama) {\n  return \"Halo, \" + nama + \"! Selamat belajar! 🚀\";\n}\n\n// Panggil function-nya\nconsole.log(sapa(\"Budi\"));\nconsole.log(sapa(\"Ani\"));\n\n// Function untuk hitung luas persegi panjang\nfunction hitungLuas(panjang, lebar) {\n  return panjang * lebar;\n}\n\nlet hasil = hitungLuas(5, 3);\nconsole.log(\"Luas persegi panjang: \" + hasil);\n\n// Challenge: Bikin function 'hitungVolume' untuk balok!",
+      "hint": "Volume balok = panjang × lebar × tinggi. Jangan lupa kasih 3 parameter!"
+    },
+    {
+      "type": "analogy_card",
+      "title": "Function itu Seperti Mesin",
+      "icon": "🤖",
+      "realWorld": "Bayangkan kamu punya mesin pembuat jus. Kamu masukkan buah (input), mesin proses, keluar jus (output). Function sama persis! Kamu kasih parameter (input), function proses kode, lalu return hasil (output).",
+      "connection": "Parameter function = buah yang kamu masukkan. Kode di dalam function = proses mesin. Return value = jus yang keluar.",
+      "insight": "Dengan function, kamu bisa pakai kode yang sama berkali-kali tanpa nulis ulang. Efisien!"
+    },
+    {
+      "type": "code_playground",
+      "title": "Bikin Kalkulator Sederhana",
+      "icon": "🧮",
+      "language": "javascript",
+      "instruction": "Mari bikin kalkulator dengan function! Coba jalankan dan modifikasi sendiri.",
+      "fileName": "kalkulator.js",
+      "defaultCode": "// Kalkulator JavaScript Sederhana\n\nfunction tambah(a, b) {\n  return a + b;\n}\n\nfunction kurang(a, b) {\n  return a - b;\n}\n\nfunction kali(a, b) {\n  return a * b;\n}\n\nfunction bagi(a, b) {\n  if (b === 0) {\n    return \"Error: Tidak bisa bagi dengan 0!\";\n  }\n  return a / b;\n}\n\n// Test kalkulator\nconsole.log(\"10 + 5 =\", tambah(10, 5));\nconsole.log(\"10 - 5 =\", kurang(10, 5));\nconsole.log(\"10 × 5 =\", kali(10, 5));\nconsole.log(\"10 ÷ 5 =\", bagi(10, 5));\nconsole.log(\"10 ÷ 0 =\", bagi(10, 0));\n\n// Challenge: Tambahkan function pangkat(a, b) untuk a^b",
+      "hint": "Gunakan operator ** untuk pangkat, contoh: 2 ** 3 = 8"
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus JavaScript",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "console.log()",
+          "definition": "Function bawaan JavaScript untuk menampilkan output ke console browser",
+          "example": "console.log('Hello World');"
+        },
+        {
+          "term": "let",
+          "definition": "Kata kunci untuk membuat variabel yang nilainya bisa diubah",
+          "example": "let umur = 17; umur = 18;"
+        },
+        {
+          "term": "const",
+          "definition": "Kata kunci untuk membuat variabel yang nilainya tetap (konstanta)",
+          "example": "const PI = 3.14; // tidak bisa diubah"
+        },
+        {
+          "term": "return",
+          "definition": "Perintah untuk mengembalikan nilai dari sebuah function",
+          "example": "function double(x) { return x * 2; }"
+        },
+        {
+          "term": "parameter",
+          "definition": "Input yang diterima function, ditulis dalam kurung ()",
+          "example": "function sapa(nama) { ... } // nama = parameter"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Apa fungsi dari kata kunci 'let' di JavaScript?",
+      "options": [
+        "Membuat variabel yang nilainya bisa diubah",
+        "Membuat function baru",
+        "Menampilkan output ke console",
+        "Menghapus variabel"
+      ],
+      "answer": "Membuat variabel yang nilainya bisa diubah",
+      "explanation": "'let' digunakan untuk mendeklarasikan variabel yang nilainya bisa diubah setelah dibuat. Berbeda dengan 'const' yang nilainya tetap.",
+      "xpReward": 50
+    },
+    {
+      "question": "Manakah penulisan function yang BENAR?",
+      "options": [
+        "function sapa(nama) { return \"Halo \" + nama; }",
+        "function sapa nama { return \"Halo \" + nama; }",
+        "sapa(nama) { return \"Halo \" + nama; }",
+        "func sapa(nama) return \"Halo \" + nama;"
+      ],
+      "answer": "function sapa(nama) { return \"Halo \" + nama; }",
+      "explanation": "Penulisan function yang benar: kata kunci 'function', nama function, parameter dalam (), dan kode dalam {}.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa output dari code ini?\nlet x = 10;\nlet y = 5;\nconsole.log(x + y);",
+      "options": [
+        "15",
+        "10 + 5",
+        "105",
+        "Error"
+      ],
+      "answer": "15",
+      "explanation": "Operator + akan menjumlahkan angka 10 dan 5, hasilnya 15.",
+      "xpReward": 50
+    },
+    {
+      "question": "Parameter dalam function berfungsi sebagai...",
+      "options": [
+        "Input yang diterima function",
+        "Output yang dihasilkan function",
+        "Nama function",
+        "Tipe data function"
+      ],
+      "answer": "Input yang diterima function",
+      "explanation": "Parameter adalah input/nilai yang diberikan ke function saat dipanggil. Function bisa menerima 0 atau lebih parameter.",
+      "xpReward": 50
+    },
+    {
+      "question": "Keyword apa yang digunakan untuk mengembalikan nilai dari function?",
+      "options": [
+        "return",
+        "output",
+        "result",
+        "send"
+      ],
+      "answer": "return",
+      "explanation": "Keyword 'return' digunakan untuk mengembalikan nilai dari function. Tanpa return, function akan return 'undefined'.",
+      "xpReward": 50
+    },
+    {
+      "question": "console.log() digunakan untuk...",
+      "options": [
+        "Menampilkan output di console browser",
+        "Membuat variabel baru",
+        "Menghapus data dari console",
+        "Membuat function baru"
+      ],
+      "answer": "Menampilkan output di console browser",
+      "explanation": "console.log() adalah function bawaan JavaScript untuk menampilkan/mencetak output ke console browser, berguna untuk debugging.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa perbedaan 'let' dan 'const'?",
+      "options": [
+        "let bisa diubah nilainya, const tidak bisa",
+        "let untuk angka, const untuk teks",
+        "let lebih cepat dari const",
+        "Tidak ada perbedaan"
+      ],
+      "answer": "let bisa diubah nilainya, const tidak bisa",
+      "explanation": "'let' membuat variabel yang bisa di-reassign nilai barunya. 'const' membuat konstanta yang nilainya tetap setelah dibuat.",
+      "xpReward": 50
+    },
+    {
+      "question": "Function tambah(5, 3) akan mengembalikan nilai...",
+      "options": [
+        "8",
+        "53",
+        "5 + 3",
+        "Error"
+      ],
+      "answer": "8",
+      "explanation": "Function tambah() menjumlahkan parameter pertama (5) dengan parameter kedua (3), hasilnya 8.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa itu Variabel?",
+      "answer": "Variabel adalah 'kotak penyimpanan' di program yang bisa menyimpan data. Seperti kotak berlabel yang bisa kamu isi dengan berbagai macam barang (data).",
+      "emoji": "📦",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa fungsi keyword 'let'?",
+      "answer": "Keyword 'let' digunakan untuk membuat variabel baru yang nilainya bisa diubah setelah dibuat. Contoh: let umur = 17;",
+      "emoji": "🔤",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa itu Function?",
+      "answer": "Function adalah 'mesin' yang menerima input (parameter), memproses kode, dan menghasilkan output (return value). Bisa dipanggil berkali-kali.",
+      "emoji": "⚙️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa kegunaan console.log()?",
+      "answer": "console.log() digunakan untuk menampilkan output di console browser. Sangat berguna untuk debugging dan melihat nilai variabel.",
+      "emoji": "🖥️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa itu Parameter?",
+      "answer": "Parameter adalah input yang diterima function, ditulis dalam kurung (). Function bisa punya 0, 1, atau lebih parameter. Contoh: function sapa(nama) { ... }",
+      "emoji": "📥",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa fungsi keyword 'return'?",
+      "answer": "Keyword 'return' digunakan untuk mengembalikan nilai dari function. Tanpa return, function akan mengembalikan undefined.",
+      "emoji": "↩️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Perbedaan let dan const?",
+      "answer": "let membuat variabel yang nilainya bisa diubah. const membuat konstanta yang nilainya tetap setelah dibuat. Gunakan const untuk nilai yang tidak berubah.",
+      "emoji": "🔒",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa itu camelCase?",
+      "answer": "camelCase adalah gaya penulisan nama variabel/function: kata pertama huruf kecil, kata berikutnya huruf kapital. Contoh: hitungLuas, namaSiswa, jumlahBuku.",
+      "emoji": "🐫",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Kenapa function itu penting?",
+      "answer": "Function membuat kode reusable (bisa dipakai berkali-kali), lebih terorganisir, mudah di-maintain, dan menghindari pengulangan kode yang sama.",
+      "emoji": "⭐",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa itu String?",
+      "answer": "String adalah tipe data untuk menyimpan teks/kata. Ditulis dalam tanda kutip (\"...\" atau '...'). Contoh: let nama = \"Budi\";",
+      "emoji": "📝",
+      "difficulty": "easy"
+    }
+  ],
+  "tutorContext": "Materi ini membahas dasar-dasar JavaScript untuk pemula absolut. Fokus utama ada pada dua konsep fundamental: variabel dan function.\n\nVariabel dijelaskan dengan analogi kotak penyimpanan berlabel. Siswa perlu memahami bahwa variabel adalah cara menyimpan data di memori komputer dengan nama yang mudah diingat. Ada dua kata kunci utama: 'let' untuk variabel yang bisa diubah, dan 'const' untuk konstanta.\n\nFunction dijelaskan dengan analogi mesin yang menerima input dan menghasilkan output. Konsep parameter dan return value sangat penting. Function membuat kode reusable dan terorganisir.\n\nMateri dilengkapi dengan Code Playground interaktif dimana siswa bisa langsung praktek coding di browser. Playground pertama fokus pada variabel sederhana, kedua pada function dasar, ketiga pada implementasi kalkulator.\n\nSetiap code playground punya default code yang bisa diedit siswa, lalu dijalankan dengan tombol 'Run Code'. Output ditampilkan di console area di bawah editor. Ada hint untuk challenge tambahan.\n\nPenekanan pada learning by doing - siswa tidak hanya baca teori tapi langsung praktek. Gunakan bahasa yang friendly dan relatable. Beri contoh konkret dari kehidupan sehari-hari.\n\nSaat menjelaskan error, fokus pada pemahaman konsep bukan syntax hafalan. Dorong siswa untuk eksperimen dengan code playground."
+}

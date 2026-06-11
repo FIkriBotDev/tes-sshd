@@ -1,0 +1,34 @@
+[
+  {
+    "studentId": "bdca51d63a55507d",
+    "username": "Fikri",
+    "email": "muhammadfikrifahrezi2@gmail.com",
+    "password": "$2b$10$qfwv4s6tp9e4Z3L1cgqcn.O.dpAqo7TJSIKpubPOn0RMgygFpbLE.",
+    "profilePicture": "",
+    "xp": 985,
+    "coin": 410,
+    "level": 3,
+    "streak": 0,
+    "lastLogin": "11-06-2026, 11.31.00",
+    "quizScore": 5,
+    "completedBlocks": [
+      "block-3",
+      "block-7",
+      "block-2"
+    ],
+    "completedChapter": [],
+    "flashcardsViewed": 9,
+    "leaderboardPoint": 770,
+    "achievements": [
+      "first_block",
+      "coin_100",
+      "quiz_master",
+      "flashcard_pro"
+    ],
+    "joinedAt": "11-06-2026, 11.31.00",
+    "quizCorrectCount": 5,
+    "aiInteractions": 1,
+    "todayAiCount": 1,
+    "lastAiDate": "Thu Jun 11 2026"
+  }
+]
