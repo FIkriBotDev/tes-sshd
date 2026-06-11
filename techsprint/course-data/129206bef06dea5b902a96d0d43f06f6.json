@@ -1,0 +1,346 @@
+{
+  "title": "Capex & Akuntansi Aset Tetap: Kenali PPE, Hitung Cost, dan Atur Pengeluaran",
+  "summary": "Kamu akan belajar cara mengidentifikasi property, plant, and equipment (PPE) beserta ciri dan biaya terkaitnya. Materi juga menuntunmu memahami konsep historical cost, kapan biaya dikapitalisasi, serta isu valuasi (cost method vs revaluation).",
+  "emoji": "🏗️",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "PPE itu apa? (Propery, Plant, Equipment)",
+      "icon": "🏗️",
+      "explanation": "Property, plant, and equipment (PPE) adalah aset berwujud yang dipakai untuk produksi/penyediaan barang dan jasa, disewakan, atau kebutuhan administratif. Aset ini diharapkan memberi manfaat lebih dari satu periode, sehingga umumnya tidak untuk dijual.",
+      "analogy": "Bayangkan kamu punya mesin produksi di toko roti. Mesin itu dipakai berulang-ulang selama bertahun-tahun, jadi masuk kategori aset tetap, bukan persediaan bahan roti.",
+      "highlight": "tangible, dipakai > 1 periode, bukan untuk dijual",
+      "keyPoints": [
+        "PPE dipakai untuk operasi, bukan untuk resale",
+        "Umumnya long-term dan didepresiasi (kecuali land)",
+        "PPE berwujud secara fisik, beda dari intangible asset"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Ciri Utama PPE (3 pembeda yang sering keluar di soal)",
+      "icon": "✅",
+      "explanation": "Ada tiga ciri penting PPE: (1) untuk digunakan dalam operasi, bukan dijual; (2) bersifat jangka panjang dan biasanya didepresiasi; (3) punya substansi fisik (tangible). Pembedaan ini membantu mengklasifikasikan biaya dan penyajian di laporan keuangan.",
+      "analogy": "Seperti memilih perlengkapan camping: tenda dan kompor dipakai lama (PPE), sementara makanan cepat habis (inventory).",
+      "highlight": "penggunaan operasi, long-term, tangible",
+      "keyPoints": [
+        "Idle building atau aset untuk apresiasi harga dipisahkan dari PPE",
+        "Land biasanya tidak didepresiasi kecuali ada penurunan nilai material",
+        "PPE tidak ikut “hilang jadi produk” seperti bahan baku"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Peta Keputusan: PPE vs Inventory vs Investment",
+      "icon": "🧭",
+      "items": [
+        {
+          "label": "Tujuan kepemilikan",
+          "value": "dipakai operasi (PPE) vs dijual (inventory) vs untuk apresiasi/imbal hasil (investment)",
+          "icon": "🎯"
+        },
+        {
+          "label": "Durasi manfaat",
+          "value": "lebih dari satu periode (PPE)",
+          "icon": "⏳"
+        },
+        {
+          "label": "Bentuk aset",
+          "value": "berwujud fisik (PPE)",
+          "icon": "🧱"
+        },
+        {
+          "label": "Perlakuan umum",
+          "value": "umumnya didepresiasi, kecuali land (biasanya)",
+          "icon": "📉"
+        }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Langkah Praktis Menentukan Biaya yang Dikapitalisasi",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Tanyakan: aset ini untuk operasi atau untuk dijual?",
+          "description": "Jika untuk operasi dan memberi manfaat > 1 periode, biasanya masuk PPE. Jika untuk dijual, lebih dekat ke inventory; jika untuk investasi/apresiasi, bisa kategori lain.",
+          "tip": "Istirahatkan dari kebiasaan: lihat “tujuan”, bukan hanya jenis barangnya."
+        },
+        {
+          "number": 2,
+          "title": "Gunakan historical cost sebagai basis awal",
+          "description": "Historical cost = kas/ekuivalen kas yang dibayarkan untuk memperoleh aset dan membawa ke lokasi & kondisi agar siap dipakai.",
+          "tip": "Pikirkan seperti biaya “onboarding” mesin sampai siap produksi."
+        },
+        {
+          "number": 3,
+          "title": "Masukkan komponen biaya yang relevan",
+          "description": "Umumnya: (a) harga beli termasuk bea impor & pajak yang tidak dapat dikembalikan (dikurangi diskon/rebate), (b) biaya agar aset siap digunakan sesuai maksud perusahaan.",
+          "tip": "Perhatikan kata kunci: siap digunakan, lokasi, kondisi."
+        },
+        {
+          "number": 4,
+          "title": "Bedakan reparasi vs biaya yang menciptakan manfaat periode berikutnya",
+          "description": "Biaya perbaikan rutin yang manfaatnya terutama untuk periode berjalan cenderung diakui sebagai beban; biaya yang terkait menyiapkan aset agar siap dipakai biasanya dikapitalisasi.",
+          "tip": "Jika hanya menjaga agar tetap jalan sekarang, seringnya beban."
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Historical Cost vs Fair Value (Revaluation)",
+      "icon": "🧠",
+      "explanation": "Untuk PPE, basis paling umum adalah historical cost. Namun setelah pengakuan awal, perusahaan dapat memilih metode valuasi selanjutnya: cost method atau fair value (revaluation) method. Revaluation umumnya menghasilkan nilai aset lebih tinggi sehingga depresiasi lebih besar dan net income cenderung lebih rendah.",
+      "analogy": "Bayangkan kamu menilai kendaraan: beli dulu dengan harga asli (historical), lalu bisa juga re-appraisal dengan harga pasar (revaluation). Re-appraisal sering membuat laporan terlihat “lebih mahal” sehingga biaya susut (depresiasi) bisa berubah.",
+      "highlight": "cost method lebih umum karena lebih murah; revaluation cenderung menaikkan nilai aset",
+      "keyPoints": [
+        "Historical cost: uang untuk memperoleh dan siap dipakai",
+        "Metode lanjutan: cost method vs revaluation (fair value)",
+        "Revaluation → nilai aset naik → depresiasi naik → laba bersih bisa turun"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Komponen Cost PPE (contoh yang sering diuji)",
+      "icon": "🧾",
+      "explanation": "Biaya yang dimasukkan ke PPE umumnya mencakup harga beli (dikurangi diskon/rebate), bea impor, pajak yang tidak dapat dikembalikan, serta biaya yang langsung terkait membawa aset ke lokasi dan kondisi yang diperlukan. Untuk ilustrasi, pembelian mesin biasanya kapitalisasi sampai siap dipakai, termasuk biaya pengiriman/delivery yang diperlukan.",
+      "analogy": "Seperti beli laptop: harga laptop saja belum cukup; ada biaya charger/case import, ongkir, dan instalasi awal agar siap dipakai. Semua yang membuatnya siap dipakai menjadi bagian dari cost awal.",
+      "highlight": "purchase price (+ bea impor, pajak non-refundable) dan costs to prepare",
+      "keyPoints": [
+        "Diskon dan rebate mengurangi cost",
+        "Biaya pengiriman yang diperlukan bisa masuk PPE",
+        "Biaya yang hanya menjaga periode berjalan biasanya beban"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Coding Challenge: Hitung Land Cost (Simulasi Kapitalisasi)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Ubah kategori biaya berikut menjadi total land cost. Aturan: land cost = purchase price + closing costs + site prep (grading/filling/draining/clearing) + encumbrances assumed + additional improvements with indefinite life + special assessments for local improvements. Jika ada proceeds salvage dari demolition/clearing yang terkait menyiapkan tanah untuk intended use, proceeds tersebut mengurangi land cost. Jalankan untuk lihat output total.",
+      "fileName": "land_cost.js",
+      "defaultCode": "// Code Playground: Land Cost Calculator (Simulasi) \n// Aturan ringkas: total = purchasePrice + closingCosts + sitePrep + assumedEncumbrances + indefiniteImprovements + specialAssessments - salvageProceeds \n\nconst purchasePrice = 50000000; // contoh: ¥ 50,000,000\nconst closingCosts = 2000000;  // contoh: title/attorney/recording fees\nconst sitePrep = 3500000;      // contoh: grading, filling, draining, clearing\nconst assumedEncumbrances = 15000000; // back taxes + liens + mortgages assumed\nconst indefiniteImprovements = 1200000; // perbaikan dengan life tidak terbatas\nconst specialAssessments = 800000; // street lights, sewers, drainage, dll\nconst salvageProceeds = 300000; // proceeds dari material demolition/cleared timber (mengurangi cost)\n\nconst totalLandCost = purchasePrice + closingCosts + sitePrep + assumedEncumbrances + indefiniteImprovements + specialAssessments - salvageProceeds;\n\nconsole.log(\"Total land cost (simulasi):\", totalLandCost);\n\n// Challenge: Ubah angka-angka di atas untuk mencocokkan kasus tugasmu.",
+      "hint": "Coba buat salvageProceeds = 0 untuk melihat dampak pengurangan cost."
+    },
+    {
+      "type": "code_playground",
+      "title": "Coding Challenge: Klasifikasikan Cost PPE vs Expense (Rules Mini)",
+      "icon": "⚡",
+      "language": "javascript",
+      "instruction": "Lengkapi fungsi `classifyCost`. Berdasarkan aturan mini: jika biaya membantu aset jadi siap dipakai (delivery/setup/prep) atau terkait perolehan (purchase/import duties/non-refundable taxes) maka PPE. Jika hanya repair rutin yang manfaat utamanya periode berjalan maka Expense. Perintahnya sengaja disederhanakan untuk latihan aturan berpikir.",
+      "fileName": "classify_cost.js",
+      "defaultCode": "// Code Playground: PPE vs Expense (Rules Mini)\n// Sederhana untuk latihan logika klasifikasi.\n\nfunction classifyCost(costType) {\n  const PPE = [\"purchase\", \"import_duty\", \"non_refundable_tax\", \"delivery\", \"site_prep\", \"setup_to_use\", \"capitalized_repairs_ready_to_use\", \"closing_costs\", \"assumed_liens_mortgages\"];\n  const EXPENSE = [\"ordinary_repairs\", \"routine_maintenance\", \"current_period_service_only\"];\n\n  if (PPE.includes(costType)) return \"PPE (capitalize)\";\n  if (EXPENSE.includes(costType)) return \"Expense\";\n  return \"Unknown\";\n}\n\nconst test = [\"purchase\", \"delivery\", \"ordinary_repairs\", \"site_prep\", \"routine_maintenance\", \"setup_to_use\"];\n\nfor (const t of test) {\n  console.log(t, \"=>\", classifyCost(t));\n}\n\n// Challenge: Tambahkan tipe cost lain dan perluas rules.",
+      "hint": "Kalau kamu dapat “delivery” atau “site_prep”, pikirkan: ini membuat aset siap dipakai, jadi lebih condong dikapitalisasi."
+    },
+    {
+      "type": "analogy_card",
+      "title": "Analogi: Proyek Renovasi Kost",
+      "icon": "🏠",
+      "realWorld": "Kamu merenovasi rumah untuk kos. Ada biaya beli bahan, bayar tukang, dan ongkos listrik untuk pemasangan awal; ada juga biaya cat ulang rutin tiap beberapa bulan.",
+      "connection": "Dalam akuntansi PPE, beberapa biaya menjadi bagian cost aset (siap dipakai), sementara yang hanya memberi manfaat periode berjalan menjadi beban.",
+      "insight": "Kuncinya bukan “besar atau kecil”, tapi “menciptakan manfaat masa depan / membuat aset siap dipakai”."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini PPE & Cost",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Property, Plant, and Equipment (PPE)",
+          "definition": "Aset berwujud yang dipakai untuk operasi/penyewaan/administrasi dan memberi manfaat > 1 periode.",
+          "example": "mesin produksi, gedung pabrik, furnitur kantor"
+        },
+        {
+          "term": "Plant assets",
+          "definition": "Istilah lain untuk PPE, fokus pada aset yang dipakai dalam operasi.",
+          "example": "pabrik dan equipment produksi"
+        },
+        {
+          "term": "Fixed assets",
+          "definition": "Istilah umum untuk aset jangka panjang yang tidak untuk dijual sebagai aktivitas utama.",
+          "example": "konstruksi dan mesin"
+        },
+        {
+          "term": "Historical cost",
+          "definition": "Biaya perolehan berdasarkan kas/ekuivalen kas untuk memperoleh aset dan menempatkannya pada lokasi & kondisi siap digunakan.",
+          "example": "harga beli + pengiriman + biaya penyiapan"
+        },
+        {
+          "term": "Capitalization",
+          "definition": "Mengakui biaya tertentu sebagai bagian dari aset (bukan beban langsung).",
+          "example": "biaya delivery mesin sampai siap produksi"
+        },
+        {
+          "term": "Cost method",
+          "definition": "Metode valuasi lanjutan PPE berdasarkan cost historis (umumnya setelah akumulasi depresiasi).",
+          "example": "PPE tetap di cost lalu depresiasi tiap periode"
+        },
+        {
+          "term": "Revaluation (fair value) method",
+          "definition": "Metode valuasi lanjutan dengan penyesuaian ke nilai wajar, mempengaruhi nilai aset dan depresiasi.",
+          "example": "tanah/kelas aset dinilai ulang ke fair value"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Manakah yang paling tepat untuk mendefinisikan property, plant, and equipment (PPE)?",
+      "options": [
+        "Aset tak berwujud yang biasanya dijual kembali",
+        "Aset berwujud yang dipakai lebih dari satu periode untuk operasi/penyewaan/administrasi",
+        "Aset jangka pendek yang umumnya menjadi bagian produk yang dijual",
+        "Aset yang hanya dimiliki untuk apresiasi harga dan tidak digunakan operasi"
+      ],
+      "answer": "Aset berwujud yang dipakai lebih dari satu periode untuk operasi/penyewaan/administrasi",
+      "explanation": "PPE adalah tangible assets yang dipakai untuk operasi, penyewaan, atau administrasi dan diharapkan memberi manfaat lebih dari satu periode.",
+      "xpReward": 50
+    },
+    {
+      "question": "Salah satu ciri PPE adalah umumnya didepresiasi. Apa pengecualian yang disebut dalam materi?",
+      "options": [
+        "Gedung selalu tidak didepresiasi",
+        "Tanah (land) didepresiasi setiap tahun tanpa pengecualian",
+        "Tanah (land) biasanya tidak didepresiasi kecuali penurunan nilai material",
+        "Semua PPE didepresiasi termasuk land secara rutin"
+      ],
+      "answer": "Tanah (land) biasanya tidak didepresiasi kecuali penurunan nilai material",
+      "explanation": "Materi menekankan exception pada land: didepresiasi hanya jika ada penurunan nilai material.",
+      "xpReward": 50
+    },
+    {
+      "question": "Mengapa fair value (revaluation) umumnya kurang relevan untuk PPE dibanding inventory menurut materi?",
+      "options": [
+        "Karena PPE tidak dimiliki untuk dijual seperti inventory",
+        "Karena fair value hanya berlaku untuk intangible assets",
+        "Karena revaluation dilarang secara akuntansi untuk semua aset",
+        "Karena PPE hanya terdiri dari tanah"
+      ],
+      "answer": "Karena PPE tidak dimiliki untuk dijual seperti inventory",
+      "explanation": "PPE dipakai untuk bisnis (going concern), bukan untuk dijual seperti inventory, sehingga historical cost/cost method lebih umum.",
+      "xpReward": 50
+    },
+    {
+      "question": "Dalam historical cost, apa arti utama dari “bring it to the location and condition necessary for its intended use”?",
+      "options": [
+        "Hanya biaya pembelian, tanpa ongkir atau penyiapan",
+        "Biaya untuk memperoleh aset sampai siap dipakai sesuai tujuan perusahaan",
+        "Biaya hanya setelah aset mulai menghasilkan pendapatan",
+        "Biaya yang terjadi setelah masa depresiasi dimulai"
+      ],
+      "answer": "Biaya untuk memperoleh aset sampai siap dipakai sesuai tujuan perusahaan",
+      "explanation": "Historical cost mencakup biaya yang diperlukan agar aset berada di lokasi dan kondisi yang membuatnya siap dipakai sesuai maksud perusahaan.",
+      "xpReward": 50
+    },
+    {
+      "question": "Biaya manakah yang umumnya dimasukkan ke cost PPE pada saat perolehan?",
+      "options": [
+        "Diskon dan rebate ditambahkan ke cost",
+        "Pajak yang tidak dapat dikembalikan dan bea impor",
+        "Biaya perbaikan rutin yang manfaatnya hanya periode berjalan",
+        "Beban iklan untuk mempromosikan aset"
+      ],
+      "answer": "Pajak yang tidak dapat dikembalikan dan bea impor",
+      "explanation": "Materi menyebut purchase price termasuk import duties dan non-refundable purchase taxes, lalu dikurangi trade discounts dan rebates.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika perusahaan membeli coffee makers untuk operasi (contoh Starbucks), menurut materi biaya itu biasanya dicatat sebagai apa?",
+      "options": [
+        "Persediaan (inventory)",
+        "Aset PPE",
+        "Beban pemasaran",
+        "Aset lancar yang tidak didepresiasi"
+      ],
+      "answer": "Aset PPE",
+      "explanation": "Biaya pembelian yang dapat diukur andal dan memberi manfaat masa depan dikapitalisasi sebagai aset.",
+      "xpReward": 50
+    },
+    {
+      "question": "Menurut materi, idle building lebih tepat diklasifikasikan sebagai apa dibanding PPE?",
+      "options": [
+        "PPE",
+        "Investment (karena bukan untuk operasi normal)",
+        "Inventory",
+        "Intangible asset"
+      ],
+      "answer": "Investment (karena bukan untuk operasi normal)",
+      "explanation": "Materi mencontohkan idle building diklasifikasikan terpisah sebagai investment, bukan PPE.",
+      "xpReward": 50
+    },
+    {
+      "question": "Pernyataan mana yang paling sesuai tentang revaluation method (fair value) pada PPE?",
+      "options": [
+        "Cenderung menghasilkan asset values lebih rendah sehingga depresiasi lebih kecil",
+        "Cenderung membuat nilai aset lebih tinggi sehingga depresiasi lebih besar dan net income lebih rendah",
+        "Revaluation tidak mempengaruhi depresiasi",
+        "Revaluation hanya boleh untuk inventory"
+      ],
+      "answer": "Cenderung membuat nilai aset lebih tinggi sehingga depresiasi lebih besar dan net income lebih rendah",
+      "explanation": "Materi menyatakan revaluation umumnya menyebabkan asset values lebih tinggi yang berdampak pada depresiasi lebih besar dan net income lebih rendah.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa definisi singkat PPE?",
+      "answer": "PPE adalah aset berwujud yang dipakai untuk operasi/penyewaan/administrasi dan diharapkan memberi manfaat lebih dari satu periode.",
+      "emoji": "🏗️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Sebutkan 3 ciri utama PPE!",
+      "answer": "Untuk digunakan operasi (bukan resale), bersifat long-term (biasanya didepresiasi), dan punya substansi fisik (tangible).",
+      "emoji": "🧩",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Kenapa land biasanya tidak didepresiasi?",
+      "answer": "Karena land biasanya tidak didepresiasi; didepresiasi hanya jika ada penurunan nilai material (misalnya masalah kesuburan pada agricultural land).",
+      "emoji": "🌍",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa itu historical cost untuk PPE?",
+      "answer": "Kas/ekuivalen kas untuk memperoleh aset dan membawanya ke lokasi serta kondisi yang diperlukan agar siap digunakan sesuai maksud perusahaan.",
+      "emoji": "🧾",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Komponen apa yang termasuk purchase price PPE menurut materi?",
+      "answer": "Harga beli termasuk import duties dan non-refundable purchase taxes dikurangi trade discounts dan rebates.",
+      "emoji": "📦",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa contoh biaya yang biasanya dikapitalisasi sebagai PPE selain harga beli?",
+      "answer": "Biaya yang langsung attributable untuk membawa aset ke lokasi dan kondisi siap digunakan, misalnya delivery dan site prep yang diperlukan.",
+      "emoji": "🚚",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Perbaikan rutin mesin biasanya dicatat sebagai apa?",
+      "answer": "Biasanya beban (expense) bila manfaat utamanya hanya pada periode berjalan, bukan menyiapkan aset untuk manfaat masa depan yang signifikan.",
+      "emoji": "🛠️",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Cost method vs revaluation method, dampaknya apa pada net income (umum)?",
+      "answer": "Revaluation cenderung menaikkan nilai aset sehingga depresiasi naik dan net income cenderung lebih rendah.",
+      "emoji": "📉",
+      "difficulty": "hard"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama tentang identifikasi PPE dan biaya perolehannya.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi ini membahas Chapter 9 tentang Acquisition and Disposition of Property, Plant, and Equipment (PPE). Namun potongan konten yang tersedia pada materi pengguna terutama menekankan Learning Objective 1: mengidentifikasi property, plant, and equipment serta biaya terkaitnya. Di awal bab dijelaskan bahwa investasi aset berumur panjang (PPE) merupakan elemen penting dalam laporan posisi keuangan dan berdampak langsung pada total aset, beban depresiasi, arus kas, dan laba bersih. Karena capex (capital expenditures) mempengaruhi fleksibilitas keuangan, perusahaan harus berhati-hati dalam menentukan volume belanja modal, alokasi ke proyek tertentu, dan bagaimana belanja tersebut berubah menjadi return nyata.\n\nBab juga menekankan bahwa isu capex kompleks. Terlalu banyak atau terlalu sedikit dapat menurunkan cash flows, membuat perusahaan kehilangan posisi kompetitif, dan mengurangi pricing power. Hubungan antara capex terhadap penjualan, capex terhadap depresiasi, serta free cash flow memberi wawasan tentang kemampuan perusahaan menghasilkan kas. Ini membuka konteks mengapa akuntansi PPE penting bagi pengguna laporan keuangan.\n\nMasuk ke bagian “Property, Plant, and Equipment” dengan Learning Objective 1, materi mendefinisikan PPE sebagai tangible assets yang dimiliki untuk digunakan dalam produksi atau penyediaan barang dan jasa, untuk disewakan kepada pihak lain, atau untuk tujuan administratif. Aset ini diharapkan memberikan manfaat selama lebih dari satu periode. Istilah yang sering digunakan juga termasuk plant assets dan fixed assets, yang umumnya dipakai bergantian.\n\nLalu materi memberikan tiga karakteristik utama PPE. (1) PPE diperoleh untuk penggunaan dalam operasi, bukan untuk dijual. Karena itu klasifikasi bergantung pada fungsi aset dalam operasi normal. Contohnya, idle building (bangunan yang menganggur) lebih tepat diklasifikasikan terpisah sebagai investment, bukan PPE. Jika aset dimiliki untuk potensi kenaikan harga (price appreciation), aset tersebut diklasifikasikan sebagai investasi. Selain itu, PPE yang dimiliki untuk dijual atau disposal harus diklasifikasikan dan dilaporkan secara terpisah di statement of financial position. Materi juga menyinggung bahwa land developers atau subdividers mengklasifikasikan tanah sebagai inventory.\n\n(2) PPE bersifat long-term dan biasanya didepresiasi. Karena PPE memberikan jasa/layanan selama beberapa tahun, biaya perolehannya dialokasikan ke periode-periode mendatang melalui depresiasi. Pengecualian adalah land: land didepresiasi hanya jika terjadi penurunan nilai yang material. Materi memberi contoh pada lahan pertanian yang bisa kehilangan fertilitas akibat poor crop rotation, drought, atau soil erosion.\n\n(3) PPE memiliki substansi fisik (physical substance). Artinya PPE adalah aset berwujud (tangible) sehingga berbeda dari intangible assets seperti patents atau copyrights. Materi juga menjelaskan bahwa meski sama-sama tidak seperti bahan baku, PPE tidak “secara fisik berubah menjadi bagian produk” yang dipegang untuk dijual seperti raw materials.\n\nSetelah definisi dan ciri, materi membahas “Acquisition of Property, Plant, and Equipment”. Sebagian besar perusahaan menggunakan historical cost sebagai basis valuasi. Historical cost didefinisikan sebagai cash atau cash equivalent price yang dikeluarkan untuk memperoleh aset dan membawanya ke lokasi serta kondisi yang dibutuhkan agar aset siap digunakan sesuai rencana. Materi juga mengaitkan konsep fair value: fair value relevan untuk inventory tetapi kurang relevan untuk PPE karena PPE dipakai dalam bisnis (going concern) bukan untuk dijual seperti inventory.\n\nPengakuan PPE terjadi ketika biaya aset dapat diukur secara andal dan perusahaan menganggap probabilitas akan memperoleh manfaat ekonomis di masa depan. Materi memberi contoh Starbucks (USA) membeli coffee makers untuk operasi: karena biaya dapat diukur andal dan manfaat memberi periode berikutnya, biaya tersebut dikapitalisasi sebagai aset. Sebaliknya, ordinary repairs untuk mesin kopi dicatat sebagai expense karena manfaat utamanya hanya periode berjalan (primary period benefited hanya periode saat ini).\n\nSecara umum, biaya yang dicatat sebagai bagian dari PPE meliputi: (1) purchase price termasuk import duties dan non-refundable purchase taxes, dikurangi trade discounts dan rebates; (2) biaya yang dapat diatribusikan langsung untuk membawa aset ke lokasi dan kondisi yang diperlukan agar dapat digunakan sebagaimana dimaksud perusahaan. Materi memberikan contoh ketika Skanska AB (SWE) membeli heavy machinery dari Caterpillar (USA), perusahaan mengkapitalisasi costs purchase termasuk delivery costs.\n\nSelanjutnya materi membahas khusus “Cost of Land”. Semua pengeluaran untuk memperoleh tanah dan menyiapkan tanah hingga siap digunakan termasuk dalam land cost. Contoh kasus Auchan (FRA) atau ÆON (JPN) membeli tanah untuk membangun toko baru. Land costs biasanya mencakup: purchase price; closing costs (title, attorney’s fees, recording fees); biaya agar tanah berada dalam kondisi yang diperlukan (grading, filling, draining, clearing); asumsi liens/mortgages/encumbrances yang terkait dengan properti; serta additional land improvements yang memiliki indefinite life. Disebutkan bahwa ketika ÆON membeli tanah untuk membangun gedung, biaya yang terjadi sampai tahap excavation untuk bangunan baru diperlakukan sebagai land cost.\n\nMateri juga menerangkan bahwa biaya removal of old buildings (clearing, grading, filling) adalah land cost karena diperlukan untuk menyiapkan tanah sesuai tujuan. Keberadaan proceeds dari proses penyiapan (misalnya salvage receipts saat demolition atau penjualan cleared timber) diperlakukan sebagai pengurang dari price/land cost (reductions in the price of the land). Contoh perlakuan kewajiban: jika saat pembelian tanah ÆON mengasumsikan back taxes atau liens, maka land cost adalah cash paid ditambah encumbrances. Materi memberi angka contoh: purchase price ¥50.000.000 cash; asumsi accrued property taxes ¥5.000.000 dan liens ¥10.000.000 sehingga land cost menjadi ¥65.000.000.\n\nBagian terakhir yang tampak (terpotong) menyebut kemungkinan biaya special assessments untuk local improvements seperti pavements, street lights, sewers, dan drainage systems. Dalam konteks land cost, ide utamanya adalah biaya untuk menyiapkan tanah agar siap digunakan dan meningkatkan/mendukung penggunaan tanah dapat dikapitalisasi ke land cost.\n\nUntuk tutoring, cara menjelaskan yang friendly adalah menekankan bahwa klasifikasi PPE vs inventory/investment bergantung pada tujuan penggunaan (operasi vs dijual vs apresiasi), bukan sekadar jenis fisik barang. Setelah itu, historical cost membantu menentukan “biaya sampai aset siap dipakai”, dan pembeda kapitalisasi vs expense datang dari apakah biaya memberi manfaat terutama periode berjalan (expense) atau menyiapkan aset untuk manfaat masa depan (capitalize)."
+}
