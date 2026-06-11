@@ -27,8 +27,8 @@
     "xp": 215,
     "coin": 80,
     "level": 2,
-    "streak": 0,
-    "lastLogin": "11-06-2026, 10.58.02",
+    "streak": 1,
+    "lastLogin": "11-06-2026, 23.23.48",
     "quizScore": 0,
     "completedBlocks": [
       "block-0",
@@ -46,6 +46,7 @@
     "joinedAt": "11-06-2026, 10.58.02",
     "aiInteractions": 1,
     "todayAiCount": 1,
-    "lastAiDate": "Thu Jun 11 2026"
+    "lastAiDate": "Thu Jun 11 2026",
+    "lastLoginDate": "Thu Jun 11 2026"
   }
 ]
