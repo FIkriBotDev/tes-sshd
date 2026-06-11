@@ -1,0 +1,367 @@
+{
+  "title": "Linux Dasar & Command Line: Jelajah Folder, Permission, Proses, sampai Jaringan",
+  "summary": "Di course ini kamu akan belajar Linux dari nol lewat konsep yang jelas dan latihan praktis. Kamu akan menguasai navigasi direktori, manajemen file, membaca isi file, permission, pencarian, proses, hingga dasar jaringan pakai command line.",
+  "emoji": "🐧",
+  "color": "#3b82f6",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Linux Itu Apa sih?",
+      "icon": "🐧",
+      "explanation": "Linux adalah sistem operasi open-source yang memakai kernel Linux. Biasanya dipakai di server, desktop, perangkat embedded, sampai cloud karena stabil dan fleksibel.",
+      "analogy": "Kalau Windows seperti satu 'toko', Linux lebih seperti 'pasar open-source' yang banyak komponennya bisa dipakai dan disesuaikan.",
+      "highlight": "open-source • kernel • server dan cloud",
+      "keyPoints": [
+        "Linux berbasis kernel Linux",
+        "Dipakai luas: server, desktop, embedded, cloud",
+        "Open-source membuatnya mudah dikembangkan dan diadaptasi"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Peta Struktur Direktori Linux",
+      "icon": "🗺️",
+      "items": [
+        {
+          "label": "/home",
+          "value": "Folder pengguna",
+          "icon": "🏠"
+        },
+        {
+          "label": "/etc",
+          "value": "Konfigurasi sistem",
+          "icon": "⚙️"
+        },
+        {
+          "label": "/var",
+          "value": "Data yang sering berubah",
+          "icon": "🔄"
+        },
+        {
+          "label": "/usr",
+          "value": "Aplikasi & program",
+          "icon": "🧰"
+        },
+        {
+          "label": "/bin",
+          "value": "Perintah dasar",
+          "icon": "⌨️"
+        },
+        {
+          "label": "/tmp",
+          "value": "File sementara",
+          "icon": "🧪"
+        }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Navigasi & Manajemen Folder/File (Mini Quest)",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Lihat direktori aktif",
+          "description": "Pakai pwd untuk mengetahui lokasi kamu sekarang.",
+          "tip": "Kalau bingung, cek pwd dulu biar gak tersesat."
+        },
+        {
+          "number": 2,
+          "title": "Lihat isi folder",
+          "description": "Pakai ls untuk melihat nama file/folder di dalam direktori.",
+          "tip": "Coba juga ls -la untuk tampilan lebih lengkap."
+        },
+        {
+          "number": 3,
+          "title": "Pindah direktori",
+          "description": "Pakai cd /path atau cd nama_foler untuk masuk ke folder yang diinginkan.",
+          "tip": "Gunakan ../ untuk naik satu level."
+        },
+        {
+          "number": 4,
+          "title": "Buat folder & file",
+          "description": "mkdir membuat folder dan touch membuat file kosong.",
+          "tip": "Nama folder sebaiknya jelas dan sederhana."
+        },
+        {
+          "number": 5,
+          "title": "Kelola file",
+          "description": "cp menyalin, mv memindahkan/mengganti nama, rm menghapus.",
+          "tip": "rm itu permanen—pastikan nama file yang benar!"
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Permission: Kenapa File Bisa 'Ditolak'?",
+      "icon": "🔐",
+      "explanation": "Permission mengatur siapa yang boleh membaca, menulis, dan mengeksekusi sebuah file. r berarti read, w write, x execute.",
+      "analogy": "Permission itu seperti akses kunci kos: baca = boleh lihat isi, tulis = boleh mengubah, eksekusi = boleh menjalankan sebagai program.",
+      "highlight": "chmod • chown • r w x",
+      "keyPoints": [
+        "chmod mengubah izin (permissions)",
+        "chown mengubah pemilik (owner)",
+        "r=read, w=write, x=execute"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Playground 1: Latihan Membaca Isi File (Simulasi)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan dan lihat output. Kamu akan mensimulasikan cara cat/head/tail bekerja terhadap isi file teks. Ubah teksContent atau angka slice pada kode.",
+      "fileName": "linux_read_sim.js",
+      "defaultCode": "const teksContent = \"Baris 1\nBaris 2\nBaris 3\nBaris 4\nBaris 5\nBaris 6\nBaris 7\nBaris 8\nBaris 9\nBaris 10\"; \nconst lines = teksContent.split(\"\n\"); \n// cat: tampilkan semua \nconsole.log(\"[cat] \n\" + lines.join(\"\n\")); \n// head 10: ambil 10 baris awal \nconsole.log(\"\n[head -n 10] \n\" + lines.slice(0, 10).join(\"\n\")); \n// tail 10: ambil 10 baris akhir \nconsole.log(\"\n[tail -n 10] \n\" + lines.slice(-10).join(\"\n\"));",
+      "hint": "Coba ubah teksContent jadi 20 baris, lalu perhatikan output head dan tail."
+    },
+    {
+      "type": "code_playground",
+      "title": "Playground 2: Pencarian Teks ala grep (Simulasi)",
+      "icon": "🔎",
+      "language": "python",
+      "instruction": "Jalankan kode ini. Ini mensimulasikan grep: mencari baris yang mengandung kata tertentu. Coba ganti keyword dan lihat baris mana yang muncul.",
+      "fileName": "linux_grep_sim.py",
+      "defaultCode": "teks = \"\"\"alpha\nbeta\nlorem ipsum\ngrep menemukan keyword\nzeta\nkeyword ada di sini juga\n\"\"\"\nkeyword = \"keyword\"\nlines = teks.split(\"\n\")\nprint(\"[grep] Mencari:\", keyword)\nfor i, line in enumerate(lines, start=1):\n    if keyword in line:\n        print(f\"Line {i}: {line}\")",
+      "hint": "Kalau keyword diubah jadi 'grep', kamu akan melihat baris yang berbeda."
+    },
+    {
+      "type": "analogy_card",
+      "title": "find vs grep: Bedanya Apa?",
+      "icon": "💡",
+      "realWorld": "Misal kamu cari tugas: find itu cari file berdasarkan nama/pola, grep itu cari isi kata di dalam file.",
+      "connection": "Di materi, find dipakai untuk mencari file (misal find . -name '*.txt'), sedangkan grep untuk mencari teks dalam file.",
+      "insight": "Gunakan find saat butuh 'file mana yang ada', dan gunakan grep saat butuh 'di file mana kata tertentu muncul'."
+    },
+    {
+      "type": "concept_card",
+      "title": "Proses & Monitoring: ps, top, kill",
+      "icon": "⏱️",
+      "explanation": "Di command line, kamu perlu melihat proses yang berjalan. ps menampilkan daftar proses, top memantau secara real-time, dan kill menghentikan proses (biasanya dengan PID).",
+      "analogy": "Anggap itu seperti mengawasi antrean: ps seperti cek daftar, top seperti CCTV live, dan kill seperti menghentikan orang yang mengganggu layanan.",
+      "highlight": "ps • top • kill • PID",
+      "keyPoints": [
+        "ps menampilkan proses aktif",
+        "top memantau proses secara terus-menerus",
+        "kill menghentikan proses berdasarkan PID"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Jaringan: ping, ip addr, curl",
+      "icon": "🌐",
+      "explanation": "Untuk cek koneksi dan komunikasi, kamu bisa pakai ping untuk menguji koneksi ke host, ip addr untuk melihat alamat IP, dan curl untuk mengambil data dari server HTTP.",
+      "analogy": "ping itu seperti 'halo, kamu ada nggak?', ip addr seperti 'nomor kamar kamu', curl seperti 'ambil katalog dari website'.",
+      "highlight": "ping • ip addr • curl",
+      "keyPoints": [
+        "ping menguji koneksi ke target",
+        "ip addr melihat alamat IP pada perangkat",
+        "curl mengambil data dari endpoint HTTP"
+      ]
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini Command Line Linux",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "pwd",
+          "definition": "Menampilkan direktori kerja saat ini.",
+          "example": "Kamu baru login lalu butuh tahu lokasi kamu berada."
+        },
+        {
+          "term": "ls",
+          "definition": "Menampilkan isi folder.",
+          "example": "ls untuk lihat file, ls -la untuk detail izin."
+        },
+        {
+          "term": "cd",
+          "definition": "Berpindah direktori.",
+          "example": "cd ~/Documents masuk ke folder Documents."
+        },
+        {
+          "term": "mkdir",
+          "definition": "Membuat direktori baru.",
+          "example": "mkdir proyek"
+        },
+        {
+          "term": "touch",
+          "definition": "Membuat file kosong atau mengubah timestamp.",
+          "example": "touch catatan.txt"
+        },
+        {
+          "term": "chmod",
+          "definition": "Mengubah permission file.",
+          "example": "chmod +x script.sh agar bisa dieksekusi."
+        },
+        {
+          "term": "chown",
+          "definition": "Mengubah pemilik (owner) file.",
+          "example": "chown user:group file.txt"
+        },
+        {
+          "term": "find",
+          "definition": "Mencari file berdasarkan kriteria.",
+          "example": "find . -name '*.txt'"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Perintah apa yang digunakan untuk menampilkan direktori kerja yang sedang aktif?",
+      "options": [
+        "ls",
+        "pwd",
+        "cd",
+        "mkdir"
+      ],
+      "answer": "pwd",
+      "explanation": "pwd adalah perintah untuk menunjukkan lokasi direktori saat ini di terminal.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perintah ls digunakan untuk…",
+      "options": [
+        "mengubah permission",
+        "menampilkan isi folder",
+        "memindahkan file",
+        "menghapus proses"
+      ],
+      "answer": "menampilkan isi folder",
+      "explanation": "ls berfungsi menampilkan daftar file dan folder di direktori yang kamu sedang berada.",
+      "xpReward": 50
+    },
+    {
+      "question": "mkdir digunakan untuk…",
+      "options": [
+        "membuat file kosong",
+        "menghapus file",
+        "membuat folder/direktori",
+        "menyalin file"
+      ],
+      "answer": "membuat folder/direktori",
+      "explanation": "mkdir adalah perintah untuk membuat direktori baru.",
+      "xpReward": 50
+    },
+    {
+      "question": "chmod paling berhubungan dengan…",
+      "options": [
+        "owner file",
+        "permission/izin file",
+        "alamat IP jaringan",
+        "mengambil HTTP content"
+      ],
+      "answer": "permission/izin file",
+      "explanation": "chmod mengubah izin (read/write/execute) pada file atau folder.",
+      "xpReward": 50
+    },
+    {
+      "question": "Perintah grep biasanya digunakan untuk…",
+      "options": [
+        "mencari file berdasarkan nama",
+        "mencari teks di dalam file",
+        "menghentikan proses",
+        "melihat alamat IP"
+      ],
+      "answer": "mencari teks di dalam file",
+      "explanation": "grep mencari baris/kemunculan teks tertentu di isi file.",
+      "xpReward": 50
+    },
+    {
+      "question": "head 10 artinya menampilkan…",
+      "options": [
+        "10 baris pertama",
+        "10 baris terakhir",
+        "semua baris",
+        "hanya baris yang mengandung kata '10'"
+      ],
+      "answer": "10 baris pertama",
+      "explanation": "head menampilkan bagian awal file, dan -n 10 berarti 10 baris teratas.",
+      "xpReward": 50
+    },
+    {
+      "question": "kill digunakan untuk…",
+      "options": [
+        "mengubah permission",
+        "menghentikan proses",
+        "mencari file",
+        "mengganti nama file"
+      ],
+      "answer": "menghentikan proses",
+      "explanation": "kill menghentikan proses yang berjalan, biasanya dengan PID.",
+      "xpReward": 50
+    },
+    {
+      "question": "curl digunakan untuk…",
+      "options": [
+        "menguji koneksi server (ICMP)",
+        "melihat alamat IP",
+        "mengambil data dari HTTP endpoint",
+        "menampilkan isi folder"
+      ],
+      "answer": "mengambil data dari HTTP endpoint",
+      "explanation": "curl dipakai untuk request HTTP dan mengambil respons data dari server.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa fungsi command pwd?",
+      "answer": "Menampilkan direktori kerja (working directory) yang sedang aktif.",
+      "emoji": "📍",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa perbedaan cd dan ls?",
+      "answer": "cd berpindah direktori, sedangkan ls menampilkan isi direktori.",
+      "emoji": "🧭",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Command apa untuk membuat folder baru?",
+      "answer": "mkdir <nama_folder>.",
+      "emoji": "📁",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Command apa untuk membuat file kosong?",
+      "answer": "touch <nama_file>.",
+      "emoji": "📝",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Manakah yang mengubah izin file: chmod atau chown?",
+      "answer": "chmod mengubah permission/izin; chown mengubah pemilik (owner).",
+      "emoji": "🔐",
+      "difficulty": "medium"
+    },
+    {
+      "question": "r, w, x artinya apa dalam permission Linux?",
+      "answer": "r=read (baca), w=write (tulis), x=execute (eksekusi).",
+      "emoji": "🧩",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa fungsi grep?",
+      "answer": "Mencari teks/pola di dalam isi file.",
+      "emoji": "🔎",
+      "difficulty": "medium"
+    },
+    {
+      "question": "curl itu cocok untuk kebutuhan apa?",
+      "answer": "Mengambil data dari endpoint HTTP (web/API).",
+      "emoji": "🌐",
+      "difficulty": "hard"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi membahas Linux dan dasar command line melalui konsep inti dan perintah-perintah penting. Pertama, jelaskan apa itu Linux: Linux adalah sistem operasi open-source berbasis kernel Linux yang digunakan di berbagai lingkungan seperti server, desktop, perangkat embedded, dan cloud. Sampaikan bahwa karena open-source dan stabil, Linux sering dipilih untuk sistem yang membutuhkan kontrol dan keandalan. Selanjutnya, masuk ke struktur direktori Linux. Fokus pada direktori yang disebut: /home pengguna (tempat kerja pribadi pengguna dan file user), /etc konfigurasi sistem (berisi file konfigurasi layanan), /var data berubah (misalnya log dan data runtime yang sering update), /usr aplikasi (lokasi program dan library), /bin perintah dasar (command essential yang dibutuhkan untuk sistem), dan /tmp file sementara (digunakan untuk penyimpanan sementara dan bisa dibersihkan). Untuk memperkuat pemahaman, bantu siswa membayangkan masing-masing direktori sebagai “ruang” dengan fungsi berbeda. Bagian berikutnya adalah navigasi: perintah pwd untuk melihat direktori aktif, ls untuk melihat isi folder, dan cd untuk berpindah direktori. Tekankan bahwa sebelum melakukan operasi file, siswa sebaiknya mengecek lokasi menggunakan pwd agar tidak salah folder. Untuk manajemen file, materi menyebut mkdir (membuat folder/direktori), touch (membuat file baru kosong), cp (menyalin file), mv (memindahkan atau mengganti nama file), rm (menghapus file). Jelaskan cara berpikir saat bekerja dengan file: mkdir dan touch adalah langkah pembuatan, cp dan mv adalah langkah perubahan lokasi/identitas, sedangkan rm adalah langkah penghapusan yang bersifat destruktif sehingga perlu hati-hati. Lalu ada bagian membaca isi file: cat menampilkan isi file secara langsung (cocok untuk file pendek), less membaca bertahap (berguna untuk file panjang karena bisa scroll), head 10 baris awal dan tail 10 baris akhir (berguna untuk preview bagian tertentu). Pastikan tutor mengingatkan siswa kapan memakai head/tail untuk cepat mengecek isi tanpa membuka semuanya. Setelah itu bahas permission: perintah chmod untuk mengubah izin, dan chown untuk mengubah pemilik. Materi juga menjelaskan arti r=read, w=write, x=execute. Jelaskan bahwa permission berpengaruh pada siapa yang bisa melakukan apa terhadap file. Hubungkan konsep ini dengan kebutuhan praktik: misalnya script.sh perlu permission execute agar bisa dijalankan. Tutor harus menekankan konsep pemilik dan izin: chmod mengatur hak akses, chown mengatur siapa pemiliknya. Bagian pencarian mencakup find dan grep. find digunakan untuk mencari file berdasarkan kriteria, contoh yang diberikan adalah find . -name '*.txt' untuk mencari file .txt di direktori saat ini dan turunannya. grep digunakan untuk mencari teks dalam file, misalnya mencari kata tertentu yang muncul pada konten file. Jelaskan perbedaan mental model find vs grep: find itu mencari “benda/file”, grep itu mencari “kata/teks di dalam benda”. Bagian proses menjelaskan ps untuk melihat daftar proses, top untuk memantau proses secara real-time, dan kill untuk menghentikan proses. Tekankan bahwa kill memerlukan PID (process id). Untuk membantu, tutor bisa menganalogikan proses seperti aplikasi yang berjalan dan PID sebagai nomor antrean. Lanjut ke jaringan: ping menguji koneksi ke host (apakah target merespons), ip addr melihat alamat IP perangkat, dan curl mengambil data dari HTTP. Tutor harus mengaitkan ketiganya dengan troubleshooting: jika ping gagal, cek konektivitas; jika butuh tahu alamat IP, gunakan ip addr; jika butuh cek respons API/web, gunakan curl. Bagian contoh sesi menggabungkan beberapa perintah dalam alur praktis: cd ~/Documents -> mkdir proyek -> cd proyek -> touch catatan.txt -> cat (pada materi disebut cat untuk menampilkan isi; tutor bisa tekankan cat bisa menampilkan file setelah ada isi—pada awalnya file kosong, jadi perlu menulis konten terlebih dahulu melalui editor, atau tutor bisa menyebut konsep bahwa touch membuat file kosong). Materi juga memberi ringkasan command penting: pwd, ls -la, cd /path, mkdir nama, touch file.txt, cp a b, mv a b, rm file, cat file, grep teks file, find . -name '*.txt', chmod +x script.sh. Tutor sebaiknya menutup dengan latihan konseptual singkat: siswa harus bisa menjelaskan fungsi setiap perintah dan kapan digunakan, lalu memilih perintah yang tepat untuk skenario. Pastikan penjelasan friendly, gunakan analogi sehari-hari (folder sebagai kamar, permission sebagai akses kunci, grep sebagai pencarian kata di dalam buku, find sebagai mencari buku berdasarkan judul/jenis, top sebagai live monitor)."
+}

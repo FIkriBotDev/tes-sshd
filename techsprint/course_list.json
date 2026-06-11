@@ -274,5 +274,17 @@
     "courseUrl": "/course/203cf8e424db7eaa15a8c65b3ddc5e6e",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "31a68bdc9d3b33d2ba67c9159a456483",
+    "courseName": "Linux Dasar & Command Line: Jelajah Folder, Permission, Proses, sampai Jaringan",
+    "courseEmoji": "🐧",
+    "courseColor": "#3b82f6",
+    "courseFileName": "Materi_Linux_dan_Dasar_Command_Line.pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "11-06-2026, 04.30.56",
+    "courseUrl": "/course/31a68bdc9d3b33d2ba67c9159a456483",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
