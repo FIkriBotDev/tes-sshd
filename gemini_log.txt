@@ -38047,3 +38047,77 @@ Info utamanya:
 
 Kalau Anda mau, saya bisa bantu **menyusun draft email/cover letter**, atau **merangkum syarat/format penulisan**—tetapi saya perlu teks persyaratan lengkapnya (biasanya ada di halaman submission link).
 
+
+[2026-06-11T09:20:05.003Z]
+Prompt    : sedang build project AI education platform
+
+upload PDF => langsung jadi course interaktif + AI tutor + quiz + flashcard + leaderboard
+
+jadikelas.tech
+Image URL : https://uploader.exodusai.biz.id/tmp/83d8a6-1781169595933.jpg
+Response  : Keren—dari gambar dan deskripsi kamu, “pipeline”-nya jelas: **upload PDF → jadi course interaktif + AI tutor + quiz + flashcard + (playground) + leaderboard**.  
+
+Biar aku bisa bantu secara tepat, jawab 5 hal ini dulu ya:
+
+1) **Stack** yang dipakai sekarang apa? (Next.js/React, Node, Python, dll)  
+2) PDF-nya mau diproses **offline di server** atau langsung via **API** (mis. OpenAI/LLM + vector DB)?  
+3) “AI tutor”-nya bentuknya **chat** per materi atau **guided** per bab/lesson?  
+4) Leaderboard mau berdasarkan apa: **XP**, **streak**, **skor quiz**, atau kombinasi?  
+5) Kamu sudah punya database? (Postgres/Supabase/Mongo) dan pakai auth login (JWT/OAuth) atau guest?
+
+Sambil nunggu jawabanmu, ini rancangan arsitektur yang paling umum (dan gampang diimplementasi) untuk fitur di gambar:
+
+### 1) Upload & Ingest PDF (backend)
+- Simpan file → ekstrak teks (PDF to text) + OCR kalau perlu
+- Pecah jadi “chunks” (mis. per paragraf/section)
+- Buat **embedding** tiap chunk → simpan ke **vector DB**
+- Simpan “course outline” (judul, bab, subbab) hasil AI atau heuristic
+
+### 2) Generate Course Interaktif (LLM + schema output)
+Untuk setiap bab/chunk:
+- Ringkasan materi (bahasa sesuai target)
+- Daftar poin penting
+- Materi interaktif: contoh, analogi, mini-skenario
+- Output terstruktur pakai **JSON schema** (biar konsisten)
+
+### 3) AI Tutor
+- Tutor pakai **RAG**: ambil chunk relevan dari vector DB
+- Jawaban model disertai:
+  - “rujukan” (opsional)
+  - level kesulitan (basic/intermediate/advanced)
+- Ada fitur:
+  - “Explain like I’m 5”
+  - “Buat latihan”
+  - “Lanjutkan ke topik berikutnya”
+
+### 4) Quiz & Flashcard
+- Quiz: jenis (MCQ, true/false, short answer, cloze)
+- Negatif/pengecoh di generate dari konsep yang mirip
+- Flashcard:
+  - Front (pertanyaan/konsep)
+  - Back (jawaban + penjelasan singkat)
+- Nanti bisa diset jadwal review (SM-2) kalau mau belajar lebih serius.
+
+### 5) Playground (coding/try-it)
+- Jika materinya coding: auto-generate problem + unit test
+- Eksekusi code pakai sandbox (mis. container, Firecracker, atau service khusus)
+- Capture hasil → score → update XP
+
+### 6) Leaderboard & XP System
+Contoh aturan cepat:
+- Quiz correct: +10 XP per soal
+- Flashcard pass: +2 XP
+- Streak harian: +20 XP
+- Playground score: berdasarkan test pass count
+Simpan ke tabel: `user_xp_events` → aggregate jadi leaderboard.
+
+---
+
+Kalau kamu mau, aku bisa bantu lebih “actionable” dengan salah satu ini:
+1) **Blueprint database schema** (tabel course, chapter, question, flashcard, leaderboard, events)  
+2) **Flow diagram** + urutan job background (queue)  
+3) **Prompting & JSON schema** untuk output: course/quiz/flashcard  
+4) **Strategi RAG** yang bener (chunking, retrieval, prompt template)
+
+Jawab 5 pertanyaan di atas ya—nanti aku susunkan blueprint yang cocok dengan kondisi project kamu.
+
