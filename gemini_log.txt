@@ -38139,3 +38139,21 @@ Response  : Saya lihat gambar itu: sebuah tangkapan layar halaman web **JadiKela
 
 Kalau kamu mau, bilang: kamu ingin saya **jelaskan isi gambar lebih detail**, atau **menilai desainnya**, atau **mengekstrak teks** yang ada di gambar.
 
+
+[2026-06-12T03:52:44.151Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/98cb16-1781236357551.jpg
+Response  : Saya sudah melihat gambar tersebut. Itu adalah **poster “DEMO JAKARTA”** bertema **Security Awareness** dengan informasi acara/aksi pada:
+
+- **Tanggal:** **12 Juni 2026 (Besok / Kamis)**
+- **Waktu (estimasi):** mulai sekitar **09.00–17.00 WIB** (terlihat ada fase 09.00–11.00, 11.00–13.00, 13.00–16.00, dan 16.00–17.00+)
+- **Titik utama:** **Bundaran HI** (ditunjukkan sebagai “TITIK UTAMA” dan “TINGGI” pada area yang perlu diwaspadai), serta koridor sekitar seperti **Jalan MH Thamrin, Simpang Sarinah, DUKU Atas**, dll.
+- **Konten inti di poster:**
+  - **Materi/narasi yang beredar** (mis. pembenaran/isu-isu ekonomi, kritik kebijakan pemerintah, dll.)
+  - **Estimasi rute pergerakan**: dari sekitar **Bundaran HI** lalu pergerakan mengikuti koridor **MH Thamrin** menuju area lain (tertera juga skenario kemungkinan: long march terbatas dan pengamanan area).
+  - **Area yang perlu diwaspadai** dibagi level: **Tinggi / Sedang**.
+  - **Imbauan untuk personel security** (hindari area konsentrasi massa, antisipasi keterlambatan, monitoring, siapkan evakuasi, koordinasi jalur, dll.)
+  - **Executive summary/Threat level**: umumnya **sedang** dengan dampak seperti kemungkinan gangguan operasional/akses jalan dan kemungkinan eskalasi **rendah–sedang**.
+
+Kalau kamu mau, bilang saja kamu butuh apa—misalnya **ringkasan singkat**, **poin-poin yang harus dilakukan security**, atau **analisis rute & waktu** dari poster ini.
+
