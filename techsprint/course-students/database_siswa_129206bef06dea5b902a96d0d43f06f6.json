@@ -24,8 +24,8 @@
     "email": "cayang@gmail.com",
     "password": "$2b$10$9yHxAL8qRK5nFNh04/Pnz.pON3UNK5Fj06HvsUh6d6C27WrluqJly",
     "profilePicture": "",
-    "xp": 345,
-    "coin": 135,
+    "xp": 375,
+    "coin": 145,
     "level": 2,
     "streak": 2,
     "lastLogin": "12-06-2026, 14.59.44",
@@ -37,11 +37,12 @@
       "block-2",
       "block-3",
       "block-8",
-      "block-7"
+      "block-7",
+      "block-6"
     ],
     "completedChapter": [],
     "flashcardsViewed": 0,
-    "leaderboardPoint": 210,
+    "leaderboardPoint": 240,
     "achievements": [
       "first_block",
       "coin_100"
