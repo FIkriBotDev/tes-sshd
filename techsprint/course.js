@@ -540,14 +540,63 @@ router.post("/course/student/login", async (req, res) => {
     if (!courseId || !email || !password)
         return res.status(400).json({ success: false, message: "Semua field wajib diisi." });
 
-    const students = readStudents(courseId);
-    const student = students.find(s => s.email === email);
-    if (!student)
-        return res.status(404).json({ success: false, message: "Akun tidak ditemukan di course ini." });
+    // Cek course exists
+    const coursePath = path.join(COURSE_DATA_DIR, `${courseId}.json`);
+    if (!fs.existsSync(coursePath))
+        return res.status(404).json({ success: false, message: "Course tidak ditemukan." });
 
-    const match = await bcrypt.compare(password, student.password);
-    if (!match)
-        return res.status(401).json({ success: false, message: "Password salah." });
+    let students = readStudents(courseId);
+    let student = students.find(s => s.email === email);
+    let isMainAccountLogin = false;
+
+    // Jika tidak ditemukan di database siswa course, cek di database_user.json
+    if (!student) {
+        const mainUsers = readDB();
+        const mainUser = mainUsers.find(u => u.email === email);
+        
+        if (mainUser) {
+            // Verifikasi password dari akun utama
+            const match = await bcrypt.compare(password, mainUser.password);
+            if (!match)
+                return res.status(401).json({ success: false, message: "Password salah." });
+
+            // Auto-register user ke course ini sebagai siswa
+            const studentId = crypto.randomBytes(8).toString("hex");
+            const newStudent = {
+                studentId,
+                username: mainUser.namaLengkap,
+                email: mainUser.email,
+                password: mainUser.password, // Sudah ter-hash
+                profilePicture: "",
+                xp: 0,
+                coin: 0,
+                level: 1,
+                streak: 0,
+                lastLogin: nowStr(),
+                lastLoginDate: new Date().toDateString(),
+                quizScore: 0,
+                completedBlocks: [],
+                completedChapter: [],
+                flashcardsViewed: 0,
+                leaderboardPoint: 0,
+                achievements: [],
+                joinedAt: nowStr(),
+                isMainAccount: true // Tandai sebagai akun dari database utama
+            };
+
+            students.push(newStudent);
+            writeStudents(courseId, students);
+            student = newStudent;
+            isMainAccountLogin = true;
+        } else {
+            return res.status(404).json({ success: false, message: "Akun tidak ditemukan. Silakan register terlebih dahulu atau gunakan akun JadiKelas Anda." });
+        }
+    } else {
+        // Login dengan akun siswa yang sudah ada
+        const match = await bcrypt.compare(password, student.password);
+        if (!match)
+            return res.status(401).json({ success: false, message: "Password salah." });
+    }
 
     // Update streak
     const studentIdx = students.findIndex(s => s.email === email);
@@ -571,7 +620,24 @@ router.post("/course/student/login", async (req, res) => {
 
     req.session.student = { studentId: student.studentId, username: student.username, email: student.email, courseId };
 
-    return res.json({ success: true, student: { studentId: student.studentId, username: student.username, email: student.email, xp: students[studentIdx].xp, coin: students[studentIdx].coin, level: students[studentIdx].level, streak: students[studentIdx].streak } });
+    const welcomeMessage = isMainAccountLogin 
+        ? "Selamat datang! Anda berhasil login dengan akun JadiKelas." 
+        : "Login berhasil!";
+
+    return res.json({ 
+        success: true, 
+        message: welcomeMessage,
+        student: { 
+            studentId: students[studentIdx].studentId, 
+            username: students[studentIdx].username, 
+            email: students[studentIdx].email, 
+            xp: students[studentIdx].xp, 
+            coin: students[studentIdx].coin, 
+            level: students[studentIdx].level, 
+            streak: students[studentIdx].streak,
+            isMainAccount: students[studentIdx].isMainAccount || false
+        } 
+    });
 });
 
 // POST /api/course/student/logout
