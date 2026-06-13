@@ -310,5 +310,17 @@
     "courseUrl": "/course/129206bef06dea5b902a96d0d43f06f6",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "5934a8f78c0fa79a18f38206fd85a7b1",
+    "courseName": "Kalkulus Dasar untuk Biologi: Bilangan, Fungsi, dan Pertidaksamaan",
+    "courseEmoji": "📚",
+    "courseColor": "#6366f1",
+    "courseFileName": "Bahan Kuliah Kalkulus Dasar (Andri Suryana) revisi-converted.pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "13-06-2026, 06.26.13",
+    "courseUrl": "/course/5934a8f78c0fa79a18f38206fd85a7b1",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]

@@ -1,0 +1,362 @@
+{
+  "title": "Kalkulus Dasar untuk Biologi: Bilangan, Fungsi, dan Pertidaksamaan",
+  "summary": "Kamu akan menyusun fondasi kalkulus dasar mulai dari sistem bilangan, cara mengubah desimal berulang/irasional, sampai memahami interval, pertidaksamaan, nilai mutlak, dan pengantar fungsi serta model. Materi ini dibuat jadi latihan interaktif agar kamu benar-benar paham, bukan cuma menghafal.",
+  "emoji": "📚",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Peta Sistem Bilangan: N, Z, Q, Q’ , R",
+      "icon": "🧭",
+      "explanation": "Sistem bilangan itu seperti level akses: Bilangan Asli (N) paling “sempit”, lalu Bilangan Bulat (Z), Bilangan Rasional (Q) yang bisa ditulis sebagai perbandingan bilangan bulat, lalu Bilangan Irasional (Q’) yang desimalnya tak berakhir dan tak berulang, akhirnya Bilangan Real (R) mencakup keduanya. Intinya: operasi dan sifat-sifat (tertutup, komutatif, asosiatif, identitas, invers) membantu kita bekerja konsisten.",
+      "analogy": "Bayangin kamu pakai aplikasi kuis dengan kategori soal: N cuma soal pilihan ganda positif, Z sudah termasuk nol dan negatif, Q semua yang bisa jadi pecahan, Q’ pecahan “aneh” yang desimalnya terus panjang, dan R adalah gabungan semuanya.",
+      "highlight": "N, Z, Q, Q’, R",
+      "keyPoints": [
+        "N: tertutup + dan × (positif), komutatif, asosiatif",
+        "Q: bilangan pecahan a/b (b≠0), tetap tertutup untuk + dan ×",
+        "Q’: contoh √2 dan π, desimal tak berakhir serta tak berulang, lalu gabung menjadi R"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Konverter Pecahan dari Desimal Berulang (Metode Euler)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Ubah desimal berulang menjadi pecahan. Isi bagian repeatStart dan repeatLen, lalu cek hasil numeriknya. Coba untuk 0.181818... (repeat 18) atau 0.121212... (repeat 12).",
+      "fileName": "euler-decimal-repeating.js",
+      "defaultCode": "function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b !== 0) { const t = b; b = a % b; a = t; } return a; }\n\n// Konversi bentuk: x = intPart + nonRepeat/10^k + repeatBlock/repeatDen\n// Misal: 0.181818... => nonRepeat=\"\" (k=0), repeat=\"18\" => value = 18 / 99\nfunction repeatingDecimalToFraction(intPart, nonRepeatStr, repeatStr) {\n  const k = nonRepeatStr.length;\n  const r = repeatStr.length;\n\n  const nonRepeat = nonRepeatStr === \"\" ? 0 : parseInt(nonRepeatStr, 10);\n  const repeat = parseInt(repeatStr, 10);\n\n  // value = intPart + nonRepeat/10^k + repeat/(10^k)*(1/ (10^r-1))\n  // Agar menjadi pecahan: value = intPart + (nonRepeat*(10^r-1)+repeat)/(10^k*(10^r-1))\n  const denom = Math.pow(10, k) * (Math.pow(10, r) - 1);\n  const numer = intPart * denom + nonRepeat * (Math.pow(10, r) - 1) + repeat;\n\n  const g = gcd(numer, denom);\n  return { numer: numer / g, denom: denom / g };\n}\n\n// Contoh: 0,181818... => intPart=0, nonRepeat=\"\", repeat=\"18\"\nconst ex1 = repeatingDecimalToFraction(0, \"\", \"18\");\nconsole.log(`0.181818... = ${ex1.numer}/${ex1.denom}`);\n\n// Contoh: 0,121212... => intPart=0, nonRepeat=\"\", repeat=\"12\"\nconst ex2 = repeatingDecimalToFraction(0, \"\", \"12\");\nconsole.log(`0.121212... = ${ex2.numer}/${ex2.denom}`);",
+      "hint": "Kalau desimalnya 0.234234..., maka repeatStr adalah \"234\" dan nonRepeatStr kosong. Jika ada bagian yang tidak berulang dulu (misal 0.1(23)), maka isi nonRepeatStr = \"1\" dan repeatStr=\"23\"."
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual: Desimal vs Pecahan vs Real",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Rasional (Q)",
+          "value": "Bisa jadi pecahan a/b",
+          "icon": "➗"
+        },
+        {
+          "label": "Desimal Rasional",
+          "value": "Berakhir atau berulang",
+          "icon": "🔁"
+        },
+        {
+          "label": "Irasional (Q’)",
+          "value": "Tidak bisa jadi pecahan a/b",
+          "icon": "√"
+        },
+        {
+          "label": "Desimal Irasional",
+          "value": "Tak berakhir dan tak berulang",
+          "icon": "∞"
+        },
+        {
+          "label": "Real (R)",
+          "value": "Gabungan Q dan Q’",
+          "icon": "📐"
+        }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Langkah Mengubah Desimal Berulang ke Pecahan (Metode Euler)",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Tandai pola berulang",
+          "description": "Misal 0.181818... berulangnya adalah blok \"18\".",
+          "tip": "Lihat dari digit yang mulai berulang terus-menerus."
+        },
+        {
+          "number": 2,
+          "title": "Tulis bentuk x",
+          "description": "Misal x = 0.181818... ",
+          "tip": "Kosongkan non-berulang jika tidak ada digit awal yang beda."
+        },
+        {
+          "number": 3,
+          "title": "Kalikan 10^r sesuai panjang blok",
+          "description": "Jika blok berulang panjang r=2, kalikan x dengan 10^2 = 100.",
+          "tip": "Untuk blok 3 digit, pakai 1000."
+        },
+        {
+          "number": 4,
+          "title": "Kurangkan agar bagian berulang hilang",
+          "description": "100x - x akan menghasilkan angka yang hanya berisi blok berulang.",
+          "tip": "Ini seperti menyelaraskan pola lalu menghapusnya."
+        },
+        {
+          "number": 5,
+          "title": "Selesaikan pecahan dan sederhanakan",
+          "description": "Bagi hasil pengurangan dengan 99 (karena 10^2-1). Sederhanakan pakai faktor persekutuan.",
+          "tip": "Misal 0.181818... = 18/99 = 2/11."
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Interval & Himpunan pada Garis Bilangan",
+      "icon": "🧩",
+      "explanation": "Interval membantu menulis semua nilai x yang memenuhi syarat seperti a < x < b atau a ≤ x ≤ b. Notasi seperti (a,b) memakai tanda kurung yang berarti tidak termasuk ujung, sedangkan [a,b] memakai tanda siku yang berarti ujungnya termasuk.",
+      "analogy": "Anggap garis bilangan itu jalur sepeda. Tanda kurung ( ) seperti pagar yang tidak mengizinkan kamu menempel di ujung, sedangkan tanda siku [ ] seperti pintu masuk yang mengizinkan titik ujungnya ikut.",
+      "highlight": "(), [], ∞, himpunan kosong ∅",
+      "keyPoints": [
+        "(a,b): a dan b tidak termasuk",
+        " [a,b]: a dan b termasuk",
+        "Notasi dengan ∞ menggambarkan batas tanpa ujung dan ∅ berarti tidak ada solusi"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Pertidaksamaan: Menjembatani Simbol ke Solusi",
+      "icon": "⚖️",
+      "explanation": "Pertidaksamaan seperti x-variabel + dan perkalian dengan bilangan positif/negatif mengubah arah tanda. Materi di sini menekankan aturan bentuk: cara memindahkan suku, menggabungkan, lalu menyelesaikan untuk mendapatkan interval solusi.",
+      "analogy": "Bayangin tanda pertidaksamaan sebagai arah panah di GPS. Mengalikan dengan bilangan negatif seperti memutar peta, jadi arah (tanda < atau >) bisa kebalik.",
+      "highlight": "Tanda berbalik jika dikali negatif",
+      "keyPoints": [
+        "Selesaikan pertidaksamaan menjadi nilai x yang memenuhi",
+        "Gunakan aturan bentuk untuk menggabungkan ruas",
+        "Akhiri dengan interval (bukan cuma angka tunggal kalau ada rentang)"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Nilai Mutlak: Jarak ke Nol",
+      "icon": "📏",
+      "explanation": "Nilai mutlak |a| adalah jarak dari a ke 0 pada garis bilangan. Karena jarak selalu non-negatif, |a| ≥ 0. Definisi pecahannya: |a| = a jika a ≥ 0, dan |a| = -a jika a < 0. Dari sini muncul sifat-sifat yang memudahkan penyelesaian pertidaksamaan nilai mutlak.",
+      "analogy": "Seperti mengukur jarak antar dua titik di garis lurus. Kalau kamu di kiri nol atau kanan nol, jaraknya tetap positif, jadi | -5 | sama dengan | 5 |.",
+      "highlight": "|a| = jarak, definisi pecah, pertaksamaan segitiga",
+      "keyPoints": [
+        "|a| ≥ 0 selalu benar",
+        "|a| = a jika a ≥ 0 dan |a| = -a jika a < 0",
+        "Sifat seperti |x| ≤ k menghasilkan rentang -k ≤ x ≤ k (dengan k≥0)"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Uji Nilai Mutlak & Hitung Solusi Bentuk |x-c| ≤ r",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Ubah c dan r, lalu lihat interval solusi untuk pertidaksamaan nilai mutlak |x-c| ≤ r. Coba juga ganti ke contoh |x-c| ≥ r dengan menambahkan logika pada kode jika kamu mau.",
+      "fileName": "absolute-value-interval.js",
+      "defaultCode": "function solveAbsLe(c, r) {\n  // Solusi |x-c| <= r adalah c-r <= x <= c+r jika r>=0\n  if (r < 0) return { valid: false, interval: \"Tidak ada solusi karena |x-c| selalu >= 0\" };\n  return { valid: true, interval: { left: c - r, right: c + r } };\n}\n\nconst c = 3;\nconst r = 5;\nconst res = solveAbsLe(c, r);\nif (res.valid) {\n  console.log(`Solusi |x-${c}| <= ${r} adalah ${res.interval.left} <= x <= ${res.interval.right}`);\n} else {\n  console.log(res.interval);\n}\n\n// Contoh lain\nconst c2 = -2;\nconst r2 = 4;\nconst res2 = solveAbsLe(c2, r2);\nconsole.log(`Solusi |x-${c2}| <= ${r2} adalah ${res2.interval.left} <= x <= ${res2.interval.right}`);",
+      "hint": "Ingat: |x-c| ≤ r setara dengan c-r ≤ x ≤ c+r (asal r ≥ 0). Kalau r negatif, pasti tidak ada solusi."
+    },
+    {
+      "type": "analogy_card",
+      "title": "Nilai Mutlak dalam Kehidupan: Uji Jarak & Zona Aman",
+      "icon": "💡",
+      "realWorld": "Misal kamu menentukan zona aman di sekitar titik koordinat 0, misalnya suhu atau kadar maksimum yang masih aman dari nilai target.",
+      "connection": "Nilai mutlak dipakai untuk menyatakan 'sejauh mana' x dari c, tanpa peduli arah (lebih kecil atau lebih besar).",
+      "insight": "Pertidaksamaan nilai mutlak sering berubah jadi interval (rentang) di garis bilangan, jadi kamu bisa langsung baca solusi sebagai daerah kiri-kanan."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Domain (daerah asal)",
+          "definition": "Himpunan semua nilai x yang boleh dipakai di suatu fungsi.",
+          "example": "Jika f(x)=√(x-1), domainnya x≥1."
+        },
+        {
+          "term": "Range (daerah hasil)",
+          "definition": "Himpunan semua nilai f(x) yang mungkin keluar.",
+          "example": "Untuk f(x)=x^2, range adalah y≥0."
+        },
+        {
+          "term": "Interval (a,b)",
+          "definition": "Himpunan semua x dengan a < x < b (ujung tidak termasuk).",
+          "example": " (2,5) berarti 2 dan 5 tidak termasuk."
+        },
+        {
+          "term": "Nilai mutlak |a|",
+          "definition": "Jarak bilangan a terhadap nol di garis bilangan.",
+          "example": "|-7| = 7."
+        },
+        {
+          "term": "Pertidaksamaan",
+          "definition": "Hubungan tidak sama dengan seperti <, >, ≤, ≥.",
+          "example": "x^2-1 < 0 menghasilkan rentang x."
+        },
+        {
+          "term": "Fungsi genap",
+          "definition": "Jika f(-x)=f(x). Grafik simetri terhadap sumbu-y.",
+          "example": "f(x)=x^2."
+        },
+        {
+          "term": "Fungsi ganjil",
+          "definition": "Jika f(-x)=-f(x). Grafik simetri terhadap titik asal.",
+          "example": "f(x)=x^3."
+        },
+        {
+          "term": "Uji garis tegak",
+          "definition": "Kurva grafik merupakan fungsi jika garis tegak memotong kurva tepat satu kali.",
+          "example": "Lingkaran bukan fungsi terhadap sumbu-x."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Bilangan rasional Q didefinisikan sebagai ...",
+      "options": [
+        "a adalah perbandingan bilangan bulat a/b dengan b≠0",
+        "a adalah bilangan yang desimalnya tak berakhir dan berulang",
+        "a adalah bilangan yang desimalnya tak berakhir tapi tidak berulang",
+        "a adalah bilangan selain bilangan bulat"
+      ],
+      "answer": "a adalah perbandingan bilangan bulat a/b dengan b≠0",
+      "explanation": "Definisi rasional adalah bilangan yang bisa ditulis sebagai a/b (b tidak boleh nol).",
+      "xpReward": 50
+    },
+    {
+      "question": "Desimal 0,3333... termasuk jenis bilangan apa?",
+      "options": [
+        "Irasional (Q’)",
+        "Rasional (Q)",
+        "Bilangan asli (N)",
+        "Bilangan real (R) tetapi bukan rasional"
+      ],
+      "answer": "Rasional (Q)",
+      "explanation": "0,3333... berulang, sehingga dapat dinyatakan sebagai pecahan 1/3.",
+      "xpReward": 50
+    },
+    {
+      "question": "Notasi interval (2,5) berarti ...",
+      "options": [
+        "2 dan 5 termasuk",
+        "2 dan 5 tidak termasuk",
+        "2 termasuk tapi 5 tidak termasuk",
+        "2 tidak termasuk tapi 5 termasuk"
+      ],
+      "answer": "2 dan 5 tidak termasuk",
+      "explanation": "Tanda kurung ( ) menandakan ujung interval tidak termasuk.",
+      "xpReward": 50
+    },
+    {
+      "question": "Pernyataan yang benar tentang nilai mutlak adalah ...",
+      "options": [
+        "|a| selalu bernilai negatif jika a≠0",
+        "|a| bisa bernilai apa saja termasuk negatif",
+        "|a| selalu bernilai positif atau nol",
+        "|a| = a tanpa syarat"
+      ],
+      "answer": "|a| selalu bernilai positif atau nol",
+      "explanation": "Nilai mutlak adalah jarak, jarak tidak mungkin negatif.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika |x-3| ≤ 5 maka interval solusinya adalah ...",
+      "options": [
+        "3-5 ≤ x ≤ 3+5",
+        "x ≤ 3-5 atau x ≥ 3+5",
+        "3+5 ≤ x ≤ 3-5",
+        "x = 3"
+      ],
+      "answer": "3-5 ≤ x ≤ 3+5",
+      "explanation": "|x-c| ≤ r setara dengan c-r ≤ x ≤ c+r.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika x memenuhi trikotomi untuk bilangan real, maka hanya salah satu yang benar adalah ...",
+      "options": [
+        "x=a",
+        "x=a atau x<b",
+        "x<b, x=a, atau x>b",
+        "x≠a"
+      ],
+      "answer": "x<a, x=a, atau x>a",
+      "explanation": "Trikotomi menyatakan untuk a dan b di R, tepat satu dari a<b, a=b, atau a>b yang berlaku.",
+      "xpReward": 50
+    },
+    {
+      "question": "Kurva pada bidang xy merupakan grafik suatu fungsi terhadap x jika ...",
+      "options": [
+        "setiap garis tegak memotong kurva tepat sekali",
+        "setiap garis mendatar memotong kurva tepat sekali",
+        "kurva tertutup seperti lingkaran",
+        "kurva tidak pernah menyentuh sumbu-x"
+      ],
+      "answer": "setiap garis tegak memotong kurva tepat sekali",
+      "explanation": "Uji garis tegak: jika garis tegak memotong kurva sebanyak sekali, maka itu fungsi.",
+      "xpReward": 50
+    },
+    {
+      "question": "Sifat fungsi genap adalah ...",
+      "options": [
+        "f(-x)=f(x)",
+        "f(-x)=-f(x)",
+        "f(x+y)=f(x)+f(y)",
+        "f(x)=0 untuk semua x"
+      ],
+      "answer": "f(-x)=f(x)",
+      "explanation": "Fungsi genap memenuhi f(-x)=f(x) dan grafik simetri terhadap sumbu-y.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa hubungan Q dan R?",
+      "answer": "Q adalah bagian dari R; R = Q ∪ Q’ (rasional dan irasional).",
+      "emoji": "🧠",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Tanda kurung ( ) pada interval menunjukkan apa?",
+      "answer": "Ujung interval tidak termasuk dalam himpunan solusi.",
+      "emoji": "()",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Tanda siku [ ] pada interval menunjukkan apa?",
+      "answer": "Ujung interval termasuk dalam himpunan solusi.",
+      "emoji": "[]",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Definisi nilai mutlak |a| menurut aturan pecahnya adalah apa?",
+      "answer": "|a| = a jika a ≥ 0, dan |a| = -a jika a < 0.",
+      "emoji": "📏",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Jika |x-c| ≤ r dengan r≥0, solusi x berbentuk apa?",
+      "answer": "c-r ≤ x ≤ c+r.",
+      "emoji": "🧩",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa yang dimaksud domain (daerah asal) fungsi?",
+      "answer": "Himpunan semua nilai x yang boleh dipakai sehingga f(x) terdefinisi.",
+      "emoji": "🗺️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa ciri grafik fungsi genap?",
+      "answer": "Simetri terhadap sumbu-y (f(-x)=f(x)).",
+      "emoji": "🟰",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa ciri grafik fungsi ganjil?",
+      "answer": "Simetri terhadap titik asal (f(-x)=-f(x)).",
+      "emoji": "↔️",
+      "difficulty": "medium"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi yang kamu terima membahas Kalkulus Dasar dengan fokus awal pada fondasi aljabar-bilangan dan cara menuliskan solusi dalam bentuk himpunan/interval. Bagian paling awal adalah Aturan Perkuliahan yang menjelaskan cakupan bab untuk UTS/UAP/UPM serta komposisi penilaian (UTS/UAP 30%, UPM 50%, Tugas 20%). Kamu juga diberi konteks tugas individu berisi tugas terstruktur 1 sampai 6, quiz dilakukan sebelum UTS dan sebelum UPM untuk mahasiswa reguler, sedangkan non-reguler quiz hanya sekali sebelum UAP jika memungkinkan. Selain itu dijelaskan aturan pengumpulan tugas: terlambat tidak diterima (nilai 0), peniruan tugas juga nilai 0, mahasiswa dianjurkan membawa kalkulator, dan ada mekanisme ujian susulan. Catatan lain penting adalah UPM tidak ada susulan; jika tidak ikut maka tidak lulus/mengulang. Dalam pembelajaran, keaktifan/ sikap dinilai lewat partisipasi di kelas, mengerjakan soal di depan, menjawab pertanyaan lisan saat diskusi, dan aspek afektif lainnya, serta nilai absensi membantu nilai akhir.\n\nMasuk ke materi Bab 1: Sistem Bilangan. Urutannya dimulai dari sejarah perkembangan bilangan real dan pengelompokan bilangan: Bilangan Asli N (biasanya 1,2,3,...), Bilangan Bulat Z (...,-2,-1,0,1,2,...), Bilangan Rasional Q (a/b dengan a dan b bilangan bulat serta b tidak nol), Bilangan Irasional Q’ (bilangan real yang tidak rasional; contoh yang disebut adalah √2 dan π), serta Bilangan Real R (gabungan Q dan Q’). Untuk tiap kelompok, materi menuliskan sifat-sifat aljabar yang penting agar kamu bisa memastikan operasi seperti penjumlahan (+) dan perkalian (×) bekerja konsisten: sifat tertutup (hasil operasi tetap berada di himpunan yang sama), komutatif (a+b=b+a dan a×b=b×a), asosiatif ((a+b)+c=a+(b+c) dan (a×b)×c=a×(b×c)), elemen identitas (untuk + identitasnya 0, untuk × identitasnya 1), invers aditif (kebalikan penjumlahan: -a), invers perkalian (kebalikan perkalian: 1/a untuk a≠0), serta distributif (a×(b+c)=a×b+a×c). Pada bilangan real juga ditambahkan sifat urutan: trikotomi (untuk dua bilangan real hanya salah satu dari <, =, > yang benar), transitif (jika a<b dan b<c maka a<c), adiktif (a<b mengarah ke a+c<b+c), dan multiplikatif (aturan arah berubah ketika mengalikan bilangan negatif).\n\nBagian berikutnya adalah desimal dan bilangan real. Materi menekankan bahwa setiap bilangan real dapat dinyatakan sebagai desimal tak berakhir. Bilangan rasional memiliki desimal yang berakhir atau berulang. Contoh yang diberikan: 2/5 = 0,4 atau 1/3 = 0,3333... sedangkan bilangan irasional seperti √2 = 1,41421356... dan π = 3,14159... menghasilkan desimal tak berakhir dan tidak berulang. Materi juga mengajarkan dua arah konversi: (1) pecahan ke desimal (biasanya melalui pembagian a/b), dan (2) desimal ke pecahan, khususnya untuk desimal berulang dengan metode Euler (mengalikan digit berulang: jika berulang 1 digit kalikan 10, jika berulang 2 digit kalikan 100, dst). Ada juga pendekatan lewat deret waktu tak hingga untuk desimal yang berulang periodik, yaitu dengan menyusun menjadi deret geometri yang menggunakan suku pertama a dan rasio r, lalu menjumlahkan sampai tak hingga. Contoh yang tampak di materi menggunakan ide deret: 0,121212... bisa dipandang sebagai 12/100 + 12/100^2 + ... sehingga didapat pecahannya.\n\nSetelah sistem bilangan, Bab 1 masuk ke Konsep Selang/Interval. Notasi interval yang diajarkan adalah bentuk-bentuk dengan tanda kurung dan siku: (a,b), [a,b], [a,b), (a,b], (a,∞), [a,∞), (-∞,b), (-∞,b], dan (-∞,∞) yang berarti semua bilangan real. Ada juga simbol himpunan kosong ∅ yang artinya tidak memiliki anggota. Pemahaman interval sangat penting karena penyelesaian pertidaksamaan biasanya diakhiri dengan penulisan himpunan solusi dalam bentuk interval.\n\nBagian berikutnya adalah Pertidaksamaan. Materi memperkenalkan konsep dan beberapa aturan bentuk yang menghubungkan pertidaksamaan aljabar, lalu menyediakan Latihan 2 yang meminta menyelesaikan pertidaksamaan dalam bentuk-bentuk seperti kuadrat/berpangkat, termasuk pertidaksamaan gabungan dari beberapa suku. Dalam memandu siswa, biasanya yang ditekankan adalah: susun ulang pertidaksamaan, gunakan operasi aljabar untuk memindahkan ruas, lalu selesaikan sehingga didapat nilai x yang memenuhi. Jika ada perkalian oleh bilangan negatif, arah tanda pertidaksamaan perlu dibalik (ini akan sering muncul pada penyelesaian soal-soal). Setelah itu, bentuk solusi dibaca sebagai interval.\n\nKemudian ada Nilai/Harga Mutlak. Materi mendefinisikan nilai mutlak |a| sebagai jarak dari a ke 0 pada garis bilangan real. Karena jarak tidak negatif, maka |a| ≥ 0 untuk semua a. Definisi pecah: |a| = a untuk a≥0 dan |a| = -a untuk a<0. Lalu diberikan sifat-sifat: (1) |a| = a jika a≥0, (2) |ab| = |a||b|, (3) |a| = |b| untuk implikasi tertentu, (4) |a|^n = |a^n| untuk n bilangan bulat, (5-10) berisi aturan yang menghubungkan bentuk (|x|) terhadap pertidaksamaan seperti x|a| dan aturan tanda yang menghasilkan rentang solusi. Salah satu sifat yang paling penting untuk proses adalah: |x-a| ≤ k setara dengan a-k ≤ x ≤ a+k (untuk k≥0), sedangkan |x-a| ≥ k setara dengan x ≤ a-k atau x ≥ a+k. Materi juga mencantumkan pertaksamaan segitiga a-b| ≤ |a|+|b| dalam bentuk batasan jumlah mutlak.\n\nSetelah konsep, materi memberikan Latihan 3 untuk menyelesaikan pertidaksamaan nilai mutlak, dan juga Tugas Terstruktur 1 yang berisi beberapa soal konversi desimal berulang ke pecahan memakai Metode Euler dan Deret Tak Hingga, lalu soal pertidaksamaan biasa dan pertidaksamaan nilai mutlak dalam beberapa subbagian (a-e). Tujuan tugas ini adalah melatih dua keterampilan: (i) konversi bilangan yang tampak rumit, dan (ii) mengubah pertidaksamaan menjadi interval solusi.\n\nBab 2 mulai memperkenalkan Fungsi dan Model. Bagian awal adalah definisi fungsi: fungsi f memadankan setiap x pada himpunan A dengan tepat satu elemen pada himpunan B yang disebut f(x). Ada Uji Garis Tegak untuk menentukan apakah suatu kurva merupakan grafik fungsi: garis tegak pada sumbu-x harus memotong kurva tepat satu kali. Lalu dijelaskan domain (daerah asal) dan range (daerah hasil). Cara penyajian fungsi juga disebutkan: lisan, numerik, visual, dan aljabar. Materi juga mengulas simetri fungsi: fungsi genap memenuhi f(-x)=f(x) dan grafik simetri terhadap sumbu-y, fungsi ganjil memenuhi f(-x)=-f(x) dan grafik simetri terhadap titik asal. Terakhir, pengantar fungsi naik dan fungsi turun pada selang I, yang biasanya dihubungkan dengan tanda perbandingan nilai f(x1) dan f(x2) untuk x1<x2.\n\nUntuk bagian Model Matematika (yang baru mulai di cuplikan), definisi diberikan bahwa model matematika adalah uraian matematis (menggunakan fungsi atau persamaan) tentang fenomena dunia nyata seperti populasi, permintaan barang, kecepatan benda jatuh, konsentrasi reaksi kimia, harapan hidup, atau biaya reduksi emisi. Tujuan model adalah untuk memahami fenomena tersebut. Meski cuplikan berhenti sebelum detail tujuan/jenis model, tutor bisa menjelaskan bahwa tahap lanjut biasanya meliputi: memilih variabel, menyusun hubungan matematis (model), lalu memvalidasi atau menggunakan model untuk prediksi dan analisis.\n\nSecara pedagogis, strategi tutor untuk bab ini adalah: selalu kaitkan notasi ke makna geometris (garis bilangan untuk interval dan nilai mutlak), pastikan siswa memahami alasan di balik aturan (misal arah pertidaksamaan berubah saat operasi tertentu), dan latihan dibuat bertahap dari identifikasi bentuk (rasional/irasional, interval, jenis fungsi) sampai penyelesaian soal numerik."
+}
