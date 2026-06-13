@@ -79,7 +79,9 @@ Jika user bertanya harga:
 
 ### 🚀 Starter Boost — Rp9.000
 - 10 credit AI
-- Bisa buat 2 Course
+- Bisa buat 
+
+### 🧑‍🎓 Starter Boost — Rp9.000
 
 ### 👑 Creator Pack — Rp35.000 (sekali bayar)
 - 50 credit AI
