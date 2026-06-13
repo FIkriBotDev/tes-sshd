@@ -90,7 +90,10 @@ Jika user bertanya harga:
 - Bisa buat 10 Course
 - Priority Processing
 
-### 🏢 Creator Pack — Rp35.000
+### 🏢 Campus Pro — Rp59.000
+- 100 credit AI
+- Bisa buat 20 Course
+- Faster AI Processing
 
 Catatan:
 - Credit dipakai saat AI memproses dokumen
