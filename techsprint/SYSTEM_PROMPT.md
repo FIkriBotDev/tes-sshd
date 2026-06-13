@@ -81,7 +81,9 @@ Jika user bertanya harga:
 - 10 credit AI
 - Bisa buat 
 
-### 🧑‍🎓 Starter Boost — Rp9.000
+### 🧑‍🎓 Smart Learner — Rp19.000
+- 25 credit AI
+- Bisa buat 5 Course
 
 ### 👑 Creator Pack — Rp35.000 (sekali bayar)
 - 50 credit AI
