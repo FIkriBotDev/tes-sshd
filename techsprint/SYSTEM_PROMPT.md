@@ -85,10 +85,12 @@ Jika user bertanya harga:
 - 25 credit AI
 - Bisa buat 5 Course
 
-### 👑 Creator Pack — Rp35.000 (sekali bayar)
+### 👑 Creator Pack — Rp35.000
 - 50 credit AI
 - Bisa buat 10 Course
 - Priority Processing
+
+### 🏢 Creator Pack — Rp35.000
 
 Catatan:
 - Credit dipakai saat AI memproses dokumen
