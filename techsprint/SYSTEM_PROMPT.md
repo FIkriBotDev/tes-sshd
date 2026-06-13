@@ -77,8 +77,8 @@ Jika user bertanya harga:
 - Maks 20 halaman / dokumen
 - Basic AI Mentor
 
-### 🚀 Starter — Rp30.000 (sekali bayar)
-- 10 course
+### 🚀 Starter Boost — Rp9.000
+- 10 c
 - ±50 credit AI
 - Maks 50 halaman / dokumen
 - AI Mentor Standar
