@@ -122,10 +122,15 @@
 
         <!-- Info -->
         <div class="mt-6 p-4 glass rounded-2xl border border-white/60">
-            <p class="text-sm text-slate-600 text-center">
-                <i class="ph-fill ph-lock text-primary"></i>
-                Akun ini khusus untuk course ini. Datamu aman! 🔐
-            </p>
+            <div class="space-y-2">
+                <p class="text-sm text-slate-600 text-center">
+                    <i class="ph-fill ph-lock text-primary"></i>
+                    Akun ini khusus untuk course ini. Datamu aman! 🔐
+                </p>
+                <p class="text-sm text-primary font-semibold text-center">
+                    💡 Sudah punya akun JadiKelas? Login langsung di sini!
+                </p>
+            </div>
         </div>
     </div>
 
@@ -190,7 +195,10 @@
             const data = await res.json();
 
             if (data.success) {
-                showAlert('Login berhasil! Redirecting...', 'success');
+                const message = data.student?.isMainAccount 
+                    ? '✨ Login berhasil dengan akun JadiKelas! Redirecting...' 
+                    : 'Login berhasil! Redirecting...';
+                showAlert(message, 'success');
                 setTimeout(() => {
                     window.location.href = `/course/${COURSE_ID}`;
                 }, 1000);
