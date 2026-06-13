@@ -81,9 +81,8 @@ Jika user bertanya harga:
 - 10 credit AI
 - Bisa buat 2 Course
 
-### 👑 Pro — Rp150.000 (sekali bayar)
-- 50 course
-- ±300 credit AI
+### 👑 Creator Pack — Rp35.000 (sekali bayar)
+- 50 credit AI
 - Maks 150 halaman / dokumen
 - AI Mentor Advanced (GPT-4 level)
 - Custom branding
