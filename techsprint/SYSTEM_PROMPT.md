@@ -83,10 +83,8 @@ Jika user bertanya harga:
 
 ### 👑 Creator Pack — Rp35.000 (sekali bayar)
 - 50 credit AI
-- Maks 150 halaman / dokumen
-- AI Mentor Advanced (GPT-4 level)
-- Custom branding
-- Prioritas processing
+- Bisa buat 10 Course
+- Priority Processing
 
 Catatan:
 - Credit dipakai saat AI memproses dokumen
