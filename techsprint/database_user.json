@@ -67,30 +67,6 @@
     "courseCreated": 0
   },
   {
-    "namaLengkap": "user_gratis",
-    "email": "usergratisan@gmail.com",
-    "password": "$2b$10$3tMS/UyVRuYv3QVpp8OlCuK9bDjdgjCx5ytozz982knafjkCTVBw2",
-    "plan": 1,
-    "creditLeft": 5,
-    "courseCreated": 1
-  },
-  {
-    "namaLengkap": "pablo",
-    "email": "pablo@gmail.com",
-    "password": "$2b$10$nuoF7NgJuh.wcJDLl1NZWu2Sv2.akmRRWVsaPgIH4j7jkjwQHEpIC",
-    "plan": 1,
-    "creditLeft": 999999989,
-    "courseCreated": 3
-  },
-  {
-    "namaLengkap": "vscode",
-    "email": "vscode@gmail.id",
-    "password": "$2b$10$9FFMzIG3ZxWtI3v3eypSiOgNRz4CxoHdTbPHn19dsXw2M3zoRTbDa",
-    "plan": 1,
-    "creditLeft": 0,
-    "courseCreated": 2
-  },
-  {
     "namaLengkap": "Amanda Esa Karti",
     "email": "amandaekarti@apps.ipb.ac.id",
     "password": "$2b$10$imirym3Rhe15gQoUkx5cG.MEPZ858gQ3GdbAjtvI2unCHPCCD12/.",
