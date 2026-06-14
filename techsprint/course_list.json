@@ -322,5 +322,17 @@
     "courseUrl": "/course/5934a8f78c0fa79a18f38206fd85a7b1",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "d7685f57c49fe5fe5bc1d47b759e5329",
+    "courseName": "Kenali Malware dan Cara Waspadanya",
+    "courseEmoji": "🛡️",
+    "courseColor": "#3b82f6",
+    "courseFileName": "malware.pdf",
+    "courseOwner": "johndoe@gmail.com",
+    "courseCreated": "14-06-2026, 23.27.24",
+    "courseUrl": "/course/d7685f57c49fe5fe5bc1d47b759e5329",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]

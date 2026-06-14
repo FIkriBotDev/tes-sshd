@@ -1,0 +1,326 @@
+{
+  "title": "Kenali Malware dan Cara Waspadanya",
+  "summary": "Malware adalah perangkat lunak berbahaya yang bisa merusak, mengganggu, atau mencuri data tanpa izin. Kamu akan belajar jenis-jenis malware seperti worm, trojan horse, dan ransomware lewat penjelasan mudah, analogi, serta latihan kuis.",
+  "emoji": "🛡️",
+  "color": "#3b82f6",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Malware itu apa sih?",
+      "icon": "🛡️",
+      "explanation": "Malware atau malicious software adalah program/software berbahaya yang dibuat untuk merusak, mengganggu sistem, atau mencuri informasi tanpa izin pemiliknya. Biasanya masuk lewat file berbahaya, tautan mencurigakan, atau celah keamanan di perangkat atau jaringan.",
+      "analogy": "Bayangkan malware seperti tamu tak diundang yang pura-pura baik-baik saja, padahal tujuannya merusak rumah dan mengambil barang.",
+      "highlight": "merusak, mengganggu, mencuri",
+      "keyPoints": [
+        "Malware bekerja tanpa izin pemilik perangkat",
+        "Tujuannya bisa merusak atau mengambil data",
+        "Bisa menyebar dan menginfeksi sistem lain"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Jenis Malware: bedanya apa?",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Worm",
+          "value": "Menggandakan diri dan menyebar lewat jaringan",
+          "icon": "🕷️"
+        },
+        {
+          "label": "Trojan Horse",
+          "value": "Menyamar seperti software sah/baik-baik",
+          "icon": "🐴"
+        },
+        {
+          "label": "Ransomware",
+          "value": "Mengenkripsi data lalu meminta tebusan",
+          "icon": "🔐"
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Worm: si penyebar otomatis",
+      "icon": "🕷️",
+      "explanation": "Worm adalah malware yang bisa menggandakan dirinya sendiri dan menyebar ke perangkat lain melalui jaringan. Karena dia menyebar otomatis, dampaknya bisa cepat meluas kalau tidak ditangani.",
+      "analogy": "Seperti virus yang menular dan menyebar dari satu orang ke banyak orang lewat kontak dekat.",
+      "highlight": "menggandakan diri, menyebar via jaringan",
+      "keyPoints": [
+        "Bisa membuat salinan dari dirinya",
+        "Menyebar melalui jaringan antar perangkat",
+        "Sering menyebabkan penyebaran cepat"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Trojan Horse: menyamar jadi yang aman",
+      "icon": "🐴",
+      "explanation": "Trojan horse adalah malware yang menyamar sebagai software yang sah atau terlihat normal. Biasanya pengguna tertipu untuk menjalankan file atau aplikasi tersebut, padahal setelah aktif bisa melakukan aksi berbahaya.",
+      "analogy": "Seperti bungkusan hadiah yang terlihat resmi, tapi isinya ternyata alat yang merugikan.",
+      "highlight": "menyamar sebagai software sah",
+      "keyPoints": [
+        "Tampak seperti aplikasi resmi",
+        "Biasanya butuh bantuan pengguna untuk dijalankan",
+        "Setelah aktif bisa membahayakan perangkat"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Ransomware: data dikunci, tebusan diminta",
+      "icon": "🔐",
+      "explanation": "Ransomware adalah malware yang mengenkripsi data di perangkat, lalu meminta tebusan agar data bisa dibuka kembali. Ini mengganggu akses data dan bisa membuat korban kehilangan pekerjaan atau informasi penting.",
+      "analogy": "Seperti kunci gembok yang menutup semua dokumen di ruang kerja, lalu ada pesan: bayar dulu baru dibuka.",
+      "highlight": "mengenkripsi data, meminta tebusan",
+      "keyPoints": [
+        "Mengunci data dengan enkripsi",
+        "Korban diminta membayar tebusan",
+        "Akses data menjadi terganggu"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Langkah praktis saat merasa ada malware",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Hentikan koneksi internet",
+          "description": "Kalau mencurigai perangkat terinfeksi, putuskan koneksi jaringan untuk memperlambat penyebaran (terutama worm).",
+          "tip": "Cabut Wi-Fi atau matikan data seluler sebentar."
+        },
+        {
+          "number": 2,
+          "title": "Jangan jalankan file mencurigakan",
+          "description": "Jika ada file aplikasi atau tautan yang baru saja diunduh/diakses, hindari menjalankannya lagi.",
+          "tip": "Tutup tab/ aplikasi yang mencurigakan."
+        },
+        {
+          "number": 3,
+          "title": "Lakukan scan keamanan",
+          "description": "Gunakan antivirus/anti-malware yang terpercaya untuk memindai dan menghapus ancaman.",
+          "tip": "Pastikan database antivirus sudah terbaru."
+        },
+        {
+          "number": 4,
+          "title": "Amankan akun dan data",
+          "description": "Ganti password penting bila ada indikasi pencurian data, dan backup data yang aman.",
+          "tip": "Gunakan password kuat dan unik."
+        }
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "Siapa pelakunya? Cocokkan cirinya",
+      "icon": "💡",
+      "realWorld": "Kamu menerima file “aplikasi update” yang terlihat resmi, lalu perangkat jadi aneh dan memunculkan permintaan tebusan.",
+      "connection": "Bisa saja ada kombinasi malware, tapi petunjuk paling jelas adalah perilaku enkripsi dan permintaan tebusan yang khas ransomware.",
+      "insight": "Dengan memahami ciri dasar (sebaran, penyamaran, dan enkripsi-tebusan), kamu bisa lebih cepat mengidentifikasi jenis malware."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Malware",
+          "definition": "Perangkat lunak berbahaya yang merusak, mengganggu, atau mencuri data tanpa izin.",
+          "example": "Program yang mengunci file lalu meminta tebusan."
+        },
+        {
+          "term": "Worm",
+          "definition": "Malware yang menggandakan diri dan menyebar melalui jaringan.",
+          "example": "Menyebar dari satu perangkat ke perangkat lain saat terhubung jaringan."
+        },
+        {
+          "term": "Trojan Horse",
+          "definition": "Malware yang menyamar sebagai software sah agar pengguna mau menjalankannya.",
+          "example": "File installer yang terlihat resmi tapi sebenarnya berbahaya."
+        },
+        {
+          "term": "Ransomware",
+          "definition": "Malware yang mengenkripsi data lalu meminta tebusan.",
+          "example": "Dokumen terenkripsi dan muncul pesan pembayaran."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Mini Simulator: Tebak Jenis Malware dari Ciri",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode untuk mengklasifikasikan malware berdasarkan ciri yang kamu pilih. Ubah variabel scenario menjadi salah satu: \"menyebar_jaringan\", \"menyamar_sah\", \"mengenkripsi_meminta_tebusan\" lalu lihat outputnya.",
+      "fileName": "malware-simulator.js",
+      "defaultCode": "const scenario = \"menyebar_jaringan\"; // coba ubah ke: menyamar_sah atau mengenkripsi_meminta_tebusan\n\nfunction classifyMalware(s) {\n  if (s === \"menyebar_jaringan\") return \"Worm\";\n  if (s === \"menyamar_sah\") return \"Trojan Horse\";\n  if (s === \"mengenkripsi_meminta_tebusan\") return \"Ransomware\";\n  return \"Tidak diketahui\";\n}\n\nconst result = classifyMalware(scenario);\nconsole.log(\"Ciri:\", scenario);\nconsole.log(\"Klasifikasi:\", result);",
+      "hint": "Kunci jawaban ada di kata-kata ciri: \"sebar\" untuk worm, \"menyamar\" untuk trojan, dan \"mengenkripsi\" untuk ransomware."
+    },
+    {
+      "type": "code_playground",
+      "title": "Simulator Cepat: Kodekan Pesan Ciri Jadi Output",
+      "icon": "⚡",
+      "language": "javascript",
+      "instruction": "Ketik ciri yang sesuai pada input kata kunci. Program akan memberikan jenis malware. Ubah keyword menjadi: worm, trojan, atau ransomware.",
+      "fileName": "malware-keyword.js",
+      "defaultCode": "const keyword = \"worm\"; // ganti jadi \"trojan\" atau \"ransomware\"\n\nfunction malwareFromKeyword(k) {\n  const map = {\n    \"worm\": \"Worm\",\n    \"trojan\": \"Trojan Horse\",\n    \"ransomware\": \"Ransomware\"\n  };\n  return map[k] || \"Tidak diketahui\";\n}\n\nconsole.log(\"Keyword:\", keyword);\nconsole.log(\"Jawaban:\", malwareFromKeyword(keyword));",
+      "hint": "Gunakan mapping sederhana seperti objek map: worm -> Worm, trojan -> Trojan Horse, ransomware -> Ransomware."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Apa pengertian paling tepat tentang malware?",
+      "options": [
+        "Software yang hanya untuk menambah performa perangkat",
+        "Perangkat lunak berbahaya yang merusak/mengganggu/mencuri tanpa izin",
+        "Sistem operasi bawaan yang aman",
+        "Aplikasi pemulihan data resmi"
+      ],
+      "answer": "Perangkat lunak berbahaya yang merusak/mengganggu/mencuri tanpa izin",
+      "explanation": "Malware memang dirancang untuk merusak, mengganggu, atau mencuri informasi tanpa izin pemilik perangkat atau jaringan.",
+      "xpReward": 50
+    },
+    {
+      "question": "Worm biasanya menyebar dengan cara apa?",
+      "options": [
+        "Hanya melalui flashdisk fisik tanpa jaringan",
+        "Menggandakan diri dan menyebar melalui jaringan",
+        "Mengubah tampilan layar menjadi normal kembali",
+        "Berhenti setelah satu kali infeksi"
+      ],
+      "answer": "Menggandakan diri dan menyebar melalui jaringan",
+      "explanation": "Ciri utama worm adalah dapat menggandakan diri dan menyebar lewat jaringan ke perangkat lain.",
+      "xpReward": 50
+    },
+    {
+      "question": "Trojan horse dikenal karena…",
+      "options": [
+        "Mengenkripsi data lalu meminta tebusan",
+        "Menyamar sebagai software yang sah",
+        "Tidak bisa dijalankan oleh pengguna sama sekali",
+        "Tidak berinteraksi dengan sistem"
+      ],
+      "answer": "Menyamar sebagai software yang sah",
+      "explanation": "Trojan horse menyamar agar pengguna tertipu dan menjalankan sesuatu yang sebenarnya berbahaya.",
+      "xpReward": 50
+    },
+    {
+      "question": "Ransomware paling tepat digambarkan sebagai malware yang…",
+      "options": [
+        "Menggandakan diri dan menyebar via jaringan",
+        "Menyamar seperti aplikasi resmi",
+        "Mengenkripsi data lalu meminta tebusan",
+        "Menghapus semua data tanpa jejak"
+      ],
+      "answer": "Mengenkripsi data lalu meminta tebusan",
+      "explanation": "Ransomware bekerja dengan mengenkripsi data kemudian meminta tebusan agar data dapat diakses kembali.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika sebuah malware cepat menyebar ke banyak perangkat saat jaringan aktif, kemungkinan besar itu…",
+      "options": [
+        "Worm",
+        "Trojan Horse",
+        "Ransomware",
+        "Antivirus"
+      ],
+      "answer": "Worm",
+      "explanation": "Karena worm mampu menggandakan diri dan menyebar melalui jaringan, penyebarannya biasanya cepat.",
+      "xpReward": 50
+    },
+    {
+      "question": "Ciri apa yang paling mendekati Trojan Horse?",
+      "options": [
+        "Ada permintaan tebusan setelah data terenkripsi",
+        "Muncul sebagai installer yang terlihat resmi dan meyakinkan",
+        "Menunjukkan pesan bahwa malware sudah menginfeksi jaringan lain secara otomatis",
+        "Menyebar hanya lewat kabel jaringan tanpa file"
+      ],
+      "answer": "Muncul sebagai installer yang terlihat resmi dan meyakinkan",
+      "explanation": "Trojan horse menyamar seperti software sah, sehingga pengguna sering tertipu untuk menjalankannya.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa dampak utama ransomware pada data pengguna?",
+      "options": [
+        "Data berubah jadi tidak bisa dibaca karena terenkripsi",
+        "Data otomatis dipulihkan tanpa tindakan",
+        "Data menjadi lebih cepat dibuka",
+        "Data tidak terpengaruh sama sekali"
+      ],
+      "answer": "Data berubah jadi tidak bisa dibaca karena terenkripsi",
+      "explanation": "Ransomware mengenkripsi data sehingga pengguna kehilangan akses dan kemudian diminta tebusan.",
+      "xpReward": 50
+    },
+    {
+      "question": "Kalau kamu menerima file “update” yang terlihat resmi tapi ternyata berbahaya, jenis malware yang paling mungkin adalah…",
+      "options": [
+        "Worm",
+        "Trojan Horse",
+        "Ransomware",
+        "Firewall"
+      ],
+      "answer": "Trojan Horse",
+      "explanation": "Karena file terlihat resmi, pola penyamaran seperti trojan horse sangat mungkin terjadi.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Malware itu definisinya apa?",
+      "answer": "Malware adalah perangkat lunak berbahaya yang merusak, mengganggu, atau mencuri informasi tanpa izin pemilik perangkat atau jaringan.",
+      "emoji": "🛡️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Ciri utama worm apa?",
+      "answer": "Worm dapat menggandakan dirinya sendiri dan menyebar ke perangkat lain melalui jaringan.",
+      "emoji": "🕷️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Trojan horse biasanya menyamar sebagai apa?",
+      "answer": "Trojan horse menyamar sebagai software yang sah atau terlihat normal agar pengguna tertipu.",
+      "emoji": "🐴",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa yang dilakukan ransomware terhadap data?",
+      "answer": "Ransomware mengenkripsi data pada perangkat lalu meminta tebusan untuk membuka kembali akses.",
+      "emoji": "🔐",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Jenis malware mana yang paling identik dengan enkripsi data dan tebusan?",
+      "answer": "Ransomware.",
+      "emoji": "💰",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Jenis malware mana yang dikenal sebagai penyebar otomatis lewat jaringan?",
+      "answer": "Worm.",
+      "emoji": "🌐",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Jika malware terlihat seperti aplikasi resmi, kemungkinannya apa?",
+      "answer": "Trojan Horse.",
+      "emoji": "🎭",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Sebutkan tujuan malware secara umum!",
+      "answer": "Merusak, mengganggu, atau mencuri informasi tanpa izin.",
+      "emoji": "🎯",
+      "difficulty": "easy"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama tentang pengenalan malware dan jenisnya.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi ini membahas pengenalan malware (malicious software) yaitu perangkat lunak yang dirancang untuk tindakan berbahaya seperti merusak, mengganggu, atau mencuri informasi dari perangkat komputer atau jaringan tanpa izin pemilik. Inti penting yang perlu dipahami siswa adalah bahwa malware bukan sekadar “virus” secara umum, melainkan program yang memang dibuat untuk tujuan jahat, dan biasanya beroperasi tanpa sepengetahuan korban. Dalam pengalaman belajar, jelaskan dengan bahasa sederhana: bayangkan perangkatmu seperti rumah dan data seperti barang berharga. Malware adalah orang yang masuk diam-diam dengan niat mengacak-acak atau mengambil barang.\n\nSetelah definisi, materi menguraikan tiga jenis malware: Worm, Trojan Horse, dan Ransomware. Worm dijelaskan sebagai malware yang dapat menggandakan dirinya sendiri dan menyebar ke perangkat lain melalui jaringan. Poin yang harus ditekankan: ada aspek self-replication (menggandakan diri) dan ada aspek penyebaran antar perangkat (melalui jaringan). Karena itu, dampak worm sering cepat meluas jika perangkat yang terinfeksi masih terhubung ke jaringan, misalnya dalam satu lab sekolah atau kantor yang saling terkoneksi.\n\nTrojan Horse dijelaskan sebagai jenis malware yang menyamar sebagai software yang sah. Ini berarti pelaku tidak langsung “terlihat” sebagai malware. Karena tampil seperti aplikasi resmi, pengguna bisa tertipu untuk menjalankan file atau menginstal program tersebut. Maka, cara berpikir yang bagus untuk siswa adalah: fokus pada tanda penyamaran. Misalnya, file yang katanya update resmi tetapi sumbernya tidak jelas. Trojans cenderung membutuhkan interaksi pengguna (misalnya menjalankan file) sebelum aktivitas berbahaya terjadi.\n\nRansomware dijelaskan sebagai jenis malware yang mengenkripsi data pada perangkat komputer lalu meminta tebusan. Di sini, kata kunci utamanya adalah enkripsi (data dikunci sehingga tidak bisa dibaca/diakses) dan permintaan tebusan. Dampak psikologis dan praktis dari ransomware sering besar: siswa mungkin kehilangan akses ke tugas, dokumen, atau proyek. Karena itu, jelaskan bahwa ransomware bukan hanya merusak tampilan, tapi bisa membuat data “terkunci”. Dalam sesi tutor, tekankan bahwa korban biasanya melihat pesan permintaan tebusan setelah sistem/ dokumen terkena enkripsi.\n\nUntuk membantu pemahaman, tutor dapat memakai analogi sehari-hari: Worm seperti orang yang menyebarkan salinan kartu ke banyak orang sekaligus lewat koneksi; Trojan Horse seperti penyamar yang memakai seragam resmi agar dipercaya; Ransomware seperti kunci ganda yang menutup brankas lalu ada tuntutan pembayaran. Setelah analogi, arahkan siswa ke cara mengidentifikasi ciri berdasarkan perilaku: penyebaran cepat lewat jaringan mengarah ke worm; penyamaran sebagai software sah mengarah ke trojan; enkripsi data dan tebusan mengarah ke ransomware.\n\nMateri juga bisa ditutup dengan langkah respons awal yang aman dan logis: jika merasa ada malware, hentikan koneksi internet (untuk menahan penyebaran terutama worm), jangan menjalankan file/tautan mencurigakan, lakukan scan menggunakan antivirus/anti-malware tepercaya, dan amankan akun serta data penting (misalnya password dan backup). Tujuan bagian ini adalah memberi rasa kontrol kepada siswa: meskipun mereka belajar teori, mereka juga tahu tindakan awal yang masuk akal bila menghadapi situasi nyata.\n\nSecara keseluruhan, pastikan siswa memahami bahwa setiap jenis malware punya “ciri khas” yang dapat dikenali dari pola: worm = menyebar dan menggandakan diri, trojan = menyamar sebagai software sah, ransomware = mengenkripsi data dan meminta tebusan."
+}
