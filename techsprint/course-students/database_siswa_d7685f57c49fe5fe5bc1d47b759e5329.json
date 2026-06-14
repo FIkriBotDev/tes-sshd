@@ -5,13 +5,13 @@
     "email": "johndoe@gmail.com",
     "password": "$2b$10$D.EZvC7.F9JuxoWXMpr8MeftFRq8p3A/Ha9N4Es5glXElxwUMW2vq",
     "profilePicture": "",
-    "xp": 525,
-    "coin": 210,
+    "xp": 725,
+    "coin": 290,
     "level": 3,
     "streak": 0,
     "lastLogin": "14-06-2026, 23.27.45",
     "lastLoginDate": "Sun Jun 14 2026",
-    "quizScore": 0,
+    "quizScore": 2,
     "completedBlocks": [
       "block-0",
       "block-1",
@@ -25,8 +25,8 @@
       "block-9"
     ],
     "completedChapter": [],
-    "flashcardsViewed": 6,
-    "leaderboardPoint": 360,
+    "flashcardsViewed": 8,
+    "leaderboardPoint": 560,
     "achievements": [
       "first_block",
       "coin_100",
@@ -36,6 +36,7 @@
     "isMainAccount": true,
     "aiInteractions": 1,
     "todayAiCount": 1,
-    "lastAiDate": "Sun Jun 14 2026"
+    "lastAiDate": "Sun Jun 14 2026",
+    "quizCorrectCount": 2
   }
 ]
