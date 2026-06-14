@@ -38271,3 +38271,33 @@ Response  : Saya sudah melihat gambar brosur tersebut. Ini ringkasan informasiny
 
 Kalau kamu mau, saya bisa bantu buat **caption promosi**, **susun ulang teks untuk WhatsApp**, atau **cek ejaan nama tempat** yang ada di brosur.
 
+
+[2026-06-14T08:05:23.624Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/ed3a94-1781424319624.jpg
+Response  : Gambar tersebut adalah poster promo **“Candra Tour & Travel – Explore Pandeglang Bersama Upc. Ariya”** dengan rincian:
+
+- **Tanggal:** 21 Juni 2026  
+- **Tujuan wisata (PP):**
+  - *Curug Goong*
+  - *D’Manuku Farm*
+  - *Oleh-oleh khas Pandeglang*
+- **Fasilitas:**
+  - Bus Medium Pariwisata AC (seat 2–2)
+  - Sarapan pagi
+  - Makan siang
+  - Es buah
+  - Tiket wisata
+  - Air minum + kopi + teh
+- **Jadwal berangkat:**
+  - Berangkat: 21 Juni 2026
+  - Kumpul: Pom Bensin Taman Cibodas, Tangerang
+  - Jam: 04.00 pagi
+- **Biaya:**
+  - **Rp 365.000/org**
+  - **DP Rp 100.000/org**
+- **Catatan:** bawa baju ganti, dan **tempat terbatas**
+- **Kontak/Hub:** Upc. Ariya — **087774189592**  
+
+Kalau kamu mau, bilang kamu butuh versi **copy teks** untuk disalin ke chat/WA atau ringkasan lebih singkat.
+
