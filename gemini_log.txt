@@ -38237,3 +38237,37 @@ Kalau kamu mau, aku bisa bantu:
 1) menebak/meringkas suasana acara dari teks itu, atau  
 2) membantu bikin caption postingan IG/Facebook berdasarkan foto ini.
 
+
+[2026-06-14T08:04:24.199Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/34788d-1781424257383.jpg
+Response  : Saya sudah melihat gambar brosur tersebut. Ini ringkasan informasinya:
+
+- **Paket:** *TOUR DIENG* (3 hari 2 malam)  
+- **Tanggal:** **15–17 Agustus 2026**
+- **Highlight:** “Suhu di Dieng pas dingin!”
+- **Tujuan wisata:**
+  - Swiss Van Java
+  - Telaga Menyir
+  - Kebun Teh Panuma
+  - Curug Sikarim
+  - Batu Angkruk
+  - Kawah Sikidang
+  - Candi Arjuna
+  - Oleh-oleh khas Dieng
+- **Fasilitas:**
+  - Bus **Elp Long (19 seat)**
+  - Jeep **estay 1 km 2 org** (tertera di brosur)
+  - Tiket wisata
+  - Makan **6x**
+  - Air minum + kopi + teh
+- **Informasi keberangkatan:**
+  - **Kumpul:** Pom Bensin Taman Cibodas Tangerang  
+  - **Jam berangkat:** **03.30 pagi**
+- **Biaya:** **Rp 1.750.000/orang**
+  - **DP:** Rp 500.000/orang
+  - Status: **Tempat terbatas**
+- **Kontak:** **Yana Budi** (Hp/Wa: **0852 1248 0148**)
+
+Kalau kamu mau, saya bisa bantu buat **caption promosi**, **susun ulang teks untuk WhatsApp**, atau **cek ejaan nama tempat** yang ada di brosur.
+
