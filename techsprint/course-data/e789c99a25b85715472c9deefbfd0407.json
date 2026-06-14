@@ -1,0 +1,369 @@
+{
+  "title": "30 Days of Practice PenTest? #2: Rute Belajar Penetration Testing yang Fleksibel",
+  "summary": "Materi ini bukan “kurikulum kaku”, tapi daftar rute latihan PenTest yang bisa kamu susun sendiri. Kamu akan dapat peta konsep dari incident response sampai teknik web/API, plus beberapa tantangan lab untuk latihan langsung.",
+  "emoji": "🧭",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Cara Pakai Daftar Latihan (Tanpa Deadline & Tidak Harus Berurutan)",
+      "icon": "🧭",
+      "explanation": "Daftar 30 item ini dibuat supaya kamu bisa memilih fokus latihan. 30 hari tidak harus 30 hari berurutan, dan tidak wajib menyelesaikan semuanya sekaligus. Yang penting: tiap minggu kamu punya “satu tema” dan satu set lab yang sejalan.",
+      "analogy": "Bayangin kamu belajar masak: resepnya banyak, tapi kamu bisa pilih menu dulu sesuai bahan yang ada di rumah. Targetnya tetap bisa masak enak, bukan menyelesaikan semua resep hari ini juga.",
+      "highlight": "pilih fokus, latih bertahap, iterasi",
+      "keyPoints": [
+        "30 days itu kerangka latihan, bukan jadwal keras",
+        "Mulai dari fondasi (model/kerangka) lalu masuk lab teknis",
+        "Setiap lab = catat temuan, bukti, dan langkah mitigasi"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Peta Rute Latihan dari Konsep ke Lab",
+      "icon": "🗺️",
+      "items": [
+        {
+          "label": "Incident Response",
+          "value": "Incident Responder Path",
+          "icon": "🚨"
+        },
+        {
+          "label": "Threat Modeling",
+          "value": "Cyber Kill Chain, MITRE Att&ck",
+          "icon": "🧩"
+        },
+        {
+          "label": "Privilege Escalation Tools",
+          "value": "GTFOBins",
+          "icon": "🗝️"
+        },
+        {
+          "label": "Web Exploitation",
+          "value": "SSRF, SQLi, JWT, WrongSecrets",
+          "icon": "🌐"
+        },
+        {
+          "label": "CTF/Box Praktik",
+          "value": "HackTheBox/VulnHub/AWS CTF/APIs",
+          "icon": "🎮"
+        },
+        {
+          "label": "AD & Cloud",
+          "value": "Active Directory PenTest, GOAD, AWS",
+          "icon": "☁️"
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Kerangka Berpikir: Kill Chain vs MITRE Att&ck",
+      "icon": "🧠",
+      "explanation": "Cyber Kill Chain membantu kamu memahami alur serangan dari tahap awal sampai dampak. MITRE Att&ck lebih detail karena mengelompokkan teknik yang digunakan penyerang. Gabungkan keduanya: gunakan Kill Chain buat peta “cerita”, dan MITRE buat daftar “alat/teknik” yang mungkin dipakai.",
+      "analogy": "Kill Chain itu seperti alur film (adegan 1-2-3), MITRE Att&ck itu seperti daftar jurus yang digunakan karakter di film.",
+      "highlight": "alur serangan + teknik spesifik",
+      "keyPoints": [
+        "Gunakan Kill Chain untuk menilai di tahap mana kamu berada",
+        "Gunakan MITRE untuk memetakan teknik yang relevan",
+        "Latihan yang bagus: tulis mapping dari temuan ke teknik/phase"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "GTFOBins: Shortcut untuk Memahami Escalation",
+      "icon": "🗃️",
+      "explanation": "GTFOBins adalah database “biner yang bisa dieksploitasi” untuk eskalasi hak akses atau bypass. Tujuannya bukan asal pakai, tapi membantu kamu memahami kemungkinan transformasi dari konfigurasi/izin yang lemah. Saat kamu ketemu biner tertentu di lab, GTFOBins jadi referensi awal hipotesis.",
+      "analogy": "GTFOBins seperti “daftar kunci” untuk pintu-pintu bermasalah: kamu tidak mengunci-membuka sembarang, tapi cek kunci mana yang cocok dengan kunci kamar yang kamu lihat.",
+      "highlight": "biner yang bisa dieksploitasi",
+      "keyPoints": [
+        "Cari biner/fitur yang sering muncul di target",
+        "Baca skenario: izin apa yang perlu agar berhasil",
+        "Selalu kaitkan dengan konteks lab dan mitigasi"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Rencana Latihan 7 Hari (Template Praktik)",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Pilih satu jalur utama",
+          "description": "Contoh: fokus Web (SSRF/SQLi/JWT) atau fokus AD/AWS.",
+          "tip": "Kalau kamu pemula, pilih Web dulu karena feed-back cepat."
+        },
+        {
+          "number": 2,
+          "title": "Baca kerangka yang relevan",
+          "description": "Misal untuk web: pikirkan threat path dan dampak. Untuk AD: pahami fase privilege escalation.",
+          "tip": "Gunakan Kill Chain/MITRE sebagai “checklist berpikir”."
+        },
+        {
+          "number": 3,
+          "title": "Tulis hipotesis sebelum eksekusi",
+          "description": "Tuliskan: input mana yang kamu uji, respon apa yang kamu cari, dan tujuan akhirnya.",
+          "tip": "Hipotesis yang bagus menghemat waktu troubleshooting."
+        },
+        {
+          "number": 4,
+          "title": "Kerjakan lab, tapi catat dengan pola",
+          "description": "Catat: bukti (output), langkah (commands/requests), dan dampak (apa yang berubah).",
+          "tip": "Buat format catatan konsisten untuk setiap box."
+        },
+        {
+          "number": 5,
+          "title": "Pemetaan ke MITRE",
+          "description": "Tandai teknik yang kamu jalankan (misal discovery, exploitation, credential access).",
+          "tip": "Kalau belum yakin, minimal tulis “kemungkinan teknik” dulu."
+        },
+        {
+          "number": 6,
+          "title": "Mitigasi singkat",
+          "description": "Untuk tiap temuan, tulis 1-2 langkah mitigasi yang masuk akal.",
+          "tip": "Latihan PenTest yang matang selalu berujung saran mitigasi."
+        },
+        {
+          "number": 7,
+          "title": "Refleksi & pilih lab berikutnya",
+          "description": "Putuskan tema minggu depan: naik level (misal SSRF -> chaining, atau JWT -> validation pitfalls).",
+          "tip": "Kalau gagal, bukan selesai: jadikan kegagalan sebagai peta studi."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Playground: Buat Checklist Threat Model (Mode Ringkas)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode ini. Ubah daftar teknik/phase sesuai lab yang sedang kamu kerjakan, lalu lihat ringkasan checklist yang bisa kamu gunakan untuk catatan latihan.",
+      "fileName": "threat_checklist.js",
+      "defaultCode": "const phases = [\"Recon\",\"Initial Access\",\"Execution\",\"Persistence\",\"Privilege Escalation\",\"Defense Evasion\",\"Credential Access\",\"Discovery\",\"Lateral Movement\",\"Collection\",\"Exfiltration\",\"Impact\"]; const selected = [\"Recon\",\"Initial Access\",\"Privilege Escalation\"]; const techniques = [\"Endpoint discovery\",\"Misconfiguration\",\"Credential exposure\"]; const checklist = { phases: phases.filter(p => selected.includes(p)), techniques }; console.log(\"=== Threat Checklist (Ringkas) ===\"); console.log(checklist); console.log(\"Catatan: isi selected/techniques sesuai lab kamu.\");",
+      "hint": "Challenge: ganti selected jadi [\"Recon\",\"Execution\",\"Impact\"] untuk tema “web impact”, lalu tambahkan 2 teknik yang cocok."
+    },
+    {
+      "type": "concept_card",
+      "title": "Web Exploitation: Fokus SSRF, SQLi, Secret Leaks, dan JWT",
+      "icon": "🌐",
+      "explanation": "Materi ini mengarahkan latihan pada kerentanan web yang umum dan “berantai”: SSRF (termasuk routing-based dan blind dengan Shellshock), SQL injection (login bypass dan conditional responses), secret leaks (WrongSecrets), dan JSON Web Token (hacking challenges serta konsep JWT security). Tujuan latihan: memahami pola bukti-bukti dan cara validasi perbaikan.",
+      "analogy": "Anggap web app itu seperti warung: SSRF adalah jalan pintas ke gudang, SQLi adalah kata-kata yang bisa “mengubah aturan transaksi”, JWT adalah tiket identitas. Kalau tiket bisa dipalsukan, orang bisa masuk tanpa bayar.",
+      "highlight": "bukti respon, validasi, dan chaining",
+      "keyPoints": [
+        "SSRF: perhatikan jalur request dan perbedaan respon (terutama blind)",
+        "SQLi: pahami teknik login bypass dan conditional responses",
+        "JWT: bedakan masalah trust/signature/validation dan cara token diperlakukan"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Playground: Simulasi Login Bypass (Konsep Respons Kondisional)",
+      "icon": "🧪",
+      "language": "python",
+      "instruction": "Kode ini mensimulasikan ide conditional responses. Kamu bisa ubah input 'payload' untuk melihat bagaimana perbedaan respon bisa mengindikasikan kerentanan (tanpa benar-benar menyerang sistem mana pun).",
+      "fileName": "conditional_responses_sim.py",
+      "defaultCode": "def server_validate(username, payload):     if username != \"admin\":         return \"Invalid user\"     # Simulasi logika rentan (sekedar edukasi)     if payload in [\"' OR 1=1--\", \"admin' --\"]:         return \"Welcome admin\"     return \"Invalid password\"  def blind_probe(payload):     username = \"admin\"     resp = server_validate(username, payload)     if resp.startswith(\"Welcome\"):\n        return True\n    return False  tests = [\"normal\", \"' OR 1=1--\", \"random\", \"admin' --\"]  for t in tests:\n    ok = blind_probe(t)\n    print(t, \"=>\", \"TRUE\" if ok else \"FALSE\")",
+      "hint": "Challenge: tambahkan payload lain dan lihat apakah hasil berubah. Fokusnya: pahami pola 'respon berbeda' sebagai sinyal."
+    },
+    {
+      "type": "analogy_card",
+      "title": "CTF/Box itu Latihan “Sistematis”, Bukan Tebak-tebakan",
+      "icon": "💡",
+      "realWorld": "Saat kamu mengerjakan Pilgrimage/Topology/PC/Cerberus/ Derailed dan box lain, tujuanmu bukan cuma dapat flag, tapi melatih alur kerja: discovery -> hipotesis -> bukti -> eskalasi -> mitigasi.",
+      "connection": "Link ke materi lain: kerangka (Kill Chain/MITRE) memberi urutan berpikir, sedangkan GTFOBins/ lab memberi cara eksploit yang realistis.",
+      "insight": "Kalau kamu bisa menjelaskan 'kenapa langkah itu masuk akal' dan 'apa mitigasinya', latihanmu sudah naik level dari sekadar berhasil."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini PenTest (Versi Praktik)",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "SSRF",
+          "definition": "Server-side request forgery: aplikasi memaksa server mengakses target internal/luar yang tidak semestinya.",
+          "example": "Lab host-header routing-based SSRF dan blind SSRF"
+        },
+        {
+          "term": "Blind SQL Injection",
+          "definition": "SQLi saat kamu tidak langsung melihat error/data, tapi menebak berdasarkan perbedaan respon.",
+          "example": "conditional responses untuk inferensi kondisi"
+        },
+        {
+          "term": "JWT",
+          "definition": "JSON Web Token: format token untuk autentikasi/authorization yang harus divalidasi ketat.",
+          "example": "JWT hacking challenges dan JWT security"
+        },
+        {
+          "term": "Privilege Escalation",
+          "definition": "Naik dari hak akses rendah ke lebih tinggi (misal dari user -> admin/root).",
+          "example": "GTFOBins membantu memetakan biner yang bisa dieksploitasi"
+        },
+        {
+          "term": "MITRE Att&ck",
+          "definition": "Framework yang mengklasifikasikan teknik adversary dan memungkinkan mapping temuan.",
+          "example": "Mempetakan langkahmu ke teknik tertentu"
+        },
+        {
+          "term": "Cyber Kill Chain",
+          "definition": "Model tahapan serangan dari awal hingga dampak.",
+          "example": "Membantu menyusun urutan 'cerita serangan'"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Dalam materi ini, aturan paling benar terkait '30 days' adalah...",
+      "options": [
+        "Harus 30 hari berurutan tanpa jeda",
+        "Tidak wajib 30 hari berturut-turut dan bisa disesuaikan fokus",
+        "30 hari hanya untuk membaca materi tanpa lab",
+        "30 hari berarti harus menyelesaikan semua link"
+      ],
+      "answer": "Tidak wajib 30 hari berturut-turut dan bisa disesuaikan fokus",
+      "explanation": "Teksnya menekankan fleksibilitas: tidak ada deadline keras, dan 30 hari tidak harus berurutan atau mencakup semuanya.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa peran yang paling cocok untuk MITRE Att&ck dalam latihan PenTest?",
+      "options": [
+        "Mengganti semua model proses serangan tanpa perlu mapping",
+        "Membantu memetakan teknik yang digunakan penyerang ke temuan",
+        "Hanya untuk incident response, bukan untuk eksploit",
+        "Hanya daftar alat komersial, bukan teknik"
+      ],
+      "answer": "Membantu memetakan teknik yang digunakan penyerang ke temuan",
+      "explanation": "MITRE Att&ck berfokus pada klasifikasi teknik, jadi sangat cocok untuk mapping langkah yang kamu lakukan selama lab.",
+      "xpReward": 50
+    },
+    {
+      "question": "Cyber Kill Chain lebih cocok dipakai untuk...",
+      "options": [
+        "Menyusun alur tahap serangan dari awal sampai dampak",
+        "Menentukan apakah signature JWT valid tanpa decoding",
+        "Menghitung checksum file biner",
+        "Mengganti kebutuhan mitigasi"
+      ],
+      "answer": "Menyusun alur tahap serangan dari awal sampai dampak",
+      "explanation": "Kill Chain menekankan urutan proses serangan, jadi bagus untuk membentuk 'timeline' dari temuan.",
+      "xpReward": 50
+    },
+    {
+      "question": "GTFOBins paling relevan ketika kamu sedang...",
+      "options": [
+        "Menguji apakah template CSS rentan",
+        "Mencari biner yang bisa dieksploitasi untuk escalation/bypass",
+        "Mengonversi warna hex ke RGB",
+        "Menguji validasi formulir pendaftaran akun"
+      ],
+      "answer": "Mencari biner yang bisa dieksploitasi untuk escalation/bypass",
+      "explanation": "GTFOBins adalah database biner yang sering dipakai untuk eskalasi hak akses atau bypass konfigurasi di lingkungan target.",
+      "xpReward": 50
+    },
+    {
+      "question": "Blind SQL injection umumnya berarti...",
+      "options": [
+        "Kamu selalu melihat hasil query secara langsung di halaman",
+        "Kamu menilai kerentanan berdasarkan perbedaan respon tanpa data/error langsung",
+        "Hanya terjadi pada tabel terenkripsi",
+        "Tidak berhubungan dengan login bypass"
+      ],
+      "answer": "Kamu menilai kerentanan berdasarkan perbedaan respon tanpa data/error langsung",
+      "explanation": "Blind berarti kamu tidak mendapat output jelas; inferensi dilakukan dari perbedaan respon (misal conditional responses).",
+      "xpReward": 50
+    },
+    {
+      "question": "Lab SSRF blind dengan Shellshock biasanya menekankan...",
+      "options": [
+        "Memecahkan angka matematika tanpa HTTP",
+        "Perilaku eksekusi/response yang tidak langsung terlihat sehingga perlu inferensi",
+        "Mengganti kredensial tanpa mengubah request",
+        "Hanya menebak flag dengan brute force tanpa respon"
+      ],
+      "answer": "Perilaku eksekusi/response yang tidak langsung terlihat sehingga perlu inferensi",
+      "explanation": "Blind SSRF fokus pada indikator tidak langsung, sehingga kamu membaca respon untuk menyimpulkan efek.",
+      "xpReward": 50
+    },
+    {
+      "question": "JWT security paling penting karena...",
+      "options": [
+        "JWT tidak pernah bisa dipalsukan",
+        "Sistem yang buruk bisa mempercayai token yang tidak tervalidasi dengan benar",
+        "JWT hanya untuk enkripsi file",
+        "JWT hanya berlaku untuk server non-web"
+      ],
+      "answer": "Sistem yang buruk bisa mempercayai token yang tidak tervalidasi dengan benar",
+      "explanation": "Kalau validasi signature/claims tidak benar, token bisa dipakai untuk akses yang seharusnya ditolak.",
+      "xpReward": 50
+    },
+    {
+      "question": "Template rencana latihan 7 hari yang ideal sebaiknya mencakup...",
+      "options": [
+        "Hanya eksploit sampai berhasil tanpa catatan",
+        "Catatan temuan termasuk bukti dan mitigasi singkat",
+        "Mengabaikan pemetaan teknik dan hanya mencoba random payload",
+        "Tidak perlu refleksi"
+      ],
+      "answer": "Catatan temuan termasuk bukti dan mitigasi singkat",
+      "explanation": "Materi latihan yang matang menekankan pencatatan bukti dan mitigasi agar kamu benar-benar memahami dampak dan perbaikannya.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa maksud '30 days' di daftar ini?",
+      "answer": "Kerangka latihan yang fleksibel: tidak harus 30 hari berurutan dan bisa disesuaikan fokus.",
+      "emoji": "🧠",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Kill Chain digunakan untuk apa?",
+      "answer": "Menyusun alur tahap serangan dari awal hingga dampak.",
+      "emoji": "🎬",
+      "difficulty": "easy"
+    },
+    {
+      "question": "MITRE Att&ck membantu apa?",
+      "answer": "Memetakan teknik yang digunakan adversary ke temuan langkahmu di lab.",
+      "emoji": "🧩",
+      "difficulty": "easy"
+    },
+    {
+      "question": "GTFOBins itu apa?",
+      "answer": "Database biner yang sering bisa dieksploitasi untuk escalation atau bypass tertentu.",
+      "emoji": "🗝️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa inti SSRF?",
+      "answer": "Aplikasi memaksa server melakukan request ke target yang tidak semestinya (sering internal).",
+      "emoji": "🌐",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Blind SQL injection bedanya apa dari SQLi yang terlihat?",
+      "answer": "Kamu tidak melihat data/error langsung; inferensi dilakukan dari perbedaan respon.",
+      "emoji": "🕵️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Kenapa JWT security penting?",
+      "answer": "Karena sistem bisa mempercayai token yang tidak divalidasi dengan benar sehingga akses bisa disalahgunakan.",
+      "emoji": "🔐",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa output yang paling berharga setelah menyelesaikan lab box?",
+      "answer": "Bukti + langkah + pemetaan ide (Kill Chain/MITRE) + mitigasi singkat.",
+      "emoji": "📌",
+      "difficulty": "hard"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan blok konsep pertama dan membuat rencana latihan 7 hari.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi ini adalah daftar rute latihan “PenTest practice” bertema #30DAYSOFPENTEST? #2. Intinya bukan kurikulum yang kaku dengan fokus tunggal dan deadline, melainkan kumpulan link yang bisa kamu susun sendiri menjadi rencana belajar. Teksnya menekankan: (1) Organize as you wish, (2) has no focus, no deadline, (3) 30 days tidak harus berarti 30 hari berurutan. Jadi AI tutor sebaiknya mengarahkan siswa untuk merancang strategi belajar: pilih satu jalur/tema yang sedang ingin dikuasai, lalu ambil sumber yang relevan dari daftar. Jangan memaksa menuntaskan semuanya; lebih baik membuat progres kecil yang konsisten.\n\nSumber pertama sampai beberapa item awal menekankan fondasi berpikir sebagai pentester/incident responder: Incident Responder Path (letsdefend) memberi alur tanggap insiden, membantu kamu memahami perspektif operasional: bagaimana menangani indikasi, mengumpulkan data, dan mengambil keputusan. Cyber Kill Chain (letsdefend) memberi model tahapan serangan: dari recon hingga impact. MITRE Att&ck (letsdefend) memberi framework teknik (tactics/techniques) yang dapat dipetakan ke aktivitas adversary. Dua kerangka ini saling melengkapi: Kill Chain cocok untuk alur cerita serangan, MITRE cocok untuk daftar teknik yang mungkin dipakai. Saat siswa menyelesaikan lab, tutor sebaiknya mendorong mereka membuat mapping: temuan apa yang terjadi pada phase mana (Kill Chain) dan teknik apa yang paling dekat (MITRE).\n\nSelanjutnya GTFOBins adalah sumber penting untuk pemahaman eksploitasi biner: tutor harus menjelaskan bahwa GTFOBins bukan “resep otomatis”, tetapi database kemungkinan mis-use biner tertentu untuk escalation/bypass. Yang dipelajari siswa: (a) biner apa yang terlihat di target, (b) kondisi izin/konfigurasi apa yang diperlukan agar skenario bisa bekerja, (c) bagaimana cara menilai risiko serupa di sistem nyata (mitigasi). Dalam sesi tutor, sebaiknya tekankan etika dan penggunaan hanya pada lab/izin.\n\nDaftar juga berisi latihan spesifik dari LetsDefend dan platform lain untuk berbagai skenario. “Hacked Web Server Analysis” mengarah pada pemahaman forensik analisis layanan web yang telah dikompromi. “Matrix-Breakout 2: Morpheus”, “DigitalWorld.Local: Electrical”, dan sejumlah box di VulnHub/HackTheBox memberi latihan eksploit dan eksplorasi kelemahan sistem dari sisi praktik.\n\nBagian berikutnya masuk ke lab web dan kerentanan aplikasi: Routing-Based SSRF, Blind SSRF with Shellshock exploitation, SQL injection login bypass, Blind SQL injection with conditional responses, dan OWASP WrongSecrets (repositori). Tutor perlu mengajarkan pola umum: untuk SSRF routing-based, perhatikan mekanisme host header/routing dan bagaimana server menerjemahkan input ke request backend. Untuk blind SSRF dengan Shellshock, fokus pada efek samping atau perubahan perilaku yang tidak terlihat langsung (maka teknik inferensi dari respon). Untuk SQL injection, tutor perlu membedakan dua tipe: login bypass (membypass autentikasi dengan manipulasi query/logic) dan blind SQLi conditional responses (menggunakan perbedaan respons untuk menguji kondisi). Dengan cara ini, siswa belajar bahwa “respon berbeda” adalah sinyal penting.\n\nKemudian materi JWT: ada link JWT Hacking Challenges (GitHub) dan referensi tambahan, serta P oints “JWT Security” (PortSwigger). Tutor sebaiknya menekankan konsep: JWT terdiri dari header.payload.signature, server harus memverifikasi signature dan claim dengan benar; kesalahan seperti algoritma confusion, invalid validation, atau trust yang salah dapat menyebabkan bypass. Tantangan JWT melatih siswa untuk menyadari asumsi umum aplikasi yang salah (misalnya backend hanya decode token tanpa memverifikasi signature) dan menguji hipotesis secara aman di lab.\n\nUntuk threat dan vulnerability management, modul “Threat and Vulnerability Management” (TryHackMe) memperluas sudut pandang: bukan hanya menyerang, tapi menghubungkan temuan dengan proses manajemen risiko—bagaimana mengklasifikasikan, memprioritaskan, dan merespons kelemahan dalam siklus yang lebih luas.\n\nAda pula daftar untuk cloud/AWS: “Security CTF AWS 101”, “Attacking and Defending AWS”, dan “PenTesting Cloud Learning”. Tutor perlu mengarahkan siswa agar tidak hanya fokus pada eksploitasi, tetapi juga memahami kontrol AWS, role/permission, dan dampak misconfig. Untuk API, “API PenTest” (API Sec University) menambah latihan dari sisi endpoint, auth, parameter, dan pola serangan umum pada layanan REST/GraphQL.\n\nBagian Active Directory: “Active Directory PenTesting” (dev.to) dan GOAD (Game of Active Directory) mendorong latihan lateral movement, privilege escalation, dan konsep domain. GOAD sering digunakan untuk membuat home-lab/latihan scenario AD; tutor sebaiknya mendorong siswa membuat catatan yang rapi tentang hubungan user/group/permissions dan indikator yang mendukung chaining.\n\nTerakhir ada daftar machine/box tambahan di HackTheBox: Pilgrimage, Topology, PC, Search/Busqueda, Cerberus, Coder, Derailed, serta lab-lab lain. Tutor perlu menekankan metode konsisten: discovery, enumerasi, validasi hipotesis, bukti, eksploit, post-exploitation, dan mitigasi. Karena materi ini adalah kumpulan link, AI tutor harus bertindak seperti “coach” yang membantu siswa memilih urutan belajar sesuai kemampuan, memecah tiap link menjadi tujuan kecil, dan memastikan refleksi. Siswa harus didorong menggunakan kerangka (Kill Chain/MITRE) untuk memetakan langkah, menggunakan GTFOBins sebagai referensi eksploit escalation yang informatif, dan menggunakan hasil lab untuk membuat rencana mitigasi.\n\nKarena materi tidak mengandung code program tertentu, blok code playground pada course di sini digunakan untuk melatih cara berpikir secara sistematis: membuat checklist threat model dan memahami ide “conditional responses” melalui simulasi non-ekspoit (edukasi). Tujuannya adalah memperkuat mental model siswa saat membaca lab SSRF/SQLi/JWT agar mereka tahu apa yang harus diuji dan bagaimana membaca respon."
+}
