@@ -1,0 +1,282 @@
+{
+  "title": "50 Linux Command untuk Cloud Engineers: dari ls sampai ssh",
+  "summary": "Materi ini merangkum perintah Linux yang paling sering dipakai di lingkungan cloud: navigasi file, manajemen file, pencarian, permissions, sampai networking dasar. Kamu akan belajar fungsi tiap command, contoh penggunaannya, lalu praktik lewat playground mini supaya makin nempel.",
+  "emoji": "🐧",
+  "color": "#3b82f6",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Navigasi Dasar: ls, pwd, cd",
+      "icon": "🧭",
+      "explanation": "ls dipakai untuk menampilkan isi folder saat ini, pwd untuk mengetahui path lengkap folder yang sedang kamu pakai, dan cd untuk pindah direktori. Kombinasi tiga ini adalah starter pack saat bekerja di terminal.",
+      "analogy": "Bayangin kamu lagi pindah ruangan di gedung: ls itu lihat daftar pintu, pwd itu lihat alamat lengkap ruangan, cd itu pindah ke ruangan yang dituju.",
+      "highlight": "ls | pwd | cd",
+      "keyPoints": ["ls menampilkan file dan folder di working directory", "pwd menampilkan full pathname dari folder saat ini", "cd mengubah current working directory"]
+    },
+    {
+      "type": "concept_card",
+      "title": "Buat & Kelola File/Folders: mkdir, touch, rm",
+      "icon": "🗂️",
+      "explanation": "mkdir membuat direktori baru, touch membuat file kosong baru, dan rm menghapus file atau direktori. Saat bekerja cepat, kamu akan sering membuat struktur folder dulu lalu menyiapkan file-file kosong sebelum diisi.",
+      "analogy": "Seperti nyiapin rak dan kertas: mkdir bikin rak, touch bikin lembar kosong, rm itu buang kertas yang sudah tidak dipakai.",
+      "highlight": "mkdir | touch | rm",
+      "keyPoints": ["mkdir new_folder membuat folder baru", "touch new_file.txt membuat file kosong", "rm menghapus file atau folder (harus hati-hati)"]
+    },
+    {
+      "type": "concept_card",
+      "title": "Copy, Move, dan Lihat Isi: cp, mv, cat",
+      "icon": "📋",
+      "explanation": "cp menyalin file atau folder dari sumber ke tujuan, mv memindahkan atau merename, dan cat menampilkan isi file di terminal. Untuk tugas harian, cp dan mv membantu saat backup, reorganisasi, atau mengganti nama file.",
+      "analogy": "Anggap cp seperti fotokopi dokumen, mv seperti memindahkan map ke laci lain atau ganti judul map.",
+      "highlight": "cp | mv | cat",
+      "keyPoints": ["cp source_file destination/ menyalin ke folder tujuan", "mv old new bisa memindahkan atau rename", "cat file.txt menampilkan content file"]
+    },
+    {
+      "type": "code_playground",
+      "title": "Playground: Simulasikan Efek Command File (JS)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Edit code untuk memanggil fungsi sesuai skenario (buat folder, buat file kosong, tulis konten, lalu cat). Output akan tampil di console.",
+      "fileName": "linux-sim.js",
+      "defaultCode": "// Simulasi kecil perilaku command Linux (bukan benar-benar menjalankan Linux)\n// Kamu bisa ubah skenario di bawah.\n\nconst fs = {\n  \"/\": { type: \"dir\", children: { \"home\": { type: \"dir\", children: {} } } }\n};\n\nfunction getNode(path){\n  const parts = path.split(\"/\").filter(Boolean);\n  let cur = fs[\"/\"];\n  for (const p of parts){\n    if (!cur.children || !cur.children[p]) throw new Error(\"Path not found: \" + path);\n    cur = cur.children[p];\n  }\n  return cur;\n}\n\nfunction ensureDir(path){\n  const parts = path.split(\"/\").filter(Boolean);\n  let cur = fs[\"/\"];\n  for (const p of parts){\n    if (!cur.children[p]) cur.children[p] = { type: \"dir\", children: {} };\n    cur = cur.children[p];\n  }\n}\n\nfunction mkdir(path){\n  const parent = path.split(\"/\").slice(0,-1).join(\"/\") || \"/\";\n  const name = path.split(\"/\").pop();\n  const dir = getNode(parent);\n  if (dir.type !== \"dir\") throw new Error(\"Parent is not dir\");\n  if (!dir.children[name]) dir.children[name] = { type: \"dir\", children: {} };\n}\n\nfunction touch(path){\n  const parent = path.split(\"/\").slice(0,-1).join(\"/\") || \"/\";\n  const name = path.split(\"/\").pop();\n  const dir = getNode(parent);\n  if (!dir.children[name]) dir.children[name] = { type: \"file\", content: \"\" };\n}\n\nfunction writeFile(path, content){\n  const parent = path.split(\"/\").slice(0,-1).join(\"/\") || \"/\";\n  const name = path.split(\"/\").pop();\n  const dir = getNode(parent);\n  if (!dir.children[name]) dir.children[name] = { type: \"file\", content: \"\" };\n  dir.children[name].content = content;\n}\n\nfunction cat(path){\n  const node = getNode(path);\n  if (node.type !== \"file\") throw new Error(\"Not a file: \" + path);\n  return node.content;\n}\n\n// -------- Skenario --------\nensureDir(\"/home/user\");\nmkdir(\"/home/user/Documents\");\nmkdir(\"/home/user/Documents/projects\");\ntouch(\"/home/user/Documents/projects/readme.txt\");\nwriteFile(\"/home/user/Documents/projects/readme.txt\", \"Ini contoh output dari cat.\\nKamu bisa edit skenario dan lihat hasilnya.\");\n\nconsole.log(\"cat readme.txt:\\n\" + cat(\"/home/user/Documents/projects/readme.txt\"));",
+      "hint": "Challenge: ubah konten writeFile menjadi kalimat lain, lalu pastikan cat menampilkan yang baru."
+    },
+    {
+      "type": "concept_card",
+      "title": "Ringkas untuk File Besar: less, head, tail",
+      "icon": "🔍",
+      "explanation": "Kalau file terlalu besar, cat kurang nyaman karena menampilkan semuanya. less membantu viewing yang bisa di-scroll. head menampilkan awal file, sedangkan tail menampilkan bagian akhir (sering dipakai untuk log).",
+      "analogy": "cat itu seperti baca seluruh buku sekaligus, less itu seperti buka buku di meja lalu bisa geser halaman, head/tail itu seperti baca ringkasan awal dan ringkasan akhir.",
+      "highlight": "less | head | tail",
+      "keyPoints": ["less nyaman untuk file besar dan bisa scroll", "head biasanya menunjukkan 10 baris pertama", "tail biasanya menunjukkan 10 baris terakhir"]
+    },
+    {
+      "type": "concept_card",
+      "title": "Cari Pola & Cari Lokasi: grep dan find",
+      "icon": "🕵️",
+      "explanation": "grep mencari baris yang cocok dengan pola di dalam file. find mencari file atau direktori berdasarkan kondisi (misalnya nama) pada direktori tertentu dan subdirektorinya. Ini dua command yang sering dipakai saat troubleshooting.",
+      "analogy": "grep itu seperti mencari kalimat tertentu di dalam tumpukan dokumen, find itu seperti mencari keberadaan dokumen berdasarkan label di seluruh rak.",
+      "highlight": "grep | find",
+      "keyPoints": ["grep 'hello' file.txt menampilkan baris yang mengandung 'hello'", "find /home -name myfile.txt mencari file bernama sesuai", "grep fokus pada isi, find fokus pada lokasi/struktur"]
+    },
+    {
+      "type": "concept_card",
+      "title": "Manual dan Privilege: man dan sudo",
+      "icon": "📘",
+      "explanation": "man menampilkan user manual dari command yang bisa kamu jalankan (misalnya man ls). sudo memungkinkan kamu menjalankan perintah yang membutuhkan hak admin atau root, misalnya saat update paket dengan apt-get.",
+      "analogy": "man itu buku petunjuk, sudo itu akses pegawai senior yang boleh masuk area admin.",
+      "highlight": "man | sudo",
+      "keyPoints": ["man ls membuka manual untuk command ls", "sudo dipakai untuk perintah yang butuh permission tinggi", "gunakan sudo dengan sadar karena dampaknya bisa besar"]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual: Kategori Command",
+      "icon": "📊",
+      "items": [
+        { "label": "Navigasi", "value": "ls, pwd, cd", "icon": "🧭" },
+        { "label": "Buat/Hapus", "value": "mkdir, touch, rm", "icon": "🗂️" },
+        { "label": "Salin/Pindah", "value": "cp, mv", "icon": "📋" },
+        { "label": "Lihat Isi", "value": "cat, less, head, tail", "icon": "🔍" },
+        { "label": "Cari", "value": "grep (isi), find (lokasi)", "icon": "🕵️" },
+        { "label": "Admin", "value": "man, sudo", "icon": "📘" }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Workflow Cepat untuk Kerja di Terminal",
+      "icon": "🪜",
+      "steps": [
+        { "number": 1, "title": "Cek lokasi kerja", "description": "Jalankan pwd lalu gunakan ls untuk melihat isi direktori saat ini.", "tip": "Kalau kamu bingung di mana kamu berada, mulai dari pwd dulu." },
+        { "number": 2, "title": "Buat struktur", "description": "Gunakan mkdir untuk membuat folder, lalu touch untuk membuat file kosong yang nanti akan diisi.", "tip": "Pisahkan folder proyek dan file konfigurasi agar rapi." },
+        { "number": 3, "title": "Kelola file", "description": "Gunakan cp untuk menyalin, mv untuk memindahkan/rename, dan rm untuk menghapus yang tidak diperlukan.", "tip": "Renam e via mv itu jauh lebih aman daripada hapus lalu buat ulang." },
+        { "number": 4, "title": "Lihat isi tanpa kaget", "description": "Pakai head/tail untuk ringkasan, less untuk scroll file besar, dan cat untuk tampilkan content lengkap.", "tip": "Untuk log, tail sering jadi penyelamat." },
+        { "number": 5, "title": "Cari masalah atau data", "description": "Pakai grep untuk cari pola di isi file, dan find untuk cari file berdasarkan nama/condition di folder.", "tip": "Ingat: grep = isi, find = lokasi." },
+        { "number": 6, "title": "Butuh info perintah atau akses admin", "description": "Cek man untuk dokumentasi command, dan gunakan sudo untuk perintah yang butuh privilege.", "tip": "Kalau command gagal permission, coba cek apakah butuh sudo." }
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "grep vs find: bedanya kayak cari kata vs cari map",
+      "icon": "💡",
+      "realWorld": "Kamu punya banyak buku di perpustakaan. Suatu hari kamu butuh tahu: (1) siapa tokoh yang muncul di halaman, (2) buku dengan judul tertentu ada di rak mana.",
+      "connection": "grep seperti (1) karena mencari pola di dalam isi dokumen, sedangkan find seperti (2) karena mencari keberadaan item berdasarkan atribut di struktur folder.",
+      "insight": "Kalau pertanyaanmu “ada teks apa di file?”, pakai grep. Kalau pertanyaanmu “file ini ada di mana?”, pakai find."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini Command",
+      "icon": "📖",
+      "terms": [
+        { "term": "Working Directory", "definition": "Folder aktif tempat perintah dijalankan dan path relatif dihitung.", "example": "Saat ini kamu ada di /home/user, maka ls tanpa path akan menampilkan isi /home/user." },
+        { "term": "Path", "definition": "Alamat lengkap lokasi file/folder.", "example": " /home/user/Documents adalah path untuk folder Documents." },
+        { "term": "PID", "definition": "Process ID, angka identitas untuk proses yang sedang berjalan.", "example": "kill 12345 akan mencoba menghentikan proses dengan PID 12345." },
+        { "term": "Pattern", "definition": "Pola teks yang dicari (untuk grep).", "example": "grep 'hello' mencari baris yang memuat kata 'hello'." },
+        { "term": "Permission", "definition": "Aturan akses untuk read/write/execute pada file/folder.", "example": "chmod 755 mengatur hak akses tertentu." }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Admin, Resource, dan Proses: df, du, ps, top, kill",
+      "icon": "🧠",
+      "explanation": "Untuk melihat resource storage, df menampilkan disk space yang digunakan dan tersedia, sedangkan du memperkirakan pemakaian space file/folder. Untuk melihat proses, ps memberi daftar proses yang sedang berjalan, top menampilkan view real-time. Saat proses bermasalah, kill dipakai untuk menghentikan proses berdasarkan PID.",
+      "analogy": "df dan du itu seperti cek sisa kuota dan pemakaian di setiap aplikasi, ps/top itu seperti daftar aktivitas orang-orang di kantor, kill itu seperti mematikan tugas yang mengganggu berdasarkan nomor antrian (PID).",
+      "highlight": "df | du | ps | top | kill",
+      "keyPoints": ["df -h menampilkan disk usage format manusia", "du -sh membantu lihat total ukuran pada target", "ps dan top untuk melihat proses; kill untuk menghentikan proses"]
+    },
+    {
+      "type": "concept_card",
+      "title": "Arsip, Permission, Ownership: tar, chmod, chown",
+      "icon": "🧰",
+      "explanation": "tar dipakai untuk membuat dan mengekstrak archive .tar atau .tar.gz. chmod mengubah permission file/folder (misalnya 755). chown mengubah owner dan group pada file/folder, misalnya chown username:groupname file.",
+      "analogy": "tar itu seperti map besar berisi banyak dokumen (bisa disimpan dan dibuka lagi). chmod itu seperti stempel “siapa boleh baca/tulis/eksekusi”. chown itu seperti mengganti nama pemilik dan kelompok penanggung jawabnya.",
+      "highlight": "tar | chmod | chown",
+      "keyPoints": ["tar bisa create/extract archive .tar/.tar.gz", "chmod mengatur read/write/execute untuk owner/group/others", "chown mengubah owner dan group pada file atau direktori"]
+    },
+    {
+      "type": "concept_card",
+      "title": "Networking dasar: ssh, wget, curl",
+      "icon": "🌐",
+      "explanation": "ssh digunakan untuk login ke mesin remote dan bekerja langsung di mesin tersebut. wget adalah downloader non-interaktif untuk mengunduh file dari web. curl juga dipakai untuk transfer data dan mendukung banyak protokol (HTTP/HTTPS/FTP dan lain-lain).",
+      "analogy": "ssh itu seperti masuk ke ruang kerja orang lain dengan remote, wget/curl itu seperti kurir yang mengantar file dari alamat website ke komputermu.",
+      "highlight": "ssh | wget | curl",
+      "keyPoints": ["ssh username@remote_host login ke mesin remote", "wget URL mendownload file ke current directory", "curl mendukung banyak protokol untuk transfer data"]
+    },
+    {
+      "type": "concept_card",
+      "title": "Bantuan Command Ringan: alias, echo, exit",
+      "icon": "⚙️",
+      "explanation": "alias membuat shortcut agar command lebih cepat diketik, misalnya alias l='ls -l'. echo menampilkan teks ke terminal atau file, dan exit keluar dari shell yang sedang berjalan (bisa pakai status N).",
+      "analogy": "alias itu seperti membuat tombol cepat, echo itu seperti papan pengumuman kecil, exit itu seperti keluar dari ruangan kerja ke luar.",
+      "highlight": "alias | echo | exit",
+      "keyPoints": ["alias l='ls -l' membuat shortcut", "echo \"Hello World\" menampilkan teks", "exit keluar dari shell dan bisa mengirim status error/sukses"]
+    },
+    {
+      "type": "code_playground",
+      "title": "Playground: Buat Alias, Echo, dan Exit Secara Simulasi (JS)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan code. Kamu akan melihat simulasi bagaimana alias memetakan perintah, echo menampilkan output, dan exit mengakhiri program dengan status.",
+      "fileName": "alias-echo-exit.js",
+      "defaultCode": "const aliases = {}; \nfunction aliasDef(name, command){ aliases[name] = command; console.log(\"Alias dibuat:\", name, \"->\", command); }\nfunction runCommand(cmd){\n  if (aliases[cmd]) return runCommand(aliases[cmd]);\n  const parts = cmd.split(\" \");\n  const head = parts[0];\n  if (head === \"echo\") { return console.log(parts.slice(1).join(\" \").replace(/^\"|\"$/g, \"\")); }\n  if (head === \"exit\") { const code = Number(parts[1] || 0); console.log(\"Keluar dengan status:\", code); process.exitCode = code; return; }\n  console.log(\"(Simulasi) menjalankan:\", cmd);\n}\n\n// Skenario\naliasDef(\"l\", \"ls -l\");\nrunCommand(\"echo \\\"Hello World\\\"\");\nrunCommand(\"l\");\nrunCommand(\"exit 1\");\n\nconsole.log(\"Catatan: karena simulasi exit, kamu mungkin tetap melihat baris ini tergantung environment.\");",
+      "hint": "Challenge: buat alias baru misalnya 'll' untuk 'ls -la' lalu jalankan runCommand(\"ll\")."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Perintah Linux yang digunakan untuk menampilkan isi file dan direktori di working directory adalah?",
+      "options": ["ls", "pwd", "cd", "mkdir"],
+      "answer": "ls",
+      "explanation": "ls adalah command untuk daftar isi folder saat ini.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa fungsi command pwd?",
+      "options": ["Menampilkan path lengkap folder saat ini", "Mengubah direktori", "Membuat direktori baru", "Menghapus file"],
+      "answer": "Menampilkan path lengkap folder saat ini",
+      "explanation": "pwd singkatan Print Working Directory dan menunjukkan full pathname dari working directory yang sedang aktif.",
+      "xpReward": 50
+    },
+    {
+      "question": "Command man digunakan untuk…",
+      "options": ["Melihat manual/petunjuk penggunaan suatu command", "Mengunduh file dari web", "Mengganti owner file", "Menghapus direktori"],
+      "answer": "Melihat manual/petunjuk penggunaan suatu command",
+      "explanation": "man menampilkan user manual untuk command yang bisa kamu jalankan di terminal.",
+      "xpReward": 50
+    },
+    {
+      "question": "Kalau kamu ingin membuat folder baru bernama new_folder di current directory, command yang tepat adalah?",
+      "options": ["touch new_folder", "mkdir new_folder", "rm new_folder", "mv new_folder"],
+      "answer": "mkdir new_folder",
+      "explanation": "mkdir berarti Make Directory, jadi cocok untuk membuat direktori baru.",
+      "xpReward": 50
+    },
+    {
+      "question": "Command touch paling tepat digunakan untuk…",
+      "options": ["Membuat file baru berukuran tertentu", "Membuat file kosong baru", "Menampilkan isi file", "Mengarsipkan file menjadi tar"],
+      "answer": "Membuat file kosong baru",
+      "explanation": "touch digunakan untuk membuat file baru yang kosong (default content kosong).",
+      "xpReward": 50
+    },
+    {
+      "question": "Perbedaan utama grep dan find yang benar adalah?",
+      "options": ["grep mencari isi (pattern) di file, find mencari lokasi (berdasarkan kondisi) pada struktur direktori", "grep mencari lokasi, find mencari isi", "grep hanya untuk folder, find hanya untuk file", "grep untuk jaringan, find untuk proses"],
+      "answer": "grep mencari isi (pattern) di file, find mencari lokasi (berdasarkan kondisi) pada struktur direktori",
+      "explanation": "grep fokus pada pencarian baris yang cocok dengan pola di dalam file, sedangkan find fokus pada mencari file/direktori berdasarkan kondisi di filesystem.",
+      "xpReward": 50
+    },
+    {
+      "question": "Command tail digunakan untuk menampilkan…",
+      "options": ["Bagian awal file", "Bagian akhir file", "Daftar proses secara real-time", "Manual command"],
+      "answer": "Bagian akhir file",
+      "explanation": "tail output bagian terakhir dari file (contohnya 10 baris terakhir pada materi).",
+      "xpReward": 50
+    },
+    {
+      "question": "Command chmod 755 berhubungan dengan…",
+      "options": ["Mengubah permission (mode) file atau direktori", "Mengubah owner dan group", "Menghapus file", "Login ke remote host"],
+      "answer": "Mengubah permission (mode) file atau direktori",
+      "explanation": "chmod berarti Change Mode dan dipakai untuk mengubah permissions.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa kepanjangan ls dan fungsinya singkat?",
+      "answer": "ls = List Segments, digunakan untuk menampilkan file dan direktori di working directory.",
+      "emoji": "📂",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa fungsi pwd?",
+      "answer": "Menampilkan full pathname dari working directory saat ini.",
+      "emoji": "🧾",
+      "difficulty": "easy"
+    },
+    {
+      "question": "mkdir itu untuk apa?",
+      "answer": "Membuat direktori/folder baru.",
+      "emoji": "🗂️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "touch itu untuk apa?",
+      "answer": "Membuat file baru kosong (tanpa content default).",
+      "emoji": "📝",
+      "difficulty": "easy"
+    },
+    {
+      "question": "cp vs mv bedanya apa (inti)?",
+      "answer": "cp menyalin, mv memindahkan atau merename.",
+      "emoji": "🔁",
+      "difficulty": "medium"
+    },
+    {
+      "question": "cat untuk apa?",
+      "answer": "Menampilkan content file di terminal (juga bisa concatenate).",
+      "emoji": "🧠",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Kapan lebih cocok pakai less dibanding cat?",
+      "answer": "Saat file sangat besar dan kamu butuh scroll/meninjau sebagian tanpa menampilkan semuanya sekaligus.",
+      "emoji": "🧷",
+      "difficulty": "medium"
+    },
+    {
+      "question": "grep mencari apa: isi atau lokasi?",
+      "answer": "Isi: mencari baris yang cocok dengan pattern di dalam file.",
+      "emoji": "🔎",
+      "difficulty": "medium"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi ini berisi ringkasan 50 Linux command yang relevan untuk Cloud Engineers. Namun pada cuplikan yang diberikan, command yang dibahas mencakup perintah dasar untuk navigasi, manajemen file, melihat isi file, pencarian, bantuan manual, akses admin, pemantauan sistem dan proses, arsitektur permission/ownership, hingga tools networking dan command shell yang umum dipakai. Berikut penjelasan lengkap isi materi untuk AI tutor: Pertama ada command navigasi: ls (List Segments) untuk menampilkan file dan direktori di working directory saat ini. Contoh ls -l menampilkan detail seperti permission, size, owner, group, dan tanggal/waktu modifikasi terakhir. Lalu pwd (Print Working Directory) yang menunjukkan full pathname dari direktori saat ini; contoh pwd menghasilkan path lengkap. Berikutnya cd (Change Directory) untuk berpindah folder; contoh cd /home/user/Documents akan memindahkan working directory ke Documents. Setelah itu masuk ke manajemen file: mkdir (Make Directory) untuk membuat direktori baru; contoh mkdir new_folder membuat folder new_folder di folder aktif. rm (Remove) digunakan untuk menghapus file atau direktori; contoh rm my_file.txt menghapus file bernama my_file.txt di working directory. touch dipakai untuk membuat file baru yang kosong; contohnya touch new_file.txt akan membuat file kosong tersebut. Untuk operasi salin dan pindah: cp (Copy) menyalin file/direktori dari lokasi sumber ke tujuan; contohnya cp source_file.txt destinationfolder/ menyalin source_file.txt ke destinationfolder. mv (Move) digunakan untuk memindahkan atau merename; contoh mv oldname.txt newname.txt merename oldname.txt menjadi newname.txt (dan bisa juga digunakan untuk memindahkan). Untuk melihat isi file: cat (Concatenate) menampilkan content file, menggabungkan file, dan juga dapat melakukan redirect output; contoh cat file.txt menampilkan isi file.txt. less (Less, tanpa singkatan) berguna untuk viewing file tanpa harus membukanya sepenuhnya; khususnya saat file besar agar bisa scroll dengan nyaman. head (Head) mengeluarkan bagian awal file; contoh head file.txt menampilkan 10 baris pertama. tail (Tail) mengeluarkan bagian akhir file; contoh tail file.txt menampilkan 10 baris terakhir. Selanjutnya bagian pencarian: grep (Global Regular Expression Print) mencari baris dalam file yang cocok dengan pattern tertentu; contoh grep 'hello' file.txt menampilkan baris yang mengandung kata 'hello'. find (Find) mencari file/direktori berdasarkan kondisi pada struktur folder; contoh find /home -name my_file.txt akan menemukan my_file.txt di direktori /home dan subdirektorinya. Lalu ada man (Manual) yang menampilkan user manual dari command yang dapat dijalankan; contoh man ls menampilkan manual untuk ls. Ada juga sudo (SuperUser Do) yang dipakai untuk menjalankan perintah yang membutuhkan hak admin atau root permission; contoh sudo apt-get update memperbarui daftar paket tanpa benar-benar menginstal/upgrade. Setelah itu bagian monitoring sistem dan proses: df (Disk Filesystem) menampilkan penggunaan disk: space terpakai dan tersedia; contoh df -h menampilkan dalam format human-readable. du (Disk Usage) mengestimasi pemakaian space untuk file/direktori; contoh du -sh /home/user/* menampilkan ukuran masing-masing file/direktori secara ringkas dan human-readable. ps (Process Status) memberi informasi proses yang sedang berjalan termasuk PID; contoh ps -aux menampilkan semua proses yang running. top (Table of Processes) adalah view real-time proses; kamu cukup mengetik top untuk melihat proses berjalan secara langsung. kill (Kill, tanpa singkatan) menghentikan proses manual; contoh kill 12345 menghentikan proses dengan PID 12345. Berikutnya bagian archive dan permission: tar (Tape Archive) membuat dan mengekstrak archive .tar atau .tar.gz. Contoh tar -cvf archive.tar /home/user membuat archive tar dari /home/user. chmod (Change Mode) mengubah permissions file/dir; contoh chmod 755 my_file.txt mengatur read/write/execute untuk owner dan read/execute untuk group dan others sesuai standar 755. chown (Change Owner) mengubah owner dan group; contoh chown username:groupname my_file.txt mengubah owner jadi username dan groupname. Bagian networking: ssh (Secure Shell) untuk login ke mesin remote dan bekerja langsung di sana; contoh ssh username@remote_host login sebagai username pada remote_host. wget (World Wide Web Get) untuk download non-interaktif file dari web; contoh wget https://example.com/file.zip mengunduh file.zip ke current directory. curl (Client URL) untuk transfer data dari command line atau script; mendukung banyak protokol seperti HTTP/HTTPS/FTP dan juga SCP/SFTP; contoh curl -O https://example.com/file.zip mengunduh file.zip ke current directory. Terakhir command shell yang ringan: alias membuat shortcut untuk command lain; contoh alias l='ls -l' membuat l menjalankan ls -l. echo (Echo) menampilkan teks/string ke standard output atau file; contoh echo "Hello World" menampilkan teks itu di terminal. exit (Exit) digunakan untuk keluar dari shell yang sedang berjalan; bisa menerima argumen N dan keluar dengan status N, contoh exit akan keluar sederhana, sedangkan exit 1 keluar dengan status error umum (unspecified error). Untuk tutor, tekankan perbedaan fungsi tiap command: (1) ls/pwd/cd untuk navigasi, (2) mkdir/touch/rm untuk pembuatan dan penghapusan, (3) cp/mv untuk copy vs move/rename, (4) cat/less/head/tail untuk membaca file dengan gaya berbeda, (5) grep (isi) vs find (lokasi), (6) man untuk dokumentasi dan sudo untuk privilege, (7) df/du/ps/top/kill untuk melihat dan mengelola sistem/proses, (8) tar/ chmod/ chown untuk archive dan control keamanan, (9) ssh/wget/curl untuk akses dan download dari jaringan, serta (10) alias/echo/exit untuk kenyamanan dan kontrol shell. Tutor juga harus menekankan bahwa contoh pada materi merupakan pola umum, dan siswa sebaiknya mencoba variasi parameter sambil memahami dampaknya (terutama rm, chmod, chown, dan sudo)."
+}
