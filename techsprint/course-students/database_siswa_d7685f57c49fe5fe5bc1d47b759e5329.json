@@ -5,9 +5,9 @@
     "email": "johndoe@gmail.com",
     "password": "$2b$10$D.EZvC7.F9JuxoWXMpr8MeftFRq8p3A/Ha9N4Es5glXElxwUMW2vq",
     "profilePicture": "",
-    "xp": 455,
-    "coin": 175,
-    "level": 2,
+    "xp": 525,
+    "coin": 210,
+    "level": 3,
     "streak": 0,
     "lastLogin": "14-06-2026, 23.27.45",
     "lastLoginDate": "Sun Jun 14 2026",
@@ -25,11 +25,12 @@
       "block-9"
     ],
     "completedChapter": [],
-    "flashcardsViewed": 4,
-    "leaderboardPoint": 340,
+    "flashcardsViewed": 6,
+    "leaderboardPoint": 360,
     "achievements": [
       "first_block",
-      "coin_100"
+      "coin_100",
+      "flashcard_pro"
     ],
     "joinedAt": "14-06-2026, 23.27.45",
     "isMainAccount": true,
