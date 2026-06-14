@@ -89,5 +89,13 @@
     "plan": 1,
     "creditLeft": 5,
     "courseCreated": 1
+  },
+  {
+    "namaLengkap": "johndoe",
+    "email": "johndoe@gmail.com",
+    "password": "$2b$10$D.EZvC7.F9JuxoWXMpr8MeftFRq8p3A/Ha9N4Es5glXElxwUMW2vq",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
