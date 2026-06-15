@@ -39,5 +39,24 @@
     "todayAiCount": 1,
     "lastAiDate": "Sun Jun 14 2026",
     "quizCorrectCount": 7
+  },
+  {
+    "studentId": "ddae3f6371bbe103",
+    "username": "fff",
+    "email": "muhammadfikrifahrezi2@gmail.com",
+    "password": "$2b$10$cV1x/taG63d0eQCUH0A7Y.jmbVqNKHPoVnepGLahPZ3voFDwBghse",
+    "profilePicture": "",
+    "xp": 0,
+    "coin": 0,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "15-06-2026, 23.59.01",
+    "quizScore": 0,
+    "completedBlocks": [],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 0,
+    "achievements": [],
+    "joinedAt": "15-06-2026, 23.59.01"
   }
 ]
