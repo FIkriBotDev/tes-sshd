@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "studentId": "176d63533995530f",
+    "username": "johndoe",
+    "email": "johndoe@gmail.com",
+    "password": "$2b$10$D.EZvC7.F9JuxoWXMpr8MeftFRq8p3A/Ha9N4Es5glXElxwUMW2vq",
+    "profilePicture": "",
+    "xp": 10,
+    "coin": 5,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "15-06-2026, 07.27.44",
+    "lastLoginDate": "Mon Jun 15 2026",
+    "quizScore": 0,
+    "completedBlocks": [],
+    "completedChapter": [],
+    "flashcardsViewed": 1,
+    "leaderboardPoint": 10,
+    "achievements": [],
+    "joinedAt": "15-06-2026, 07.27.44",
+    "isMainAccount": true
+  }
+]
