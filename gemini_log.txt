@@ -38338,3 +38338,14 @@ Response  : Saya lihat gambar tersebut: suasananya seperti **gerai/bazar di dala
 
 Kalau kamu mau, bilang ya: kamu ingin saya **deskripsikan lebih detail**, **menebak konteks acaranya**, atau **membantu membaca tulisan pada banner**?
 
+
+[2026-06-16T07:43:47.139Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/d8ffd6-1781595823318.jpg
+Response  : Gambar yang kamu kirim menunjukkan dua minuman dalam gelas botol di atas meja.
+
+- **Kiri:** minuman kental/berkrim dengan sedotan, kemasan logo **Starbucks**.
+- **Kanan:** botol minuman bertuliskan **“EXCLUSIV…”** dan terlihat logo/ilustrasi **ombak** (mirip produk “water”/minuman rasa), juga memakai tutup ulir.
+
+Di bagian bawah gambar ada teks: **“Jakarta International Expo (JIExpo)”**.
+
