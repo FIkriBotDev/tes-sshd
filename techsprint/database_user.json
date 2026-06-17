@@ -97,5 +97,13 @@
     "plan": 1,
     "creditLeft": 0,
     "courseCreated": 2
+  },
+  {
+    "namaLengkap": "oliv",
+    "email": "anindakalinolivia@gmail.com",
+    "password": "$2b$10$LGIOAuT1COVwBCoTLm5p0u.Zb0ZD3KrGabojaek5ecxllCqxbB/m6",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
