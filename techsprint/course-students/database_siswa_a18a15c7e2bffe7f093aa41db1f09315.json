@@ -19,5 +19,32 @@
     "achievements": [],
     "joinedAt": "17-06-2026, 12.28.23",
     "isMainAccount": true
+  },
+  {
+    "studentId": "08d1197106e26bdd",
+    "username": "oliv",
+    "email": "anindakalinolivia@gmail.com",
+    "password": "$2b$10$LGIOAuT1COVwBCoTLm5p0u.Zb0ZD3KrGabojaek5ecxllCqxbB/m6",
+    "profilePicture": "",
+    "xp": 140,
+    "coin": 55,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "17-06-2026, 12.49.58",
+    "lastLoginDate": "Wed Jun 17 2026",
+    "quizScore": 0,
+    "completedBlocks": [
+      "block-0",
+      "block-1",
+      "block-2"
+    ],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 90,
+    "achievements": [
+      "first_block"
+    ],
+    "joinedAt": "17-06-2026, 12.49.58",
+    "isMainAccount": true
   }
 ]
