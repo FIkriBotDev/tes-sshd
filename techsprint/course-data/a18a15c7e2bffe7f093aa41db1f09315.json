@@ -1,0 +1,339 @@
+{
+  "title": "Serunya Sistem Pencernaan Manusia: Nutrisi, Proses, dan Jaga Kesehatan",
+  "summary": "Kamu akan belajar apa saja nutrisi yang dibutuhkan tubuh, bagaimana proses pencernaan mekanis dan kimiawi berlangsung, serta organ-organ pentingnya. Di bagian akhir, kamu juga akan diajak memahami gangguan pencernaan dan membuat model organ sebagai proyek kreatif.",
+  "emoji": "🧠",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Nutrisi Utama: Bahan Bakar & Pembangun Tubuh",
+      "icon": "🍽️",
+      "explanation": "Makanan bukan cuma mengenyangkan, tapi juga jadi sumber energi, membantu pertumbuhan, dan menjaga kesehatan. Tubuh membutuhkan karbohidrat, protein, lemak, vitamin, mineral, dan air. Setiap zat punya “peran kerja” yang berbeda di dalam tubuh.",
+      "analogy": "Bayangkan tubuhmu seperti tim olahraga: butuh bensin (energi), bahan bangunan (pembangun), dan alat pelindung (cadangan).",
+      "highlight": "karbohidrat, protein, lemak, vitamin, mineral, air",
+      "keyPoints": [
+        "Karbohidrat jadi sumber energi utama",
+        "Protein jadi pembangun dan bisa jadi energi bila perlu",
+        "Lemak cadangan energi dan membantu melarutkan vitamin A, D, E, K"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Hitung Energi dari Nutrisi (Kalori)",
+      "icon": "🔥",
+      "explanation": "Dalam materi ini, energi dari nutrisi dihitung berdasarkan kalori per gram. Karbohidrat dan protein masing-masing menghasilkan sekitar 4,1 kalori per gram, sedangkan lemak menghasilkan 9,3 kalori per gram. Ini membantu kita memahami kebutuhan energi sehari-hari.",
+      "analogy": "Kalori itu seperti mata uang energi. Lemak seperti koin bernilai tinggi, sedangkan karbohidrat dan protein seperti koin bernilai sedang.",
+      "highlight": "4,1 kalori/gram (karbohidrat & protein), 9,3 kalori/gram (lemak)",
+      "keyPoints": [
+        "Karbohidrat menghasilkan 4,1 kalori per gram",
+        "Protein menghasilkan 4,1 kalori per gram",
+        "Lemak menghasilkan 9,3 kalori per gram"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Peta Peran Nutrisi dalam Tubuh",
+      "icon": "🗺️",
+      "items": [
+        {
+          "label": "Karbohidrat",
+          "value": "Energi utama (glukosa) disimpan jadi glikogen & lemak",
+          "icon": "🥖"
+        },
+        {
+          "label": "Protein",
+          "value": "Asam amino untuk pembangun, bisa jadi energi saat perlu",
+          "icon": "🥚"
+        },
+        {
+          "label": "Lemak",
+          "value": "Cadangan energi, pelarut vitamin A D E K, pelindung",
+          "icon": "🥜"
+        },
+        {
+          "label": "Vitamin, Mineral, Air",
+          "value": "Bantu metabolisme dan kerja enzim",
+          "icon": "💧"
+        }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Alur Pencernaan: Dari Mulut sampai Usus Besar",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Mulut: mulai mekanis & kimiawi",
+          "description": "Gigi mengunyah (mekanis) dan lidah membantu rasa serta menelan. Kelenjar ludah menghasilkan enzim ptyalin yang memecah amilum jadi maltosa (kimiawi).",
+          "tip": "Ingat pH optimal ptyalin sekitar 6,8–7 dan suhu sekitar 37°C."
+        },
+        {
+          "number": 2,
+          "title": "Kerongkongan: jalur lewat",
+          "description": "Makanan didorong oleh gerak peristaltik otot polos menuju lambung. Di bagian ini makanan hanya lewat, tidak diolah berat-berat.",
+          "tip": "Gerak peristaltik itu seperti dorongan gelombang pelan."
+        },
+        {
+          "number": 3,
+          "title": "Lambung: diaduk & diproses kimiawi",
+          "description": "Otot lambung mengaduk jadi bubur (mekanis) dan HCl + enzim memecah makanan (kimiawi). Ada renin (khusus bayi), pepsin, dan HCl.",
+          "tip": "HCl bikin pH lambung jadi sangat asam (sekitar 1–3)."
+        },
+        {
+          "number": 4,
+          "title": "Usus halus: pencernaan lanjutan & penyerapan",
+          "description": "Duodenum, jejunum, ileum memecah lebih lanjut dan menyerap sari-sari makanan. Vili dan mikrovili memperluas permukaan penyerapan.",
+          "tip": "Ileum punya vili terbanyak untuk membantu penyerapan maksimal."
+        },
+        {
+          "number": 5,
+          "title": "Usus besar: serap air & bentuk feses",
+          "description": "Usus besar menyerap sisa nutrisi (sebagian), menyerap air, lalu memadatkan feses. Memiliki bagian ascenden, transversal, descenden, sigmoid serta ada cecum dan appendix.",
+          "tip": "Gerak otot kuat di sigmoid membantu mendorong feses ke rektum."
+        }
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "Dua Mode Pencernaan: Chopper vs Chef",
+      "icon": "💡",
+      "realWorld": "Saat kamu menyiapkan makanan: ada proses memotong dan menghaluskan bahan, lalu ada proses memasak dengan bumbu.",
+      "connection": "Materi membedakan pencernaan mekanis (oleh gigi/otot) dan kimiawi (oleh enzim dan asam).",
+      "insight": "Mekanisme mekanis menyiapkan ‘ukuran’, sedangkan kimiawi mengubah ‘bentuk kimia’ agar bisa diserap tubuh."
+    },
+    {
+      "type": "code_playground",
+      "title": "Kalkulator Kalori Nutrisi (Coba Sendiri!)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Ubah nilai karbohidrat_g (gram), protein_g (gram), dan lemak_g (gram), lalu jalankan. Sistem akan menghitung total kalori dengan aturan dari materi: karbohidrat 4,1 kal/gram, protein 4,1 kal/gram, lemak 9,3 kal/gram.",
+      "fileName": "kalkulator_kalori.js",
+      "defaultCode": "const karbohidrat_g = 50; // contoh: 50 gram\nconst protein_g = 20; // contoh: 20 gram\nconst lemak_g = 10; // contoh: 10 gram\n\nconst kalori_karbo = karbohidrat_g * 4.1;\nconst kalori_protein = protein_g * 4.1;\nconst kalori_lemak = lemak_g * 9.3;\n\nconst total = kalori_karbo + kalori_protein + kalori_lemak;\nconsole.log(\"Kalori dari karbohidrat:\", kalori_karbo);\nconsole.log(\"Kalori dari protein:\", kalori_protein);\nconsole.log(\"Kalori dari lemak:\", kalori_lemak);\nconsole.log(\"Total kalori:\", total);",
+      "hint": "Coba eksperimen: tambah lemak 2 gram, bandingkan kenaikan total kalori dengan menambah karbohidrat 2 gram."
+    },
+    {
+      "type": "code_playground",
+      "title": "Latihan Identifikasi: Mekanis atau Kimiawi?",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Isi fungsi jenisPencernaan untuk mengembalikan label 'mekanis' atau 'kimiawi' berdasarkan kata kunci pada input. Coba variasi: 'gigi', 'lidah', 'amilase', 'HCl', 'enzim', 'peristaltik'.",
+      "fileName": "identifikasi_mekanis_kimiawi.js",
+      "defaultCode": "function jenisPencernaan(input) {\n  const s = input.toLowerCase();\n  const mekanisKeys = [\"gigi\",\"lidah\",\"peristaltik\",\"otot\",\"mengunyah\",\"pengadukan\"];\n  const kimiawiKeys = [\"enzim\",\"amilase\",\"ptyalin\",\"hcl\",\"pepsin\",\"renin\",\"maltosa\",\"pepton\"];\n  if (kimiawiKeys.some(k => s.includes(k))) return \"kimiawi\";\n  if (mekanisKeys.some(k => s.includes(k))) return \"mekanis\";\n  return \"tidak dikenali\";\n}\n\nconst testInputs = [\"gigi\", \"lidah\", \"enzim ptyalin\", \"HCl\", \"gerak peristaltik\", \"pepsin\"];\nfor (const x of testInputs) {\n  console.log(x, \"->\", jenisPencernaan(x));\n}",
+      "hint": "Tingkatkan latihan: tambahkan kata kunci lain dari materi yang kamu temukan saat membaca."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini Sistem Pencernaan",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Nutrisi",
+          "definition": "Zat dalam makanan yang dibutuhkan tubuh untuk energi, pembangun, dan pengatur.",
+          "example": "Karbohidrat, protein, lemak, vitamin, mineral, air."
+        },
+        {
+          "term": "Pencernaan mekanis",
+          "definition": "Proses mengubah makanan menjadi lebih kecil/halus secara fisik.",
+          "example": "Pengunyahan oleh gigi dan pengadukan oleh otot lambung."
+        },
+        {
+          "term": "Pencernaan kimiawi",
+          "definition": "Proses mengubah makanan secara kimiawi menggunakan enzim dan asam.",
+          "example": "Amilum jadi maltosa oleh ptyalin, protein jadi pepton oleh pepsin."
+        },
+        {
+          "term": "Ptyalin (amilase)",
+          "definition": "Enzim ludah yang memecah amilum menjadi maltosa.",
+          "example": "Bekerja maksimal pada pH sekitar 6,8–7 dan suhu 37°C."
+        },
+        {
+          "term": "Peristaltik",
+          "definition": "Gerakan otot berbentuk gelombang yang mendorong makanan di saluran pencernaan.",
+          "example": "Makanan terdorong dari kerongkongan ke lambung."
+        },
+        {
+          "term": "Glikogen",
+          "definition": "Senyawa cadangan karbohidrat yang disimpan di hati dan otot.",
+          "example": "Kelebihan karbohidrat diubah menjadi glikogen."
+        },
+        {
+          "term": "Vili dan mikrovili",
+          "definition": "Tonjolan di usus halus yang memperluas permukaan penyerapan.",
+          "example": "Membantu penyerapan sari-sari makanan lebih efektif."
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Gangguan Pencernaan & Upaya Menanggulanginya (Preview)",
+      "icon": "🩺",
+      "explanation": "Setiap sistem tubuh bisa mengalami gangguan. Materi mengajak kamu mengenali macam gangguan pada sistem pencernaan dan cara menanggulanginya agar pencernaan tetap sehat. Pada bagian proyek nanti, kamu bisa mengaitkan organ yang terlibat dengan pencegahan yang tepat.",
+      "analogy": "Kalau pabrik tidak dirawat, mesin bisa macet. Pencernaan juga butuh kebiasaan baik supaya 'mesin' tubuh tetap lancar.",
+      "highlight": "pengenalan gangguan, pencegahan, kebiasaan sehat",
+      "keyPoints": [
+        "Kenali gejala agar tahu organ mana yang kemungkinan bermasalah",
+        "Terapkan kebiasaan makan dan hidup sehat",
+        "Cari upaya menanggulangi yang sesuai dengan jenis gangguannya"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Karbohidrat merupakan sumber energi utama karena dapat menghasilkan ... per gram.",
+      "options": [
+        "4,1 kalori",
+        "9,3 kalori",
+        "1,0 kalori",
+        "10,0 kalori"
+      ],
+      "answer": "4,1 kalori",
+      "explanation": "Menurut materi, setiap 1 gram karbohidrat mampu menghasilkan 4,1 kalori.",
+      "xpReward": 50
+    },
+    {
+      "question": "Enzim ptyalin (amilase) bekerja mengubah amilum menjadi ...",
+      "options": [
+        "glikogen",
+        "maltosa",
+        "pepton",
+        "feses"
+      ],
+      "answer": "maltosa",
+      "explanation": "Ptyalin mengubah amilum (karbohidrat) menjadi maltosa (gula sederhana).",
+      "xpReward": 50
+    },
+    {
+      "question": "Gerak peristaltik paling berperan mendorong makanan dari ... ke ...",
+      "options": [
+        "lambung ke mulut",
+        "kerongkongan ke lambung",
+        "usus besar ke lambung",
+        "mulut ke usus besar"
+      ],
+      "answer": "kerongkongan ke lambung",
+      "explanation": "Kerongkongan mendorong makanan masuk ke lambung melalui peristaltik ototnya.",
+      "xpReward": 50
+    },
+    {
+      "question": "Bagian lambung yang menjadi pintu masuk makanan dari kerongkongan adalah ...",
+      "options": [
+        "Fundus",
+        "Kardiak",
+        "Pilorus",
+        "Rektum"
+      ],
+      "answer": "Kardiak",
+      "explanation": "Kardiak adalah bagian atas lambung sebagai pintu masuk dari kerongkongan.",
+      "xpReward": 50
+    },
+    {
+      "question": "HCl pada lambung berfungsi mengaktifkan ... menjadi ...",
+      "options": [
+        "pepsinogen menjadi pepsin",
+        "renin menjadi pepsin",
+        "maltosa menjadi glikogen",
+        "amilum menjadi lemak"
+      ],
+      "answer": "pepsinogen menjadi pepsin",
+      "explanation": "Materi menyebut HCl mengaktifkan pepsinogen menjadi pepsin dan membuat pH lambung asam.",
+      "xpReward": 50
+    },
+    {
+      "question": "Usus halus pada manusia dewasa memiliki panjang sekitar ...",
+      "options": [
+        "± 1 m",
+        "± 2 m",
+        "± 6 m",
+        "± 15 m"
+      ],
+      "answer": "± 6 m",
+      "explanation": "Materi menyebut panjang usus halus sekitar 6 meter pada manusia dewasa.",
+      "xpReward": 50
+    },
+    {
+      "question": "Fungsi utama usus besar adalah ...",
+      "options": [
+        "memecah protein menjadi pepton",
+        "menyerap air dan memadatkan feses",
+        "membentuk maltosa",
+        "menghasilkan enzim renin"
+      ],
+      "answer": "menyerap air dan memadatkan feses",
+      "explanation": "Menurut materi, usus besar menyerap sebagian nutrisi dan terutama air untuk memadatkan feses.",
+      "xpReward": 50
+    },
+    {
+      "question": "Protein dapat digunakan sebagai sumber energi jika ...",
+      "options": [
+        "kebutuhan kalori tidak dapat dipenuhi karbohidrat dan lemak",
+        "lambung tidak memiliki HCl",
+        "tubuh kekurangan vitamin A saja",
+        "mulut tidak mengunyah"
+      ],
+      "answer": "kebutuhan kalori tidak dapat dipenuhi karbohidrat dan lemak",
+      "explanation": "Materi menjelaskan protein digunakan sebagai tenaga hanya jika kebutuhan kalori tubuh tidak terpenuhi oleh karbohidrat dan lemak.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Sebutkan nutrisi utama yang dibutuhkan tubuh manusia berdasarkan materi.",
+      "answer": "Karbohidrat, protein, lemak, vitamin, mineral, dan air.",
+      "emoji": "🥗",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Berapa kalori per gram untuk karbohidrat (menurut materi)?",
+      "answer": "4,1 kalori per gram.",
+      "emoji": "📈",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Berapa kalori per gram untuk lemak (menurut materi)?",
+      "answer": "9,3 kalori per gram.",
+      "emoji": "📈",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa fungsi gigi dalam proses pencernaan di mulut?",
+      "answer": "Memotong dan mengoyak makanan agar lebih kecil sehingga mudah dicerna.",
+      "emoji": "🦷",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa yang dilakukan lidah selain mengunyah?",
+      "answer": "Membantu proses mengunyah, menelan, membedakan rasa (manis, asam, asin, pahit), serta peka terhadap panas, dingin, dan tekanan.",
+      "emoji": "😋",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa peran ludah dalam pencernaan?",
+      "answer": "Membasahi dan melumasi makanan agar mudah ditelan, serta mengandung enzim ptyalin yang mengubah amilum menjadi maltosa.",
+      "emoji": "💧",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Bagian lambung yang bekerja sebagai pintu keluar menuju usus dua belas jari adalah ...",
+      "answer": "Pilorus.",
+      "emoji": "🚪",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Sebutkan 3 enzim/komponen utama yang disebut bekerja di lambung pada materi.",
+      "answer": "Renin, pepsin, dan HCl (asam klorida).",
+      "emoji": "🧪",
+      "difficulty": "hard"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama tentang nutrisi dan awal proses pencernaan.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Bahan ajar ini membahas Sistem Pencernaan Manusia dengan target belajar yang berpusat pada nutrisi, organ pencernaan, proses mekanis dan kimiawi, serta gangguan dan upaya penanggulangannya, termasuk proyek membuat model organ. Tutor sebaiknya memandu siswa secara bertahap: mulai dari pemahaman bahwa makanan adalah kebutuhan pokok makhluk hidup karena menjadi sumber energi. Siswa perlu paham bahwa makanan yang dikonsumsi manusia harus mengandung zat-zat yang dibutuhkan tubuh: karbohidrat, protein, lemak, vitamin, mineral, dan air. Lalu tutor menjelaskan konsep bahwa makanan harus dicerna terlebih dahulu agar zat gizi dapat diserap. Istilah kunci yang bisa dipakai adalah proses pencernaan makanan: perubahan makanan dari bentuk kompleks menjadi lebih sederhana.\n\nBagian pertama menekankan komponen nutrisi utama. Tutor jelaskan tiap kelompok dengan fungsi dan bentuknya. Untuk zat penghasil energi, materi menyebut gula dalam bentuk molekul tunggal (monosakarida) seperti glukosa, galaktosa, fruktosa. Dalam makanan, monosakarida umumnya terdapat dalam bentuk karbohidrat dan tepung/amilum. Karbohidrat menjadi sumber energi utama. Materi mencantumkan angka kalori: 1 gram karbohidrat menghasilkan 4,1 kalori. Jika karbohidrat berlebih, tubuh mengubahnya menjadi glikogen dan lemak. Tutor perlu menekankan lokasi penyimpanan: glikogen disimpan di hati dan otot, sedangkan lemak disimpan di perut, sekeliling ginjal, dan di bawah kulit.\n\nUntuk zat pembangun, pengatur, dan sumber energi, materi menjelaskan protein yang diperoleh dalam bentuk asam amino. Protein digunakan sebagai sumber tenaga apabila kebutuhan kalori tidak dapat dipenuhi oleh karbohidrat dan lemak. Angka kalori: 1 gram protein menghasilkan 4,1 kalori. Untuk zat pelindung, pembangun, dan cadangan energi, materi menjelaskan lemak yang diperoleh sebagai asam lemak dan gliserol. Lemak berfungsi sebagai sumber energi, pelarut vitamin A, D, E, K, serta pelindung tubuh dari suhu rendah. Penyimpanan lemak dapat terjadi di sekitar usus, ginjal, dan hati. Materi juga menyebut 1 gram lemak menghasilkan 9,3 kalori. Terakhir, tutor tekankan komponen pendukung lain seperti vitamin, air, mineral yang membantu kerja enzim-enzim untuk metabolisme.\n\nBagian kedua membahas organ-organ dan proses pencernaan makanan. Tutor jelaskan bahwa sistem pencernaan terdiri dari saluran pencernaan dan kelenjar pencernaan. Saluran pencernaan mencakup mulut, kerongkongan (esophagus), lambung, usus halus, dan usus besar. Materi menguraikan detail fungsi masing-masing.\n\nMulut: tutor jelaskan pencernaan mekanis oleh gigi dan lidah berupa pengunyahan serta pergerakan otot lidah dan pipi untuk mencampur makanan dengan air ludah sebelum ditelan. Gigi berfungsi memotong dan mengoyak makanan agar mudah dicerna lambung. Materi juga memuat informasi perkembangan gigi: gigi susu tumbuh sekitar 6 bulan; usia 6-14 tahun gigi susu diganti menjadi gigi sulung, kemudian berkembang menjadi gigi tetap. Tutor tidak perlu masuk terlalu jauh, namun bisa mendorong siswa untuk memahami hubungan gigi dengan proses mekanis. Lidah: selain membantu pengunyahan dan menelan, lidah membedakan rasa manis, asam, asin, pahit melalui papila dan puting pengecap, serta peka terhadap panas, dingin, dan tekanan.\n\nPencernaan kimia di mulut: dilakukan oleh kelenjar ludah melalui enzim ptyalin (amilase) yang memecah amilum menjadi maltosa. Tutor jelaskan kelenjar ludah terdiri dari tiga pasang: parotis (di bawah telinga, menghasilkan ludah cair), submandibularis (di rahang bawah, menghasilkan getah berisi air dan lendir), dan sublingualis (di bawah lidah, menghasilkan getah berisi air dan lendir). Ludah membantu proses menelan dengan membasahi dan melumasi. Enzim ptyalin bekerja maksimal pada pH 6,8-7 dan suhu 37°C; tutor bisa membuat siswa membayangkan enzim sebagai “alat kerja” yang butuh kondisi pas.\n\nKerongkongan: tutor jelaskan esophagus berbentuk tabung sempit panjang sekitar 25 cm dengan diameter sekitar 2 cm yang menghubungkan laring/anak tekak dengan lambung. Dinding kerongkongan mengeluarkan musin untuk membasahi jalan makanan dan sebagian tersusun oleh otot polos. Perpindahan makanan terjadi karena gerak peristaltik: kontraksi dan relaksasi otot yang mendorong makanan masuk lambung. Di sini materi menegaskan makanan hanya lewat dan tidak mengalami pencernaan berarti.\n\nLambung: tutor jelaskan lambung tempat makanan dicerna dan sejumlah kecil sari-sari makanan diserap. Lambung terbagi menjadi kardiak (pintu masuk), fundus (tempat makanan ditampung dan mengalami perlakuan kimiawi), dan pilorus (pintu keluar menuju usus dua belas jari). Tutor tekankan pengaruh pH pada kerja pilorus: jika pH makanan asam, otot pilorus mengendor sehingga terbuka; jika makanan basa, otot pilorus berkontraksi sehingga menutup. Proses di lambung berlangsung mekanik dan kimiawi. Mekanik: otot lambung berkontraksi sehingga makanan tercampur dan teraduk dengan enzim serta asam klorida sampai menjadi bubur. Kimiawi: menggunakan enzim renin, pepsin, dan HCl. Renin berfungsi mengendapkan protein pada susu (kasein) dari ASI, hanya dimiliki bayi. Pepsin memecah protein menjadi pepton. HCl berfungsi mengaktifkan pepsinogen menjadi pepsin, bekerja sebagai disinfektan membunuh kuman dan merangsang hormon sekretin dan kolesistokinin pada usus halus. Tutor tekankan pH lambung sangat asam, antara 1 sampai 3.\n\nUsus halus: tutor jelaskan panjangnya sekitar 6 meter dan fungsinya mencerna serta mengabsorpsi kimus (hasil dari lambung). Bagian usus halus memanjang dari piloric sphincter sampai sphincter ileocaecal. Materi menambahkan lapisan usus halus: lapisan luar peritoneum, lapisan otot polos dua lapis (longitudinal dan sircular) yang membantu peristaltik dan pencampuran enzim, submukosa berisi jaringan ikat dan saraf otonom, serta mukosa dengan sel epitel selapis kolumnar goblet yang mensekresikan getah usus halus (intestinal juice). Intestinal juice adalah kombinasi cairan dari glandula intestinalis di duodenum, jejunum, dan ileum, produksinya dipengaruhi hormon sekretin dan enterokrinin. Penting juga bahwa mukosa memiliki villi (tonjolan plica circularis) yang menambah luas permukaan agar absorpsi lebih efektif.\n\nTiga bagian usus halus: duodenum (~25 cm) berbentuk sepatu kuda melengkung ke kiri, memiliki akses dari pankreas dan kantung empedu. Empedu berfungsi mengemulsikan lemak dengan bantuan lipase. Pankreas menghasilkan amilase untuk mencerna karbohidrat menjadi disakarida, serta tripsin untuk mencerna protein menjadi asam amino/albumin dan polipeptida. Dinding duodenum juga memiliki kelenjar brunner yang menghasilkan getah untuk melindungi dari asam lambung.\nJejunum (1,5-1,75 m): pencernaan kimiawi lebih lanjut oleh enzim yang dihasilkan dinding usus, menghasilkan bubur lumat encer.\nIleum (0,75-3,5 m): penyerapan utama. Permukaan ileum dipenuhi jonjot/vili dan ditutup epitel yang menyerap zat hara. Ada sekitar 1000 mikrovili tiap sel. Enzim pada mikrovili membantu memecah makanan menjadi partikel kecil agar mudah diserap. Dalam setiap jonjot terdapat pembuluh darah halus dan saluran limfa: vena porta mengambil glukosa dan asam amino, sedangkan asam lemak dan gliserol masuk sel limfa, kemudian hasil diedarkan ke seluruh tubuh melalui pembuluh tersebut. Sisa makanan bergerak peristaltik ke usus besar.\n\nUsus besar: tutor jelaskan sebagai kelanjutan usus halus; setelah sebagian besar nutrisi diserap, sisa masuk ke usus besar untuk pemrosesan lebih lanjut. Panjang usus besar sekitar 1,5 m, berfungsi menyerap sebagian nutrisi, air, dan memadatkan feses agar mudah dikeluarkan. Usus besar terbagi 4 bagian: ascenden, transversal, descenden, sigmoid. Tutor jelaskan fungsi tiap bagian: ascenden menyerap nutrisi sisa, air, dan memadatkan; transversal menyempurnakan penyerapan dan pemadatan; descenden menampung sementara feses sebelum rektum; sigmoid berbentuk S dengan kontraksi kuat untuk menekan feses ke rektum. Materi juga menyebut cecum/usus buntu (awal usus besar) berperan menyerap nutrisi dan air walau tidak signifikan, serta appendix/umbai cacing yang fungsinya belum diketahui jelas.\n\nBagian gangguan dan upaya menanggulanginya: materi menyebut siswa harus mampu menyebutkan macam gangguan/penyakit pada sistem pencernaan manusia dan upaya menanggulanginya. Tutor sebaiknya menekankan pendekatan pencegahan melalui kebiasaan makan sehat, kebersihan makanan, dan kapan harus mencari bantuan tenaga kesehatan. Jika materi lanjutan PDF memuat daftar gangguan spesifik, tutor seharusnya menyesuaikan dengan isi tersebut. \n\nTerakhir, proyek: siswa diminta membuat model organ penyusun sistem pencernaan manusia. Tutor sebaiknya mendorong siswa bekerja dengan langkah: menentukan organ yang akan dibuat, memilih bahan (kertas karton, plastisin, dll), menambahkan label, serta menghubungkan tiap organ dengan fungsi berdasarkan materi. Selain itu, materi juga menekankan sikap bertanggung jawab, kejujuran, dan kedisiplinan dalam pembelajaran luring dan daring, termasuk kolaborasi dengan orang tua dan guru untuk memahami konsep dan gambar, menyiapkan alat/bahan, serta menyelesaikan dan mengumpulkan tugas sesuai jadwal."
+}

@@ -346,5 +346,17 @@
     "courseUrl": "/course/e789c99a25b85715472c9deefbfd0407",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "a18a15c7e2bffe7f093aa41db1f09315",
+    "courseName": "Serunya Sistem Pencernaan Manusia: Nutrisi, Proses, dan Jaga Kesehatan",
+    "courseEmoji": "🧠",
+    "courseColor": "#6366f1",
+    "courseFileName": "2020-10-06-file-sistem-pencernaan-pada-manusia.pdf",
+    "courseOwner": "anindakalinolivia@gmail.com",
+    "courseCreated": "17-06-2026, 12.18.08",
+    "courseUrl": "/course/a18a15c7e2bffe7f093aa41db1f09315",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
