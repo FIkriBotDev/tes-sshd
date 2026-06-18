@@ -38566,3 +38566,19 @@ Response  : Gambar itu adalah cuplikan slide presentasi yang menampilkan:
 
 Kalau kamu mau, bilang kamu ingin saya **jelaskan isi slide lebih rinci** atau **menangkap pesan utama/implikasinya**.
 
+
+[2026-06-18T08:35:02.147Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/068a5c-1781771694735.jpg
+Response  : Saya sudah melihat gambar tersebut. Ini terlihat seperti presentasi di panggung konferensi dengan slide berjudul **“AI Engines in Panther Lake”**. Di slide tertulis beberapa spesifikasi, misalnya:
+
+- **Up to 180 platform TOPS**
+- **CPU: up to 10 TOPS**
+- **NPU: up to 50 TOPS**
+- **GPU: up to 120 TOPS**
+- Ada juga teks **“Light AI workload”**, **“VNNU & AVX”**, dan **“Up to 120”** untuk GPU, serta ikon/label terkait mesin AI (termasuk “Gameri…” dan “x3 x3MM engines” di bagian kanan).
+
+Di foto, pembicara sedang berdiri di depan layar dan ada elemen panggung seperti lampu/layar LED serta pengeras suara.  
+
+Kalau kamu mau, sebutkan kamu ingin saya **jelaskan isi slide lebih detail**, **terjemahkan teksnya**, atau **menilai/menafsirkan maknanya**.
+
