@@ -38466,3 +38466,21 @@ Response  : Saya sudah melihat gambarnya.
 
 Itu tampak seperti foto/video dari **Lenovo Tech Days 2026 di Ariya**: ada pembicara di panggung dengan layar LED besar, teks kutipan seperti “**This is not an imitation game but an innovation...**”, dan bagian bawah menunjukkan keterangan acara dari akun **olimproject**. Di langit-langit terlihat lampu panggung besar, dan penonton duduk menghadap presentasi.
 
+
+[2026-06-18T04:04:24.719Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/254be2-1781755458656.jpg
+Response  : Berikut yang terlihat dari gambar tersebut (sebuah slide presentasi tentang **AI Adoption**):
+
+- **Adopsi AI makin cepat** dari 2025 ke 2026.
+  - **2026:** 66% (Pilot/Secara sistematis sudah mengadopsi AI), 15% (Early stages), 19% (Considering)
+  - **2025:** 29% (Pilot/Secara sistematis sudah mengadopsi AI), 15% (Early stages), 56% (Considering)
+- **Area implementasi AI yang paling cepat berkembang** terbagi jadi:
+  - **IT:** Data & Analytics, Cyber Security, Software Development
+  - **Non-IT:** Finance, Industry-specific LOB (line of business), Marketing
+- Poin kanan: **“AI Adoption is Accelerating, Outside of IT”**
+  - **1 dari 2 organisasi** yang disurvei melaporkan bahwa **anggaran departemen non-IT** berkontribusi pada implementasi AI.
+- **Sumber:** IDC CIO Playbook 2026 Survey (commissioned by Lenovo), sampel **n=920**.
+  
+Kalau kamu mau, aku bisa bantu merangkum jadi 2–3 kalimat untuk caption, atau dibuatkan poin presentasi (bullet) untuk dibacakan.
+
