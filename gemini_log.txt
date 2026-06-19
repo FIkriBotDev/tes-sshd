@@ -38601,3 +38601,17 @@ Kalau Anda mau, saya bisa:
 2) merangkum jadi versi singkat, atau  
 3) bantu cek bagian mana yang kurang jelas.
 
+
+[2026-06-19T07:19:03.751Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/f7f977-1781853539694.jpg
+Response  : Saya sudah melihat gambar tersebut. Itu adalah poster **Webinar** dari **PPAPT Kemdiktisaintek** tentang:
+
+- **Judul:** *Sosialisasi Beasiswa Program Doktor untuk Dosen Indonesia Tahun 2026*
+- **Tayang:** **Jumat, 19 Juni 2026**  
+- **Waktu:** **13.00 WIB**
+- **Platform:** **Live YouTube (Kemdiktisaintek)**
+- Terdapat 3 pembicara (nama yang terlihat): **Brian Yuliarto**, **Sandro Mirhadi**, dan **Badr i Munir Sukoco**.
+
+Kalau kamu mau, aku bisa bantu rangkum isi poster jadi teks untuk caption/undangan, atau buatkan versi informasi singkat.
+
