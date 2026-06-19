@@ -38582,3 +38582,22 @@ Di foto, pembicara sedang berdiri di depan layar dan ada elemen panggung seperti
 
 Kalau kamu mau, sebutkan kamu ingin saya **jelaskan isi slide lebih detail**, **terjemahkan teksnya**, atau **menilai/menafsirkan maknanya**.
 
+
+[2026-06-19T05:45:58.159Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/2425d8-1781847952201.jpg
+Response  : Saya sudah melihat gambarnya. Itu adalah poster acara **“Kursus Dasar Buddha Dharma”** dengan tema/bagian **“Budha Dharma Bhikkhu”** (terlihat ada beberapa foto peserta), dan informasi utamanya:
+
+- **Hari/Tanggal:** **Minggu, 05 Juli 2026**
+- **Waktu:** **PKL 07.00–18 WIB**
+- **Tempat:** **Vihara Ariyadipasena**
+- **Keterangan acara:** *Visudhi Tisaranа Pancasila* oleh **YM. Bhikkhu Ratanajayo** dan tersedia **e-sertifikat**
+- **Biaya pendaftaran:** **Rp 50.000**
+- Ada info kontak/pendaftaran (tercantum nama dan nomor telepon di bagian bawah kiri)
+- Ada info transfer/partisipasi dana (tercantum nomor rekening/BCA dan atas nama tertentu) serta konfirmasi dana.
+
+Kalau Anda mau, saya bisa:
+1) menyalin teksnya lebih lengkap persis dari poster, atau  
+2) merangkum jadi versi singkat, atau  
+3) bantu cek bagian mana yang kurang jelas.
+
