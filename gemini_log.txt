@@ -38615,3 +38615,17 @@ Response  : Saya sudah melihat gambar tersebut. Itu adalah poster **Webinar** da
 
 Kalau kamu mau, aku bisa bantu rangkum isi poster jadi teks untuk caption/undangan, atau buatkan versi informasi singkat.
 
+
+[2026-06-19T14:08:03.788Z]
+Prompt    : Extrem Kuliner
+Image URL : https://uploader.exodusai.biz.id/tmp/8f6043-1781878080417.jpg
+Response  : Dari foto, ini terlihat seperti **daftar menu “Tenda Ular Cobra” – Sate Ular Tenda Dua Cobra** (tertera juga “Kuliner Destination”).
+
+Namun, **tulisan di kertas menu tidak cukup terbaca** untuk saya tulis ulang item-item dan harganya dengan akurat.
+
+Kalau kamu mau, kirim:
+1) foto yang lebih dekat (zoom ke kertas menu), atau  
+2) 2–3 foto bagian atas–tengah–bawah menu,  
+
+nanti aku bisa bantu **membaca semua menunya dan merangkum harganya**.
+
