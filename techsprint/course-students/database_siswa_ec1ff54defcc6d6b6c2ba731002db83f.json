@@ -5,9 +5,9 @@
     "email": "muhammadfikrifahrezi2@gmail.com",
     "password": "$2b$10$XQiR.Vea9lMLXAUcMqhsEuDkXbv8Vb.vHRyiyeKUX0yqEDcIESRzm",
     "profilePicture": "",
-    "xp": 490,
-    "coin": 205,
-    "level": 2,
+    "xp": 505,
+    "coin": 210,
+    "level": 3,
     "streak": 0,
     "lastLogin": "20-06-2026, 01.56.23",
     "lastLoginDate": "Sat Jun 20 2026",
@@ -29,6 +29,9 @@
       "flashcard_pro"
     ],
     "joinedAt": "20-06-2026, 01.56.23",
-    "isMainAccount": true
+    "isMainAccount": true,
+    "aiInteractions": 1,
+    "todayAiCount": 1,
+    "lastAiDate": "Sat Jun 20 2026"
   }
 ]
