@@ -442,5 +442,17 @@
     "courseUrl": "/course/d1bda2f767e7ddc1b8c77e9053dbf825",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "c6a3530c26fd8d55e6e031e0b6b7ba7f",
+    "courseName": "Bikin & Pahami Invoice: Dari Detail Produk sampai Total yang Benar",
+    "courseEmoji": "🧾",
+    "courseColor": "#6366f1",
+    "courseFileName": "invoice.pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "20-06-2026, 10.18.28",
+    "courseUrl": "/course/c6a3530c26fd8d55e6e031e0b6b7ba7f",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]

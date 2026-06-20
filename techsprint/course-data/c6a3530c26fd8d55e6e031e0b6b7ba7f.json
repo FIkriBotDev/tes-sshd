@@ -1,0 +1,366 @@
+{
+  "title": "Bikin & Pahami Invoice: Dari Detail Produk sampai Total yang Benar",
+  "summary": "Kamu akan belajar cara membaca komponen penting invoice seperti Invoice No, tanggal, pengirim-penerima, item (Qty, Unit Price, Amount), sampai Subtotal dan Total. Di akhir, kamu latihan menghitung Amount dan menyusun ulang invoice versi rapi.",
+  "emoji": "🧾",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Bagian-Bagian Invoice yang Wajib Kamu Cek",
+      "icon": "🧾",
+      "explanation": "Invoice adalah dokumen tagihan yang merinci siapa menagih siapa, kapan diterbitkan, kapan harus dibayar, dan rincian barang/jasa. Dengan memahami tiap komponennya, kamu bisa memastikan angka dan identitas transaksi tidak tertukar.",
+      "analogy": "Bayangkan invoice seperti struk belanja: ada identitas toko, item yang dibeli, harga per item, dan total yang harus dibayar.",
+      "highlight": "Invoice No, Issue Date, Due Date, From, Bill To",
+      "keyPoints": [
+        "Invoice No unik untuk melacak transaksi",
+        "Issue Date adalah tanggal invoice dibuat",
+        "Due Date adalah batas waktu pembayaran"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Peta Angka di Invoice (Model Baca Cepat)",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Invoice No",
+          "value": "INV-1755355813952",
+          "icon": "🪪"
+        },
+        {
+          "label": "Issue Date",
+          "value": "16 Aug 2025",
+          "icon": "🗓️"
+        },
+        {
+          "label": "Due Date",
+          "value": "22 Aug 2025",
+          "icon": "⏰"
+        },
+        {
+          "label": "From (Penagih)",
+          "value": "ExodusCloud, Jakarta, Indonesia",
+          "icon": "🏢"
+        },
+        {
+          "label": "Bill To (Penerima Tagihan)",
+          "value": "Ariya, Jakarta, Indonesia",
+          "icon": "👤"
+        },
+        {
+          "label": "Item",
+          "value": "VPS Qty 1",
+          "icon": "📦"
+        },
+        {
+          "label": "Unit Price",
+          "value": "Rp 25.000",
+          "icon": "🏷️"
+        },
+        {
+          "label": "Amount",
+          "value": "Rp 25.000",
+          "icon": "🧮"
+        },
+        {
+          "label": "Subtotal & Total",
+          "value": "Rp 25.000",
+          "icon": "✅"
+        },
+        {
+          "label": "Notes",
+          "value": "Bayar di dana",
+          "icon": "💳"
+        }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Cara Menghitung Amount, Subtotal, dan Total",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Cek kolom item",
+          "description": "Lihat nama layanan/barang (misal VPS), lalu ambil Qty dan Unit Price.",
+          "tip": "Kalau ada beberapa item, kerjakan satu per satu."
+        },
+        {
+          "number": 2,
+          "title": "Hitung Amount per item",
+          "description": "Rumusnya: Amount = Qty × Unit Price.",
+          "tip": "Pastikan satuan uang sama (misal semua Rupiah)."
+        },
+        {
+          "number": 3,
+          "title": "Jumlahkan Subtotal",
+          "description": "Subtotal = total semua Amount dari semua item.",
+          "tip": "Jika cuma 1 item, Subtotal biasanya sama dengan Amount."
+        },
+        {
+          "number": 4,
+          "title": "Tentukan Total",
+          "description": "Total = Subtotal (di invoice contoh ini tidak ada pajak/biaya tambahan).",
+          "tip": "Kalau ada pajak/fee, Total = Subtotal + (pajak/fee)."
+        },
+        {
+          "number": 5,
+          "title": "Validasi cepat",
+          "description": "Cocokkan: Amount yang dihitung harus sama dengan angka Amount di invoice.",
+          "tip": "Kalau tidak sama, berarti ada salah baca Qty/Unit Price."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Hitung Amount Otomatis dari Qty dan Unit Price",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Ubah qty dan unitPrice, lalu jalankan. Pastikan Amount = qty × unitPrice dan tampilkan Subtotal/Total.",
+      "fileName": "invoice_calc.js",
+      "defaultCode": "// invoice_calc.js\nconst qty = 1;\nconst unitPrice = 25000; // dalam rupiah\nconst amount = qty * unitPrice;\nconst subtotal = amount;\nconst total = subtotal;\nconsole.log(\"Qty:\", qty);\nconsole.log(\"Unit Price:\", unitPrice);\nconsole.log(\"Amount:\", amount);\nconsole.log(\"Subtotal:\", subtotal);\nconsole.log(\"Total:\", total);",
+      "hint": "Coba ubah qty menjadi 2, dan unitPrice tetap 25000. Apa yang terjadi pada Amount?"
+    },
+    {
+      "type": "concept_card",
+      "title": "Membedakan Subtotal vs Total (Biar Nggak Tertukar)",
+      "icon": "🧠",
+      "explanation": "Subtotal adalah penjumlahan Amount semua item. Total adalah angka yang benar-benar dibayar. Di contoh invoice ini, Total sama dengan Subtotal karena tidak ada pajak atau biaya tambahan yang disebutkan.",
+      "analogy": "Subtotal itu seperti total harga sebelum diskon/pajak, sedangkan Total itu harga akhir yang kamu bayar di kasir.",
+      "highlight": "Subtotal = jumlah Amount, Total = angka akhir pembayaran",
+      "keyPoints": [
+        "Subtotal menjumlahkan rincian item",
+        "Total bisa berbeda jika ada pajak/fee/diskon",
+        "Di invoice contoh: Total = Subtotal = Rp 25.000"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Simulasi Invoice Multi-Item (Subtotal & Total)",
+      "icon": "⚡",
+      "language": "javascript",
+      "instruction": "Lengkapi daftar items. Program akan hitung Amount tiap item lalu menjumlahkan Subtotal dan Total.",
+      "fileName": "invoice_multi_items.js",
+      "defaultCode": "// invoice_multi_items.js\nconst items = [\n  { name: \"VPS\", qty: 1, unitPrice: 25000 },\n  // Tambahkan item lain di sini, contoh:\n  // { name: \"Domain\", qty: 1, unitPrice: 50000 },\n];\n\nconst amounts = items.map(it => ({ ...it, amount: it.qty * it.unitPrice }));\nconst subtotal = amounts.reduce((sum, it) => sum + it.amount, 0);\nconst total = subtotal; // contoh: tanpa pajak/fee\n\nconsole.log(\"Daftar item:\");\namounts.forEach(it => {\n  console.log(it.name, \"Qty:\", it.qty, \"Unit:\", it.unitPrice, \"Amount:\", it.amount);\n});\nconsole.log(\"Subtotal:\", subtotal);\nconsole.log(\"Total:\", total);",
+      "hint": "Tambahkan 1 item lagi lalu cek apakah Total berubah sesuai penjumlahan Amount."
+    },
+    {
+      "type": "analogy_card",
+      "title": "Invoice sebagai “Checklist Pembayaran”",
+      "icon": "💡",
+      "realWorld": "Saat kamu langganan layanan (misal VPS), kamu menerima invoice dari penyedia layanan. Kamu lalu membayar sebelum Due Date.",
+      "connection": "Tiap kolom invoice membantu kamu memverifikasi transaksi: identitas pengirim-penerima, waktu pembayaran, dan rincian harga layanan.",
+      "insight": "Kalau angka di Amount/Total tidak cocok, biasanya ada kesalahan input Qty atau Unit Price."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini (Biar Makin Cepat Paham)",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Invoice No",
+          "definition": "Nomor unik untuk mengidentifikasi invoice tertentu.",
+          "example": "INV-1755355813952"
+        },
+        {
+          "term": "Issue Date",
+          "definition": "Tanggal invoice diterbitkan oleh penagih.",
+          "example": "16 Aug 2025"
+        },
+        {
+          "term": "Due Date",
+          "definition": "Tanggal batas pembayaran agar tidak telat.",
+          "example": "22 Aug 2025"
+        },
+        {
+          "term": "Qty",
+          "definition": "Jumlah item/layanan yang kamu beli.",
+          "example": "Qty 1 untuk VPS"
+        },
+        {
+          "term": "Unit Price",
+          "definition": "Harga per satuan item.",
+          "example": "Rp 25.000 per VPS"
+        },
+        {
+          "term": "Amount",
+          "definition": "Total harga untuk satu item: Qty × Unit Price.",
+          "example": "1 × Rp 25.000 = Rp 25.000"
+        },
+        {
+          "term": "Subtotal",
+          "definition": "Jumlah Amount dari semua item di invoice.",
+          "example": "Rp 25.000"
+        },
+        {
+          "term": "Total",
+          "definition": "Jumlah akhir yang harus dibayar (tanpa tambahan pajak/fee jika tidak ada).",
+          "example": "Rp 25.000"
+        },
+        {
+          "term": "Notes",
+          "definition": "Catatan tambahan untuk cara pembayaran atau informasi lain.",
+          "example": "Bayar di dana"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Pada invoice, apa fungsi utama kolom Invoice No?",
+      "options": [
+        "Untuk menentukan pajak yang harus dibayar",
+        "Untuk mengidentifikasi invoice secara unik",
+        "Untuk menghitung Amount",
+        "Untuk menentukan cara pembayaran"
+      ],
+      "answer": "Untuk mengidentifikasi invoice secara unik",
+      "explanation": "Invoice No dipakai untuk melacak transaksi/invoice tertentu, bukan untuk hitung pajak, Amount, atau metode bayar.",
+      "xpReward": 50
+    },
+    {
+      "question": "Rumus untuk menghitung Amount per item adalah…",
+      "options": [
+        "Amount = Unit Price - Qty",
+        "Amount = Qty + Unit Price",
+        "Amount = Qty × Unit Price",
+        "Amount = Total - Subtotal"
+      ],
+      "answer": "Amount = Qty × Unit Price",
+      "explanation": "Amount adalah total harga untuk item tersebut, didapat dari perkalian Qty dan Unit Price.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika Qty = 3 dan Unit Price = Rp 10.000, berapa Amount?",
+      "options": [
+        "Rp 13.000",
+        "Rp 30.000",
+        "Rp 20.000",
+        "Rp 10.000"
+      ],
+      "answer": "Rp 30.000",
+      "explanation": "Amount = 3 × Rp 10.000 = Rp 30.000.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa beda Subtotal dan Total pada invoice contoh ini?",
+      "options": [
+        "Total lebih kecil dari Subtotal",
+        "Subtotal sama dengan Total karena tidak ada pajak/fee",
+        "Total hanya terdiri dari Unit Price",
+        "Subtotal hanya jumlah Qty"
+      ],
+      "answer": "Subtotal sama dengan Total karena tidak ada pajak/fee",
+      "explanation": "Di invoice contoh, tertulis Subtotal Rp 25.000 dan Total Rp 25.000, jadi nilainya sama.",
+      "xpReward": 50
+    },
+    {
+      "question": "Pada invoice yang diberikan, tanggal Issue Date adalah…",
+      "options": [
+        "22 Aug 2025",
+        "16 Aug 2025",
+        "01 Sep 2025",
+        "15 Aug 2025"
+      ],
+      "answer": "16 Aug 2025",
+      "explanation": "Issue Date pada invoice tercantum sebagai 16 Aug 2025.",
+      "xpReward": 50
+    },
+    {
+      "question": "Pada invoice yang diberikan, item yang ditagihkan adalah…",
+      "options": [
+        "Domain",
+        "VPS",
+        "Hosting",
+        "Voucher"
+      ],
+      "answer": "VPS",
+      "explanation": "Di bagian Description tertulis VPS dengan Qty 1 dan Unit Price Rp 25.000.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika invoice memiliki 2 item, Subtotal didapat dari…",
+      "options": [
+        "Jumlahkan semua Unit Price saja",
+        "Jumlahkan Amount dari semua item",
+        "Ambil Unit Price item pertama saja",
+        "Gunakan Due Date untuk hitung subtotal"
+      ],
+      "answer": "Jumlahkan Amount dari semua item",
+      "explanation": "Subtotal adalah penjumlahan total harga per item (Amount), bukan Unit Price atau informasi tanggal.",
+      "xpReward": 50
+    },
+    {
+      "question": "Pada invoice contoh, Notes berisi informasi tentang…",
+      "options": [
+        "Cara pembayaran",
+        "Jenis pajak",
+        "Revisi desain",
+        "Jumlah pelanggan"
+      ],
+      "answer": "Cara pembayaran",
+      "explanation": "Notes pada invoice contoh berbunyi “Bayar di dana”, yang mengarah ke metode pembayaran.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa itu Invoice No?",
+      "answer": "Nomor unik untuk mengidentifikasi invoice tertentu agar mudah dilacak.",
+      "emoji": "🪪",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa yang dimaksud Issue Date?",
+      "answer": "Tanggal invoice diterbitkan oleh penagih.",
+      "emoji": "🗓️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa yang dimaksud Due Date?",
+      "answer": "Batas tanggal pembayaran agar transaksi dianggap tepat waktu.",
+      "emoji": "⏰",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Kalau Qty 1 dan Unit Price Rp 25.000, berapa Amount?",
+      "answer": "Amount = 1 × Rp 25.000 = Rp 25.000.",
+      "emoji": "🧮",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Rumus Amount adalah apa?",
+      "answer": "Amount = Qty × Unit Price.",
+      "emoji": "📐",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Subtotal dihitung dari apa?",
+      "answer": "Subtotal = penjumlahan semua Amount dari seluruh item.",
+      "emoji": "➕",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Total selalu sama dengan Subtotal?",
+      "answer": "Tidak selalu. Total sama dengan Subtotal jika tidak ada pajak/fee/diskon; kalau ada, Total = Subtotal +/− tambahan.",
+      "emoji": "✅",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Notes pada invoice biasanya berisi apa?",
+      "answer": "Catatan tambahan seperti metode pembayaran atau info penting lainnya.",
+      "emoji": "📝",
+      "difficulty": "easy"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi pada PDF berisi contoh sebuah invoice (dokumen tagihan). Kamu akan menjelaskan bahwa invoice memuat identitas transaksi dan rincian biaya sehingga penerima tagihan bisa memverifikasi apa yang ditagihkan serta berapa total yang harus dibayar. Dari contoh invoice: terdapat Invoice No \"INV-1755355813952\" yang berfungsi sebagai penanda unik untuk invoice. Lalu ada Issue Date \"16 Aug 2025\" yang merupakan tanggal invoice dibuat/diterbitkan oleh penyedia jasa. Kemudian Due Date \"22 Aug 2025\" yang merupakan tanggal batas waktu pembayaran. Bagian From menunjukkan pihak penagih, di contoh tertulis \"ExodusCloud, Jakarta, Indonesia\". Bagian Bill To menunjukkan pihak yang menerima tagihan, di contoh tertulis \"Ariya, Jakarta, Indonesia\". Selanjutnya bagian Description adalah rincian item layanan/barang yang ditagihkan. Pada invoice ini, hanya ada satu baris item: \"VPS\" dengan Qty 1, Unit Price Rp 25.000, dan Amount Rp 25.000. Tutor perlu menekankan rumus Amount karena itu inti pemahaman angka: Amount = Qty × Unit Price. Dengan Qty 1 dan Unit Price Rp 25.000, Amount memang menjadi Rp 25.000. Setelah itu ada Subtotal. Subtotal adalah penjumlahan Amount dari semua item. Karena pada contoh hanya ada satu item, maka Subtotal sama dengan Amount item tersebut, yaitu Rp 25.000. Bagian Total menampilkan angka akhir yang harus dibayar. Pada invoice ini, tertulis Total Rp 25.000 dan tidak ada informasi pajak, biaya tambahan, atau diskon. Maka Total = Subtotal. Tutor bisa mengajak siswa melakukan validasi cepat: cocokkan angka Total dengan hasil perhitungan dari Amount dan Subtotal. Terakhir ada Notes yang berisi instruksi/catatan tambahan mengenai pembayaran: \"Bayar di dana\". Tutor menjelaskan bahwa Notes sering dipakai untuk menyebutkan metode pembayaran (misal e-wallet, transfer bank, atau instruksi khusus) atau info lain yang membantu penerima menuntaskan pembayaran. Untuk membuat pengalaman belajar interaktif, siswa akan dilatih membaca struktur invoice (identitas, tanggal, pihak penagih/penerima, lalu rincian item) dan menghitung ulang Amount, Subtotal, dan Total. Karena materi memuat konsep perhitungan sederhana (Qty, Unit Price, Amount) tutor dapat menekankan pentingnya konsistensi satuan uang (semua menggunakan Rupiah) dan memastikan tidak ada item lain yang belum dijumlahkan. Tutor juga sebaiknya menekankan bahwa jika di invoice lain ternyata ada pajak/fee, maka Total bisa berbeda dari Subtotal, sehingga siswa harus selalu mengecek apakah invoice menyebutkan tambahan seperti VAT, service charge, atau diskon."
+}
