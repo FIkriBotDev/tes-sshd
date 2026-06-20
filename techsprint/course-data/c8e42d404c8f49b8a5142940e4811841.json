@@ -1,0 +1,425 @@
+{
+  "title": "SQL Basics: Dari SELECT sampai Subquery (plus Hak Cipta yang Perlu Kamu Tahu)",
+  "summary": "Di course ini kamu belajar SQL dari nol: konsep dasar, perintah SELECT untuk menampilkan data, manipulasi (INSERT/UPDATE/DELETE), filtering dengan WHERE, pengurutan, lalu masuk ke fungsi-fungsi SQL dan sub-query. Bonusnya, kamu juga dapat pemahaman singkat tentang batasan hak cipta (yang sering muncul di materi/produk belajar).",
+  "emoji": "🗄️",
+  "color": "#3b82f6",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "SQL itu Bahasa untuk “Ngomong ke Data”",
+      "icon": "🗄️",
+      "explanation": "SQL (Structured Query Language) adalah bahasa yang dipakai untuk berinteraksi dengan database: menampilkan data, menyaring baris, mengurutkan, sampai memanipulasi isi tabel. Biasanya kamu memulai dari SELECT, lalu berkembang ke DML, DDL, dan DCL.",
+      "analogy": "Bayangin database itu seperti perpustakaan. SQL adalah daftar perintah untuk “cari judul”, “ambil halaman tertentu”, dan “ubah data katalog”.",
+      "highlight": "SELECT, WHERE, ORDER BY, DML/DDL/DCL",
+      "keyPoints": [
+        "SQL membantu mengambil data dengan query",
+        "Filtering dan pengurutan membuat data lebih relevan",
+        "SQL biasanya dipelajari bertahap: dari dasar sampai fungsi dan subquery"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Urutan Belajar SQL yang Bikin Kamu Cepat Nyerempet Mahir",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Kenali perintah inti SQL",
+          "description": "Mulai dari SELECT untuk menampilkan data, lalu INSERT/UPDATE/DELETE untuk manipulasi.",
+          "tip": "Kalau masih bingung, fokus dulu: bagian mana yang tampil (SELECT), mana yang difilter (WHERE)."
+        },
+        {
+          "number": 2,
+          "title": "Pelajari filtering dengan WHERE",
+          "description": "Gunakan operator pembanding seperti BETWEEN, IN, LIKE, dan aturan NULL.",
+          "tip": "Ingat: NULL itu bukan kosong biasa—perlakuannya khusus di SQL."
+        },
+        {
+          "number": 3,
+          "title": "Urutkan data biar enak dibaca",
+          "description": "Gunakan ORDER BY (DESC) dan bisa urut berdasarkan beberapa kolom.",
+          "tip": "Kalau hasilnya berantakan, cek urutan kolom ORDER BY-mu."
+        },
+        {
+          "number": 4,
+          "title": "Masuk ke fungsi-fungsi SQL",
+          "description": "Kenali single-row functions (karakter, angka, tanggal, konversi, NVL/COALESCE) dan grup functions (AVG/SUM/MIN/MAX/COUNT).",
+          "tip": "Kalau output tergantung banyak baris, biasanya melibatkan fungsi grup + klausa GROUP BY."
+        },
+        {
+          "number": 5,
+          "title": "Gabungkan tabel dengan join",
+          "description": "Pelajari natural join, self join, non-equi join, dan outer join (left/right/full).",
+          "tip": "Kalau ada yang hilang di hasil, coba cek apakah butuh outer join."
+        },
+        {
+          "number": 6,
+          "title": "Power up pakai sub-query",
+          "description": "Gunakan sub-query untuk single-row dan multiple-row operation.",
+          "tip": "Kalau query utama butuh nilai hasil query lain, biasanya kamu butuh sub-query."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Coba Query SELECT Dasar (Simulasi dengan Output di Konsol)",
+      "icon": "💻",
+      "language": "sql",
+      "instruction": "Jalankan query di SQL engine kamu (atau anggap ini sebagai latihan). Fokus: SELECT semua kolom, SELECT sebagian kolom, alias, concat, dan menulis ekspresi sederhana.",
+      "fileName": "01_select_basics.sql",
+      "defaultCode": "SELECT * FROM employees; SELECT id, name FROM employees; SELECT name AS nama_karyawan, salary AS gaji FROM employees; SELECT CONCAT(name, ' - ', department) AS label FROM employees; SELECT 2 + 3 AS hasil_ekspresi;",
+      "hint": "Challenge: coba ganti CONCAT jadi operasi string lain yang didukung engine kamu."
+    },
+    {
+      "type": "concept_card",
+      "title": "Manipulasi Data: INSERT, UPDATE, DELETE",
+      "icon": "🛠️",
+      "explanation": "Setelah data bisa ditampilkan, kamu perlu kemampuan mengubah isi tabel. INSERT menambah baris baru, UPDATE mengubah baris yang memenuhi kondisi, dan DELETE menghapus baris berdasarkan kondisi (biasanya pakai WHERE agar tidak menghapus semuanya).",
+      "analogy": "Seperti mengelola daftar peserta: INSERT mendaftarkan orang baru, UPDATE memperbarui data, DELETE menghapus peserta yang sudah tidak ikut.",
+      "highlight": "INSERT, UPDATE, DELETE, WHERE",
+      "keyPoints": [
+        "INSERT menambah data",
+        "UPDATE dan DELETE sebaiknya memakai WHERE agar aman",
+        "Manipulasi data = operasi yang berdampak ke isi tabel"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Hands-on DML: INSERT, UPDATE, DELETE",
+      "icon": "💻",
+      "language": "sql",
+      "instruction": "Latihan kueri berikut. Tujuannya: pastikan kamu bisa menargetkan baris dengan WHERE sebelum UPDATE/DELETE.",
+      "fileName": "02_dml_ops.sql",
+      "defaultCode": "INSERT INTO employees (id, name, department, salary) VALUES (101, 'Ayu', 'IT', 8000000); UPDATE employees SET salary = salary * 1.1 WHERE department = 'IT'; DELETE FROM employees WHERE id = 101;",
+      "hint": "Challenge: bikin UPDATE khusus untuk satu nama (WHERE name = '...') lalu bayangkan dampaknya."
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual: Momen Kamu Akan Memakai Klausa Apa?",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Tampilkan data",
+          "value": "SELECT (+ kolom/alias/ekspresi)",
+          "icon": "🔎"
+        },
+        {
+          "label": "Ambil yang sesuai kondisi",
+          "value": "WHERE (BETWEEN/IN/LIKE/NULL)",
+          "icon": "🎯"
+        },
+        {
+          "label": "Urutkan hasil",
+          "value": "ORDER BY (DESC, multi kolom)",
+          "icon": "↕️"
+        },
+        {
+          "label": "Ubah isi tabel",
+          "value": "INSERT, UPDATE, DELETE (DML)",
+          "icon": "🧩"
+        },
+        {
+          "label": "Transformasi nilai",
+          "value": "Fungsi karakter/angka/tanggal/konversi",
+          "icon": "🧠"
+        },
+        {
+          "label": "Rekap per grup",
+          "value": "AVG/SUM/MIN/MAX/COUNT + GROUP BY",
+          "icon": "🧮"
+        },
+        {
+          "label": "Query di dalam query",
+          "value": "Sub-query (single-row vs multiple-row)",
+          "icon": "🪄"
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "WHERE dan Operator Pembanding: Presisi Itu Penting",
+      "icon": "🎯",
+      "explanation": "WHERE dipakai untuk membatasi baris yang muncul. Operator seperti BETWEEN (rentang), IN (daftar), LIKE (pola string), dan aturan untuk NULL akan menentukan apakah baris dianggap cocok atau tidak.",
+      "analogy": "Seperti menyaring mie di warung: kamu pilih yang pedasnya 3 sampai 5 (BETWEEN), bumbu yang termasuk paket tertentu (IN), atau yang mengandung kata 'ayam' (LIKE).",
+      "highlight": "BETWEEN, IN, LIKE, NULL, AND/OR/NOT",
+      "keyPoints": [
+        "BETWEEN untuk rentang nilai",
+        "IN untuk beberapa kemungkinan sekaligus",
+        "NULL punya perlakuan khusus dalam kondisi"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "WHERE Mastery: AND, OR, NOT dan NULL (Latihan)",
+      "icon": "💻",
+      "language": "sql",
+      "instruction": "Latihan buat query yang memfilter berdasarkan beberapa kondisi. Fokus: kombinasi AND/OR/NOT dan membedakan kondisi dengan NULL.",
+      "fileName": "03_where_logic.sql",
+      "defaultCode": "SELECT name, department, salary FROM employees WHERE salary BETWEEN 5000000 AND 10000000 AND department IN ('IT', 'HR'); SELECT name FROM employees WHERE department LIKE '%IT%'; SELECT name FROM employees WHERE manager_id IS NULL; SELECT name FROM employees WHERE NOT department = 'Finance';",
+      "hint": "Challenge: coba ubah LIKE '%IT%' menjadi 'IT%' dan tebak perbedaan hasilnya."
+    },
+    {
+      "type": "analogy_card",
+      "title": "Urutan Prioritas Itu Seperti Antrian Gerbang Tol",
+      "icon": "🚦",
+      "realWorld": "Di jam sibuk, aturan jalur/urutan menentukan kendaraan mana jalan dulu.",
+      "connection": "Di SQL, prioritas operator di ekspresi logika (AND/OR/NOT) menentukan interpretasi kondisi di WHERE.",
+      "insight": "Kalau hasil query tidak sesuai harapan, seringnya penyebabnya adalah prioritas operator atau kurung ( ) yang belum kamu pasang."
+    },
+    {
+      "type": "concept_card",
+      "title": "Fungsi SQL: Single-row dan Grup (Rekap)",
+      "icon": "🧠",
+      "explanation": "Single-row functions memproses tiap baris dan menghasilkan nilai baru per baris (misal fungsi karakter seperti UPPER/LOWER/TRIM, fungsi angka seperti ROUND/TRUNC/MOD, fungsi tanggal, konversi, dan penanganan NULL seperti NVL/COALESCE). Fungsi grup seperti AVG, SUM, MIN, MAX, COUNT bekerja bersama rekap data per kelompok dan biasanya butuh klausa grup.",
+      "analogy": "Single-row itu seperti mengulas satu per satu foto, sedangkan fungsi grup itu seperti merangkum total nilai semua foto dalam satu album.",
+      "highlight": "Single-row vs Grup, NVL/COALESCE, AVG/SUM/COUNT",
+      "keyPoints": [
+        "Single-row memetakan nilai per baris",
+        "Fungsi grup menghitung ringkasan banyak baris",
+        "COUNT dan NULL punya aturan perilaku tertentu dalam rekap"
+      ]
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini: Istilah yang Pasti Muncul",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "SQL",
+          "definition": "Bahasa untuk berinteraksi dengan database dan menulis query.",
+          "example": "SELECT ... FROM ... WHERE ..."
+        },
+        {
+          "term": "DML",
+          "definition": "Data Manipulation Language untuk mengubah isi data.",
+          "example": "INSERT, UPDATE, DELETE"
+        },
+        {
+          "term": "DDL",
+          "definition": "Data Definition Language untuk mendefinisikan struktur data (contoh tabel/struktur).",
+          "example": "CREATE TABLE (umum di SQL)"
+        },
+        {
+          "term": "DCL",
+          "definition": "Data Control Language untuk kontrol akses/izin.",
+          "example": "GRANT / REVOKE (umum di SQL)"
+        },
+        {
+          "term": "WHERE",
+          "definition": "Klausa untuk memfilter baris agar query lebih spesifik.",
+          "example": "WHERE salary > 5000000"
+        },
+        {
+          "term": "NULL",
+          "definition": "Nilai yang berarti 'tidak ada data' (bukan angka 0 atau string kosong).",
+          "example": "WHERE manager_id IS NULL"
+        },
+        {
+          "term": "LIKE",
+          "definition": "Operator untuk pencarian pola string.",
+          "example": "WHERE name LIKE '%Ayu%'"
+        },
+        {
+          "term": "Sub-query",
+          "definition": "Query di dalam query lain untuk menghasilkan nilai/daftar sebagai filter.",
+          "example": "WHERE id IN (SELECT ...)"
+        },
+        {
+          "term": "Outer Join",
+          "definition": "Join yang tetap menampilkan baris walau pasangan tidak ditemukan (berbeda dengan inner join).",
+          "example": "LEFT OUTER JOIN"
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Sub-query dan Operator Set: Cara Nambah “Otomasi” di Query",
+      "icon": "🪄",
+      "explanation": "Sub-query membuat query kamu bisa bertumpuk: hasil dari query di dalam dipakai untuk query utama. Ada sub-query untuk operasi single-row (hasilnya satu nilai) dan multiple-row (hasilnya beberapa nilai). Operator set (misal penggabungan/irisan) juga membantu saat kamu membandingkan himpunan hasil query.",
+      "analogy": "Seperti memasak: kamu bisa menyiapkan saus dulu (sub-query), lalu baru menu utamanya dibuat pakai saus tersebut.",
+      "highlight": "Single-row vs Multiple-row, IN, operator set",
+      "keyPoints": [
+        "Sub-query menyederhanakan query kompleks",
+        "Single-row cocok untuk perbandingan nilai tunggal",
+        "Multiple-row biasanya dipasangkan dengan IN/ANY/ALL (tergantung SQL engine)"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Catatan Hak Cipta (UU No 28 Tahun 2014): Kamu Tetap Bisa Belajar dengan Aman",
+      "icon": "📜",
+      "explanation": "Materi pembelajaran bisa punya perlindungan hak cipta karena ada hak moral dan hak ekonomi. Meski begitu, undang-undang juga mengatur pembatasan perlindungan untuk kondisi tertentu, seperti kutipan singkat untuk pelaporan peristiwa aktual, penggandaan untuk penelitian ilmu pengetahuan, dan penggandaan untuk pengajaran sebagai bahan ajar dengan pengecualian tertentu.",
+      "analogy": "Ini seperti etika berbagi catatan: boleh untuk tujuan pendidikan tertentu dan kutipan seperlunya, tapi tidak boleh menjiplak/menjual tanpa izin.",
+      "highlight": "Hak moral + hak ekonomi, kutipan singkat, pendidikan/penelitian",
+      "keyPoints": [
+        "Hak cipta = hak eksklusif (moral dan ekonomi)",
+        "Ada pengecualian untuk kepentingan tertentu seperti pendidikan dan penelitian",
+        "Pelanggaran untuk penggunaan komersial bisa dikenai sanksi pidana dan/atau denda"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Klausa SQL yang paling sering dipakai untuk menyaring baris agar hanya yang sesuai kondisi yang tampil adalah ...",
+      "options": [
+        "HAVING",
+        "WHERE",
+        "ORDER BY",
+        "GROUP BY"
+      ],
+      "answer": "WHERE",
+      "explanation": "WHERE dipakai sebelum proses pengelompokan, untuk membatasi baris yang lolos kriteria query.",
+      "xpReward": 50
+    },
+    {
+      "question": "Operator BETWEEN paling cocok digunakan untuk kondisi ...",
+      "options": [
+        "Mencari pola string",
+        "Memeriksa keanggotaan dalam daftar",
+        "Memilih nilai dalam rentang tertentu",
+        "Mengecualikan nilai tertentu"
+      ],
+      "answer": "Memilih nilai dalam rentang tertentu",
+      "explanation": "BETWEEN secara konsep digunakan untuk rentang nilai, misalnya 10 sampai 20.",
+      "xpReward": 50
+    },
+    {
+      "question": "Dalam SQL, cara yang tepat untuk mengecek nilai NULL adalah menggunakan ...",
+      "options": [
+        "= NULL",
+        "!= NULL",
+        "IS NULL",
+        "IS NOT EMPTY"
+      ],
+      "answer": "IS NULL",
+      "explanation": "NULL punya perlakuan khusus. Operator yang umum dipakai adalah IS NULL (dan IS NOT NULL).",
+      "xpReward": 50
+    },
+    {
+      "question": "Fungsi ROUND dan TRUNC umumnya termasuk ke kategori ...",
+      "options": [
+        "Fungsi tanggal",
+        "Fungsi angka",
+        "Fungsi grup",
+        "Fungsi join"
+      ],
+      "answer": "Fungsi angka",
+      "explanation": "ROUND/TRUNC mengolah bilangan (pemulatan/penyederhanaan angka).",
+      "xpReward": 50
+    },
+    {
+      "question": "Fungsi grup seperti SUM dan AVG bekerja untuk ...",
+      "options": [
+        "Mengubah format per baris saja",
+        "Meringkas beberapa baris menjadi satu nilai",
+        "Mengurutkan data",
+        "Menggabungkan dua tabel secara fisik"
+      ],
+      "answer": "Meringkas beberapa baris menjadi satu nilai",
+      "explanation": "Fungsi grup menghitung ringkasan dari banyak baris (biasanya dengan GROUP BY).",
+      "xpReward": 50
+    },
+    {
+      "question": "Perintah INSERT termasuk ke dalam kategori ...",
+      "options": [
+        "DML",
+        "DDL",
+        "DCL",
+        "DQL"
+      ],
+      "answer": "DML",
+      "explanation": "INSERT dipakai untuk menambah data sehingga termasuk Data Manipulation Language.",
+      "xpReward": 50
+    },
+    {
+      "question": "Outer join (misalnya LEFT OUTER JOIN) berguna untuk ...",
+      "options": [
+        "Menampilkan hanya baris yang cocok di kedua tabel",
+        "Tetap menampilkan baris dari tabel kiri walau pasangan tidak ada",
+        "Menghapus baris",
+        "Mengubah tipe data kolom"
+      ],
+      "answer": "Tetap menampilkan baris dari tabel kiri walau pasangan tidak ada",
+      "explanation": "Outer join menjaga baris tetap tampil meski data pasangan tidak ditemukan di tabel lain.",
+      "xpReward": 50
+    },
+    {
+      "question": "Sub-query yang hasilnya berupa satu nilai cocok untuk disebut ...",
+      "options": [
+        "Single-Row Operation",
+        "Multiple-Row Operation",
+        "Cartesian Product",
+        "Natural Join"
+      ],
+      "answer": "Single-Row Operation",
+      "explanation": "Single-row sub-query menghasilkan satu baris/nilai untuk dipakai oleh query utama.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Untuk apa klausa WHERE digunakan?",
+      "answer": "WHERE digunakan untuk memfilter baris data agar query hanya menampilkan data yang memenuhi kondisi tertentu.",
+      "emoji": "🎯",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Sebutkan contoh operator pembanding untuk rentang.",
+      "answer": "BETWEEN digunakan untuk memilih nilai dalam rentang tertentu, misal salary BETWEEN 5_000_000 AND 10_000_000.",
+      "emoji": "📏",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Bagaimana mengecek NULL di SQL?",
+      "answer": "Gunakan IS NULL (dan untuk kebalikannya IS NOT NULL).",
+      "emoji": "🚫",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa perbedaan singkat single-row function dan fungsi grup?",
+      "answer": "Single-row function memproses tiap baris; fungsi grup meringkas banyak baris menjadi satu hasil.",
+      "emoji": "🧠",
+      "difficulty": "medium"
+    },
+    {
+      "question": "INSERT termasuk jenis bahasa SQL apa?",
+      "answer": "INSERT termasuk DML (Data Manipulation Language).",
+      "emoji": "➕",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Untuk apa ORDER BY digunakan?",
+      "answer": "ORDER BY digunakan untuk mengurutkan hasil query, misalnya secara menaik atau menurun dengan DESC.",
+      "emoji": "↕️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa fungsi dasar alias (AS) pada SELECT?",
+      "answer": "Alias dipakai untuk memberi nama sementara pada kolom hasil agar tampil lebih rapi dan mudah dibaca.",
+      "emoji": "🏷️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa itu sub-query?",
+      "answer": "Sub-query adalah query di dalam query lain yang hasilnya dipakai oleh query utama.",
+      "emoji": "🪄",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Dalam konteks hak cipta, apa bedanya hak moral dan hak ekonomi (ringkas)?",
+      "answer": "Hak moral terkait pengakuan/kehormatan pencipta, sedangkan hak ekonomi terkait manfaat finansial dari ciptaan.",
+      "emoji": "📜",
+      "difficulty": "hard"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi dasar sampai latihan query SELECT + WHERE.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi pada PDF membahas “Pengenalan Dasar SQL” dari sisi konsep dan kemampuan praktis query. Di bagian awal, buku menempatkan SQL sebagai bahasa untuk mengakses dan mengolah data di database. Kamu diperkenalkan bahwa SQL tidak hanya untuk menampilkan data, tetapi juga untuk melakukan interaksi seperti pembatasan (filtering) dan pengurutan, manipulasi data, penggunaan fungsi (termasuk fungsi yang bekerja pada satu baris dan fungsi grup), serta penggunaan sub-query dan operator set. Karena PDF memuat juga daftar isi yang luas, tutor sebaiknya membimbing siswa secara bertahap sesuai struktur bagian: Bagian 1 tentang pembatasan dan pengurutan data; Bagian 2 tentang interaksi dengan SQL termasuk SELECT dan manipulasi data; Bagian 3 tentang seleksi data dengan WHERE serta pengurutan data; Bagian 4 tentang fungsi-fungsi SQL; Bagian 5 tentang penggunaan sub query. Pada Bagian 2, kamu menampilkan data dengan perintah SELECT. Tutor bisa jelaskan kapabilitas SELECT: memilih semua kolom atau sebagian kolom, menulis query secara benar, menambahkan ekspresi aritmatik pada kolom hasil, mendefinisikan nilai NULL sebagai bagian dari output atau logika, menggunakan kolom alias agar hasil mudah dibaca, memakai operator concat untuk menggabungkan string, menggunakan karakter literal string (misalnya teks di dalam tanda kutip), dan memahami operator quote (q) bila didukung engine tertentu. Selain itu, siswa juga dikenalkan konsep duplikasi baris (misalnya perilaku SELECT DISTINCT vs default) dan cara menampilkan struktur tabel (biasanya melalui perintah khusus/metadata tergantung DBMS). Lalu pada Bagian 2 bagian manipulasi data, tutor perlu memastikan siswa paham perintah DML: INSERT untuk menambah baris, UPDATE untuk mengubah baris yang memenuhi kondisi, dan DELETE untuk menghapus baris. Pesan penting yang bisa ditekankan: UPDATE dan DELETE sebaiknya memakai WHERE agar tidak mengubah/menghapus seluruh tabel tanpa sadar. Pada Bagian 3, fokus meningkat pada seleksi data dengan klausa WHERE. Tutor jelaskan bahwa WHERE menjadi pusat pengontrolan baris yang tampil. Operator pembanding meliputi BETWEEN untuk rentang, IN untuk memilih nilai dari daftar, LIKE untuk pola string (menggunakan wildcard seperti % atau _), serta penanganan NULL. Bagian ini juga membahas operator logical AND, OR, dan NOT. Tutor harus menekankan prioritas operator: bagaimana AND dan OR dievaluasi, serta kapan sebaiknya gunakan tanda kurung agar maksud query jelas. Setelah filtering, siswa belajar pengurutan data dengan konsep ORDER BY. PDF menyebut urutan DESC (descending), mengurutkan dengan kolom alias, mengurutkan berdasarkan nomor kolom, dan mengurutkan beberapa kolom sekaligus. Artinya, tutor perlu membuat siswa memahami bahwa urutan sortir bersifat bertingkat: kolom pertama menentukan utama, lalu jika seri baru kolom kedua, dan seterusnya. Bagian 4 memperluas kemampuan dengan fungsi-fungsi SQL. Tutor perlu memetakan fungsi ke dua kategori besar: Single-row functions dan Multiple-row functions. Single-row functions bekerja pada setiap baris secara independen: (1) Fungsi karakter seperti LOWER, UPPER, INITCAP, serta manipulasi karakter seperti CONCAT, SUBSTR, LENGTH, INSTR, LPAD/RPAD, TRIM, REPLACE. (2) Fungsi angka seperti ROUND, TRUNC, MOD. (3) Fungsi tanggal seperti MONTHS_BETWEEN, ADD_MONTHS, NEXT_DAY, LAST_DAY, serta aspek ROUND/TRUNC untuk pengolahan tertentu. (4) Fungsi konversi seperti TO_CHAR, TO_NUMBER, TO_DATE. (5) Fungsi nested (fungsi di dalam fungsi). (6) Fungsi umum lainnya seperti NVL, NVL2, NULL IF, COALESCE, dan kondisi ekspresi. Untuk fungsi grup (agregasi), tutor menjelaskan AVG dan SUM pada tipe data angka; MIN dan MAX untuk angka/karakter/tanggal; COUNT untuk menghitung jumlah baris; bagaimana fungsi grup berinteraksi dengan NULL; klausa grup (misalnya ide GROUP BY); serta konsep fungsi grup nested (bersarang) bila ada. Pada akhir Bagian 4, PDF membahas Multiple-row functions yang berkaitan dengan join antar tabel: natural join (dengan USING dan ON), self join, nonequi join, dan outer join (left/right/full). Tutor perlu menekankan perbedaan inner join vs outer join: outer join menjaga baris tetap tampil meskipun pasangan tidak ada. Lalu dibahas juga Cartesian Products yang merupakan hasil kombinasi semua kemungkinan pasangan baris (biasanya berisiko menghasilkan hasil sangat besar bila tidak disaring). Bagian 5 membahas penggunaan sub-query. Tutor perlu membimbing konsep bahwa sub-query adalah query di dalam query, dipakai untuk menghasilkan nilai atau daftar yang digunakan pada query utama. PDF menyebut macam sub-query: single-row operation dan multiple-row operation. Tutor bisa memberi contoh umum pola IN (SELECT ...) untuk multiple-row dan operator pembanding langsung untuk single-row. Selain itu, PDF juga menyebut operator set, yang secara konsep membantu membandingkan himpunan hasil query (misalnya gabungan/irisan/perbedaan tergantung DBMS), jadi tutor harus mengaitkan ke pola “hasil query adalah himpunan” bukan sekadar list biasa. Terakhir, bagian awal PDF memuat materi UU No 28 tahun 2014 tentang Hak Cipta: menegaskan bahwa hak cipta adalah hak eksklusif yang terdiri atas hak moral dan hak ekonomi. PDF juga menyebut pembatasan perlindungan dalam situasi tertentu seperti kutipan singkat untuk pelaporan peristiwa aktual, penggandaan untuk penelitian, penggandaan untuk pengajaran (dengan pengecualian pertunjukan dan fonogram yang telah diumumkan sebagai bahan ajar), serta penggunaan untuk pendidikan dan pengembangan ilmu pengetahuan yang memungkinkan suatu ciptaan dapat digunakan tanpa izin pihak-pihak tertentu. Tutor sebaiknya menyisipkan pengingat etika: siswa boleh belajar dan mengutip seperlunya untuk konteks pendidikan, namun tidak boleh melakukan pelanggaran hak ekonomi untuk penggunaan komersial yang dapat dikenai sanksi pidana dan/atau denda sesuai Pasal 113. Dengan cara ini tutor menggabungkan literasi teknis SQL (SELECT/WHERE/ORDER BY/fungsi/join/subquery) dan literasi aturan hak cipta agar aktivitas belajar tetap aman dan bertanggung jawab."
+}

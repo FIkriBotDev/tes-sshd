@@ -406,5 +406,17 @@
     "courseUrl": "/course/e70a1c75de242c265dd98b7cffbbec5b",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "c8e42d404c8f49b8a5142940e4811841",
+    "courseName": "SQL Basics: Dari SELECT sampai Subquery (plus Hak Cipta yang Perlu Kamu Tahu)",
+    "courseEmoji": "🗄️",
+    "courseColor": "#3b82f6",
+    "courseFileName": "610357-pengenalan-dasar-sql-a10ad258.pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "20-06-2026, 09.49.05",
+    "courseUrl": "/course/c8e42d404c8f49b8a5142940e4811841",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
