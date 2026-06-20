@@ -105,5 +105,13 @@
     "plan": 1,
     "creditLeft": 5,
     "courseCreated": 1
+  },
+  {
+    "namaLengkap": "rndm",
+    "email": "rndm@gmail.com",
+    "password": "$2b$10$AlibWG5bYYSpmL7xFeXSw.0QeML.bNahcPNe/lqbit7xDNeORNVES",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
