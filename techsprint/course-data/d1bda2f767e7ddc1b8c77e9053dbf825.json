@@ -1,0 +1,386 @@
+{
+  "title": "Belajar JavaScript dari Nol: Dasar Skrip Web + Variabel + Operator + Form Interaktif",
+  "summary": "Kamu akan belajar asal-usul JavaScript, kenapa JavaScript penting di web, lalu cara menulis skrip pertama di HTML. Setelah itu kamu praktikkan variabel, tipe data, operator, dan cara memasukkan data lewat form (input, radio, checkbox, textarea, select).",
+  "emoji": "⚡",
+  "color": "#f59e0b",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "JavaScript: Skrip yang Hidup di Browser",
+      "icon": "⚡",
+      "explanation": "JavaScript adalah bahasa pemrograman berbentuk skrip yang berjalan di browser saat halaman HTML dimuat. Artinya perintah JavaScript dieksekusi di sisi user (browser), bukan di server. JavaScript juga menjadi bahasa skrip pertama yang populer untuk web sehingga bisa menambah interaksi pada halaman HTML.",
+      "analogy": "Bayangin HTML itu seperti poster, sementara JavaScript itu seperti aktor yang bergerak saat poster dipajang di depanmu.",
+      "highlight": "dieksekusi di browser",
+      "keyPoints": [
+        "Berjalan di sisi user (browser)",
+        "Script tertanam di HTML",
+        "Tidak butuh kompilator khusus karena ada di browser"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Peta Konsep Jalur Eksekusi",
+      "icon": "🗺️",
+      "items": [
+        {
+          "label": "Tampilan",
+          "value": "Browser membaca HTML",
+          "icon": "🌐"
+        },
+        {
+          "label": "Skrip",
+          "value": "Script JavaScript ikut terselip di HTML",
+          "icon": "⚡"
+        },
+        {
+          "label": "Eksekusi",
+          "value": "Perintah dijalankan di sisi browser",
+          "icon": "🧠"
+        },
+        {
+          "label": "Output",
+          "value": "Teks/aksi muncul di halaman",
+          "icon": "📄"
+        }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Cara Menulis JavaScript di HTML (2 Metode)",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Metode 1: Script di file HTML yang sama",
+          "description": "Tulis kode JavaScript di dalam tag <SCRIPT> di bagian HTML (seringnya di dalam <BODY>).",
+          "tip": "Mulai dari contoh kecil dulu agar mudah debug."
+        },
+        {
+          "number": 2,
+          "title": "Metode 2: Script dipisah jadi file .js",
+          "description": "Simpan kode JavaScript di file berekstensi .js lalu panggil menggunakan <SCRIPT SRC=\"nama.js\">.</SCRIPT>.",
+          "tip": "Pakai pemisahan ini supaya HTML tetap rapi dan kode mudah diatur."
+        },
+        {
+          "number": 3,
+          "title": "Pahami cara output teks",
+          "description": "Gunakan document.write untuk tanpa ganti baris, dan document.writeln untuk dengan ganti baris.",
+          "tip": "Kalau outputmu terasa 'berantakan', cek perbedaan write vs writeln."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Playground 1: Program Teks Pertama",
+      "icon": "💻",
+      "language": "html",
+      "instruction": "Jalankan HTML ini. Ubah isi teks pada document.write/writeln lalu lihat hasilnya di halaman. Jangan lupa: writeln akan membuat baris baru.",
+      "fileName": "playground-1.html",
+      "defaultCode": "<!DOCTYPE html> <html> <head> <meta charset=\"UTF-8\"> <title>Program Pertama JavaScript</title> </head> <body> <h3>Output dari JavaScript:</h3> <div id=\"out\"></div> <script> const out = document.getElementById('out'); out.innerHTML = ''; out.innerHTML += 'Belajar Pemrograman Javascript!'; out.innerHTML += '<br/>Ini ditampilkan oleh JavaScript di browser.'; console.log('JavaScript berhasil menampilkan output'); </script> </body> </html>",
+      "hint": "Challenge: ganti kalimat pertama jadi 'Halo Dunia dari JavaScript!' dan tambahkan 1 baris lagi."
+    },
+    {
+      "type": "concept_card",
+      "title": "Komentar: Superpower untuk Kamu yang Membaca Nanti",
+      "icon": "📝",
+      "explanation": "Komentar membantu kamu atau orang lain memahami kode tanpa mengubah cara program berjalan. JavaScript punya dua gaya komentar: // untuk komentar satu baris, dan /* ... */ untuk komentar blok.",
+      "analogy": "Komentar itu seperti catatan tempel di buku resep: tidak dimakan, tapi bikin proses memasak jadi lebih paham.",
+      "highlight": "// dan /* */",
+      "keyPoints": [
+        "Komentar tidak dieksekusi",
+        "Gunakan // untuk catatan singkat",
+        "Gunakan /* */ untuk penjelasan panjang"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Playground 2: Variabel, Tipe Data, dan Operator (Console)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode ini. Ubah nilai variabel A/B dan lihat perubahan hasil operasi di console. Pastikan kamu memahami mana yang string dan mana yang numerik.",
+      "fileName": "playground-2.js",
+      "defaultCode": "const A = 100; const B = 200; const C = A + B; console.log('A + B =', C); const S1 = \"Java\"; const S2 = \"Script\"; const nama = S1 + S2; console.log('Penggabungan string =', nama); const Y = 91; const X = (Y > 90); console.log('Y > 90 ?', X); const hex = 0x2F; console.log('0x2F dalam desimal =', hex);",
+      "hint": "Challenge: coba ganti A menjadi \"100\" (string) lalu lihat bedanya saat pakai +."
+    },
+    {
+      "type": "concept_card",
+      "title": "Variabel & Aturan Penamaan",
+      "icon": "📦",
+      "explanation": "Variabel dipakai untuk menyimpan nilai/informasi. Di JavaScript pendeklarasian variabel bersifat fleksibel: saat kamu memberi nilai, JavaScript menganggap variabel sudah dideklarasikan. Tapi tetap ada aturan penamaan: harus diawali huruf atau underscore, tidak boleh pakai spasi, huruf besar-kecil itu beda, dan tidak boleh memakai kata perintah JavaScript.",
+      "analogy": "Variabel itu seperti kotak penyimpanan di meja belajarmu: isinya bisa angka, teks, atau status kondisi.",
+      "highlight": "huruf besar-kecil berbeda",
+      "keyPoints": [
+        "Variabel menyimpan nilai",
+        "Deklarasi bisa fleksibel",
+        "Aturan penamaan wajib dipatuhi"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Tipe Data Implisit: Number, String, Boolean, Null",
+      "icon": "🧩",
+      "explanation": "JavaScript tidak mendeklarasikan tipe data secara eksplisit. Tipe data ditentukan secara implisit dari nilai yang kamu masukkan ke variabel. Tipe implisit yang dibahas di materi ini: numerik (integer/float), string, boolean (true/false), dan null (belum diinisialisasi).",
+      "analogy": "Bayangkan gelas: kalau kamu isi air, gelas otomatis jadi 'gelas berisi air' tanpa harus kamu bilang dulu.",
+      "highlight": "ditentukan dari nilai",
+      "keyPoints": [
+        "Numerik: integer atau pecahan",
+        "String: pakai tanda kutip",
+        "Boolean: true/false, Null: belum punya nilai awal"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Operator: Aritmatika, Assign, Pembanding, Logika, String",
+      "icon": "🔧",
+      "explanation": "Operator adalah 'alat' untuk melakukan operasi. Materi ini membahas operator aritmatika (+, -, *, /, %, negasi, ++, --), operator pemberian nilai (+=, -=, dll), pembanding (==, !=, >, <, >=, <=), operator logika (&&, ||, !), serta operator string untuk penggabungan (misalnya \"Java\" + \"Script\").",
+      "analogy": "Kalau variabel itu kotak, operator itu seperti tombol: tekanannya berbeda-beda menghasilkan hasil berbeda.",
+      "highlight": "+ untuk string (gabung)",
+      "keyPoints": [
+        "Aritmatika untuk angka",
+        "Assign untuk update nilai cepat",
+        "Pembanding & logika untuk keputusan"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Playground 3: Input Keyboard + Penjumlahan dengan alert",
+      "icon": "🧠",
+      "language": "html",
+      "instruction": "Masukkan 2 bilangan di form lalu klik 'Jumlahkan'. Jika kamu mengisi bukan angka, program akan menganggapnya 0 (sesuai logika parseFloat dan isNaN).",
+      "fileName": "playground-3.html",
+      "defaultCode": "<!DOCTYPE html> <html> <head> <meta charset=\"UTF-8\"> <title>Input Keyboard JavaScript</title> </head> <body> <h3>Memasukkan Data Lewat Keyboard</h3> <form name=\"fform\"> <div> Bilangan Pertama: <input type=\"text\" size=\"11\" name=\"bilangan1\" /></div> <div> Bilangan Kedua: <input type=\"text\" size=\"11\" name=\"bilangan2\" /></div> <div style=\"margin-top:10px;\"> <button type=\"button\" onclick=\"jumlah()\">Jumlahkan</button> <button type=\"reset\">Ulang</button> </div> </form> <script> function jumlah(){ let bil1 = parseFloat(document.fform.bilangan1.value); if (isNaN(bil1)) bil1 = 0.0; let bil2 = parseFloat(document.fform.bilangan2.value); if (isNaN(bil2)) bil2 = 0.0; const hasil = bil1 + bil2; alert('Hasil Penjumlahan = ' + hasil); } </script> </body> </html>",
+      "hint": "Challenge: sebelum alert, tampilkan juga bil1 dan bil2 di console.log."
+    },
+    {
+      "type": "concept_card",
+      "title": "Objek Form: Text, Radio, Checkbox, Textarea, Select",
+      "icon": "🧾",
+      "explanation": "Untuk memasukkan data, JavaScript umumnya membaca nilai dari komponen form. Materi ini memperkenalkan objek Text (input teks), Radio (pilihan tunggal berbentuk grup), dan Checkbox (kotak cek). Polanya mirip: kamu cek properti seperti .checked untuk radio/checkbox, lalu ambil nilai input dari elemen form.",
+      "analogy": "Form itu seperti kuesioner: Text buat jawaban bebas, Radio buat pilih satu, Checkbox buat centang satu atau banyak.",
+      "highlight": "akses lewat document.formName.fieldName",
+      "keyPoints": [
+        "Text: ambil nilai .value",
+        "Radio: cek .checked dan ambil index/value",
+        "Checkbox: juga pakai .checked untuk status centang"
+      ]
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "JavaScript",
+          "definition": "Bahasa skrip yang berjalan di browser untuk membuat halaman web interaktif.",
+          "example": "Menampilkan teks/alert saat tombol diklik."
+        },
+        {
+          "term": "document.write",
+          "definition": "Menulis teks ke halaman tanpa ganti baris.",
+          "example": "document.write('Halo');"
+        },
+        {
+          "term": "document.writeln",
+          "definition": "Menulis teks ke halaman dan otomatis ganti baris.",
+          "example": "document.writeln('Baris baru');"
+        },
+        {
+          "term": "Komentar",
+          "definition": "Catatan di kode yang tidak dijalankan oleh program.",
+          "example": "// ini komentar"
+        },
+        {
+          "term": "Variabel",
+          "definition": "Tempat menyimpan nilai agar bisa dipakai lagi.",
+          "example": "var X = 1998;"
+        },
+        {
+          "term": "String",
+          "definition": "Tipe data berupa teks, diapit tanda kutip.",
+          "example": "var s = 'April';"
+        },
+        {
+          "term": "Boolean",
+          "definition": "Tipe data untuk kondisi true atau false.",
+          "example": "var ok = (Y > 90);"
+        },
+        {
+          "term": "Null",
+          "definition": "Tipe data untuk kondisi 'belum diinisialisasi' atau kosong nilai awal.",
+          "example": "var z = null;"
+        },
+        {
+          "term": "Operator Logika",
+          "definition": "Operator untuk menggabungkan/menolak kondisi boolean.",
+          "example": "&&, ||, !"
+        }
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "Null Itu Kosong yang Disengaja",
+      "icon": "💡",
+      "realWorld": "Kamu bikin form pendaftaran lalu kolom 'nomor telepon' dibiarkan kosong sementara.",
+      "connection": "Materi membahas tipe Null sebagai variabel yang tidak diberi nilai awal.",
+      "insight": "Null membantu menandai bahwa sebuah nilai memang belum diisi, bukan sekadar salah ketik angka."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "JavaScript pertama kali diperkenalkan pada tahun berapa menurut materi?",
+      "options": [
+        "1990",
+        "1995",
+        "2000",
+        "2005"
+      ],
+      "answer": "1995",
+      "explanation": "Materi menyebut Netscape memperkenalkan JavaScript pertama kali pada tahun 1995.",
+      "xpReward": 50
+    },
+    {
+      "question": "Di sisi mana JavaScript biasanya dieksekusi menurut materi (untuk skrip di browser)?",
+      "options": [
+        "Di server web",
+        "Di database",
+        "Di browser (sisi user)",
+        "Di perangkat input keyboard"
+      ],
+      "answer": "Di browser (sisi user)",
+      "explanation": "Materi menjelaskan perintah dieksekusi di sisi user yaitu browser, bukan di server.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa fungsi utama document.write dalam materi?",
+      "options": [
+        "Menulis teks dan ganti baris",
+        "Menulis teks tanpa ganti baris",
+        "Membuat variabel baru",
+        "Menghapus teks di halaman"
+      ],
+      "answer": "Menulis teks tanpa ganti baris",
+      "explanation": "document.write dipakai untuk menulis teks tanpa ganti baris.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa bedanya document.writeln dibanding document.write?",
+      "options": [
+        "writeln menulis tanpa ganti baris",
+        "writeln menambahkan spasi",
+        "writeln menulis dengan ganti baris",
+        "writeln hanya untuk console.log"
+      ],
+      "answer": "writeln menulis dengan ganti baris",
+      "explanation": "Materi menyebut writeln digunakan untuk menuliskan teks dengan ganti baris.",
+      "xpReward": 50
+    },
+    {
+      "question": "Komentar satu baris di JavaScript menggunakan simbol apa?",
+      "options": [
+        "/*",
+        "//",
+        "#",
+        "<!--"
+      ],
+      "answer": "//",
+      "explanation": "Materi menyebut //ini komentar untuk komentar satu baris.",
+      "xpReward": 50
+    },
+    {
+      "question": "Pemberian nilai seperti X += Y termasuk jenis operator apa?",
+      "options": [
+        "Operator pembanding",
+        "Operator assign (pemberian nilai)",
+        "Operator logika",
+        "Operator string"
+      ],
+      "answer": "Operator assign (pemberian nilai)",
+      "explanation": "Materi menjelaskan operator +=, -=, *=, /=, %= untuk pemberian nilai/update.",
+      "xpReward": 50
+    },
+    {
+      "question": "Operator mana yang digunakan untuk logika AND menurut materi?",
+      "options": [
+        "&&",
+        "||",
+        "!",
+        "++"
+      ],
+      "answer": "&&",
+      "explanation": "Materi menyebut && adalah operator logika AND.",
+      "xpReward": 50
+    },
+    {
+      "question": "Operator string untuk menggabungkan teks menggunakan tanda apa?",
+      "options": [
+        "-",
+        "*",
+        "+",
+        "%"
+      ],
+      "answer": "+",
+      "explanation": "Materi memberi contoh nama = \"Java\" + \"Script\" menghasilkan JavaScript.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "JavaScript dieksekusi di mana?",
+      "answer": "Di browser pada sisi user, saat halaman HTML yang mengandung script dimuat.",
+      "emoji": "🌐",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Untuk apa document.writeln dipakai?",
+      "answer": "Untuk menulis teks ke halaman dan otomatis ganti baris.",
+      "emoji": "🧾",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Sebutkan dua gaya komentar JavaScript yang ada di materi.",
+      "answer": "// untuk komentar satu baris dan /* ... */ untuk komentar blok.",
+      "emoji": "📝",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Sebutkan aturan penamaan variabel yang disebut dalam materi.",
+      "answer": "Harus diawali huruf atau underscore, tidak boleh pakai spasi, huruf besar-kecil beda, dan tidak boleh memakai kata perintah JavaScript.",
+      "emoji": "📦",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Tipe data boolean bernilai apa saja?",
+      "answer": "Hanya true atau false.",
+      "emoji": "✅",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa itu null menurut materi?",
+      "answer": "Nilai yang merepresentasikan variabel yang tidak diberi nilai awal (inisialisasi).",
+      "emoji": "🕳️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Operator mana yang termasuk operator aritmatika biner untuk penjumlahan?",
+      "answer": "+",
+      "emoji": "➕",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Operator mana yang dipakai untuk memeriksa tidak sama (not equal) dalam materi?",
+      "answer": "!=",
+      "emoji": "≠",
+      "difficulty": "medium"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama tentang pengantar JavaScript dan program teks dasar.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Modul 1 membahas pengantar JavaScript: sejarah singkat, peran bahasa sebagai skrip web, kebutuhan dasar untuk belajar, cara penulisan di HTML, program pertama, serta komentar. Materi menjelaskan bahwa JavaScript diperkenalkan oleh Netscape pada tahun 1995. Pada awalnya bahasa ini bernama LiveScript dan berfungsi sebagai bahasa sederhana untuk browser Netscape Navigator 2. Saat itu JavaScript mendapatkan banyak kritik karena isu keamanan, pengembangannya yang terasa terburu-buru, serta minimnya pesan kesalahan ketika terjadi kesalahan sintaks saat menulis program. Lalu karena kerjasama antara Netscape dan Sun (pengembang bahasa pemrograman Java), Netscape memberikan nama JavaScript pada tanggal 4 Desember 1995. Pada waktu yang sama, Microsoft mengadaptasi teknologi ini di Internet Explorer 3 dengan istilah Jscript. Dari sisi konsep, JavaScript digambarkan sebagai bahasa berbentuk kumpulan skrip yang berjalan pada dokumen HTML. Sepanjang sejarah internet, JavaScript disebut sebagai bahasa skrip pertama untuk web yang memungkinkan kemampuan tambahan terhadap HTML. Artinya, JavaScript memberi interaksi/aksi di sisi user, khususnya di sisi browser, bukan di sisi server web. JavaScript bergantung pada browser yang memanggil halaman web yang mengandung skrip, dan skrip biasanya terselip di dalam dokumen HTML. Materi juga menekankan bahwa JavaScript tidak memerlukan kompilator atau penterjemah khusus untuk menjalankannya; kompilator JavaScript sudah termasuk dalam browser. Ini dibandingkan dengan Java yang memerlukan kompilator khusus di sisi user/klien.\n\nSelanjutnya, modul membahas keperluan belajar JavaScript: dua piranti utama yaitu teks editor dan web browser. Teks editor digunakan untuk menuliskan kode JavaScript, contohnya Notepad dan Ultra Edit. Web browser digunakan untuk menampilkan halaman yang mengandung kode JavaScript, dan browser harus mendukung JavaScript; contoh yang disebut adalah Internet Explorer dan Netscape Navigator. Bagian penulisan JavaScript menjelaskan bahwa kode JavaScript ditulis pada file HTML, dengan dua cara. Pertama, menulis JavaScript pada file yang sama dengan HTML: gunakan tag <SCRIPT LANGUAGE=\"JavaScript\"> program </SCRIPT> yang biasanya diletakkan di antara tag <BODY>…</BODY>. Contoh strukturnya ditunjukkan: <HTML><HEAD>…</HEAD><BODY><SCRIPT LANGUAGE=\"JavaScript\"> kode javascript </SCRIPT> kode HTML lain </BODY></HTML>. Kedua, menulis JavaScript pada file terpisah: dibuat file berekstensi .js lalu dipanggil dari HTML menggunakan <SCRIPT SRC=\"namafile.js\">…</SCRIPT>. Karena logika JavaScript sudah berada di file terpisah, di dalam tag SCRIPT pada HTML tidak perlu menuliskan kode JavaScript lagi.\n\nMateri kemudian masuk ke program pertama JavaScript yang menampilkan teks \"Belajar Pemrograman Javascript\". Contoh kode memakai document.write di dalam tag SCRIPT. Ada penekanan penggunaan document.write dan document.writeln: document.write menulis teks tanpa ganti baris, sedangkan document.writeln menulis teks dengan ganti baris. Materi juga memberi contoh lain yang menampilkan beberapa baris dan format menggunakan tag HTML seperti <PRE>, <B>, <FONT SIZE=5>, <I> melalui document.write/writeln. Penjelasan selanjutnya adalah contoh ketika JavaScript diletakkan di file lain (misalnya isi.js) lalu dipanggil dari file HTML. File isi.js berisi document.writeln untuk membangun tampilan seperti garis HR dan judul-judul universitas, sedangkan HTML memanggilnya lewat <SCRIPT language=\"JavaScript\" SRC=\"isi.js\"></SCRIPT>.\n\nBagian komentar menjelaskan fasilitas untuk menuliskan komentar seperti bahasa pemrograman lain. Komentar berguna agar ketika kamu atau orang lain membaca program di kemudian hari, mereka mudah memahami maksud kode. Dua cara komentar yang diajarkan adalah // untuk komentar satu baris, dan /* ... */ untuk komentar blok. Ini penting karena membantu dokumentasi internal saat latihan, apalagi ketika program semakin panjang.\n\nModul 2 berfokus pada variabel dan tipe data serta operator. Modul 2.1 membahas variabel: variabel digunakan untuk menyimpan nilai atau informasi. Materi menyebutkan ada pendeklarasian yang bersifat opsional: kamu boleh mendeklarasikan atau tidak, tidak menjadi masalah; jika memberi nilai pada variabel, JavaScript menganggap variabel sudah dideklarasikan. Aturan penamaan variabel yang disebut: harus diawali karakter (huruf atau underscore), tidak boleh menggunakan spasi, huruf kapital dan kecil memiliki arti berbeda, dan tidak boleh menggunakan kata-kata yang merupakan perintah dalam JavaScript. Sintaks deklarasi yang dicontohkan: var nama_variabel = nilai atau Nama_variabel = nilai, termasuk contoh var nama; var nama = \"Zaskia Mecca\"; var X=1998; var Y; Nama=\"Bunga Lestari\"; X=1990; Y=08170223513. Modul 2.2 membahas tipe data implisit: berbeda dari bahasa lain yang mungkin mendeklarasikan tipe secara eksplisit, JavaScript tidak memiliki tipe data secara eksplisit. Namun JavaScript mempunyai tipe data implisit, dengan empat macam tipe yang dibahas: Numerik (misalnya 0222532531, 1000, 45, 3.146789), String (misalnya \"Hallo\", \"April\", alamat dalam teks), Boolean (true/false), dan Null (variabel yang tidak diinisialisasi).\n\nModul 2.3 membahas tipe numerik: JavaScript mengenal dua macam tipe numerik yaitu bilangan bulat (integer) dan bilangan pecahan (real/float). Untuk integer bisa direpresentasikan dalam basis desimal, oktal, atau heksadesimal. Materi memberi contoh var A=100; var B=0x2F. Untuk bilangan pecahan/real bisa menggunakan tanda titik atau notasi ilmiah (notasi E). Contoh: var a=3.14533567; var b=1.23456E+3. Modul 2.4 membahas tipe string: string dituliskan di antara tanda petik tunggal '...' atau petik ganda \"...\". Modul 2.5 membahas boolean: hanya true atau false, biasanya dipakai mengecek kondisi. Contoh var X = (Y > 90); yang berarti jika Y lebih besar dari 90 maka X bernilai True. Modul 2.6 membahas null: tipe null untuk variabel yang tidak diberi nilai awal.\n\nModul 2.7 membahas operator yang terbagi menjadi enam: operator aritmatika, operator pemberian nilai (assign), operator manipulasi bit, operator pembanding, operator logika, dan operator string (gabungan). Materi menjelaskan operator aritmatika: numerik tunggal dan biner. Contoh biner untuk penjumlahan +, pengurangan -, perkalian *, pembagian /, modulus %. Operator tunggal meliputi negasi -, serta ++ (penambahan dengan satu) dan -- (pengurangan dengan satu). Modul 2.7b membahas operator pemberian nilai: = sama dengan, += setara dengan X=X+Y, -= setara dengan X=X-Y, *=, /=, %= serta juga termasuk &= (bit AND), |= (bit OR). Materi 2.7c operator manipulasi bit: & AND, | OR, ^ XOR, ~ NOT, << geser kiri, >> geser kanan, >>> geser kanan dengan pengisian nol. Materi memberi contoh A=12 (1100b), B=10 (1010b), C=A&B menghasilkan 1000b, lalu contoh A<<2 menjadi 48 dan A>>1 menjadi 6. Modul 2.7d operator pembanding: == sama dengan, != tidak sama dengan, >, <, >=, <=; operator ini bisa membandingkan numerik, string, maupun ekspresi. Modul 2.7e operator logika: && AND, || OR, ! NOT, dengan contoh A=true, B=false menghasilkan C=false untuk A&&B, D untuk A||B, dan E=!A. Terakhir materi 2.7f operator string: penggabungan string menggunakan tanda +.\n\nModul 2.8 membahas memasukkan data dari keyboard menggunakan perintah input. Contoh program memakai fungsi jumlah() yang membaca bilangan dari form (document.fform.bilangan1.value dan bilangan2.value), mengubahnya jadi angka dengan parseFloat, lalu mengecek isNaN untuk memastikan jika input bukan angka, nilainya diset 0.0. Kemudian hasil penjumlahan ditampilkan lewat alert dengan string 'Hasil Penjumlahan = ' + hasil. Materi memberi latihan: memodifikasi program sebelumnya agar bisa melakukan pengurangan, perkalian, dan pembagian. Ini berarti siswa perlu membuat logika operasi lain selain +.\n\nModul 3 (yang mulai dibahas sampai bagian objek radio) membahas objek untuk memasukkan data. Modul 3.1 menyatakan ada beberapa objek yang biasanya terdapat dalam suatu form: Text, Radio, Checkbox, Textarea, dan Select. Objek-objek ini digunakan untuk mengumpulkan input dari user. Modul 3.2 membahas objek Text: cara mengambil nilai dari elemen input teks biasanya lewat document.fform.<nama>.value. Contoh memperlihatkan fungsi tekan() yang mengambil nama dan alamat lalu menaruhnya ke field output onama dan oalamat. Modul 3.3 membahas objek Radio: radio digunakan untuk memilih data, berbentuk array/grup, dan akses satu tombol radio menggunakan radio[indeks]. Materi juga menyebut properti checked bernilai true jika dipilih dan false jika tidak. Selain checked, kamu juga perlu melihat nilai radio tertentu (misalnya value wanita/pria) untuk menentukan output. Materi memberi contoh fungsi radio_box(form) yang memeriksa form.wanita.checked; jika true maka ket='Wanita', selain itu ket='Pria', lalu menampilkan alert. Contoh HTML radio memakai input type=\"radio\" name=\"wanita\" value=\"wanita\" dan tombol confirm yang memanggil radio_box(this.form). Materi juga menyebut reset untuk mengembalikan pilihan.\n\nCatatan untuk tutor: jelaskan konsep interaksi form secara bertahap (text bebas dulu, lalu radio pilihan tunggal, lalu checkbox pilihan ganda) karena siswa perlu membangun mental model bahwa JavaScript membaca properti elemen DOM/form. Tekankan perbedaan .value (data input) dan .checked (status terpilih untuk radio/checkbox). Tekankan juga pentingnya parseFloat dan isNaN pada kasus input angka dari keyboard."
+}

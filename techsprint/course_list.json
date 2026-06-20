@@ -430,5 +430,17 @@
     "courseUrl": "/course/bf07584330204d09cae34a452a355069",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "d1bda2f767e7ddc1b8c77e9053dbf825",
+    "courseName": "Belajar JavaScript dari Nol: Dasar Skrip Web + Variabel + Operator + Form Interaktif",
+    "courseEmoji": "⚡",
+    "courseColor": "#f59e0b",
+    "courseFileName": "Modul Lengkap Javascript.pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "20-06-2026, 10.16.24",
+    "courseUrl": "/course/d1bda2f767e7ddc1b8c77e9053dbf825",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
