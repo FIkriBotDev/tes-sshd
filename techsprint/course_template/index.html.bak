@@ -12,10 +12,6 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.2/ace.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-    <!-- Python Support (Pyodide) -->
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
-    <!-- SQL Support (SQL.js) -->
-    <script src="https://cdn.jsdelivr.net/npm/sql.js@1.8.0/dist/sql-wasm.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -739,51 +735,6 @@
     let quizState = { current: 0, correct: 0, total: 0 };
     let progressSaveTimer = null;
     let codeEditors = {}; // Store Ace editor instances
-    let pyodideReady = false;
-    let pyodideInstance = null;
-    let sqlDB = null;
-    let sqlReady = false;
-    
-    // Initialize Pyodide (Python runtime)
-    async function initPyodide() {
-        if (pyodideReady) return pyodideInstance;
-        try {
-            console.log('🐍 Loading Pyodide...');
-            pyodideInstance = await loadPyodide({
-                indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.24.1/full/'
-            });
-            pyodideReady = true;
-            console.log('✅ Pyodide ready!');
-            return pyodideInstance;
-        } catch (error) {
-            console.error('❌ Error loading Pyodide:', error);
-            return null;
-        }
-    }
-    
-    // Initialize SQL.js (SQL runtime)
-    async function initSQL() {
-        if (sqlReady && sqlDB) return sqlDB;
-        try {
-            console.log('🗄️ Loading SQL.js...');
-            const SQL = await initSqlJs({
-                locateFile: file => `https://cdn.jsdelivr.net/npm/sql.js@1.8.0/dist/${file}`
-            });
-            sqlDB = new SQL.Database();
-            sqlReady = true;
-            console.log('✅ SQL.js ready!');
-            return sqlDB;
-        } catch (error) {
-            console.error('❌ Error loading SQL.js:', error);
-            return null;
-        }
-    }
-    
-    // Preload Python and SQL on page load (with delay to not block UI)
-    setTimeout(() => {
-        initPyodide();
-        initSQL();
-    }, 2000);
 
     // ══════════════════════════════════════════════════════════
     // INIT
@@ -1192,9 +1143,7 @@
             javascript: `// Coba edit code ini!\nconsole.log("Hello, JadiKelas! 🚀");\n\nconst nama = "Student";\nconsole.log("Selamat belajar, " + nama);`,
             python: `# Coba edit code ini!\nprint("Hello, JadiKelas! 🚀")\n\nnama = "Student"\nprint(f"Selamat belajar, {nama}")`,
             html: `<!DOCTYPE html>\n<html>\n<head>\n  <title>Playground</title>\n</head>\n<body>\n  <h1>Hello, JadiKelas! 🚀</h1>\n  <p>Edit HTML ini sesuka hati!</p>\n</body>\n</html>`,
-            css: `.container {\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  padding: 20px;\n  border-radius: 10px;\n  color: white;\n}`,
-            sql: `-- Coba edit SQL ini!\nCREATE TABLE siswa (\n  id INTEGER PRIMARY KEY,\n  nama TEXT NOT NULL,\n  nilai INTEGER\n);\n\nINSERT INTO siswa VALUES (1, 'Budi', 90);\nINSERT INTO siswa VALUES (2, 'Ani', 95);\n\nSELECT * FROM siswa;`,
-            java: `// Java playground (preview only)\npublic class Main {\n  public static void main(String[] args) {\n    System.out.println("Hello, JadiKelas!");\n    String nama = "Student";\n    System.out.println("Selamat belajar, " + nama);\n  }\n}`
+            css: `.container {\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n  padding: 20px;\n  border-radius: 10px;\n  color: white;\n}`
         };
         return defaults[language] || `// Code playground for ${language}\nconsole.log("Start coding!");`;
     }
@@ -1243,23 +1192,9 @@
             if (language === 'javascript') {
                 runJavaScript(code, outputEl);
             } else if (language === 'python') {
-                runPython(code, outputEl);
+                outputEl.innerHTML = '<div class="text-yellow-400">⚠️ Python playground coming soon! Saat ini hanya support JavaScript.</div>';
             } else if (language === 'html') {
                 runHTML(code, outputEl);
-            } else if (language === 'sql') {
-                runSQL(code, outputEl);
-            } else if (language === 'java') {
-                outputEl.innerHTML = `<div class="text-blue-400">
-                    <div class="mb-2">📝 Java Code Preview:</div>
-                    <pre class="text-slate-300 bg-slate-800 p-3 rounded text-sm overflow-auto">${escapeHtml(code)}</pre>
-                    <div class="mt-2 text-yellow-400">⚠️ Java compilation tidak didukung di browser. Gunakan IDE seperti IntelliJ IDEA atau Eclipse untuk menjalankan code Java.</div>
-                </div>`;
-            } else if (language === 'css') {
-                outputEl.innerHTML = `<div class="text-blue-400">
-                    <div class="mb-2">🎨 CSS Preview:</div>
-                    <pre class="text-slate-300 bg-slate-800 p-3 rounded text-sm overflow-auto">${escapeHtml(code)}</pre>
-                    <div class="mt-2 text-slate-400">💡 Tip: Gabungkan dengan HTML playground untuk melihat hasil CSS.</div>
-                </div>`;
             } else {
                 outputEl.innerHTML = `<div class="text-yellow-400">⚠️ ${language.toUpperCase()} playground coming soon!</div>`;
             }
@@ -1308,150 +1243,6 @@
         iframeDoc.open();
         iframeDoc.write(code);
         iframeDoc.close();
-    }
-
-    async function runPython(code, outputEl) {
-        try {
-            if (!pyodideReady) {
-                outputEl.innerHTML = '<div class="text-yellow-400 mb-2">⏳ Loading Python interpreter...</div>';
-                const pyodide = await initPyodide();
-                if (!pyodide) {
-                    outputEl.innerHTML = '<div class="text-red-400">❌ Gagal memuat Python. Coba refresh halaman.</div>';
-                    return;
-                }
-            }
-            
-            // Capture stdout
-            pyodideInstance.runPython(`
-import sys
-from io import StringIO
-sys.stdout = StringIO()
-            `);
-            
-            // Run user code
-            try {
-                pyodideInstance.runPython(code);
-                
-                // Get output
-                const stdout = pyodideInstance.runPython('sys.stdout.getvalue()');
-                
-                if (stdout && stdout.trim()) {
-                    outputEl.innerHTML = '<div class="text-green-400">✓ Output:</div>' + 
-                        stdout.split('\n').map(line => 
-                            `<div class="mt-1 text-slate-200">${escapeHtml(line)}</div>`
-                        ).join('');
-                } else {
-                    outputEl.innerHTML = '<div class="text-slate-400">✓ Code dijalankan tanpa output</div>';
-                }
-            } catch (pythonError) {
-                // Extract error message
-                let errorMsg = String(pythonError);
-                outputEl.innerHTML = `<div class="text-red-400">❌ Python Error:<br><pre class="mt-2 text-sm">${escapeHtml(errorMsg)}</pre></div>`;
-            }
-            
-        } catch (error) {
-            outputEl.innerHTML = `<div class="text-red-400">❌ Error: ${escapeHtml(error.message)}</div>`;
-        }
-    }
-
-    async function runSQL(code, outputEl) {
-        try {
-            if (!sqlReady) {
-                outputEl.innerHTML = '<div class="text-yellow-400 mb-2">⏳ Loading SQL engine...</div>';
-                const db = await initSQL();
-                if (!db) {
-                    outputEl.innerHTML = '<div class="text-red-400">❌ Gagal memuat SQL. Coba refresh halaman.</div>';
-                    return;
-                }
-            }
-            
-            // Split multiple SQL statements
-            const statements = code.split(';').map(s => s.trim()).filter(s => s.length > 0);
-            let results = [];
-            let lastResult = null;
-            
-            for (const statement of statements) {
-                try {
-                    // Execute statement
-                    const result = sqlDB.exec(statement);
-                    
-                    if (result && result.length > 0) {
-                        lastResult = result[0];
-                        
-                        // Check if it's a SELECT query
-                        if (statement.trim().toUpperCase().startsWith('SELECT')) {
-                            results.push({
-                                type: 'select',
-                                statement: statement,
-                                data: result[0]
-                            });
-                        } else {
-                            results.push({
-                                type: 'modify',
-                                statement: statement,
-                                message: 'Query berhasil dieksekusi'
-                            });
-                        }
-                    } else {
-                        results.push({
-                            type: 'modify',
-                            statement: statement,
-                            message: 'Query berhasil dieksekusi'
-                        });
-                    }
-                } catch (sqlError) {
-                    results.push({
-                        type: 'error',
-                        statement: statement,
-                        error: String(sqlError)
-                    });
-                }
-            }
-            
-            // Render results
-            let html = '<div class="text-green-400 mb-2">✓ SQL Results:</div>';
-            
-            for (const result of results) {
-                if (result.type === 'select') {
-                    // Render table
-                    const { columns, values } = result.data;
-                    html += `
-                        <div class="my-3 bg-slate-800 rounded-lg p-3 overflow-x-auto">
-                            <div class="text-xs text-slate-400 mb-2">${escapeHtml(result.statement)}</div>
-                            <table class="w-full text-sm">
-                                <thead>
-                                    <tr class="border-b border-slate-600">
-                                        ${columns.map(col => `<th class="text-left px-2 py-1 text-blue-300 font-semibold">${escapeHtml(col)}</th>`).join('')}
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    ${values.map(row => `
-                                        <tr class="border-b border-slate-700">
-                                            ${row.map(cell => `<td class="px-2 py-1 text-slate-200">${escapeHtml(String(cell))}</td>`).join('')}
-                                        </tr>
-                                    `).join('')}
-                                </tbody>
-                            </table>
-                            <div class="text-xs text-slate-500 mt-2">${values.length} rows returned</div>
-                        </div>
-                    `;
-                } else if (result.type === 'modify') {
-                    html += `<div class="text-sm text-slate-300 my-2">✓ ${escapeHtml(result.message)}</div>`;
-                } else if (result.type === 'error') {
-                    html += `
-                        <div class="my-2 bg-red-900/30 border border-red-500/50 rounded p-2">
-                            <div class="text-xs text-slate-400 mb-1">${escapeHtml(result.statement)}</div>
-                            <div class="text-red-300 text-sm">❌ ${escapeHtml(result.error)}</div>
-                        </div>
-                    `;
-                }
-            }
-            
-            outputEl.innerHTML = html;
-            
-        } catch (error) {
-            outputEl.innerHTML = `<div class="text-red-400">❌ Error: ${escapeHtml(error.message)}</div>`;
-        }
     }
 
     // ══════════════════════════════════════════════════════════
