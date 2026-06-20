@@ -418,5 +418,17 @@
     "courseUrl": "/course/c8e42d404c8f49b8a5142940e4811841",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "bf07584330204d09cae34a452a355069",
+    "courseName": "Jago HTML Dasar: dari Struktur Tag sampai Hyperlink Interaktif",
+    "courseEmoji": "🌐",
+    "courseColor": "#6366f1",
+    "courseFileName": "MODUL_1_2.pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "20-06-2026, 09.59.51",
+    "courseUrl": "/course/bf07584330204d09cae34a452a355069",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]

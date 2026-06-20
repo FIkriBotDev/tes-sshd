@@ -1,0 +1,457 @@
+{
+  "title": "Jago HTML Dasar: dari Struktur Tag sampai Hyperlink Interaktif",
+  "summary": "Di modul ini kamu belajar HTML mulai dari pengertian, struktur dasar dokumen (HEAD dan BODY), cara menulis tag, hingga HTML entities. Lalu kamu praktek membuat halaman web sederhana lengkap dengan background, warna text, dan hyperlink antar halaman.",
+  "emoji": "🌐",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "HTML itu Apa sih?",
+      "icon": "🌐",
+      "explanation": "HTML (Hyper Text Markup Language) adalah bahasa markup untuk membuat halaman web yang ditampilkan di browser. HTML berisi kode tag yang menginstruksikan browser bagaimana menyusun dan menampilkan konten seperti teks, gambar, suara, dan video.",
+      "analogy": "Anggap HTML seperti resep masakan: tag-tagnya adalah instruksi untuk browser supaya tampilannya jadi sesuai “resep” yang kamu tulis.",
+      "highlight": "tag, browser, markup",
+      "keyPoints": [
+        "HTML adalah bahasa markup untuk web",
+        "Tag mengatur tampilan dan struktur konten",
+        "HTML ditampilkan oleh browser seperti Chrome/Firefox"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Struktur Dasar Dokumen HTML",
+      "icon": "🧱",
+      "explanation": "Dokumen HTML umumnya punya bagian header dan body. Bagian <HEAD> biasanya berisi informasi seperti judul dokumen (TITLE), sedangkan <BODY> berisi isi yang tampil di halaman.",
+      "analogy": "HEAD itu seperti identitas buku (judul, nama), BODY itu seperti isi halaman buku yang kamu baca.",
+      "highlight": "<HEAD> dan <BODY>",
+      "keyPoints": [
+        "<HTML> membungkus seluruh dokumen",
+        "<HEAD> berisi informasi dokumen",
+        "<BODY> berisi konten yang tampil"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Elemen HTML: HEAD vs BODY",
+      "icon": "🧠",
+      "explanation": "Elemen <HEAD> dipakai untuk mendeklarasikan info dokumen, sedangkan <BODY> menentukan bagaimana isi ditampilkan di browser. Kalau kamu mau teks atau link tampil, letakkan di dalam <BODY>.",
+      "analogy": "Bayangkan studio: <HEAD> adalah ruang administrasi produksi, <BODY> adalah panggung tempat penonton melihat hasilnya.",
+      "highlight": "<HEAD>, <BODY>",
+      "keyPoints": [
+        "Isi tampilan ada di <BODY>",
+        "Informasi tambahan umumnya di <HEAD>",
+        "TITLE berada di <HEAD>"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Langkah Menulis HTML Paling Dasar",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Mulai dokumen",
+          "description": "Buat kerangka dengan <HTML>, lalu isi bagian <HEAD> dan <BODY>.",
+          "tip": "Kalau kamu bingung, ingat: HEAD untuk info, BODY untuk konten."
+        },
+        {
+          "number": 2,
+          "title": "Isi judul dokumen",
+          "description": "Di dalam <HEAD>, tulis <TITLE>... </TITLE> agar judul muncul di tab browser.",
+          "tip": "Judul tab beda dengan teks yang tampil di halaman (teksnya ada di BODY)."
+        },
+        {
+          "number": 3,
+          "title": "Tulis konten yang tampil",
+          "description": "Di dalam <BODY>, tulis teks, paragraf, baris baru pakai <BR> bila perlu.",
+          "tip": "Semakin rapi struktur BODY, semakin mudah dikembangkan."
+        },
+        {
+          "number": 4,
+          "title": "Tutup dokumen",
+          "description": "Pastikan menutup tag </BODY> dan </HTML> agar HTML valid.",
+          "tip": "Kesalahan paling sering: lupa penutup tag."
+        }
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual: Bagian-bagian HTML",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Pembungkus utama",
+          "value": "<HTML> ... </HTML>",
+          "icon": "🧩"
+        },
+        {
+          "label": "Header",
+          "value": "<HEAD> + <TITLE>",
+          "icon": "🗂️"
+        },
+        {
+          "label": "Judul tab",
+          "value": "<TITLE>Nama</TITLE>",
+          "icon": "🏷️"
+        },
+        {
+          "label": "Konten tampil",
+          "value": "<BODY>Isi</BODY>",
+          "icon": "🖥️"
+        },
+        {
+          "label": "Baris baru",
+          "value": "<BR>",
+          "icon": "↩️"
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Ketik HTML Pertama Kamu (Struktur + Judul + Teks)",
+      "icon": "💻",
+      "language": "html",
+      "instruction": "Buka file ini di browser. Coba ubah judul tab di <title> dan ganti teks di dalam <body>. Lihat apakah perubahan muncul di tampilan dan tab browser.",
+      "fileName": "index.html",
+      "defaultCode": "<!DOCTYPE html> <html> <head> <meta charset=\"UTF-8\"> <title>Web Pertamaku</title> </head> <body> <h2>Selamat Datang di Web Pertamaku</h2> <p>Ini halaman pertama.</p> <p>Kamu bisa ganti teks ini sekarang.</p> </body> </html>",
+      "hint": "Coba tambahkan 1 baris baru pakai <BR> atau gunakan <p> untuk paragraf."
+    },
+    {
+      "type": "concept_card",
+      "title": "Tag: Pasangan yang Mengatur Tampilan",
+      "icon": "🏷️",
+      "explanation": "Tag di HTML ditulis menggunakan tanda < dan >. Banyak tag adalah pasangan: tag awal untuk membuka, dan tag akhir untuk menutup (contoh: <b>...</b>). Dengan tag, kamu bisa mengubah format teks seperti menjadi tebal.",
+      "analogy": "Tag itu seperti kancing baju: tag pembuka membuka “format”, tag penutup menutup format supaya hanya bagian tertentu saja yang berubah.",
+      "highlight": "tag awal <tag> dan tag akhir </tag>",
+      "keyPoints": [
+        "Tag ditulis dengan < ... >",
+        "Tag biasanya berpasangan",
+        "Tag mengatur format konten (misal tebal pakai <b> </b>)"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Praktek: Komentar HTML, Background, dan Warna Text",
+      "icon": "💻",
+      "language": "html",
+      "instruction": "Ubah pilihanmu: ganti background warna menjadi warna lain, atau background gambar (nama file) sesuai yang kamu punya. Lalu ubah warna teks pada beberapa baris <font color=\"...\">.",
+      "fileName": "warna-background.html",
+      "defaultCode": "<!DOCTYPE html> <html> <head> <meta charset=\"UTF-8\"> <title>Background dan Warna Text</title> </head> <body bgcolor=\"yellow\"> <!-- Ini komentar: tidak tampil di browser --> <font color=\"blue\">Tulisan ini berwarna Biru</font> <br> <font color=\"red\">Tulisan ini berwarna Merah</font> <br> <font color=\"green\">Tulisan ini berwarna Hijau</font> <br> <font color=\"white\">Tulisan ini berwarna Putih</font> <br> <font color=\"black\">Tulisan ini berwarna Hitam</font> </body> </html>",
+      "hint": "Kalau kamu ingin background gambar, ganti <body bgcolor=\"yellow\"> menjadi <body background=\"foto.jpg\"> (sesuaikan nama file)."
+    },
+    {
+      "type": "concept_card",
+      "title": "Hyperlink: Link Antar Halaman",
+      "icon": "🔗",
+      "explanation": "Hyperlink dibuat dengan tag <A HREF=\"nama_file.html\">Keterangan link</A>. Saat user mengklik teks link, browser akan berpindah ke file HTML yang dituju. Contoh: halaman1.html dan halaman2.html saling terhubung.",
+      "analogy": "Link itu seperti “pintu” di web: kamu tinggal klik nama pintunya, lalu masuk ke ruangan (halaman) lain.",
+      "highlight": "<A HREF=\"...\">",
+      "keyPoints": [
+        "Hyperlink dibuat dengan tag <A>",
+        "HREF berisi nama file tujuan",
+        "Teks link ada di antara tag <A> dan </A>"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Hyperlink Sederhana: Halaman 1 ↔ Halaman 2",
+      "icon": "💻",
+      "language": "html",
+      "instruction": "Buat dua file: halaman1.html dan halaman2.html. Pastikan keduanya ada di folder yang sama. Lalu buka halaman1.html dan klik link untuk pindah ke halaman2.html.",
+      "fileName": "halaman1.html",
+      "defaultCode": "<!DOCTYPE html> <html> <head> <meta charset=\"UTF-8\"> <title>Hyperlink</title> </head> <body> Ini Bagian pertama dari Web saya. <br> Silahkan membaca halaman kedua <br> <center> <a href=\"halaman2.html\">Ke Halaman 2</a> </center> </body> </html>",
+      "hint": "Coba buat halaman2.html dengan teks berbeda dan link balik ke halaman1.html."
+    },
+    {
+      "type": "concept_card",
+      "title": "Warna Hyperlink: LINK, ALINK, VLINK",
+      "icon": "🎨",
+      "explanation": "Kamu bisa mengubah warna hyperlink memakai atribut pada tag <BODY>: LINK untuk warna link yang belum diklik, ALINK untuk warna saat diklik, dan VLINK untuk warna link yang sudah dikunjungi. Ini membuat tampilan link lebih variatif sesuai gaya web.",
+      "analogy": "Bayangkan lampu pada rambu jalan: sebelum kamu lewat warnanya satu, saat kamu lewat warnanya berubah, setelah lewat tetap ada warna penanda sudah dilewati.",
+      "highlight": "LINK, ALINK, VLINK",
+      "keyPoints": [
+        "LINK: link belum dikunjungi",
+        "ALINK: saat link diklik",
+        "VLINK: link yang sudah dikunjungi"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "HTML Entities: Tampilkan Karakter Spesial dengan Benar",
+      "icon": "🧷",
+      "explanation": "Beberapa karakter seperti “<” dan “>” bisa dianggap sebagai awal tag, jadi tidak tampil sebagai teks. HTML menyediakan entities supaya karakter spesial bisa ditampilkan, misalnya &lt; untuk “<” dan &gt; untuk “>”.",
+      "analogy": "Kalau kamu menulis “<BR/>” biasa, browser menganggap itu perintah. Entities itu seperti “membungkus” karakter agar browser tidak salah paham.",
+      "highlight": "&lt; dan &gt;",
+      "keyPoints": [
+        "“<” dan “>” bisa dianggap tag",
+        "Gunakan &lt; untuk menampilkan “<”",
+        "Gunakan &gt; untuk menampilkan “>”"
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "Analogi Mudah: HTML Itu Seperti Papan Nama",
+      "icon": "💡",
+      "realWorld": "Kamu membuat stan di event kampus: ada background, tulisan warna-warni, dan pintu menuju ruangan lain.",
+      "connection": "Background dan warna text diatur lewat atribut pada <BODY> dan <FONT>. Hyperlink adalah pintu ke halaman lain. Entities memastikan simbol spesial tetap tampil seperti yang kamu tulis.",
+      "insight": "Kalau kamu mengerti “bagian mana yang untuk tampilan” (BODY) dan “bagian mana untuk identitas” (HEAD/TITLE), kamu akan lebih cepat menyusun halaman web pertama."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini HTML",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "HTML",
+          "definition": "Bahasa markup untuk membuat halaman web.",
+          "example": "Struktur <html><head>...<body>...</body></html>"
+        },
+        {
+          "term": "Tag",
+          "definition": "Instruksi yang ditulis dengan tanda < dan >.",
+          "example": "<b>teks tebal</b>"
+        },
+        {
+          "term": "HEAD",
+          "definition": "Bagian dokumen untuk info/deklarasi.",
+          "example": "<head><title>Judul</title></head>"
+        },
+        {
+          "term": "BODY",
+          "definition": "Bagian dokumen yang isinya tampil di browser.",
+          "example": "<body>Selamat datang</body>"
+        },
+        {
+          "term": "TITLE",
+          "definition": "Judul dokumen yang tampil di tab browser.",
+          "example": "<title>Web Pertamaku</title>"
+        },
+        {
+          "term": "Komentar HTML",
+          "definition": "Teks yang tidak tampil, dipakai untuk catatan.",
+          "example": "<!-- ini komentar -->"
+        },
+        {
+          "term": "Background",
+          "definition": "Latar halaman bisa warna atau gambar.",
+          "example": "<body bgcolor=\"purple\">"
+        },
+        {
+          "term": "Hyperlink",
+          "definition": "Link untuk pindah ke halaman lain.",
+          "example": "<a href=\"halaman2.html\">Ke Halaman 2</a>"
+        },
+        {
+          "term": "HTML Entities",
+          "definition": "Kode khusus untuk menampilkan karakter spesial.",
+          "example": "&lt; untuk menampilkan <"
+        }
+      ]
+    },
+    {
+      "type": "key_terms",
+      "title": "Challenge Latihan: Homepage Pribadi",
+      "icon": "🧩",
+      "terms": [
+        {
+          "term": "Index.html",
+          "definition": "Nama file halaman awal/homepage.",
+          "example": "Index.html berisi menu ke halaman lain"
+        },
+        {
+          "term": "Halaman Sejarah Hidup",
+          "definition": "Subhalaman yang dihubungkan dari homepage.",
+          "example": "Link dari Index.html menuju sejarah.html"
+        },
+        {
+          "term": "Halaman Study",
+          "definition": "Subhalaman untuk konten pendidikan.",
+          "example": "Link dari Index.html menuju study.html"
+        },
+        {
+          "term": "Halaman Keluarga",
+          "definition": "Subhalaman tentang keluarga.",
+          "example": "Link dari Index.html menuju keluarga.html"
+        },
+        {
+          "term": "Halaman Cita-cita",
+          "definition": "Subhalaman tujuan masa depan.",
+          "example": "Link dari Index.html menuju citacita.html"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "HTML digunakan untuk…",
+      "options": [
+        "Membuat program komputer berjenis Java",
+        "Membuat halaman web dan menampilkan informasi di browser",
+        "Mengatur jaringan komputer secara langsung",
+        "Menghitung rumus matematika di halaman web"
+      ],
+      "answer": "Membuat halaman web dan menampilkan informasi di browser",
+      "explanation": "HTML adalah bahasa markup untuk membuat halaman web yang ditampilkan oleh browser.",
+      "xpReward": 50
+    },
+    {
+      "question": "Bagian yang biasanya berisi judul dokumen (yang tampil di tab browser) adalah…",
+      "options": [
+        "<BODY>",
+        "<HEAD>",
+        "<HTML>",
+        "Tidak ada, HTML hanya punya BODY"
+      ],
+      "answer": "<HEAD>",
+      "explanation": "Judul ada di dalam tag <HEAD> menggunakan <TITLE>...</TITLE>.",
+      "xpReward": 50
+    },
+    {
+      "question": "Tag awal dan tag akhir pada HTML ditulis dengan pola…",
+      "options": [
+        "Tag awal: </tag> dan tag akhir: <tag>",
+        "Tag awal: <nama tag> dan tag akhir: </nama tag>",
+        "Tag awal dan akhir sama-sama: <tag>",
+        "Tag tidak pernah punya penutup"
+      ],
+      "answer": "Tag awal: <nama tag> dan tag akhir: </nama tag>",
+      "explanation": "Contohnya: <b>Teks</b> memakai <b> sebagai pembuka dan </b> sebagai penutup.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika kamu ingin menampilkan teks “TAMPIL TEBAL” menjadi tebal, tag yang benar adalah…",
+      "options": [
+        "<b>TAMPIL TEBAL</b>",
+        "<strong>TAMPIL TEBAL</strong>",
+        [
+          "<tebal>TAMPIL TEBAL</tebal>",
+          "<font>TAMPIL TEBAL</font>"
+        ],
+        "<b>TAMPIL TEBAL</b/>"
+      ],
+      "answer": "<b>TAMPIL TEBAL</b>",
+      "explanation": "Modul memberi contoh penulisan tebal dengan <b>...</b>.",
+      "xpReward": 50
+    },
+    {
+      "question": "Agar karakter “<” tampil sebagai teks (bukan dianggap awal tag), gunakan entity…",
+      "options": [
+        "&amp;",
+        "&lt;",
+        "&gt;",
+        "&#60;BR"
+      ],
+      "answer": "&lt;",
+      "explanation": "HTML entity &lt; digunakan untuk menampilkan karakter “<”.",
+      "xpReward": 50
+    },
+    {
+      "question": "Hyperlink sederhana dibuat dengan tag…",
+      "options": [
+        "<LINK HREF=...>",
+        "<A HREF=\"...\">Keterangan link</A>",
+        "<HREF>link</HREF>",
+        "<HYPER>..."
+      ],
+      "answer": "<A HREF=\"...\">Keterangan link</A>",
+      "explanation": "Contoh modul: <A HREF=\"halaman2.html\">Ke Halaman 2</A>.",
+      "xpReward": 50
+    },
+    {
+      "question": "Warna hyperlink belum dikunjungi diatur dengan atribut…",
+      "options": [
+        "ALINK",
+        "VLINK",
+        "LINK",
+        "BGCOLOR"
+      ],
+      "answer": "LINK",
+      "explanation": "Modul menjelaskan LINK untuk warna link yang belum diklik.",
+      "xpReward": 50
+    },
+    {
+      "question": "Penulisan komentar HTML dimulai dengan…",
+      "options": [
+        "//",
+        "<!--",
+        "{ }",
+        "<%"
+      ],
+      "answer": "<!--",
+      "explanation": "Komentar HTML dimulai dengan <!-- dan diakhiri dengan -->.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa kepanjangan dari HTML?",
+      "answer": "Hyper Text Markup Language",
+      "emoji": "🌐",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Fungsi utama tag <HEAD> adalah…",
+      "answer": "Memberikan informasi atau mendeklarasikan dokumen (contoh: judul lewat <TITLE>).",
+      "emoji": "🗂️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Fungsi utama tag <BODY> adalah…",
+      "answer": "Menentukan bagaimana isi dokumen ditampilkan pada browser.",
+      "emoji": "🖥️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Contoh tag berpasangan untuk teks tebal adalah…",
+      "answer": "<b>... </b>",
+      "emoji": "🏷️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Bagaimana cara menulis komentar HTML?",
+      "answer": "<!-- ini komentar -->",
+      "emoji": "💬",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Entity HTML untuk menampilkan karakter “<” adalah…",
+      "answer": "&lt;",
+      "emoji": "🧷",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Entity HTML untuk menampilkan karakter “>” adalah…",
+      "answer": "&gt;",
+      "emoji": "🧷",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Tag untuk membuat hyperlink sederhana adalah…",
+      "answer": "<a href=\"nama_file.html\">Keterangan</a>",
+      "emoji": "🔗",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Atribut BODY untuk warna link belum dikunjungi adalah…",
+      "answer": "LINK",
+      "emoji": "🎨",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa yang membedakan dokumen HTML dengan dokumen lain?",
+      "answer": "Adanya elemen HTML dan tag-tag yang memformat serta menentukan struktur dokumen.",
+      "emoji": "🧱",
+      "difficulty": "hard"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Modul ini membahas dasar-dasar HTML yang biasanya dipelajari pada Praktikum Aplikasi IT 1 jurusan Teknik Komputer. Materi dimulai dari pengertian HTML. HTML (Hyper Text Markup Language) adalah bahasa markup yang digunakan untuk membuat halaman web dan menampilkan berbagai informasi di dalam sebuah browser. Konsep HTML berawal dari bahasa markup yang populer di dunia penerbitan dan percetakan bernama SGML (Standard Generalized Markup Language). Seiring waktu, HTML berkembang menjadi standar internet yang luas dipakai untuk menampilkan halaman web. Pada praktiknya, HTML adalah kumpulan kode tag yang menginstruksikan browser bagaimana harus merender tampilan halaman. Karena HTML adalah standar web, dokumen HTML dapat dibuka oleh banyak browser seperti Mozilla Firefox, Microsoft Internet Explorer, Opera, Google Chrome, Safari, dan lain-lain. Saat menulis dokumen HTML, kita bisa menempatkan berbagai jenis konten seperti teks, gambar, suara, dan video. Namun yang membedakan HTML dari dokumen biasa adalah elemen-elemen HTML beserta tag yang menandai struktur serta bagian-bagian tertentu dari dokumen. Dengan tag itulah browser memahami bagian mana yang harus diformat atau ditata.\n\nSetelah pengertian, modul menjelaskan struktur dasar HTML. Secara umum dokumen HTML memiliki pembagian seperti: <HTML>, kemudian bagian header <HEAD>, dan bagian body <BODY>. Bagian header biasanya berisi informasi seperti judul dokumen yang didefinisikan melalui <TITLE> dan ditutup dengan </TITLE>. Setelah header selesai, barulah isi halaman dimulai pada <BODY> ... </BODY>. Seluruh dokumen ditutup dengan </HTML>. Modul juga menekankan bahwa struktur dasar ini penting agar browser bisa membaca dokumen dengan benar dan menampilkan isi sesuai maksud penulis.\n\nPada bagian elemen HTML, modul menyatakan bahwa elemen HTML terdiri dari dua kategori besar. Pertama, elemen <HEAD> berfungsi untuk memberikan informasi atau mendeklarasikan dokumen tersebut. Kedua, elemen <BODY> berfungsi untuk menentukan bagaimana isi dokumen ditampilkan pada browser. Artinya, bila kamu ingin sesuatu terlihat di halaman (misalnya teks sambutan), letakkan di dalam BODY. Kalau kamu hanya butuh informasi tambahan seperti judul yang muncul di tab browser, gunakan HEAD.\n\nSelanjutnya modul membahas tag. Dalam dokumen HTML, teks dapat memuat instruksi yang ditandai dengan TAG. Tag dinyatakan dengan tanda lebih kecil dan lebih besar (< >). Umumnya tag berupa pasangan: tag awal berfungsi membuka dan tag akhir berfungsi menutup. Tag awal ditulis dengan pola <nama tag>, sedangkan tag akhir ditulis dengan </nama tag>. Modul memberikan contoh tag untuk membuat teks tebal: bila ingin “TAMPIL TEBAL” menjadi tebal, gunakan <b>TAMPIL TEBAL</b>. Penulisan ini berarti <b> mengaktifkan format cetak tebal, teks diikuti di dalamnya, lalu </b> menonaktifkan format tebal agar hanya bagian yang di dalam tag tersebut yang menjadi tebal. Modul menekankan contoh penulisan tag yang benar termasuk bagaimana tag bersarang bisa dilakukan: <tag 1> Teks untuk tag ke 1 <tag 2> Teks untuk tag ke 2 </tag 2> </tag 1>.\n\nModul kemudian masuk ke HTML entities. Di HTML/XHTML, beberapa karakter bisa dianggap ilegal atau berpotensi disalahartikan jika dituliskan langsung. Contoh penting: karakter lebih besar “>” (dan karakter terkait “<”) bila ditulis langsung bisa membuat browser mengira itu bagian dari tag HTML. Jika kamu menuliskan instruksi seperti “<BR/>” secara biasa, browser dapat menganggap itu sebagai tag sungguhan, sehingga teks “<BR/>” tidak tampil sebagai teks melainkan dijalankan (atau hilang sebagai tampilan string literal). Karena itu HTML menyediakan HTML entities. Modul memberi contoh: untuk menampilkan teks yang berisi simbol “<BR/>” agar simbol < tidak ditafsirkan sebagai tag, gunakan entities seperti &lt;BR/&gt;. Intinya, &lt; digunakan untuk menampilkan karakter “<” dan &gt; untuk menampilkan karakter “>”. Modul juga menampilkan tabel entities yang berisi mapping antara character entity number dan entity name ke karakter yang dihasilkan, menunjukkan bahwa HTML memiliki banyak pilihan entities selain &lt; dan &gt;.\n\nBagian Modul II memperdalam praktik dasar HTML. Materi pertama adalah membuat dokumen HTML. Modul menjelaskan dokumen HTML dimulai dengan <HTML>, lalu <HEAD> dan <TITLE>. Isi antara <TITLE> dan </TITLE> adalah judul dokumen. Contoh program yang disajikan: <HTML> <HEAD> <TITLE> Web Pertamaku </TITLE> </HEAD> <BODY> Selamat Datang di Web Pertamaku </BODY> </HTML>. Penekanan di sini adalah urutan penulisan tag: HTML menyatukan dokumen, HEAD mendefinisikan informasi seperti judul, BODY menjadi tempat konten yang tampil.\n\nKemudian modul menjelaskan cara menambahkan komentar. HTML menyediakan komentar dengan penanda <!-- dan -->. Komentar berguna saat pembuat atau orang lain membaca kode untuk memahami bagian-bagian tertentu tanpa mempengaruhi tampilan halaman.\n\nBerikutnya materi background pada halaman web. Modul menjelaskan bahwa background dapat berupa warna atau gambar dan ditambahkan pada tag <BODY>. Untuk background warna gunakan <BODY BGCOLOR=\"warna\"> dan untuk background gambar gunakan <BODY BACKGROUND=\"nama_gambar.ext\">. Modul memberikan contoh program untuk dua skenario tersebut.\n\nMateri berikutnya adalah mengganti warna text. Modul menjelaskan penggunaan tag <FONT COLOR=\"warna\"> untuk mengatur warna teks, diakhiri dengan </FONT>. Contoh program menampilkan beberapa baris teks dengan warna berbeda menggunakan <BR> untuk pindah baris.\n\nLalu modul membahas hyperlink. Hyperlink dibuat dengan tag <A HREF=\"nama_file_html_yang_dituju.html\">Keterangan link</A>. Modul memberikan contoh dua file: halaman1.html berisi link menuju halaman2.html, dan halaman2.html berisi link kembali ke halaman1.html. Ini mengajarkan konsep navigasi antar halaman.\n\nSetelah hyperlink, modul membahas pemberian warna pada hyperlink. Warna hyperlink diatur dengan atribut pada tag BODY yaitu LINK, ALINK, dan VLINK. LINK mengatur warna link yang belum dikunjungi, ALINK warna saat link sedang diklik, dan VLINK warna link setelah dikunjungi.\n\nTerakhir modul memberikan latihan: buatlah homepage pribadi sederhana sesuai tampilan yang diminta, dengan file index.html sebagai halaman awal serta halaman-halaman lain untuk Sejarah Hidup, Study, Keluarga, dan Cita-cita. Konsep yang harus diterapkan adalah: menu di halaman index.html menggunakan hyperlink yang menuju file-file subhalaman, dan setiap subhalaman berisi konten sesuai judulnya. Secara keseluruhan, modul menggabungkan konsep struktur HTML, tag format, komentar, background, warna text, hyperlink, warna hyperlink, dan penggunaan entities untuk karakter spesial sehingga siswa mampu membangun halaman web dasar yang bisa dinavigasi."
+}
