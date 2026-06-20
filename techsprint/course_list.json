@@ -370,5 +370,17 @@
     "courseUrl": "/course/ec1ff54defcc6d6b6c2ba731002db83f",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "eb06dfc49dce164f8438aea54927da15",
+    "courseName": "Machine Learning: Dari Data ke Prediksi (Supervised, Unsupervised, Reinforcement)",
+    "courseEmoji": "🤖",
+    "courseColor": "#10b981",
+    "courseFileName": "MAKALAH OSK.pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "20-06-2026, 02.02.09",
+    "courseUrl": "/course/eb06dfc49dce164f8438aea54927da15",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
