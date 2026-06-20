@@ -1,0 +1,354 @@
+{
+  "title": "Java Basics: Dari Sejarah sampai Program Pertama (HelloWorld & Konsep Class)",
+  "summary": "Belajar Java dari nol lewat cerita sejarah, konsep teknologi (JVM dan Java API), sampai langkah praktis membuat dan menjalankan program pertama. Kamu juga akan memahami struktur class, method main, serta ide class driver yang memakai class lain.",
+  "emoji": "☕️",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Java Itu Apa? Kenapa Populer?",
+      "icon": "☕️",
+      "explanation": "Java dibuat oleh James Gosling di Sun Microsystems dan dirilis pada tahun 1995. Java dikenal karena bisa dijalankan di banyak komputer dan platform (Write once, run anywhere), serta sintaksnya mirip C/C++ tapi lebih sederhana. Java juga populer untuk membangun berbagai aplikasi termasuk aplikasi berbasis web.",
+      "analogy": "Java itu seperti aplikasi pengantar yang bisa dipakai di banyak tipe HP: kamu menulis sekali, lalu “bisa jalan” di perangkat berbeda.",
+      "highlight": "Write once, run anywhere",
+      "keyPoints": [
+        "Dibuat James Gosling, dirilis 1995",
+        "Portabel lintas platform",
+        "Umum untuk aplikasi termasuk web"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Teknologi Java = Bahasa + Platform",
+      "icon": "🧩",
+      "explanation": "Java bukan cuma bahasa pemrograman, tapi juga sebuah platform. Karakter Java meliputi sederhana, berorientasi objek, interpreted, terdistribusi, tangguh, portable, kinerja tinggi, aman, dan dinamis. Intinya: kamu menulis kode Java, lalu platform Java membantu mengeksekusinya dengan cara yang cocok untuk mesin target.",
+      "analogy": "Bayangkan kamu memasak resep (bahasa Java) dan punya alat dapur yang menyesuaikan jenis kompor (platform). Resepnya sama, cara eksekusinya menyesuaikan alat.",
+      "highlight": "JVM + Java API",
+      "keyPoints": [
+        "Java: bahasa pemrograman",
+        "Java: platform eksekusi",
+        "Ada JVM dan Java API"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Alur Eksekusi Java: Compile jadi Bytecode, Jalan dengan JVM",
+      "icon": "🔁",
+      "items": [
+        {
+          "label": "1) Tulis kode",
+          "value": "File .java berisi programmu",
+          "icon": "✍️"
+        },
+        {
+          "label": "2) Compile",
+          "value": "Kode diubah jadi bytecode (.class)",
+          "icon": "🧠"
+        },
+        {
+          "label": "3) Jalankan",
+          "value": "JVM membaca bytecode lalu menerjemahkan ke bahasa mesin sesuai komputer",
+          "icon": "⚙️"
+        },
+        {
+          "label": "4) Hasil",
+          "value": "Program berjalan dengan perilaku yang sama lintas OS",
+          "icon": "✅"
+        }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Siapkan Lingkungan Java: JDK, PATH, dan Cek Versi",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Unduh JDK (SDK Java)",
+          "description": "Ambil paket JDK terbaru dari situs resmi, lalu instal di komputer kamu.",
+          "tip": "Pilih versi yang sesuai sistem operasi (Windows/Linux/Mac)."
+        },
+        {
+          "number": 2,
+          "title": "Atur environment variable PATH",
+          "description": "Tambahkan path folder yang diperlukan agar perintah Java bisa dikenali dari command prompt.",
+          "tip": "Biasanya ada opsi di Control Panel > System > Advanced > Environment Variables."
+        },
+        {
+          "number": 3,
+          "title": "Cek versi JRE",
+          "description": "Pastikan runtime yang diperlukan sudah tersedia.",
+          "tip": "Kamu bisa cek versi JRE yang terinstal melalui command prompt."
+        },
+        {
+          "number": 4,
+          "title": "Cek versi JDK",
+          "description": "Pastikan JDK terpasang benar karena proses compile butuh JDK.",
+          "tip": "Catat versi agar konsisten saat mengembangkan proyek."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Coba “Hello World” ala Java (Simulasi dengan JavaScript)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode ini. Ubah teks pada console.log agar sesuai format Hello world! Kamu juga bisa menambahkan satu baris lagi, misalnya menampilkan nama kamu.",
+      "fileName": "hello_sim.js",
+      "defaultCode": "// Simulasi output HelloWorld ala Java\nconsole.log('Hello world!');",
+      "hint": "Challenge: cetak 2 baris: pertama 'Hello world!' lalu baris kedua 'Nama kamu'."
+    },
+    {
+      "type": "concept_card",
+      "title": "Class: Blueprint Objek di Java",
+      "icon": "🏗️",
+      "explanation": "Java berorientasi objek. Program Java tersusun dari kelas-kelas (class). Class itu seperti blueprint, sedangkan objek adalah “wujud nyata” dari blueprint saat program berjalan (runtime). Setiap class punya template: class NamaKelas { // body }. Di dalam class ada atribut dan method; salah satu method paling penting adalah main.",
+      "analogy": "Class itu seperti pola baju (blueprint), objek itu baju yang sudah jadi ketika dipakai.",
+      "highlight": "class = blueprint, object = instans",
+      "keyPoints": [
+        "Class berisi template",
+        "Ada atribut dan method",
+        "main adalah titik mulai program"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "main Method: Mulai Program dari Sini (Simulasi)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Kode ini mensimulasikan fungsi utama program. Ubah argumen atau teks output untuk melihat perubahan pada hasil console.",
+      "fileName": "main_sim.js",
+      "defaultCode": "// Simulasi konsep main() seperti Java\nfunction main(args) { console.log('Hello world!'); console.log('args length = ' + args.length); }\nmain(['IF2123', 'Java']);",
+      "hint": "Challenge: ganti array args menjadi ['Nama', 'NIM'] dan pastikan output args length ikut berubah."
+    },
+    {
+      "type": "analogy_card",
+      "title": "Driver Class: Kenapa Ada Kelas Penggerak?",
+      "icon": "🚗",
+      "realWorld": "Bayangkan kamu punya kelas Mahasiswa yang berisi data dan aturan. Lalu kamu butuh kelas DriverMhs untuk membuat beberapa objek Mahasiswa dan menjalankannya (misalnya menampilkan informasi).",
+      "connection": "Materi menyebut pola DriverMhs menggunakan kelas Mahasiswa, lalu DriverMatriks menggunakan kelas Matriks dan memakai/berhubungan dengan Mahasiswa.",
+      "insight": "Dengan memisahkan kelas ‘model’ (Mahasiswa/Matriks) dan kelas ‘driver’ (yang mengatur alur), program jadi lebih rapi, mudah di-debug, dan gampang dikembangkan."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini Java",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "JVM (Java Virtual Machine)",
+          "definition": "Program yang menjalankan bytecode dengan cara menyesuaikan ke bahasa mesin pada komputer yang menjalankannya.",
+          "example": "Bytecode dari .class dijalankan oleh JVM saat kamu menjalankan program."
+        },
+        {
+          "term": "Bytecode",
+          "definition": "Format antara hasil kompilasi Java (.class) yang sama di berbagai sistem, lalu diterjemahkan oleh JVM.",
+          "example": "Kamu compile HelloWorld.java, hasilnya HelloWorld.class berisi bytecode."
+        },
+        {
+          "term": "Java API",
+          "definition": "Kumpulan library siap pakai untuk membantu membuat aplikasi Java.",
+          "example": "System.out.println berasal dari API yang menangani output."
+        },
+        {
+          "term": "Class",
+          "definition": "Blueprint untuk membuat objek.",
+          "example": "class Mahasiswa { ... }"
+        },
+        {
+          "term": "Main method",
+          "definition": "Titik awal eksekusi program Java biasanya bernama main.",
+          "example": "public static void main(String[] args) { ... }"
+        }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Dari HelloWorld.java sampai Menjalankan: Urutan yang Benar",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Tulis program",
+          "description": "Ketik HelloWorld di editor teks, lalu simpan sebagai HelloWorld.java.",
+          "tip": "Nama file harus sama persis dengan nama class."
+        },
+        {
+          "number": 2,
+          "title": "Kompilasi",
+          "description": "Kompilasi dari command prompt sampai terbentuk file .class.",
+          "tip": "Pastikan environment variable PATH sudah benar."
+        },
+        {
+          "number": 3,
+          "title": "Jalankan",
+          "description": "Jalankan file .class via command prompt.",
+          "tip": "Jika benar, kamu akan melihat output seperti 'Hello world!'."
+        },
+        {
+          "number": 4,
+          "title": "Uji perubahan",
+          "description": "Ubah isi output, compile ulang, lalu jalankan lagi untuk melihat efeknya.",
+          "tip": "Ini kebiasaan inti saat belajar pemrograman."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Java dirilis pada tahun berapa menurut materi?",
+      "options": [
+        "1990",
+        "1993",
+        "1995",
+        "1998"
+      ],
+      "answer": "1995",
+      "explanation": "Materi menyebut Java dibuat oleh James Gosling dan dirilis tahun 1995.",
+      "xpReward": 50
+    },
+    {
+      "question": "Slogan Java yang terkenal adalah ...",
+      "options": [
+        "Run once, compile anywhere",
+        "Write once, run anywhere",
+        "Build once, deploy everywhere",
+        "Learn once, practice everywhere"
+      ],
+      "answer": "Write once, run anywhere",
+      "explanation": "Ini slogan Java: tulis sekali lalu jalankan di mana pun.",
+      "xpReward": 50
+    },
+    {
+      "question": "Dalam proses kompilasi Java, kode diubah menjadi apa?",
+      "options": [
+        "Assembly",
+        "Bytecode",
+        "Machine language langsung",
+        "HTML template"
+      ],
+      "answer": "Bytecode",
+      "explanation": "Kompiler Java mengubah kode program menjadi intermediate yang disebut Java bytecode.",
+      "xpReward": 50
+    },
+    {
+      "question": "Peran JVM saat eksekusi adalah ...",
+      "options": [
+        "Mengedit kode sumber agar lebih rapi",
+        "Menerjemahkan bytecode ke bahasa mesin yang sesuai komputer",
+        "Menghapus error saat compile",
+        "Mengganti nama class secara otomatis"
+      ],
+      "answer": "Menerjemahkan bytecode ke bahasa mesin yang sesuai komputer",
+      "explanation": "Materi menjelaskan JVM membaca bytecode lalu mengubahnya menjadi bahasa mesin sesuai komputer yang menjalankan.",
+      "xpReward": 50
+    },
+    {
+      "question": "Java disebut berorientasi objek. Class dalam Java adalah ...",
+      "options": [
+        "Bahasa pemrograman tingkat rendah",
+        "Blueprint untuk objek",
+        "File yang berisi bytecode",
+        "Nama editor teks"
+      ],
+      "answer": "Blueprint untuk objek",
+      "explanation": "Materi menyebut class adalah blueprint dari objek, sedangkan objek adalah instans saat running.",
+      "xpReward": 50
+    },
+    {
+      "question": "Method yang menjadi titik awal program Java pada materi adalah bernama ...",
+      "options": [
+        "start()",
+        "main",
+        "run()",
+        "init()"
+      ],
+      "answer": "main",
+      "explanation": "Materi memberi contoh class HelloWorld yang hanya punya method main.",
+      "xpReward": 50
+    },
+    {
+      "question": "Saat menyimpan program HelloWorld, nama file harus sama dengan ...",
+      "options": [
+        "Nama server",
+        "Nama proyek",
+        "Nama class",
+        "Tanggal pembuatan"
+      ],
+      "answer": "Nama class",
+      "explanation": "Materi menegaskan: simpan dengan nama file HelloWorld.java (harus sama persis dengan nama class).",
+      "xpReward": 50
+    },
+    {
+      "question": "Komponen platform Java yang disebut pada materi ada dua, yaitu ...",
+      "options": [
+        "JDK dan GUI",
+        "JVM dan Java API",
+        "Compiler dan IDE",
+        "JRE dan Editor teks"
+      ],
+      "answer": "JVM dan Java API",
+      "explanation": "Materi menyebut platform Java terdiri dari Java Virtual Machine (JVM) dan Java API.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa arti slogan \"Write once, run anywhere\"?",
+      "answer": "Tulis program sekali, lalu bisa dijalankan di berbagai platform/komputer.",
+      "emoji": "🌍",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Siapa pencipta Java dan kapan Java dirilis?",
+      "answer": "Java dibuat oleh James Gosling dan dirilis tahun 1995.",
+      "emoji": "🧑‍💻",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Output kompilasi Java (.java) biasanya menjadi apa?",
+      "answer": "Menjadi bytecode dalam file .class.",
+      "emoji": "📦",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa tugas JVM saat program dijalankan?",
+      "answer": "Membaca bytecode dan mengubahnya menjadi bahasa mesin yang sesuai dengan komputer target.",
+      "emoji": "⚙️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Java API itu apa?",
+      "answer": "Library siap pakai untuk membantu pengembangan aplikasi Java.",
+      "emoji": "🧰",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Dalam OOP, class adalah blueprint dari apa?",
+      "answer": "Dari objek (object).",
+      "emoji": "🏗️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Method apa yang menjadi titik awal eksekusi program Java pada contoh materi?",
+      "answer": "main dengan tanda tangan public static void main(String[] args).",
+      "emoji": "🚀",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Sebutkan tiga edisi Java yang disebut dalam materi.",
+      "answer": "Java Standard Edition (J2SE), Java Micro Edition (J2ME), dan Java Enterprise Edition (J2EE).",
+      "emoji": "🗂️",
+      "difficulty": "medium"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama tentang pengantar Java dan konsep dasar class.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi ini adalah pengantar pemrograman dengan Java, bagian awal yang memperkenalkan sejarah singkat Java, alasan Java populer, serta konsep dasar bagaimana program Java dieksekusi sampai ke struktur class dan contoh program pertama (HelloWorld). Kamu bisa mengajarkan materi ini dengan gaya “dari besar ke kecil”: mulai dari gambaran apa itu Java, lalu masuk ke komponen teknologinya (JVM dan Java API), kemudian bagaimana cara menyiapkan tools (JDK, editor teks, dan pengaturan PATH), lalu contoh program pertama serta makna class dan main.  Sejarah Java: materi menyebut Java dibuat oleh James Gosling saat ia masih bergabung di Sun Microsystems. Java dirilis tahun 1995. Ada slogan “Write once, run anywhere!” yang berarti program yang ditulis sekali dapat dijalankan di berbagai komputer/platform. Java adalah bahasa pemrograman tujuan umum (general purpose). Sintaks Java mengadopsi gaya dari C dan C++ namun dibuat lebih sederhana sehingga lebih mudah dipelajari. Menariknya, nama “Java” diambil dari jenis kopi yang diminum oleh James Gosling pada saat itu. Selain itu materi memberi konteks popularitas Java dengan data peringkat top programming languages pada tahun 2015 (masih top 10), 2017 turun ke peringkat 3, dan 2018 masih bertahan pada daftar top 10. Ini bisa digunakan untuk memotivasi siswa: Java bukan cuma “pernah populer”, tapi juga relevan cukup lama.  Teknologi Java: materi menekankan bahwa Java itu bukan sekadar bahasa, tapi “teknologi” yang terdiri dari bahasa pemrograman dan platform eksekusinya. Java punya karakteristik: sederhana, berorientasi objek, interpreted, terdistribusi, tangguh, portable, memiliki kinerja tinggi, aman, dan dinamis. Untuk memahami karakter interpreted dan portable, materi menjelaskan proses kompilasi dan interpretasi: compiler Java mengubah kode program menjadi intermediate bernama Java bytecode. Lalu ada interpreter/engine di runtime bernama JVM (Java Virtual Machine) yang menginterpretasi bytecode setiap kali bytecode dijalankan. Jadi, compile tidak langsung mengubah ke machine code spesifik perangkat, melainkan ke bytecode yang netral.  Java sebagai platform: materi mendefinisikan platform sebagai lingkungan perangkat keras dan perangkat lunak untuk menjalankan program. Java adalah platform perangkat lunak untuk menjalankan program Java. Platform Java terdiri dari dua komponen utama: (1) JVM dan (2) Java API. JVM pada dasarnya adalah aplikasi sederhana yang ditulis dalam bahasa C untuk mengeksekusi program yang ditulis dalam Java. Cara kerja JVM saat eksekusi adalah: JVM membaca bytecode, lalu mengubahnya menjadi bahasa mesin yang sesuai dengan komputer yang menjalankan. Intinya: bytecode selalu sama untuk tiap sistem operasi/jenis mesin, sedangkan JVM yang akan mengadaptasi ke bahasa mesin target.  Java API: materi menekankan bahwa Java API adalah library yang disediakan Java untuk memudahkan pemrogram Java mengembangkan aplikasi. Java API berisi kumpulan komponen perangkat lunak (class-library) yang membantu developer membuat fitur-fitur, misalnya penanganan input/output, struktur data, dan utilitas. Materi memberi contoh output melalui System.out.println pada bagian HelloWorld.  Edisi Java: materi menyebut tiga edisi Java dari Sun Microsystems. Pertama Java Standard Edition (J2SE) untuk aplikasi java secara umum. Kedua Java Micro Edition (J2ME) untuk perangkat dengan keterbatasan memori dan prosesor seperti mobile dan wireless. Ketiga Java Enterprise Edition (J2EE) untuk pengembangan aplikasi besar. Walau materi tidak terlalu dalam membahas perbedaan edisi, penting untuk siswa menangkap bahwa Java punya “varian” lingkungan sesuai target aplikasi.  Kakas Java: materi menjelaskan perlunya beberapa tools. Untuk menulis program Java, diperlukan Java Standard Edition (J2SE) dengan cara mengunduh paket SDK Java terbaru dari situs resmi. Selain itu dibutuhkan editor teks: Notepad, Ultraedit, Wordpad, Vi, Joe. Untuk pengembangan aplikasi visual (visual programming), diperlukan kakas pengembangan yang mengintegrasikan beberapa hal: JDK, editor teks, GUI editor (Graphical User Interface), manajemen aplikasi, dan debugger. Contoh IDE yang disebut adalah Netbeans dan Eclipse. Lalu ada langkah instalasi JDK, dan pengaturan environment variable PATH melalui Control Panel > System > Advanced > Environment Variables. Materi juga mengingatkan untuk mengecek versi JRE dan versi JDK yang terinstal (agar proses compile dan run sesuai).  Program pertama: bagian ini mengajarkan urutan praktis membuat program HelloWorld. Langkahnya: ketik program HelloWorld di editor teks, simpan sebagai HelloWorld.java (nama file harus sama persis dengan nama class). Kemudian kompilasi dari command prompt untuk menghasilkan arsip HelloWord.class (nama class yang konsisten penting; pada materi ada sedikit typo penulisan HelloWord vs HelloWorld, tapi konsepnya: output file .class muncul setelah compile). Setelah itu jalankan arsip .class dari command prompt hingga muncul output “Hello world!”.  Class (OOP): materi selanjutnya menguatkan konsep class. Java berorientasi objek; struktur Java terdiri dari kelas-kelas objek. Class adalah blueprint, sedangkan objek adalah instans dari class pada saat running. Template class: class NamaKelas { // body }. Di dalam class terdapat atribut dan method. Atribut dinyatakan dengan variabel atau objek kelas lain. Method adalah operasi (prosedur, fungsi, atau konstruktor) yang dimiliki oleh class. Contoh class HelloWorld hanya punya satu method yaitu main: public static void main(String[] args) { System.out.println(\"Hello world!\"); }. Ini penting sebagai baseline: siswa harus paham bahwa program dieksekusi mulai dari main.  Program input/output sederhana: materi menyebut contoh InputTest.java dan proses compile lalu menjalankan programnya. Selanjutnya ada InputTestGUI.java untuk input menggunakan GUI. Materi juga menunjukkan pola yang lebih besar: ada Kelas Mahasiswa (Mahasiswa.java) dan Kelas DriverMhs (DriverMhs.java) yang menggunakan kelas Mahasiswa. Konsep ini bisa dijelaskan sebagai pemisahan tanggung jawab: Mahasiswa menyimpan data/behavior, sementara DriverMhs mengatur alur program (membuat objek, memanggil method, menampilkan hasil). Lalu ada contoh Kelas Matriks dan DriverMatriks, yang juga menggunakan Mahasiswa. Intinya: cara menyusun program multi-class adalah membuat beberapa class yang saling bekerja, dan class driver sebagai pengendali eksekusi.  Cara menjelaskan dengan friendly: ajak siswa membayangkan compile seperti mengubah resep menjadi bentuk yang bisa diproses oleh mesin (bytecode), JVM seperti juru masak yang menyesuaikan kompor tiap rumah (OS/CPU). Saat masuk ke class, gunakan analogi blueprint-baju atau cetakan-kue: class adalah blueprint, objek adalah produk jadi. Saat masuk driver class, gunakan analogi pengontrol lomba: kelas Mahasiswa/Matriks adalah peserta dan aturan, sedangkan Driver adalah panitia yang memanggil dan menjalankan proses.  Supaya pembelajaran terasa interaktif, tutor bisa mendorong siswa untuk selalu mengulang pola: ubah kode, compile, lalu jalankan untuk melihat output. Untuk bagian code, meskipun materi aslinya Java, playground di platform pembelajaran bisa berupa simulasi output (misalnya main dan System.out.println) agar siswa tetap berlatih logika dan fokus pada konsep alur eksekusi dan struktur program."
+}

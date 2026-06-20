@@ -382,5 +382,17 @@
     "courseUrl": "/course/eb06dfc49dce164f8438aea54927da15",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "708d57be2087302cf2dc211279851b53",
+    "courseName": "Java Basics: Dari Sejarah sampai Program Pertama (HelloWorld & Konsep Class)",
+    "courseEmoji": "☕️",
+    "courseColor": "#6366f1",
+    "courseFileName": "Pengantar-Pemrograman-dengan-Bahasa-Java-2018.pdf",
+    "courseOwner": "rndm@gmail.com",
+    "courseCreated": "20-06-2026, 09.43.19",
+    "courseUrl": "/course/708d57be2087302cf2dc211279851b53",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
