@@ -394,5 +394,17 @@
     "courseUrl": "/course/708d57be2087302cf2dc211279851b53",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "e70a1c75de242c265dd98b7cffbbec5b",
+    "courseName": "Java Dasar: Multiplatform, Variabel, Operator, dan Kontrol Alur",
+    "courseEmoji": "☕️💻",
+    "courseColor": "#6366f1",
+    "courseFileName": "Modul 1.pdf",
+    "courseOwner": "rndm@gmail.com",
+    "courseCreated": "20-06-2026, 09.45.47",
+    "courseUrl": "/course/e70a1c75de242c265dd98b7cffbbec5b",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]

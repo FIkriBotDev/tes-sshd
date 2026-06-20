@@ -1,0 +1,426 @@
+{
+  "title": "Java Dasar: Multiplatform, Variabel, Operator, dan Kontrol Alur",
+  "summary": "Di modul ini kamu belajar fondasi pemrograman Java: kenapa Java cocok untuk banyak perangkat, lalu masuk ke cara menyusun kode dasar di NetBeans. Setelah itu kamu praktik konsep inti seperti variabel, tipe data, operator, percabangan (if/switch), pengulangan (for/while/do-while), dan array.",
+  "emoji": "☕️💻",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Sekilas Java: Tulis sekali, jalan di mana-mana",
+      "icon": "☕️",
+      "explanation": "Java adalah bahasa pemrograman multi platform dan multi device. Artinya, program Java yang kamu tulis bisa dijalankan di banyak perangkat yang mendukung Java, dengan perubahan kode yang minim atau bahkan tidak perlu sama sekali. Java dikompilasi menjadi p-code/bytecode lalu dijalankan oleh Java Virtual Machine (JVM).",
+      "analogy": "Bayangkan kamu menulis resep masakan. Resepnya sama, tapi bisa dipakai di dapur yang berbeda selama “alat masaknya” (JVM) tersedia.",
+      "highlight": "JVM, bytecode, multiplatform",
+      "keyPoints": [
+        "Java diproses jadi bytecode lalu dijalankan oleh JVM",
+        "Bytecode tidak tergantung arsitektur perangkat tertentu",
+        "Tujuannya: sekali tulis, banyak tempat bisa jalan"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Kenapa Java unggul? (OOP, Multiplatform, Multithread, Networking, Dinamis)",
+      "icon": "🏆",
+      "explanation": "Java punya beberapa keunggulan penting. Java berorientasi objek (OOP), mendukung aplikasi di lingkungan jaringan berbeda (multiplatform), dan bisa menjalankan beberapa proses secara bersamaan (multithread). Java juga punya library networking untuk TCP/IP seperti HTTP dan FTP, serta bersifat dinamis saat linking class.",
+      "analogy": "Kalau program itu seperti tim kerja, Java seperti tim dengan SOP yang rapi: tiap anggota adalah “objek”, tugas bisa paralel, dan tim juga punya perlengkapan untuk kerja tim jarak jauh (networking).",
+      "highlight": "OOP, multithread, TCP/IP, dynamic linking",
+      "keyPoints": [
+        "OOP: program dibagi jadi objek yang punya data dan perilaku",
+        "Multithread: beberapa pekerjaan berjalan dalam waktu bersamaan",
+        "Networking: lebih mudah buat koneksi dan layanan berbasis protokol"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "NetBeans IDE: Editor, compiler, debugger dalam satu tempat",
+      "icon": "🧰",
+      "explanation": "NetBeans adalah Integrated Development Environment (IDE) berbasis Java. IDE menggabungkan GUI builder, editor kode, compiler, dan debugger dalam satu aplikasi. NetBeans berjalan di atas Swing untuk membuat aplikasi desktop lintas platform.",
+      "analogy": "IDE itu seperti dapur lengkap: ada kompor (compiler), oven (debugger membantu cari masalah), dan alat masak (GUI builder). Kamu tidak perlu nyiapin semuanya satu-satu.",
+      "highlight": "IDE, Swing, GUI Builder (GRATIS)",
+      "keyPoints": [
+        "IDE memudahkan menulis, menguji, dan mencari bug",
+        "NetBeans punya GUI Builder untuk Swing",
+        "Java GUI yang didukung NetBeans (di modul ini) adalah Swing"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Buat Project dan Class Java di NetBeans",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Buat Project Baru",
+          "description": "Klik File > New Project untuk membuka jendela NewProject.",
+          "tip": "Pilih lokasi project yang mudah kamu akses (misalnya di folder “Documents/JavaLabs”)."
+        },
+        {
+          "number": 2,
+          "title": "Pilih Tipe Project",
+          "description": "Pada Categories pilih Java, lalu pada Projects pilih JavaApplication, lalu klik Next.",
+          "tip": "Kalau bingung, cari tulisan JavaApplication karena ini sesuai modul."
+        },
+        {
+          "number": 3,
+          "title": "Isi Nama dan Lokasi",
+          "description": "Ketik ProjectName (misalnya demo) lalu pilih lokasi penyimpanan.",
+          "tip": "Nama project bebas, tapi usahakan singkat dan jelas."
+        },
+        {
+          "number": 4,
+          "title": "Finish",
+          "description": "Klik Finish untuk membuat project.",
+          "tip": "Setelah selesai, pastikan project muncul di Project Pane."
+        },
+        {
+          "number": 5,
+          "title": "Buat Class Baru",
+          "description": "Klik kanan node project (demo) > New > Java Class.",
+          "tip": "Kelas baru biasanya untuk fitur kecil atau percobaan konsep."
+        },
+        {
+          "number": 6,
+          "title": "Tentukan Nama Class dan Package",
+          "description": "Isi ClassName (misalnya perkenalan) dan pilih Source Packages pada Location.",
+          "tip": "Pakai package agar struktur project rapi."
+        },
+        {
+          "number": 7,
+          "title": "Finish dan Jalankan",
+          "description": "Klik Finish, lalu edit kode sampai bisa mencetak output seperti “Hello World!”.",
+          "tip": "Cari tombol Run (biasanya panah hijau)."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Code Playground: Hello World versi Java (cek outputnya)",
+      "icon": "💻",
+      "language": "java",
+      "instruction": "Jalankan program ini dan pastikan output menampilkan kalimat yang sesuai. Kamu bisa ubah teks di System.out.println. Tantangan: ganti pesan menjadi “Belajar Java itu Seru!”",
+      "fileName": "HelloWorld.java",
+      "defaultCode": "public class HelloWorld { public static void main(String[] args) { System.out.println(\"Hello World!\"); } }",
+      "hint": "Output ada di console. Coba ubah string di tanda petik ganda."
+    },
+    {
+      "type": "concept_card",
+      "title": "Variabel & Tipe Data: tempat menyimpan informasi",
+      "icon": "🧠",
+      "explanation": "Variabel dipakai untuk menampung data yang dipakai program. Tipe data menentukan jenis nilai yang boleh disimpan. Java punya dua kategori: tipe data primitif dan tipe data referensi. Contoh primitif: integer (bilangan bulat), floating point (desimal), char (karakter tunggal pakai tanda petik tunggal), dan boolean (true/false). Tipe data referensi contohnya String, karena bisa merepresentasikan objek.",
+      "analogy": "Kalau program itu seperti kotak-kotak penyimpanan, tipe data adalah label ukuran kotaknya. Integer itu kotak bilangan bulat, char itu kotak 1 karakter, boolean itu kotak “ya/tidak”.",
+      "highlight": "identifier, tipe primitif vs referensi",
+      "keyPoints": [
+        "Deklarasi variabel: [tipe data] [nama variabel]",
+        "Identifier: harus mulai huruf/underscore, tidak boleh keyword",
+        "Primitif: int/float/double/char/boolean (sesuai modul); Referensi: misalnya String"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Operator: + - bandingkan sampai logika",
+      "icon": "🧮",
+      "explanation": "Operator adalah simbol untuk melakukan operasi pada satu, dua, atau tiga operand lalu menghasilkan nilai. Java punya beberapa kelompok operator: aritmatika (+, -, *, /, %, ++/--), relasional (<, <=, >, >=, ==, !=) yang menghasilkan true/false, kondisional/logika (&&, ||, !) untuk menggabungkan kondisi boolean, shift dan bitwise untuk manipulasi level bit, serta operator assignment (misalnya +=, -=, *=, dst.) untuk memberi nilai ke variabel secara ringkas.",
+      "analogy": "Operator itu seperti tombol di remote: ada tombol hitung (aritmatika), tombol cek (relasional), tombol aturan (logika), dan tombol mode khusus (bitwise/shift).",
+      "highlight": "+, ==, &&, +=, %, ++",
+      "keyPoints": [
+        "Aritmatika untuk hitung: + - * / %",
+        "Relasional menghasilkan true/false untuk keputusan",
+        "Assignment shortcut seperti += mempermudah penulisan"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Code Playground: Uji Operator (relasional & logika)",
+      "icon": "💻",
+      "language": "java",
+      "instruction": "Ubah nilai a dan b, lalu lihat output apakah kondisi logika menghasilkan true atau false. Tantangan: buat kondisi agar hasilnya berubah saat a naik dari 10 ke 11.",
+      "fileName": "OperatorTest.java",
+      "defaultCode": "public class OperatorTest { public static void main(String[] args) { int a = 10; int b = 20; boolean cond1 = (a < b); boolean cond2 = (a + 1 == b); boolean cond3 = (cond1 && cond2); System.out.println(\"a < b = \" + cond1); System.out.println(\"a + 1 == b = \" + cond2); System.out.println(\"cond1 && cond2 = \" + cond3); } }",
+      "hint": "Coba ubah a dan lihat perubahan pada cond2 dan cond3."
+    },
+    {
+      "type": "concept_card",
+      "title": "Percabangan: if, if-else, nested if, dan switch",
+      "icon": "🎯",
+      "explanation": "Percabangan (struktur pemilihan) membuat program memilih aksi berdasarkan kondisi. Jika kondisi benar, blok kode dijalankan; jika salah, blok kode lain yang dijalankan. Struktur yang umum: if, if-else, nested if (if di dalam if). Ada juga switch, cocok untuk memilih satu dari banyak kemungkinan berdasarkan nilai integral konstan.",
+      "analogy": "Seperti menentukan jalan saat di persimpangan: jika syarat tertentu benar, ambil jalan A, kalau tidak ambil jalan B. Switch seperti menempatkan “jawaban” ke daftar pilihan berdasarkan nomor.",
+      "highlight": "if (kondisi), else, else if, switch-case, break, default",
+      "keyPoints": [
+        "if-else memilih aksi berdasarkan benar/salah",
+        "nested if dipakai untuk kondisi bertingkat",
+        "switch memakai case dan break untuk keluar dari blok"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Pengulangan: for, while, do-while (berapa kali loop?)",
+      "icon": "🔁",
+      "explanation": "Struktur pengulangan mengulang satu blok instruksi. Ada inisialisasi, kondisi, dan iterasi pada for. for cocok saat jumlah pengulangannya diketahui. while cocok saat jumlahnya belum diketahui, perulangan berhenti ketika kondisi menjadi salah. do-while mirip while, tapi kondisi dicek di akhir sehingga minimal satu kali iterasi pasti terjadi.",
+      "analogy": "Mengulang langkah belajar: for itu seperti “hafal 10 kali”, sementara while itu seperti “ulang sampai terasa hafal”. do-while itu seperti “jawab dulu, baru cek benar atau tidak”.",
+      "highlight": "for (inisialisasi;kondisi;iterasi), while, do-while minimal 1x",
+      "keyPoints": [
+        "for: jumlah iterasi terkontrol dengan jelas",
+        "while: berhenti saat kondisi jadi false",
+        "do-while: minimal satu kali jalan"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Array: kumpulan variabel bertipe sama dengan indeks",
+      "icon": "📦",
+      "explanation": "Array adalah struktur data yang berisi banyak elemen dengan tipe data yang sama, dan tiap elemen punya indeks. Ukuran array bersifat tetap setelah dibuat, dan setiap elemen menyimpan satu nilai. Contoh array X berisi 10 elemen: X[0] sampai X[9].",
+      "analogy": "Seperti laci penyimpanan bernomor. Kamu bisa menyimpan angka di tiap laci, lalu mengambil berdasarkan nomor laci (indeks).",
+      "highlight": "array bertipe sama, indeks, ukuran tetap",
+      "keyPoints": [
+        "Deklarasi array: datatype[] arrayName",
+        "Indeks dimulai dari 0 (sesuai contoh umum modul)",
+        "Ukuran array tetap saat sudah dibuat"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Java Workflow",
+          "value": "Source Code -> Bytecode -> JVM",
+          "icon": "⚙️"
+        },
+        {
+          "label": "Pilar Keunggulan Java",
+          "value": "OOP, Multiplatform, Multithread, Networking, Dinamis",
+          "icon": "🏆"
+        },
+        {
+          "label": "IDE yang dipakai",
+          "value": "NetBeans + Swing GUI Builder",
+          "icon": "🧰"
+        },
+        {
+          "label": "Kontrol Alur",
+          "value": "if/switch untuk pilihan, for/while/do-while untuk pengulangan",
+          "icon": "🧭"
+        },
+        {
+          "label": "Data dalam Program",
+          "value": "Variabel + Tipe Data, Array untuk kumpulan elemen",
+          "icon": "🧠"
+        }
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "Analogi: JVM seperti penerjemah resep",
+      "icon": "💡",
+      "realWorld": "Kamu menulis resep di HP, tapi masaknya di dapur yang berbeda.",
+      "connection": "Bytecode seperti format resep universal, JVM seperti juru masak yang menyesuaikan alat dapur setempat.",
+      "insight": "Kalau JVM tersedia, program Java bisa jalan tanpa kamu menulis ulang dari nol untuk setiap perangkat."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "JVM",
+          "definition": "Lingkungan yang menjalankan bytecode Java agar program bisa berjalan di berbagai platform.",
+          "example": "Program Java bisa dijalankan di Windows dan Linux karena keduanya punya JVM."
+        },
+        {
+          "term": "Bytecode",
+          "definition": "Format kode yang tidak tergantung arsitektur perangkat tertentu, hasil kompilasi Java.",
+          "example": "Kompilator menghasilkan bytecode lalu JVM mengeksekusinya."
+        },
+        {
+          "term": "Identifier",
+          "definition": "Nama untuk variabel, method, class, interface, dan package.",
+          "example": "namaVariabel, nilai1, perkenalan."
+        },
+        {
+          "term": "Tipe Data Primitif",
+          "definition": "Tipe data dasar bawaan Java (contoh: integer, floating point, char, boolean).",
+          "example": "boolean isValid = true;"
+        },
+        {
+          "term": "Tipe Data Referensi",
+          "definition": "Tipe yang merepresentasikan objek (contoh: String).",
+          "example": "String nama = \"Ani\";"
+        },
+        {
+          "term": "Operator Relasional",
+          "definition": "Operator untuk membandingkan nilai dan menghasilkan true/false.",
+          "example": "a > b"
+        },
+        {
+          "term": "Switch-Case",
+          "definition": "Struktur pemilihan untuk memilih eksekusi berdasarkan nilai integral tertentu.",
+          "example": "switch (nilai) { case 1: ... }"
+        },
+        {
+          "term": "Array",
+          "definition": "Kumpulan elemen bertipe sama dengan indeks.",
+          "example": "int[] X = new int[10];"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Java dikompilasi menjadi apa sebelum dijalankan oleh JVM?",
+      "options": [
+        "Machine code",
+        "Bytecode/p-code",
+        "Script HTML",
+        "Assembly khusus platform"
+      ],
+      "answer": "Bytecode/p-code",
+      "explanation": "Modul menjelaskan Java dikompilasi menjadi p-code dan bisa dijalankan dengan Java Virtual Machine. Intinya hasilnya adalah format bytecode yang portabel.",
+      "xpReward": 50
+    },
+    {
+      "question": "Keunggulan Java yang membuat program bisa berjalan di banyak sistem operasi adalah ...",
+      "options": [
+        "Tidak ada compiler",
+        "Multiplatform",
+        "Single thread saja",
+        "Hanya untuk mobile"
+      ],
+      "answer": "Multiplatform",
+      "explanation": "Modul menyebut Java bersifat multiplatform karena compiler membangkitkan bytecodes yang tidak tergantung arsitektur tertentu.",
+      "xpReward": 50
+    },
+    {
+      "question": "Tipe data boolean di Java hanya punya nilai ...",
+      "options": [
+        "0 dan 1",
+        "true dan false",
+        "A sampai Z",
+        "bilangan desimal saja"
+      ],
+      "answer": "true dan false",
+      "explanation": "Boolean terdiri dari dua nilai: true dan false untuk evaluasi kondisi.",
+      "xpReward": 50
+    },
+    {
+      "question": "Operator relasional menghasilkan nilai ...",
+      "options": [
+        "int",
+        "float",
+        "true atau false",
+        "String"
+      ],
+      "answer": "true atau false",
+      "explanation": "Operator relasional membandingkan nilai dan menghasilkan True/False sesuai modul.",
+      "xpReward": 50
+    },
+    {
+      "question": "Mana yang termasuk operator logika untuk operasi Boolean?",
+      "options": [
+        "&&, ||, !",
+        "+, -, *",
+        "<<, >>",
+        "%, ++"
+      ],
+      "answer": "&&, ||, !",
+      "explanation": "Operator kondisional/logika pada modul adalah && (And), || (Or), dan ! (Not).",
+      "xpReward": 50
+    },
+    {
+      "question": "Dalam switch, fungsi break adalah ...",
+      "options": [
+        "Mengubah nilai ekspresi",
+        "Keluar dari blok kondisi/iterasi",
+        "Membuat case otomatis",
+        "Mengulang loop dari awal"
+      ],
+      "answer": "Keluar dari blok kondisi/iterasi",
+      "explanation": "Modul menjelaskan break adalah perintah pengontrol alur program untuk keluar dari satu blok kondisi ataupun iterasi.",
+      "xpReward": 50
+    },
+    {
+      "question": "Struktur perulangan do...while menjamin minimal ... kali pengulangan.",
+      "options": [
+        "0 kali",
+        "1 kali",
+        "2 kali",
+        "sampai kondisi benar tanpa batas"
+      ],
+      "answer": "1 kali",
+      "explanation": "Modul menyebutkan karena kondisi berada di bawah, sekurang-kurangnya terjadi satu kali pengulangan.",
+      "xpReward": 50
+    },
+    {
+      "question": "Array tersusun atas ... elemen dengan tipe data sama.",
+      "options": [
+        "Elemen dengan tipe berbeda",
+        "Banyak variabel dengan tipe data sama",
+        "Hanya satu elemen",
+        "Bentuk bebas tanpa indeks"
+      ],
+      "answer": "Banyak variabel dengan tipe data sama",
+      "explanation": "Modul menjelaskan array adalah kumpulan banyak variabel dengan tipe data sama dan tiap elemen memiliki indeks.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa fungsi JVM dalam eksekusi program Java?",
+      "answer": "JVM menjalankan bytecode agar program Java bisa berjalan di berbagai platform.",
+      "emoji": "🧩",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Sebutkan 2 contoh tipe data primitif pada modul!",
+      "answer": "Contoh primitif: integer (bilangan bulat), floating point (bilangan pecahan), char, boolean.",
+      "emoji": "🔢",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Identifier yang benar harus diawali dengan apa?",
+      "answer": "Diawali huruf (abjad) atau underscore (_).",
+      "emoji": "🏷️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa operator relasional untuk “tidak sama dengan”?",
+      "answer": "Operator !=",
+      "emoji": "≠",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Operator logika untuk AND adalah apa?",
+      "answer": "&&",
+      "emoji": "&&",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Kapan sebaiknya menggunakan for dibanding while?",
+      "answer": "Gunakan for saat jumlah pengulangan diketahui; while saat jumlah pengulangan belum diketahui.",
+      "emoji": "🔁",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa keunikan do...while dibanding while?",
+      "answer": "do...while minimal menjalankan isi loop satu kali karena pengecekan kondisi dilakukan di akhir.",
+      "emoji": "⏩",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Array itu apa dan apa yang membedakan tiap elemennya?",
+      "answer": "Array adalah kumpulan elemen bertipe sama; tiap elemen diakses dengan indeks.",
+      "emoji": "📦",
+      "difficulty": "easy"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama: memahami dasar Java, NetBeans, dan membuat class sederhana.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Modul 1 ini memperkenalkan dasar pemrograman Java dan cara mulai menulis program dengan NetBeans. Tutor sebaiknya membuka dengan konteks: Java adalah bahasa pemrograman yang multi platform dan multi device, artinya program yang ditulis bisa dijalankan di banyak komputer/perangkat selama ada dukungan Java. Bagian ini penting karena menjawab pertanyaan siswa “kalau saya bikin program di PC Windows, apakah bisa jalan di Linux atau Mac?” Modul menegaskan bahwa setelah menulis program Java, kodenya dikompilasi menjadi p-code/bytecode, lalu dijalankan oleh Java Virtual Machine (JVM). Karena format bytecode dirancang tidak tergantung arsitektur spesifik, JVM bertindak seperti penerjemah yang menyesuaikan eksekusi ke sistem operasi yang berbeda. Tutor bisa menjelaskan secara sederhana: kamu tidak “mengulang coding” untuk setiap OS, karena bytecode yang sama dijalankan oleh JVM di berbagai OS.\n\nSetelah itu, modul memaparkan keunggulan Java dibanding bahasa lain. Pertama, Java berorientasi objek (OOP). Tutor sebaiknya menekankan bahwa OOP memodelkan masalah menggunakan objek-objek yang mempunyai data dan tingkah laku (behavior). Walau modul ini belum masuk ke detail class/objects, konsep ini menyiapkan mental siswa: program bukan hanya rangkaian instruksi linear, tapi bisa disusun dari komponen yang saling terkait.\n\nKeunggulan kedua adalah multiplatform. Tutor bisa menghubungkan lagi ke bytecode: compiler membangkitkan bytecodes, yaitu format yang didesain untuk dikirim ke banyak platform dengan efisien. Modul menyebut contoh platform seperti Linux, Unix, Windows, Solaris, dan Mac. Tutor jangan terlalu teknis; cukup tekankan bahwa Java dirancang untuk berjalan luas.\n\nKeunggulan ketiga adalah multithread. Tutor perlu menjelaskan bahwa multithreading adalah kemampuan program mengerjakan beberapa proses dalam waktu bersamaan. Thread dapat memanfaatkan kelebihan multi prosessor jika sistem operasi mendukung. Bisa diceritakan contoh sederhana: saat program tidak hanya menghitung, tapi juga menanggapi input pengguna sambil proses lain jalan.\n\nKeunggulan keempat adalah dapat didistribusi dengan mudah dan networking. Modul menyebut Java memiliki library rutin yang lengkap untuk protocol TCP/IP seperti HTTP dan FTP, memudahkan tugas networking yang sulit seperti membuka dan mengakses soket koneksi, serta memudahkan pembuatan CGI. Tutor bisa menjelaskan bahwa ini membuat Java cocok untuk aplikasi jaringan.\n\nKeunggulan kelima adalah bersifat dinamis. Tutor jelaskan bahwa Java dirancang adaptif terhadap perkembangan. Dalam tahap linking, class yang diperlukan saja bisa dilink, dan jika dibutuhkan modul kode baru dapat dilink dari beberapa sumber termasuk dari internet. Tujuan dari penjelasan ini adalah memberi gambaran “Java fleksibel” saat aplikasi berkembang.\n\nBagian berikutnya beralih ke NetBeans. Tutor jelaskan bahwa NetBeans adalah IDE (Integrated Development Environment) berbasis Java dari Sun Microsystems yang berjalan di atas Swing. Swing dijelaskan sebagai teknologi Java untuk pengembangan aplikasi desktop lintas platform (Windows, Linux, Mac OS X, Solaris). Tutor sebaiknya menegaskan arti IDE: satu aplikasi yang memadukan GUI (untuk membuat tampilan), editor kode atau text, compiler, dan debugger. Modul juga menyoroti kelebihan GUI Builder NetBeans yang gratis dan kompetibel karena Swing juga dikembangkan oleh Sun. Tutor sebaiknya menyinggung bahwa NetBeans hanya mensupport 1 pengembangan Java GUI yaitu Swing, berbeda dengan Eclipse yang populer menggunakan SWT dan JFace.\n\nSelanjutnya modul menjelaskan langkah membuat project dan class di NetBeans. Tutor bisa mengajak siswa mengikuti alur: File > New Project, memilih kategori Java dan project JavaApplication, mengisi ProjectName dan lokasi, klik Finish. Lalu membuat class baru: klik kanan project pane, New JavaClass, isi ClassName dan pilih Source Packages, klik Finish. Penting untuk dicatat bahwa modul menyertakan contoh program yang saat dieksekusi mencetak “Hello World!”. Tutor dapat memastikan siswa memahami bahwa entry point program Java umumnya ada di method main dalam class, dan output dicetak memakai System.out.println.\n\nBagian inti berikutnya adalah implementasi algoritma dasar. Tutor harus fokus pada konsep: variabel, identifier, tipe data, operator, struktur pemilihan (if/switch), struktur pengulangan (for/while/do-while), dan array. Tutor sebaiknya memulai dari variabel: variabel digunakan untuk menampung data. Tipe variabel ditentukan sebelum variabel dipakai. Sintaks dasar yang disebut modul: [tipe data] [nama variabel]. Tutor bisa jelaskan juga identifier: kumpulan karakter untuk menamai variabel, method, class, interface, package. Aturan: harus diawali huruf/abjad atau underscore, boleh berisi huruf, angka, underscore. Tidak boleh mengandung @, tidak boleh spasi, tidak boleh diawali angka, serta tidak boleh memakai keyword Java. Modul juga menyebut Unicode bisa digunakan untuk identifier; tutor cukup sebut sebagai tambahan tanpa mendalami.\n\nTipe data: modul membagi dua menjadi tipe primitif dan tipe referensi. Tutor harus mengajak siswa mengingat contoh primitif: Integer (bilangan bulat), Floating Point (bilangan pecahan/desimal), Char (karakter tunggal dengan tanda petik tunggal), dan Boolean (true/false). Untuk referensi, modul menyebut dapat mendefinisikan tipe data baru sebagai objek dari class tertentu, contohnya String. Tutor bisa gunakan analogi kotak bertipe: setiap kotak hanya muat jenis isi tertentu.\n\nOperator: tutor sebaiknya membagi menjadi kelompok. Aritmatika: +, -, *, /, % (modulus/sisa bagi), ++ (increment), -- (decrement). Relasional: <, <=, >, >=, ==, != menghasilkan true/false. Kondisional/logika: && (And), || (Or), ! (Not). Shift dan Bitwise: modul menyebut operator seperti & (And) pada bitwise, | (Or), ^ (Xor), ~ (Not), >> (Shift Right), << (Shift Left). Assignment: modul menjelaskan operator memberi nilai ke variabel bukan hanya '=' tetapi juga shortcut seperti += setara b=b+a, -= setara b=b-a, *=, /=, %=, &=, |=, ^=, <<=, >>=, dll. Tutor sebaiknya menekankan manfaat shortcut: lebih ringkas dan mengurangi salah ketik.\n\nStruktur pemilihan: tutor jelaskan bahwa percabangan digunakan untuk memecahkan masalah dengan memilih statement berdasarkan kondisi. if statement: bentuk umum if (kondisi) { ... } Jika kondisi benar jalankan blok; jika salah keluar. if-else: if (kodisi) Pernyataan-1; else Pernyataan-2; Nested if: if (kondisi1) ... else if (kondisi2) ... else ... Tutor harus menekankan hubungan logika: kondisi dievaluasi berurutan. Lalu switch: cocok untuk banyak kemungkinan berbasis nilai integral konstan (byte/short/int/char). Tutor jelaskan konsep case sebagai label, default sebagai fallback jika tidak ada case yang cocok, dan break untuk keluar dari blok switch agar tidak jatuh ke case berikutnya.\n\nStruktur pengulangan: modul menjelaskan bahwa loop mengulang instruksi sejumlah kali. Ada for, while, do...while (dan disebut juga foreach, serta break, goto, continue, namun fokus modul ini pada for/while/do-while). Tutor jelaskan for: for (inisialisasi;kondisi;iterasi) { ... }. Inisialisasi set awal variable kontrol, kondisi ekspresi relasi untuk keluar, iterasi memperbarui nilai kontrol. while: while (kondisi) { ... }, selama kondisi true loop berjalan. do...while: do { ... } while (kondisi), kondisi diperiksa di akhir sehingga minimal satu iterasi. Modul juga memberi contoh untuk input menggunakan Scanner dan menguji bilangan positif/negatif/nol (dengan if), serta contoh for/while untuk pengulangan.\n\nTerakhir, array: tutor jelaskan array sebagai struktur data dengan banyak elemen bertipe sama dan indeks. Ukuran array bersifat tetap setelah dibuat. Elemen array bisa diakses berdasarkan indeks, contoh array X dengan 10 elemen: X[0]..X[9]. Modul juga menunjukkan konsep perulangan while dengan contoh input bilangan dan mencetak i sampai batas nilai, sebagai pengantar untuk berpikir runtut seperti “mengisi/mengecek elemen” walau belum membuat array pada contoh tersebut.\n\nSecara keseluruhan, tutor sebaiknya menjaga alur belajar: pahami platform Java dan IDE, lalu latih dasar-dasar kode (Hello World), kemudian pelajari building blocks algoritma: variabel dan tipe data, operator untuk logika/hitungan, percabangan untuk keputusan, pengulangan untuk repetisi, dan array untuk menyimpan banyak data. Gunakan contoh output console agar siswa cepat melihat efek perubahan kode."
+}
