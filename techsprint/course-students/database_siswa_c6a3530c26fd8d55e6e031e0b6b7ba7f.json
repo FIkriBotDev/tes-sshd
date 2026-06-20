@@ -5,8 +5,8 @@
     "email": "muhammadfikrifahrezi2@gmail.com",
     "password": "$2b$10$XQiR.Vea9lMLXAUcMqhsEuDkXbv8Vb.vHRyiyeKUX0yqEDcIESRzm",
     "profilePicture": "",
-    "xp": 1250,
-    "coin": 535,
+    "xp": 1265,
+    "coin": 540,
     "level": 4,
     "streak": 0,
     "lastLogin": "20-06-2026, 10.18.50",
@@ -35,6 +35,9 @@
     "joinedAt": "20-06-2026, 10.18.50",
     "isMainAccount": true,
     "quizCorrectCount": 8,
-    "perfectQuizCount": 1
+    "perfectQuizCount": 1,
+    "aiInteractions": 1,
+    "todayAiCount": 1,
+    "lastAiDate": "Sat Jun 20 2026"
   }
 ]
