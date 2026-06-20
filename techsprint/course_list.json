@@ -358,5 +358,17 @@
     "courseUrl": "/course/a18a15c7e2bffe7f093aa41db1f09315",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "ec1ff54defcc6d6b6c2ba731002db83f",
+    "courseName": "Java OOP di NetBeans: Object, Class, Method, Encapsulation, Inheritance, Polymorphism",
+    "courseEmoji": "☕️",
+    "courseColor": "#6366f1",
+    "courseFileName": "Modul-Pemrograman-Berbasis-Object_Evita-Fitri.pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "20-06-2026, 01.55.45",
+    "courseUrl": "/course/ec1ff54defcc6d6b6c2ba731002db83f",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]

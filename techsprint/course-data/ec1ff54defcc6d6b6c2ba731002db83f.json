@@ -1,0 +1,383 @@
+{
+  "title": "Java OOP di NetBeans: Object, Class, Method, Encapsulation, Inheritance, Polymorphism",
+  "summary": "Kamu akan belajar dasar pemrograman Java lewat konsep Object Oriented Programming (OOP): cara berpikir pakai objek, memahami Class dan Method, lalu ciri khas OOP seperti enkapsulasi, pewarisan, dan polimorfisme. Di akhir, kamu juga praktik membuat program Java mini dengan struktur OOP yang rapi.",
+  "emoji": "☕️",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Java itu Luwes: Multiplatform + JVM",
+      "icon": "☕️",
+      "explanation": "Java populer karena bisa dipakai membuat banyak jenis aplikasi, dari desktop sampai mobile. Kuncinya ada di JVM dan bytecode: program Java dikompilasi jadi bytecode yang bisa dijalankan di berbagai sistem operasi selama JVM tersedia.",
+      "analogy": "Anggap Java itu seperti resep makanan universal: bisa dimasak di dapur mana pun asal ada “kompor” (JVM) yang cocok.",
+      "highlight": "Platform Independen, Bytecode, JVM",
+      "keyPoints": [
+        "Java bisa jalan di Windows, Linux, dan lainnya",
+        "Bytecode tidak tergantung arsitektur OS",
+        "JVM adalah jembatan eksekusi program"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Ciri-Ciri Java yang Sering Keluar di Soal",
+      "icon": "🧠",
+      "explanation": "Java punya banyak karakteristik: dinamis, berorientasi objek, multithreaded, performa tinggi, terinterpretasi via JVM, terdistribusi, portabel, dan kuat serta aman (secure). Semua ini bikin Java enak dipakai untuk membangun sistem yang kompleks.",
+      "analogy": "Kalau program itu kayak tim, Java seperti tim yang siap kerja: dinamis buat perubahan, multithread biar kerja serentak, dan secure biar tidak gampang “dibobol”.",
+      "highlight": "Dinamis, OOP, Multithread, Secure",
+      "keyPoints": [
+        "Multithread membantu banyak tugas berjalan bersamaan",
+        "Secure: ada penanganan exception yang terencana",
+        "Portabel karena bytecode"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Object vs Class: Bedanya Apa?",
+      "icon": "📦",
+      "explanation": "Class adalah “cetakan/blueprint”, sedangkan Object adalah “hasil jadi” yang dibangun dari cetakan itu. Dalam OOP, sebuah objek punya atribut (data) dan behaviour (aksi) yang biasanya diwujudkan sebagai method.",
+      "analogy": "Class itu seperti desain rumah di kertas, sedangkan object adalah rumah nyata yang dibangun dari desain tersebut.",
+      "highlight": "Class = Cetakan, Object = Instans",
+      "keyPoints": [
+        "Atribut = variabel/data milik objek",
+        "Behaviour = perilaku/aksi objek",
+        "Object dibuat pakai new"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Method: Cara Objek “Berkomunikasi”",
+      "icon": "🗣️",
+      "explanation": "Method adalah kumpulan pernyataan di dalam class yang menangani tugas tertentu. Objek memanggil method untuk mengubah data atau menghasilkan nilai, sehingga objek bisa “berinteraksi” dengan bagian program lain.",
+      "analogy": "Method itu seperti tombol di perangkat: kamu tekan tombolnya, perangkat melakukan aksi tertentu tanpa kamu harus tahu proses detail di dalamnya.",
+      "highlight": "Tipe return, Tipe akses, NamaMethod",
+      "keyPoints": [
+        "Method bisa menerima argumen dan memproses data",
+        "Method bisa mengembalikan nilai (return)",
+        "Method adalah implementasi operasi class/object"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Praktik: Buat Class, Lalu Bangun Object (Java Simulasi)",
+      "icon": "💻",
+      "language": "java",
+      "instruction": "Edit kode di bawah agar: 1) atribut berupa nama dan umur, 2) method bertipe return mengembalikan kalimat perkenalan, 3) output menggunakan System.out.println. Pastikan program berjalan tanpa error.",
+      "fileName": "Main.java",
+      "defaultCode": "class Burung { String jenis; int usia; String perkenalan() { return \"Halo, saya \" + jenis + \", usia \" + usia; } } public class Main { public static void main(String[] args) { Burung burungElang = new Burung(); burungElang.jenis = \"Elang\"; burungElang.usia = 3; System.out.println(burungElang.perkenalan()); } }",
+      "hint": "Kalau ingin method mengembalikan String, pastikan tanda tangan method cocok: String namaMethod(...){ ... return ...; }"
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual: Kerangka OOP",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Class",
+          "value": "Cetakan: berisi atribut & method",
+          "icon": "🏗️"
+        },
+        {
+          "label": "Object",
+          "value": "Instans nyata dari class",
+          "icon": "🏠"
+        },
+        {
+          "label": "Atribut",
+          "value": "Data (mis: String jenis, int usia)",
+          "icon": "🧩"
+        },
+        {
+          "label": "Method",
+          "value": "Perilaku/aksi (mis: perkenalan())",
+          "icon": "🛠️"
+        },
+        {
+          "label": "new",
+          "value": "Membuat object dari class",
+          "icon": "⚙️"
+        }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Langkah Susun Program OOP (Pola yang Rapi)",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Tentukan Class",
+          "description": "Cari konsep utama: misal Burung, Mobil, Mahasiswa, dll.",
+          "tip": "Ambil kata benda dulu, jangan mulai dari method dulu."
+        },
+        {
+          "number": 2,
+          "title": "Tulis Atribut (Data)",
+          "description": "Definisikan variabel anggota: misal String jenis; int usia;",
+          "tip": "Atribut biasanya sesuai “informasi yang disimpan”."
+        },
+        {
+          "number": 3,
+          "title": "Buat Method (Aksi)",
+          "description": "Buat fungsi untuk mengubah/menghasilkan sesuatu: misal perkenalan().",
+          "tip": "Gunakan nama method yang jelas seperti perkenalan, terbang, hitungTotal."
+        },
+        {
+          "number": 4,
+          "title": "Buat Object dengan new",
+          "description": "Instansikan class di main: Burung b = new Burung();",
+          "tip": "Set atributnya dulu sebelum memanggil method."
+        },
+        {
+          "number": 5,
+          "title": "Jalankan dan cek output",
+          "description": "Pastikan hasilnya sesuai yang kamu harapkan.",
+          "tip": "Kalau salah, cek: ejaan nama class/method, tipe data, dan tanda kurung."
+        }
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "Enkapsulasi: Remote TV yang Simpel",
+      "icon": "📺",
+      "realWorld": "Saat kamu ganti channel TV pakai remote, kamu tidak perlu tahu proses di dalam TV.",
+      "connection": "Di OOP, enkapsulasi membungkus data dan method agar detail internal terlindungi dari akses sembarang.",
+      "insight": "Kamu cukup memanggil “tombol” (method publik), sementara data internal bisa disembunyikan (private) supaya tidak rusak."
+    },
+    {
+      "type": "concept_card",
+      "title": "Enkapsulasi (Encapsulation): Lindungi Data",
+      "icon": "🔒",
+      "explanation": "Enkapsulasi adalah cara membungkus data (atribut) dan method agar data tidak bisa dimanipulasi sembarangan dari luar class. Biasanya atribut dibuat private, sedangkan method untuk mengakses/mengubahnya dibuat public.",
+      "analogy": "Kunci rumah itu enkapsulasi: kamu boleh masuk lewat pintu (method), tapi tidak bisa membuka semua ruang sembarangan (atribut private).",
+      "highlight": "private vs public, mencegah manipulasi eksternal",
+      "keyPoints": [
+        "Mencegah akses sembarangan ke atribut",
+        "Detail implementasi lebih aman dan rapi",
+        "Memudahkan pelacakan bug"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Pewarisan (Inheritance) dan Polymorphism (Gaya yang Fleksibel)",
+      "icon": "🧬",
+      "explanation": "Inheritance memungkinkan class anak mewarisi atribut dan method dari class induk agar tidak duplikasi kode. Polymorphism membuat satu antarmuka (misal method yang sama) bisa menghasilkan perilaku berbeda tergantung jenis object yang memanggilnya.",
+      "analogy": "Seperti keluarga: anak mewarisi ciri dari orang tua (inheritance), tapi cara bicara bisa berbeda tiap anggota (polymorphism).",
+      "highlight": "extends, reuse kode, override",
+      "keyPoints": [
+        "Inheritance membentuk hirarki class",
+        "Polymorphism membuat kode lebih fleksibel",
+        "Gunakan override untuk perilaku berbeda"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Praktik: Inheritance + Polymorphism Mini (Java Simulasi)",
+      "icon": "💻",
+      "language": "java",
+      "instruction": "Lengkapi kode agar: 1) ada class induk Hewan dengan method suara(), 2) class anak Kucing dan Anjing men-override suara(), 3) main membuat array Hewan dan memanggil suara() lewat referensi induk.",
+      "fileName": "Main.java",
+      "defaultCode": "class Hewan { String suara() { return \"...\"; } } class Kucing extends Hewan { @Override String suara() { return \"Meong\"; } } class Anjing extends Hewan { @Override String suara() { return \"Guk Guk\"; } } public class Main { public static void main(String[] args) { Hewan[] hewan = new Hewan[]{ new Kucing(), new Anjing() }; for (Hewan h : hewan) { System.out.println(h.suara()); } } }",
+      "hint": "Polymorphism terjadi saat memanggil h.suara() meskipun tipe variable-nya Hewan."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini OOP Java",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Class",
+          "definition": "Cetakan blueprint yang berisi atribut dan method.",
+          "example": "class Burung { ... }"
+        },
+        {
+          "term": "Object",
+          "definition": "Instans nyata dari class.",
+          "example": "Burung b = new Burung();"
+        },
+        {
+          "term": "Atribut (Field)",
+          "definition": "Data yang dimiliki object.",
+          "example": "String jenis; int usia;"
+        },
+        {
+          "term": "Method",
+          "definition": "Perilaku/aksi yang dilakukan class/object.",
+          "example": "String perkenalan() { ... }"
+        },
+        {
+          "term": "Enkapsulasi",
+          "definition": "Membungkus data agar aman dari akses sembarangan.",
+          "example": "atribut private + method publik"
+        },
+        {
+          "term": "Inheritance",
+          "definition": "Mewariskan kode dari class induk ke class anak.",
+          "example": "class Kucing extends Hewan"
+        },
+        {
+          "term": "Polymorphism",
+          "definition": "Satu pemanggilan bisa menghasilkan perilaku berbeda tergantung object.",
+          "example": "Hewan h = new Kucing(); h.suara()"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Dalam OOP, class paling tepat disebut sebagai...",
+      "options": [
+        "Cetakan/blueprint",
+        "Hasil akhir program yang langsung berjalan",
+        "File bytecode dari JVM",
+        "Tipe data primitif"
+      ],
+      "answer": "Cetakan/blueprint",
+      "explanation": "Class adalah blueprint yang mendefinisikan atribut dan method; object adalah instans yang dibentuk darinya.",
+      "xpReward": 50
+    },
+    {
+      "question": "Pembuatan object pada Java umumnya menggunakan kata kunci...",
+      "options": [
+        "new",
+        "var",
+        "set",
+        "init"
+      ],
+      "answer": "new",
+      "explanation": "Objek dibuat dari class menggunakan new, misalnya Burung b = new Burung();",
+      "xpReward": 50
+    },
+    {
+      "question": "Atribut (atribut/field) pada object berfungsi untuk...",
+      "options": [
+        "Menyimpan data",
+        "Menghasilkan bytecode",
+        "Menjalankan kompiler",
+        "Mengatur jaringan TCP/IP"
+      ],
+      "answer": "Menyimpan data",
+      "explanation": "Atribut adalah data yang dimiliki object, misalnya jenis, warna, usia.",
+      "xpReward": 50
+    },
+    {
+      "question": "Method adalah...",
+      "options": [
+        "Kumpulan pernyataan untuk tugas tertentu di dalam class",
+        "Nama package Java",
+        "Versi JVM pada komputer",
+        "Struktur data stack"
+      ],
+      "answer": "Kumpulan pernyataan untuk tugas tertentu di dalam class",
+      "explanation": "Method mewujudkan perilaku class/object dan bisa menerima argumen serta mengembalikan nilai.",
+      "xpReward": 50
+    },
+    {
+      "question": "Konsep enkapsulasi paling tepat dijelaskan sebagai...",
+      "options": [
+        "Membungkus data agar terlindungi dari manipulasi luar",
+        "Membuat class menjadi lebih kecil",
+        "Menjalankan program lebih cepat tanpa JVM",
+        "Mengubah bytecode menjadi assembler"
+      ],
+      "answer": "Membungkus data agar terlindungi dari manipulasi luar",
+      "explanation": "Enkapsulasi biasanya menggunakan private untuk data dan method untuk akses terkontrol.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa tujuan inheritance?",
+      "options": [
+        "Mewariskan atribut dan method dari class induk ke class anak",
+        "Menghapus semua method di class",
+        "Mengganti JVM menjadi compiler lain",
+        "Mengubah operator aritmatika"
+      ],
+      "answer": "Mewariskan atribut dan method dari class induk ke class anak",
+      "explanation": "Inheritance membantu reuse kode dan membuat hirarki class.",
+      "xpReward": 50
+    },
+    {
+      "question": "Polymorphism terjadi ketika...",
+      "options": [
+        "Pemanggilan method menghasilkan perilaku berbeda sesuai jenis object",
+        "Program berhenti saat runtime",
+        "Hanya satu jenis class yang bisa digunakan",
+        "Tidak ada method di class induk"
+      ],
+      "answer": "Pemanggilan method menghasilkan perilaku berbeda sesuai jenis object",
+      "explanation": "Saat method dipanggil lewat referensi tipe induk, implementasi yang digunakan mengikuti objek sebenarnya.",
+      "xpReward": 50
+    },
+    {
+      "question": "Karakteristik Java yang membuatnya bisa berjalan lintas platform adalah...",
+      "options": [
+        "Bytecode dan JVM",
+        "Hanya support Windows",
+        "Hanya interpreter tanpa JVM",
+        "Tidak ada keamanan"
+      ],
+      "answer": "Bytecode dan JVM",
+      "explanation": "Java dikompilasi ke bytecode, lalu dijalankan oleh JVM di berbagai OS.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa beda Class dan Object dalam OOP?",
+      "answer": "Class adalah blueprint/cetakan, object adalah instans nyata yang dibuat dari class.",
+      "emoji": "🏗️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa fungsi method pada OOP?",
+      "answer": "Method merepresentasikan perilaku/aksi di dalam class dan bisa memproses data serta mengembalikan nilai.",
+      "emoji": "🛠️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Kapan kamu menggunakan kata kunci new?",
+      "answer": "Saat membuat object dari class, misalnya MyClass obj = new MyClass();",
+      "emoji": "⚙️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa yang dimaksud atribut pada object?",
+      "answer": "Atribut adalah data/variabel anggota yang menyimpan informasi milik object.",
+      "emoji": "🧩",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Jelaskan enkapsulasi dengan satu kalimat.",
+      "answer": "Enkapsulasi membungkus data agar terlindungi dan aksesnya dikontrol lewat method.",
+      "emoji": "🔒",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa itu inheritance?",
+      "answer": "Inheritance adalah pewarisan atribut dan method dari class induk ke class anak.",
+      "emoji": "🧬",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa itu polymorphism?",
+      "answer": "Polymorphism membuat method yang sama dapat memiliki perilaku berbeda tergantung jenis object yang memanggilnya.",
+      "emoji": "🎭",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Kenapa Java disebut platform independent?",
+      "answer": "Karena bytecode dijalankan oleh JVM sehingga bisa berjalan di berbagai OS selama JVM tersedia.",
+      "emoji": "🌍",
+      "difficulty": "easy"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama: dasar Java dan pondasi OOP.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Modul ini membahas pemrograman berbasis object dengan Java (konteks NetBeans sebagai IDE). Bagian awal menekankan landasan teori: pengertian Java, sifat dan karakteristiknya, kemudian masuk ke konsep-konsep OOP: Object, Class, Method, serta karakteristik OOP seperti enkapsulasi (encapsulation), pewarisan (inheritance), dan polimorfisme (polymorphism). Setelah fondasi OOP dipahami, modul juga mencantumkan topik lanjutan seperti jenis-jenis program Java, pengenalan NetBeans, perintah dasar (tipe data dan penerapannya), operator (aritmatika, pemberi nilai, penambah/pengurang, pembanding, logika), serta perintah input, seleksi kondisi, perulangan, dan array. Pada potongan materi yang tersedia di teks, bagian detail yang terbaca mencakup: (1) Java merupakan bahasa pemrograman populer karena cakupan aplikasi yang luas, (2) sejarah singkat Java: ditemukan oleh James Gosling dkk, awalnya dikenal sebagai OAK, dan diposisikan agar dapat dijalankan di berbagai platform, (3) macam paket kelas Java yang disebutkan: java.lang (kelas dasar), java.io (input output termasuk file), java.util (pelengkap seperti struktur data dan tanggal), java.net (komunikasi TCP/IP), java.awt (GUI dasar), dan java.applet (antar muka untuk web), (4) karakteristik Java: dinamis, berorientasi objek, architectural neutral, multithreaded, performa tinggi, platform independen, terinterpretasi, terdistribusi, portabel, serta kuat dan aman. Untuk tutor: jelaskan karakteristik-karakteristik tersebut dengan gaya analogi agar siswa mengerti tanpa harus menghafal teknis. Misalnya platform independent bisa dijelaskan dengan konsep bytecode dan JVM sebagai “jembatan” eksekusi; multithreaded sebagai kemampuan menjalankan beberapa aktivitas sekaligus; secure sebagai adanya penanganan exception (kesalahan runtime) sehingga lebih terkontrol.\n\nLalu modul memfokuskan konsep OOP. Tutor perlu menekankan bahwa OOP mengembangkan program dengan mengelompokkan masalah ke dalam objek-objek berbeda. Setiap objek “hidup” dalam dunianya sendiri dan memiliki atribut (data/variabel anggota) serta behaviour (perilaku/aksi) yang diwujudkan lewat method. Penting untuk membedakan Object dan Class: class adalah blueprint, sedangkan object adalah instans nyata yang dibuat dari class menggunakan kata kunci new. Dalam teks juga ada bentuk deklarasi class yang bisa dijelaskan secara konsep: class memiliki nama, memiliki daftar property/atribut, dan daftar method. Untuk method, jelaskan bahwa method adalah kumpulan pernyataan di dalam kelas yang menangani tugas tertentu. Method berperan sebagai cara objek berkomunikasi satu sama lain, karena menerima argumen, memodifikasi data, dan/atau menghasilkan return. Tutor bisa menegaskan struktur umum deklarasi method: tipe akses (optional), tipe return, nama method, daftar argumen, dan body method. Tekankan bahwa tipe return bisa primitive (int, float, double, dll) atau tipe referensi (misal String), dan bahwa method bisa mengubah nilai atribut melalui pemrosesan data.\n\nBagian karakteristik OOP yang terbaca: Enkapsulasi (encapsulation), Pewarisan (inheritance), dan Polymorphism. Enkapsulasi dijelaskan sebagai pembungkus data dan method agar terlindungi dari manipulasi eksternal dan penyalahgunaan. Dalam praktik Java, ini umumnya diwujudkan dengan memberikan akses private pada atribut, lalu menyediakan method publik (getter/setter atau method aksi) agar akses terkontrol. Tutor bisa menggunakan analogi remote TV: pengguna tidak perlu tahu proses internal TV, cukup mengakses lewat remote; ini sama dengan menyembunyikan detail implementasi dan membatasi akses ke data. Pewarisan (inheritance) dijelaskan sebagai mekanisme mewariskan atribut dan method dari class induk ke class anak, untuk penggunaan ulang kode dan menghindari duplikasi. Tutor bisa menggunakan analogi keluarga/bus: bus dapat mewariskan ciri-ciri pada bus lain (nomor trayek, ukuran, jumlah penumpang). Polymorphism dijelaskan sebagai pemanfaatan pewarisan agar satu interface/kelas induk dapat digunakan untuk berbagai implementasi perilaku berbeda pada class anak. Tutor bisa mencontohkan dengan konsep override: method pada class anak dapat menampilkan perilaku berbeda meski namanya sama.\n\nAgar konsisten dengan potongan materi, tutor sebaiknya menjaga alur belajar seperti berikut: mulai dari Java dan konsep eksekusi (JVM/bytecode) untuk menumbuhkan pemahaman “mengapa Java bisa multiplatform”, lalu masuk ke OOP (object, class, method) sebagai pondasi, kemudian karakteristik OOP (encapsulation, inheritance, polymorphism) sebagai cara menulis kode yang terstruktur dan scalable. Modul lanjutan yang terdaftar di daftar isi (operator, input, seleksi kondisi, perulangan, array) belum terlihat isinya pada teks yang diberikan, namun tutor dapat mengaitkan bahwa konsep OOP akan dipakai nanti untuk membuat program yang lebih nyata (misal input pengguna mengubah atribut object, seleksi/perulangan mengontrol perilaku method, array menyimpan banyak object)."
+}
