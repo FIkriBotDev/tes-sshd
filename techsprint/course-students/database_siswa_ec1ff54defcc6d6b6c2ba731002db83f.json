@@ -5,8 +5,8 @@
     "email": "muhammadfikrifahrezi2@gmail.com",
     "password": "$2b$10$XQiR.Vea9lMLXAUcMqhsEuDkXbv8Vb.vHRyiyeKUX0yqEDcIESRzm",
     "profilePicture": "",
-    "xp": 230,
-    "coin": 85,
+    "xp": 490,
+    "coin": 205,
     "level": 2,
     "streak": 0,
     "lastLogin": "20-06-2026, 01.56.23",
@@ -21,10 +21,12 @@
       "block-11"
     ],
     "completedChapter": [],
-    "flashcardsViewed": 0,
-    "leaderboardPoint": 180,
+    "flashcardsViewed": 8,
+    "leaderboardPoint": 340,
     "achievements": [
-      "first_block"
+      "first_block",
+      "coin_100",
+      "flashcard_pro"
     ],
     "joinedAt": "20-06-2026, 01.56.23",
     "isMainAccount": true
