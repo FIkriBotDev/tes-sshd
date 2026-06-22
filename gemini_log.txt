@@ -38629,3 +38629,18 @@ Kalau kamu mau, kirim:
 
 nanti aku bisa bantu **membaca semua menunya dan merangkum harganya**.
 
+
+[2026-06-22T11:28:50.397Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/ed6555-1782127724751.jpg
+Response  : Gambar tersebut adalah tangkapan layar unggahan/preview jadwal acara **“Everyday”** dari akun **Upc. Ariya P. Candra (M.Ti)**.
+
+Di poster/slide-nya terlihat:
+- Logo mandala/ikon keagamaan di bagian atas
+- Tulisan besar: **“Everyday”**
+- Info acara: **“Jadwal Bulan Jul 26 - Web Ariya”** dan **“Jadwal Bulan Juli 2026”**
+- Alamat situs: **ariya.my.id**
+- Teks lanjutan yang mulai terlihat: **“Selamat malam Nammo Buddhaya…”** (bagian bawah terpotong)
+
+Kalau kamu mau, sebutkan kamu ingin **dibaca teksnya lebih lengkap**, atau **dibantu merangkum/menjelaskan isi posternya**.
+
