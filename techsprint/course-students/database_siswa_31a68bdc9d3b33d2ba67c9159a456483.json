@@ -77,5 +77,24 @@
     "leaderboardPoint": 0,
     "achievements": [],
     "joinedAt": "20-06-2026, 09.17.46"
+  },
+  {
+    "studentId": "8dd12c90c3673752",
+    "username": "aaaaa",
+    "email": "aaaa@aaa.aa",
+    "password": "$2b$10$Y55RyycCieFWgprlcaWhDue0l1vohqduaVwXts7yZFR0ts0gsA81a",
+    "profilePicture": "",
+    "xp": 0,
+    "coin": 0,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "23-06-2026, 03.11.19",
+    "quizScore": 0,
+    "completedBlocks": [],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 0,
+    "achievements": [],
+    "joinedAt": "23-06-2026, 03.11.19"
   }
 ]
