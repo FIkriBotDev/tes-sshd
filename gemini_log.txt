@@ -38644,3 +38644,60 @@ Di poster/slide-nya terlihat:
 
 Kalau kamu mau, sebutkan kamu ingin **dibaca teksnya lebih lengkap**, atau **dibantu merangkum/menjelaskan isi posternya**.
 
+
+[2026-06-23T09:58:21.396Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/2e260a-1782208696902.jpg
+Response  : Gambar tersebut adalah poster **“Sensus Ekonomi 2026”** (Badan/Program Sensus Ekonomi). Isinya menampilkan:
+
+- Judul besar: **Sensus Ekonomi 2026**
+- Informasi anggaran pada banner: **Anggaran Rp2,13 Triliun**
+- Pertanyaan/ajakan: **“Apa yang sebenarnya didata?”**
+- Terdapat tombol/teks ajakan: **“Geser untuk tahu”**
+
+Kalau kamu mau, aku bisa bantu jelaskan bagian “didata” berdasarkan konteks/sumber resminya—atau kamu bisa kirim gambar lanjutan/isi detailnya.
+
+
+[2026-06-23T09:58:21.626Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/e05273-1782208697917.jpg
+Response  : Saya lihat gambar tersebut berisi materi **“SENSUS EKONOMI 2026”** dengan judul besar **“BUKAN YANG DIDATA”**. Di dalamnya dijelaskan bahwa yang **tidak** termasuk dalam data Sensus Ekonomi 2026 adalah aspek **keuangan pribadi/keluarga**, yaitu:
+
+- **Tabungan Pribadi**
+- **Saldo Rekening**  
+- **Utang Pribadi**
+- **Harta Keluarga**
+
+Di bagian bawah juga tertulis pesan penegasan: *Sensus Ekonomi 2026 fokus pada kegiatan usaha, bukan keuangan pribadi keluarga.*
+
+
+[2026-06-23T09:58:21.667Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/01b0a5-1782208698491.jpg
+Response  : Gambar itu adalah poster **“Sensus Ekonomi 2026”** dengan fokus pada **data usaha/aktivitas ekonomi** di **USAHAHA (UMS/usahanya)**. Isinya menampilkan kategori usaha yang didata:
+
+1. **Warung / Toko** — *Perdagangan*  
+2. **UMKM** — *Usaha Mikro, Kecil, Menengah*  
+3. **Jasa** — *Berbagai layanan*  
+4. **Perusahaan** — *Skala menengah hingga besar*
+
+Di bagian bawah tertulis tujuannya: **memetakan kegiatan usaha di Indonesia untuk dasar kebijakan ekonomi.**
+
+
+[2026-06-23T09:58:22.887Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/748ed3-1782208699023.jpg
+Response  : Saya melihat gambar tersebut. Isinya adalah poster **“Sensus Ekonomi 2026”** dengan tema **TUJUAN**.
+
+Poin-poin utamanya:
+- **Memetakan kegiatan usaha di Indonesia** untuk **dasar kebijakan ekonomi**.
+- Tiga manfaat utama:
+  1. **Memetakan** jumlah dan sebaran usaha di Indonesia  
+  2. **Mengetahui** perkembangan sektor usaha  
+  3. **Menjadi dasar** kebijakan ekonomi dan pembinaan **UMKM**
+- Ada keterangan: **“Data akurat dari usaha, untuk Indonesia yang lebih maju.”**
+- Di bagian bawah tertulis: **DATA AMAN, RAHASIA TERJAMIN** (mengacu pada UU Statistik No. 16 Tahun 1997).
+- Sumber informasi: **BPS (Badan Pusat Statistik) – Sensus Ekonomi 2026**.
+
+Kalau Anda mau, saya bisa bantu merangkum teksnya lebih singkat atau menjelaskan bagian tertentu.
+
