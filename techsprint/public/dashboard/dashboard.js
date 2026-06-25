@@ -66,10 +66,27 @@ async function loadCourses() {
             return;
         }
 
-        container.innerHTML = data.courses.map(c => `
+        container.innerHTML = data.courses.map(c => {
+            // Determine file type and icon
+            const fileType = c.fileType || 'pdf';
+            let iconHtml = '<i class="ph-fill ph-file-pdf"></i>';
+            let iconBg = 'bg-red-50';
+            let iconColor = 'text-red-500';
+            
+            if (fileType === 'docx') {
+                iconHtml = '<i class="ph-fill ph-file-doc"></i>';
+                iconBg = 'bg-blue-50';
+                iconColor = 'text-blue-500';
+            } else if (fileType === 'pptx') {
+                iconHtml = '<i class="ph-fill ph-file-ppt"></i>';
+                iconBg = 'bg-orange-50';
+                iconColor = 'text-orange-500';
+            }
+            
+            return `
             <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 flex flex-col gap-4 hover:shadow-md transition-all course-card" data-title="${c.courseName.toLowerCase()}">
-                <div class="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center text-primary text-2xl">
-                    <i class="ph-fill ph-file-pdf"></i>
+                <div class="w-12 h-12 rounded-xl ${iconBg} flex items-center justify-center ${iconColor} text-2xl">
+                    ${iconHtml}
                 </div>
                 <div class="flex-1">
                     <h3 class="font-bold text-dark text-base mb-1">${c.courseName}</h3>
@@ -79,7 +96,8 @@ async function loadCourses() {
                     Buka Course
                 </a>
             </div>
-        `).join("");
+            `;
+        }).join("");
     } catch (err) {
         console.error("Gagal load courses:", err);
     }
@@ -346,15 +364,58 @@ function handleFileSelect(e) {
 }
 
 function setSelectedFile(file) {
-    if (file.type !== 'application/pdf') {
-        alert('Hanya file PDF yang diizinkan.');
+    // Supported file types
+    const supportedTypes = [
+        'application/pdf',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document', // DOCX
+        'application/vnd.openxmlformats-officedocument.presentationml.presentation' // PPTX
+    ];
+    
+    if (!supportedTypes.includes(file.type)) {
+        alert('Format file tidak didukung. Gunakan: PDF, DOCX, atau PPTX.');
         return;
     }
     if (file.size > 20 * 1024 * 1024) {
         alert('Ukuran file maksimal 20 MB.');
         return;
     }
+    
     selectedFile = file;
+    
+    // Get file extension
+    const ext = file.name.split('.').pop().toLowerCase();
+    
+    // Update icon and colors based on file type
+    const iconContainer = document.getElementById('upload-file-icon');
+    let iconHtml = '';
+    let iconClass = '';
+    
+    if (ext === 'pdf') {
+        iconHtml = '<i class="ph-fill ph-file-pdf"></i>';
+        iconClass = 'w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center text-red-500 text-2xl shrink-0';
+    } else if (ext === 'docx') {
+        iconHtml = '<i class="ph-fill ph-file-doc"></i>';
+        iconClass = 'w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500 text-2xl shrink-0';
+    } else if (ext === 'pptx') {
+        iconHtml = '<i class="ph-fill ph-file-ppt"></i>';
+        iconClass = 'w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-orange-500 text-2xl shrink-0';
+    }
+    
+    iconContainer.innerHTML = iconHtml;
+    iconContainer.className = iconClass;
+    
+    // Update processing text based on file type
+    const readText = document.getElementById('step-read-text');
+    if (readText) {
+        if (ext === 'pdf') {
+            readText.textContent = 'Membaca PDF...';
+        } else if (ext === 'docx') {
+            readText.textContent = 'Membaca DOCX...';
+        } else if (ext === 'pptx') {
+            readText.textContent = 'Membaca PPTX...';
+        }
+    }
+    
     document.getElementById('upload-dropzone').classList.add('hidden');
     document.getElementById('upload-preview').classList.remove('hidden');
     document.getElementById('upload-filename').textContent = file.name;
