@@ -58,17 +58,24 @@
     "email": "bualil@.com",
     "password": "$2b$10$lGaU4ebLXvQKxco36Y3uquGzl.NeGEKNx/uBcF0KoDGpjIrYdyKcq",
     "profilePicture": "",
-    "xp": 0,
-    "coin": 0,
+    "xp": 170,
+    "coin": 65,
     "level": 1,
     "streak": 0,
     "lastLogin": "25-06-2026, 10.28.37",
     "quizScore": 0,
-    "completedBlocks": [],
+    "completedBlocks": [
+      "block-1",
+      "block-2",
+      "block-3",
+      "block-4"
+    ],
     "completedChapter": [],
     "flashcardsViewed": 0,
-    "leaderboardPoint": 0,
-    "achievements": [],
+    "leaderboardPoint": 120,
+    "achievements": [
+      "first_block"
+    ],
     "joinedAt": "25-06-2026, 10.28.37"
   }
 ]
