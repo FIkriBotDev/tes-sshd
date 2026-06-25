@@ -11,19 +11,12 @@ const path    = require("path");
 const crypto  = require("crypto");
 const bcrypt  = require("bcrypt");
 
-// ── PDF Text Extraction ──────────────────────────────────────
-async function extractPdfText(filePath) {
-    const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.mjs");
-    const data = new Uint8Array(fs.readFileSync(filePath));
-    const doc  = await pdfjsLib.getDocument({ data }).promise;
-    let text = "";
-    for (let i = 1; i <= doc.numPages; i++) {
-        const page    = await doc.getPage(i);
-        const content = await page.getTextContent();
-        text += content.items.map(item => item.str).join(" ") + "\n";
-    }
-    return text;
-}
+// ── Document Extraction Service ──────────────────────────────
+const {
+    extractDocument,
+    getFileTypeFromMimetype,
+    getFileIcon
+} = require("./services/documentExtractor");
 
 const router = express.Router();
 
@@ -119,19 +112,29 @@ const storage = multer.diskStorage({
         cb(null, `${ts}-${safe}`);
     }
 });
+// ── Supported File Types ─────────────────────────────────────
+const SUPPORTED_MIMETYPES = [
+    "application/pdf",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document", // DOCX
+    "application/vnd.openxmlformats-officedocument.presentationml.presentation" // PPTX
+];
+
 const upload = multer({
     storage,
-    limits: { fileSize: 20 * 1024 * 1024 },
+    limits: { fileSize: 20 * 1024 * 1024 }, // 20MB
     fileFilter: (req, file, cb) => {
-        if (file.mimetype === "application/pdf") cb(null, true);
-        else cb(new Error("Hanya file PDF yang diizinkan."));
+        if (SUPPORTED_MIMETYPES.includes(file.mimetype)) {
+            cb(null, true);
+        } else {
+            cb(new Error("Format file tidak didukung. Gunakan: PDF, DOCX, atau PPTX."));
+        }
     }
 });
 
 // ── AI Course Generation System Prompt (UPGRADED) ────────────
-const AI_SYSTEM_PROMPT = `Kamu adalah AI Learning Designer kelas dunia yang mengubah materi PDF menjadi pengalaman belajar interaktif seperti Duolingo + Khan Academy.
+const AI_SYSTEM_PROMPT = `Kamu adalah AI Learning Designer kelas dunia yang mengubah materi pembelajaran (PDF, DOCX, PPTX) menjadi pengalaman belajar interaktif seperti Duolingo + Khan Academy.
 
-TUGAS: Baca materi PDF, ubah menjadi INTERACTIVE LEARNING EXPERIENCE.
+TUGAS: Baca materi dokumen (PDF/DOCX/PPTX), ubah menjadi INTERACTIVE LEARNING EXPERIENCE.
 
 PENTING SEKALI: Jika materi berisi CODE/PROGRAMMING (JavaScript, Python, HTML, SQL, etc), kamu WAJIB membuat CODE PLAYGROUND untuk praktek hands-on!
 
@@ -244,11 +247,11 @@ RULES WAJIB:
 - Return JSON valid saja, TIDAK ADA teks lain
 
 DETEKSI TOPIK OTOMATIS:
-- Jika PDF berisi: function, variable, console.log, def, print(), class, import → PASTI materi coding → WAJIB code_playground
-- Jika PDF berisi: <html>, <div>, CSS, style → Materi web development → WAJIB code_playground HTML
-- Jika PDF berisi: SELECT, INSERT, DATABASE, query → Materi database → buat playground SQL (atau simulasi)
-- Jika PDF berisi rumus matematika → gunakan analogy_card dan visual_summary lebih banyak
-- Jika PDF berisi konfigurasi jaringan/server → gunakan step_by_step dan visual_summary`;
+- Jika dokumen berisi: function, variable, console.log, def, print(), class, import → PASTI materi coding → WAJIB code_playground
+- Jika dokumen berisi: <html>, <div>, CSS, style → Materi web development → WAJIB code_playground HTML
+- Jika dokumen berisi: SELECT, INSERT, DATABASE, query → Materi database → buat playground SQL (atau simulasi)
+- Jika dokumen berisi rumus matematika → gunakan analogy_card dan visual_summary lebih banyak
+- Jika dokumen berisi konfigurasi jaringan/server → gunakan step_by_step dan visual_summary`;
 
 // ── POST /api/course/upload ───────────────────────────────────
 router.post("/course/upload", upload.single("pdf"), async (req, res) => {
@@ -256,7 +259,7 @@ router.post("/course/upload", upload.single("pdf"), async (req, res) => {
         return res.status(401).json({ success: false, message: "Belum login." });
 
     if (!req.file)
-        return res.status(400).json({ success: false, message: "File PDF wajib diupload." });
+        return res.status(400).json({ success: false, message: "File wajib diupload (PDF, DOCX, atau PPTX)." });
 
     const email = req.session.user.email;
 
@@ -272,20 +275,32 @@ router.post("/course/upload", upload.single("pdf"), async (req, res) => {
     const courseId   = crypto.randomBytes(16).toString("hex");
     const filePath   = req.file.path;
     const fileName   = req.file.originalname;
+    const fileMime   = req.file.mimetype;
+    const fileType   = getFileTypeFromMimetype(fileMime);
+
+    if (!fileType) {
+        fs.unlink(filePath, () => {});
+        return res.status(400).json({ success: false, message: "Format file tidak didukung." });
+    }
 
     try {
-        let pdfText = "";
+        // Extract document text using unified extractor
+        let documentText = "";
         try {
-            pdfText = (await extractPdfText(filePath)).slice(0, 15000);
-        } catch (pdfErr) {
-            console.error("PDF parse error:", pdfErr.message);
+            const extracted = await extractDocument(filePath, fileType);
+            documentText = extracted.text.slice(0, 15000); // Limit to 15000 chars
+        } catch (extractErr) {
+            console.error(`${fileType.toUpperCase()} extraction error:`, extractErr.message);
             fs.unlink(filePath, () => {});
-            return res.status(400).json({ success: false, message: "Gagal membaca PDF. Pastikan file tidak terenkripsi." });
+            return res.status(400).json({ 
+                success: false, 
+                message: extractErr.message || `Gagal membaca ${fileType.toUpperCase()}. Pastikan file tidak terenkripsi atau corrupt.` 
+            });
         }
 
-        if (!pdfText || pdfText.trim().length < 50) {
+        if (!documentText || documentText.trim().length < 50) {
             fs.unlink(filePath, () => {});
-            return res.status(400).json({ success: false, message: "PDF tidak dapat dibaca atau kosong." });
+            return res.status(400).json({ success: false, message: "Dokumen tidak dapat dibaca atau terlalu pendek. Minimal 50 karakter." });
         }
 
         // Call Pollinations AI
@@ -295,7 +310,7 @@ router.post("/course/upload", upload.single("pdf"), async (req, res) => {
                 model: "openai",
                 messages: [
                     { role: "system", content: AI_SYSTEM_PROMPT },
-                    { role: "user",   content: `Isi materi PDF:\n\n${pdfText}` }
+                    { role: "user",   content: `Isi materi ${fileType.toUpperCase()}:\n\n${documentText}` }
                 ]
             },
             {
@@ -449,6 +464,8 @@ Rules:
             courseEmoji:     aiData.emoji || "📚",
             courseColor:     aiData.color || "#6366f1",
             courseFileName:  fileName,
+            fileType:        fileType, // NEW: Track file type
+            originalFileName: fileName, // NEW: Original file name
             courseOwner:     email,
             courseCreated:   nowStr(),
             courseUrl:       `/course/${courseId}`,
