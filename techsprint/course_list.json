@@ -508,5 +508,19 @@
     "courseUrl": "/course/0a6c3700134d87aff12fb172cbe034f1",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "c77c773e514562a50007e5d5352e6abd",
+    "courseName": "Exploit & Keamanan Web: Dari FreeBSD Setup sampai Web Shell (konsep + praktik aman)",
+    "courseEmoji": "🧩",
+    "courseColor": "#6366f1",
+    "courseFileName": "Webinar  Eksploitasi kerentanan pada suatu plugin di Wordpress 6.7.2 yang berjalan di FreeBSD 14.2 menggunakan Kali Linux 2024.4.pptx",
+    "fileType": "pptx",
+    "originalFileName": "Webinar  Eksploitasi kerentanan pada suatu plugin di Wordpress 6.7.2 yang berjalan di FreeBSD 14.2 menggunakan Kali Linux 2024.4.pptx",
+    "courseOwner": "tibotyronaldo@gmail.com",
+    "courseCreated": "25-06-2026, 12.02.57",
+    "courseUrl": "/course/c77c773e514562a50007e5d5352e6abd",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
