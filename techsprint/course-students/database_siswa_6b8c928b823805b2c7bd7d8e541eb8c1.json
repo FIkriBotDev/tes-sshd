@@ -5,23 +5,46 @@
     "email": "muhammadfikrifahrezi2@gmail.com",
     "password": "$2b$10$XQiR.Vea9lMLXAUcMqhsEuDkXbv8Vb.vHRyiyeKUX0yqEDcIESRzm",
     "profilePicture": "",
-    "xp": 80,
-    "coin": 35,
+    "xp": 140,
+    "coin": 55,
     "level": 1,
     "streak": 0,
     "lastLogin": "25-06-2026, 10.26.41",
     "lastLoginDate": "Thu Jun 25 2026",
     "quizScore": 0,
     "completedBlocks": [
-      "block-8"
+      "block-8",
+      "block-9",
+      "block-10"
     ],
     "completedChapter": [],
     "flashcardsViewed": 0,
-    "leaderboardPoint": 30,
+    "leaderboardPoint": 90,
     "achievements": [
       "first_block"
     ],
     "joinedAt": "25-06-2026, 10.26.41",
+    "isMainAccount": true
+  },
+  {
+    "studentId": "a04cb4a3cad8d912",
+    "username": "Tiboty Ronaldo",
+    "email": "tibotyronaldo@gmail.com",
+    "password": "$2b$10$WsBzSNlNN/qIPITfivamRuXl/nCN4EQBkE61O2QuSazYYCX/cjf5y",
+    "profilePicture": "",
+    "xp": 0,
+    "coin": 0,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "25-06-2026, 10.27.35",
+    "lastLoginDate": "Thu Jun 25 2026",
+    "quizScore": 0,
+    "completedBlocks": [],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 0,
+    "achievements": [],
+    "joinedAt": "25-06-2026, 10.27.35",
     "isMainAccount": true
   }
 ]
