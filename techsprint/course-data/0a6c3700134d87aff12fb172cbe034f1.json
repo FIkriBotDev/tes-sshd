@@ -1,0 +1,397 @@
+{
+  "title": "Hands-on Keamanan Web: Eksploitasi Plugin WordPress via Arbitrary File Upload & PHP Shell (FreeBSD + Kali)",
+  "summary": "Kamu akan mempelajari konsep exploit, jenis-jenisnya, dan bagaimana celah seperti Arbitrary File Upload bisa berujung ke dampak berbahaya seperti RCE lewat PHP shell. Materi juga mengajak kita memahami setup dasar FreeBSD, web server, dan alur pemahaman teknis yang relevan untuk pengujian keamanan secara etis.",
+  "emoji": "🛡️",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Exploit Itu Apa sih?",
+      "icon": "🧨",
+      "explanation": "Exploit adalah kode atau metode yang dipakai untuk memanfaatkan kelemahan (vulnerability) di sistem, aplikasi, atau jaringan. Tujuannya bisa macam-macam: mulai dari akses tidak sah, privilege escalation, mencuri data, sampai membuat layanan down (DoS).",
+      "analogy": "Bayangin ada kunci pintu yang punya celah. Celahnya adalah vulnerability, sedangkan exploit adalah kunci “bujukan” yang memanfaatkan celah itu supaya pintu bisa terbuka.",
+      "highlight": "exploit, vulnerability, dampak",
+      "keyPoints": [
+        "Exploit memanfaatkan vulnerability",
+        "Tujuan exploit bisa akses tidak sah sampai DoS",
+        "Sering dipakai untuk menguji keamanan secara etis juga"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Jenis-Jenis Exploit (Biar Paham Pola Serangannya)",
+      "icon": "🗂️",
+      "explanation": "Ada beberapa kategori exploit berdasarkan lokasi dan cara masuk. Remote menyerang dari jarak jauh, Local butuh akses awal ke sistem, Client-Side menyerang aplikasi di sisi pengguna, dan Web Exploit menarget aplikasi web.",
+      "analogy": "Anggap servis berbeda seperti pintu rumah: Remote itu mengetuk dari luar, Local itu sudah punya kunci untuk masuk dulu, Client-Side itu menyerang aplikasi yang dibuka di HP/laptop korban, Web Exploit itu menyerang “toko online”-nya.",
+      "highlight": "Remote, Local, Client-Side, Web",
+      "keyPoints": [
+        "Remote: lewat jaringan",
+        "Local: biasanya untuk privilege escalation",
+        "Web: contoh SQLi, XSS, RCE"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Setup Dasar FreeBSD (dari install sampai jaringan)",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Download & Install FreeBSD",
+          "description": "Download FreeBSD dari halaman resmi, lalu lakukan install sesuai kebutuhan mesin.",
+          "tip": "Pakai versi terbaru (sesuai materi: 14.2) untuk menghindari masalah kompatibilitas."
+        },
+        {
+          "number": 2,
+          "title": "Update paket & tool dasar",
+          "description": "Setelah install, jalankan update paket dan install tools seperti wget, unzip, nano, dan sudo (sesuai materi).",
+          "tip": "Jika environment minim, tool editor dan download akan sangat membantu saat konfigurasi."
+        },
+        {
+          "number": 3,
+          "title": "Jadikan user biasa jadi admin (sudo)",
+          "description": "Buka visudo untuk menambahkan hak administratif agar user bisa menjalankan perintah sebagai root.",
+          "tip": "Selalu pakai visudo supaya format konfigurasi sudoers aman."
+        },
+        {
+          "number": 4,
+          "title": "Set IP Address & gateway",
+          "description": "Konfigurasi interface (contoh em0) dengan IP, netmask, dan default router. Lalu atur agar persist lewat rc.conf.",
+          "tip": "Pastikan netif restart dan routing restart sesuai kebutuhan jaringan lab."
+        },
+        {
+          "number": 5,
+          "title": "Mulai service jaringan",
+          "description": "Restart service yang terkait agar perubahan konfigurasi diterapkan.",
+          "tip": "Kalau tidak tersambung, cek IP, netmask, dan gateway dulu sebelum menyalahkan service lain."
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "WordPress & Peran Plugin dalam Serangan",
+      "icon": "📚",
+      "explanation": "WordPress adalah CMS populer yang memudahkan pembuatan dan pengelolaan situs. Namun, plugin yang punya bug/vulnerability bisa menjadi titik masuk jika versi dan patch tidak dikelola dengan baik.",
+      "analogy": "WordPress itu seperti dapur jadi yang siap pakai. Plugin adalah alat tambahan. Kalau salah satu alat ada cacat, bukan mustahil dapur jadi bocor dan berbahaya.",
+      "highlight": "WordPress, CMS, plugin",
+      "keyPoints": [
+        "WordPress memudahkan pengelolaan website",
+        "Plugin bisa punya vulnerability",
+        "Patch dan update penting untuk mengurangi risiko"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Arbitrary File Upload Bug: Celah “Unggah Sembarangan”",
+      "icon": "⬆️",
+      "explanation": "Arbitrary File Upload Bug adalah kelemahan saat aplikasi mengizinkan penyerang mengunggah file berbahaya tanpa validasi/pembatasan yang memadai. Biasanya terjadi di fitur upload gambar/dokumen/lampiran.",
+      "analogy": "Mirip sistem penitipan barang: kalau petugas tidak memeriksa isi, orang bisa menitipkan barang berbahaya yang kemudian dipakai untuk membobol tempat.",
+      "highlight": "validasi lemah, upload file berbahaya",
+      "keyPoints": [
+        "Penyerang bisa mengunggah file berbahaya",
+        "Umumnya karena validasi/pembatasan kurang",
+        "Sering ada di fitur upload web"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Alur Dampak: dari Upload ke Eksekusi",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Mulai",
+          "value": "Arbitrary File Upload",
+          "icon": "⬆️"
+        },
+        {
+          "label": "Hasil Jika Berhasil",
+          "value": "Konten berbahaya masuk ke server",
+          "icon": "🧩"
+        },
+        {
+          "label": "Dampak Utama",
+          "value": "RCE (Remote Code Execution)",
+          "icon": "⚠️"
+        },
+        {
+          "label": "Dampak Lain",
+          "value": "Malware, ubah/hapus data, botnet/DDoS",
+          "icon": "🕸️"
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "PHP Shell: Saat File Berbahaya Jadi “Akses”",
+      "icon": "🐚",
+      "explanation": "PHP Shell adalah skrip berbasis PHP yang memberi akses ke sistem operasi server lewat antarmuka web. Dalam konteks pengujian keamanan, PHP shell bisa dipakai pentester untuk verifikasi dampak; namun jika disalahgunakan, bisa jadi jalan akses ilegal.",
+      "analogy": "Kalau server itu rumah, PHP shell adalah kunci portal web. Tanpa kontrol, portal itu bisa dipakai untuk mengendalikan ruangan di dalam rumah.",
+      "highlight": "web interface, akses shell, potensi penyalahgunaan",
+      "keyPoints": [
+        "Berjalan melalui web",
+        "Bisa memberi akses command ke server",
+        "Penting untuk etika: untuk testing yang sah"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Simulasi Validasi Upload (Belajar Kenapa Arbitrary Upload Berbahaya)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Ubah daftar file yang diunggah, lalu lihat apakah sistem menolak atau menerima berdasarkan validasi sederhana (ekstensi, MIME-like, dan ukuran). Tujuannya untuk memahami pola mitigasi, bukan untuk eksploit nyata.",
+      "fileName": "uploadValidatorSim.js",
+      "defaultCode": "const uploadedFiles = [ { name: 'foto.jpg', sizeKB: 120 }, { name: 'shell.php', sizeKB: 5 }, { name: 'cat.jpeg.php', sizeKB: 1 }, { name: 'gambar.png', sizeKB: 900 } ];\n\nfunction isAllowed(file) {\n  const allowedExt = ['.jpg', '.jpeg', '.png', '.gif'];\n  const ext = file.name.toLowerCase().includes('.') ? file.name.toLowerCase().slice(file.name.toLowerCase().lastIndexOf('.')) : '';\n  const maxKB = 512;\n  if (file.sizeKB > maxKB) return false;\n  if (!allowedExt.includes(ext)) return false;\n  // Tolak pola ganda yang sering dipakai menyamarkan ekstensi\n  if (file.name.toLowerCase().includes('.php')) return false;\n  return true;\n}\n\nfor (const f of uploadedFiles) {\n  const verdict = isAllowed(f) ? 'ACCEPTED' : 'REJECTED';\n  console.log(`${verdict}: ${f.name} (${f.sizeKB}KB)`);\n}",
+      "hint": "Challenge: ubah daftar agar ada file dengan nama 'nice.jpg.php' lalu lihat kenapa seharusnya ditolak."
+    },
+    {
+      "type": "code_playground",
+      "title": "Rangkaian Dampak: Dari Upload ke RCE (Simulasi Alur)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan simulasi alur: jika file berbahaya lolos validasi, maka sistem 'mengaktifkan' command execution. Ubah variabel `validationPasses` dan `hasWebExecution` untuk memahami hubungan sebab-akibat.",
+      "fileName": "impactFlowSim.js",
+      "defaultCode": "const validationPasses = false; // coba true/false\nconst hasWebExecution = true;  // asumsi file bisa dieksekusi oleh web server\n\nfunction simulateArbitraryUpload() {\n  console.log('Stage 1: Upload request received');\n  if (!validationPasses) {\n    console.log('Stage 2: Validation failed -> file is blocked');\n    console.log('Outcome: No RCE');\n    return;\n  }\n\n  console.log('Stage 2: Validation passed -> risky file stored');\n  if (hasWebExecution) {\n    console.log('Stage 3: Web server executes uploaded script -> RCE');\n    console.log('Outcome: Server control compromised');\n  } else {\n    console.log('Stage 3: File stored but not executable -> limited impact');\n    console.log('Outcome: No RCE (yet)');\n  }\n}\n\nsimulateArbitraryUpload();",
+      "hint": "Challenge: buat `hasWebExecution = false` lalu lihat dampaknya berubah."
+    },
+    {
+      "type": "step_by_step",
+      "title": "Bangun Stack Web di FreeBSD (Apache + PHP + MySQL)",
+      "icon": "⚙️",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Install Apache dan komponen PHP",
+          "description": "Install apache24, php83, dan modul PHP yang diperlukan (mysqli, mbstring, curl, gd, xml, dll).",
+          "tip": "Pilih modul sesuai kebutuhan aplikasi web yang akan diuji (misal WordPress butuh banyak ekstensi PHP)."
+        },
+        {
+          "number": 2,
+          "title": "Aktifkan dan start Apache",
+          "description": "Set apache24_enable=\"YES\" lalu jalankan service apache24 start.",
+          "tip": "Pastikan DocumentRoot sesuai path yang benar agar website bisa diakses."
+        },
+        {
+          "number": 3,
+          "title": "Install MySQL server",
+          "description": "Install mysql80-server, aktifkan mysql_enable=\"YES\", lalu start service mysql-server.",
+          "tip": "Cek log bila service tidak jalan."
+        },
+        {
+          "number": 4,
+          "title": "Konfigurasi PHP agar ditangani oleh Apache",
+          "description": "Edit php.conf di Includes agar ekstensi .php dipetakan ke handler PHP.",
+          "tip": "Jika tidak benar, halaman PHP akan tampil sebagai teks biasa."
+        },
+        {
+          "number": 5,
+          "title": "Buat database untuk WordPress",
+          "description": "Set kredensial root menggunakan mysql native password (sesuai materi) lalu create database wordpress.",
+          "tip": "Penyesuaian user/host bisa diperlukan tergantung konfigurasi default MySQL."
+        }
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "Kenapa GPL v2 Bisa Digabung? (Versi: lisensi dan aturan Main)",
+      "icon": "📜",
+      "realWorld": "Saat bikin proyek keamanan/alat pentest, kamu sering mengintegrasikan komponen open source yang lisensinya sama.",
+      "connection": "Materi menjelaskan kenapa PHP reverse shell dapat diintegrasikan dengan X-code PHP Shell jika lisensi GPL v2 cocok.",
+      "insight": "Licensing itu seperti aturan permainan: kalau aturannya sama-sama GPL v2, integrasi bisa dilakukan tanpa konflik selama tetap mematuhi kewajiban seperti menyertakan lisensi dan membuka kode saat redistribusi."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini Keamanan Web",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Exploit",
+          "definition": "Kode/metode untuk memanfaatkan vulnerability",
+          "example": "memakai celah upload untuk mendapatkan akses"
+        },
+        {
+          "term": "Vulnerability",
+          "definition": "Kelemahan dalam sistem/aplikasi",
+          "example": "validasi upload yang tidak memadai"
+        },
+        {
+          "term": "Remote Code Execution (RCE)",
+          "definition": "Kemampuan mengeksekusi kode dari jarak jauh",
+          "example": "server menjalankan skrip berbahaya yang diunggah"
+        },
+        {
+          "term": "Arbitrary File Upload",
+          "definition": "Celah saat file berbahaya bisa diunggah tanpa kontrol cukup",
+          "example": "upload skrip PHP lewat form upload"
+        },
+        {
+          "term": "PHP Shell",
+          "definition": "Skrip PHP yang menyediakan akses shell via web",
+          "example": "antarmuka web untuk command server"
+        },
+        {
+          "term": "Privilege Escalation",
+          "definition": "Menaikkan hak akses dari level rendah ke lebih tinggi",
+          "example": "akun biasa menjadi admin setelah celah lokal"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Exploit adalah... ",
+      "options": [
+        "Program untuk memperbaiki bug secara otomatis",
+        "Kode/metode untuk mengeksploitasi vulnerability",
+        "Protokol komunikasi jaringan",
+        "Antivirus untuk mendeteksi malware"
+      ],
+      "answer": "Kode/metode untuk mengeksploitasi vulnerability",
+      "explanation": "Exploit dipakai untuk memanfaatkan kelemahan (vulnerability) agar tujuan tertentu tercapai.",
+      "xpReward": 50
+    },
+    {
+      "question": "Yang termasuk Remote Exploit adalah serangan yang... ",
+      "options": [
+        "hanya bekerja jika penyerang sudah punya akses ke sistem",
+        "dilakukan dari jarak jauh melalui jaringan",
+        "targetnya selalu aplikasi klien seperti browser",
+        "hanya terjadi pada database"
+      ],
+      "answer": "dilakukan dari jarak jauh melalui jaringan",
+      "explanation": "Remote exploit menyerang sistem lewat jaringan tanpa perlu akses awal langsung di host.",
+      "xpReward": 50
+    },
+    {
+      "question": "Local Exploit biasanya digunakan untuk... ",
+      "options": [
+        "privilege escalation setelah penyerang sudah mengakses sistem",
+        "membuat DoS tanpa menyasar sistem",
+        "mencuri token hanya dari sisi browser",
+        "mengubah tampilan CSS saja"
+      ],
+      "answer": "privilege escalation setelah penyerang sudah mengakses sistem",
+      "explanation": "Local exploit sering dipakai untuk naik level hak akses karena penyerang sudah berada di sistem target.",
+      "xpReward": 50
+    },
+    {
+      "question": "Arbitrary File Upload Bug paling tepat dijelaskan sebagai... ",
+      "options": [
+        "celah yang mengubah DNS server",
+        "celah yang memungkinkan penyerang mengunggah file berbahaya tanpa validasi memadai",
+        "celah yang hanya terjadi pada login admin",
+        "celah yang hanya ada di server database"
+      ],
+      "answer": "celah yang memungkinkan penyerang mengunggah file berbahaya tanpa validasi memadai",
+      "explanation": "Intinya upload file berbahaya bisa terjadi karena kontrol validasi dan pembatasan kurang.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika file berbahaya yang diunggah adalah PHP shell dan server mengeksekusinya, dampak yang mungkin terjadi adalah... ",
+      "options": [
+        "RCE (Remote Code Execution)",
+        "Cuma mengubah warna tema",
+        "Menghapus semua log secara otomatis",
+        "Menonaktifkan jaringan"
+      ],
+      "answer": "RCE (Remote Code Execution)",
+      "explanation": "PHP shell bisa memberi kemampuan eksekusi perintah ke server sehingga termasuk RCE.",
+      "xpReward": 50
+    },
+    {
+      "question": "Client-Side Exploit biasanya menarget... ",
+      "options": [
+        "server web secara langsung",
+        "aplikasi klien seperti browser atau PDF reader",
+        "hanya sistem operasi FreeBSD",
+        "hanya protokol MySQL"
+      ],
+      "answer": "aplikasi klien seperti browser atau PDF reader",
+      "explanation": "Client-side exploit memanfaatkan kelemahan saat aplikasi di sisi pengguna memproses konten.",
+      "xpReward": 50
+    },
+    {
+      "question": "Web Exploit contohnya adalah... ",
+      "options": [
+        "SQL Injection, XSS, RCE",
+        "ICMP flood tanpa aplikasi web",
+        "kunci enkripsi untuk TLS",
+        "print server discovery"
+      ],
+      "answer": "SQL Injection, XSS, RCE",
+      "explanation": "Materi menyebut Web Exploit mencakup teknik seperti SQLi, XSS, dan RCE.",
+      "xpReward": 50
+    },
+    {
+      "question": "Kenapa validasi upload penting untuk mencegah RCE dari Arbitrary File Upload?",
+      "options": [
+        "Karena tanpa validasi, file berbahaya bisa tersimpan lalu dieksekusi oleh web server",
+        "Karena validasi upload mempercepat bandwidth",
+        "Karena validasi upload otomatis membuat database aman",
+        "Karena validasi upload mengganti versi WordPress"
+      ],
+      "answer": "Karena tanpa validasi, file berbahaya bisa tersimpan lalu dieksekusi oleh web server",
+      "explanation": "Tujuan kontrol upload adalah mencegah file berbahaya bisa masuk dan berujung pada eksekusi.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa definisi singkat exploit?",
+      "answer": "Kode/metode untuk memanfaatkan vulnerability agar mencapai tujuan tertentu.",
+      "emoji": "🧨",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Sebutkan 4 jenis exploit yang disebut di materi.",
+      "answer": "Remote exploit, Local exploit, Client-Side exploit, Web exploit.",
+      "emoji": "🗂️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa itu Arbitrary File Upload Bug?",
+      "answer": "Celah yang memungkinkan penyerang mengunggah file berbahaya tanpa validasi/pembatasan yang memadai.",
+      "emoji": "⬆️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Jika file php shell berhasil diunggah dan dieksekusi, dampak utamanya apa?",
+      "answer": "Remote Code Execution (RCE).",
+      "emoji": "⚠️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa itu PHP Shell dalam konteks keamanan web?",
+      "answer": "Skrip PHP yang memberikan akses ke OS server melalui antarmuka web.",
+      "emoji": "🐚",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Client-Side Exploit menyerang bagian mana?",
+      "answer": "Aplikasi klien seperti browser atau PDF reader.",
+      "emoji": "🖱️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Web Exploit biasanya berkaitan dengan serangan seperti apa?",
+      "answer": "Contohnya SQL Injection, XSS, dan RCE.",
+      "emoji": "🌐",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Kenapa GPL v2 penting saat integrasi kode reverse shell?",
+      "answer": "Karena lisensi yang sama memudahkan integrasi tanpa konflik selama kewajiban GPL v2 dipenuhi.",
+      "emoji": "📜",
+      "difficulty": "hard"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi PPT membahas webinar bertema eksploitasi kerentanan pada plugin WordPress versi 6.7.2 (terbaru saat materi dibuat) yang dijalankan di FreeBSD 14.2 (terbaru) menggunakan Kali Linux 2024.4 (terbaru). Namun fokus pembelajaran yang bisa ditarik dari slide tidak hanya pada identifikasi target, melainkan pada fondasi keamanan: memahami apa itu exploit, mengerti tipe-tipe eksploit, mengenali konsep web vulnerability yang umum seperti arbitrary file upload, serta memahami bagaimana hasil dari celah tersebut dapat berujung pada dampak serius seperti RCE melalui PHP shell. Bagian awal webinar memberi konteks sistem operasi FreeBSD sebagai turunan BSD yang bersifat Unix-like namun sering dijelaskan sebagai sistem operasi bertipe Unix yang bebas, dengan asal historis dari 386BSD dan 4.4BSD-Lite (sebutan pada materi). FreeBSD mendukung banyak arsitektur termasuk x86, amd64, ARM, dan lainnya. Slide juga menekankan cara mendapatkan informasi lengkap dari situs resmi FreeBSD.\n\nSetelah konteks FreeBSD, slide berikutnya masuk ke praktik setup. Di slide “Download FreeBSD” terdapat tautan resmi unduhan dari halaman where. Setelah install, materi menyebut perintah pengelolaan paket: pkg update untuk update database paket, lalu pkg install wget untuk tool unduh, pkg install unzip untuk mengekstrak arsip, pkg install nano sebagai editor, dan pkg install sudo untuk menjalankan perintah dengan hak sesuai kebutuhan. Lalu ada langkah “Menjadikan user biasa menjadi admin” menggunakan EDITOR=nano visudo. Ini penting karena visudo adalah cara aman untuk mengedit sudoers, memastikan syntax tidak rusak sehingga tidak mengunci akses.\n\nUntuk konfigurasi jaringan, slide memuat contoh perintah ifconfig em0 inet 192.168.1.100 netmask 255.255.255.0, route add default 192.168.1.1, lalu edit rc.conf dengan nano /etc/rc.conf untuk membuat pengaturan persist: ifconfig_em0=\"inet 192.168.1.100 netmask 255.255.255.0\" dan defaultrouter=\"192.168.1.1\". Setelah itu service netif restart dan service routing restart untuk menerapkan perubahan.\n\nSelanjutnya materi mengajarkan cara menyiapkan stack web di FreeBSD. Slide instalasi Apache + PHP menampilkan perintah pkg install apache24 php83 dan modul-modul penting: mod_php83, php83-mysqli, php83-mbstring, php83-zip, php83-gd, php83-curl, php83-xml, php83-tokenizer, php83-session, php83-pdo, php83-pdo_mysql, php83-intl, php83-opcache, php83-pecl-imagick, php83-pecl-memcached, dan php83-pecl-redis. Lalu diaktifkan dengan sysrc apache24_enable=\"YES\" kemudian service apache24 start. Materi menyebut Document root /usr/local/www/apache24/data/. Untuk log error, ditunjukkan path /var/log/httpd-error.log. Setelah web server siap, dilanjutkan instalasi MySQL: pkg update, pkg install mysql80-server, sysrc mysql_enable=\"YES\", service mysql-server start.\n\nKonfigurasi database untuk WordPress dibahas pada slide berikutnya. Ada perintah ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'baseball'; kemudian create database wordpress; dan exit. Ini menunjukkan bahwa setup WordPress butuh skema dan kredensial sesuai konfigurasi MySQL. Materi juga mengarahkan konfigurasi Apache agar menangani file PHP. Slide menyebut edit /usr/local/etc/apache24/httpd.conf dan menambahkan DirectoryIndex index.php. Lalu di file php.conf (Includes) ditetapkan FileMatch \"\\.php$\" SetHandler application/x-httpd-php. Pada akhir slide, service apache24 restart dilakukan agar handler PHP aktif.\n\nSetelah fondasi setup dipahami, materi beralih ke konsep keamanan: exploit (slide 8) dan jenis-jenisnya (slide 9). Slide 8 mendefinisikan exploit sebagai kode/metode yang mengeksploitasi vulnerability. Slide 9 membagi exploit menjadi Remote, Local, Client-Side, dan Web. Bagian WordPress (slide 10) mendeskripsikan WordPress sebagai CMS populer yang memungkinkan pembuatan dan pengelolaan situs web tanpa perlu pengetahuan pemrograman mendalam.\n\nKemudian inti keamanan yang relevan dengan dampak eksploitasi muncul lewat slide PHP Shell (slide 11) dan Arbitrary File Upload (slide 12 dan 13). PHP Shell dijelaskan sebagai skrip PHP yang memberikan akses ke sistem operasi server melalui antarmuka web. Ini sering dipakai pentester untuk pengujian keamanan, tetapi juga dapat disalahgunakan hacker untuk akses ilegal. Slide 11 juga memberi contoh “p0wny@shell” sebagai referensi web shell PHP ringan dan minimalis. Arbitrary File Upload bug (slide 12) dijelaskan sebagai celah yang memungkinkan penyerang mengunggah file berbahaya tanpa validasi atau pembatasan memadai, sering ditemukan pada fitur unggah file seperti gambar atau dokumen.\n\nSlide 13 merinci dampak dari keberhasilan arbitrary file upload: (1) mendapatkan akses penuh ke server (RCE), (2) mengunggah malware untuk penyebaran lanjutan, (3) mengubah/menghapus data di server, (4) memakai server sebagai botnet atau bagian dari serangan DDoS. Ini menghubungkan konsep vulnerability (upload) dengan dampak keamanan yang lebih luas.\n\nTerakhir, slide 14 dan 15 membahas X-code PHP Shell untuk target FreeBSD: link GitHub repository xcodephpshell (sesuai materi). Slide 15 menjelaskan bahwa X-code PHP Shell memasukkan PHP Reverse Shell dari pentestmonkey (2007) dengan lisensi GPL v2. Penjelasan pada slide menekankan kenapa GPL v2 bisa digabung: karena lisensinya sama, GPL mengizinkan redistribusi dan modifikasi dengan syarat tetap mengikuti lisensi, serta kewajiban seperti menyertakan lisensi GPL v2 di proyek, tidak membatasi pengguna untuk mengakses/memodifikasi kode, dan memberikan akses ke kode sumber saat didistribusikan. Slide 16 menutup dengan tautan proyek xcode.co.id dan daftar kontributor.\n\nCatatan penting untuk tutor: walaupun materi membahas pembuatan/konsep shell dan potensi exploit, dalam pembelajaran sebaiknya tekankan etika pengujian (legal/permissioned testing) dan fokus pada mitigasi: validasi upload, pembatasan ekstensi dan MIME, ukuran file, scanning konten, isolasi eksekusi file upload (misalnya menyimpan di direktori non-executable), konfigurasi handler PHP yang benar, dan patching plugin WordPress. Tutor sebaiknya menjelaskan alur sebab-akibat: vulnerability upload -> file berbahaya tersimpan -> jika dieksekusi oleh web server -> RCE -> dampak luas. Dengan begitu, peserta memahami pola serangan tanpa menjadikan konten sebagai instruksi eksploit yang tidak etis."
+}
