@@ -480,5 +480,19 @@
     "courseUrl": "/course/b4f4e0112bd602e9940b44afa92114a0",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "6b8c928b823805b2c7bd7d8e541eb8c1",
+    "courseName": "Machine Learning: Dari Data Jadi Keputusan (Supervised, Unsupervised, Reinforcement)",
+    "courseEmoji": "🤖",
+    "courseColor": "#10b981",
+    "courseFileName": "MAKALAH OSK KELOMPOK.docx",
+    "fileType": "docx",
+    "originalFileName": "MAKALAH OSK KELOMPOK.docx",
+    "courseOwner": "tibotyronaldo@gmail.com",
+    "courseCreated": "25-06-2026, 10.26.25",
+    "courseUrl": "/course/6b8c928b823805b2c7bd7d8e541eb8c1",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
