@@ -1,0 +1,262 @@
+{
+  "title": "Kelas Kilat HTML Dasar: Dari Struktur Sampai Link, Gambar, dan List",
+  "summary": "HTML adalah bahasa markup untuk membentuk tampilan halaman web. Di course ini kamu akan belajar struktur dasar dokumen, tag penting seperti heading, paragraf, format teks, link, gambar, background, dan list lewat latihan yang langsung bisa dicoba.",
+  "emoji": "🌐",
+  "color": "#3b82f6",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "HTML itu apa dan kenapa disebut “Markup”",
+      "icon": "🌐",
+      "explanation": "HTML (HyperText Markup Language) menentukan tampilan teks serta peran/tingkat kepentingannya di halaman. Kamu menuliskan tag untuk memberi instruksi ke browser: teks ini judul, ini paragraf, ini link, dan seterusnya.",
+      "analogy": "Bayangkan halaman web seperti naskah presentasi. Tag HTML seperti cap/label yang memberi tahu presenter: bagian ini pembuka (heading), ini isi (paragraf), ini tombol menuju slide lain (link).",
+      "highlight": "HyperText Markup Language",
+      "keyPoints": ["HTML membentuk struktur tampilan web", "Tag memberi instruksi ke browser", "HyperText = link untuk loncat ke halaman/bagian lain"]
+    },
+    {
+      "type": "concept_card",
+      "title": "Struktur Wajib Dokumen: html, head, title, body",
+      "icon": "🧱",
+      "explanation": "Setiap dokumen HTML minimal punya tag <html>, lalu <head> untuk info dokumen (termasuk <title>), dan <body> untuk isi yang tampil di browser. Urutannya penting: <head> berisi keterangan, <body> berisi konten.",
+      "analogy": "Seperti map acara: <head> adalah data peta seperti judul kegiatan untuk ditaruh di kartu, sedangkan <body> adalah jadwal acara yang benar-benar kamu lihat.",
+      "highlight": "<html> <head> <title> <body>",
+      "keyPoints": ["<html> penanda dokumen HTML", "<head> berisi informasi dokumen", "<body> berisi konten tampil di layar"]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Bikin Kerangka HTML Paling Dasar",
+      "icon": "🪜",
+      "steps": [
+        { "number": 1, "title": "Mulai dengan tag html", "description": "Tulis <html> sebagai pembuka dokumen dan </html> sebagai penutup.", "tip": "Biasakan menulis penutupnya langsung biar tidak lupa." },
+        { "number": 2, "title": "Siapkan head", "description": "Di dalam <html>, letakkan <head>... </head> tepat setelahnya.", "tip": "Head tidak menampilkan konten utama, tapi memberi info dokumen." },
+        { "number": 3, "title": "Isi judul tab browser dengan title", "description": "Masukkan <title>Judul</title> di dalam <head>.", "tip": "Judul ini yang muncul di tab browser, jadi buat yang jelas." },
+        { "number": 4, "title": "Tulis konten di body", "description": "Letakkan <body>... </body> setelah </head>.", "tip": "Apa pun yang ingin terlihat di halaman, masuk ke body." }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Code Playground: Kerangka HTML dan Heading + Paragraf",
+      "icon": "💻",
+      "language": "html",
+      "instruction": "Edit bagian teksnya lalu lihat hasilnya. Coba ubah judul tab (title), ubah heading, dan ubah isi paragraf agar kamu merasakan peran masing-masing tag.",
+      "fileName": "index.html",
+      "defaultCode": "<!DOCTYPE html> <html> <head> <meta charset=\"utf-8\"> <title>Belajar HTML Dasar</title> </head> <body> <h1 align=\"center\">Halo! Ini HTML</h1> <p align=\"center\">Kerangka: html, head, title, body</p> <p align=\"left\">Ketik tag yang tepat untuk memberi makna pada teksmu.</p> </body> </html>",
+      "hint": "Challenge: ganti <h1> ke <h2> atau <h3>, lalu lihat perbedaan ukuran/urgensinya."
+    },
+    {
+      "type": "concept_card",
+      "title": "Tag, Element, Attribute: “Bahasa Perintah” HTML",
+      "icon": "🧠",
+      "explanation": "Tag adalah tanda yang dipakai untuk mengatur perilaku browser, berbentuk <tag> dan </tag>. Element adalah “hasil” penggunaan tag (plus isi/strukturnya). Attribute dipakai untuk memodifikasi nilai pada element, misalnya mengatur align atau sumber gambar.",
+      "analogy": "Anggap tag itu seperti perintah, element itu seperti kotak perintah yang sudah lengkap, dan attribute itu seperti setelan tambahan (ukuran, posisi, sumber).",
+      "highlight": "Tag, Element, Attribute",
+      "keyPoints": ["Tag awal dan tag akhir membungkus elemen", "Element = tag yang digunakan sesuai fungsinya", "Attribute mengubah perilaku/parameter"]
+    },
+    {
+      "type": "code_playground",
+      "title": "Code Playground: Format Teks, Pre, dan Br (Break)",
+      "icon": "💻",
+      "language": "html",
+      "instruction": "Coba eksperimen: ubah teks pada <b>, <i>, <sup>, <sub>, <del>, <code>. Lihat juga perbedaan <pre> (spasi/format sama seperti diketik) vs <p>.",
+      "fileName": "format.html",
+      "defaultCode": "<!DOCTYPE html> <html> <head> <meta charset=\"utf-8\"> <title>Format Teks HTML</title> </head> <body> <p>Contoh <b>Teks Bold</b></p> <p>Contoh <i>Teks Italic</i></p> <p>Contoh <sup>superscript</sup> dan <sub>subscript</sub></p> <p>Contoh <del>Teks dicoret</del></p> <p>Contoh <code>console.log(\"hi\")</code></p> <p>Baris baru dengan <br/> br tag</p> <pre>Ini   pre-format
+Spasi   dan baris akan
+tetap seperti yang kamu ketik</pre> </body> </html>",
+      "hint": "Challenge: ubah bagian pre-format jadi lebih panjang, lalu pastikan spasi tetap tampil."
+    },
+    {
+      "type": "concept_card",
+      "title": "Heading, Paragraf, dan Pre-format: bedanya apa?",
+      "icon": "🧾",
+      "explanation": "Heading (<h1> sampai <h6>) dipakai untuk judul/subjudul dengan tingkat kepentingan. Paragraf (<p>) dipakai untuk isi teks dan umumnya per pikiran utama. <pre> menampilkan teks seperti yang kamu ketik (termasuk spasi dan baris).",
+      "analogy": "Heading itu seperti bab pada buku, paragraf itu paragraf isi, dan pre itu seperti kamu mengetik kode program atau teks yang perlu formatnya sama persis.",
+      "highlight": "<h1>...<h6> <p> <pre>",
+      "keyPoints": ["Heading = judul berjenjang", "Paragraf = unit isi teks", "Pre-format = tampilan persis seperti ketikan"]
+    },
+    {
+      "type": "concept_card",
+      "title": "Tag Link (a href): loncat ke web, file, email, atau bagian halaman",
+      "icon": "🔗",
+      "explanation": "Link dibuat dengan <a href=\"...\">teks</a>. Kamu bisa mengarah ke URL website, dokumen/file, email (mailto:), atau ke bagian tertentu pada halaman dengan target bernama.",
+      "analogy": "Seperti peta di buku: ada teks yang bisa kamu klik untuk pindah ke bab lain, email, atau halaman tertentu.",
+      "highlight": "<a href>",
+      "keyPoints": ["URL: <a href=\"http://...\">", "Email: mailto:alamat", "Bagian halaman bisa pakai target/anchor"]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual Tag yang Sering Dipakai",
+      "icon": "📊",
+      "items": [
+        { "label": "Struktur Dokumen", "value": "<html><head><title><body>", "icon": "🧱" },
+        { "label": "Judul", "value": "<h1> sampai <h6>", "icon": "🏷️" },
+        { "label": "Paragraf", "value": "<p> untuk isi teks", "icon": "✍️" },
+        { "label": "Baris Baru", "value": "<br/> tanpa membuat paragraf baru", "icon": "↩️" },
+        { "label": "Garis Pemisah", "value": "<hr/> untuk pemisahan visual", "icon": "➖" },
+        { "label": "Link", "value": "<a href=\"...\">", "icon": "🔗" },
+        { "label": "Gambar", "value": "<img src=\"...\">", "icon": "🖼️" },
+        { "label": "List", "value": "<ul> unordered, <ol> ordered", "icon": "🧺" }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Code Playground: Link, Gambar (Relative Path), dan List",
+      "icon": "💻",
+      "language": "html",
+      "instruction": "Ubah teks link dan daftar. Untuk gambar, kamu bisa ganti src ke file yang kamu punya (misal satu folder dengan nama gambar). Kalau gambarnya tidak ada, browser mungkin tidak menampilkan gambar, tapi struktur HTML tetap benar.",
+      "fileName": "links-images-list.html",
+      "defaultCode": "<!DOCTYPE html> <html> <head> <meta charset=\"utf-8\"> <title>Link, Gambar, List</title> </head> <body> <h2 align=\"center\">Contoh Tag Link & List</h2> <p>Ke website: <a href=\"https://www.mozilla.org\">Mozilla</a></p> <p>Kirim email: <a href=\"mailto:contoh@email.com\">Email saya</a></p> <p>Download file: <a href=\"handout.pdf\">handout.pdf</a></p> <p>Gambar (relative path):</p> <img src=\"./penguins.jpg\" width=\"220\"> <p><b>Nama gambar</b> (opsional teks pendamping)</p> <h3>Daftar Belajar HTML</h3> <ul type=\"disc\"> <li>Tag</li> <li>Element</li> <li>Attribute</li> </ul> <h3>Langkah Urut</h3> <ol type=\"1\" start=\"1\"> <li>Buat kerangka</li> <li>Tulis konten</li> <li>Uji di browser</li> </ol> </body> </html>",
+      "hint": "Challenge: ubah <ul type=\"square\"> atau ubah start pada <ol> agar urutannya berubah."
+    },
+    {
+      "type": "analogy_card",
+      "title": "Komentar HTML seperti catatan tempel untuk developer",
+      "icon": "🗒️",
+      "realWorld": "Saat kamu membuat file HTML, kamu dan tim perlu tahu bagian mana yang sedang dikerjakan.",
+      "connection": "Tag komentar formatnya mulai dengan <! -- dan ditutup dengan -- > (tanpa spasi aneh di tengah saat menulis versi final). Komentar tidak tampil, tapi membantu dokumentasi.",
+      "insight": "Komentar bisa berisi nama aplikasi, tujuan, nama pengarang, tanggal, versi, hingga hak cipta."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini HTML",
+      "icon": "📖",
+      "terms": [
+        { "term": "Tag", "definition": "Tanda untuk menginstruksikan browser (misal <p>, <a>, <img>).", "example": "Tulis <p>Halo</p> untuk paragraf." },
+        { "term": "Element", "definition": "Kombinasi tag yang membentuk sebuah bagian dari dokumen.", "example": "<p>Ini paragraf</p> adalah element paragraf." },
+        { "term": "Attribute", "definition": "Parameter tambahan untuk memodifikasi element.", "example": "align pada <h1 align=\"center\">." },
+        { "term": "Heading", "definition": "Judul/subjudul berjenjang dari <h1> sampai <h6>.", "example": "<h2>Subjudul</h2>." },
+        { "term": "Paragraf", "definition": "Unit teks isi menggunakan <p>.", "example": "<p>Isi materi...</p>" },
+        { "term": "Link", "definition": "Navigasi ke URL, file, email, atau bagian halaman menggunakan <a href=\"...\">.", "example": "<a href=\"mailto:abc@email.com\">Email</a>" }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Tag yang berfungsi sebagai penanda awal dan akhir dokumen HTML adalah ...",
+      "options": ["<head> ... </head>", "<title> ... </title>", "<html> ... </html>", "<body> ... </body>"],
+      "answer": "<html> ... </html>",
+      "explanation": "Kerangka dokumen wajib punya <html> sebagai penanda dokumen HTML secara keseluruhan.",
+      "xpReward": 50
+    },
+    {
+      "question": "Bagian <head> biasanya digunakan untuk ...",
+      "options": ["Menampilkan konten utama halaman", "Menyimpan informasi tentang dokumen yang ditampilkan", "Membuat paragraf isi teks", "Menampilkan gambar"],
+      "answer": "Menyimpan informasi tentang dokumen yang ditampilkan",
+      "explanation": "<head> berisi keterangan seperti <title> dan meta yang mempengaruhi informasi dokumen.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa fungsi tag <title>?",
+      "options": ["Mengatur isi yang ditampilkan di tengah halaman", "Memberi judul pada tab browser", "Mengatur warna background", "Membuat baris baru"],
+      "answer": "Memberi judul pada tab browser",
+      "explanation": "Isi <title> adalah judul dokumen yang biasanya muncul di tab/caption browser.",
+      "xpReward": 50
+    },
+    {
+      "question": "Konten yang ingin tampil di browser harus ditulis di dalam ...",
+      "options": ["<head>", "<html>", "<body>", "<title>"],
+      "answer": "<body>",
+      "explanation": "Section utama tampilan ada di <body>, sedangkan <head> untuk informasi dokumen.",
+      "xpReward": 50
+    },
+    {
+      "question": "Tag apa yang digunakan untuk membuat paragraf?",
+      "options": ["<p> ... </p>", "<div> ... </div>", "<span> ... </span>", "<pre> ... </pre>"],
+      "answer": "<p> ... </p>",
+      "explanation": "Materi menjelaskan paragraf mengikuti kaidah penulisan dan dimulai dengan tag <p>.",
+      "xpReward": 50
+    },
+    {
+      "question": "Untuk membuat baris baru tanpa memulai paragraf baru, gunakan tag ...",
+      "options": ["<br/>", "<hr/>", "<p>", "<pre>"],
+      "answer": "<br/>",
+      "explanation": "Tag <br> berfungsi untuk menulis teks pada baris berikutnya.",
+      "xpReward": 50
+    },
+    {
+      "question": "Tag <hr/> berfungsi untuk ...",
+      "options": ["Menampilkan teks kode monospaced", "Membuat garis pemisah horisontal", "Membuat heading", "Menyisipkan gambar"],
+      "answer": "Membuat garis pemisah horisontal",
+      "explanation": "Materi menyebut <hr> adalah garis horisontal untuk memisahkan teks.",
+      "xpReward": 50
+    },
+    {
+      "question": "Link ke alamat email menggunakan ...",
+      "options": ["href=\"email\" ", "href=\"mailto:alamat_email\"", "href=\"@alamat_email\"", "href=\"email://alamat\""],
+      "answer": "href=\"mailto:alamat_email\"",
+      "explanation": "Format email di HTML memakai mailto: di dalam href.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa fungsi tag <html>?",
+      "answer": "Menandai awal dan akhir dokumen sebagai dokumen HTML.",
+      "emoji": "🧱",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Tag <head> berisi apa?",
+      "answer": "Informasi tentang dokumen web (misalnya judul tab di <title>).",
+      "emoji": "🗂️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Untuk apa tag <title>?",
+      "answer": "Memberi judul dokumen yang ditampilkan pada caption browser/tab.",
+      "emoji": "🏷️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Di mana konten yang tampil di halaman ditulis?",
+      "answer": "Di dalam <body>.",
+      "emoji": "🧑‍💻",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Heading tag terdiri dari berapa level?",
+      "answer": "Dari <h1> sampai <h6>.",
+      "emoji": "🔠",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Perbedaan <pre> dengan <p> yang paling penting?",
+      "answer": "<pre> menampilkan teks sama persis seperti diketik (spasi dan baris ikut terbawa).",
+      "emoji": "📐",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Tag apa untuk membuat list tanpa nomor?",
+      "answer": "<ul> (unordered list).",
+      "emoji": "🧺",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Tag apa yang untuk membuat list bernomor?",
+      "answer": "<ol> (ordered list).",
+      "emoji": "1️⃣",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Format komentar HTML dimulai dengan apa?",
+      "answer": "<! -- dan diakhiri dengan -- >.",
+      "emoji": "🗒️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Bagaimana menampilkan gambar dari folder yang sama?",
+      "answer": "Gunakan src dengan relative path seperti <img src=\"./nama.jpg\">.",
+      "emoji": "🖼️",
+      "difficulty": "medium"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi HTML dasar: struktur dokumen, heading, paragraf, format teks, link, gambar, dan list.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi PPTX ini membahas HTML dasar: pengertian HTML, struktur dokumen minimal, istilah tag/element/attribute, serta berbagai tag penting untuk membuat halaman web sederhana. HTML adalah singkatan dari HyperText Markup Language. HTML berperan menentukan tampilan suatu teks dan tingkat kepentingan dari teks tersebut dalam suatu dokumen. Artinya, browser tidak hanya menampilkan tulisan, tapi juga memahami peran tulisan itu (misal judul, paragraf, heading tingkat pertama, link, dan elemen-elemen lain) lewat tag yang kamu tulis. HyperText berarti halaman web dapat memiliki link untuk berpindah ke dokumen lain atau bagian tertentu. Saat mempelajari HTML, perangkat yang dibutuhkan umumnya text editor sederhana (misal Notepad di Windows, atau editor seperti Bluefish/gEdit/mcedit/pico di Linux) dan web browser untuk menjalankan serta melihat hasil.\n\nBagian yang sangat fundamental adalah struktur dasar dokumen HTML. Dokumen HTML umumnya terdiri atas teks informasi yang dibungkus dengan tag dasar. Tag pertama yang wajib ditulis adalah <html> di awal dokumen dan </html> di akhir. Setelah <html>, ada bagian <head>. Materi menjelaskan bahwa <head> digunakan untuk menuliskan keterangan tentang dokumen web yang akan ditampilkan. Di dalam <head>, terdapat tag <title> yang berfungsi memberi judul/ informasi pada caption browser web tentang topik atau judul dari dokumen web. Jadi, kalau kamu membuka browser, judul ini biasanya muncul pada tab. Kemudian setelah </head>, masuk ke <body>. <body> adalah section utama dalam dokumen web, yaitu tempat semua isi dokumen yang akan ditampilkan di browser harus diletakkan. Tag <body> diletakkan segera setelah tag </head> dan ditutup sebelum </html>.\n\nSelanjutnya materi membahas tag paragraf. Informasi dalam dokumen harus mengikuti kaidah penulisan: satu pikiran utama disimpan dalam satu paragraf. Setiap paragraf dimulai dengan tag <p>. Bagian penutup </p> tidak diwajibkan, tetapi setiap pergantian paragraf harus dimulai dengan <p> kembali. Ini membantu browser memahami pemisahan teks sebagai paragraf terpisah.\n\nMateri juga menjelaskan istilah-istilah dalam HTML: tag, element, dan attribute. Tag digunakan untuk menentukan tingkah laku web browser dan ditandai dengan simbol < untuk tag awal dan > untuk tag akhir. Tag kontainer memiliki bentuk <namatag> ..... </namatag>, artinya tag yang membungkus isi. Element merupakan jenis-jenis dari tag; HTML punya banyak elemen untuk keperluan berbeda dengan bentuk penggunaan berbeda. Attribute digunakan untuk memodifikasi nilai dari elemen HTML. Umumnya satu elemen bisa memiliki banyak atribut. Contoh atribut yang muncul di materi adalah align untuk heading dan paragraf, src untuk gambar, bgcolor dan background untuk background.\n\nTag utama dalam struktur dokumen yang disebut materi meliputi <html>, <head>, <body>, dan juga catatan tentang komentar HTML. Materi memperlihatkan format komentar versi yang sering ditulis seperti <!– untuk menyatakan suatu dokumen HTML -- > (meski tanda minus-nya tampak ada variasi di materi). Secara konsep, komentar HTML dipakai untuk memberi informasi di dalam file (nama aplikasi, tujuan, nama pengarang, tanggal pembuatan, nomor versi, hak cipta) dan komentar ini tidak ditampilkan sebagai bagian dari tampilan halaman. Materi juga menyebut aturan penggunaan komentar: <! -- ... -- >.\n\nMateri berikutnya mengajarkan contoh HTML sederhana: menggunakan <html><head><title>...</title></head><body>...</body></html> untuk menampilkan tulisan tertentu. Lalu masuk ke tag heading: <h1> sampai <h6>. Pada tag heading, materi mencantumkan opsi align seperti left, center, right. Tag heading dipakai untuk judul atau sub judul dalam dokumen.\n\nAda juga pembahasan tag paragraf yang dapat diatur perataannya. Contoh script di materi memperlihatkan penggunaan align=\"right\" pada paragraf dan align=\"left\" pada paragraf lainnya, serta judul menggunakan <h2 align=\"center\">. Setelah heading dan paragraf, materi mengajarkan tag memformat dokumen: <b> untuk bold, <i> untuk italic, <sup> untuk superscripted, <sub> untuk subscripted, <del> untuk struckthrough, dan <code> untuk menampilkan teks sebagai kode.\n\nSelanjutnya ada tag <pre> yang digunakan untuk menampilkan teks sama seperti yang diketikkan dalam dokumen HTML. Ini penting karena browser biasa akan merapikan spasi dan line break, sedangkan pre-format akan mempertahankan format asli (spasi dan baris). Tag <br> digunakan untuk menulis teks pada baris berikutnya (break). Lalu tag garis pemisah horisontal <hr> digunakan untuk memisahkan teks dengan teks lain. Materi juga menyinggung tag font (meski dalam praktik modern font tag sudah jarang): cara mengatur ukuran font dengan size=\"n\", jenis font dengan face=\"jenis_font\", dan warna font dengan color=\"warna\" (contoh warna hexcolor #FF00FF atau color=\"red\").\n\nUntuk membuat hyperlink, materi memperkenalkan tag <a> dengan atribut href. Berbagai kasus yang disebut: link ke dokumen lain, link ke bagian tertentu dalam dokumen yang sama (anchor/target), link ke alamat URL atau website, link ke alamat email dengan mailto:alamat_email, dan link ke file yang akan didownload. Contoh script di materi menunjukkan cara membuat link blog menggunakan <a href=\"http://...\"> dan teks link di dalam tag <a>.\n\nMateri juga membahas tag memuat gambar dengan <img src=\"URL\" ... />. Terdapat info relative path: jika gambar ada di direktori yang sama gunakan ./nama_gambar, dan jika ada di direktori sebelumnya gunakan ../nama_gambar. Contoh script menampilkan <img src=\"./penguins.jpg\"> lalu menampilkan teks pendamping menggunakan <b>.\n\nLalu dibahas background warna dan gambar. Untuk warna menggunakan <body bgcolor=#nnnnnn> ...</body>. Materi juga memberikan contoh bgcolor=\"pink\". Untuk background gambar menggunakan atribut background pada body: <body background=\"nama_file_gambar\"> ... </body> dan contoh menggunakan background=\"./Desert.jpg\".\n\nTerakhir materi membahas tag list: <ul> untuk unordered list (tanpa nomor) dengan type untuk variasi bullet (disc, square, circle), dan <ol> untuk ordered list (dengan nomor) dengan type (1, a, A, I, i) serta start=\"n\" untuk menentukan mulai nomor. Ada juga <dl> untuk definition list dengan <dt> sebagai istilah dan <dd> sebagai deskripsi.\n\nCara menjelaskan materi kepada siswa sebaiknya dimulai dari struktur dasar (html-head-title-body) karena ini pondasi. Setelah itu baru masuk ke tag-tag tampilan (heading, paragraf, format teks, pre, br, hr). Kemudian fokus ke elemen interaktif seperti link dan media seperti gambar dan background. Terakhir barulah list agar siswa memahami cara menata informasi terstruktur. Di setiap bagian, tekankan hubungan antara tag dan dampaknya langsung di browser: perubahan tag akan terlihat sebagai perubahan tampilan atau perilaku (misal link bisa diklik, gambar bisa muncul, list bisa berbullets/bernomor)."
+}
