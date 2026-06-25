@@ -77,5 +77,31 @@
       "first_block"
     ],
     "joinedAt": "25-06-2026, 10.28.37"
+  },
+  {
+    "studentId": "20b314f33940a1b0",
+    "username": "Ramon Chill",
+    "email": "ramonchill@gmail.com",
+    "password": "$2b$10$k6seZAEq27LnLRmAryygueV6naakXTteRO4r1Q0eyKH8/oER4ppwG",
+    "profilePicture": "",
+    "xp": 270,
+    "coin": 125,
+    "level": 2,
+    "streak": 0,
+    "lastLogin": "25-06-2026, 10.29.26",
+    "quizScore": 0,
+    "completedBlocks": [
+      "block-3",
+      "block-5"
+    ],
+    "completedChapter": [],
+    "flashcardsViewed": 6,
+    "leaderboardPoint": 120,
+    "achievements": [
+      "first_block",
+      "flashcard_pro",
+      "coin_100"
+    ],
+    "joinedAt": "25-06-2026, 10.29.26"
   }
 ]
