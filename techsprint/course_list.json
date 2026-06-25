@@ -466,5 +466,19 @@
     "courseUrl": "/course/affe4afb0ef9c86e0848ac7694d76bc7",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "b4f4e0112bd602e9940b44afa92114a0",
+    "courseName": "Perangkat Masukan (Input Device): dari Keyboard sampai OCR",
+    "courseEmoji": "📚",
+    "courseColor": "#6366f1",
+    "courseFileName": "materi dasar peranti masukan.pptx",
+    "fileType": "pptx",
+    "originalFileName": "materi dasar peranti masukan.pptx",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "25-06-2026, 08.31.18",
+    "courseUrl": "/course/b4f4e0112bd602e9940b44afa92114a0",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
