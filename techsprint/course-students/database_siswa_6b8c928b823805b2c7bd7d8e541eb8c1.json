@@ -84,8 +84,8 @@
     "email": "ramonchill@gmail.com",
     "password": "$2b$10$k6seZAEq27LnLRmAryygueV6naakXTteRO4r1Q0eyKH8/oER4ppwG",
     "profilePicture": "",
-    "xp": 270,
-    "coin": 125,
+    "xp": 385,
+    "coin": 170,
     "level": 2,
     "streak": 0,
     "lastLogin": "25-06-2026, 10.29.26",
@@ -95,13 +95,16 @@
       "block-5"
     ],
     "completedChapter": [],
-    "flashcardsViewed": 6,
-    "leaderboardPoint": 120,
+    "flashcardsViewed": 8,
+    "leaderboardPoint": 220,
     "achievements": [
       "first_block",
       "flashcard_pro",
       "coin_100"
     ],
-    "joinedAt": "25-06-2026, 10.29.26"
+    "joinedAt": "25-06-2026, 10.29.26",
+    "aiInteractions": 1,
+    "todayAiCount": 1,
+    "lastAiDate": "Thu Jun 25 2026"
   }
 ]
