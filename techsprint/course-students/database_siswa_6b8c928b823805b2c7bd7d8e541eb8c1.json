@@ -51,5 +51,24 @@
     ],
     "joinedAt": "25-06-2026, 10.27.35",
     "isMainAccount": true
+  },
+  {
+    "studentId": "b349fbc0d1660dd5",
+    "username": "Bualil",
+    "email": "bualil@.com",
+    "password": "$2b$10$lGaU4ebLXvQKxco36Y3uquGzl.NeGEKNx/uBcF0KoDGpjIrYdyKcq",
+    "profilePicture": "",
+    "xp": 0,
+    "coin": 0,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "25-06-2026, 10.28.37",
+    "quizScore": 0,
+    "completedBlocks": [],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 0,
+    "achievements": [],
+    "joinedAt": "25-06-2026, 10.28.37"
   }
 ]
