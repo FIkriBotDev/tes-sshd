@@ -32,18 +32,23 @@
     "email": "tibotyronaldo@gmail.com",
     "password": "$2b$10$WsBzSNlNN/qIPITfivamRuXl/nCN4EQBkE61O2QuSazYYCX/cjf5y",
     "profilePicture": "",
-    "xp": 0,
-    "coin": 0,
+    "xp": 110,
+    "coin": 45,
     "level": 1,
     "streak": 0,
     "lastLogin": "25-06-2026, 10.27.35",
     "lastLoginDate": "Thu Jun 25 2026",
     "quizScore": 0,
-    "completedBlocks": [],
+    "completedBlocks": [
+      "block-0",
+      "block-1"
+    ],
     "completedChapter": [],
     "flashcardsViewed": 0,
-    "leaderboardPoint": 0,
-    "achievements": [],
+    "leaderboardPoint": 60,
+    "achievements": [
+      "first_block"
+    ],
     "joinedAt": "25-06-2026, 10.27.35",
     "isMainAccount": true
   }
