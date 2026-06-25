@@ -113,5 +113,13 @@
     "plan": 1,
     "creditLeft": 0,
     "courseCreated": 2
+  },
+  {
+    "namaLengkap": "Tiboty Ronaldo",
+    "email": "tibotyronaldo@gmail.com",
+    "password": "$2b$10$WsBzSNlNN/qIPITfivamRuXl/nCN4EQBkE61O2QuSazYYCX/cjf5y",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
