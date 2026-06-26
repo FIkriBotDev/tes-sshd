@@ -1,1 +1,27 @@
-[]
+[
+  {
+    "studentId": "8beda0eef653fc61",
+    "username": "Fikri",
+    "email": "muhammadfikrifahrezi2@gmail.com",
+    "password": "$2b$10$XQiR.Vea9lMLXAUcMqhsEuDkXbv8Vb.vHRyiyeKUX0yqEDcIESRzm",
+    "profilePicture": "",
+    "xp": 80,
+    "coin": 35,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "26-06-2026, 10.12.24",
+    "lastLoginDate": "Fri Jun 26 2026",
+    "quizScore": 0,
+    "completedBlocks": [
+      "block-0"
+    ],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 30,
+    "achievements": [
+      "first_block"
+    ],
+    "joinedAt": "26-06-2026, 10.12.24",
+    "isMainAccount": true
+  }
+]
