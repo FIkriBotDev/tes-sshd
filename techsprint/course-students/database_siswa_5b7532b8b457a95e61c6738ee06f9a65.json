@@ -5,8 +5,8 @@
     "email": "muhammadfikrifahrezi2@gmail.com",
     "password": "$2b$10$XQiR.Vea9lMLXAUcMqhsEuDkXbv8Vb.vHRyiyeKUX0yqEDcIESRzm",
     "profilePicture": "",
-    "xp": 120,
-    "coin": 43,
+    "xp": 170,
+    "coin": 53,
     "level": 1,
     "streak": 0,
     "lastLogin": "26-06-2026, 10.12.24",
@@ -18,12 +18,18 @@
     ],
     "completedChapter": [],
     "flashcardsViewed": 0,
-    "leaderboardPoint": 60,
+    "leaderboardPoint": 550,
     "achievements": [
       "first_block"
     ],
     "joinedAt": "26-06-2026, 10.12.24",
-    "isMainAccount": true
+    "isMainAccount": true,
+    "examScore": 38,
+    "totalExamsTaken": 1,
+    "highestExamScore": 38,
+    "totalExamScore": 38,
+    "averageExamScore": 38,
+    "examBadges": []
   },
   {
     "studentId": "97cce3c30f8b8fc4",
