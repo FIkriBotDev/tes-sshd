@@ -707,6 +707,463 @@ router.post("/course/student/update-profile", async (req, res) => {
 });
 
 // ============================================================
+// FEATURE 1: AI EXPLAIN LIKE I'M 5
+// ============================================================
+
+// POST /api/course/explain-simple
+router.post("/course/explain-simple", async (req, res) => {
+    console.log('=== EXPLAIN SIMPLE REQUEST ===');
+    console.log('Session:', req.session.student ? 'Logged in' : 'Not logged in');
+    
+    const sess = req.session.student;
+    if (!sess) {
+        console.log('Error: No session');
+        return res.status(401).json({ success: false, message: "Belum login." });
+    }
+
+    const { courseId, selectedText, blockTitle } = req.body;
+    console.log('Request body:', { courseId, selectedTextLength: selectedText?.length, blockTitle });
+    
+    if (!courseId || !selectedText) {
+        console.log('Error: Missing data');
+        return res.status(400).json({ success: false, message: "Data tidak lengkap." });
+    }
+
+    if (sess.courseId !== courseId) {
+        console.log('Error: CourseId mismatch', { sessionCourseId: sess.courseId, requestCourseId: courseId });
+        return res.status(403).json({ success: false, message: "Akses ditolak." });
+    }
+
+    try {
+        // Call Pollinations AI with ELI5 prompt
+        const systemPrompt = `Kamu adalah guru SD terbaik yang paling sabar dan ramah.
+
+TUGAS: Ubah materi berikut menjadi bahasa yang SANGAT mudah dipahami, bahkan untuk anak SD kelas 5.
+
+ATURAN WAJIB:
+- Gunakan bahasa Indonesia yang santai dan friendly
+- Gunakan analogi dari kehidupan sehari-hari
+- Gunakan contoh yang mudah dipahami (mainan, makanan, kegiatan sehari-hari)
+- JANGAN gunakan istilah teknis yang rumit
+- JANGAN menghilangkan konsep utama, tapi jelaskan dengan sederhana
+- Maksimal 300 kata
+- Gunakan poin-poin jika perlu agar mudah dibaca
+- Mulai dengan kalimat pembuka yang hangat
+- Akhiri dengan kalimat motivasi
+
+CONTOH FORMAT JAWABAN:
+Oke, aku jelasin dengan cara yang gampang ya! 😊
+
+[Penjelasan dengan analogi sederhana]
+
+Jadi intinya:
+• Poin 1
+• Poin 2
+• Poin 3
+
+Gampang kan? Kamu pasti bisa! 💪`;
+
+        const aiResponse = await axios.post(
+            "https://gen.pollinations.ai/v1/chat/completions",
+            {
+                model: "openai",
+                messages: [
+                    { role: "system", content: systemPrompt },
+                    { role: "user", content: `Judul Materi: ${blockTitle || 'Materi Pembelajaran'}\n\nIsi Materi:\n${selectedText}` }
+                ]
+            },
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${POLLINATIONS_API_KEY}`
+                },
+                timeout: 30000
+            }
+        );
+
+        console.log('AI Response received:', aiResponse.data.choices?.[0]?.message ? 'Success' : 'Empty');
+        
+        const simpleExplanation = aiResponse.data.choices?.[0]?.message?.content || "Maaf, tidak bisa menjelaskan saat ini.";
+
+        // Deduct credit from student (1 credit per use)
+        const students = readStudents(courseId);
+        const idx = students.findIndex(s => s.studentId === sess.studentId);
+        
+        console.log('Student found:', idx !== -1);
+        
+        if (idx === -1) {
+            return res.status(404).json({ success: false, message: "Siswa tidak ditemukan." });
+        }
+
+        // Check if student has credit (we'll use coins as credit system)
+        console.log('Student coins:', students[idx].coin || 0);
+        
+        if ((students[idx].coin || 0) < 1) {
+            return res.status(402).json({ 
+                success: false, 
+                message: "Coin tidak cukup. Minimal 1 coin untuk menggunakan fitur ini.",
+                insufficientCredit: true
+            });
+        }
+
+        // Deduct 1 coin
+        students[idx].coin = Math.max(0, (students[idx].coin || 0) - 1);
+        
+        // Give XP reward for active learning
+        students[idx].xp = (students[idx].xp || 0) + 5;
+        students[idx].level = calcLevel(students[idx].xp);
+
+        writeStudents(courseId, students);
+
+        console.log('Success! New coin:', students[idx].coin);
+
+        return res.json({
+            success: true,
+            simpleExplanation,
+            newCoin: students[idx].coin,
+            xpGained: 5
+        });
+
+    } catch (err) {
+        console.error("Explain Simple error:", err.message);
+        console.error("Error stack:", err.stack);
+        return res.status(500).json({ success: false, message: "Gagal menjelaskan materi: " + err.message });
+    }
+});
+
+// ============================================================
+// FEATURE 2: AI EXAM SIMULATION
+// ============================================================
+
+// POST /api/course/generate-exam
+router.post("/course/generate-exam", async (req, res) => {
+    const sess = req.session.student;
+    if (!sess) return res.status(401).json({ success: false, message: "Belum login." });
+
+    const { courseId } = req.body;
+    if (!courseId || sess.courseId !== courseId) {
+        return res.status(403).json({ success: false, message: "Akses ditolak." });
+    }
+
+    // Check if exam already exists (cache)
+    const EXAMS_DIR = path.join(COURSE_DATA_DIR, "exams");
+    if (!fs.existsSync(EXAMS_DIR)) fs.mkdirSync(EXAMS_DIR, { recursive: true });
+    
+    const examPath = path.join(EXAMS_DIR, `${courseId}.json`);
+    if (fs.existsSync(examPath)) {
+        // Return cached exam
+        try {
+            const cachedExam = JSON.parse(fs.readFileSync(examPath, "utf-8"));
+            return res.json({ success: true, exam: cachedExam, cached: true });
+        } catch (_) {
+            // If cache corrupted, regenerate
+        }
+    }
+
+    // Load course data
+    const courseDataPath = path.join(COURSE_DATA_DIR, `${courseId}.json`);
+    if (!fs.existsSync(courseDataPath)) {
+        return res.status(404).json({ success: false, message: "Course tidak ditemukan." });
+    }
+
+    try {
+        const courseData = JSON.parse(fs.readFileSync(courseDataPath, "utf-8"));
+
+        // Prepare content for AI
+        const contentSummary = `
+COURSE: ${courseData.title}
+SUMMARY: ${courseData.summary}
+
+LEARNING BLOCKS:
+${courseData.learningBlocks.map((b, i) => `${i + 1}. ${b.title} (${b.type})`).join('\n')}
+
+FLASHCARDS TOPICS:
+${courseData.flashcards.slice(0, 5).map(f => f.question).join('\n')}
+
+TUTOR CONTEXT:
+${courseData.tutorContext.slice(0, 1000)}
+        `.trim();
+
+        const examPrompt = `Kamu adalah expert exam designer untuk platform pembelajaran online.
+
+TUGAS: Buat simulasi ujian komprehensif berdasarkan course berikut.
+
+${contentSummary}
+
+REQUIREMENTS:
+- Buat 20 soal yang mencakup SEMUA materi
+- Campuran tipe soal: 40% multiple choice, 20% true/false, 20% matching, 20% case study
+- Setiap soal harus relevan dengan materi course
+- Difficulty bertingkat: 50% mudah, 30% sedang, 20% sulit
+- Time limit: 30 menit (1800 detik)
+
+OUTPUT FORMAT (JSON ONLY):
+{
+  "title": "Simulasi Ujian: [Judul Course]",
+  "timeLimit": 1800,
+  "totalQuestions": 20,
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Pertanyaan yang jelas dan spesifik?",
+      "options": ["Opsi A", "Opsi B", "Opsi C", "Opsi D"],
+      "answer": "Opsi A",
+      "explanation": "Penjelasan singkat kenapa jawaban ini benar",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Pernyataan yang bisa dijawab benar/salah",
+      "answer": "true",
+      "explanation": "Penjelasan jawaban",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan istilah dengan definisi yang tepat",
+      "pairs": [
+        {"term": "Istilah 1", "definition": "Definisi 1"},
+        {"term": "Istilah 2", "definition": "Definisi 2"},
+        {"term": "Istilah 3", "definition": "Definisi 3"}
+      ],
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Deskripsi kasus/situasi yang harus dianalisis",
+      "question": "Pertanyaan berdasarkan kasus di atas?",
+      "options": ["Opsi A", "Opsi B", "Opsi C", "Opsi D"],
+      "answer": "Opsi A",
+      "explanation": "Penjelasan detail",
+      "points": 15,
+      "difficulty": "hard"
+    }
+  ]
+}
+
+CRITICAL: Return ONLY valid JSON, no other text.`;
+
+        const aiResponse = await axios.post(
+            "https://gen.pollinations.ai/v1/chat/completions",
+            {
+                model: "openai",
+                messages: [
+                    { role: "system", content: "You are an expert educational assessment designer. Return only valid JSON." },
+                    { role: "user", content: examPrompt }
+                ]
+            },
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${POLLINATIONS_API_KEY}`
+                },
+                timeout: 120000
+            }
+        );
+
+        const rawContent = aiResponse.data.choices?.[0]?.message?.content || "";
+        
+        let examData;
+        try {
+            let cleaned = rawContent
+                .replace(/^```json\s*/i, "")
+                .replace(/^```\s*/i, "")
+                .replace(/```\s*$/i, "")
+                .trim()
+                .replace(/[\x00-\x1F\x7F]/g, '');
+            
+            examData = JSON.parse(cleaned);
+        } catch (parseErr) {
+            console.error("Exam JSON parse error:", parseErr.message);
+            return res.status(500).json({ success: false, message: "AI gagal generate exam. Coba lagi." });
+        }
+
+        // Save to cache
+        fs.writeFileSync(examPath, JSON.stringify(examData, null, 2));
+
+        return res.json({ success: true, exam: examData, cached: false });
+
+    } catch (err) {
+        console.error("Generate exam error:", err.message);
+        return res.status(500).json({ success: false, message: "Gagal generate exam. Coba lagi." });
+    }
+});
+
+// POST /api/course/submit-exam
+router.post("/course/submit-exam", (req, res) => {
+    const sess = req.session.student;
+    if (!sess) return res.status(401).json({ success: false, message: "Belum login." });
+
+    const { courseId, answers, timeSpent, tabSwitches } = req.body;
+    if (!courseId || !answers || sess.courseId !== courseId) {
+        return res.status(400).json({ success: false, message: "Data tidak lengkap." });
+    }
+
+    // Load exam
+    const examPath = path.join(COURSE_DATA_DIR, "exams", `${courseId}.json`);
+    if (!fs.existsSync(examPath)) {
+        return res.status(404).json({ success: false, message: "Exam tidak ditemukan." });
+    }
+
+    try {
+        const examData = JSON.parse(fs.readFileSync(examPath, "utf-8"));
+        
+        // Calculate score
+        let correctCount = 0;
+        let totalPoints = 0;
+        let earnedPoints = 0;
+
+        examData.questions.forEach((q, index) => {
+            totalPoints += q.points || 10;
+            const userAnswer = answers[index];
+
+            let isCorrect = false;
+            
+            if (q.type === "multiple_choice" || q.type === "case_study") {
+                isCorrect = userAnswer === q.answer;
+            } else if (q.type === "true_false") {
+                isCorrect = userAnswer === q.answer;
+            } else if (q.type === "matching") {
+                // For matching, check if all pairs are correct
+                // userAnswer should be an object mapping terms to definitions
+                if (userAnswer && q.pairs) {
+                    isCorrect = q.pairs.every(pair => userAnswer[pair.term] === pair.definition);
+                }
+            }
+
+            if (isCorrect) {
+                correctCount++;
+                earnedPoints += q.points || 10;
+            }
+        });
+
+        const score = Math.round((earnedPoints / totalPoints) * 100);
+        
+        // Apply tab switch penalty
+        let penaltyPercent = 0;
+        if (tabSwitches > 3) {
+            penaltyPercent = 10;
+        }
+        const finalScore = Math.max(0, score - penaltyPercent);
+
+        // Determine grade
+        let grade = "F";
+        if (finalScore >= 90) grade = "A";
+        else if (finalScore >= 80) grade = "B";
+        else if (finalScore >= 70) grade = "C";
+        else if (finalScore >= 60) grade = "D";
+
+        // Calculate rewards
+        let xpReward = 0;
+        let coinReward = 0;
+        const badges = [];
+
+        if (finalScore === 100) {
+            xpReward = 500;
+            coinReward = 150;
+            badges.push({ id: "perfect_score", name: "Perfect Score", icon: "🏆", rarity: "legendary" });
+        } else if (finalScore >= 90) {
+            xpReward = 400;
+            coinReward = 100;
+            badges.push({ id: "gold_badge", name: "Gold Master", icon: "🥇", rarity: "epic" });
+        } else if (finalScore >= 80) {
+            xpReward = 300;
+            coinReward = 75;
+            badges.push({ id: "silver_badge", name: "Silver Star", icon: "🥈", rarity: "rare" });
+        } else if (finalScore >= 70) {
+            xpReward = 200;
+            coinReward = 50;
+            badges.push({ id: "bronze_badge", name: "Bronze Fighter", icon: "🥉", rarity: "uncommon" });
+        } else {
+            xpReward = 50;
+            coinReward = 10;
+        }
+
+        // Update student data
+        const students = readStudents(courseId);
+        const idx = students.findIndex(s => s.studentId === sess.studentId);
+        if (idx === -1) {
+            return res.status(404).json({ success: false, message: "Siswa tidak ditemukan." });
+        }
+
+        students[idx].xp = (students[idx].xp || 0) + xpReward;
+        students[idx].coin = (students[idx].coin || 0) + coinReward;
+        students[idx].level = calcLevel(students[idx].xp);
+        
+        // Update exam stats
+        students[idx].examScore = finalScore;
+        students[idx].totalExamsTaken = (students[idx].totalExamsTaken || 0) + 1;
+        students[idx].highestExamScore = Math.max(finalScore, students[idx].highestExamScore || 0);
+        students[idx].totalExamScore = (students[idx].totalExamScore || 0) + finalScore;
+        students[idx].averageExamScore = Math.round(students[idx].totalExamScore / students[idx].totalExamsTaken);
+
+        // Add badges
+        if (!students[idx].examBadges) students[idx].examBadges = [];
+        badges.forEach(b => {
+            if (!students[idx].examBadges.find(eb => eb.id === b.id)) {
+                students[idx].examBadges.push({ ...b, earnedAt: nowStr() });
+            }
+        });
+
+        // Update leaderboard
+        students[idx].leaderboardPoint = (students[idx].xp || 0) + (students[idx].examScore || 0) * 10;
+
+        writeStudents(courseId, students);
+
+        return res.json({
+            success: true,
+            score: finalScore,
+            grade,
+            correctCount,
+            totalQuestions: examData.questions.length,
+            xpReward,
+            coinReward,
+            badges,
+            penalty: penaltyPercent > 0 ? `${penaltyPercent}% penalty for ${tabSwitches} tab switches` : null,
+            newXP: students[idx].xp,
+            newCoin: students[idx].coin,
+            newLevel: students[idx].level,
+            passed: finalScore >= (examData.passingScore || 70)
+        });
+
+    } catch (err) {
+        console.error("Submit exam error:", err.message);
+        return res.status(500).json({ success: false, message: "Gagal submit exam." });
+    }
+});
+
+// GET /api/course/exam-stats/:courseId
+router.get("/course/exam-stats/:courseId", (req, res) => {
+    const sess = req.session.student;
+    if (!sess) return res.status(401).json({ success: false, message: "Belum login." });
+
+    const { courseId } = req.params;
+    if (sess.courseId !== courseId) {
+        return res.status(403).json({ success: false, message: "Akses ditolak." });
+    }
+
+    const students = readStudents(courseId);
+    const student = students.find(s => s.studentId === sess.studentId);
+    if (!student) {
+        return res.status(404).json({ success: false, message: "Siswa tidak ditemukan." });
+    }
+
+    return res.json({
+        success: true,
+        stats: {
+            totalExamsTaken: student.totalExamsTaken || 0,
+            highestExamScore: student.highestExamScore || 0,
+            averageExamScore: student.averageExamScore || 0,
+            examBadges: student.examBadges || []
+        }
+    });
+});
+
+// ============================================================
 // GAMIFICATION — XP, Coin, Achievements
 // ============================================================
 
@@ -1019,6 +1476,42 @@ router.get("/course/data/:courseId", (req, res) => {
     } catch {
         return res.status(500).json({ success: false, message: "Gagal membaca course data." });
     }
+});
+
+// ============================================================
+// EXAM PAGE ROUTE
+// ============================================================
+
+// GET /course/:courseId/exam - Serve exam page
+router.get("/course/:courseId/exam", (req, res) => {
+    const { courseId } = req.params;
+    
+    // Check if course exists
+    const courseDataPath = path.join(COURSE_DATA_DIR, `${courseId}.json`);
+    if (!fs.existsSync(courseDataPath)) {
+        return res.status(404).send("Course tidak ditemukan.");
+    }
+    
+    // Check if student is logged in
+    if (!req.session.student || req.session.student.courseId !== courseId) {
+        return res.redirect(`/course/${courseId}/auth`);
+    }
+    
+    // Load exam template
+    const EXAM_TEMPLATE_PATH = path.join(ROOT, "course_template", "exam.html");
+    if (!fs.existsSync(EXAM_TEMPLATE_PATH)) {
+        return res.status(500).send("Template exam tidak ditemukan.");
+    }
+    
+    let examHtml = fs.readFileSync(EXAM_TEMPLATE_PATH, "utf-8");
+    
+    // Inject course ID
+    examHtml = examHtml.replace(
+        "// <!-- COURSE_ID_INJECT -->",
+        `const COURSE_ID = "${courseId}";`
+    );
+    
+    res.send(examHtml);
 });
 
 module.exports = router;

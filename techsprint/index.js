@@ -21,6 +21,8 @@ app.use(express.static("public"));
 app.use("/generated-course", express.static(path.join(__dirname, "generated-course")));
 app.use("/api", authRoutes);
 app.use("/api", courseRoutes);
+// Mount course routes without /api prefix for page routes (exam, etc)
+app.use("/", courseRoutes);
 
 const POLLINATIONS_API_KEY = "sk_RM9sUErPNlaj7kFenSIMljnIVvAyssUk";
 
