@@ -23,5 +23,24 @@
     ],
     "joinedAt": "26-06-2026, 10.12.24",
     "isMainAccount": true
+  },
+  {
+    "studentId": "97cce3c30f8b8fc4",
+    "username": "aa",
+    "email": "aa@aaa.aaa",
+    "password": "$2b$10$4d25jKMk1RwYEiUQwPiz.ek.13z1bXENlE2tL9jM0gQhI8PjcV2QW",
+    "profilePicture": "",
+    "xp": 0,
+    "coin": 0,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "26-06-2026, 10.15.50",
+    "quizScore": 0,
+    "completedBlocks": [],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 0,
+    "achievements": [],
+    "joinedAt": "26-06-2026, 10.15.50"
   }
 ]
