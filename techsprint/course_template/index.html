@@ -502,6 +502,24 @@
                         <span class="text-xs font-semibold text-slate-600">Cards</span>
                     </button>
                 </div>
+                
+                <!-- Exam Button - NEW FEATURE -->
+                <div class="mt-3">
+                    <button onclick="goToExam()" class="block w-full p-4 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-600 hover:via-teal-600 hover:to-cyan-600 text-white rounded-xl shadow-lg hover:shadow-xl transition-all group">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-2xl">
+                                    🎓
+                                </div>
+                                <div class="text-left">
+                                    <div class="font-bold text-white">Simulasi Ujian</div>
+                                    <div class="text-xs text-white/80">Uji kemampuanmu!</div>
+                                </div>
+                            </div>
+                            <i class="ph-fill ph-arrow-right text-xl group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </button>
+                </div>
             </div>
             
             <!-- Leaderboard Preview -->
@@ -945,6 +963,20 @@
                 console.error(`Error rendering block ${idx}:`, e);
             }
         });
+        
+        // Setup event listeners for explain buttons
+        setupExplainButtonListeners();
+    }
+    
+    function setupExplainButtonListeners() {
+        document.querySelectorAll('.explain-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const blockId = this.dataset.blockId;
+                const blockTitle = this.dataset.blockTitle;
+                const blockType = this.dataset.blockType;
+                explainSimple(blockId, blockTitle, blockType);
+            });
+        });
     }
 
     function createBlockElement(block, idx) {
@@ -958,14 +990,23 @@
         
         let content = '';
         
-        // Header dengan icon
+        // Header dengan icon dan tombol Explain
         content += `
             <div class="flex items-start justify-between mb-4">
                 <div class="flex items-center gap-3 flex-1">
                     <div class="block-icon">${block.icon || '📘'}</div>
                     <h3 class="text-2xl font-black text-slate-800">${escapeHtml(block.title)}</h3>
                 </div>
-                ${isCompleted ? '<div class="text-green-500 text-3xl">✓</div>' : ''}
+                <div class="flex items-center gap-2">
+                    <button class="explain-btn px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-xl font-bold text-sm transition-all shadow-md hover:shadow-lg inline-flex items-center gap-2"
+                            data-block-id="${blockId}" 
+                            data-block-title="${escapeHtml(block.title)}" 
+                            data-block-type="${block.type}"
+                            title="Jelaskan dengan bahasa yang mudah dipahami">
+                        ✨ Jelaskan Lebih Sederhana
+                    </button>
+                    ${isCompleted ? '<div class="text-green-500 text-3xl">✓</div>' : ''}
+                </div>
             </div>
         `;
         
@@ -2069,8 +2110,204 @@ sys.stdout = StringIO()
     }
 
     // ══════════════════════════════════════════════════════════
+    // FEATURE: EXPLAIN LIKE I'M 5
+    // ══════════════════════════════════════════════════════════
+    function goToExam() {
+        window.location.href = `/course/${COURSE_ID}/exam`;
+    }
+    
+    async function explainSimple(blockId, blockTitle, blockType) {
+        console.log('explainSimple called:', { blockId, blockTitle, blockType });
+        
+        // Get block content
+        const blockEl = document.getElementById(blockId);
+        if (!blockEl) {
+            console.error('Block element not found:', blockId);
+            return;
+        }
+        
+        // Extract text content from block
+        let selectedText = '';
+        const blockIndex = parseInt(blockId.replace('block-', ''));
+        const blockData = COURSE_DATA.learningBlocks[blockIndex];
+        
+        console.log('Block data:', blockData);
+        
+        if (blockData) {
+            // Collect relevant text from block
+            if (blockData.explanation) selectedText += blockData.explanation + ' ';
+            if (blockData.analogy) selectedText += blockData.analogy + ' ';
+            if (blockData.keyPoints) selectedText += blockData.keyPoints.join(' ') + ' ';
+            if (blockData.realWorld) selectedText += blockData.realWorld + ' ';
+            if (blockData.connection) selectedText += blockData.connection + ' ';
+        }
+        
+        console.log('Selected text length:', selectedText.length);
+        
+        if (!selectedText.trim()) {
+            alert('Tidak ada konten untuk dijelaskan.');
+            return;
+        }
+        
+        // Show loading modal
+        showExplainModal('loading', '');
+        
+        try {
+            console.log('Sending request to /api/course/explain-simple');
+            
+            const res = await fetch('/api/course/explain-simple', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    courseId: COURSE_ID,
+                    selectedText: selectedText.substring(0, 1000), // Limit to 1000 chars
+                    blockTitle: blockTitle
+                })
+            });
+            
+            console.log('Response status:', res.status);
+            
+            if (!res.ok) {
+                console.error('HTTP error:', res.status, res.statusText);
+                throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+            }
+            
+            const data = await res.json();
+            console.log('Response data:', data);
+            
+            if (!data.success) {
+                if (data.insufficientCredit) {
+                    showExplainModal('error', 'Coin tidak cukup! Kamu perlu minimal 1 coin untuk menggunakan fitur ini. Dapatkan coin dengan menyelesaikan quiz dan learning blocks.');
+                } else {
+                    showExplainModal('error', data.message || 'Gagal menjelaskan materi.');
+                }
+                return;
+            }
+            
+            // Show result
+            showExplainModal('success', data.simpleExplanation);
+            
+            // Update coin display if needed
+            if (data.newCoin !== undefined) {
+                studentData.coin = data.newCoin;
+                const coinEl = document.getElementById('student-coin');
+                if (coinEl) coinEl.textContent = data.newCoin;
+            }
+            
+            // Show XP gained notification
+            if (data.xpGained) {
+                showNotification(`+${data.xpGained} XP untuk belajar aktif! 🌟`);
+            }
+            
+        } catch (err) {
+            console.error('Explain simple error:', err);
+            showExplainModal('error', 'Terjadi kesalahan: ' + err.message + '. Coba lagi atau hubungi support jika masalah berlanjut.');
+        }
+    }
+    
+    function showExplainModal(state, content) {
+        let modal = document.getElementById('explain-modal');
+        
+        // Create modal if doesn't exist
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.id = 'explain-modal';
+            modal.className = 'fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-6';
+            modal.innerHTML = `
+                <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-hidden">
+                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-6">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                                ✨ Versi Mudah Dipahami
+                            </h3>
+                            <button onclick="closeExplainModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-all">
+                                <i class="ph ph-x text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="explain-content" class="p-6 overflow-y-auto max-h-[60vh]">
+                        <!-- Content will be injected -->
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+        
+        const contentEl = document.getElementById('explain-content');
+        
+        if (state === 'loading') {
+            contentEl.innerHTML = `
+                <div class="text-center py-12">
+                    <div class="w-16 h-16 border-4 border-purple-200 border-t-purple-500 rounded-full animate-spin mx-auto mb-4"></div>
+                    <p class="text-slate-600 font-medium">AI sedang menjelaskan dengan bahasa yang mudah...</p>
+                    <p class="text-slate-400 text-sm mt-2">Tunggu sebentar ya! 😊</p>
+                </div>
+            `;
+        } else if (state === 'success') {
+            contentEl.innerHTML = `
+                <div class="prose prose-slate max-w-none">
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border-2 border-purple-200 mb-6">
+                        <p class="text-slate-700 leading-relaxed whitespace-pre-line">${escapeHtml(content)}</p>
+                    </div>
+                    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                        <p class="text-sm text-amber-800 flex items-center gap-2">
+                            <i class="ph-fill ph-info text-lg"></i>
+                            <span><strong>Biaya:</strong> 1 coin digunakan. <strong>Bonus:</strong> +5 XP untuk belajar aktif!</span>
+                        </p>
+                    </div>
+                </div>
+            `;
+        } else if (state === 'error') {
+            contentEl.innerHTML = `
+                <div class="text-center py-8">
+                    <div class="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center text-red-500 text-3xl mx-auto mb-4">
+                        <i class="ph-fill ph-warning"></i>
+                    </div>
+                    <p class="text-red-600 font-medium">${escapeHtml(content)}</p>
+                </div>
+            `;
+        }
+        
+        modal.classList.remove('hidden');
+        setTimeout(() => modal.classList.add('opacity-100'), 10);
+    }
+    
+    function closeExplainModal() {
+        const modal = document.getElementById('explain-modal');
+        if (modal) {
+            modal.classList.remove('opacity-100');
+            setTimeout(() => modal.classList.add('hidden'), 200);
+        }
+    }
+
+    // ══════════════════════════════════════════════════════════
     // UTILITIES
     // ══════════════════════════════════════════════════════════
+    function showNotification(message) {
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = 'fixed top-4 right-4 z-50 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-6 py-3 rounded-xl shadow-lg font-bold text-sm transform translate-x-full transition-transform duration-300';
+        notification.textContent = message;
+        
+        // Add to page
+        document.body.appendChild(notification);
+        
+        // Show notification
+        setTimeout(() => {
+            notification.classList.remove('translate-x-full');
+        }, 100);
+        
+        // Hide after 3 seconds
+        setTimeout(() => {
+            notification.classList.add('translate-x-full');
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 300);
+        }, 3000);
+    }
+    
     function escapeHtml(str) {
         if (!str) return '';
         const div = document.createElement('div');
