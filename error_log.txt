@@ -3236,3 +3236,4 @@
   "errno": "ERR_STREAM_PREMATURE_CLOSE",
   "code": "ERR_STREAM_PREMATURE_CLOSE"
 }
+[2026-06-26T13:02:05.682Z] Error processing image: {}
