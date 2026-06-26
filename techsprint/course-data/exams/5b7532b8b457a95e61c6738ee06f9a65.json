@@ -1,352 +1,300 @@
 {
-  "title": "Simulasi Ujian: Perangkat Masukan (Input Device)",
+  "title": "Simulasi Ujian: Perangkat Masukan (Input Device): dari Keyboard sampai OCR",
   "timeLimit": 1800,
   "totalQuestions": 20,
   "passingScore": 70,
   "questions": [
     {
       "type": "multiple_choice",
-      "question": "Apa definisi singkat input device dalam konteks komputer?",
+      "question": "Input device adalah...",
       "options": [
-        "Perangkat yang hanya menyimpan data di memori permanen",
-        "Periferal yang digunakan pengguna untuk memasukkan data dan sinyal kendali ke sistem pemrosesan",
-        "Perangkat yang hanya menampilkan data ke layar",
-        "Komponen internal prosesor untuk menjalankan instruksi"
+        "Perangkat untuk menampilkan data ke pengguna",
+        "Periferal yang digunakan untuk memasukkan data dan/atau sinyal kendali ke sistem pemrosesan",
+        "Media penyimpanan permanen untuk file",
+        "Perangkat jaringan untuk mengirim data antar komputer"
       ],
-      "answer": "Periferal yang digunakan pengguna untuk memasukkan data dan sinyal kendali ke sistem pemrosesan",
-      "explanation": "Input device adalah periferal/ perangkat keras yang memungkinkan pengguna memberi masukan data maupun perintah ke komputer.",
-      "points": 10,
-      "difficulty": "easy"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "Keyboard termasuk jenis input device yang mana?",
-      "options": [
-        "Peranti pengetikan (text entry devices)",
-        "Peranti penunjuk (pointing devices)",
-        "Pengambil gambar terformat (formatted image capture devices)",
-        "Peranti keluaran (output devices)"
-      ],
-      "answer": "Peranti pengetikan (text entry devices)",
-      "explanation": "Keyboard memasukkan data/perintah dalam bentuk teks, angka, dan simbol melalui tombol.",
+      "answer": "Periferal yang digunakan untuk memasukkan data dan/atau sinyal kendali ke sistem pemrosesan",
+      "explanation": "Input device berfungsi memasukkan data dan perintah kendali ke komputer/sistem pemrosesan.",
       "points": 10,
       "difficulty": "easy"
     },
     {
       "type": "true_false",
-      "question": "Touchpad termasuk peranti penunjuk karena input dilakukan lewat gerakan dan klik.",
-      "answer": "true",
-      "explanation": "Peranti penunjuk memfokuskan pada kontrol kursor melalui gerakan serta aksi klik.",
-      "points": 10,
-      "difficulty": "easy"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "Contoh peranti pengetikan selain keyboard adalah…",
-      "options": [
-        "Pena digital (stylus) pada tablet",
-        "Joystick",
-        "Barcode reader",
-        "OCR reader (pemindai teks)"
-      ],
-      "answer": "Pena digital (stylus) pada tablet",
-      "explanation": "Stylus/penginput teks berbasis pena pada tablet termasuk text entry devices karena berperan memasukkan data/karakter.",
-      "points": 10,
-      "difficulty": "easy"
-    },
-    {
-      "type": "matching",
-      "question": "Cocokkan peranti dengan cara input utamanya.",
-      "pairs": [
-        {
-          "term": "Keyboard",
-          "definition": "Memasukkan data/perintah melalui tombol dan karakter"
-        },
-        {
-          "term": "Mouse",
-          "definition": "Menggerakkan alat untuk mengontrol kursor lalu mengklik"
-        },
-        {
-          "term": "Touch Screen",
-          "definition": "Input dilakukan dengan menyentuh layar langsung"
-        },
-        {
-          "term": "Barcode Reader",
-          "definition": "Memindai barcode dunia nyata menjadi data digital"
-        }
-      ],
-      "answerMapping": [
-        {
-          "term": "Keyboard",
-          "definition": "Memasukkan data/perintah melalui tombol dan karakter"
-        },
-        {
-          "term": "Mouse",
-          "definition": "Menggerakkan alat untuk mengontrol kursor lalu mengklik"
-        },
-        {
-          "term": "Touch Screen",
-          "definition": "Input dilakukan dengan menyentuh layar langsung"
-        },
-        {
-          "term": "Barcode Reader",
-          "definition": "Memindai barcode dunia nyata menjadi data digital"
-        }
-      ],
-      "points": 15,
-      "difficulty": "medium"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "Pada keyboard QWERTY, pengelompokan huruf awal yang membedakan susunan keyboard ini adalah…",
-      "options": [
-        "Urutan tombol diawali Q-W-E-R-T-Y",
-        "Urutan tombol diawali A-S-D-F-G-H",
-        "Urutan tombol diawali Z-X-C-V-B-N",
-        "Urutan tombol diawali 1-2-3-4-5-6"
-      ],
-      "answer": "Urutan tombol diawali Q-W-E-R-T-Y",
-      "explanation": "Nama QWERTY diambil dari urutan huruf pada baris awal keyboard tersebut.",
-      "points": 10,
-      "difficulty": "easy"
-    },
-    {
-      "type": "case_study",
-      "scenario": "Seorang pengguna ATM sedang memilih menu dengan tombol angka dan menekan tombol untuk konfirmasi. Informasi seperti PIN dan nominal dimasukkan menggunakan keypad, lalu sistem merespons transaksi.",
-      "question": "Peranti input yang paling tepat menggambarkan skenario tersebut adalah…",
-      "options": [
-        "ATM/panel transaksi yang menggunakan pengetikan angka + interaksi transaksi",
-        "Mouse yang menggerakkan kursor pada layar",
-        "Barcode reader yang memindai kode pada struk",
-        "OCR yang memindai dokumen untuk teks"
-      ],
-      "answer": "ATM/panel transaksi yang menggunakan pengetikan angka + interaksi transaksi",
-      "explanation": "ATM dan POS adalah contoh pengetikan berbasis tombol/angka untuk memasukkan data transaksi dan berinteraksi selama proses transaksi.",
-      "points": 15,
-      "difficulty": "medium"
-    },
-    {
-      "type": "true_false",
-      "question": "Fungsi utama peranti penunjuk adalah memasukkan teks langsung melalui tombol huruf.",
+      "question": "Mouse termasuk perangkat pengetikan (text entry device) karena digunakan untuk memasukkan teks.",
       "answer": "false",
-      "explanation": "Peranti penunjuk utamanya mengontrol posisi kursor/objek lewat gerakan dan klik, bukan memasukkan teks secara langsung.",
-      "points": 10,
-      "difficulty": "easy"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "Sebuah perangkat memungkinkan pengguna mengontrol pilihan di layar dengan menggerakkan alat dan menekan tombol klik. Perangkat tersebut adalah…",
-      "options": [
-        "Mouse",
-        "Keyboard",
-        "Barcode MICR reader",
-        "OMR/OCR reader"
-      ],
-      "answer": "Mouse",
-      "explanation": "Mouse termasuk peranti penunjuk: input lewat gerakan dan klik.",
+      "explanation": "Mouse umumnya termasuk peranti penunjuk (pointing device), bukan peranti pengetikan berbasis tombol/teks.",
       "points": 10,
       "difficulty": "easy"
     },
     {
       "type": "matching",
-      "question": "Cocokkan istilah input device dengan pasangan yang paling sesuai (Kamus Mini).",
+      "question": "Cocokkan jenis input device dengan cara input yang sesuai.",
       "pairs": [
         {
-          "term": "OCR",
-          "definition": "Mengubah teks pada gambar/dokumen menjadi data teks digital"
+          "term": "Peranti pengetikan",
+          "definition": "Memasukkan input melalui gerakan kursor dan klik"
         },
         {
-          "term": "OMR",
-          "definition": "Mendeteksi tanda pada lembar/format yang sudah ditentukan (mis. arsiran/bulet)"
+          "term": "Peranti penunjuk",
+          "definition": "Memasukkan input melalui tombol/angka/simbol"
         },
         {
-          "term": "Barcode Reader",
-          "definition": "Membaca barcode untuk mengambil informasi terkode"
-        },
-        {
-          "term": "MICR",
-          "definition": "Membaca karakter bermagnet pada cek (cheque) untuk pemrosesan bank"
+          "term": "Pengambil gambar terformat (formatted image reader)",
+          "definition": "Memindai objek tertentu menjadi data digital terstruktur"
         }
       ],
-      "answerMapping": [
-        {
-          "term": "OCR",
-          "definition": "Mengubah teks pada gambar/dokumen menjadi data teks digital"
-        },
-        {
-          "term": "OMR",
-          "definition": "Mendeteksi tanda pada lembar/format yang sudah ditentukan (mis. arsiran/bulet)"
-        },
-        {
-          "term": "Barcode Reader",
-          "definition": "Membaca barcode untuk mengambil informasi terkode"
-        },
-        {
-          "term": "MICR",
-          "definition": "Membaca karakter bermagnet pada cek (cheque) untuk pemrosesan bank"
-        }
-      ],
+      "answer": {
+        "Peranti pengetikan": "Memasukkan input melalui tombol/angka/simbol",
+        "Peranti penunjuk": "Memasukkan input melalui gerakan kursor dan klik",
+        "Pengambil gambar terformat (formatted image reader)": "Memindai objek tertentu menjadi data digital terstruktur"
+      },
+      "explanation": "Tipe input device dipetakan berdasarkan “cara input”-nya: tombol/teks, gerakan/klik, atau pemindaian format khusus.",
       "points": 15,
-      "difficulty": "medium"
+      "difficulty": "easy"
     },
     {
       "type": "multiple_choice",
-      "question": "“Mouse vs Trackball” bedanya yang paling tepat adalah…",
+      "question": "Keyboard termasuk ke dalam kategori input device yang mana?",
       "options": [
-        "Mouse menggerakkan alat (mouse) sehingga menggerakkan kursor; trackball menggerakkan bola kecil di dalam perangkat",
-        "Mouse hanya membaca barcode; trackball hanya membaca teks OCR",
-        "Mouse digunakan untuk menyentuh layar; trackball digunakan untuk menekan tombol QWERTY",
-        "Trackball bekerja tanpa gerakan sama sekali (hanya tombol)"
+        "Peranti penunjuk",
+        "Peranti pengetikan (text entry device)",
+        "Pengambil gambar terformat",
+        "Perangkat keluaran (output device)"
       ],
-      "answer": "Mouse menggerakkan alat (mouse) sehingga menggerakkan kursor; trackball menggerakkan bola kecil di dalam perangkat",
-      "explanation": "Perbedaan inti ada pada mekanisme menggerakkan input: mouse menggerakkan perangkat, trackball menggerakkan bola di dalamnya.",
+      "answer": "Peranti pengetikan (text entry device)",
+      "explanation": "Keyboard memasukkan teks/angka/simbol melalui tombol.",
       "points": 10,
-      "difficulty": "medium"
-    },
-    {
-      "type": "true_false",
-      "question": "Joystic k adalah salah satu contoh peranti penunjuk yang umumnya mengandalkan gerakan untuk memberikan masukan ke sistem.",
-      "answer": "true",
-      "explanation": "Joystick termasuk dalam ringkasan peranti penunjuk (input lewat gerakan).",
-      "points": 10,
-      "difficulty": "medium"
+      "difficulty": "easy"
     },
     {
       "type": "case_study",
-      "scenario": "Sebuah aplikasi pemindaian di kasir memotret dokumen struk, lalu mengubah teks dari gambar menjadi string yang bisa dicari dan diedit. Tidak hanya mengambil kode tertentu, tetapi membaca isi teks secara umum.",
-      "question": "Teknologi input device yang paling sesuai dengan deskripsi tersebut adalah…",
+      "question": "Seorang pengguna di mesin ATM melakukan transaksi: memasukkan PIN, memilih menu, dan mengonfirmasi saldo. Input utama yang digunakan berasal dari...",
       "options": [
-        "OCR",
-        "OMR",
-        "Barcode Reader",
-        "MICR"
+        "Peranti penunjuk saja (mis. mouse)",
+        "Peranti pengetikan (tombol/angka) dan interaksi transaksi di perangkat ATM/POS",
+        "OCR untuk membaca dokumen",
+        "Joystick untuk menggerakkan kursor tanpa tombol"
       ],
-      "answer": "OCR",
-      "explanation": "OCR bertujuan mengubah teks pada gambar/dokumen menjadi data teks digital yang bisa digunakan komputer.",
+      "answer": "Peranti pengetikan (tombol/angka) dan interaksi transaksi di perangkat ATM/POS",
+      "explanation": "ATM/POS menggunakan pengetikan (mis. PIN, nominal) dan langkah interaksi transaksi melalui tombol/antarmuka perangkat tersebut.",
       "points": 15,
-      "difficulty": "hard"
+      "difficulty": "easy"
     },
     {
       "type": "multiple_choice",
-      "question": "Pada “Latihan Cepat: Cocokkan Perangkat dengan Cara Input-nya”, perangkat yang input utamanya melalui menyentuh layar langsung adalah…",
+      "question": "Contoh peranti pengetikan selain keyboard adalah...",
       "options": [
-        "Touchpad",
-        "Touch Screen",
+        "Touch screen yang disentuh untuk memilih menu",
         "Mouse",
+        "Pena digital/tablet yang digunakan untuk memasukkan karakter/tulisan atau input berbasis pena",
         "Trackball"
       ],
-      "answer": "Touch Screen",
-      "explanation": "Touch screen menerima input dengan sentuhan langsung pada permukaan layar.",
+      "answer": "Pena digital/tablet yang digunakan untuk memasukkan karakter/tulisan atau input berbasis pena",
+      "explanation": "Peranti pengetikan tidak hanya keyboard; perangkat berbasis tombol/pengetikan termasuk input berbasis pena/tablet sesuai konteks pengisian data.",
       "points": 10,
       "difficulty": "easy"
-    },
-    {
-      "type": "matching",
-      "question": "Cocokkan peranti penunjuk berikut dengan kategori input yang paling tepat.",
-      "pairs": [
-        {
-          "term": "Touchpad",
-          "definition": "Input lewat gerakan dan klik pada permukaan trackpad"
-        },
-        {
-          "term": "Touch Screen",
-          "definition": "Input lewat menyentuh layar langsung"
-        },
-        {
-          "term": "Pena (stylus) pada tablet",
-          "definition": "Input grafis/gestur melalui alat pena"
-        },
-        {
-          "term": "Trackball",
-          "definition": "Menggerakkan bola kecil untuk memindahkan kursor"
-        }
-      ],
-      "answerMapping": [
-        {
-          "term": "Touchpad",
-          "definition": "Input lewat gerakan dan klik pada permukaan trackpad"
-        },
-        {
-          "term": "Touch Screen",
-          "definition": "Input lewat menyentuh layar langsung"
-        },
-        {
-          "term": "Pena (stylus) pada tablet",
-          "definition": "Input grafis/gestur melalui alat pena"
-        },
-        {
-          "term": "Trackball",
-          "definition": "Menggerakkan bola kecil untuk memindahkan kursor"
-        }
-      ],
-      "points": 15,
-      "difficulty": "medium"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "“Pengambil Gambar Terformat” yang paling tepat untuk mendeteksi tanda jawaban seperti bulatan yang diisi pada lembar ujian adalah…",
-      "options": [
-        "OMR",
-        "OCR",
-        "Barcode",
-        "MICR"
-      ],
-      "answer": "OMR",
-      "explanation": "OMR mendeteksi tanda pada format/lembar yang sudah ditentukan (mis. jawaban arsiran/bulet).",
-      "points": 10,
-      "difficulty": "medium"
-    },
-    {
-      "type": "case_study",
-      "scenario": "Di sebuah gedung, sistem keamanan menggunakan pemindaian dokumen dan kemudian mengambil informasi penting dalam bentuk data terstruktur. Namun, format yang dipindai adalah halaman yang berisi teks cetak biasa, bukan barcode atau data tanda pilihan.",
-      "question": "Dalam rule sederhana Playground: OCR vs OMR vs Barcode Reader, pilihan terbaik adalah…",
-      "options": [
-        "OCR",
-        "OMR",
-        "Barcode Reader",
-        "MICR"
-      ],
-      "answer": "OCR",
-      "explanation": "Jika yang diekstrak adalah teks dari dokumen umum, maka teknologi yang sesuai adalah OCR (bukan OMR/Barcode).",
-      "points": 15,
-      "difficulty": "hard"
     },
     {
       "type": "true_false",
-      "question": "MICR termasuk pengambil gambar terformat yang terkait pembacaan karakter bermagnet, umumnya pada cek (cheque).",
+      "question": "Touch screen dapat berfungsi sebagai input dengan cara menyentuh layar langsung.",
       "answer": "true",
-      "explanation": "MICR secara khas digunakan untuk membaca karakter bermagnet pada cek untuk pemrosesan bank.",
+      "explanation": "Touch screen termasuk peranti penunjuk; input dilakukan dengan sentuhan pada area layar.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Keyboard QWERTY dinamai dari...",
+      "options": [
+        "Urutan tombol huruf pertama pada baris atas: Q-W-E-R-T-Y",
+        "Jumlah tombol fungsi (F1–F12)",
+        "Susunan angka saja pada keypad",
+        "Bentuk fisik keyboard (ergonomis)"
+      ],
+      "answer": "Urutan tombol huruf pertama pada baris atas: Q-W-E-R-T-Y",
+      "explanation": "QWERTY merujuk pada susunan huruf Q, W, E, R, T, Y pada keyboard.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "question": "Sebuah restoran menggunakan mesin POS. Kasir memasukkan kode menu dan jumlah pesanan memakai keypad/ tombol, lalu menyentuh area konfirmasi. Sistem memproses input tersebut untuk mencetak struk. Bagian yang paling sesuai untuk “cara input” penjelasan ini adalah...",
+      "options": [
+        "Keypad/tombol untuk pengetikan + sentuhan konfirmasi (kombinasi pengetikan dan interaksi perangkat)",
+        "Hanya OCR membaca struk lama",
+        "Hanya trackball untuk memasukkan huruf satu per satu",
+        "Hanya joysticks untuk memilih menu melalui gerak tangan"
+      ],
+      "answer": "Keypad/tombol untuk pengetikan + sentuhan konfirmasi (kombinasi pengetikan dan interaksi perangkat)",
+      "explanation": "POS/ATM memadukan pengetikan melalui tombol/angka serta konfirmasi/aksi pada antarmuka perangkat.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan perangkat dengan deskripsi “input lewat gerakan & klik/ sentuh” yang tepat.",
+      "pairs": [
+        {
+          "term": "Mouse",
+          "definition": "Menggerakkan bola (track) untuk mengendalikan kursor, tanpa mengangkat perangkat"
+        },
+        {
+          "term": "Touchpad",
+          "definition": "Mengontrol kursor dengan sentuhan pada permukaan pad"
+        },
+        {
+          "term": "Trackball",
+          "definition": "Mengontrol kursor dengan menggerakkan alat dan melakukan klik"
+        }
+      ],
+      "answer": {
+        "Mouse": "Mengontrol kursor dengan menggerakkan alat dan melakukan klik",
+        "Touchpad": "Mengontrol kursor dengan sentuhan pada permukaan pad",
+        "Trackball": "Menggerakkan bola (track) untuk mengendalikan kursor, tanpa mengangkat perangkat"
+      },
+      "explanation": "Mouse: gerakkan alat + klik. Touchpad: sentuh/gestur pada pad. Trackball: bola digerakkan, bukan seluruh alat.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "true_false",
+      "question": "Dalam analogi mouse vs trackball, trackball lebih menekankan ‘menggerakkan alat’ daripada menggerakkan bola.",
+      "answer": "false",
+      "explanation": "Trackball justru berkaitan dengan menggerakkan bola kecil, bukan menggerakkan seluruh alat seperti pada mouse.",
       "points": 10,
       "difficulty": "medium"
     },
     {
       "type": "multiple_choice",
-      "question": "Kumpulan peranti penunjuk yang benar mencakup…",
+      "question": "Pada perangkat penunjuk, input utama dilakukan lewat...",
       "options": [
-        "Mouse, Trackball, Touchpad, Touch Screen, Joystick, Pena, Tablet",
-        "Keyboard, ATM keypad, Barcode Reader, OCR",
-        "Monitor, Printer, Speaker, Proyektor",
-        "RAM, CPU, SSD, GPU"
+        "Tombol untuk memasukkan angka/teks",
+        "Gerakan kursor dan aksi klik/gesture",
+        "Pemindaian foto dokumen menjadi teks",
+        "Perekaman suara"
       ],
-      "answer": "Mouse, Trackball, Touchpad, Touch Screen, Joystick, Pena, Tablet",
-      "explanation": "Ringkasan peranti penunjuk mencantumkan jenis-jenis tersebut sebagai contoh input lewat gerakan/klik/ sentuh/ pena.",
+      "answer": "Gerakan kursor dan aksi klik/gesture",
+      "explanation": "Peranti penunjuk berfokus pada menggerakkan pointer dan memilih melalui klik/gesture.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "question": "Seorang mahasiswa menggunakan aplikasi scan untuk mengisi jawaban ujian pilihan ganda pada lembar format khusus. Sistem membaca tanda pada area jawaban yang sudah ditentukan. Jenis pembaca yang paling sesuai adalah...",
+      "options": [
+        "OCR",
+        "OMR",
+        "MICR",
+        "Barcode reader"
+      ],
+      "answer": "OMR",
+      "explanation": "OMR (Optical Mark Recognition) mengenali tanda/mark pada lembar yang terformat (mis. gelembung pilihan ganda).",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Di antara contoh berikut, yang termasuk “perangkat pengambil gambar terformat” adalah...",
+      "options": [
+        "Barcode, MICR, OMR, OCR",
+        "Keyboard dan mouse",
+        "Touch screen dan touchpad",
+        "Joystick dan trackball"
+      ],
+      "answer": "Barcode, MICR, OMR, OCR",
+      "explanation": "Barcode reader/MICR/OMR/OCR termasuk pengambil gambar terformat yang mengubah objek/format menjadi data digital.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Rule sederhana: jika sistem memindai pola garis batang untuk mengambil identitas/angka kode dari label produk, perangkat yang paling tepat adalah...",
+      "options": [
+        "OCR",
+        "OMR",
+        "Barcode reader",
+        "MICR"
+      ],
+      "answer": "Barcode reader",
+      "explanation": "Barcode reader memindai barcode (pola garis) untuk membaca kode.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "MICR berkaitan dengan pembacaan karakter pada cek (cheque) yang memakai karakter khusus (mis. format magnetik).",
+      "answer": "true",
+      "explanation": "MICR (Magnetic Ink Character Recognition) digunakan untuk membaca karakter pada cek.",
       "points": 10,
       "difficulty": "hard"
     },
     {
       "type": "case_study",
-      "scenario": "Seorang pengguna ingin memasukkan PIN dan nominal transaksi di mesin pembayaran. Dia mengetik angka dengan keypad dan menekan tombol konfirmasi. Tidak ada kebutuhan menggeser kursor.",
-      "question": "Jenis input device yang paling sesuai adalah…",
+      "question": "Di sebuah kantor, staf memindai halaman dokumen biasa (teks cetak di kertas tanpa gelembung pilihan ganda atau barcode) untuk dijadikan teks yang dapat diedit di komputer. Jenis input device yang sesuai adalah...",
       "options": [
-        "Peranti pengetikan (tombol/angka) seperti keypad pada ATM/POS",
-        "Peranti penunjuk seperti mouse/trackball",
-        "Pengambil gambar terformat seperti OCR/OMR",
-        "Hanya touch screen tanpa tombol angka"
+        "OMR",
+        "MICR",
+        "OCR",
+        "Trackball"
       ],
-      "answer": "Peranti pengetikan (tombol/angka) seperti keypad pada ATM/POS",
-      "explanation": "PIN dan nominal dimasukkan melalui pengetikan angka berbasis tombol, sehingga masuk kategori peranti pengetikan.",
+      "answer": "OCR",
+      "explanation": "OCR (Optical Character Recognition) mengekstrak karakter dari gambar/dokumen agar menjadi teks digital.",
       "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan istilah (input device) dengan contoh penerapannya yang paling tepat.",
+      "pairs": [
+        {
+          "term": "Touch Screen",
+          "definition": "Memindai dokumen teks menjadi karakter digital (mengubah teks pada gambar menjadi teks)"
+        },
+        {
+          "term": "OCR",
+          "definition": "Menerima input dengan menyentuh layar langsung"
+        },
+        {
+          "term": "Barcode Reader",
+          "definition": "Membaca kode dari pola garis batang pada label"
+        }
+      ],
+      "answer": {
+        "Touch Screen": "Menerima input dengan menyentuh layar langsung",
+        "OCR": "Memindai dokumen teks menjadi karakter digital (mengubah teks pada gambar menjadi teks)",
+        "Barcode Reader": "Membaca kode dari pola garis batang pada label"
+      },
+      "explanation": "Touch screen untuk sentuhan langsung; OCR untuk teks dari gambar; barcode reader untuk pola barcode.",
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Pilih perangkat yang termasuk “ringkas peranti penunjuk” dalam materi: ",
+      "options": [
+        "Mouse, Trackball, Touchpad, Touch Screen, Joystick, Pena, Tablet",
+        "Keyboard, Keypad, Mesin fotokopi, Printer",
+        "Penyimpanan SSD, HDD, USB flash drive, CD-ROM",
+        "Monitor, speaker, proyektor, printer tinta"
+      ],
+      "answer": "Mouse, Trackball, Touchpad, Touch Screen, Joystick, Pena, Tablet",
+      "explanation": "Daftar tersebut sesuai ringkasan peranti penunjuk pada materi.",
+      "points": 10,
       "difficulty": "easy"
+    },
+    {
+      "type": "case_study",
+      "question": "Mode latihan “Playground” menuntut memilih jenis input device berdasarkan aturan sederhana. Skenario: Sebuah form memiliki kotak-kotak yang harus diberi tanda pada area jawaban, kemudian dibaca otomatis menjadi skor. Dari opsi berikut, pilihan yang benar adalah...",
+      "options": [
+        "OMR",
+        "OCR",
+        "Barcode reader",
+        "Mouse"
+      ],
+      "answer": "OMR",
+      "explanation": "Skenario “tanda pada area jawaban” pada lembar format khusus paling cocok dengan OMR.",
+      "points": 15,
+      "difficulty": "hard"
     }
   ]
 }
