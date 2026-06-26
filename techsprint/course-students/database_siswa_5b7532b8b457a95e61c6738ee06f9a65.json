@@ -5,19 +5,20 @@
     "email": "muhammadfikrifahrezi2@gmail.com",
     "password": "$2b$10$XQiR.Vea9lMLXAUcMqhsEuDkXbv8Vb.vHRyiyeKUX0yqEDcIESRzm",
     "profilePicture": "",
-    "xp": 90,
-    "coin": 33,
+    "xp": 120,
+    "coin": 43,
     "level": 1,
     "streak": 0,
     "lastLogin": "26-06-2026, 10.12.24",
     "lastLoginDate": "Fri Jun 26 2026",
     "quizScore": 0,
     "completedBlocks": [
-      "block-0"
+      "block-0",
+      "block-2"
     ],
     "completedChapter": [],
     "flashcardsViewed": 0,
-    "leaderboardPoint": 30,
+    "leaderboardPoint": 60,
     "achievements": [
       "first_block"
     ],
