@@ -1,0 +1,273 @@
+{
+  "title": "Simulasi Ujian: Muamalah Ijtama'iyyah Digital: Etika Bermedia & Transaksi Online Sesuai Syariat",
+  "timeLimit": 1800,
+  "totalQuestions": 20,
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Apa prinsip utama yang harus dijaga dalam muamalah digital agar sesuai syariat?",
+      "options": [
+        "Hanya mengikuti tren pasar",
+        "Keadilan, transparansi, dan kehalalan",
+        "Mengutamakan kecepatan tanpa verifikasi",
+        "Maksimalkan keuntungan meski ada ketidakjelasan"
+      ],
+      "answer": "Keadilan, transparansi, dan kehalalan",
+      "explanation": "Materi menekankan bahwa tantangan digital harus dijawab dengan prinsip keadilan, transparansi, dan kehalalan.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Teknologi digital pada dasarnya memudahkan transaksi, namun tantangan utamanya apa dalam muamalah digital?",
+      "options": [
+        "Potensi penipuan, akad tidak jelas, dan riba online yang disamarkan",
+        "Selalu menghilangkan risiko hukum",
+        "Tidak ada peluang manipulasi",
+        "Semua informasi produk pasti benar"
+      ],
+      "answer": "Potensi penipuan, akad tidak jelas, dan riba online yang disamarkan",
+      "explanation": "Ringkasan materi menyebut tiga tantangan utama: penipuan, ketidakjelasan akad, dan riba online.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Tabayyun berarti tidak langsung percaya dan/atau menyebarkan informasi sebelum dicek kebenarannya.",
+      "answer": "true",
+      "explanation": "Tabayyun adalah adab bermedia sosial: verifikasi dulu sebelum menyimpulkan atau membagikan.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dalam transaksi online, penjual wajib melakukan apa terkait informasi produk agar akad tidak mengandung gharar?",
+      "options": [
+        "Menyembunyikan spesifikasi agar pembeli bertanya",
+        "Memberi informasi yang jelas dan jujur (spesifikasi, kondisi, harga, ongkir)",
+        "Mengganti harga setelah barang dipesan tanpa kesepakatan",
+        "Mengandalkan testimoni tanpa konteks"
+      ],
+      "answer": "Memberi informasi yang jelas dan jujur (spesifikasi, kondisi, harga, ongkir)",
+      "explanation": "Kejelasan informasi mengurangi risiko akad tidak jelas (gharar).",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan istilah muamalah digital dengan maknanya yang tepat.",
+      "pairs": [
+        {
+          "term": "Tabayyun",
+          "definition": "Memeriksa kebenaran informasi sebelum percaya/menyebarkan"
+        },
+        {
+          "term": "Ridha",
+          "definition": "Kerelaan kedua pihak dalam transaksi tanpa paksaan/penipuan"
+        },
+        {
+          "term": "Gharar",
+          "definition": "Ketidakjelasan/ketidakpastian dalam objek atau akad"
+        },
+        {
+          "term": "Riba",
+          "definition": "Tambahan yang tidak dibenarkan syariat dalam transaksi utang/imbalan tertentu"
+        }
+      ],
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Manakah contoh perilaku yang paling sesuai dengan etika bermedia sosial syariat?",
+      "options": [
+        "Menyebarkan rumor tanpa sumber",
+        "Bertanya klarifikasi saat ada informasi meragukan",
+        "Menertawakan pihak lain yang berbeda pendapat",
+        "Memposting konten sensitif tanpa tabayyun"
+      ],
+      "answer": "Bertanya klarifikasi saat ada informasi meragukan",
+      "explanation": "Adab yang dianjurkan: tabayyun dan komunikasi yang sopan/terarah.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Toleransi dalam bermedia sosial berarti menghargai perbedaan selama tidak melanggar prinsip syariat.",
+      "answer": "true",
+      "explanation": "Materi menekankan toleransi sebagai bagian adab bermedia sosial.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Sebutkan 3 prinsip bermedia sosial yang sesuai syariat menurut materi.",
+      "options": [
+        "Tabayyun, sopan santun, toleransi",
+        "Asal viral, menghakimi, dan mengadu domba",
+        "Spam, fitnah, dan provokasi",
+        "Tidak perlu klarifikasi, gunakan bahasa kasar, dan doxing"
+      ],
+      "answer": "Tabayyun, sopan santun, toleransi",
+      "explanation": "Materi menyebut etika bermedia sosial: sopan santun, tabayyun, dan toleransi.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "case_study",
+      "scenario": "A menerima pesan berisi informasi promosi “diskon besar” dari akun yang tidak dikenal. A ingin segera membagikannya agar ramai. Sebelum share, A: (1) mengecek sumber/akun resmi, (2) melihat detail syarat dan ketentuan, (3) membandingkan dengan postingan lain yang kredibel, lalu memutuskan untuk share hanya jika terbukti benar.",
+      "question": "Langkah A paling sesuai dengan checklist tabayyun yang mana?",
+      "options": [
+        "Langsung share demi mengejar momentum tanpa cek",
+        "Memeriksa kebenaran (sumber), mengecek detail, dan membandingkan bukti sebelum share",
+        "Share saja tanpa membaca syarat karena nanti menyusul",
+        "Mengikuti keramaian karena mayoritas pasti benar"
+      ],
+      "answer": "Memeriksa kebenaran (sumber), mengecek detail, dan membandingkan bukti sebelum share",
+      "explanation": "Checklist tabayyun berfokus pada verifikasi sumber dan isi agar tidak menyebarkan informasi keliru.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Ridha dalam transaksi berarti…",
+      "options": [
+        "Salah satu pihak mendapat keuntungan besar tanpa memperhatikan kerelaan",
+        "Kerelaan kedua pihak tanpa paksaan, kecurangan, atau penipuan",
+        "Transaksi sah selama ada chat walau ada informasi disembunyikan",
+        "Barang yang sudah dibeli pasti lebih rendah nilainya"
+      ],
+      "answer": "Kerelaan kedua pihak tanpa paksaan, kecurangan, atau penipuan",
+      "explanation": "Ridha adalah kondisi hati: setuju dan rela atas akad yang jelas dan benar.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dalam generator akad singkat, mana yang paling tepat untuk memastikan kejujuran dan ridha?",
+      "options": [
+        "Menyatakan harga “perkiraan” tanpa kepastian dan menekan agar cepat bayar",
+        "Menuliskan rincian barang/jasa, harga, ongkir/biaya, dan kesepakatan waktu serah terima secara jelas",
+        "Mengunci pembeli dengan janji sepihak tanpa konfirmasi ulang",
+        "Menghilangkan informasi kondisi barang agar pembeli “mengira-ngira”"
+      ],
+      "answer": "Menuliskan rincian barang/jasa, harga, ongkir/biaya, dan kesepakatan waktu serah terima secara jelas",
+      "explanation": "Kejujuran dan ridha terbantu dengan akad yang jelas: rincian dan kesepakatan disebutkan.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "true_false",
+      "question": "Salah satu larangan utama dalam muamalah digital adalah maisir (unsur perjudian/untung-untungan).",
+      "answer": "true",
+      "explanation": "Materi memasukkan larangan utama termasuk maisir dalam konteks risiko transaksi online.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan “Larangan Utama” dengan dampak yang paling sesuai pada transaksi online.",
+      "pairs": [
+        {
+          "term": "Riba",
+          "definition": "Tambahan yang tidak dibenarkan pada skema pinjaman/imbalan tertentu"
+        },
+        {
+          "term": "Gharar",
+          "definition": "Ketidakjelasan barang, harga akhir, atau ketentuan yang membuat akad tidak pasti"
+        },
+        {
+          "term": "Maisir",
+          "definition": "Mekanisme untung-untungan seperti game/undian dengan taruhan atau peluang yang diperdagangkan"
+        },
+        {
+          "term": "Penipuan (tadlîs)",
+          "definition": "Informasi palsu/menyesatkan yang membuat pihak lain keliru mengambil keputusan"
+        }
+      ],
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "case_study",
+      "scenario": "B membeli barang secara online. Penjual menampilkan foto terbaik dan menulis “kondisi seperti baru”, tetapi setelah barang tiba ternyata ada kerusakan tersembunyi dan penjual sulit dihubungi. Dari awal, penjual juga mengubah ketentuan pengembalian barang di tengah proses.",
+      "question": "Menurut prinsip yang dibahas, tindakan penjual ini paling terkait dengan masalah apa?",
+      "options": [
+        "Transaksi online pasti selalu halal tanpa verifikasi",
+        "Gharar/ketidakjelasan dan penipuan karena informasi kondisi tidak jujur + perubahan sepihak ketentuan",
+        "Ridha selalu ada karena pembeli sudah membayar",
+        "Tabayyun hanya berlaku untuk informasi berita, bukan jual beli"
+      ],
+      "answer": "Gharar/ketidakjelasan dan penipuan karena informasi kondisi tidak jujur + perubahan sepihak ketentuan",
+      "explanation": "Informasi “seperti baru” yang tidak sesuai dan ketentuan berubah sepihak menunjukkan pelanggaran kejujuran serta mengarah pada risiko gharar dan penipuan.",
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Analogi “game co-op” dalam materi dimaksudkan untuk menekankan bahwa…",
+      "options": [
+        "Setiap pihak menang sendiri-sendiri tanpa tanggung jawab",
+        "Tanggung jawab bertransaksi bersifat timbal balik dan saling membantu mencapai hasil yang adil",
+        "Hanya pembeli yang wajib memeriksa, penjual bebas dari tanggung jawab",
+        "Transaksi hanya berhasil jika salah satu pihak diuntungkan terus menerus"
+      ],
+      "answer": "Tanggung jawab bertransaksi bersifat timbal balik dan saling membantu mencapai hasil yang adil",
+      "explanation": "Materi mengilustrasikan transaksi sebagai kerja sama: tanggung jawab timbal balik antara penjual-pembeli.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "true_false",
+      "question": "Keadilan dalam transaksi digital mencakup transparansi: harga, biaya, dan ketentuan harus dapat dipahami oleh kedua pihak sebelum akad berjalan.",
+      "answer": "true",
+      "explanation": "Keadilan dan transparansi saling terkait untuk menghindari kerugian dan ketidakjelasan.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "C hendak mengikuti “promo cashback” yang mensyaratkan C membayar terlebih dahulu, lalu cashback diberikan dengan hitungan yang berubah-ubah tergantung sistem internal aplikasi. Tidak ada penjelasan rumus atau kepastian kapan tepatnya cashback masuk, tetapi promonya terlihat menarik.",
+      "question": "Jika menilai skor risiko transaksi pada aspek anti riba/gharar/maisir, tindakan C yang paling selaras dengan syariat adalah…",
+      "options": [
+        "Tetap ikut karena terlihat menarik dan tidak perlu kepastian",
+        "Menolak atau meminta kejelasan akad: kepastian nominal, waktu, dan mekanisme agar tidak gharar",
+        "Langsung ikut tapi tidak perlu membayar karena cashback saja yang penting",
+        "Menganggap unsur riba pasti tidak ada tanpa melihat mekanisme"
+      ],
+      "answer": "Menolak atau meminta kejelasan akad: kepastian nominal, waktu, dan mekanisme agar tidak gharar",
+      "explanation": "Mekanisme berubah-ubah dan tidak jelas rumus/waktu berpotensi gharar; prinsipnya perlu kejelasan sebelum akad.",
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Larangan utama dalam muamalah digital yang termasuk dalam simulasi cepat skor risiko adalah…",
+      "options": [
+        "Riba, Gharar, Maisir",
+        "Hanya riba",
+        "Gharar saja",
+        "Maisir saja"
+      ],
+      "answer": "Riba, Gharar, Maisir",
+      "explanation": "Materi simulasi cepat secara eksplisit membahas anti-riba, anti-gharar, dan anti-maisir.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Manakah yang paling tepat sebagai nilai utama dalam tanggung jawab bertransaksi (timbal balik) antara penjual dan pembeli?",
+      "options": [
+        "Menghindari komunikasi agar tidak ada konfirmasi",
+        "Menunaikan kewajiban sesuai kesepakatan dan jujur dalam informasi",
+        "Menghalalkan cara agar cepat selesai meski menipu",
+        "Memindahkan risiko sepenuhnya ke pihak lain tanpa alasan"
+      ],
+      "answer": "Menunaikan kewajiban sesuai kesepakatan dan jujur dalam informasi",
+      "explanation": "Nilai utama tanggung jawab bertransaksi menuntut kejujuran, pemenuhan kewajiban, dan kesepakatan yang jelas.",
+      "points": 10,
+      "difficulty": "medium"
+    }
+  ]
+}
