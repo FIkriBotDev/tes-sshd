@@ -7,5 +7,14 @@
     "creditAdded": 10,
     "status": "PAID",
     "date": "2026-06-27 00:32:04"
+  },
+  {
+    "invoiceId": "INV-20260627-002",
+    "email": "muhammadfikrifahrezi2@gmail.com",
+    "packageName": "Campus Pro",
+    "price": 59000,
+    "creditAdded": 100,
+    "status": "PAID",
+    "date": "2026-06-27 00:32:21"
   }
 ]
