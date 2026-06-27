@@ -1,0 +1,349 @@
+{
+  "title": "Muamalah Ijtama'iyyah Digital: Etika Bermedia & Transaksi Online Sesuai Syariat",
+  "summary": "Materi ini membahas tantangan muamalah di era digital dan cara menjalankannya dengan prinsip syariat: keadilan, transparansi, dan kehalalan. Kamu juga akan belajar adab bermedia sosial (tabayyun, toleransi) serta nilai-nilai transaksi seperti anti-riba/gharar/maisir dan tanggung jawab antara penjual-pembeli.",
+  "emoji": "🕌",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Muamalah Digital Itu Tetap Punya Aturan Syariat",
+      "icon": "🕌",
+      "explanation": "Teknologi membuat transaksi dan interaksi jadi cepat, namun kewajiban moral dan prinsip syariat tidak ikut hilang. Muamalah digital harus tetap dijalankan dengan kejujuran, transparansi, dan keadilan agar transaksi bernilai berkah.",
+      "analogy": "Bayangkan kamu belanja online pakai “jalan tol” yang super cepat. Jalannya boleh baru, tapi aturan lalu lintas (syariat) tetap harus kamu patuhi.",
+      "highlight": "keadilan, transparansi, kehalalan",
+      "keyPoints": [
+        "Teknologi memudahkan interaksi ekonomi, tapi tidak menghapus etika",
+        "Transaksi online harus memenuhi prinsip syariat",
+        "Tujuan akhirnya: mencegah manipulasi dan praktik tidak sah"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Tantangan Era Modern: Penipuan, Akad Tidak Jelas, dan Riba Online",
+      "icon": "⚠️",
+      "explanation": "Di dunia digital, risiko seperti penipuan meningkat karena informasi bisa dimanipulasi dan akad bisa jadi tidak jelas. Bahkan praktik yang mengarah ke riba bisa tersamarkan dalam bentuk skema finansial online. Karena itu perlu penanganan dengan prinsip syariat.",
+      "analogy": "Seperti diskon yang ternyata palsu: tampilannya menarik, tapi isinya menipu. Di muamalah digital, kamu harus cek ‘isi’ dan ‘akad’—bukan cuma tampilannya.",
+      "highlight": "akad jelas, pencegahan riba, waspada penipuan",
+      "keyPoints": [
+        "Penipuan makin mudah terjadi lewat konten dan promosi",
+        "Ketidakjelasan akad bisa merusak sah-tidaknya transaksi",
+        "Prinsip syariat jadi filter utama sebelum setuju transaksi"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Checklist Tabayyun Sebelum Share Info Online",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Cek sumber informasi",
+          "description": "Cari dari mana berita/unggahan itu berasal dan apakah kredibel atau hanya klaim viral.",
+          "tip": "Kalau sumbernya anonim dan hanya ‘katanya’, perlambat sebelum menyebar."
+        },
+        {
+          "number": 2,
+          "title": "Cocokkan dengan bukti nyata",
+          "description": "Lihat apakah ada data, tautan rujukan, atau konteks yang bisa diverifikasi.",
+          "tip": "Gunakan pendekatan ‘apa buktinya?’ bukan ‘siapa yang bilang?’"
+        },
+        {
+          "number": 3,
+          "title": "Nilai dampaknya ke orang lain",
+          "description": "Tanyakan: informasi ini bisa menimbulkan fitnah, kebencian, atau membuka aib?",
+          "tip": "Kalau berpotensi merugikan/menyerang tanpa dasar, tahan dulu."
+        },
+        {
+          "number": 4,
+          "title": "Sebarkan dengan adab jika perlu",
+          "description": "Kalau memang ingin membagikan, gunakan bahasa sopan, sebutkan konteks, dan hindari provokasi.",
+          "tip": "Adab itu bagian dari iman saat bermedia sosial."
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Etika Bermedia Sosial: Sopan Santun, Tabayyun, Toleransi",
+      "icon": "💬",
+      "explanation": "Bermedia sosial yang sesuai syariat berarti menjaga hubungan sosial: tidak menghina, tidak menyebarkan ujaran kebencian, dan tidak membuka aib orang lain. Selain itu, tabayyun membantu mencegah hoaks dan fitnah, sementara toleransi menjaga keharmonisan saat perbedaan pendapat muncul.",
+      "analogy": "Grup chat itu seperti ruang tamu bersama: kamu boleh berdiskusi, tapi jangan menggebrak pintu dengan kata-kata yang melukai atau menyebarkan gosip.",
+      "highlight": "hindari ujaran kebencian, tabayyun, toleransi",
+      "keyPoints": [
+        "Sopan santun: tidak merendahkan dan tidak membuka aib",
+        "Tabayyun: cek kebenaran sebelum menyebarkan",
+        "Toleransi: hormati perbedaan pendapat demi keharmonisan"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Transaksi Online yang Halal: Jujur, Ridha, dan Akad Jelas",
+      "icon": "🛍️",
+      "explanation": "Transaksi online boleh selama memenuhi prinsip syariat. Penjual harus jujur tentang kondisi, kualitas, dan harga produk. Ridha (suka sama suka) juga perlu terwujud tanpa paksaan, melalui kesepakatan dan akad yang jelas di awal transaksi.",
+      "analogy": "Seperti memilih menu di warung: kamu berhak tahu bahan dan harga. Kamu tidak boleh dipaksa menerima menu yang tidak kamu setujui.",
+      "highlight": "kejujuran, keterbukaan, ridha, akad jelas",
+      "keyPoints": [
+        "Info produk harus akurat: kondisi, kualitas, dan harga",
+        "Ridha tanpa paksaan melalui akad/kesepakatan yang jelas",
+        "Transaksi harus saling menguntungkan secara adil"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Larangan Utama dalam Muamalah Digital",
+      "icon": "🧠",
+      "items": [
+        {
+          "label": "Riba",
+          "value": "Tambahan tidak sah; bunga/imbal hasil yang tidak adil dalam pinjaman atau pertukaran tertentu",
+          "icon": "🧨"
+        },
+        {
+          "label": "Gharar",
+          "value": "Ketidakjelasan barang/jasa; deskripsi tidak detail atau informasi disembunyikan",
+          "icon": "🌫️"
+        },
+        {
+          "label": "Maisir",
+          "value": "Spekulasi/judi; untung-rugi tergantung keberuntungan tanpa kepastian transaksi",
+          "icon": "🎲"
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Simulasi Cepat: Skor Risiko Transaksi (Anti Riba, Gharar, Maisir)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode ini. Ubah input seperti ‘deskripsiJelas’, ‘adaBunga’, dan ‘adaSpekulasi’ untuk melihat bagaimana skor risiko berubah. Tujuan: membiasakan berpikir sebelum setuju transaksi.",
+      "fileName": "muamalah-risk-check.js",
+      "defaultCode": "// Code playground: Risiko transaksi berdasarkan indikator sederhana (edukasi, bukan fatwa)\nfunction riskScore(input){\n  let score = 0;\n  if(input.adaBunga) score += 40; // indikasi riba\n  if(!input.deskripsiJelas) score += 35; // indikasi gharar\n  if(input.adaSpekulasi) score += 25; // indikasi maisir\n  return score;\n}\n\nfunction verdict(score){\n  if(score >= 60) return 'Tinggi: perlu ditinjau ulang (hindari keputusan cepat)';\n  if(score >= 30) return 'Sedang: cek lagi info/akad dengan lebih teliti';\n  return 'Rendah: indikator utama relatif aman (tetap cek akad & kejujuran)';\n}\n\nconst input = { adaBunga: false, deskripsiJelas: true, adaSpekulasi: false };\nconst score = riskScore(input);\nconsole.log('Input:', input);\nconsole.log('Skor risiko:', score);\nconsole.log('Status:', verdict(score));",
+      "hint": "Coba ubah deskripsiJelas menjadi false, lalu lihat skor meningkat karena indikator gharar."
+    },
+    {
+      "type": "code_playground",
+      "title": "Generator Akad Singkat: Pastikan Kejujuran & Ridha dalam Transaksi",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode. Ubah data ‘produk’, ‘harga’, dan ‘estimasiKirim’. Kode akan membuat draft akad sederhana yang membantu kamu memikirkan poin kejujuran, keterbukaan, dan kesepakatan (ridha).",
+      "fileName": "akad-draft-generator.js",
+      "defaultCode": "// Code playground: Draft akad sederhana (edukasi)\nfunction createAkad({produk, harga, estimasiKirim, kondisi, caraPembayaran}){\n  const lines = [];\n  lines.push('AKAD MUAMALAH DIGITAL');\n  lines.push('Produk: ' + produk);\n  lines.push('Kondisi: ' + kondisi);\n  lines.push('Harga: ' + harga);\n  lines.push('Estimasi kirim: ' + estimasiKirim);\n  lines.push('Cara pembayaran: ' + caraPembayaran);\n  lines.push('Prinsip: kejujuran dan keterbukaan');\n  lines.push('Ridha: pihak penjual dan pembeli setuju tanpa paksaan');\n  lines.push('Kesimpulan: transaksi dilakukan sesuai kesepakatan di atas');\n  return lines.join(' | ');\n}\n\nconst draft = createAkad({\n  produk: 'Sepatu lari',\n  harga: 'Rp250.000',\n  estimasiKirim: '1-2 hari kerja',\n  kondisi: 'Baru, sesuai foto',\n  caraPembayaran: 'Transfer/VA sesuai marketplace'\n});\n\nconsole.log(draft);",
+      "hint": "Coba ubah ‘kondisi’ menjadi sesuatu yang kurang jelas (misal ‘kondisi bagus’) lalu lihat apakah kamu merasa perlu memperjelas agar mengurangi gharar."
+    },
+    {
+      "type": "analogy_card",
+      "title": "Tanggung Jawab Bertransaksi Itu Timbal Balik, Seperti Game Co-Op",
+      "icon": "🎮",
+      "realWorld": "Penjual mengirim sesuai waktu dan spesifikasi, pembeli membayar sesuai kesepakatan; kalau ada kendala, keduanya mencari solusi secara baik.",
+      "connection": "Ini nyambung langsung ke nilai amanah, musyawarah, kemaslahatan, dan niat ibadah dalam muamalah digital.",
+      "insight": "Transaksi yang sehat bukan cuma ‘jadi beli-beli’, tapi juga menjaga trust dan meminimalkan mudarat bagi kedua pihak."
+    },
+    {
+      "type": "concept_card",
+      "title": "Nilai Utama dalam Tanggung Jawab Bertransaksi",
+      "icon": "🤝",
+      "explanation": "Transaksi digital perlu dilandasi amanah: penjual memastikan pengiriman tepat waktu, pembeli melunasi sesuai akad. Jika ada kendala atau komplain, lakukan musyawarah lewat komunikasi yang baik. Di atas itu semua ada kemaslahatan (manfaat untuk kedua pihak) dan nilai ibadah: transaksi yang benar bernilai spiritual, bukan sekadar ekonomi.",
+      "analogy": "Seperti membayar titipan di kantor: kalau kamu titip, kamu harus jelas dan tepat; kalau kamu terima, kamu juga harus memenuhi kesepakatan pembayaran.",
+      "highlight": "amanah, musyawarah, kemaslahatan, nilai ibadah",
+      "keyPoints": [
+        "Amanah: tepat waktu dan sesuai akad",
+        "Musyawarah: cari solusi saat masalah muncul",
+        "Kemaslahatan dan niat ibadah memperkuat kualitas transaksi"
+      ]
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini Muamalah Digital",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Tabayyun",
+          "definition": "Memeriksa kebenaran informasi secara teliti sebelum menyebarkannya.",
+          "example": "Sebelum share berita viral, cek sumber dan bukti."
+        },
+        {
+          "term": "Ridha",
+          "definition": "Suka sama suka tanpa paksaan dalam transaksi.",
+          "example": "Pembeli setuju karena info produk jelas dan harga transparan."
+        },
+        {
+          "term": "Riba",
+          "definition": "Tambahan yang tidak sah; tidak adil seperti bunga dalam konteks pinjaman/pertukaran tertentu.",
+          "example": "Skema yang meminta imbalan tambahan berbunga tanpa dasar syar’i."
+        },
+        {
+          "term": "Gharar",
+          "definition": "Ketidakjelasan barang atau jasa sehingga berpotensi menipu.",
+          "example": "Deskripsi produk tidak detail dan tidak sesuai foto."
+        },
+        {
+          "term": "Maisir",
+          "definition": "Spekulasi/judi yang untungnya bergantung keberuntungan tanpa kepastian transaksi.",
+          "example": "Undian dengan sistem menang-kalah yang menyerupai perjudian."
+        },
+        {
+          "term": "Amanah",
+          "definition": "Kepercayaan yang harus dijaga melalui pemenuhan janji/akad.",
+          "example": "Penjual mengirim tepat waktu sesuai spesifikasi."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Manakah yang paling tepat menggambarkan tabayyun dalam bermedia sosial?",
+      "options": [
+        "Langsung share karena cepat viral",
+        "Cek sumber dan bukti sebelum menyebarkan",
+        "Hanya percaya karena akun terlihat resmi",
+        "Sebarkan agar tidak ketinggalan tren"
+      ],
+      "answer": "Cek sumber dan bukti sebelum menyebarkan",
+      "explanation": "Tabayyun berarti memeriksa kebenaran informasi secara teliti agar tidak terjadi hoaks dan fitnah.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa kewajiban penjual dalam transaksi online agar sesuai syariat?",
+      "options": [
+        "Menyembunyikan kekurangan produk agar menarik",
+        "Memberikan info jujur tentang kondisi, kualitas, dan harga",
+        "Mengubah harga setelah pembeli setuju",
+        "Mengandalkan diskon palsu untuk meyakinkan pembeli"
+      ],
+      "answer": "Memberikan info jujur tentang kondisi, kualitas, dan harga",
+      "explanation": "Transaksi online diperbolehkan jika ada kejujuran dan keterbukaan tentang produk dan harga.",
+      "xpReward": 50
+    },
+    {
+      "question": "Ridha (suka sama suka) paling dekat dengan makna yang mana?",
+      "options": [
+        "Transaksi dipaksakan agar cepat selesai",
+        "Kesepakatan dilakukan tanpa paksaan dan akad jelas",
+        "Transaksi dilakukan meski pembeli ragu",
+        "Keputusan diambil sepihak tanpa dialog"
+      ],
+      "answer": "Kesepakatan dilakukan tanpa paksaan dan akad jelas",
+      "explanation": "Ridha menuntut tidak ada paksaan dan kesepakatan/akad jelas di awal transaksi.",
+      "xpReward": 50
+    },
+    {
+      "question": "Gharar dalam konteks transaksi online biasanya terkait dengan…",
+      "options": [
+        "Kejelasan deskripsi produk",
+        "Ketidakjelasan informasi barang atau jasa",
+        "Pembayaran sesuai akad",
+        "Pengiriman tepat waktu"
+      ],
+      "answer": "Ketidakjelasan informasi barang atau jasa",
+      "explanation": "Gharar muncul ketika informasi barang/jasa tidak detail dan transparan sehingga berpotensi menipu.",
+      "xpReward": 50
+    },
+    {
+      "question": "Riba berarti…",
+      "options": [
+        "Tambahan yang tidak sah",
+        "Ketidakterbukaan produk",
+        "Spekulasi seperti perjudian",
+        "Kegiatan musyawarah saat komplain"
+      ],
+      "answer": "Tambahan yang tidak sah",
+      "explanation": "Materi menyebut riba sebagai segala bentuk tambahan yang tidak sah dalam pertukaran maupun pinjaman yang tidak adil.",
+      "xpReward": 50
+    },
+    {
+      "question": "Maisir paling menggambarkan…",
+      "options": [
+        "Kepastian pertukaran nilai dan barang",
+        "Spekulasi atau perjudian dalam transaksi",
+        "Amanah dalam pengiriman barang",
+        "Tabayyun sebelum membagikan info"
+      ],
+      "answer": "Spekulasi atau perjudian dalam transaksi",
+      "explanation": "Maisir adalah unsur spekulasi/judi, di mana hasilnya seperti permainan dan tidak ada kepastian transaksi.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa yang termasuk tanggung jawab pembeli berdasarkan nilai amanah?",
+      "options": [
+        "Membayar sesuai akad yang disepakati",
+        "Minta pengembalian tanpa kesepakatan",
+        "Mengunggah aib jika terjadi masalah",
+        "Mengabaikan komplain penjual"
+      ],
+      "answer": "Membayar sesuai akad yang disepakati",
+      "explanation": "Amanah menuntut pembeli melunasi pembayaran sesuai akad dan penjual mengirim sesuai janji.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika terjadi kendala/komplain dalam transaksi online, sikap yang dianjurkan adalah…",
+      "options": [
+        "Saling menyerang di komentar",
+        "Memutus komunikasi tanpa solusi",
+        "Musyawarah dengan komunikasi baik",
+        "Memblokir tanpa klarifikasi"
+      ],
+      "answer": "Musyawarah dengan komunikasi baik",
+      "explanation": "Materi menekankan musyawarah: kedua pihak mencari penyelesaian dengan komunikasi yang baik.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa itu tabayyun?",
+      "answer": "Memeriksa kebenaran informasi secara teliti sebelum menyebarkannya agar terhindar dari hoaks dan fitnah.",
+      "emoji": "🔎",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Sebutkan 3 prinsip bermedia sosial yang sesuai syariat.",
+      "answer": "Sopan & santun, tabayyun, dan toleransi.",
+      "emoji": "🧩",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Dalam transaksi online, penjual wajib melakukan apa terkait informasi produk?",
+      "answer": "Memberikan informasi yang jujur tentang kondisi, kualitas, dan harga produk.",
+      "emoji": "🧾",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Ridha dalam transaksi berarti…",
+      "answer": "Suka sama suka tanpa paksaan melalui kesepakatan dan akad yang jelas di awal transaksi.",
+      "emoji": "😊",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa larangan riba?",
+      "answer": "Segala bentuk tambahan yang tidak sah; pertukaran maupun pinjaman harus adil tanpa bunga finansial.",
+      "emoji": "⛔",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Apa itu gharar?",
+      "answer": "Ketidakjelasan informasi barang atau jasa yang berpotensi menimbulkan unsur penipuan.",
+      "emoji": "🌫️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa itu maisir?",
+      "answer": "Unsur spekulasi atau perjudian dalam transaksi, di mana hasilnya seperti permainan tanpa kepastian transaksi yang jelas.",
+      "emoji": "🎲",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Nilai amanah dalam transaksi contohnya apa?",
+      "answer": "Penjual mengirim tepat waktu, pembeli melunasi pembayaran sesuai akad.",
+      "emoji": "🤝",
+      "difficulty": "easy"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama tentang etika bermedia sosial dan prinsip muamalah digital.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi PPT berjudul “Muamalah Ijtama'iyyah Digital”. Topik besarnya adalah bagaimana umat Islam menjaga adab dan prinsip syariat dalam interaksi serta transaksi ekonomi di era modern yang sangat dipengaruhi teknologi. Materi dimulai dari pendahuluan yang menekankan latar belakang dan tantangan muamalah di era modern. Teknologi membuat interaksi dan transaksi ekonomi difasilitasi tanpa batas ruang dan waktu, sehingga aktivitas jual beli dan komunikasi bisa berlangsung kapan saja, di mana saja. Transformasi digital kemudian menghadirkan wadah seperti e-commerce, fintech, dan media sosial yang memperluas cara manusia bertransaksi. Namun, di balik kemudahan ini, muncul tantangan baru: potensi penipuan yang lebih mudah dilakukan, ketidakjelasan akad, dan kemungkinan praktik riba yang disamarkan melalui skema online. Karena itu, materi menegaskan solusi utama: diperlukan penerapan prinsip keadilan, transparansi, dan kehalalan sesuai pedoman syariat Islam. Dengan kata lain, teknologi tidak menghapus aturan moral dan hukum syariat; teknologi hanya menjadi media, sementara nilai dan prinsip tetap harus dijaga.\n\nBagian berikutnya membahas etika dan adab bermedia sosial. Materi menekankan “menjaga hubungan sosial sesuai syariat di dunia maya”. Di sini ada tiga prinsip: (1) Sopan & santun, yang mencakup kewajiban menghindari ujaran kebencian, tidak merendahkan orang lain, dan tidak membuka aib sesama pengguna. (2) Tabayyun, yaitu memeriksa kebenaran suatu informasi secara teliti sebelum menyebarkannya agar menghindari hoaks dan fitnah. (3) Toleransi, yakni menghormati perbedaan pendapat dan menjaga keharmonisan dalam kehidupan bermasyarakat virtual. Cara tutor menjelaskan bagian ini sebaiknya menekankan bahwa media sosial adalah ruang interaksi sosial, sehingga adab berperilaku tetap wajib walau dilakukan secara digital. Tutor bisa memberi contoh situasi: berita viral dengan judul provokatif, komentar yang merendahkan pihak lain, atau unggahan yang mengungkap rahasia orang tanpa izin. Intinya, etika digital harus meminimalkan dampak negatif seperti kebencian, fitnah, dan keretakan hubungan sosial.\n\nSetelah etika bermedia sosial, materi berpindah ke transaksi online sesuai syariat. Materi menyajikan ide “membangun ekosistem jual beli digital yang berkah”. Dalam syariat bertransaksi, materi menyebut dua pilar utama: kejujuran & keterbukaan, serta prinsip ridha (suka sama suka). Kejujuran berarti penjual wajib memberikan informasi yang jujur mengenai kondisi, kualitas, dan harga produk. Keterbukaan menuntut deskripsi yang tidak menyesatkan dan tidak menutupi hal penting. Ridha tanpa paksaan diterapkan melalui kesepakatan dan akad yang jelas di awal transaksi. Tutor perlu menegaskan bahwa transaksi online itu boleh selama tetap memenuhi prinsip-prinsip syariat, sehingga tidak semua praktik digital otomatis sah. Yang menentukan adalah kualitas informasi dan kejelasan kesepakatan.\n\nMateri kemudian menjabarkan larangan dalam muamalah digital: riba, gharar, dan maisir. Riba didefinisikan sebagai segala bentuk tambahan yang tidak sah; pertukaran maupun pinjaman harus dilakukan secara adil tanpa bunga finansial. Tutor perlu menekankan bahwa yang dilarang bukan semangat kerja/hasil usaha, tapi bentuk tambahan yang tidak adil atau tidak sesuai ketentuan syariat. Gharar adalah ketidakjelasan informasi barang atau jasa. Dalam konteks online, gharar sering terjadi ketika deskripsi produk tidak detail, informasi penting disembunyikan, atau pembeli tidak memperoleh gambaran yang jelas sebelum transaksi. Maisir adalah unsur spekulasi atau perjudian dalam transaksi. Tutor dapat menjelaskan bahwa unsur maisir membuat transaksi seperti permainan untung-untungan, sehingga kepastian dan kejelasan nilai serta barang tidak terpenuhi. Materi juga menguatkan perlunya kepastian dalam pertukaran nilai dan barang.\n\nSelanjutnya, materi menambahkan nilai tanggung jawab bertransaksi. Ada empat nilai: (1) Amanah (kepercayaan). Penjual memastikan barang dikirim tepat waktu, sementara pembeli melunasi pembayaran sesuai akad. (2) Musyawarah. Jika terjadi kendala atau komplain, kedua pihak mencari penyelesaian dengan cara komunikasi yang baik. (3) Kemaslahatan. Transaksi harus mendatangkan manfaat bagi kedua belah pihak dan tidak membawa mudarat. (4) Nilai ibadah. Aktivitas jual beli yang baik tidak hanya bernilai ekonomi, tetapi dihitung sebagai ibadah kepada Allah SWT. Dengan cara ini, tutor dapat menanamkan motivasi: transaksi yang benar adalah cara beribadah.\n\nBagian kesimpulan dan saran menegaskan bahwa perkembangan teknologi modern tidak menghilangkan kewajiban moral umat Islam. Muamalah digital harus dijalankan dengan penuh tanggung jawab, mengutamakan kejujuran (shiddiq), dan berkeadilan untuk mencegah manipulasi seperti riba, gharar, dan maisir. Saran bagi masyarakat: lebih bijak bermedia sosial dengan mengedepankan asas tabayyun. Bagi pelaku usaha: memprioritaskan transparansi demi keberkahan. Selain itu, materi menekankan perlunya program edukasi fikih muamalah kontemporer bagi generasi digital. Untuk tutor, penutup ini dapat dipakai untuk mengajak siswa membuat komitmen praktis: misalnya menahan diri sebelum share informasi, memeriksa kejelasan produk dan akad, serta memilih transaksi yang aman dari indikasi riba/gharar/maisir.\n\nSecara keseluruhan, materi menargetkan dua domain: adab bermedia sosial dan etika transaksi online. Tutor sebaiknya menggunakan pendekatan yang konkret dan berbasis skenario sehari-hari agar siswa bisa menghubungkan prinsip syariat dengan keputusan digital: kapan harus percaya, kapan harus menunda, dan indikator apa yang harus dicek sebelum melakukan pembelian atau kesepakatan."
+}

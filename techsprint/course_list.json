@@ -536,5 +536,19 @@
     "courseUrl": "/course/5b7532b8b457a95e61c6738ee06f9a65",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "c20d8b29e088ba7dd1bd2670c2b24d1e",
+    "courseName": "Muamalah Ijtama'iyyah Digital: Etika Bermedia & Transaksi Online Sesuai Syariat",
+    "courseEmoji": "🕌",
+    "courseColor": "#6366f1",
+    "courseFileName": "Muamalah Ijtama'iyyah Digital.pptx",
+    "fileType": "pptx",
+    "originalFileName": "Muamalah Ijtama'iyyah Digital.pptx",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "27-06-2026, 00.33.54",
+    "courseUrl": "/course/c20d8b29e088ba7dd1bd2670c2b24d1e",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
