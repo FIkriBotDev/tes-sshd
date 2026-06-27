@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "invoiceId": "INV-20260627-001",
+    "email": "muhammadfikrifahrezi2@gmail.com",
+    "packageName": "Starter Boost",
+    "price": 9000,
+    "creditAdded": 10,
+    "status": "PAID",
+    "date": "2026-06-27 00:32:04"
+  }
+]
