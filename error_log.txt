@@ -3252,3 +3252,9 @@
   "errno": "ERR_STREAM_PREMATURE_CLOSE",
   "code": "ERR_STREAM_PREMATURE_CLOSE"
 }
+[2026-06-28T01:38:55.333Z] Error processing image: {
+  "message": "Invalid response body while trying to fetch https://gen.pollinations.ai/v1/chat/completions: Premature close",
+  "type": "system",
+  "errno": "ERR_STREAM_PREMATURE_CLOSE",
+  "code": "ERR_STREAM_PREMATURE_CLOSE"
+}
