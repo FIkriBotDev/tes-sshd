@@ -22,5 +22,30 @@
     "aiInteractions": 1,
     "todayAiCount": 1,
     "lastAiDate": "Tue Jun 30 2026"
+  },
+  {
+    "studentId": "13c0fbf295a55a1f",
+    "username": "John Doe",
+    "email": "john@gmail.com",
+    "password": "$2b$10$XfswLxdjknvQ87IwqWvsTeZLD1QdxSq2QhSsYGIj5InB0tIO6KkRy",
+    "profilePicture": "",
+    "xp": 140,
+    "coin": 55,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "30-06-2026, 09.59.33",
+    "quizScore": 0,
+    "completedBlocks": [
+      "block-0",
+      "block-1",
+      "block-2"
+    ],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 90,
+    "achievements": [
+      "first_block"
+    ],
+    "joinedAt": "30-06-2026, 09.59.33"
   }
 ]
