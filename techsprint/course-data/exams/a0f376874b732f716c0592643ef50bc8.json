@@ -1,0 +1,361 @@
+{
+  "title": "Simulasi Ujian: SQL Explorer Pemula: SELECT, WHERE, Join, Fungsi, Subquery & DML/DDL/DCL",
+  "timeLimit": 1800,
+  "totalQuestions": 20,
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Apa fungsi utama perintah SQL SELECT?",
+      "options": [
+        "Mengambil/memilih data dari satu atau lebih tabel untuk ditampilkan",
+        "Menghapus tabel dari database",
+        "Memberi izin akses pengguna ke database",
+        "Mengubah struktur tabel secara permanen"
+      ],
+      "answer": "Mengambil/memilih data dari satu atau lebih tabel untuk ditampilkan",
+      "explanation": "SELECT digunakan untuk menampilkan data (kolom/hasil query) dari tabel yang ada.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Di SQL, apa bedanya NULL dengan 0?",
+      "options": [
+        "NULL berarti angka 0, sedangkan 0 berarti tidak ada data",
+        "NULL adalah nilai ketidaktahuan/tidak ada; 0 adalah nilai numerik nyata",
+        "NULL selalu sama dengan nilai string kosong ''",
+        "NULL hanya berlaku untuk kolom bertipe teks"
+      ],
+      "answer": "NULL adalah nilai ketidaktahuan/tidak ada; 0 adalah nilai numerik nyata",
+      "explanation": "NULL menandakan tidak ada/nilai tidak diketahui; 0 adalah angka yang valid dan berbeda dari NULL.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Tanpa WHERE, query SELECT akan mengembalikan semua baris data dari tabel yang ditentukan.",
+      "answer": "true",
+      "explanation": "WHERE adalah filter; jika tidak digunakan, seluruh baris pada tabel akan dipilih.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan konsep berikut dengan fungsinya yang tepat.",
+      "pairs": [
+        {
+          "term": "SELECT",
+          "definition": "Memfilter baris berdasarkan kondisi"
+        },
+        {
+          "term": "WHERE",
+          "definition": "Menentukan kolom/hasil yang ditampilkan"
+        },
+        {
+          "term": "ORDER BY",
+          "definition": "Mengurutkan hasil query"
+        },
+        {
+          "term": "NULL",
+          "definition": "Nilai tak diketahui/tidak ada"
+        }
+      ],
+      "answer": [
+        {
+          "term": "SELECT",
+          "definition": "Menentukan kolom/hasil yang ditampilkan"
+        },
+        {
+          "term": "WHERE",
+          "definition": "Memfilter baris berdasarkan kondisi"
+        },
+        {
+          "term": "ORDER BY",
+          "definition": "Mengurutkan hasil query"
+        },
+        {
+          "term": "NULL",
+          "definition": "Nilai tak diketahui/tidak ada"
+        }
+      ],
+      "explanation": "SELECT menentukan apa yang ditampilkan, WHERE menyaring baris, ORDER BY mengurutkan, dan NULL berarti tidak ada/tidak diketahui.",
+      "points": 15,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Kapan kamu menggunakan WHERE?",
+      "options": [
+        "Untuk menampilkan seluruh kolom tanpa syarat",
+        "Untuk memfilter data agar hanya baris yang memenuhi kondisi tertentu yang muncul",
+        "Untuk membuat tabel baru",
+        "Untuk menghapus database"
+      ],
+      "answer": "Untuk memfilter data agar hanya baris yang memenuhi kondisi tertentu yang muncul",
+      "explanation": "WHERE adalah klausa filter kondisi pada query.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Misalkan kamu memiliki tabel bernama employees dengan kolom: id, name, salary, dept_id, dan bonus (kolom bonus bisa NULL). Kamu ingin menampilkan nama dan salary dari karyawan yang bonus-nya tidak NULL (artinya punya nilai). Pernyataan SQL yang paling tepat adalah:",
+      "question": "Pilih query yang benar.",
+      "options": [
+        "SELECT name, salary FROM employees WHERE bonus != 0;",
+        "SELECT name, salary FROM employees WHERE bonus IS NOT NULL;",
+        "SELECT name, salary FROM employees WHERE bonus = NULL;",
+        "SELECT name, salary FROM employees WHERE bonus LIKE 'NULL';"
+      ],
+      "answer": "SELECT name, salary FROM employees WHERE bonus IS NOT NULL;",
+      "explanation": "Untuk memeriksa NULL harus menggunakan operator IS NULL / IS NOT NULL. bonus != 0 hanya memeriksa nilai numerik, bukan ketidakhadiran.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Sebutkan contoh operator pembanding untuk rentang nilai.",
+      "options": [
+        "LIKE",
+        "BETWEEN",
+        "IN",
+        "IS NULL"
+      ],
+      "answer": "BETWEEN",
+      "explanation": "BETWEEN digunakan untuk memeriksa apakah nilai berada dalam rentang tertentu (inklusif).",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Operator IN cocok untuk kondisi di mana sebuah kolom harus bernilai salah satu dari beberapa pilihan nilai.",
+      "answer": "true",
+      "explanation": "IN digunakan untuk daftar nilai (misal: status IN ('A','B','C')).",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Operator LIKE biasanya digunakan untuk kondisi berbasis pola teks. Karakter wildcard yang umum digunakan adalah:",
+      "options": [
+        "% untuk satu karakter, _ untuk banyak karakter",
+        "% untuk banyak karakter, _ untuk satu karakter",
+        "★ untuk pola, □ untuk satu karakter",
+        "Hanya bekerja pada bilangan, bukan teks"
+      ],
+      "answer": "% untuk banyak karakter, _ untuk satu karakter",
+      "explanation": "Dalam LIKE (umumnya), % mewakili banyak karakter dan _ mewakili satu karakter.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan jenis pengurutan dengan sintaks konsep yang benar.",
+      "pairs": [
+        {
+          "term": "Urutkan menaik (default untuk angka/tanggal tertentu)",
+          "definition": "ORDER BY kolom DESC"
+        },
+        {
+          "term": "Urutkan menurun",
+          "definition": "ORDER BY kolom ASC"
+        },
+        {
+          "term": "Urutkan berdasarkan beberapa kolom",
+          "definition": "ORDER BY kolom1, kolom2"
+        }
+      ],
+      "answer": [
+        {
+          "term": "Urutkan menaik (default untuk angka/tanggal tertentu)",
+          "definition": "ORDER BY kolom ASC"
+        },
+        {
+          "term": "Urutkan menurun",
+          "definition": "ORDER BY kolom DESC"
+        },
+        {
+          "term": "Urutkan berdasarkan beberapa kolom",
+          "definition": "ORDER BY kolom1, kolom2"
+        }
+      ],
+      "explanation": "ORDER BY ASC untuk menaik, DESC untuk menurun, dan dapat mencantumkan lebih dari satu kolom untuk pengurutan bertingkat.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Kamu diberi hasil query yang menampilkan data produk dengan kolom: product_id, name, stock. Kamu ingin menampilkan 3 produk terendah berdasarkan stock. Tabel sudah ada. Pilih cara yang paling sesuai dengan materi pengurutan (ORDER BY).",
+      "question": "Pernyataan SQL yang paling tepat adalah:",
+      "options": [
+        "SELECT product_id, name, stock FROM products ORDER BY stock ASC;",
+        "SELECT product_id, name, stock FROM products ORDER BY stock DESC;",
+        "SELECT product_id, name, stock FROM products WHERE stock ORDER BY ASC;",
+        "SELECT product_id, name, stock FROM products ORDER BY stock = 0;"
+      ],
+      "answer": "SELECT product_id, name, stock FROM products ORDER BY stock ASC;",
+      "explanation": "Untuk mendapatkan produk dengan stock terendah, gunakan ORDER BY stock ASC (ASC = menaik). Catatan: membatasi TOP/LIMIT bisa ditambahkan, tetapi fokus kasus ini adalah pengurutan.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Berikut adalah contoh penggunaan alias pada SELECT. Manakah yang paling tepat?",
+      "options": [
+        "SELECT name AS Nama Produk FROM products;",
+        "SELECT AS name Nama Produk FROM products;",
+        "SELECT name Nama Produk FROM products AS;",
+        "SELECT name FROM products ALIAS Nama Produk;"
+      ],
+      "answer": "SELECT name AS Nama Produk FROM products;",
+      "explanation": "Alias menggunakan kata kunci AS (atau tanpa AS tergantung DBMS), tetapi bentuk yang benar dan umum adalah: SELECT kolom AS alias.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "true_false",
+      "question": "Fungsi grup (aggregate) seperti COUNT, SUM, AVG, MAX, MIN biasanya menghasilkan satu nilai per kelompok (atau satu nilai untuk seluruh hasil) bukan per baris.",
+      "answer": "true",
+      "explanation": "Fungsi grup merangkum banyak baris menjadi satu/lebih ringkasan nilai.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Misalkan tabel orders berisi kolom order_id, customer_id, total_amount. Kamu ingin menghitung total jumlah seluruh order. Fungsi grup yang cocok adalah:",
+      "options": [
+        "COUNT(total_amount)",
+        "SUM(total_amount)",
+        "LOWER(total_amount)",
+        "TRIM(total_amount)"
+      ],
+      "answer": "SUM(total_amount)",
+      "explanation": "SUM menjumlahkan nilai numerik. COUNT menghitung banyak baris, sedangkan fungsi LOWER/TRIM mengubah teks.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Kamu memiliki tabel customers(customer_id, name) dan orders(order_id, customer_id, total_amount). Kamu ingin menampilkan setiap order beserta nama customer yang terkait. Pilih jenis join yang paling tepat untuk kasus ini (diasumsikan setiap order harus memiliki customer yang valid, sehingga baris order yang cocok ditampilkan).",
+      "question": "Join yang paling sesuai adalah:",
+      "options": [
+        "CROSS JOIN (Cartesian)",
+        "INNER JOIN (gabungan berdasarkan customer_id)",
+        "LEFT JOIN dengan kondisi yang tidak sesuai (tanpa ON)",
+        "NATURAL JOIN yang tidak dipastikan kolomnya sama"
+      ],
+      "answer": "INNER JOIN (gabungan berdasarkan customer_id)",
+      "explanation": "Untuk menampilkan pasangan yang cocok antara order dan customer berdasarkan kunci relasi, gunakan INNER JOIN dengan ON customer_id.",
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Apa perbedaan konsep OUTER JOIN dibanding INNER JOIN?",
+      "options": [
+        "OUTER JOIN hanya mengembalikan baris yang tidak memiliki pasangan",
+        "OUTER JOIN mengembalikan semua baris dari satu/dua sisi termasuk yang tidak memiliki pasangan (dengan NULL pada sisi yang tidak cocok)",
+        "INNER JOIN selalu mengembalikan semua baris kedua tabel",
+        "OUTER JOIN tidak membutuhkan kondisi ON"
+      ],
+      "answer": "OUTER JOIN mengembalikan semua baris dari satu/dua sisi termasuk yang tidak memiliki pasangan (dengan NULL pada sisi yang tidak cocok)",
+      "explanation": "OUTER JOIN mencakup baris tanpa pasangan, mengisi bagian yang tidak cocok dengan NULL.",
+      "points": 10,
+      "difficulty": "hard"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan jenis JOIN dengan deskripsinya.",
+      "pairs": [
+        {
+          "term": "Natural Join",
+          "definition": "Join berbasis kondisi kesetaraan yang diminta eksplisit menggunakan ON/where"
+        },
+        {
+          "term": "Self Join",
+          "definition": "Menggabungkan baris tanpa kondisi relasi eksplisit (membentuk semua kombinasi)"
+        },
+        {
+          "term": "Cartesian Join (Cross Join)",
+          "definition": "Join tabel dengan dirinya sendiri (misal membandingkan baris dalam tabel yang sama)"
+        },
+        {
+          "term": "Non-equi join",
+          "definition": "Join menggunakan kolom-kolom yang namanya sama secara otomatis (bergantung DBMS)"
+        }
+      ],
+      "answer": [
+        {
+          "term": "Natural Join",
+          "definition": "Join menggunakan kolom-kolom yang namanya sama secara otomatis (bergantung DBMS)"
+        },
+        {
+          "term": "Self Join",
+          "definition": "Join tabel dengan dirinya sendiri (misal membandingkan baris dalam tabel yang sama)"
+        },
+        {
+          "term": "Cartesian Join (Cross Join)",
+          "definition": "Menggabungkan baris tanpa kondisi relasi eksplisit (membentuk semua kombinasi)"
+        },
+        {
+          "term": "Non-equi join",
+          "definition": "Join berbasis kondisi kesetaraan yang diminta eksplisit menggunakan ON/where"
+        }
+      ],
+      "explanation": "Natural join memakai kolom yang namanya sama; self join adalah join tabel dengan dirinya; cartesian menghasilkan semua kombinasi; non-equi join menggunakan kondisi relasi yang tidak hanya '=' (misal >, <, BETWEEN, dll).",
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Subquery adalah query di dalam query. Pernyataan mana yang menggambarkan penggunaan subquery dengan tepat?",
+      "options": [
+        "Subquery selalu harus berada setelah ORDER BY",
+        "Subquery dapat dipakai untuk memberikan nilai/daftar hasil sebagai bagian dari kondisi atau ekspresi utama",
+        "Subquery hanya bisa digunakan pada UPDATE, bukan pada SELECT",
+        "Subquery selalu menggantikan kebutuhan JOIN"
+      ],
+      "answer": "Subquery dapat dipakai untuk memberikan nilai/daftar hasil sebagai bagian dari kondisi atau ekspresi utama",
+      "explanation": "Subquery fleksibel: dapat dipakai pada WHERE (IN/EXISTS), pada SELECT (scalar), dan banyak konteks lain.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Kamu ingin mengambil karyawan yang bekerja di departemen dengan nama 'IT'. Skema: departments(dept_id, dept_name) dan employees(emp_id, name, dept_id). Kamu ingin menuliskan query menggunakan subquery (query di dalam query) untuk mencari dept_id departemen 'IT' lalu mengambil karyawan yang dept_id-nya termasuk hasil itu.",
+      "question": "Pilih pola query yang paling tepat:",
+      "options": [
+        "SELECT name FROM employees WHERE dept_id = (SELECT dept_id FROM departments WHERE dept_name='IT');",
+        "SELECT name FROM employees WHERE dept_id JOIN departments ON dept_name='IT';",
+        "SELECT name FROM employees WHERE dept_id IN (dept_name='IT');",
+        "SELECT name FROM employees WHERE dept_name='IT';"
+      ],
+      "answer": "SELECT name FROM employees WHERE dept_id = (SELECT dept_id FROM departments WHERE dept_name='IT');",
+      "explanation": "Subquery menghasilkan dept_id. Kemudian kondisi WHERE memakai hasil subquery tersebut untuk filter karyawan.",
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "true_false",
+      "question": "DCL mencakup perintah untuk mengatur hak akses/otorisasi, misalnya GRANT dan REVOKE.",
+      "answer": "true",
+      "explanation": "DCL (Data Control Language) berisi perintah kontrol akses seperti GRANT/REVOKE.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dalam kategori perintah SQL, manakah pasangan yang paling tepat?",
+      "options": [
+        "DML: CREATE/ALTER, DDL: UPDATE/DELETE, DCL: SELECT",
+        "DML: INSERT/UPDATE/DELETE, DDL: CREATE/ALTER/DROP, DCL: GRANT/REVOKE",
+        "DML: GRANT/REVOKE, DDL: INSERT/UPDATE, DCL: SELECT",
+        "DDL: SELECT, DCL: DROP TABLE, DML: TRUNCATE DATABASE"
+      ],
+      "answer": "DML: INSERT/UPDATE/DELETE, DDL: CREATE/ALTER/DROP, DCL: GRANT/REVOKE",
+      "explanation": "Pembagian umum: DML memanipulasi data (INSERT/UPDATE/DELETE), DDL mengubah struktur (CREATE/ALTER/DROP), DCL mengatur akses (GRANT/REVOKE).",
+      "points": 10,
+      "difficulty": "easy"
+    }
+  ]
+}
