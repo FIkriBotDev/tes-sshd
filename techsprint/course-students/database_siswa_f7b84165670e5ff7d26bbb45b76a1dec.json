@@ -27,5 +27,51 @@
     "aiInteractions": 1,
     "todayAiCount": 1,
     "lastAiDate": "Thu Jul 02 2026"
+  },
+  {
+    "studentId": "ca3860b0fbbc5bf6",
+    "username": "John Doe",
+    "email": "john@email.co",
+    "password": "$2b$10$7xcqnCKoVQi3o5gVWXfCY.x3hozipxIAuQy0UG62tdqACPPEcYn.O",
+    "profilePicture": "",
+    "xp": 80,
+    "coin": 35,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "02-07-2026, 07.34.42",
+    "quizScore": 0,
+    "completedBlocks": [
+      "block-0"
+    ],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 30,
+    "achievements": [
+      "first_block"
+    ],
+    "joinedAt": "02-07-2026, 07.34.42"
+  },
+  {
+    "studentId": "72800f6fdaf03680",
+    "username": "Elon Musk",
+    "email": "elon@mas.com",
+    "password": "$2b$10$ud2vaIh4nCrWr.qVZmqYWefVi1YaKG.hXQekhiXXDKfpk3NUlm/EK",
+    "profilePicture": "",
+    "xp": 80,
+    "coin": 35,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "02-07-2026, 07.35.06",
+    "quizScore": 0,
+    "completedBlocks": [
+      "block-0"
+    ],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 30,
+    "achievements": [
+      "first_block"
+    ],
+    "joinedAt": "02-07-2026, 07.35.06"
   }
 ]
