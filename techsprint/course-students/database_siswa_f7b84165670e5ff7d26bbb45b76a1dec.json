@@ -5,8 +5,8 @@
     "email": "muhammadfikrifahrezi2@gmail.com",
     "password": "$2b$10$XQiR.Vea9lMLXAUcMqhsEuDkXbv8Vb.vHRyiyeKUX0yqEDcIESRzm",
     "profilePicture": "",
-    "xp": 80,
-    "coin": 35,
+    "xp": 95,
+    "coin": 40,
     "level": 1,
     "streak": 0,
     "lastLogin": "02-07-2026, 07.26.50",
@@ -22,6 +22,9 @@
       "first_block"
     ],
     "joinedAt": "02-07-2026, 07.26.50",
-    "isMainAccount": true
+    "isMainAccount": true,
+    "aiInteractions": 1,
+    "todayAiCount": 1,
+    "lastAiDate": "Thu Jul 02 2026"
   }
 ]
