@@ -1,0 +1,345 @@
+{
+  "title": "Simulasi Ujian: Python untuk Pemula: Dari Nol Jadi Bisa Ngoding",
+  "timeLimit": 1800,
+  "totalQuestions": 20,
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Python termasuk bahasa pemrograman tingkat tinggi yang dirancang agar...",
+      "options": [
+        "sulit dibaca dan banyak sintaks khusus",
+        "mudah dibaca dan dipelajari",
+        "hanya bisa dijalankan di browser",
+        "hanya mendukung satu tipe data"
+      ],
+      "answer": "mudah dibaca dan dipelajari",
+      "explanation": "Python dibuat dengan fokus keterbacaan sehingga sintaksnya relatif sederhana dan ramah untuk pemula.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Python diciptakan oleh Guido van Rossum pada tahun 1991.",
+      "answer": "true",
+      "explanation": "Materi mengenalkan bahwa Guido van Rossum menciptakan Python pada tahun 1991.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan struktur data dengan kegunaannya yang paling tepat.",
+      "pairs": [
+        {
+          "term": "List",
+          "definition": "Kumpulan item berurutan yang bisa diubah (mutable)"
+        },
+        {
+          "term": "Tuple",
+          "definition": "Kumpulan item berurutan yang biasanya tidak diubah (immutable)"
+        },
+        {
+          "term": "Dictionary",
+          "definition": "Kumpulan pasangan key-value untuk akses berbasis key"
+        },
+        {
+          "term": "String",
+          "definition": "Urutan karakter untuk merepresentasikan teks"
+        }
+      ],
+      "answer": [
+        {
+          "term": "List",
+          "definition": "Kumpulan item berurutan yang bisa diubah (mutable)"
+        },
+        {
+          "term": "Tuple",
+          "definition": "Kumpulan item berurutan yang biasanya tidak diubah (immutable)"
+        },
+        {
+          "term": "Dictionary",
+          "definition": "Kumpulan pasangan key-value untuk akses berbasis key"
+        }
+      ],
+      "points": 15,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Empat tipe data dasar yang sering dipakai pada materi pemula ini adalah...",
+      "options": [
+        "int, float, str, bool",
+        "char, double, boolean, byte",
+        "list, tuple, set, map",
+        "file, socket, thread, process"
+      ],
+      "answer": "int, float, str, bool",
+      "explanation": "Materi menekankan tipe data dasar: integer (int), float, string (str), dan boolean (bool).",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Apa itu integer (int) di Python?",
+      "options": [
+        "angka dengan pecahan desimal",
+        "angka bulat tanpa desimal",
+        "teks yang berisi karakter",
+        "nilai logika true/false"
+      ],
+      "answer": "angka bulat tanpa desimal",
+      "explanation": "Integer (int) adalah tipe data untuk bilangan bulat (tidak memiliki bagian pecahan).",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Float (float) di Python hanya bisa menampung bilangan bulat dan tidak bisa pecahan.",
+      "answer": "false",
+      "explanation": "Float digunakan untuk angka dengan pecahan desimal, misalnya 3.14 atau 2.5.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Bagaimana cara menulis string yang benar di Python?",
+      "options": [
+        "Halo = Halo",
+        "nama = Halo",
+        "nama = \"Halo\"",
+        "nama = 'Halo' tanpa tanda petik"
+      ],
+      "answer": "nama = \"Halo\"",
+      "explanation": "String perlu ditulis di dalam tanda petik (\" \") atau (' ').",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Operator aritmetika yang digunakan untuk penjumlahan adalah...",
+      "options": [
+        "*",
+        "+",
+        "/",
+        "%"
+      ],
+      "answer": "+",
+      "explanation": "Penjumlahan di Python menggunakan operator +.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Jika a = 10 dan b = 3, berapakah hasil dari a // b?",
+      "options": [
+        "3.333...",
+        "13",
+        "3",
+        "30"
+      ],
+      "answer": "3",
+      "explanation": "Operator // melakukan pembagian bilangan bulat (floor division). 10 // 3 = 3.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Kamu membuat kode nilai akhir siswa menggunakan f-string untuk menampilkan informasi. Potongan kode:\n\nnama = \"Alya\"\nnilai = 85\nprint(\"Nilai akhir \" + nama + \" adalah \" + nilai)\n\nSaat dijalankan, kode akan error. Kamu ingin output: \"Nilai akhir Alya adalah 85\". Pilihan mana yang paling tepat?",
+      "options": [
+        "Ubah menjadi: print(f\"Nilai akhir {nama} adalah {nilai}\")",
+        "Ubah menjadi: print(f\"Nilai akhir {nama} adalah {nilai}\") dengan nilai tetap string tanpa konversi (nilai=85 sudah string otomatis)",
+        "Tetap pakai concatenation, tetapi ubah nama menjadi angka agar tidak error",
+        "Ganti ke: print(\"Nilai akhir\" , nama , \"adalah\" , nilai) tanpa perubahan lain pasti selalu benar"
+      ],
+      "answer": "Ubah menjadi: print(f\"Nilai akhir {nama} adalah {nilai}\")",
+      "explanation": "Error terjadi karena concatenation (+) tidak bisa menggabungkan str dengan int. f-string ({nilai}) akan mengubah nilai menjadi teks saat ditampilkan.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "true_false",
+      "question": "Pada operator perbandingan, == digunakan untuk mengecek kesamaan nilai.",
+      "answer": "true",
+      "explanation": "== adalah operator perbandingan untuk mengecek apakah dua nilai sama.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan operator dengan fungsi yang benar.",
+      "pairs": [
+        {
+          "term": "=",
+          "definition": "Assignment (memberi nilai ke variabel)"
+        },
+        {
+          "term": "==",
+          "definition": "Mengecek kesamaan"
+        },
+        {
+          "term": ">",
+          "definition": "Mengecek apakah lebih besar"
+        },
+        {
+          "term": "%",
+          "definition": "Sisa hasil bagi (modulus)"
+        }
+      ],
+      "answer": [
+        {
+          "term": "=",
+          "definition": "Assignment (memberi nilai ke variabel)"
+        },
+        {
+          "term": "==",
+          "definition": "Mengecek kesamaan"
+        },
+        {
+          "term": ">",
+          "definition": "Mengecek apakah lebih besar"
+        },
+        {
+          "term": "%",
+          "definition": "Sisa hasil bagi (modulus)"
+        }
+      ],
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Kamu diminta membuat grade otomatis dengan aturan berikut: \n- Jika nilai >= 90: 'A'\n- Jika nilai >= 80: 'B'\n- Jika nilai >= 70: 'C'\n- Jika nilai >= 60: 'D'\n- Selain itu: 'E'\n\nNilai yang diinput: nilai = 83.\nPotongan kode yang kamu tulis memakai if/elif/else. Pernyataan mana yang paling tepat agar hasilnya benar?",
+      "options": [
+        "Urutkan dari nilai tertinggi ke terendah dan gunakan if/elif/else; untuk nilai 83 harus masuk kondisi nilai >= 80 sehingga grade 'B'.",
+        "Gunakan hanya if (tanpa elif/else) agar lebih fleksibel; untuk nilai 83 akan menghasilkan dua grade sekaligus.",
+        "Urutkan dari nilai terendah ke tertinggi agar cepat; untuk nilai 83 grade menjadi 'A'.",
+        "Pakai switch-case (match) karena if/elif/else hanya untuk operator logika, bukan untuk grade."
+      ],
+      "answer": "Urutkan dari nilai tertinggi ke terendah dan gunakan if/elif/else; untuk nilai 83 harus masuk kondisi nilai >= 80 sehingga grade 'B'.",
+      "explanation": "Dengan if/elif/else dan urutan pengecekan dari yang tertinggi, nilai 83 memenuhi syarat >= 80 dan tidak perlu mengecek kondisi berikutnya.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Pada Python, struktur percabangan yang benar untuk mengecek beberapa kondisi bertingkat adalah...",
+      "options": [
+        "switch/elif",
+        "if/elif/else",
+        "for/while/else",
+        "try/except/else"
+      ],
+      "answer": "if/elif/else",
+      "explanation": "Materi menggunakan if, elif, dan else untuk keputusan bertingkat.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Kamu ingin menjetak angka 0 sampai 4.\n\nPilihan implementasi:\n(1) for i in range(5): print(i)\n(2) while i < 5: print(i)\nNamun pada (2) kamu lupa men-setup nilai awal i dan juga lupa update i di dalam loop.\n\nManakah pernyataan yang paling tepat?",
+      "options": [
+        "for lebih aman untuk iterasi jumlah tertentu; while membutuhkan inisialisasi dan update counter agar tidak infinite loop.",
+        "while selalu lebih cepat daripada for dan tidak perlu update counter.",
+        "range(5) menghasilkan 1 sampai 5 sehingga output (1) benar tapi definisi (2) pasti sama tanpa i.",
+        "while tidak memerlukan kondisi karena print sudah menghentikan loop."
+      ],
+      "answer": "for lebih aman untuk iterasi jumlah tertentu; while membutuhkan inisialisasi dan update counter agar tidak infinite loop.",
+      "explanation": "while memerlukan variabel kondisi serta perubahan counter agar loop berhenti. for cocok untuk iterasi dengan batas jelas (mis. range).",
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "true_false",
+      "question": "Di loop for, kita harus selalu menentukan variabel counter secara manual.",
+      "answer": "false",
+      "explanation": "Pada for, variabel iterasi biasanya disediakan oleh mekanisme loop (mis. for i in range(...)). Tidak selalu perlu mengatur counter manual.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Apa output dari kode berikut?\n\nhasil = []\nfor i in range(3):\n    hasil.append(i*2)\nprint(hasil)\n\n",
+      "options": [
+        "[0, 1, 2]",
+        "[0, 2, 4]",
+        "[2, 4, 6]",
+        "RangeError"
+      ],
+      "answer": "[0, 2, 4]",
+      "explanation": "i = 0,1,2 lalu i*2 menghasilkan 0,2,4 sehingga list menjadi [0, 2, 4].",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan konsep fungsi dengan praktik yang benar.",
+      "pairs": [
+        {
+          "term": "def",
+          "definition": "Mendeklarasikan fungsi"
+        },
+        {
+          "term": "parameter",
+          "definition": "Nilai masukan yang diterima fungsi saat dipanggil"
+        },
+        {
+          "term": "return",
+          "definition": "Mengembalikan hasil dari fungsi ke pemanggil"
+        },
+        {
+          "term": "pemanggilan fungsi",
+          "definition": "Menjalankan fungsi dengan menulis nama fungsi beserta argumen"
+        }
+      ],
+      "answer": [
+        {
+          "term": "def",
+          "definition": "Mendeklarasikan fungsi"
+        },
+        {
+          "term": "parameter",
+          "definition": "Nilai masukan yang diterima fungsi saat dipanggil"
+        },
+        {
+          "term": "return",
+          "definition": "Mengembalikan hasil dari fungsi ke pemanggil"
+        },
+        {
+          "term": "pemanggilan fungsi",
+          "definition": "Menjalankan fungsi dengan menulis nama fungsi beserta argumen"
+        }
+      ],
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Potongan kode fungsi berikut yang paling sesuai untuk latihan 'buat fungsi sapa' adalah...",
+      "options": [
+        "def sapa(): print(\"Halo!\")",
+        "def sapa print(\"Halo!\")",
+        "function sapa(): print(\"Halo!\")",
+        "def sapa {print(\"Halo!\")}"
+      ],
+      "answer": "def sapa(): print(\"Halo!\")",
+      "explanation": "Sintaks fungsi Python menggunakan def dan tanda kurung, lalu blok kode menggunakan indentasi.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Kamu membuat fungsi untuk mencari grade:\n\ndef grade(nilai):\n    if nilai >= 90:\n        return \"A\"\n    elif nilai >= 80:\n        return \"B\"\n    elif nilai >= 70:\n        return \"C\"\n    else:\n        return \"D\"\n\nLalu kamu memanggil:\n\nhasil = grade(68)\nprint(hasil)\n\nApa yang akan tercetak?",
+      "question": "Jawaban yang benar adalah...",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "D",
+      "explanation": "nilai 68 tidak memenuhi >= 70, sehingga masuk else dan return \"D\".",
+      "points": 15,
+      "difficulty": "hard"
+    }
+  ]
+}
