@@ -57,11 +57,36 @@
     "email": "elon@mas.com",
     "password": "$2b$10$ud2vaIh4nCrWr.qVZmqYWefVi1YaKG.hXQekhiXXDKfpk3NUlm/EK",
     "profilePicture": "",
+    "xp": 140,
+    "coin": 55,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "02-07-2026, 07.35.06",
+    "quizScore": 0,
+    "completedBlocks": [
+      "block-0",
+      "block-1",
+      "block-2"
+    ],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 90,
+    "achievements": [
+      "first_block"
+    ],
+    "joinedAt": "02-07-2026, 07.35.06"
+  },
+  {
+    "studentId": "a12cca22bb244892",
+    "username": "Albert Einstein",
+    "email": "albert@o.co",
+    "password": "$2b$10$v6Q7JkN.TKegXJ4WP5SEOObf3Joy7dQi1rM7d8AsrLZBdp7keyH2a",
+    "profilePicture": "",
     "xp": 80,
     "coin": 35,
     "level": 1,
     "streak": 0,
-    "lastLogin": "02-07-2026, 07.35.06",
+    "lastLogin": "02-07-2026, 07.35.38",
     "quizScore": 0,
     "completedBlocks": [
       "block-0"
@@ -72,6 +97,6 @@
     "achievements": [
       "first_block"
     ],
-    "joinedAt": "02-07-2026, 07.35.06"
+    "joinedAt": "02-07-2026, 07.35.38"
   }
 ]
