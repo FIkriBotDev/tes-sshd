@@ -1,0 +1,466 @@
+{
+  "title": "Python untuk Pemula: Dari Nol Jadi Bisa Ngoding",
+  "summary": "Belajar dasar pemrograman Python mulai dari pengenalan, variabel & tipe data, operator, percabangan, loop, struktur data, sampai fungsi. Kamu juga akan praktik langsung lewat playground biar makin cepat paham.",
+  "emoji": "🐍",
+  "color": "#10b981",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Python Itu Apa sih, dan Kenapa Populer?",
+      "icon": "🐍",
+      "explanation": "Python adalah bahasa pemrograman tingkat tinggi yang dibuat supaya mudah dibaca dan dipelajari. Dibuat oleh Guido van Rossum pada 1991 dan sekarang jadi favorit untuk Data Science, AI, dan Web. Belajar Python itu ibarat dapat kunci: kamu bisa masuk ke banyak bidang lewat library yang lengkap.",
+      "analogy": "Bayangin Python itu seperti 'sepeda' yang gampang dikendarai—lebih simpel, jadi kamu fokus ke perjalanan (problem solving), bukan ke mesin sepeda yang rumit.",
+      "highlight": "mudah dibaca library lengkap multi-platform",
+      "keyPoints": [
+        "Python dirancang agar sintaksnya mudah dipahami",
+        "Cocok untuk Data Science, AI, dan Web",
+        "Library dan komunitasnya besar"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Variabel & Tipe Data: Wadah untuk Informasi",
+      "icon": "📦",
+      "explanation": "Variabel adalah wadah untuk menyimpan data. Di Python, kamu tidak perlu mendeklarasikan tipe data secara eksplisit; Python akan menebak tipe datanya otomatis. Tipe data dasar yang sering dipakai: integer, float, string, dan boolean.",
+      "analogy": "Variabel itu seperti nama kotak di rumah. Isi kotaknya bisa berbeda jenis: angka bulat, angka pecahan, teks, atau pilihan benar/salah.",
+      "highlight": "integer float string boolean",
+      "keyPoints": [
+        "Integer: bilangan bulat (contoh 10, -5)",
+        "Float: bilangan desimal (contoh 3.14, 2.0)",
+        "String: teks pakai kutip (contoh \"Halo Dunia\")"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Praktik: Variabel + Print Interpolasi (f-string)",
+      "icon": "💻",
+      "language": "python",
+      "instruction": "Jalankan kode ini. Ubah nilai nama, umur, dan tinggi, lalu lihat bagaimana output print berubah. Fokus ke pemakaian f-string { }.",
+      "fileName": "latihan_fstring.py",
+      "defaultCode": "nama = \"Budi\" umur = 20 tinggi = 175.5 is_student = True print(f\"Nama: {nama}, Umur: {umur}, Tinggi: {tinggi}, Status: {is_student}\")",
+      "hint": "Coba ganti status menjadi False, lalu cek tampilannya."
+    },
+    {
+      "type": "concept_card",
+      "title": "Operator Dasar: Mengolah Nilai Jadi Hasil",
+      "icon": "➕",
+      "explanation": "Operator dipakai untuk melakukan operasi pada nilai. Python punya operator aritmatika seperti penjumlahan (+), pengurangan (-), perkalian (*), pembagian (/), dan perpangkatan (**). Hasilnya bisa jadi angka baru yang siap dipakai di langkah berikutnya.",
+      "analogy": "Kalau variabel adalah bahan, operator adalah 'alat masak'—bahan yang sama bisa jadi hidangan berbeda tergantung alatnya (berapa kali dikali, dibagi, atau dipangkatkan).",
+      "highlight": "+ - * / **",
+      "keyPoints": [
+        "Pembagian / bisa menghasilkan float (misal 5/2 = 2.5)",
+        "Perpangkatan ** untuk pangkat (5**2 = 25)",
+        "Operator dipakai langsung pada nilai atau variabel"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Praktik: Hitung Nilai Pakai Operator",
+      "icon": "💻",
+      "language": "python",
+      "instruction": "Ubah angka a dan b. Coba lihat perubahan hasil untuk +, -, *, /, dan **. Pastikan kamu paham mana yang pangkat.",
+      "fileName": "latihan_operator.py",
+      "defaultCode": "a = 5 b = 2 print(\"a+b =\", a + b) print(\"a-b =\", a - b) print(\"a*b =\", a * b) print(\"a/b =\", a / b) print(\"a**b =\", a ** b)",
+      "hint": "Kalau kamu ubah b jadi 3, coba prediksi dulu hasilnya sebelum menjalankan."
+    },
+    {
+      "type": "step_by_step",
+      "title": "Percabangan (if/elif/else): Buat Keputusan",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Tentukan kondisi utama dengan if",
+          "description": "Tulis if lalu kondisi yang menghasilkan True/False.",
+          "tip": "Misal: if nilai >= 90: berarti grade A."
+        },
+        {
+          "number": 2,
+          "title": "Tambahkan elif untuk kondisi berikutnya",
+          "description": "elif dipakai kalau if tidak terpenuhi, tapi kondisi lain terpenuhi.",
+          "tip": "Urutkan dari yang paling besar ke yang lebih kecil biar tidak bingung."
+        },
+        {
+          "number": 3,
+          "title": "Sediakan else sebagai fallback",
+          "description": "else dijalankan kalau semua kondisi sebelumnya tidak benar.",
+          "tip": "else itu seperti 'kalau tidak masuk kategori mana pun, masuk sini'."
+        },
+        {
+          "number": 4,
+          "title": "Pastikan indentasi benar",
+          "description": "Baris di dalam if/elif/else harus menjorok (indentasi) konsisten.",
+          "tip": "Biasakan 4 spasi."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Praktik: Grade Otomatis dengan if/elif/else",
+      "icon": "💻",
+      "language": "python",
+      "instruction": "Jalankan program. Ubah nilai menjadi angka lain (misal 92, 78, 64) untuk melihat grade berubah.",
+      "fileName": "latihan_grade.py",
+      "defaultCode": "nilai = 85 if nilai >= 90: print(\"Grade: A\") elif nilai >= 75: print(\"Grade: B\") else: print(\"Grade: C\")",
+      "hint": "Coba nilai tepat di batas, misal 90 dan 75, untuk memastikan logikanya benar."
+    },
+    {
+      "type": "concept_card",
+      "title": "Looping: for dan while untuk Ulang-ulang",
+      "icon": "🔁",
+      "explanation": "Loop membantu menjalankan kode berulang. for cocok saat kamu tahu jumlah iterasi (misal 0 sampai 4). while cocok saat kamu tidak yakin jumlahnya, tapi ada syarat yang harus dipenuhi selama True.",
+      "analogy": "for itu seperti mengulang daftar langkah yang sudah kamu catat jumlahnya. while itu seperti mengulang sampai tugas selesai, selama masih ada alasan untuk melanjutkan.",
+      "highlight": "for in range while condition",
+      "keyPoints": [
+        "for i in range(5): menjalankan 5 kali",
+        "while count < 3: berhenti saat kondisi sudah tidak terpenuhi",
+        "while biasanya butuh update variabel (count += 1) agar tidak infinite loop"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Praktik: for vs while (Iterasi & Counter)",
+      "icon": "💻",
+      "language": "python",
+      "instruction": "Jalankan kode. Amati perbedaan output antara for dan while. Ubah angka range dan batas while untuk melihat dampaknya.",
+      "fileName": "latihan_loop.py",
+      "defaultCode": "for i in range(5): print(f\"Iterasi for ke-{i}\") count = 0 while count < 3: print(\"Halo!\") count += 1",
+      "hint": "Kalau while kamu hapus count += 1, program bisa 'nggak berhenti' (infinite)."
+    },
+    {
+      "type": "concept_card",
+      "title": "List, Tuple, dan Dictionary: Struktur Data yang Paling Sering Dipakai",
+      "icon": "🧰",
+      "explanation": "Struktur data dipakai untuk menyimpan kumpulan data dalam satu variabel. List itu urut dan bisa diubah. Tuple urut tapi tidak bisa diubah. Dictionary menyimpan pasangan kunci dan nilai, cocok untuk data yang punya nama field.",
+      "analogy": "List seperti daftar belanja, Tuple seperti stiker urutan yang kamu tidak boleh ubah, dan Dictionary seperti formulir: ada label (kunci) dan isi (nilai).",
+      "highlight": "list tuple dictionary kunci-nilai",
+      "keyPoints": [
+        "List: bisa diubah (mutable)",
+        "Tuple: tidak bisa diubah (immutable)",
+        "Dictionary: {\"nama\": ..., \"usia\": ...}"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual: Peta Konsep Dasar Python",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Variabel",
+          "value": "wadah data (nama = \"Budi\")",
+          "icon": "📦"
+        },
+        {
+          "label": "Tipe Data",
+          "value": "int, float, str, bool",
+          "icon": "🔢"
+        },
+        {
+          "label": "Operator",
+          "value": "+ - * / **",
+          "icon": "➗"
+        },
+        {
+          "label": "Percabangan",
+          "value": "if elif else",
+          "icon": "🧭"
+        },
+        {
+          "label": "Loop",
+          "value": "for vs while",
+          "icon": "🔁"
+        },
+        {
+          "label": "Struktur Data",
+          "value": "list, tuple, dictionary",
+          "icon": "🗂️"
+        },
+        {
+          "label": "Fungsi",
+          "value": "def + return",
+          "icon": "⚙️"
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Fungsi (Function): Kode yang Bisa Dipanggil Kapan Saja",
+      "icon": "⚙️",
+      "explanation": "Fungsi adalah blok kode yang hanya berjalan saat dipanggil. Kamu bisa menerima input (parameter) dan mengembalikan output pakai return. Ini membantu kode lebih rapi, bisa dipakai ulang, dan lebih mudah dites.",
+      "analogy": "Fungsi itu seperti tombol di perangkat: kamu tidak perlu mengerti semua proses di dalamnya setiap kali, kamu cukup memasukkan input dan dapat output yang diinginkan.",
+      "highlight": "def return parameter",
+      "keyPoints": [
+        "def membuat fungsi baru",
+        "return mengembalikan hasil ke pemanggil",
+        "Fungsi membantu membuat program lebih terstruktur"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Praktik: Buat Fungsi Sapa",
+      "icon": "💻",
+      "language": "python",
+      "instruction": "Jalankan kode. Ubah nama yang dikirim ke sapa(\"...\") untuk melihat pesan berubah.",
+      "fileName": "latihan_fungsi.py",
+      "defaultCode": "def sapa(nama): return f\"Halo, {nama}! Selamat belajar Python.\" pesan = sapa(\"Andi\") print(pesan)",
+      "hint": "Coba buat versi lain: misal sapa_pagi yang mengembalikan ucapan berbeda."
+    },
+    {
+      "type": "analogy_card",
+      "title": "Analogi Mudah: Python sebagai Dapur, Data sebagai Bahan",
+      "icon": "💡",
+      "realWorld": "Kamu masak mie: ada bahan (data), ada resep (kode), ada keputusan (kalau saus kurang, tambah), dan ada pengulangan (aduk beberapa menit).",
+      "connection": "Variabel dan tipe data = bahan, operator = alat masak, if/elif/else = keputusan, loop = pengulangan, list/dict = tempat menyimpan bahan banyak, fungsi = resep yang bisa dipakai ulang.",
+      "insight": "Saat kamu bisa menggabungkan semua ini, kamu sebenarnya sedang membangun 'mesin pemecah masalah' yang rapi di Python."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini Python",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Variabel",
+          "definition": "wadah untuk menyimpan nilai",
+          "example": "nama = \"Budi\""
+        },
+        {
+          "term": "Integer (int)",
+          "definition": "bilangan bulat",
+          "example": "umur = 20"
+        },
+        {
+          "term": "Float",
+          "definition": "bilangan desimal",
+          "example": "tinggi = 175.5"
+        },
+        {
+          "term": "String",
+          "definition": "teks diapit tanda kutip",
+          "example": "pesan = \"Halo Dunia\""
+        },
+        {
+          "term": "Boolean",
+          "definition": "nilai logika True atau False",
+          "example": "is_student = True"
+        },
+        {
+          "term": "if/elif/else",
+          "definition": "struktur kontrol untuk keputusan",
+          "example": "if nilai >= 90: ..."
+        },
+        {
+          "term": "for loop",
+          "definition": "pengulangan berdasarkan urutan/range",
+          "example": "for i in range(5): ..."
+        },
+        {
+          "term": "while loop",
+          "definition": "pengulangan selama kondisi bernilai True",
+          "example": "while count < 3: ..."
+        },
+        {
+          "term": "List",
+          "definition": "kumpulan data urut yang bisa diubah",
+          "example": "buah = [\"Apel\", \"Jeruk\"]"
+        },
+        {
+          "term": "Tuple",
+          "definition": "kumpulan data urut yang tidak bisa diubah",
+          "example": "koordinat = (10, 20)"
+        },
+        {
+          "term": "Dictionary",
+          "definition": "kumpulan pasangan kunci dan nilai",
+          "example": "user = {\"nama\": \"Andi\", \"usia\": 25}"
+        },
+        {
+          "term": "Fungsi (def)",
+          "definition": "blok kode yang berjalan saat dipanggil",
+          "example": "def sapa(nama): return ..."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Python diciptakan oleh siapa dan pada tahun berapa?",
+      "options": [
+        "Steve Jobs, 1998",
+        "Guido van Rossum, 1991",
+        "Mark Zuckerberg, 2004",
+        "James Gosling, 1995"
+      ],
+      "answer": "Guido van Rossum, 1991",
+      "explanation": "Python dibuat oleh Guido van Rossum dan dirilis pada tahun 1991.",
+      "xpReward": 50
+    },
+    {
+      "question": "Manakah yang termasuk tipe data String di Python?",
+      "options": [
+        "10",
+        "3.14",
+        "\"Halo Dunia\"",
+        "True"
+      ],
+      "answer": "\"Halo Dunia\"",
+      "explanation": "String adalah teks yang diapit tanda kutip, contoh \"Halo Dunia\".",
+      "xpReward": 50
+    },
+    {
+      "question": "Operator ** digunakan untuk apa di Python?",
+      "options": [
+        "Penjumlahan",
+        "Perpangkatan",
+        "Pembagian",
+        "Pengurangan"
+      ],
+      "answer": "Perpangkatan",
+      "explanation": "Operator ** berarti pangkat, contoh 5 ** 2 = 25.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika nilai = 80, output grade yang benar adalah apa (berdasarkan aturan: >=90 A, >=75 B, selain itu C)?",
+      "options": [
+        "Grade: A",
+        "Grade: B",
+        "Grade: C",
+        "Tidak ada output"
+      ],
+      "answer": "Grade: B",
+      "explanation": "80 tidak memenuhi >=90, tapi memenuhi >=75, jadi Grade: B.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa perbedaan utama for dan while?",
+      "options": [
+        "for untuk keputusan, while untuk data",
+        "for untuk perulangan jumlah tertentu, while untuk perulangan selama kondisi True",
+        "for selalu berjalan infinite, while selalu berhenti",
+        "for hanya bisa dipakai dengan dictionary"
+      ],
+      "answer": "for untuk perulangan jumlah tertentu, while untuk perulangan selama kondisi True",
+      "explanation": "for biasanya memakai range atau urutan, sedangkan while bergantung pada kondisi boolean.",
+      "xpReward": 50
+    },
+    {
+      "question": "Manakah yang benar tentang list dan tuple di Python?",
+      "options": [
+        "List tidak bisa diubah, tuple bisa diubah",
+        "Tuple tidak bisa diubah, list bisa diubah",
+        "Keduanya tidak bisa diubah",
+        "Keduanya selalu sama persis"
+      ],
+      "answer": "Tuple tidak bisa diubah, list bisa diubah",
+      "explanation": "List bersifat mutable (bisa diubah), tuple bersifat immutable (tidak bisa diubah).",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa fungsi keyword def dalam Python?",
+      "options": [
+        "Membuat variabel baru",
+        "Membuat fungsi baru",
+        "Membuat komentar",
+        "Menghentikan program"
+      ],
+      "answer": "Membuat fungsi baru",
+      "explanation": "def digunakan untuk mendefinisikan function.",
+      "xpReward": 50
+    },
+    {
+      "question": "Dictionary di Python menggunakan struktur apa?",
+      "options": [
+        "[ ] untuk index angka",
+        "( ) untuk pasangan",
+        "{ } untuk pasangan kunci dan nilai",
+        "< > untuk tag"
+      ],
+      "answer": "{ } untuk pasangan kunci dan nilai",
+      "explanation": "Dictionary memakai kurung kurawal { } berisi kunci: nilai.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika count = 0 dan kode while count < 3: ... count += 1 dijalankan, berapa kali baris print di dalam while akan tampil?",
+      "options": [
+        "2 kali",
+        "3 kali",
+        "4 kali",
+        "Tidak akan tampil"
+      ],
+      "answer": "3 kali",
+      "explanation": "count bernilai 0,1,2 (saat itu < 3). Setelah jadi 3, kondisi gagal, jadi total 3 kali.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Python itu bahasa pemrograman tingkat tinggi yang dirancang agar…",
+      "answer": "mudah dibaca dan dipelajari.",
+      "emoji": "🐍",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Sebutkan 4 tipe data dasar yang sering dipakai di materi ini!",
+      "answer": "Integer (int), Float, String, Boolean.",
+      "emoji": "📦",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa itu integer di Python?",
+      "answer": "Bilangan bulat, contoh 10 dan -5.",
+      "emoji": "🔢",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa itu float di Python?",
+      "answer": "Bilangan desimal, contoh 3.14 dan 2.0.",
+      "emoji": "➗",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Bagaimana cara menulis string yang benar di Python?",
+      "answer": "Diapit kutip, misal \"Halo Dunia\".",
+      "emoji": "💬",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Operator apa untuk perpangkatan?",
+      "answer": "**",
+      "emoji": "⚡",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Kapan kamu lebih cocok memakai for loop?",
+      "answer": "Saat kamu tahu jumlah iterasinya atau punya urutan/range.",
+      "emoji": "🔁",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa beda list dan tuple?",
+      "answer": "List bisa diubah (mutable), tuple tidak bisa diubah (immutable).",
+      "emoji": "🗂️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Dictionary di Python menyimpan apa?",
+      "answer": "Pasangan kunci dan nilai (key-value).",
+      "emoji": "🗄️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Untuk apa keyword return dalam fungsi?",
+      "answer": "Mengembalikan hasil dari fungsi ke bagian kode yang memanggil.",
+      "emoji": "↩️",
+      "difficulty": "medium"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama: fondasi Python dari variabel sampai konsep kontrol dasar.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi ini membahas fondasi pemrograman Python untuk pemula, dari pengenalan bahasa, konsep dasar variabel dan tipe data, operator, struktur kontrol percabangan (if/elif/else), perulangan (for/while), struktur data (list/tuple/dictionary), hingga fungsi (function) menggunakan def dan return. Tutor sebaiknya memandu peserta didik dengan gaya yang ramah seperti belajar bareng teman: mulai dari memahami “apa itu Python”, lalu langsung menghubungkannya ke contoh kode sederhana, dan mengulang latihan dengan mengubah nilai agar peserta merasakan efeknya. Tutor juga perlu menekankan bahwa Python dibuat agar mudah dibaca dan dipelajari, sehingga peserta tidak terlalu takut pada sintaks di awal.\n\nBagian 1: Pengenalan Python. Tutor menjelaskan bahwa Python adalah bahasa pemrograman tingkat tinggi yang didesain agar mudah dibaca. Disebut juga bahwa Python diciptakan oleh Guido van Rossum pada tahun 1991. Jelaskan kenapa Python populer: (1) sintaksnya sederhana dan mirip bahasa Inggris sehingga pembaca pemula lebih mudah memahami maksud kode, (2) komunitas besar dan pustaka/library lengkap yang membuat banyak masalah bisa diselesaikan cepat, (3) multi-platform (Windows, Mac, Linux) sehingga peserta tidak terikat satu sistem. Tutor bisa menegaskan bahwa belajar Python ibarat membuka pintu ke banyak bidang: Data Science, AI, dan pengembangan web.\n\nBagian 2: Variabel dan Tipe Data. Tutor mengajarkan bahwa variabel itu wadah untuk menyimpan data. Peserta tidak perlu mendeklarasikan tipe data secara eksplisit karena Python bersifat dinamis (tipe ditentukan berdasarkan nilai). Tipe dasar yang harus dipahami: Integer untuk bilangan bulat (contoh 10, -5), Float untuk bilangan desimal (3.14, 2.0), String untuk teks diapit kutip (\"Halo Dunia\"), dan Boolean untuk logika True/False. Materi juga memberi contoh variabel: nama = \"Budi\", umur = 20, tinggi = 175.5, is_student = True. Tutor perlu menekankan output bisa dibuat dengan print, termasuk format menggunakan f-string seperti print(f\"Nama: {nama}, Umur: {umur}\") agar peserta melihat cara memasukkan variabel ke teks.\n\nBagian 3: Operator Dasar. Tutor menerangkan bahwa operator melakukan operasi pada variabel dan nilai. Operator yang ada di materi: + penjumlahan, - pengurangan, * perkalian, / pembagian (contoh 5 / 2 = 2.5), dan ** perpangkatan (contoh 5 ** 2 = 25). Tutor sebaiknya memberi penekanan khusus pada perpangkatan karena operator ini berbeda dari banyak bahasa lain yang mungkin memakai pow(). Di kelas, tutor bisa meminta peserta memprediksi hasil terlebih dahulu sebelum menjalankan kode.\n\nBagian 4: Struktur Kontrol Percabangan. Tutor menjelaskan penggunaan if, elif, else untuk membuat keputusan. Materi contoh grade: nilai = 85; jika nilai >= 90 maka print \"Grade: A\"; elif nilai >= 75 print \"Grade: B\"; else print \"Grade: C\". Tutor sebaiknya menekankan pentingnya urutan kondisi dari yang paling besar ke yang lebih kecil agar logika benar, dan juga pentingnya indentasi karena Python menggunakan whitespace untuk blok kode. Tutor bisa menambahkan pertanyaan reflektif: “Kalau nilai 90, masuk kategori apa? Kalau 74, masuk mana?”\n\nBagian 5: Perulangan (Loops). Tutor menjelaskan dua jenis utama: for dan while. Untuk for, materi menunjukkan: for i in range(5): print(f\"Iterasi ke-{i}\"). Tutor perlu menjelaskan bahwa range(5) menghasilkan angka 0 sampai 4, sehingga iterasi ada 5 kali. Untuk while, materi menunjukkan: count = 0; while count < 3: print(\"Halo!\"); count += 1. Tutor perlu mengingatkan bahwa while butuh perubahan kondisi (count += 1) supaya loop berhenti; kalau tidak, program bisa berjalan terus (infinite loop). Tutor bisa mengajak peserta mengubah batas atau nilai awal count untuk melihat dampak.\n\nBagian 6: Struktur Data List, Tuple, Dictionary. Tutor menjelaskan bahwa struktur data digunakan untuk menyimpan koleksi data dalam satu variabel. List: terurut dan bisa diubah, contoh buah = [\"Apel\", \"Jeruk\"]. Tuple: terurut tetapi tidak bisa diubah, contoh koordinat = (10, 20). Dictionary: pasangan kunci dan nilai, contoh user = {\"nama\": \"Andi\", \"usia\": 25}. Tutor bisa memberi analogi: list seperti daftar, tuple seperti stiker yang tidak boleh ditempel ulang/diubah, dictionary seperti formulir dengan label kunci (nama/usia) dan isinya.\n\nBagian 7: Fungsi (Function). Tutor menjelaskan bahwa fungsi adalah blok kode yang berjalan hanya saat dipanggil. Materi memberi contoh def sapa(nama): return f\"Halo, {nama}! Selamat belajar Python.\" lalu pesan = sapa(\"Andi\") dan print(pesan). Tutor perlu menekankan dua hal: def untuk mendefinisikan fungsi, return untuk mengembalikan hasil. Jelaskan manfaat fungsi: membuat kode rapi, bisa dipakai ulang, dan memudahkan debugging.\n\nBagian 8: Penutup. Tutor menegaskan bahwa Python sangat luas dan materi ini adalah fondasi. Langkah selanjutnya yang disebut: mempelajari library seperti NumPy (matematika), Pandas (data), dan Django (web). Tutor bisa mengarahkan peserta ke ide: “setelah kamu kuat di dasar, library akan membuat kamu jauh lebih cepat menyelesaikan proyek nyata.”\n\nSelama mengajar, tutor sebaiknya: (1) menautkan konsep dengan contoh kode pendek, (2) meminta peserta memodifikasi nilai agar memahami perubahan output, (3) menggunakan bahasa sederhana dan ramah, (4) menekankan kebiasaan indentasi benar untuk if/while, dan (5) memastikan peserta memahami hubungan antar konsep: variabel dan tipe data adalah “bahan”, operator adalah “alat”, if/loop adalah “cara mengambil keputusan dan pengulangan”, struktur data adalah “wadah kumpulan”, dan fungsi adalah “resep yang bisa dipakai ulang”."
+}
