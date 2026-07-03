@@ -1,0 +1,378 @@
+{
+  "title": "Pemrograman Web Dasar: HTML, CSS, JavaScript, dan PHP (Fondasi Ngebangun Website)",
+  "summary": "Kamu akan belajar fondasi pemrograman web dari sejarah web sampai cara menggabungkan HTML, CSS, JavaScript, dan PHP untuk membuat aplikasi web dinamis. Materinya dibuat dari konsep inti + latihan praktis agar kamu cepat bisa memegang alur berpikir web.",
+  "emoji": "🌐",
+  "color": "#3b82f6",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Apa itu Pemrograman Web dan Kenapa Penting?",
+      "icon": "🚀",
+      "explanation": "Pemrograman web adalah cara membuat dan mengatur perilaku situs/aplikasi di browser dan di server. Intinya kamu mengkombinasikan struktur (HTML), tampilan (CSS), interaksi (JavaScript), dan pengolahan data (PHP) supaya web terasa hidup dan berguna.",
+      "analogy": "Bayangin web itu seperti warung: HTML = kerangka bangunan, CSS = gaya dekorasi, JavaScript = pelayan yang merespons pesanan, PHP = koki yang memasak dan mengolah bahan.",
+      "highlight": "HTML-CSS-JS-PHP = paket lengkap web",
+      "keyPoints": [
+        "Web butuh struktur, tampilan, interaksi, dan data",
+        "Frontend berjalan di browser, backend berjalan di server",
+        "Tujuan akhirnya: web dinamis yang responsif dan berguna"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Struktur Dasar Situs Web: Client-Server",
+      "icon": "🧑‍💻",
+      "explanation": "Saat kamu membuka situs, browser mengirim permintaan ke web server. Server memproses (misal: butuh PHP, akses data, validasi), lalu mengirim balasan ke browser untuk ditampilkan.",
+      "analogy": "Kamu pesan makanan lewat aplikasi: pesanan kamu (request) dikirim ke restoran (server), lalu restoran mengirimkan makanan jadi (response) ke kamu.",
+      "highlight": "Request-Response",
+      "keyPoints": [
+        "Browser = client yang meminta konten",
+        "Server = pihak yang memproses dan mengirim hasil",
+        "Interaksi dinamis biasanya melibatkan backend (PHP)"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Peta Materi: Dari HTML sampai Proyek Dinamis",
+      "icon": "🗺️",
+      "items": [
+        {
+          "label": "HTML",
+          "value": "Struktur halaman (tag, teks, gambar, link, form, table, list, semantik)",
+          "icon": "🧱"
+        },
+        {
+          "label": "CSS",
+          "value": "Stil: background, margin/padding, border, layout, responsif, animasi, framework",
+          "icon": "🎨"
+        },
+        {
+          "label": "JavaScript",
+          "value": "Logika & interaksi: variabel, tipe data, fungsi, loop, DOM, events, validasi, jQuery",
+          "icon": "⚡"
+        },
+        {
+          "label": "PHP",
+          "value": "Backend: variabel/fungsi/operator, form GET vs POST, validasi, keamanan, OOP",
+          "icon": "🧠"
+        },
+        {
+          "label": "Integrasi",
+          "value": "Gabungkan frontend-backend untuk form interaktif & aplikasi dinamis",
+          "icon": "🧩"
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Mini Validator Form dengan JavaScript (DOM + Event)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode ini. Coba ubah nilai awal di inputData, lalu lihat apakah validasi lulus. Ini latihan konsep validasi sederhana + event logic (secara konsep).",
+      "fileName": "validator.js",
+      "defaultCode": "function validateForm(data){ const errors = []; if(!data.name || data.name.trim().length < 3){ errors.push('Nama minimal 3 karakter'); } if(!data.email || !data.email.includes('@')){ errors.push('Email harus mengandung @'); } if(!data.password || data.password.length < 6){ errors.push('Password minimal 6 karakter'); } return { ok: errors.length === 0, errors }; } const inputData = { name: 'Dio', email: 'dioexample.com', password: '12345' }; const result = validateForm(inputData); console.log('Validasi ok?', result.ok); console.log('Error:', result.errors);",
+      "hint": "Tantangan: ubah email jadi 'nama@domain.com' dan password minimal 6 karakter, pastikan result.ok menjadi true."
+    },
+    {
+      "type": "step_by_step",
+      "title": "Langkah Membuat Form Interaktif (HTML + CSS + JS + PHP)",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Buat struktur form di HTML",
+          "description": "Gunakan tag form dan elemen input seperti text/email/password. Tetapkan method (GET atau POST) sesuai kebutuhan.",
+          "tip": "Untuk latihan, mulai dari field nama, email, dan password."
+        },
+        {
+          "number": 2,
+          "title": "Styling agar rapi pakai CSS",
+          "description": "Atur margin, padding, border, background. Buat layout yang enak dibaca dan responsif.",
+          "tip": "Coba gunakan kelas untuk input dan tombol."
+        },
+        {
+          "number": 3,
+          "title": "Interaksi & validasi pakai JavaScript",
+          "description": "Tangkap input, cek aturan minimal (misal nama >= 3 karakter, email mengandung '@').",
+          "tip": "Latih konsep DOM dan event handling (addEventListener)."
+        },
+        {
+          "number": 4,
+          "title": "Proses data di backend (PHP)",
+          "description": "PHP membaca data dari form, melakukan validasi ulang, mengamankan proses, lalu menyiapkan response.",
+          "tip": "Ingat validasi harus dilakukan juga di server."
+        },
+        {
+          "number": 5,
+          "title": "Redirect atau tampilkan hasil",
+          "description": "Setelah diproses, arahkan ke halaman sukses atau tampilkan pesan hasil.",
+          "tip": "Untuk konsep: redirect setelah form diproses."
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "HTML: Tag, Elemen, dan Semantik untuk SEO",
+      "icon": "🧱",
+      "explanation": "HTML membangun struktur halaman dengan elemen dan tag. Materi fokus pada membuat teks, gambar, link (hyperlink), form, input, table, list, serta semantik list/table agar membantu SEO dan keterbacaan.",
+      "analogy": "HTML itu daftar isi dan kerangka draft: sebelum dihias dan dibuat cantik, kamu butuh susunan yang benar.",
+      "highlight": "Semantik = makna untuk mesin pencari dan aksesibilitas",
+      "keyPoints": [
+        "Tag menyusun konten (teks, gambar, link, form)",
+        "Form butuh input dan atribut penting",
+        "Table/list bisa dibuat detail dan semantik untuk SEO"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "DOM Mini: Ubah Konten Saat Tombol Diklik (Konsep JS Web)",
+      "icon": "🧠",
+      "language": "html",
+      "instruction": "Buka file HTML ini di browser. Klik tombol untuk mengubah teks di halaman. Ini latihan konsep DOM dan event handling.",
+      "fileName": "dom-button.html",
+      "defaultCode": "<!DOCTYPE html><html lang=\"id\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>DOM + Event Demo</title><style>body{font-family:Arial, sans-serif; padding:24px;} .card{max-width:520px; margin:0 auto; border:1px solid #ddd; border-radius:12px; padding:16px;} button{padding:10px 14px; border:none; border-radius:10px; background:#3b82f6; color:white; cursor:pointer;} button:active{transform:scale(0.99);} #status{margin-top:12px; font-weight:700;}</style></head><body><div class=\"card\"><h1>Interaksi Web Sederhana</h1><p>Klik tombol untuk mengubah isi teks (DOM) lewat event.</p><button id=\"btn\">Klik Aku</button><div id=\"status\">Status: belum ada aksi</div></div><script>const btn = document.getElementById('btn'); const status = document.getElementById('status'); btn.addEventListener('click', function(){ status.textContent = 'Status: tombol sudah diklik!'; });</script></body></html>",
+      "hint": "Tantangan: ganti teks status menjadi menampilkan hitungan klik (count)."
+    },
+    {
+      "type": "concept_card",
+      "title": "CSS: Styling dari Background sampai Responsif",
+      "icon": "🎨",
+      "explanation": "CSS mengatur tampilan: background (color, image, repeat, position, size, attachment, clip, shorthand), spacing (margin/padding), border (dasar, per sisi, radius, shorthand, border-image), styling teks dan layout, hingga desain responsif dengan media queries dan unit responsif. Ada juga animasi dasar (transisi dan keyframes) dan framework seperti Bootstrap/Tailwind/Bulma.",
+      "analogy": "Kalau HTML itu kerangka, CSS itu seperti baju dan make-up: warnanya, jaraknya, bentuknya, dan bagaimana tampil di layar kecil/besar.",
+      "highlight": "Responsif = web nyaman dipakai di HP & laptop",
+      "keyPoints": [
+        "Selector-property-value adalah pola inti CSS",
+        "Background, margin/padding, border membentuk tampilan kuat",
+        "Media queries + unit responsif buat layout adaptif"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "JavaScript: Variabel, Fungsi, Loop, DOM, dan Event",
+      "icon": "⚡",
+      "explanation": "JavaScript memberi kemampuan berpikir dan interaksi di browser: mulai dari variabel dan tipe data, fungsi, perulangan, manipulasi DOM (navigasi elemen di halaman), lalu event handling dengan addEventListener. Kamu juga belajar validasi sederhana dan pengenalan jQuery untuk menyederhanakan manipulasi DOM, event, efek animasi, hingga AJAX.",
+      "analogy": "JavaScript itu otak pelayan: ia membaca pesanan (event), memproses logika (fungsi/loop), lalu mengubah tampilan (DOM).",
+      "highlight": "DOM + Event = web terasa interaktif",
+      "keyPoints": [
+        "Event handling menentukan kapan aksi terjadi",
+        "DOM memungkinkan JS mengubah halaman",
+        "Validasi sederhana bisa mencegah input tidak valid sejak awal"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "PHP: Backend untuk Proses Form dan Data",
+      "icon": "🧠",
+      "explanation": "PHP adalah bahasa server-side untuk mengolah data dan menggerakkan backend. Materi mencakup struktur dasar, variabel, fungsi, operator, cara mengolah form dengan GET vs POST, validasi data form, pengamanan pengolahan, redirect setelah proses, serta pengenalan OOP (pemrograman berbasis objek).",
+      "analogy": "PHP itu bagian dapur: browser hanya mengantar bahan (request), dapur yang memasak sesuai aturan (validasi & pengolahan), lalu hasilnya dikirim kembali.",
+      "highlight": "Validasi di server wajib (jangan cuma di browser)",
+      "keyPoints": [
+        "GET untuk query, POST untuk kirim data form lebih tertata",
+        "Server validasi ulang sebelum menyimpan/proses",
+        "Redirect memberi alur user setelah submit"
+      ]
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini yang Sering Muncul",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "HTML",
+          "definition": "Bahasa untuk struktur konten halaman web menggunakan tag dan elemen.",
+          "example": "Menggunakan <form>, <input>, <a>."
+        },
+        {
+          "term": "CSS",
+          "definition": "Bahasa untuk mengatur tampilan (warna, layout, ukuran, border, responsif).",
+          "example": "Menggunakan selector seperti .card dan properti background-color."
+        },
+        {
+          "term": "DOM",
+          "definition": "Model objek dokumen yang mewakili struktur halaman agar JavaScript bisa membacanya dan mengubahnya.",
+          "example": "document.getElementById('status').textContent = '...'."
+        },
+        {
+          "term": "Event Handling",
+          "definition": "Mekanisme menjalankan kode ketika ada aksi seperti klik, submit, input berubah.",
+          "example": "btn.addEventListener('click', ...)."
+        },
+        {
+          "term": "GET vs POST",
+          "definition": "Dua metode pengiriman data form ke server: GET biasanya di URL, POST di body request.",
+          "example": "form method='post' untuk kirim data sensitif."
+        },
+        {
+          "term": "SEO (semantik)",
+          "definition": "Praktik membuat struktur konten mudah dipahami mesin pencari dan pengguna.",
+          "example": "Menggunakan struktur table/list yang benar dan semantik."
+        }
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "Web Dinamis Itu Bukan Sekadar Halaman Statis",
+      "icon": "💡",
+      "realWorld": "Kamu melihat form pendaftaran: sebelum diklik, halaman biasa saja. Setelah kamu isi dan submit, sistem merespons dengan validasi dan hasil.",
+      "connection": "Itu kombinasi HTML (form), CSS (tampilan), JavaScript (validasi/interaksi), dan PHP (proses data + redirect/response).",
+      "insight": "Web dinamis berarti ada proses dan logika di balik layar, bukan cuma tampil lalu berhenti."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Mana pasangan yang paling tepat untuk fungsi berikut: HTML untuk struktur, CSS untuk tampilan, JavaScript untuk interaksi, PHP untuk proses data di server?",
+      "options": [
+        "HTML-CSS-JS-PHP: sesuai",
+        "HTML-PHP-JS-CSS",
+        "CSS-HTML-PHP-JS",
+        "JS-JS-JS-JS"
+      ],
+      "answer": "HTML-CSS-JS-PHP: sesuai",
+      "explanation": "Materi menempatkan HTML sebagai struktur, CSS sebagai styling, JavaScript untuk interaksi di browser, dan PHP sebagai backend untuk pengolahan data di server.",
+      "xpReward": 50
+    },
+    {
+      "question": "Saat tombol di browser diklik dan kode JavaScript dijalankan, itu disebut apa?",
+      "options": [
+        "Event handling",
+        "Caching CSS",
+        "Static rendering",
+        "SEO image map"
+      ],
+      "answer": "Event handling",
+      "explanation": "Klik adalah event, dan addEventListener adalah cara menangani event agar menjalankan fungsi tertentu.",
+      "xpReward": 50
+    },
+    {
+      "question": "DOM dalam JavaScript paling tepat dipahami sebagai...",
+      "options": [
+        "Model struktur halaman agar JS bisa mengakses dan mengubah elemen",
+        "Bahasa styling untuk membuat background",
+        "Sistem database untuk menyimpan data",
+        "Aturan penulisan nama file PHP"
+      ],
+      "answer": "Model struktur halaman agar JS bisa mengakses dan mengubah elemen",
+      "explanation": "DOM adalah representasi objek dari dokumen HTML yang memungkinkan manipulasi elemen oleh JavaScript.",
+      "xpReward": 50
+    },
+    {
+      "question": "Validasi form seharusnya dilakukan di mana saja?",
+      "options": [
+        "Hanya di browser (JavaScript saja)",
+        "Hanya di server (PHP saja)",
+        "Di browser dan di server",
+        "Tidak perlu validasi, asal UI menarik"
+      ],
+      "answer": "Di browser dan di server",
+      "explanation": "JavaScript bisa membantu UX dengan validasi cepat, tapi server (PHP) tetap harus memvalidasi ulang untuk keamanan.",
+      "xpReward": 50
+    },
+    {
+      "question": "Dalam konteks form, method GET paling tepat dipahami sebagai...",
+      "options": [
+        "Data biasanya terlihat di URL sebagai query string",
+        "Data selalu terenkripsi otomatis",
+        "Data hanya bisa dipakai untuk file upload",
+        "Tidak bisa mengirim data ke server"
+      ],
+      "answer": "Data biasanya terlihat di URL sebagai query string",
+      "explanation": "Secara umum GET mengirim data lewat URL/query string, sedangkan POST mengirim di body request.",
+      "xpReward": 50
+    },
+    {
+      "question": "Fungsi utama CSS adalah...",
+      "options": [
+        "Mengatur struktur dokumen",
+        "Mengatur tampilan dan layout",
+        "Memproses request di server",
+        "Menghasilkan halaman HTML dari database"
+      ],
+      "answer": "Mengatur tampilan dan layout",
+      "explanation": "CSS berfokus pada styling: warna, border, margin/padding, layout, responsif, dan animasi.",
+      "xpReward": 50
+    },
+    {
+      "question": "Manakah contoh yang paling sesuai dengan konsep perulangan (loop) dalam JavaScript?",
+      "options": [
+        "Mengulang eksekusi logika untuk tiap item data",
+        "Mengubah warna teks menggunakan CSS",
+        "Mengirim query database",
+        "Mendefinisikan style keyframes saja"
+      ],
+      "answer": "Mengulang eksekusi logika untuk tiap item data",
+      "explanation": "Loop dipakai untuk menjalankan blok kode berulang berdasarkan kondisi atau jumlah iterasi.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika kamu ingin web tetap nyaman dipakai di HP dan laptop, yang paling relevan adalah...",
+      "options": [
+        "Desain responsif dengan media queries",
+        "Menghapus semua ukuran font",
+        "Mengunci layout hanya satu ukuran",
+        "Menghindari CSS"
+      ],
+      "answer": "Desain responsif dengan media queries",
+      "explanation": "Materi membahas responsif dengan media queries, unit responsif, dan teknik desain responsif.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa peran HTML dalam website?",
+      "answer": "HTML membentuk struktur konten halaman dengan tag dan elemen.",
+      "emoji": "🧱",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa peran CSS?",
+      "answer": "CSS mengatur tampilan seperti warna, margin/padding, border, layout, dan responsif.",
+      "emoji": "🎨",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa itu DOM?",
+      "answer": "DOM adalah representasi struktur halaman yang memungkinkan JavaScript mengakses dan mengubah elemen.",
+      "emoji": "🧠",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa itu addEventListener?",
+      "answer": "Metode untuk mendaftarkan fungsi agar dipanggil saat event tertentu terjadi (misal klik).",
+      "emoji": "⚡",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Validasi form sebaiknya hanya di browser atau juga di server?",
+      "answer": "Tidak cukup hanya di browser; server (PHP) harus validasi ulang untuk keamanan.",
+      "emoji": "🔒",
+      "difficulty": "medium"
+    },
+    {
+      "question": "GET dan POST bedanya secara konsep apa?",
+      "answer": "GET biasanya mengirim data lewat URL/query string, POST mengirim data lewat body request.",
+      "emoji": "🧾",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa yang dimaksud desain responsif?",
+      "answer": "Desain yang menyesuaikan tampilan pada berbagai ukuran layar menggunakan teknik seperti media queries.",
+      "emoji": "📱",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Kenapa semantik HTML penting untuk SEO?",
+      "answer": "Semantik membantu mesin pencari dan aksesibilitas memahami makna konten, termasuk struktur table/list.",
+      "emoji": "🔎",
+      "difficulty": "hard"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama dan latihan interaktif fondasi web.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi pada PDF ini memperkenalkan perjalanan “Pengantar Pemrograman Web Dasar” yang membangun fondasi untuk pemula. Bagian awal memuat konteks penting tentang dunia digital dan alasan kenapa pemrograman web menjadi keterampilan yang dibutuhkan di berbagai industri. Penulis menekankan bahwa pembelajaran tidak hanya memperkenalkan konsep, tetapi juga membimbing pembaca langkah demi langkah dengan pendekatan praktis serta contoh yang relevan.\n\nSebelum masuk ke teknis, materi juga memuat daftar isi yang menunjukkan cakupan topik dari Bab 1 sampai Bab 6. Bab 1 membahas pengantar pemrograman web: (1) sejarah dan perkembangan web, (2) apa itu pemrograman web, (3) struktur dasar sebuah situs web, (4) bahasa-bahasa pemrograman web, dan (5) tool serta software pengembangan web. Bagian “struktur dasar situs web” biasanya mengarah pada cara berpikir client-server: browser sebagai client yang meminta konten, web server sebagai pihak yang merespons. Bahkan dari daftar gambar disebutkan “cara kerja web server”, yang menjadi pengantar penting untuk memahami bahwa web bukan hanya tampilan, tetapi ada mekanisme request-response.\n\nBab 2 fokus pada HTML (Hyper Text Markup Language). Kamu belajar pengenalan HTML dan struktur dasar HTML, lalu elemen dan tag HTML. Setelah itu materi mengarah ke pembuatan teks, gambar, dan link (hyperlink). Ada subbagian yang menekankan pembuatan dan pengaturan teks, penyisipan gambar, serta pembuatan link. Kemudian materi masuk ke konsep form (formulir) yang sangat fundamental dalam web interaktif: struktur dasar form HTML, elemen input dalam form, atribut penting pada input, dan validasi form. Materi juga membahas penerapan table dan list (termasuk detail lanjutan). Ini penting karena banyak halaman web menampilkan data dalam bentuk tabel dan daftar. Materi menutup Bab 2 dengan HTML5: fitur baru, lalu rangkuman. Dalam pembelajaran tutor, tekankan juga semantik list dan table untuk SEO: bukan hanya tampilan yang benar, tetapi struktur yang memiliki makna.\n\nBab 3 membahas CSS (Cascading Style Sheets). CSS diajarkan dari konsep dasar: struktur dasar CSS yang biasanya terdiri dari selector, property, dan value. Lalu materi memandu properti latar belakang (background-color, background-image, background-repeat, background-position, background-size, background-attachment, background-clip, serta background shorthand). Setelah itu dibahas margin dan padding karena keduanya membentuk jarak dan “napas” layout. Berikutnya properti border: border dasar, border per sisi, border-radius, border shorthand (border), dan border-image. Kemudian ada styling teks dan layout, lalu desain responsif: media queries, unit responsif, dan teknik desain responsif. Untuk memberi web lebih hidup, materi menambahkan animasi dasar dengan CSS: transisi, animasi kunci (keyframes), dan teknik animasi. Terakhir Bab 3 membahas frameworks CSS, terutama Bootstrap, Tailwind CSS, Bulma, dan Foundation sebagai opsi percepatan pembuatan UI.\n\nBab 4 masuk ke JavaScript (JS), yaitu bahasa untuk logika dan interaksi. Materi memulai dengan pengenalan JavaScript, struktur dasar, variabel, tipe data, dan fungsi. Lalu membahas perulangan (loop) untuk mengulang proses untuk banyak data. Setelah itu JavaScript dihubungkan dengan web melalui navigasi dan manipulasi elemen DOM. Ini inti agar halaman HTML yang statis menjadi interaktif. Lalu masuk ke event handling: sintaks addEventListener, contoh sederhana, mengelola event dengan fungsi terpisah, menghapus event listener, menangani event dengan parameter, dan penggunaan useCapture untuk fase event. Materi juga menyertakan validasi sederhana. Ada juga pengenalan jQuery: alasan menggunakan jQuery, cara mengimpor, sintaks dasar memilih elemen DOM, manipulasi DOM, penanganan event, efek animasi, dan AJAX. Pada tutor, jelaskan bahwa jQuery membantu mempercepat tugas-tugas tertentu, terutama pada masa awal web, meskipun konsep intinya tetap tentang DOM dan event.\n\nBab 5 membahas PHP (Hypertext Preprocessor) sebagai backend. Materi memuat pengenalan PHP, instalasi dan setup, struktur dasar PHP, lalu variabel, fungsi, dan operator. Fokus penting ada pada pengolahan form dengan PHP: metode GET vs POST, mengambil data form menggunakan POST dan GET, validasi data form, pengamanan pengolahan form agar tidak mudah disalahgunakan, serta redirect setelah form diproses. Materi juga memperkenalkan OOP (Object Oriented Programming) di PHP. Tutor perlu menekankan bahwa server-side validation dan keamanan itu krusial: JavaScript bisa memvalidasi cepat, tetapi server harus tetap menjadi “penjaga utama”.\n\nBab 6 adalah integrasi: menggabungkan HTML, CSS, JavaScript, dan PHP. Materi mencakup cara mengintegrasikan HTML dengan CSS, menghubungkan HTML dengan CSS, serta interaksi JavaScript dengan HTML melalui DOM. Lalu dibahas komunikasi antara frontend dan backend: bagaimana data dari halaman (frontend) diproses oleh server (backend). Materi juga memberikan proyek sederhana: formulir interaktif. Bagian ini mencakup desain formulir dengan HTML dan CSS, interaksi dengan JavaScript, lalu pembangunan aplikasi web dinamis yang memakai API (konsep), backend dinamis dengan PHP, dan rangkuman.\n\nCatatan penting untuk tutor: karena PDF yang diberikan hanya menampilkan cuplikan teks dan daftar isi, tutor harus menjaga pembelajaran tetap konseptual sesuai struktur Bab. Aktivitas hands-on di platform pembelajaran bisa berupa mini validator (validasi sederhana) dan demo DOM event klik, kemudian penguatan konsep GET vs POST serta alur integrasi. Dengan pendekatan tersebut, siswa memahami bahwa web adalah sistem: struktur + tampilan + interaksi + proses data, yang akhirnya menghasilkan pengalaman pengguna yang dinamis dan bermanfaat."
+}

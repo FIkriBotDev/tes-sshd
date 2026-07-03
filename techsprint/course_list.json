@@ -578,5 +578,19 @@
     "courseUrl": "/course/f7b84165670e5ff7d26bbb45b76a1dec",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "5d065b2b11049ca1924493767916a7c2",
+    "courseName": "Pemrograman Web Dasar: HTML, CSS, JavaScript, dan PHP (Fondasi Ngebangun Website)",
+    "courseEmoji": "🌐",
+    "courseColor": "#3b82f6",
+    "courseFileName": "593960-pengantar-pemrograman-web-dasar-0de236de.pdf",
+    "fileType": "pdf",
+    "originalFileName": "593960-pengantar-pemrograman-web-dasar-0de236de.pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "03-07-2026, 06.08.05",
+    "courseUrl": "/course/5d065b2b11049ca1924493767916a7c2",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
