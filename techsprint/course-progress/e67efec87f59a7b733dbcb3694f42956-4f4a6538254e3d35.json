@@ -1,11 +1,11 @@
 {
   "studentId": "4f4a6538254e3d35",
   "courseId": "e67efec87f59a7b733dbcb3694f42956",
-  "scrollProgress": 24,
-  "flashcardsCompleted": 0,
+  "scrollProgress": 0,
+  "flashcardsCompleted": 8,
   "quizCompleted": false,
-  "quizScore": 0,
+  "quizScore": 1,
   "lastBlock": 0,
   "completedBlocks": [],
-  "lastAccess": "03-07-2026, 07.20.23"
+  "lastAccess": "03-07-2026, 07.22.26"
 }
