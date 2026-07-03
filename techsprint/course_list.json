@@ -592,5 +592,19 @@
     "courseUrl": "/course/5d065b2b11049ca1924493767916a7c2",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "e67efec87f59a7b733dbcb3694f42956",
+    "courseName": "Cyber Security & Digital Forensic: Dari Serangan ke Investigasi (Berbasis Konsep Dasar)",
+    "courseEmoji": "🛡️",
+    "courseColor": "#3b82f6",
+    "courseFileName": "Dasar Cyber Security.pdf",
+    "fileType": "pdf",
+    "originalFileName": "Dasar Cyber Security.pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "03-07-2026, 07.17.29",
+    "courseUrl": "/course/e67efec87f59a7b733dbcb3694f42956",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]

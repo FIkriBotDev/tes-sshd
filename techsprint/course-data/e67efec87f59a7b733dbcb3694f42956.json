@@ -1,0 +1,388 @@
+{
+  "title": "Cyber Security & Digital Forensic: Dari Serangan ke Investigasi (Berbasis Konsep Dasar)",
+  "summary": "Kamu akan mempelajari dasar cyber security dan digital forensic lewat peta konsep serangan, motivasinya, serta framework keamanan informasi. Selain itu, kamu juga akan diajak memahami pondasi teknis seperti file system dan jenis serangan pada email, termasuk gambaran praktik investigasi forensik.",
+  "emoji": "🛡️",
+  "color": "#3b82f6",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Peta Dasar: Cyber Security vs Digital Forensic",
+      "icon": "🧭",
+      "explanation": "Cyber security itu fokus mencegah dan mengurangi risiko serangan siber. Digital forensic fokus pada proses menemukan bukti digital, menganalisisnya, lalu menyusun temuan agar bisa dipertanggungjawabkan. Jadi satu sisi melindungi, sisi lain membuktikan saat insiden terjadi.",
+      "analogy": "Keamanan siber seperti mengunci rumah dan memasang CCTV, sedangkan digital forensic seperti menyelidiki rekaman CCTV dan barang bukti ketika ada pencurian.",
+      "highlight": "Prevent dan Investigate",
+      "keyPoints": [
+        "Cyber security berfokus pada pencegahan, deteksi, dan respons",
+        "Digital forensic berfokus pada pengumpulan bukti dan analisis",
+        "Tujuan akhirnya: kerugian berkurang dan bukti bisa dipahami serta dipercaya"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Motivasi Serangan: Kenapa Penyerang Melakukan Itu?",
+      "icon": "🎯",
+      "explanation": "Serangan siber biasanya punya tujuan yang jelas: mencuri data, mengganggu layanan, merusak sistem, atau mendapatkan keuntungan finansial. Dalam materi ini, kita mempelajari jenis-jenis serangan beserta pola umumnya supaya kamu bisa mengantisipasi dari sisi defender.",
+      "analogy": "Seperti strategi lawan dalam game: kalau kamu tahu musuh ingin menyerang pusat atau kabur dengan loot, kamu bisa menempatkan pertahanan dengan benar.",
+      "highlight": "Tujuan menentukan taktik",
+      "keyPoints": [
+        "Pencurian data dan akses tidak sah bisa jadi motivasi utama",
+        "Gangguan layanan biasanya terkait DoS dan DDoS",
+        "Keuntungan finansial sering muncul pada phishing, fraud, dan ransomware"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Klasifikasi Serangan: Tidak Terstruktur sampai APT",
+      "icon": "🧩",
+      "explanation": "Materi membagi serangan berdasarkan pola dan tingkat kelengkapan. Mulai dari serangan tidak terstruktur yang cenderung menyasar banyak pihak, sampai serangan terstruktur yang lebih terarah. Ada juga serangan tingkat tinggi seperti APT yang berlangsung lama dan fokus pada target spesifik.",
+      "analogy": "Bayangkan ada penjambret: ada yang iseng dan cepat, ada yang terlatih dan menarget individu, ada juga yang membuntuti lama sebelum bertindak.",
+      "highlight": "Semakin terarah, semakin sulit dideteksi",
+      "keyPoints": [
+        "Serangan tidak terstruktur: peluang besar, kontrol rendah",
+        "Serangan terstruktur: lebih rapi dan punya target",
+        "APT: persisten, terukur, dan sering sulit dikenali di awal"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Rekayasa Sosial: Phishing, Spear Phishing, dan Kawan-Kawan",
+      "icon": "🎣",
+      "explanation": "Rekayasa sosial memanfaatkan manusia sebagai titik lemah, bukan duluan menyasar teknis sistem. Phishing biasanya massal, sedangkan spear phishing lebih spesifik menyesuaikan target. Ini sering dipakai untuk credential theft, penipuan, atau membawa korban ke malware.",
+      "analogy": "Sama seperti penipu telepon yang mengaku sebagai bank: yang ditipu bukan 'mesinnya', tapi 'orangnya'.",
+      "highlight": "Manusia sebagai attack surface",
+      "keyPoints": [
+        "Phishing dan spear phishing berfokus pada manipulasi korban",
+        "Tujuan sering: ambil kredensial, akses, atau membuat korban mengklik tautan berbahaya",
+        "Waspada pada urgensi, tautan mencurigakan, dan permintaan data sensitif"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Framework Keamanan Informasi: CIA-A + Nonrepudiation",
+      "icon": "🧱",
+      "explanation": "Framework dasar keamanan informasi mencakup confidentiality (kerahasiaan), integrity (integritas), availability (ketersediaan), serta nonrepudiation (anti-penyangkalan). Autentikasi dan otorisasi membantu memastikan siapa yang boleh melakukan apa, sedangkan keempat pilar ini jadi kompas untuk mengevaluasi keamanan sistem.",
+      "analogy": "Kerahasiaan seperti menjaga agar isi chat tidak bocor, integritas seperti memastikan dokumen tidak diubah diam-diam, ketersediaan seperti aplikasi tidak mogok saat dibutuhkan, dan nonrepudiation seperti bukti transaksi bahwa pengirim memang benar.",
+      "highlight": "Autentikasi, Otorisasi, CIA-A, Nonrepudiation",
+      "keyPoints": [
+        "Autentikasi: membuktikan identitas",
+        "Otorisasi: menentukan hak akses setelah identitas dikenal",
+        "CIA-A plus nonrepudiation: panduan nilai keamanan sistem"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Mindset Defender: Cara Menangani Insiden dari Sudut Pandang Forensik",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Amankan dulu, jangan langsung 'beresin'",
+          "description": "Prioritaskan keselamatan sistem dan data. Jangan hapus log atau mematikan perangkat tanpa rencana investigasi.",
+          "tip": "Catat waktu kejadian dan perangkat yang terlibat sejak awal."
+        },
+        {
+          "number": 2,
+          "title": "Buat daftar bukti potensial",
+          "description": "Identifikasi jejak digital: file, log, metadata, proses, koneksi jaringan, dan perubahan yang terjadi.",
+          "tip": "Bukti sering ada di tempat yang tidak kamu kira, seperti file sementara atau konfigurasi."
+        },
+        {
+          "number": 3,
+          "title": "Koleksi dengan prinsip minim perubahan",
+          "description": "Kumpulkan bukti dengan cara yang meminimalkan perubahan pada sistem.",
+          "tip": "Gunakan pendekatan konservatif dan dokumentasikan setiap langkah."
+        },
+        {
+          "number": 4,
+          "title": "Analisis pola serangan",
+          "description": "Cocokkan temuan dengan pola umum serangan: phishing, DoS/DDoS, MITM, botnet, ransomware, dan lainnya.",
+          "tip": "Cari indikator: perubahan akun, anomali trafik, penciptaan file tak biasa, dan indikator kripto-ransom."
+        },
+        {
+          "number": 5,
+          "title": "Susun timeline dan kesimpulan",
+          "description": "Bangun urutan peristiwa: apa yang terjadi dulu, lalu dampaknya. Ini yang biasanya paling membantu saat pelaporan.",
+          "tip": "Timeline yang rapi lebih meyakinkan dibanding daftar temuan acak."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Coba Praktek: Klasifikasikan Jenis Serangan dari Deskripsi",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Ubah fungsi classifyAttack() agar mengembalikan label yang benar: 'Phishing', 'DoS/DDoS', 'MITM', 'Ransomware', atau 'Unknown'. Gunakan kata kunci sederhana untuk latihan. Output akan dicetak ke console.",
+      "fileName": "attack_classifier.js",
+      "defaultCode": "// Code playground: Attack classifier sederhana (latihan kata kunci)\nfunction classifyAttack(desc) {\n  const text = desc.toLowerCase();\n  if (text.includes('phish') || text.includes('spear') || text.includes('smishing') || text.includes('vishing')) return 'Phishing';\n  if (text.includes('dos') || text.includes('ddos') || text.includes('flood') || text.includes('service unavailable')) return 'DoS/DDoS';\n  if (text.includes('mitm') || text.includes('man in the middle') || text.includes('intercept')) return 'MITM';\n  if (text.includes('ransom') || text.includes('encrypt') || text.includes('file locked') || text.includes('tebus')) return 'Ransomware';\n  return 'Unknown';\n}\n\nconst samples = [\n  'Email phishing meminta login karena akun akan diblokir',\n  'Serangan DoS menyebabkan service unavailable selama 30 menit',\n  'MITM mengintersep trafik saat pengguna login',\n  'Ransomware mengenkripsi file dan menampilkan pesan tebus',\n  'Aktivitas aneh tanpa petunjuk kata kunci'\n];\n\nfor (const s of samples) {\n  console.log(s, '=>', classifyAttack(s));\n}",
+      "hint": "Coba tambahkan kata kunci baru sesuai pemahamanmu. Misalnya ransomware sering muncul dengan kata 'encrypt' atau 'tebus'."
+    },
+    {
+      "type": "concept_card",
+      "title": "Botnet, Fast Flux, dan Ancaman pada Infrastruktur",
+      "icon": "🤖",
+      "explanation": "Botnet adalah jaringan perangkat yang dikendalikan untuk menyerang, biasanya secara terkoordinasi. Fast flux dan variasinya membantu menyulitkan pelacakan karena perpindahan infrastruktur terjadi cepat. Intinya: serangan tidak hanya soal satu komputer, tapi tentang ekosistem yang digerakkan.",
+      "analogy": "Kalau phishing adalah penipu satu-dua orang, botnet itu seperti pasukan yang bisa digerakkan serentak. Fast flux seperti mengganti baju anggota pasukan agar tetap sulit dikenali.",
+      "highlight": "Koordinasi skala besar",
+      "keyPoints": [
+        "Botnet mengubah banyak host menjadi mesin serangan",
+        "Fast flux menyamarkan jejak dengan pergantian alamat cepat",
+        "Defender perlu memikirkan trafik, kontrol, dan indikator anomali"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual: Dari Tujuan Serangan ke Dampak",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Phishing/Social Engineering",
+          "value": "Target korban agar menyerahkan kredensial/klik berbahaya",
+          "icon": "🎣"
+        },
+        {
+          "label": "DoS/DDoS",
+          "value": "Lumpuhkan layanan dengan membanjiri permintaan/traffic",
+          "icon": "🚦"
+        },
+        {
+          "label": "MITM",
+          "value": "Intersepsi komunikasi agar informasi bisa dicuri/dimodifikasi",
+          "icon": "🕵️"
+        },
+        {
+          "label": "Ransomware",
+          "value": "Enkripsi/penyanderaan data lalu menuntut tebusan",
+          "icon": "🔒"
+        },
+        {
+          "label": "Botnet",
+          "value": "Jaringan perangkat korban untuk menjalankan serangan",
+          "icon": "🤖"
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Coba Praktek: Mini Aturan Keamanan Email (Simulasi Deteksi)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Latihan: buat aturan sederhana untuk memberi label risiko email berdasarkan teks. Outputnya akan mencetak status untuk beberapa contoh kalimat.",
+      "fileName": "email_risk_detector.js",
+      "defaultCode": "// Code playground: Deteksi risiko email berbasis kata kunci (simulasi)\nfunction detectEmailRisk(subject, body) {\n  const text = (subject + ' ' + body).toLowerCase();\n  let risk = 0;\n  if (text.includes('verify') || text.includes('login') || text.includes('password')) risk += 2;\n  if (text.includes('urgent') || text.includes('segera') || text.includes('akun akan') || text.includes('diblokir')) risk += 2;\n  if (text.includes('free') || text.includes('hadiah') || text.includes('win') || text.includes('pemenang')) risk += 1;\n  if (text.includes('wire') || text.includes('transfer') || text.includes('bank') || text.includes('invoice')) risk += 2;\n  if (text.includes('unsubscribe') || text.includes('spam')) risk += 1;\n  if (text.includes('attachment') || text.includes('lampiran') || text.includes('.exe') || text.includes('link')) risk += 1;\n\n  if (risk >= 6) return 'High';\n  if (risk >= 3) return 'Medium';\n  return 'Low';\n}\n\nconst tests = [\n  { subject: 'URGENT: Akun akan diblokir', body: 'Verifikasi login password sekarang untuk mencegah kehilangan akses' },\n  { subject: 'Info newsletter', body: 'Terima kasih sudah berlangganan. Klik unsubscribe jika tidak ingin menerima email' },\n  { subject: 'Pemberitahuan invoice', body: 'Silakan transfer pembayaran sesuai invoice terlampir. Attachment bisa berupa PDF' },\n  { subject: 'Hadiah Free Win!', body: 'Anda pemenang. Klik link untuk klaim hadiah sekarang' }\n];\n\ntests.forEach(t => {\n  console.log(t.subject, '=> risk:', detectEmailRisk(t.subject, t.body));\n});",
+      "hint": "Coba ubah ambang risiko (>=6, >=3) atau tambahkan kata kunci untuk 'email spoofing' dan 'email bombing' secara konseptual."
+    },
+    {
+      "type": "analogy_card",
+      "title": "Harddisk & File System: Kenapa Ini Penting untuk Forensik?",
+      "icon": "💾",
+      "realWorld": "Saat insiden terjadi, investigator perlu tahu di mana jejak data disimpan: struktur partisi, jenis file system, dan bagaimana data diindeks.",
+      "connection": "Materi membahas struktur internal hard disk, low level format vs high level format, dan berbagai file system seperti FAT, NTFS, Ext2/3/4, XFS, ZFS, dan BTRFS. Pemahaman ini membantu menentukan lokasi bukti dan cara membacanya.",
+      "insight": "Kalau kamu paham 'peta' storage, kamu lebih cepat menemukan jejak: metadata, file yang dibuat, dan perubahan yang mengarah ke serangan."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini Cyber Security & Forensik",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Autentikasi",
+          "definition": "Proses membuktikan identitas pengguna/entitas.",
+          "example": "Login dengan username dan password yang valid."
+        },
+        {
+          "term": "Otorisasi",
+          "definition": "Menentukan hak akses setelah identitas diverifikasi.",
+          "example": "Admin boleh menghapus akun, user biasa tidak."
+        },
+        {
+          "term": "Confidentiality",
+          "definition": "Kerahasiaan: mencegah data diakses pihak tak berwenang.",
+          "example": "Enkripsi saat mengirim data."
+        },
+        {
+          "term": "Integrity",
+          "definition": "Integritas: memastikan data tidak diubah tanpa izin.",
+          "example": "Hash untuk mendeteksi perubahan dokumen."
+        },
+        {
+          "term": "Availability",
+          "definition": "Ketersediaan: layanan tetap bisa digunakan saat dibutuhkan.",
+          "example": "Mitigasi DoS agar server tidak tumbang."
+        },
+        {
+          "term": "Nonrepudiation",
+          "definition": "Anti-penyangkalan: pelaku tidak bisa menyangkal tindakan yang sudah dibuktikan.",
+          "example": "Bukti log transaksi dan tanda tangan digital."
+        },
+        {
+          "term": "DoS/DDoS",
+          "definition": "Serangan yang membuat layanan tidak tersedia dengan membanjiri permintaan.",
+          "example": "Server overload karena traffic berlebih."
+        },
+        {
+          "term": "Digital Forensic",
+          "definition": "Proses mengumpulkan dan menganalisis bukti digital secara bertanggung jawab.",
+          "example": "Menganalisis log dan file untuk menyusun timeline insiden."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Dalam framework keamanan informasi, 'confidentiality' paling terkait dengan perlindungan apa?",
+      "options": [
+        "Kerajinan data agar tidak rusak",
+        "Kerahasiaan agar tidak diakses pihak tak berwenang",
+        "Ketersediaan layanan saat trafik meningkat",
+        "Bukti agar pelaku tidak bisa menyangkal"
+      ],
+      "answer": "Kerahasiaan agar tidak diakses pihak tak berwenang",
+      "explanation": "Confidentiality fokus pada kerahasiaan: mencegah data bocor atau diakses pihak yang tidak berhak.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa perbedaan utama autentikasi dan otorisasi?",
+      "options": [
+        "Autentikasi menentukan hak akses, otorisasi membuktikan identitas",
+        "Autentikasi membuktikan identitas, otorisasi menentukan hak akses",
+        "Autentikasi fokus ketersediaan layanan, otorisasi fokus integritas",
+        "Keduanya sama artinya"
+      ],
+      "answer": "Autentikasi membuktikan identitas, otorisasi menentukan hak akses",
+      "explanation": "Autentikasi menjawab 'siapa kamu?', otorisasi menjawab 'boleh melakukan apa?'",
+      "xpReward": 50
+    },
+    {
+      "question": "Serangan MITM (Man-in-the-Middle) umumnya melakukan tindakan apa?",
+      "options": [
+        "Mengunci file korban lalu minta tebusan",
+        "Mengintersepsi komunikasi antara dua pihak",
+        "Membanjiri server agar tidak tersedia",
+        "Menyebarkan antivirus palsu untuk penipuan"
+      ],
+      "answer": "Mengintersepsi komunikasi antara dua pihak",
+      "explanation": "MITM fokus pada intersepsi: attacker berada di tengah komunikasi dan bisa membaca atau mengubah data.",
+      "xpReward": 50
+    },
+    {
+      "question": "Ransomware paling kuat dikaitkan dengan pilar keamanan informasi yang mana?",
+      "options": [
+        "Confidentiality",
+        "Integrity",
+        "Availability",
+        "Integritas dan kerahasiaan saja tanpa dampak lain"
+      ],
+      "answer": "Availability",
+      "explanation": "Ransomware sering menyebabkan layanan/data tak bisa digunakan karena data dienkripsi/terkunci, sehingga berdampak pada availability akses ke data.",
+      "xpReward": 50
+    },
+    {
+      "question": "Manakah yang termasuk bentuk rekayasa sosial yang umum dibahas?",
+      "options": [
+        "Phishing dan Spear phishing",
+        "Low level format",
+        "FAT dan NTFS",
+        "SCSI dan SATA"
+      ],
+      "answer": "Phishing dan Spear phishing",
+      "explanation": "Phishing dan spear phishing adalah contoh rekayasa sosial yang memanipulasi pengguna agar bertindak sesuai permintaan penyerang.",
+      "xpReward": 50
+    },
+    {
+      "question": "Botnet paling tepat dijelaskan sebagai...",
+      "options": [
+        "Satu komputer korban yang disabotase",
+        "Jaringan perangkat yang dikendalikan untuk menyerang",
+        "Metode enkripsi file tanpa tebusan",
+        "Jenis file system pada hard disk"
+      ],
+      "answer": "Jaringan perangkat yang dikendalikan untuk menyerang",
+      "explanation": "Botnet adalah kumpulan host yang dikendalikan untuk melakukan serangan terkoordinasi.",
+      "xpReward": 50
+    },
+    {
+      "question": "Dalam konteks forensik digital, mengapa 'jangan langsung beresin/ubah sistem' itu penting?",
+      "options": [
+        "Agar komputer jadi lebih cepat",
+        "Karena bukti digital bisa berubah atau hilang jika sistem dimodifikasi",
+        "Agar log otomatis terhapus",
+        "Karena semua bukti tidak memerlukan dokumentasi"
+      ],
+      "answer": "Karena bukti digital bisa berubah atau hilang jika sistem dimodifikasi",
+      "explanation": "Forensik butuh integritas bukti. Perubahan sistem bisa membuat hasil analisis tidak valid.",
+      "xpReward": 50
+    },
+    {
+      "question": "Email spoofing paling berkaitan dengan serangan terhadap bagian mana?",
+      "options": [
+        "Identitas pengirim agar terlihat seolah sah",
+        "Struktur file system Ext4",
+        "Ketersediaan storage internal hard disk",
+        "Hash untuk integrity dokumen"
+      ],
+      "answer": "Identitas pengirim agar terlihat seolah sah",
+      "explanation": "Spoofing adalah pemalsuan identitas, khususnya pengirim email agar korban tertipu.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Autentikasi itu menjawab apa?",
+      "answer": "Autentikasi menjawab 'siapa kamu?' (membuktikan identitas).",
+      "emoji": "🔐",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Otorisasi itu menjawab apa?",
+      "answer": "Otorisasi menjawab 'boleh melakukan apa?' (hak akses setelah identitas benar).",
+      "emoji": "🪪",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Confidentiality maksudnya?",
+      "answer": "Kerahasiaan: mencegah data diakses oleh pihak yang tidak berwenang.",
+      "emoji": "🤫",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Integrity maksudnya?",
+      "answer": "Integritas: memastikan data tidak berubah tanpa izin.",
+      "emoji": "🧬",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Availability maksudnya?",
+      "answer": "Ketersediaan: layanan/data tetap bisa digunakan ketika dibutuhkan.",
+      "emoji": "⚙️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Nonrepudiation berguna untuk apa?",
+      "answer": "Anti-penyangkalan: pihak pelaku tidak bisa menyangkal tindakan yang telah dibuktikan.",
+      "emoji": "🧾",
+      "difficulty": "medium"
+    },
+    {
+      "question": "MITM itu singkatan dari?",
+      "answer": "Man-in-the-Middle: penyerang berada di tengah komunikasi dan bisa mengintersepsi.",
+      "emoji": "🕵️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Botnet itu apa?",
+      "answer": "Jaringan perangkat yang terinfeksi dan dikendalikan untuk menjalankan serangan.",
+      "emoji": "🤖",
+      "difficulty": "medium"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama: peta dasar cyber security, motivasi serangan, dan framework keamanan informasi.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi ini membahas dasar cyber security dan digital forensic, dengan fokus pada dua hal besar: (1) bagaimana serangan siber bekerja dan pola-pola umum yang perlu dikenali, dan (2) bagaimana proses forensik digital memahami serta menelusuri bukti digital ketika terjadi insiden. Kita juga mendapat konteks tambahan berupa aturan perlindungan hak cipta (UU No 28 Tahun 2014) yang relevan untuk penggunaan materi, kutipan, dan pembatasannya, termasuk sanksi pelanggaran untuk penggunaan komersial tanpa izin. Namun, inti perjalanan belajarnya tetap pada fondasi keamanan siber dan investigasi forensik.\n\nPertama, sejak bagian awal, buku menempatkan cyber security sebagai kebutuhan karena dunia komputer dan jaringan menghadirkan peluang kejahatan cyber. Kejahatan cyber tidak hanya soal teknik hacking, tetapi juga tentang motivasi. Karena motivasi memengaruhi taktik, defender perlu memahami jenis-jenis serangan. Materi juga membedakan serangan berdasarkan pola: serangan tidak terstruktur cenderung menyasar banyak target dengan pola yang relatif umum; serangan terstruktur lebih rapi, biasanya punya tahapan dan target yang lebih spesifik; sedangkan Advanced Persistent Threat (APT) lebih menonjol sebagai serangan persisten dan terarah yang bertahan lama serta cermat memilih waktu dan metode agar sulit dideteksi.\n\nBeberapa jenis serangan yang dibahas mencakup rekayasa sosial seperti Phishing dan Spear Phishing. Rekayasa sosial adalah teknik yang menjadikan manusia sebagai titik lemah (human attack surface). Phishing sering bersifat massal (lebih luas), sementara spear phishing lebih personal dan disesuaikan, sehingga tingkat keberhasilannya bisa lebih tinggi. Selanjutnya Denial of Service (DoS) dan Distributed Denial of Service (DDoS) berfokus pada mengganggu ketersediaan layanan. Konsepnya: jika layanan tidak bisa merespons karena overload trafik atau sumber daya, maka pengguna kehilangan akses. Ini sangat dekat dengan pilar availability dalam framework keamanan informasi.\n\nMateri juga memuat serangan Man-in-the-Middle (MITM) yang mengintersepsi komunikasi antara dua pihak. Dalam MITM, penyerang memanfaatkan kelemahan pada jalur komunikasi atau validasi identitas sehingga korban bisa mengira ia berkomunikasi dengan pihak yang benar, padahal tidak. Selain itu, materi membahas Botnet sebagai jaringan perangkat yang telah terinfeksi dan dikendalikan. Botnet penting karena serangan yang “terlihat” sederhana sering berasal dari koordinasi banyak perangkat. Pada skala inilah serangan seperti DDoS menjadi efektif. Ada pula pembahasan konsep skrip lintas situs (sebagai bagian dari serangan berbasis web), serangan download drive-by (korban diarahkan mengunduh konten berbahaya tanpa sadar), serangan dari internal (misalnya pelaku berasal dari dalam organisasi), spionase (pengintaian/stealing informasi jangka panjang), dan ransomware (penyanderaan data untuk tebusan). Meski detail teknisnya lebih luas di bab-bab berikut, pada bab dasar ini siswa perlu menangkap pola: tujuan, cara, dan dampak.\n\nSetelah memahami ragam serangan, buku menempatkan Digital Forensic. Digital forensic (komputer forensik) adalah disiplin yang mengumpulkan bukti digital secara bertanggung jawab, menganalisisnya, lalu menyusun kesimpulan. Dalam konteks pendidikan, tujuan utamanya agar siswa paham bahwa forensik bukan sekadar “mencari file”, tetapi juga menjaga integritas bukti dan membangun timeline yang logis. Di saat insiden terjadi, langkah defensif dan forensik harus paralel: sistem tidak boleh “dibereskan” secara sembarangan karena tindakan itu bisa mengubah bukti. Investigator perlu menyusun urutan peristiwa, dari apa yang dilakukan penyerang, dampaknya, hingga indikator teknis yang ditinggalkan.\n\nBagian kedua dari materi menekankan Framework Cyber Security, yang mencakup dasar keamanan informasi. Framework ini berisi konsep autentikasi dan otorisasi, serta pilar CIA-A dan nonrepudiation. Autentikasi memastikan identitas (misal proses login/validasi kredensial), sedangkan otorisasi menentukan hak akses setelah identitas diketahui. Confidentiality mencegah data dibaca oleh pihak tak berwenang; Integrity mencegah modifikasi tanpa izin; Availability memastikan sistem tetap dapat digunakan. Nonrepudiation adalah aspek penting dalam pembuktian: pihak pelaku tidak bisa menyangkal tindakan yang telah dilakukan karena ada mekanisme bukti (misalnya log transaksi yang dapat dipertanggungjawabkan). Framework ini menjadi jembatan untuk menganalisis insiden: jenis serangan biasanya menarget salah satu atau beberapa pilar.\n\nBab selanjutnya membahas teknik dan motivasi menyerang, termasuk penggunaan proxy dan tunneling. Proxy bisa digunakan untuk menyamarkan sumber koneksi, sedangkan tunneling membantu membungkus trafik agar terlihat seperti jalur lain. Pengetahuan ini membantu defender karena sering kali serangan tidak datang langsung dari IP penyerang asli. Materi juga membahas teknik fraud: phishing, smishing, vishing, mobile malicious code, rogue antivirus, fraud klik (pay per click), serta strategi deteksi yang secara konsep bisa dipakai untuk melihat pola. Ada juga ancaman pada infrastruktur seperti botnet, fast flux, dan advance fast flux, yang menunjukkan bahwa penyerang tidak hanya menyerang target, tapi juga mengelola infrastruktur agar sulit dilacak.\n\nMasuk bab berikutnya, materi menguatkan pondasi penyimpanan: pemahaman hardisk, storage, dan file system. Ini penting karena digital forensic butuh pemahaman tempat data disimpan dan bagaimana struktur internal hard disk bekerja. Materi membahas cara kerja hard disk, interface (SCSI, IDE, EIDE, Fibre Channel, SAS, SATA), struktur internal, low level format dan high level format, serta jenis file system umum seperti FAT, NTFS, Ext2/3/4, XFS, ZFS, BTRFS. Selain itu, ada klasifikasi jenis file system berdasarkan penggunaan: disk file system, flash file system, tape, database file system, transactional file system, network file system, share disk, special file system, minimal/tape file system, dan flat file system. Intinya: forensic bukan hanya tahu alat, tapi tahu konteks penyimpanan data.\n\nBab mengenai jenis serangan dan forensik pada email membahas layanan email dan jenis serangan seperti flaming, email spoofing, email bombing, email hacking, email spam, email phishing, dan email fraud. Fokus pembelajaran untuk siswa: email sering menjadi “jalur” awal serangan, sehingga forensik email bisa menelusuri metadata, header, pola pengiriman, dan indikator manipulasi identitas. Dengan memahami konsep ini, siswa bisa mengaitkan kembali ke framework keamanan informasi: misalnya phishing menyerang confidentiality (data kredensial), availability bisa terdampak pada email bombing, dan nonrepudiation relevan saat menyangkut bukti pengiriman/penggunaan identitas.\n\nTerakhir, materi memuat UU No 28 Tahun 2014 tentang Hak Cipta, yang menjelaskan bahwa hak cipta adalah hak eksklusif terdiri dari hak moral dan hak ekonomi, serta memuat pembatasan perlindungan untuk penggunaan tertentu tanpa izin (misalnya kutipan singkat untuk pelaporan peristiwa aktual, penggandaan untuk penelitian ilmu pengetahuan, penggandaan untuk pengajaran dengan pengecualian untuk pertunjukan dan fonogram yang sudah diumumkan sebagai bahan ajar, serta penggunaan untuk kepentingan pendidikan dan pengembangan ilmu pengetahuan yang memungkinkan suatu ciptaan digunakan tanpa izin pelaku pertunjukan/produser/pihak lembaga penyiaran). Materi juga memuat sanksi pelanggaran Pasal 113, termasuk ancaman pidana penjara dan/atau denda untuk pelanggaran hak ekonomi dalam penggunaan komersial. Untuk pembelajaran, bagian ini penting sebagai etika akademik: saat membuat materi pembelajaran, kutip dengan benar, dokumentasikan sumber, dan hindari penggunaan komersial tanpa izin.\n\nDalam pelaksanaan pembelajaran interaktif, tutor bisa menuntun siswa untuk: (1) mengenali pola serangan dari deskripsi (rekayasa sosial vs DoS vs MITM vs ransomware vs botnet), (2) mengaitkan tiap serangan dengan pilar CIA-A dan nonrepudiation, (3) memahami bahwa forensik butuh timeline dan integritas bukti, (4) memahami struktur penyimpanan dan file system sebagai konteks lokasi bukti, dan (5) memahami serangan pada email sebagai jalur masuk yang umum. Dengan pendekatan ini, siswa bukan hanya menghafal istilah, tetapi bisa menginterpretasi kasus dan mengambil langkah defensif yang masuk akal."
+}
