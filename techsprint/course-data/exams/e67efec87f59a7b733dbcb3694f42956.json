@@ -1,64 +1,60 @@
 {
-  "title": "Simulasi Ujian: Cyber Security & Digital Forensic: Dari Serangan ke Investigasi (Berbasis Konsep Dasar)",
+  "title": "Simulasi Ujian: Cyber Security & Digital Forensic (Dari Serangan ke Investigasi)",
   "timeLimit": 1800,
   "totalQuestions": 20,
   "passingScore": 70,
   "questions": [
     {
       "type": "multiple_choice",
-      "question": "Pada level konsep dasar, perbedaan utama antara Cyber Security dan Digital Forensic adalah…",
+      "question": "Pada peta dasar, cyber security dan digital forensic paling tepat dipahami sebagai perbedaan: cyber security berfokus pada pencegahan/penanganan sebelum kejadian, sedangkan digital forensic berfokus pada…",
       "options": [
-        "Cyber Security berfokus mencegah/merespons serangan, sedangkan Digital Forensic berfokus pada penelusuran dan pembuktian saat insiden",
-        "Cyber Security hanya mempelajari bukti digital, sedangkan Digital Forensic hanya mempelajari pencegahan serangan",
-        "Keduanya identik karena sama-sama melakukan investigasi",
-        "Digital Forensic hanya menangani keamanan aplikasi, sedangkan Cyber Security hanya menangani forensik harddisk"
+        "pembuktian dan penelusuran bukti setelah kejadian untuk memahami apa yang terjadi",
+        "penyusunan kebijakan akses tanpa mempedulikan bukti insiden",
+        "mengubah konfigurasi sistem agar serangan tidak pernah terjadi",
+        "memonitor trafik jaringan secara real-time tanpa kebutuhan analisis bukti"
       ],
-      "answer": "Cyber Security berfokus mencegah/merespons serangan, sedangkan Digital Forensic berfokus pada penelusuran dan pembuktian saat insiden",
-      "explanation": "Cyber Security menitikberatkan kontrol/pencegahan dan respons, sedangkan Digital Forensic menitikberatkan pengumpulan, analisis, dan pemaknaan bukti digital secara sistematis.",
+      "answer": "pembuktian dan penelusuran bukti setelah kejadian untuk memahami apa yang terjadi",
+      "explanation": "Digital forensic menitikberatkan pada pengumpulan, preservasi, analisis, dan interpretasi bukti digital guna menjawab apa yang terjadi saat insiden.",
       "points": 10,
       "difficulty": "easy"
     },
     {
       "type": "multiple_choice",
-      "question": "Motivasi penyerang biasanya memengaruhi…",
+      "question": "Motivasi serangan paling sering memengaruhi…",
       "options": [
-        "Taktik yang dipilih dan jenis target yang dituju",
-        "Hanya teknik enkripsi yang digunakan",
-        "Status legalitas tindakan penyerang",
-        "Kebijakan keamanan organisasi secara otomatis"
+        "jenis bukti apa yang akan tersisa dan taktik yang digunakan",
+        "kecepatan RAM dalam sistem korban",
+        "format file pada harddisk korban menjadi satu standar",
+        "hanya pada bagaimana serangan didaftarkan di log tanpa memengaruhi tekniknya"
       ],
-      "answer": "Taktik yang dipilih dan jenis target yang dituju",
-      "explanation": "Motivasi (uang, spionase, balas dendam, dll.) menentukan sasaran, prioritas, dan cara serangan dijalankan.",
+      "answer": "jenis bukti apa yang akan tersisa dan taktik yang digunakan",
+      "explanation": "Motivasi menentukan target, teknik, dan dampak yang dituju—sehingga pola serangan serta jejak digital yang ditinggalkan bisa berbeda.",
       "points": 10,
       "difficulty": "easy"
     },
     {
       "type": "true_false",
-      "question": "Digital forensik tidak memerlukan pemahaman tentang file system, karena bukti digital cukup berasal dari log jaringan saja.",
+      "question": "Digital forensic bisa dilakukan tanpa mempertimbangkan preservasi bukti, selama analis sudah mengingat kronologi serangan.",
       "answer": "false",
-      "explanation": "File system penting karena struktur folder/file, metadata, dan lokasi artefak sangat memengaruhi analisis forensik.",
+      "explanation": "Forensik membutuhkan preservasi/chain of custody agar integritas bukti terjaga; mengandalkan ingatan saja tidak cukup.",
       "points": 10,
       "difficulty": "easy"
     },
     {
       "type": "matching",
-      "question": "Cocokkan istilah pada keamanan informasi dengan perannya.",
+      "question": "Cocokkan konsep keamanan dengan pernyataannya yang tepat (CIA-A).",
       "pairs": [
         {
-          "term": "Autentikasi",
-          "definition": "Menjawab “apakah subjek itu benar-benar siapa?” (verifikasi identitas)"
+          "term": "Confidentiality (C)",
+          "definition": "Mencegah akses atau pengungkapan informasi kepada pihak yang tidak berwenang"
         },
         {
-          "term": "Otorisasi",
-          "definition": "Menjawab “apa yang boleh dilakukan oleh subjek setelah terverifikasi?” (hak/izin akses)"
+          "term": "Integrity (I)",
+          "definition": "Menjaga agar data tetap akurat dan tidak dimodifikasi tanpa izin"
         },
         {
-          "term": "Nonrepudiation",
-          "definition": "Mencegah penyangkalan bahwa seseorang telah melakukan aksi tertentu (bukti keterkaitan aksi dan pelaku)"
-        },
-        {
-          "term": "Confidentiality",
-          "definition": "Menjaga kerahasiaan informasi dari pihak yang tidak berwenang"
+          "term": "Availability (A)",
+          "definition": "Memastikan layanan dan data dapat diakses saat dibutuhkan"
         }
       ],
       "points": 15,
@@ -66,239 +62,237 @@
     },
     {
       "type": "multiple_choice",
-      "question": "Istilah “Confidentiality” dalam CIA-A berarti…",
+      "question": "Dalam flashcard: 'Autentikasi itu menjawab apa?'",
       "options": [
-        "Kerahasiaan data dijaga dari akses tidak sah",
-        "Data harus selalu tersedia 24/7",
-        "Data tidak boleh berubah sama sekali",
-        "Pelaku tidak dapat menyangkal tindakannya"
+        "Apakah pengguna benar-benar siapa yang diklaimnya?",
+        "Apa yang boleh dilakukan pengguna tersebut setelah masuk?",
+        "Apakah data dirahasiakan dari semua orang?",
+        "Apakah pengguna tidak dapat menyangkal tindakan yang dilakukan"
       ],
-      "answer": "Kerahasiaan data dijaga dari akses tidak sah",
-      "explanation": "Confidentiality adalah perlindungan agar informasi hanya dapat diakses oleh pihak yang berwenang.",
+      "answer": "Apakah pengguna benar-benar siapa yang diklaimnya?",
+      "explanation": "Autentikasi berfokus pada verifikasi identitas (siapa).",
       "points": 10,
       "difficulty": "easy"
     },
     {
       "type": "multiple_choice",
-      "question": "Berikut ini yang paling tepat menggambarkan “Klasifikasi serangan” dari tidak terstruktur sampai APT adalah…",
+      "question": "Dalam flashcard: 'Otorisasi itu menjawab apa?'",
       "options": [
-        "Mulai dari serangan yang tidak terencana/acak sampai operasi yang sangat terorganisir, persisten, dan berdampak luas",
-        "Mulai dari serangan yang pasti berhasil sampai yang selalu gagal",
-        "Semua tahapan hanya terkait malware yang sama",
-        "Tidak ada hubungan antara tingkat organisasi serangan dan tujuan penyerang"
+        "Apakah pengguna memiliki hak akses tertentu?",
+        "Apakah password benar secara kriptografis?",
+        "Apakah pesan terenkripsi saat transit?",
+        "Apakah insiden dapat disanggah oleh pelaku"
       ],
-      "answer": "Mulai dari serangan yang tidak terencana/acak sampai operasi yang sangat terorganisir, persisten, dan berdampak luas",
-      "explanation": "Kerangka klasifikasi umum menggambarkan evolusi dari serangan low-effort menuju kemampuan canggih dan persisten (APT).",
+      "answer": "Apakah pengguna memiliki hak akses tertentu?",
+      "explanation": "Otorisasi menentukan izin/hak (apa yang boleh dilakukan) setelah identitas diverifikasi.",
       "points": 10,
-      "difficulty": "medium"
+      "difficulty": "easy"
     },
     {
       "type": "true_false",
-      "question": "Spear phishing umumnya lebih spesifik dan menarget individu/organisasi tertentu dibanding phishing yang lebih umum.",
+      "question": "Nonrepudiation berkaitan dengan kemampuan untuk mencegah/menyulitkan pihak menyangkal telah melakukan tindakan tertentu.",
       "answer": "true",
-      "explanation": "Spear phishing biasanya menggunakan konteks yang lebih relevan dengan target sehingga meningkatkan peluang keberhasilan.",
+      "explanation": "Nonrepudiation bertujuan menyediakan bukti/jejak yang membuat penyangkalan tindakan sulit dilakukan.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Seorang pengguna menerima email berjudul 'Pemberitahuan Verifikasi Akun' berisi tautan menuju halaman login palsu. Email menggunakan nama pengguna secara spesifik dan mengancam akun akan diblokir dalam 2 jam bila tidak segera mengklik.",
+      "question": "Jenis serangan email yang paling tepat berdasarkan deskripsi tersebut adalah…",
+      "options": [
+        "phishing umum tanpa personalisasi",
+        "spear phishing (phishing yang menarget spesifik/berpersonal)",
+        "spam tanpa adanya tautan berbahaya atau rekayasa sosial",
+        "legitimate notification dari layanan resmi karena ada ancaman waktu singkat"
+      ],
+      "answer": "spear phishing (phishing yang menarget spesifik/berpersonal)",
+      "explanation": "Personalisasi (menyebut nama pengguna) dan ancaman dengan konteks waktu mengarah ke spear phishing.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Klasifikasi serangan dari yang tidak terstruktur hingga APT menggambarkan…",
+      "options": [
+        "peningkatan tingkat keahlian, organisasi, dan fokus target (hingga penggunaan strategi kompleks seperti APT)",
+        "penurunan jumlah tahap serangan sampai satu tahap saja",
+        "bahwa APT selalu dimulai dari hal-hal acak tanpa tujuan",
+        "bahwa serangan APT tidak meninggalkan jejak digital karena selalu otomatis"
+      ],
+      "answer": "peningkatan tingkat keahlian, organisasi, dan fokus target (hingga penggunaan strategi kompleks seperti APT)",
+      "explanation": "Semakin ke arah APT, serangan cenderung lebih terorganisir, terencana, dan persist en pada target.",
       "points": 10,
       "difficulty": "easy"
     },
     {
       "type": "matching",
-      "question": "Cocokkan tujuan CIA-A dengan definisinya yang tepat.",
+      "question": "Cocokkan tujuan CIA-A + Nonrepudiation dengan maksudnya yang paling tepat (menggunakan konsep dasar).",
       "pairs": [
         {
+          "term": "Confidentiality",
+          "definition": "Mencegah kebocoran informasi"
+        },
+        {
           "term": "Integrity",
-          "definition": "Menjaga agar data tetap akurat dan tidak dimodifikasi tanpa otorisasi"
+          "definition": "Mencegah perubahan data yang tidak sah"
         },
         {
           "term": "Availability",
-          "definition": "Memastikan sistem/layanan dapat diakses dan digunakan saat dibutuhkan"
-        },
-        {
-          "term": "Confidentiality",
-          "definition": "Mencegah akses/penyingkapan informasi kepada pihak yang tidak berwenang"
+          "definition": "Memastikan layanan tersedia ketika dibutuhkan"
         },
         {
           "term": "Nonrepudiation",
-          "definition": "Memberikan bukti yang mengaitkan aksi dengan pelaku sehingga sulit menyangkalnya"
+          "definition": "Membuat penyangkalan tindakan menjadi sulit karena ada bukti"
         }
       ],
       "points": 15,
       "difficulty": "medium"
     },
     {
-      "type": "case_study",
-      "scenario": "Sebuah organisasi menerima email berisi tautan ‘verifikasi akun’ dengan gaya bahasa generik. Email meminta korban login melalui tautan, bukan melalui situs resmi yang dituju. Tidak ada nama spesifik karyawan atau referensi kejadian internal. Email sempat disaring, namun beberapa pengguna mengklik.",
-      "question": "Jenis serangan email yang paling mungkin dari deskripsi tersebut adalah…",
-      "options": [
-        "Spear phishing",
-        "Phishing generik",
-        "Fast flux",
-        "Nonrepudiation failure"
-      ],
-      "answer": "Phishing generik",
-      "explanation": "Deskripsi menekankan sifat generik dan ajakan login melalui tautan mencurigakan—ciri umum phishing.",
-      "points": 15,
-      "difficulty": "easy"
-    },
-    {
       "type": "multiple_choice",
-      "question": "Dalam mindset defender berbasis sudut pandang forensik, langkah awal yang paling tepat setelah insiden terdeteksi adalah…",
+      "question": "Mindset defender dari sudut pandang forensik paling sesuai dengan langkah yang menekankan…",
       "options": [
-        "Mengamati dan mendokumentasikan secara hati-hati, serta menjaga bukti agar tidak rusak/terubah",
-        "Langsung menghapus artefak agar tidak terlihat",
-        "Langsung mengubah konfigurasi sistem tanpa menyiapkan pengumpulan bukti",
-        "Membagikan bukti mentah ke banyak pihak agar cepat ditangani"
+        "menghapus artefak agar sistem cepat pulih tanpa dokumentasi",
+        "mengisolasi dampak namun tetap menjaga bukti (preservasi) dan mendokumentasikan temuan",
+        "membiarkan insiden berjalan agar bukti bertambah tanpa kendali",
+        "menggunakan alat pihak ketiga tanpa verifikasi dan tanpa log"
       ],
-      "answer": "Mengamati dan mendokumentasikan secara hati-hati, serta menjaga bukti agar tidak rusak/terubah",
-      "explanation": "Forensik menekankan pelestarian bukti (evidence preservation) dan dokumentasi untuk menjaga integritas bukti.",
+      "answer": "mengisolasi dampak namun tetap menjaga bukti (preservasi) dan mendokumentasikan temuan",
+      "explanation": "Forensik menuntut preservasi dan dokumentasi agar bukti bisa dianalisis dan dipertanggungjawabkan.",
       "points": 10,
       "difficulty": "medium"
     },
     {
-      "type": "multiple_choice",
-      "question": "Manakah yang paling mendukung integritas (Integrity) sesuai konsep CIA-A?",
+      "type": "case_study",
+      "scenario": "Tim insiden menemukan indikasi kompromi email gateway. Mereka ingin melakukan langkah cepat: 'copy-paste' file yang dicurigai ke folder baru dan langsung melakukan reimage tanpa mencatat hash atau membuat urutan waktu kejadian.",
+      "question": "Manakah evaluasi yang paling tepat terhadap pendekatan tersebut dari sudut pandang forensik?",
       "options": [
-        "Menggunakan kontrol agar data tidak dapat dimodifikasi tanpa otorisasi",
-        "Menambah bandwidth untuk memastikan situs selalu online",
-        "Menerbitkan sertifikat untuk memastikan siapa yang login",
-        "Mencatat log agar penyerang tidak bisa menyangkal tindakannya"
+        "Pendekatan ini benar karena reimage biasanya menghapus semua masalah dan tidak perlu bukti",
+        "Pendekatan ini berisiko tinggi karena integritas dan keterlacakan bukti (mis. hash, kronologi) bisa hilang",
+        "Pendekatan ini optimal karena forensik tidak memerlukan dokumentasi teknis",
+        "Pendekatan ini aman selama file dicopy ke folder yang sama"
       ],
-      "answer": "Menggunakan kontrol agar data tidak dapat dimodifikasi tanpa otorisasi",
-      "explanation": "Integrity berfokus pada keakuratan dan tidak adanya perubahan yang tidak sah pada data.",
-      "points": 10,
-      "difficulty": "easy"
+      "answer": "Pendekatan ini berisiko tinggi karena integritas dan keterlacakan bukti (mis. hash, kronologi) bisa hilang",
+      "explanation": "Tanpa preservasi/integritas (hash) dan dokumentasi, chain of custody dan kredibilitas bukti bisa melemah.",
+      "points": 15,
+      "difficulty": "hard"
     },
     {
-      "type": "case_study",
-      "scenario": "Tim incident response menemukan bahwa seorang karyawan mengirim file berbahaya dari laptopnya. Namun, bukti utama seperti file asli, log aplikasi, dan metadata direktori sudah berubah/terhapus. Tim diminta menjelaskan dampak terhadap proses investigasi forensik.",
-      "question": "Efek paling mungkin dari perubahan/penghapusan bukti terhadap investigasi adalah…",
+      "type": "multiple_choice",
+      "question": "Pada latihan 'klasifikasikan jenis serangan dari deskripsi', deskripsi berikut: 'Penyerang mengirim banyak email tidak spesifik ke ratusan ribu alamat dengan lampiran/tautan berbahaya, tanpa menyasar individu tertentu.' Termasuk kategori…",
       "options": [
-        "Kredibilitas dan kemampuan menautkan artefak ke timeline insiden menurun karena integritas bukti tidak terjaga",
-        "Investigasi menjadi lebih cepat karena artefak tidak lagi diperlukan",
-        "Forensik hanya butuh analisis jaringan, sehingga perubahan file tidak relevan",
-        "Nonrepudiation pasti meningkat karena bukti hilang"
+        "spear phishing",
+        "phishing umum/spam yang bersifat massal",
+        "APT",
+        "manipulasi hak akses melalui otorisasi yang salah"
       ],
-      "answer": "Kredibilitas dan kemampuan menautkan artefak ke timeline insiden menurun karena integritas bukti tidak terjaga",
-      "explanation": "Mengubah/menghapus artefak mengganggu integritas bukti dan merusak rekonstruksi timeline.",
-      "points": 15,
-      "difficulty": "medium"
+      "answer": "phishing umum/spam yang bersifat massal",
+      "explanation": "Deskripsi massal tanpa personalisasi mengarah ke phishing umum atau spam berbahaya.",
+      "points": 10,
+      "difficulty": "easy"
     },
     {
       "type": "true_false",
-      "question": "Availability dalam CIA-A berhubungan dengan kemampuan sistem/layanan untuk tetap dapat digunakan ketika dibutuhkan.",
+      "question": "Fast flux (fast-flux) umumnya berkaitan dengan perubahan cepat infrastruktur/relai agar serangan (mis. hosting konten berbahaya) sulit dilacak dan diblokir.",
       "answer": "true",
-      "explanation": "Availability mengacu pada akses terhadap layanan tanpa gangguan pada waktu yang diperlukan.",
+      "explanation": "Konsep fast-flux berfokus pada rotasi cepat komponen infrastruktur untuk menghindari deteksi dan pemblokiran.",
       "points": 10,
-      "difficulty": "easy"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "Istilah “Autentikasi itu menjawab apa?” sesuai flashcard adalah…",
-      "options": [
-        "Apakah subjek itu benar-benar siapa (verifikasi identitas)",
-        "Apa izin yang diberikan setelah login",
-        "Apa dampak kerusakan data pada CIA-A",
-        "Seberapa cepat layanan merespons serangan"
-      ],
-      "answer": "Apakah subjek itu benar-benar siapa (verifikasi identitas)",
-      "explanation": "Autentikasi = verifikasi identitas.",
-      "points": 10,
-      "difficulty": "easy"
-    },
-    {
-      "type": "multiple_choice",
-      "question": "Istilah “Otorisasi itu menjawab apa?” sesuai flashcard adalah…",
-      "options": [
-        "Apa yang boleh dilakukan oleh pengguna/akun setelah identitasnya terverifikasi",
-        "Bagaimana cara menyembunyikan data dari semua orang",
-        "Apakah bukti digital dapat dibuktikan secara hukum tanpa konteks",
-        "Kapan sistem akan down sehingga tidak tersedia"
-      ],
-      "answer": "Apa yang boleh dilakukan oleh pengguna/akun setelah identitasnya terverifikasi",
-      "explanation": "Otorisasi = pemberian hak/izin setelah autentikasi.",
-      "points": 10,
-      "difficulty": "easy"
-    },
-    {
-      "type": "case_study",
-      "scenario": "Deskripsi serangan: penyerang memanfaatkan botnet untuk mengirim spam dalam skala besar, kemudian memakai teknik untuk mengubah banyak alamat yang digunakan pada infrastrukturnya (agar sulit dilacak), dan akhirnya menargetkan korban dengan email berisi payload. Dampak yang diincar adalah gangguan layanan dan pencurian informasi.",
-      "question": "Pernyataan yang paling tepat tentang komponen ancamannya adalah…",
-      "options": [
-        "Botnet membantu distribusi skala besar, fast flux membantu mengaburkan infrastruktur, dan kombinasi keduanya meningkatkan kesulitan atribusi serta dampak serangan",
-        "Botnet adalah mekanisme proteksi, fast flux adalah fitur keamanan otomatis",
-        "Fast flux hanya bekerja pada USB, sedangkan botnet hanya pada harddisk",
-        "Komponen tersebut tidak relevan dengan email karena email tidak menggunakan infrastruktur jaringan"
-      ],
-      "answer": "Botnet membantu distribusi skala besar, fast flux membantu mengaburkan infrastruktur, dan kombinasi keduanya meningkatkan kesulitan atribusi serta dampak serangan",
-      "explanation": "Secara konsep, botnet = jaringan perangkat terkontrol untuk aksi skala besar, fast flux = teknik mengubah/memperbanyak jalur/infrastruktur untuk menghindari deteksi, dan keduanya mendukung serangan berbasis kampanye.",
-      "points": 15,
-      "difficulty": "hard"
+      "difficulty": "medium"
     },
     {
       "type": "matching",
-      "question": "Cocokkan konsep dengan contoh/indikasi yang sesuai dalam konteks investigasi atau keamanan email.",
+      "question": "Cocokkan istilah dengan definisi yang sesuai dari materi (kamus mini/konsep dasar).",
       "pairs": [
         {
-          "term": "Fast flux",
-          "definition": "Teknik mengaburkan infrastruktur dengan cepat mengubah alamat/penunjukan layanan agar sulit dilacak"
+          "term": "Autentikasi",
+          "definition": "Menguji identitas pengguna/perangkat yang mengklaim dirinya"
         },
         {
-          "term": "Botnet",
-          "definition": "Jaringan perangkat yang terinfeksi dan dikendalikan untuk melakukan aksi otomatis (mis. spam, DDoS)"
+          "term": "Otorisasi",
+          "definition": "Menentukan hak/izin tindakan yang boleh dilakukan setelah autentikasi"
         },
         {
-          "term": "Digital forensic evidence preservation",
-          "definition": "Upaya menjaga integritas bukti agar analisis forensik tetap valid (mis. minim perubahan, dokumentasi)"
+          "term": "Confidentiality",
+          "definition": "Menjaga agar data tidak diakses/diungkap tanpa izin"
         },
         {
-          "term": "Email phishing indikator umum",
-          "definition": "Link mencurigakan dan permintaan tindakan mendesak/berujung login atau pengungkapan kredensial"
+          "term": "Integrity",
+          "definition": "Menjaga agar data tetap benar dan tidak diubah secara ilegal"
+        },
+        {
+          "term": "Availability",
+          "definition": "Memastikan sistem/layanan bisa digunakan saat diperlukan"
         }
       ],
       "points": 15,
-      "difficulty": "hard"
+      "difficulty": "easy"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Simulasi aturan keamanan email: Email masuk memiliki ciri berikut: (1) pengirim domain mirip 'support-paypaI.com' (huruf I besar), (2) subject meminta 'Login sekarang untuk klaim hadiah', (3) body mengandung tautan mencurigakan, (4) terdapat attachment file .exe.",
+      "question": "Dalam simulasi deteksi, aksi paling defensif yang sesuai adalah…",
+      "options": [
+        "langsung whitelist karena ada attachment yang dikenal",
+        "tandai sebagai phishing/suspicious, blokir atau karantina, dan minta verifikasi independen",
+        "abaikan karena hanya ada tautan, bukan virus",
+        "hapus otomatis tanpa menyimpan metadata yang diperlukan"
+      ],
+      "answer": "tandai sebagai phishing/suspicious, blokir atau karantina, dan minta verifikasi independen",
+      "explanation": "Gabungan domain look-alike, social engineering, tautan, dan attachment .exe adalah indikator kuat phishing; karantina/blok membantu mencegah kompromi.",
+      "points": 15,
+      "difficulty": "medium"
     },
     {
       "type": "multiple_choice",
-      "question": "Mengapa harddisk dan file system penting dalam forensik? (Pilih jawaban terbaik)",
+      "question": "Mengapa harddisk & file system penting dalam digital forensik (berdasarkan analogy card)?",
       "options": [
-        "Karena artefak untuk timeline dan hubungan antar kejadian (metadata, struktur direktori, file remnants) banyak tersimpan di sini",
-        "Karena harddisk tidak pernah berubah sehingga selalu memuat bukti utuh tanpa analisis",
-        "Karena forensik hanya memerlukan isi jaringan, bukan penyimpanan",
-        "Karena file system hanya relevan untuk administrasi, bukan untuk investigasi"
+        "karena file system menentukan bagaimana data disimpan, sehingga artefak (mis. metadata) bisa dianalisis untuk rekonstruksi kejadian",
+        "karena file system tidak berpengaruh pada bukti; yang terpenting hanya email korban",
+        "karena harddisk selalu menyimpan isi file yang sama seperti saat dihapus tanpa jejak metadata",
+        "karena investigasi forensik hanya fokus pada jaringan, bukan penyimpanan"
       ],
-      "answer": "Karena artefak untuk timeline dan hubungan antar kejadian (metadata, struktur direktori, file remnants) banyak tersimpan di sini",
-      "explanation": "File system menyimpan struktur dan metadata yang membantu membangun timeline serta menghubungkan aktivitas ke artefak tertentu.",
+      "answer": "karena file system menentukan bagaimana data disimpan, sehingga artefak (mis. metadata) bisa dianalisis untuk rekonstruksi kejadian",
+      "explanation": "Forensik memanfaatkan struktur penyimpanan dan metadata (bergantung file system) untuk memahami aktivitas dan jejak.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Ringkasan visual 'Dari Tujuan Serangan ke Dampak' paling tepat dipahami sebagai…",
+      "options": [
+        "rantai sebab-akibat: tujuan penyerang → teknik → aset yang ditarget → dampak terhadap CIA-A dan/atau sistem",
+        "urutan acak tanpa keterkaitan antara tujuan dan dampak",
+        "hanya menggambarkan jenis malware tanpa menjelaskan dampak bisnis/teknis",
+        "pernyataan bahwa semua serangan menghasilkan dampak yang sama"
+      ],
+      "answer": "rantai sebab-akibat: tujuan penyerang → teknik → aset yang ditarget → dampak terhadap CIA-A dan/atau sistem",
+      "explanation": "Visual ringkasan menekankan keterkaitan antara motivasi/tujuan, taktik, target, hingga dampak yang dirasakan.",
       "points": 10,
       "difficulty": "medium"
     },
     {
       "type": "case_study",
-      "scenario": "Simulasi aturan keamanan email (konseptual):\n- Aturan A: Jika subjek mengandung kata “URGENT” dan ada tautan eksternal, berikan skor tinggi.\n- Aturan B: Jika pengirim domain-nya mirip (typosquatting) dengan domain perusahaan, skor tinggi.\n- Aturan C: Jika email meminta pengguna login via tautan dan bukan lewat halaman resmi, skor menengah.\n\nSebuah email memiliki subjek “URGENT: Account Verification”, menyertakan tautan domain eksternal yang mirip perusahaan (mis. corp-company.com vs corpbcompany.com), dan meminta login melalui tautan tersebut.",
-      "question": "Kategori risiko yang paling mungkin (berdasarkan skor aturan) adalah…",
+      "scenario": "Analisis awal menunjukkan komputer korban menjadi bagian dari jaringan bot. Laporan menyebut 'command-and-control' dan aktivitas penyebaran ulang ke host lain. Selain itu, ada petunjuk penggunaan infrastruktur yang berubah cepat untuk meng-host konten berbahaya.",
+      "question": "Konsep yang paling sesuai untuk menggambarkan dua ancaman tersebut adalah…",
       "options": [
-        "Rendah (aman) karena hanya ada tautan",
-        "Sedang karena hanya meminta login",
-        "Tinggi karena memenuhi Aturan A dan B, serta mendukung Aturan C",
-        "Tidak dapat dinilai karena tidak ada lampiran"
+        "botnet untuk jaringan mesin terinfeksi dan fast-flux untuk perubahan infrastruktur cepat yang sulit dilacak",
+        "hanya CIA-A tanpa kaitan ancaman nyata",
+        "otentikasi untuk menjelaskan penyebab botnet",
+        "nonrepudiation sebagai teknik penyamaran identitas botnet"
       ],
-      "answer": "Tinggi karena memenuhi Aturan A dan B, serta mendukung Aturan C",
-      "explanation": "Email memenuhi beberapa sinyal berisiko sekaligus: ‘URGENT’ + tautan eksternal (Aturan A), typosquatting domain (Aturan B), dan permintaan login via tautan (Aturan C).",
+      "answer": "botnet untuk jaringan mesin terinfeksi dan fast-flux untuk perubahan infrastruktur cepat yang sulit dilacak",
+      "explanation": "Botnet merujuk pada kumpulan host terinfeksi yang diatur (C2), sedangkan fast-flux mengarah pada rotasi cepat infrastruktur untuk menghindari deteksi.",
       "points": 15,
-      "difficulty": "medium"
+      "difficulty": "hard"
     },
     {
-      "type": "multiple_choice",
-      "question": "Ringkasan visual “dari tujuan serangan ke dampak” paling sesuai jika penyerang memiliki tujuan yang berbeda, maka…",
-      "options": [
-        "Dampak yang ditimbulkan juga berbeda, karena target dan strategi disesuaikan dengan tujuan (mis. spionase vs gangguan layanan)",
-        "Dampaknya selalu sama karena semua serangan mengejar kerusakan perangkat keras",
-        "Tujuan penyerang tidak memengaruhi taktik atau hasil",
-        "Forensik tidak perlu memahami dampak sehingga dapat diabaikan"
-      ],
-      "answer": "Dampak yang ditimbulkan juga berbeda, karena target dan strategi disesuaikan dengan tujuan (mis. spionase vs gangguan layanan)",
-      "explanation": "Tujuan (mis. keuntungan finansial, spionase, sabotase) mengarahkan taktik dan akhirnya menentukan dampak pada CIA-A/confidentiality/integrity/availability.",
+      "type": "true_false",
+      "question": "Phishing, spear phishing, dan variasi rekayasa sosial lainnya umumnya berangkat dari manipulasi psikologis untuk membuat korban melakukan tindakan yang menguntungkan penyerang.",
+      "answer": "true",
+      "explanation": "Rekayasa sosial memanfaatkan teknik persuasi/ancaman agar korban mengklik tautan, membuka lampiran, atau membocorkan kredensial.",
       "points": 10,
-      "difficulty": "hard"
+      "difficulty": "easy"
     }
   ]
 }
