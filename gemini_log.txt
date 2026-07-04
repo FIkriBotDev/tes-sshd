@@ -38727,3 +38727,19 @@ Biar aku pas, jawab singkat ya:
 - Kuahnya pakai **bumbu apa** (bawang putih/ketumbar/jahe/saset/kaldu bubuk)?  
 - Rasanya lebih ke **pedas, gurih, atau asam**?
 
+
+[2026-07-04T11:18:43.207Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/1bf99e-1783163916286.jpg
+Response  : Saya sudah melihat gambar poster acaranya. Ini isinya (ringkas):
+
+- **Tema/Judul:** *“Menjadi Anak yang Vanggi Baik”* (tulisan besar: **YANG… BAIK**)  
+- **Nama kegiatan:** **Cetia Sattha Dhamma**  
+- **Lokasi:** *Cetia Sattha Dhamma*, **Jl. Delta Raya No. 98, RT 002/RW 006, Cibodas, Kec. Cibodas, Kota Tangerang, Banten 15138**  
+- **Penceramah:** **Upc. Arya P. Candra, S.Kom, M.Ti.,M.Pd**  
+- **Hari/Tanggal:** **Minggu, 05 Juli 2026**  
+- **Waktu:** **Pukul 09.00 – selesai**  
+- **IG:** **@cetya_sattha_dhamma**
+
+Kalau kamu mau, bilang ya: kamu ingin **dibuatkan versi teks** yang rapi untuk disalin (copy-paste) atau mau saya bantu **perbaiki ejaan/format judul** poster?
+
