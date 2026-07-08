@@ -38808,3 +38808,45 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.exodusai.biz.id/tmp/480fd0-1783504030232.jpg
 Response  : Saya lihat gambar ini adalah foto saat kereta melaju di lintasan, dengan blur gerak pada sekitar pohon/pepohonan. Di tengah layar ada overlay **“Stasiun Tebet”** dan waktu **16:46**, jadi kemungkinan ini menunjukkan kamu sedang berada/berpapasan dengan area **Stasiun Tebet** pada jam tersebut.
 
+
+[2026-07-08T15:29:27.470Z]
+Prompt    : 📢 PERHATIAN SEMUA PENGENDARA! ATURAN BARU PEMBELIAN BBM DI SELURUH SPBU SUDAH DIBATASI! ⛽🛵🚗
+ 
+Sahabat sekalian, ada kabar penting yang wajib kalian ketahui mulai sekarang. Pemerintah bersama Pertamina mulai memberlakukan pembatasan jumlah pembelian BBM bersubsidi setiap kali pengisian di SPBU, demi menjaga stok tetap aman dan tepat sasaran bagi yang benar-benar berhak.
+ 
+ 
+ 
+📋 BATAS MAKSIMAL PEMBELIAN PER SEKALI ISI:
+ 
+✅ MOTOR MATIK: Maksimal pembelian Rp 30.000,-
+✅ MOTOR BESAR / SPORT: Maksimal pembelian Rp 50.000,-
+✅ MOBIL RODA EMPAT: Maksimal pembelian Rp 120.000,-
+ 
+ 
+ 
+⚠️ KETENTUAN YANG WAJIB DIPATUHI:
+ 
+🔹 Setiap transaksi pembelian akan dicatat sesuai nomor plat kendaraan yang terdaftar
+🔹 DILARANG KERAS membeli BBM secara berulang-ulang / bolak-balik dalam waktu singkat untuk menambah jumlah
+🔹 Dilarang keras memalsukan nomor plat atau menggunakan plat kendaraan lain demi membeli lebih dari batas yang ditentukan
+ 
+🚨 PERINGATAN KERAS: SIAP-SIAP DIPIDANA JIKA MELANGGAR!
+Image URL : https://uploader.exodusai.biz.id/tmp/212902-1783524560121.jpg
+Response  : Saya lihat Anda mengirim gambar/info berisi **aturan pembatasan pembelian BBM bersubsidi di SPBU** (mis. motor matik Rp30 ribu, motor besar Rp50 ribu, mobil Rp120 ribu) plus ancaman pencatatan plat dan pemidanaan.
+
+Namun, **saya perlu klarifikasi**: sampai pengetahuan saya (cutoff 2025-08), **saya tidak bisa memastikan** bahwa angka-angka dan redaksi spesifik di poster tersebut adalah **ketentuan resmi nasional** yang sedang berlaku saat ini—karena informasi seperti ini sering beredar lewat media sosial dan kadang **tidak sesuai regulasi terbaru** atau konteksnya lokal/periodik.
+
+Kalau Anda mau, saya bisa bantu cek dengan akurat lewat langkah berikut:
+1) **Sebutkan sumbernya** (akun/unggahan/link) atau lokasi (provinsi/kota) poster ini.  
+2) Kirim **teks lengkap** jika ada, atau ambil detail: “mulai tanggal kapan”, “untuk BBM jenis apa” (Pertalite/solar subsidi/pertamax subsidi?—yang benar biasanya spesifik), dan apakah disebut **nama regulasinya**.
+
+Sambil menanggapi isi posternya, ini poin yang umumnya bisa benar secara prinsip (tapi tetap perlu pembuktian regulasi):
+- Pemerintah memang menerapkan skema **pembatasan penyaluran** BBM subsidi agar tepat sasaran.
+- Sistem di SPBU dapat memakai **identifikasi data kendaraan** untuk mencegah penyalahgunaan (tergantung kebijakan daerah/sistem).
+
+**Tolong hati-hati** bila ada klaim seperti “di seluruh SPBU” dengan nominal spesifik—lebih aman pastikan dari:
+- pengumuman resmi Kementerian terkait/pertamina,
+- atau surat edaran/aplikasi resmi yang berlaku di wilayah Anda.
+
+Kirimkan **link atau asal poster** (atau lokasi Anda), nanti saya bantu telaah apakah itu **valid atau hoaks/keliru** dan jika valid, aturan resminya yang mana.
+
