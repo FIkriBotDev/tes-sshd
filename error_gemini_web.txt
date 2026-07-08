@@ -4066,3 +4066,34 @@ Request ID: 4IG3hCa2rW_V1v-lJKd6ViyprloBBw4VQxpC_KhRxHCMPwqU1lfaBA&#x3D;&#x3D;
 </ADDRESS>
 </BODY></HTML>
 
+[2026-07-08T15:08:05.793Z] API Error:
+{
+  "success": false,
+  "error": {
+    "message": "400 Bad Request: azure-openai error: You uploaded an unsupported image. Please make sure your image has of one the following formats: ['webp', 'gif', 'jpeg', 'png'].",
+    "code": "BAD_REQUEST",
+    "timestamp": "2026-07-08T15:08:05.773Z",
+    "details": {
+      "name": "UpstreamError",
+      "upstreamStatus": 400,
+      "upstreamHost": "gen.myceli.ai",
+      "upstreamBody": "{\"error\":{\"message\":\"azure-openai error: You uploaded an unsupported image. Please make sure your image has of one the following formats: ['webp', 'gif', 'jpeg', 'png'].\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_image_format\"},\"provider\":\"azure-openai\"}"
+    },
+    "cause": {
+      "status": 400,
+      "upstreamStatus": 400,
+      "details": {
+        "error": {
+          "message": "azure-openai error: You uploaded an unsupported image. Please make sure your image has of one the following formats: ['webp', 'gif', 'jpeg', 'png'].",
+          "type": "invalid_request_error",
+          "param": null,
+          "code": "invalid_image_format"
+        },
+        "provider": "azure-openai"
+      },
+      "model": "gpt-5.4-nano"
+    }
+  },
+  "status": 400
+}
+
