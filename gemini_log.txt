@@ -38850,3 +38850,16 @@ Sambil menanggapi isi posternya, ini poin yang umumnya bisa benar secara prinsip
 
 Kirimkan **link atau asal poster** (atau lokasi Anda), nanti saya bantu telaah apakah itu **valid atau hoaks/keliru** dan jika valid, aturan resminya yang mana.
 
+
+[2026-07-09T14:00:59.483Z]
+Prompt    : Nyayur Jamur extra bawang putih
+Image URL : https://uploader.exodusai.biz.id/tmp/1624c4-1783605654877.jpg
+Response  : Kelihatan seperti **nyayur jamur dengan ekstra bawang putih**—kuahnya merah gurih dengan potongan jamur dan sayur/irisan cabai, plus bawang putih yang mungkin dicincang/diiris kecil.
+
+Kalau kamu mau, aku bisa bantu:
+1) **Tebak bumbu & cara masaknya** dari tampilan ini, atau  
+2) Bikinin **resep lengkap** versi “extra bawang putih” (takaran jelas), atau  
+3) **Saran penyempurnaan rasa** (biar lebih gurih/lebih pedas/lebih wangi).
+
+Kamu pengin yang mana? Dan jamurnya pakai jenis apa (tiram/ kancing/ merang)?
+
