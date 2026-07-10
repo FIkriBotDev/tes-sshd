@@ -38863,3 +38863,14 @@ Kalau kamu mau, aku bisa bantu:
 
 Kamu pengin yang mana? Dan jamurnya pakai jenis apa (tiram/ kancing/ merang)?
 
+
+[2026-07-10T10:51:45.521Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/253cae-1783680700897.jpg
+Response  : Gambar itu menunjukkan suasana jalan pasar saat sore/menjelang malam: di kiri ada kendaraan (tampak seperti bus/van warna hijau), di kanan deretan lapak berjualan dengan barang-barang seperti kerajinan/aksesoris, dan di belakang terlihat banyak kendaraan antre di jalan yang sama. Ada watermark lokasi bertuliskan **“Pasar Laris”** di bagian kiri bawah.
+
+Kalau kamu mau, aku bisa bantu:
+1) jelaskan foto ini lebih detail,  
+2) buat caption Instagram/TikTok, atau  
+3) bantu tebak kira-kira jenis pasar/aktivitasnya.
+
