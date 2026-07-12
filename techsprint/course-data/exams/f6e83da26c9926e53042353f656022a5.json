@@ -1,0 +1,286 @@
+{
+  "title": "Simulasi Ujian: Grafik Fungsi Trigonometri: Amplitudo, Periode, dan Transformasi Sinus (Sin Graph Lab)",
+  "timeLimit": 1800,
+  "totalQuestions": 20,
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Untuk fungsi y = A sin(ax), amplitudo adalah ...",
+      "options": [
+        "nilai A",
+        "nilai a",
+        "2π/a",
+        "0"
+      ],
+      "answer": "nilai A",
+      "explanation": "Pada bentuk y = A sin(ax), sin berada pada [-1,1] sehingga amplitudo (jarak ke puncak) adalah |A|, yaitu A pada konteks soal ini.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Jika y = 4 sin(x) dengan x dalam derajat, nilai maksimum y adalah ... dan minimum y adalah ...",
+      "options": [
+        "max 4, min -4",
+        "max -4, min 4",
+        "max 1, min -1",
+        "max 4, min 0"
+      ],
+      "answer": "max 4, min -4",
+      "explanation": "Karena sin(x) ∈ [-1,1], maka y = 4 sin(x) ∈ [-4,4].",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Untuk y = A sin(ax), periode T dipengaruhi oleh nilai a (bukan oleh A).",
+      "answer": "true",
+      "explanation": "A mengubah skala vertikal (amplitudo), sedangkan a mengubah frekuensi sehingga periode berubah.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan bentuk transformasi dengan interpretasinya pada grafik sinus.",
+      "pairs": [
+        {
+          "term": "y = A sin(ax + b)",
+          "definition": "Geser horizontal ke kiri sebesar b/a"
+        },
+        {
+          "term": "y = A sin(ax - b)",
+          "definition": "Geser horizontal ke kanan sebesar b/a"
+        },
+        {
+          "term": "y = A sin(ax) + c",
+          "definition": "Geser vertikal ke atas sebesar c (jika c>0) atau ke bawah (jika c<0)"
+        }
+      ],
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Jika y = 3 sin(2x) dengan x dalam derajat, periode fungsi adalah ...",
+      "options": [
+        "180 derajat",
+        "360 derajat",
+        "90 derajat",
+        "45 derajat"
+      ],
+      "answer": "180 derajat",
+      "explanation": "Periode T untuk sin(ax) (derajat) adalah 360/a. Dengan a=2, T=360/2=180.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Untuk y = -3 sin(x), amplitudonya adalah ... dan arah awal dari origin adalah ...",
+      "options": [
+        "3 dan naik",
+        "3 dan turun",
+        "-3 dan naik",
+        "-3 dan turun"
+      ],
+      "answer": "3 dan turun",
+      "explanation": "Amplitudo tetap bernilai 3 (|A|). Tanda negatif membalik fase sehingga dari origin kurva mulai menurun.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Jika a makin besar pada y = A sin(ax), periode T makin besar (lebih jarang berulang).",
+      "answer": "false",
+      "explanation": "Saat a makin besar, periode T = 360/a (derajat) makin kecil, sehingga kurva berulang lebih sering.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Pola berulang (repeat) pada y = sin(ax) terjadi setiap ... derajat sesuai periode.",
+      "options": [
+        "T = 180/a",
+        "T = 360/a",
+        "T = a/360",
+        "T = 2πa"
+      ],
+      "answer": "T = 360/a",
+      "explanation": "Untuk input derajat, periode y = sin(ax) adalah 360/a.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan nilai a dengan pengaruhnya terhadap periode pada grafik y = A sin(ax) (derajat).",
+      "pairs": [
+        {
+          "term": "a membesar",
+          "definition": "Periode mengecil (lebih sering berulang)"
+        },
+        {
+          "term": "a mengecil (positif)",
+          "definition": "Periode membesar (lebih jarang berulang)"
+        },
+        {
+          "term": "a = 1",
+          "definition": "Periode = 360 derajat"
+        }
+      ],
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Diketahui y = 2 sin(x + 30°). Geser horizontalnya adalah ke ... sebesar ...",
+      "options": [
+        "kanan 30°",
+        "kiri 30°",
+        "kiri 15°",
+        "kanan 15°"
+      ],
+      "answer": "kiri 30°",
+      "explanation": "Bentuk sin(x + b) setara dengan pergeseran ke kiri sebesar b (karena puncak/zeronya bergeser ke arah negatif x).",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Seorang siswa menggunakan Sin Graph Lab untuk grafik y = 5 sin(3x - 60°) - 2. Ia diminta: (1) periode T, (2) pusat garis tengah (nilai y tengah), dan (3) arah geser horizontal.",
+      "question": "Pilih opsi yang benar untuk (1) T, (2) pusat, dan (3) arah geser.",
+      "options": [
+        "T = 120°, pusat y = -2, geser horizontal ke kanan",
+        "T = 360°, pusat y = 2, geser horizontal ke kiri",
+        "T = 180°, pusat y = -2, geser horizontal ke kiri",
+        "T = 120°, pusat y = 2, geser horizontal ke kanan"
+      ],
+      "answer": "T = 120°, pusat y = -2, geser horizontal ke kanan",
+      "explanation": "a=3 → T=360/3=120°. Konstanta -2 di luar sin → garis tengah y=-2. Bentuk sin(3x - 60°) berarti (ax - b) → geser ke kanan sebesar b/a = 60/3 = 20° (arahnya kanan).",
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "true_false",
+      "question": "Untuk y = A sin(ax) + c, nilai maksimum grafik adalah A + c dan minimum grafik adalah -A + c (asumsi A≥0).",
+      "answer": "true",
+      "explanation": "Karena sin selalu di [-1,1], maka y maksimum saat sin=1: A+c, dan minimum saat sin=-1: -A+c.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Untuk y = A sin(ax) + c, jika c = -4, maka seluruh grafik bergeser ...",
+      "options": [
+        "ke atas 4",
+        "ke bawah 4",
+        "tidak berubah",
+        "mengubah amplitudo"
+      ],
+      "answer": "ke bawah 4",
+      "explanation": "Tanda c negatif menyebabkan pergeseran vertikal turun sebesar 4.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Misalkan y = sin(x - 90°). Tanpa menggambar lengkap, siswa menghitung titik potong sumbu-x yang pertama setelah x=0. Ia menanyakan: pada bentuk sin(x - b), grafik bergeser horizontal ke mana?",
+      "question": "Jawaban yang benar adalah ...",
+      "options": [
+        "ke kanan sebesar b",
+        "ke kiri sebesar b",
+        "tidak ada geser horizontal",
+        "ke kiri sebesar b/2"
+      ],
+      "answer": "ke kanan sebesar b",
+      "explanation": "Bentuk sin(ax - b) merepresentasikan pergeseran ke kanan sebesar b/a. Untuk a=1, geser ke kanan sebesar b.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Diketahui y = 2 sin(0.5x). Dengan x dalam derajat, periode T adalah ...",
+      "options": [
+        "720°",
+        "360°",
+        "180°",
+        "90°"
+      ],
+      "answer": "720°",
+      "explanation": "T = 360/a = 360/0.5 = 720°.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "true_false",
+      "question": "Pada y = sin(x), nilai y maksimum terjadi saat x = 0°.",
+      "answer": "false",
+      "explanation": "sin(0°)=0, bukan maksimum. Maksimum terjadi saat sin(x)=1 yaitu x=90° (mod 360°).",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan pernyataan dengan efeknya pada grafik.",
+      "pairs": [
+        {
+          "term": "Amplitudo |A| besar",
+          "definition": "Puncak makin jauh dari garis tengah"
+        },
+        {
+          "term": "a makin besar",
+          "definition": "Frekuensi naik, periode turun"
+        },
+        {
+          "term": "Ada ±c di luar sin",
+          "definition": "Menggeser seluruh grafik vertikal tanpa mengubah periode"
+        }
+      ],
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Seorang siswa ingin membuat grafik y = |sin(x)| dari |melipat bagian negatif|. Ia memilih contoh x=150° dan x=30°. Ia mengingat sin(150°)=1/2 dan sin(30°)=1/2 tetapi tandanya berbeda untuk salah satu sudut. Dalam y = |...|, nilai mana yang benar?",
+      "question": "Jika sin(150°)=1/2 (positif) dan sin(30°)=1/2 (positif), maka nilai y untuk |sin(150°)| dan |sin(30°)| adalah ...",
+      "options": [
+        "(1/2, 1/2)",
+        "(-1/2, -1/2)",
+        "(1/2, -1/2)",
+        "(-1/2, 1/2)"
+      ],
+      "answer": "(1/2, 1/2)",
+      "explanation": "Nilai absolut mengubah semua nilai negatif menjadi positif, tetapi jika sin-nya sudah positif maka tetap sama: |1/2|=1/2.",
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Jika diketahui y = |2 sin(x)|, amplitudo grafik baru adalah ...",
+      "options": [
+        "2",
+        "4",
+        "0",
+        "1"
+      ],
+      "answer": "2",
+      "explanation": "|2 sin(x)| tetap memiliki nilai maksimum 2 karena |sin(x)| maksimum 1, sehingga puncak di 2 dan tidak ada bagian negatif.",
+      "points": 10,
+      "difficulty": "hard"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Sin Graph Lab menampilkan grafik untuk y = 3 sin(2x + 45°) + 1. Tugas Anda menentukan: (1) periode, (2) garis tengah, dan (3) tanda arah geser horizontal yang benar (kiri/kanan).",
+      "question": "Pilih opsi yang paling tepat.",
+      "options": [
+        "Periode 180°, garis tengah y=1, geser ke kiri",
+        "Periode 360°, garis tengah y=-1, geser ke kanan",
+        "Periode 90°, garis tengah y=1, geser ke kanan",
+        "Periode 180°, garis tengah y=-1, geser ke kiri"
+      ],
+      "answer": "Periode 180°, garis tengah y=1, geser ke kiri",
+      "explanation": "a=2 → T=360/2=180°. Konstanta +1 → garis tengah y=1. Bentuk sin(2x + 45°) adalah ax + b → geser horizontal ke kiri sebesar b/a = 45/2.",
+      "points": 15,
+      "difficulty": "hard"
+    }
+  ]
+}
