@@ -606,5 +606,19 @@
     "courseUrl": "/course/e67efec87f59a7b733dbcb3694f42956",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "f6e83da26c9926e53042353f656022a5",
+    "courseName": "Grafik Fungsi Trigonometri: Amplitudo, Periode, dan Transformasi Sinus (Sin Graph Lab)",
+    "courseEmoji": "📐",
+    "courseColor": "#6366f1",
+    "courseFileName": "TUGAS FINAL KALKULUS KELOMPOK 2.pptx",
+    "fileType": "pptx",
+    "originalFileName": "TUGAS FINAL KALKULUS KELOMPOK 2.pptx",
+    "courseOwner": "pedro@yahoo.com",
+    "courseCreated": "12-07-2026, 10.44.24",
+    "courseUrl": "/course/f6e83da26c9926e53042353f656022a5",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]

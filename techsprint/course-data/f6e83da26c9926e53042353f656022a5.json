@@ -1,0 +1,344 @@
+{
+  "title": "Grafik Fungsi Trigonometri: Amplitudo, Periode, dan Transformasi Sinus (Sin Graph Lab)",
+  "summary": "Kamu akan belajar cara membaca grafik y = A sin(ax ± b) ± c dari nol: amplitudo, periode, pola berulang, lalu transformasi fase (geser kiri/kanan) dan geser vertikal (atas/bawah). Di akhir, kamu juga akan memahami efek nilai absolut yang “melipat” bagian negatif ke atas sumbu x.",
+  "emoji": "📐",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Bentuk Umum: y = A sin(ax)",
+      "icon": "📌",
+      "explanation": "Mulai dari grafik dasar y = A sin(ax). Amplitudo A menentukan batas maksimum dan minimum grafik: max = A dan min = -A (tanda A memengaruhi arah awal dari origin). Faktor a mengatur periode (seberapa cepat gelombang berulang).",
+      "analogy": "Bayangkan A seperti “tinggi ayunan” dan a seperti “kecepatan ayunan”. Kalau ayunan makin tinggi, puncaknya makin tinggi; kalau ayunan makin cepat, putarannya makin sering.",
+      "highlight": "Amplitude A, Period T, max/min",
+      "keyPoints": [
+        "max = A dan min = -A",
+        "T = 360°/a",
+        "tanda A mengubah arah mulai (naik vs turun)"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Cara Cepat Membaca Skala Grafik",
+      "icon": "🧭",
+      "items": [
+        {
+          "label": "Amplitudo",
+          "value": "Batas atas/bawah = A dan -A",
+          "icon": "📏"
+        },
+        {
+          "label": "Periode",
+          "value": "T = 360°/a (satu gelombang penuh)",
+          "icon": "⏱️"
+        },
+        {
+          "label": "Pola Berulang",
+          "value": "Grafik tinggal diulang setiap T derajat",
+          "icon": "🔁"
+        }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Menyusun Tabel Nilai y = A sin(ax)",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Tentukan A dan a",
+          "description": "Amplitudo A langsung memberi max/min; a memberi periode T = 360°/a.",
+          "tip": "Kalau A negatif, grafik akan mulai dengan turun dari titik asal."
+        },
+        {
+          "number": 2,
+          "title": "Tentukan rentang untuk satu periode",
+          "description": "Pilih x agar (a x) menutupi sudut 0° sampai 360° untuk satu siklus.",
+          "tip": "Kalau a = 2, maka x cukup 0° sampai 180° untuk satu periode."
+        },
+        {
+          "number": 3,
+          "title": "Hitung y pakai y = A sin(ax)",
+          "description": "Untuk setiap x pilihan, hitung sudut ax, lalu sin, lalu kalikan A.",
+          "tip": "Kalau tabel pakai derajat: sin(30°)=1/2, sin(60°)=√3/2, sin(90°)=1."
+        },
+        {
+          "number": 4,
+          "title": "Kalau diminta 0°-360°, ulang polanya",
+          "description": "Kalau domain lebih panjang dari satu periode, cukup baca ulang siklus yang sama.",
+          "tip": "Jumlah pengulangan = 360°/T."
+        }
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "Periode Itu Seperti Ulangan Siklus",
+      "icon": "💡",
+      "realWorld": "Kamu menonton video yang berulang: durasi satu putaran adalah periode.",
+      "connection": "Jika T = 180°, maka dalam 360° kamu menonton dua putaran yang identik.",
+      "insight": "Transformasi fase/vertikal bisa menggeser grafik, tapi periode (kecepatan pengulangan) ditentukan oleh a."
+    },
+    {
+      "type": "concept_card",
+      "title": "Mengubah Periode dengan a (Makin Besar, Makin Sering)",
+      "icon": "🔁",
+      "explanation": "Saat bentuk menjadi y = -2 sin(2x), amplitudo tetap memberi max/min tetapi periode berubah. Dengan a = 2, periode T = 360°/2 = 180°. Artinya satu gelombang penuh terjadi dalam 180° bukan 360°.",
+      "analogy": "Kalau lagu punya beat dua kali lebih cepat, maka dalam waktu yang sama kamu mendengar dua kali pengulangan pola beat.",
+      "highlight": "a mengontrol T",
+      "keyPoints": [
+        "T = 360°/a",
+        "a lebih besar -> gelombang lebih sering",
+        "domain 0°-360° bisa memuat beberapa periode"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Sin Graph Lab: Hitung dan Rasakan Amplitudo + Periode (Derajat)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Ubah parameter A dan a lalu klik Run (di console). Skrip akan mencetak beberapa titik untuk satu periode: x dari 0° sampai 360°/a dan y = A sin(a x) (dengan sin berbasis derajat).",
+      "fileName": "sin_graph_lab.js",
+      "defaultCode": "function sinDeg(d){ return Math.sin(d*Math.PI/180); }\n\nconst A = 3;      // amplitude\nconst a = 1;      // frequency multiplier\n\nconst T = 360 / a; // one full period in degrees\nconsole.log('A=',A,'a=',a,'T(one period)=',T,'degrees');\n\n// sample points across one period\nconst steps = [0, T/4, T/2, 3*T/4, T];\nfor (const x of steps){\n  const y = A * sinDeg(a * x);\n  console.log('x=', x.toFixed(2), 'y=', y.toFixed(4));\n}\n\n// quick checks\nconst max = A;\nconst min = -A;\nconsole.log('Expected max=',max,'Expected min=',min);",
+      "hint": "Coba A=-3 (lihat max/min yang sama besar tapi arah mulai berubah). Coba a=2 lalu cek T menjadi 180°."
+    },
+    {
+      "type": "concept_card",
+      "title": "Phase Shift: Geser Kanan/Kiri (±b di dalam sin)",
+      "icon": "↔️",
+      "explanation": "Ketika muncul b di dalam kurung: y = A sin(ax ± b). Nilai b menggeser grafik secara horizontal. Besarnya geser adalah b/a derajat: tanda (+) berarti geser ke kanan, tanda (-) berarti geser ke kiri. Amplitudo dan periode tidak berubah—hanya posisi di sumbu x yang bergeser.",
+      "analogy": "Seperti menggeser jam dinding: detiknya sama (periode tetap), tapi angka yang ditunjukkan terjadi pada posisi waktu yang berbeda (geser horizontal).",
+      "highlight": "+b kanan, -b kiri, shift = b/a",
+      "keyPoints": [
+        "shift = b/a",
+        "(+b) ke kanan",
+        "Amplitudo dan periode tetap"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Phase & Vertical Shift Checker: Hitung y dan Tanda Pergeseran",
+      "icon": "⚡",
+      "language": "javascript",
+      "instruction": "Ubah b (phase shift) dan c (vertical shift). Program akan menghitung y pada beberapa nilai x dan menampilkan perbandingan dengan bentuk referensi. Pastikan kamu melihat perubahan horizontal dan perubahan baseline (arah atas/bawah).",
+      "fileName": "shift_checker.js",
+      "defaultCode": "function sinDeg(d){ return Math.sin(d*Math.PI/180); }\n\nconst A = -2;\nconst a = 2;\nconst b = 60;  // phase shift in degrees inside sin(ax + b)\nconst c = 1;   // vertical shift outside\n\nconst samples = [0, 15, 30, 45, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360];\n\nfunction yOriginal(x){\n  return A * sinDeg(a*x + b) ;\n}\nfunction yShifted(x){\n  return A * sinDeg(a*x + b) + c;\n}\n\nconsole.log('Params:',{A,a,b,c});\nconsole.log('Comparing y = A sin(a x + b) vs y = A sin(a x + b) + c');\nfor (const x of samples){\n  const y1 = yOriginal(x);\n  const y2 = yShifted(x);\n  console.log('x=',x,'y_base=',y1.toFixed(4),'y_shifted=',y2.toFixed(4),'delta=',(y2-y1).toFixed(4));\n}\n\n// y-intercept at x=0\nconst yInt = yShifted(0);\nconsole.log('y-intercept at x=0 =>', yInt.toFixed(4));",
+      "hint": "Kalau c=1, maka untuk semua x, nilai y harus naik 1 dibanding tanpa +c (delta konstan = 1)."
+    },
+    {
+      "type": "concept_card",
+      "title": "Vertical Shift: Geser Atas/Bawah (±c di luar sin)",
+      "icon": "⬆️",
+      "explanation": "Jika ditambah ±c di luar: y = A sin(ax ± b) ± c. Nilai c menggeser grafik vertikal tanpa mengubah bentuk, amplitudo, atau periode. Secara interpretasi: +c membuat grafik bergerak naik (baseline x-axis referensi turun), sedangkan -c membuat grafik turun.",
+      "analogy": "Seperti memindahkan posisi ketinggian gelombang air: bentuk riak sama, tapi seluruh riak sekarang berada pada ketinggian yang lebih tinggi atau lebih rendah.",
+      "highlight": "+c naik, -c turun, bentuk tetap",
+      "keyPoints": [
+        "+c: naik c unit",
+        "-c: turun c unit",
+        "amplitudo & periode tetap sama"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Absolute Value: y = |...| Melipat Bagian Negatif ke Atas",
+      "icon": "🪞",
+      "explanation": "Jika fungsi menjadi y = |-2 sin(2x + 60°) + 1| maka nilai absolut membuat output selalu positif atau nol. Bagian kurva yang sebelumnya berada di bawah sumbu x akan dipantulkan ke atas sumbu x. Bagian yang sudah di atas tetap.",
+      "analogy": "Anggap garis x-axis itu seperti lantai: kalau ‘ketinggian’ gelombang di bawah lantai, gelombang memantul seolah lantai menahan turun.",
+      "highlight": "nilai absolut memantulkan negatif",
+      "keyPoints": [
+        "y negatif jadi positif (nilai dikalikan -1)",
+        "bagian bawah sumbu x dipantulkan",
+        "minimum menjadi 0 (untuk kasus ini)"
+      ]
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Amplitudo (A)",
+          "definition": "Nilai yang menentukan jarak maksimum dari baseline: max = A, min = -A.",
+          "example": "y = 3 sin x memiliki max 3 dan min -3."
+        },
+        {
+          "term": "Periode (T)",
+          "definition": "Sudut yang dibutuhkan untuk satu gelombang penuh berulang.",
+          "example": "Jika a = 2, maka T = 180°."
+        },
+        {
+          "term": "Phase shift (b)",
+          "definition": "Perubahan horizontal karena b berada di dalam sin: y = A sin(ax ± b).",
+          "example": "y = A sin(ax + 60°) geser kanan sebesar 60°/a."
+        },
+        {
+          "term": "Vertical shift (c)",
+          "definition": "Perubahan vertikal karena c berada di luar sin: y = A sin(...) ± c.",
+          "example": "Jika +c=+1 maka seluruh grafik naik 1 unit."
+        },
+        {
+          "term": "Nilai absolut |...|",
+          "definition": "Memaksa semua nilai output menjadi tidak negatif.",
+          "example": "|-k| = k sehingga bagian grafik di bawah sumbu x dipantulkan."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Untuk y = A sin(ax), periode satu gelombang penuh adalah…",
+      "options": [
+        "T = 360° · a",
+        "T = 360° / a",
+        "T = a / 360°",
+        "T = 180° / a"
+      ],
+      "answer": "T = 360° / a",
+      "explanation": "Di materi, periode ditentukan oleh T = 360°/a. Jadi saat a naik, periode turun.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika y = 3 sin x, nilai maksimum dan minimum adalah…",
+      "options": [
+        "max = 3, min = 3",
+        "max = 3, min = -3",
+        "max = -3, min = 3",
+        "max = 1, min = -1"
+      ],
+      "answer": "max = 3, min = -3",
+      "explanation": "Amplitudo A=3 sehingga max=A=3 dan min=-A=-3.",
+      "xpReward": 50
+    },
+    {
+      "question": "Pada y = -3 sin x, nilai maksimum dan minimum yang benar adalah…",
+      "options": [
+        "max = -3, min = 3",
+        "max = 3, min = -3",
+        "max = 3, min = 0",
+        "max = 0, min = -3"
+      ],
+      "answer": "max = 3, min = -3",
+      "explanation": "Walau tanda A negatif memengaruhi arah awal, batas max/min tetap ±|A| sehingga max=3 dan min=-3.",
+      "xpReward": 50
+    },
+    {
+      "question": "Untuk y = -2 sin(2x), periode T adalah…",
+      "options": [
+        "90°",
+        "180°",
+        "270°",
+        "360°"
+      ],
+      "answer": "180°",
+      "explanation": "a=2, maka T = 360°/2 = 180°.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika grafik y = A sin(ax + b), tanda (+b) berarti grafik bergeser…",
+      "options": [
+        "ke kiri sebesar b/a",
+        "ke kanan sebesar b/a",
+        "tidak bergeser",
+        "vertikal sebesar b/a"
+      ],
+      "answer": "ke kanan sebesar b/a",
+      "explanation": "Aturan di materi: y = A sin(ax + b) bergeser RIGHT (kanan) sebesar b/a.",
+      "xpReward": 50
+    },
+    {
+      "question": "Pada y = A sin(ax - b), tanda (-b) berarti grafik bergeser…",
+      "options": [
+        "ke kiri sebesar b/a",
+        "ke kanan sebesar b/a",
+        "ke atas sebesar b/a",
+        "tidak berubah"
+      ],
+      "answer": "ke kiri sebesar b/a",
+      "explanation": "Aturan di materi: y = A sin(ax - b) bergeser LEFT (kiri) sebesar b/a.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika fungsi menjadi y = A sin(ax ± b) + c, maka grafik bergeser…",
+      "options": [
+        "turun c unit",
+        "naik c unit",
+        "kanan sebesar c",
+        "tidak berubah amplitudo dan periode saja tapi baseline tetap"
+      ],
+      "answer": "naik c unit",
+      "explanation": "c ditambahkan di luar sin: +c membuat grafik bergerak UP (naik) sebesar c.",
+      "xpReward": 50
+    },
+    {
+      "question": "Untuk y = |1 - 2 sin(2x + 60°)|, nilai y yang benar adalah…",
+      "options": [
+        "y selalu negatif",
+        "y selalu positif atau nol",
+        "y bisa positif dan negatif",
+        "y selalu sama dengan 1"
+      ],
+      "answer": "y selalu positif atau nol",
+      "explanation": "Nilai absolut memaksa output tidak negatif, jadi y tidak pernah bernilai negatif.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa rumus periode untuk y = A sin(ax)?",
+      "answer": "T = 360°/a",
+      "emoji": "⏱️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa hubungan amplitudo A dengan nilai maksimum dan minimum grafik?",
+      "answer": "max = A dan min = -A",
+      "emoji": "📏",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Untuk y = A sin(ax + b), geser horizontalnya berapa dan ke mana?",
+      "answer": "Geser sebesar b/a ke kanan",
+      "emoji": "➡️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Untuk y = A sin(ax - b), geser horizontalnya berapa dan ke mana?",
+      "answer": "Geser sebesar b/a ke kiri",
+      "emoji": "⬅️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Jika ada +c di luar sin: y = A sin(...) + c, apa efeknya?",
+      "answer": "Grafik naik c unit (baseline bergeser turun c)",
+      "emoji": "⬆️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Jika ada -c di luar sin: y = A sin(...) - c, apa efeknya?",
+      "answer": "Grafik turun c unit",
+      "emoji": "⬇️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa yang dilakukan nilai absolut pada bagian grafik yang berada di bawah sumbu x?",
+      "answer": "Dilipat (dipantulkan) ke atas sumbu x sehingga menjadi positif",
+      "emoji": "🪞",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Kenapa y = |f(x)| membuat grafik selalu tidak negatif?",
+      "answer": "Karena |f(x)| selalu bernilai ≥ 0 untuk semua f(x)",
+      "emoji": "🔒",
+      "difficulty": "easy"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama tentang grafik sinus: amplitudo dan periode.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi ini membahas cara menggambar dan memahami grafik fungsi trigonometri sinus dalam derajat dengan bentuk umum y = A sin(ax ± b) ± c serta efek khusus nilai absolut. Inti pembelajaran dibangun bertahap dari konsep dasar sampai transformasi. Pertama, kita mulai dari Basic Concept: General Form y = A sin(ax). Amplitudo A menentukan batas maksimum dan minimum grafik. Karena nilai sin selalu berada pada rentang [-1, 1], maka y berada pada rentang [-A, A] tetapi dengan penulisan yang mudah: max = A dan min = -A. Penting juga memahami pengaruh tanda A terhadap arah awal dari origin. Jika A positif, kurva mulai dengan naik dari titik asal (0,0). Jika A negatif, kurva mulai dengan turun dari origin. Contoh: y = 3 sin x memiliki max = 3 dan min = -3, sedangkan y = -3 sin x juga memiliki max = 3 dan min = -3 (batasnya sama besar), hanya saja arah awalnya berbeda karena faktor pengali negatif memutar fase secara “vertikal” terhadap sin.\n\nKedua, faktor a mengontrol periode. Periode T adalah sudut yang diperlukan untuk menyelesaikan satu gelombang penuh. Rumusnya T = 360° / a. Misalnya pada y = 2 sin x untuk domain 0° ≤ x ≤ 360°, karena a = 1 maka T = 360°. Namun jika fungsi berubah menjadi y = -2 sin(2x), maka a = 2 sehingga T = 360°/2 = 180°. Artinya gelombang menyelesaikan satu siklus penuh hanya dalam 180° bukan 360°. Slide 3 menekankan bagaimana membangun tabel nilai saat a berubah. Caranya: pilih nilai dari 2x (misal 0° sampai 360°), hitung y = -2 sin(2x), lalu kembalikan ke nilai x yang sesuai dengan membagi 2x dengan 2. Secara konsep, ketika 2x menempuh 0° sampai 360°, maka x hanya menempuh 0° sampai 180° yang berarti tepat satu periode.\n\nKetiga, materi membahas repeating the pattern. Dengan contoh y = -2 sin(2x) pada domain penuh 0° sampai 360°, periode tetap 180°, sehingga 360°/180° = 2. Gelombang akan berulang dua kali. Prinsipnya: periodic functions bisa digambar lebih cepat. Begitu kamu tahu satu periode, kamu bisa memperluas grafik dengan mengulang pola. Dalam latihan tabel, nilai yang sama dibaca dua kali untuk dua periode. Fokusnya bukan mengubah perhitungan, tetapi mengenali pengulangan secara sistematis.\n\nKeempat, slide berikutnya masuk ke Horizontal Translation atau phase shift. Bentuknya y = A sin(ax ± b). Tambahan b di dalam argumen sin membuat grafik bergeser secara horizontal (kiri/kanan) tanpa mengubah amplitudo A dan periode T. Besarnya pergeseran adalah shift = b/a derajat. Dengan tanda: y = A sin(ax + b) menggeser kurva ke kanan sebesar b/a, sedangkan y = A sin(ax - b) menggeser ke kiri sebesar b/a. Materi memberi aturan praktis: tanda (+b) = kanan, tanda (-b) = kiri. Contoh yang dipakai sebagai acuan adalah base graph y = -2 sin(2x). Lalu diaplikasikan pada y = -2 sin(2x + 60°). Di sini a = 2 dan b = 60°, sehingga shift = 60°/2 = 30°. Karena tandanya (+), grafik berpindah 30° ke kanan.\n\nSlide 6 menunjukkan cara “mendarat” hasil pergeseran pada tabel nilai. Intinya: setiap titik dari kurva referensi y = -2 sin(2x) dipindahkan sepanjang sumbu x sejauh 30° ke kanan. Amplitudo dan periode tetap sama: max = 2, min = -2 dan T = 180°.\n\nKelima, materi membahas Vertical Translation atau vertical shift. Bentuknya y = A sin(ax ± b) ± c. Konstanta c berada di luar fungsi sinus, sehingga efeknya adalah pergeseran vertikal. Tanda +c mengangkat grafik naik c unit, sedangkan -c menurunkan grafik turun c unit. Di materi juga dijelaskan interpretasi referensi x-axis: jika +c membuat grafik naik, maka x-axis referensi secara “geometris” tampak bergeser turun c. Penting: shape grafik tetap sama, amplitudo dan periode tidak berubah—hanya baseline vertikal yang berpindah.\n\nSlide 7 memberi contoh y = -2 sin(2x + 60°) + 1. Karena c = 1, maka gelombang naik 1 unit. Slide 8 lalu menekankan cara memeriksa ketepatan shift menggunakan titik potong sumbu y (y-intercept) dengan mengevaluasi y pada x = 0. Dengan perhitungan: y = -2 sin(60°) + 1 = 1 - 2(√3/2) = 1 - √3 ≈ -0.73. Ini dibandingkan dengan nilai tanpa shift pada titik yang sama yaitu -√3 ≈ -1.73. Selisihnya adalah 1, yang sama dengan c = 1. Jadi verifikasi menunjukkan pergeseran vertikal benar.\n\nKeenam, materi menutup dengan refleksi menggunakan nilai absolut. Slide 9 membahas absolute value pada fungsi: y = |-2 sin(2x + 60°) + 1| atau setara y = |1 - 2 sin(2x + 60°)|. Aturan penting: nilai absolut membuat setiap output menjadi tidak negatif. Bagian kurva yang semula berada di bawah sumbu x dipantulkan ke atas sumbu x. Secara matematis, jika ada bagian dengan nilai -k (k positif), maka setelah absolute value menjadi +k. Bagian yang sudah di atas sumbu x tetap sama. Dampak akhirnya: y tidak pernah negatif. Untuk kasus yang diberikan, minimum nilai menjadi 0 dan maksimum tetap 3, sesuai dengan base range (-2 sampai 2) yang digeser naik 1 menjadi (-1 sampai 3) lalu dilipat sehingga nilai negatifnya menjadi positif.\n\nTerakhir, Slide 10 merangkum semua transformasi dan parameter: Amplitudo A menentukan max/min; tanda A mengubah arah awal; a menentukan periode; b (phase shift) menggeser horizontal sebesar b/a dengan arah mengikuti tanda; c (vertical shift) menggeser vertikal sebesar c tanpa mengubah bentuk; dan absolute value y = |...| melipat bagian negatif ke atas sehingga y tidak negatif. Key takeaway-nya: semua grafik sinus dengan transformasi dibangun dari gelombang sederhana yang sama. Dengan menguasai lima gagasan (A, periode dari a, phase shift dari b/a, vertical shift dari c, dan absolute value), siswa bisa menggambar grafik baru dengan percaya diri."
+}

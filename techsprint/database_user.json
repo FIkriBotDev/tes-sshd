@@ -127,7 +127,7 @@
     "email": "pedro@yahoo.com",
     "password": "$2b$10$cipWSRKlEabEgKBqhAFGOeBPWc2hiJa5secALIsWspf4ZYT2/17n.",
     "plan": 1,
-    "creditLeft": 10,
-    "courseCreated": 0
+    "creditLeft": 5,
+    "courseCreated": 1
   }
 ]
