@@ -5,8 +5,8 @@
     "email": "pedro@yahoo.com",
     "password": "$2b$10$cipWSRKlEabEgKBqhAFGOeBPWc2hiJa5secALIsWspf4ZYT2/17n.",
     "profilePicture": "",
-    "xp": 590,
-    "coin": 218,
+    "xp": 640,
+    "coin": 228,
     "level": 3,
     "streak": 0,
     "lastLogin": "12-07-2026, 10.44.42",
@@ -27,13 +27,19 @@
     ],
     "completedChapter": [],
     "flashcardsViewed": 0,
-    "leaderboardPoint": 480,
+    "leaderboardPoint": 980,
     "achievements": [
       "first_block",
       "coin_100"
     ],
     "joinedAt": "12-07-2026, 10.44.42",
     "isMainAccount": true,
-    "quizCorrectCount": 3
+    "quizCorrectCount": 3,
+    "examScore": 34,
+    "totalExamsTaken": 1,
+    "highestExamScore": 34,
+    "totalExamScore": 34,
+    "averageExamScore": 34,
+    "examBadges": []
   }
 ]
