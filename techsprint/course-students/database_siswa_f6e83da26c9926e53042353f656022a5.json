@@ -5,8 +5,8 @@
     "email": "pedro@yahoo.com",
     "password": "$2b$10$cipWSRKlEabEgKBqhAFGOeBPWc2hiJa5secALIsWspf4ZYT2/17n.",
     "profilePicture": "",
-    "xp": 640,
-    "coin": 228,
+    "xp": 850,
+    "coin": 323,
     "level": 3,
     "streak": 0,
     "lastLogin": "12-07-2026, 10.44.42",
@@ -26,11 +26,12 @@
       "block-10"
     ],
     "completedChapter": [],
-    "flashcardsViewed": 0,
-    "leaderboardPoint": 980,
+    "flashcardsViewed": 8,
+    "leaderboardPoint": 1140,
     "achievements": [
       "first_block",
-      "coin_100"
+      "coin_100",
+      "flashcard_pro"
     ],
     "joinedAt": "12-07-2026, 10.44.42",
     "isMainAccount": true,
