@@ -5,8 +5,8 @@
     "email": "pedro@yahoo.com",
     "password": "$2b$10$cipWSRKlEabEgKBqhAFGOeBPWc2hiJa5secALIsWspf4ZYT2/17n.",
     "profilePicture": "",
-    "xp": 850,
-    "coin": 323,
+    "xp": 865,
+    "coin": 328,
     "level": 3,
     "streak": 0,
     "lastLogin": "12-07-2026, 10.44.42",
@@ -41,6 +41,9 @@
     "highestExamScore": 34,
     "totalExamScore": 34,
     "averageExamScore": 34,
-    "examBadges": []
+    "examBadges": [],
+    "aiInteractions": 1,
+    "todayAiCount": 1,
+    "lastAiDate": "Sun Jul 12 2026"
   }
 ]
