@@ -5,13 +5,13 @@
     "email": "pedro@yahoo.com",
     "password": "$2b$10$cipWSRKlEabEgKBqhAFGOeBPWc2hiJa5secALIsWspf4ZYT2/17n.",
     "profilePicture": "",
-    "xp": 410,
-    "coin": 148,
-    "level": 2,
+    "xp": 590,
+    "coin": 218,
+    "level": 3,
     "streak": 0,
     "lastLogin": "12-07-2026, 10.44.42",
     "lastLoginDate": "Sun Jul 12 2026",
-    "quizScore": 0,
+    "quizScore": 3,
     "completedBlocks": [
       "block-0",
       "block-1",
@@ -22,16 +22,18 @@
       "block-6",
       "block-7",
       "block-8",
-      "block-9"
+      "block-9",
+      "block-10"
     ],
     "completedChapter": [],
     "flashcardsViewed": 0,
-    "leaderboardPoint": 300,
+    "leaderboardPoint": 480,
     "achievements": [
       "first_block",
       "coin_100"
     ],
     "joinedAt": "12-07-2026, 10.44.42",
-    "isMainAccount": true
+    "isMainAccount": true,
+    "quizCorrectCount": 3
   }
 ]
