@@ -38882,3 +38882,59 @@ Response  : Saya melihat foto ini: di dalam bengkel, seorang mekanik sedang meng
 
 Kalau kamu mau, bilang ya kamu ingin saya bantu **deskripsikan untuk caption**, **menilai kira-kira bagian apa yang dikerjakan**, atau **membuat promosi/judul iklan bengkel**.
 
+
+[2026-07-13T08:04:34.988Z]
+Prompt    : WELCOME BACK TO SCHOOL! 📚
+
+A new academic year means a new beginning, new opportunities, and new dreams waiting to be achieved.
+
+To all our beloved students, welcome back! We can't wait to see your smiles, hear your stories, and watch you grow through every lesson, challenge, and achievement this year.
+
+Here's to a fresh start full of learning, laughter, and growth.
+
+May this Academic Year 2026/2027 be filled with curiosity, kindness, confidence, and unforgettable memories. Together, let's make every day at school meaningful and inspiring!
+
+See you at Course! 
+
+Come join the fun of learning at Cyber Learning Maja
+‎📍 (Citra Maja City) Jl. Benoa Boulevard W07/29 Kab. Lebak
+‎📞 0813 1535 9237
+‎🌎 http://www.webcyberlearning.my.id
+
+#DigitalCourse
+#LearningICT
+#DKV_Course
+#TKJ_Course
+Image URL : https://uploader.exodusai.biz.id/tmp/88e366-1783929870343.jpg
+Response  : Tentu! Berikut versi caption yang lebih rapi dan siap diposting (mengikuti materi di gambar) untuk **Cyber Learning Maja**:
+
+---
+
+📚 **WELCOME BACK TO SCHOOL!**  
+Selamat datang kembali untuk tahun ajaran **2026/2027** — saatnya memulai lagi dengan semangat baru!  
+
+Untuk semua siswa Cyber Learning Maja: kami tidak sabar melihat senyum kalian, mendengar cerita kalian, dan menyaksikan kalian bertumbuh lewat setiap pembelajaran, tantangan, dan pencapaian.  
+
+✨ **Maju di Era Digital! Belajar dari Ahli!**  
+
+🎯 Yuk gabung dan ikut program kursus kami:  
+✅ **WordPress Course** — buat website profesional dari nol (mulai **Rp. 350.000/bulan**)  
+✅ **Komputer Dasar** — kuasai operasi komputer & software (mulai **Rp. 300.000/bulan**)  
+✅ **Algoritma & Struktur Data** — fondasi pemrograman untuk pemecahan masalah (mulai… )  
+✅ **Web Master Project Course** — bangun proyek web nyata sampai siap dipublikasikan (mulai **Rp. 450.000/bulan**)  
+✅ **Bimbel IT** — bimbingan tugas sekolah, persiapan ujian & pendalaman materi (mulai **Rp. 450.000/bulan**)  
+
+📍 **Cyber Learning Maja (Citra Maja City)**  
+Jl. Benoa Boulevard W07/29 Kab. Lebak  
+📞 **0813 1535 9237**  
+🌐 http://www.webcyberlearning.my.id  
+
+#DigitalCourse #LearningICT #DKV_Course #TKJ_Course #CyberLearningMaja  
+
+🚀 **See you at Course!**  
+
+---
+
+Kalau mau, aku bisa buatin juga:  
+1) versi caption yang lebih singkat, atau 2) versi promosi dengan CTA “daftar sekarang” + format WhatsApp.
+
