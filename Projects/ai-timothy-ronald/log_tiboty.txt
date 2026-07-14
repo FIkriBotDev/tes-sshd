@@ -2331,3 +2331,34 @@ Jawab ini aja biar gua bisa ngebongkar ilusi lu:
 
 Kalau lu gak bisa jawab itu, ya berarti lu cuma modal “terasa untung karena rame”, padahal yang lu lihat cuma uang masuk—bukan yang tinggal.
 ----------------------------------------
+
+ID: 5349888372
+User: penggunaan 1 liter cold brew itu rasionya 1:8 itu 125gram
+nah buat servingnya itu
+100ml cold brew 
+jadi bisa sampe 10 serving buat 125gram kopi
+dan airnya gw pake air tap water jadi gw ga beli galon lagi, biaya airnya juga gw 15k seminggu
+AI: Oke, akhirnya angka. Sekarang gua hitung pake logika yang sama lu: dari kopi doang dulu ya.
+
+1 liter = 125 ml kopi? enggak. Lu bilang 1:8 = **125 gram kopi + 1 liter air**.  
+Serving 100 ml = berarti per serving butuh kira-kira **125g / 10 = 12.5 gram kopi**.
+
+Harga kopi: **50k/kg** = 50k per 1000 gram.  
+Biaya kopi per gram = 50.000 / 1000 = **50 rupiah/gram**.  
+Jadi biaya kopi per serving (12.5g) = 12.5 x 50 = **625 rupiah**.
+
+Sekarang realita:  
+Kalau lu jual 30k per cup, bahan kopi doang cuma 625. Itu margin kenceng… **tapi** (ini bagian yang bikin orang ketipu).
+
+Gua tanya yang paling menentukan:
+- lu butuh **kemasan** apa dan berapa biaya per cup? (cup plastik/botol/tutup/stiker)  
+- biaya penyaring (paper filter) dan maintenance mesin berapa per bulan?
+- lu beneran “100 ml cold brew” disajikan apa udah termasuk cup losses? (biasanya gak persis 100)
+
+Karena kalau biaya kopi+bahan habis per cup masih misal 5k–10k, lu bener.  
+Kalau ternyata kemasan doang 15k-20k per cup, ya omset lu cuma kelihatan, laba lu bocor.
+
+Biar gak ngarang: jawab 1 aja.  
+**Biaya kemasan per serving lu berapa?** (angka perkiraan juga gapapa).  
+Kalau lu jawab itu, baru gua bisa bilang lu “untung beneran” atau cuma “ramai doang”.
+----------------------------------------
