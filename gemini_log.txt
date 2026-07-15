@@ -39027,3 +39027,16 @@ Response  : Saya lihat ini adalah tangkapan layar dari **halaman pemilihan slot 
 
 Kalau Anda mau, sebutkan tujuan/negara Anda—nanti saya bantu konversi ke jam lokal (mis. Indonesia) atau pilih slot yang paling cocok.
 
+
+[2026-07-15T17:26:51.664Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/d113bc-1784136405411.jpg
+Response  : Gambar itu adalah tangkapan layar percakapan WhatsApp (bot) dalam bahasa Portugis.
+
+Yang terlihat di chat:
+- Ada pesan informasi **enkripsi end-to-end (ponta a ponta)**: artinya pesan dan panggilan dilindungi enkripsi, dan hanya orang yang ada di percakapan yang bisa membaca/mendengar/membagikan konten.
+- Ada notifikasi fitur **default timer untuk pesan menghilang**: pesan baru akan hilang dari chat **setelah 90 hari** (kecuali pesan yang di-“keep”/disimpan).
+- Di bagian input chat, ada teks perintah seperti: **`/whatsapp`**, **`/menu`**, lalu **“Oi”** (bahasa Portugis = “halo/hey”).
+
+Kalau kamu mau, bilang tujuanmu (mis. mau terjemahan lengkap, arti tiap bagian, atau cara mengubah timer/matikan pesan menghilang) nanti aku bantu.
+
