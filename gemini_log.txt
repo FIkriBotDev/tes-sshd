@@ -38983,3 +38983,16 @@ Response  : Saya melihat ini adalah tangkapan layar **QR code WhatsApp untuk seb
 
 Kalau kamu mau, saya bisa bantu jelaskan cara memindainya atau cara membuat/menampilkan QR code grupnya.
 
+
+[2026-07-15T17:00:28.765Z]
+Prompt    : Aperta nessa opção pra entra em QR code
+Image URL : https://uploader.exodusai.biz.id/tmp/f96d91-1784134823644.jpg
+Response  : Pra entrar via **QR Code** no WhatsApp, toca em **“Dispositivos conectados”** (é a opção que você circulou).
+
+Depois é só:
+1. Vai aparecer a tela de dispositivos.
+2. Toca em **“Vincular um dispositivo”** / **“Conectar com QR code”**.
+3. Aí você aponta a câmera no **QR Code** (ou usa o código que está no outro aparelho).
+
+Se você quiser, me diz se é pra **conectar outro celular** ou pra **usar no PC (WhatsApp Web/Desktop)** que eu te guio certinho.
+
