@@ -38951,3 +38951,11 @@ Artinya: **tidak bisa menambahkan “ExodusAI”** ke komunitas, karena **orang 
 
 Kalau kamu mau, bilang: kamu coba menambahkan ExodusAI sebagai **anggota komunitas** atau **admin/mod**, dan apakah “ExodusAI” itu akun WhatsApp biasa? Nanti aku bantu langkah yang paling pas.
 
+
+[2026-07-15T12:26:08.015Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/296c42-1784118362980.jpg
+Response  : Itu adalah tampilan **QR code WhatsApp untuk grup**. Di gambar tertulis (dalam bahasa Portugis) bahwa **QR code grup ini bersifat privat**—artinya **hanya orang yang memiliki/ mendapatkan QR code tersebut** yang bisa memindainya lewat kamera WhatsApp untuk **masuk ke grup**.
+
+Kalau kamu mau, bilang: kamu ingin **jelaskan cara scan**, atau kamu ingin tahu **cara membuat/menemukan QR code grup**?
+
