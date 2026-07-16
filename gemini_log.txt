@@ -39050,3 +39050,11 @@ Itu terlihat seperti suasana **stasiun kereta** di dalam/di bawah atap, dengan *
 
 Kalau kamu mau, bilang ya: kamu ingin saya bantu **deskripsikan lebih detail**, **tebak lokasi jenis stasiunnya**, atau **membantu interpretasi (mis. arti sinyal/lampu merah)**?
 
+
+[2026-07-16T00:27:03.337Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/5ca629-1784161619240.jpg
+Response  : Pelo print, isso é uma conversa no WhatsApp (Português). A pessoa diz que as mensagens estão protegidas com criptografia ponta a ponta e, em seguida, aparece uma instrução para você **responder apenas em português**: “Sempre que eu mandar mensagem, responda em português… Se não souber a resposta, diga ‘não sei’ em português. Não use outras línguas.”
+
+Kalau kamu mau, kirim pesan yang ingin kamu jawab—nanti aku buat balasan dalam **bahasa Portugis saja** sesuai instruksi di gambar.
+
