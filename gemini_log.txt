@@ -39067,3 +39067,9 @@ Kebersamaannya, dukungan, dan kerja sama yang luar biasa sudah sangat berarti.
 
 Kalau Anda mau, saya bisa bantu buatkan caption yang lebih “rapi” untuk posting (tinggal sebutkan mau gaya formal atau santai) atau versi singkat untuk ucapan di slide.
 
+
+[2026-07-17T04:17:09.888Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/ba3dd9-1784261826011.jpg
+Response  : Saya lihat gambarnya: suasananya seperti acara **“Meetup Ojs – JBA”** (ada teks di bagian bawah). Terlihat beberapa orang di dalam ruangan, dengan spanduk/poster di belakang (serta watermark/label “Sekolah Tinggi Bahasa Asing LIA” dan waktu **11:16** di pojok kanan atas).
+
