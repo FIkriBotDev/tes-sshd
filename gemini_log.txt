@@ -39081,3 +39081,48 @@ Response  : Saya sudah melihat gambarnya.
 
 Terlihat seseorang bersepeda menghadap arah depan (punggung terlihat), suasananya di pinggir jalan dekat pepohonan. Di bagian bawah ada tulisan **“Sepedaan pagi”** dan lokasi **“Cyber Learning”**, serta waktu tampilan **06:37**.
 
+
+[2026-07-18T05:10:23.435Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/69221a-1784351417060.jpg
+Response  : Saya sudah melihat gambar poster tersebut. Ini adalah **Workshop Berbasis Kompetensi – Data Science**.
+
+Ringkasan informasinya:
+- **Gratis** untuk siswa & siswi **SMA/SMK**
+- **Hari/Tanggal:** Kamis, **23 Juli 2026**
+- **Waktu:** **09.00 – 16.00 WIB**
+- **Tempat:** **Lab Komputer Universitas LIA**
+- **Materi:**
+  1. Pengenalan Data dan Jenis Data  
+  2. Analisis Data Dasar  
+  3. Visualisasi Data Sederhana  
+  4. Mini Project Portofolio
+- **Manfaat & Output:** belajar berbasis kompetensi, praktik langsung, output portofolio, dan diarahkan ke persiapan sertifikasi **BNSP**
+- **Pendaftaran:** melalui **QR** pada poster, **hingga 22 Juli 2026**
+- Ada kuota terbatas serta kontak: **081531839099** (sesuai yang tertulis)
+
+Kalau kamu mau, saya bisa bantu **mengecek teksnya lebih detail** atau bantu **buatkan versi caption/promosi** dari poster ini.
+
+
+[2026-07-18T05:10:23.680Z]
+Prompt    : lihatlah gambar ini
+Image URL : https://uploader.exodusai.biz.id/tmp/57a904-1784351416583.jpg
+Response  : Saya sudah melihat gambar tersebut. Isinya poster informasi **Beasiswa KIP Kuliah** dari **Universitas LIA** dengan poin utama:
+
+- **Keuntungan:** *Biaya kuliah gratis* dan *uang saku per semester*  
+- **Syarat pendaftaran (tercantum):**
+  1. Domisili **Jakarta Pusat & Jakarta Selatan**
+  2. Terdata di **DTKS** dan **P3KE**
+  3. Memiliki **Surat Keterangan Tidak Mampu**
+  4. Lulusan **2025–2026**
+- **Timeline seleksi (tercantum):**
+  - **31 Juli 2026**: Batas seleksi berkas  
+  - **1 Agustus 2026**: Pengumuman lolos berkas  
+  - **3–7 Agustus 2026**: Seleksi wawancara  
+  - **14 Agustus 2026**: Pengumuman penerima
+- Ada **Langkah 1 & 2** (pendaftaran via scan QR untuk KIP Kuliah/PMB—sesuai teks pada poster)
+- **Link pendaftaran:** `pmb.universitaslia.ac.id`
+- Kontak tertera: **0858 8103 6948** dan akun media sosial Universitas LIA.
+
+Kalau kamu mau, saya bisa bantu ringkas lagi atau bantu cek bagian tertentu (mis. syarat paling penting atau langkah pendaftarannya).
+
