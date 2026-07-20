@@ -39143,3 +39143,18 @@ Prompt    : lihatlah gambar ini
 Image URL : https://uploader.exodusai.biz.id/tmp/50ab54-1784524501072.jpg
 Response  : Saya sudah lihat gambar tersebut. Itu terlihat seperti tangkapan layar **Zoom/rekaman “Pekerti 56 Universitas Muslim Indonesia”** dengan tampilan peserta meeting (banyak video kecil) dan ada banner bertuliskan **“Pelaksanaan Pekerti selama 1 Minggu”** serta lokasi **“STBA LIA Jakarta”**. Di bagian bawah juga terlihat pengatur waktu **“12:14”**.
 
+
+[2026-07-20T10:48:31.324Z]
+Prompt    : Kebakaran d bayur
+Image URL : https://uploader.exodusai.biz.id/tmp/4a36b3-1784544507450.jpg
+Response  : Saya lihat di fotomu ada **asap/gelagat kebakaran** dari arah bangunan di dekat sungai, dan langit tampak tertutup asap tebal.
+
+Kalau ini kejadian **kebakaran yang nyata**, mohon lakukan ini ya:
+1. **Jauhi lokasi** dan ke area terbuka yang aman.
+2. **Hubungi layanan darurat**: **112** (atau **113** untuk pemadam, tergantung daerah), dan kabarkan lokasi jelas “Bayur” + patokan.
+3. **Jangan masuk** ke area asap tebal. Kalau ada orang terdampak: evakuasi dan panggil bantuan.
+4. Bila aman dan api kecil: gunakan **APAR/selimut api**. Kalau sudah membesar, **jangan dipadamkan sendiri**.
+
+Biar saya bantu lebih tepat:  
+**Kebakaran di Bayur itu di daerah mana (Bayur kabupaten/kota apa), dan apakah ada korban/akses jalan tersendat?**
+
