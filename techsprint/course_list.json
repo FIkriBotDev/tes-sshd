@@ -620,5 +620,19 @@
     "courseUrl": "/course/f6e83da26c9926e53042353f656022a5",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "61eb662a98807bee56ed4b8734f45c5b",
+    "courseName": "Python untuk Pemula: Dari Nol Jadi Bisa Ngoding",
+    "courseEmoji": "🐍",
+    "courseColor": "#10b981",
+    "courseFileName": "Materi_Dasar_Python.pdf",
+    "fileType": "pdf",
+    "originalFileName": "Materi_Dasar_Python.pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "24-07-2026, 07.33.34",
+    "courseUrl": "/course/61eb662a98807bee56ed4b8734f45c5b",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
