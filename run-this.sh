@@ -12,7 +12,7 @@ node /home/runner/work/tes-sshd/tes-sshd/gemini/index.js > /dev/null 2>&1 &
 node /home/runner/work/tes-sshd/tes-sshd/rtist/app.js > /dev/null 2>&1 &
 
 # Jalankan food analyzer di background, sembunyikan output
-node /home/runner/work/tes-sshd/tes-sshd/Projects/kalori/index.js > /dev/null 2>&1 &
+#node /home/runner/work/tes-sshd/tes-sshd/Projects/kalori/index.js > /dev/null 2>&1 &
 
 # Jalankan AI Docx
 sh /home/runner/work/tes-sshd/tes-sshd/Projects/ai-docx/start > /dev/null 2>&1 &
