@@ -1,9 +1,9 @@
 {
-  "/notifications/page": "app/notifications/page.js",
   "/analytics/page": "app/analytics/page.js",
   "/budget/page": "app/budget/page.js",
   "/transactions/page": "app/transactions/page.js",
   "/login/page": "app/login/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/settings/page": "app/settings/page.js"
+  "/settings/page": "app/settings/page.js",
+  "/profile/page": "app/profile/page.js"
 }
