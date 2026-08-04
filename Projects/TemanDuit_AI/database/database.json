@@ -8,10 +8,10 @@
       "timezone": "WITA",
       "occupation": "Mahasiswa",
       "incomeSource": "Uang jajan",
-      "balance": 13585000,
+      "balance": 133585000,
       "savingBalance": 0,
       "createdAt": "2026-08-04T12:15:59.607Z",
-      "updatedAt": "2026-08-04T20:52:30.700Z"
+      "updatedAt": "2026-08-04T20:57:52.977Z"
     },
     {
       "id": "f4feb6dc-ca64-404b-8918-2067a5935911",
@@ -396,19 +396,6 @@
       "source": "bonus",
       "aiParsed": true,
       "rawInput": "dapat bonus 130 juta"
-    },
-    {
-      "id": "624e0c52-135d-4cc5-b2bf-fcc781b82218",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "expense",
-      "amount": 120000000,
-      "categoryId": "cat-belanja-2514b76d",
-      "description": "beli mobil",
-      "date": "2026-08-04T12:51:53.747Z",
-      "createdAt": "2026-08-04T12:51:53.747Z",
-      "updatedAt": "2026-08-04T12:51:53.747Z",
-      "aiParsed": true,
-      "rawInput": "beli mobil 120 juta"
     },
     {
       "id": "baea95a8-55db-4f65-966f-9727b5ca898a",
