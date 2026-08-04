@@ -8,10 +8,10 @@
       "timezone": "WITA",
       "occupation": "Mahasiswa",
       "incomeSource": "Uang jajan",
-      "balance": 133535000,
-      "savingBalance": 0,
+      "balance": 133530000,
+      "savingBalance": 5000,
       "createdAt": "2026-08-04T12:15:59.607Z",
-      "updatedAt": "2026-08-04T21:22:34.538Z"
+      "updatedAt": "2026-08-04T21:30:23.184Z"
     },
     {
       "id": "f4feb6dc-ca64-404b-8918-2067a5935911",
@@ -601,7 +601,16 @@
     }
   ],
   "savingGoals": [],
-  "savingTransactions": [],
+  "savingTransactions": [
+    {
+      "id": "995bd9e3-8012-43e9-bbe3-d3a13cbbaa3c",
+      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
+      "type": "deposit",
+      "amount": 5000,
+      "description": "dana darurat",
+      "createdAt": "2026-08-04T21:30:23.184Z"
+    }
+  ],
   "notifications": [
     {
       "id": "d1facf67-56bf-4330-8166-bbf1886b1a21",
