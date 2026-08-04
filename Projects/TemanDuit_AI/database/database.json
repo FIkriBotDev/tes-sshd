@@ -1,6 +1,13 @@
 {
   "users": [],
-  "registrationTokens": [],
+  "registrationTokens": [
+    {
+      "token": "09589116-68ee-49dc-b4af-71c6e67c4e72",
+      "telegramId": "8084800390",
+      "expiresAt": "2026-08-05T12:15:19.391Z",
+      "used": false
+    }
+  ],
   "loginCodes": [],
   "categories": [],
   "transactions": [],
