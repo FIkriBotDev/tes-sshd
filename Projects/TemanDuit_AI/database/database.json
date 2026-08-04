@@ -8,10 +8,10 @@
       "timezone": "WITA",
       "occupation": "Mahasiswa",
       "incomeSource": "Uang jajan",
-      "balance": 133585000,
+      "balance": 133535000,
       "savingBalance": 0,
       "createdAt": "2026-08-04T12:15:59.607Z",
-      "updatedAt": "2026-08-04T20:57:52.977Z"
+      "updatedAt": "2026-08-04T21:22:34.538Z"
     },
     {
       "id": "f4feb6dc-ca64-404b-8918-2067a5935911",
@@ -500,6 +500,19 @@
       "updatedAt": "2026-08-04T20:52:30.700Z",
       "aiParsed": true,
       "rawInput": "habis beli sepatu 800 ribu"
+    },
+    {
+      "id": "fa0efb06-c0dc-4e82-9b6d-ed588d803dbe",
+      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
+      "type": "expense",
+      "amount": 50000,
+      "categoryId": "cat-makanan-2514b76d",
+      "description": "beli seblak",
+      "date": "2026-08-04T21:22:34.538Z",
+      "createdAt": "2026-08-04T21:22:34.538Z",
+      "updatedAt": "2026-08-04T21:22:34.538Z",
+      "aiParsed": true,
+      "rawInput": "tolong catat saya habis beli seblak 50 ribu"
     }
   ],
   "budgets": [
@@ -508,13 +521,13 @@
       "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
       "categoryId": "cat-makanan-2514b76d",
       "amount": 250000,
-      "spent": 0,
+      "spent": 50000,
       "month": 8,
       "year": 2026,
       "rollover": false,
       "rolledAmount": 0,
       "createdAt": "2026-08-04T20:47:47.777Z",
-      "updatedAt": "2026-08-04T20:47:47.777Z"
+      "updatedAt": "2026-08-04T21:22:34.539Z"
     },
     {
       "id": "f80e564d-3e98-4dc2-a6a2-c404a476c866",
