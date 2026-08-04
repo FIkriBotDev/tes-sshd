@@ -2,5 +2,7 @@
   "/activeUserLogin/page": "app/activeUserLogin/page.js",
   "/login/page": "app/login/page.js",
   "/ai-insight/page": "app/ai-insight/page.js",
-  "/notifications/page": "app/notifications/page.js"
+  "/notifications/page": "app/notifications/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/analytics/page": "app/analytics/page.js"
 }

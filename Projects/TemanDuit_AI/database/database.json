@@ -528,7 +528,7 @@
       "type": "large_expense",
       "title": "Pengeluaran Besar",
       "message": "Kamu baru saja mengeluarkan Rp 120.000.000 untuk beli mobil. Ini 801% dari saldo kamu.",
-      "isRead": false,
+      "isRead": true,
       "sentToTelegram": false,
       "relatedId": "624e0c52-135d-4cc5-b2bf-fcc781b82218",
       "createdAt": "2026-08-04T12:51:53.748Z"
@@ -550,7 +550,7 @@
       "type": "reminder_due",
       "title": "⏰ Bayar utang",
       "message": "Reminder: Bayar utang",
-      "isRead": false,
+      "isRead": true,
       "sentToTelegram": true,
       "relatedId": "e39c4904-2dd2-44d5-89ab-748abd00a77a",
       "createdAt": "2026-08-04T20:28:00.211Z"
