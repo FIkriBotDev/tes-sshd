@@ -22,10 +22,10 @@
       "occupation": "mahasiswa ",
       "incomeSource": "dari ortu",
       "financialGoal": "menabung untuk beli apa yg aku mau ",
-      "balance": -40000,
+      "balance": 9930000,
       "savingBalance": 0,
       "createdAt": "2026-08-04T12:48:57.415Z",
-      "updatedAt": "2026-08-04T12:52:00.761Z"
+      "updatedAt": "2026-08-04T12:53:21.863Z"
     }
   ],
   "registrationTokens": [
@@ -410,6 +410,32 @@
       "updatedAt": "2026-08-04T12:52:00.761Z",
       "aiParsed": true,
       "rawInput": "terus tadi aku jajan 20k"
+    },
+    {
+      "id": "e8d94cb0-dc84-4f6f-bf98-51bb191d2b5d",
+      "userId": "f4feb6dc-ca64-404b-8918-2067a5935911",
+      "type": "income",
+      "amount": 10000000,
+      "categoryId": "cat-lainnya-f4feb6dc",
+      "description": "apa aja ",
+      "date": "2026-08-04T00:00:00.000Z",
+      "createdAt": "2026-08-04T12:52:59.287Z",
+      "updatedAt": "2026-08-04T12:52:59.287Z",
+      "source": "other",
+      "aiParsed": false
+    },
+    {
+      "id": "1d2cde0d-1428-4f96-b1f8-91c60a1e8831",
+      "userId": "f4feb6dc-ca64-404b-8918-2067a5935911",
+      "type": "expense",
+      "amount": 30000,
+      "categoryId": "cat-makanan-f4feb6dc",
+      "description": "jajan",
+      "date": "2026-08-04T12:53:21.863Z",
+      "createdAt": "2026-08-04T12:53:21.863Z",
+      "updatedAt": "2026-08-04T12:53:21.863Z",
+      "aiParsed": true,
+      "rawInput": "aku jajan 30k"
     }
   ],
   "budgets": [],
