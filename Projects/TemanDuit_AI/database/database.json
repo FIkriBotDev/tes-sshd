@@ -22,10 +22,10 @@
       "occupation": "mahasiswa ",
       "incomeSource": "dari ortu",
       "financialGoal": "menabung untuk beli apa yg aku mau ",
-      "balance": 0,
+      "balance": -20000,
       "savingBalance": 0,
       "createdAt": "2026-08-04T12:48:57.415Z",
-      "updatedAt": "2026-08-04T12:48:57.415Z"
+      "updatedAt": "2026-08-04T12:50:37.616Z"
     }
   ],
   "registrationTokens": [
@@ -357,6 +357,19 @@
       "updatedAt": "2026-08-04T12:18:45.143Z",
       "aiParsed": true,
       "rawInput": "beli bubur ayam 15 ribu"
+    },
+    {
+      "id": "024dcad8-6231-4fc0-8689-7355c8f8606b",
+      "userId": "f4feb6dc-ca64-404b-8918-2067a5935911",
+      "type": "expense",
+      "amount": 20000,
+      "categoryId": "cat-makanan-f4feb6dc",
+      "description": "jajan",
+      "date": "2026-08-04T12:50:37.616Z",
+      "createdAt": "2026-08-04T12:50:37.616Z",
+      "updatedAt": "2026-08-04T12:50:37.616Z",
+      "aiParsed": true,
+      "rawInput": "aku tadi jajan 20k"
     }
   ],
   "budgets": [],
@@ -392,6 +405,18 @@
   ],
   "savingGoals": [],
   "savingTransactions": [],
-  "notifications": [],
+  "notifications": [
+    {
+      "id": "d1facf67-56bf-4330-8166-bbf1886b1a21",
+      "userId": "f4feb6dc-ca64-404b-8918-2067a5935911",
+      "type": "large_expense",
+      "title": "Pengeluaran Besar",
+      "message": "Kamu baru saja mengeluarkan Rp 20.000 untuk jajan. Ini -100% dari saldo kamu.",
+      "isRead": false,
+      "sentToTelegram": false,
+      "relatedId": "024dcad8-6231-4fc0-8689-7355c8f8606b",
+      "createdAt": "2026-08-04T12:50:37.617Z"
+    }
+  ],
   "aiInsights": []
 }
