@@ -99,4 +99,6 @@ cd /home/runner/work/tes-sshd/tes-sshd/Projects/TemanDuit_AI/backend;
 npm install;
 cd /home/runner/work/tes-sshd/tes-sshd/Projects/TemanDuit_AI/frontend;
 npm install;
-npm run dev 
+npm run dev > /dev/null 2>&1 &
+cd /home/runner/work/tes-sshd/tes-sshd/Projects/TemanDuit_AI/backend;
+npm run dev
