@@ -8,10 +8,10 @@
       "timezone": "WITA",
       "occupation": "Mahasiswa",
       "incomeSource": "Uang jajan",
-      "balance": 134985000,
+      "balance": 14985000,
       "savingBalance": 0,
       "createdAt": "2026-08-04T12:15:59.607Z",
-      "updatedAt": "2026-08-04T12:51:25.794Z"
+      "updatedAt": "2026-08-04T12:51:53.747Z"
     },
     {
       "id": "f4feb6dc-ca64-404b-8918-2067a5935911",
@@ -22,10 +22,10 @@
       "occupation": "mahasiswa ",
       "incomeSource": "dari ortu",
       "financialGoal": "menabung untuk beli apa yg aku mau ",
-      "balance": -20000,
+      "balance": -40000,
       "savingBalance": 0,
       "createdAt": "2026-08-04T12:48:57.415Z",
-      "updatedAt": "2026-08-04T12:50:37.616Z"
+      "updatedAt": "2026-08-04T12:52:00.761Z"
     }
   ],
   "registrationTokens": [
@@ -384,6 +384,32 @@
       "source": "bonus",
       "aiParsed": true,
       "rawInput": "dapat bonus 130 juta"
+    },
+    {
+      "id": "624e0c52-135d-4cc5-b2bf-fcc781b82218",
+      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
+      "type": "expense",
+      "amount": 120000000,
+      "categoryId": "cat-belanja-2514b76d",
+      "description": "beli mobil",
+      "date": "2026-08-04T12:51:53.747Z",
+      "createdAt": "2026-08-04T12:51:53.747Z",
+      "updatedAt": "2026-08-04T12:51:53.747Z",
+      "aiParsed": true,
+      "rawInput": "beli mobil 120 juta"
+    },
+    {
+      "id": "baea95a8-55db-4f65-966f-9727b5ca898a",
+      "userId": "f4feb6dc-ca64-404b-8918-2067a5935911",
+      "type": "expense",
+      "amount": 20000,
+      "categoryId": "cat-makanan-f4feb6dc",
+      "description": "jajan",
+      "date": "2026-08-04T12:52:00.761Z",
+      "createdAt": "2026-08-04T12:52:00.761Z",
+      "updatedAt": "2026-08-04T12:52:00.761Z",
+      "aiParsed": true,
+      "rawInput": "terus tadi aku jajan 20k"
     }
   ],
   "budgets": [],
@@ -430,6 +456,28 @@
       "sentToTelegram": false,
       "relatedId": "024dcad8-6231-4fc0-8689-7355c8f8606b",
       "createdAt": "2026-08-04T12:50:37.617Z"
+    },
+    {
+      "id": "7e0fa623-9f7d-46c9-83fd-a8eaab2d924e",
+      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
+      "type": "large_expense",
+      "title": "Pengeluaran Besar",
+      "message": "Kamu baru saja mengeluarkan Rp 120.000.000 untuk beli mobil. Ini 801% dari saldo kamu.",
+      "isRead": false,
+      "sentToTelegram": false,
+      "relatedId": "624e0c52-135d-4cc5-b2bf-fcc781b82218",
+      "createdAt": "2026-08-04T12:51:53.748Z"
+    },
+    {
+      "id": "b24903ba-8360-4106-b5d1-25a444f735f7",
+      "userId": "f4feb6dc-ca64-404b-8918-2067a5935911",
+      "type": "large_expense",
+      "title": "Pengeluaran Besar",
+      "message": "Kamu baru saja mengeluarkan Rp 20.000 untuk jajan. Ini -50% dari saldo kamu.",
+      "isRead": false,
+      "sentToTelegram": false,
+      "relatedId": "baea95a8-55db-4f65-966f-9727b5ca898a",
+      "createdAt": "2026-08-04T12:52:00.762Z"
     }
   ],
   "aiInsights": []

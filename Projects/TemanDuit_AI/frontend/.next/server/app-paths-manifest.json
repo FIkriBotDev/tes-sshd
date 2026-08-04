@@ -4,5 +4,5 @@
   "/reminder/page": "app/reminder/page.js",
   "/page": "app/page.js",
   "/login/page": "app/login/page.js",
-  "/activeUserLogin/page": "app/activeUserLogin/page.js"
+  "/income/page": "app/income/page.js"
 }
