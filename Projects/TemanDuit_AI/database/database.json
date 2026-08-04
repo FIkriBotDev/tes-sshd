@@ -22,10 +22,10 @@
       "occupation": "mahasiswa ",
       "incomeSource": "dari ortu",
       "financialGoal": "menabung untuk beli apa yg aku mau ",
-      "balance": 9930000,
+      "balance": 9730000,
       "savingBalance": 0,
       "createdAt": "2026-08-04T12:48:57.415Z",
-      "updatedAt": "2026-08-04T12:53:21.863Z"
+      "updatedAt": "2026-08-04T12:53:48.760Z"
     }
   ],
   "registrationTokens": [
@@ -436,6 +436,19 @@
       "updatedAt": "2026-08-04T12:53:21.863Z",
       "aiParsed": true,
       "rawInput": "aku jajan 30k"
+    },
+    {
+      "id": "6bfef127-6bd5-43b2-a90f-58cc7d5d766a",
+      "userId": "f4feb6dc-ca64-404b-8918-2067a5935911",
+      "type": "expense",
+      "amount": 200000,
+      "categoryId": "cat-lainnya-f4feb6dc",
+      "description": "beliin keluarga",
+      "date": "2026-08-04T12:53:48.760Z",
+      "createdAt": "2026-08-04T12:53:48.760Z",
+      "updatedAt": "2026-08-04T12:53:48.760Z",
+      "aiParsed": true,
+      "rawInput": "terus waktu itu beliin keluarga abis 200"
     }
   ],
   "budgets": [],
