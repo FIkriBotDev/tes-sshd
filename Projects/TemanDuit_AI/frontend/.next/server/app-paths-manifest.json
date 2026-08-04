@@ -4,5 +4,7 @@
   "/ai-insight/page": "app/ai-insight/page.js",
   "/notifications/page": "app/notifications/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/analytics/page": "app/analytics/page.js"
+  "/analytics/page": "app/analytics/page.js",
+  "/saving/page": "app/saving/page.js",
+  "/budget/page": "app/budget/page.js"
 }
