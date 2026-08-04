@@ -5,7 +5,7 @@ const os = require("os-utils");
 const fs = require("fs");
 
 const app = express();
-const PORT = 3000;
+const PORT = 3200;
 const TOTAL_REQUEST_FILE = './total_request_count.txt';
 const LOG_FILE = './log.txt';
 const axiosInstance = axios.create({
