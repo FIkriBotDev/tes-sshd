@@ -1,6 +1,7 @@
 {
+  "/activeUserLogin/page": "app/activeUserLogin/page.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/saving/page": "app/saving/page.js",
-  "/activeUserLogin/page": "app/activeUserLogin/page.js",
-  "/analytics/page": "app/analytics/page.js"
+  "/analytics/page": "app/analytics/page.js",
+  "/notifications/page": "app/notifications/page.js"
 }
