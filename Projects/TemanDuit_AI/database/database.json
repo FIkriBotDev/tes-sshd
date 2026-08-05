@@ -8,10 +8,10 @@
       "timezone": "WITA",
       "occupation": "Mahasiswa",
       "incomeSource": "Uang jajan",
-      "balance": 133530000,
+      "balance": 103530000,
       "savingBalance": 5000,
       "createdAt": "2026-08-04T12:15:59.607Z",
-      "updatedAt": "2026-08-04T21:30:23.184Z"
+      "updatedAt": "2026-08-05T05:33:59.495Z"
     },
     {
       "id": "f4feb6dc-ca64-404b-8918-2067a5935911",
@@ -513,6 +513,19 @@
       "updatedAt": "2026-08-04T21:22:34.538Z",
       "aiParsed": true,
       "rawInput": "tolong catat saya habis beli seblak 50 ribu"
+    },
+    {
+      "id": "99e2570d-4178-4f79-b200-408cb1f4e8a1",
+      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
+      "type": "expense",
+      "amount": 30000000,
+      "categoryId": "cat-belanja-2514b76d",
+      "description": "beli MacBook Pro karena gengsi",
+      "date": "2026-08-05T05:33:59.495Z",
+      "createdAt": "2026-08-05T05:33:59.495Z",
+      "updatedAt": "2026-08-05T05:33:59.495Z",
+      "aiParsed": true,
+      "rawInput": "catat habis beli macbook pro 30 juta karena gengsi"
     }
   ],
   "budgets": [
@@ -534,13 +547,13 @@
       "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
       "categoryId": "cat-belanja-2514b76d",
       "amount": 1000000,
-      "spent": 800000,
+      "spent": 30800000,
       "month": 8,
       "year": 2026,
       "rollover": false,
       "rolledAmount": 0,
       "createdAt": "2026-08-04T20:48:03.470Z",
-      "updatedAt": "2026-08-04T20:52:30.701Z"
+      "updatedAt": "2026-08-05T05:33:59.496Z"
     },
     {
       "id": "c6982c35-0cf3-4abb-b267-e92b61b604ff",
@@ -677,6 +690,28 @@
       "sentToTelegram": false,
       "relatedId": "f80e564d-3e98-4dc2-a6a2-c404a476c866",
       "createdAt": "2026-08-04T20:52:30.701Z"
+    },
+    {
+      "id": "cff38e6c-e76a-4a13-ba83-91e36363b1d8",
+      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
+      "type": "large_expense",
+      "title": "Pengeluaran Besar",
+      "message": "Kamu baru saja mengeluarkan Rp 30.000.000 untuk beli MacBook Pro karena gengsi. Ini 29% dari saldo kamu.",
+      "isRead": false,
+      "sentToTelegram": false,
+      "relatedId": "99e2570d-4178-4f79-b200-408cb1f4e8a1",
+      "createdAt": "2026-08-05T05:33:59.496Z"
+    },
+    {
+      "id": "1a4b1720-3426-4c85-a287-9c2bfd812075",
+      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
+      "type": "budget_exceeded",
+      "title": "Budget Belanja Habis!",
+      "message": "Budget Belanja kamu sudah habis. Pengeluaran: Rp 30.800.000 dari Rp 1.000.000.",
+      "isRead": false,
+      "sentToTelegram": false,
+      "relatedId": "f80e564d-3e98-4dc2-a6a2-c404a476c866",
+      "createdAt": "2026-08-05T05:33:59.497Z"
     }
   ],
   "aiInsights": []
