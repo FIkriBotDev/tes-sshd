@@ -8,10 +8,10 @@
       "timezone": "WITA",
       "occupation": "Mahasiswa",
       "incomeSource": "Uang jajan",
-      "balance": 103530000,
+      "balance": 68530000,
       "savingBalance": 5000,
       "createdAt": "2026-08-04T12:15:59.607Z",
-      "updatedAt": "2026-08-05T05:33:59.495Z"
+      "updatedAt": "2026-08-05T05:36:32.091Z"
     },
     {
       "id": "f4feb6dc-ca64-404b-8918-2067a5935911",
@@ -526,6 +526,19 @@
       "updatedAt": "2026-08-05T05:33:59.495Z",
       "aiParsed": true,
       "rawInput": "catat habis beli macbook pro 30 juta karena gengsi"
+    },
+    {
+      "id": "e39f8cdb-2458-438e-9f11-e84bb15d3f6c",
+      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
+      "type": "expense",
+      "amount": 35000000,
+      "categoryId": "cat-transport-2514b76d",
+      "description": "beli motor nmax",
+      "date": "2026-08-05T05:36:32.091Z",
+      "createdAt": "2026-08-05T05:36:32.091Z",
+      "updatedAt": "2026-08-05T05:36:32.091Z",
+      "aiParsed": true,
+      "rawInput": "catat habis beli motor nmax 35 juta"
     }
   ],
   "budgets": [
@@ -712,6 +725,17 @@
       "sentToTelegram": false,
       "relatedId": "f80e564d-3e98-4dc2-a6a2-c404a476c866",
       "createdAt": "2026-08-05T05:33:59.497Z"
+    },
+    {
+      "id": "dc9b4303-c312-4960-8bc9-8135aac4ea7b",
+      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
+      "type": "large_expense",
+      "title": "Pengeluaran Besar",
+      "message": "Kamu baru saja mengeluarkan Rp 35.000.000 untuk beli motor nmax. Ini 51% dari saldo kamu.",
+      "isRead": false,
+      "sentToTelegram": false,
+      "relatedId": "e39f8cdb-2458-438e-9f11-e84bb15d3f6c",
+      "createdAt": "2026-08-05T05:36:32.092Z"
     }
   ],
   "aiInsights": []
