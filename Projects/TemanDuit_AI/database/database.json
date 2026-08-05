@@ -8,10 +8,10 @@
       "timezone": "WITA",
       "occupation": "Mahasiswa",
       "incomeSource": "Uang jajan",
-      "balance": 68530000,
+      "balance": 67280000,
       "savingBalance": 5000,
       "createdAt": "2026-08-04T12:15:59.607Z",
-      "updatedAt": "2026-08-05T05:36:32.091Z"
+      "updatedAt": "2026-08-05T05:37:40.337Z"
     },
     {
       "id": "f4feb6dc-ca64-404b-8918-2067a5935911",
@@ -539,6 +539,19 @@
       "updatedAt": "2026-08-05T05:36:32.091Z",
       "aiParsed": true,
       "rawInput": "catat habis beli motor nmax 35 juta"
+    },
+    {
+      "id": "0d001fec-1462-443e-bbd2-9751a109039f",
+      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
+      "type": "expense",
+      "amount": 1250000,
+      "categoryId": "cat-hiburan-2514b76d",
+      "description": "habis beli mystery box (isinya zonk)",
+      "date": "2026-08-05T05:37:40.337Z",
+      "createdAt": "2026-08-05T05:37:40.337Z",
+      "updatedAt": "2026-08-05T05:37:40.337Z",
+      "aiParsed": true,
+      "rawInput": "catat habis beli mistery box 1 juta 250 ribu dan ternyata isinya zonk"
     }
   ],
   "budgets": [
