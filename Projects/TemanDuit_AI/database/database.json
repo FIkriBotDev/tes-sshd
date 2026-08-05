@@ -79,6 +79,12 @@
       "code": "3KYAEBTT",
       "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
       "createdAt": "2026-08-05T07:57:14.614Z",
+      "isActive": false
+    },
+    {
+      "code": "E3XQVMGN",
+      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
+      "createdAt": "2026-08-05T10:23:07.524Z",
       "isActive": true
     }
   ],
