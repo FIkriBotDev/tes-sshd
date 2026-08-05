@@ -720,7 +720,7 @@
       "type": "budget_exceeded",
       "title": "Budget Internet Habis!",
       "message": "Budget Internet kamu sudah habis. Pengeluaran: Rp 250.000 dari Rp 250.000.",
-      "isRead": false,
+      "isRead": true,
       "sentToTelegram": false,
       "relatedId": "c6982c35-0cf3-4abb-b267-e92b61b604ff",
       "createdAt": "2026-08-04T20:51:33.851Z"
@@ -731,7 +731,7 @@
       "type": "budget_warning",
       "title": "Budget Belanja Hampir Habis",
       "message": "Budget Belanja sudah terpakai 80%. Sisa: Rp 200.000.",
-      "isRead": false,
+      "isRead": true,
       "sentToTelegram": false,
       "relatedId": "f80e564d-3e98-4dc2-a6a2-c404a476c866",
       "createdAt": "2026-08-04T20:52:30.701Z"
@@ -742,7 +742,7 @@
       "type": "large_expense",
       "title": "Pengeluaran Besar",
       "message": "Kamu baru saja mengeluarkan Rp 30.000.000 untuk beli MacBook Pro karena gengsi. Ini 29% dari saldo kamu.",
-      "isRead": false,
+      "isRead": true,
       "sentToTelegram": false,
       "relatedId": "99e2570d-4178-4f79-b200-408cb1f4e8a1",
       "createdAt": "2026-08-05T05:33:59.496Z"
@@ -753,7 +753,7 @@
       "type": "budget_exceeded",
       "title": "Budget Belanja Habis!",
       "message": "Budget Belanja kamu sudah habis. Pengeluaran: Rp 30.800.000 dari Rp 1.000.000.",
-      "isRead": false,
+      "isRead": true,
       "sentToTelegram": false,
       "relatedId": "f80e564d-3e98-4dc2-a6a2-c404a476c866",
       "createdAt": "2026-08-05T05:33:59.497Z"
@@ -764,7 +764,7 @@
       "type": "large_expense",
       "title": "Pengeluaran Besar",
       "message": "Kamu baru saja mengeluarkan Rp 35.000.000 untuk beli motor nmax. Ini 51% dari saldo kamu.",
-      "isRead": false,
+      "isRead": true,
       "sentToTelegram": false,
       "relatedId": "e39f8cdb-2458-438e-9f11-e84bb15d3f6c",
       "createdAt": "2026-08-05T05:36:32.092Z"
