@@ -13,6 +13,19 @@
       "savingBalance": 0,
       "createdAt": "2026-08-04T12:48:57.415Z",
       "updatedAt": "2026-08-04T12:53:48.760Z"
+    },
+    {
+      "id": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "telegramId": "8084800390",
+      "name": "Fikri",
+      "age": 19,
+      "timezone": "WITA",
+      "occupation": "Mahasiswa",
+      "incomeSource": "Ortu",
+      "balance": 0,
+      "savingBalance": 0,
+      "createdAt": "2026-08-06T14:05:35.186Z",
+      "updatedAt": "2026-08-06T14:05:35.186Z"
     }
   ],
   "registrationTokens": [
@@ -26,7 +39,7 @@
       "token": "1200a078-54e0-4b00-9305-e582675fda17",
       "telegramId": "8084800390",
       "expiresAt": "2026-08-07T14:04:59.059Z",
-      "used": false
+      "used": true
     }
   ],
   "loginCodes": [
@@ -36,6 +49,13 @@
       "createdAt": "2026-08-04T12:48:57.415Z",
       "isActive": true,
       "shownAt": "2026-08-04T12:48:58.016Z"
+    },
+    {
+      "code": "6HRJMQUP",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "createdAt": "2026-08-06T14:05:35.186Z",
+      "isActive": true,
+      "shownAt": "2026-08-06T14:05:35.730Z"
     }
   ],
   "categories": [
@@ -173,6 +193,141 @@
       "isDefault": true,
       "createdAt": "2026-08-04T12:14:17.908Z",
       "userId": "f4feb6dc-ca64-404b-8918-2067a5935911"
+    },
+    {
+      "id": "cat-makanan-3eae76d2",
+      "name": "Makanan",
+      "icon": "🍜",
+      "color": "#F97316",
+      "isDefault": true,
+      "createdAt": "2026-08-06T14:04:50.777Z",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032"
+    },
+    {
+      "id": "cat-minuman-3eae76d2",
+      "name": "Minuman",
+      "icon": "☕",
+      "color": "#F59E0B",
+      "isDefault": true,
+      "createdAt": "2026-08-06T14:04:50.777Z",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032"
+    },
+    {
+      "id": "cat-transport-3eae76d2",
+      "name": "Transport",
+      "icon": "🚗",
+      "color": "#3B82F6",
+      "isDefault": true,
+      "createdAt": "2026-08-06T14:04:50.777Z",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032"
+    },
+    {
+      "id": "cat-belanja-3eae76d2",
+      "name": "Belanja",
+      "icon": "🛍️",
+      "color": "#EC4899",
+      "isDefault": true,
+      "createdAt": "2026-08-06T14:04:50.777Z",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032"
+    },
+    {
+      "id": "cat-tagihan-3eae76d2",
+      "name": "Tagihan",
+      "icon": "📄",
+      "color": "#EF4444",
+      "isDefault": true,
+      "createdAt": "2026-08-06T14:04:50.777Z",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032"
+    },
+    {
+      "id": "cat-internet-3eae76d2",
+      "name": "Internet",
+      "icon": "🌐",
+      "color": "#8B5CF6",
+      "isDefault": true,
+      "createdAt": "2026-08-06T14:04:50.777Z",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032"
+    },
+    {
+      "id": "cat-pulsa-3eae76d2",
+      "name": "Pulsa",
+      "icon": "📱",
+      "color": "#06B6D4",
+      "isDefault": true,
+      "createdAt": "2026-08-06T14:04:50.777Z",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032"
+    },
+    {
+      "id": "cat-kesehatan-3eae76d2",
+      "name": "Kesehatan",
+      "icon": "🏥",
+      "color": "#10B981",
+      "isDefault": true,
+      "createdAt": "2026-08-06T14:04:50.777Z",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032"
+    },
+    {
+      "id": "cat-pendidikan-3eae76d2",
+      "name": "Pendidikan",
+      "icon": "📚",
+      "color": "#6366F1",
+      "isDefault": true,
+      "createdAt": "2026-08-06T14:04:50.777Z",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032"
+    },
+    {
+      "id": "cat-hiburan-3eae76d2",
+      "name": "Hiburan",
+      "icon": "🎮",
+      "color": "#F43F5E",
+      "isDefault": true,
+      "createdAt": "2026-08-06T14:04:50.777Z",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032"
+    },
+    {
+      "id": "cat-bisnis-3eae76d2",
+      "name": "Bisnis",
+      "icon": "💼",
+      "color": "#64748B",
+      "isDefault": true,
+      "createdAt": "2026-08-06T14:04:50.777Z",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032"
+    },
+    {
+      "id": "cat-investasi-3eae76d2",
+      "name": "Investasi",
+      "icon": "📈",
+      "color": "#059669",
+      "isDefault": true,
+      "createdAt": "2026-08-06T14:04:50.777Z",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032"
+    },
+    {
+      "id": "cat-donasi-3eae76d2",
+      "name": "Donasi",
+      "icon": "💝",
+      "color": "#DB2777",
+      "isDefault": true,
+      "createdAt": "2026-08-06T14:04:50.777Z",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032"
+    },
+    {
+      "id": "cat-pajak-3eae76d2",
+      "name": "Pajak",
+      "icon": "🏛️",
+      "color": "#92400E",
+      "isDefault": true,
+      "createdAt": "2026-08-06T14:04:50.777Z",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032"
+    },
+    {
+      "id": "cat-lainnya-3eae76d2",
+      "name": "Lainnya",
+      "icon": "📦",
+      "color": "#6B7280",
+      "isDefault": true,
+      "createdAt": "2026-08-06T14:04:50.777Z",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032"
     }
   ],
   "transactions": [
