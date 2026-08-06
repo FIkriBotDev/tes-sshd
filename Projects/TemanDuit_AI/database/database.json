@@ -8,10 +8,10 @@
       "timezone": "WITA",
       "occupation": "Mahasiswa",
       "incomeSource": "Uang jajan",
-      "balance": 47230000,
+      "balance": 46980002,
       "savingBalance": 20005000,
       "createdAt": "2026-08-04T12:15:59.607Z",
-      "updatedAt": "2026-08-05T07:58:55.472Z"
+      "updatedAt": "2026-08-06T01:01:20.920Z"
     },
     {
       "id": "f4feb6dc-ca64-404b-8918-2067a5935911",
@@ -589,6 +589,19 @@
       "updatedAt": "2026-08-05T05:41:18.055Z",
       "aiParsed": true,
       "rawInput": "catat habis beli ikan gabus 50k"
+    },
+    {
+      "id": "aa3f4bff-2225-4918-a1a2-65b328692984",
+      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
+      "type": "expense",
+      "amount": 249998,
+      "categoryId": "cat-tagihan-2514b76d",
+      "description": "listrik",
+      "date": "2026-08-06T01:01:20.920Z",
+      "createdAt": "2026-08-06T01:01:20.920Z",
+      "updatedAt": "2026-08-06T01:01:20.920Z",
+      "aiParsed": true,
+      "rawInput": "catet abis bayar listrik 249.998"
     }
   ],
   "budgets": [
