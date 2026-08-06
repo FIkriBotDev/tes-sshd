@@ -1,19 +1,6 @@
 {
   "users": [
     {
-      "id": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "telegramId": "8084800390",
-      "name": "Fikri",
-      "age": 19,
-      "timezone": "WITA",
-      "occupation": "Mahasiswa",
-      "incomeSource": "Uang jajan",
-      "balance": 46980002,
-      "savingBalance": 20005000,
-      "createdAt": "2026-08-04T12:15:59.607Z",
-      "updatedAt": "2026-08-06T01:01:20.920Z"
-    },
-    {
       "id": "f4feb6dc-ca64-404b-8918-2067a5935911",
       "telegramId": "8829130989",
       "name": "april",
@@ -30,12 +17,6 @@
   ],
   "registrationTokens": [
     {
-      "token": "09589116-68ee-49dc-b4af-71c6e67c4e72",
-      "telegramId": "8084800390",
-      "expiresAt": "2026-08-05T12:15:19.391Z",
-      "used": true
-    },
-    {
       "token": "f8c401a7-e735-4a31-b85a-d24552007788",
       "telegramId": "8829130989",
       "expiresAt": "2026-08-05T12:47:49.245Z",
@@ -44,192 +25,14 @@
   ],
   "loginCodes": [
     {
-      "code": "EBQ5ENQQ",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "createdAt": "2026-08-04T12:15:59.607Z",
-      "isActive": false,
-      "shownAt": "2026-08-04T12:16:00.520Z"
-    },
-    {
       "code": "7MJ54YZY",
       "userId": "f4feb6dc-ca64-404b-8918-2067a5935911",
       "createdAt": "2026-08-04T12:48:57.415Z",
       "isActive": true,
       "shownAt": "2026-08-04T12:48:58.016Z"
-    },
-    {
-      "code": "L98QTXWR",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "createdAt": "2026-08-04T20:40:57.091Z",
-      "isActive": false
-    },
-    {
-      "code": "BYLJLZF4",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "createdAt": "2026-08-04T20:42:44.374Z",
-      "isActive": false
-    },
-    {
-      "code": "M7ZPLYKM",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "createdAt": "2026-08-05T05:41:27.411Z",
-      "isActive": false
-    },
-    {
-      "code": "3KYAEBTT",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "createdAt": "2026-08-05T07:57:14.614Z",
-      "isActive": false
-    },
-    {
-      "code": "E3XQVMGN",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "createdAt": "2026-08-05T10:23:07.524Z",
-      "isActive": false
-    },
-    {
-      "code": "G79PHWEP",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "createdAt": "2026-08-05T22:47:28.224Z",
-      "isActive": true
     }
   ],
   "categories": [
-    {
-      "id": "cat-makanan-2514b76d",
-      "name": "Makanan",
-      "icon": "🍜",
-      "color": "#F97316",
-      "isDefault": true,
-      "createdAt": "2026-08-04T12:14:17.908Z",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c"
-    },
-    {
-      "id": "cat-minuman-2514b76d",
-      "name": "Minuman",
-      "icon": "☕",
-      "color": "#F59E0B",
-      "isDefault": true,
-      "createdAt": "2026-08-04T12:14:17.908Z",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c"
-    },
-    {
-      "id": "cat-transport-2514b76d",
-      "name": "Transport",
-      "icon": "🚗",
-      "color": "#3B82F6",
-      "isDefault": true,
-      "createdAt": "2026-08-04T12:14:17.908Z",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c"
-    },
-    {
-      "id": "cat-belanja-2514b76d",
-      "name": "Belanja",
-      "icon": "🛍️",
-      "color": "#EC4899",
-      "isDefault": true,
-      "createdAt": "2026-08-04T12:14:17.908Z",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c"
-    },
-    {
-      "id": "cat-tagihan-2514b76d",
-      "name": "Tagihan",
-      "icon": "📄",
-      "color": "#EF4444",
-      "isDefault": true,
-      "createdAt": "2026-08-04T12:14:17.908Z",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c"
-    },
-    {
-      "id": "cat-internet-2514b76d",
-      "name": "Internet",
-      "icon": "🌐",
-      "color": "#8B5CF6",
-      "isDefault": true,
-      "createdAt": "2026-08-04T12:14:17.908Z",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c"
-    },
-    {
-      "id": "cat-pulsa-2514b76d",
-      "name": "Pulsa",
-      "icon": "📱",
-      "color": "#06B6D4",
-      "isDefault": true,
-      "createdAt": "2026-08-04T12:14:17.908Z",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c"
-    },
-    {
-      "id": "cat-kesehatan-2514b76d",
-      "name": "Kesehatan",
-      "icon": "🏥",
-      "color": "#10B981",
-      "isDefault": true,
-      "createdAt": "2026-08-04T12:14:17.908Z",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c"
-    },
-    {
-      "id": "cat-pendidikan-2514b76d",
-      "name": "Pendidikan",
-      "icon": "📚",
-      "color": "#6366F1",
-      "isDefault": true,
-      "createdAt": "2026-08-04T12:14:17.908Z",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c"
-    },
-    {
-      "id": "cat-hiburan-2514b76d",
-      "name": "Hiburan",
-      "icon": "🎮",
-      "color": "#F43F5E",
-      "isDefault": true,
-      "createdAt": "2026-08-04T12:14:17.908Z",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c"
-    },
-    {
-      "id": "cat-bisnis-2514b76d",
-      "name": "Bisnis",
-      "icon": "💼",
-      "color": "#64748B",
-      "isDefault": true,
-      "createdAt": "2026-08-04T12:14:17.908Z",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c"
-    },
-    {
-      "id": "cat-investasi-2514b76d",
-      "name": "Investasi",
-      "icon": "📈",
-      "color": "#059669",
-      "isDefault": true,
-      "createdAt": "2026-08-04T12:14:17.908Z",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c"
-    },
-    {
-      "id": "cat-donasi-2514b76d",
-      "name": "Donasi",
-      "icon": "💝",
-      "color": "#DB2777",
-      "isDefault": true,
-      "createdAt": "2026-08-04T12:14:17.908Z",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c"
-    },
-    {
-      "id": "cat-pajak-2514b76d",
-      "name": "Pajak",
-      "icon": "🏛️",
-      "color": "#92400E",
-      "isDefault": true,
-      "createdAt": "2026-08-04T12:14:17.908Z",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c"
-    },
-    {
-      "id": "cat-lainnya-2514b76d",
-      "name": "Lainnya",
-      "icon": "📦",
-      "color": "#6B7280",
-      "isDefault": true,
-      "createdAt": "2026-08-04T12:14:17.908Z",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c"
-    },
     {
       "id": "cat-makanan-f4feb6dc",
       "name": "Makanan",
@@ -368,33 +171,6 @@
   ],
   "transactions": [
     {
-      "id": "4e7c1831-e4d2-4efc-a302-13beb38f0bec",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "income",
-      "amount": 5000000,
-      "categoryId": "cat-lainnya-2514b76d",
-      "description": "gajian",
-      "date": "2026-08-04T12:17:48.145Z",
-      "createdAt": "2026-08-04T12:17:48.145Z",
-      "updatedAt": "2026-08-04T12:17:48.145Z",
-      "source": "salary",
-      "aiParsed": true,
-      "rawInput": "habis gajian 5 juta"
-    },
-    {
-      "id": "40150897-c843-4a09-8ee5-0ce535456da4",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "expense",
-      "amount": 15000,
-      "categoryId": "cat-makanan-2514b76d",
-      "description": "bubur ayam",
-      "date": "2026-08-04T12:18:45.143Z",
-      "createdAt": "2026-08-04T12:18:45.143Z",
-      "updatedAt": "2026-08-04T12:18:45.143Z",
-      "aiParsed": true,
-      "rawInput": "beli bubur ayam 15 ribu"
-    },
-    {
       "id": "024dcad8-6231-4fc0-8689-7355c8f8606b",
       "userId": "f4feb6dc-ca64-404b-8918-2067a5935911",
       "type": "expense",
@@ -406,20 +182,6 @@
       "updatedAt": "2026-08-04T12:50:37.616Z",
       "aiParsed": true,
       "rawInput": "aku tadi jajan 20k"
-    },
-    {
-      "id": "425ec7e4-11b0-48d1-b154-8820ac5d8288",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "income",
-      "amount": 130000000,
-      "categoryId": "cat-lainnya-2514b76d",
-      "description": "dapat bonus",
-      "date": "2026-08-04T12:51:25.794Z",
-      "createdAt": "2026-08-04T12:51:25.794Z",
-      "updatedAt": "2026-08-04T12:51:25.794Z",
-      "source": "bonus",
-      "aiParsed": true,
-      "rawInput": "dapat bonus 130 juta"
     },
     {
       "id": "baea95a8-55db-4f65-966f-9727b5ca898a",
@@ -472,243 +234,14 @@
       "updatedAt": "2026-08-04T12:53:48.760Z",
       "aiParsed": true,
       "rawInput": "terus waktu itu beliin keluarga abis 200"
-    },
-    {
-      "id": "45c0f5ec-2384-49e9-88c5-b3a4b6fae8b8",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "expense",
-      "amount": 100000,
-      "categoryId": "cat-lainnya-2514b76d",
-      "description": "abis bayar",
-      "date": "2026-08-04T20:40:03.244Z",
-      "createdAt": "2026-08-04T20:40:03.244Z",
-      "updatedAt": "2026-08-04T20:40:03.244Z",
-      "aiParsed": true,
-      "rawInput": "abis bayar 100 ribu"
-    },
-    {
-      "id": "179e6a77-b74e-4c89-a69f-6ddded93ee0a",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "expense",
-      "amount": 250000,
-      "categoryId": "cat-donasi-2514b76d",
-      "description": "donasi",
-      "date": "2026-08-04T20:50:11.460Z",
-      "createdAt": "2026-08-04T20:50:11.460Z",
-      "updatedAt": "2026-08-04T20:50:11.460Z",
-      "aiParsed": true,
-      "rawInput": "habis donasi 250 ribu"
-    },
-    {
-      "id": "9865c134-3eec-4cac-83aa-7337ac026482",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "expense",
-      "amount": 250000,
-      "categoryId": "cat-internet-2514b76d",
-      "description": "beli internet",
-      "date": "2026-08-04T20:51:33.850Z",
-      "createdAt": "2026-08-04T20:51:33.850Z",
-      "updatedAt": "2026-08-04T20:51:33.850Z",
-      "aiParsed": true,
-      "rawInput": "habis beli internet 250 ribu"
-    },
-    {
-      "id": "77683aa2-cde0-4360-9b3c-7a31bce85908",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "expense",
-      "amount": 800000,
-      "categoryId": "cat-belanja-2514b76d",
-      "description": "beli sepatu",
-      "date": "2026-08-04T20:52:30.700Z",
-      "createdAt": "2026-08-04T20:52:30.700Z",
-      "updatedAt": "2026-08-04T20:52:30.700Z",
-      "aiParsed": true,
-      "rawInput": "habis beli sepatu 800 ribu"
-    },
-    {
-      "id": "fa0efb06-c0dc-4e82-9b6d-ed588d803dbe",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "expense",
-      "amount": 50000,
-      "categoryId": "cat-makanan-2514b76d",
-      "description": "beli seblak",
-      "date": "2026-08-04T21:22:34.538Z",
-      "createdAt": "2026-08-04T21:22:34.538Z",
-      "updatedAt": "2026-08-04T21:22:34.538Z",
-      "aiParsed": true,
-      "rawInput": "tolong catat saya habis beli seblak 50 ribu"
-    },
-    {
-      "id": "99e2570d-4178-4f79-b200-408cb1f4e8a1",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "expense",
-      "amount": 30000000,
-      "categoryId": "cat-belanja-2514b76d",
-      "description": "beli MacBook Pro karena gengsi",
-      "date": "2026-08-05T05:33:59.495Z",
-      "createdAt": "2026-08-05T05:33:59.495Z",
-      "updatedAt": "2026-08-05T05:33:59.495Z",
-      "aiParsed": true,
-      "rawInput": "catat habis beli macbook pro 30 juta karena gengsi"
-    },
-    {
-      "id": "e39f8cdb-2458-438e-9f11-e84bb15d3f6c",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "expense",
-      "amount": 35000000,
-      "categoryId": "cat-transport-2514b76d",
-      "description": "beli motor nmax",
-      "date": "2026-08-05T05:36:32.091Z",
-      "createdAt": "2026-08-05T05:36:32.091Z",
-      "updatedAt": "2026-08-05T05:36:32.091Z",
-      "aiParsed": true,
-      "rawInput": "catat habis beli motor nmax 35 juta"
-    },
-    {
-      "id": "0d001fec-1462-443e-bbd2-9751a109039f",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "expense",
-      "amount": 1250000,
-      "categoryId": "cat-hiburan-2514b76d",
-      "description": "habis beli mystery box (isinya zonk)",
-      "date": "2026-08-05T05:37:40.337Z",
-      "createdAt": "2026-08-05T05:37:40.337Z",
-      "updatedAt": "2026-08-05T05:37:40.337Z",
-      "aiParsed": true,
-      "rawInput": "catat habis beli mistery box 1 juta 250 ribu dan ternyata isinya zonk"
-    },
-    {
-      "id": "ec78c30d-b971-4a7e-974b-f82068b702d5",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "expense",
-      "amount": 50000,
-      "categoryId": "cat-makanan-2514b76d",
-      "description": "beli ikan gabus",
-      "date": "2026-08-05T05:41:18.055Z",
-      "createdAt": "2026-08-05T05:41:18.055Z",
-      "updatedAt": "2026-08-05T05:41:18.055Z",
-      "aiParsed": true,
-      "rawInput": "catat habis beli ikan gabus 50k"
-    },
-    {
-      "id": "aa3f4bff-2225-4918-a1a2-65b328692984",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "expense",
-      "amount": 249998,
-      "categoryId": "cat-tagihan-2514b76d",
-      "description": "listrik",
-      "date": "2026-08-06T01:01:20.920Z",
-      "createdAt": "2026-08-06T01:01:20.920Z",
-      "updatedAt": "2026-08-06T01:01:20.920Z",
-      "aiParsed": true,
-      "rawInput": "catet abis bayar listrik 249.998"
     }
   ],
-  "budgets": [
-    {
-      "id": "369ed6fa-424b-4077-84c6-a11a770e7ea5",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "categoryId": "cat-makanan-2514b76d",
-      "amount": 250000,
-      "spent": 100000,
-      "month": 8,
-      "year": 2026,
-      "rollover": false,
-      "rolledAmount": 0,
-      "createdAt": "2026-08-04T20:47:47.777Z",
-      "updatedAt": "2026-08-05T05:41:18.056Z"
-    },
-    {
-      "id": "f80e564d-3e98-4dc2-a6a2-c404a476c866",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "categoryId": "cat-belanja-2514b76d",
-      "amount": 1000000,
-      "spent": 30800000,
-      "month": 8,
-      "year": 2026,
-      "rollover": false,
-      "rolledAmount": 0,
-      "createdAt": "2026-08-04T20:48:03.470Z",
-      "updatedAt": "2026-08-05T05:33:59.496Z"
-    },
-    {
-      "id": "c6982c35-0cf3-4abb-b267-e92b61b604ff",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "categoryId": "cat-internet-2514b76d",
-      "amount": 250000,
-      "spent": 250000,
-      "month": 8,
-      "year": 2026,
-      "rollover": false,
-      "rolledAmount": 0,
-      "createdAt": "2026-08-04T20:48:15.636Z",
-      "updatedAt": "2026-08-04T20:51:33.850Z"
-    },
-    {
-      "id": "1c709f37-068e-4859-8268-d33dbba8b6c0",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "categoryId": "cat-donasi-2514b76d",
-      "amount": 500000,
-      "spent": 250000,
-      "month": 8,
-      "year": 2026,
-      "rollover": false,
-      "rolledAmount": 0,
-      "createdAt": "2026-08-04T20:48:37.416Z",
-      "updatedAt": "2026-08-04T20:50:11.460Z"
-    }
-  ],
+  "budgets": [],
   "debts": [],
   "debtPayments": [],
-  "reminders": [
-    {
-      "id": "5f999fdc-16a1-4aa4-816d-c67fdb5fee89",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "bill",
-      "title": "Bayar listrik",
-      "amount": 249998,
-      "frequency": "once",
-      "dueDate": "2026-08-06T01:00:00.000Z",
-      "nextTrigger": "2026-08-06T01:00:00.000Z",
-      "isActive": false,
-      "createdAt": "2026-08-04T12:26:05.806Z",
-      "updatedAt": "2026-08-06T01:00:01.441Z",
-      "lastTriggered": "2026-08-06T01:00:01.441Z"
-    },
-    {
-      "id": "e39c4904-2dd2-44d5-89ab-748abd00a77a",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "debt",
-      "title": "Bayar utang",
-      "amount": 100000,
-      "frequency": "once",
-      "dueDate": "2026-08-04T20:28:00.000Z",
-      "nextTrigger": "2026-08-04T20:28:00.000Z",
-      "isActive": false,
-      "createdAt": "2026-08-04T12:26:41.978Z",
-      "updatedAt": "2026-08-04T20:28:00.756Z",
-      "lastTriggered": "2026-08-04T20:28:00.756Z"
-    }
-  ],
+  "reminders": [],
   "savingGoals": [],
-  "savingTransactions": [
-    {
-      "id": "995bd9e3-8012-43e9-bbe3-d3a13cbbaa3c",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "deposit",
-      "amount": 5000,
-      "description": "dana darurat",
-      "createdAt": "2026-08-04T21:30:23.184Z"
-    },
-    {
-      "id": "42bd10dc-1bc1-46cb-bb28-6faec65b0dba",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "deposit",
-      "amount": 20000000,
-      "description": "tabung",
-      "createdAt": "2026-08-05T07:58:55.473Z"
-    }
-  ],
+  "savingTransactions": [],
   "notifications": [
     {
       "id": "d1facf67-56bf-4330-8166-bbf1886b1a21",
@@ -722,17 +255,6 @@
       "createdAt": "2026-08-04T12:50:37.617Z"
     },
     {
-      "id": "7e0fa623-9f7d-46c9-83fd-a8eaab2d924e",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "large_expense",
-      "title": "Pengeluaran Besar",
-      "message": "Kamu baru saja mengeluarkan Rp 120.000.000 untuk beli mobil. Ini 801% dari saldo kamu.",
-      "isRead": true,
-      "sentToTelegram": false,
-      "relatedId": "624e0c52-135d-4cc5-b2bf-fcc781b82218",
-      "createdAt": "2026-08-04T12:51:53.748Z"
-    },
-    {
       "id": "b24903ba-8360-4106-b5d1-25a444f735f7",
       "userId": "f4feb6dc-ca64-404b-8918-2067a5935911",
       "type": "large_expense",
@@ -742,83 +264,6 @@
       "sentToTelegram": false,
       "relatedId": "baea95a8-55db-4f65-966f-9727b5ca898a",
       "createdAt": "2026-08-04T12:52:00.762Z"
-    },
-    {
-      "id": "1b827be9-8f1a-4a8f-a6cc-a80c95153eb1",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "reminder_due",
-      "title": "⏰ Bayar utang",
-      "message": "Reminder: Bayar utang",
-      "isRead": true,
-      "sentToTelegram": true,
-      "relatedId": "e39c4904-2dd2-44d5-89ab-748abd00a77a",
-      "createdAt": "2026-08-04T20:28:00.211Z"
-    },
-    {
-      "id": "302cdf60-6cfa-494e-bed7-af43a31492c0",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "budget_exceeded",
-      "title": "Budget Internet Habis!",
-      "message": "Budget Internet kamu sudah habis. Pengeluaran: Rp 250.000 dari Rp 250.000.",
-      "isRead": true,
-      "sentToTelegram": false,
-      "relatedId": "c6982c35-0cf3-4abb-b267-e92b61b604ff",
-      "createdAt": "2026-08-04T20:51:33.851Z"
-    },
-    {
-      "id": "4970b713-6acd-41e5-809f-b6156e80649b",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "budget_warning",
-      "title": "Budget Belanja Hampir Habis",
-      "message": "Budget Belanja sudah terpakai 80%. Sisa: Rp 200.000.",
-      "isRead": true,
-      "sentToTelegram": false,
-      "relatedId": "f80e564d-3e98-4dc2-a6a2-c404a476c866",
-      "createdAt": "2026-08-04T20:52:30.701Z"
-    },
-    {
-      "id": "cff38e6c-e76a-4a13-ba83-91e36363b1d8",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "large_expense",
-      "title": "Pengeluaran Besar",
-      "message": "Kamu baru saja mengeluarkan Rp 30.000.000 untuk beli MacBook Pro karena gengsi. Ini 29% dari saldo kamu.",
-      "isRead": true,
-      "sentToTelegram": false,
-      "relatedId": "99e2570d-4178-4f79-b200-408cb1f4e8a1",
-      "createdAt": "2026-08-05T05:33:59.496Z"
-    },
-    {
-      "id": "1a4b1720-3426-4c85-a287-9c2bfd812075",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "budget_exceeded",
-      "title": "Budget Belanja Habis!",
-      "message": "Budget Belanja kamu sudah habis. Pengeluaran: Rp 30.800.000 dari Rp 1.000.000.",
-      "isRead": true,
-      "sentToTelegram": false,
-      "relatedId": "f80e564d-3e98-4dc2-a6a2-c404a476c866",
-      "createdAt": "2026-08-05T05:33:59.497Z"
-    },
-    {
-      "id": "dc9b4303-c312-4960-8bc9-8135aac4ea7b",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "large_expense",
-      "title": "Pengeluaran Besar",
-      "message": "Kamu baru saja mengeluarkan Rp 35.000.000 untuk beli motor nmax. Ini 51% dari saldo kamu.",
-      "isRead": true,
-      "sentToTelegram": false,
-      "relatedId": "e39f8cdb-2458-438e-9f11-e84bb15d3f6c",
-      "createdAt": "2026-08-05T05:36:32.092Z"
-    },
-    {
-      "id": "78cfde24-2275-46ab-b26e-984b6cde63c3",
-      "userId": "2514b76d-288e-4108-b120-404cb0b4fe5c",
-      "type": "reminder_due",
-      "title": "⏰ Bayar listrik",
-      "message": "Reminder: Bayar listrik",
-      "isRead": false,
-      "sentToTelegram": true,
-      "relatedId": "5f999fdc-16a1-4aa4-816d-c67fdb5fee89",
-      "createdAt": "2026-08-06T01:00:00.877Z"
     }
   ],
   "aiInsights": []
