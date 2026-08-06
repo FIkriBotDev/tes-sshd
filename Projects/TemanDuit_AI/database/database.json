@@ -426,11 +426,11 @@
       "type": "custom",
       "title": "Tidur",
       "frequency": "daily",
-      "dueDate": "2026-08-07T21:18",
-      "nextTrigger": "2026-08-07T21:18:00.000Z",
+      "dueDate": "2026-08-07T17:19",
+      "nextTrigger": "2026-08-07T17:19:00.000Z",
       "isActive": true,
       "createdAt": "2026-08-06T14:17:33.451Z",
-      "updatedAt": "2026-08-06T14:19:02.824Z"
+      "updatedAt": "2026-08-06T14:19:17.775Z"
     }
   ],
   "savingGoals": [],
