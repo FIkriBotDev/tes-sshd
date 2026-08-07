@@ -22,10 +22,10 @@
       "timezone": "WITA",
       "occupation": "Mahasiswa",
       "incomeSource": "Ortu",
-      "balance": 200000,
+      "balance": 5200000,
       "savingBalance": 0,
       "createdAt": "2026-08-06T14:05:35.186Z",
-      "updatedAt": "2026-08-06T14:09:37.648Z"
+      "updatedAt": "2026-08-07T10:55:31.353Z"
     }
   ],
   "registrationTokens": [
@@ -426,6 +426,20 @@
       "updatedAt": "2026-08-06T14:09:37.648Z",
       "source": "gift",
       "aiParsed": false
+    },
+    {
+      "id": "21c60181-ab4d-4626-bd0b-f6811e0649bd",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "type": "income",
+      "amount": 5000000,
+      "categoryId": "cat-lainnya-3eae76d2",
+      "description": "gajian",
+      "date": "2026-08-07T10:55:31.353Z",
+      "createdAt": "2026-08-07T10:55:31.353Z",
+      "updatedAt": "2026-08-07T10:55:31.353Z",
+      "source": "salary",
+      "aiParsed": true,
+      "rawInput": "habis gajian 5 juta"
     }
   ],
   "budgets": [],
