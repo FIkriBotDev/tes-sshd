@@ -67,6 +67,12 @@
       "code": "SDNGX237",
       "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
       "createdAt": "2026-08-06T14:28:10.017Z",
+      "isActive": false
+    },
+    {
+      "code": "KVXB4WKE",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "createdAt": "2026-08-07T09:13:43.471Z",
       "isActive": true
     }
   ],
