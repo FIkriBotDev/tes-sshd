@@ -22,10 +22,10 @@
       "timezone": "WITA",
       "occupation": "Mahasiswa",
       "incomeSource": "Ortu",
-      "balance": 5200000,
+      "balance": 5180000,
       "savingBalance": 0,
       "createdAt": "2026-08-06T14:05:35.186Z",
-      "updatedAt": "2026-08-07T10:55:31.353Z"
+      "updatedAt": "2026-08-07T10:56:04.484Z"
     }
   ],
   "registrationTokens": [
@@ -440,6 +440,19 @@
       "source": "salary",
       "aiParsed": true,
       "rawInput": "habis gajian 5 juta"
+    },
+    {
+      "id": "0b0c6faa-487c-4ddc-b0f6-e5d6cdbfbca1",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "type": "expense",
+      "amount": 20000,
+      "categoryId": "cat-makanan-3eae76d2",
+      "description": "nasi goreng",
+      "date": "2026-08-07T10:56:04.484Z",
+      "createdAt": "2026-08-07T10:56:04.484Z",
+      "updatedAt": "2026-08-07T10:56:04.484Z",
+      "aiParsed": true,
+      "rawInput": "beli nasi goreng 20 ribu"
     }
   ],
   "budgets": [],
