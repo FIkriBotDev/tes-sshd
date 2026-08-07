@@ -484,10 +484,11 @@
       "title": "Tidur",
       "frequency": "daily",
       "dueDate": "2026-08-07T17:19",
-      "nextTrigger": "2026-08-07T17:19:00.000Z",
+      "nextTrigger": "2026-08-08T17:19:00.000Z",
       "isActive": true,
       "createdAt": "2026-08-06T14:17:33.451Z",
-      "updatedAt": "2026-08-06T14:19:17.775Z"
+      "updatedAt": "2026-08-07T17:19:00.783Z",
+      "lastTriggered": "2026-08-07T17:19:00.783Z"
     },
     {
       "id": "43f6210a-748c-460d-867f-dae41525a2f1",
@@ -526,6 +527,17 @@
       "sentToTelegram": false,
       "relatedId": "baea95a8-55db-4f65-966f-9727b5ca898a",
       "createdAt": "2026-08-04T12:52:00.762Z"
+    },
+    {
+      "id": "9440178c-102b-4c09-a279-92ba0e4c6e64",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "type": "reminder_due",
+      "title": "⏰ Tidur",
+      "message": "Reminder: Tidur",
+      "isRead": false,
+      "sentToTelegram": true,
+      "relatedId": "5b19174d-8986-4481-8498-5a6b7c17d42c",
+      "createdAt": "2026-08-07T17:19:00.167Z"
     }
   ],
   "aiInsights": []
