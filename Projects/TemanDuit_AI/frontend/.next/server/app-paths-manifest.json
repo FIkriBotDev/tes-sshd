@@ -2,5 +2,6 @@
   "/page": "app/page.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/notifications/page": "app/notifications/page.js",
-  "/reminder/page": "app/reminder/page.js"
+  "/reminder/page": "app/reminder/page.js",
+  "/login/page": "app/login/page.js"
 }
