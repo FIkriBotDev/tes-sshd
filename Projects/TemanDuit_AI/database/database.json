@@ -535,7 +535,7 @@
       "type": "reminder_due",
       "title": "⏰ Tidur",
       "message": "Reminder: Tidur",
-      "isRead": false,
+      "isRead": true,
       "sentToTelegram": true,
       "relatedId": "5b19174d-8986-4481-8498-5a6b7c17d42c",
       "createdAt": "2026-08-07T17:19:00.167Z"
@@ -546,7 +546,7 @@
       "type": "reminder_due",
       "title": "⏰ Bangun",
       "message": "Reminder: Bangun",
-      "isRead": false,
+      "isRead": true,
       "sentToTelegram": true,
       "relatedId": "43f6210a-748c-460d-867f-dae41525a2f1",
       "createdAt": "2026-08-07T21:19:00.846Z"
