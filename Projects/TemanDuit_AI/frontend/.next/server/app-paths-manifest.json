@@ -1,8 +1,9 @@
 {
-  "/page": "app/page.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/notifications/page": "app/notifications/page.js",
   "/reminder/page": "app/reminder/page.js",
   "/income/page": "app/income/page.js",
-  "/activeUserLogin/page": "app/activeUserLogin/page.js"
+  "/activeUserLogin/page": "app/activeUserLogin/page.js",
+  "/ai-insight/page": "app/ai-insight/page.js",
+  "/login/page": "app/login/page.js"
 }
