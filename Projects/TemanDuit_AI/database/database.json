@@ -528,6 +528,19 @@
       "createdAt": "2026-08-06T14:19:59.967Z",
       "updatedAt": "2026-08-07T21:19:01.334Z",
       "lastTriggered": "2026-08-07T21:19:01.334Z"
+    },
+    {
+      "id": "f02ab251-b058-42f7-9d08-ef76f6144a19",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "type": "custom",
+      "title": "Sholat Tahajjud",
+      "description": "Bangun sholat tahajjud",
+      "frequency": "daily",
+      "dueDate": "2026-08-09T15:10:00.000Z",
+      "nextTrigger": "2026-08-09T15:10:00.000Z",
+      "isActive": true,
+      "createdAt": "2026-08-08T14:10:11.953Z",
+      "updatedAt": "2026-08-08T14:10:11.953Z"
     }
   ],
   "savingGoals": [],
