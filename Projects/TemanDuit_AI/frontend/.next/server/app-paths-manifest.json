@@ -3,5 +3,6 @@
   "/dashboard/page": "app/dashboard/page.js",
   "/notifications/page": "app/notifications/page.js",
   "/reminder/page": "app/reminder/page.js",
-  "/login/page": "app/login/page.js"
+  "/login/page": "app/login/page.js",
+  "/income/page": "app/income/page.js"
 }
