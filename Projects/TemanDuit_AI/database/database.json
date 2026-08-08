@@ -22,10 +22,10 @@
       "timezone": "WITA",
       "occupation": "Mahasiswa",
       "incomeSource": "Ortu",
-      "balance": 5180000,
+      "balance": 180000,
       "savingBalance": 0,
       "createdAt": "2026-08-06T14:05:35.186Z",
-      "updatedAt": "2026-08-07T10:56:04.484Z"
+      "updatedAt": "2026-08-08T14:03:58.835Z"
     }
   ],
   "registrationTokens": [
@@ -471,6 +471,19 @@
       "updatedAt": "2026-08-07T10:56:04.484Z",
       "aiParsed": true,
       "rawInput": "beli nasi goreng 20 ribu"
+    },
+    {
+      "id": "506ab987-d27a-4c95-98a0-f7d2ef7f9fca",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "type": "expense",
+      "amount": 5000000,
+      "categoryId": "cat-lainnya-3eae76d2",
+      "description": "uang hilang",
+      "date": "2026-08-08T14:03:58.835Z",
+      "createdAt": "2026-08-08T14:03:58.835Z",
+      "updatedAt": "2026-08-08T14:03:58.835Z",
+      "aiParsed": true,
+      "rawInput": "catat uang hilang 5 juta"
     }
   ],
   "budgets": [],
@@ -550,6 +563,17 @@
       "sentToTelegram": true,
       "relatedId": "43f6210a-748c-460d-867f-dae41525a2f1",
       "createdAt": "2026-08-07T21:19:00.846Z"
+    },
+    {
+      "id": "a3094588-8716-4f93-91ef-37fceed95ed9",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "type": "large_expense",
+      "title": "Pengeluaran Besar",
+      "message": "Kamu baru saja mengeluarkan Rp 5.000.000 untuk uang hilang. Ini 2778% dari saldo kamu.",
+      "isRead": false,
+      "sentToTelegram": false,
+      "relatedId": "506ab987-d27a-4c95-98a0-f7d2ef7f9fca",
+      "createdAt": "2026-08-08T14:03:58.836Z"
     }
   ],
   "aiInsights": []
