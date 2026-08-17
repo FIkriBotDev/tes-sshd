@@ -129,5 +129,13 @@
     "plan": 1,
     "creditLeft": 5,
     "courseCreated": 1
+  },
+  {
+    "namaLengkap": "DIPLEK",
+    "email": "ahmmadroger@gmail.com",
+    "password": "$2b$10$piqB6mtEsx1CUy2A4Dy3/.qEiCZ3vkwpIvlX10BopAyZUtotYKeD.",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
