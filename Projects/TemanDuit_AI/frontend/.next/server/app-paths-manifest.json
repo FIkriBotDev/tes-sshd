@@ -3,5 +3,6 @@
   "/login/page": "app/login/page.js",
   "/activeUserLogin/page": "app/activeUserLogin/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/reminder/page": "app/reminder/page.js"
+  "/reminder/page": "app/reminder/page.js",
+  "/profile/page": "app/profile/page.js"
 }
