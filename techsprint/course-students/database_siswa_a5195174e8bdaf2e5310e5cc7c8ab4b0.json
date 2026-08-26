@@ -5,8 +5,8 @@
     "email": "azureuser@outlook.com",
     "password": "$2b$10$nYNa3JJ9aiCYckVRewn77e.7c0/qXdM1xfC0n2F6JuJJx0mrGk3.K",
     "profilePicture": "",
-    "xp": 805,
-    "coin": 314,
+    "xp": 820,
+    "coin": 319,
     "level": 3,
     "streak": 0,
     "lastLogin": "26-08-2026, 10.30.38",
@@ -36,6 +36,9 @@
     ],
     "joinedAt": "26-08-2026, 10.30.38",
     "isMainAccount": true,
-    "quizCorrectCount": 1
+    "quizCorrectCount": 1,
+    "aiInteractions": 1,
+    "todayAiCount": 1,
+    "lastAiDate": "Wed Aug 26 2026"
   }
 ]

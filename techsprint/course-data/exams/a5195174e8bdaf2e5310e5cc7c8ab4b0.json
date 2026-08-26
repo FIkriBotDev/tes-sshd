@@ -1,0 +1,285 @@
+{
+  "title": "Simulasi Ujian: UKK TKJ Paket 2: VLAN + Hotspot + Routing Statik (MikroTik WinBox)",
+  "timeLimit": 1800,
+  "totalQuestions": 20,
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Apa fungsi utama VLAN dalam jaringan berdasarkan materi?",
+      "options": [
+        "Menggabungkan semua perangkat agar satu broadcast domain",
+        "Memisahkan segmen jaringan (mis. Siswa vs Guru) menjadi broadcast domain berbeda",
+        "Menggantikan kebutuhan DHCP",
+        "Menentukan rute ke internet secara otomatis"
+      ],
+      "answer": "Memisahkan segmen jaringan (mis. Siswa vs Guru) menjadi broadcast domain berbeda",
+      "explanation": "VLAN digunakan untuk memisahkan lalu lintas dan broadcast agar segmen berbeda tidak saling mengganggu.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Pada praktikum ini, Siswa menggunakan VLAN ID berapa?",
+      "options": [
+        "10",
+        "20",
+        "30",
+        "40"
+      ],
+      "answer": "10",
+      "explanation": "Materi menyebut penggunaan VLAN 10 untuk segmen siswa.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Pada praktikum ini, Guru menggunakan VLAN ID berapa?",
+      "options": [
+        "10",
+        "20",
+        "100",
+        "200"
+      ],
+      "answer": "20",
+      "explanation": "Materi menyebut penggunaan VLAN 20 untuk segmen guru.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Hotspot pada MikroTik umumnya bekerja pada interface/VLAN yang terhubung ke WLAN (client nirkabel).",
+      "answer": "true",
+      "explanation": "Hotspot disiapkan agar perangkat WLAN dapat melakukan autentikasi dan pengaturan akses.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan komponen MikroTik dengan fungsinya.",
+      "pairs": [
+        {
+          "term": "DHCP",
+          "definition": "Membagikan IP address, gateway, dan parameter jaringan ke client"
+        },
+        {
+          "term": "VLAN",
+          "definition": "Memisahkan segmen jaringan ke dalam broadcast domain berbeda"
+        },
+        {
+          "term": "NAT masquerade",
+          "definition": "Mengubah sumber IP agar trafik dari LAN/VLAN bisa keluar menuju internet"
+        }
+      ],
+      "points": 15,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Pada penjelasan materi, Router A berperan sebagai apa?",
+      "options": [
+        "Switch manageable yang hanya mengelola VLAN secure",
+        "Internet gateway + DHCP + AP WLAN",
+        "DNS server utama tanpa DHCP",
+        "Client hotspot untuk pengujian"
+      ],
+      "answer": "Internet gateway + DHCP + AP WLAN",
+      "explanation": "Router A pada materi berfungsi sebagai router utama menuju internet sekaligus menyediakan layanan LAN/WLAN.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Jika pada generate ringkasan konfigurasi IP/VLAN terdapat salah ketik gateway VLAN siswa, dampaknya yang paling mungkin adalah…",
+      "options": [
+        "Client siswa tetap bisa internet tanpa masalah",
+        "Client siswa bisa login hotspot tetapi tidak bisa akses internet",
+        "VLAN guru otomatis berubah menjadi VLAN siswa",
+        "Switch manageable otomatis menonaktifkan VLAN"
+      ],
+      "answer": "Client siswa bisa login hotspot tetapi tidak bisa akses internet",
+      "explanation": "Gateway yang salah membuat trafik ke jaringan luar (routing/NAT) gagal walau layanan lokal mungkin masih terlihat.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "true_false",
+      "question": "VLAN dapat memisahkan broadcast domain, sehingga perangkat siswa tidak langsung menerima broadcast dari perangkat guru (tanpa routing yang tepat).",
+      "answer": "true",
+      "explanation": "Dengan VLAN berbeda, broadcast domain ikut terpisah; komunikasi memerlukan routing antar-VLAN.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Gateway IP VLAN siswa pada skenario praktikum ini adalah…",
+      "options": [
+        "192.168.10.1",
+        "192.168.20.1",
+        "192.168.30.1",
+        "10.10.10.1"
+      ],
+      "answer": "192.168.10.1",
+      "explanation": "Materi menyajikan skema VLAN 10 dengan gateway 192.168.10.1.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Gateway IP VLAN guru pada skenario praktikum ini adalah…",
+      "options": [
+        "192.168.10.1",
+        "192.168.20.1",
+        "192.168.20.254",
+        "192.168.30.1"
+      ],
+      "answer": "192.168.20.1",
+      "explanation": "Materi menyajikan skema VLAN 20 dengan gateway 192.168.20.1.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan langkah kerja dengan tujuan utamanya.",
+      "pairs": [
+        {
+          "term": "Reset konfigurasi (default configuration)",
+          "definition": "Memastikan kondisi awal bersih agar konfigurasi baru tidak konflik"
+        },
+        {
+          "term": "Set identitas (identity) & nama model/router",
+          "definition": "Memudahkan identifikasi device saat konfigurasi dan pengujian"
+        },
+        {
+          "term": "Konfigurasi Ether + Wireless",
+          "definition": "Menentukan interface mana untuk LAN kabel dan mana untuk WLAN/AP"
+        }
+      ],
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Dalam pengujian VLAN, Anda melihat client kabel untuk VLAN siswa mendapatkan IP dari DHCP, namun saat membuka web tidak berhasil. Ping ke gateway VLAN siswa juga gagal. Anda sudah memastikan kabel ke port switch benar, tetapi konfigurasi gateway pada DHCP atau interface VLAN di Router A kemungkinan salah.",
+      "question": "Langkah pemeriksaan paling sesuai untuk menyelesaikan masalah tersebut adalah…",
+      "options": [
+        "Mengubah pengaturan Hotspot rate limit saja karena itu memengaruhi DNS",
+        "Mengecek kembali IP interface VLAN siswa dan gateway yang dikirim DHCP, lalu pastikan keduanya sesuai skema",
+        "Menghapus konfigurasi VLAN guru agar VLAN siswa bisa lewat",
+        "Mematikan NAT masquerade karena hotspot login perlu tanpa NAT"
+      ],
+      "answer": "Mengecek kembali IP interface VLAN siswa dan gateway yang dikirim DHCP, lalu pastikan keduanya sesuai skema",
+      "explanation": "Jika gateway/prefix pada VLAN atau parameter DHCP tidak sinkron, client tidak bisa routing ke jaringan lain sehingga akses internet gagal.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "true_false",
+      "question": "User profile pada Hotspot dapat digunakan untuk membedakan hak akses dan/atau rate limit kecepatan antar jenis pengguna.",
+      "answer": "true",
+      "explanation": "Materi menekankan pembuatan user profile untuk membedakan peran (kepala sekolah/guru/siswa) termasuk pembatasan kecepatan.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Apa manfaat routing statik + NAT masquerade dalam konteks praktikum ini?",
+      "options": [
+        "Agar VLAN dapat melakukan login hotspot tanpa autentikasi",
+        "Agar trafik dari VLAN/WLAN bisa keluar ke internet melalui router A",
+        "Agar switch manageable tidak perlu konfigurasi VLAN secure",
+        "Agar client otomatis mendapatkan MAC address baru"
+      ],
+      "answer": "Agar trafik dari VLAN/WLAN bisa keluar ke internet melalui router A",
+      "explanation": "Routing statik mengarahkan trafik ke tujuan berikutnya, sedangkan NAT masquerade memungkinkan alamat internal akses internet.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Router B (switch manageable/VLAN capable) sudah dikonfigurasi VLAN, tetapi saat pengujian, perangkat dari port siswa ternyata bisa melihat/mengakses perangkat guru. Anda menduga VLAN secure atau pengaturan strip/forwarding tidak tepat.",
+      "question": "Tindakan paling sesuai sesuai materi 'VLAN Secure + Always-Strip' adalah…",
+      "options": [
+        "Mengaktifkan skenario yang membuat frame VLAN bisa masuk dari port tanpa tag yang benar (agar lebih mudah)",
+        "Menerapkan VLAN secure dan always-strip pada port yang sesuai, supaya akses hanya sesuai VLAN dan tag tidak dipertahankan di kondisi yang tidak diizinkan",
+        "Menonaktifkan DHCP pada Router A agar komunikasi antar VLAN berhenti total",
+        "Menghapus NAT masquerade agar traffic internal tidak bisa routing"
+      ],
+      "answer": "Menerapkan VLAN secure dan always-strip pada port yang sesuai, supaya akses hanya sesuai VLAN dan tag tidak dipertahankan di kondisi yang tidak diizinkan",
+      "explanation": "VLAN secure mencegah trafik masuk ke VLAN yang tidak diizinkan, sedangkan always-strip membantu kontrol tag VLAN pada port tertentu.",
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Analogi 'Port Itu Pintu Masuk' pada materi berarti…",
+      "options": [
+        "Port switch hanya berfungsi sebagai kabel, tanpa pengaruh VLAN",
+        "Port switch menentukan 'pintu' VLAN mana yang boleh dilewati perangkat",
+        "Port router menentukan IP publik yang dipakai NAT",
+        "Port WLAN hanya untuk menampilkan halaman login hotspot"
+      ],
+      "answer": "Port switch menentukan 'pintu' VLAN mana yang boleh dilewati perangkat",
+      "explanation": "Analogi ini menekankan bahwa konfigurasi port (untagged/tagged, secure) menentukan segmen jaringan yang dapat diakses.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan istilah singkat MikroTik dengan artinya (sesuai semangat 'biaya salah ketik tidak mahal, tapi risiko besar').",
+      "pairs": [
+        {
+          "term": "chain=srcnat",
+          "definition": "Aturan NAT yang memproses trafik dari sumber LAN menuju tujuan luar"
+        },
+        {
+          "term": "action=masquerade",
+          "definition": "NAT dengan menyamarkan alamat sumber menggunakan alamat gateway (umum pada koneksi dinamis)"
+        },
+        {
+          "term": "rate-limit",
+          "definition": "Pembatasan kecepatan/throughput untuk user berdasarkan profile"
+        }
+      ],
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Langkah yang paling tepat untuk memunculkan tulisan 'selamat datang' sesuai nama sekolah di halaman login hotspot adalah…",
+      "options": [
+        "Mengubah konfigurasi NAT masquerade",
+        "Mengedit template/script/HTML halaman hotspot pada pengaturan hotspot dan login page",
+        "Mengubah VLAN ID siswa menjadi VLAN ID guru",
+        "Menambahkan static route default di switch"
+      ],
+      "answer": "Mengedit template/script/HTML halaman hotspot pada pengaturan hotspot dan login page",
+      "explanation": "Materi menyebut pengubahan tampilan halaman login hotspot agar ada tulisan selamat datang sesuai nama sekolah.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Di jaringan WLAN, beberapa user berhasil menampilkan halaman login hotspot, tetapi tidak bisa mendapatkan hak akses sesuai profile (mis. kecepatan tetap seperti user siswa). Anda mencurigai user profile tidak terpasang/terbaca saat login.",
+      "question": "Langkah diagnostik yang paling tepat adalah…",
+      "options": [
+        "Memastikan user profile/pengguna yang dibuat benar, terhubung dengan hotspot user, dan rate limit sesuai peran (kepala sekolah/guru/siswa)",
+        "Mengubah VLAN ID pada interface wireless agar sesuai dengan VLAN siswa",
+        "Menghapus gateway default pada DHCP sehingga user tidak dapat login sama sekali",
+        "Menonaktifkan wireless agar hanya kabel yang bisa login"
+      ],
+      "answer": "Memastikan user profile/pengguna yang dibuat benar, terhubung dengan hotspot user, dan rate limit sesuai peran (kepala sekolah/guru/siswa)",
+      "explanation": "Jika profile tidak terasosiasi atau salah saat login, rate limit/hak akses tidak akan diterapkan sesuai rencana.",
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "true_false",
+      "question": "Jika Anda menambahkan NAT masquerade tanpa routing statik yang benar, maka VLAN/WLAN mungkin tetap tidak bisa internet karena jalur ke jaringan tujuan tidak jelas.",
+      "answer": "true",
+      "explanation": "NAT saja tidak cukup; perangkat tetap butuh rute/next-hop yang benar agar trafik sampai ke internet gateway.",
+      "points": 10,
+      "difficulty": "hard"
+    }
+  ]
+}
