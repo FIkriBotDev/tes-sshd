@@ -143,7 +143,7 @@
     "email": "azureuser@outlook.com",
     "password": "$2b$10$nYNa3JJ9aiCYckVRewn77e.7c0/qXdM1xfC0n2F6JuJJx0mrGk3.K",
     "plan": 1,
-    "creditLeft": 10,
-    "courseCreated": 0
+    "creditLeft": 5,
+    "courseCreated": 1
   }
 ]

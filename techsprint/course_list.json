@@ -634,5 +634,19 @@
     "courseUrl": "/course/61eb662a98807bee56ed4b8734f45c5b",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "a5195174e8bdaf2e5310e5cc7c8ab4b0",
+    "courseName": "UKK TKJ Paket 2: VLAN + Hotspot + Routing Statik (MikroTik WinBox)",
+    "courseEmoji": "📚",
+    "courseColor": "#3b82f6",
+    "courseFileName": "PEMBAHASAN UKK TKJ PAKET 2.docx",
+    "fileType": "docx",
+    "originalFileName": "PEMBAHASAN UKK TKJ PAKET 2.docx",
+    "courseOwner": "azureuser@outlook.com",
+    "courseCreated": "26-08-2026, 10.30.24",
+    "courseUrl": "/course/a5195174e8bdaf2e5310e5cc7c8ab4b0",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]

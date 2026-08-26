@@ -1,0 +1,436 @@
+{
+  "title": "UKK TKJ Paket 2: VLAN + Hotspot + Routing Statik (MikroTik WinBox)",
+  "summary": "Kamu akan merancang jaringan berbasis kabel dan nirkabel dengan VLAN (Siswa/Guru) lewat MikroTik Router A, lalu mengatur Hotspot, user profile, serta pembagian kecepatan. Setelah itu, kamu buat routing statis (NAT masquerade) agar jaringan bisa akses internet dan lanjut konfigurasi Switch Manageable (Router B) dengan VLAN secure.",
+  "emoji": "📚",
+  "color": "#3b82f6",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Gambaran Besar: VLAN Memisahkan Siswa & Guru",
+      "icon": "🏫",
+      "explanation": "VLAN bikin jaringan fisik (ether yang sama) terasa seperti beberapa jaringan berbeda. Di materi ini, VLAN 10 untuk Siswa dan VLAN 20 untuk Guru, supaya akses dan layanan (misalnya DHCP & Hotspot) terpisah rapi.",
+      "analogy": "Bayangkan satu sekolah punya 2 kantin: kantin Siswa dan kantin Guru. Walau lokasinya bersebelahan (jaringan yang sama), aturan masuk dan menu bisa berbeda (VLAN).",
+      "highlight": "VLAN ID 10/20, Interface VLAN, DHCP per VLAN",
+      "keyPoints": [
+        "VLAN memisahkan broadcast domain",
+        "Setiap VLAN dapat punya IP gateway sendiri",
+        "DHCP dibuat terpisah untuk tiap VLAN"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Router A: Internet Gateway + DHCP + Wireless AP",
+      "icon": "🛜",
+      "explanation": "Router A bertugas menghubungkan ke internet, memberi IP via DHCP untuk VLAN kabel dan WLAN, serta menjalankan wireless sebagai AP Bridge. Setelah DHCP siap, Hotspot akan mengelola login user dengan profile dan rate limit.",
+      "analogy": "Router A itu seperti resepsionis hotel: mengantar tamu ke kamar (IP), menyediakan akses Wi-Fi, dan mengatur siapa yang boleh masuk (Hotspot + user profile).",
+      "highlight": "Ether1 DHCP Client, VLAN gateway, WLAN=AP Bridge",
+      "keyPoints": [
+        "Ether1 diambil IP dari internet pakai DHCP client",
+        "Gateway IP tiap VLAN dan WLAN ditetapkan",
+        "WLAN dibuat sebagai AP Bridge dan diberi keamanan WPA2-PSK"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Simulasi Pembagian IP Pool DHCP (VLAN 10/20 & WLAN)",
+      "icon": "🧪",
+      "language": "javascript",
+      "instruction": "Ubah base dan mask bila perlu, lalu cek apakah range DHCP kamu benar dan menghasilkan total jumlah IP. Klik Run (atau jalankan) untuk melihat output.",
+      "fileName": "dhcp_simulation.js",
+      "defaultCode": "// DHCP Pool Simulator untuk VLAN 10/20 dan WLAN\n// Jalankan dengan Node.js\nfunction ipToInt(ip){ const p=ip.split('.').map(Number); return ((p[0]*256+p[1])*256+p[2])*256+p[3]; }\nfunction intToIp(n){ return [ (n>>>24)&255, (n>>>16)&255, (n>>>8)&255, n&255 ].join('.'); }\nfunction rangeInfo(startIp,endIp){ const s=ipToInt(startIp); const e=ipToInt(endIp); if(e<s) return {ok:false,message:'End IP lebih kecil dari Start IP'}; return {ok:true,start:startIp,end:endIp,total:(e-s+1)}; }\nconst pools=[\n  {name:'vlan1-Siswa', start:'192.168.40.10', end:'192.168.40.50'},\n  {name:'vlan2-Guru', start:'192.168.60.10', end:'192.168.60.50'},\n  {name:'wlan1', start:'192.168.20.10', end:'192.168.20.50'}\n];\nfor(const p of pools){ const r=rangeInfo(p.start,p.end); console.log(`${p.name}:`, r.ok?`OK range ${r.start} - ${r.end}, total IP = ${r.total}` : r.message); }\n\n// Challenge: coba ganti start/end pada salah satu pool lalu lihat apakah total berubah dan apakah range masih valid.",
+      "hint": "Pastikan start < end dan total masuk akal. Misalnya 192.168.40.10 sampai 192.168.40.50 totalnya 41 IP."
+    },
+    {
+      "type": "step_by_step",
+      "title": "Langkah Kerja Router A: Reset, Identitas, Ether + Wireless",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Reset & Masuk WinBox",
+          "description": "Akses Router A menggunakan WinBox, lalu lakukan reset konfigurasi (System > Reset Configuration).",
+          "tip": "Kalau bingung, pastikan kamu memang terhubung ke IP default/neighbor, lalu baru reset."
+        },
+        {
+          "number": 2,
+          "title": "Set Identity Router",
+          "description": "System > Identity, isi nama seperti: ROUTER A-(Nama Anda) lalu Apply/OK.",
+          "tip": "Nama ini membantu saat ada lebih dari satu perangkat di topologi."
+        },
+        {
+          "number": 3,
+          "title": "Beri Comment Ether yang Dipakai",
+          "description": "Masuk Interface, double klik Ether yang digunakan. Isi comment: Ether Internet = \"Ineternet\" dan Wireless/Hotspot = \"Hotspot\".",
+          "tip": "Comment membuat konfigurasi lebih mudah dibaca saat praktik dan saat evaluasi."
+        },
+        {
+          "number": 4,
+          "title": "Konfigurasi VLAN 10 dan VLAN 20 di Ether2",
+          "description": "Tambahkan VLAN general: VLAN 10 dengan nama vlan1-Siswa (interface Ether2), lalu VLAN 20 dengan nama vlan2-Guru (interface Ether2).",
+          "tip": "VLAN dibuat di interface trunk agar tag VLAN bisa lewat ke Router."
+        },
+        {
+          "number": 5,
+          "title": "Konfigurasi Ether1 (Gateway Internet)",
+          "description": "Ether1: IP > DHCP Client > enable, pilih interface ether1 lalu tunggu status Bound. Uji dengan Terminal: ping 8.8.8.8.",
+          "tip": "Kalau ping gagal, periksa kabel internet dan DHCP client sampai bound."
+        },
+        {
+          "number": 6,
+          "title": "Set IP Address untuk VLAN & WLAN",
+          "description": "Gateway IP: VLAN1 = 192.168.40.1/24, VLAN2 = 192.168.60.1/24, WLAN1 = 192.168.20.1/24.",
+          "tip": "Pastikan interface sesuai: vlan1-Siswa, vlan2-Guru, dan Wlan1."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Generate Ringkasan Konfigurasi IP/VLAN (Agar Minim Salah Ketik)",
+      "icon": "⚡",
+      "language": "javascript",
+      "instruction": "Gunakan form bawaan (di kode) untuk mengubah nilai VLAN/IP pool. Program ini akan menampilkan ringkasan yang bisa kamu cocokkan dengan panduan tugas.",
+      "fileName": "vlan_summary_generator.js",
+      "defaultCode": "// VLAN Summary Generator (bantu cek konfigurasi IP & DHCP pool)\nconst config={\n  vlan10:{name:'vlan1-Siswa', id:10, gateway:'192.168.40.1/24', poolStart:'192.168.40.10', poolEnd:'192.168.40.50'},\n  vlan20:{name:'vlan2-Guru', id:20, gateway:'192.168.60.1/24', poolStart:'192.168.60.10', poolEnd:'192.168.60.50'},\n  wlan:{name:'wlan1', gateway:'192.168.20.1/24', poolStart:'192.168.20.10', poolEnd:'192.168.20.50'}\n};\nfunction maskFromCidr(cidr){ const [ip,mask]=cidr.split('/'); return `gateway=${ip} mask=/${mask}`; }\nconsole.log('=== RINGKASAN ===');\nconsole.log(`${config.vlan10.name} (VLAN ID ${config.vlan10.id})`, maskFromCidr(config.vlan10.gateway), `DHCP=${config.vlan10.poolStart}-${config.vlan10.poolEnd}`);\nconsole.log(`${config.vlan20.name} (VLAN ID ${config.vlan20.id})`, maskFromCidr(config.vlan20.gateway), `DHCP=${config.vlan20.poolStart}-${config.vlan20.poolEnd}`);\nconsole.log(`${config.wlan.name}`, maskFromCidr(config.wlan.gateway), `DHCP=${config.wlan.poolStart}-${config.wlan.poolEnd}`);\n\n// Challenge: ubah nama VLAN atau salah satu IP untuk melihat format ringkasannya.\n// Jangan lupa: di tugas, pastikan VLAN 10=192.168.40.1/24 dan VLAN 20=192.168.60.1/24 serta WLAN=192.168.20.1/24.",
+      "hint": "Cek apakah output ringkasan sudah sama dengan panduan: 40.x untuk Siswa, 60.x untuk Guru, 20.x untuk WLAN."
+    },
+    {
+      "type": "concept_card",
+      "title": "Hotspot & User Profile: Login + Rate Limit",
+      "icon": "🔥",
+      "explanation": "Hotspot bertindak seperti gerbang login. Kamu membuat Hotspot server di Wlan1, lalu membuat user profile (kepsek/guru/siswa) dengan address pool yang sama (untuk WLAN), tetapi rate limit berbeda supaya kecepatan tiap peran tidak sama.",
+      "analogy": "Bayangkan lab komputer: semua bisa login (hotspot), tapi paket kecepatannya berbeda. Kepala sekolah dapat kuota lebih besar, guru sedang, siswa paling kecil.",
+      "highlight": "portalsmk.sch.id, user profile, rate limit rx/tx",
+      "keyPoints": [
+        "Hotspot setup menentukan DNS name dan password",
+        "User profile mengatur pool IP dan rate limit",
+        "Login user memakai password sesuai profile"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual: Peta Alur Konfigurasi",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Internet masuk",
+          "value": "Ether1 via DHCP Client lalu NAT masquerade",
+          "icon": "🌐"
+        },
+        {
+          "label": "Pemisahan jaringan",
+          "value": "VLAN 10 (Siswa) & VLAN 20 (Guru) di Ether2",
+          "icon": "🧩"
+        },
+        {
+          "label": "Gateway & IP",
+          "value": "192.168.40.1/24, 192.168.60.1/24, WLAN 192.168.20.1/24",
+          "icon": "🧠"
+        },
+        {
+          "label": "DHCP per segmen",
+          "value": "Pool berbeda untuk VLAN1, VLAN2, dan WLAN",
+          "icon": "🧾"
+        },
+        {
+          "label": "Hotspot login",
+          "value": "Login di WLAN + user profile + rate limit",
+          "icon": "🔑"
+        }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Langkah Kerja Router A: DHCP, Wireless Hotspot, User, dan Login Page",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Buat DHCP Pool untuk Siswa/Guru/WLAN",
+          "description": "DHCP Server > DHCP Setup pada interface vlan1-Siswa, vlan2-Guru, dan Wlan1. Isi address to give out sesuai rentang tugas.",
+          "tip": "Rentang yang tepat mencegah konflik IP dan memudahkan testing."
+        },
+        {
+          "number": 2,
+          "title": "Wireless Security & Mode AP Bridge",
+          "description": "Buat Security Profile (nama TKJ), aktifkan WPA2-PSK, key 12345678. Set wlan1 mode AP Bridge, SSID UKK_Nama, band B/G/N.",
+          "tip": "Mode AP Bridge penting agar wireless berfungsi seperti access point."
+        },
+        {
+          "number": 3,
+          "title": "Hotspot Setup di Wlan1",
+          "description": "IP > Hotspot > Server > Hotspot Setup pilih Wlan1, lanjut sampai DNS name: portalsmk.sch.id, lalu set password hotspot 12345.",
+          "tip": "Jangan salah interface; pastikan hotspot memang di Wlan1."
+        },
+        {
+          "number": 4,
+          "title": "Atur Server Profile (Hilangkan cookie centang)",
+          "description": "Di Server profile, buka hotspot1 yang dibuat, pilih login, hilangkan centang cookie lalu OK.",
+          "tip": "Bagian ini mengikuti instruksi tugas agar tampilan/login sesuai."
+        },
+        {
+          "number": 5,
+          "title": "Buat User Profile: kepsek/guru/siswa",
+          "description": "Hotspot > User Profile > buat profile. Semua pakai address pool dhcp_pool2 (pool yang relevan untuk wireless), tapi rate limit berbeda: 512k, 256k, 128k.",
+          "tip": "Pastikan rx/tx sesuai: 512k/512k, 256k/256k, 128k/128k."
+        },
+        {
+          "number": 6,
+          "title": "Buat User Login sesuai Profile",
+          "description": "Hotspot > User > buat 3 user: kepsek (123), guru (456), siswa (789) dengan password dan profile sesuai.",
+          "tip": "Kalau login gagal, biasanya karena password atau profile tidak cocok."
+        },
+        {
+          "number": 7,
+          "title": "Ubah Tampilan Halaman Login Hotspot",
+          "description": "Edit hotspot/login.html di Notepad, cari Please log on lalu ganti menjadi Selamat Datang di Hotspot SMKN 1 PANGKEP (atau sesuaikan nama sekolah).",
+          "tip": "Simpan lalu pastikan file di-load oleh WinBox menu Files."
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Routing Statik & NAT: Biar VLAN/WLAN Bisa Internet",
+      "icon": "🧯",
+      "explanation": "Agar jaringan internal (VLAN dan WLAN) bisa akses internet, Router A perlu NAT (masquerade) dan routing. NAT membuat trafik lokal terlihat seperti trafik dari router, sementara routing statis mengarah ke gateway internet.",
+      "analogy": "Sebuah pengiriman barang: label alamat (NAT) membuat barang terlihat seperti dikirim dari pusat distribusi (router), dan rute kendaraan (routing) menentukan jalurnya ke internet.",
+      "highlight": "IP > Firewall > NAT chain=srcnat out=ether1 masquerade",
+      "keyPoints": [
+        "Masquerade mengubah sumber agar bisa kembali",
+        "Routing statis memakai gateway internet yang sesuai",
+        "Testing internet: ping atau browsing dari client"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Langkah Kerja Router B (Switch Manageable): VLAN Secure + Always-Strip",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Reset & Identity Router B",
+          "description": "Akses Router B via WinBox, reset konfiguration, lalu isi System > Identity menjadi SWITCH-(Nama Anda).",
+          "tip": "Identitas membantu saat troubleshooting."
+        },
+        {
+          "number": 2,
+          "title": "Buat Bridge Interface",
+          "description": "Bridge > + > general: bridge 1_(nama anda).",
+          "tip": "Ini agar interface dapat dikelola dalam satu bridge."
+        },
+        {
+          "number": 3,
+          "title": "Atur Port: ether1 trunk, ether2-3 VLAN1, ether4 VLAN2",
+          "description": "Set interface bridge untuk ether1, ether2, ether3, ether4.",
+          "tip": "Logic tugas: port trunk = pembawa tag VLAN."
+        },
+        {
+          "number": 4,
+          "title": "Buat VLAN 10 dan VLAN 20 di Switch",
+          "description": "Switch > VLAN > + VLAN=10 isi ports ether1 lalu pilih ether2 dan ether3. VLAN=20 isi ports ether1 dan ether4. Apply/OK.",
+          "tip": "Pastikan ether1 ikut sebagai trunk untuk kedua VLAN."
+        },
+        {
+          "number": 5,
+          "title": "Aktifkan VLAN Secure + Always Strip",
+          "description": "Double klik tiap ether: mode VLAN=secure. ether2 dan ether3: VLAN Header=always strip Default VLAN ID=10. ether4: always strip Default VLAN ID=20. Apply.",
+          "tip": "Always-strip memastikan tag dibuang di port access sehingga perangkat client dapat IP tanpa tag VLAN."
+        }
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "Analogi Pengujian Client: Port Itu Pintu Masuk",
+      "icon": "🎛️",
+      "realWorld": "Kamu menghubungkan PC kabel ke port 2, laptop kabel ke port 4, dan HP ke Wi-Fi. Masing-masing harus dapat DHCP sesuai segmennya.",
+      "connection": "Port 2/3 masuk VLAN 10, port 4 masuk VLAN 20, WLAN dibawa oleh Wlan1.",
+      "insight": "Kalau port/tags salah, client akan dapat IP dari segmen yang tidak semestinya atau tidak bisa internet."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini MikroTik (Biaya Salah Ketik Nggak Mahal, Tapi Risiko Besar)",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "VLAN ID",
+          "definition": "Nomor identitas jaringan virtual agar perangkat masuk ke segmen yang berbeda.",
+          "example": "VLAN 10 untuk siswa, VLAN 20 untuk guru."
+        },
+        {
+          "term": "Trunk vs Access",
+          "definition": "Trunk membawa tag VLAN, access biasanya menerima tanpa tag.",
+          "example": "ether1 trunk, ether2-4 access (pakai always-strip)."
+        },
+        {
+          "term": "DHCP Pool",
+          "definition": "Rentang IP yang akan dibagikan ke client secara otomatis.",
+          "example": "Siswa 192.168.40.10-192.168.40.50."
+        },
+        {
+          "term": "Hotspot Server",
+          "definition": "Fitur login web captive portal untuk mengontrol akses user.",
+          "example": "Hotspot setup di Wlan1."
+        },
+        {
+          "term": "User Profile",
+          "definition": "Template untuk user hotspot yang mengatur pool dan rate limit.",
+          "example": "Profile kepsek rate 512k/512k."
+        },
+        {
+          "term": "NAT Masquerade",
+          "definition": "Mengubah sumber paket agar dapat balik saat akses internet.",
+          "example": "chain=srcnat out-interface=ether1 action=masquerade."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Di Router A, VLAN untuk Siswa memakai VLAN ID berapa?",
+      "options": [
+        "10",
+        "20",
+        "30",
+        "40"
+      ],
+      "answer": "10",
+      "explanation": "Pada instruksi, VLAN 10 dibuat dengan nama vlan1-Siswa dan VLAN ID 10."
+    },
+    {
+      "question": "Pada instruksi ini, IP gateway VLAN Guru adalah ...",
+      "options": [
+        "192.168.40.1/24",
+        "192.168.60.1/24",
+        "192.168.20.1/24",
+        "10.10.10.1/24"
+      ],
+      "answer": "192.168.60.1/24",
+      "explanation": "Bagian konfigurasi IP address menyebut VLAN 2 (Guru) = 192.168.60.1/24."
+    },
+    {
+      "question": "Hotspot Setup pada materi ini diarahkan ke interface wireless yaitu ...",
+      "options": [
+        "ether1",
+        "ether2",
+        "Wlan1",
+        "vlan1-Siswa"
+      ],
+      "answer": "Wlan1",
+      "explanation": "Di langkah Hotspot, saat Hotspot Setup pilih Wlan1."
+    },
+    {
+      "question": "Kecepatan (rate limit rx/tx) untuk profile kepala sekolah adalah ...",
+      "options": [
+        "512k/512k",
+        "256k/256k",
+        "128k/128k",
+        "1M/1M"
+      ],
+      "answer": "512k/512k",
+      "explanation": "Instruksi user profile kepala sekolah: Rate limit (rx/tx) 512k/512k."
+    },
+    {
+      "question": "Password user kepala sekolah pada materi ini adalah ...",
+      "options": [
+        "123",
+        "456",
+        "789",
+        "000"
+      ],
+      "answer": "123",
+      "explanation": "Instruksi user kepala sekolah: password 123."
+    },
+    {
+      "question": "Untuk NAT agar internet bisa diakses, chain yang digunakan pada rule masquerade adalah ...",
+      "options": [
+        "dstnat",
+        "srcnat",
+        "forward",
+        "input"
+      ],
+      "answer": "srcnat",
+      "explanation": "Pada langkah Gateway Internet: IP > firewall > NAT chain = srcnat."
+    },
+    {
+      "question": "Pada switch manageable (Router B), ether2 dan ether3 masuk VLAN mode secure dengan VLAN header always strip dan default VLAN ID 10. VLAN untuk default ID 10 adalah ...",
+      "options": [
+        "10",
+        "20",
+        "30",
+        "40"
+      ],
+      "answer": "10",
+      "explanation": "Instruksi menyebut ether2 dan ether3: Default VLAN ID = 10."
+    },
+    {
+      "question": "Pengujian client laptop kabel pada materi ini terhubung ke port ...",
+      "options": [
+        "Port 2",
+        "Port 3",
+        "Port 4",
+        "Port 1"
+      ],
+      "answer": "Port 4",
+      "explanation": "Pada bagian PENGUJIAN: Client Laptop jaringan kabel terhubung dengan port 4."
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa fungsi VLAN dalam jaringan?",
+      "answer": "Memisahkan jaringan fisik menjadi beberapa segmen logis agar broadcast domain dan kebijakan bisa berbeda.",
+      "emoji": "🧩",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Siswa menggunakan VLAN ID berapa?",
+      "answer": "VLAN ID 10.",
+      "emoji": "🎒",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Guru menggunakan VLAN ID berapa?",
+      "answer": "VLAN ID 20.",
+      "emoji": "👩‍🏫",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Gateway IP VLAN siswa berapa?",
+      "answer": "192.168.40.1/24.",
+      "emoji": "📍",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Gateway IP VLAN guru berapa?",
+      "answer": "192.168.60.1/24.",
+      "emoji": "📍",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Gateway IP WLAN (Wlan1) berapa?",
+      "answer": "192.168.20.1/24.",
+      "emoji": "📶",
+      "difficulty": "medium"
+    },
+    {
+      "question": "NAT masquerade dibuat pada chain apa?",
+      "answer": "srcnat.",
+      "emoji": "🧯",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Rate limit profile siswa adalah ...",
+      "answer": "128k/128k.",
+      "emoji": "🐣",
+      "difficulty": "hard"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama: VLAN + IP gateway + DHCP pool di Router A.",
+      "icon": "🏅",
+      "condition": "complete_learningBlocks_up_to_visual_summary"
+    }
+  ],
+  "tutorContext": "Materi ini adalah pembahasan tugas UKK TKJ Paket 2 TA 2023/2024 berjudul Rancang Bangun Jaringan Berbasis Kabel dan Nirkabel dengan VLAN dan Routing. Tujuan praktikum: membangun jaringan dengan pemisahan segmen menggunakan VLAN pada Routerboard MikroTik (Router A sebagai router utama dan Router B sebagai switch manageable/VLAN capable), menyediakan akses internet, mengatur DHCP untuk client kabel maupun wireless, menyiapkan layanan Hotspot pada WLAN, serta membuat user profile untuk membedakan hak akses dan rate limit (kecepatan) masing-masing peran (kepala sekolah, guru, siswa). Materi juga menuntun pengubahan tampilan halaman login Hotspot agar ada tulisan selamat datang sesuai nama sekolah. A. Alat dan bahan: 2 unit PC/Laptop, 1 unit RB 900/951 Router (Router A), 1 unit RB 900/951 Switch Manageable/VLAN (Router B), 1 unit smartphone untuk pengujian WLAN, koneksi internet minimal 1 Mbps, dan 3 unit kabel UTP. Komponen ini relevan karena praktikum menguji fungsi ethernet (kabel) dan wireless (nirkabel), plus kebutuhan trunk VLAN agar tag VLAN dapat lewat dari switch ke router.\nB. Langkah kerja Router A secara umum: Router A diakses menggunakan WinBox. Sebelum konfigurasi, dilakukan reset konfigurasi agar mulai dari keadaan bersih. Lalu router diberi identitas menggunakan System > Identity dengan format ROUTER A-(Nama Anda). Tujuannya memudahkan dokumentasi dan identifikasi perangkat saat ada lebih dari satu router. Setelah itu, diberi comment pada setiap ether yang digunakan agar tidak tertukar saat konfigurasi: ether1 diberi comment “Ineternet” (gateway internet) dan ether wireless/hotspot diberi comment “Hotspot”. \nC. Konfigurasi VLAN di Router A: VLAN 10 (vlan1-Siswa) dan VLAN 20 (vlan2-Guru) dikonfigurasi pada Ether2. Di WinBox, masuk menu Interface, klik tanda +, pilih VLAN general, atur nama dan VLAN ID, lalu pilih interface Ether2 sebagai tempat tag VLAN diterima. Konsep penting untuk tutor adalah bahwa interface trunk harus mampu membawa paket bertag VLAN. Ether2 di sini berperan sebagai sisi yang menerima VLAN dari perangkat upstream atau desain topologi yang diberikan.\nD. Konfigurasi Ether1 sebagai gateway internet: Ether1 menggunakan DHCP Client. Langkahnya IP > DHCP Client > enable dan pilih interface ether1, tunggu sampai status bound. Setelah itu uji koneksi internet dengan Terminal: ping 8.8.8.8. Jika terkoneksi, lanjut langkah berikutnya. Inti pemahamannya: Router A harus punya akses internet terlebih dahulu sebelum melakukan NAT dan routing statis agar internal jaringan bisa internet.\nE. Konfigurasi IP Address: Router A memiliki beberapa interface logis: vlan1-Siswa (IP VLAN 1), vlan2-Guru (IP VLAN 2), dan Wlan1 (IP WLAN). IP VLAN 1 ditetapkan 192.168.40.1/24 pada interface vlan1-Siswa. IP VLAN 2 ditetapkan 192.168.60.1/24 pada interface vlan2-Guru. IP WLAN ditetapkan 192.168.20.1/24 pada interface Wlan1. Ini membangun tiga segmen berbeda: jaringan kabel siswa, jaringan kabel guru, serta jaringan nirkabel (wireless) yang akan menggunakan Hotspot.\nF. Konfigurasi DHCP Server: DHCP pool ditetapkan untuk masing-masing segmen agar client otomatis mendapatkan IP tanpa setting manual. Untuk vlan1-Siswa: range 192.168.40.10 sampai 192.168.40.50. Untuk vlan2-Guru: range 192.168.60.10 sampai 192.168.60.50. Untuk wlan1: range 192.168.20.10 sampai 192.168.20.50. Setup dilakukan lewat IP > DHCP Server > DHCP Setup, pilih interface yang sesuai lalu next sampai muncul address to give out dan sampai status successful. Tutor perlu menekankan bahwa gateway sudah ada pada interface VLAN/WLAN; DHCP hanya membagikan IP dalam pool dan mengarahkan gateway sesuai konfigurasi.\nG. Konfigurasi Wireless dan Hotspot: 1) Wireless security profile: Wireless > Security Profile > + general. Nama “TKJ”, aktifkan WPA2PSK, set WPA Per-Shared Key “12345678”. 2) Wireless interface: double klik interface wlan1, set mode AP Bridge, band B/G/N, channel width 20/40 MHz Ce, SSID “UKK_Nama” (ganti dengan nama). Pilih security profile TKJ, lalu Apply/OK. 3) Hotspot: IP > Hotspot > Server > Hotspot Setup pilih Wlan1, next sampai DNS name “portalsmk.sch.id”, next dan set password “12345”, lalu OK. Setelah hotspot dibuat, buka Server profile, double klik hotpot1, pilih login, hilangkan centang pada bagian cookie, lalu OK. Lalu dibuatlah 5 user sesuai ketentuan profil. Pada materi dijelaskan tiga user: kepsek, guru, siswa, namun tertulis “Buatlah 5 user”; bagian yang benar dari tabel menunjukkan 3 user utama beserta password dan profile. Tutor harus mengarahkan siswa mengikuti daftar user yang disebut: kepsek (123), guru (456), siswa (789). Jika sekolah meminta 5 user, siswa bisa menambah user lain dengan pattern yang sama, tetapi harus tetap menggunakan profile dan password yang tersedia dalam soal.\nH. Pembuatan user profile dan user: 1) Profile kepala sekolah: Hotspot > User Profil > general nama “kepsek”, Address pool: dhcp_pool2 (sesuai pool dhcp wireless yang dipakai pada interface wireless), Rate limit (rx/tx): 512k/512k, queue: Parent Queue none. 2) Profile guru: nama “guru”, Address pool dhcp_pool2, rate limit 256k/256k. 3) Profile siswa: nama “siswa”, Address pool dhcp_pool2, rate limit 128k/128k. Setelah itu buat user: user kepala sekolah server hotdpot1 (penulisan di materi hotdpot1/hotpot1 ada variasi typo; konsepnya user dibuat pada server hotspot yang telah dibuat, misalnya hotspot1), user “kepsek” password 123 profile kepsek. User guru: user “guru” password 456 profile guru. User siswa: user “siswa” password 789 profile siswa. Intinya cocokkan nama user, password, dan profile.\nI. Ubah tampilan halaman login hotspot: Files > cari file hotspot/login.html, drag ke desktop, open with Notepad, cari teks “Please log on” dan ganti dengan “Selamat Datang di Hotspot SMKN 1 PANGKEP” (XXX = nama sekolah). Simpan, lalu drag file kembali ke menu Files di WinBox agar diterapkan.\nJ. Konfigurasi routing statis dan NAT untuk internet: Router A menjalankan NAT masquerade pada IP > Firewall > NAT rule: Chain = srcnat, out interface = ether1 (internet), action = masquerade. Setelah NAT dibuat, routing statis diatur lewat IP > Route. Pada baris gateway internet, Hapus row yang tidak diperlukan, lalu buat rule: Gateway 192.168.2.1 sesuai instruksi. Konsepnya: routing statis memberi jalur menuju internet melalui gateway upstream; NAT membuat traffic dari jaringan internal berhasil diterjemahkan.\nK. Konfigurasi Router B (MIKROTIK B) sebagai Switch Manageable dengan VLAN secure dan always-strip: Router B diakses via WinBox, reset konfigurasi, lalu set identity “SWITCH-(Nama Anda)” sesuai materi. Konfigurasi VLAN mengikuti logika topologi: Port 1 terhubung ke WiFi Routerboard dan difungsikan sebagai port trunk (membawa tag VLAN), Port 2 dan 3 terhubung ke VLAN 1 (VLAN ID 10), Port 4 terhubung ke VLAN 2 (VLAN ID 20). Buat bridge: Bridge > + > general bridge 1_ (nama). Tambahkan interface: ether1 ether2 ether3 ether4 ke bridge pada menu Port. Lalu buat VLAN: pada Switch > VLAN tambahkan VLAN=10, isi ports dengan ether1 kemudian arrow bawah pilih ether2 dan ether3. VLAN=20: isi ports ether1 dan ether4. Setelah VLAN entries dibuat, atur mode per port: pada Port double klik ether1 set VLAN mode = secure, VLAN header add if missing, lalu Apply. Pada port access ether2 dan ether3 set VLAN mode secure, VLAN header always strip, Default VLAN ID 10, Apply. Port ether4 set VLAN mode secure, VLAN header always strip, Default VLAN ID 20, Apply. Tutor perlu menekankan perbedaan VLAN header add if missing vs always strip: add if missing pada trunk membantu menambahkan tag saat dibutuhkan; always strip pada access membuang tag sehingga client tidak perlu tahu VLAN.\nL. Pengujian: Pasang perangkat sesuai desain topologi. Client PC kabel terhubung ke port 2 dengan IP Address DHCP pada Windows. Client laptop kabel terhubung port 4 dengan IP Address DHCP pada Windows. Client jaringan wireless menggunakan Android/Ios dengan IP Address DHCP. Jika VLAN dan DHCP benar, PC port 2 harus dapat IP segmen VLAN 10 (192.168.40.x), laptop port 4 dapat IP segmen VLAN 20 (192.168.60.x), dan smartphone dapat IP segmen WLAN (192.168.20.x) serta memunculkan halaman login Hotspot. Lalu pastikan juga akses internet berhasil sesuai NAT dan routing."
+}
