@@ -1,1 +1,31 @@
-[]
+[
+  {
+    "studentId": "72669d83f207406d",
+    "username": "azureuser",
+    "email": "azureuser@outlook.com",
+    "password": "$2b$10$nYNa3JJ9aiCYckVRewn77e.7c0/qXdM1xfC0n2F6JuJJx0mrGk3.K",
+    "profilePicture": "",
+    "xp": 200,
+    "coin": 75,
+    "level": 2,
+    "streak": 0,
+    "lastLogin": "26-08-2026, 10.30.38",
+    "lastLoginDate": "Wed Aug 26 2026",
+    "quizScore": 0,
+    "completedBlocks": [
+      "block-0",
+      "block-1",
+      "block-2",
+      "block-3",
+      "block-4"
+    ],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 150,
+    "achievements": [
+      "first_block"
+    ],
+    "joinedAt": "26-08-2026, 10.30.38",
+    "isMainAccount": true
+  }
+]
