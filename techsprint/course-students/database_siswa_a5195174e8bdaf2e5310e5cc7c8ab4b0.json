@@ -5,8 +5,8 @@
     "email": "azureuser@outlook.com",
     "password": "$2b$10$nYNa3JJ9aiCYckVRewn77e.7c0/qXdM1xfC0n2F6JuJJx0mrGk3.K",
     "profilePicture": "",
-    "xp": 515,
-    "coin": 189,
+    "xp": 805,
+    "coin": 314,
     "level": 3,
     "streak": 0,
     "lastLogin": "26-08-2026, 10.30.38",
@@ -27,11 +27,12 @@
       "block-11"
     ],
     "completedChapter": [],
-    "flashcardsViewed": 0,
-    "leaderboardPoint": 410,
+    "flashcardsViewed": 8,
+    "leaderboardPoint": 650,
     "achievements": [
       "first_block",
-      "coin_100"
+      "coin_100",
+      "flashcard_pro"
     ],
     "joinedAt": "26-08-2026, 10.30.38",
     "isMainAccount": true,
