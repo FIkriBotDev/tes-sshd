@@ -28,7 +28,7 @@ const uploadFile = async (buffer) => {
         let form = new FormData();
         form.append('file', buffer, 'tmp.' + ext);
 
-        const response = await axios.post('https://uploader.exodusai.biz.id/upload', form, {
+        const response = await axios.post('https://uploader.jadikelas.tech/upload', form, {
             headers: {
                 ...form.getHeaders(),
             },
@@ -66,7 +66,7 @@ function getConversation(userId) {
                          userId === '6283897921042@s.whatsapp.net' ? 's.json' :
                          userId === '6285271848176@s.whatsapp.net' ? 'nuni.json' : '/home/runner/work/tes-sshd/tes-sshd/database.json';
         userConversations[userId] = loadConversation(fileName);
-    }
+ex    }
     return userConversations[userId];
 }
 function reloadChatbotConversation(userId) {
