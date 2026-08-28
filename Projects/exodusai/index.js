@@ -66,7 +66,7 @@ function getConversation(userId) {
                          userId === '6283897921042@s.whatsapp.net' ? 's.json' :
                          userId === '6285271848176@s.whatsapp.net' ? 'nuni.json' : '/home/runner/work/tes-sshd/tes-sshd/database.json';
         userConversations[userId] = loadConversation(fileName);
-ex    }
+    }
     return userConversations[userId];
 }
 function reloadChatbotConversation(userId) {
