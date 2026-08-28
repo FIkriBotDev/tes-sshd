@@ -99,6 +99,8 @@ node /home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/index.js > /
 #npm install;
 #cd /home/runner/work/tes-sshd/tes-sshd/Projects/TemanDuit_AI/frontend;
 #npm install;
-npm run dev > /dev/null 2>&1 &
-cd /home/runner/work/tes-sshd/tes-sshd/Projects/TemanDuit_AI/backend;
-npm run dev
+#npm run dev > /dev/null 2>&1 &
+#cd /home/runner/work/tes-sshd/tes-sshd/Projects/TemanDuit_AI/backend;
+#npm run dev
+# Jalankan exodusai di foreground (output tampil di terminal)
+sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start
