@@ -81,7 +81,7 @@ node /home/runner/work/tes-sshd/tes-sshd/Projects/telegram-chat-odol > /dev/null
 node /home/runner/work/tes-sshd/tes-sshd/Projects/cpanel/index.js > /dev/null 2>&1 &
 
 # Jalankan exodusai di foreground (output tampil di terminal)
-#sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start > /dev/null 2>&1 &
+sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start #> /dev/null 2>&1 &
 
 # Jalankan JadiKelas di background, sembunyikan output
 cd /home/runner/work/tes-sshd/tes-sshd/techsprint;
@@ -102,5 +102,3 @@ node /home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/index.js > /
 #npm run dev > /dev/null 2>&1 &
 #cd /home/runner/work/tes-sshd/tes-sshd/Projects/TemanDuit_AI/backend;
 #npm run dev
-# Jalankan exodusai di foreground (output tampil di terminal)
-sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start
