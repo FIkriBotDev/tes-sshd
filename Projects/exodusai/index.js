@@ -717,7 +717,7 @@ if (currentMode === 'websearch') {
         if (currentMode === 'chatbot') {
             conversation.push({ role: "user", content: userMessage });
             try {
-                const response = await fetch('http://localhost:3000/post/rtist', {
+                const response = await fetch('http://localhost:3200/post/rtist', {
                     method: 'POST',
                     headers: { 'accept': 'application/json', 'Content-Type': 'application/json' },
                     body: JSON.stringify({ messages: conversation }),
