@@ -648,5 +648,19 @@
     "courseUrl": "/course/a5195174e8bdaf2e5310e5cc7c8ab4b0",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "2a4365b402c25d85a6f63a8725a6c3d9",
+    "courseName": "5 Lapisan Keamanan Google Cloud: Dari Hardware sampai Operasional",
+    "courseEmoji": "☁️🔐",
+    "courseColor": "#6366f1",
+    "courseFileName": "pengenalan_keamanan_cloud.pdf",
+    "fileType": "pdf",
+    "originalFileName": "pengenalan_keamanan_cloud.pdf",
+    "courseOwner": "azureuser@outlook.com",
+    "courseCreated": "29-08-2026, 02.51.11",
+    "courseUrl": "/course/2a4365b402c25d85a6f63a8725a6c3d9",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
