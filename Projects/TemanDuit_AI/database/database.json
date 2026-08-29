@@ -619,11 +619,11 @@
       "title": "Bangun",
       "frequency": "daily",
       "dueDate": "2026-08-07T21:19:00.000Z",
-      "nextTrigger": "2026-08-29T21:19:00.000Z",
+      "nextTrigger": "2026-08-30T21:19:00.000Z",
       "isActive": true,
       "createdAt": "2026-08-06T14:19:59.967Z",
-      "updatedAt": "2026-08-28T21:19:01.349Z",
-      "lastTriggered": "2026-08-28T21:19:01.349Z"
+      "updatedAt": "2026-08-29T22:34:00.538Z",
+      "lastTriggered": "2026-08-29T22:34:00.538Z"
     },
     {
       "id": "f02ab251-b058-42f7-9d08-ef76f6144a19",
@@ -633,11 +633,11 @@
       "description": "Bangun sholat tahajjud",
       "frequency": "daily",
       "dueDate": "2026-08-09T19:11",
-      "nextTrigger": "2026-08-29T19:11:00.000Z",
+      "nextTrigger": "2026-08-30T19:11:00.000Z",
       "isActive": true,
       "createdAt": "2026-08-08T14:10:11.953Z",
-      "updatedAt": "2026-08-28T19:11:00.873Z",
-      "lastTriggered": "2026-08-28T19:11:00.873Z"
+      "updatedAt": "2026-08-29T22:34:00.831Z",
+      "lastTriggered": "2026-08-29T22:34:00.831Z"
     }
   ],
   "savingGoals": [],
@@ -1399,6 +1399,28 @@
       "sentToTelegram": true,
       "relatedId": "5b19174d-8986-4481-8498-5a6b7c17d42c",
       "createdAt": "2026-08-29T17:19:00.452Z"
+    },
+    {
+      "id": "d3aa12ef-690e-4928-95c5-26873c1706ce",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "type": "reminder_due",
+      "title": "⏰ Bangun",
+      "message": "Reminder: Bangun",
+      "isRead": false,
+      "sentToTelegram": true,
+      "relatedId": "43f6210a-748c-460d-867f-dae41525a2f1",
+      "createdAt": "2026-08-29T22:34:00.046Z"
+    },
+    {
+      "id": "6270ca84-aad7-471b-b13e-942d854ef094",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "type": "reminder_due",
+      "title": "⏰ Sholat Tahajjud",
+      "message": "Bangun sholat tahajjud",
+      "isRead": false,
+      "sentToTelegram": true,
+      "relatedId": "f02ab251-b058-42f7-9d08-ef76f6144a19",
+      "createdAt": "2026-08-29T22:34:00.539Z"
     }
   ],
   "aiInsights": []
