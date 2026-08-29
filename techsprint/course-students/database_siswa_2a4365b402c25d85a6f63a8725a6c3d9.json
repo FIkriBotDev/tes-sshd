@@ -5,8 +5,8 @@
     "email": "azureuser@outlook.com",
     "password": "$2b$10$nYNa3JJ9aiCYckVRewn77e.7c0/qXdM1xfC0n2F6JuJJx0mrGk3.K",
     "profilePicture": "",
-    "xp": 110,
-    "coin": 45,
+    "xp": 140,
+    "coin": 55,
     "level": 1,
     "streak": 0,
     "lastLogin": "29-08-2026, 02.51.25",
@@ -14,11 +14,12 @@
     "quizScore": 0,
     "completedBlocks": [
       "block-0",
-      "block-1"
+      "block-1",
+      "block-2"
     ],
     "completedChapter": [],
     "flashcardsViewed": 0,
-    "leaderboardPoint": 60,
+    "leaderboardPoint": 90,
     "achievements": [
       "first_block"
     ],
