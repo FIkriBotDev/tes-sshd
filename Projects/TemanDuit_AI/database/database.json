@@ -205,6 +205,12 @@
       "code": "86JGZ3D2",
       "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
       "createdAt": "2026-08-30T16:13:16.762Z",
+      "isActive": false
+    },
+    {
+      "code": "JHZ83SAL",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "createdAt": "2026-09-01T12:43:09.496Z",
       "isActive": true
     }
   ],
