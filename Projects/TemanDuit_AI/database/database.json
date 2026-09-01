@@ -211,6 +211,12 @@
       "code": "JHZ83SAL",
       "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
       "createdAt": "2026-09-01T12:43:09.496Z",
+      "isActive": false
+    },
+    {
+      "code": "NCF4V4CT",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "createdAt": "2026-09-01T15:01:50.967Z",
       "isActive": true
     }
   ],
