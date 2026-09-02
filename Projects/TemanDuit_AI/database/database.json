@@ -217,6 +217,12 @@
       "code": "NCF4V4CT",
       "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
       "createdAt": "2026-09-01T15:01:50.967Z",
+      "isActive": false
+    },
+    {
+      "code": "5DGY8VZX",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "createdAt": "2026-09-02T16:01:20.746Z",
       "isActive": true
     }
   ],
