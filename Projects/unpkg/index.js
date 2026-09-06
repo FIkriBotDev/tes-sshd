@@ -34,7 +34,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: `https://exodusapi.jadikelas.tech`,
+        url: `/`,
         description: 'Production Server'
       }
     ]
