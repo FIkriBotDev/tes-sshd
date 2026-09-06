@@ -34,6 +34,10 @@ const swaggerOptions = {
     },
     servers: [
       {
+        url: '/',
+        description: 'Current environment (Relative Path)'
+      },
+      {
         url: `http://localhost:${PORT}`,
         description: 'Development server'
       }
