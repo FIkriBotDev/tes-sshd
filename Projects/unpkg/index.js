@@ -34,11 +34,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: '/',
-        description: 'Current environment (Relative Path)'
-      },
-      {
-        url: `http://localhost:${PORT}`,
+        url: `https://exodusapi.jadikelas.tech`,
         description: 'Development server'
       }
     ]
