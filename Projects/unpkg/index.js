@@ -8,7 +8,11 @@ const app = express();
 const PORT = process.env.PORT || 8027;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -40,8 +44,21 @@ const swaggerOptions = {
 
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
 
-// Swagger UI route
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+// Endpoint untuk serve swagger.json
+app.get('/swagger.json', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(swaggerSpec);
+});
+
+// Swagger UI route dengan konfigurasi yang lebih baik
+const swaggerUiOptions = {
+  explorer: true,
+  swaggerOptions: {
+    url: '/swagger.json',
+  },
+};
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, swaggerUiOptions));
 
 // ==================== EXAMPLE API ROUTES ====================
 
