@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free AI API for Developers - Access powerful AI models through one simple API">
+    <title>Free AI API - Developer Platform for AI Integration</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="/">
+                    <h2>Free AI API</h2>
+                </a>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#models">Models</a>
+                <a href="/docs">Documentation</a>
+                <a href="#api">API</a>
+                <a href="/login">Login</a>
+                <a href="/register" class="btn btn-primary btn-small">Get Started</a>
+            </div>
+            <button class="nav-mobile-toggle" id="navToggle">
+                <span>☰</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>🚀</span>
+                    <span id="totalRequests">-</span>
+                    <span>Total Request</span>
+                </div>
+                
+                <h1>
+                    Build with <span class="gradient-text">AI</span>.<br>
+                    Without the complexity.
+                </h1>
+                
+                <p class="hero-subtitle">
+                    One simple API to access multiple AI models. No credit card required. 
+                    OpenAI-compatible endpoints. Built for developers.
+                </p>
+                
+                    <a href="/docs" class="btn btn-secondary btn-large">
+                        Read Documentation
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Hero Code Example -->
+        <div class="container">
+            <div class="hero-code">
+                <div class="code-window">
+                    <div class="code-window-header">
+                        <div class="code-window-dots">
+                            <span class="code-window-dot"></span>
+                            <span class="code-window-dot"></span>
+                            <span class="code-window-dot"></span>
+                        </div>
+                        <div class="code-window-title">POST /v1/chat/completions</div>
+                        <div class="code-window-actions">
+                            <button class="code-copy-btn" onclick="copyHeroCode()">Copy</button>
+                        </div>
+                    </div>
+                    <div class="code-window-body">
+                        <pre id="heroCode"><code><span class="code-keyword">const</span> response = <span class="code-keyword">await</span> <span class="code-function">fetch</span>(<span class="code-string">'https://your-api.com/v1/chat/completions'</span>, {
+  <span class="code-property">method</span>: <span class="code-string">'POST'</span>,
+  <span class="code-property">headers</span>: {
+    <span class="code-string">'Authorization'</span>: <span class="code-string">'Bearer ak_live_xxxxx'</span>,
+    <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span>
+  },
+  <span class="code-property">body</span>: JSON.<span class="code-function">stringify</span>({
+    <span class="code-property">model</span>: <span class="code-string">'openai'</span>,
+    <span class="code-property">messages</span>: [
+      { <span class="code-property">role</span>: <span class="code-string">'user'</span>, <span class="code-property">content</span>: <span class="code-string">'Hello, world!'</span> }
+    ]
+  })
+});
+
+<span class="code-keyword">const</span> data = <span class="code-keyword">await</span> response.<span class="code-function">json</span>();</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalRequests">-</div>
+                    <div class="stat-label">API Requests</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="totalUsers">-</div>
+                    <div class="stat-label">Developers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="totalModels">-</div>
+                    <div class="stat-label">AI Models</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Features</span>
+                <h2 class="section-title">Everything you need to build with AI</h2>
+                <p class="section-subtitle">
+                    A complete platform designed for developers who want to integrate AI without the hassle.
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Simple API</h3>
+                    <p>One endpoint to access multiple AI models. OpenAI-compatible format makes integration seamless.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔑</div>
+                    <h3>Developer API Keys</h3>
+                    <p>Secure API keys designed for application integration. Generate, manage, and revoke keys instantly.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Fast & Reliable</h3>
+                    <p>Built with automatic fallback mechanisms and rate limiting for 99.9% uptime and consistent performance.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🧩</div>
+                    <h3>Multiple Models</h3>
+                    <p>Access text generation, image creation, and vision models through a unified interface.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Usage Analytics</h3>
+                    <p>Track your API usage with detailed analytics. Monitor requests, models, and quotas in real-time.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Free to Use</h3>
+                    <p>Generous daily quota with no credit card required. Perfect for prototyping and small projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Models Section -->
+    <section class="models-section" id="models">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">AI Models</span>
+                <h2 class="section-title">Explore AI Models</h2>
+                <p class="section-subtitle">
+                    Choose the right model for your application. All models accessible through one API.
+                </p>
+            </div>
+            
+            <!-- Category Filter -->
+            <div class="category-filter" id="categoryFilter">
+                <button class="category-btn active" data-category="all">All</button>
+                <!-- Dynamic categories will be added here -->
+            </div>
+
+            <!-- Models Grid -->
+            <div class="models-grid" id="modelsGrid">
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <span>Loading models...</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Showcase Section -->
+    <section class="code-showcase section" id="api">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Integration</span>
+                <h2 class="section-title">One API. Infinite possibilities.</h2>
+                <p class="section-subtitle">
+                    OpenAI-compatible endpoints. Easy integration with your favorite frameworks.
+                </p>
+            </div>
+            
+            <div class="code-tabs">
+                <button class="code-tab active" data-tab="javascript">JavaScript</button>
+                <button class="code-tab" data-tab="python">Python</button>
+                <button class="code-tab" data-tab="curl">cURL</button>
+            </div>
+            
+            <!-- JavaScript Example -->
+            <div class="code-content active" id="javascript">
+                <div class="code-split">
+                    <div class="code-panel">
+                        <div class="code-panel-header">
+                            <span class="code-panel-title">Request</span>
+                            <button class="code-copy-btn" onclick="copyCode('jsRequest')">Copy</button>
+                        </div>
+                        <div class="code-panel-body">
+                            <pre id="jsRequest"><code><span class="code-keyword">const</span> response = <span class="code-keyword">await</span> <span class="code-function">fetch</span>(
+  <span class="code-string">'https://your-api.com/v1/chat/completions'</span>,
+  {
+    <span class="code-property">method</span>: <span class="code-string">'POST'</span>,
+    <span class="code-property">headers</span>: {
+      <span class="code-string">'Authorization'</span>: <span class="code-string">'Bearer ak_live_xxxxx'</span>,
+      <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span>
+    },
+    <span class="code-property">body</span>: JSON.<span class="code-function">stringify</span>({
+      <span class="code-property">model</span>: <span class="code-string">'openai'</span>,
+      <span class="code-property">messages</span>: [
+        {
+          <span class="code-property">role</span>: <span class="code-string">'user'</span>,
+          <span class="code-property">content</span>: <span class="code-string">'Hello!'</span>
+        }
+      ]
+    })
+  }
+);
+
+<span class="code-keyword">const</span> data = <span class="code-keyword">await</span> response.<span class="code-function">json</span>();</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="code-panel">
+                        <div class="code-panel-header">
+                            <span class="code-panel-title">Response</span>
+                        </div>
+                        <div class="code-panel-body">
+                            <pre><code>{
+  <span class="code-string">"id"</span>: <span class="code-string">"chatcmpl_xxxxx"</span>,
+  <span class="code-string">"object"</span>: <span class="code-string">"chat.completion"</span>,
+  <span class="code-string">"choices"</span>: [
+    {
+      <span class="code-string">"message"</span>: {
+        <span class="code-string">"role"</span>: <span class="code-string">"assistant"</span>,
+        <span class="code-string">"content"</span>: <span class="code-string">"Hello! How can I help?"</span>
+      },
+      <span class="code-string">"finish_reason"</span>: <span class="code-string">"stop"</span>
+    }
+  ]
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Python Example -->
+            <div class="code-content" id="python">
+                <div class="code-split">
+                    <div class="code-panel">
+                        <div class="code-panel-header">
+                            <span class="code-panel-title">Request</span>
+                            <button class="code-copy-btn" onclick="copyCode('pythonRequest')">Copy</button>
+                        </div>
+                        <div class="code-panel-body">
+                            <pre id="pythonRequest"><code><span class="code-keyword">import</span> requests
+
+response = requests.<span class="code-function">post</span>(
+    <span class="code-string">'https://your-api.com/v1/chat/completions'</span>,
+    <span class="code-property">headers</span>={
+        <span class="code-string">'Authorization'</span>: <span class="code-string">'Bearer ak_live_xxxxx'</span>,
+        <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span>
+    },
+    <span class="code-property">json</span>={
+        <span class="code-string">'model'</span>: <span class="code-string">'openai'</span>,
+        <span class="code-string">'messages'</span>: [
+            {
+                <span class="code-string">'role'</span>: <span class="code-string">'user'</span>,
+                <span class="code-string">'content'</span>: <span class="code-string">'Hello!'</span>
+            }
+        ]
+    }
+)
+
+data = response.<span class="code-function">json</span>()</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="code-panel">
+                        <div class="code-panel-header">
+                            <span class="code-panel-title">Response</span>
+                        </div>
+                        <div class="code-panel-body">
+                            <pre><code>{
+  <span class="code-string">"id"</span>: <span class="code-string">"chatcmpl_xxxxx"</span>,
+  <span class="code-string">"object"</span>: <span class="code-string">"chat.completion"</span>,
+  <span class="code-string">"choices"</span>: [
+    {
+      <span class="code-string">"message"</span>: {
+        <span class="code-string">"role"</span>: <span class="code-string">"assistant"</span>,
+        <span class="code-string">"content"</span>: <span class="code-string">"Hello! How can I help?"</span>
+      },
+      <span class="code-string">"finish_reason"</span>: <span class="code-string">"stop"</span>
+    }
+  ]
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- cURL Example -->
+            <div class="code-content" id="curl">
+                <div class="code-split">
+                    <div class="code-panel">
+                        <div class="code-panel-header">
+                            <span class="code-panel-title">Request</span>
+                            <button class="code-copy-btn" onclick="copyCode('curlRequest')">Copy</button>
+                        </div>
+                        <div class="code-panel-body">
+                            <pre id="curlRequest"><code>curl https://your-api.com/v1/chat/completions \
+  -H <span class="code-string">"Authorization: Bearer ak_live_xxxxx"</span> \
+  -H <span class="code-string">"Content-Type: application/json"</span> \
+  -d <span class="code-string">'{
+    "model": "openai",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hello!"
+      }
+    ]
+  }'</span></code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="code-panel">
+                        <div class="code-panel-header">
+                            <span class="code-panel-title">Response</span>
+                        </div>
+                        <div class="code-panel-body">
+                            <pre><code>{
+  <span class="code-string">"id"</span>: <span class="code-string">"chatcmpl_xxxxx"</span>,
+  <span class="code-string">"object"</span>: <span class="code-string">"chat.completion"</span>,
+  <span class="code-string">"choices"</span>: [
+    {
+      <span class="code-string">"message"</span>: {
+        <span class="code-string">"role"</span>: <span class="code-string">"assistant"</span>,
+        <span class="code-string">"content"</span>: <span class="code-string">"Hello! How can I help?"</span>
+      },
+      <span class="code-string">"finish_reason"</span>: <span class="code-string">"stop"</span>
+    }
+  ]
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to build?</h2>
+                <p>Start integrating AI into your application in minutes. No credit card required.</p>
+                <div class="cta-actions">
+                    <a href="/register" class="btn btn-primary btn-large">Get Started Free</a>
+                    <a href="/docs" class="btn btn-secondary btn-large">Read Documentation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Free AI API</h3>
+                    <p>A developer-first platform for accessing AI models through one simple API. Built with care for the community.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <div class="footer-links">
+                        <a href="#models">Models</a>
+                        <a href="#api">API</a>
+                        <a href="/docs">Documentation</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Developers</h4>
+                    <div class="footer-links">
+                        <a href="/register">Get Started</a>
+                        <a href="/docs">Quickstart</a>
+                        <a href="/docs#examples">Examples</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <div class="footer-links">
+                        <a href="/dashboard">Dashboard</a>
+                        <a href="/login">Login</a>
+                        <a href="/admin">Admin</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>&copy; 2026 Free AI API. Built with Node.js & Express.</div>
+                <div>Powered by <a href="https://pollinations.ai" target="_blank" style="color: var(--primary-light);">Pollinations.ai</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
