@@ -47,7 +47,7 @@ app.use(express.static(path.join(__dirname)));
 const swaggerDocument = {
   openapi: '3.0.0',
   info: {
-    title: 'Pollinations AI API - FikriDev',
+    title: 'Free AI API - FikriDev',
     version: '1.0.0',
     description: 'REST API untuk mengakses Pollinations AI models',
     contact: {
@@ -58,7 +58,7 @@ const swaggerDocument = {
   servers: [
     {
       url: `https://exodusapi.jadikelas.tech`,
-      description: 'Development server'
+      description: 'Main server'
     }
   ],
   tags: [
