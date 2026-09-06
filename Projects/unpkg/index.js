@@ -49,10 +49,10 @@ const swaggerDocument = {
   info: {
     title: 'Free AI API - FikriDev',
     version: '1.0.0',
-    description: 'REST API untuk mengakses Pollinations AI models',
+    description: 'REST API untuk mengakses AI models gratis untuk developer',
     contact: {
       name: 'FikriDev',
-      url: 'https://github.com/muhammad-fikri'
+      url: 'https://github.com/fikrifahrezi25'
     }
   },
   servers: [
