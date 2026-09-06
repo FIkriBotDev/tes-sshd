@@ -56,7 +56,7 @@
             </div>
         </div>
         
-        <!-- Hero Code Example -->
+      <!-- Hero Code Example -->
         <div class="container">
             <div class="hero-code">
                 <div class="code-window">
@@ -75,13 +75,12 @@
                         <pre id="heroCode"><code><span class="code-keyword">const</span> response = <span class="code-keyword">await</span> <span class="code-function">fetch</span>(<span class="code-string">'https://exodusapi.jadikelas.tech/api/text/gpt-5-4-nano'</span>, {
   <span class="code-property">method</span>: <span class="code-string">'POST'</span>,
   <span class="code-property">headers</span>: {
-    <span class="code-string">'Authorization'</span>: <span class="code-string">'Bearer ak_live_xxxxx'</span>,
+    <span class="code-string">'accept'</span>: <span class="code-string">'application/json'</span>,
     <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span>
   },
   <span class="code-property">body</span>: JSON.<span class="code-function">stringify</span>({
-    <span class="code-property">model</span>: <span class="code-string">'openai'</span>,
     <span class="code-property">messages</span>: [
-      { <span class="code-property">role</span>: <span class="code-string">'user'</span>, <span class="code-property">content</span>: <span class="code-string">'Hello, world!'</span> }
+      { <span class="code-property">role</span>: <span class="code-string">'user'</span>, <span class="code-property">content</span>: <span class="code-string">'Hello, how are you?'</span> }
     ]
   })
 });
