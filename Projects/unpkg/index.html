@@ -189,13 +189,25 @@
                 <button class="code-tab" data-tab="curl">cURL</button>
             </div>
             
- <!-- JavaScript Example -->
+ <!-- Main Code Examples Section -->
+<section class="code-section">
+    <div class="container">
+        <!-- Tab Navigation -->
+        <div class="code-tabs">
+            <button class="tab-btn active" onclick="switchTab(event, 'javascript')">JavaScript</button>
+            <button class="tab-btn" onclick="switchTab(event, 'python')">Python</button>
+            <button class="tab-btn" onclick="switchTab(event, 'curl')">cURL</button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="tab-container">
+            <!-- JavaScript Example -->
             <div class="code-content active" id="javascript">
                 <div class="code-split">
                     <div class="code-panel">
                         <div class="code-panel-header">
                             <span class="code-panel-title">Request</span>
-                            <button class="code-copy-btn" onclick="copyCode('jsRequest')">Copy</button>
+                            <button class="code-copy-btn" onclick="copyCode('jsRequest', this)">Copy</button>
                         </div>
                         <div class="code-panel-body">
                             <pre id="jsRequest"><code><span class="code-keyword">const</span> response = <span class="code-keyword">await</span> <span class="code-function">fetch</span>(
@@ -250,7 +262,7 @@
                     <div class="code-panel">
                         <div class="code-panel-header">
                             <span class="code-panel-title">Request</span>
-                            <button class="code-copy-btn" onclick="copyCode('pythonRequest')">Copy</button>
+                            <button class="code-copy-btn" onclick="copyCode('pythonRequest', this)">Copy</button>
                         </div>
                         <div class="code-panel-body">
                             <pre id="pythonRequest"><code><span class="code-keyword">import</span> requests
@@ -304,7 +316,7 @@ data = response.<span class="code-function">json</span>()</code></pre>
                     <div class="code-panel">
                         <div class="code-panel-header">
                             <span class="code-panel-title">Request</span>
-                            <button class="code-copy-btn" onclick="copyCode('curlRequest')">Copy</button>
+                            <button class="code-copy-btn" onclick="copyCode('curlRequest', this)">Copy</button>
                         </div>
                         <div class="code-panel-body">
                             <pre id="curlRequest"><code>curl -X <span class="code-string">'POST'</span> \
@@ -345,7 +357,55 @@ data = response.<span class="code-function">json</span>()</code></pre>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- JavaScript Script pendukung (Tambahkan sebelum </body>) -->
+<script>
+// Fungsi untuk Pindah Tab (JavaScript, Python, cURL)
+function switchTab(event, tabId) {
+    // Sembunyikan semua tab content
+    const contents = document.querySelectorAll('.code-content');
+    contents.forEach(content => content.classList.remove('active'));
+
+    // Nonaktifkan semua button tab
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // Tampilkan tab yang dipilih & aktifkan button-nya
+    document.getElementById(tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
+}
+
+// Fungsi universal untuk Copy Code
+function copyCode(elementId, btnElement) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+
+    // Ambil plain text tanpa tag HTML
+    const textToCopy = element.innerText || element.textContent;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        // Feedback visual saat berhasil menyalin
+        const originalText = btnElement.innerText;
+        btnElement.innerText = 'Copied!';
+        btnElement.style.opacity = '0.7';
+
+        setTimeout(() => {
+            btnElement.innerText = originalText;
+            btnElement.style.opacity = '1';
+        }, 2000);
+    }).catch(err => {
+        console.error('Gagal menyalin teks: ', err);
+    });
+}
+
+// Fungsi khusus Hero Code Copy (jika diperlukan terpisah)
+function copyHeroCode() {
+    const heroBtn = document.querySelector('.hero-code .code-copy-btn');
+    copyCode('heroCode', heroBtn);
+}
+</script>
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
