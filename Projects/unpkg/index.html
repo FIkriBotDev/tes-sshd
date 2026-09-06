@@ -189,7 +189,7 @@
                 <button class="code-tab" data-tab="curl">cURL</button>
             </div>
             
-            <!-- JavaScript Example -->
+ <!-- JavaScript Example -->
             <div class="code-content active" id="javascript">
                 <div class="code-split">
                     <div class="code-panel">
@@ -199,19 +199,18 @@
                         </div>
                         <div class="code-panel-body">
                             <pre id="jsRequest"><code><span class="code-keyword">const</span> response = <span class="code-keyword">await</span> <span class="code-function">fetch</span>(
-  <span class="code-string">'https://your-api.com/v1/chat/completions'</span>,
+  <span class="code-string">'https://exodusapi.jadikelas.tech/api/text/gpt-5-4-nano'</span>,
   {
     <span class="code-property">method</span>: <span class="code-string">'POST'</span>,
     <span class="code-property">headers</span>: {
-      <span class="code-string">'Authorization'</span>: <span class="code-string">'Bearer ak_live_xxxxx'</span>,
+      <span class="code-string">'accept'</span>: <span class="code-string">'application/json'</span>,
       <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span>
     },
     <span class="code-property">body</span>: JSON.<span class="code-function">stringify</span>({
-      <span class="code-property">model</span>: <span class="code-string">'openai'</span>,
       <span class="code-property">messages</span>: [
         {
           <span class="code-property">role</span>: <span class="code-string">'user'</span>,
-          <span class="code-property">content</span>: <span class="code-string">'Hello!'</span>
+          <span class="code-property">content</span>: <span class="code-string">'Hello, how are you?'</span>
         }
       ]
     })
@@ -234,7 +233,7 @@
     {
       <span class="code-string">"message"</span>: {
         <span class="code-string">"role"</span>: <span class="code-string">"assistant"</span>,
-        <span class="code-string">"content"</span>: <span class="code-string">"Hello! How can I help?"</span>
+        <span class="code-string">"content"</span>: <span class="code-string">"Hello! How can I help you today?"</span>
       },
       <span class="code-string">"finish_reason"</span>: <span class="code-string">"stop"</span>
     }
@@ -257,17 +256,16 @@
                             <pre id="pythonRequest"><code><span class="code-keyword">import</span> requests
 
 response = requests.<span class="code-function">post</span>(
-    <span class="code-string">'https://your-api.com/v1/chat/completions'</span>,
+    <span class="code-string">'https://exodusapi.jadikelas.tech/api/text/gpt-5-4-nano'</span>,
     <span class="code-property">headers</span>={
-        <span class="code-string">'Authorization'</span>: <span class="code-string">'Bearer ak_live_xxxxx'</span>,
+        <span class="code-string">'accept'</span>: <span class="code-string">'application/json'</span>,
         <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span>
     },
     <span class="code-property">json</span>={
-        <span class="code-string">'model'</span>: <span class="code-string">'openai'</span>,
         <span class="code-string">'messages'</span>: [
             {
                 <span class="code-string">'role'</span>: <span class="code-string">'user'</span>,
-                <span class="code-string">'content'</span>: <span class="code-string">'Hello!'</span>
+                <span class="code-string">'content'</span>: <span class="code-string">'Hello, how are you?'</span>
             }
         ]
     }
@@ -289,7 +287,7 @@ data = response.<span class="code-function">json</span>()</code></pre>
     {
       <span class="code-string">"message"</span>: {
         <span class="code-string">"role"</span>: <span class="code-string">"assistant"</span>,
-        <span class="code-string">"content"</span>: <span class="code-string">"Hello! How can I help?"</span>
+        <span class="code-string">"content"</span>: <span class="code-string">"Hello! How can I help you today?"</span>
       },
       <span class="code-string">"finish_reason"</span>: <span class="code-string">"stop"</span>
     }
@@ -309,15 +307,15 @@ data = response.<span class="code-function">json</span>()</code></pre>
                             <button class="code-copy-btn" onclick="copyCode('curlRequest')">Copy</button>
                         </div>
                         <div class="code-panel-body">
-                            <pre id="curlRequest"><code>curl https://your-api.com/v1/chat/completions \
-  -H <span class="code-string">"Authorization: Bearer ak_live_xxxxx"</span> \
-  -H <span class="code-string">"Content-Type: application/json"</span> \
+                            <pre id="curlRequest"><code>curl -X <span class="code-string">'POST'</span> \
+  <span class="code-string">'https://exodusapi.jadikelas.tech/api/text/gpt-5-4-nano'</span> \
+  -H <span class="code-string">'accept: application/json'</span> \
+  -H <span class="code-string">'Content-Type: application/json'</span> \
   -d <span class="code-string">'{
-    "model": "openai",
     "messages": [
       {
         "role": "user",
-        "content": "Hello!"
+        "content": "Hello, how are you?"
       }
     ]
   }'</span></code></pre>
@@ -336,7 +334,7 @@ data = response.<span class="code-function">json</span>()</code></pre>
     {
       <span class="code-string">"message"</span>: {
         <span class="code-string">"role"</span>: <span class="code-string">"assistant"</span>,
-        <span class="code-string">"content"</span>: <span class="code-string">"Hello! How can I help?"</span>
+        <span class="code-string">"content"</span>: <span class="code-string">"Hello! How can I help you today?"</span>
       },
       <span class="code-string">"finish_reason"</span>: <span class="code-string">"stop"</span>
     }
@@ -348,7 +346,6 @@ data = response.<span class="code-function">json</span>()</code></pre>
             </div>
         </div>
     </section>
-
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
