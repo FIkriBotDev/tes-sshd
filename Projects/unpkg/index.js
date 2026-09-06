@@ -323,7 +323,7 @@ app.get('/', (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`Server berjalan di http://localhost:${PORT}`);
-  console.log(`Swagger UI tersedia di http://localhost:${PORT}/api-docs`);
-  console.log(`Web aplikasi tersedia di http://localhost:${PORT}`);
+  console.log(`Server berjalan di https://exodusapi.jadikelas.tech`);
+  console.log(`Swagger UI tersedia di https://exodusapi.jadikelas.tech/api-docs`);
+  console.log(`Web aplikasi tersedia di https://exodusapi.jadikelas.tech`);
 });
