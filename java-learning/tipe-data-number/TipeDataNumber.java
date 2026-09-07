@@ -16,7 +16,7 @@ public class TipeDataNumber {
         int binaryDecimal = 0b10101010;
 
         long balance = 1_000_000_000_000L;
-        
+        int sum = 60_000_000;
 
     }
 
