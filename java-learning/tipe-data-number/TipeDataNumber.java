@@ -18,6 +18,8 @@ public class TipeDataNumber {
         long balance = 1_000_000_000_000L;
         int sum = 60_000_000;
 
+        int amount = 1_000_000_000;
+
     }
 
 }
