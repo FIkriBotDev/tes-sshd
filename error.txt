@@ -7821,3 +7821,25 @@
     at Axios.request (/home/runner/work/tes-sshd/tes-sshd/rtist/node_modules/axios/dist/node/axios.cjs:4258:41)
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
     at async /home/runner/work/tes-sshd/tes-sshd/rtist/app.js:642:22
+[2026-09-07T03:51:46.160Z] Model: openai - Error: No API keys configured
+    at getApiKey (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:23:11)
+    at requestToPollinations (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:246:20)
+    at /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:301:28
+    at Layer.handleRequest (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/lib/layer.js:152:17)
+    at next (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/lib/route.js:117:3)
+    at handle (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/lib/layer.js:152:17)
+    at /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/index.js:295:15
+    at processParams (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/index.js:582:12)
+[2026-09-07T03:51:56.226Z] Model: openai - Error: No API keys configured
+    at getApiKey (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:23:11)
+    at requestToPollinations (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:246:20)
+    at /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:301:28
+    at Layer.handleRequest (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/lib/layer.js:152:17)
+    at next (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/lib/route.js:117:3)
+    at handle (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/lib/layer.js:152:17)
+    at /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/index.js:295:15
+    at processParams (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/index.js:582:12)
