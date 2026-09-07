@@ -230,24 +230,37 @@ textModels.forEach(model => {
 imageModels.forEach(model => {
   const routeName = model.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   swaggerDocument.paths[`/api/image/${routeName}`] = {
-    post: {
+    get: {
       tags: ['Image'],
       summary: model.name,
       description: `Generate image using ${model.name} model (${model.id})`,
-      requestBody: {
-        required: true,
-        content: {
-          'application/json': {
-            schema: { $ref: '#/components/schemas/MessageInput' }
-          }
+      parameters: [
+        {
+          name: 'prompt',
+          in: 'query',
+          required: true,
+          schema: {
+            type: 'string',
+            example: 'a cat in space'
+          },
+          description: 'Text prompt for image generation'
         }
-      },
+      ],
       responses: {
         200: {
-          description: 'Success',
+          description: 'Generated image',
           content: {
-            'application/json': {
-              schema: { $ref: '#/components/schemas/SuccessResponse' }
+            'image/png': {
+              schema: {
+                type: 'string',
+                format: 'binary'
+              }
+            },
+            'image/jpeg': {
+              schema: {
+                type: 'string',
+                format: 'binary'
+              }
             }
           }
         },
@@ -358,26 +371,45 @@ textModels.forEach(model => {
 imageModels.forEach(model => {
   const routeName = model.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   
-  app.post(`/api/image/${routeName}`, async (req, res) => {
+  app.get(`/api/image/${routeName}`, async (req, res) => {
     try {
-      const { messages } = req.body;
+      const { prompt } = req.query;
 
-      if (!messages || !Array.isArray(messages)) {
+      if (!prompt || typeof prompt !== 'string') {
         return res.status(400).json({
-          error: 'Invalid request format. "messages" harus berupa array.'
+          error: 'Invalid request format. "prompt" query parameter is required.'
         });
       }
 
-      const result = await requestToPollinations(model.id, messages);
-
-      res.json({
-        status: true,
-        creator: 'FikriDev',
-        result
+      // Encode prompt untuk URL
+      const encodedPrompt = encodeURIComponent(prompt);
+      
+      // Request image dari Pollinations
+      const imageUrl = `https://gen.pollinations.ai/image/${encodedPrompt}?model=${model.id}`;
+      
+      const response = await axios.get(imageUrl, {
+        responseType: 'arraybuffer',
+        timeout: 60000,
+        headers: {
+          'User-Agent': 'FikriDev-API/1.0'
+        }
       });
+
+      // Deteksi content type dari response
+      const contentType = response.headers['content-type'] || 'image/png';
+      
+      // Set headers dan kirim image
+      res.setHeader('Content-Type', contentType);
+      res.setHeader('X-Creator', 'FikriDev');
+      res.send(response.data);
 
     } catch (error) {
       console.error(`Error in ${routeName}:`, error.message);
+      
+      // Log error ke file
+      const errorLog = `[${new Date().toISOString()}] Image Model: ${model.id} - ${error.stack || error.message}\n`;
+      fs.appendFile('error.txt', errorLog, () => {});
+      
       res.status(500).json({ error: 'Internal Server Error' });
     }
   });
