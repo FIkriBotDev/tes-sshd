@@ -1,0 +1,10 @@
+[2026-09-07T04:00:14.338Z] Model: gptimage - AxiosError: Request failed with status code 400
+    at settle (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:2530:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:4772:11)
+    at IncomingMessage.emit (node:events:531:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async requestToPollinations (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:253:22)
+    at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:330:22
