@@ -11,6 +11,8 @@ public class TipeDataNumber {
         float iniFloat = 10.10F;
         double iniDouble 10.10;
 
+        int decimal
+
     }
 
 }
