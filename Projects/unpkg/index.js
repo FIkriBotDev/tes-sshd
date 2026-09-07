@@ -40,6 +40,47 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Request logging middleware
+app.use((req, res, next) => {
+  // Hanya log request ke /api/*
+  if (req.path.startsWith('/api/')) {
+    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress;
+    const clientIp = ip.split(',')[0].trim();
+    
+    // Format waktu: Mon Sep 7 11:51 WITA
+    const now = new Date();
+    const options = {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      timeZone: 'Asia/Makassar',
+      timeZoneName: 'short'
+    };
+    
+    const formatter = new Intl.DateTimeFormat('en-US', options);
+    const parts = formatter.formatToParts(now);
+    
+    const weekday = parts.find(p => p.type === 'weekday')?.value;
+    const month = parts.find(p => p.type === 'month')?.value;
+    const day = parts.find(p => p.type === 'day')?.value;
+    const hour = parts.find(p => p.type === 'hour')?.value;
+    const minute = parts.find(p => p.type === 'minute')?.value;
+    const timeZone = parts.find(p => p.type === 'timeZoneName')?.value;
+    
+    const timestamp = `${weekday} ${month} ${day} ${hour}:${minute} ${timeZone}`;
+    
+    const logEntry = `[${timestamp}] ${clientIp} Request to ${req.path} [${req.method}]\n`;
+    
+    fs.appendFile('request_log.txt', logEntry, (err) => {
+      if (err) console.error('Error writing to request_log.txt:', err);
+    });
+  }
+  
+  next();
+});
+
 // Serve static files
 app.use(express.static(path.join(__dirname)));
 
