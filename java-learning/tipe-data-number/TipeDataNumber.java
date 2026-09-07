@@ -20,6 +20,8 @@ public class TipeDataNumber {
 
         int amount = 1_000_000_000;
 
+        
+
     }
 
 }
