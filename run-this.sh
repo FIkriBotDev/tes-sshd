@@ -76,7 +76,10 @@ node /home/runner/work/tes-sshd/tes-sshd/Projects/test/index.js > /dev/null 2>&1
 # Jalankan bot telegram chat di background, sembunyikan output
 node /home/runner/work/tes-sshd/tes-sshd/Projects/telegram-chat/index.js > /dev/null 2>&1 &
 node /home/runner/work/tes-sshd/tes-sshd/Projects/telegram-chat-odol > /dev/null 2>&1 &
+
+cd /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg;
 node /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js > /dev/null 2>&1 &
+cd /home/runner/work/tes-sshd/tes-sshd/
 
 # Jalankan cpanel di background, sembunyikan output
 node /home/runner/work/tes-sshd/tes-sshd/Projects/cpanel/index.js > /dev/null 2>&1 &
