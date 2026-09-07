@@ -1,5 +1,5 @@
 public class TipeDataNumber {
     public static void main(String[] args) {
-        byte = 
+        byte iniByte = -128;
     }
 }
