@@ -4,7 +4,8 @@ public class TipeDataNumber {
 
         byte iniByte = 100;
         short  iniShort = 1000;
-        int  iniInt = 100
+        int  iniInt = 10000000;
+        long iniLong = 10
 
     }
 
