@@ -6,7 +6,8 @@ public class KonversiNumber {
         short iniShort = iniByte;
         int iniInt = iniShort;
 
-        byte iniByte2 = (byte) iniInt;
+        int iniInt2 = 1000;
+        byte iniByte2 = (byte) iniInt2;
 
     }
 
