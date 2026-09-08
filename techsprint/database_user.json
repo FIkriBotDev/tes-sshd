@@ -145,5 +145,13 @@
     "plan": 3,
     "creditLeft": 100,
     "courseCreated": 2
+  },
+  {
+    "namaLengkap": "indra87g",
+    "email": "noeldycreator@gmail.com",
+    "password": "$2b$10$lPTa72EMso/7f5Kx.ziFeO0y.z/H5Y/.s08UuGC8oTYm4SkwRPBX.",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
