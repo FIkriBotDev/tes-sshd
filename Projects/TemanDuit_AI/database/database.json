@@ -235,6 +235,18 @@
       "code": "PJUCATAC",
       "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
       "createdAt": "2026-09-04T19:30:16.526Z",
+      "isActive": false
+    },
+    {
+      "code": "BN9VJ2TX",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "createdAt": "2026-09-08T17:02:49.800Z",
+      "isActive": false
+    },
+    {
+      "code": "TDN89HFT",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "createdAt": "2026-09-08T17:02:55.697Z",
       "isActive": true
     }
   ],
