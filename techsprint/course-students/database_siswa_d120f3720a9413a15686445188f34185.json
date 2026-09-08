@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "studentId": "79c3fe03d43d4d85",
+    "username": "indra87g",
+    "email": "noeldycreator@gmail.com",
+    "password": "$2b$10$lPTa72EMso/7f5Kx.ziFeO0y.z/H5Y/.s08UuGC8oTYm4SkwRPBX.",
+    "profilePicture": "",
+    "xp": 0,
+    "coin": 0,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "08-09-2026, 08.43.43",
+    "lastLoginDate": "Tue Sep 08 2026",
+    "quizScore": 0,
+    "completedBlocks": [],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 0,
+    "achievements": [],
+    "joinedAt": "08-09-2026, 08.43.43",
+    "isMainAccount": true
+  }
+]
