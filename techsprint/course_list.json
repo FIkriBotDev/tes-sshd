@@ -662,5 +662,19 @@
     "courseUrl": "/course/2a4365b402c25d85a6f63a8725a6c3d9",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "d120f3720a9413a15686445188f34185",
+    "courseName": "Dasar Pemrograman Rust: Aman, Cepat, dan Siap Concurrency",
+    "courseEmoji": "🦀",
+    "courseColor": "#10b981",
+    "courseFileName": "dasarpemrogramanrust.pdf",
+    "fileType": "pdf",
+    "originalFileName": "dasarpemrogramanrust.pdf",
+    "courseOwner": "noeldycreator@gmail.com",
+    "courseCreated": "08-09-2026, 08.41.40",
+    "courseUrl": "/course/d120f3720a9413a15686445188f34185",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]

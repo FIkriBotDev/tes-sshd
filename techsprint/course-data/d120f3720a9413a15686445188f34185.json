@@ -1,0 +1,352 @@
+{
+  "title": "Dasar Pemrograman Rust: Aman, Cepat, dan Siap Concurrency",
+  "summary": "Kamu bakal kenal Rust dari sudut pandang beginner: kenapa Rust populer, fitur inti seperti ownership dan type safety, lalu langsung ke fondasi praktis instalasi dan editor. Materi ini juga merangkum pembaruan versi dan konteks project ebook agar kamu tahu “versi apa” yang sedang dipelajari.",
+  "emoji": "🦀",
+  "color": "#10b981",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Rust itu apa sih? Kenapa berbeda?",
+      "icon": "🦀",
+      "explanation": "Rust adalah bahasa pemrograman general purpose yang fokus pada performance, type safety, dan concurrency. Rust dibuat sebagai alternatif untuk kebutuhan low-level, tapi tetap memberi fitur high-level agar pengembangan lebih nyaman. Hasilnya: kode cenderung aman dan tetap cepat saat dieksekusi.",
+      "analogy": "Bayangin kamu masak makanan: low-level itu seperti kamu mengatur detail api dan wajan, sedangkan high-level itu seperti ada resep dan timer. Rust memberi kontrol detail tanpa mengorbankan “keamanan” prosesnya.",
+      "highlight": "performance, type safety, concurrency",
+      "keyPoints": [
+        "Rust didesain untuk cepat dan aman tanpa runtime “asal cepat”",
+        "Fokus pada keamanan memory (dibantu pengecekan saat kompilasi)",
+        "Mendukung concurrency dengan cara yang lebih terkontrol"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Fitur unggulan Rust: keamanan memory sampai tooling",
+      "icon": "🛡️",
+      "explanation": "Rust punya beberapa kelebihan penting: keamanan memory dengan pengecekan di waktu kompilasi, ownership memory management, dan type system yang kuat (traits, generics, struct, dll). Selain itu, Rust dilengkapi macros, tooling dan std library yang lengkap, serta manajemen package bawaan lewat cargo dan crates.io.",
+      "analogy": "Kalau bahasa lain seperti “mobil tanpa rem pakem”, Rust lebih mirip mobil dengan sistem pengereman yang dipasang berdasarkan aturan fisika sejak dari awal (dikontrol kompilator).",
+      "highlight": "ownership, type system, cargo & crates.io",
+      "keyPoints": [
+        "Ownership membantu mengatur kapan memory dipinjam/diterbitkan",
+        "Type system yang kuat mencegah banyak bug sejak kompilasi",
+        "Cargo mempermudah membangun, mengelola dependensi, dan update tool"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Mulai cepat: instal Rust dengan rustup (macOS/Linux/Unix)",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Buka terminal",
+          "description": "Pastikan kamu menggunakan terminal yang siap menjalankan command.",
+          "tip": "Kalau pakai Git Bash/WSL, pastikan shell bisa akses internet."
+        },
+        {
+          "number": 2,
+          "title": "Jalankan instal rustup",
+          "description": "Perintah instal resminya memakai script rustup.",
+          "tip": "Pastikan kamu punya akses internet dan izin menjalankan command."
+        },
+        {
+          "number": 3,
+          "title": "Cek versi tooling",
+          "description": "Setelah instal, verifikasi rustup, rustc, dan cargo.",
+          "tip": "Kalau perintah gagal, coba ulang instal dan pastikan PATH ter-update."
+        }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Instal Rust di Windows & alternatif installer",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Pilih jalur instal",
+          "description": "Kamu bisa pakai rustup-init.exe (disarankan) atau standalone installer.",
+          "tip": "Untuk banyak kasus, rustup paling nyaman untuk update versi."
+        },
+        {
+          "number": 2,
+          "title": "Jalankan installer",
+          "description": "Ikuti wizard instalasi sampai selesai.",
+          "tip": "Restart terminal setelah instal untuk memastikan PATH kebaca."
+        },
+        {
+          "number": 3,
+          "title": "Cek hasil instal",
+          "description": "Jalankan command untuk memastikan rustc dan cargo tersedia.",
+          "tip": "Jika pakai WSL, jalankan command di dalam environment WSL."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Coba Praktek (Simulasi): Periksa “versi toolchain” di terminal",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode ini untuk mensimulasikan output cek versi. Ubah angka versi sesukamu untuk latihan memahami alur “cek rustup -> rustc -> cargo”.",
+      "fileName": "rust_toolchain_check_sim.js",
+      "defaultCode": "const toolchain = { rustup: '1.0.0', rustc: '1.79.0', cargo: '1.79.0' }; console.log('rustup --version =>', toolchain.rustup); console.log('rustc --version =>', toolchain.rustc); console.log('cargo --version =>', toolchain.cargo); console.log('Status => OK (simulasi)');",
+      "hint": "Challenge: Buat versi rustc berbeda dari cargo, lalu tampilkan pesan: apakah masih OK atau tidak (misalnya aturan sederhana: bila rustc dan cargo major sama, anggap OK)."
+    },
+    {
+      "type": "concept_card",
+      "title": "Editor & plugin: pilih yang bikin nyaman (rust-analyzer)",
+      "icon": "🧰",
+      "explanation": "Rust bisa ditulis di editor/IDE apa pun, tapi pengembangan biasanya lebih mudah dengan plugin. Yang resmi disupport adalah rust-analyzer untuk VS Code. Plugin ini membantu autocomplete, fitur analisis kode, dan feedback cepat saat kamu mengetik.",
+      "analogy": "Kalau Rust adalah mesin, rust-analyzer adalah kaca spion dan dashboard: kamu melihat kondisi mesin tanpa harus menebak-nebak.",
+      "highlight": "rust-analyzer, VS Code, feedback cepat",
+      "keyPoints": [
+        "Editor bebas, tapi plugin mempercepat belajar",
+        "rust-analyzer membantu kamu memahami error dan struktur kode",
+        "Pilih setup yang kamu nyaman agar konsisten latihan"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual: Apa yang kamu pelajari di awal",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Tujuan Rust",
+          "value": "Aman + cepat + siap concurrency",
+          "icon": "🧠"
+        },
+        {
+          "label": "Keunggulan inti",
+          "value": "Ownership, type safety, macros, tooling",
+          "icon": "🛡️"
+        },
+        {
+          "label": "Mulai instal",
+          "value": "rustup (disarankan) atau installer",
+          "icon": "⚙️"
+        },
+        {
+          "label": "Setup kerja",
+          "value": "Editor + rust-analyzer",
+          "icon": "🧰"
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Coba Praktek: Output “Hello Rust” versi JavaScript (latihan mindset)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Ganti teks output menjadi nama kamu, lalu jalankan. Ini latihan untuk membiasakan alur: menulis kode kecil, menjalankan, dan mengecek output.",
+      "fileName": "hello_rust_mock.js",
+      "defaultCode": "const name = 'Belajar Rust'; console.log('Hello Rust'); console.log('Halo,', name, '');",
+      "hint": "Challenge: Tambahkan format umur (misalnya 17) dan cetak satu kalimat lengkap."
+    },
+    {
+      "type": "analogy_card",
+      "title": "Ownership itu seperti “kunci kamar”",
+      "icon": "🔑",
+      "realWorld": "Misalnya kamu memegang kunci rumah. Saat kamu memegang kunci, kamu yang bertanggung jawab atas akses dan kapan kunci dipakai lalu dikembalikan.",
+      "connection": "Rust memakai ownership untuk mengatur siapa yang bertanggung jawab atas data, mencegah memory dipakai setelah “sudah tidak valid”.",
+      "insight": "Ownership membuat aturan waktu akses data jelas, jadi banyak bug memory bisa dicegah sebelum program dijalankan."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini Rust untuk Beginner",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "general purpose",
+          "definition": "Bahasa yang bisa dipakai untuk banyak jenis kebutuhan (bukan khusus satu domain).",
+          "example": "Bisa untuk sistem, tool, web backend, sampai aplikasi CLI."
+        },
+        {
+          "term": "performance",
+          "definition": "Fokus ke kecepatan eksekusi dan efisiensi sumber daya.",
+          "example": "Program berjalan cepat dan hemat memory."
+        },
+        {
+          "term": "type safety",
+          "definition": "Pengecekan tipe data supaya banyak error dicegah sejak kompilasi.",
+          "example": "Menghindari operasi yang tidak sesuai tipe."
+        },
+        {
+          "term": "concurrency",
+          "definition": "Menjalankan beberapa pekerjaan “secara bersamaan” dengan pengelolaan aman.",
+          "example": "Menangani beberapa request sekaligus."
+        },
+        {
+          "term": "ownership",
+          "definition": "Mekanisme Rust untuk mengatur siapa pemilik data dan kapan data valid.",
+          "example": "Komplier membantu mencegah akses ke data yang sudah tidak ada."
+        },
+        {
+          "term": "cargo",
+          "definition": "Tool resmi Rust untuk build, run, test, dan manajemen dependensi.",
+          "example": "cargo build atau cargo run."
+        },
+        {
+          "term": "rustup",
+          "definition": "Tool untuk manajemen toolchain Rust (install dan update versi).",
+          "example": "rustup update untuk update toolchain."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Rust fokus utama pada tiga hal berikut, kecuali ...",
+      "options": [
+        "performance",
+        "type safety",
+        "concurrency",
+        "garbage collection otomatis"
+      ],
+      "answer": "garbage collection otomatis",
+      "explanation": "Rust dikenal dengan keamanan memory dan manajemen melalui ownership/type system, bukan mengandalkan garbage collection otomatis sebagai fokus utama.",
+      "xpReward": 50
+    },
+    {
+      "question": "Mekanisme Rust yang mengatur kapan suatu data valid dan mencegah memory bug adalah ...",
+      "options": [
+        "ownership",
+        "inheritance",
+        "garbage collector",
+        "reflection"
+      ],
+      "answer": "ownership",
+      "explanation": "Ownership adalah inti dari cara Rust mengelola memory dan memastikan akses data aman.",
+      "xpReward": 50
+    },
+    {
+      "question": "Tool resmi untuk manajemen toolchain Rust (install dan update versi) adalah ...",
+      "options": [
+        "cargo",
+        "rustup",
+        "crates.io",
+        "rustc"
+      ],
+      "answer": "rustup",
+      "explanation": "rustup digunakan untuk mengelola versi Rust dan tooling, sedangkan cargo lebih ke build dan dependensi.",
+      "xpReward": 50
+    },
+    {
+      "question": "Dalam ekosistem Rust, package management dan dependensi biasanya dikelola lewat ...",
+      "options": [
+        "cargo & crates.io",
+        "git clone saja",
+        "npm",
+        "pip"
+      ],
+      "answer": "cargo & crates.io",
+      "explanation": "Cargo adalah tool build dan manajemen dependensi, crates.io adalah registry package-nya.",
+      "xpReward": 50
+    },
+    {
+      "question": "Kenapa rust-analyzer di editor bisa membantu saat belajar Rust?",
+      "options": [
+        "Karena bisa mengubah Rust jadi bahasa lain",
+        "Karena memberi analisis dan bantuan saat mengetik kode",
+        "Karena otomatis menghapus semua error tanpa perlu dipahami",
+        "Karena menggantikan compiler Rust"
+      ],
+      "answer": "Karena memberi analisis dan bantuan saat mengetik kode",
+      "explanation": "rust-analyzer membantu autocomplete, penjelasan, dan feedback cepat terhadap struktur kode dan potensi error.",
+      "xpReward": 50
+    },
+    {
+      "question": "Istilah general purpose pada Rust berarti ...",
+      "options": [
+        "Dibuat hanya untuk game",
+        "Cocok untuk banyak jenis kebutuhan",
+        "Hanya untuk embedded system",
+        "Hanya untuk web frontend"
+      ],
+      "answer": "Cocok untuk banyak jenis kebutuhan",
+      "explanation": "Rust general purpose artinya bisa dipakai untuk berbagai macam aplikasi dan domain.",
+      "xpReward": 50
+    },
+    {
+      "question": "Update toolchain Rust saat menggunakan rustup dilakukan dengan perintah ...",
+      "options": [
+        "cargo update",
+        "rustup update",
+        "rustc update",
+        "crates update"
+      ],
+      "answer": "rustup update",
+      "explanation": "Perintah rustup update digunakan untuk memperbarui toolchain dan komponen Rust.",
+      "xpReward": 50
+    },
+    {
+      "question": "Versi Rust yang disebut pada materi tutorial ini adalah ...",
+      "options": [
+        "1.78.0",
+        "1.79.0",
+        "2.0.0",
+        "0.9.9"
+      ],
+      "answer": "1.79.0",
+      "explanation": "Materi menyebut Rust 1.79.0 sebagai konteks versi saat ebook dibuat/dirilis.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Sebutkan 3 fokus utama Rust.",
+      "answer": "performance, type safety, concurrency",
+      "emoji": "🧠",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa itu ownership di Rust (inti gagasannya)?",
+      "answer": "Mekanisme yang mengatur siapa pemilik data dan kapan data valid, membantu mencegah bug memory.",
+      "emoji": "🔑",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Tool apa yang dipakai untuk build dan menjalankan project Rust?",
+      "answer": "cargo",
+      "emoji": "⚙️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Tool apa yang dipakai untuk menginstal dan update versi Rust tooling?",
+      "answer": "rustup",
+      "emoji": "🧰",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa fungsi crates.io dalam ekosistem Rust?",
+      "answer": "Registry untuk package/library Rust yang bisa diunduh sebagai dependensi.",
+      "emoji": "📦",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Kenapa type safety penting untuk belajar Rust?",
+      "answer": "Karena banyak kesalahan bisa terdeteksi saat kompilasi sebelum program dijalankan.",
+      "emoji": "🛡️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Plugin apa yang terkenal untuk membantu coding Rust di VS Code?",
+      "answer": "rust-analyzer",
+      "emoji": "🧩",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Rust cocok untuk kebutuhan yang cenderung low-level tapi tetap butuh fitur high-level. Jelaskan singkat.",
+      "answer": "Rust memberi kontrol ke detail seperti system programming, namun tetap menyediakan kenyamanan fitur dan ekosistem untuk pengembangan yang lebih tinggi level.",
+      "emoji": "⚡",
+      "difficulty": "hard"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan semua block pada modul pengenalan dan setup dasar.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi ini adalah pengantar untuk belajar Rust yang disajikan dalam format ebook/website tutorial bernama “Dasar Pemrograman Rust”. Fokus utamanya adalah memberi konteks Rust, alasan Rust populer, plus langkah awal yang dibutuhkan beginner agar bisa benar-benar mulai menulis dan menjalankan program. Di dalam materi, ada beberapa bagian penting: (1) definisi Rust dan karakteristiknya, (2) kelebihan Rust dibanding bahasa lain, (3) konteks ebook sebagai referensi belajar gratis, (4) informasi versi ebook dan versi Rust, (5) changelog update yang menjelaskan perubahan konten di release tertentu, (6) info project open source: kontribusi, lisensi, tech stack arsitektur website+PDF, serta (7) bagian awal pengenalan: instalasi Rust, pilihan editor dan plugin, dan mulai program pertama “Hello Rust”. Ini berarti tutor yang mengajar dari materi ini perlu memastikan siswa paham “kenapa Rust”, “cara mulai”, dan “bagaimana menyiapkan lingkungan belajar”. Rust didefinisikan sebagai bahasa pemrograman general purpose. Istilah “general purpose” artinya Rust bisa digunakan untuk banyak tipe aplikasi (bukan hanya domain khusus seperti embedded saja). Tiga fokus yang disebut eksplisit adalah performance, type safety, dan concurrency. Performance berarti eksekusi efisien. Type safety berarti banyak kesalahan terkait tipe data dicegah lebih awal melalui pengecekan kompilasi. Concurrency berarti Rust didesain agar kemampuan menjalankan pekerjaan secara bersamaan dapat dilakukan dengan cara yang lebih terkontrol dan aman. Materi juga menekankan bahwa Rust dibuat sebagai alternatif untuk bahasa yang berfokus low-level namun tetap men-support fitur yang sifatnya high-level. Artinya, Rust berusaha menggabungkan dua sisi: kontrol dekat ke perangkat/operasi dasar (low-level) tetapi tetap nyaman untuk pengembangan aplikasi yang lebih “tinggi” (high-level). Tutor sebaiknya menjembatani konsep ini dengan analogi kehidupan sehari-hari agar siswa tidak hanya menghafal. Misalnya, low-level seperti mengatur detail kompor, high-level seperti mengikuti resep dan timer: kamu tetap punya kontrol, tapi prosesnya tidak kacau. Lalu ada penjelasan tentang keunggulan Rust dibanding system-programming lainnya. Daftar yang muncul: keamanan memory yang sangat bagus dengan pengecekan di waktu kompilasi; ownership memory management sebagai mekanisme inti untuk menghindari bug memory seperti use-after-free dan data race; type system termasuk traits, generic, struct dan lainnya; macros untuk metaprogramming; tooling dan std library yang lengkap; built-in package management melalui cargo dan crates.io; efisien dengan performa tinggi; serta dukungan komunitas yang baik dan banyak library open source. Dalam teaching, tutor perlu menjelaskan bahwa banyak kelebihan ini saling terkait: compiler dan type system bekerja bersama untuk membuat “banyak bug lebih sulit muncul”. Bagian penting lain adalah konteks ebook. Materi menjelaskan bahwa ebook ini gratis sebagai referensi alternatif dan komplemen, bukan pengganti “the book” Rust official. Tutor sebaiknya menekankan bahwa dokumentasi official Rust sangat lengkap dan aktif di-update oleh komunitas, dan jika siswa sudah punya pengalaman di system programming seperti C atau C++, mereka dianjurkan langsung memakai the book. Materi menyebut versi ebook website/ebook v1.1.20260510 dan versi Rust 1.79.0. Di bagian changelog, banyak poin perbaikan konten: operator, slice, string literal vs String vs &str, tipe data (Option, Result), error handling recoverable vs panic, function naming convention, variabel dan konstanta, komentar, array dan vector, trait dan iterator (iter vs into_iter, iter_mut, enumerate), module system (inline, scope, visibility & privacy), generics (PartialOrd dan if), lifetime, enum, closures, datetime crate chrono, use/import, serta update umum di seluruh halaman termasuk copyedit dan perbaikan referensi silang. Tutor tidak perlu membahas semua teknis changelog satu per satu untuk siswa beginner, tetapi perlu menjelaskan “kenapa penting”: siswa belajar dengan versi tertentu, sehingga contoh dan penjelasan bisa mengikuti konteks release saat itu. Tutor bisa menekankan bahwa perubahan biasanya berupa perbaikan narasi, sinkronisasi contoh agar sesuai dokumen, koreksi output, dan typo, sehingga pembelajaran tetap konsisten. Materi juga menjelaskan project open source: siswa bisa ikut kontribusi melalui GitHub, misalnya fork repository, buat issue, dan submit pull request. Ada bagian lisensi dan distribusi konten: konten gratis untuk disebarluaskan komersil maupun non-komersil dengan syarat kredit sumber asli (Dasar Pemrograman Rust atau novalagung) dan tidak mengubah lisensi aslinya (CC BY-SA 4.0). Tutor sebaiknya menyampaikan etika belajar: jangan copy-paste tanpa mencoba menulis sendiri, agar cepat terbiasa dengan bahasa Rust. Bagian tech stack dan arsitektur mencakup penggunaan Docusaurus v2 untuk web-book, generator PDF Prince XML dengan docusaurus-prince-pdf dan PDFtk, repository GitHub, hosting GitHub Pages, CI/CD GitHub Actions, dan content search Algolia DocSearch. Bagian ini relevan untuk siswa yang tertarik kontribusi konten, tetapi untuk learner pemula bisa dianggap “info latar”. Bagian utama yang dimulai di akhir materi adalah “Instalasi Rust” dan “Rust Editor & Plugin”, lalu “A.1 Program Pertama -> Hello Rust”. Materi instalasi menyebut bahwa pembaca bisa mengikuti panduan resmi di rust-lang.org/tools/install. Ada dua metode instalasi: menggunakan rustup atau installer standalone. Tutor harus menjelaskan rustup sebagai tool resmi untuk manajemen Rust tooling yang mempermudah instalasi, update versi, dan penggantian versi. Materi memberi contoh command untuk macOS/Linux/Unix: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh, lalu cek rustup --version, rustc --version, cargo --version. Untuk Windows, materi menyarankan download rustup-init.exe dari halaman instal, jalankan installer, lalu cek versi dengan command yang sama. Untuk pengguna WSL, materi menyebut bisa menjalankan command di environment WSL. Materi juga menjelaskan update versi: jika memakai rustup, cukup menjalankan rustup update. Jika pakai installer standalone, update dengan download installer versi terbaru. Lalu “Rust Editor & Plugin” menjelaskan bahwa normalnya semua editor bisa digunakan, tetapi plugin membuat development lebih mudah. Ada beberapa editor yang didukung secara official: VS Code dengan plugin rust-analyzer, Sublime Text dengan rust-enhanced, IntelliJ IDEA dengan plugin Rust, Eclipse dengan Eclipse IDE for Rust Developers, Vim dengan rust.vim, Emacs dengan rust-mode, dan Geany. Tutor bisa mengarahkan bahwa untuk pembelajaran awal, memilih VS Code + rust-analyzer adalah opsi populer dan cepat. Materi juga menyebut bahwa penulis menggunakan VS Code dengan rust-analyzer ter-install. Terakhir, bagian “A.1 Program Pertama -> Hello Rust” mengatakan seperti bahasa pemrograman pada umumnya, belajar dimulai dari program Hello World; di sini akan dibuat “Hello Rust”. Materi mulai masuk ke langkah pembuatan project/package, meskipun potongan dokumen berhenti di tengah kalimat, namun tutor dapat mengisi dengan konteks standar: di Rust, pembuatan project umumnya memakai cargo new dan menjalankan cargo run. Untuk tutor, penting memastikan siswa memahami alur: (1) siapkan toolchain, (2) siapkan editor, (3) buat project pertama, (4) jalankan dan lihat output. Secara interaktif, tutor juga bisa memandu siswa melakukan latihan output dan memverifikasi environment lewat “cek versi” (rustup/rustc/cargo) sebelum masuk ke kode yang lebih besar. Tujuan modul ini adalah membuat siswa siap secara teknis dan mental: tahu karakter Rust, tahu manfaat fitur utamanya, tahu bagaimana menginstal, dan punya langkah pertama untuk menjalankan program."
+}
