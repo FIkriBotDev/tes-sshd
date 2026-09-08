@@ -5,8 +5,8 @@
     "email": "noeldycreator@gmail.com",
     "password": "$2b$10$lPTa72EMso/7f5Kx.ziFeO0y.z/H5Y/.s08UuGC8oTYm4SkwRPBX.",
     "profilePicture": "",
-    "xp": 140,
-    "coin": 55,
+    "xp": 170,
+    "coin": 65,
     "level": 1,
     "streak": 0,
     "lastLogin": "08-09-2026, 08.43.43",
@@ -15,11 +15,12 @@
     "completedBlocks": [
       "block-0",
       "block-1",
-      "block-2"
+      "block-2",
+      "block-3"
     ],
     "completedChapter": [],
     "flashcardsViewed": 0,
-    "leaderboardPoint": 90,
+    "leaderboardPoint": 120,
     "achievements": [
       "first_block"
     ],
