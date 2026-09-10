@@ -391,7 +391,7 @@ imageModels.forEach(model => {
         responseType: 'arraybuffer',
         timeout: 60000,
         headers: {
-          'User-Agent': 'FikriDev-API/1.0'
+          'User-Agent': 'FikriDev-API/1.0',
           'Authorization': `Bearer ${process.env.POLLINATIONS_API_KEY1}`
         }
       });
