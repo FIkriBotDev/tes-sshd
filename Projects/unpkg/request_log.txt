@@ -126,3 +126,7 @@
 [Thu Sep 10 11:29 GMT+8] 82.158.133.222 Request to /api/openapi.json [GET]
 [Thu Sep 10 11:41 GMT+8] 82.158.133.222 Request to /api/image/gpt-image [GET]
 [Thu Sep 10 11:41 GMT+8] 82.158.133.222 Request to /api/image/gpt-image [GET]
+[Thu Sep 10 11:41 GMT+8] 82.158.133.222 Request to /api/image/flux-1-schnell [GET]
+[Thu Sep 10 11:41 GMT+8] 82.158.133.222 Request to /api/text/meta-llama-3-3-70b [POST]
+[Thu Sep 10 11:41 GMT+8] 114.10.150.152 Request to /api/text/nova-micro [POST]
+[Thu Sep 10 11:41 GMT+8] 82.158.133.222 Request to /api/image/dreamshaper-8-lcm [GET]
