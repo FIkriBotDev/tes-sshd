@@ -676,5 +676,19 @@
     "courseUrl": "/course/d120f3720a9413a15686445188f34185",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "4435f1729f7705cf6c3ba7cb08f75aff",
+    "courseName": "Google Cloud Observability: Monitoring, Logging, Error, Trace, Profiler untuk Debug Lebih Cepat",
+    "courseEmoji": "📡",
+    "courseColor": "#3b82f6",
+    "courseFileName": "Transkrip_Google_Cloud_Observability.pdf",
+    "fileType": "pdf",
+    "originalFileName": "Transkrip_Google_Cloud_Observability.pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "10-09-2026, 02.41.49",
+    "courseUrl": "/course/4435f1729f7705cf6c3ba7cb08f75aff",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]

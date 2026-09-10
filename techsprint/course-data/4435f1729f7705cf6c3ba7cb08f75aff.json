@@ -1,0 +1,365 @@
+{
+  "title": "Google Cloud Observability: Monitoring, Logging, Error, Trace, Profiler untuk Debug Lebih Cepat",
+  "summary": "Pelajari bagaimana Google Cloud Observability membantu tim DevOps melihat kondisi dan performa aplikasi berbasis cloud secara end-to-end. Kamu akan memahami peran Cloud Monitoring, Cloud Logging, Error Reporting, Cloud Trace, dan Cloud Profiler beserta contoh use-case agar siap dipakai saat aplikasi mulai bermasalah.",
+  "emoji": "📡",
+  "color": "#3b82f6",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Observability Itu “Radar” untuk Aplikasi Cloud",
+      "icon": "📡",
+      "explanation": "Google Cloud Observability menyatukan pemantauan, logging, error reporting, dan pelacakan performa supaya kamu bisa menemukan akar masalah lebih cepat. Tujuannya bukan cuma lihat error, tapi juga memahami konteks performa, ketersediaan, dan pola latensi dari aplikasi kamu.",
+      "analogy": "Kalau monitoring itu seperti melihat kecepatan di dashboard, observability itu seperti punya GPS, sensor mesin, dan log perjalanan—jadi kamu tahu bukan hanya apa yang terjadi, tapi kenapa dan sejak kapan.",
+      "highlight": "insight, performa, ketersediaan, debug",
+      "keyPoints": [
+        "Melihat sinyal performa dan kondisi aplikasi secara menyeluruh",
+        "Menghubungkan log, error, dan trace untuk menemukan penyebab",
+        "Membantu respons lebih cepat saat masalah muncul"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Cloud Monitoring: Metrik dari Sinyal ke Insight",
+      "icon": "📈",
+      "explanation": "Cloud Monitoring dimulai dari data sinyal yang kemudian diproses menjadi metrik terarah waktu. Misalnya data CPU mentah bisa dihitung menjadi rata-rata per menit sehingga mudah dibaca dan dianalisis lewat dasbor, alarm, dan pemberitahuan.",
+      "analogy": "Bayangkan kamu menimbang berat badan setiap hari. Monitoring itu mengubah banyak angka mentah menjadi ringkasan tren (misal rata-rata mingguan) supaya kamu bisa cepat melihat perubahan.",
+      "highlight": "sinyal → metrik, Metrics Explorer, alert",
+      "keyPoints": [
+        "Metrik adalah hasil pengukuran yang diringkas sepanjang waktu",
+        "Bisa pakai dasbor, diagram, dan alert otomatis",
+        "Google Cloud mengumpulkan ribuan aliran metrik bawaan"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Peta Peran Setiap Komponen Observability",
+      "icon": "🧭",
+      "items": [
+        {
+          "label": "Cloud Monitoring",
+          "value": "Mengukur performa lewat metrik (CPU, memori, latensi, ketersediaan)",
+          "icon": "📈"
+        },
+        {
+          "label": "Cloud Logging",
+          "value": "Menyimpan dan menelusuri log (audit, agen, jaringan, layanan)",
+          "icon": "📝"
+        },
+        {
+          "label": "Error Reporting",
+          "value": "Mengumpulkan & menganalisis error dari aplikasi aktif + stack trace",
+          "icon": "🚨"
+        },
+        {
+          "label": "Cloud Trace",
+          "value": "Melacak latensi aplikasi terdistribusi dari berbagai layanan",
+          "icon": "🧵"
+        },
+        {
+          "label": "Cloud Profiler",
+          "value": "Memberi gambaran CPU/heap dan hierarki panggilan dengan overhead rendah",
+          "icon": "🧠"
+        }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Workflow Debug Cepat Pakai 5 Layanan",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Mulai dari sinyal performa",
+          "description": "Cek Cloud Monitoring untuk melihat metrik yang turun/naik (misal CPU tinggi, lonjakan error, latensi meningkat).",
+          "tip": "Cari pola waktu: kapan mulai berubah, dan komponen mana yang ikut bergerak."
+        },
+        {
+          "number": 2,
+          "title": "Buka log untuk konteks",
+          "description": "Gunakan Logs Explorer di Cloud Logging untuk menelusuri peristiwa, request, dan pesan dari layanan terkait.",
+          "tip": "Filter log berdasarkan resource dan rentang waktu yang sama dengan anomali metrik."
+        },
+        {
+          "number": 3,
+          "title": "Validasi error yang paling berdampak",
+          "description": "Lihat Error Reporting untuk daftar error, urutkan berdasarkan jumlah kejadian dan pengguna terdampak.",
+          "tip": "Perhatikan stack trace yang sudah dibersihkan untuk mempercepat pencarian sumber masalah."
+        },
+        {
+          "number": 4,
+          "title": "Lacak latensi antar komponen",
+          "description": "Gunakan Cloud Trace untuk memahami trace terdistribusi dan bagian mana yang meningkatkan latensi.",
+          "tip": "Cari penurunan performa terbaru: Trace akan membantu melihat perubahan yang terjadi."
+        },
+        {
+          "number": 5,
+          "title": "Bedah konsumsi CPU/heap",
+          "description": "Gunakan Cloud Profiler untuk melihat hierarki panggilan dan flame graph guna menemukan fungsi yang paling boros resource.",
+          "tip": "Fokus ke jalur paling tebal di flame graph untuk target optimasi paling cepat."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Simulasi: Buat Metrik dari Sinyal (Rata-rata per Menit)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Ubah kode agar kamu bisa hitung rata-rata CPU per menit dari data sinyal mentah. Saat dijalankan, console.log akan menampilkan metrik per-menit.",
+      "fileName": "monitoring-metric-sim.js",
+      "defaultCode": "// Simulasi konsep: sinyal metrik → diringkas per interval waktu (misal per menit)\n// Data format: { t: detikSejakMulai, cpu: nilaiCPU }\nconst signals = [ { t: 0, cpu: 10 }, { t: 20, cpu: 12 }, { t: 40, cpu: 14 }, { t: 60, cpu: 30 }, { t: 70, cpu: 28 }, { t: 90, cpu: 26 } ];\n\nconst intervalSec = 60; // 1 menit\nconst buckets = new Map();\n\nfor (const s of signals) {\n  const bucketIndex = Math.floor(s.t / intervalSec);\n  if (!buckets.has(bucketIndex)) buckets.set(bucketIndex, []);\n  buckets.get(bucketIndex).push(s.cpu);\n}\n\nconst metrics = Array.from(buckets.entries())\n  .sort((a, b) => a[0] - b[0])\n  .map(([idx, values]) => {\n    const avg = values.reduce((acc, v) => acc + v, 0) / values.length;\n    return { minute: idx + 1, avgCpu: avg };\n  });\n\nconsole.log('Metrik CPU rata-rata per menit:', metrics);\n\n// Challenge: ubah intervalSec jadi 30 detik lalu lihat metriknya berubah.",
+      "hint": "Coba ganti intervalSec=30 lalu cek apakah jumlah bucket meningkat dan nilai rata-rata tiap bucket makin spesifik."
+    },
+    {
+      "type": "code_playground",
+      "title": "Simulasi: Ringkas Log ke “Metode” (audit/agen/jaringan/layanan)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode ini untuk mengklasifikasikan log sederhana ke kategori utama: audit, agen, jaringan, dan layanan. Latih instingmu sebelum memakainya di Logs Explorer.",
+      "fileName": "logging-categories-sim.js",
+      "defaultCode": "// Simulasi konsep: Cloud Logging punya kategori utama (audit, agen, jaringan, layanan)\n// Kita buat aturan sederhana berdasarkan field eventType.\n\nconst logs = [\n  { id: 1, eventType: 'AUDIT', message: 'Admin mengubah setting', user: 'alice' },\n  { id: 2, eventType: 'AGENT', message: 'Fluentd mengirim log instance', vm: 'compute-1' },\n  { id: 3, eventType: 'VPC_FLOW', message: 'Sample alur jaringan VPC', src: '10.0.0.2', dst: '10.0.0.8' },\n  { id: 4, eventType: 'SERVICE', message: 'Container mencatat stdout error', service: 'cloud-run-app' }\n];\n\nfunction categorizeLog(log) {\n  const t = log.eventType;\n  if (t === 'AUDIT') return 'log audit';\n  if (t === 'AGENT') return 'log agen';\n  if (t === 'VPC_FLOW' || t === 'FIREWALL' || t === 'NAT') return 'log jaringan';\n  return 'log layanan';\n}\n\nconst summarized = logs.map(l => ({ id: l.id, category: categorizeLog(l), message: l.message }));\nconsole.log('Ringkasan kategori log:', summarized);\n\n// Challenge: tambahkan 2 log baru (misal eventType: FIREWALL dan eventType: SERVICE) lalu lihat kategorinya.",
+      "hint": "Fokus pada pemetaan eventType → kategori agar selaras dengan konsep empat kategori utama."
+    },
+    {
+      "type": "concept_card",
+      "title": "Cloud Logging: Eksplorasi, Ekspor, Retensi, dan Kategori",
+      "icon": "📝",
+      "explanation": "Cloud Logging biasanya dimulai dari Logs Explorer untuk analisis log cepat. Kamu juga bisa mengekspor log ke Cloud Storage, Pub/Sub, atau BigQuery untuk analisis lanjutan, dan bahkan membangun metrik berbasis log untuk dashboard serta pemberitahuan. Retensi log default berbeda-beda tergantung jenis log, dan bisa diperpanjang dengan ekspor.",
+      "analogy": "Log itu seperti catatan kejadian di buku harian. Logs Explorer seperti membuka buku di halaman yang tepat, sedangkan ekspor itu seperti menyimpan salinan ke folder riset supaya bisa dianalisis pakai alat lain.",
+      "highlight": "Logs Explorer, ekspor (Storage/PubSub/BigQuery), retensi, kategori",
+      "keyPoints": [
+        "Log dapat dieksplorasi dan diekspor untuk kebutuhan analisis berbeda",
+        "Retensi default bergantung jenis log (misal akses data vs admin)",
+        "Empat kategori log utama: audit, agen, jaringan, layanan"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Error Reporting + Cloud Trace: Dari Error ke Akar Latensi",
+      "icon": "🧯",
+      "explanation": "Error Reporting mengumpulkan dan menganalisis error yang terjadi di layanan cloud aktif, lalu menampilkan detail seperti timeline kemunculan, jumlah pengguna terdampak, dan stack trace. Cloud Trace adalah sistem pelacakan latensi untuk aplikasi terdistribusi; ia membantu melihat bagian mana yang membuat permintaan jadi lambat dan menganalisis perubahan performa secara berkelanjutan.",
+      "analogy": "Error Reporting itu seperti alarm kebakaran yang mencatat kejadian dan lokasi api. Cloud Trace seperti peta jalur asap yang menunjukkan titik mana yang paling banyak menghambat aliran.",
+      "highlight": "stack trace, pengguna terdampak, latensi terdistribusi, hampir real-time",
+      "keyPoints": [
+        "Error Reporting fokus pada apa yang gagal dan dampaknya",
+        "Cloud Trace mengurai latensi antar komponen layanan",
+        "Keduanya membantu mengurangi waktu dari gejala ke diagnosis"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Cloud Profiler: Temukan Fungsi Boros CPU/Heap dengan Overhead Rendah",
+      "icon": "🧠",
+      "explanation": "Cloud Profiler menggunakan teknik statistik dan instrumentasi berdampak rendah untuk menggambarkan heap aplikasi dan konsumsi CPU tanpa memperlambat produksi. Hasilnya menampilkan hierarki panggilan dan flame graph, sehingga developer bisa melihat jalur mana yang paling banyak memakai resource dan memfokuskan optimasi.",
+      "analogy": "Kalau performa itu seperti antrean di kasir, Profiler itu seperti menelusuri staf mana yang membuat antrean paling panjang—bukan hanya bilang antreannya lambat, tapi bagian pekerjaan mana yang paling memakan waktu.",
+      "highlight": "flame graph, hierarki panggilan, CPU/heap, overhead rendah",
+      "keyPoints": [
+        "Profiler memberi gambaran resource (CPU dan heap) secara mendalam",
+        "Flame graph membantu menemukan hotspot performa",
+        "Cocok untuk aplikasi di Compute Engine, App Engine, dan GKE serta mendukung berbagai bahasa"
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "BigQuery & Cloud Run: Monitoring yang Nyambung ke Biaya",
+      "icon": "💰",
+      "realWorld": "Data scientist menjalankan kueri besar di BigQuery dan ingin tahu kueri aktif, byte yang diproses untuk penagihan, dan pola slot. Tim DevOps menjalankan aplikasi di Cloud Run dan ingin tahu CPU/memori serta waktu yang berpengaruh ke tagihan.",
+      "connection": "Konsep metrik di Monitoring + log/trace/error memberi konteks performa dan kualitas layanan, sementara metrik juga bisa dibuat dari sinyal custom menggunakan OpenTelemetry.",
+      "insight": "Kalau kamu menyandingkan performa dengan sinyal biaya (misal byte dipindai/slot dan waktu layanan), debugging jadi lebih praktis: bukan hanya cepat, tapi juga efisien."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini Observability",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Metrik",
+          "definition": "Ringkasan numerik dari sinyal yang dihitung sepanjang waktu (contoh: rata-rata CPU per menit).",
+          "example": "CPU raw 0-100% menjadi metrik avgCpu tiap interval."
+        },
+        {
+          "term": "Sinyal",
+          "definition": "Data mentah/kejadian yang bisa diolah menjadi metrik atau insight.",
+          "example": "Pengukuran CPU, request rate, atau event sistem."
+        },
+        {
+          "term": "Logs Explorer",
+          "definition": "Tampilan untuk mencari dan menganalisis log di Cloud Logging.",
+          "example": "Filter log pada rentang waktu dan service tertentu."
+        },
+        {
+          "term": "Error Reporting",
+          "definition": "Sistem untuk menghimpun dan menganalisis error pada layanan cloud aktif.",
+          "example": "Menampilkan stack trace yang sudah dibersihkan."
+        },
+        {
+          "term": "Cloud Trace",
+          "definition": "Pelacakan latensi untuk aplikasi terdistribusi beserta insight performa.",
+          "example": "Trace dari App Engine, Compute Engine, dan GKE."
+        },
+        {
+          "term": "Cloud Profiler",
+          "definition": "Alat untuk memetakan CPU/heap dan hotspot performa dengan overhead rendah.",
+          "example": "Flame graph untuk menemukan fungsi boros resource."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Apa langkah awal yang paling sering dilakukan saat memulai pemantauan di Cloud Monitoring?",
+      "options": [
+        "Langsung mengedit kode aplikasi",
+        "Mengumpulkan dan memproses data sinyal menjadi metrik",
+        "Menghapus semua log agar ringan",
+        "Hanya menampilkan stack trace tanpa latensi"
+      ],
+      "answer": "Mengumpulkan dan memproses data sinyal menjadi metrik",
+      "explanation": "Cloud Monitoring dimulai dari data sinyal, lalu metrik dihitung/diringkas dari waktu ke waktu untuk menghasilkan nilai yang siap dianalisis dan ditampilkan.",
+      "xpReward": 50
+    },
+    {
+      "question": "Contoh yang benar untuk konsep metrik adalah ...",
+      "options": [
+        "Nilai CPU mentah dipakai langsung tanpa ringkasan",
+        "Rata-rata penggunaan CPU dihitung sehingga menjadi satu nilai per interval",
+        "Log disimpan hanya 1 hari karena sederhana",
+        "Trace hanya untuk satu endpoint saja"
+      ],
+      "answer": "Rata-rata penggunaan CPU dihitung sehingga menjadi satu nilai per interval",
+      "explanation": "Materi menjelaskan metrik bisa mengambil nilai pengukuran mentah dan menyelaraskannya menjadi satu nilai per menit (contoh rata-rata CPU).",
+      "xpReward": 50
+    },
+    {
+      "question": "Pada studi kasus BigQuery, metrik yang relevan untuk dipantau mencakup ...",
+      "options": [
+        "Jumlah kueri aktif dan byte yang dipindai (untuk tagihan)",
+        "Hanya ukuran file lokal tanpa konteks",
+        "Hanya warna tampilan dashboard",
+        "Kecepatan internet pengguna akhir saja"
+      ],
+      "answer": "Jumlah kueri aktif dan byte yang dipindai (untuk tagihan)",
+      "explanation": "Materi menyebut DevOps/data scientist perlu tahu kueri aktif, byte dipindai dan ditambahkan ke tagihan, serta pola penggunaan slot.",
+      "xpReward": 50
+    },
+    {
+      "question": "Cloud Logging biasanya dianalisis mulai dari ...",
+      "options": [
+        "Logs Explorer",
+        "Cloud Profiler saja",
+        "Cloud Trace saja",
+        "Scheduler offline tanpa filter"
+      ],
+      "answer": "Logs Explorer",
+      "explanation": "Materi menyatakan sebagian besar analisis log dimulai dengan Logs Explorer terintegrasi Google Cloud.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa salah satu tujuan ekspor log yang disebutkan di materi?",
+      "options": [
+        "Hanya disimpan di browser",
+        "Cloud Storage, Pub/Sub, atau BigQuery",
+        "Tidak bisa diekspor",
+        "Harus diubah menjadi gambar dulu"
+      ],
+      "answer": "Cloud Storage, Pub/Sub, atau BigQuery",
+      "explanation": "Materi menjelaskan entri logging bisa diekspor ke tujuan lain untuk analisis lanjutan, termasuk Cloud Storage, Pub/Sub, dan BigQuery.",
+      "xpReward": 50
+    },
+    {
+      "question": "Kategori log audit menjawab pertanyaan seperti ...",
+      "options": [
+        "Siapa melakukan apa, di mana, dan kapan?",
+        "Berapa rata-rata CPU per menit?",
+        "Fungsi mana yang memakai CPU paling banyak dalam flame graph?",
+        "Bagian mana yang paling menambah latensi per trace?"
+      ],
+      "answer": "Siapa melakukan apa, di mana, dan kapan?",
+      "explanation": "Materi menyebut Cloud Audit Logs menjawab pertanyaan siapa melakukan apa, di mana, dan kapan.",
+      "xpReward": 50
+    },
+    {
+      "question": "Error Reporting paling cocok digunakan untuk ...",
+      "options": [
+        "Menganalisis error di layanan cloud aktif beserta stack trace dan dampaknya",
+        "Menghitung rata-rata CPU dari sinyal mentah",
+        "Memaparkan hierarki panggilan dengan flame graph untuk hotspot",
+        "Mengukur throughput disk secara otomatis tanpa data lain"
+      ],
+      "answer": "Menganalisis error di layanan cloud aktif beserta stack trace dan dampaknya",
+      "explanation": "Materi menjelaskan Error Reporting menghitung, menganalisis, menghimpun error, dan menampilkan detail seperti stack trace serta pengguna terdampak.",
+      "xpReward": 50
+    },
+    {
+      "question": "Cloud Trace fokus pada ...",
+      "options": [
+        "Latensi aplikasi terdistribusi dan insight hampir real-time",
+        "Retensi log akses data tanpa analisis",
+        "Overhead rendah instrumentasi CPU/heap",
+        "Pengelompokan kategori log audit secara otomatis"
+      ],
+      "answer": "Latensi aplikasi terdistribusi dan insight hampir real-time",
+      "explanation": "Cloud Trace adalah sistem pelacakan yang mengumpulkan data latensi dan menampilkannya di Konsol Google Cloud.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Definisi cepat Cloud Monitoring",
+      "answer": "Layanan yang memantau kondisi dan performa aplikasi melalui metrik yang berasal dari sinyal dan diringkas dari waktu ke waktu.",
+      "emoji": "📈",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa itu metrik per interval (contoh per menit)?",
+      "answer": "Ringkasan numerik hasil transformasi dari pengukuran mentah, misalnya menghitung rata-rata CPU setiap menit.",
+      "emoji": "⏱️",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa fungsi Logs Explorer?",
+      "answer": "Tempat untuk mencari dan menganalisis log di Cloud Logging secara terintegrasi.",
+      "emoji": "📝",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Sebutkan 3 tujuan ekspor log yang disebut materi",
+      "answer": "Cloud Storage, Pub/Sub, dan BigQuery.",
+      "emoji": "📤",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Empat kategori log utama",
+      "answer": "Log audit, log agen, log jaringan, dan log layanan.",
+      "emoji": "🧩",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Kegunaan Error Reporting",
+      "answer": "Menghimpun dan menganalisis error dari layanan cloud aktif, termasuk stack trace dan dampak ke pengguna.",
+      "emoji": "🚨",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa yang dilacak oleh Cloud Trace?",
+      "answer": "Data latensi untuk aplikasi terdistribusi (trace) dan menampilkan insight performa hampir real-time.",
+      "emoji": "🧵",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa yang ditampilkan oleh Cloud Profiler dalam konteks performa?",
+      "answer": "Gambaran CPU/heap dan hierarki panggilan dalam flame graph untuk menemukan hotspot resource.",
+      "emoji": "🔥",
+      "difficulty": "hard"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi membahas Google Cloud Observability sebagai paket alat untuk pemantauan dan debugging aplikasi berbasis cloud secara menyeluruh. Inti besarnya: Observability memberi insight tentang kondisi, performa, dan ketersediaan aplikasi sehingga tim bisa menemukan serta memperbaiki masalah lebih cepat. Di dalamnya ada beberapa komponen utama: Cloud Monitoring, Cloud Logging, Error Reporting, Cloud Trace, dan Cloud Profiler. Tutor bisa mengaitkan semuanya dengan alur kerja troubleshooting: mulai dari gejala performa (metrik), lalu cari konteks kejadian (log), konfirmasi kegagalan (error), uraikan latensi antar komponen (trace), dan akhirnya bedah penyebab performa dari sisi konsumsi resource (profiler).\n\nPertama, Cloud Monitoring & metrik. Materi menekankan bahwa pemantauan dimulai dari data sinyal. Sinyal adalah data mentah/kejadian yang kemudian diproses secara matematis menjadi metrik yang selaras terhadap waktu. Contoh yang diberikan: CPU mentah diukur lalu dihitung rata-ratanya untuk menghasilkan satu nilai per menit. Dengan pendekatan ini, sistem bisa menampilkan tren dan kondisi secara konsisten. Google Cloud secara default mengumpulkan lebih dari seribu aliran data metrik; metrik-metrik ini bisa dimasukkan ke dasbor, pemberitahuan, dan berbagai alat penting lain. Materi juga menyebut Metrics Explorer yang digunakan untuk menavigasi diagram metrik dan melakukan analisis.\n\nLalu studi kasus BigQuery & Cloud Run untuk memperjelas kenapa metrik penting. Untuk BigQuery, data scientist perlu tahu berapa banyak kueri yang sedang aktif, berapa byte yang telah dipindai dan ditambahkan ke tagihan, serta pola penggunaan slot data. Ini menghubungkan observability dengan biaya dan kapasitas. Untuk Cloud Run (aplikasi dalam container), tim DevOps perlu mengetahui pemakaian CPU dan memori, serta waktu tagihan aplikasi. Materi juga mengangkat ide peningkatan metrik sinyal dari aplikasi kustom di mana pun aplikasi berjalan melalui OpenTelemetry open source agar aplikasi mengekspor metrik sendiri (bukan hanya metrik bawaan).\n\nSelanjutnya, Compute Engine & monitoring. Workload di Compute Engine mendapat manfaat dari data pemakaian CPU dan memori, waktu operasional, throughput disk, dan metrik lain. Cloud Monitoring mengumpulkan metrik, peristiwa, dan metadata dari berbagai sumber: log, layanan, sistem, agen, kode kustom, serta komponen aplikasi umum (contoh yang disebut: Cassandra, NGINX, Apache Web Server, Elasticsearch). Monitoring kemudian menyerap data tersebut dan membuat insight melalui dasbor, diagram Metrics Explorer, serta pemberitahuan otomatis. Tutor sebaiknya menekankan bahwa observability tidak hanya memantau satu sumber, tetapi menggabungkan banyak komponen.\n\nBagian Cloud Logging membahas dua hal besar: eksplorasi dan ekspor. Logs Explorer diintegrasikan dan menjadi tempat awal untuk analisis log. Entri logging bisa diekspor untuk analisis alternatif/lanjutan. Materi memberi contoh penggunaan hampir real-time pada pesan Pub/Sub dengan kode kustom atau stream processing seperti Dataflow. BigQuery dapat memeriksa data logging melalui kueri SQL. Arsip file log di Cloud Storage juga dapat dianalisis dengan berbagai alat. Data log dapat diekspor sebagai file ke Cloud Storage, pesan melalui Pub/Sub, atau ke dalam tabel BigQuery. Selain itu, metrik berbasis log bisa dibuat dan diintegrasikan ke dashboard, pemberitahuan, dan SLO layanan di Cloud Monitoring.\n\nTutor juga perlu menjelaskan retensi log. Retensi default bergantung pada jenis log. Materi menyebut log akses data default tersimpan 30 hari dan bisa dikonfigurasi menjadi 3650 hari. Log admin default disimpan 400 hari. Jika butuh memperpanjang retensi, ekspor log ke Cloud Storage atau BigQuery bisa dilakukan. Ini penting untuk strategi kepatuhan (compliance) dan audit investigasi jangka panjang.\n\nKemudian kategori log. Cloud Logging yang terlihat bervariasi tergantung resource Google Cloud dalam project atau organisasi. Tetapi materi menekankan empat kategori utama: log audit, log agen, log jaringan, dan log layanan. Cloud Audit Logs menjawab pertanyaan “Siapa melakukan apa, di mana, dan kapan?”. Aktivitas admin melacak perubahan konfigurasi. Akses data melacak panggilan yang membaca konfigurasi atau metadata resource dan panggilan berbasis pengguna yang membuat, mengubah, atau membaca data resource. Peristiwa sistem adalah tindakan administratif non-manusia yang mengubah konfigurasi resource. Transparansi Akses mencatat tindakan yang dilakukan personel Google saat mengakses konten Anda. Tutor bisa memandu siswa agar memahami bahwa log audit lebih fokus ke perubahan/akses (siapa-apa-kapan), bukan performa.\n\nBagian log agen & jaringan. Log agen menggunakan agen Fluentd yang disesuaikan dan dikemas oleh Google dan dapat diinstal di VM AWS atau Google Cloud untuk menyerap data log dari instance (contoh Compute Engine, VM terkelola, container) dan juga instance AWS EC2. Log jaringan menyediakan telemetri operasi jaringan dan keamanan. Log Alur VPC mencatat sampel alur jaringan VPC dan dapat digunakan untuk pemantauan jaringan, forensik, analisis keamanan real-time, serta pengoptimalan biaya. Firewall Rules Logging mendukung audit, verifikasi, dan analisis efek aturan firewall. Log Gateway NAT mencatat informasi koneksi dan error jaringan NAT.\n\nBagian log layanan & Error Reporting. Log layanan memberikan akses ke log buatan developer yang mengirim kode ke Google Cloud. Contoh: jika developer menggunakan Node.js membangun dan mendeploy container ke Cloud Run, logging ke Standard Out atau Standard Error otomatis dikirim ke Cloud Logging sehingga terpusat dan mudah diakses. Error Reporting menghitung, menganalisis, dan menghimpun error di layanan cloud aktif. Materi menyebut bahwa dalam kebanyakan bahasa modern, error adalah “pengecualian” yang tidak selalu terdeteksi dan ditangani kode secara eksplisit. Antarmuka Error Reporting menampilkan hasil yang bisa diurutkan dan difilter. Tampilan khusus menampilkan detail error: diagram waktu, kemunculan, jumlah pengguna terdampak, pertama/terakhir terlihat, dan stack trace pengecualian yang dibersihkan.\n\nCloud Trace. Materi menjelaskan kamu bisa membuat pemberitahuan untuk menerima notifikasi error baru. Cloud Trace adalah sistem pelacakan berdasarkan alat Google pada layanan produksinya, yang mengumpulkan data latensi dari aplikasi terdistribusi dan menampilkannya di Konsol Google Cloud. Cloud Trace dapat mencatat trace untuk aplikasi di App Engine, Compute Engine, dan container Kubernetes Engine. Insight performa disediakan hampir real-time; Cloud Trace otomatis menganalisis trace aplikasi untuk membuat laporan latensi mendalam, memunculkan penurunan performa, dan terus-menerus mengumpulkan serta menganalisis data untuk mengidentifikasi perubahan terbaru pada performa.\n\nCloud Profiler. Materi menggambarkan masalah kode berperforma buruk yang menaikkan latensi dan biaya, namun sering tidak diketahui. Cloud Profiler mengubah situasi itu dengan teknik statistik dan instrumentasi berdampak sangat rendah yang berjalan di semua instance aplikasi produksi. Ia memberi gambaran heap aplikasi dan CPU yang lengkap tanpa memperlambat. Dukungan platform mencakup VM Compute Engine, App Engine, dan GKE. Ia juga mendukung bahasa Java, Go, Python, dan Node.js. Cloud Profiler menampilkan hierarki panggilan dan konsumsi resource fungsi terkait dalam flame graph sehingga developer paham jalur mana yang memakai resource terbanyak, termasuk berbagai cara Cloud Profiler memanggil kode.\n\nUntuk AI tutor, gaya mengajar sebaiknya friendly dan seperti memandu investigasi nyata. Tutor bisa menanyakan: jika metrik menunjukkan lonjakan latensi, mulai dari metrik (Monitoring), lalu cek log (Logging) untuk konteks, verifikasi error (Error Reporting), lihat alur latensi (Trace), lalu gunakan flame graph (Profiler) untuk target optimasi. Ajarkan juga keterkaitan dengan biaya dan kapasitas: monitoring metrik BigQuery/Cloud Run membantu memahami dampak biaya selain performa."
+}
