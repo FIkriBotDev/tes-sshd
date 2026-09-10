@@ -5,6 +5,7 @@ const axios = require('axios');
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
+const FormData = require('form-data');
 
 const app = express();
 const PORT = process.env.PORT || 8027;
@@ -104,7 +105,8 @@ const swaggerDocument = {
   ],
   tags: [
     { name: 'Text', description: 'Text generation endpoints' },
-    { name: 'Image', description: 'Image generation endpoints' }
+    { name: 'Image', description: 'Image generation endpoints' },
+    { name: 'Audio', description: 'Audio transcription endpoints' }
   ],
   components: {
     schemas: {
@@ -128,6 +130,18 @@ const swaggerDocument = {
                 }
               }
             }
+          }
+        }
+      },
+      AudioTranscribeInput: {
+        type: 'object',
+        required: ['audio_url'],
+        properties: {
+          audio_url: {
+            type: 'string',
+            format: 'uri',
+            example: 'https://example.com/audio.mp3',
+            description: 'URL of the audio file to transcribe'
           }
         }
       },
@@ -285,6 +299,49 @@ imageModels.forEach(model => {
   };
 });
 
+// Swagger path untuk Audio Transcription
+swaggerDocument.paths['/api/audio/transcribe'] = {
+  post: {
+    tags: ['Audio'],
+    summary: 'Transcribe Audio (Whisper Large V3)',
+    description: 'Transcribe audio from URL using OpenAI Whisper Large V3 model. Supported formats: mp3, mp4, mpeg, mpga, m4a, wav, webm',
+    requestBody: {
+      required: true,
+      content: {
+        'application/json': {
+          schema: { $ref: '#/components/schemas/AudioTranscribeInput' }
+        }
+      }
+    },
+    responses: {
+      200: {
+        description: 'Transcription successful',
+        content: {
+          'application/json': {
+            schema: { $ref: '#/components/schemas/SuccessResponse' }
+          }
+        }
+      },
+      400: {
+        description: 'Bad Request',
+        content: {
+          'application/json': {
+            schema: { $ref: '#/components/schemas/ErrorResponse' }
+          }
+        }
+      },
+      500: {
+        description: 'Internal Server Error',
+        content: {
+          'application/json': {
+            schema: { $ref: '#/components/schemas/ErrorResponse' }
+          }
+        }
+      }
+    }
+  }
+};
+
 // Swagger UI setup
 app.get('/swagger.json', (req, res) => {
   res.json(swaggerDocument);
@@ -429,6 +486,94 @@ imageModels.forEach(model => {
   });
 });
 
+// Route untuk Audio Transcription
+app.post('/api/audio/transcribe', async (req, res) => {
+  try {
+    const { audio_url } = req.body;
+
+    if (!audio_url || typeof audio_url !== 'string') {
+      return res.status(400).json({
+        error: 'Invalid request format. "audio_url" is required.'
+      });
+    }
+
+    // Validasi URL
+    try {
+      new URL(audio_url);
+    } catch (e) {
+      return res.status(400).json({
+        error: 'Invalid audio URL format.'
+      });
+    }
+
+    // Download audio dari URL
+    console.log('Downloading audio from:', audio_url);
+    const audioResponse = await axios.get(audio_url, {
+      responseType: 'stream',
+      timeout: 60000,
+      headers: {
+        'User-Agent': 'FikriDev-API/1.0'
+      }
+    });
+
+    // Dapatkan nama file dari URL atau gunakan default
+    const urlParts = audio_url.split('/');
+    const fileName = urlParts[urlParts.length - 1] || 'audio.mp3';
+
+    // Buat FormData untuk upload ke Pollinations
+    const formData = new FormData();
+    formData.append('file', audioResponse.data, {
+      filename: fileName,
+      contentType: audioResponse.headers['content-type'] || 'audio/mpeg'
+    });
+    formData.append('model', 'openai/whisper-large-v3');
+
+    // Get API key
+    const apiKey = getApiKey();
+
+    console.log('Sending to Pollinations for transcription...');
+    
+    // Request transcription ke Pollinations
+    const transcriptionResponse = await axios.post(
+      'https://gen.pollinations.ai/v1/audio/transcriptions',
+      formData,
+      {
+        headers: {
+          ...formData.getHeaders(),
+          'Authorization': `Bearer ${apiKey}`
+        },
+        timeout: 120000 // 2 minutes timeout untuk transcription
+      }
+    );
+
+    const transcriptionText = transcriptionResponse.data?.text || '';
+
+    res.json({
+      status: true,
+      creator: 'FikriDev',
+      result: transcriptionText
+    });
+
+  } catch (error) {
+    console.error('Error in audio transcription:', error.message);
+    
+    // Log error ke file
+    const errorLog = `[${new Date().toISOString()}] Audio Transcription - ${error.stack || error.message}\n`;
+    fs.appendFile('error.txt', errorLog, () => {});
+
+    // Handle specific errors
+    if (error.response?.status === 401 || error.response?.status === 403) {
+      return res.status(500).json({ error: 'API authentication failed' });
+    }
+
+    if (error.code === 'ECONNABORTED') {
+      return res.status(500).json({ error: 'Request timeout' });
+    }
+
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 // Route untuk serving index.html
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
@@ -446,5 +591,6 @@ app.listen(PORT, () => {
   console.log(`║   API Keys loaded: ${API_KEYS.length}                            ║`);
   console.log(`║   Text Models: ${textModels.length}                              ║`);
   console.log(`║   Image Models: ${imageModels.length}                             ║`);
+  console.log(`║   Audio Transcription: 1                          ║`);
   console.log(`╚═══════════════════════════════════════════════════╝`);
 });
