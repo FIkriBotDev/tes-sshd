@@ -32,3 +32,6 @@
 [Thu Sep 10 06:35 GMT+8] 182.8.65.7 Request to /api/text/qwen3-coder-30b [POST]
 [Thu Sep 10 06:35 GMT+8] 182.8.65.7 Request to /api/text/grok-4-20 [POST]
 [Thu Sep 10 06:36 GMT+8] 182.8.65.7 Request to /api/text/qwen3guard-8b [POST]
+[Thu Sep 10 06:36 GMT+8] 182.8.65.7 Request to /api/text/midijourney [POST]
+[Thu Sep 10 06:36 GMT+8] 182.8.65.7 Request to /api/text/gpt-5-4-mini [POST]
+[Thu Sep 10 06:36 GMT+8] 182.8.65.7 Request to /api/text/nvidia-nemotron-3-5-lightning [POST]
