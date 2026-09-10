@@ -89,3 +89,4 @@
 [Thu Sep 10 09:36 GMT+8] 114.10.150.152 Request to /api/image/flux-1-schnell [GET]
 [Thu Sep 10 09:36 GMT+8] 114.10.150.152 Request to /api/image/dreamshaper-8-lcm [GET]
 [Thu Sep 10 09:36 GMT+8] 114.10.150.152 Request to /api/image/gpt-image [GET]
+[Thu Sep 10 09:40 GMT+8] 114.10.150.152 Request to /api/image/dreamshaper-8-lcm [GET]
