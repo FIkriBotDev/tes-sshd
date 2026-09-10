@@ -67,3 +67,5 @@
 [Thu Sep 10 06:49 GMT+8] 182.8.65.7 Request to /api/text/gpt-5-4-mini [POST]
 [Thu Sep 10 06:49 GMT+8] 182.8.65.7 Request to /api/text/midijourney [POST]
 [Thu Sep 10 06:49 GMT+8] 182.8.65.7 Request to /api/text/gpt-5-4-nano [POST]
+[Thu Sep 10 06:49 GMT+8] 182.8.65.7 Request to /api/text/meta-llama-3-3-70b [POST]
+[Thu Sep 10 06:50 GMT+8] 182.8.65.7 Request to /api/text/grok-4-20 [POST]
