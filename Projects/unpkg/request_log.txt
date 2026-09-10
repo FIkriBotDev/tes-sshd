@@ -124,3 +124,5 @@
 [Thu Sep 10 11:29 GMT+8] 82.158.133.222 Request to /api/docs [GET]
 [Thu Sep 10 11:29 GMT+8] 82.158.133.222 Request to /api/v1/models [GET]
 [Thu Sep 10 11:29 GMT+8] 82.158.133.222 Request to /api/openapi.json [GET]
+[Thu Sep 10 11:41 GMT+8] 82.158.133.222 Request to /api/image/gpt-image [GET]
+[Thu Sep 10 11:41 GMT+8] 82.158.133.222 Request to /api/image/gpt-image [GET]
