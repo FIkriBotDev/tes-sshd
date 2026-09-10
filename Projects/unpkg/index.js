@@ -294,7 +294,9 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, {
   explorer: true
 }));
 
-app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, {
+  explorer: true
+}));
 
 // Handler untuk request ke Pollinations dengan fallback
 async function requestToPollinations(modelId, messages, retryCount = 0) {
