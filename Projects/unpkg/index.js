@@ -93,12 +93,12 @@ const swaggerDocument = {
     description: 'REST API untuk mengakses AI models gratis untuk developer',
     contact: {
       name: 'FikriDev',
-      url: 'https://github.com/fikrifahrezi25'
+      url: 'https://fikridev.me'
     }
   },
   servers: [
     {
-      url: `https://exodusapi.jadikelas.tech`,
+      url: `https://api.fikridev.me`,
       description: 'Main server'
     }
   ],
