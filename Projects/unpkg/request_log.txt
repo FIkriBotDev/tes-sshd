@@ -52,3 +52,6 @@
 [Thu Sep 10 06:45 GMT+8] 182.8.65.7 Request to /api/text/nova-micro [POST]
 [Thu Sep 10 06:46 GMT+8] 182.8.65.7 Request to /api/text/qwen3-coder-30b [POST]
 [Thu Sep 10 06:46 GMT+8] 182.8.65.7 Request to /api/text/qwen3-coder-30b [POST]
+[Thu Sep 10 06:46 GMT+8] 182.8.65.7 Request to /api/text/grok-4-20 [POST]
+[Thu Sep 10 06:46 GMT+8] 182.8.65.7 Request to /api/text/grok-4-20 [POST]
+[Thu Sep 10 06:47 GMT+8] 182.8.65.7 Request to /api/text/qwen3guard-8b [POST]
