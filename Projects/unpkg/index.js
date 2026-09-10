@@ -387,7 +387,7 @@ imageModels.forEach(model => {
         `https://gen.pollinations.ai/image/${encodedPrompt}?model=${model.id}`,
         {
           headers: {
-            Authorization: `Bearer ${process.env.sk_EWIgGly9vDctwiFStvZkfaaZBTTIjGGf}`
+            Authorization: "Bearer sk_EWIgGly9vDctwiFStvZkfaaZBTTIjGGf"
           }
         }
       );
