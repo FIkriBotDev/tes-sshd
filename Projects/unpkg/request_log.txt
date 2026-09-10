@@ -27,3 +27,5 @@
 [Thu Sep 10 06:17 GMT+8] 114.10.153.43 Request to /api/text/qwen3-coder-30b [POST]
 [Thu Sep 10 06:34 GMT+8] 182.8.65.7 Request to /api/text/gpt-5-4-nano [POST]
 [Thu Sep 10 06:34 GMT+8] 182.8.65.7 Request to /api/text/gpt-5-4-nano [POST]
+[Thu Sep 10 06:35 GMT+8] 182.8.65.7 Request to /api/text/gpt-5-nano [POST]
+[Thu Sep 10 06:35 GMT+8] 182.8.65.7 Request to /api/text/nova-micro [POST]
