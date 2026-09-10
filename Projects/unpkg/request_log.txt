@@ -17,3 +17,8 @@
 [Thu Sep 10 02:27 GMT+8] 82.158.133.222 Request to /api/text/gpt-5-4-nano [POST]
 [Thu Sep 10 05:52 GMT+8] 82.158.133.222 Request to /api/text/gpt-5-4-nano [POST]
 [Thu Sep 10 06:04 GMT+8] 182.8.65.7 Request to /api/text/gpt-5-4-nano [POST]
+[Thu Sep 10 06:09 GMT+8] 114.10.153.43 Request to /api/health [GET]
+[Thu Sep 10 06:09 GMT+8] 114.10.153.43 Request to /api/docs [GET]
+[Thu Sep 10 06:09 GMT+8] 114.10.153.43 Request to /api/openapi.json [GET]
+[Thu Sep 10 06:09 GMT+8] 114.10.153.43 Request to /api/v1/models [GET]
+[Thu Sep 10 06:09 GMT+8] 114.10.153.43 Request to /api/text/gpt-5-4-nano [POST]
