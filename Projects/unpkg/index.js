@@ -43,8 +43,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // Request logging middleware
 app.use((req, res, next) => {
-  // Log request ke /api/* dan /v1/*
-  if (req.path.startsWith('/api/') || req.path.startsWith('/v1/')) {
+  // Log request ke /api/* dan /v1/* kecuali endpoint stats
+  const shouldLog = (req.path.startsWith('/api/') || req.path.startsWith('/v1/')) 
+                    && !req.path.startsWith('/api/stats/');
+  
+  if (shouldLog) {
     const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress;
     const clientIp = ip.split(',')[0].trim();
     
