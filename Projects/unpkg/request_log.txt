@@ -236,3 +236,5 @@
 [Sat Sep 12 07:02 GMT+8] 82.158.133.167 Request to /api/audio/transcribe [POST]
 [Sat Sep 12 07:02 GMT+8] 82.158.133.167 Request to /api/audio/transcribe [POST]
 [Sat Sep 12 07:02 GMT+8] 82.158.133.167 Request to /api/image/dreamshaper-8-lcm [GET]
+[Sat Sep 12 07:03 GMT+8] 82.158.133.167 Request to /api/image/dreamshaper-8-lcm [GET]
+[Sat Sep 12 07:03 GMT+8] 82.158.133.167 Request to /v1/chat/completions [POST]
