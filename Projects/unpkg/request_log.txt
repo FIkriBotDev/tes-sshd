@@ -208,3 +208,4 @@
 [Fri Sep 11 01:23 GMT+8] 65.52.167.154 Request to /v1/models [GET]
 [Fri Sep 11 01:23 GMT+8] 65.52.167.154 Request to /v1/chat/completions [POST]
 [Fri Sep 11 01:24 GMT+8] 65.52.167.154 Request to /v1/images/generations [POST]
+[Fri Sep 11 01:24 GMT+8] 65.52.167.154 Request to /v1/models/openai [GET]
