@@ -205,3 +205,5 @@
 [Fri Sep 11 01:22 GMT+8] 65.52.167.154 Request to /api/docs/swagger-ui-bundle.js [GET]
 [Fri Sep 11 01:22 GMT+8] 65.52.167.154 Request to /api/docs/swagger-ui-standalone-preset.js [GET]
 [Fri Sep 11 01:22 GMT+8] 65.52.167.154 Request to /api/docs/favicon-32x32.png [GET]
+[Fri Sep 11 01:23 GMT+8] 65.52.167.154 Request to /v1/models [GET]
+[Fri Sep 11 01:23 GMT+8] 65.52.167.154 Request to /v1/chat/completions [POST]
