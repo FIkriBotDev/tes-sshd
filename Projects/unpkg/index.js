@@ -1200,6 +1200,28 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+// API endpoint untuk mendapatkan total request count
+app.get('/api/stats/total-requests', (req, res) => {
+  try {
+    const logFile = path.join(__dirname, 'request_log.txt');
+    
+    // Cek apakah file ada
+    if (!fs.existsSync(logFile)) {
+      return res.json({ total: 0 });
+    }
+
+    // Baca file dan hitung jumlah baris
+    const fileContent = fs.readFileSync(logFile, 'utf-8');
+    const lines = fileContent.split('\n').filter(line => line.trim() !== '');
+    const totalRequests = lines.length;
+
+    res.json({ total: totalRequests });
+  } catch (error) {
+    console.error('Error reading request log:', error);
+    res.json({ total: 0 });
+  }
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`╔═══════════════════════════════════════════════════╗`);
