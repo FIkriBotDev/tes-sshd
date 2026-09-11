@@ -598,57 +598,6 @@ swaggerDocument.paths['/v1/models/{model}'] = {
   }
 };
 
-// POST /v1/images/generations
-swaggerDocument.paths['/v1/images/generations'] = {
-  post: {
-    tags: ['OpenAI Compatible'],
-    summary: 'Image Generation (OpenAI-compatible)',
-    description: 'Generate images using OpenAI-compatible format',
-    requestBody: {
-      required: true,
-      content: {
-        'application/json': {
-          schema: { $ref: '#/components/schemas/ImageGenerationRequest' }
-        }
-      }
-    },
-    responses: {
-      200: {
-        description: 'Generated image',
-        content: {
-          'application/json': {
-            schema: { $ref: '#/components/schemas/ImageGenerationResponse' }
-          }
-        }
-      },
-      400: {
-        description: 'Bad Request',
-        content: {
-          'application/json': {
-            schema: { $ref: '#/components/schemas/OpenAIError' }
-          }
-        }
-      },
-      404: {
-        description: 'Model Not Found',
-        content: {
-          'application/json': {
-            schema: { $ref: '#/components/schemas/OpenAIError' }
-          }
-        }
-      },
-      500: {
-        description: 'Internal Server Error',
-        content: {
-          'application/json': {
-            schema: { $ref: '#/components/schemas/OpenAIError' }
-          }
-        }
-      }
-    }
-  }
-};
-
 // Generate Swagger paths untuk Text models (Legacy)
 textModels.forEach(model => {
   const routeName = model.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
@@ -1034,113 +983,6 @@ app.post('/v1/chat/completions', async (req, res) => {
   }
 });
 
-// POST /v1/images/generations - OpenAI-compatible image generation
-app.post('/v1/images/generations', async (req, res) => {
-  try {
-    const { model: modelId, prompt, n = 1, size, response_format = 'url' } = req.body;
-
-    // Validasi model
-    if (!modelId) {
-      const err = openaiError(
-        'Missing required parameter: model',
-        'invalid_request_error',
-        'model',
-        'missing_parameter',
-        400
-      );
-      return res.status(err.statusCode).json(err.body);
-    }
-
-    // Validasi prompt
-    if (!prompt || typeof prompt !== 'string') {
-      const err = openaiError(
-        'Missing or invalid required parameter: prompt',
-        'invalid_request_error',
-        'prompt',
-        'invalid_parameter',
-        400
-      );
-      return res.status(err.statusCode).json(err.body);
-    }
-
-    // Cek apakah model ada
-    const model = findModelById(modelId);
-    if (!model) {
-      const err = openaiError(
-        `The model '${modelId}' does not exist.`,
-        'invalid_request_error',
-        'model',
-        'model_not_found',
-        404
-      );
-      return res.status(err.statusCode).json(err.body);
-    }
-
-    // Validasi bahwa model adalah image model
-    if (model.type !== 'image') {
-      const err = openaiError(
-        `The model '${modelId}' is not an image model.`,
-        'invalid_request_error',
-        'model',
-        'invalid_model_type',
-        400
-      );
-      return res.status(err.statusCode).json(err.body);
-    }
-
-    const encodedPrompt = encodeURIComponent(prompt);
-    const imageUrl = `https://gen.pollinations.ai/image/${encodedPrompt}?model=${model.id}`;
-
-    if (response_format === 'b64_json') {
-      // Download image dan convert ke base64
-      const imageResponse = await axios.get(imageUrl, {
-        responseType: 'arraybuffer',
-        timeout: 60000,
-        headers: {
-          'User-Agent': 'ExodusAPI/1.0'
-        }
-      });
-
-      const base64 = Buffer.from(imageResponse.data).toString('base64');
-
-      res.json({
-        created: Math.floor(Date.now() / 1000),
-        data: [
-          {
-            b64_json: base64
-          }
-        ]
-      });
-    } else {
-      // Return URL
-      res.json({
-        created: Math.floor(Date.now() / 1000),
-        data: [
-          {
-            url: imageUrl
-          }
-        ]
-      });
-    }
-
-  } catch (error) {
-    console.error('Error in /v1/images/generations:', error.message);
-    
-    // Log error
-    const errorLog = `[${new Date().toISOString()}] /v1/images/generations - ${error.stack || error.message}\n`;
-    fs.appendFile('error.txt', errorLog, () => {});
-
-    const err = openaiError(
-      error.message || 'Internal server error',
-      'api_error',
-      null,
-      'internal_error',
-      500
-    );
-    res.status(err.statusCode).json(err.body);
-  }
-});
-
 // ============================================
 // LEGACY API ROUTES
 // ============================================
@@ -1369,7 +1211,6 @@ app.listen(PORT, () => {
   console.log(`╠═══════════════════════════════════════════════════╣`);
   console.log(`║   OpenAI-Compatible Endpoints:                    ║`);
   console.log(`║   • POST /v1/chat/completions                     ║`);
-  console.log(`║   • POST /v1/images/generations                   ║`);
   console.log(`║   • GET  /v1/models                               ║`);
   console.log(`║   • GET  /v1/models/:model                        ║`);
   console.log(`╠═══════════════════════════════════════════════════╣`);
