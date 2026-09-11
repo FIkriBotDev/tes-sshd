@@ -171,3 +171,4 @@
 [Fri Sep 11 07:58 GMT+8] 82.158.133.222 Request to /api/docs/swagger-ui-bundle.js [GET]
 [Fri Sep 11 07:58 GMT+8] 82.158.133.222 Request to /api/docs/favicon-32x32.png [GET]
 [Fri Sep 11 08:08 GMT+8] 65.52.167.154 Request to /api/audio/transcribe [POST]
+[Fri Sep 11 08:21 GMT+8] 65.52.167.154 Request to /api/audio/transcribe [POST]
