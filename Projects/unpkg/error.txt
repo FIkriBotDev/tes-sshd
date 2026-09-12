@@ -392,3 +392,26 @@
     at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
     at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1083:24
+[2026-09-12T00:32:34.346Z] Audio Transcription - AxiosError: Request failed with status code 404
+    at settle (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:2530:12)
+    at RedirectableRequest.handleResponse (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:4731:9)
+    at RedirectableRequest.emit (node:events:531:35)
+    at RedirectableRequest._processResponse (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/follow-redirects/index.js:424:10)
+    at RedirectableRequest._onNativeResponse (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/follow-redirects/index.js:109:12)
+    at Object.onceWrapper (node:events:634:26)
+    at ClientRequest.emit (node:events:519:28)
+    at HTTPParser.parserOnIncomingClient [as onIncoming] (node:_http_client:780:27)
+    at HTTPParser.parserOnHeadersComplete (node:_http_common:125:17)
+    at TLSSocket.socketOnData (node:_http_client:615:22)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1135:27
+[2026-09-12T00:32:51.728Z] Image Model: gptimage - AxiosError: Request failed with status code 401
+    at settle (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:2530:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:4772:11)
+    at IncomingMessage.emit (node:events:531:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1083:24
