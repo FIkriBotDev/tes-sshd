@@ -244,3 +244,5 @@
 [Sat Sep 12 10:22 GMT+8] 82.158.133.167 Request to /v1/models [GET]
 [Sat Sep 12 08:06 GMT+8] 82.158.133.167 Request to /v1/chat/completions [POST]
 [Sun Sep 13 11:27 GMT+8] 82.158.133.242 Request to /v1/models [GET]
+[Sun Sep 13 11:27 GMT+8] 82.158.133.242 Request to /v1/models/nova-fast [GET]
+[Sun Sep 13 11:27 GMT+8] 82.158.133.242 Request to /v1/chat/completions [POST]
