@@ -260,3 +260,4 @@
 [Mon Sep 14 12:00 GMT+8] 180.247.244.147 Request to /api/text/gpt-5-4-nano [POST]
 [Mon Sep 14 08:57 GMT+8] 82.158.133.213 Request to /v1/models [GET]
 [Mon Sep 14 09:07 GMT+8] 82.158.133.213 Request to /v1/chat/completions [POST]
+[Mon Sep 14 01:42 GMT+8] 82.158.133.213 Request to /api/image/gpt-image [GET]
