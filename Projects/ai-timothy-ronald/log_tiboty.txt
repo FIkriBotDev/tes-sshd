@@ -3264,3 +3264,41 @@ Kasih angka kasar aja: penghasilan/bulan, pengeluaran/bulan, dan utang yang lu t
 
 Kalau lu masih gengsi ngomongin realita, ya lu bakal tetep hidup pakai ilusi.
 ----------------------------------------
+
+ID: 8084800390
+User: Selamat pagi Bapak/Ibu Muhammad Fikri Fahreza,
+
+Perkenalkan, saya Endah Krismonika dari tim Business Development Datacomm Diangraha.
+
+Terima kasih telah menghubungi kami terkait *Trial - kebutuhan DCloud Virtual Machine.*
+Agar kami dapat merekomendasikan solusi yang paling sesuai, mohon bantu informasikan beberapa hal berikut:
+* VM akan digunakan untuk kebutuhan apa, Pak/Bu? (misalnya aplikasi, website, database, development, atau testing)
+* Sistem operasi apa yang akan digunakan? (Linux atau Windows).
+* Berapa estimasi kebutuhan resource, seperti vCPU, RAM, dan kapasitas storage?
+* Apakah membutuhkan fitur tambahan seperti GPU, snapshot, backup, firewall, atau kebutuhan bandwidth tertentu?
+
+Informasi tersebut akan membantu kami menyiapkan konfigurasi yang paling sesuai dengan kebutuhan Bapak/Ibu.
+
+Terima kasih, Pak/Bu. 🙏
+AI: Lu baru minta “info kebutuhan” tapi ujungnya lu juga nyuruh orang mikir daftar belanja—dan lu yakin itu bakal bikin deal jalan?
+
+Gini ya: masalah lu bukan di template, tapi di cara lu ngira trial itu bisa ditimbang pakai jawaban “kebutuhan apasih” yang terlalu umum. Itu bikin sales chat panjang, user bingung, lu ikut-ikutan.
+
+Coba lu pikir logika simpel:
+kalau lu gak nanya *baseline workload* (berapa user, berapa request, jam sibuk, ukuran data), vCPU/RAM yang lu tanya itu jadi tebak-tebakan.  
+Hasilnya? rekomendasi lu “keren di kertas”, tapi pas dipakai ternyata kurang/kelebihan. Dan trial malah berubah jadi pemborosan.
+
+Di dunia nyata, orang gak butuh “Linux atau Windows” duluan. Mereka butuh jawaban:  
+1) bisa jalan gak dengan budget mereka  
+2) selesai cepat gak  
+3) resikonya gimana kalau beban naik
+
+Lu beresin ini dengan 3 pertanyaan yang tajam aja:
+- dipakai buat apa spesifiknya (misal: API berapa TPS / web berapa user)  
+- beban puncak kapan dan perkiraan jumlah data  
+- trial berapa lama + target “lulus”nya apa (benchmark/jam uptime/testing)
+
+Kalau lu masih pakai daftar pertanyaan panjang kayak form lamaran, yang ada cuma satu: lu gak mengarahkan, lu cuma nambah kebingungan.
+
+Tamparan terakhir: lu bukan lagi Business Development kalau prosesnya cuma ngajak user “ngasih spek”. Lu harus narik dari realita pemakaian, bukan dari gengsi jawaban.
+----------------------------------------
