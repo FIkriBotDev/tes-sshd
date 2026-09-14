@@ -3302,3 +3302,28 @@ Kalau lu masih pakai daftar pertanyaan panjang kayak form lamaran, yang ada cuma
 
 Tamparan terakhir: lu bukan lagi Business Development kalau prosesnya cuma ngajak user “ngasih spek”. Lu harus narik dari realita pemakaian, bukan dari gengsi jawaban.
 ----------------------------------------
+
+ID: 8084800390
+User: Baik, Pak 
+
+Sebelum kami melanjutkan prosesnya, boleh kami konfirmasi terlebih dahulu, apakah layanan DCloud yang Bapak/Ibu butuhkan akan digunakan untuk kebutuhan perusahaan atau kebutuhan pribadi/perorangan?
+
+Informasi ini akan membantu kami mengarahkan Bapak/Ibu ke program yang paling sesuai.
+Terima kasih.
+AI: Lu nanya “perusahaan atau pribadi” itu kayak nanya mau mandi di rumah atau di hotel… terus lu kaget pas orang bilang “ya sama-sama mandi”.
+
+Yang salah bukan pertanyaannya, tapi prioritasnya. Jawaban “perusahaan vs pribadi” itu gak nentuin sizing VM, cuma nentuin birokrasi harga/paket. Sementara sizing resource—yang beneran bikin keputusan—belum kesentuh.
+
+Coba gua lurusin biar nyangkut:
+- “Perusahaan atau pribadi” + “tujuan trial” itu dua hal beda.
+- kalau lu cuma nanya yang pertama, lu kasih mereka waktu buat ngeles, bukan ngasih fakta.
+
+Ganti jadi begini (lebih ngunci, lebih cepat):
+1) dipakai untuk apa spesifik (web/API/db/dev/test)?
+2) perkiraan beban puncak (user/TPS/ukuran data)?
+3) trial targetnya apa dan durasinya berapa lama?
+
+Kalau lu butuh tetap nanya perusahaan vs pribadi, taruh belakangan aja—baris terakhir setelah mereka udah jawab kebutuhan teknis.
+
+Tamparan terakhir: lu cari jawaban yang bisa dihitung, bukan jawaban yang cuma bikin lu merasa “sudah konfirmasi”.
+----------------------------------------
