@@ -328,3 +328,4 @@
 [Wed Sep 16 09:04 GMT+8] 114.10.153.239 Request to /api/text/nvidia-nemotron-3-5-lightning [POST]
 [Wed Sep 16 09:18 GMT+8] 2404:c0:b204:a327:6099:e50a:e7b7:cb53 Request to /v1/models [GET]
 [Wed Sep 16 09:19 GMT+8] 2404:c0:b204:a327:6099:e50a:e7b7:cb53 Request to /v1/models [GET]
+[Wed Sep 16 09:19 GMT+8] 2001:448a:d100:28b:9c42:181a:2201:ad35 Request to /api/text/gpt-5-4-nano [POST]
