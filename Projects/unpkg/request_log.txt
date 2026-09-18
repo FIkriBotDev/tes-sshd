@@ -332,3 +332,4 @@
 [Wed Sep 16 09:21 GMT+8] 2404:c0:b204:a327:6099:e50a:e7b7:cb53 Request to /v1/chat/completions [POST]
 [Thu Sep 17 10:51 GMT+8] 82.158.133.254 Request to /v1/models [GET]
 [Thu Sep 17 10:56 GMT+8] 114.10.153.212 Request to /api/text/qwen3-coder-30b [POST]
+[Fri Sep 18 09:37 GMT+8] 114.10.150.25 Request to /api/text/nvidia-nemotron-3-5-lightning [POST]
