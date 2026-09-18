@@ -559,3 +559,14 @@
     at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
     at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1083:24
+[2026-09-18T13:29:58.341Z] /v1/chat/completions - TypeError: Cannot destructure property 'model' of 'req.body' as it is undefined.
+    at /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:831:20
+    at Layer.handleRequest (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/lib/layer.js:152:17)
+    at next (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/lib/route.js:117:3)
+    at handle (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/lib/layer.js:152:17)
+    at /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/index.js:295:15
+    at processParams (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/index.js:582:12)
+    at next (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/router/index.js:291:5)
+    at serveStatic (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/serve-static/index.js:74:16)
