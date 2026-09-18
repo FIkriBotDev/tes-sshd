@@ -463,3 +463,5 @@
 [Fri Sep 18 10:02 GMT+8] 103.139.244.177 Request to /api/image/gpt-image [GET]
 [Fri Sep 18 10:03 GMT+8] 103.139.244.177 Request to /api/image/dreamshaper-8-lcm [GET]
 [Fri Sep 18 10:03 GMT+8] 103.139.244.177 Request to /api/image/gpt-image [GET]
+[Fri Sep 18 10:03 GMT+8] 103.139.244.177 Request to /api/image/gpt-image [GET]
+[Fri Sep 18 10:03 GMT+8] 103.139.244.177 Request to /api/audio/transcribe [POST]
