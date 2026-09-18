@@ -403,3 +403,4 @@
 [Fri Sep 18 09:19 GMT+8] 82.158.132.180 Request to /api/docs/swagger-ui.css [GET]
 [Fri Sep 18 09:19 GMT+8] 82.158.132.180 Request to /api/docs/favicon-32x32.png [GET]
 [Fri Sep 18 09:19 GMT+8] 82.158.132.180 Request to /api/docs/favicon-32x32.png [GET]
+[Fri Sep 18 09:21 GMT+8] 103.187.88.2 Request to /api/text/gpt-5-4-nano [POST]
