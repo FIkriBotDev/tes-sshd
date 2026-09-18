@@ -468,3 +468,8 @@
 [Fri Sep 18 10:04 GMT+8] 103.139.244.177 Request to /api/audio/transcribe [POST]
 [Fri Sep 18 10:04 GMT+8] 103.139.244.177 Request to /api/audio/transcribe [POST]
 [Fri Sep 18 10:04 GMT+8] 103.139.244.177 Request to /api/audio/transcribe [POST]
+[Fri Sep 18 10:04 GMT+8] 103.139.244.177 Request to /api/text/gpt-5-4-nano [POST]
+[Fri Sep 18 10:04 GMT+8] 103.139.244.177 Request to /api/text/gpt-5-4-nano [POST]
+[Fri Sep 18 10:04 GMT+8] 103.139.244.177 Request to /api/text/gpt-5-nano [POST]
+[Fri Sep 18 10:04 GMT+8] 103.139.244.177 Request to /api/text/nova-micro [POST]
+[Fri Sep 18 10:05 GMT+8] 103.139.244.177 Request to /api/text/qwen3-coder-30b [POST]
