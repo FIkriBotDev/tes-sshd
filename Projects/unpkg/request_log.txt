@@ -351,3 +351,5 @@
 [Fri Sep 18 08:40 GMT+8] 157.15.62.167 Request to /api/docs/favicon-32x32.png [GET]
 [Fri Sep 18 08:40 GMT+8] 157.15.62.167 Request to /api/docs/favicon-16x16.png [GET]
 [Fri Sep 18 08:40 GMT+8] 157.15.62.167 Request to /v1/models/openai [GET]
+[Fri Sep 18 08:40 GMT+8] 157.15.62.167 Request to /api/text/gpt-5-nano [POST]
+[Fri Sep 18 08:41 GMT+8] 157.15.62.167 Request to /api/text/gpt-5-4-nano [POST]
