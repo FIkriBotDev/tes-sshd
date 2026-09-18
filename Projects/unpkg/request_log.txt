@@ -386,3 +386,6 @@
 [Fri Sep 18 09:09 GMT+8] 157.85.207.243 Request to /api/docs/favicon-32x32.png [GET]
 [Fri Sep 18 09:12 GMT+8] 157.85.207.243 Request to /api/docs [GET]
 [Fri Sep 18 09:12 GMT+8] 157.85.207.243 Request to /api/docs/ [GET]
+[Fri Sep 18 09:12 GMT+8] 103.187.88.2 Request to /api/text/gpt-5-4-nano [POST]
+[Fri Sep 18 09:12 GMT+8] 157.85.207.243 Request to /api/image/flux-1-schnell [GET]
+[Fri Sep 18 09:12 GMT+8] 157.85.207.243 Request to /api/image/flux-1-schnell [GET]
