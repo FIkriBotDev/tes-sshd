@@ -1488,3 +1488,84 @@
     at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
     at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1083:24
+[2026-09-18T14:35:41.190Z] Image Model: flux - AxiosError: Request failed with status code 401
+    at settle (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:2530:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:4772:11)
+    at IncomingMessage.emit (node:events:531:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1083:24
+[2026-09-18T14:35:44.210Z] Image Model: gptimage - AxiosError: Request failed with status code 401
+    at settle (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:2530:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:4772:11)
+    at IncomingMessage.emit (node:events:531:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1083:24
+[2026-09-18T14:35:47.176Z] Image Model: gptimage - AxiosError: Request failed with status code 401
+    at settle (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:2530:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:4772:11)
+    at IncomingMessage.emit (node:events:531:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1083:24
+[2026-09-18T14:35:50.126Z] Image Model: gptimage - AxiosError: Request failed with status code 401
+    at settle (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:2530:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:4772:11)
+    at IncomingMessage.emit (node:events:531:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1083:24
+[2026-09-18T14:35:53.158Z] Image Model: gptimage - AxiosError: Request failed with status code 401
+    at settle (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:2530:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:4772:11)
+    at IncomingMessage.emit (node:events:531:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1083:24
+[2026-09-18T14:35:55.676Z] Image Model: flux - AxiosError: Request failed with status code 401
+    at settle (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:2530:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:4772:11)
+    at IncomingMessage.emit (node:events:531:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1083:24
+[2026-09-18T14:35:58.229Z] Image Model: flux - AxiosError: Request failed with status code 401
+    at settle (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:2530:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:4772:11)
+    at IncomingMessage.emit (node:events:531:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1083:24
+[2026-09-18T14:36:01.179Z] Image Model: flux - AxiosError: Request failed with status code 401
+    at settle (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:2530:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:4772:11)
+    at IncomingMessage.emit (node:events:531:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1083:24
+[2026-09-18T14:36:04.221Z] Image Model: flux - AxiosError: Request failed with status code 401
+    at settle (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:2530:12)
+    at IncomingMessage.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:4772:11)
+    at IncomingMessage.emit (node:events:531:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1083:24
