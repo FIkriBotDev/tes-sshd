@@ -412,3 +412,6 @@
 [Fri Sep 18 09:23 GMT+8] 2402:8780:1011:db1b:4e68:14d5:ff7a:798a Request to /api/docs/swagger-ui-init.js [GET]
 [Fri Sep 18 09:23 GMT+8] 2402:8780:1011:db1b:4e68:14d5:ff7a:798a Request to /api/docs/favicon-32x32.png [GET]
 [Fri Sep 18 09:24 GMT+8] 2402:8780:1011:db1b:4e68:14d5:ff7a:798a Request to /api/text/gpt-5-4-nano [POST]
+[Fri Sep 18 09:25 GMT+8] 142.132.207.84 Request to /api/image/dreamshaper-8-lcm [GET]
+[Fri Sep 18 09:25 GMT+8] 142.132.207.84 Request to /api/image/dreamshaper-8-lcm [GET]
+[Fri Sep 18 09:25 GMT+8] 142.132.207.84 Request to /api/image/dreamshaper-8-lcm [GET]
