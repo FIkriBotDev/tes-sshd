@@ -650,3 +650,5 @@
 [Sat Sep 19 01:20 GMT+8] 202.169.225.202 Request to /api/docs/swagger-ui-standalone-preset.js [GET]
 [Sat Sep 19 01:20 GMT+8] 202.169.225.202 Request to /api/docs/swagger-ui-bundle.js [GET]
 [Sat Sep 19 01:20 GMT+8] 202.169.225.202 Request to /api/docs/swagger-ui-init.js [GET]
+[Sat Sep 19 01:20 GMT+8] 202.169.225.202 Request to /api/docs/favicon-32x32.png [GET]
+[Sat Sep 19 01:20 GMT+8] 202.169.225.202 Request to /v1/models [GET]
