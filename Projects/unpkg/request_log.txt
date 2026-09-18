@@ -384,3 +384,5 @@
 [Fri Sep 18 09:09 GMT+8] 157.85.207.243 Request to /api/docs/swagger-ui-bundle.js [GET]
 [Fri Sep 18 09:09 GMT+8] 157.85.207.243 Request to /api/docs/swagger-ui.css [GET]
 [Fri Sep 18 09:09 GMT+8] 157.85.207.243 Request to /api/docs/favicon-32x32.png [GET]
+[Fri Sep 18 09:12 GMT+8] 157.85.207.243 Request to /api/docs [GET]
+[Fri Sep 18 09:12 GMT+8] 157.85.207.243 Request to /api/docs/ [GET]
