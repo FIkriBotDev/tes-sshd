@@ -438,3 +438,6 @@
 [Fri Sep 18 09:31 GMT+8] 142.132.207.84 Request to /api/image/flux-1-schnell [GET]
 [Fri Sep 18 09:31 GMT+8] 142.132.207.84 Request to /api/image/gpt-image [GET]
 [Fri Sep 18 09:32 GMT+8] 2001:448a:2091:46a9:7e09:373c:63d2:1eac Request to /v1/models [GET]
+[Fri Sep 18 09:33 GMT+8] 180.252.160.174 Request to /v1/chat/completions [POST]
+[Fri Sep 18 09:33 GMT+8] 2001:448a:2091:46a9:7e09:373c:63d2:1eac Request to /v1/chat/completions [POST]
+[Fri Sep 18 09:33 GMT+8] 180.252.160.174 Request to /v1/chat/completions [POST]
