@@ -623,3 +623,4 @@
 [Fri Sep 18 10:43 GMT+8] 160.19.19.175 Request to /api/docs/swagger-ui-init.js [GET]
 [Fri Sep 18 10:43 GMT+8] 160.19.19.175 Request to /api/docs/swagger-ui-standalone-preset.js [GET]
 [Fri Sep 18 10:43 GMT+8] 160.19.19.175 Request to /api/docs/swagger-ui-bundle.js [GET]
+[Fri Sep 18 10:43 GMT+8] 160.19.19.175 Request to /api/docs/favicon-32x32.png [GET]
