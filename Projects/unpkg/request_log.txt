@@ -725,3 +725,6 @@
 [Sat Sep 19 12:58 GMT+8] 2402:5680:9b23:30a5:4049:37ff:fe19:eb16 Request to /api/docs/swagger-ui-bundle.js [GET]
 [Sat Sep 19 12:58 GMT+8] 2402:5680:9b23:30a5:4049:37ff:fe19:eb16 Request to /api/docs/favicon-32x32.png [GET]
 [Sat Sep 19 01:00 GMT+8] 43.163.126.176 Request to /api/image/flux-1-schnell [GET]
+[Sat Sep 19 01:01 GMT+8] 43.163.126.176 Request to /v1/models [GET]
+[Sat Sep 19 01:01 GMT+8] 43.163.126.176 Request to /api/show [POST]
+[Sat Sep 19 01:01 GMT+8] 43.163.126.176 Request to /v1/chat/completions [POST]
