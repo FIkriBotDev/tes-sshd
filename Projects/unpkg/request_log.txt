@@ -690,3 +690,5 @@
 [Sat Sep 19 08:30 GMT+8] 114.10.152.151 Request to /api/text/nvidia-nemotron-3-5-lightning [POST]
 [Sat Sep 19 08:30 GMT+8] 43.163.126.176 Request to /api/image/flux-1-schnell [GET]
 [Sat Sep 19 09:00 GMT+8] 43.163.126.176 Request to /api/image/flux-1-schnell [GET]
+[Sat Sep 19 09:13 GMT+8] 180.252.160.174 Request to /v1/chat/completions [POST]
+[Sat Sep 19 09:13 GMT+8] 180.252.160.174 Request to /v1/chat/completions [POST]
