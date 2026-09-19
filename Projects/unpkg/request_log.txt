@@ -723,3 +723,4 @@
 [Sat Sep 19 12:58 GMT+8] 2402:5680:9b23:30a5:4049:37ff:fe19:eb16 Request to /api/docs/swagger-ui-init.js [GET]
 [Sat Sep 19 12:58 GMT+8] 2402:5680:9b23:30a5:4049:37ff:fe19:eb16 Request to /api/docs/swagger-ui-standalone-preset.js [GET]
 [Sat Sep 19 12:58 GMT+8] 2402:5680:9b23:30a5:4049:37ff:fe19:eb16 Request to /api/docs/swagger-ui-bundle.js [GET]
+[Sat Sep 19 12:58 GMT+8] 2402:5680:9b23:30a5:4049:37ff:fe19:eb16 Request to /api/docs/favicon-32x32.png [GET]
