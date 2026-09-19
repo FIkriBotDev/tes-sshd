@@ -748,3 +748,5 @@
 [Sat Sep 19 01:26 GMT+8] 43.163.126.176 Request to /v1/chat/completions [POST]
 [Sat Sep 19 01:28 GMT+8] 43.163.126.176 Request to /api/show [POST]
 [Sat Sep 19 01:28 GMT+8] 43.163.126.176 Request to /api/show [POST]
+[Sat Sep 19 01:29 GMT+8] 43.163.126.176 Request to /api/show [POST]
+[Sat Sep 19 01:29 GMT+8] 43.163.126.176 Request to /v1/chat/completions [POST]
