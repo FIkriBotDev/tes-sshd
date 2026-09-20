@@ -419,6 +419,7 @@ const swaggerDocument = {
 // Model list dari file markdown
 const textModels = [
   { name: 'GPT-5.4 Nano', id: 'openai' },
+  { name: 'GPT-5.4 Nano', id: 'openai' },
   { name: 'GPT-5 Nano', id: 'openai-fast' },
   { name: 'Nova Micro', id: 'nova-fast' },
   { name: 'Qwen3 Coder 30B', id: 'qwen-coder' },
