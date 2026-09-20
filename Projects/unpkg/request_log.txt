@@ -887,3 +887,5 @@
 [Sun Sep 20 02:20 GMT+8] 20.24.72.254 Request to /v1/chat/completions [POST]
 [Sun Sep 20 02:30 GMT+8] 43.163.126.176 Request to /api/image/flux-1-schnell [GET]
 [Sun Sep 20 03:00 GMT+8] 43.163.126.176 Request to /api/image/flux-1-schnell [GET]
+[Sun Sep 20 03:21 GMT+8] 54.150.210.180 Request to /api/status [GET]
+[Sun Sep 20 03:21 GMT+8] 54.150.210.180 Request to /v1/models [GET]
