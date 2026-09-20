@@ -418,6 +418,7 @@ const swaggerDocument = {
 
 // Model list dari file markdown
 const textModels = [
+  { name: 'GPT-6 Astra', id: 'openai/gpt-6-astra' },
   { name: 'GPT-5.4 Nano', id: 'openai' },
   { name: 'GPT-5 Nano', id: 'openai-fast' },
   { name: 'Nova Micro', id: 'nova-fast' },
