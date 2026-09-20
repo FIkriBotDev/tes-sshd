@@ -877,3 +877,5 @@
 [Sun Sep 20 01:45 GMT+8] 82.158.133.254 Request to /api/text/gpt-6-astra [POST]
 [Sun Sep 20 02:00 GMT+8] 43.163.126.176 Request to /api/image/flux-1-schnell [GET]
 [Sun Sep 20 02:18 GMT+8] 20.24.72.254 Request to /v1/models [GET]
+[Sun Sep 20 02:18 GMT+8] 20.24.72.254 Request to /v1/models [GET]
+[Sun Sep 20 02:18 GMT+8] 20.24.72.254 Request to /api/show [POST]
