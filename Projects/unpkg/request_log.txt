@@ -1140,3 +1140,4 @@
 [Thu Sep 24 12:24 GMT+8] 82.158.133.159 Request to /api/image/flux-1-schnell [GET]
 [Thu Sep 24 12:24 GMT+8] 82.158.133.159 Request to /api/image/dreamshaper-8-lcm [GET]
 [Thu Sep 24 12:25 GMT+8] 82.158.133.159 Request to /api/image/gpt-image [GET]
+[Thu Sep 24 12:25 GMT+8] 82.158.133.159 Request to /api/audio/transcribe [POST]
