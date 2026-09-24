@@ -665,6 +665,51 @@ imageModels.forEach(model => {
             example: 'a cat in space'
           },
           description: 'Text prompt for image generation'
+        },
+        {
+          name: 'width',
+          in: 'query',
+          required: false,
+          schema: {
+            type: 'integer',
+            default: 1024,
+            example: 1024
+          },
+          description: 'Image width in pixels'
+        },
+        {
+          name: 'height',
+          in: 'query',
+          required: false,
+          schema: {
+            type: 'integer',
+            default: 1024,
+            example: 1024
+          },
+          description: 'Image height in pixels'
+        },
+        {
+          name: 'seed',
+          in: 'query',
+          required: false,
+          schema: {
+            type: 'integer',
+            default: 0,
+            example: 0
+          },
+          description: 'Random seed for reproducibility'
+        },
+        {
+          name: 'quality',
+          in: 'query',
+          required: false,
+          schema: {
+            type: 'string',
+            enum: ['low', 'medium', 'high', 'standard', 'hd'],
+            default: 'medium',
+            example: 'medium'
+          },
+          description: 'Image quality level'
         }
       ],
       responses: {
@@ -678,6 +723,12 @@ imageModels.forEach(model => {
               }
             },
             'image/jpeg': {
+              schema: {
+                type: 'string',
+                format: 'binary'
+              }
+            },
+            'image/svg+xml': {
               schema: {
                 type: 'string',
                 format: 'binary'
@@ -1069,7 +1120,7 @@ imageModels.forEach(model => {
 
   app.get(`/api/image/${routeName}`, async (req, res) => {
     try {
-      const { prompt } = req.query;
+      const { prompt, width = 1024, height = 1024, seed = 0, quality = 'medium' } = req.query;
 
       if (!prompt || typeof prompt !== 'string') {
         return res.status(400).json({
@@ -1077,14 +1128,21 @@ imageModels.forEach(model => {
         });
       }
 
+      // Get API key
+      const apiKey = getApiKey();
+
+      // Encode prompt untuk URL
       const encodedPrompt = encodeURIComponent(prompt);
-      const imageUrl = `https://gen.pollinations.ai/image/${encodedPrompt}?model=${model.id}`;
+      
+      // Build URL dengan parameter
+      const imageUrl = `https://gen.pollinations.ai/image/${encodedPrompt}?model=${model.id}&width=${width}&height=${height}&seed=${seed}&quality=${quality}&transparent=false&audio=false`;
 
       const response = await axios.get(imageUrl, {
         responseType: 'arraybuffer',
         timeout: 60000,
         headers: {
-          'User-Agent': 'ExodusAPI/1.0'
+          'Accept': 'image/jpeg, image/png, image/svg+xml',
+          'Authorization': `Bearer ${apiKey}`
         }
       });
 
