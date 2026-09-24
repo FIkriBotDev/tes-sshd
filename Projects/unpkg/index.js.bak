@@ -382,40 +382,8 @@ const swaggerDocument = {
           audio_url: {
             type: 'string',
             format: 'uri',
-            example: 'https://uploader.fikridev.me/test.mp3',
+            example: 'https://example.com/audio.mp3',
             description: 'URL of the audio file to transcribe'
-          },
-          language: {
-            type: 'string',
-            example: '',
-            description: 'Language code (ISO-639-1) for the audio. Leave empty for auto-detection.'
-          },
-          prompt: {
-            type: 'string',
-            example: '',
-            description: 'Optional text to guide the model\'s style or continue a previous audio segment'
-          },
-          response_format: {
-            type: 'string',
-            enum: ['json', 'text', 'srt', 'verbose_json', 'vtt'],
-            default: 'json',
-            example: 'json',
-            description: 'Format of the response'
-          },
-          temperature: {
-            type: 'number',
-            minimum: 0,
-            maximum: 1,
-            default: 1,
-            example: 1,
-            description: 'Sampling temperature (0-1)'
-          },
-          speakers_expected: {
-            type: 'integer',
-            minimum: 1,
-            default: 1,
-            example: 1,
-            description: 'Expected number of speakers in the audio'
           }
         }
       },
@@ -1203,14 +1171,7 @@ imageModels.forEach(model => {
 // Route untuk Audio Transcription
 app.post('/api/audio/transcribe', async (req, res) => {
   try {
-    const { 
-      audio_url,
-      language = '',
-      prompt = '',
-      response_format = 'json',
-      temperature = 1,
-      speakers_expected = 1
-    } = req.body;
+    const { audio_url } = req.body;
 
     if (!audio_url || typeof audio_url !== 'string') {
       return res.status(400).json({
@@ -1248,11 +1209,6 @@ app.post('/api/audio/transcribe', async (req, res) => {
       contentType: audioResponse.headers['content-type'] || 'audio/mpeg'
     });
     formData.append('model', 'openai/whisper-large-v3');
-    formData.append('language', language);
-    formData.append('prompt', prompt);
-    formData.append('response_format', response_format);
-    formData.append('temperature', temperature.toString());
-    formData.append('speakers_expected', speakers_expected.toString());
 
     // Get API key
     const apiKey = getApiKey();
