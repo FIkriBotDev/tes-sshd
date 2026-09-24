@@ -1205,11 +1205,11 @@ app.post('/api/audio/transcribe', async (req, res) => {
   try {
     const { 
       audio_url,
-      language = '',
-      prompt = '',
-      response_format = 'json',
-      temperature = 1,
-      speakers_expected = 1
+      language,
+      prompt,
+      response_format,
+      temperature,
+      speakers_expected
     } = req.body;
 
     if (!audio_url || typeof audio_url !== 'string') {
@@ -1248,11 +1248,23 @@ app.post('/api/audio/transcribe', async (req, res) => {
       contentType: audioResponse.headers['content-type'] || 'audio/mpeg'
     });
     formData.append('model', 'openai/whisper-large-v3');
-    formData.append('language', language);
-    formData.append('prompt', prompt);
-    formData.append('response_format', response_format);
-    formData.append('temperature', temperature.toString());
-    formData.append('speakers_expected', speakers_expected.toString());
+    
+    // Append optional parameters only if provided
+    if (language !== undefined && language !== '') {
+      formData.append('language', language);
+    }
+    if (prompt !== undefined && prompt !== '') {
+      formData.append('prompt', prompt);
+    }
+    if (response_format !== undefined && response_format !== '') {
+      formData.append('response_format', response_format);
+    }
+    if (temperature !== undefined) {
+      formData.append('temperature', temperature.toString());
+    }
+    if (speakers_expected !== undefined) {
+      formData.append('speakers_expected', speakers_expected.toString());
+    }
 
     // Get API key
     const apiKey = getApiKey();
@@ -1283,6 +1295,12 @@ app.post('/api/audio/transcribe', async (req, res) => {
   } catch (error) {
     console.error('Error in audio transcription:', error.message);
     
+    // Log detailed error
+    if (error.response) {
+      console.error('Response status:', error.response.status);
+      console.error('Response data:', error.response.data);
+    }
+    
     // Log error ke file
     const errorLog = `[${new Date().toISOString()}] Audio Transcription - ${error.stack || error.message}\n`;
     fs.appendFile('error.txt', errorLog, () => {});
@@ -1290,6 +1308,13 @@ app.post('/api/audio/transcribe', async (req, res) => {
     // Handle specific errors
     if (error.response?.status === 401 || error.response?.status === 403) {
       return res.status(500).json({ error: 'API authentication failed' });
+    }
+
+    if (error.response?.status === 400) {
+      return res.status(400).json({ 
+        error: 'Bad request to transcription service',
+        details: error.response?.data || error.message
+      });
     }
 
     if (error.code === 'ECONNABORTED') {
