@@ -432,7 +432,7 @@ const textModels = [
 
 const imageModels = [
   { name: 'DreamShaper 8 LCM', id: 'dreamshaper' },
-  { name: 'FLUX.1 Schnell', id: 'flux' },
+  { name: 'FLUX.1 Schnell', id: 'black-forest-labs/flux.1-schnell' },
   { name: 'GPT Image', id: 'gptimage' }
 ];
 
