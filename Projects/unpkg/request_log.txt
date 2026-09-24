@@ -1148,3 +1148,5 @@
 [Thu Sep 24 12:30 GMT+8] 149.154.161.199 Request to /api/image/flux-1-schnell [GET]
 [Thu Sep 24 12:31 GMT+8] 82.158.133.159 Request to /api/audio/transcribe [POST]
 [Thu Sep 24 12:32 GMT+8] 82.158.133.159 Request to /api/audio/transcribe [POST]
+[Thu Sep 24 12:32 GMT+8] 82.158.133.159 Request to /api/audio/transcribe [POST]
+[Thu Sep 24 12:32 GMT+8] 82.158.133.159 Request to /api/audio/transcribe [POST]
