@@ -1150,3 +1150,4 @@
 [Thu Sep 24 12:32 GMT+8] 82.158.133.159 Request to /api/audio/transcribe [POST]
 [Thu Sep 24 12:32 GMT+8] 82.158.133.159 Request to /api/audio/transcribe [POST]
 [Thu Sep 24 12:32 GMT+8] 82.158.133.159 Request to /api/audio/transcribe [POST]
+[Thu Sep 24 12:33 GMT+8] 82.158.133.159 Request to /api/docs/ [GET]

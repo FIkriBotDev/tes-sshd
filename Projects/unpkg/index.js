@@ -382,7 +382,7 @@ const swaggerDocument = {
           audio_url: {
             type: 'string',
             format: 'uri',
-            example: 'https://uploader.fikridev.me/test.mp3',
+            example: 'https://uploader.fikridev.me/tmp/test.mp3',
             description: 'URL of the audio file to transcribe'
           },
           language: {
