@@ -1196,3 +1196,7 @@
 [Fri Sep 25 10:19 GMT+8] 182.10.98.34 Request to /api/docs/favicon-32x32.png [GET]
 [Sat Sep 26 03:52 GMT+8] 24.133.126.137 Request to /api/docs [GET]
 [Sat Sep 26 03:52 GMT+8] 24.133.126.137 Request to /api/docs/ [GET]
+[Sat Sep 26 03:52 GMT+8] 24.133.126.137 Request to /v1/models [GET]
+[Sat Sep 26 03:52 GMT+8] 24.133.126.137 Request to /api/text/gpt-6-astra [POST]
+[Sat Sep 26 03:52 GMT+8] 24.133.126.137 Request to /v1/models/openai [GET]
+[Sat Sep 26 03:53 GMT+8] 24.133.126.137 Request to /v1/models/openai [GET]
