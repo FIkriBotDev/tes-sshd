@@ -1267,3 +1267,8 @@
 [Sat Sep 26 04:17 GMT+8] 24.133.126.137 Request to /api/text/gpt-6-astra-nano [POST]
 [Sat Sep 26 04:17 GMT+8] 24.133.126.137 Request to /api/text/gpt-6-astra-mini [POST]
 [Sat Sep 26 04:17 GMT+8] 24.133.126.137 Request to /api/text/gpt6-astra [POST]
+[Sat Sep 26 04:17 GMT+8] 24.133.126.137 Request to /v1/chat/completions [POST]
+[Sat Sep 26 04:17 GMT+8] 24.133.126.137 Request to /v1/chat/completions [POST]
+[Sat Sep 26 04:17 GMT+8] 24.133.126.137 Request to /v1/chat/completions [POST]
+[Sat Sep 26 04:17 GMT+8] 24.133.126.137 Request to /v1/chat/completions [POST]
+[Sat Sep 26 04:17 GMT+8] 24.133.126.137 Request to /v1/chat/completions [POST]
