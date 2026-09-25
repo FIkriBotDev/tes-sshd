@@ -1480,3 +1480,6 @@
 [Sat Sep 26 04:22 GMT+8] 24.133.126.137 Request to /api/text/gpt-5-nano [POST]
 [Sat Sep 26 04:22 GMT+8] 24.133.126.137 Request to /api/text/qwen3-coder-30b [POST]
 [Sat Sep 26 04:22 GMT+8] 24.133.126.137 Request to /api/text/grok-4-20 [POST]
+[Sat Sep 26 04:22 GMT+8] 24.133.126.137 Request to /api/text/nova-micro [POST]
+[Sat Sep 26 04:22 GMT+8] 24.133.126.137 Request to /api/text/nvidia-nemotron-3-5-lightning [POST]
+[Sat Sep 26 04:22 GMT+8] 24.133.126.137 Request to /api/text/gpt-5-4-mini [POST]
