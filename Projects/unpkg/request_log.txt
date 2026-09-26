@@ -1538,3 +1538,5 @@
 [Sat Sep 26 04:52 GMT+8] 24.133.126.137 Request to /api/image/gpt-image [GET]
 [Sat Sep 26 06:29 GMT+8] 24.133.126.137 Request to /api/image/gpt-image [GET]
 [Sat Sep 26 09:39 GMT+8] 82.158.133.165 Request to /v1/models [GET]
+[Sat Sep 26 08:12 GMT+8] 43.163.126.176 Request to /v1/models [GET]
+[Sat Sep 26 08:12 GMT+8] 43.163.126.176 Request to /api/show [POST]
