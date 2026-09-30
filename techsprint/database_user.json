@@ -153,5 +153,13 @@
     "plan": 1,
     "creditLeft": 5,
     "courseCreated": 1
+  },
+  {
+    "namaLengkap": "LMS",
+    "email": "lms@fikridev.me",
+    "password": "$2b$10$GxEopHHlKSF8vVvAuBuyYOo0HmU17wwhTG9RzzZMEFkhwEjH.cSD.",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
