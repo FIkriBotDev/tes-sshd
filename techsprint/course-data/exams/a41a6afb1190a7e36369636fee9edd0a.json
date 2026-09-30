@@ -1,0 +1,292 @@
+{
+  "title": "Simulasi Ujian Komprehensif: Fondasi Sistem Basis Data Relasional: dari Data sampai DBMS (Oracle & PostgreSQL)",
+  "timeLimit": 1800,
+  "totalQuestions": 20,
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Manakah pernyataan paling tepat tentang perbedaan *data* dan *informasi* pada konteks sistem basis data?",
+      "options": [
+        "Data adalah hasil akhir yang sudah siap dipakai pengambil keputusan, sedangkan informasi adalah bahan mentah",
+        "Data adalah fakta mentah; informasi adalah data yang sudah diolah/diinterpretasi sehingga bermakna",
+        "Data dan informasi adalah istilah yang sama dan tidak perlu dibedakan",
+        "Informasi hanya berupa angka statistik; data hanya berupa teks"
+      ],
+      "answer": "Data adalah fakta mentah; informasi adalah data yang sudah diolah/diinterpretasi sehingga bermakna",
+      "explanation": "Data bersifat mentah, sedangkan informasi muncul ketika data diberi konteks/olah menjadi bermakna untuk tujuan tertentu.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Apa definisi yang paling tepat untuk *basis data* (database)?",
+      "options": [
+        "Kumpulan file mentah yang tidak terstruktur untuk disimpan jangka pendek",
+        "Kumpulan data yang saling terkait dan disimpan secara terstruktur untuk dapat diakses dan dikelola",
+        "Program aplikasi untuk membuat laporan",
+        "Diagram relasi antar tabel tanpa data aktual"
+      ],
+      "answer": "Kumpulan data yang saling terkait dan disimpan secara terstruktur untuk dapat diakses dan dikelola",
+      "explanation": "Basis data adalah penyimpanan data terstruktur yang saling terkait agar dapat dikelola dan diakses secara efisien.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Sistem basis data (database system) adalah istilah untuk DBMS saja tanpa melibatkan pengguna, aplikasi, dan komponen lain.",
+      "answer": "false",
+      "explanation": "Sistem basis data mencakup DBMS, data, pengguna, aplikasi/proses, serta kebijakan/komponen terkait, bukan hanya DBMS.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan istilah berikut dengan definisi yang tepat.",
+      "pairs": [
+        {
+          "term": "Data",
+          "definition": "Fakta mentah yang belum tentu bermakna tanpa konteks"
+        },
+        {
+          "term": "Informasi",
+          "definition": "Data yang telah diolah/diinterpretasi sehingga berguna untuk pengambilan keputusan"
+        },
+        {
+          "term": "Metadata",
+          "definition": "Data tentang data, misalnya struktur/tabel, skema, dan atribut"
+        },
+        {
+          "term": "Basis data",
+          "definition": "Kumpulan data terstruktur dan saling terkait untuk dikelola"
+        }
+      ],
+      "points": 15,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dalam pendekatan *file-based processing*, masalah utama yang sering muncul adalah ...",
+      "options": [
+        "Adanya aturan integritas otomatis pada semua akses data",
+        "Ketergantungan program terhadap struktur file sehingga perubahan format sulit",
+        "Penggunaan skema konseptual dan eksternal untuk independensi data",
+        "Penggunaan query bahasa tingkat tinggi (mis. SQL) yang selalu konsisten"
+      ],
+      "answer": "Ketergantungan program terhadap struktur file sehingga perubahan format sulit",
+      "explanation": "Pada file-based, struktur file sering melekat pada program; perubahan data/format memerlukan penyesuaian banyak program.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Transformasi data → informasi biasanya juga melibatkan metadata agar sistem memahami struktur/arti data.",
+      "answer": "true",
+      "explanation": "Metadata membantu interpretasi data (mis. tipe atribut, struktur tabel) sehingga hasil pengolahan menjadi informasi yang bermakna.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Sebuah toko mencatat transaksi pelanggan dalam beberapa file terpisah: file A untuk data transaksi harian, file B untuk daftar produk, dan file C untuk ringkasan diskon. Ketika manajer ingin laporan 'total transaksi per kategori produk', tim harus menggabungkan beberapa file manual dan formatnya sering berubah. Tim juga kesulitan memastikan apakah jumlah diskon dihitung konsisten. Jika dibandingkan dengan pendekatan DBMS relasional, masalah ini paling menggambarkan kelemahan file-based pada aspek ...",
+      "question": "Masalah paling sesuai untuk kasus tersebut adalah ...",
+      "options": [
+        "Kelemahan pada integrasi data dan konsistensi karena kontrol aturan data tidak terpusat",
+        "Kelebihan pada file-based karena perubahan format tidak berdampak ke program",
+        "Ketersediaan skema eksternal/konseptual yang menjamin independensi data sempurna",
+        "Kemampuan otomatis DBMS untuk mengubah definisi diskon tanpa perlu penyesuaian aturan"
+      ],
+      "answer": "Kelemahan pada integrasi data dan konsistensi karena kontrol aturan data tidak terpusat",
+      "explanation": "File-based cenderung membuat integrasi dan konsistensi sulit karena aturan/struktur tersebar di file dan program; DBMS menyediakan kontrol terpusat (termasuk integritas) dan query yang lebih konsisten.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dalam model relasional, tabel (relation) terdiri dari baris dan kolom. Istilah yang paling tepat untuk sebuah baris pada tabel adalah ...",
+      "options": [
+        "Tuple",
+        "Domain",
+        "Key schema",
+        "Attribute type"
+      ],
+      "answer": "Tuple",
+      "explanation": "Tuple merepresentasikan satu baris/rekaman data pada relasi.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Kunci relasional yang berfungsi mengidentifikasi secara unik tiap tuple pada sebuah relasi adalah ...",
+      "options": [
+        "Superkey",
+        "Primary key/Key yang unik",
+        "Foreign key tanpa syarat unik",
+        "Domain"
+      ],
+      "answer": "Primary key/Key yang unik",
+      "explanation": "Primary key (key unik) memastikan setiap tuple dapat diidentifikasi secara unik dalam relasi.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan komponen model relasional dengan contohnya.",
+      "pairs": [
+        {
+          "term": "Atribut",
+          "definition": "Nama kolom seperti 'id_pelanggan', 'nama', 'tanggal_lahir'"
+        },
+        {
+          "term": "Domain",
+          "definition": "Kumpulan nilai yang sah untuk suatu atribut, mis. umur 0–120"
+        },
+        {
+          "term": "Relasi",
+          "definition": "Struktur tabel seperti 'Pelanggan(id, nama, umur)'"
+        },
+        {
+          "term": "Key (Primary Key)",
+          "definition": "Kolom/ kombinasi kolom yang mengidentifikasi tuple secara unik, mis. id_pelanggan"
+        }
+      ],
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "true_false",
+      "question": "Foreign key digunakan untuk menjaga hubungan antar relasi agar data referensial tetap valid (mis. baris anak harus merujuk baris induk yang ada).",
+      "answer": "true",
+      "explanation": "Foreign key berperan dalam integritas referensial dengan memastikan konsistensi referensi antar relasi.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Anda diminta merancang relasi: R( KodeProduk, NamaProduk, Harga ) dan S( KodeTransaksi, KodeProduk, Tanggal ). Anda menetapkan KodeProduk pada R sebagai *primary key*. Pada S, KodeProduk ditetapkan sebagai *foreign key* yang mereferensikan R(KodeProduk). Saat memasukkan data, sistem menolak transaksi dengan KodeProduk = 'P-999' karena tidak ada pada R. Kebijakan penolakan ini terutama menunjukkan bahwa DBMS sedang menerapkan ...",
+      "question": "Bukti penerapan aturan integritas yang paling tepat adalah ...",
+      "options": [
+        "Integritas entitas (entity integrity) pada R saja",
+        "Integritas referensial (referential integrity) melalui foreign key",
+        "Aturan metadata hanya untuk menampilkan struktur tabel",
+        "Independensi data sehingga penolakan tidak mungkin terjadi"
+      ],
+      "answer": "Integritas referensial (referential integrity) melalui foreign key",
+      "explanation": "Penolakan karena referensi tidak ditemukan adalah ciri integritas referensial yang diawasi oleh foreign key.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Menurut ide penting dari Codd, kontribusi utama pendekatan relasional adalah ...",
+      "options": [
+        "Mengharuskan semua data disimpan dalam format file yang sama tanpa tabel",
+        "Menyusun data sebagai relasi (tabel) dan memakai aturan integritas serta manipulasi data berbasis relasi",
+        "Mengutamakan pemrograman prosedural langsung ke penyimpanan fisik",
+        "Menghapus konsep skema untuk menghindari perubahan"
+      ],
+      "answer": "Menyusun data sebagai relasi (tabel) dan memakai aturan integritas serta manipulasi data berbasis relasi",
+      "explanation": "Pendekatan relasional memandang data sebagai relasi (tabel) dan menekankan konsistensi/aturan serta manipulasi berbasis model relasional.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "true_false",
+      "question": "Model relasional memandang basis data sebagai kumpulan tabel (relations) dan bukan sebagai struktur pohon file atau daftar berurutan semata.",
+      "answer": "true",
+      "explanation": "Model relasional merepresentasikan data dalam bentuk relasi/tabel.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dalam arsitektur DBMS three-schema (eksternal–konseptual–internal), komponen 'eksternal' terutama berkaitan dengan ...",
+      "options": [
+        "Cara penyimpanan fisik data pada disk (file/struktur internal)",
+        "Skema konseptual yang mencerminkan organisasi lengkap seluruh data",
+        "Pandangan pengguna/aplikasi tertentu terhadap data (subset) sesuai kebutuhan",
+        "Logika pemrosesan query pada level pengaksesan memori"
+      ],
+      "answer": "Pandangan pengguna/aplikasi tertentu terhadap data (subset) sesuai kebutuhan",
+      "explanation": "Skema eksternal adalah representasi yang dilihat pengguna/aplikasi; ini mendukung independensi data dari sisi pandangan.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Sebuah perusahaan memiliki banyak aplikasi. Aplikasi A melihat data melalui kolom: (id, nama, kota). Tiga bulan kemudian tim mengubah struktur internal penyimpanan (misalnya cara indeks dibuat) tetapi mempertahankan struktur konseptual (skema logis) dan kolom yang tersedia untuk aplikasi. Aplikasi A tidak perlu diubah. Fenomena ini paling konsisten dengan konsep independensi data pada level ...",
+      "question": "Perubahan yang terjadi paling sesuai menggambarkan independensi data terhadap ...",
+      "options": [
+        "Perubahan skema konseptual (jadi aplikasi harus ikut diubah)",
+        "Perubahan skema internal (storage/implementasi fisik) selama skema konseptual tetap",
+        "Perubahan seluruh skema eksternal karena subset pengguna berubah",
+        "Penghapusan metadata sehingga query tidak dapat dipahami"
+      ],
+      "answer": "Perubahan skema internal (storage/implementasi fisik) selama skema konseptual tetap",
+      "explanation": "Jika skema konseptual tidak berubah, perubahan internal biasanya tidak memaksa aplikasi mengubah query/format pandangan—ini adalah independensi data pada level internal.",
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan istilah arsitektur three-schema dengan deskripsi singkatnya.",
+      "pairs": [
+        {
+          "term": "External schema",
+          "definition": "Definisi view/pandangan data untuk pengguna tertentu"
+        },
+        {
+          "term": "Conceptual schema",
+          "definition": "Deskripsi menyeluruh struktur data logis (entitas-relasi, batasan)"
+        },
+        {
+          "term": "Internal schema",
+          "definition": "Cara data disimpan dan diakses secara fisik/implementasi"
+        },
+        {
+          "term": "Data independence",
+          "definition": "Kemampuan untuk meminimalkan dampak perubahan skema pada level lain"
+        }
+      ],
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dibandingkan PostgreSQL dan Oracle secara umum (tanpa tenggelam teknis), pendekatan mana yang paling tepat untuk memahami keduanya pada level pembelajaran dasar ini?",
+      "options": [
+        "Menganggap keduanya tidak menggunakan DBMS relasional sama sekali",
+        "Mempelajari konsep relasional (tabel, kunci, integritas, arsitektur three-schema) sebagai fondasi, lalu melihat bagaimana keduanya mengimplementasikannya di praktik",
+        "Fokus sepenuhnya pada perbedaan syntax tanpa memahami model dan arsitektur",
+        "Mengabaikan independensi data karena berbeda platform"
+      ],
+      "answer": "Mempelajari konsep relasional (tabel, kunci, integritas, arsitektur three-schema) sebagai fondasi, lalu melihat bagaimana keduanya mengimplementasikannya di praktik",
+      "explanation": "Keduanya adalah DBMS relasional; pemahaman fondasi model dan arsitektur lebih penting daripada detail teknis spesifik.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Analogi: sebuah 'wasit' akan menegakkan aturan permainan agar pertandingan berjalan adil. Dalam konteks DBMS, Anda merancang kebijakan integritas: (1) setiap pelanggan harus memiliki id unik (PK), (2) setiap transaksi harus merujuk pelanggan yang ada (FK), dan (3) nilai umur harus berada pada rentang yang sah (domain/batasan). Tim aplikasi sebelumnya sering memasukkan data salah karena validasi dilakukan manual di beberapa tempat. Anda ingin memindahkan penegakan aturan ke DBMS. Dari skenario ini, fungsi DBMS sebagai 'wasit' paling tepat diterjemahkan sebagai ...",
+      "question": "Pernyataan yang paling sesuai adalah ...",
+      "options": [
+        "DBMS hanya menyimpan data; validasi dan aturan integritas tidak pernah dijalankan",
+        "DBMS menegakkan aturan integritas secara konsisten sehingga data tetap valid meski banyak aplikasi mengakses",
+        "DBMS membuat aplikasi tidak perlu lagi memikirkan struktur data",
+        "DBMS hanya bekerja pada skema eksternal dan tidak pada konseptual"
+      ],
+      "answer": "DBMS menegakkan aturan integritas secara konsisten sehingga data tetap valid meski banyak aplikasi mengakses",
+      "explanation": "DBMS bertindak sebagai kontrol terpusat untuk integritas (PK/FK dan batasan domain) sehingga konsistensi data lebih terjaga.",
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "true_false",
+      "question": "Metadata tidak penting untuk relasi data, karena DBMS bisa selalu menebak struktur dan arti atribut hanya dari data mentahnya.",
+      "answer": "false",
+      "explanation": "Tanpa metadata, DBMS akan kesulitan memahami struktur/tipe atribut, skema, dan batasan; metadata krusial untuk interpretasi dan pengelolaan data.",
+      "points": 10,
+      "difficulty": "easy"
+    }
+  ]
+}
