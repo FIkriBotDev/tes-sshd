@@ -1573,3 +1573,4 @@
 [Wed Sep 30 12:54 GMT+8] 2001:448a:70b0:828e:9b37:2e7b:226:7c27 Request to /api/docs/swagger-ui.css [GET]
 [Wed Sep 30 12:54 GMT+8] 2001:448a:70b0:828e:9b37:2e7b:226:7c27 Request to /api/docs/ [GET]
 [Wed Sep 30 12:54 GMT+8] 2001:448a:70b0:828e:9b37:2e7b:226:7c27 Request to /api/docs/favicon-32x32.png [GET]
+[Wed Sep 30 12:55 GMT+8] 2001:448a:70b0:828e:9b37:2e7b:226:7c27 Request to /v1/chat/completions [POST]
