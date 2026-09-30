@@ -1,0 +1,23 @@
+[
+  {
+    "studentId": "4dcddb0161a049bf",
+    "username": "Fikri",
+    "email": "lms@fikridev.me",
+    "password": "$2b$10$GxEopHHlKSF8vVvAuBuyYOo0HmU17wwhTG9RzzZMEFkhwEjH.cSD.",
+    "profilePicture": "",
+    "xp": 0,
+    "coin": 0,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "30-09-2026, 03.37.03",
+    "lastLoginDate": "Wed Sep 30 2026",
+    "quizScore": 0,
+    "completedBlocks": [],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 0,
+    "achievements": [],
+    "joinedAt": "30-09-2026, 03.37.03",
+    "isMainAccount": true
+  }
+]

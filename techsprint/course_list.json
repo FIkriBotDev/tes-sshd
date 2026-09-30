@@ -690,5 +690,19 @@
     "courseUrl": "/course/4435f1729f7705cf6c3ba7cb08f75aff",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "a41a6afb1190a7e36369636fee9edd0a",
+    "courseName": "Fondasi Sistem Basis Data Relasional: dari Data sampai DBMS (Oracle & PostgreSQL)",
+    "courseEmoji": "🗄️",
+    "courseColor": "#3b82f6",
+    "courseFileName": "Dokumen tanpa judul.pdf",
+    "fileType": "pdf",
+    "originalFileName": "Dokumen tanpa judul.pdf",
+    "courseOwner": "lms@fikridev.me",
+    "courseCreated": "30-09-2026, 03.36.50",
+    "courseUrl": "/course/a41a6afb1190a7e36369636fee9edd0a",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
