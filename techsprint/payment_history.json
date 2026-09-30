@@ -79,5 +79,14 @@
     "creditAdded": 100,
     "status": "PAID",
     "date": "2026-09-30 03:33:42"
+  },
+  {
+    "invoiceId": "INV-20260930-010",
+    "email": "lms@fikridev.me",
+    "packageName": "Campus Pro",
+    "price": 59000,
+    "creditAdded": 100,
+    "status": "PAID",
+    "date": "2026-09-30 03:33:47"
   }
 ]
