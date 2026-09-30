@@ -5,9 +5,9 @@
     "email": "lms@fikridev.me",
     "password": "$2b$10$GxEopHHlKSF8vVvAuBuyYOo0HmU17wwhTG9RzzZMEFkhwEjH.cSD.",
     "profilePicture": "",
-    "xp": 150,
-    "coin": 60,
-    "level": 1,
+    "xp": 200,
+    "coin": 80,
+    "level": 2,
     "streak": 0,
     "lastLogin": "30-09-2026, 03.37.03",
     "lastLoginDate": "Wed Sep 30 2026",
@@ -15,10 +15,10 @@
     "completedBlocks": [],
     "completedChapter": [],
     "flashcardsViewed": 0,
-    "leaderboardPoint": 150,
+    "leaderboardPoint": 200,
     "achievements": [],
     "joinedAt": "30-09-2026, 03.37.03",
     "isMainAccount": true,
-    "quizCorrectCount": 3
+    "quizCorrectCount": 4
   }
 ]
