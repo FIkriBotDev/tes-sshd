@@ -155,11 +155,12 @@
     "courseCreated": 1
   },
   {
-    "namaLengkap": "LMS",
+    "namaLengkap": "Fikri",
     "email": "lms@fikridev.me",
     "password": "$2b$10$GxEopHHlKSF8vVvAuBuyYOo0HmU17wwhTG9RzzZMEFkhwEjH.cSD.",
-    "plan": 1,
-    "creditLeft": 10,
-    "courseCreated": 0
+    "plan": 3,
+    "creditLeft": 410,
+    "courseCreated": 0,
+    "sekolah": ""
   }
 ]
