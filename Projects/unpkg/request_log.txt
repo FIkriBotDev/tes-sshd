@@ -1587,3 +1587,4 @@
 [Sun Oct 4 02:32 GMT+8] 114.10.151.245 Request to /api/text/qwen3guard-8b [POST]
 [Sun Oct 4 02:32 GMT+8] 114.10.151.245 Request to /api/image/flux-1-schnell [GET]
 [Sun Oct 4 02:32 GMT+8] 114.10.151.245 Request to /api/image/dreamshaper-8-lcm [GET]
+[Sun Oct 4 02:32 GMT+8] 114.10.151.245 Request to /api/image/gpt-image [GET]
