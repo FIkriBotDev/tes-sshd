@@ -1,0 +1,300 @@
+{
+  "title": "Simulasi Ujian: Python untuk Pemula: Dari Nol Jadi Bisa Ngoding",
+  "timeLimit": 1800,
+  "totalQuestions": 20,
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Python termasuk bahasa pemrograman tingkat tinggi yang dirancang agar…",
+      "options": [
+        "Sintaksnya mudah dibaca dan dipahami",
+        "Program selalu berjalan tanpa bug",
+        "Hanya bisa digunakan untuk game",
+        "Tidak mendukung struktur data"
+      ],
+      "answer": "Sintaksnya mudah dibaca dan dipahami",
+      "explanation": "Python dibuat dengan sintaks yang relatif sederhana dan mudah dibaca, cocok untuk pemula.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Siapa pencipta Python dan tahun awalnya dirilis?",
+      "options": [
+        "Bill Gates, 1985",
+        "Guido van Rossum, 1991",
+        "Mark Zuckerberg, 2004",
+        "James Gosling, 1995"
+      ],
+      "answer": "Guido van Rossum, 1991",
+      "explanation": "Python diciptakan oleh Guido van Rossum dan mulai diperkenalkan pada tahun 1991.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dalam materi variabel & tipe data, yang merupakan 4 tipe data dasar yang sering dipakai adalah…",
+      "options": [
+        "int, float, str, bool",
+        "list, tuple, dict, class",
+        "set, module, package, thread",
+        "byte, char, short, long"
+      ],
+      "answer": "int, float, str, bool",
+      "explanation": "Tipe data dasar yang umum untuk pemula: integer (int), float, string (str), dan boolean (bool).",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Apa itu integer (int) di Python?",
+      "options": [
+        "Bilangan pecahan dengan koma desimal",
+        "Bilangan bulat tanpa bagian desimal",
+        "Teks/karakter",
+        "Nilai benar/salah"
+      ],
+      "answer": "Bilangan bulat tanpa bagian desimal",
+      "explanation": "Integer adalah tipe data untuk bilangan bulat (contoh: 1, -3, 0).",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Apa itu float di Python?",
+      "options": [
+        "Bilangan pecahan dengan desimal",
+        "Bilangan bulat saja",
+        "Himpunan data unik",
+        "Urutan teks"
+      ],
+      "answer": "Bilangan pecahan dengan desimal",
+      "explanation": "Float digunakan untuk menyimpan nilai desimal (contoh: 3.14, -0.5).",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Di Python, string bisa ditulis menggunakan tanda kutip tunggal atau kutip ganda, misalnya 'Halo' atau \"Halo\".",
+      "answer": "true",
+      "explanation": "Python menerima beberapa bentuk penulisan string dengan tanda kutip tunggal maupun ganda.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Operator '==' digunakan untuk membandingkan apakah dua nilai sama.",
+      "answer": "true",
+      "explanation": "Dalam Python, '==' adalah operator perbandingan (equality).",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Pada if/elif/else, urutan pengecekan tidak berpengaruh karena semua kondisi akan dieksekusi bersamaan.",
+      "answer": "false",
+      "explanation": "if/elif/else dieksekusi berurutan; setelah kondisi benar ditemukan, cabang lain biasanya tidak dieksekusi.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan konsep dengan deskripsinya yang tepat.",
+      "pairs": [
+        {
+          "term": "print()",
+          "definition": "Fungsi untuk menampilkan output ke layar"
+        },
+        {
+          "term": "f-string",
+          "definition": "String yang mengizinkan ekspresi disisipkan menggunakan { }"
+        },
+        {
+          "term": "def",
+          "definition": "Keyword untuk mendefinisikan fungsi"
+        },
+        {
+          "term": "return",
+          "definition": "Mengirim nilai hasil kembali dari fungsi"
+        }
+      ],
+      "answer": "print()=Fungsi untuk menampilkan output ke layar; f-string=String yang mengizinkan ekspresi disisipkan menggunakan { }; def=Keyword untuk mendefinisikan fungsi; return=Mengirim nilai hasil kembali dari fungsi",
+      "explanation": "Konsep-konsep ini adalah fondasi yang muncul pada praktik print/f-string dan pembuatan fungsi.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan operator dengan maknanya.",
+      "pairs": [
+        {
+          "term": "+",
+          "definition": "Penjumlahan"
+        },
+        {
+          "term": "-",
+          "definition": "Pengurangan"
+        },
+        {
+          "term": "*",
+          "definition": "Perkalian"
+        },
+        {
+          "term": "/",
+          "definition": "Pembagian"
+        }
+      ],
+      "answer": "+ = Penjumlahan; - = Pengurangan; * = Perkalian; / = Pembagian",
+      "explanation": "Operator aritmetika dasar yang dipakai pada praktik hitung nilai.",
+      "points": 15,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Pada latihan variabel + print interpolasi (f-string), manakah contoh f-string yang benar?",
+      "options": [
+        "print(f\"Nama: {nama}\")",
+        "print(\"Nama: {nama}\")",
+        "print(f\"Nama: nama\")",
+        "print(\"Nama: \" + {nama})"
+      ],
+      "answer": "print(f\"Nama: {nama}\")",
+      "explanation": "f-string ditandai dengan awalan f dan ekspresi disisipkan di dalam { }.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Misalkan x = 7 dan y = 3. Nilai dari x * y adalah…",
+      "options": [
+        "10",
+        "21",
+        "4",
+        "14"
+      ],
+      "answer": "21",
+      "explanation": "Perkalian 7 × 3 = 21.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Seorang siswa membuat program grade otomatis dengan logika: jika nilai >= 90 maka 'A', jika nilai >= 80 maka 'B', jika nilai >= 70 maka 'C', selain itu 'D'. Peserta menguji nilai 85 dan 65. Program benar jika hasilnya berturut-turut adalah…",
+      "question": "Hasil grade yang tepat untuk nilai 85 dan 65 adalah?",
+      "options": [
+        "85 -> 'B', 65 -> 'D'",
+        "85 -> 'A', 65 -> 'C'",
+        "85 -> 'C', 65 -> 'D'",
+        "85 -> 'B', 65 -> 'C'"
+      ],
+      "answer": "85 -> 'B', 65 -> 'D'",
+      "explanation": "85 memenuhi syarat >= 80 dan < 90 => 'B'. Nilai 65 < 70 => 'D'.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Kode berikut dimaksudkan untuk menghitung total dari 1 sampai n (inklusif):\n\nn = 5\ntotal = 0\nfor i in range(1, n):\n    total += i\n\nNamun seorang tutor memperhatikan output ternyata tidak sesuai ekspektasi. Ekspektasi total 1+2+3+4+5 = 15, tapi kode hanya menjumlahkan 1 sampai 4.\n\nPertanyaan: perubahan paling tepat agar hasil menjadi 15 adalah…",
+      "question": "Apa perbaikan yang benar?",
+      "options": [
+        "Ubah range(1, n) menjadi range(1, n+1)",
+        "Ubah total = 0 menjadi total = 1",
+        "Ubah i menjadi i+1 pada total += i",
+        "Ganti for menjadi while tanpa kondisi"
+      ],
+      "answer": "Ubah range(1, n) menjadi range(1, n+1)",
+      "explanation": "Python range(1, n) berhenti di n-1. Untuk inklusif sampai n, gunakan range(1, n+1).",
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Manakah pernyataan yang benar tentang perulangan?",
+      "options": [
+        "for biasanya cocok untuk iterasi jumlah yang diketahui/iterable, sedangkan while cocok untuk kondisi yang berubah",
+        "while selalu lebih cepat daripada for untuk semua kasus",
+        "for tidak bisa digunakan dengan list",
+        "while tidak membutuhkan kondisi"
+      ],
+      "answer": "for biasanya cocok untuk iterasi jumlah yang diketahui/iterable, sedangkan while cocok untuk kondisi yang berubah",
+      "explanation": "Materi menekankan perbedaan praktik for vs while: for untuk iterasi, while untuk kondisi/kontrol berbasis kondisi.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan struktur data dengan ciri singkatnya.",
+      "pairs": [
+        {
+          "term": "List",
+          "definition": "Urutan data yang dapat diubah (mutable) dan bisa memiliki duplikat"
+        },
+        {
+          "term": "Tuple",
+          "definition": "Urutan data yang relatif tidak diubah (immutable)"
+        },
+        {
+          "term": "Dictionary (dict)",
+          "definition": "Kumpulan pasangan key-value untuk akses berdasarkan key"
+        }
+      ],
+      "answer": "List=Urutan data yang dapat diubah (mutable) dan bisa memiliki duplikat; Tuple=Urutan data yang relatif tidak diubah (immutable); Dictionary (dict)=Kumpulan pasangan key-value untuk akses berdasarkan key",
+      "explanation": "Konsep list/tuple/dict sering dipakai untuk memodelkan data berbeda dalam program pemula.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Seorang peserta diberi tugas menyimpan nilai nama siswa dan nilai rata-ratanya.\n- Ia ingin bisa mengubah nilai jika ada pembaruan.\n- Ia perlu akses cepat menggunakan nama sebagai kunci.\n\nPertanyaan: struktur data yang paling sesuai adalah…",
+      "question": "Pilihan terbaik untuk kebutuhan tersebut?",
+      "options": [
+        "List of list",
+        "Dictionary (key-value) dengan nama sebagai key dan nilai sebagai value",
+        "Tuple saja tanpa kemungkinan ubah",
+        "Satu buah string berisi semua data"
+      ],
+      "answer": "Dictionary (key-value) dengan nama sebagai key dan nilai sebagai value",
+      "explanation": "Karena butuh akses berdasarkan key (nama) dan pembaruan nilai, dict adalah pilihan paling tepat.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Manakah contoh fungsi yang benar menggunakan def dan return?",
+      "options": [
+        "def sapa(nama): return \"Halo, \" + nama",
+        "sapa def(nama): return \"Halo\" + nama",
+        "function sapa(nama) -> \"Halo\" + nama",
+        "def sapa(nama) { return \"Halo, \" + nama }"
+      ],
+      "answer": "def sapa(nama): return \"Halo, \" + nama",
+      "explanation": "Python menggunakan keyword def dan blok dengan indentasi; return mengembalikan nilai.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "true_false",
+      "question": "Dalam Python, fungsi yang memakai return akan mengirim nilai hasil kembali ke pemanggilnya.",
+      "answer": "true",
+      "explanation": "return adalah mekanisme mengembalikan nilai dari fungsi ke bagian kode yang memanggilnya.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Tutor menggunakan analogi: Python seperti dapur dan data seperti bahan.\nSeorang peserta menulis program yang menukar peran: ia menganggap 'data' sebagai langkah-langkah proses, dan 'kode' sebagai bahan.\n\nAkibatnya, peserta bingung saat memodifikasi program.\n\nPertanyaan: kalimat mana yang paling benar sesuai analogi tersebut?",
+      "question": "Pernyataan yang paling tepat adalah…",
+      "options": [
+        "Kode adalah proses/aturan, sedangkan data adalah informasi yang diolah oleh proses itu",
+        "Data adalah proses, sedangkan kode adalah bahan mentah",
+        "Kode tidak berpengaruh selama data benar",
+        "Python hanya tentang data, bukan tentang langkah-langkah"
+      ],
+      "answer": "Kode adalah proses/aturan, sedangkan data adalah informasi yang diolah oleh proses itu",
+      "explanation": "Analoginya: kode (aturan/proses di dapur) mengolah data (bahan). Jika peran tertukar, logika program jadi salah.",
+      "points": 15,
+      "difficulty": "hard"
+    }
+  ]
+}
