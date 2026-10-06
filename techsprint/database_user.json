@@ -162,13 +162,5 @@
     "creditLeft": 505,
     "courseCreated": 1,
     "sekolah": ""
-  },
-  {
-    "namaLengkap": "userbaru",
-    "email": "userbaru@gmail.com",
-    "password": "$2b$10$4.5EDvLhlJbSemLNhWDsmOdN1e/9IWnVaflVEBcswQ3vkMXFHn/3O",
-    "plan": 1,
-    "creditLeft": 10,
-    "courseCreated": 0
   }
 ]
