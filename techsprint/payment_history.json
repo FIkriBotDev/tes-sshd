@@ -88,5 +88,14 @@
     "creditAdded": 100,
     "status": "PAID",
     "date": "2026-09-30 03:33:47"
+  },
+  {
+    "invoiceId": "INV-20261006-011",
+    "email": "muhammadfikrifahrezi2@gmail.com",
+    "packageName": "Creator Pack",
+    "price": 35000,
+    "creditAdded": 50,
+    "status": "PAID",
+    "date": "2026-10-06 12:06:19"
   }
 ]
