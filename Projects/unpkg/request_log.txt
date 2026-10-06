@@ -1622,3 +1622,4 @@
 [Tue Oct 6 12:32 GMT+8] 43.163.126.176 Request to /v1/chat/completions [POST]
 [Tue Oct 6 01:43 GMT+8] 2001:448a:70b0:5b9f:a01d:3628:3f27:eae Request to /v1/chat/completions [POST]
 [Tue Oct 6 09:19 GMT+8] 140.213.179.172 Request to /v1/chat/completions [POST]
+[Tue Oct 6 09:19 GMT+8] 2400:9800:b60:6af0:c9fa:e6ef:f463:963 Request to /api/image/gpt-image [GET]
