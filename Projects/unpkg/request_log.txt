@@ -1677,3 +1677,5 @@
 [Sun Oct 11 05:26 GMT+8] 43.163.126.176 Request to /v1/models [GET]
 [Sun Oct 11 05:26 GMT+8] 43.163.126.176 Request to /api/show [POST]
 [Sun Oct 11 05:26 GMT+8] 43.163.126.176 Request to /v1/chat/completions [POST]
+[Sun Oct 11 05:28 GMT+8] 43.163.126.176 Request to /api/show [POST]
+[Sun Oct 11 05:28 GMT+8] 43.163.126.176 Request to /v1/chat/completions [POST]
