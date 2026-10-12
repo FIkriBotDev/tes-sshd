@@ -1817,3 +1817,6 @@
 [Mon Oct 12 05:49 GMT+8] 125.118.248.116 Request to /api/tags [GET]
 [Mon Oct 12 06:18 GMT+8] 125.118.248.116 Request to /v1/chat/completions [POST]
 [Mon Oct 12 08:04 GMT+8] 125.118.248.116 Request to /v1/models [GET]
+[Mon Oct 12 08:40 GMT+8] 125.118.248.116 Request to /v1/chat/completions [POST]
+[Mon Oct 12 08:40 GMT+8] 125.118.248.116 Request to /v1/chat/completions [POST]
+[Mon Oct 12 08:40 GMT+8] 125.118.248.116 Request to /v1/chat/completions [POST]
