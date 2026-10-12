@@ -4317,3 +4317,18 @@
     at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
     at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1172:24
+[2026-10-12T06:01:07.314Z] /v1/chat/completions - Error: timeout of 60000ms exceeded
+    at requestToPollinations (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1116:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1028:21
+[2026-10-12T06:01:07.314Z] Model: openai-fast - AxiosError: timeout of 60000ms exceeded
+    at createTimeoutError (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:4308:14)
+    at RedirectableRequest.handleTimeout (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:4842:15)
+    at RedirectableRequest.emit (node:events:519:28)
+    at Timeout._onTimeout (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/follow-redirects/index.js:233:12)
+    at listOnTimeout (node:internal/timers:585:17)
+    at process.processTimers (node:internal/timers:521:7)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async requestToPollinations (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1086:22)
+    at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1028:21
