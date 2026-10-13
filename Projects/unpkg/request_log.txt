@@ -1876,3 +1876,7 @@
 [Tue Oct 13 02:25 GMT+8] 218.74.20.10 Request to /v1/videos [POST]
 [Tue Oct 13 02:25 GMT+8] 218.74.20.10 Request to /v1/video/generations [POST]
 [Tue Oct 13 02:25 GMT+8] 218.74.20.10 Request to /v1/videos [POST]
+[Tue Oct 13 02:44 GMT+8] 218.74.20.10 Request to /v1/images/generations [POST]
+[Tue Oct 13 02:44 GMT+8] 218.74.20.10 Request to /v1/image/generations [POST]
+[Tue Oct 13 02:44 GMT+8] 218.74.20.10 Request to /v1/images/generations [POST]
+[Tue Oct 13 02:44 GMT+8] 218.74.20.10 Request to /v1/image/generations [POST]
