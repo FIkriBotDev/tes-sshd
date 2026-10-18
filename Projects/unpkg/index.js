@@ -110,7 +110,8 @@ const swaggerDocument = {
     { name: 'OpenAI Compatible', description: 'OpenAI-compatible endpoints (v1)' },
     { name: 'Text', description: 'Text generation endpoints (Legacy)' },
     { name: 'Image', description: 'Image generation endpoints (Legacy)' },
-    { name: 'Audio', description: 'Audio transcription endpoints' }
+    { name: 'Audio', description: 'Audio transcription endpoints' },
+    { name: 'Vision', description: 'Image vision and analysis endpoints' }
   ],
   components: {
     schemas: {
@@ -832,6 +833,65 @@ swaggerDocument.paths['/api/audio/transcribe'] = {
   }
 };
 
+// Swagger path untuk Image Vision
+swaggerDocument.paths['/api/vision/analyze'] = {
+  post: {
+    tags: ['Vision'],
+    summary: 'Image Vision Analysis',
+    description: 'Analyze image using openai/gpt-5.4-nano vision model. Provide image URL and text prompt to get analysis.',
+    requestBody: {
+      required: true,
+      content: {
+        'application/json': {
+          schema: {
+            type: 'object',
+            required: ['image_url', 'prompt'],
+            properties: {
+              image_url: {
+                type: 'string',
+                format: 'uri',
+                example: 'https://example.com/image.jpg',
+                description: 'URL of the image to analyze'
+              },
+              prompt: {
+                type: 'string',
+                example: 'Siapakah orang di dalam gambar ini?',
+                description: 'Text prompt/question about the image'
+              }
+            }
+          }
+        }
+      }
+    },
+    responses: {
+      200: {
+        description: 'Analysis successful',
+        content: {
+          'application/json': {
+            schema: { $ref: '#/components/schemas/SuccessResponse' }
+          }
+        }
+      },
+      400: {
+        description: 'Bad Request',
+        content: {
+          'application/json': {
+            schema: { $ref: '#/components/schemas/ErrorResponse' }
+          }
+        }
+      },
+      500: {
+        description: 'Internal Server Error',
+        content: {
+          'application/json': {
+            schema: { $ref: '#/components/schemas/ErrorResponse' }
+          }
+        }
+      }
+    }
+  }
+};
+
 // Swagger UI setup
 app.get('/swagger.json', (req, res) => {
   res.json(swaggerDocument);
@@ -1200,6 +1260,116 @@ imageModels.forEach(model => {
   });
 });
 
+// Route untuk Image Vision Analysis
+app.post('/api/vision/analyze', async (req, res) => {
+  try {
+    const { image_url, prompt } = req.body;
+
+    // Validasi input
+    if (!image_url || typeof image_url !== 'string') {
+      return res.status(400).json({
+        error: 'Invalid request format. "image_url" is required.'
+      });
+    }
+
+    if (!prompt || typeof prompt !== 'string') {
+      return res.status(400).json({
+        error: 'Invalid request format. "prompt" is required.'
+      });
+    }
+
+    // Validasi URL
+    try {
+      new URL(image_url);
+    } catch (e) {
+      return res.status(400).json({
+        error: 'Invalid image URL format.'
+      });
+    }
+
+    console.log('Analyzing image:', image_url);
+    console.log('With prompt:', prompt);
+
+    // Get API key
+    const apiKey = getApiKey();
+
+    // Buat request ke Pollinations API dengan vision
+    const payload = {
+      model: 'openai/gpt-5.4-nano',
+      messages: [
+        {
+          role: 'user',
+          content: [
+            {
+              type: 'text',
+              text: prompt
+            },
+            {
+              type: 'image_url',
+              image_url: {
+                url: image_url
+              }
+            }
+          ]
+        }
+      ]
+    };
+
+    console.log('Sending vision request to Pollinations...');
+
+    const response = await axios.post(
+      'https://gen.pollinations.ai/v1/chat/completions',
+      payload,
+      {
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json'
+        },
+        timeout: 60000
+      }
+    );
+
+    const analysisResult = response.data?.choices?.[0]?.message?.content || '';
+
+    res.json({
+      status: true,
+      creator: 'FikriDev',
+      result: analysisResult
+    });
+
+  } catch (error) {
+    console.error('Error in image vision analysis:', error.message);
+    
+    // Log detailed error
+    if (error.response) {
+      console.error('Response status:', error.response.status);
+      console.error('Response data:', error.response.data);
+    }
+    
+    // Log error ke file
+    const errorLog = `[${new Date().toISOString()}] Image Vision Analysis - ${error.stack || error.message}\n`;
+    fs.appendFile('error.txt', errorLog, () => {});
+
+    // Handle specific errors
+    if (error.response?.status === 401 || error.response?.status === 403) {
+      return res.status(500).json({ error: 'API authentication failed' });
+    }
+
+    if (error.response?.status === 400) {
+      return res.status(400).json({ 
+        error: 'Bad request to vision service',
+        details: error.response?.data || error.message
+      });
+    }
+
+    if (error.code === 'ECONNABORTED') {
+      return res.status(500).json({ error: 'Request timeout' });
+    }
+
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 // Route untuk Audio Transcription
 app.post('/api/audio/transcribe', async (req, res) => {
   try {
@@ -1370,5 +1540,6 @@ app.listen(PORT, () => {
   console.log(`║   Text Models: ${textModels.length}                              ║`);
   console.log(`║   Image Models: ${imageModels.length}                             ║`);
   console.log(`║   Audio Transcription: 1                          ║`);
+  console.log(`║   Image Vision: 1                                 ║`);
   console.log(`╚═══════════════════════════════════════════════════╝`);
 });
