@@ -850,12 +850,12 @@ swaggerDocument.paths['/api/vision/analyze'] = {
               image_url: {
                 type: 'string',
                 format: 'uri',
-                example: 'https://example.com/image.jpg',
+                example: 'https://cdn.antaranews.com/cache/1200x800/2018/11/jok4.jpg',
                 description: 'URL of the image to analyze'
               },
               prompt: {
                 type: 'string',
-                example: 'Siapakah orang di dalam gambar ini?',
+                example: 'gambar apa ini?',
                 description: 'Text prompt/question about the image'
               }
             }
