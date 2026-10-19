@@ -162,5 +162,13 @@
     "creditLeft": 505,
     "courseCreated": 1,
     "sekolah": ""
+  },
+  {
+    "namaLengkap": "asdasda",
+    "email": "dwasdawsd@mail.com",
+    "password": "$2b$10$aQmBAkiNipReNCRFD7G7ae/WhohE2uJ5ZWYloOhTS1PpjG/w2fucC",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
