@@ -1,0 +1,350 @@
+{
+  "title": "Kerangka Dasar Agama Islam: Aqidah, Syariah, Akhlak",
+  "summary": "Kamu akan mempelajari pondasi utama ajaran Islam: sumbernya dari Al-Qur’an dan Al-Hadits serta tiga komponen kerangka dasar yaitu aqidah, syariah, dan akhlak. Kita juga bahas hubungan ketiganya dan cara menerapkannya dalam kehidupan sehari-hari lewat latihan berpikir dan kuis cepat.",
+  "emoji": "📚",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Apa Itu Kerangka Dasar Agama Islam?",
+      "icon": "🕌",
+      "explanation": "Kerangka dasar agama Islam adalah pondasi utama bagi setiap muslim dan muslimah dalam menjalani kehidupan. Kerangka ini terdiri dari tiga komponen: aqidah, syari’ah, dan akhlak. Ketiganya saling melengkapi agar iman, aturan, dan perilaku berjalan seimbang.",
+      "analogy": "Bayangkan Islam seperti bangunan rumah: fondasinya perlu kuat (aqidah), rangka dan aturan bangunannya jelas (syari’ah), lalu bentuk dan keindahannya terlihat dalam cara kita hidup (akhlak).",
+      "highlight": "pondasi: aqidah, syari’ah, akhlak",
+      "keyPoints": [
+        "Kerangka dasar = pondasi utama ajaran Islam",
+        "Terdiri dari 3 komponen: aqidah, syari’ah, akhlak",
+        "Dipakai untuk membimbing kehidupan sehari-hari"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Sumber Islam: Al-Qur’an & Al-Hadits",
+      "icon": "📜",
+      "explanation": "Sumber agama Islam yang menjadi rujukan utama adalah Al-Qur’an dan Al-Hadits. Keduanya memuat isi kerangka dasar agama Islam. Jadi, saat belajar aqidah, syari’ah, maupun akhlak, kita perlu kembali ke dua sumber ini.",
+      "analogy": "Seperti peta dan kompas saat perjalanan: Al-Qur’an dan Al-Hadits adalah petunjuk utamanya supaya langkah kita tidak salah arah.",
+      "highlight": "rujukan utama: Al-Qur’an & Al-Hadits",
+      "keyPoints": [
+        "Al-Qur’an = pedoman utama",
+        "Al-Hadits = penjelas praktik/ajaran",
+        "Kerangka dasar Islam bersumber dari keduanya"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Peta Cepat 3 Komponen Kerangka Dasar",
+      "icon": "🗺️",
+      "items": [
+        {
+          "label": "Aqidah",
+          "value": "Sistem keyakinan (inti keimanan)",
+          "icon": "🧠"
+        },
+        {
+          "label": "Syari’ah",
+          "value": "Sistem aturan/ketentuan Ilahi (cara berhubungan & beribadah)",
+          "icon": "⚖️"
+        },
+        {
+          "label": "Akhlak",
+          "value": "Sifat & perilaku baik (arah dan tujuan dalam hidup)",
+          "icon": "🌟"
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Aqidah: Keyakinan yang Membentuk Hati",
+      "icon": "🧡",
+      "explanation": "Aqidah adalah sejumlah kebenaran yang dapat diterima oleh manusia berdasarkan akal, wahyu yang didengar, dan fitrah. Aqidah menjadi inti keyakinan yang membentuk cara pandang dan arah hidup seorang muslim.",
+      "analogy": "Aqidah itu seperti kompor dan api: selama apinya benar, masakan (perilaku) bisa matang. Tanpa kompor/inti yang benar, semuanya jadi tidak terarah.",
+      "highlight": "aqidah = sistem kepercayaan/keyakinan",
+      "keyPoints": [
+        "Berisi kebenaran yang diterima manusia",
+        "Berdasarkan akal, wahyu, dan fitrah",
+        "Menjadi dasar bagi komponen lain"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Syari’ah: Aturan Jalan yang Terang",
+      "icon": "📏",
+      "explanation": "Syari’ah berarti aturan dan jalan yang terang. Dalam Al-Qur’an disebutkan: “Untuk tiap-tiap umat diantara kamu, Kami berikan aturan dan jalan yang terang” (Al-Maidah 5:48). Syari’ah mengatur hubungan manusia dengan Allah, dengan sesama, serta dengan alam dan lingkungan.",
+      "analogy": "Kalau aqidah adalah kompas arah, syari’ah adalah rambu lalu lintas: aturan yang membuat perjalanan aman dan sesuai tujuan.",
+      "highlight": "syari’ah = norma/kaidah Ilahi",
+      "keyPoints": [
+        "Mengatur hubungan dengan Allah",
+        "Mengatur hubungan dengan sesama",
+        "Mengatur urusan sosial dan lingkungan hidup"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Akhlak: Perilaku Baik yang Terlihat Nyata",
+      "icon": "🤝",
+      "explanation": "Akhlak adalah ilmu yang menjelaskan arti baik dan buruk pada sikap serta perilaku manusia. Sumber akhlak Islam adalah Al-Qur’an dan Al-Hadits. Akhlak juga menyangkut bagaimana kita bersikap kepada orang lain, diri sendiri, dan lingkungan.",
+      "analogy": "Akhlak itu seperti “bahasa tubuh” dari iman: bukan cuma apa yang diyakini, tapi bagaimana terlihat dalam tindakan sehari-hari.",
+      "highlight": "akhlak = sikap & perilaku seyogyanya",
+      "keyPoints": [
+        "Menjelaskan baik-buruk sikap dan perilaku",
+        "Sumbernya Al-Qur’an dan Al-Hadits",
+        "Ditujukan untuk diri, orang lain, dan lingkungan"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Latihan: Hubungkan Aqidah, Syari’ah, Akhlak",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Tentukan kejadian",
+          "description": "Pilih satu situasi sehari-hari (misal: antri, jujur saat tugas, atau menjaga kebersihan).",
+          "tip": "Mulai dari hal kecil karena di situlah latihan paling terasa."
+        },
+        {
+          "number": 2,
+          "title": "Cocokkan dengan Aqidah",
+          "description": "Tanya: nilai keyakinan apa yang seharusnya mendorong sikap itu?",
+          "tip": "Aqidah menjawab 'mengapa harus'."
+        },
+        {
+          "number": 3,
+          "title": "Cocokkan dengan Syari’ah",
+          "description": "Tanya: aturan/ketentuan apa yang membimbing cara kita bertindak?",
+          "tip": "Syari’ah menjawab 'apa yang benar dilakukan'."
+        },
+        {
+          "number": 4,
+          "title": "Cocokkan dengan Akhlak",
+          "description": "Tanya: bentuk perilaku baik yang tampak itu seperti apa?",
+          "tip": "Akhlak menjawab 'bagaimana caranya memperlakukan orang dan keadaan'."
+        },
+        {
+          "number": 5,
+          "title": "Tulis rencana perbaikan",
+          "description": "Tulis 1 kalimat: 'Minggu ini saya akan... (syari’ah) agar ... (akhlak) karena ... (aqidah)'.",
+          "tip": "Bikin spesifik dan realistis."
+        }
+      ]
+    },
+    {
+      "type": "analogy_card",
+      "title": "Analogi 1 Kalimat yang Nempel",
+      "icon": "💡",
+      "realWorld": "Saat kamu diminta kerja kelompok, kamu tidak hanya 'tahu' (keyakinan), tapi juga 'melakukan aturan pembagian tugas', dan 'bersikap sopan serta adil'.",
+      "connection": "Aqidah memberi fondasi keyakinan, syari’ah memberi aturan cara berinteraksi, akhlak membuat sikapnya menjadi baik dan mulia.",
+      "insight": "Kalau hanya tahu tapi tidak melakukan aturannya, akhlak biasanya ikut melemah. Kerangka dasar itu satu paket."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Aqidah",
+          "definition": "Sistem kepercayaan atau keyakinan tentang kebenaran yang diterima manusia.",
+          "example": "Meyakini kebenaran ajaran Islam sebagai landasan hidup."
+        },
+        {
+          "term": "Syari’ah",
+          "definition": "Sistem norma/kaidah Ilahi yang mengatur cara beribadah dan berhubungan dalam kehidupan.",
+          "example": "Mengikuti ketentuan saat melakukan kegiatan sehari-hari sesuai ajaran."
+        },
+        {
+          "term": "Akhlak",
+          "definition": "Ilmu dan pedoman tentang baik-buruk sikap serta perilaku manusia.",
+          "example": "Bersikap jujur, sopan, dan peduli pada lingkungan."
+        },
+        {
+          "term": "Al-Qur’an",
+          "definition": "Sumber utama ajaran Islam yang berisi petunjuk dan pedoman.",
+          "example": "Menjadi rujukan saat memahami aqidah, syari’ah, dan akhlak."
+        },
+        {
+          "term": "Al-Hadits",
+          "definition": "Riwayat/ajaran Nabi yang menjelaskan praktik dan contoh penerapan ajaran.",
+          "example": "Menjadi sumber akhlak dan penjelas ketentuan dalam syari’ah."
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Mini Interaktif: Klasifikasikan Kejadian ke Aqidah/Syari’ah/Akhlak",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode untuk mengisi kuis otomatis: pilih kategori yang paling tepat untuk setiap pernyataan. Lalu ubah jawabanmu pada array 'choices'. Output akan menampilkan skor dan evaluasi di console.",
+      "fileName": "klasifikasi-ia.js",
+      "defaultCode": "const questions = [ { id: 1, text: \"Saya yakin ajaran Islam adalah kebenaran dan menuntun hidup.\", correct: \"aqidah\" }, { id: 2, text: \"Saya membagi tugas kelompok sesuai ketentuan agar adil dan tidak merugikan.\", correct: \"syariah\" }, { id: 3, text: \"Saya berkata sopan dan menghargai teman saat berdiskusi.\", correct: \"akhlak\" }, { id: 4, text: \"Saya berusaha menjaga kebersihan kelas sebagai bentuk tanggung jawab.\", correct: \"syariah\" }, { id: 5, text: \"Saya memilih perilaku baik karena ingin menjadi pribadi mulia.\", correct: \"akhlak\" } ]; const choices = [\"aqidah\",\"syariah\",\"akhlak\",\"syariah\",\"akhlak\"]; let score = 0; const results = questions.map((q, i) => { const pick = choices[i]; const ok = pick === q.correct; if (ok) score++; return { id: q.id, text: q.text, pick, correct: q.correct, ok }; }); console.log(\"Skor:\", score + \"/\" + questions.length); console.log(\"Detail:\", results);",
+      "hint": "Kalau isinya tentang 'keyakinan/inti iman' → aqidah. Kalau isinya tentang 'aturan/cara melakukan' → syari’ah. Kalau isinya tentang 'sikap/perilaku baik' → akhlak."
+    },
+    {
+      "type": "code_playground",
+      "title": "Simulasi: Buat Rencana 1 Minggu (Aqidah-Syari’ah-Akhlak)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Jalankan kode. Kamu akan memilih kata kunci untuk memetakan rencana mingguan. Ubah 'theme' dan 'action' agar output rencananya sesuai. Output akan ditampilkan di console.",
+      "fileName": "rencana-mingguan.js",
+      "defaultCode": "const theme = \"jujur\"; const action = \"menyelesaikan tugas sesuai kemampuan tanpa menyontek\"; const mapping = { aqidah: \"Saya memperkuat keyakinan bahwa kejujuran adalah bagian dari iman.\", syariah: \"Saya menerapkan aturan yang benar saat belajar dan bekerja.\", akhlak: \"Saya menjaga sikap sopan, bertanggung jawab, dan tidak merugikan orang lain.\" }; const plan = [ \"Tema: \" + theme, \"Aqidah: \" + mapping.aqidah, \"Syari’ah: \" + mapping.syariah, \"Akhlak: \" + mapping.akhlak, \"Aksi spesifik: \" + action, \"Target: lakukan konsisten 7 hari.\" ]; console.log(plan.join(\" | \"));",
+      "hint": "Coba ganti tema menjadi misal 'kebersihan', 'disiplin', atau 'menghargai teman'. Pastikan aksi spesifiknya sesuai syari’ah dan menghasilkan akhlak yang baik."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Apa saja sumber agama Islam yang disebutkan dalam materi?",
+      "options": [
+        "Al-Qur’an dan Al-Hadits",
+        "Taurat dan Injil",
+        "Buddha Dharma dan Weda",
+        "Zabur dan Suhuf"
+      ],
+      "answer": "Al-Qur’an dan Al-Hadits",
+      "explanation": "Materi menyebut sumber agama Islam yaitu Al-Qur’an dan Al-Hadits sebagai rujukan utama.",
+      "xpReward": 50
+    },
+    {
+      "question": "Komponen kerangka dasar agama Islam ada berapa dan apa saja?",
+      "options": [
+        "2: ibadah dan muamalah",
+        "3: aqidah, syari’ah, akhlak",
+        "4: iman, Islam, ihsan, taqwa",
+        "5: rukun dan wajib"
+      ],
+      "answer": "3: aqidah, syari’ah, akhlak",
+      "explanation": "Materi menyatakan kerangka dasar Islam terdiri dari aqidah, syari’ah, dan akhlak.",
+      "xpReward": 50
+    },
+    {
+      "question": "Aqidah paling tepat dipahami sebagai...",
+      "options": [
+        "Sistem norma/kaidah Ilahi",
+        "Sistem kepercayaan atau keyakinan",
+        "Ilmu tentang baik-buruk perilaku",
+        "Kitab selain Al-Qur’an"
+      ],
+      "answer": "Sistem kepercayaan atau keyakinan",
+      "explanation": "Materi menegaskan aqidah adalah sistem kepercayaan atau keyakinan.",
+      "xpReward": 50
+    },
+    {
+      "question": "Syari’ah dalam materi dikaitkan dengan pengertian dari...",
+      "options": [
+        "Aturan dan jalan yang terang",
+        "Ilmu baik-buruk sikap",
+        "Keyakinan yang berbasis fitrah",
+        "Kumpulan kisah sejarah"
+      ],
+      "answer": "Aturan dan jalan yang terang",
+      "explanation": "Materi mengutip Al-Maidah 5:48 dan menjelaskan syari’ah sebagai aturan dan jalan yang terang.",
+      "xpReward": 50
+    },
+    {
+      "question": "Menurut materi, akhlak itu berhubungan dengan...",
+      "options": [
+        "Hubungan dengan Allah saja tanpa manusia",
+        "Baik-buruk sikap dan perilaku manusia",
+        "Astronomi dan perhitungan waktu",
+        "Aturan matematika ibadah"
+      ],
+      "answer": "Baik-buruk sikap dan perilaku manusia",
+      "explanation": "Materi menjelaskan akhlak adalah ilmu yang menjelaskan arti baik dan buruk pada sikap dan perilaku.",
+      "xpReward": 50
+    },
+    {
+      "question": "Sumber akhlak Islam yang disebutkan dalam materi adalah...",
+      "options": [
+        "Al-Qur’an dan Al-Hadits",
+        "Hanya Al-Qur’an",
+        "Hanya Al-Hadits",
+        "Buku pelajaran umum"
+      ],
+      "answer": "Al-Qur’an dan Al-Hadits",
+      "explanation": "Materi menyebut sumber akhlak Islam adalah Al-Qur’an dan Al-Hadits.",
+      "xpReward": 50
+    },
+    {
+      "question": "Manakah hubungan yang tepat dalam kerangka dasar ajaran Islam?",
+      "options": [
+        "Aqidah = arah tujuan agama, Syari’ah = keyakinan, Akhlak = aturan",
+        "Aqidah = sistem kepercayaan, Syari’ah = sistem nilai/peraturan, Akhlak = arah dan tujuan",
+        "Syari’ah = perilaku baik, Akhlak = sistem kepercayaan, Aqidah = peraturan",
+        "Akhlak = sumber utama Al-Qur’an, Syari’ah = hadits"
+      ],
+      "answer": "Aqidah = sistem kepercayaan, Syari’ah = sistem nilai/peraturan, Akhlak = arah dan tujuan",
+      "explanation": "Bagian kesimpulan materi menyebut aqidah sistem kepercayaan, syari’ah sistem nilai/peraturan, akhlak sistematika arah dan tujuan.",
+      "xpReward": 50
+    },
+    {
+      "question": "Saran dalam materi paling sesuai dengan tindakan berikut yaitu...",
+      "options": [
+        "Ikutilah syari’ah dalam Islam ketika hendak melakukan sesuatu",
+        "Mengabaikan rukun Iman dan rukun Islam",
+        "Tidak perlu memperdalam pengetahuan tentang Islam",
+        "Berhenti menerapkan ajaran agama dalam kehidupan"
+      ],
+      "answer": "Ikutilah syari’ah dalam Islam ketika hendak melakukan sesuatu",
+      "explanation": "Di slide saran, tertulis ajakan untuk mengikut syari’ah saat hendak melakukan sesuatu.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Kerangka dasar agama Islam terdiri dari apa saja?",
+      "answer": "Aqidah, syari’ah, dan akhlak.",
+      "emoji": "🕌",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Sumber agama Islam yang utama menurut materi?",
+      "answer": "Al-Qur’an dan Al-Hadits.",
+      "emoji": "📜",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa pengertian singkat aqidah?",
+      "answer": "Aqidah adalah sistem kepercayaan atau keyakinan.",
+      "emoji": "🧠",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Syari’ah artinya apa dalam materi?",
+      "answer": "Aturan dan jalan yang terang (norma/kaidah Ilahi).",
+      "emoji": "⚖️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Akhlak membahas apa?",
+      "answer": "Baik dan buruk sikap serta perilaku manusia.",
+      "emoji": "🌟",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Sumber akhlak Islam berasal dari apa?",
+      "answer": "Al-Qur’an dan Al-Hadits.",
+      "emoji": "🤝",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Aqidah fokus pada apa?",
+      "answer": "Keyakinan/kebenaran yang membentuk hati dan cara pandang.",
+      "emoji": "❤️",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Syari’ah mengatur hubungan yang meliputi apa saja?",
+      "answer": "Hubungan manusia dengan Allah, dengan sesama manusia, serta dengan benda/alam dan lingkungan hidup.",
+      "emoji": "🌿",
+      "difficulty": "hard"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama (kerangka dasar: aqidah, syari’ah, akhlak) dan kuis pengantar.",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi PPT membahas “Kerangka Dasar Agama Islam”. Secara ringkas, Islam memiliki sumber ajaran utama yaitu Al-Qur’an dan Al-Hadits. Dari dua sumber ini, tersusun kerangka dasar agama Islam yang menjadi pondasi utama bagi setiap muslim dan muslimah. Kerangka dasar tersebut terdiri dari tiga komponen besar: (1) aqidah, (2) syari’ah, dan (3) akhlak. Di awal materi juga dijelaskan adanya pendahuluan yang merangkum bahwa Al-Qur’an dan Al-Hadits memuat komponen-komponen agama Islam yang menjadi isi kerangka dasar, lalu kerangka ini berfungsi sebagai pijakan dalam kehidupan.\n\nPada bagian rumusan masalah, materi menanyakan beberapa hal: penjelasan kerangka dasar agama Islam, pengertian aqidah, pengertian syari’ah, dan pengertian akhlak. Tujuan makalahnya adalah memahami materi kerangka dasar agama Islam agar bisa diterapkan dalam kehidupan sehari-hari. Dengan kata lain, materi tidak berhenti di definisi, tapi mendorong peserta didik untuk menghubungkan konsep dengan praktik.\n\nAqidah dijelaskan sebagai sejumlah kebenaran yang dapat diterima secara mudah oleh manusia berdasarkan tiga landasan: akal, wahyu (yang didengar), dan fitrah. Ini penting karena aqidah bukan sekadar opini, melainkan dasar keyakinan yang membentuk cara manusia memandang kehidupan dan mengarahkan pilihan-pilihan dalam tindakan. Dalam kesimpulan materi ditegaskan bahwa hubungan bagian-bagian kerangka dasar ajaran agama Islam: aqidah diposisikan sebagai sistem kepercayaan yang memuat elemen-elemen dasar keyakinan, menggambarkan sumber dan hakikat keberadaan agama. Jadi, aqidah menjadi fondasi batin: sebelum aturan dilakukan dan perilaku dibentuk, keyakinan harus tertata.\n\nSyari’ah dijelaskan menggunakan kutipan ayat Al-Qur’an (Al-Maidah 5:48): “Untuk tiap-tiap umat diantara kamu, Kami berikan aturan dan jalan yang terang.” Dari kutipan ini, syari’ah dipahami sebagai aturan/ketentuan dan jalan terang yang membimbing umat. Dalam kesimpulan, syari’ah diposisikan sebagai sistem nilai yang berisi peraturan dan menggambarkan fungsi agama. Ruang lingkup syari’ah diuraikan dalam materi: mengatur hubungan manusia dengan Allah (ibadah dan ketaatan), hubungan manusia dengan sesama manusia dalam kehidupan sosial (muamalah/relasi sosial), serta hubungan manusia dengan benda dan alam lingkungan hidupnya (tanggung jawab terhadap lingkungan dan kondisi sekitar). Artinya, syari’ah memberi “panduan tindakan” agar kehidupan berjalan sesuai ketentuan Ilahi, bukan hanya karena perasaan, melainkan karena tuntunan.\n\nAkhlak dijelaskan sebagai ilmu yang menjelaskan arti baik dan buruk pada sikap dan perilaku manusia serta segala sesuatu yang berkenaan dengan sikap dan perbuatan yang seyogyanya diperlihatkan manusia terhadap manusia lain, dirinya sendiri, dan lingkungan hidupnya. Materi juga menyebut sumber akhlak Islam adalah Al-Qur’an dan Al-Hadits. Ini menekankan bahwa akhlak tidak berdiri sendiri, tetapi bersumber dari ajaran Islam. Dalam kesimpulan materi, akhlak dipahami sebagai sistematika yang menggambarkan arah dan tujuan yang hendak dicapai agama. Jadi jika syari’ah lebih menekankan “aturan yang benar”, akhlak menekankan “arah kualitas diri dan cara berperilaku yang mulia”. Kesatuan ini membuat Islam tampak utuh: ada keyakinan, ada aturan, lalu ada perilaku yang mencerminkan nilai.\n\nSlide bagian kesimpulan juga memaparkan hubungan ketiga komponen: aqidah sebagai sistem kepercayaan yang bermuatan elemen dasar keyakinan; syari’ah sebagai sistem nilai berisi peraturan yang menggambarkan fungsi agama; dan akhlak sebagai sistematika yang menggambarkan arah dan tujuan yang ingin dicapai. Hubungan ini membantu peserta didik untuk memahami bahwa aqidah memberi dasar, syari’ah memberi arah praktik, dan akhlak memberi “wujud” dalam sikap sehari-hari.\n\nTerakhir, bagian saran mengajak peserta didik untuk: (1) menjadikan Islam sebagai agama yang mulia dengan menjalankan segala ajaran-Nya, (2) menjadi manusia berakhlakul karimah yang menjunjung tinggi nilai dan norma Islam, (3) memperdalam pengetahuan tentang ilmu yang menyangkut Islam, (4) mengikuti syari’ah dalam Islam ketika hendak melakukan sesuatu, serta (5) selalu menerapkan rukun Iman dan rukun Islam dalam kehidupan sehari-hari. Dengan demikian, materi menutup bukan hanya dengan pemahaman konsep, tetapi juga ajakan praktis.\n\nUntuk AI tutor, pendekatan yang ramah bisa dilakukan dengan mengajak peserta didik membayangkan contoh kehidupan nyata: misalnya saat bekerja kelompok, antri, berkata jujur, menjaga kebersihan, atau bersikap sopan. Kemudian tutor membantu memetakan: mana yang lebih dekat ke aqidah (keyakinan yang mendorong), mana yang lebih dekat ke syari’ah (aturan/ketentuan), dan mana yang lebih dekat ke akhlak (sikap dan perilaku baik). Ini membuat pembelajaran terasa interaktif dan relevan, sesuai tujuan materi untuk diterapkan dalam kehidupan sehari-hari."
+}

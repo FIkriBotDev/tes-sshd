@@ -704,5 +704,19 @@
     "courseUrl": "/course/a41a6afb1190a7e36369636fee9edd0a",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "5369a253a2082433085ac799241d07f7",
+    "courseName": "Kerangka Dasar Agama Islam: Aqidah, Syariah, Akhlak",
+    "courseEmoji": "📚",
+    "courseColor": "#6366f1",
+    "courseFileName": "Dasar-dasar Al-Islam.pptx",
+    "fileType": "pptx",
+    "originalFileName": "Dasar-dasar Al-Islam.pptx",
+    "courseOwner": "dwasdawsd@mail.com",
+    "courseCreated": "19-10-2026, 07.11.38",
+    "courseUrl": "/course/5369a253a2082433085ac799241d07f7",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
