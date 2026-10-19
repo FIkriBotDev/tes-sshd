@@ -5,17 +5,25 @@
     "email": "ade@mail.com",
     "password": "$2b$10$b9ErX5ZA.eoaLUcl2nKdxuWhkUozHNE2hvTC0lu1c9t4AvUISglqi",
     "profilePicture": "",
-    "xp": 0,
-    "coin": 0,
-    "level": 1,
+    "xp": 200,
+    "coin": 75,
+    "level": 2,
     "streak": 0,
     "lastLogin": "19-10-2026, 07.12.51",
     "quizScore": 0,
-    "completedBlocks": [],
+    "completedBlocks": [
+      "block-0",
+      "block-1",
+      "block-2",
+      "block-3",
+      "block-4"
+    ],
     "completedChapter": [],
     "flashcardsViewed": 0,
-    "leaderboardPoint": 0,
-    "achievements": [],
+    "leaderboardPoint": 150,
+    "achievements": [
+      "first_block"
+    ],
     "joinedAt": "19-10-2026, 07.12.51"
   }
 ]
