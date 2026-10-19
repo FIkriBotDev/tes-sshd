@@ -1,0 +1,271 @@
+{
+  "title": "Simulasi Ujian Komprehensif: Kerangka Dasar Agama Islam (Aqidah, Syariah, Akhlak)",
+  "timeLimit": 1800,
+  "totalQuestions": 20,
+  "passingScore": 70,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Kerangka dasar agama Islam dalam materi terdiri dari tiga komponen utama, yaitu…",
+      "options": [
+        "Aqidah, Syari’ah, Akhlak",
+        "Iman, Islam, Ihsan",
+        "Tawakal, Sabar, Syukur",
+        "Tauhid, Fiqih, Tasawuf"
+      ],
+      "answer": "Aqidah, Syari’ah, Akhlak",
+      "explanation": "Materi menegaskan kerangka dasar tersusun dari aqidah, syari’ah, dan akhlak sebagai pondasi utama.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dalam materi, sumber ajaran Islam yang utama adalah…",
+      "options": [
+        "Al-Qur’an saja",
+        "Al-Hadits saja",
+        "Al-Qur’an dan Al-Hadits",
+        "Ijma’ dan Qiyas"
+      ],
+      "answer": "Al-Qur’an dan Al-Hadits",
+      "explanation": "Pada pembukaan materi dijelaskan bahwa Al-Qur’an dan Al-Hadits memuat isi kerangka dasar.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Fungsi kerangka dasar agama Islam dalam kehidupan sehari-hari adalah…",
+      "options": [
+        "Hanya untuk hafalan konsep",
+        "Menjadi pijakan dalam bertindak dan berperilaku",
+        "Mengganti peran keluarga",
+        "Menentukan warna baju ibadah"
+      ],
+      "answer": "Menjadi pijakan dalam bertindak dan berperilaku",
+      "explanation": "Materi menekankan tidak berhenti pada definisi, tetapi mendorong penerapan dalam kehidupan.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Pengertian singkat aqidah menurut fokus materi adalah…",
+      "options": [
+        "Aturan ibadah dan muamalah",
+        "Keyakinan yang membentuk hati",
+        "Perintah untuk berbicara jujur saja",
+        "Kebiasaan sosial agar disukai"
+      ],
+      "answer": "Keyakinan yang membentuk hati",
+      "explanation": "Blok materi 4 menyebut aqidah sebagai keyakinan yang membentuk hati.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Syari’ah dalam materi diibaratkan sebagai…",
+      "options": [
+        "Aturan jalan yang terang",
+        "Perilaku baik yang terlihat nyata",
+        "Kamus istilah agama",
+        "Rencana mingguan yang wajib"
+      ],
+      "answer": "Aturan jalan yang terang",
+      "explanation": "Blok materi 5 menggambarkan syari’ah sebagai aturan jalan yang terang.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Akhlak dalam materi membahas…",
+      "options": [
+        "Keyakinan dasar dalam hati",
+        "Aturan ibadah secara teknis",
+        "Perilaku baik yang terlihat nyata",
+        "Sumber hukum utama Al-Qur’an/Al-Hadits"
+      ],
+      "answer": "Perilaku baik yang terlihat nyata",
+      "explanation": "Blok materi 6 menekankan akhlak sebagai perilaku baik yang terlihat nyata.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Berikut ini yang paling tepat menunjukkan hubungan kerangka aqidah-syari’ah-akhlak adalah…",
+      "options": [
+        "Aqidah, Syari’ah, Akhlak berdiri sendiri tanpa keterkaitan",
+        "Aqidah memengaruhi syari’ah, dan keduanya membentuk akhlak",
+        "Syari’ah hanya berlaku saat di sekolah",
+        "Akhlak adalah sumber aqidah"
+      ],
+      "answer": "Aqidah memengaruhi syari’ah, dan keduanya membentuk akhlak",
+      "explanation": "Materi menekankan keterkaitan konsep untuk penerapan; keyakinan mendorong kepatuhan aturan dan kemudian tampak dalam perilaku.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Sebuah tindakan seperti “memenuhi janji” paling dekat dikategorikan ke…",
+      "options": [
+        "Aqidah",
+        "Syari’ah",
+        "Akhlak",
+        "Al-Hadits sebagai tema hafalan"
+      ],
+      "answer": "Akhlak",
+      "explanation": "Memenuhi janji adalah perilaku/karakter (akhlak) yang terlihat nyata dalam hubungan sosial.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Jika seseorang meyakini kebenaran ajaran Islam, tetapi menolak menjalankan aturan ibadah/syari’ah, maka dampaknya paling mungkin pada…",
+      "options": [
+        "Tidak memengaruhi apa pun",
+        "Konsistensi syari’ah menurun dan akhlak dapat ikut tidak terbentuk dengan baik",
+        "Justru akhlak pasti baik",
+        "Syari’ah akan otomatis terlaksana tanpa latihan"
+      ],
+      "answer": "Konsistensi syari’ah menurun dan akhlak dapat ikut tidak terbentuk dengan baik",
+      "explanation": "Keterkaitan dalam materi mengarah pada bahwa keteguhan keyakinan seharusnya mendorong kepatuhan syari’ah dan berujung pada akhlak.",
+      "points": 10,
+      "difficulty": "hard"
+    },
+    {
+      "type": "true_false",
+      "question": "Pernyataan: Al-Qur’an dan Al-Hadits menjadi sumber utama yang memuat isi kerangka dasar agama Islam.",
+      "answer": "true",
+      "explanation": "Materi menegaskan bahwa dari Al-Qur’an dan Al-Hadits tersusun kerangka dasar aqidah, syari’ah, akhlak.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Pernyataan: Syari’ah berfokus pada perilaku baik yang terlihat nyata.",
+      "answer": "false",
+      "explanation": "Perilaku baik yang terlihat nyata adalah fokus akhlak, sedangkan syari’ah adalah aturan jalan yang terang.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Pernyataan: Aqidah dalam materi adalah keyakinan yang membentuk hati.",
+      "answer": "true",
+      "explanation": "Blok materi aqidah menyatakan aqidah sebagai keyakinan pembentuk hati.",
+      "points": 10,
+      "difficulty": "easy"
+    },
+    {
+      "type": "true_false",
+      "question": "Pernyataan: Akhlak hanya membahas sumber hukum (Al-Qur’an/Al-Hadits) sehingga tidak terkait dengan tindakan harian.",
+      "answer": "false",
+      "explanation": "Akhlak terkait tindakan/perilaku nyata dalam kehidupan, bukan sumber hukum.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "true_false",
+      "question": "Pernyataan: Kerangka dasar agama Islam berfungsi sebagai pijakan dalam kehidupan dan bisa diterapkan sehari-hari.",
+      "answer": "true",
+      "explanation": "Materi menegaskan penerapan: peserta didik didorong menghubungkan konsep dengan praktik.",
+      "points": 10,
+      "difficulty": "medium"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan istilah dengan deskripsi yang paling tepat (berdasarkan fokus materi).",
+      "pairs": [
+        {
+          "term": "Aqidah",
+          "definition": "Keyakinan yang membentuk hati"
+        },
+        {
+          "term": "Syari’ah",
+          "definition": "Aturan jalan yang terang"
+        },
+        {
+          "term": "Akhlak",
+          "definition": "Perilaku baik yang terlihat nyata"
+        }
+      ],
+      "answer": [
+        "Aqidah -> Keyakinan yang membentuk hati",
+        "Syari’ah -> Aturan jalan yang terang",
+        "Akhlak -> Perilaku baik yang terlihat nyata"
+      ],
+      "explanation": "Pencocokan dilakukan sesuai deskripsi yang disebutkan pada blok materi 4, 5, dan 6.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "matching",
+      "question": "Cocokkan komponen kerangka dasar dengan “contoh fokus” yang sesuai.",
+      "pairs": [
+        {
+          "term": "Aqidah",
+          "definition": "Mendasari niat dan keyakinan dalam hati"
+        },
+        {
+          "term": "Syari’ah",
+          "definition": "Mengatur tata cara dan kepatuhan hukum/aturan"
+        },
+        {
+          "term": "Akhlak",
+          "definition": "Mewujud dalam sikap/perilaku sehari-hari"
+        }
+      ],
+      "answer": [
+        "Aqidah -> Mendasari niat dan keyakinan dalam hati",
+        "Syari’ah -> Mengatur tata cara dan kepatuhan hukum/aturan",
+        "Akhlak -> Mewujud dalam sikap/perilaku sehari-hari"
+      ],
+      "explanation": "Materi mengarahkan pembeda peran masing-masing: hati (aqidah), aturan (syari’ah), tindakan/perilaku (akhlak).",
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Seorang siswa berkata: “Saya meyakini ajaran Islam, tapi saya sering mengabaikan shalat dan memilih berurusan dengan riba karena terasa lebih menguntungkan. Namun saya tetap berusaha bersikap ramah kepada teman.”",
+      "question": "Komponen mana yang paling jelas bermasalah dalam kasus tersebut?",
+      "options": [
+        "Aqidah tidak ada masalah; yang bermasalah akhlak saja",
+        "Yang bermasalah syari’ah, sementara akhlak ramah masih dijaga",
+        "Semua aspek (aqidah, syari’ah, akhlak) sudah seimbang",
+        "Yang bermasalah aqidah karena ramah kepada teman"
+      ],
+      "answer": "Yang bermasalah syari’ah, sementara akhlak ramah masih dijaga",
+      "explanation": "Kasus menyebut tidak menjalankan shalat dan menerima riba—itu termasuk ketidakpatuhan pada aturan/syari’ah. Sikap ramah menunjukkan akhlak masih terjaga sebagian, meski hubungan keterkaitan ketiganya belum utuh.",
+      "points": 15,
+      "difficulty": "medium"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Dalam diskusi kelompok, seseorang menyampaikan: “Kalau kita sudah benar dalam aturan (syari’ah), berarti hati pasti baik dan otomatis akhlak pun akan baik tanpa usaha.” Teman lainnya menjawab: “Kita harus menghubungkan keyakinan (aqidah) dengan praktik aturan, lalu tampak pada perilaku (akhlak).”",
+      "question": "Penilaian yang paling sesuai dengan materi adalah…",
+      "options": [
+        "Pernyataan pertama benar karena syari’ah otomatis menjamin akhlak dan aqidah",
+        "Pernyataan kedua lebih sesuai karena materi menekankan hubungan aqidah-syari’ah-akhlak dalam penerapan",
+        "Keduanya salah karena materi tidak membahas hubungan ketiganya",
+        "Pernyataan pertama benar karena akhlak tidak berkaitan dengan aturan"
+      ],
+      "answer": "Pernyataan kedua lebih sesuai karena materi menekankan hubungan aqidah-syari’ah-akhlak dalam penerapan",
+      "explanation": "Materi menegaskan adanya hubungan dan cara menerapkan ketiga komponen. Jadi, keyakinan dan kepatuhan aturan berperan membentuk perilaku/akhlak.",
+      "points": 15,
+      "difficulty": "hard"
+    },
+    {
+      "type": "case_study",
+      "scenario": "Contoh kejadian: “Adi berkata bohong saat ditanya oleh gurunya tentang tugas. Ia tahu itu salah, tapi ia menganggap menghindari masalah lebih penting. Setelah itu, ia menyesal dan ingin memperbaiki diri.”",
+      "question": "Klasifikasi awal kejadian ini yang paling tepat (mengacu pada fokus materi) adalah…",
+      "options": [
+        "Akhlak (karena terkait perilaku/kejujuran yang terlihat), lalu ada peluang perbaikan syari’ah dan aqidah dalam proses memperbaiki niat",
+        "Syari’ah saja, karena bohong adalah aturan fiqih",
+        "Aqidah saja, karena semua masalah hanya soal hati tanpa tindakan",
+        "Al-Qur’an/Al-Hadits saja, karena kejadian tidak menunjukkan komponen kerangka dasar"
+      ],
+      "answer": "Akhlak (karena terkait perilaku/kejujuran yang terlihat), lalu ada peluang perbaikan syari’ah dan aqidah dalam proses memperbaiki niat",
+      "explanation": "Kejadian bohong adalah bentuk akhlak. Penyesalan membuka jalan perbaikan: kejujuran dan kepatuhan pada aturan (syari’ah) serta penguatan keyakinan/niat (aqidah).",
+      "points": 15,
+      "difficulty": "hard"
+    }
+  ]
+}
