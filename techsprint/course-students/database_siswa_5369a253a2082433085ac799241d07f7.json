@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "studentId": "ee4866ad55dda3ad",
+    "username": "ade",
+    "email": "ade@mail.com",
+    "password": "$2b$10$b9ErX5ZA.eoaLUcl2nKdxuWhkUozHNE2hvTC0lu1c9t4AvUISglqi",
+    "profilePicture": "",
+    "xp": 0,
+    "coin": 0,
+    "level": 1,
+    "streak": 0,
+    "lastLogin": "19-10-2026, 07.12.51",
+    "quizScore": 0,
+    "completedBlocks": [],
+    "completedChapter": [],
+    "flashcardsViewed": 0,
+    "leaderboardPoint": 0,
+    "achievements": [],
+    "joinedAt": "19-10-2026, 07.12.51"
+  }
+]
