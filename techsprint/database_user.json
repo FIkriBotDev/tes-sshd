@@ -170,5 +170,13 @@
     "plan": 3,
     "creditLeft": 130,
     "courseCreated": 1
+  },
+  {
+    "namaLengkap": "cahyo widiantoro",
+    "email": "cahyowidiantoro99@gmail.com",
+    "password": "$2b$10$vabIH0liWs2.fxCj3LHKgux9tw.RtN0L21N.Vmzj2ETFEYyEdvrrW",
+    "plan": 1,
+    "creditLeft": 10,
+    "courseCreated": 0
   }
 ]
