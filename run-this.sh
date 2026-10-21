@@ -96,6 +96,11 @@ cd /home/runner/work/tes-sshd/tes-sshd/
 # Jalankan tiboty ronaldo di background, sembunyikan output
 node /home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/index.js > /dev/null 2>&1 &
 
+# Jalankan BantuKasir
+cd /home/runner/work/tes-ssh/tes-sshd/Projects/bantukasir;
+node index.js > /dev/null 2>&1 &
+cd /home/runner/work/tes-sshd/tes-sshd;
+
 # Jalankan exodusai di foreground (output tampil di terminal)
 # sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start > /dev/null 2>&1 &
 
