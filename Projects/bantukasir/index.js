@@ -2,7 +2,6 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-const TARGET_BASE = "https://code-server.exodusai.biz.id/?folder=/home/runner/work/tes-sshd/tes-sshd/techsprint";
 const app = express();
 const PORT = 9123;
 
@@ -24,8 +23,8 @@ app.get("/", (req, res, next) => {
 });
 
 // Middleware untuk melayani file statis dari folder public-www-exodusai
-app.use(express.static(path.join(__dirname, "public-www-exodusai")));
+app.use(express.static(path.join(__dirname, "public_html")));
 
 app.listen(PORT, () => {
-  console.log(`ExodusAI Web Server running at http://localhost:${PORT}`);
+  console.log(`Web Server running at http://localhost:${PORT}`);
 });
