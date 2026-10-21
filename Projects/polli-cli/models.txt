@@ -1,1 +1,2 @@
-polli keys create --name "ExodusAPI" --models openai/gpt-5.4-nano
+(new key) polli keys create --name "ExodusAPI" --models openai/gpt-5.4-nano
+(update key) polli keys update <ID_KUNCI_KAMU> --models text black-forest-labs/flux.1-schnell
