@@ -2460,3 +2460,8 @@
 [Sun Oct 25 09:23 GMT+8] 20.187.89.95 Request to /v1/models [GET]
 [Sun Oct 25 09:23 GMT+8] 20.187.89.95 Request to /api/show [POST]
 [Sun Oct 25 09:24 GMT+8] 20.187.89.95 Request to /api/show [POST]
+[Sun Oct 25 09:25 GMT+8] 20.187.89.95 Request to /api/show [POST]
+[Sun Oct 25 09:25 GMT+8] 20.187.89.95 Request to /api/show [POST]
+[Sun Oct 25 09:25 GMT+8] 20.187.89.95 Request to /api/show [POST]
+[Sun Oct 25 09:25 GMT+8] 20.187.89.95 Request to /v1/chat/completions [POST]
+[Sun Oct 25 09:25 GMT+8] 20.187.89.95 Request to /v1/chat/completions [POST]
