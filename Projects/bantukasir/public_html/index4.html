@@ -54,24 +54,25 @@ header.top{position:sticky;top:0;z-index:20;background:var(--paper);border-botto
 @keyframes ld{from{transform:translateX(-100%)}to{transform:translateX(200%)}}
 
 /* ===== HERO — MOBILE-FIRST: 1 kolom ===== */
-.hero{padding:var(--s4) 0 var(--s5);display:grid;grid-template-columns:1fr;gap:var(--s4)}
-.hero h1{font-size:clamp(28px,8vw,64px);line-height:1.05}
+.hero{padding:var(--s5) 0 var(--s5);display:grid;grid-template-columns:1fr;gap:var(--s5)}
+.hero h1{font-size:clamp(32px,8.5vw,64px);line-height:1.1;margin-bottom:var(--s4)}
 .hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--accent) 62%)}
-.hero p{font-size:17px;color:var(--muted);margin:var(--s3) 0 var(--s4);max-width:520px}
-/* CTA buttons: 1 kolom penuh di mobile */
-.hero-ctas{display:flex;flex-direction:column;gap:var(--s2);align-items:stretch}
-.hero-ctas .cta-primary,.hero-ctas .btn{width:100%;min-height:52px}
-.cta-note{display:block;margin-top:var(--s3);color:var(--muted);font-size:14px}
+.hero p{font-size:18px;color:var(--muted);margin:0 0 var(--s5);max-width:540px;line-height:1.65}
+/* CTA buttons: 1 kolom penuh di mobile dengan spacing yang baik */
+.hero-ctas{display:flex;flex-direction:column;gap:var(--s3);align-items:stretch}
+.hero-ctas .cta-primary,.hero-ctas .btn{width:100%;min-height:54px}
+.cta-note{display:block;margin-top:var(--s2);color:var(--muted);font-size:14px;line-height:1.5}
 
 /* Demo calc card */
-.demo-calc{background:var(--card);border:1px solid var(--line);border-radius:var(--r1);padding:var(--s4);box-shadow:var(--sh1);transform:rotate(1.2deg);width:100%;max-width:420px;position:relative;overflow:hidden}
+.demo-calc{background:var(--card);border:1px solid var(--line);border-radius:var(--r1);padding:var(--s4);box-shadow:var(--sh1);transform:rotate(1.2deg);width:100%;max-width:420px;position:relative;overflow:hidden;margin-top:var(--s4)}
 .demo-calc h4{font:600 13px var(--fb);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--s3)}
 /* Baris kalkulator: label kiri, angka kanan, tidak menempel */
-.calc-item{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s3);padding:10px 0;border-bottom:1px dashed var(--line);font-variant-numeric:tabular-nums}
-.calc-item span:first-child{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.calc-item span:last-child{flex:none;text-align:right;white-space:nowrap}
-.calc-item:last-child{border:0;border-top:2px solid var(--ink);margin-top:var(--s2);font:800 24px var(--fh);color:var(--brand);gap:var(--s3)}
-.calc-item:last-child span:last-child{font:800 24px var(--fh)}
+.calc-item{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s4);padding:12px 0;border-bottom:1px dashed var(--line);font-variant-numeric:tabular-nums}
+.calc-item span:first-child{flex:1;min-width:0;font-size:15px}
+.calc-item span:last-child{flex:none;text-align:right;white-space:nowrap;font-weight:500}
+.calc-item:last-child{border:0;border-top:2px solid var(--ink);margin-top:var(--s3);padding-top:var(--s3);font:800 26px var(--fh);color:var(--brand);gap:var(--s4)}
+.calc-item:last-child span:first-child{font:800 20px var(--fh)}
+.calc-item:last-child span:last-child{font:800 28px var(--fh)}
 
 /* ===== BENEFITS ===== */
 .benefits{padding:48px 0;border-top:1px solid var(--line)}
