@@ -2477,3 +2477,8 @@
 [Mon Oct 26 08:13 GMT+8] 195.178.110.223 Request to /api/.env [GET]
 [Mon Oct 26 08:13 GMT+8] 195.178.110.223 Request to /api/v1/version [GET]
 [Mon Oct 26 08:13 GMT+8] 195.178.110.223 Request to /api/v1/version [GET]
+[Mon Oct 26 08:13 GMT+8] 195.178.110.223 Request to /api/v2/config [GET]
+[Mon Oct 26 08:13 GMT+8] 195.178.110.223 Request to /api/v1/config [GET]
+[Mon Oct 26 08:13 GMT+8] 195.178.110.223 Request to /api/env [GET]
+[Mon Oct 26 08:13 GMT+8] 195.178.110.223 Request to /api/settings [GET]
+[Mon Oct 26 08:13 GMT+8] 195.178.110.223 Request to /api/config [GET]
