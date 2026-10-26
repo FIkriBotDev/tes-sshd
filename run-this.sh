@@ -98,9 +98,6 @@ node /home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/index.js > /
 
 # Jalankan BantuKasir
 node /home/runner/work/tes-sshd/tes-sshd/Projects/bantukasir/index.js > /dev/null 2>&1 &
-cd /home/runner/work/tes-ssh/tes-sshd/Projects/bantukasir;
-node index.js > /dev/null 2>&1 &
-cd /home/runner/work/tes-sshd/tes-sshd;
 
 # Jalankan exodusai di foreground (output tampil di terminal)
 # sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start > /dev/null 2>&1 &
