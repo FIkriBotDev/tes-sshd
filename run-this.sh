@@ -97,6 +97,7 @@ cd /home/runner/work/tes-sshd/tes-sshd/
 node /home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/index.js > /dev/null 2>&1 &
 
 # Jalankan BantuKasir
+node /home/runner/work/tes-sshd/tes-sshd/Projects/bantukasir/index.js > /dev/null 2>&1 &
 cd /home/runner/work/tes-ssh/tes-sshd/Projects/bantukasir;
 node index.js > /dev/null 2>&1 &
 cd /home/runner/work/tes-sshd/tes-sshd;
