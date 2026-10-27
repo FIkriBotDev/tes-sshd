@@ -97,7 +97,7 @@ cd /home/runner/work/tes-sshd/tes-sshd/
 node /home/runner/work/tes-sshd/tes-sshd/Projects/ai-timothy-ronald/index.js > /dev/null 2>&1 &
 
 # Jalankan BantuKasir
-node /home/runner/work/tes-sshd/tes-sshd/Projects/bantukasir/index.js > /dev/null 2>&1 &
+node /home/runner/work/tes-sshd/tes-sshd/Projects/bantukasir/server.js > /dev/null 2>&1 &
 
 # Jalankan exodusai di foreground (output tampil di terminal)
 # sh /home/runner/work/tes-sshd/tes-sshd/Projects/exodusai/start > /dev/null 2>&1 &
