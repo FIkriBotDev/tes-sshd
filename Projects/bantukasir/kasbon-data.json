@@ -40,6 +40,12 @@
             "vi": 0
           }
         ]
+      },
+      {
+        "tipe": "bayar",
+        "jml": 101000,
+        "tgl": 1793433095636,
+        "catatan": "Lunas - dibayar tunai"
       }
     ]
   }
