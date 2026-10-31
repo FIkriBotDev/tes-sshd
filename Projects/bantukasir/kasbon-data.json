@@ -1,0 +1,46 @@
+[
+  {
+    "id": "kb_1793433070739",
+    "nama": "Bu Sari",
+    "hp": "08512398852",
+    "riwayat": [
+      {
+        "tipe": "utang",
+        "jml": 101000,
+        "tgl": 1793433070739,
+        "catatan": "dibayar besok",
+        "items": [
+          {
+            "id": 3,
+            "n": "Es Teh Manis",
+            "p": 5000,
+            "c": 1500,
+            "q": 7
+          },
+          {
+            "id": 4,
+            "n": "Air Mineral",
+            "p": 4000,
+            "c": 2500,
+            "q": 5
+          },
+          {
+            "id": 7,
+            "n": "Roti Bakar",
+            "p": 10000,
+            "c": 4500,
+            "q": 3
+          },
+          {
+            "id": 2,
+            "n": "Kopi Susu (Reguler)",
+            "p": 8000,
+            "c": 3200,
+            "q": 2,
+            "vi": 0
+          }
+        ]
+      }
+    ]
+  }
+]
