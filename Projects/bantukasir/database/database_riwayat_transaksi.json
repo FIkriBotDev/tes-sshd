@@ -1,0 +1,108 @@
+[
+  {
+    "user_id": "user_1793500363207",
+    "transaksi": [
+      {
+        "id": "TRX-46721320",
+        "timestamp": 1793546721320,
+        "items": [
+          {
+            "id": 1793546688469,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          }
+        ],
+        "total": 15000,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 20000,
+        "kembalian": 5000
+      },
+      {
+        "id": "TRX-46857203",
+        "timestamp": 1793546857203,
+        "items": [
+          {
+            "id": 1793546708033,
+            "n": "Ayam Katsu",
+            "p": 18000,
+            "c": 15000,
+            "q": 1
+          }
+        ],
+        "total": 18000,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 50000,
+        "kembalian": 32000
+      }
+    ]
+  },
+  {
+    "user_id": "user_1793547028259",
+    "transaksi": [
+      {
+        "id": "TRX-47478538",
+        "timestamp": 1793547478538,
+        "items": [
+          {
+            "id": 1793547321723,
+            "n": "Ayam Katsu",
+            "p": 18000,
+            "c": 15000,
+            "q": 1
+          },
+          {
+            "id": 1793547339589,
+            "n": "Es Teh",
+            "p": 15000,
+            "c": 8000,
+            "q": 1
+          }
+        ],
+        "total": 33000,
+        "metode_bayar": "qris",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false
+      },
+      {
+        "id": "TRX-47562167",
+        "timestamp": 1793547562167,
+        "items": [
+          {
+            "id": 1793547321723,
+            "n": "Ayam Katsu",
+            "p": 18000,
+            "c": 15000,
+            "q": 1
+          },
+          {
+            "id": 1793547437646,
+            "n": "Roti Bakar (Mix (Cokelat Keju))",
+            "p": 20000,
+            "c": 18000,
+            "q": 1,
+            "vi": 2
+          },
+          {
+            "id": 1793547381950,
+            "n": "Jus jeruk",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          }
+        ],
+        "total": 53000,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 100000,
+        "kembalian": 47000
+      }
+    ]
+  }
+]
