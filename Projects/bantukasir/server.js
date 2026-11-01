@@ -463,7 +463,7 @@ app.delete("/api/kasbon/:id", (req, res) => {
 
 // ===== PENGATURAN USER =====
 
-// PUT /api/user/pengaturan — Update nama usaha, alamat, kasir, qris, tema, dll
+// PUT /api/user/pengaturan — Update nama usaha, alamat, kasir, qris, tema, pajak & diskon
 app.put("/api/user/pengaturan", (req, res) => {
   try {
     const { user_id, pengaturan } = req.body;
@@ -480,6 +480,16 @@ app.put("/api/user/pengaturan", (req, res) => {
       if (pengaturan.tema !== undefined) user.tema = pengaturan.tema;
       if (pengaturan.pajak !== undefined) user.pajak = pengaturan.pajak;
       if (pengaturan.kats !== undefined) user.kats = pengaturan.kats;
+      
+      // Konfigurasi PPN
+      if (pengaturan.ppn_aktif !== undefined) user.ppn_aktif = pengaturan.ppn_aktif;
+      if (pengaturan.ppn_persen !== undefined) user.ppn_persen = pengaturan.ppn_persen;
+      
+      // Konfigurasi Diskon Global
+      if (pengaturan.diskon_global_aktif !== undefined) user.diskon_global_aktif = pengaturan.diskon_global_aktif;
+      if (pengaturan.diskon_global_tipe !== undefined) user.diskon_global_tipe = pengaturan.diskon_global_tipe;
+      if (pengaturan.diskon_global_persen !== undefined) user.diskon_global_persen = pengaturan.diskon_global_persen;
+      if (pengaturan.diskon_global_nominal !== undefined) user.diskon_global_nominal = pengaturan.diskon_global_nominal;
     }
     simpanDatabase("database_user.json", users);
     res.json({ success: true, message: "Pengaturan disimpan" });
@@ -506,11 +516,21 @@ app.get("/api/user/pengaturan", (req, res) => {
       tema: user.tema || "auto",
       pajak: user.pajak || false,
       kats: user.kats || ["Minuman", "Makanan", "Camilan"],
+      
+      // Konfigurasi PPN
+      ppn_aktif: user.ppn_aktif !== undefined ? user.ppn_aktif : false,
+      ppn_persen: user.ppn_persen !== undefined ? user.ppn_persen : 11,
+      
+      // Konfigurasi Diskon Global
+      diskon_global_aktif: user.diskon_global_aktif !== undefined ? user.diskon_global_aktif : false,
+      diskon_global_tipe: user.diskon_global_tipe || "persen",
+      diskon_global_persen: user.diskon_global_persen !== undefined ? user.diskon_global_persen : 0,
+      diskon_global_nominal: user.diskon_global_nominal !== undefined ? user.diskon_global_nominal : 0,
     },
   });
 });
 
-// Unsplash API
+// Unsplash API foto produk
 app.get("/api/product-photo", (req, res) => {
   const query = req.query.q;
   if (!query) return res.status(400).json({ error: "Query parameter 'q' is required" });
