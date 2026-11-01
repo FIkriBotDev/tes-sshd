@@ -3,26 +3,81 @@ const express = require("express");
 const path = require("path");
 const fs = require("fs");
 const https = require("https");
-require('dotenv').config(); // Load .env file
+const bcrypt = require("bcrypt");
+require("dotenv").config();
 
 const app = express();
 const PORT = 9123;
+const SALT_ROUNDS = 10;
 
 // Unsplash Access Key dari .env
 const UNSPLASH_ACCESS_KEY = process.env.UNSPLASH_ACCESS_KEY;
 
-// Middleware untuk parse JSON
-app.use(express.json());
+// Middleware
+app.use(express.json({ limit: "10mb" }));
 
-// Lokasi file log visitor
+// ===== DATABASE HELPERS =====
+const DB_PATH = path.join(__dirname, "database");
+
+// Pastikan folder database ada
+if (!fs.existsSync(DB_PATH)) {
+  fs.mkdirSync(DB_PATH);
+}
+
+function bacaDatabase(filename) {
+  const filepath = path.join(DB_PATH, filename);
+  try {
+    if (!fs.existsSync(filepath)) return [];
+    const raw = fs.readFileSync(filepath, "utf-8").trim();
+    return raw ? JSON.parse(raw) : [];
+  } catch (err) {
+    console.error(`[DB] Error membaca ${filename}:`, err.message);
+    return [];
+  }
+}
+
+function simpanDatabase(filename, data) {
+  const filepath = path.join(DB_PATH, filename);
+  try {
+    fs.writeFileSync(filepath, JSON.stringify(data, null, 2), "utf-8");
+    return true;
+  } catch (err) {
+    console.error(`[DB] Error menyimpan ${filename}:`, err.message);
+    return false;
+  }
+}
+
+// Helper: ambil/buat entry user di suatu database
+function getUserEntry(filename, userId) {
+  const db = bacaDatabase(filename);
+  let entry = db.find((x) => x.user_id === userId);
+  if (!entry) {
+    entry = { user_id: userId };
+    // Tambahkan array default berdasarkan jenis file
+    if (filename === "database_produk.json") entry.produk = [];
+    if (filename === "database_laporan.json") entry.laporan = [];
+    if (filename === "database_riwayat_transaksi.json") entry.transaksi = [];
+    if (filename === "database_kasbon.json") entry.kasbon = [];
+    db.push(entry);
+    simpanDatabase(filename, db);
+  }
+  return { db, entry };
+}
+
+function saveUserEntry(filename, db) {
+  simpanDatabase(filename, db);
+}
+
+// ===== VISITOR COUNTER =====
 const visitorLogPath = path.join(__dirname, "visitor-count.txt");
-
-// Inisialisasi file log jika belum ada
 if (!fs.existsSync(visitorLogPath)) {
   fs.writeFileSync(visitorLogPath, "0", "utf-8");
 }
 
-// Middleware logging visitor khusus untuk request ke root "/"
+// ===== STATIC FILES =====
+app.use(express.static(path.join(__dirname, "public_html")));
+
+// ===== VISITOR COUNTER MIDDLEWARE =====
 app.get("/", (req, res, next) => {
   try {
     let count = parseInt(fs.readFileSync(visitorLogPath, "utf-8").trim()) || 0;
@@ -32,134 +87,248 @@ app.get("/", (req, res, next) => {
   } catch (err) {
     console.error("Gagal memperbarui file log visitor:", err);
   }
-  next(); // Lanjutkan ke middleware static untuk merender index.html
+  next();
 });
 
-// Middleware untuk melayani file statis (HTML, CSS, JS, Gambar) dari folder "public_html"
-app.use(express.static(path.join(__dirname, "public_html")));
+// ===== ROUTING HALAMAN =====
+app.get("/dashboard", (req, res) => {
+  res.sendFile(path.join(__dirname, "public_html", "dashboard.html"));
+});
 
-// ===== ENDPOINT UNSPLASH API =====
-// Endpoint untuk mendapatkan foto produk dari Unsplash
-app.get("/api/product-photo", (req, res) => {
-  const query = req.query.q;
-  
-  if (!query) {
-    return res.status(400).json({ error: "Query parameter 'q' is required" });
-  }
+// ===== AUTH ENDPOINTS =====
 
-  // Validasi Access Key
-  if (!UNSPLASH_ACCESS_KEY) {
-    return res.status(500).json({ 
-      error: "Unsplash Access Key not configured",
-      message: "Please set UNSPLASH_ACCESS_KEY in .env file"
-    });
-  }
+// POST /api/auth/register
+app.post("/api/auth/register", async (req, res) => {
+  try {
+    const { nama, nama_usaha, alamat_usaha, email, password } = req.body;
 
-  console.log(`[Unsplash API] Searching for: "${query}"`);
-  
-  const encodedQuery = encodeURIComponent(query);
-  const apiUrl = `https://api.unsplash.com/search/photos?page=1&query=${encodedQuery}&per_page=1`;
-
-  const options = {
-    headers: {
-      'Authorization': `Client-ID ${UNSPLASH_ACCESS_KEY}`,
-      'Accept-Version': 'v1'
+    // --- Validasi ---
+    if (!nama || !nama.trim()) {
+      return res.status(400).json({ success: false, message: "Nama tidak boleh kosong" });
     }
-  };
+    if (!nama_usaha || !nama_usaha.trim()) {
+      return res.status(400).json({ success: false, message: "Nama usaha wajib diisi" });
+    }
+    if (!email || !email.trim()) {
+      return res.status(400).json({ success: false, message: "Email atau nomor WhatsApp wajib diisi" });
+    }
+    // Validasi email atau nomor telepon
+    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+    const isPhone = /^[\d\s+()-]{10,}$/.test(email.trim());
+    if (!isEmail && !isPhone) {
+      return res.status(400).json({ success: false, message: "Format email atau nomor WhatsApp tidak valid" });
+    }
+    if (!password || password.length < 8) {
+      return res.status(400).json({ success: false, message: "Kata sandi minimal 8 karakter" });
+    }
 
-  https.get(apiUrl, options, (apiRes) => {
-    let data = '';
-    
-    console.log(`[Unsplash API] Response status: ${apiRes.statusCode}`);
+    // Cek duplikat email
+    const users = bacaDatabase("database_user.json");
+    const emailNormal = email.trim().toLowerCase();
+    const sudahAda = users.find((u) => u.email.toLowerCase() === emailNormal);
+    if (sudahAda) {
+      return res.status(409).json({ success: false, message: "Email atau nomor sudah terdaftar" });
+    }
 
-    apiRes.on('data', (chunk) => {
-      data += chunk;
-    });
+    // Hash password
+    const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
+    const timestamp = Date.now();
+    const userId = `user_${timestamp}`;
 
-    apiRes.on('end', () => {
-      try {
-        const parsed = JSON.parse(data);
-        
-        console.log(`[Unsplash API] Results found: ${parsed.results ? parsed.results.length : 0}`);
-        
-        if (parsed.results && parsed.results.length > 0) {
-          const photo = parsed.results[0];
-          console.log(`[Unsplash API] Photo URL: ${photo.urls.small}`);
-          res.json({
-            success: true,
-            photo: {
-              url: photo.urls.regular,
-              thumb: photo.urls.thumb,
-              small: photo.urls.small,
-              author: photo.user.name,
-              author_url: photo.user.links.html
-            }
-          });
-        } else {
-          console.log(`[Unsplash API] No results for query: "${query}"`);
-          res.json({
-            success: false,
-            message: "No photos found for this query"
-          });
-        }
-      } catch (err) {
-        console.error("[Unsplash API] Error parsing response:", err);
-        console.error("[Unsplash API] Raw response:", data);
-        res.status(500).json({ 
-          error: "Failed to parse Unsplash response",
-          details: err.message 
-        });
-      }
+    const newUser = {
+      id: userId,
+      nama: nama.trim(),
+      nama_usaha: nama_usaha.trim(),
+      alamat_usaha: alamat_usaha ? alamat_usaha.trim() : "",
+      email: emailNormal,
+      password: hashedPassword,
+      created_at: new Date().toISOString(),
+      last_login: new Date().toISOString(),
+    };
+
+    // Simpan user
+    users.push(newUser);
+    simpanDatabase("database_user.json", users);
+
+    // Inisialisasi database kosong untuk user baru
+    getUserEntry("database_produk.json", userId);
+    getUserEntry("database_laporan.json", userId);
+    getUserEntry("database_riwayat_transaksi.json", userId);
+    getUserEntry("database_kasbon.json", userId);
+
+    console.log(`[Auth] User baru terdaftar: ${newUser.nama} (${userId})`);
+
+    return res.status(201).json({
+      success: true,
+      message: "Pendaftaran berhasil",
+      user: {
+        id: newUser.id,
+        nama: newUser.nama,
+        nama_usaha: newUser.nama_usaha,
+        alamat_usaha: newUser.alamat_usaha,
+        email: newUser.email,
+      },
     });
-  }).on('error', (err) => {
-    console.error("[Unsplash API] Request error:", err);
-    res.status(500).json({ 
-      error: "Failed to fetch from Unsplash",
-      details: err.message 
-    });
-  });
+  } catch (err) {
+    console.error("[Auth] Register error:", err);
+    return res.status(500).json({ success: false, message: "Terjadi kesalahan server. Silakan coba lagi." });
+  }
 });
 
-// ===== ENDPOINT KASBON API =====
-// Data kasbon disimpan ke file JSON agar persisten tanpa database eksternal
-const kasbonFilePath = path.join(__dirname, "kasbon-data.json");
-
-function bacaKasbon() {
+// POST /api/auth/login
+app.post("/api/auth/login", async (req, res) => {
   try {
-    if (!fs.existsSync(kasbonFilePath)) return [];
-    const raw = fs.readFileSync(kasbonFilePath, "utf-8").trim();
-    return raw ? JSON.parse(raw) : [];
-  } catch (err) {
-    console.error("[Kasbon] Gagal membaca file:", err);
-    return [];
-  }
-}
+    const { email, password } = req.body;
 
-function simpanKasbon(data) {
-  try {
-    fs.writeFileSync(kasbonFilePath, JSON.stringify(data, null, 2), "utf-8");
-  } catch (err) {
-    console.error("[Kasbon] Gagal menyimpan file:", err);
-    throw err;
-  }
-}
+    if (!email || !email.trim()) {
+      return res.status(400).json({ success: false, message: "Email atau nomor WhatsApp wajib diisi" });
+    }
+    if (!password) {
+      return res.status(400).json({ success: false, message: "Kata sandi wajib diisi" });
+    }
 
-// GET /api/kasbon — Ambil semua data kasbon
+    const users = bacaDatabase("database_user.json");
+    const emailNormal = email.trim().toLowerCase();
+    const user = users.find((u) => u.email.toLowerCase() === emailNormal);
+
+    if (!user) {
+      return res.status(401).json({ success: false, message: "Email atau kata sandi salah" });
+    }
+
+    const passwordCocok = await bcrypt.compare(password, user.password);
+    if (!passwordCocok) {
+      return res.status(401).json({ success: false, message: "Email atau kata sandi salah" });
+    }
+
+    // Update last_login
+    user.last_login = new Date().toISOString();
+    simpanDatabase("database_user.json", users);
+
+    console.log(`[Auth] Login berhasil: ${user.nama} (${user.id})`);
+
+    return res.status(200).json({
+      success: true,
+      message: "Login berhasil",
+      user: {
+        id: user.id,
+        nama: user.nama,
+        nama_usaha: user.nama_usaha,
+        alamat_usaha: user.alamat_usaha || "",
+        email: user.email,
+      },
+    });
+  } catch (err) {
+    console.error("[Auth] Login error:", err);
+    return res.status(500).json({ success: false, message: "Terjadi kesalahan server. Silakan coba lagi." });
+  }
+});
+
+// ===== PRODUK ENDPOINTS =====
+
+// GET /api/produk?user_id=xxx
+app.get("/api/produk", (req, res) => {
+  const { user_id } = req.query;
+  if (!user_id) return res.status(400).json({ success: false, message: "user_id wajib diisi" });
+  const { entry } = getUserEntry("database_produk.json", user_id);
+  res.json({ success: true, produk: entry.produk || [] });
+});
+
+// POST /api/produk — Simpan semua produk (replace)
+app.post("/api/produk", (req, res) => {
+  const { user_id, produk } = req.body;
+  if (!user_id) return res.status(400).json({ success: false, message: "user_id wajib diisi" });
+  if (!Array.isArray(produk)) return res.status(400).json({ success: false, message: "produk harus array" });
+  const { db, entry } = getUserEntry("database_produk.json", user_id);
+  entry.produk = produk;
+  saveUserEntry("database_produk.json", db);
+  res.json({ success: true, message: "Produk disimpan", produk: entry.produk });
+});
+
+// ===== TRANSAKSI ENDPOINTS =====
+
+// GET /api/transaksi?user_id=xxx
+app.get("/api/transaksi", (req, res) => {
+  const { user_id } = req.query;
+  if (!user_id) return res.status(400).json({ success: false, message: "user_id wajib diisi" });
+  const { entry } = getUserEntry("database_riwayat_transaksi.json", user_id);
+  res.json({ success: true, transaksi: entry.transaksi || [] });
+});
+
+// POST /api/transaksi — Tambah satu transaksi
+app.post("/api/transaksi", (req, res) => {
+  const { user_id, transaksi } = req.body;
+  if (!user_id) return res.status(400).json({ success: false, message: "user_id wajib diisi" });
+  if (!transaksi) return res.status(400).json({ success: false, message: "data transaksi wajib diisi" });
+  const { db, entry } = getUserEntry("database_riwayat_transaksi.json", user_id);
+  if (!entry.transaksi) entry.transaksi = [];
+  entry.transaksi.push(transaksi);
+  saveUserEntry("database_riwayat_transaksi.json", db);
+  res.json({ success: true, message: "Transaksi disimpan", transaksi });
+});
+
+// PUT /api/transaksi/:id/void — Void/batalkan transaksi
+app.put("/api/transaksi/:id/void", (req, res) => {
+  const { id } = req.params;
+  const { user_id } = req.body;
+  if (!user_id) return res.status(400).json({ success: false, message: "user_id wajib diisi" });
+  const { db, entry } = getUserEntry("database_riwayat_transaksi.json", user_id);
+  const trx = (entry.transaksi || []).find((t) => t.id === id);
+  if (!trx) return res.status(404).json({ success: false, message: "Transaksi tidak ditemukan" });
+  trx.void = true;
+  saveUserEntry("database_riwayat_transaksi.json", db);
+  res.json({ success: true, message: "Transaksi dibatalkan", transaksi: trx });
+});
+
+// ===== LAPORAN ENDPOINTS =====
+
+// GET /api/laporan?user_id=xxx
+app.get("/api/laporan", (req, res) => {
+  const { user_id } = req.query;
+  if (!user_id) return res.status(400).json({ success: false, message: "user_id wajib diisi" });
+  const { entry } = getUserEntry("database_laporan.json", user_id);
+  res.json({ success: true, laporan: entry.laporan || [] });
+});
+
+// POST /api/laporan — Simpan / update laporan harian
+app.post("/api/laporan", (req, res) => {
+  const { user_id, tanggal, uang_masuk, modal_keluar, pengeluaran, untung } = req.body;
+  if (!user_id) return res.status(400).json({ success: false, message: "user_id wajib diisi" });
+  if (!tanggal) return res.status(400).json({ success: false, message: "tanggal wajib diisi" });
+  const { db, entry } = getUserEntry("database_laporan.json", user_id);
+  if (!entry.laporan) entry.laporan = [];
+  const idx = entry.laporan.findIndex((l) => l.tanggal === tanggal);
+  const data = { tanggal, uang_masuk: uang_masuk || 0, modal_keluar: modal_keluar || 0, pengeluaran: pengeluaran || 0, untung: untung || 0 };
+  if (idx >= 0) entry.laporan[idx] = data;
+  else entry.laporan.push(data);
+  saveUserEntry("database_laporan.json", db);
+  res.json({ success: true, message: "Laporan disimpan", laporan: data });
+});
+
+// ===== KASBON ENDPOINTS (per user) =====
+
+// GET /api/kasbon?user_id=xxx
 app.get("/api/kasbon", (req, res) => {
-  try {
-    const data = bacaKasbon();
-    console.log(`[Kasbon] GET semua: ${data.length} pelanggan`);
-    res.json({ success: true, kasbon: data });
-  } catch (err) {
-    res.status(500).json({ success: false, error: "Gagal membaca data kasbon" });
+  const { user_id } = req.query;
+  // Backward compat: jika tidak ada user_id, baca kasbon-data.json lama
+  if (!user_id) {
+    try {
+      const kasbonFilePath = path.join(__dirname, "kasbon-data.json");
+      if (!fs.existsSync(kasbonFilePath)) return res.json({ success: true, kasbon: [] });
+      const raw = fs.readFileSync(kasbonFilePath, "utf-8").trim();
+      const data = raw ? JSON.parse(raw) : [];
+      return res.json({ success: true, kasbon: data });
+    } catch (err) {
+      return res.status(500).json({ success: false, error: "Gagal membaca data kasbon" });
+    }
   }
+  const { entry } = getUserEntry("database_kasbon.json", user_id);
+  res.json({ success: true, kasbon: entry.kasbon || [] });
 });
 
-// POST /api/kasbon — Buat entri kasbon baru atau tambah utang ke pelanggan existing
-// Body: { nama, hp, jml, catatan, items }
+// POST /api/kasbon — Buat kasbon baru atau tambah utang
 app.post("/api/kasbon", (req, res) => {
   try {
-    const { nama, hp, jml, catatan, items } = req.body;
+    const { user_id, nama, hp, jml, catatan, items } = req.body;
     if (!nama || !nama.trim()) {
       return res.status(400).json({ success: false, error: "Nama pelanggan wajib diisi" });
     }
@@ -167,27 +336,40 @@ app.post("/api/kasbon", (req, res) => {
       return res.status(400).json({ success: false, error: "Jumlah kasbon harus lebih dari 0" });
     }
 
-    const data = bacaKasbon();
-    let pel = data.find(p => p.nama.toLowerCase() === nama.trim().toLowerCase());
-
-    if (!pel) {
-      pel = { id: `kb_${Date.now()}`, nama: nama.trim(), hp: hp ? hp.trim() : "", riwayat: [] };
-      data.push(pel);
-      console.log(`[Kasbon] Pelanggan baru: "${pel.nama}" (${pel.id})`);
+    let dbData, entryData;
+    if (user_id) {
+      const { db, entry } = getUserEntry("database_kasbon.json", user_id);
+      dbData = db;
+      entryData = entry;
+      if (!entryData.kasbon) entryData.kasbon = [];
     } else {
-      if (hp && hp.trim()) pel.hp = hp.trim();
-      console.log(`[Kasbon] Tambah utang ke pelanggan existing: "${pel.nama}"`);
+      // Backward compat dengan kasbon-data.json lama
+      const kasbonFilePath = path.join(__dirname, "kasbon-data.json");
+      dbData = null;
+      entryData = { kasbon: [] };
+      try {
+        if (fs.existsSync(kasbonFilePath)) {
+          const raw = fs.readFileSync(kasbonFilePath, "utf-8").trim();
+          entryData.kasbon = raw ? JSON.parse(raw) : [];
+        }
+      } catch (e) { entryData.kasbon = []; }
     }
 
-    pel.riwayat.push({
-      tipe: "utang",
-      jml: Number(jml),
-      tgl: Date.now(),
-      catatan: catatan ? catatan.trim() : "",
-      items: items || []
-    });
+    let pel = entryData.kasbon.find((p) => p.nama.toLowerCase() === nama.trim().toLowerCase());
+    if (!pel) {
+      pel = { id: `kb_${Date.now()}`, nama: nama.trim(), hp: hp ? hp.trim() : "", riwayat: [] };
+      entryData.kasbon.push(pel);
+    } else {
+      if (hp && hp.trim()) pel.hp = hp.trim();
+    }
+    pel.riwayat.push({ tipe: "utang", jml: Number(jml), tgl: Date.now(), catatan: catatan ? catatan.trim() : "", items: items || [] });
 
-    simpanKasbon(data);
+    if (user_id && dbData) {
+      saveUserEntry("database_kasbon.json", dbData);
+    } else {
+      const kasbonFilePath = path.join(__dirname, "kasbon-data.json");
+      fs.writeFileSync(kasbonFilePath, JSON.stringify(entryData.kasbon, null, 2), "utf-8");
+    }
     res.json({ success: true, pelanggan: pel });
   } catch (err) {
     console.error("[Kasbon] POST error:", err);
@@ -195,42 +377,46 @@ app.post("/api/kasbon", (req, res) => {
   }
 });
 
-// POST /api/kasbon/:id/bayar — Catat pembayaran cicilan atau lunas
-// Body: { jml, catatan }
+// POST /api/kasbon/:id/bayar
 app.post("/api/kasbon/:id/bayar", (req, res) => {
   try {
     const { id } = req.params;
-    const { jml, catatan } = req.body;
-
+    const { user_id, jml, catatan } = req.body;
     if (!jml || isNaN(jml) || Number(jml) <= 0) {
       return res.status(400).json({ success: false, error: "Jumlah bayar harus lebih dari 0" });
     }
 
-    const data = bacaKasbon();
-    const pel = data.find(p => p.id === id);
-    if (!pel) {
-      return res.status(404).json({ success: false, error: "Pelanggan tidak ditemukan" });
+    let dbData, kasbon;
+    if (user_id) {
+      const { db, entry } = getUserEntry("database_kasbon.json", user_id);
+      dbData = db;
+      kasbon = entry.kasbon || [];
+    } else {
+      const kasbonFilePath = path.join(__dirname, "kasbon-data.json");
+      try {
+        const raw = fs.readFileSync(kasbonFilePath, "utf-8").trim();
+        kasbon = raw ? JSON.parse(raw) : [];
+      } catch (e) { kasbon = []; }
     }
 
-    const totalUtang = pel.riwayat.filter(r => r.tipe === "utang").reduce((s, r) => s + r.jml, 0);
-    const totalBayar = pel.riwayat.filter(r => r.tipe === "bayar").reduce((s, r) => s + r.jml, 0);
+    const pel = kasbon.find((p) => p.id === id);
+    if (!pel) return res.status(404).json({ success: false, error: "Pelanggan tidak ditemukan" });
+
+    const totalUtang = pel.riwayat.filter((r) => r.tipe === "utang").reduce((s, r) => s + r.jml, 0);
+    const totalBayar = pel.riwayat.filter((r) => r.tipe === "bayar").reduce((s, r) => s + r.jml, 0);
     const sisa = totalUtang - totalBayar;
-
     const jumlahBayar = Math.min(Number(jml), sisa);
-    if (jumlahBayar <= 0) {
-      return res.status(400).json({ success: false, error: "Kasbon pelanggan ini sudah lunas" });
-    }
+    if (jumlahBayar <= 0) return res.status(400).json({ success: false, error: "Kasbon pelanggan ini sudah lunas" });
 
-    pel.riwayat.push({
-      tipe: "bayar",
-      jml: jumlahBayar,
-      tgl: Date.now(),
-      catatan: catatan ? catatan.trim() : ""
-    });
-
-    simpanKasbon(data);
+    pel.riwayat.push({ tipe: "bayar", jml: jumlahBayar, tgl: Date.now(), catatan: catatan ? catatan.trim() : "" });
     const sisaBaru = sisa - jumlahBayar;
-    console.log(`[Kasbon] Bayar "${pel.nama}": ${jumlahBayar}, sisa: ${sisaBaru}`);
+
+    if (user_id && dbData) {
+      saveUserEntry("database_kasbon.json", dbData);
+    } else {
+      const kasbonFilePath = path.join(__dirname, "kasbon-data.json");
+      fs.writeFileSync(kasbonFilePath, JSON.stringify(kasbon, null, 2), "utf-8");
+    }
     res.json({ success: true, pelanggan: pel, sisa: sisaBaru });
   } catch (err) {
     console.error("[Kasbon] POST bayar error:", err);
@@ -238,19 +424,36 @@ app.post("/api/kasbon/:id/bayar", (req, res) => {
   }
 });
 
-// DELETE /api/kasbon/:id — Hapus seluruh data kasbon satu pelanggan
+// DELETE /api/kasbon/:id
 app.delete("/api/kasbon/:id", (req, res) => {
   try {
     const { id } = req.params;
-    const data = bacaKasbon();
-    const idx = data.findIndex(p => p.id === id);
-    if (idx === -1) {
-      return res.status(404).json({ success: false, error: "Pelanggan tidak ditemukan" });
+    const { user_id } = req.body;
+
+    let dbData, kasbon;
+    if (user_id) {
+      const { db, entry } = getUserEntry("database_kasbon.json", user_id);
+      dbData = db;
+      kasbon = entry.kasbon || [];
+    } else {
+      const kasbonFilePath = path.join(__dirname, "kasbon-data.json");
+      try {
+        const raw = fs.readFileSync(kasbonFilePath, "utf-8").trim();
+        kasbon = raw ? JSON.parse(raw) : [];
+      } catch (e) { kasbon = []; }
     }
-    const nama = data[idx].nama;
-    data.splice(idx, 1);
-    simpanKasbon(data);
-    console.log(`[Kasbon] Hapus "${nama}" (${id})`);
+
+    const idx = kasbon.findIndex((p) => p.id === id);
+    if (idx === -1) return res.status(404).json({ success: false, error: "Pelanggan tidak ditemukan" });
+    const nama = kasbon[idx].nama;
+    kasbon.splice(idx, 1);
+
+    if (user_id && dbData) {
+      saveUserEntry("database_kasbon.json", dbData);
+    } else {
+      const kasbonFilePath = path.join(__dirname, "kasbon-data.json");
+      fs.writeFileSync(kasbonFilePath, JSON.stringify(kasbon, null, 2), "utf-8");
+    }
     res.json({ success: true, message: `Data kasbon "${nama}" dihapus` });
   } catch (err) {
     console.error("[Kasbon] DELETE error:", err);
@@ -258,11 +461,105 @@ app.delete("/api/kasbon/:id", (req, res) => {
   }
 });
 
-// Jalankan server
-app.listen(PORT, () => {
-  console.log(`Web Server running at http://localhost:${PORT}`);
-  console.log(`Unsplash API: ${UNSPLASH_ACCESS_KEY ? '✓ Access Key configured' : '✗ Access Key NOT configured'}`);
-  if (UNSPLASH_ACCESS_KEY) {
-    console.log(`Access Key: ${UNSPLASH_ACCESS_KEY.substring(0, 10)}...`);
+// ===== PENGATURAN USER =====
+
+// PUT /api/user/pengaturan — Update nama usaha, alamat, kasir, qris, tema, dll
+app.put("/api/user/pengaturan", (req, res) => {
+  try {
+    const { user_id, pengaturan } = req.body;
+    if (!user_id) return res.status(400).json({ success: false, message: "user_id wajib diisi" });
+    const users = bacaDatabase("database_user.json");
+    const user = users.find((u) => u.id === user_id);
+    if (!user) return res.status(404).json({ success: false, message: "User tidak ditemukan" });
+    // Simpan pengaturan non-sensitif ke user record
+    if (pengaturan) {
+      if (pengaturan.nama_usaha !== undefined) user.nama_usaha = pengaturan.nama_usaha;
+      if (pengaturan.alamat_usaha !== undefined) user.alamat_usaha = pengaturan.alamat_usaha;
+      if (pengaturan.kasir !== undefined) user.kasir = pengaturan.kasir;
+      if (pengaturan.qris !== undefined) user.qris = pengaturan.qris;
+      if (pengaturan.tema !== undefined) user.tema = pengaturan.tema;
+      if (pengaturan.pajak !== undefined) user.pajak = pengaturan.pajak;
+      if (pengaturan.kats !== undefined) user.kats = pengaturan.kats;
+    }
+    simpanDatabase("database_user.json", users);
+    res.json({ success: true, message: "Pengaturan disimpan" });
+  } catch (err) {
+    console.error("[User] PUT pengaturan error:", err);
+    res.status(500).json({ success: false, message: "Gagal menyimpan pengaturan" });
   }
+});
+
+// GET /api/user/pengaturan?user_id=xxx
+app.get("/api/user/pengaturan", (req, res) => {
+  const { user_id } = req.query;
+  if (!user_id) return res.status(400).json({ success: false, message: "user_id wajib diisi" });
+  const users = bacaDatabase("database_user.json");
+  const user = users.find((u) => u.id === user_id);
+  if (!user) return res.status(404).json({ success: false, message: "User tidak ditemukan" });
+  res.json({
+    success: true,
+    pengaturan: {
+      nama_usaha: user.nama_usaha || "",
+      alamat_usaha: user.alamat_usaha || "",
+      kasir: user.kasir || "",
+      qris: user.qris || "",
+      tema: user.tema || "auto",
+      pajak: user.pajak || false,
+      kats: user.kats || ["Minuman", "Makanan", "Camilan"],
+    },
+  });
+});
+
+// ===== UNSPLASH API =====
+app.get("/api/product-photo", (req, res) => {
+  const query = req.query.q;
+  if (!query) return res.status(400).json({ error: "Query parameter 'q' is required" });
+  if (!UNSPLASH_ACCESS_KEY) {
+    return res.status(500).json({ error: "Unsplash Access Key not configured" });
+  }
+  const encodedQuery = encodeURIComponent(query);
+  const apiUrl = `https://api.unsplash.com/search/photos?page=1&query=${encodedQuery}&per_page=1`;
+  const options = { headers: { Authorization: `Client-ID ${UNSPLASH_ACCESS_KEY}`, "Accept-Version": "v1" } };
+  https.get(apiUrl, options, (apiRes) => {
+    let data = "";
+    apiRes.on("data", (chunk) => { data += chunk; });
+    apiRes.on("end", () => {
+      try {
+        const parsed = JSON.parse(data);
+        if (parsed.results && parsed.results.length > 0) {
+          const photo = parsed.results[0];
+          res.json({ success: true, photo: { url: photo.urls.regular, thumb: photo.urls.thumb, small: photo.urls.small, author: photo.user.name, author_url: photo.user.links.html } });
+        } else {
+          res.json({ success: false, message: "No photos found" });
+        }
+      } catch (err) {
+        res.status(500).json({ error: "Failed to parse Unsplash response" });
+      }
+    });
+  }).on("error", (err) => {
+    res.status(500).json({ error: "Failed to fetch from Unsplash" });
+  });
+});
+
+// ===== JALANKAN SERVER =====
+app.listen(PORT, () => {
+  console.log(`\nBantuKasir Server running at http://localhost:${PORT}`);
+  console.log(`Database folder: ${DB_PATH}`);
+  console.log(`Unsplash API: ${UNSPLASH_ACCESS_KEY ? "✓ Configured" : "✗ Not configured"}`);
+  console.log(`\nEndpoints:`);
+  console.log(`  POST   /api/auth/register`);
+  console.log(`  POST   /api/auth/login`);
+  console.log(`  GET    /api/produk?user_id=xxx`);
+  console.log(`  POST   /api/produk`);
+  console.log(`  GET    /api/transaksi?user_id=xxx`);
+  console.log(`  POST   /api/transaksi`);
+  console.log(`  PUT    /api/transaksi/:id/void`);
+  console.log(`  GET    /api/laporan?user_id=xxx`);
+  console.log(`  POST   /api/laporan`);
+  console.log(`  GET    /api/kasbon?user_id=xxx`);
+  console.log(`  POST   /api/kasbon`);
+  console.log(`  POST   /api/kasbon/:id/bayar`);
+  console.log(`  DELETE /api/kasbon/:id`);
+  console.log(`  GET    /api/user/pengaturan?user_id=xxx`);
+  console.log(`  PUT    /api/user/pengaturan`);
 });
