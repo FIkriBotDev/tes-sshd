@@ -541,7 +541,7 @@ app.get("/api/product-photo", (req, res) => {
   });
 });
 
-// ===== JALANKAN SERVER =====
+// Run
 app.listen(PORT, () => {
   console.log(`\nBantuKasir Server running at http://localhost:${PORT}`);
   console.log(`Database folder: ${DB_PATH}`);
