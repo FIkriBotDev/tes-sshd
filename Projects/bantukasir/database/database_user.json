@@ -23,5 +23,30 @@
     "diskon_global_tipe": "persen",
     "diskon_global_persen": 91,
     "diskon_global_nominal": 0
+  },
+  {
+    "id": "user_1793612731617",
+    "nama": "Muh. Reski Ramadani",
+    "nama_usaha": "Warung 3D",
+    "alamat_usaha": "Layoa",
+    "email": "rramadanil@gmail.com",
+    "password": "$2b$10$D5F0Vc1GQvq3YOwM.qGapeAg4G.Gk4AH4kDbvOcXyZ2MFlYD4knma",
+    "created_at": "2026-11-02T09:45:31.617Z",
+    "last_login": "2026-11-02T09:45:31.617Z",
+    "kasir": "Muh. Reski Ramadani",
+    "qris": "",
+    "tema": "terang",
+    "pajak": false,
+    "kats": [
+      "Minuman",
+      "Makanan",
+      "Camilan"
+    ],
+    "ppn_aktif": false,
+    "ppn_persen": 11,
+    "diskon_global_aktif": false,
+    "diskon_global_tipe": "persen",
+    "diskon_global_persen": 0,
+    "diskon_global_nominal": 0
   }
 ]
