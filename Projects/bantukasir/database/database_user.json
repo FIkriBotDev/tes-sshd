@@ -19,9 +19,9 @@
     ],
     "ppn_aktif": true,
     "ppn_persen": 11,
-    "diskon_global_aktif": false,
+    "diskon_global_aktif": true,
     "diskon_global_tipe": "persen",
-    "diskon_global_persen": 0,
+    "diskon_global_persen": 91,
     "diskon_global_nominal": 0
   }
 ]
