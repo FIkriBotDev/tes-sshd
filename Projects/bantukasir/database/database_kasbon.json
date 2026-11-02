@@ -33,6 +33,12 @@
                 "q": 1
               }
             ]
+          },
+          {
+            "tipe": "bayar",
+            "jml": 36630,
+            "tgl": 1793615028222,
+            "catatan": "Lunas - dibayar tunai"
           }
         ]
       }
