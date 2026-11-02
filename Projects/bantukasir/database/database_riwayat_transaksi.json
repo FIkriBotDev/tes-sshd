@@ -220,6 +220,45 @@
         "void": false,
         "bayar": 10000,
         "kembalian": 5504
+      },
+      {
+        "id": "TRX-09176196",
+        "timestamp": 1793609176196,
+        "items": [
+          {
+            "id": 1793547299989,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          },
+          {
+            "id": 1793547339589,
+            "n": "Es Teh",
+            "p": 15000,
+            "c": 8000,
+            "q": 1
+          },
+          {
+            "id": 1793547321723,
+            "n": "Ayam Katsu",
+            "p": 18000,
+            "c": 15000,
+            "q": 1
+          }
+        ],
+        "total": 4795,
+        "subtotal": 48000,
+        "diskon": 43680,
+        "diskon_persen": 91,
+        "diskon_nominal": 0,
+        "ppn": 475,
+        "ppn_persen": 11,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 5000,
+        "kembalian": 205
       }
     ]
   }
