@@ -289,6 +289,31 @@
         "metode_bayar": "qris",
         "kasir": "Muhammad Fikri Fahrezi",
         "void": false
+      },
+      {
+        "id": "TRX-13392604",
+        "timestamp": 1793613392604,
+        "items": [
+          {
+            "id": 1793547381950,
+            "n": "Jus jeruk",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          }
+        ],
+        "total": 1499,
+        "subtotal": 15000,
+        "diskon": 13650,
+        "diskon_persen": 91,
+        "diskon_nominal": 0,
+        "ppn": 149,
+        "ppn_persen": 11,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 10000,
+        "kembalian": 8501
       }
     ]
   },
