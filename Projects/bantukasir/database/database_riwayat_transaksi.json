@@ -149,6 +149,52 @@
         "metode_bayar": "qris",
         "kasir": "Muhammad Fikri Fahrezi",
         "void": false
+      },
+      {
+        "id": "TRX-07405879",
+        "timestamp": 1793607405879,
+        "items": [
+          {
+            "id": 1793547299989,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          },
+          {
+            "id": 1793547321723,
+            "n": "Ayam Katsu",
+            "p": 18000,
+            "c": 15000,
+            "q": 1
+          },
+          {
+            "id": 1793547381950,
+            "n": "Jus jeruk",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          },
+          {
+            "id": 1793547339589,
+            "n": "Es Teh",
+            "p": 15000,
+            "c": 8000,
+            "q": 1
+          }
+        ],
+        "total": 6294,
+        "subtotal": 63000,
+        "diskon": 57330,
+        "diskon_persen": 91,
+        "diskon_nominal": 0,
+        "ppn": 624,
+        "ppn_persen": 11,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 10000,
+        "kembalian": 3706
       }
     ]
   }
