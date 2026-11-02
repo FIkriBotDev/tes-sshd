@@ -259,6 +259,36 @@
         "void": false,
         "bayar": 5000,
         "kembalian": 205
+      },
+      {
+        "id": "TRX-09373953",
+        "timestamp": 1793609373953,
+        "items": [
+          {
+            "id": 1793547339589,
+            "n": "Es Teh",
+            "p": 15000,
+            "c": 8000,
+            "q": 1
+          },
+          {
+            "id": 1793547437646,
+            "n": "Roti Bakar (Mix (Cokelat Keju))",
+            "p": 20000,
+            "c": 18000,
+            "q": 1,
+            "vi": 2
+          }
+        ],
+        "total": 35000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "qris",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false
       }
     ]
   }
