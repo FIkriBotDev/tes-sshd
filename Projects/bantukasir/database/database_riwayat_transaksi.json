@@ -543,6 +543,57 @@
         "metode_bayar": "qris",
         "kasir": "Muhammad Fikri Fahrezi",
         "void": false
+      },
+      {
+        "id": "TRX-29793426",
+        "timestamp": 1793629793426,
+        "items": [
+          {
+            "id": 1793614077645,
+            "n": "Kopi Susu",
+            "p": 15000,
+            "c": 10000,
+            "q": 2
+          },
+          {
+            "id": 1793547437646,
+            "n": "Roti Bakar (Cokelat)",
+            "p": 15000,
+            "c": 10000,
+            "q": 2,
+            "vi": 0
+          },
+          {
+            "id": 1793547321723,
+            "n": "Ayam Katsu",
+            "p": 18000,
+            "c": 15000,
+            "q": 2
+          },
+          {
+            "id": 1793547299989,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 2
+          },
+          {
+            "id": 1793547381950,
+            "n": "Jus jeruk",
+            "p": 15000,
+            "c": 10000,
+            "q": 2
+          }
+        ],
+        "total": 156000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "qris",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false
       }
     ]
   },
