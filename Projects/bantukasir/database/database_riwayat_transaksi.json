@@ -127,6 +127,28 @@
         "metode_bayar": "qris",
         "kasir": "Muhammad Fikri Fahrezi",
         "void": false
+      },
+      {
+        "id": "TRX-86028282",
+        "timestamp": 1793586028282,
+        "items": [
+          {
+            "id": 1793547299989,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 2
+          }
+        ],
+        "total": 30000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "qris",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false
       }
     ]
   }
