@@ -246,6 +246,17 @@ nav.bnav{position:sticky;top:0;grid-column:1;grid-row:1/3;height:100dvh;display:
 #struk-preview table td{vertical-align:top}
 #struk-preview{box-shadow:var(--sh1)}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+/* ===== AI VOICE-TO-ORDER ===== */
+.voice-btn{position:relative;width:56px;height:56px;border-radius:50%;border:3px solid var(--brand);background:var(--card);color:var(--brand);cursor:pointer;transition:all 240ms;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:var(--sh1)}
+.voice-btn:hover{transform:scale(1.05);box-shadow:var(--sh2)}
+.voice-btn:active{transform:scale(0.95)}
+.voice-btn.recording{background:var(--bad);border-color:var(--bad);color:#fff;animation:pulse-record 1.5s infinite}
+.voice-btn.recording .i{animation:mic-pulse 0.8s ease-in-out infinite alternate}
+.voice-btn.processing{background:var(--accent);border-color:var(--accent);color:var(--ink);pointer-events:none}
+.voice-btn.processing .i{animation:spin 1s linear infinite}
+@keyframes pulse-record{0%,100%{box-shadow:0 0 0 0 rgba(179,54,27,0.7)}50%{box-shadow:0 0 0 12px rgba(179,54,27,0)}}
+@keyframes mic-pulse{from{transform:scale(1)}to{transform:scale(1.15)}}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 /* ===== LAPORAN KEUANGAN MODERN ===== */
 .lap-banner{background:linear-gradient(135deg,var(--brand) 0%,#0E4A32 100%);color:var(--on-brand);padding:var(--s5);border-radius:var(--r2);margin-bottom:var(--s4);position:relative;overflow:hidden}
 .lap-banner::before{content:"";position:absolute;top:-50%;right:-10%;width:300px;height:300px;background:rgba(255,255,255,0.05);border-radius:50%;pointer-events:none}
@@ -336,6 +347,8 @@ nav.bnav{position:sticky;top:0;grid-column:1;grid-row:1/3;height:100dvh;display:
 <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 2.63-6.36L3 3v6h6l-2.1-2.1A7 7 0 1 1 5 12"/><path d="M12 7v5l3 2"/></symbol>
 <symbol id="i-void" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93l14.14 14.14"/></symbol>
 <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 19v3"/></symbol>
+<symbol id="i-mic-off" viewBox="0 0 24 24"><line x1="1" y1="1" x2="23" y2="23"/><path d="M9 9v2a3 3 0 0 0 5.12 2.12M15 9.34V5a3 3 0 0 0-5.94-.6"/><path d="M17 16.95A7 7 0 0 1 5 11v-1M12 19v3"/><path d="M19 11v1a7 7 0 0 1-1.45 4.27"/></symbol>
 </svg>
 
 <div id="loader" aria-label="Memuat"><b>BantuKasir</b><i></i></div>
@@ -676,7 +689,7 @@ ${bannerStok}
 ${t.per.length?`<ul class="list">${t.per.slice(0,3).map(r=>`<li><span>${esc(r.n)}<span class="sub">${r.q} terjual</span></span><span class="num pos">+${jt(r.u)}</span></li>`).join('')}</ul>`:`<div class="empty">${ic('cart')}<b>Belum ada jualan hari ini.</b>Ketuk Mulai Jualan untuk mencatat yang pertama.</div>`}
 <button class="btn btn--p bigbtn" data-act="go" data-v="kasir">${ic('cart')}Mulai Jualan</button>`},
 kasir(){const ps=S.prod.filter(p=>(S.kat==='Semua'||p.k===S.kat)&&p.n.toLowerCase().includes(S.q.toLowerCase()));const bestSellers=getBestSellers(7);const sorted=ps.sort((a,b)=>{const aIsBest=bestSellers.includes(a.id);const bIsBest=bestSellers.includes(b.id);if(aIsBest&&!bIsBest)return -1;if(!aIsBest&&bIsBest)return 1;return 0});
-return `<h1>Kasir</h1><div class="form-group" style="margin:var(--s2) 0 0"><label for="cari" class="lead">Cari produk</label><input class="fld" id="cari" type="search" data-in="cari" value="${esc(S.q)}" placeholder="Ketik nama produk" autocomplete="off" enterkeyhint="search"></div>
+return `<h1>Kasir</h1><div class="form-group" style="margin:var(--s2) 0 0"><label for="cari" class="lead">Cari produk atau 🎤 gunakan suara</label><div style="display:flex;gap:var(--s2);align-items:center"><input class="fld" id="cari" type="search" data-in="cari" value="${esc(S.q)}" placeholder="Ketik nama produk" autocomplete="off" enterkeyhint="search" style="flex:1"><button class="voice-btn" id="voice-btn" data-act="voice-order" aria-label="Pesan dengan suara" title="Klik untuk pesan dengan suara">${ic('mic')}</button></div></div>
 <div class="chips" role="group" aria-label="Kategori">${['Semua',...S.kats].map(k=>`<button class="chip" data-act="kat" data-k="${k}" aria-pressed="${S.kat===k}">${k}</button>`).join('')}</div>
 <div class="grid" id="grid">${gridHtml(sorted,bestSellers)}</div><div id="cb">${cartbar()}</div>`},
 produk(){const ps=S.prod.filter(p=>(S.kat==='Semua'||p.k===S.kat)&&p.n.toLowerCase().includes(S.q.toLowerCase()));
@@ -1499,6 +1512,185 @@ const d={n:$('#pf-n').value.trim(),k:kategori,f:tempFoto};
 if(hasVar){if(!tempVariants.length){toast('Tambahkan minimal 1 varian');return}const validVars=tempVariants.filter(v=>v.n.trim()&&v.p>0);if(!validVars.length||validVars.length<tempVariants.length){toast('Isi nama dan harga jual semua varian');return}d.v=validVars;d.p=0;d.c=0;d.s=0}else{d.p=+($('#pf-p').dataset.raw||$('#pf-p').value.replace(/\D/g,''));d.c=+($('#pf-c').dataset.raw||$('#pf-c').value.replace(/\D/g,''));d.s=+($('#pf-s').dataset.raw||$('#pf-s').value.replace(/\D/g,''));d.v=[]}
 if(f.dataset.id)Object.assign(S.prod.find(p=>p.id==f.dataset.id),d);else{d.id=Date.now();S.prod.push(d)}
 saveProduk();savePengaturan();closeSheet();render();toast('Produk tersimpan');tempFoto='';tempVariants=[]});
+
+// ===== AI VOICE-TO-ORDER FUNCTIONALITY =====
+let mediaRecorder=null;
+let audioChunks=[];
+let isRecording=false;
+
+async function startVoiceOrder(){
+  const voiceBtn=$('#voice-btn');
+  if(!voiceBtn)return;
+  
+  if(isRecording){
+    // Stop recording
+    if(mediaRecorder&&mediaRecorder.state==='recording'){
+      mediaRecorder.stop();
+    }
+    return;
+  }
+  
+  try{
+    // Request microphone permission
+    const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+    
+    audioChunks=[];
+    mediaRecorder=new MediaRecorder(stream);
+    
+    mediaRecorder.ondataavailable=event=>{
+      if(event.data.size>0){
+        audioChunks.push(event.data);
+      }
+    };
+    
+    mediaRecorder.onstop=async()=>{
+      isRecording=false;
+      voiceBtn.classList.remove('recording');
+      voiceBtn.classList.add('processing');
+      const micIcon=voiceBtn.querySelector('.i use');
+      if(micIcon)micIcon.setAttribute('href','#i-mic-off');
+      
+      // Stop all audio tracks
+      stream.getTracks().forEach(track=>track.stop());
+      
+      // Process audio
+      const audioBlob=new Blob(audioChunks,{type:'audio/webm'});
+      await processVoiceOrder(audioBlob);
+      
+      // Reset button
+      voiceBtn.classList.remove('processing');
+      if(micIcon)micIcon.setAttribute('href','#i-mic');
+      audioChunks=[];
+    };
+    
+    mediaRecorder.start();
+    isRecording=true;
+    voiceBtn.classList.add('recording');
+    const micIcon=voiceBtn.querySelector('.i use');
+    if(micIcon)micIcon.setAttribute('href','#i-mic');
+    
+    toast('🎤 Berbicara... (Tap lagi untuk berhenti)',null,null);
+    
+  }catch(error){
+    console.error('Voice recording error:',error);
+    toast('❌ Tidak bisa mengakses mikrofon. Izinkan akses mikrofon di pengaturan browser.');
+    isRecording=false;
+    voiceBtn.classList.remove('recording','processing');
+  }
+}
+
+async function processVoiceOrder(audioBlob){
+  try{
+    // Convert blob to base64 for transmission
+    const reader=new FileReader();
+    reader.readAsDataURL(audioBlob);
+    
+    reader.onloadend=async()=>{
+      const base64Audio=reader.result;
+      
+      // Send to backend API for processing
+      const response=await fetch('/api/voice-order',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          user_id:USER_ID,
+          audio:base64Audio,
+          products:S.prod.map(p=>({
+            id:p.id,
+            name:p.n,
+            price:p.p,
+            stock:p.s,
+            variants:p.v||[]
+          }))
+        })
+      });
+      
+      if(!response.ok){
+        throw new Error('Gagal memproses suara. HTTP '+response.status);
+      }
+      
+      const result=await response.json();
+      
+      if(!result.success){
+        throw new Error(result.error||'Gagal memproses pesanan suara');
+      }
+      
+      // Process the parsed items
+      if(result.items&&result.items.length>0){
+        let addedCount=0;
+        let notFoundItems=[];
+        
+        result.items.forEach(orderItem=>{
+          // Fuzzy match product name
+          const matchedProduct=S.prod.find(p=>
+            p.n.toLowerCase().includes(orderItem.product_name.toLowerCase())||
+            orderItem.product_name.toLowerCase().includes(p.n.toLowerCase())
+          );
+          
+          if(matchedProduct){
+            // Check if product has variants
+            if(matchedProduct.v&&matchedProduct.v.length>0){
+              // For variants, try to match variant name or just add the first available variant
+              const variantMatch=matchedProduct.v.findIndex(v=>
+                orderItem.product_name.toLowerCase().includes(v.n.toLowerCase())
+              );
+              const variantIdx=variantMatch>=0?variantMatch:0;
+              const variant=matchedProduct.v[variantIdx];
+              
+              if(variant&&variant.s>0){
+                const cartKey=`${matchedProduct.id}_${variantIdx}`;
+                const currentQty=S.cart[cartKey]||0;
+                const newQty=Math.min(currentQty+orderItem.quantity,variant.s);
+                S.cart[cartKey]=newQty;
+                addedCount++;
+              }
+            }else{
+              // Standard product without variants
+              if(matchedProduct.s>0){
+                const currentQty=S.cart[matchedProduct.id]||0;
+                const newQty=Math.min(currentQty+orderItem.quantity,matchedProduct.s);
+                S.cart[matchedProduct.id]=newQty;
+                addedCount++;
+              }
+            }
+          }else{
+            notFoundItems.push(orderItem.product_name);
+          }
+        });
+        
+        refreshKasir();
+        
+        if(addedCount>0){
+          const c=$('#cbtn');
+          if(c){
+            c.classList.remove('bump');
+            void c.offsetWidth;
+            c.classList.add('bump');
+            countTo(c.querySelector('.num'),total());
+          }
+          
+          let msg=`✓ ${addedCount} produk ditambahkan via suara!`;
+          if(notFoundItems.length>0){
+            msg+=` (Tidak ditemukan: ${notFoundItems.join(', ')})`;
+          }
+          toast(msg,null,null);
+        }else if(notFoundItems.length>0){
+          toast(`❌ Produk tidak ditemukan: ${notFoundItems.join(', ')}`,null,null);
+        }else{
+          toast('❌ Tidak ada produk yang bisa ditambahkan',null,null);
+        }
+      }else{
+        toast('❌ Tidak dapat mengenali pesanan. Coba lagi dengan lebih jelas.',null,null);
+      }
+    };
+    
+  }catch(error){
+    console.error('Voice processing error:',error);
+    toast('❌ Gagal memproses suara: '+error.message,null,null);
+  }
+}
+
+A['voice-order']=()=>startVoiceOrder();
 
 // ===== KONEKSI =====
 function net(){const n=$('#net'),on=navigator.onLine;n.className='net'+(on?'':' off');n.textContent=on?'Online':'Offline - mode terbatas'}
