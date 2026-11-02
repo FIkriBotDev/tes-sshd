@@ -337,6 +337,32 @@
         "metode_bayar": "qris",
         "kasir": "Muhammad Fikri Fahrezi",
         "void": false
+      },
+      {
+        "id": "TRX-13556700",
+        "timestamp": 1793613556700,
+        "items": [
+          {
+            "id": 1793547437646,
+            "n": "Roti Bakar (Cokelat)",
+            "p": 15000,
+            "c": 10000,
+            "q": 1,
+            "vi": 0
+          }
+        ],
+        "total": 1499,
+        "subtotal": 15000,
+        "diskon": 13650,
+        "diskon_persen": 91,
+        "diskon_nominal": 0,
+        "ppn": 149,
+        "ppn_persen": 11,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 10000,
+        "kembalian": 8501
       }
     ]
   },
