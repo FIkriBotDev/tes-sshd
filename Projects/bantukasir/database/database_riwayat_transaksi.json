@@ -421,6 +421,40 @@
         "void": false,
         "bayar": 50000,
         "kembalian": 0
+      },
+      {
+        "id": "TRX-13407358",
+        "timestamp": 1793613407358,
+        "items": [
+          {
+            "id": 1793612764396,
+            "n": "Ayam goreng (Pedas)",
+            "p": 15000,
+            "c": 13000,
+            "q": 1,
+            "vi": 0
+          },
+          {
+            "id": 1793612823957,
+            "n": "Kopi Hitam (Hot)",
+            "p": 5000,
+            "c": 3000,
+            "q": 1,
+            "vi": 0
+          }
+        ],
+        "total": 20000,
+        "subtotal": 20000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muh. Reski Ramadani",
+        "void": false,
+        "bayar": 50000,
+        "kembalian": 30000
       }
     ]
   }
