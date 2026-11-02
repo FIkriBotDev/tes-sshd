@@ -1518,176 +1518,211 @@ let mediaRecorder=null;
 let audioChunks=[];
 let isRecording=false;
 
+let recognition=null;
+
 async function startVoiceOrder(){
   const voiceBtn=$('#voice-btn');
   if(!voiceBtn)return;
   
+  // Check browser support for Web Speech API
+  const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SpeechRecognition){
+    toast('❌ Browser Anda tidak mendukung Speech Recognition. Gunakan Chrome, Edge, atau Safari.');
+    return;
+  }
+  
   if(isRecording){
-    // Stop recording
-    if(mediaRecorder&&mediaRecorder.state==='recording'){
-      mediaRecorder.stop();
+    // Stop recognition
+    if(recognition){
+      recognition.stop();
     }
     return;
   }
   
   try{
-    // Request microphone permission
-    const stream=await navigator.mediaDevices.getUserMedia({audio:true});
-    
-    audioChunks=[];
-    mediaRecorder=new MediaRecorder(stream);
-    
-    mediaRecorder.ondataavailable=event=>{
-      if(event.data.size>0){
-        audioChunks.push(event.data);
-      }
-    };
-    
-    mediaRecorder.onstop=async()=>{
-      isRecording=false;
-      voiceBtn.classList.remove('recording');
-      voiceBtn.classList.add('processing');
-      const micIcon=voiceBtn.querySelector('.i use');
-      if(micIcon)micIcon.setAttribute('href','#i-mic-off');
-      
-      // Stop all audio tracks
-      stream.getTracks().forEach(track=>track.stop());
-      
-      // Process audio
-      const audioBlob=new Blob(audioChunks,{type:'audio/webm'});
-      await processVoiceOrder(audioBlob);
-      
-      // Reset button
-      voiceBtn.classList.remove('processing');
-      if(micIcon)micIcon.setAttribute('href','#i-mic');
-      audioChunks=[];
-    };
-    
-    mediaRecorder.start();
     isRecording=true;
+    recognition=new SpeechRecognition();
+    recognition.lang='id-ID'; // Bahasa Indonesia
+    recognition.continuous=false; // Stop after one result
+    recognition.interimResults=false; // Only final results
+    recognition.maxAlternatives=1;
+    
     voiceBtn.classList.add('recording');
     const micIcon=voiceBtn.querySelector('.i use');
     if(micIcon)micIcon.setAttribute('href','#i-mic');
+    toast('🎤 Berbicara... (contoh: "ayam goreng 2 dan jus jeruk 1")',null,null);
     
-    toast('🎤 Berbicara... (Tap lagi untuk berhenti)',null,null);
+    recognition.onresult=event=>{
+      const transcript=event.results[0][0].transcript;
+      console.log('[Voice] Transcription:',transcript);
+      
+      // Update UI to processing
+      voiceBtn.classList.remove('recording');
+      voiceBtn.classList.add('processing');
+      if(micIcon)micIcon.setAttribute('href','#i-mic-off');
+      
+      // Process the transcription
+      processVoiceTranscription(transcript);
+    };
+    
+    recognition.onerror=event=>{
+      console.error('[Voice] Recognition error:',event.error);
+      isRecording=false;
+      voiceBtn.classList.remove('recording','processing');
+      const micIcon=voiceBtn.querySelector('.i use');
+      if(micIcon)micIcon.setAttribute('href','#i-mic');
+      
+      let errorMsg='Gagal mengenali suara.';
+      if(event.error==='no-speech'){
+        errorMsg='Tidak ada suara terdeteksi. Coba lagi.';
+      }else if(event.error==='audio-capture'){
+        errorMsg='Mikrofon tidak dapat diakses.';
+      }else if(event.error==='not-allowed'){
+        errorMsg='Izin mikrofon ditolak. Aktifkan di pengaturan browser.';
+      }
+      toast('❌ '+errorMsg,null,null);
+    };
+    
+    recognition.onend=()=>{
+      isRecording=false;
+      if(!voiceBtn.classList.contains('processing')){
+        voiceBtn.classList.remove('recording');
+        const micIcon=voiceBtn.querySelector('.i use');
+        if(micIcon)micIcon.setAttribute('href','#i-mic');
+      }
+    };
+    
+    recognition.start();
     
   }catch(error){
-    console.error('Voice recording error:',error);
-    toast('❌ Tidak bisa mengakses mikrofon. Izinkan akses mikrofon di pengaturan browser.');
+    console.error('Voice recognition error:',error);
+    toast('❌ Gagal memulai pengenalan suara.');
     isRecording=false;
     voiceBtn.classList.remove('recording','processing');
   }
 }
 
-async function processVoiceOrder(audioBlob){
+async function processVoiceTranscription(transcript){
   try{
-    // Convert blob to base64 for transmission
-    const reader=new FileReader();
-    reader.readAsDataURL(audioBlob);
+    // Send transcription to backend for AI parsing
+    const response=await fetch('/api/voice-order',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        user_id:USER_ID,
+        transcription:transcript,
+        products:S.prod.map(p=>({
+          id:p.id,
+          name:p.n,
+          price:p.p,
+          stock:p.s,
+          variants:p.v||[]
+        }))
+      })
+    });
     
-    reader.onloadend=async()=>{
-      const base64Audio=reader.result;
+    const voiceBtn=$('#voice-btn');
+    if(voiceBtn){
+      voiceBtn.classList.remove('processing');
+      const micIcon=voiceBtn.querySelector('.i use');
+      if(micIcon)micIcon.setAttribute('href','#i-mic');
+    }
+    
+    if(!response.ok){
+      throw new Error('Gagal memproses suara. HTTP '+response.status);
+    }
+    
+    const result=await response.json();
+    
+    if(!result.success){
+      throw new Error(result.error||'Gagal memproses pesanan suara');
+    }
+    
+    // Process the parsed items
+    if(result.items&&result.items.length>0){
+      let addedCount=0;
+      let notFoundItems=[];
       
-      // Send to backend API for processing
-      const response=await fetch('/api/voice-order',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({
-          user_id:USER_ID,
-          audio:base64Audio,
-          products:S.prod.map(p=>({
-            id:p.id,
-            name:p.n,
-            price:p.p,
-            stock:p.s,
-            variants:p.v||[]
-          }))
-        })
-      });
-      
-      if(!response.ok){
-        throw new Error('Gagal memproses suara. HTTP '+response.status);
-      }
-      
-      const result=await response.json();
-      
-      if(!result.success){
-        throw new Error(result.error||'Gagal memproses pesanan suara');
-      }
-      
-      // Process the parsed items
-      if(result.items&&result.items.length>0){
-        let addedCount=0;
-        let notFoundItems=[];
+      result.items.forEach(orderItem=>{
+        // Fuzzy match product name
+        const matchedProduct=S.prod.find(p=>
+          p.n.toLowerCase().includes(orderItem.product_name.toLowerCase())||
+          orderItem.product_name.toLowerCase().includes(p.n.toLowerCase())
+        );
         
-        result.items.forEach(orderItem=>{
-          // Fuzzy match product name
-          const matchedProduct=S.prod.find(p=>
-            p.n.toLowerCase().includes(orderItem.product_name.toLowerCase())||
-            orderItem.product_name.toLowerCase().includes(p.n.toLowerCase())
-          );
-          
-          if(matchedProduct){
-            // Check if product has variants
-            if(matchedProduct.v&&matchedProduct.v.length>0){
-              // For variants, try to match variant name or just add the first available variant
-              const variantMatch=matchedProduct.v.findIndex(v=>
-                orderItem.product_name.toLowerCase().includes(v.n.toLowerCase())
-              );
-              const variantIdx=variantMatch>=0?variantMatch:0;
-              const variant=matchedProduct.v[variantIdx];
-              
-              if(variant&&variant.s>0){
-                const cartKey=`${matchedProduct.id}_${variantIdx}`;
-                const currentQty=S.cart[cartKey]||0;
-                const newQty=Math.min(currentQty+orderItem.quantity,variant.s);
-                S.cart[cartKey]=newQty;
-                addedCount++;
-              }
-            }else{
-              // Standard product without variants
-              if(matchedProduct.s>0){
-                const currentQty=S.cart[matchedProduct.id]||0;
-                const newQty=Math.min(currentQty+orderItem.quantity,matchedProduct.s);
-                S.cart[matchedProduct.id]=newQty;
-                addedCount++;
-              }
+        if(matchedProduct){
+          // Check if product has variants
+          if(matchedProduct.v&&matchedProduct.v.length>0){
+            // For variants, try to match variant name or just add the first available variant
+            const variantMatch=matchedProduct.v.findIndex(v=>
+              orderItem.product_name.toLowerCase().includes(v.n.toLowerCase())
+            );
+            const variantIdx=variantMatch>=0?variantMatch:0;
+            const variant=matchedProduct.v[variantIdx];
+            
+            if(variant&&variant.s>0){
+              const cartKey=`${matchedProduct.id}_${variantIdx}`;
+              const currentQty=S.cart[cartKey]||0;
+              const newQty=Math.min(currentQty+orderItem.quantity,variant.s);
+              S.cart[cartKey]=newQty;
+              addedCount++;
             }
           }else{
-            notFoundItems.push(orderItem.product_name);
+            // Standard product without variants
+            if(matchedProduct.s>0){
+              const currentQty=S.cart[matchedProduct.id]||0;
+              const newQty=Math.min(currentQty+orderItem.quantity,matchedProduct.s);
+              S.cart[matchedProduct.id]=newQty;
+              addedCount++;
+            }
           }
-        });
-        
-        refreshKasir();
-        
-        if(addedCount>0){
-          const c=$('#cbtn');
-          if(c){
-            c.classList.remove('bump');
-            void c.offsetWidth;
-            c.classList.add('bump');
-            countTo(c.querySelector('.num'),total());
-          }
-          
-          let msg=`✓ ${addedCount} produk ditambahkan via suara!`;
-          if(notFoundItems.length>0){
-            msg+=` (Tidak ditemukan: ${notFoundItems.join(', ')})`;
-          }
-          toast(msg,null,null);
-        }else if(notFoundItems.length>0){
-          toast(`❌ Produk tidak ditemukan: ${notFoundItems.join(', ')}`,null,null);
         }else{
-          toast('❌ Tidak ada produk yang bisa ditambahkan',null,null);
+          notFoundItems.push(orderItem.product_name);
         }
+      });
+      
+      refreshKasir();
+      
+      if(addedCount>0){
+        const c=$('#cbtn');
+        if(c){
+          c.classList.remove('bump');
+          void c.offsetWidth;
+          c.classList.add('bump');
+          countTo(c.querySelector('.num'),total());
+        }
+        
+        let msg=`✓ ${addedCount} produk ditambahkan via suara!`;
+        if(notFoundItems.length>0){
+          msg+=` (Tidak ditemukan: ${notFoundItems.join(', ')})`;
+        }
+        toast(msg,null,null);
+      }else if(notFoundItems.length>0){
+        toast(`❌ Produk tidak ditemukan: ${notFoundItems.join(', ')}`,null,null);
       }else{
-        toast('❌ Tidak dapat mengenali pesanan. Coba lagi dengan lebih jelas.',null,null);
+        toast('❌ Tidak ada produk yang bisa ditambahkan',null,null);
       }
-    };
+    }else{
+      toast('❌ Tidak dapat mengenali pesanan. Coba lagi dengan lebih jelas.',null,null);
+    }
     
   }catch(error){
     console.error('Voice processing error:',error);
     toast('❌ Gagal memproses suara: '+error.message,null,null);
+    
+    const voiceBtn=$('#voice-btn');
+    if(voiceBtn){
+      voiceBtn.classList.remove('processing');
+      const micIcon=voiceBtn.querySelector('.i use');
+      if(micIcon)micIcon.setAttribute('href','#i-mic');
+    }
   }
+}
+
+async function processVoiceOrder(audioBlob){
+  // DEPRECATED: This function is no longer used
+  // We now use Web Speech API (processVoiceTranscription) instead
+  toast('❌ This function is deprecated. Please use Web Speech API.',null,null);
 }
 
 A['voice-order']=()=>startVoiceOrder();

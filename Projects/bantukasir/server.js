@@ -567,79 +567,24 @@ app.get("/api/product-photo", (req, res) => {
 // ===== AI VOICE-TO-ORDER ENDPOINT =====
 app.post("/api/voice-order", async (req, res) => {
   try {
-    const { user_id, audio, products } = req.body;
+    const { user_id, transcription, products } = req.body;
     
     if (!user_id) {
       return res.status(400).json({ success: false, error: "user_id wajib diisi" });
     }
     
-    if (!audio) {
-      return res.status(400).json({ success: false, error: "Data audio wajib diisi" });
+    if (!transcription || typeof transcription !== 'string' || transcription.trim().length === 0) {
+      return res.status(400).json({ success: false, error: "Transcription text wajib diisi" });
     }
     
     if (!products || !Array.isArray(products)) {
       return res.status(400).json({ success: false, error: "Daftar produk wajib diisi" });
     }
     
-    // Extract base64 audio data
-    const base64Data = audio.replace(/^data:audio\/\w+;base64,/, "");
-    const audioBuffer = Buffer.from(base64Data, "base64");
-    
-    // Save temp audio file
-    const tempAudioPath = path.join(__dirname, `temp_audio_${Date.now()}.webm`);
-    fs.writeFileSync(tempAudioPath, audioBuffer);
-    
-    console.log(`[Voice Order] Processing audio for user ${user_id}, ${products.length} products in catalog`);
-    
-    // Step 1: Transcribe audio using Pollinations.AI Audio API
-    // Note: Pollinations.AI doesn't have direct audio transcription yet, 
-    // so we'll use OpenAI-compatible endpoint with gpt-audio-mini model
-    
-    const FormData = require('form-data');
-    const form = new FormData();
-    form.append('file', fs.createReadStream(tempAudioPath));
-    form.append('model', 'whisper-1');
-    
-    let transcription = "";
-    
-    try {
-      // Try using Pollinations AI endpoint
-      const transcribeResponse = await fetch('https://gen.pollinations.ai/v1/audio/transcriptions', {
-        method: 'POST',
-        body: form,
-        headers: form.getHeaders()
-      });
-      
-      if (transcribeResponse.ok) {
-        const transcribeData = await transcribeResponse.json();
-        transcription = transcribeData.text || "";
-      } else {
-        throw new Error('Transcription API failed');
-      }
-    } catch (transcribeError) {
-      console.error('[Voice Order] Transcription error:', transcribeError.message);
-      // Fallback: Generate mock transcription for testing
-      transcription = "nasi goreng satu dan es teh manis dua";
-      console.log('[Voice Order] Using fallback transcription for testing');
-    }
-    
+    console.log(`[Voice Order] Processing transcription for user ${user_id}, ${products.length} products in catalog`);
     console.log(`[Voice Order] Transcription: "${transcription}"`);
     
-    // Clean up temp audio file
-    try {
-      fs.unlinkSync(tempAudioPath);
-    } catch (e) {
-      console.error('[Voice Order] Failed to delete temp audio:', e.message);
-    }
-    
-    if (!transcription || transcription.trim().length === 0) {
-      return res.status(400).json({
-        success: false,
-        error: "Tidak dapat mengenali suara. Coba bicara lebih jelas."
-      });
-    }
-    
-    // Step 2: Parse transcription to structured JSON using Pollinations.AI Chat Completion
+    // Parse transcription to structured JSON using Pollinations.AI Chat Completion
     const productNames = products.map(p => p.name).join(', ');
     const systemPrompt = `Anda adalah AI asisten kasir untuk aplikasi BantuKasir. Tugas Anda adalah mengekstrak pesanan dari teks ke dalam format JSON.
 
