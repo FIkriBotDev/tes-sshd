@@ -5,7 +5,38 @@
   },
   {
     "user_id": "user_1793547028259",
-    "kasbon": []
+    "kasbon": [
+      {
+        "id": "kb_1793615011966",
+        "nama": "april",
+        "hp": "085220485228",
+        "riwayat": [
+          {
+            "tipe": "utang",
+            "jml": 36630,
+            "tgl": 1793615011966,
+            "catatan": "dibayar besok",
+            "items": [
+              {
+                "id": 1793547437646,
+                "n": "Roti Bakar (Cokelat)",
+                "p": 15000,
+                "c": 10000,
+                "q": 1,
+                "vi": 0
+              },
+              {
+                "id": 1793547321723,
+                "n": "Ayam Katsu",
+                "p": 18000,
+                "c": 15000,
+                "q": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "user_id": "user_1793612731617",
