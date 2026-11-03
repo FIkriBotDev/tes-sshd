@@ -264,8 +264,70 @@ app.post("/api/transaksi", (req, res) => {
   if (!transaksi) return res.status(400).json({ success: false, message: "data transaksi wajib diisi" });
   const { db, entry } = getUserEntry("database_riwayat_transaksi.json", user_id);
   if (!entry.transaksi) entry.transaksi = [];
+  
+  // IDEMPOTENT CHECK: Check if transaction with this ID already exists
+  if (transaksi.id) {
+    const existingTransaction = entry.transaksi.find(t => t.id === transaksi.id);
+    if (existingTransaction) {
+      console.log(`[Transaksi] Duplicate transaction ID detected: ${transaksi.id}, returning existing`);
+      return res.json({ 
+        success: true, 
+        message: "Transaksi sudah ada (duplicate prevented)",
+        transaksi: existingTransaction,
+        duplicate: true
+      });
+    }
+  }
+  
+  // Calculate day from timestamp if provided
+  if (transaksi.timestamp && !transaksi.day) {
+    transaksi.day = Math.floor(transaksi.timestamp / 864e5);
+  }
+  
   entry.transaksi.push(transaksi);
   saveUserEntry("database_riwayat_transaksi.json", db);
+  
+  // Update stock dengan safety check untuk prevent negative stock
+  if (transaksi.items && Array.isArray(transaksi.items)) {
+    const dbProd = bacaDatabase("database_produk.json");
+    const { entry: entryProd } = getUserEntry("database_produk.json", user_id);
+    let stockWarnings = [];
+    
+    transaksi.items.forEach(item => {
+      const prod = entryProd.produk.find(p => p.id === item.id);
+      if (!prod) return;
+      
+      if (item.vi !== undefined && prod.v && prod.v[item.vi]) {
+        // Variant product
+        const newStock = prod.v[item.vi].s - item.q;
+        prod.v[item.vi].s = Math.max(0, newStock);
+        if (newStock < 0) {
+          stockWarnings.push(`${prod.n} (${prod.v[item.vi].n}) stok kurang`);
+        }
+      } else {
+        // Regular product
+        const newStock = prod.s - item.q;
+        prod.s = Math.max(0, newStock);
+        if (newStock < 0) {
+          stockWarnings.push(`${prod.n} stok kurang`);
+        }
+      }
+    });
+    
+    saveUserEntry("database_produk.json", dbProd);
+    
+    if (stockWarnings.length > 0) {
+      console.log(`[Transaksi] Stock warnings: ${stockWarnings.join(', ')}`);
+    }
+    
+    return res.json({ 
+      success: true, 
+      message: "Transaksi disimpan", 
+      transaksi,
+      stockWarnings: stockWarnings.length > 0 ? stockWarnings : undefined
+    });
+  }
+  
   res.json({ success: true, message: "Transaksi disimpan", transaksi });
 });
 
@@ -562,6 +624,432 @@ app.get("/api/product-photo", (req, res) => {
   }).on("error", (err) => {
     res.status(500).json({ error: "Failed to fetch from Unsplash" });
   });
+});
+
+<<<<<<< HEAD
+// ===== INSIGHT AI ENDPOINT =====
+app.post("/api/insight", async (req, res) => {
+  try {
+    const { user_id, force_refresh } = req.body;
+    
+    if (!user_id) {
+      return res.status(400).json({ success: false, error: "user_id wajib diisi" });
+    }
+    
+    console.log(`[Insight AI] Processing insight for user ${user_id}, force_refresh: ${force_refresh || false}`);
+    
+    // Ambil atau buat entry insight untuk user
+    const { db, entry } = getUserEntry("database_insight.json", user_id);
+    if (!entry.insights) entry.insights = [];
+    if (!entry.refresh_count) entry.refresh_count = {};
+    
+    const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+    const todayKey = today.replace(/-/g, ''); // YYYYMMDD untuk key
+    
+    // Cek apakah sudah ada insight hari ini
+    const existingInsight = entry.insights.find(i => i.tanggal === today);
+    
+    // Cek batas refresh (max 5x per hari)
+    const refreshCount = entry.refresh_count[todayKey] || 0;
+    const MAX_REFRESH_PER_DAY = 5;
+    
+    if (existingInsight && !force_refresh) {
+      // Sudah ada insight dan tidak force refresh, kembalikan yang ada
+      return res.json({
+        success: true,
+        insight: existingInsight,
+        from_cache: true,
+        refresh_count: refreshCount,
+        max_refresh: MAX_REFRESH_PER_DAY
+      });
+    }
+    
+    if (force_refresh && refreshCount >= MAX_REFRESH_PER_DAY) {
+      return res.status(429).json({
+        success: false,
+        error: `Batas refresh insight hari ini sudah tercapai (${MAX_REFRESH_PER_DAY}x). Coba lagi besok.`,
+        refresh_count: refreshCount,
+        max_refresh: MAX_REFRESH_PER_DAY
+      });
+    }
+    
+    // Hitung semua angka untuk insight
+    const transaksi = bacaDatabase("database_riwayat_transaksi.json");
+    const produk = bacaDatabase("database_produk.json");
+    const kasbon = bacaDatabase("database_kasbon.json");
+    
+    const userTransaksi = (transaksi.find(t => t.user_id === user_id)?.transaksi || []);
+    const userProduk = (produk.find(p => p.user_id === user_id)?.produk || []);
+    const userKasbon = (kasbon.find(k => k.user_id === user_id)?.kasbon || []);
+    
+    const DAY = Math.floor(Date.now() / 864e5);
+    const PENGELUARAN = 15000; // Asumsi pengeluaran harian
+    
+    console.log(`[Insight AI] Calculating for DAY: ${DAY}, user has ${userTransaksi.length} transactions`);
+    
+    // Hitung untung hari ini
+    let untungHariIni = 0;
+    let uangMasuk = 0;
+    let modal = 0;
+    const produkTerlaris = {};
+    
+    userTransaksi.forEach(t => {
+      // Hitung day dari timestamp atau gunakan field day jika ada
+      const trxDay = t.day || Math.floor((t.timestamp || 0) / 864e5);
+      
+      if (!t.void && trxDay === DAY) {
+        const trxTotal = t.total || t.items.reduce((sum, i) => sum + i.p * i.q, 0);
+        uangMasuk += trxTotal;
+        
+        t.items.forEach(i => {
+          modal += i.c * i.q;
+          produkTerlaris[i.n] = (produkTerlaris[i.n] || 0) + i.q;
+        });
+      }
+    });
+    
+    console.log(`[Insight AI] Found transactions today: uangMasuk=${uangMasuk}, modal=${modal}`);
+    
+    untungHariIni = uangMasuk - modal - PENGELUARAN;
+    
+    // Hitung untung kemarin untuk perbandingan
+    let untungKemarin = 0;
+    let uangMasukKemarin = 0;
+    let modalKemarin = 0;
+    
+    userTransaksi.forEach(t => {
+      // Hitung day dari timestamp atau gunakan field day jika ada
+      const trxDay = t.day || Math.floor((t.timestamp || 0) / 864e5);
+      
+      if (!t.void && trxDay === (DAY - 1)) {
+        const trxTotal = t.total || t.items.reduce((sum, i) => sum + i.p * i.q, 0);
+        uangMasukKemarin += trxTotal;
+        
+        t.items.forEach(i => {
+          modalKemarin += i.c * i.q;
+        });
+      }
+    });
+    
+    untungKemarin = uangMasukKemarin - modalKemarin - PENGELUARAN;
+    
+    // Produk terlaris (top 3)
+    const topProduk = Object.entries(produkTerlaris)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 3)
+      .map(([nama, qty]) => `${nama} (${qty} terjual)`);
+    
+    // Produk habis atau menipis
+    const produkHabis = [];
+    const produkTipis = [];
+    
+    userProduk.forEach(p => {
+      if (p.v && p.v.length > 0) {
+        // Produk dengan varian
+        p.v.forEach(v => {
+          if (v.s === 0) produkHabis.push(`${p.n} (${v.n})`);
+          else if (v.s > 0 && v.s <= 5) produkTipis.push(`${p.n} (${v.n})`);
+        });
+      } else {
+        // Produk tanpa varian
+        if (p.s === 0) produkHabis.push(p.n);
+        else if (p.s > 0 && p.s <= 5) produkTipis.push(p.n);
+      }
+    });
+    
+    // Kasbon belum lunas
+    const kasbonBelumLunas = userKasbon.filter(k => {
+      const totalUtang = k.riwayat.filter(r => r.tipe === 'utang').reduce((s, r) => s + r.jml, 0);
+      const totalBayar = k.riwayat.filter(r => r.tipe === 'bayar').reduce((s, r) => s + r.jml, 0);
+      return totalUtang > totalBayar;
+    }).length;
+    
+    // Jika belum ada penjualan hari ini
+    if (uangMasuk === 0) {
+      const fallbackInsight = {
+        tanggal: today,
+        ringkasan: "Belum ada penjualan hari ini",
+        penyebab: untungKemarin > 0 ? 
+          `Kemarin untung ${formatRupiah(untungKemarin)}${produkHabis.length > 0 ? `, tapi ${produkHabis.slice(0, 2).join(', ')} habis` : ''}` :
+          produkHabis.length > 0 ? `${produkHabis.slice(0, 2).join(', ')} habis, susah buka jualan` : "Belum ada aktivitas",
+        saran: produkHabis.length > 0 ? 
+          `Belanja ${produkHabis.slice(0, 2).join(' dan ')} dulu supaya bisa buka` :
+          "Cek stok dan siapkan jualan hari ini",
+        timestamp: Date.now(),
+        generated_by: "template"
+      };
+      
+      // Simpan insight
+      let savedInsight;
+      if (existingInsight) {
+        Object.assign(existingInsight, fallbackInsight);
+        savedInsight = existingInsight;
+      } else {
+        entry.insights.push(fallbackInsight);
+        savedInsight = fallbackInsight;
+      }
+      
+      if (force_refresh) {
+        entry.refresh_count[todayKey] = refreshCount + 1;
+      }
+      
+      saveUserEntry("database_insight.json", db);
+      
+      // Return insight (no data_context for no transaction case)
+      return res.json({
+        success: true,
+        insight: savedInsight,
+        from_cache: false,
+        refresh_count: entry.refresh_count[todayKey] || 0,
+        max_refresh: MAX_REFRESH_PER_DAY
+      });
+    }
+    
+    // Generate insight dengan AI
+    const selisihUntung = untungHariIni - untungKemarin;
+    const persenSelisih = untungKemarin !== 0 ? Math.round((selisihUntung / Math.abs(untungKemarin)) * 100) : 0;
+    
+    // Siapkan data untuk AI (tanpa data pribadi)
+    const dataContext = {
+      untung_hari_ini: untungHariIni,
+      untung_kemarin: untungKemarin,
+      selisih: selisihUntung,
+      persen_selisih: persenSelisih,
+      uang_masuk: uangMasuk,
+      modal: modal,
+      pengeluaran: PENGELUARAN,
+      produk_terlaris: topProduk,
+      produk_habis: produkHabis.slice(0, 3),
+      produk_menipis: produkTipis.slice(0, 3),
+      kasbon_belum_lunas: kasbonBelumLunas
+    };
+    
+    // Prompt untuk AI
+    const promptAI = `Kamu adalah asisten keuangan untuk pedagang warung. Berikan insight singkat (maksimal 3-4 kalimat) tentang kondisi usaha hari ini dalam bahasa pedagang (kalimat pendek, tanpa istilah akuntansi).
+
+Data hari ini:
+- Untung hari ini: Rp ${untungHariIni.toLocaleString('id-ID')}
+- Untung kemarin: Rp ${untungKemarin.toLocaleString('id-ID')}
+- Selisih: Rp ${selisihUntung.toLocaleString('id-ID')} (${persenSelisih}%)
+- Uang masuk: Rp ${uangMasuk.toLocaleString('id-ID')}
+- Modal keluar: Rp ${modal.toLocaleString('id-ID')}
+- Produk terlaris: ${topProduk.join(', ') || 'Belum ada'}
+- Produk habis: ${produkHabis.length > 0 ? produkHabis.slice(0, 3).join(', ') : 'Tidak ada'}
+- Produk menipis: ${produkTipis.length > 0 ? produkTipis.slice(0, 3).join(', ') : 'Tidak ada'}
+- Kasbon belum lunas: ${kasbonBelumLunas} pelanggan
+
+Format output WAJIB dalam JSON:
+{
+  "ringkasan": "Ringkasan untung hari ini dibanding kemarin dalam 1 kalimat",
+  "penyebab": "1-2 penyebab utama (misal: produk habis, pengeluaran besar, penjualan turun) dalam 1-2 kalimat",
+  "saran": "Satu saran tindakan konkret yang bisa langsung dikerjakan (misal: belanja susu sebelum besok) dalam 1 kalimat"
+}
+
+Pastikan angka yang kamu sebutkan PERSIS sama dengan data di atas. Gunakan bahasa pedagang yang sederhana.`;
+    
+    try {
+      // Panggil Pollinations AI
+      const aiResponse = await fetch('https://gen.pollinations.ai/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${POLLINATIONS_API_KEY}`
+        },
+        body: JSON.stringify({
+          model: 'openai/gpt-5.4-nano',
+          messages: [
+            { role: 'system', content: 'Kamu adalah asisten keuangan pedagang yang memberikan insight singkat dalam bahasa sederhana.' },
+            { role: 'user', content: promptAI }
+          ],
+          response_format: { type: 'json_object' },
+          temperature: 0.7
+        })
+      });
+      
+      if (!aiResponse.ok) {
+        throw new Error(`AI API error: ${aiResponse.status}`);
+      }
+      
+      const aiData = await aiResponse.json();
+      const aiContent = aiData.choices?.[0]?.message?.content;
+      
+      if (!aiContent) {
+        throw new Error('No content from AI');
+      }
+      
+      const parsedInsight = JSON.parse(aiContent);
+      
+      // Validasi struktur response
+      if (!parsedInsight.ringkasan || !parsedInsight.penyebab || !parsedInsight.saran) {
+        throw new Error('Invalid AI response structure');
+      }
+      
+      const newInsight = {
+        tanggal: today,
+        ringkasan: parsedInsight.ringkasan,
+        penyebab: parsedInsight.penyebab,
+        saran: parsedInsight.saran,
+        timestamp: Date.now(),
+        generated_by: "ai",
+        data_context: dataContext // Simpan data untuk verifikasi
+      };
+      
+      // Simpan atau update insight
+      let savedInsight;
+      if (existingInsight) {
+        Object.assign(existingInsight, newInsight);
+        savedInsight = existingInsight;
+      } else {
+        entry.insights.push(newInsight);
+        savedInsight = newInsight;
+      }
+      
+      if (force_refresh) {
+        entry.refresh_count[todayKey] = refreshCount + 1;
+      }
+      
+      saveUserEntry("database_insight.json", db);
+      
+      console.log(`[Insight AI] Generated successfully for user ${user_id}`);
+      console.log(`[Insight AI] savedInsight:`, JSON.stringify(savedInsight, null, 2));
+      
+      // Return tanpa data_context untuk response (sudah ada di database)
+      const {data_context, ...insightForResponse} = savedInsight;
+      console.log(`[Insight AI] insightForResponse:`, JSON.stringify(insightForResponse, null, 2));
+      
+      return res.json({
+        success: true,
+        insight: insightForResponse,
+        from_cache: false,
+        refresh_count: entry.refresh_count[todayKey] || 0,
+        max_refresh: MAX_REFRESH_PER_DAY
+      });
+      
+    } catch (aiError) {
+      console.error('[Insight AI] AI generation failed:', aiError.message);
+      
+      // Fallback ke template berbasis aturan
+      const trendText = selisihUntung > 0 ? 'naik' : (selisihUntung < 0 ? 'turun' : 'sama');
+      const selisihText = formatRupiah(Math.abs(selisihUntung));
+      
+      let penyebabText = '';
+      if (produkHabis.length > 0) {
+        penyebabText = `${produkHabis.slice(0, 2).join(' dan ')} habis sejak ${uangMasuk < 50000 ? 'pagi' : 'siang'}`;
+      } else if (selisihUntung < 0) {
+        penyebabText = `Penjualan turun dari kemarin`;
+      } else {
+        penyebabText = `Penjualan lancar${topProduk.length > 0 ? ', ' + topProduk[0].split(' (')[0] + ' laris' : ''}`;
+      }
+      
+      let saranText = '';
+      if (produkHabis.length > 0) {
+        saranText = `Belanja ${produkHabis[0]} sebelum besok supaya tidak kehilangan pembeli`;
+      } else if (produkTipis.length > 0) {
+        saranText = `Stok ${produkTipis[0]} tinggal sedikit, siapkan belanjaan`;
+      } else if (kasbonBelumLunas > 0) {
+        saranText = `${kasbonBelumLunas} kasbon belum lunas, coba tagih yang sudah jatuh tempo`;
+      } else {
+        saranText = `Pertahankan pelayanan, besok bisa lebih baik lagi`;
+      }
+      
+      const fallbackInsight = {
+        tanggal: today,
+        ringkasan: `Untung hari ini ${formatRupiah(untungHariIni)}, ${trendText} ${selisihText} dari kemarin`,
+        penyebab: penyebabText,
+        saran: saranText,
+        timestamp: Date.now(),
+        generated_by: "template",
+        data_context: dataContext
+      };
+      
+      // Simpan fallback insight
+      let savedInsight;
+      if (existingInsight) {
+        Object.assign(existingInsight, fallbackInsight);
+        savedInsight = existingInsight;
+      } else {
+        entry.insights.push(fallbackInsight);
+        savedInsight = fallbackInsight;
+      }
+      
+      if (force_refresh) {
+        entry.refresh_count[todayKey] = refreshCount + 1;
+      }
+      
+      saveUserEntry("database_insight.json", db);
+      
+      // Return tanpa data_context
+      const {data_context, ...insightForResponse} = savedInsight;
+      
+      return res.json({
+        success: true,
+        insight: insightForResponse,
+        from_cache: false,
+        ai_failed: true,
+        refresh_count: entry.refresh_count[todayKey] || 0,
+        max_refresh: MAX_REFRESH_PER_DAY
+      });
+    }
+    
+  } catch (error) {
+    console.error('[Insight AI] Error:', error);
+    return res.status(500).json({
+      success: false,
+      error: "Terjadi kesalahan saat menghasilkan insight: " + error.message
+    });
+  }
+});
+
+// Helper function untuk format rupiah
+function formatRupiah(angka) {
+  if (angka >= 1000000) {
+    return 'Rp ' + (angka / 1000000).toFixed(1).replace('.', ',') + ' juta';
+  }
+  return 'Rp ' + Math.round(angka).toLocaleString('id-ID');
+}
+
+// GET endpoint untuk mengambil insight
+app.get("/api/insight", async (req, res) => {
+  try {
+    const { user_id } = req.query;
+    
+    if (!user_id) {
+      return res.status(400).json({ success: false, error: "user_id wajib diisi" });
+    }
+    
+    const { entry } = getUserEntry("database_insight.json", user_id);
+    const today = new Date().toISOString().slice(0, 10);
+    
+    const todayInsight = (entry.insights || []).find(i => i.tanggal === today);
+    
+    if (!todayInsight) {
+      return res.json({ success: true, insight: null });
+    }
+    
+    const todayKey = today.replace(/-/g, '');
+    const refreshCount = (entry.refresh_count || {})[todayKey] || 0;
+    
+    return res.json({
+      success: true,
+      insight: todayInsight,
+      refresh_count: refreshCount,
+      max_refresh: 5
+    });
+    
+  } catch (error) {
+    console.error('[Insight AI] GET Error:', error);
+    return res.status(500).json({
+      success: false,
+      error: "Gagal mengambil insight"
+    });
+  }
+});
+
+=======
+>>>>>>> e8b2c41e5c9c6cbbd8f2c55f11a49ff6854a5782
+// ===== HEALTH CHECK ENDPOINT =====
+app.get("/api/health", (req, res) => {
+  res.json({ success: true, status: "online", timestamp: Date.now() });
 });
 
 // ===== AI VOICE-TO-ORDER ENDPOINT =====
