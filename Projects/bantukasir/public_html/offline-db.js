@@ -62,31 +62,41 @@ function generateUUID() {
 
 // Add transaction to queue
 async function addToQueue(transactionData) {
-  if (!db) await initOfflineDB();
+  if (!db) {
+    console.log('[OfflineDB] DB not initialized, initializing now...');
+    await initOfflineDB();
+  }
   
   const transaction = {
-    id: generateUUID(), // Client-generated UUID
     ...transactionData,
-    timestamp: Date.now(),
-    status: 'pending', // pending, syncing, failed
+    id: transactionData.id || generateUUID(), // Use provided ID or generate new
+    timestamp: transactionData.timestamp || Date.now(),
+    status: 'pending', // pending, syncing, synced, failed
     retryCount: 0,
     createdAt: new Date().toISOString()
   };
   
+  console.log('[OfflineDB] Adding transaction to queue:', transaction);
+  
   return new Promise((resolve, reject) => {
-    const tx = db.transaction([QUEUE_STORE], 'readwrite');
-    const store = tx.objectStore(QUEUE_STORE);
-    const request = store.add(transaction);
-    
-    request.onsuccess = () => {
-      console.log('[OfflineDB] Transaction added to queue:', transaction.id);
-      resolve(transaction);
-    };
-    
-    request.onerror = () => {
-      console.error('[OfflineDB] Error adding to queue:', request.error);
-      reject(request.error);
-    };
+    try {
+      const tx = db.transaction([QUEUE_STORE], 'readwrite');
+      const store = tx.objectStore(QUEUE_STORE);
+      const request = store.add(transaction);
+      
+      request.onsuccess = () => {
+        console.log('[OfflineDB] ✓ Transaction added to queue:', transaction.id);
+        resolve(transaction);
+      };
+      
+      request.onerror = () => {
+        console.error('[OfflineDB] ✗ Error adding to queue:', request.error);
+        reject(request.error);
+      };
+    } catch (error) {
+      console.error('[OfflineDB] ✗ Transaction error:', error);
+      reject(error);
+    }
   });
 }
 
