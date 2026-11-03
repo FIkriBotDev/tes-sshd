@@ -626,7 +626,6 @@ app.get("/api/product-photo", (req, res) => {
   });
 });
 
-<<<<<<< HEAD
 // ===== INSIGHT AI ENDPOINT =====
 app.post("/api/insight", async (req, res) => {
   try {
@@ -1045,8 +1044,6 @@ app.get("/api/insight", async (req, res) => {
   }
 });
 
-=======
->>>>>>> e8b2c41e5c9c6cbbd8f2c55f11a49ff6854a5782
 // ===== HEALTH CHECK ENDPOINT =====
 app.get("/api/health", (req, res) => {
   res.json({ success: true, status: "online", timestamp: Date.now() });
