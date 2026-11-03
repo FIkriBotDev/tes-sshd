@@ -1,1 +1,39 @@
-[]
+[
+  {
+    "user_id": "user_1793547028259",
+    "insights": [
+      {
+        "tanggal": "2026-11-03",
+        "ringkasan": "Hari ini untungnya Rp 35.000, turun tajam dari kemarin Rp 893.243 (selisih Rp -858.243 atau -96%).",
+        "penyebab": "Yang habis hari ini: Nasi Goreng, Ayam Katsu, dan Es Teh, jadi penjualan kemungkinan kepotong. Produk terlaris seperti Kopi Susu (8 terjual) sudah jalan, tapi belum cukup buat nutup jatuhnya omset.",
+        "saran": "Besok siapin stok pengganti sebelum mulai jualan untuk Nasi Goreng, Ayam Katsu, dan Es Teh biar tidak kejadian habis lagi.",
+        "timestamp": 1793707543082,
+        "generated_by": "ai",
+        "data_context": {
+          "untung_hari_ini": 35000,
+          "untung_kemarin": 893243,
+          "selisih": -858243,
+          "persen_selisih": -96,
+          "uang_masuk": 150000,
+          "modal": 100000,
+          "pengeluaran": 15000,
+          "produk_terlaris": [
+            "Kopi Susu (8 terjual)",
+            "Roti Bakar (Cokelat) (1 terjual)",
+            "Jus jeruk (1 terjual)"
+          ],
+          "produk_habis": [
+            "Nasi Goreng",
+            "Ayam Katsu",
+            "Es Teh"
+          ],
+          "produk_menipis": [],
+          "kasbon_belum_lunas": 0
+        }
+      }
+    ],
+    "refresh_count": {
+      "20261103": 1
+    }
+  }
+]
