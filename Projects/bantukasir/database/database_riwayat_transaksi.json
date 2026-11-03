@@ -696,6 +696,32 @@
         "void": false,
         "bayar": 100000,
         "kembalian": 10000
+      },
+      {
+        "id": "TRX-03554046",
+        "timestamp": 1793703554046,
+        "items": [
+          {
+            "id": 1793614077645,
+            "n": "Kopi Susu",
+            "p": 15000,
+            "c": 10000,
+            "q": 3
+          }
+        ],
+        "total": 45000,
+        "subtotal": 45000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 50000,
+        "kembalian": 5000,
+        "day": 20760
       }
     ]
   },
