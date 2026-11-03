@@ -12,9 +12,16 @@ const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/dashboard.html',
+  '/laporan.html',
   '/manifest.json',
+  '/offline-db.js',
+  '/offline-sync.js',
+  '/offline-features.js',
+  '/pwa-install.js',
   '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png'
+  '/icons/icon-512x512.png',
+  '/icons/icon-192x192-maskable.png',
+  '/icons/icon-512x512-maskable.png'
 ];
 
 // Event: Install - cache app shell
