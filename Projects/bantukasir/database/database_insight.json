@@ -7,7 +7,7 @@
         "ringkasan": "Hari ini untungnya Rp 35.000, turun tajam dari kemarin Rp 893.243 (selisih Rp -858.243 atau -96%).",
         "penyebab": "Yang habis hari ini: Nasi Goreng, Ayam Katsu, dan Es Teh, jadi penjualan kemungkinan kepotong. Produk terlaris seperti Kopi Susu (8 terjual) sudah jalan, tapi belum cukup buat nutup jatuhnya omset.",
         "saran": "Besok siapin stok pengganti sebelum mulai jualan untuk Nasi Goreng, Ayam Katsu, dan Es Teh biar tidak kejadian habis lagi.",
-        "timestamp": 1793707543082,
+        "timestamp": 1793707861568,
         "generated_by": "ai",
         "data_context": {
           "untung_hari_ini": 35000,
@@ -33,7 +33,7 @@
       }
     ],
     "refresh_count": {
-      "20261103": 1
+      "20261103": 2
     }
   }
 ]
