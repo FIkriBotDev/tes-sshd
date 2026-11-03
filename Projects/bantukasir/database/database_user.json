@@ -17,7 +17,7 @@
       "Makanan",
       "Camilan"
     ],
-    "ppn_aktif": true,
+    "ppn_aktif": false,
     "ppn_persen": 11,
     "diskon_global_aktif": false,
     "diskon_global_tipe": "persen",
