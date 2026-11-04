@@ -807,6 +807,140 @@
         "bayar": 20000,
         "kembalian": 5000,
         "day": 20761
+      },
+      {
+        "id": "95c1b308-bb06-44f2-a5a1-4288ea2055f9",
+        "timestamp": 1793707562406,
+        "items": [
+          {
+            "id": 1793547381950,
+            "n": "Jus jeruk",
+            "p": 15000,
+            "c": 10000,
+            "q": 2
+          },
+          {
+            "id": 1793614077645,
+            "n": "Kopi Susu",
+            "p": 15000,
+            "c": 10000,
+            "q": 2
+          }
+        ],
+        "total": 60000,
+        "subtotal": 60000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 100000,
+        "kembalian": 40000,
+        "day": 20760
+      },
+      {
+        "id": "457ad0bd-3d13-4d39-96e5-0b7ca6a2d8b3",
+        "timestamp": 1793707784404,
+        "items": [
+          {
+            "id": 1793547437646,
+            "n": "Roti Bakar (Keju)",
+            "p": 15000,
+            "c": 10000,
+            "q": 1,
+            "vi": 1
+          }
+        ],
+        "total": 15000,
+        "subtotal": 15000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 100000,
+        "kembalian": 85000,
+        "day": 20760
+      },
+      {
+        "id": "561f412d-ddbf-4749-b966-34c28cd9fc97",
+        "timestamp": 1793707821722,
+        "items": [
+          {
+            "id": 1793547299989,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 13
+          }
+        ],
+        "total": 195000,
+        "subtotal": 195000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 200000,
+        "kembalian": 5000,
+        "day": 20760
+      },
+      {
+        "id": "a1ffc284-367f-407d-8ced-e1b11325a208",
+        "timestamp": 1793763335265,
+        "items": [
+          {
+            "id": 1793547381950,
+            "n": "Jus jeruk",
+            "p": 15000,
+            "c": 10000,
+            "q": 3
+          }
+        ],
+        "total": 45000,
+        "subtotal": 45000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 50000,
+        "kembalian": 5000,
+        "day": 20761
+      },
+      {
+        "id": "473451e0-4511-4f65-97ed-cb8574aee9e8",
+        "timestamp": 1793775650958,
+        "items": [
+          {
+            "id": 1793547437646,
+            "n": "Roti Bakar (Cokelat)",
+            "p": 15000,
+            "c": 10000,
+            "q": 8,
+            "vi": 0
+          }
+        ],
+        "total": 120000,
+        "subtotal": 120000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 150000,
+        "kembalian": 30000,
+        "day": 20761
       }
     ]
   },
