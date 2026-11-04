@@ -602,6 +602,7 @@ if (!__userData) {
 }
 const __user = JSON.parse(__userData || '{}');
 const USER_ID = __user.id || '';
+window.USER_ID = USER_ID; // expose for offline sync module
 
 // Initialize offline modules
 let offlineModulesReady = false;
@@ -725,7 +726,26 @@ async function loadProduk(){
 
 async function saveProduk(){
   try{
+    // CHECK OFFLINE: jika offline, simpan ke localStorage sebagai pending produk update
+    const isOffline = (window.getConnectionStatus && window.getConnectionStatus() !== 'online') || !navigator.onLine;
+    
+    if (isOffline) {
+      console.log('[Produk] Offline detected, saving produk locally');
+      try {
+        localStorage.setItem('offline_produk_' + USER_ID, JSON.stringify(S.prod));
+        localStorage.setItem('offline_produk_pending_' + USER_ID, 'true');
+        console.log('[Produk] Produk saved locally for later sync');
+      } catch(storageErr) {
+        console.error('[Produk] Failed to save locally:', storageErr);
+      }
+      return;
+    }
+    
+    // ONLINE: kirim ke server
     await apiPost('/api/produk',{user_id:USER_ID,produk:S.prod});
+    // Clear any pending local produk data after successful save
+    localStorage.removeItem('offline_produk_' + USER_ID);
+    localStorage.removeItem('offline_produk_pending_' + USER_ID);
   }catch(e){console.error('[Produk] Save error:',e);toast('Gagal menyimpan produk ke server')}
 }
 
