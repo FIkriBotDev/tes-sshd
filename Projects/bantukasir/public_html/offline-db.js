@@ -306,17 +306,65 @@ async function clearOptimisticStock() {
 
 // ===== UTILITY FUNCTIONS =====
 
-// Get queue count
+// Get queue count (only pending + failed, not already synced)
 async function getQueueCount() {
   if (!db) await initOfflineDB();
   
   return new Promise((resolve, reject) => {
     const tx = db.transaction([QUEUE_STORE], 'readonly');
     const store = tx.objectStore(QUEUE_STORE);
-    const request = store.count();
+    const request = store.getAll();
     
     request.onsuccess = () => {
-      resolve(request.result);
+      // Count items that still need to be sent (pending, syncing, or failed)
+      const count = request.result.filter(
+        item => item.status === 'pending' || item.status === 'syncing' || item.status === 'failed'
+      ).length;
+      resolve(count);
+    };
+    
+    request.onerror = () => {
+      reject(request.error);
+    };
+  });
+}
+
+// Reset failed transactions back to pending (so they can be retried)
+async function resetFailedTransactions() {
+  if (!db) await initOfflineDB();
+  
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction([QUEUE_STORE], 'readwrite');
+    const store = tx.objectStore(QUEUE_STORE);
+    const index = store.index('status');
+    const request = index.getAll('failed');
+    
+    request.onsuccess = () => {
+      const failed = request.result;
+      let pending = failed.length;
+      
+      if (pending === 0) {
+        resolve(0);
+        return;
+      }
+      
+      let updated = 0;
+      failed.forEach(item => {
+        item.status = 'pending';
+        item.error = null;
+        const putRequest = store.put(item);
+        putRequest.onsuccess = () => {
+          updated++;
+          if (updated === pending) {
+            console.log(`[OfflineDB] Reset ${updated} failed transactions to pending`);
+            resolve(updated);
+          }
+        };
+        putRequest.onerror = () => {
+          updated++;
+          if (updated === pending) resolve(updated);
+        };
+      });
     };
     
     request.onerror = () => {
@@ -358,6 +406,7 @@ window.OfflineDB = {
   clearSyncedTransactions,
   getQueueCount,
   transactionExists,
+  resetFailedTransactions,
   
   // Stock operations
   updateOptimisticStock,
