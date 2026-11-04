@@ -27,7 +27,10 @@ async function initSyncManager() {
   
   // Try initial sync if online
   if (connectionStatus === 'online') {
-    setTimeout(() => syncOfflineTransactions(), 1000);
+    setTimeout(async () => {
+      await syncPendingProduk();
+      syncOfflineTransactions();
+    }, 1000);
   }
   
   console.log('[Sync] Sync manager initialized');
@@ -39,6 +42,7 @@ function setupEventListeners() {
   window.addEventListener('online', () => {
     console.log('[Sync] Network online event');
     updateConnectionStatus('online');
+    // Sync both queued transactions AND pending produk changes
     syncOfflineTransactions();
   });
   
@@ -226,12 +230,22 @@ async function syncOfflineTransactions() {
     syncInProgress = true;
     updateConnectionStatus('syncing');
     
+    // Reset failed transactions back to pending so they get retried
+    if (OfflineDB.resetFailedTransactions) {
+      await OfflineDB.resetFailedTransactions();
+    }
+    
     const pendingTransactions = await OfflineDB.getPendingTransactions();
     
     if (pendingTransactions.length === 0) {
       console.log('[Sync] No pending transactions');
       syncInProgress = false;
       updateConnectionStatus('online');
+      // Still sync pending produk changes even if no transaction queue
+      await syncPendingProduk();
+      if (window.loadProduk) await window.loadProduk();
+      if (window.render && window.S) window.render();
+      updateQueueCountDisplay();
       return;
     }
     
@@ -243,7 +257,7 @@ async function syncOfflineTransactions() {
     // Sync transactions sequentially
     for (const transaction of pendingTransactions) {
       try {
-        await updateOfflineDB.updateTransactionStatus(transaction.id, 'syncing');
+        await OfflineDB.updateTransactionStatus(transaction.id, 'syncing');
         
         // Send to server
         const response = await fetch('/api/transaksi', {
@@ -334,6 +348,9 @@ async function refreshDataAfterSync() {
   console.log('[Sync] Refreshing data after sync...');
   
   try {
+    // Sync pending produk/stok changes saved offline
+    await syncPendingProduk();
+    
     // Reload products to get updated stock
     if (window.loadProduk) {
       await window.loadProduk();
@@ -351,6 +368,52 @@ async function refreshDataAfterSync() {
     
   } catch (error) {
     console.error('[Sync] Error refreshing data:', error);
+  }
+}
+
+// Sync pending produk changes that were saved offline
+async function syncPendingProduk() {
+  try {
+    // USER_ID is exposed as window.USER_ID from dashboard.html
+    const userId = window.USER_ID;
+    if (!userId) return;
+    
+    const pendingKey = 'offline_produk_pending_' + userId;
+    const produkKey = 'offline_produk_' + userId;
+    
+    const hasPending = localStorage.getItem(pendingKey) === 'true';
+    if (!hasPending) return;
+    
+    const produkJson = localStorage.getItem(produkKey);
+    if (!produkJson) {
+      localStorage.removeItem(pendingKey);
+      return;
+    }
+    
+    const produk = JSON.parse(produkJson);
+    console.log('[Sync] Syncing pending produk changes to server...');
+    
+    const response = await fetch('/api/produk', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ user_id: userId, produk })
+    });
+    
+    const result = await response.json();
+    
+    if (response.ok && result.success) {
+      console.log('[Sync] Pending produk synced successfully');
+      localStorage.removeItem(pendingKey);
+      localStorage.removeItem(produkKey);
+      // Update in-memory state with confirmed server data
+      if (window.S) {
+        window.S.prod = produk;
+      }
+    } else {
+      console.error('[Sync] Failed to sync pending produk:', result);
+    }
+  } catch (error) {
+    console.error('[Sync] Error syncing pending produk:', error);
   }
 }
 
