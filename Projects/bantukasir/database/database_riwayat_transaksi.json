@@ -781,6 +781,32 @@
         "bayar": 50000,
         "kembalian": 5000,
         "day": 20761
+      },
+      {
+        "id": "TRX-75621706",
+        "timestamp": 1793775621706,
+        "items": [
+          {
+            "id": 1793547381950,
+            "n": "Jus jeruk",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          }
+        ],
+        "total": 15000,
+        "subtotal": 15000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 20000,
+        "kembalian": 5000,
+        "day": 20761
       }
     ]
   },
