@@ -1039,6 +1039,33 @@
         "bayar": 50000,
         "kembalian": 20000,
         "day": 20761
+      },
+      {
+        "id": "TRX-88502110",
+        "timestamp": 1793788502110,
+        "items": [
+          {
+            "id": 1793547437646,
+            "n": "Roti Bakar (Keju)",
+            "p": 15000,
+            "c": 10000,
+            "q": 1,
+            "vi": 1
+          }
+        ],
+        "total": 15000,
+        "subtotal": 15000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 100000,
+        "kembalian": 85000,
+        "day": 20761
       }
     ]
   },
