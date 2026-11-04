@@ -748,6 +748,39 @@
         "bayar": 20000,
         "kembalian": 5000,
         "day": 20760
+      },
+      {
+        "id": "TRX-63057522",
+        "timestamp": 1793763057522,
+        "items": [
+          {
+            "id": 1793547381950,
+            "n": "Jus jeruk",
+            "p": 15000,
+            "c": 10000,
+            "q": 2
+          },
+          {
+            "id": 1793614077645,
+            "n": "Kopi Susu",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          }
+        ],
+        "total": 45000,
+        "subtotal": 45000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 50000,
+        "kembalian": 5000,
+        "day": 20761
       }
     ]
   },
