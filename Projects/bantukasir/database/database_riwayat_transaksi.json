@@ -966,6 +966,29 @@
         "bayar": 50000,
         "kembalian": 35000,
         "day": 20761
+      },
+      {
+        "id": "e850a694-57d6-4de5-a44a-a06168587a19",
+        "timestamp": 1793786005834,
+        "items": [
+          {
+            "id": 1793614077645,
+            "n": "Kopi Susu",
+            "p": 15000,
+            "c": 10000,
+            "q": 4
+          }
+        ],
+        "total": 60000,
+        "subtotal": 60000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "day": 20761
       }
     ]
   },
