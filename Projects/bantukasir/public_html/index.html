@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#17613F">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="BantuKasir">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="/icons/icon-192x192.png">
 <title>BantuKasir - Tahu untung hari ini, langsung dari browser</title>
 <meta name="description" content="Pembukuan untuk pedagang keliling dan usaha kecil. Catat jualan 2-3 ketukan, lihat untung hari ini. Tanpa unduh.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +19,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <!-- SheetJS untuk ekspor Excel -->
 <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+<!-- PWA Install Handler -->
+<script src="/pwa-install.js"></script>
 <style>
 /* Konsep: "Nota Kas" - kertas nota hangat, tinta cokelat, hijau untung */
 *{margin:0;padding:0;box-sizing:border-box}
@@ -1926,3 +1934,39 @@ addEventListener('load',()=>setTimeout(()=>{const l=$('#loader');l.style.opacity
 </script>
 </body>
 </html>
+
+<script>
+// Service Worker Registration
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('[PWA] Service Worker registered:', registration.scope);
+        
+        // Check for updates
+        registration.addEventListener('updatefound', () => {
+          const newWorker = registration.installing;
+          console.log('[PWA] New service worker found');
+          
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              // New version available
+              console.log('[PWA] New version available');
+              showUpdateNotification();
+            }
+          });
+        });
+      })
+      .catch(error => {
+        console.error('[PWA] Service Worker registration failed:', error);
+      });
+  });
+}
+
+function showUpdateNotification() {
+  // Show banner for update (will be implemented in UI)
+  if (window.showUpdateBanner) {
+    window.showUpdateBanner();
+  }
+}
+</script>
