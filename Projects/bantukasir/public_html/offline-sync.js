@@ -28,8 +28,9 @@ async function initSyncManager() {
   // Try initial sync if online
   if (connectionStatus === 'online') {
     setTimeout(async () => {
+      console.log('[Sync] Initial sync on app start');
       await syncPendingProduk();
-      syncOfflineTransactions();
+      await syncOfflineTransactions();
     }, 1000);
   }
   
@@ -39,11 +40,20 @@ async function initSyncManager() {
 // Setup event listeners for auto sync
 function setupEventListeners() {
   // Online event
-  window.addEventListener('online', () => {
-    console.log('[Sync] Network online event');
+  window.addEventListener('online', async () => {
+    console.log('[Sync] Network online event - starting auto sync');
     updateConnectionStatus('online');
+    
+    // Wait a bit for connection to stabilize
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
     // Sync both queued transactions AND pending produk changes
-    syncOfflineTransactions();
+    console.log('[Sync] Triggering syncOfflineTransactions');
+    await syncOfflineTransactions();
+    
+    // Also sync pending produk
+    console.log('[Sync] Triggering syncPendingProduk');
+    await syncPendingProduk();
   });
   
   // Offline event  
@@ -53,14 +63,15 @@ function setupEventListeners() {
   });
   
   // Visibility change (app comes to foreground)
-  document.addEventListener('visibilitychange', () => {
+  document.addEventListener('visibilitychange', async () => {
     if (!document.hidden) {
       console.log('[Sync] App visible, checking connection...');
-      checkConnectionStatus().then(isOnline => {
-        if (isOnline) {
-          syncOfflineTransactions();
-        }
-      });
+      const isOnline = await checkConnectionStatus();
+      if (isOnline) {
+        console.log('[Sync] Connection available, starting sync...');
+        await syncOfflineTransactions();
+        await syncPendingProduk();
+      }
     }
   });
   
@@ -213,17 +224,22 @@ async function updateQueueCountDisplay() {
 // Main sync function
 async function syncOfflineTransactions() {
   if (syncInProgress) {
-    console.log('[Sync] Sync already in progress');
+    console.log('[Sync] Sync already in progress, skipping');
     return;
   }
   
+  console.log('[Sync] === Starting syncOfflineTransactions ===');
+  console.log('[Sync] Current connection status:', connectionStatus);
+  
   // Check if we're actually online
   if (connectionStatus !== 'online') {
+    console.log('[Sync] Not online according to status, checking connection...');
     const isOnline = await checkConnectionStatus();
     if (!isOnline) {
-      console.log('[Sync] Not online, skipping sync');
+      console.log('[Sync] Connection check failed, skipping sync');
       return;
     }
+    console.log('[Sync] Connection check passed, proceeding...');
   }
   
   try {
@@ -236,6 +252,8 @@ async function syncOfflineTransactions() {
     }
     
     const pendingTransactions = await OfflineDB.getPendingTransactions();
+    
+    console.log(`[Sync] Found ${pendingTransactions.length} pending transactions in queue`);
     
     if (pendingTransactions.length === 0) {
       console.log('[Sync] No pending transactions');
