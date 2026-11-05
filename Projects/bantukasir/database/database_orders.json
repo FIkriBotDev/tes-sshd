@@ -1,5 +1,35 @@
 [
   {
-    "user_id": "user_1793547028259"
+    "user_id": "user_1793547028259",
+    "orders": [
+      {
+        "order_id": "order_1793845370010",
+        "order_number": 528,
+        "customer_name": "Fikri",
+        "items": [
+          {
+            "id": 1793547321723,
+            "name": "Ayam Katsu",
+            "price": 18000,
+            "cost": 15000,
+            "quantity": 1,
+            "variant_index": null
+          },
+          {
+            "id": 1793547381950,
+            "name": "Jus jeruk",
+            "price": 15000,
+            "cost": 10000,
+            "quantity": 1,
+            "variant_index": null
+          }
+        ],
+        "subtotal": 33000,
+        "status": "pending",
+        "created_at": 1793845370010,
+        "payment_method": null,
+        "processed_by": null
+      }
+    ]
   }
 ]
