@@ -2788,3 +2788,5 @@
 [Thu Nov 5 11:23 GMT+8] 2a03:2880:f802:e:: Request to /api/image/flux-1-schnell [GET]
 [Thu Nov 5 11:23 GMT+8] 2a03:2880:f802:27:: Request to /api/text/qwen3-coder-30b [POST]
 [Thu Nov 5 11:23 GMT+8] 2a03:2880:f802:4e:: Request to /api/text/nova-micro [POST]
+[Thu Nov 5 11:35 GMT+8] 103.153.189.177 Request to /v1/models [GET]
+[Thu Nov 5 11:35 GMT+8] 103.153.189.177 Request to /v1/chat/completions [POST]
