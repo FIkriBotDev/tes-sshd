@@ -1,0 +1,9 @@
+[
+  {
+    "user_id": "user_1793547028259",
+    "toko_id": "ogims7vp-x3yo8mr-rpff",
+    "order_enabled": true,
+    "order_url": "http://localhost:9123/order?toko=ogims7vp-x3yo8mr-rpff",
+    "qr_code_base64": null
+  }
+]
