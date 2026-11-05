@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesan - BantuKasir</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .header {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .header p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .voice-section {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .voice-button {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      font-size: 32px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      transition: all 0.3s ease;
+      margin: 0 auto 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .voice-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+
+    .voice-button:active {
+      transform: scale(0.95);
+    }
+
+    .voice-button.recording {
+      animation: pulse 1.5s infinite;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .voice-status {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .voice-transcript {
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+      min-height: 60px;
+      color: #333;
+      font-size: 14px;
+      display: none;
+    }
+
+    .voice-transcript.show {
+      display: block;
+    }
+
+    .products-section {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .products-section h2 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+    }
+
+    .product-card {
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .product-card:hover {
+      border-color: #667eea;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+    }
+
+    .product-card.out-of-stock {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .product-card.out-of-stock:hover {
+      transform: none;
+      border-color: #e0e0e0;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #f5f5f5;
+    }
+
+    .product-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .product-price {
+      font-size: 16px;
+      color: #667eea;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .product-stock {
+      font-size: 12px;
+      color: #999;
+    }
+
+    .cart-section {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .cart-section.show {
+      display: block;
+    }
+
+    .cart-section h2 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .cart-item-price {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cart-btn {
+      width: 30px;
+      height: 30px;
+      border: none;
+      border-radius: 6px;
+      background: #667eea;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .cart-btn:hover {
+      background: #5568d3;
+    }
+
+    .cart-btn:active {
+      transform: scale(0.95);
+    }
+
+    .cart-quantity {
+      font-size: 16px;
+      font-weight: 600;
+      min-width: 30px;
+      text-align: center;
+    }
+
+    .cart-total {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 2px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-total-label {
+      font-size: 18px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .cart-total-price {
+      font-size: 24px;
+      font-weight: 700;
+      color: #667eea;
+    }
+
+    .checkout-section {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .checkout-section.show {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 10px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .success-section {
+      background: white;
+      padding: 40px 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      display: none;
+    }
+
+    .success-section.show {
+      display: block;
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      background: #4caf50;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 48px;
+      color: white;
+    }
+
+    .success-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .order-number {
+      font-size: 48px;
+      font-weight: 700;
+      color: #667eea;
+      margin: 20px 0;
+    }
+
+    .success-message {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .loading {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      color: #667eea;
+    }
+
+    .loading.show {
+      display: block;
+    }
+
+    .spinner {
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #667eea;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 10px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .error-message {
+      background: #fee;
+      color: #c33;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      display: none;
+    }
+
+    .error-message.show {
+      display: block;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: #999;
+    }
+
+    .empty-state-icon {
+      font-size: 64px;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 600px) {
+      .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1 id="toko-name">Loading...</h1>
+      <p id="toko-address"></p>
+    </div>
+
+    <!-- Voice Order Section -->
+    <div class="voice-section">
+      <h3 style="margin-bottom: 20px; color: #333;">🎤 Pesan dengan Suara</h3>
+      <button class="voice-button" id="voiceBtn">
+        🎙️
+      </button>
+      <div class="voice-status" id="voiceStatus">
+        Tekan tombol untuk mulai pesan dengan suara
+      </div>
+      <div class="voice-transcript" id="voiceTranscript"></div>
+    </div>
+
+    <!-- Products Section -->
+    <div class="products-section">
+      <h2>📋 Pilih Menu</h2>
+      <div class="error-message" id="errorMessage"></div>
+      <div class="loading" id="productsLoading">
+        <div class="spinner"></div>
+        <p>Memuat menu...</p>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+
+    <!-- Cart Section -->
+    <div class="cart-section" id="cartSection">
+      <h2>🛒 Pesanan Anda</h2>
+      <div id="cartItems"></div>
+      <div class="cart-total">
+        <span class="cart-total-label">Total:</span>
+        <span class="cart-total-price" id="cartTotal">Rp 0</span>
+      </div>
+      <button class="btn btn-primary" id="checkoutBtn">
+        Lanjut ke Pembayaran
+      </button>
+    </div>
+
+    <!-- Checkout Section -->
+    <div class="checkout-section" id="checkoutSection">
+      <h2>✏️ Informasi Pemesan</h2>
+      <div class="form-group">
+        <label>Nama Anda</label>
+        <input type="text" id="customerName" placeholder="Masukkan nama Anda" required>
+      </div>
+      <button class="btn btn-primary" id="submitOrderBtn">
+        Proses Pembayaran
+      </button>
+      <button class="btn" style="background: #eee; color: #333;" id="backToCartBtn">
+        Kembali
+      </button>
+    </div>
+
+    <!-- Success Section -->
+    <div class="success-section" id="successSection">
+      <div class="success-icon">✓</div>
+      <div class="success-title">Pesanan Berhasil!</div>
+      <div class="order-number" id="orderNumber">#0</div>
+      <div class="success-message">
+        Silahkan tunjukkan nomor pesanan ini ke kasir untuk proses pembayaran.
+        <br><br>
+        <strong>Terima kasih sudah memesan! 😊</strong>
+      </div>
+      <button class="btn btn-primary" id="newOrderBtn">
+        Pesan Lagi
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Global state
+    let tokoId = null;
+    let products = [];
+    let cart = [];
+    let tokoInfo = {};
+
+    // Get toko_id from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    tokoId = urlParams.get('toko');
+
+    if (!tokoId) {
+      document.getElementById('errorMessage').textContent = 'Toko ID tidak ditemukan. Silakan scan QR code yang benar.';
+      document.getElementById('errorMessage').classList.add('show');
+    } else {
+      loadMenu();
+    }
+
+    // Load menu from API
+    async function loadMenu() {
+      try {
+        document.getElementById('productsLoading').classList.add('show');
+        
+        const response = await fetch(`/api/menu?toko=${tokoId}`);
+        const data = await response.json();
+        
+        if (!data.success) {
+          throw new Error(data.message || 'Gagal memuat menu');
+        }
+        
+        tokoInfo = data.toko;
+        products = data.produk;
+        
+        document.getElementById('toko-name').textContent = tokoInfo.nama;
+        document.getElementById('toko-address').textContent = tokoInfo.alamat;
+        
+        renderProducts();
+      } catch (error) {
+        console.error('Error loading menu:', error);
+        document.getElementById('errorMessage').textContent = error.message;
+        document.getElementById('errorMessage').classList.add('show');
+      } finally {
+        document.getElementById('productsLoading').classList.remove('show');
+      }
+    }
+
+    // Render products
+    function renderProducts() {
+      const grid = document.getElementById('productGrid');
+      
+      if (products.length === 0) {
+        grid.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📦</div><p>Belum ada menu tersedia</p></div>';
+        return;
+      }
+      
+      grid.innerHTML = '';
+      
+      products.forEach(product => {
+        // Handle products with variants
+        if (product.v && product.v.length > 0) {
+          product.v.forEach((variant, idx) => {
+            if (variant.s > 0) {
+              const card = createProductCard(product, variant, idx);
+              grid.appendChild(card);
+            }
+          });
+        } else {
+          // Regular product
+          const card = createProductCard(product);
+          grid.appendChild(card);
+        }
+      });
+    }
+
+    // Create product card
+    function createProductCard(product, variant = null, variantIndex = null) {
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      
+      const stock = variant ? variant.s : product.s;
+      const price = variant ? variant.p : product.p;
+      const name = variant ? `${product.n} (${variant.n})` : product.n;
+      
+      if (stock === 0) {
+        card.classList.add('out-of-stock');
+      }
+      
+      card.innerHTML = `
+        ${product.i ? `<img src="${product.i}" alt="${name}" class="product-image">` : `<div class="product-image" style="display: flex; align-items: center; justify-content: center; font-size: 48px;">🍽️</div>`}
+        <div class="product-name">${name}</div>
+        <div class="product-price">Rp ${price.toLocaleString('id-ID')}</div>
+        <div class="product-stock">${stock > 0 ? `Stok: ${stock}` : 'Habis'}</div>
+      `;
+      
+      if (stock > 0) {
+        card.addEventListener('click', () => {
+          addToCart(product, variant, variantIndex, price, name);
+        });
+      }
+      
+      return card;
+    }
+
+    // Add to cart
+    function addToCart(product, variant, variantIndex, price, name) {
+      const existingItem = cart.find(item => 
+        item.id === product.id && item.variant_index === variantIndex
+      );
+      
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        cart.push({
+          id: product.id,
+          name: name,
+          price: price,
+          cost: product.c || 0,
+          quantity: 1,
+          variant_index: variantIndex
+        });
+      }
+      
+      renderCart();
+    }
+
+    // Render cart
+    function renderCart() {
+      const cartSection = document.getElementById('cartSection');
+      const cartItems = document.getElementById('cartItems');
+      const cartTotal = document.getElementById('cartTotal');
+      
+      if (cart.length === 0) {
+        cartSection.classList.remove('show');
+        return;
+      }
+      
+      cartSection.classList.add('show');
+      
+      let html = '';
+      let total = 0;
+      
+      cart.forEach((item, index) => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        
+        html += `
+          <div class="cart-item">
+            <div class="cart-item-info">
+              <div class="cart-item-name">${item.name}</div>
+              <div class="cart-item-price">Rp ${item.price.toLocaleString('id-ID')} × ${item.quantity} = Rp ${subtotal.toLocaleString('id-ID')}</div>
+            </div>
+            <div class="cart-item-controls">
+              <button class="cart-btn" onclick="decreaseQuantity(${index})">−</button>
+              <div class="cart-quantity">${item.quantity}</div>
+              <button class="cart-btn" onclick="increaseQuantity(${index})">+</button>
+            </div>
+          </div>
+        `;
+      });
+      
+      cartItems.innerHTML = html;
+      cartTotal.textContent = `Rp ${total.toLocaleString('id-ID')}`;
+    }
+
+    // Increase quantity
+    function increaseQuantity(index) {
+      cart[index].quantity++;
+      renderCart();
+    }
+
+    // Decrease quantity
+    function decreaseQuantity(index) {
+      cart[index].quantity--;
+      if (cart[index].quantity === 0) {
+        cart.splice(index, 1);
+      }
+      renderCart();
+    }
+
+    // Checkout button
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+      document.getElementById('cartSection').style.display = 'none';
+      document.getElementById('checkoutSection').classList.add('show');
+      document.getElementById('customerName').focus();
+    });
+
+    // Back to cart button
+    document.getElementById('backToCartBtn').addEventListener('click', () => {
+      document.getElementById('checkoutSection').classList.remove('show');
+      document.getElementById('cartSection').style.display = 'block';
+    });
+
+    // Submit order
+    document.getElementById('submitOrderBtn').addEventListener('click', async () => {
+      const customerName = document.getElementById('customerName').value.trim();
+      
+      if (!customerName) {
+        alert('Mohon masukkan nama Anda');
+        return;
+      }
+      
+      if (cart.length === 0) {
+        alert('Keranjang kosong');
+        return;
+      }
+      
+      try {
+        document.getElementById('submitOrderBtn').disabled = true;
+        document.getElementById('submitOrderBtn').textContent = 'Memproses...';
+        
+        const response = await fetch('/api/orders', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            toko_id: tokoId,
+            customer_name: customerName,
+            items: cart
+          })
+        });
+        
+        const data = await response.json();
+        
+        if (!data.success) {
+          throw new Error(data.message || 'Gagal menyimpan pesanan');
+        }
+        
+        // Show success
+        document.getElementById('checkoutSection').classList.remove('show');
+        document.getElementById('orderNumber').textContent = `#${data.order.order_number}`;
+        document.getElementById('successSection').classList.add('show');
+        
+        // Reset
+        cart = [];
+        document.getElementById('customerName').value = '';
+        renderCart();
+        
+      } catch (error) {
+        console.error('Error submitting order:', error);
+        alert('Gagal menyimpan pesanan: ' + error.message);
+      } finally {
+        document.getElementById('submitOrderBtn').disabled = false;
+        document.getElementById('submitOrderBtn').textContent = 'Proses Pembayaran';
+      }
+    });
+
+    // New order button
+    document.getElementById('newOrderBtn').addEventListener('click', () => {
+      document.getElementById('successSection').classList.remove('show');
+      window.scrollTo(0, 0);
+    });
+
+    // ===== VOICE ORDER IMPLEMENTATION =====
+    let isRecording = false;
+    let mediaRecorder = null;
+    let audioChunks = [];
+
+    const voiceBtn = document.getElementById('voiceBtn');
+    const voiceStatus = document.getElementById('voiceStatus');
+    const voiceTranscript = document.getElementById('voiceTranscript');
+
+    voiceBtn.addEventListener('click', toggleVoiceRecording);
+
+    async function toggleVoiceRecording() {
+      if (!isRecording) {
+        startRecording();
+      } else {
+        stopRecording();
+      }
+    }
+
+    async function startRecording() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream);
+        audioChunks = [];
+        
+        mediaRecorder.ondataavailable = (event) => {
+          audioChunks.push(event.data);
+        };
+        
+        mediaRecorder.onstop = async () => {
+          const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+          await processVoiceOrder(audioBlob);
+          
+          // Stop all tracks
+          stream.getTracks().forEach(track => track.stop());
+        };
+        
+        mediaRecorder.start();
+        isRecording = true;
+        
+        voiceBtn.classList.add('recording');
+        voiceBtn.textContent = '⏸️';
+        voiceStatus.textContent = '🎙️ Sedang merekam... Tekan lagi untuk selesai';
+        voiceTranscript.classList.remove('show');
+        
+      } catch (error) {
+        console.error('Error accessing microphone:', error);
+        alert('Gagal mengakses mikrofon. Pastikan izin mikrofon sudah diberikan.');
+      }
+    }
+
+    function stopRecording() {
+      if (mediaRecorder && isRecording) {
+        mediaRecorder.stop();
+        isRecording = false;
+        
+        voiceBtn.classList.remove('recording');
+        voiceBtn.textContent = '🎙️';
+        voiceStatus.textContent = 'Memproses pesanan...';
+      }
+    }
+
+    async function processVoiceOrder(audioBlob) {
+      try {
+        // Step 1: Transcribe audio using Pollinations.AI
+        voiceStatus.textContent = '🔄 Mendengarkan pesanan...';
+        
+        const formData = new FormData();
+        formData.append('audio', audioBlob, 'recording.webm');
+        
+        const transcribeResponse = await fetch('https://gen.pollinations.ai/v1/audio/transcriptions', {
+          method: 'POST',
+          body: formData
+        });
+        
+        if (!transcribeResponse.ok) {
+          throw new Error('Gagal mengubah suara menjadi teks');
+        }
+        
+        const transcribeData = await transcribeResponse.json();
+        const transcription = transcribeData.text;
+        
+        if (!transcription || transcription.trim().length === 0) {
+          throw new Error('Tidak ada suara yang terdeteksi. Silakan coba lagi.');
+        }
+        
+        voiceTranscript.textContent = `Anda bilang: "${transcription}"`;
+        voiceTranscript.classList.add('show');
+        
+        // Step 2: Parse order using AI
+        voiceStatus.textContent = '🤖 Memproses pesanan...';
+        
+        const productList = products.map(p => {
+          if (p.v && p.v.length > 0) {
+            return p.v.map(v => ({
+              name: `${p.n} (${v.n})`,
+              price: v.p,
+              cost: p.c || 0,
+              id: p.id,
+              variant_index: p.v.indexOf(v)
+            }));
+          }
+          return [{
+            name: p.n,
+            price: p.p,
+            cost: p.c || 0,
+            id: p.id,
+            variant_index: null
+          }];
+        }).flat();
+        
+        const orderResponse = await fetch('/api/voice-order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            user_id: 'customer',
+            transcription: transcription,
+            products: productList
+          })
+        });
+        
+        const orderData = await orderResponse.json();
+        
+        if (!orderData.success) {
+          throw new Error(orderData.error || 'Gagal memproses pesanan');
+        }
+        
+        // Step 3: Add items to cart
+        orderData.items.forEach(item => {
+          const product = productList.find(p => 
+            p.name.toLowerCase() === item.product_name.toLowerCase()
+          );
+          
+          if (product) {
+            const existingItem = cart.find(c => 
+              c.id === product.id && c.variant_index === product.variant_index
+            );
+            
+            if (existingItem) {
+              existingItem.quantity += item.quantity;
+            } else {
+              cart.push({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                cost: product.cost,
+                quantity: item.quantity,
+                variant_index: product.variant_index
+              });
+            }
+          }
+        });
+        
+        renderCart();
+        
+        voiceStatus.textContent = '✅ Pesanan berhasil ditambahkan!';
+        setTimeout(() => {
+          voiceStatus.textContent = 'Tekan tombol untuk mulai pesan dengan suara';
+        }, 3000);
+        
+        // Scroll to cart
+        document.getElementById('cartSection').scrollIntoView({ behavior: 'smooth' });
+        
+      } catch (error) {
+        console.error('Error processing voice order:', error);
+        voiceStatus.textContent = '❌ ' + error.message;
+        setTimeout(() => {
+          voiceStatus.textContent = 'Tekan tombol untuk mulai pesan dengan suara';
+        }, 3000);
+      }
+    }
+  </script>
+</body>
+</html>
