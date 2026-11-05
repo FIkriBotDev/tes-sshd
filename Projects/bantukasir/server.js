@@ -1170,7 +1170,7 @@ app.get("/api/order-settings", (req, res) => {
     if (!entry.toko_id) {
       entry.toko_id = generateTokoId();
       entry.order_enabled = false;
-      entry.order_url = `http://localhost:${PORT}/order?toko=${entry.toko_id}`;
+      entry.order_url = `https://bantukasir.biz.id/order?toko=${entry.toko_id}`;
       entry.qr_code_base64 = null;
       saveUserEntry("database_order_settings.json", db);
     }
