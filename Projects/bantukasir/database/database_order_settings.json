@@ -1,9 +1,9 @@
 [
   {
     "user_id": "user_1793547028259",
-    "toko_id": "ogims7vp-x3yo8mr-rpff",
+    "toko_id": "n18h84k6-uo7kyf8-6ktg",
     "order_enabled": true,
-    "order_url": "http://localhost:9123/order?toko=ogims7vp-x3yo8mr-rpff",
+    "order_url": "https://bantukasir.biz.id/order?toko=n18h84k6-uo7kyf8-6ktg",
     "qr_code_base64": null
   }
 ]

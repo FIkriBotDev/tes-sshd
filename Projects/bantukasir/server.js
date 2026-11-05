@@ -1200,7 +1200,7 @@ app.post("/api/order-settings", (req, res) => {
     
     if (regenerate) {
       entry.toko_id = generateTokoId();
-      entry.order_url = `http://localhost:${PORT}/order?toko=${entry.toko_id}`;
+      entry.order_url = `https://bantukasir.biz.id/order?toko=${entry.toko_id}`;
       entry.qr_code_base64 = null; // Reset QR code
     }
     
