@@ -1834,6 +1834,60 @@
         "kasir": "Muhammad Fikri Fahrezi",
         "void": false,
         "day": 20762
+      },
+      {
+        "id": "trx_1793867733770",
+        "items": [
+          {
+            "id": 1793547339589,
+            "n": "Es Teh",
+            "p": 15000,
+            "c": 8000,
+            "q": 1,
+            "vi": null
+          },
+          {
+            "id": 1793547321723,
+            "n": "Ayam Katsu",
+            "p": 18000,
+            "c": 15000,
+            "q": 2,
+            "vi": null
+          },
+          {
+            "id": 1793547381950,
+            "n": "Jus jeruk",
+            "p": 15000,
+            "c": 10000,
+            "q": 2,
+            "vi": null
+          }
+        ],
+        "total": 81000,
+        "method": "tunai",
+        "timestamp": 1793867733770,
+        "day": 20762,
+        "void": false,
+        "from_order": "order_1793867718768",
+        "customer_name": "Mas Fikri"
+      },
+      {
+        "id": "TRX-67733582",
+        "timestamp": 1793867733582,
+        "items": [],
+        "total": 81000,
+        "subtotal": 81000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 100000,
+        "kembalian": 19000,
+        "day": 20762
       }
     ]
   },
