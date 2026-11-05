@@ -119,7 +119,7 @@
           }
         ],
         "subtotal": 30000,
-        "status": "pending",
+        "status": "paid",
         "created_at": 1793847311314,
         "payment_method": null,
         "processed_by": null
