@@ -1298,6 +1298,51 @@
         "bayar": 50000,
         "kembalian": 20000,
         "day": 20762
+      },
+      {
+        "id": "trx_1793848025955",
+        "items": [
+          {
+            "id": 1793547339589,
+            "n": "Es Teh",
+            "p": 15000,
+            "c": 8000,
+            "q": 1
+          }
+        ],
+        "total": 15000,
+        "method": "tunai",
+        "timestamp": 1793848025955,
+        "day": 20762,
+        "void": false,
+        "from_order": "order_1793848019162",
+        "customer_name": "fikri"
+      },
+      {
+        "id": "TRX-48025834",
+        "timestamp": 1793848025834,
+        "items": [
+          {
+            "id": 1793547339589,
+            "n": "Es Teh",
+            "p": 15000,
+            "c": 8000,
+            "q": 1
+          }
+        ],
+        "total": 15000,
+        "subtotal": 15000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 20000,
+        "kembalian": 5000,
+        "day": 20762
       }
     ]
   },
