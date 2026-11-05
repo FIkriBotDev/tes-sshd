@@ -96,10 +96,11 @@
           }
         ],
         "subtotal": 69000,
-        "status": "pending",
+        "status": "cancelled",
         "created_at": 1793847187497,
         "payment_method": null,
-        "processed_by": null
+        "processed_by": null,
+        "cancelled_at": 1793847240210
       }
     ]
   }
