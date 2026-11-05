@@ -312,6 +312,26 @@
         "payment_method": "tunai",
         "processed_by": "kasir",
         "processed_at": 1793887459356
+      },
+      {
+        "order_id": "order_1793899503282",
+        "order_number": 212,
+        "customer_name": "Fikri",
+        "items": [
+          {
+            "id": 1793614077645,
+            "name": "Kopi Susu",
+            "price": 15000,
+            "cost": 10000,
+            "quantity": 4,
+            "image": "https://images.unsplash.com/photo-1629688825560-917b9727c15b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8S29waSUyMFN1c3V8ZW58MHx8fHwxNzkzNjE0MDY5fDA&ixlib=rb-4.1.0&q=80&w=400"
+          }
+        ],
+        "subtotal": 60000,
+        "status": "pending",
+        "created_at": 1793899503282,
+        "payment_method": null,
+        "processed_by": null
       }
     ]
   }
