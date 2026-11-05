@@ -1390,7 +1390,7 @@ app.get("/api/orders/:order_id", (req, res) => {
     
     // If customer polling via toko_id, convert to user_id
     if (!userId && toko_id) {
-      const orderSettings = readDb("database_order_settings.json");
+      const orderSettings = bacaDatabase("database_order_settings.json");
       console.log('[Orders] Order settings:', JSON.stringify(orderSettings));
       
       const found = orderSettings.find(settings => settings.toko_id === toko_id);
