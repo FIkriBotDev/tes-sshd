@@ -1118,6 +1118,40 @@
         "bayar": 15000,
         "kembalian": 0,
         "day": 20761
+      },
+      {
+        "id": "TRX-47196422",
+        "timestamp": 1793847196422,
+        "items": [
+          {
+            "id": 1793547437646,
+            "n": "Roti Bakar (Cokelat)",
+            "p": 15000,
+            "c": 10000,
+            "q": 1,
+            "vi": 0
+          },
+          {
+            "id": 1793547321723,
+            "n": "Ayam Katsu",
+            "p": 18000,
+            "c": 15000,
+            "q": 3
+          }
+        ],
+        "total": 69000,
+        "subtotal": 69000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 70000,
+        "kembalian": 1000,
+        "day": 20762
       }
     ]
   },
