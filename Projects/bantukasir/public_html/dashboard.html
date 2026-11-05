@@ -18,6 +18,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <!-- SheetJS untuk ekspor Excel -->
 <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+<!-- QRCode.js untuk generate QR Code -->
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 <!-- IndexedDB Manager untuk Offline Queue -->
 <script src="/offline-db.js"></script>
 <!-- Offline Sync Manager -->
@@ -174,10 +176,10 @@ footer{background:#231A12;color:#F4ECDD;padding:48px 0 calc(24px + env(safe-area
 main{padding:var(--s3) var(--s3) calc(var(--navh) + 100px + env(safe-area-inset-bottom));max-width:760px;margin:0 auto}
 .view{animation:inR var(--t) ease-out}.view.l{animation-name:inL}
 @keyframes inR{from{opacity:0;transform:translateX(24px)}}@keyframes inL{from{opacity:0;transform:translateX(-24px)}}
-nav.bnav{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(6,1fr);background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+nav.bnav{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(7,1fr);background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
 .bnav button{position:relative;min-height:var(--navh);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:0;background:none;color:var(--muted);font:600 10px var(--fb);cursor:pointer}
 .bnav button[aria-current=page]{color:var(--brand)}
-.bnav .ind{position:absolute;top:0;left:0;width:calc(100% / 6);height:4px;background:var(--brand);transition:transform var(--t) ease-out;border-radius:0 0 4px 4px}
+.bnav .ind{position:absolute;top:0;left:0;width:calc(100% / 7);height:4px;background:var(--brand);transition:transform var(--t) ease-out;border-radius:0 0 4px 4px}
 .lead{font:600 14px var(--fb);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
 .hero-u{padding:var(--s4) 0 var(--s3);border-bottom:2px solid var(--ink)}
 .hero-u .num{font-size:clamp(48px,15vw,88px);line-height:1;display:block;margin:var(--s1) 0}
@@ -557,6 +559,9 @@ nav.bnav{position:sticky;top:0;grid-column:1;grid-row:1/3;height:100dvh;display:
 
 <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 19v3"/></symbol>
 <symbol id="i-mic-off" viewBox="0 0 24 24"><line x1="1" y1="1" x2="23" y2="23"/><path d="M9 9v2a3 3 0 0 0 5.12 2.12M15 9.34V5a3 3 0 0 0-5.94-.6"/><path d="M17 16.95A7 7 0 0 1 5 11v-1M12 19v3"/><path d="M19 11v1a7 7 0 0 1-1.45 4.27"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+<symbol id="i-hash" viewBox="0 0 24 24"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></symbol>
 <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M15 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path d="M12 3v1M17.66 6.34l-.71.71M21 12h-1M17.66 17.66l-.71-.71M6.34 6.34l.71.71M3 12h1M6.34 17.66l.71-.71M12 2a5 5 0 0 0-5 5c0 2.38 1.19 3.47 2 5 .27.51.56 1.92.56 3h4.88c0-1.08.29-2.49.56-3 .81-1.53 2-2.62 2-5a5 5 0 0 0-5-5z"/></symbol>
 <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></symbol>
 <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></symbol>
@@ -583,6 +588,7 @@ nav.bnav{position:sticky;top:0;grid-column:1;grid-row:1/3;height:100dvh;display:
     <span class="ind" id="ind"></span>
     <button data-act="go" data-v="home"><svg class="i"><use href="#i-home"/></svg>Beranda</button>
     <button data-act="go" data-v="kasir"><svg class="i"><use href="#i-cart"/></svg>Kasir</button>
+    <button data-act="go" data-v="orders"><svg class="i"><use href="#i-bell"/></svg>Orders</button>
     <button data-act="go" data-v="produk"><svg class="i"><use href="#i-box"/></svg>Produk</button>
     <button data-act="go" data-v="laporan"><svg class="i"><use href="#i-chart"/></svg>Laporan</button>
     <button data-act="go" data-v="riwayat"><svg class="i"><use href="#i-history"/></svg>Riwayat</button>
@@ -667,12 +673,12 @@ const ymd=d=>{const z=new Date(d.getTime()-d.getTimezoneOffset()*6e4);return z.t
 const fmtDay=(d,o)=>new Date(d*864e5).toLocaleDateString('id-ID',{...o,timeZone:'UTC'});
 const trxTot=s=>s.total||s.items.reduce((t,i)=>t+i.p*i.q,0);
 const KATS_DEFAULT=['Minuman','Makanan','Camilan'];
-const VIEWS=['home','kasir','produk','laporan','riwayat','kasbon','set'];
+const VIEWS=['home','kasir','orders','produk','laporan','riwayat','kasbon','set'];
 let tempFoto='';let tempVariants=[];
 
 // ===== STATE =====
 const S={
-  prod:[],sales:[],cart:{},kat:'Semua',q:'',per:7,
+  prod:[],sales:[],cart:{},orders:[],orderSettings:null,kat:'Semua',q:'',per:7,
   tema:'auto',
   usaha:__user.nama_usaha||'Usaha Saya',
   alamat:__user.alamat_usaha||'',
@@ -774,6 +780,181 @@ async function loadTransaksi(){
     return S.sales;
   }catch(e){console.error('[Transaksi] Load error:',e);return S.sales}
 }
+
+async function loadOrders(){
+  try{
+    const j=await apiGet('/api/orders?user_id='+USER_ID);
+    S.orders=j.orders||[];
+    updateOrdersBadge();
+    return S.orders;
+  }catch(e){console.error('[Orders] Load error:',e);return S.orders}
+}
+
+async function loadOrderSettings(){
+  try{
+    const j=await apiGet('/api/order-settings?user_id='+USER_ID);
+    S.orderSettings=j.settings||null;
+    return S.orderSettings;
+  }catch(e){console.error('[Order Settings] Load error:',e);return null}
+}
+
+async function toggleOrderEnabled(enabled){
+  try{
+    const r=await fetch('/api/order-settings',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({user_id:USER_ID,order_enabled:enabled})
+    });
+    const j=await r.json();
+    if(!j.success)throw new Error(j.message);
+    S.orderSettings=j.settings;
+    renderOrderSettings();
+    toast(enabled?'✓ Pesanan online diaktifkan':'✓ Pesanan online dinonaktifkan');
+  }catch(e){
+    console.error('[Order Settings] Toggle error:',e);
+    toast('Gagal: '+e.message);
+  }
+}
+
+async function regenerateTokoId(){
+  if(!confirm('Generate ulang ID Toko? Link dan QR code lama akan tidak bisa dipakai lagi.'))return;
+  try{
+    const r=await fetch('/api/order-settings',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({user_id:USER_ID,regenerate:true})
+    });
+    const j=await r.json();
+    if(!j.success)throw new Error(j.message);
+    S.orderSettings=j.settings;
+    renderOrderSettings();
+    toast('✓ ID Toko berhasil di-generate ulang');
+  }catch(e){
+    console.error('[Order Settings] Regenerate error:',e);
+    toast('Gagal: '+e.message);
+  }
+}
+
+function renderOrderSettings(){
+  const loading=$('#order-settings-loading');
+  const content=$('#order-settings-content');
+  if(!loading||!content)return;
+  
+  if(!S.orderSettings){
+    loading.style.display='block';
+    content.style.display='none';
+    return;
+  }
+  
+  loading.style.display='none';
+  content.style.display='block';
+  
+  const {toko_id,order_enabled,order_url}=S.orderSettings;
+  
+  content.innerHTML=`
+    <label style="display:flex;gap:var(--s3);align-items:center;min-height:48px;margin-bottom:var(--s3)">
+      <input type="checkbox" id="order-enabled" ${order_enabled?'checked':''} style="width:24px;height:24px;accent-color:var(--brand)">
+      <div><strong>Aktifkan Pesanan Online</strong><br><small style="color:var(--muted)">Pelanggan bisa pesan via link atau QR code</small></div>
+    </label>
+    
+    ${order_enabled?`
+      <div style="background:var(--ok-bg);padding:var(--s3);border-radius:var(--r2);margin-bottom:var(--s3)">
+        <div style="font-weight:600;margin-bottom:var(--s2);color:var(--brand)">✅ Pesanan Online Aktif</div>
+        <div style="font-size:13px;color:var(--muted);margin-bottom:var(--s2)">Link Pesanan:</div>
+        <div style="background:var(--card);padding:var(--s2);border-radius:var(--r1);font-family:monospace;font-size:12px;word-break:break-all;margin-bottom:var(--s2)">${esc(order_url)}</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s2)">
+          <button class="btn" data-act="copy-order-url" style="font-size:14px">📋 Salin Link</button>
+          <button class="btn" data-act="share-order-url" style="font-size:14px">📤 Bagikan</button>
+        </div>
+      </div>
+      
+      <div style="text-align:center;margin-bottom:var(--s3)">
+        <div style="font-weight:600;margin-bottom:var(--s2)">QR Code untuk Pelanggan</div>
+        <div id="qrcode-container" style="display:inline-block;padding:var(--s3);background:white;border-radius:var(--r2);box-shadow:0 2px 8px rgba(0,0,0,0.1)"></div>
+        <button class="btn btn--p" data-act="download-qr" style="margin-top:var(--s3);width:100%">💾 Unduh QR Code</button>
+      </div>
+      
+      <details style="margin-bottom:var(--s2)">
+        <summary style="cursor:pointer;padding:var(--s2);background:var(--paper);border-radius:var(--r1);font-size:14px">⚙️ Pengaturan Lanjutan</summary>
+        <div style="padding:var(--s3) var(--s2)">
+          <div style="font-size:13px;color:var(--muted);margin-bottom:var(--s2)">Toko ID: <code style="background:var(--line);padding:2px 6px;border-radius:4px">${esc(toko_id)}</code></div>
+          <button class="btn" data-act="regenerate-toko-id" style="width:100%;font-size:14px;border-color:var(--warn);color:var(--warn)">🔄 Generate Ulang ID Toko</button>
+          <p style="font-size:12px;color:var(--muted);margin-top:var(--s2)">Generate ulang akan membuat link dan QR code baru. Link lama tidak akan bisa dipakai.</p>
+        </div>
+      </details>
+    `:`
+      <div style="padding:var(--s3);background:var(--paper);border-radius:var(--r2);text-align:center;color:var(--muted)">
+        <div style="font-size:32px;margin-bottom:var(--s2)">📱</div>
+        <div>Aktifkan fitur ini untuk menerima pesanan dari pelanggan</div>
+      </div>
+    `}
+  `;
+  
+  // Event listeners
+  const checkbox=$('#order-enabled');
+  if(checkbox){
+    checkbox.addEventListener('change',e=>toggleOrderEnabled(e.target.checked));
+  }
+  
+  // Generate QR Code jika enabled
+  if(order_enabled){
+    setTimeout(()=>{
+      const qrContainer=$('#qrcode-container');
+      if(qrContainer&&window.QRCode){
+        qrContainer.innerHTML=''; // Clear previous
+        new QRCode(qrContainer,{
+          text:order_url,
+          width:200,
+          height:200,
+          colorDark:'#000000',
+          colorLight:'#ffffff',
+          correctLevel:QRCode.CorrectLevel.H
+        });
+      }
+    },100);
+  }
+}
+
+function updateOrdersBadge(){
+  const pending=(S.orders||[]).filter(o=>o.status==='pending').length;
+  const ordersBtn=$$('.bnav button').find(b=>b.dataset.v==='orders');
+  if(!ordersBtn)return;
+  let badge=ordersBtn.querySelector('.orders-nav-badge');
+  if(pending>0){
+    if(!badge){
+      badge=document.createElement('span');
+      badge.className='orders-nav-badge';
+      badge.style.cssText='position:absolute;top:4px;right:4px;background:var(--bad);color:#fff;border-radius:50%;width:20px;height:20px;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center';
+      ordersBtn.style.position='relative';
+      ordersBtn.appendChild(badge);
+    }
+    badge.textContent=pending>9?'9+':pending;
+  }else if(badge){
+    badge.remove();
+  }
+}
+
+// Long-polling for new orders
+let ordersPollingInterval = null;
+function startOrdersPolling(){
+  if(ordersPollingInterval)return;
+  ordersPollingInterval=setInterval(async()=>{
+    if(navigator.onLine){
+      await loadOrders();
+      if(S.view==='orders'){
+        render(false);
+      }
+    }
+  },5000); // Poll every 5 seconds
+}
+
+function stopOrdersPolling(){
+  if(ordersPollingInterval){
+    clearInterval(ordersPollingInterval);
+    ordersPollingInterval=null;
+  }
+}
+
 
 async function saveTransaksi(sale){
   try{
@@ -1005,7 +1186,7 @@ const closeSheet=()=>tutupAuth();
 // ===== NAVIGASI =====
 function go(v,first){const old=VIEWS.indexOf(S.view),nw=VIEWS.indexOf(v);S.view=v;const navBtns=$$('.bnav button');navBtns.forEach((b,i)=>b.setAttribute('aria-current',VIEWS[i]===v?'page':'false'));const navIdx=Math.min(nw,navBtns.length-1);$('#ind').style.transform=`translateX(${navIdx*100}%)`;$('#ind').style.opacity=nw>navBtns.length-1?0:1;render(nw<old);updateKasbonBadge();scrollTo(0,0);if(!first)$('#main').focus({preventScroll:true})}
 function updateKasbonBadge(){const aktif=(S.kasbon||[]).filter(p=>sisaKasbon(p)>0).length;const kbBtn=$$('.bnav button').find(b=>b.dataset.v==='kasbon');if(!kbBtn)return;let badge=kbBtn.querySelector('.kasbon-nav-badge');if(aktif>0){if(!badge){badge=document.createElement('span');badge.className='kasbon-nav-badge';kbBtn.appendChild(badge)}badge.textContent=aktif>9?'9+':aktif}else if(badge)badge.remove()}
-function render(left){const m=$('#main');m.innerHTML=`<div class="view ${left?'l':''}">${V[S.view]()}</div>`;if(S.view==='home'&&!S.load)countTo($('#u-val'),hitung(1).u,jt);if(S.view==='set')updateQrisPreview();if(S.view==='laporan')renderLaporanCharts();if(S.view==='home'&&!S.load)loadInsight()}
+function render(left){const m=$('#main');m.innerHTML=`<div class="view ${left?'l':''}">${V[S.view]()}</div>`;if(S.view==='home'&&!S.load)countTo($('#u-val'),hitung(1).u,jt);if(S.view==='set'){updateQrisPreview();loadOrderSettings().then(()=>renderOrderSettings())}if(S.view==='laporan')renderLaporanCharts();if(S.view==='home'&&!S.load)loadInsight()}
 // ===== INSIGHT AI FUNCTIONS =====
 async function loadInsight(){
   const container=$('#insight-card');
@@ -1243,6 +1424,103 @@ kasir(){const ps=S.prod.filter(p=>(S.kat==='Semua'||p.k===S.kat)&&p.n.toLowerCas
 return `<h1>Kasir</h1><div class="form-group" style="margin:var(--s2) 0 0"><label for="cari" class="lead">Cari produk atau 🎤 gunakan suara</label><div style="display:flex;gap:var(--s2);align-items:center"><input class="fld" id="cari" type="search" data-in="cari" value="${esc(S.q)}" placeholder="Ketik nama produk" autocomplete="off" enterkeyhint="search" style="flex:1"><button class="voice-btn" id="voice-btn" data-act="voice-order" aria-label="Pesan dengan suara" title="Klik untuk pesan dengan suara">${ic('mic')}</button></div></div>
 <div class="chips" role="group" aria-label="Kategori">${['Semua',...S.kats].map(k=>`<button class="chip" data-act="kat" data-k="${k}" aria-pressed="${S.kat===k}">${k}</button>`).join('')}</div>
 <div class="grid" id="grid">${gridHtml(sorted,bestSellers)}</div><div id="cb">${cartbar()}</div>`},
+orders(){
+  const pendingOrders = S.orders?.filter(o => o.status === 'pending') || [];
+  const paidOrders = S.orders?.filter(o => o.status === 'paid') || [];
+  
+  return `<h1>📱 Pesanan Pelanggan</h1>
+<p style="color:var(--muted);margin:var(--s2) 0 var(--s4)">Pesanan masuk dari halaman pesan pelanggan akan tampil di sini secara real-time.</p>
+
+${pendingOrders.length === 0 && paidOrders.length === 0 ? `
+<div class="empty" style="margin-top:var(--s5)">
+  ${ic('bell')}
+  <b>Belum ada pesanan masuk</b>
+  <p style="max-width:320px;margin:0 auto;color:var(--muted);font-size:15px">Aktifkan fitur Order di Pengaturan untuk mulai menerima pesanan dari pelanggan.</p>
+  <button class="btn btn--p" data-act="go" data-v="set" style="margin-top:var(--s3)">${ic('gear')} Buka Pengaturan</button>
+</div>
+` : ''}
+
+${pendingOrders.length > 0 ? `
+<h2 class="sec" style="color:var(--brand);display:flex;align-items:center;gap:var(--s2)">
+  <span class="badge" style="background:var(--brand);color:var(--on-brand);padding:6px 12px;border-radius:var(--r2)">${pendingOrders.length}</span>
+  Pesanan Pending
+</h2>
+<div style="display:grid;gap:var(--s3);margin-bottom:var(--s4)">
+  ${pendingOrders.map(order => {
+    const timeAgo = Math.floor((Date.now() - order.created_at) / 60000);
+    const timeText = timeAgo < 1 ? 'Baru saja' : timeAgo < 60 ? `${timeAgo} menit lalu` : `${Math.floor(timeAgo/60)} jam lalu`;
+    
+    return `
+    <div class="order-card pending" style="background:var(--card);border:2px solid var(--brand);border-radius:var(--r2);padding:var(--s3);box-shadow:0 2px 8px rgba(23,97,63,0.1)">
+      <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:var(--s3)">
+        <div>
+          <span style="display:inline-flex;align-items:center;gap:6px;font:700 24px var(--fh);color:var(--brand)">
+            ${ic('hash')} ${order.order_number}
+          </span>
+          <div style="color:var(--muted);font-size:14px;margin-top:4px">${timeText}</div>
+        </div>
+        <span class="badge" style="background:var(--accent);color:#231A12">⏳ PENDING</span>
+      </div>
+      
+      <div style="margin-bottom:var(--s3)">
+        <div style="display:flex;align-items:center;gap:var(--s2);margin-bottom:var(--s2)">
+          ${ic('user')}
+          <span style="font-weight:600">${esc(order.customer_name)}</span>
+        </div>
+        
+        <div style="background:var(--paper);padding:var(--s2);border-radius:var(--r1)">
+          ${order.items.map(item => `
+            <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed var(--line)">
+              <span style="flex:1">${esc(item.name)} × ${item.quantity}</span>
+              <span style="font-weight:600;color:var(--brand)">${rp(item.price * item.quantity)}</span>
+            </div>
+          `).join('')}
+          <div style="display:flex;justify-content:space-between;padding:var(--s2) 0;font:700 18px var(--fh);color:var(--brand)">
+            <span>TOTAL</span>
+            <span>${rp(order.subtotal)}</span>
+          </div>
+        </div>
+      </div>
+      
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s2)">
+        <button class="btn" style="border-color:var(--bad);color:var(--bad)" data-act="cancel-order" data-id="${order.order_id}">
+          ${ic('close')} Batalkan
+        </button>
+        <button class="btn btn--p" data-act="process-order" data-id="${order.order_id}">
+          ${ic('check')} Proses
+        </button>
+      </div>
+    </div>
+    `;
+  }).join('')}
+</div>
+` : ''}
+
+${paidOrders.length > 0 ? `
+<h2 class="sec">✅ Sudah Diproses (${paidOrders.length})</h2>
+<div style="display:grid;gap:var(--s2)">
+  ${paidOrders.slice(0, 10).map(order => {
+    const time = new Date(order.processed_at || order.created_at).toLocaleTimeString('id-ID', {hour: '2-digit', minute: '2-digit'});
+    const date = new Date(order.processed_at || order.created_at).toLocaleDateString('id-ID', {day: 'numeric', month: 'short'});
+    
+    return `
+    <div class="order-card paid" style="background:var(--ok-bg);border:1px solid var(--line);border-radius:var(--r2);padding:var(--s3);opacity:0.8">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="display:flex;align-items:center;gap:var(--s2);flex:1">
+          <span style="font:700 18px var(--fh);color:var(--brand)">#${order.order_number}</span>
+          <span style="color:var(--muted);font-size:14px">${esc(order.customer_name)}</span>
+        </div>
+        <div style="text-align:right">
+          <div style="font-weight:600;color:var(--brand)">${rp(order.subtotal)}</div>
+          <div style="font-size:13px;color:var(--muted)">${time} · ${date}</div>
+        </div>
+      </div>
+    </div>
+    `;
+  }).join('')}
+</div>
+` : ''}
+`},
 produk(){const ps=S.prod.filter(p=>(S.kat==='Semua'||p.k===S.kat)&&p.n.toLowerCase().includes(S.q.toLowerCase()));
 const semKritis=getStokKritis();
 return `<h1>Produk</h1><input class="fld" id="cari" type="search" data-in="cari2" value="${esc(S.q)}" placeholder="Cari produk" aria-label="Cari produk" style="margin-top:var(--s2)" autocomplete="off">
@@ -1527,6 +1805,14 @@ set(){return `<h1>Pengaturan</h1><div class="set" style="margin-top:var(--s3)">
 </div>
 
 <div><span class="lbl">Tampilan</span><div class="seg" role="group" aria-label="Tema">${[['auto','Ikuti HP'],['terang','Terang'],['gelap','Gelap']].map(([k,l])=>`<button data-act="tema" data-k="${k}" aria-pressed="${S.tema===k}">${l}</button>`).join('')}</div></div>
+
+<h2 class="sec" style="font-size:18px;margin-top:var(--s4)">📱 Pesanan Pelanggan Online</h2>
+<div style="padding:var(--s3);background:var(--card);border:1px solid var(--line);border-radius:var(--r2);margin-bottom:var(--s3)" id="order-settings-box">
+  <p style="font-size:14px;color:var(--muted);margin-bottom:var(--s3)">Buat link pesanan dan QR code agar pelanggan bisa pesan langsung dari HP mereka dengan Voice-to-Order AI.</p>
+  <div id="order-settings-loading" style="text-align:center;padding:var(--s3);color:var(--muted)">Memuat...</div>
+  <div id="order-settings-content" style="display:none"></div>
+</div>
+
 <button class="btn" data-act="go" data-v="kasbon" style="border-color:var(--brand);color:var(--brand)">${ic('kasbon')} Lihat Daftar Kasbon</button>
 <button class="btn" data-act="out" style="color:var(--bad);border-color:var(--bad)">Keluar (Logout)</button></div>`}};
 
@@ -1903,6 +2189,75 @@ tema:b=>{S.tema=b.dataset.k;tema();updateTemaIconApp();savePengaturan();render()
 },
 export:()=>{const r=hitung(S.per),rows=[['Produk','Terjual','Uang masuk','Untung'],...r.per.map(x=>[x.n,x.q,x.m,x.u]),['TOTAL UNTUNG (setelah pengeluaran)','',r.m,r.u]];const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([rows.map(x=>x.join(';')).join('\n')],{type:'text/csv'}));a.download='laporan-BantuKasir.csv';a.click();toast('Laporan diunduh')},
 out:()=>{localStorage.removeItem('user');location.href='/'},
+'process-order':async b=>{
+  const orderId=b.dataset.id;
+  const order=S.orders.find(o=>o.order_id===orderId);
+  if(!order||order.status!=='pending')return;
+  
+  // Set cart to order items
+  S.cart={};
+  order.items.forEach(item=>{
+    const key=item.variant_index!==undefined?`${item.id}_${item.variant_index}`:item.id;
+    S.cart[key]=item.quantity;
+  });
+  
+  // Go to kasir view untuk process pembayaran
+  closeSheet();
+  go('kasir');
+  toast('Pesanan dimuat ke kasir. Lakukan pembayaran untuk menyelesaikan.');
+},
+'cancel-order':async b=>{
+  const orderId=b.dataset.id;
+  if(!confirm('Batalkan pesanan ini?'))return;
+  
+  try{
+    b.disabled=true;
+    b.textContent='Membatalkan...';
+    
+    await fetch('/api/orders/'+orderId+'/cancel',{
+      method:'PUT',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({user_id:USER_ID})
+    }).then(r=>r.json()).then(d=>{if(!d.success)throw new Error(d.message)});
+    
+    await loadOrders();
+    toast('✓ Pesanan dibatalkan');
+    if(S.view==='orders')render();
+  }catch(e){
+    toast('Gagal membatalkan: '+e.message);
+    b.disabled=false;
+    b.textContent='Batalkan';
+  }
+},
+'copy-order-url':()=>{
+  if(!S.orderSettings)return;
+  navigator.clipboard.writeText(S.orderSettings.order_url).then(()=>{
+    toast('✓ Link pesanan disalin!');
+  }).catch(()=>{
+    toast('Gagal menyalin link');
+  });
+},
+'share-order-url':()=>{
+  if(!S.orderSettings)return;
+  const text=`🛒 Pesan di ${S.usaha}\n\nBisa pesan pakai suara! Scan QR atau klik:\n${S.orderSettings.order_url}`;
+  if(navigator.share){
+    navigator.share({title:`Pesan di ${S.usaha}`,text}).catch(()=>{});
+  }else{
+    navigator.clipboard.writeText(text).then(()=>{
+      toast('✓ Link disalin! Bagikan ke pelanggan');
+    });
+  }
+},
+'download-qr':()=>{
+  const qrImg=$('#qrcode-container img');
+  if(!qrImg)return;
+  const a=document.createElement('a');
+  a.href=qrImg.src;
+  a.download=`QR-Pesanan-${S.usaha.replace(/\s+/g,'-')}.png`;
+  a.click();
+  toast('✓ QR Code diunduh');
+},
+'regenerate-toko-id':()=>regenerateTokoId(),
 'void-trx':b=>{
   const trxId=b.dataset.id;const s=S.sales.find(x=>x.id===trxId);if(!s||s.void)return;
   const tot=trxTot(s);const kode=s.id;
@@ -2303,8 +2658,9 @@ async function initApp(){
   $('#h-tgl').textContent=new Date().toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
   net();
   try{
-    await Promise.all([loadPengaturan(),loadProduk(),loadTransaksi()]);
+    await Promise.all([loadPengaturan(),loadProduk(),loadTransaksi(),loadOrders()]);
     await apiKasbonGet();
+    startOrdersPolling(); // Start polling for new orders
   }catch(e){console.error('[Init] Error loading data:',e)}
   $('#h-usaha').textContent=S.usaha||'Usaha Saya';
   S.load=false;
