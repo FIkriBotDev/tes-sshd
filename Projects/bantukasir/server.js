@@ -1170,7 +1170,7 @@ app.get("/api/order-settings", (req, res) => {
     if (!entry.toko_id) {
       entry.toko_id = generateTokoId();
       entry.order_enabled = false;
-      entry.order_url = `https://bantukasir.biz.id/order?toko=${entry.toko_id}`;
+      entry.order_url = `http://localhost:${PORT}/order?toko=${entry.toko_id}`;
       entry.qr_code_base64 = null;
       saveUserEntry("database_order_settings.json", db);
     }
@@ -1200,7 +1200,7 @@ app.post("/api/order-settings", (req, res) => {
     
     if (regenerate) {
       entry.toko_id = generateTokoId();
-      entry.order_url = `https://bantukasir.biz.id/order?toko=${entry.toko_id}`;
+      entry.order_url = `http://localhost:${PORT}/order?toko=${entry.toko_id}`;
       entry.qr_code_base64 = null; // Reset QR code
     }
     
@@ -1359,8 +1359,13 @@ app.get("/api/orders", (req, res) => {
       orders = orders.filter(o => o.status === status);
     }
     
-    // Sort by created_at descending (terbaru di atas)
-    orders.sort((a, b) => b.created_at - a.created_at);
+    // Sort by created_at ASCENDING for pending (oldest first = FIFO)
+    // Sort by processed_at/created_at DESCENDING for paid (newest first)
+    if (status === 'pending') {
+      orders.sort((a, b) => a.created_at - b.created_at); // OLDEST FIRST
+    } else {
+      orders.sort((a, b) => (b.processed_at || b.created_at) - (a.processed_at || a.created_at));
+    }
     
     res.json({
       success: true,
@@ -1372,15 +1377,30 @@ app.get("/api/orders", (req, res) => {
   }
 });
 
-// GET /api/orders/:order_id?user_id=xxx - Get single order
+// GET /api/orders/:order_id?user_id=xxx atau ?toko_id=xxx - Get single order
 app.get("/api/orders/:order_id", (req, res) => {
   try {
     const { order_id } = req.params;
-    const { user_id } = req.query;
+    const { user_id, toko_id } = req.query;
     
-    if (!user_id) return res.status(400).json({ success: false, message: "user_id wajib diisi" });
+    let userId = user_id;
     
-    const { entry } = getUserEntry("database_orders.json", user_id);
+    // If customer polling via toko_id, convert to user_id
+    if (!userId && toko_id) {
+      const orderSettings = readDb("database_order_settings.json");
+      const found = Object.entries(orderSettings).find(([uid, settings]) => 
+        settings.toko_id === toko_id
+      );
+      if (found) {
+        userId = found[0];
+      }
+    }
+    
+    if (!userId) {
+      return res.status(400).json({ success: false, message: "user_id atau toko_id wajib diisi" });
+    }
+    
+    const { entry } = getUserEntry("database_orders.json", userId);
     const order = (entry.orders || []).find(o => o.order_id === order_id);
     
     if (!order) {
