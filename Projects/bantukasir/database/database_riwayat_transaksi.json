@@ -1703,6 +1703,65 @@
         "bayar": 50000,
         "kembalian": 35000,
         "day": 20762
+      },
+      {
+        "id": "trx_1793867325149",
+        "items": [
+          {
+            "id": 1793614077645,
+            "n": "Kopi Susu",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          },
+          {
+            "id": 1793547299989,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          }
+        ],
+        "total": 30000,
+        "method": "tunai",
+        "timestamp": 1793867325149,
+        "day": 20762,
+        "void": false,
+        "from_order": "order_1793867314487",
+        "customer_name": "Fikri"
+      },
+      {
+        "id": "TRX-67324966",
+        "timestamp": 1793867324966,
+        "items": [
+          {
+            "id": 1793614077645,
+            "n": "Kopi Susu",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          },
+          {
+            "id": 1793547299989,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          }
+        ],
+        "total": 30000,
+        "subtotal": 30000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 50000,
+        "kembalian": 20000,
+        "day": 20762
       }
     ]
   },
