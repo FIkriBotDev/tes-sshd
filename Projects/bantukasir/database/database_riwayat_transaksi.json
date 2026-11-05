@@ -1343,6 +1343,44 @@
         "bayar": 20000,
         "kembalian": 5000,
         "day": 20762
+      },
+      {
+        "id": "TRX-48566627",
+        "timestamp": 1793848566627,
+        "items": [],
+        "total": 36000,
+        "subtotal": 36000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 40000,
+        "kembalian": 4000,
+        "day": 20762
+      },
+      {
+        "id": "trx_1793848566778",
+        "items": [
+          {
+            "id": 1793547321723,
+            "n": "Ayam Katsu",
+            "p": 18000,
+            "c": 15000,
+            "q": 2,
+            "vi": null
+          }
+        ],
+        "total": 36000,
+        "method": "tunai",
+        "timestamp": 1793848566778,
+        "day": 20762,
+        "void": false,
+        "from_order": "order_1793848556979",
+        "customer_name": "fikrii"
       }
     ]
   },
