@@ -4450,3 +4450,12 @@
     at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
     at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1232:24
+[2026-11-05T17:23:12.449Z] Image Model: black-forest-labs/flux.1-schnell - AxiosError: Request failed with status code 403
+    at settle (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:2530:12)
+    at Unzip.handleStreamEnd (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:4772:11)
+    at Unzip.emit (node:events:519:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+    at Axios.request (/home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/node_modules/axios/dist/node/axios.cjs:6308:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async /home/runner/work/tes-sshd/tes-sshd/Projects/unpkg/index.js:1232:24
