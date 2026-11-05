@@ -61,6 +61,7 @@ function getUserEntry(filename, userId) {
     if (filename === "database_laporan.json") entry.laporan = [];
     if (filename === "database_riwayat_transaksi.json") entry.transaksi = [];
     if (filename === "database_kasbon.json") entry.kasbon = [];
+    if (filename === "database_orders.json") entry.orders = [];
     db.push(entry);
     simpanDatabase(filename, db);
   }
@@ -1383,28 +1384,42 @@ app.get("/api/orders/:order_id", (req, res) => {
     const { order_id } = req.params;
     const { user_id, toko_id } = req.query;
     
+    console.log(`[Orders] GET request - order_id: ${order_id}, user_id: ${user_id}, toko_id: ${toko_id}`);
+    
     let userId = user_id;
     
     // If customer polling via toko_id, convert to user_id
     if (!userId && toko_id) {
       const orderSettings = readDb("database_order_settings.json");
-      const found = Object.entries(orderSettings).find(([uid, settings]) => 
-        settings.toko_id === toko_id
-      );
+      console.log('[Orders] Order settings:', JSON.stringify(orderSettings));
+      
+      const found = orderSettings.find(settings => settings.toko_id === toko_id);
+      
       if (found) {
-        userId = found[0];
+        userId = found.user_id;
+        console.log(`[Orders] Converted toko_id ${toko_id} to user_id ${userId}`);
+      } else {
+        console.log(`[Orders] ERROR: toko_id ${toko_id} not found in settings`);
       }
     }
     
     if (!userId) {
+      console.log('[Orders] ERROR: No user_id found');
       return res.status(400).json({ success: false, message: "user_id atau toko_id wajib diisi" });
     }
     
     // Force fresh read from database
     const { entry } = getUserEntry("database_orders.json", userId);
-    const order = (entry.orders || []).find(o => o.order_id === order_id);
+    
+    if (!entry.orders) {
+      entry.orders = [];
+    }
+    
+    const order = entry.orders.find(o => o.order_id === order_id);
     
     if (!order) {
+      console.log(`[Orders] ERROR: Order ${order_id} not found for user ${userId}`);
+      console.log(`[Orders] Available orders:`, entry.orders.map(o => o.order_id));
       return res.status(404).json({ success: false, message: "Pesanan tidak ditemukan" });
     }
     
