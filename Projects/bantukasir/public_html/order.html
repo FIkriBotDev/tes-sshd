@@ -1240,163 +1240,190 @@
 
     // ===== VOICE ORDER =====
     let isRecording = false;
-    let mediaRecorder = null;
-    let audioChunks = [];
+    let recognition = null;
 
     document.getElementById('voiceBtn').addEventListener('click', toggleVoiceRecording);
 
     async function toggleVoiceRecording() {
-      if (!isRecording) {
-        startRecording();
-      } else {
-        stopRecording();
+      // Check browser support for Web Speech API
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        document.getElementById('voiceStatus').textContent = '❌ Browser Anda tidak mendukung Speech Recognition';
+        document.getElementById('voiceStatus').classList.add('error');
+        return;
       }
+      
+      if (isRecording) {
+        // Stop recognition
+        if (recognition) {
+          recognition.stop();
+        }
+        return;
+      }
+      
+      startRecording();
     }
 
     async function startRecording() {
       try {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        mediaRecorder = new MediaRecorder(stream);
-        audioChunks = [];
-        
-        mediaRecorder.ondataavailable = (event) => {
-          audioChunks.push(event.data);
-        };
-        
-        mediaRecorder.onstop = async () => {
-          const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
-          await processVoiceOrder(audioBlob);
-          
-          // Stop all tracks
-          stream.getTracks().forEach(track => track.stop());
-        };
-        
-        mediaRecorder.start();
         isRecording = true;
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        recognition = new SpeechRecognition();
+        recognition.lang = 'id-ID'; // Bahasa Indonesia
+        recognition.continuous = false; // Stop after one result
+        recognition.interimResults = false; // Only final results
+        recognition.maxAlternatives = 1;
         
         document.getElementById('voiceBtn').classList.add('recording');
         document.getElementById('voiceBtn').textContent = '⏹️ Stop Rekaman';
-        document.getElementById('voiceStatus').textContent = '🎙️ Sedang merekam...';
+        document.getElementById('voiceStatus').textContent = '🎙️ Berbicara... (contoh: "ayam goreng 2 dan es teh 1")';
+        document.getElementById('voiceStatus').classList.remove('error');
+        
+        recognition.onresult = event => {
+          const transcript = event.results[0][0].transcript;
+          console.log('[Voice] Transcription:', transcript);
+          
+          document.getElementById('voiceStatus').textContent = `Anda bilang: "${transcript}" - Memproses...`;
+          
+          // Process the transcription
+          processVoiceTranscription(transcript);
+        };
+        
+        recognition.onerror = event => {
+          console.error('[Voice] Recognition error:', event.error);
+          isRecording = false;
+          document.getElementById('voiceBtn').classList.remove('recording');
+          document.getElementById('voiceBtn').textContent = '🎤 Pesan dengan Suara';
+          
+          let errorMsg = 'Gagal mengenali suara.';
+          if (event.error === 'no-speech') {
+            errorMsg = 'Tidak ada suara terdeteksi. Coba lagi.';
+          } else if (event.error === 'audio-capture') {
+            errorMsg = 'Mikrofon tidak dapat diakses.';
+          } else if (event.error === 'not-allowed') {
+            errorMsg = 'Izin mikrofon ditolak. Aktifkan di pengaturan browser.';
+          }
+          
+          document.getElementById('voiceStatus').textContent = '❌ ' + errorMsg;
+          document.getElementById('voiceStatus').classList.add('error');
+        };
+        
+        recognition.onend = () => {
+          isRecording = false;
+          document.getElementById('voiceBtn').classList.remove('recording');
+          document.getElementById('voiceBtn').textContent = '🎤 Pesan dengan Suara';
+        };
+        
+        recognition.start();
         
       } catch (error) {
-        console.error('Error accessing microphone:', error);
-        document.getElementById('voiceStatus').textContent = '❌ Gagal mengakses mikrofon';
+        console.error('Voice recognition error:', error);
+        document.getElementById('voiceStatus').textContent = '❌ Gagal memulai pengenalan suara';
         document.getElementById('voiceStatus').classList.add('error');
-      }
-    }
-
-    function stopRecording() {
-      if (mediaRecorder && isRecording) {
-        mediaRecorder.stop();
         isRecording = false;
-        
         document.getElementById('voiceBtn').classList.remove('recording');
         document.getElementById('voiceBtn').textContent = '🎤 Pesan dengan Suara';
-        document.getElementById('voiceStatus').textContent = '🔄 Memproses...';
       }
     }
 
-    async function processVoiceOrder(audioBlob) {
+    async function processVoiceTranscription(transcript) {
       try {
-        // Step 1: Transcribe using Pollinations.AI
-        const formData = new FormData();
-        formData.append('file', audioBlob, 'recording.webm');
-        formData.append('model', 'microsoft/mai-transcribe-2');
-        
-        const transcribeResponse = await fetch('https://text.pollinations.ai/whisper', {
-          method: 'POST',
-          body: formData
-        });
-        
-        if (!transcribeResponse.ok) {
-          throw new Error('Gagal transcribe audio');
-        }
-        
-        const transcription = await transcribeResponse.text();
-        
-        if (!transcription || transcription.trim().length === 0) {
-          throw new Error('Tidak ada suara terdeteksi');
-        }
-        
-        document.getElementById('voiceStatus').textContent = `Anda bilang: "${transcription}"`;
-        
-        // Step 2: Parse with AI
+        // Build product list for backend
         const productList = [];
         products.forEach(p => {
           if (p.v && p.v.length > 0) {
             p.v.forEach((v, vi) => {
               if (v.s > 0) {
                 productList.push({
+                  id: p.id,
                   name: `${p.n} (${v.n})`,
                   price: v.p,
-                  cost: p.c || 0,
-                  id: p.id,
+                  stock: v.s,
                   variant_index: vi
                 });
               }
             });
           } else if (p.s > 0) {
             productList.push({
+              id: p.id,
               name: p.n,
               price: p.p,
-              cost: p.c || 0,
-              id: p.id,
+              stock: p.s,
               variant_index: null
             });
           }
         });
         
-        const parseResponse = await fetch('/api/voice-order', {
+        // Send to backend for AI parsing
+        const response = await fetch('/api/voice-order', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            user_id: 'customer',
-            transcription: transcription,
+            user_id: 'customer_' + tokoId,
+            transcription: transcript,
             products: productList
           })
         });
         
-        const parseData = await parseResponse.json();
-        
-        if (!parseData.success || !parseData.items || parseData.items.length === 0) {
-          throw new Error('Tidak bisa mengenali produk dari pesanan');
+        if (!response.ok) {
+          throw new Error('Gagal memproses suara');
         }
         
-        // Add to cart
-        parseData.items.forEach(item => {
-          const product = productList.find(p => 
-            p.name.toLowerCase() === item.product_name.toLowerCase()
-          );
+        const result = await response.json();
+        
+        if (!result.success) {
+          throw new Error(result.error || 'Gagal memproses pesanan suara');
+        }
+        
+        // Add items to cart
+        if (result.items && result.items.length > 0) {
+          let addedCount = 0;
           
-          if (product) {
-            const existingItem = cart.find(c => 
-              c.id === product.id && c.variant_index === product.variant_index
+          result.items.forEach(orderItem => {
+            // Find matching product from productList
+            const matchedProduct = productList.find(p =>
+              p.name.toLowerCase().includes(orderItem.product_name.toLowerCase()) ||
+              orderItem.product_name.toLowerCase().includes(p.name.toLowerCase())
             );
             
-            if (existingItem) {
-              existingItem.quantity += item.quantity;
-            } else {
-              cart.push({
-                id: product.id,
-                name: product.name,
-                price: product.price,
-                cost: product.cost,
-                quantity: item.quantity,
-                variant_index: product.variant_index,
-                image: products.find(p => p.id === product.id)?.f || products.find(p => p.id === product.id)?.i || ''
-              });
+            if (matchedProduct) {
+              // Check if already in cart
+              const existingItem = cart.find(item => 
+                item.id === matchedProduct.id && 
+                item.variant_index === matchedProduct.variant_index
+              );
+              
+              if (existingItem) {
+                existingItem.quantity += orderItem.quantity;
+              } else {
+                // Get full product data
+                const fullProduct = products.find(p => p.id === matchedProduct.id);
+                cart.push({
+                  id: matchedProduct.id,
+                  name: matchedProduct.name,
+                  price: matchedProduct.price,
+                  cost: fullProduct?.c || 0,
+                  quantity: orderItem.quantity,
+                  image: fullProduct?.f || fullProduct?.i || '',
+                  variant_index: matchedProduct.variant_index
+                });
+              }
+              addedCount++;
             }
-          }
-        });
-        
-        updateCartUI();
-        document.getElementById('voiceStatus').textContent = '✅ Pesanan berhasil ditambahkan!';
-        document.getElementById('voiceStatus').classList.remove('error');
-        
-        // Show cart
-        setTimeout(() => {
-          document.getElementById('viewCartBtn').click();
-        }, 1000);
+          });
+          
+          updateCartUI();
+          document.getElementById('voiceStatus').textContent = `✅ ${addedCount} produk ditambahkan ke keranjang!`;
+          document.getElementById('voiceStatus').classList.remove('error');
+          
+          // Show cart after 1 second
+          setTimeout(() => {
+            document.getElementById('viewCartBtn').click();
+          }, 1000);
+          
+        } else {
+          throw new Error('Tidak ada produk yang dikenali dari pesanan Anda');
+        }
         
       } catch (error) {
         console.error('Error processing voice:', error);
@@ -1406,8 +1433,9 @@
       
       // Reset status after 5s
       setTimeout(() => {
-        document.getElementById('voiceStatus').textContent = '';
-        document.getElementById('voiceStatus').classList.remove('error');
+        if (!document.getElementById('voiceStatus').classList.contains('error')) {
+          document.getElementById('voiceStatus').textContent = '';
+        }
       }, 5000);
     }
   </script>
