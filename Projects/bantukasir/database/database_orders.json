@@ -67,10 +67,11 @@
           }
         ],
         "subtotal": 15000,
-        "status": "pending",
+        "status": "cancelled",
         "created_at": 1793846350702,
         "payment_method": null,
-        "processed_by": null
+        "processed_by": null,
+        "cancelled_at": 1793847289327
       },
       {
         "order_id": "order_1793847187497",
