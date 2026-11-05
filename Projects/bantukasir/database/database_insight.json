@@ -41,26 +41,28 @@
       },
       {
         "tanggal": "2026-11-05",
-        "ringkasan": "Hari ini untung Rp 71.000, turun dari kemarin Rp 125.000 (selisih Rp -54.000 atau -43%).",
-        "penyebab": "Mungkin penjualan lagi lebih rendah dibanding kemarin, lihat dari penjualan produk seperti Ayam Katsu 8 terjual, Roti Bakar (Cokelat) 4 terjual, dan Nasi Goreng 3 terjual. Untung tidak ketahan karena uang masuk Rp 324.000 kalah dibanding modal keluar Rp 238.000.",
-        "saran": "Mulai sekarang stok dan promoin Ayam Katsu dulu—tambahkan porsi/siapkan lebih banyak hari ini untuk mengejar angka 8 terjual.",
-        "timestamp": 1793847995018,
+        "ringkasan": "Hari ini untung Rp 189.000, naik Rp 64.000 (51%) dibanding kemarin Rp 125.000.",
+        "penyebab": "Penjualan jalan bagus, terbukti dari Ayam Katsu 10 terjual, Es Teh 9 terjual, dan Jus jeruk 7 terjual. Jus jeruk mulai menipis tapi belum habis, jadi masih bisa dikejar biar makin nambah.",
+        "saran": "Besok pagi langsung tambah stok Jus jeruk secukupnya, karena yang paling menipis Jus jeruk dan yang lain sudah kuat.",
+        "timestamp": 1793850319892,
         "generated_by": "ai",
         "data_context": {
-          "untung_hari_ini": 71000,
+          "untung_hari_ini": 189000,
           "untung_kemarin": 125000,
-          "selisih": -54000,
-          "persen_selisih": -43,
-          "uang_masuk": 324000,
-          "modal": 238000,
+          "selisih": 64000,
+          "persen_selisih": 51,
+          "uang_masuk": 576000,
+          "modal": 372000,
           "pengeluaran": 15000,
           "produk_terlaris": [
-            "Ayam Katsu (8 terjual)",
-            "Roti Bakar (Cokelat) (4 terjual)",
-            "Nasi Goreng (3 terjual)"
+            "Ayam Katsu (10 terjual)",
+            "Es Teh (9 terjual)",
+            "Jus jeruk (7 terjual)"
           ],
           "produk_habis": [],
-          "produk_menipis": [],
+          "produk_menipis": [
+            "Jus jeruk"
+          ],
           "kasbon_belum_lunas": 0
         }
       }
@@ -68,7 +70,7 @@
     "refresh_count": {
       "20261103": 2,
       "20261104": 1,
-      "20261105": 2
+      "20261105": 3
     }
   }
 ]
