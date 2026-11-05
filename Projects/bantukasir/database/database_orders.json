@@ -30,6 +30,26 @@
         "payment_method": null,
         "processed_by": null,
         "cancelled_at": 1793845749538
+      },
+      {
+        "order_id": "order_1793845782170",
+        "order_number": 391,
+        "customer_name": "Fikri",
+        "items": [
+          {
+            "id": 1793614077645,
+            "name": "Kopi Susu",
+            "price": 15000,
+            "cost": 10000,
+            "quantity": 1,
+            "variant_index": null
+          }
+        ],
+        "subtotal": 15000,
+        "status": "pending",
+        "created_at": 1793845782170,
+        "payment_method": null,
+        "processed_by": null
       }
     ]
   }
