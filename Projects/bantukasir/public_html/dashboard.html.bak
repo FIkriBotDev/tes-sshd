@@ -1091,6 +1091,26 @@ async function apiKasbonHapus(id){
   const j=await r.json();if(!j.success)throw new Error(j.error||'Gagal menghapus kasbon');return j;
 }
 
+// ===== ORDERS API =====
+async function apiOrderProcess(orderId,paymentMethod,subtotal){
+  try{
+    const r=await fetch('/api/orders/'+orderId+'/process',{
+      method:'PUT',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({user_id:USER_ID,payment_method:paymentMethod,subtotal})
+    });
+    const j=await r.json();
+    if(j.success){
+      await loadOrders();
+      return j;
+    }
+    throw new Error(j.message||'Gagal memproses order');
+  }catch(e){
+    console.error('[Order] Process error:',e);
+    throw e;
+  }
+}
+
 // ===== HITUNG LAPORAN DARI S.sales =====
 function hitung(days){
   let m=0,c=0,totalDiskon=0,totalPPN=0;
@@ -1133,7 +1153,27 @@ function hari(o){
   });
   return m-c-EXP;
 }
-function subtotal(){return Object.entries(S.cart).reduce((t,[key,q])=>{if(key.includes('_')){const [pid,vi]=key.split('_');const p=S.prod.find(x=>x.id==pid);return t+(p&&p.v[+vi]?p.v[+vi].p*q:0)}else{const p=S.prod.find(x=>x.id==key);return t+(p?p.p*q:0)}},0)}
+function subtotal(){
+  return Object.entries(S.cart).reduce((t,[key,val])=>{
+    // Support both formats: number or object {q,p,c}
+    let q,price;
+    if(typeof val==='object'){
+      q=val.q;
+      price=val.p;
+      return t+(price*q);
+    }else{
+      q=val;
+      if(key.includes('_')){
+        const [pid,vi]=key.split('_');
+        const p=S.prod.find(x=>x.id==pid);
+        return t+(p&&p.v[+vi]?p.v[+vi].p*q:0);
+      }else{
+        const p=S.prod.find(x=>x.id==key);
+        return t+(p?p.p*q:0);
+      }
+    }
+  },0);
+}
 function hitungDiskon(subtotal){
   if(!S.diskon_global_aktif)return 0;
   if(S.diskon_global_tipe==='persen'){
@@ -1163,7 +1203,10 @@ function detailTotal(){
     diskon_nominal:S.diskon_global_aktif&&S.diskon_global_tipe==='nominal'?S.diskon_global_nominal:0,
     setelahDiskon,ppn,ppn_persen:S.ppn_aktif?S.ppn_persen:0,total:setelahDiskon+ppn};
 }
-const cnt=()=>Object.values(S.cart).reduce((a,b)=>a+b,0);
+const cnt=()=>Object.values(S.cart).reduce((a,b)=>{
+  // Support both formats: number or object {q,p,c}
+  return a+(typeof b==='object'?b.q:b);
+},0);
 // ===== TEMA =====
 const mq=matchMedia('(prefers-color-scheme: dark)');
 function tema(){document.documentElement.dataset.tema=S.tema==='auto'?(mq.matches?'gelap':'terang'):S.tema;const m=$('meta[name=theme-color]');if(m)m.content=document.documentElement.dataset.tema==='gelap'?'#16120D':'#17613F'}
@@ -1921,7 +1964,44 @@ ${habis.length?`<div style="padding:8px 12px;border-radius:var(--r1);background:
 // ===== KERANJANG & BAYAR =====
 function cartSheet(){const es=Object.entries(S.cart);if(!es.length){closeSheet();return}const det=detailTotal();
 openSheet(`<button class="auth-close" onclick="tutupAuth()" aria-label="Tutup">&times;</button><h2>Keranjang</h2>
-<ul class="list">${es.map(([key,q])=>{let p,vname='',price,maxStock;if(key.includes('_')){const [pid,vi]=key.split('_');p=S.prod.find(x=>x.id==pid);const v=p.v[+vi];vname=` (${v.n})`;price=v.p;maxStock=v.s}else{p=S.prod.find(x=>x.id==key);price=p.p;maxStock=p.s}return `<li><span>${esc(p.n)}${vname}<span class="sub">${rp(price*q)}</span></span><span class="step"><button data-act="dec-cart" data-key="${key}" aria-label="Kurangi">${ic('minus')}</button><b>${q}</b><button data-act="inc-cart" data-key="${key}" aria-label="Tambah" ${q>=maxStock?'disabled':''}>${ic('plus')}</button></span></li>`}).join('')}</ul>
+<ul class="list">${es.map(([key,val])=>{
+  // Support both formats
+  let q,price,maxStock,p,vname='';
+  if(typeof val==='object'){
+    q=val.q;
+    price=val.p;
+    // For processed orders, we need to find product just for name
+    if(key.includes('_')){
+      const [pid,vi]=key.split('_');
+      p=S.prod.find(x=>x.id==pid);
+      if(p&&p.v[+vi]){
+        vname=` (${p.v[+vi].n})`;
+        maxStock=p.v[+vi].s;
+      }else{
+        maxStock=999; // Can't increase already-processed orders
+      }
+    }else{
+      p=S.prod.find(x=>x.id==key);
+      maxStock=p?p.s:999;
+    }
+  }else{
+    q=val;
+    if(key.includes('_')){
+      const [pid,vi]=key.split('_');
+      p=S.prod.find(x=>x.id==pid);
+      const v=p.v[+vi];
+      vname=` (${v.n})`;
+      price=v.p;
+      maxStock=v.s;
+    }else{
+      p=S.prod.find(x=>x.id==key);
+      price=p.p;
+      maxStock=p.s;
+    }
+  }
+  if(!p)return'';
+  return `<li><span>${esc(p.n)}${vname}<span class="sub">${rp(price*q)}</span></span><span class="step"><button data-act="dec-cart" data-key="${key}" aria-label="Kurangi">${ic('minus')}</button><b>${q}</b><button data-act="inc-cart" data-key="${key}" aria-label="Tambah" ${q>=maxStock?'disabled':''}>${ic('plus')}</button></span></li>`
+}).join('')}</ul>
 <div class="eqn">
   <div><span>Subtotal</span><span>${rp(det.subtotal)}</span></div>
   ${det.diskon>0?`<div style="color:var(--bad)"><span>Diskon ${det.diskon_persen>0?`(${det.diskon_persen}%)`:''}</span><span>-${rp(det.diskon)}</span></div>
@@ -1953,7 +2033,17 @@ function tglPendek(ts){const d=new Date(ts);return d.toLocaleDateString('id-ID',
 function formKasbonBaru(totalBelanja,kartItem){openSheet(`<button class="auth-close" onclick="tutupAuth()" aria-label="Tutup">&times;</button><h2>Catat Kasbon</h2><p class="subtitle">Pelanggan belum bayar sekarang. Catat di sini supaya tidak lupa.</p>${totalBelanja>0?`<div style="padding:var(--s3);border-radius:var(--r2);background:var(--bad-bg);margin-bottom:var(--s3);font-weight:700;display:flex;justify-content:space-between"><span>Jumlah kasbon</span><span style="color:var(--bad)">${rp(totalBelanja)}</span></div>`:`<div class="form-group"><label for="kb-jml">Jumlah kasbon (Rp)</label><input class="fld" id="kb-jml" inputmode="numeric" placeholder="0" data-raw="" required><div class="form-error">Isi jumlah kasbon</div></div>`}<form id="form-kasbon" novalidate><div class="form-group"><label for="kb-nama">Nama pelanggan</label><input class="fld" id="kb-nama" type="text" placeholder="Contoh: Bu Sari" autocomplete="name" required><div class="form-error">Nama pelanggan tidak boleh kosong</div></div><div class="form-group"><label for="kb-hp">Nomor HP / WhatsApp <span style="font-weight:400;color:var(--muted)">(opsional)</span></label><input class="fld" id="kb-hp" type="tel" placeholder="Contoh: 081234567890" autocomplete="tel" inputmode="tel"></div><div class="form-group"><label for="kb-catatan">Catatan <span style="font-weight:400;color:var(--muted)">(opsional)</span></label><input class="fld" id="kb-catatan" type="text" placeholder="Contoh: dibayar minggu depan"></div><button class="btn btn--p btn-submit" type="submit">Simpan Kasbon</button></form><button class="btn" style="width:100%;margin-top:var(--s2)" onclick="tutupAuth()">Batal, bayar tunai</button><input type="hidden" id="kb-total" value="${totalBelanja}"><input type="hidden" id="kb-items" value="${esc(JSON.stringify(kartItem||[]))}">`)}
 function kasbonDetailSheet(id){const p=S.kasbon.find(x=>x.id===id);if(!p)return;const sisa=sisaKasbon(p);const riwayatHtml=p.riwayat.length?p.riwayat.slice().reverse().map(r=>`<div class="kasbon-riwayat-item"><div><span style="font-size:15px;font-weight:600">${r.tipe==='utang'?'Belanja':'Bayar'}</span><span class="tgl"> · ${tglPendek(r.tgl)}</span>${r.catatan?`<span class="tgl"> · ${esc(r.catatan)}</span>`:''}</div><span class="jml ${r.tipe}">${r.tipe==='utang'?'+':'-'}${rp(r.jml)}</span></div>`).join(''):`<div class="empty"><b>Belum ada riwayat.</b></div>`;openSheet(`<button class="auth-close" onclick="tutupAuth()" aria-label="Tutup">&times;</button><h2>${esc(p.nama)}${sisa<=0?'<span class="tag-lunas">Lunas</span>':'<span class="tag-menunggak">Menunggak</span>'}</h2><p class="subtitle">${esc(p.hp||'Nomor HP tidak dicatat')}</p><div class="kasbon-stat"><div class="kasbon-stat-item"><div class="lbl-s">Total Kasbon</div><div class="val-s" style="color:var(--bad)">${rp(p.riwayat.filter(r=>r.tipe==='utang').reduce((s,r)=>s+r.jml,0))}</div></div><div class="kasbon-stat-item"><div class="lbl-s">Sudah Dibayar</div><div class="val-s" style="color:var(--brand)">${rp(p.riwayat.filter(r=>r.tipe==='bayar').reduce((s,r)=>s+r.jml,0))}</div></div></div>${sisa>0?`<div class="kasbon-total-bar"><span>Sisa yang harus dibayar</span><span>${rp(sisa)}</span></div>`:`<div class="kasbon-total-bar bersih"><span>Semua sudah lunas</span><span>${ic('check')} Lunas</span></div>`}${sisa>0?`<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s2);margin-bottom:var(--s3)"><button class="btn btn--p" data-act="kasbon-lunas" data-id="${id}">Lunas Semua</button><button class="btn" data-act="kasbon-cicil" data-id="${id}">Catat Cicilan</button></div>`:''}<h3 style="font-size:16px;margin-bottom:var(--s2)">Riwayat</h3><div class="kasbon-riwayat">${riwayatHtml}</div><button class="btn" style="width:100%;margin-top:var(--s3);color:var(--bad);border-color:var(--bad)" data-act="kasbon-hapus" data-id="${id}">Hapus Data Kasbon Ini</button>`)}
 function kasbonCicilSheet(id){const p=S.kasbon.find(x=>x.id===id);if(!p)return;const sisa=sisaKasbon(p);openSheet(`<button class="auth-close" onclick="tutupAuth()" aria-label="Tutup">&times;</button><h2>Catat Pembayaran</h2><p class="subtitle">${esc(p.nama)} · Sisa: ${rp(sisa)}</p><form id="form-cicil" data-id="${id}" novalidate><div class="form-group"><label for="ci-jml">Jumlah yang dibayar (Rp)</label><input class="fld" id="ci-jml" inputmode="numeric" placeholder="0" data-raw="" required><div class="form-error">Isi jumlah pembayaran</div></div><div class="quick"><button type="button" class="chip" data-act="ci-quick" data-n="${sisa}">Bayar semua (${rp(sisa)})</button></div><div class="form-group" style="margin-top:var(--s3)"><label for="ci-catatan">Catatan <span style="font-weight:400;color:var(--muted)">(opsional)</span></label><input class="fld" id="ci-catatan" type="text" placeholder="Contoh: DP pertama"></div><button class="btn btn--p btn-submit" type="submit" style="margin-top:var(--s3)">Simpan Pembayaran</button></form>`)}
-function setCart(id,d){const p=S.prod.find(x=>x.id==id),q=(S.cart[id]||0)+d;if(q<=0)delete S.cart[id];else if(q<=p.s)S.cart[id]=q;}
+function setCart(id,d){
+  const p=S.prod.find(x=>x.id==id);
+  // Support both old format (number) and new format (object)
+  const currentQty=typeof S.cart[id]==='object'?S.cart[id].q:(S.cart[id]||0);
+  const newQty=currentQty+d;
+  if(newQty<=0)delete S.cart[id];
+  else if(newQty<=p.s){
+    // Keep as number for normal kasir flow
+    S.cart[id]=newQty;
+  }
+}
 function refreshKasir(){const g=$('#grid');if(g){const ps=S.prod.filter(p=>(S.kat==='Semua'||p.k===S.kat)&&p.n.toLowerCase().includes(S.q.toLowerCase()));const bestSellers=getBestSellers(7);const sorted=ps.sort((a,b)=>{const aIsBest=bestSellers.includes(a.id);const bIsBest=bestSellers.includes(b.id);if(aIsBest&&!bIsBest)return -1;if(!aIsBest&&bIsBest)return 1;return 0});g.innerHTML=gridHtml(sorted,bestSellers);$('#cb').innerHTML=cartbar()}}
 
 let waTeks='';
@@ -1978,14 +2068,44 @@ function strukTeksOf(s){
 function finalizeSale(metode){
   if(!Object.keys(S.cart).length){closeSheet();return}
   const det=detailTotal();
-  const items=Object.entries(S.cart).map(([key,q])=>{
-    if(key.includes('_')){const [pid,vi]=key.split('_');const p=S.prod.find(x=>x.id==pid),v=p&&p.v[+vi];if(!v)return null;v.s=Math.max(0,v.s-q);return{id:p.id,n:`${p.n} (${v.n})`,p:v.p,c:v.c,q,vi:+vi}}
-    const p=S.prod.find(x=>x.id==key);if(!p)return null;p.s=Math.max(0,p.s-q);return{id:p.id,n:p.n,p:p.p,c:p.c,q};
+  const items=Object.entries(S.cart).map(([key,val])=>{
+    // Support both formats: number (normal kasir) or object (from process-order)
+    let q,price,cost;
+    if(typeof val==='object'){
+      q=val.q;
+      price=val.p;
+      cost=val.c||0;
+    }else{
+      q=val;
+    }
+    
+    if(key.includes('_')){
+      const [pid,vi]=key.split('_');
+      const p=S.prod.find(x=>x.id==pid),v=p&&p.v[+vi];
+      if(!v)return null;
+      v.s=Math.max(0,v.s-q);
+      return{id:p.id,n:`${p.n} (${v.n})`,p:price||v.p,c:cost||v.c,q,vi:+vi}
+    }
+    const p=S.prod.find(x=>x.id==key);
+    if(!p)return null;
+    p.s=Math.max(0,p.s-q);
+    return{id:p.id,n:p.n,p:price||p.p,c:cost||p.c,q};
   }).filter(Boolean);
+  
   const now=Date.now(),trxId='TRX-'+String(now).slice(-8).toUpperCase();
   const sale={day:dayOf(now),ts:now,id:trxId,items,metode,kasir:S.kasir||S.usaha,void:false,subtotal:det.subtotal,diskon:det.diskon,diskon_persen:det.diskon_persen,diskon_nominal:det.diskon_nominal,ppn:det.ppn,ppn_persen:det.ppn_persen,total:det.total};
   if(metode==='tunai'&&S.terima>0){sale.bayar=S.terima;sale.kembalian=S.terima-det.total}
-  S.sales.push(sale);S.cart={};S.terima=0;
+  S.sales.push(sale);
+  
+  // Check if this is from processing an order
+  const processingOrderId=localStorage.getItem('processing_order_id');
+  if(processingOrderId){
+    // Mark order as paid
+    apiOrderProcess(processingOrderId,metode,det.total);
+    localStorage.removeItem('processing_order_id');
+  }
+  
+  S.cart={};S.terima=0;
   saveProduk();saveTransaksi(sale);
   closeSheet();refreshKasir();
   const rincian=det.diskon>0||det.ppn>0?`<div style="padding:var(--s2);background:var(--paper);border-radius:var(--r2);margin:var(--s3) 0;font-size:14px"><div style="display:flex;justify-content:space-between;padding:4px 0"><span>Subtotal</span><span>${rp(det.subtotal)}</span></div>${det.diskon>0?`<div style="display:flex;justify-content:space-between;padding:4px 0;color:var(--brand)"><span>Diskon</span><span>-${rp(det.diskon)}</span></div>`:''}${det.ppn>0?`<div style="display:flex;justify-content:space-between;padding:4px 0"><span>PPN (${det.ppn_persen}%)</span><span>+${rp(det.ppn)}</span></div>`:''}<div style="display:flex;justify-content:space-between;padding:8px 0 4px;border-top:2px solid var(--ink);margin-top:4px;font-weight:700;font-size:16px"><span>Total</span><span>${rp(det.total)}</span></div></div>`:'';
@@ -2012,8 +2132,51 @@ add:b=>{setCart(b.dataset.id,1);refreshKasir();const c=$('#cbtn');if(c){c.classL
 'add-variant-row':()=>{tempVariants.push({n:'',p:0,c:0,s:0});renderVariantList()},
 'remove-variant':b=>{const vi=+b.dataset.vi;tempVariants.splice(vi,1);renderVariantList()},
 cart:()=>cartSheet(),
-'inc-cart':b=>{const key=b.dataset.key;if(key.includes('_')){const [pid,vi]=key.split('_');const p=S.prod.find(x=>x.id==pid);const v=p.v[+vi];if((S.cart[key]||0)<v.s)S.cart[key]=(S.cart[key]||0)+1}else{const p=S.prod.find(x=>x.id==key);if((S.cart[key]||0)<p.s)S.cart[key]=(S.cart[key]||0)+1}cartSheet();refreshKasir()},
-'dec-cart':b=>{const key=b.dataset.key;const q=(S.cart[key]||0)-1;if(q<=0)delete S.cart[key];else S.cart[key]=q;cartSheet();refreshKasir()},
+'inc-cart':b=>{
+  const key=b.dataset.key;
+  // Support both formats
+  const currentQty=typeof S.cart[key]==='object'?S.cart[key].q:(S.cart[key]||0);
+  
+  if(key.includes('_')){
+    const [pid,vi]=key.split('_');
+    const p=S.prod.find(x=>x.id==pid);
+    const v=p.v[+vi];
+    if(currentQty<v.s){
+      if(typeof S.cart[key]==='object'){
+        S.cart[key].q++;
+      }else{
+        S.cart[key]=(S.cart[key]||0)+1;
+      }
+    }
+  }else{
+    const p=S.prod.find(x=>x.id==key);
+    if(currentQty<p.s){
+      if(typeof S.cart[key]==='object'){
+        S.cart[key].q++;
+      }else{
+        S.cart[key]=(S.cart[key]||0)+1;
+      }
+    }
+  }
+  cartSheet();refreshKasir();
+},
+'dec-cart':b=>{
+  const key=b.dataset.key;
+  // Support both formats
+  const currentQty=typeof S.cart[key]==='object'?S.cart[key].q:(S.cart[key]||0);
+  const newQty=currentQty-1;
+  
+  if(newQty<=0){
+    delete S.cart[key];
+  }else{
+    if(typeof S.cart[key]==='object'){
+      S.cart[key].q=newQty;
+    }else{
+      S.cart[key]=newQty;
+    }
+  }
+  cartSheet();refreshKasir();
+},
 kat:b=>{S.kat=b.dataset.k;render()},per:b=>{S.per=+b.dataset.d;render()},
 metode:b=>{S.metode=b.dataset.k;cartSheet()},quick:b=>{S.terima=+b.dataset.n;cartSheet()},
 save:()=>finalizeSale(S.metode),
@@ -2194,12 +2357,20 @@ out:()=>{localStorage.removeItem('user');location.href='/'},
   const order=S.orders.find(o=>o.order_id===orderId);
   if(!order||order.status!=='pending')return;
   
-  // Set cart to order items
+  // Set cart to order items - FIXED: include price & cost from order
   S.cart={};
   order.items.forEach(item=>{
     const key=item.variant_index!==undefined?`${item.id}_${item.variant_index}`:item.id;
-    S.cart[key]=item.quantity;
+    // Store as object with quantity, price, cost
+    S.cart[key]={
+      q:item.quantity,
+      p:item.price,
+      c:item.cost||0
+    };
   });
+  
+  // Store order_id in temp to mark as paid later
+  localStorage.setItem('processing_order_id',orderId);
   
   // Go to kasir view untuk process pembayaran
   closeSheet();
