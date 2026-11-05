@@ -1178,18 +1178,30 @@
     function startPaymentPolling() {
       if (pollingInterval) clearInterval(pollingInterval);
       
+      console.log('[Polling] Starting payment status polling for order:', currentOrderId);
+      
       pollingInterval = setInterval(async () => {
         try {
-          // Check order status via toko_id (we need to modify API for this)
-          const response = await fetch(`/api/orders/${currentOrderId}?toko_id=${tokoId}`);
+          // Check order status via toko_id - add cache buster
+          const cacheBuster = Date.now();
+          const response = await fetch(`/api/orders/${currentOrderId}?toko_id=${tokoId}&_=${cacheBuster}`, {
+            cache: 'no-store',
+            headers: {
+              'Cache-Control': 'no-cache',
+              'Pragma': 'no-cache'
+            }
+          });
           const data = await response.json();
           
+          console.log('[Polling] Order status:', data.order?.status, '| Payment:', data.order?.payment_method);
+          
           if (data.success && data.order.status === 'paid') {
+            console.log('[Polling] Payment detected! Showing success screen...');
             clearInterval(pollingInterval);
             showSuccessScreen(data.order);
           }
         } catch (error) {
-          console.error('Polling error:', error);
+          console.error('[Polling] Error:', error);
         }
       }, 3000); // Poll every 3 seconds
     }

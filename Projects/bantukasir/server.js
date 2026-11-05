@@ -1400,12 +1400,20 @@ app.get("/api/orders/:order_id", (req, res) => {
       return res.status(400).json({ success: false, message: "user_id atau toko_id wajib diisi" });
     }
     
+    // Force fresh read from database
     const { entry } = getUserEntry("database_orders.json", userId);
     const order = (entry.orders || []).find(o => o.order_id === order_id);
     
     if (!order) {
       return res.status(404).json({ success: false, message: "Pesanan tidak ditemukan" });
     }
+    
+    console.log(`[Orders] GET ${order_id} - Status: ${order.status}, Payment: ${order.payment_method || 'none'}`);
+    
+    // Prevent caching
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
     
     res.json({
       success: true,
@@ -1447,7 +1455,11 @@ app.put("/api/orders/:order_id/process", (req, res) => {
     order.processed_by = processed_by || "kasir";
     order.processed_at = Date.now();
     
+    console.log(`[Orders] Processing order ${order_id} - Setting status to PAID, payment method: ${payment_method}`);
+    
     saveUserEntry("database_orders.json", orderDb);
+    
+    console.log(`[Orders] Order ${order_id} saved with status: ${order.status}`);
     
     // Create transaction
     const timestamp = Date.now();
