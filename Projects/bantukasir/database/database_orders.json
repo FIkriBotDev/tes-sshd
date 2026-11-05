@@ -123,6 +123,58 @@
         "created_at": 1793847311314,
         "payment_method": null,
         "processed_by": null
+      },
+      {
+        "order_id": "order_1793847523817",
+        "order_number": 245,
+        "customer_name": "Fikri",
+        "items": [
+          {
+            "id": 1793547321723,
+            "name": "Ayam Katsu",
+            "price": 18000,
+            "cost": 15000,
+            "quantity": 2,
+            "image": "https://images.unsplash.com/photo-1677743540715-d4fe04852225?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8QXlhbSUyMEthdHN1fGVufDB8fHx8MTc5MzU0NjY5N3ww&ixlib=rb-4.1.0&q=80&w=400"
+          },
+          {
+            "id": 1793547339589,
+            "name": "Es Teh",
+            "price": 15000,
+            "cost": 8000,
+            "quantity": 1,
+            "image": "https://images.unsplash.com/photo-1741241858511-13978ec7a067?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8RXMlMjBUZWh8ZW58MHx8fHwxNzkzNTQ3MzI4fDA&ixlib=rb-4.1.0&q=80&w=400"
+          },
+          {
+            "id": 1793614077645,
+            "name": "Kopi Susu",
+            "price": 15000,
+            "cost": 10000,
+            "quantity": 1,
+            "image": "https://images.unsplash.com/photo-1629688825560-917b9727c15b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8S29waSUyMFN1c3V8ZW58MHx8fHwxNzkzNjE0MDY5fDA&ixlib=rb-4.1.0&q=80&w=400"
+          },
+          {
+            "id": 1793547299989,
+            "name": "Nasi Goreng",
+            "price": 15000,
+            "cost": 10000,
+            "quantity": 2,
+            "image": "https://images.unsplash.com/photo-1680674774705-90b4904b3a7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8TmFzaSUyMEdvcmVuZ3xlbnwwfHx8fDE3OTM1NDY2NTd8MA&ixlib=rb-4.1.0&q=80&w=400"
+          },
+          {
+            "id": 1793547381950,
+            "name": "Jus jeruk",
+            "price": 15000,
+            "cost": 10000,
+            "quantity": 2,
+            "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8SnVzJTIwamVydWt8ZW58MHx8fHwxNzkzNTQ3MzY3fDA&ixlib=rb-4.1.0&q=80&w=400"
+          }
+        ],
+        "subtotal": 126000,
+        "status": "pending",
+        "created_at": 1793847523817,
+        "payment_method": null,
+        "processed_by": null
       }
     ]
   }
