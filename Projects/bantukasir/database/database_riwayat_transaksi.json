@@ -1568,6 +1568,51 @@
         "bayar": 33000,
         "kembalian": 0,
         "day": 20762
+      },
+      {
+        "id": "trx_1793863325296",
+        "items": [
+          {
+            "id": 1793547381950,
+            "n": "Jus jeruk",
+            "p": 15000,
+            "c": 10000,
+            "q": 2
+          }
+        ],
+        "total": 30000,
+        "method": "tunai",
+        "timestamp": 1793863325296,
+        "day": 20762,
+        "void": false,
+        "from_order": "order_1793863307681",
+        "customer_name": "Fikri"
+      },
+      {
+        "id": "TRX-63325190",
+        "timestamp": 1793863325190,
+        "items": [
+          {
+            "id": 1793547381950,
+            "n": "Jus jeruk",
+            "p": 15000,
+            "c": 10000,
+            "q": 2
+          }
+        ],
+        "total": 30000,
+        "subtotal": 30000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 50000,
+        "kembalian": 20000,
+        "day": 20762
       }
     ]
   },
