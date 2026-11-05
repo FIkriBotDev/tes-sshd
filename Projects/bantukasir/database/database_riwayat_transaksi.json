@@ -1265,6 +1265,39 @@
         "kasir": "Muhammad Fikri Fahrezi",
         "void": false,
         "day": 20762
+      },
+      {
+        "id": "TRX-47730284",
+        "timestamp": 1793847730284,
+        "items": [
+          {
+            "id": 1793547299989,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          },
+          {
+            "id": 1793547381950,
+            "n": "Jus jeruk",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          }
+        ],
+        "total": 30000,
+        "subtotal": 30000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 50000,
+        "kembalian": 20000,
+        "day": 20762
       }
     ]
   },
