@@ -65,12 +65,42 @@
           ],
           "kasbon_belum_lunas": 0
         }
+      },
+      {
+        "tanggal": "2026-11-06",
+        "ringkasan": "Hari ini untungnya Rp 41.000, turun jauh dibanding kemarin Rp 463.000 (selisih Rp -422.000 atau -91%).",
+        "penyebab": "Hari ini uang masuk Rp 192.000 kalah dengan modal keluar Rp 136.000, jadi gerak uangnya ketat. Selain itu, Jus jeruk habis dan Nasi Goreng menipis, padahal yang laku Ayam Katsu (4 terjual), Kopi Susu (4 terjual), dan Es Teh (2 terjual).",
+        "saran": "Besok langsung restock Jus jeruk dan Nasi Goreng dulu secukupnya, biar yang laku tetap jalan dan nggak kehilangan pembeli.",
+        "timestamp": 1793977968421,
+        "generated_by": "ai",
+        "data_context": {
+          "untung_hari_ini": 41000,
+          "untung_kemarin": 463000,
+          "selisih": -422000,
+          "persen_selisih": -91,
+          "uang_masuk": 192000,
+          "modal": 136000,
+          "pengeluaran": 15000,
+          "produk_terlaris": [
+            "Ayam Katsu (4 terjual)",
+            "Kopi Susu (4 terjual)",
+            "Es Teh (2 terjual)"
+          ],
+          "produk_habis": [
+            "Jus jeruk"
+          ],
+          "produk_menipis": [
+            "Nasi Goreng"
+          ],
+          "kasbon_belum_lunas": 0
+        }
       }
     ],
     "refresh_count": {
       "20261103": 2,
       "20261104": 1,
-      "20261105": 3
+      "20261105": 3,
+      "20261106": 1
     }
   },
   {
