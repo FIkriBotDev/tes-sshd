@@ -9,7 +9,7 @@
   {
     "user_id": "user_1793612731617",
     "toko_id": "wmxva9bh-uspjmqw-bt89",
-    "order_enabled": true,
+    "order_enabled": false,
     "order_url": "http://localhost:9123/order?toko=wmxva9bh-uspjmqw-bt89",
     "qr_code_base64": null
   }
