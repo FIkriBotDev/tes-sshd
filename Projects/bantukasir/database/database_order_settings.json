@@ -5,5 +5,12 @@
     "order_enabled": true,
     "order_url": "https://bantukasir.biz.id/order?toko=n18h84k6-uo7kyf8-6ktg",
     "qr_code_base64": null
+  },
+  {
+    "user_id": "user_1793612731617",
+    "toko_id": "wmxva9bh-uspjmqw-bt89",
+    "order_enabled": false,
+    "order_url": "http://localhost:9123/order?toko=wmxva9bh-uspjmqw-bt89",
+    "qr_code_base64": null
   }
 ]
