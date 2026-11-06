@@ -2165,6 +2165,56 @@
         "metode_bayar": "qris",
         "kasir": "Muh. Reski Ramadani",
         "void": false
+      },
+      {
+        "id": "TRX-41850134",
+        "timestamp": 1793941850134,
+        "items": [
+          {
+            "id": 1793612823957,
+            "n": "Kopi Hitam (Ice)",
+            "p": 8000,
+            "c": 5000,
+            "q": 1,
+            "vi": 1
+          },
+          {
+            "id": 1793613669939,
+            "n": "Ikan goreng",
+            "p": 15000,
+            "c": 13000,
+            "q": 1
+          },
+          {
+            "id": 1793612764396,
+            "n": "Ayam goreng (Pedas)",
+            "p": 15000,
+            "c": 13000,
+            "q": 1,
+            "vi": 0
+          },
+          {
+            "id": 1793613700987,
+            "n": "Matcha latte (Large)",
+            "p": 15000,
+            "c": 13000,
+            "q": 1,
+            "vi": 0
+          }
+        ],
+        "total": 55650,
+        "subtotal": 53000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 2650,
+        "ppn_persen": 5,
+        "metode_bayar": "tunai",
+        "kasir": "Muh. Reski Ramadani",
+        "void": false,
+        "bayar": 100000,
+        "kembalian": 44350,
+        "day": 20763
       }
     ]
   }
