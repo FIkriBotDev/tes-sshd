@@ -1978,6 +1978,91 @@
         "bayar": 20000,
         "kembalian": 5000,
         "day": 20762
+      },
+      {
+        "id": "trx_1793969393461",
+        "items": [
+          {
+            "id": 1793547321723,
+            "n": "Ayam Katsu",
+            "p": 18000,
+            "c": 15000,
+            "q": 2
+          },
+          {
+            "id": 1793547339589,
+            "n": "Es Teh",
+            "p": 15000,
+            "c": 8000,
+            "q": 1
+          },
+          {
+            "id": 1793614077645,
+            "n": "Kopi Susu",
+            "p": 15000,
+            "c": 10000,
+            "q": 2
+          },
+          {
+            "id": 1793547299989,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          }
+        ],
+        "total": 96000,
+        "method": "qris",
+        "timestamp": 1793969393461,
+        "day": 20763,
+        "void": false,
+        "from_order": "order_1793969359010",
+        "customer_name": "fikri bau"
+      },
+      {
+        "id": "TRX-69392430",
+        "timestamp": 1793969392430,
+        "items": [
+          {
+            "id": 1793547321723,
+            "n": "Ayam Katsu",
+            "p": 18000,
+            "c": 15000,
+            "q": 2
+          },
+          {
+            "id": 1793547339589,
+            "n": "Es Teh",
+            "p": 15000,
+            "c": 8000,
+            "q": 1
+          },
+          {
+            "id": 1793614077645,
+            "n": "Kopi Susu",
+            "p": 15000,
+            "c": 10000,
+            "q": 2
+          },
+          {
+            "id": 1793547299989,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          }
+        ],
+        "total": 96000,
+        "subtotal": 96000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "qris",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "day": 20763
       }
     ]
   },

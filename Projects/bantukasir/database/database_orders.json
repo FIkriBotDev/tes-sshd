@@ -357,10 +357,11 @@
           }
         ],
         "subtotal": 66000,
-        "status": "pending",
+        "status": "cancelled",
         "created_at": 1793969123371,
         "payment_method": null,
-        "processed_by": null
+        "processed_by": null,
+        "cancelled_at": 1793969407387
       },
       {
         "order_id": "order_1793969359010",
@@ -401,10 +402,11 @@
           }
         ],
         "subtotal": 96000,
-        "status": "pending",
+        "status": "paid",
         "created_at": 1793969359010,
-        "payment_method": null,
-        "processed_by": null
+        "payment_method": "qris",
+        "processed_by": "kasir",
+        "processed_at": 1793969393461
       }
     ]
   },
