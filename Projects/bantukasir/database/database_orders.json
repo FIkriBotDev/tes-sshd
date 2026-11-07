@@ -450,11 +450,12 @@
             "variant_index": 0
           }
         ],
-        "subtotal": 30000,
-        "status": "pending",
+        "subtotal": 31500,
+        "status": "paid",
         "created_at": 1794030997082,
-        "payment_method": null,
-        "processed_by": null
+        "payment_method": "qris",
+        "processed_by": "kasir",
+        "processed_at": 1794031166125
       }
     ]
   }

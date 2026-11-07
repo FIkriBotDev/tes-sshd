@@ -2348,6 +2348,51 @@
         "kasir": "Muh. Reski Ramadani",
         "void": false,
         "day": 20764
+      },
+      {
+        "id": "trx_1794031166126",
+        "items": [
+          {
+            "id": 1793612764396,
+            "n": "Ayam goreng (Pedas)",
+            "p": 15000,
+            "c": 0,
+            "q": 2,
+            "vi": 0
+          }
+        ],
+        "total": 31500,
+        "method": "qris",
+        "timestamp": 1794031166126,
+        "day": 20764,
+        "void": false,
+        "from_order": "order_1794030997082",
+        "customer_name": "Muh Rofi Basri"
+      },
+      {
+        "id": "TRX-31165078",
+        "timestamp": 1794031165078,
+        "items": [
+          {
+            "id": 1793612764396,
+            "n": "Ayam goreng (Pedas)",
+            "p": 15000,
+            "c": 13000,
+            "q": 2,
+            "vi": 0
+          }
+        ],
+        "total": 31500,
+        "subtotal": 30000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 1500,
+        "ppn_persen": 5,
+        "metode_bayar": "qris",
+        "kasir": "Muh. Reski Ramadani",
+        "void": false,
+        "day": 20764
       }
     ]
   }
