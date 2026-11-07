@@ -456,6 +456,36 @@
         "payment_method": "qris",
         "processed_by": "kasir",
         "processed_at": 1794031166125
+      },
+      {
+        "order_id": "order_1794031254186",
+        "order_number": 455,
+        "customer_name": "Dani oba oba",
+        "items": [
+          {
+            "id": 1793612764396,
+            "name": "Ayam goreng (Pedas)",
+            "price": 15000,
+            "cost": 0,
+            "quantity": 1,
+            "image": "https://images.unsplash.com/photo-1732185269471-b62b52ca46f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8QXlhbSUyMGdvcmVuZ3xlbnwwfHx8fDE3OTM2MDgxMDV8MA&ixlib=rb-4.1.0&q=80&w=400",
+            "variant_index": 0
+          },
+          {
+            "id": 1793612823957,
+            "name": "Kopi Hitam (Hot)",
+            "price": 5000,
+            "cost": 0,
+            "quantity": 1,
+            "image": "https://images.unsplash.com/photo-1611162458324-aae1eb4129a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8S29waSUyMEhpdGFtfGVufDB8fHx8MTc5MzYxMjg0M3ww&ixlib=rb-4.1.0&q=80&w=400",
+            "variant_index": 0
+          }
+        ],
+        "subtotal": 20000,
+        "status": "pending",
+        "created_at": 1794031254186,
+        "payment_method": null,
+        "processed_by": null
       }
     ]
   }
