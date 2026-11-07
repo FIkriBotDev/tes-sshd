@@ -120,7 +120,7 @@
             "n": "Pedas",
             "p": 15000,
             "c": 13000,
-            "s": 20
+            "s": 19
           }
         ],
         "p": 0,
@@ -143,7 +143,7 @@
             "n": "Ice",
             "p": 8000,
             "c": 5000,
-            "s": 24
+            "s": 23
           }
         ],
         "p": 0,
@@ -157,7 +157,7 @@
         "f": "https://images.unsplash.com/photo-1725393325387-07f0d4951528?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8SWthbiUyMGdvcmVuZ3xlbnwwfHx8fDE3OTM2MTM2NzB8MA&ixlib=rb-4.1.0&q=80&w=400",
         "p": 15000,
         "c": 13000,
-        "s": 22,
+        "s": 21,
         "v": [],
         "id": 1793613669939
       },
@@ -176,7 +176,7 @@
             "n": "Reguler ",
             "p": 19000,
             "c": 15000,
-            "s": 25
+            "s": 24
           }
         ],
         "p": 0,
