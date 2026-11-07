@@ -116,23 +116,23 @@
       },
       {
         "tanggal": "2026-11-07",
-        "ringkasan": "Hari ini untungnya Rp -1.150, lebih baik dari kemarin Rp -3.350 (selisih Rp 2.200 atau 66%).",
-        "penyebab": "Mungkin karena uang masuk Rp 59.850 lebih ketutupi oleh modal keluar Rp 46.000, jadi rugi tidak sedalam kemarin. Produk juga tidak ada yang habis atau menipis, jadi tidak banyak yang mengganggu jualan.",
-        "saran": "Besok ulangi stok dan fokus ke yang laku seperti Ikan goreng, Ayam goreng (Pedas), dan Kopi Hitam (Ice) supaya penjualan tetap jalan dan rugi makin mengecil.",
-        "timestamp": 1794030676822,
+        "ringkasan": "Hari ini untung Rp 61.850, jauh naik dibanding kemarin yang rugi Rp -3.350 (selisih Rp 65.200 atau 1946%).",
+        "penyebab": "Uang masuk Rp 164.850 lebih besar dari modal keluar Rp 88.000, jadi harinya jadi positif. Penjualan paling ngangkat dari Ayam goreng (Pedas) (7 terjual), lanjut Kopi Hitam (Hot) (2 terjual), dan Ikan goreng (1 terjual).",
+        "saran": "Besok stokkan lebih banyak untuk Ayam goreng (Pedas) karena paling laku, supaya peluang untung tetap kejaga.",
+        "timestamp": 1794031454799,
         "generated_by": "ai",
         "data_context": {
-          "untung_hari_ini": -1150,
+          "untung_hari_ini": 61850,
           "untung_kemarin": -3350,
-          "selisih": 2200,
-          "persen_selisih": 66,
-          "uang_masuk": 59850,
-          "modal": 46000,
+          "selisih": 65200,
+          "persen_selisih": 1946,
+          "uang_masuk": 164850,
+          "modal": 88000,
           "pengeluaran": 15000,
           "produk_terlaris": [
-            "Ikan goreng (1 terjual)",
-            "Ayam goreng (Pedas) (1 terjual)",
-            "Kopi Hitam (Ice) (1 terjual)"
+            "Ayam goreng (Pedas) (7 terjual)",
+            "Kopi Hitam (Hot) (2 terjual)",
+            "Ikan goreng (1 terjual)"
           ],
           "produk_habis": [],
           "produk_menipis": [],
@@ -142,7 +142,7 @@
     ],
     "refresh_count": {
       "20261106": 2,
-      "20261107": 2
+      "20261107": 3
     }
   }
 ]
