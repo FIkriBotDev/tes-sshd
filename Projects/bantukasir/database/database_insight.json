@@ -97,21 +97,23 @@
       },
       {
         "tanggal": "2026-11-07",
-        "ringkasan": "Untung hari ini Rp 25.000, turun Rp 16.000 atau -39% dibanding kemarin Rp 41.000.",
-        "penyebab": "Uang masuk Rp 60.000 hanya ketutup sebagian oleh modal keluar Rp 20.000, jadi sisa untungnya lebih kecil. Selain itu, Jus jeruk sudah habis dan Nasi Goreng menipis, padahal Roti Bakar (Cokelat) jadi produk terlaris (4 terjual).",
-        "saran": "Besok sebelum ramai, langsung restock Jus jeruk dan tambah stok Nasi Goreng dulu biar penjualan tidak kepotong.",
-        "timestamp": 1794045628380,
+        "ringkasan": "Hari ini untung Rp 61.000, naik Rp 20.000 (49%) dibanding kemarin Rp 41.000.",
+        "penyebab": "Penjualan lumayan karena Roti Bakar (Cokelat) 4 terjual dan Ayam Katsu 4 terjual, sementara Jus jeruk habis jadi ada peluang jualan yang bisa ditutup besok. Nasi Goreng sudah menipis, tapi masih bisa dikejar sebelum benar-benar habis.",
+        "saran": "Besok langsung siapin stok pengganti Jus jeruk dan tambah Nasi Goreng supaya penjualan nggak putus di jam ramai.",
+        "timestamp": 1794047612936,
         "generated_by": "ai",
         "data_context": {
-          "untung_hari_ini": 25000,
+          "untung_hari_ini": 61000,
           "untung_kemarin": 41000,
-          "selisih": -16000,
-          "persen_selisih": -39,
-          "uang_masuk": 60000,
-          "modal": 20000,
+          "selisih": 20000,
+          "persen_selisih": 49,
+          "uang_masuk": 192000,
+          "modal": 116000,
           "pengeluaran": 15000,
           "produk_terlaris": [
-            "Roti Bakar (Cokelat) (4 terjual)"
+            "Roti Bakar (Cokelat) (4 terjual)",
+            "Ayam Katsu (4 terjual)",
+            "Es Teh (2 terjual)"
           ],
           "produk_habis": [
             "Jus jeruk"
@@ -128,7 +130,7 @@
       "20261104": 1,
       "20261105": 3,
       "20261106": 1,
-      "20261107": 2
+      "20261107": 3
     }
   },
   {
