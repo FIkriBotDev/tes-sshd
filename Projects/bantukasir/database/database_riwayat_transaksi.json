@@ -2063,6 +2063,53 @@
         "kasir": "Muhammad Fikri Fahrezi",
         "void": false,
         "day": 20763
+      },
+      {
+        "id": "trx_1794045372358",
+        "items": [
+          {
+            "id": 1793547437646,
+            "n": "Roti Bakar (Cokelat)",
+            "p": 15000,
+            "c": 0,
+            "q": 2,
+            "vi": 0
+          }
+        ],
+        "total": 30000,
+        "method": "tunai",
+        "timestamp": 1794045372358,
+        "day": 20764,
+        "void": false,
+        "from_order": "order_1794045357253",
+        "customer_name": "fikri"
+      },
+      {
+        "id": "TRX-45372308",
+        "timestamp": 1794045372308,
+        "items": [
+          {
+            "id": 1793547437646,
+            "n": "Roti Bakar (Cokelat)",
+            "p": 15000,
+            "c": 10000,
+            "q": 2,
+            "vi": 0
+          }
+        ],
+        "total": 30000,
+        "subtotal": 30000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 100000,
+        "kembalian": 70000,
+        "day": 20764
       }
     ]
   },
