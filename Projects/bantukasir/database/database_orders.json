@@ -407,6 +407,27 @@
         "payment_method": "qris",
         "processed_by": "kasir",
         "processed_at": 1793969393461
+      },
+      {
+        "order_id": "order_1794045357253",
+        "order_number": 232,
+        "customer_name": "fikri",
+        "items": [
+          {
+            "id": 1793547437646,
+            "name": "Roti Bakar (Cokelat)",
+            "price": 15000,
+            "cost": 0,
+            "quantity": 2,
+            "image": "https://images.unsplash.com/photo-1679812000098-ff557c197028?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8Um90aSUyMEJha2FyfGVufDB8fHx8MTc5MzU0NzM4OHww&ixlib=rb-4.1.0&q=80&w=400",
+            "variant_index": 0
+          }
+        ],
+        "subtotal": 30000,
+        "status": "pending",
+        "created_at": 1794045357253,
+        "payment_method": null,
+        "processed_by": null
       }
     ]
   },
