@@ -2110,6 +2110,31 @@
         "bayar": 100000,
         "kembalian": 70000,
         "day": 20764
+      },
+      {
+        "id": "6201d355-9e25-4d49-8bf0-4616d29a0bbf",
+        "timestamp": 1794046264052,
+        "items": [
+          {
+            "id": 1793547321723,
+            "n": "Ayam Katsu",
+            "p": 18000,
+            "c": 15000,
+            "q": 2
+          }
+        ],
+        "total": 36000,
+        "subtotal": 36000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 40000,
+        "kembalian": 4000,
+        "day": 20764
       }
     ]
   },
