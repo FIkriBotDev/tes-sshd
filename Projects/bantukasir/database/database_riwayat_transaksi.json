@@ -2393,6 +2393,67 @@
         "kasir": "Muh. Reski Ramadani",
         "void": false,
         "day": 20764
+      },
+      {
+        "id": "trx_1794031315888",
+        "items": [
+          {
+            "id": 1793612764396,
+            "n": "Ayam goreng (Pedas)",
+            "p": 15000,
+            "c": 0,
+            "q": 1,
+            "vi": 0
+          },
+          {
+            "id": 1793612823957,
+            "n": "Kopi Hitam (Hot)",
+            "p": 5000,
+            "c": 0,
+            "q": 1,
+            "vi": 0
+          }
+        ],
+        "total": 21000,
+        "method": "qris",
+        "timestamp": 1794031315888,
+        "day": 20764,
+        "void": false,
+        "from_order": "order_1794031254186",
+        "customer_name": "Dani oba oba"
+      },
+      {
+        "id": "TRX-31314844",
+        "timestamp": 1794031314844,
+        "items": [
+          {
+            "id": 1793612764396,
+            "n": "Ayam goreng (Pedas)",
+            "p": 15000,
+            "c": 13000,
+            "q": 1,
+            "vi": 0
+          },
+          {
+            "id": 1793612823957,
+            "n": "Kopi Hitam (Hot)",
+            "p": 5000,
+            "c": 3000,
+            "q": 1,
+            "vi": 0
+          }
+        ],
+        "total": 21000,
+        "subtotal": 20000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 1000,
+        "ppn_persen": 5,
+        "metode_bayar": "qris",
+        "kasir": "Muh. Reski Ramadani",
+        "void": false,
+        "day": 20764
       }
     ]
   }
