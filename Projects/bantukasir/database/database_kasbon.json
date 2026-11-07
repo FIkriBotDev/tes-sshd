@@ -41,6 +41,20 @@
             "catatan": "Lunas - dibayar tunai"
           }
         ]
+      },
+      {
+        "id": "kb_1794067689905",
+        "nama": "Rofi",
+        "hp": "08123123123",
+        "riwayat": [
+          {
+            "tipe": "utang",
+            "jml": 30000,
+            "tgl": 1794067689905,
+            "catatan": "dibayar besok",
+            "items": []
+          }
+        ]
       }
     ]
   },
