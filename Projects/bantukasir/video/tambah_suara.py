@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Otomatis menambahkan narasi suara AI (Edge-TTS) & menyelaraskan scene dengan video_1.mp4
+Otomatis menambahkan narasi suara AI (Edge-TTS) & menyelaraskan scene ke video promosi
 """
 import asyncio, json, subprocess, sys, os, shutil
 
@@ -15,7 +15,7 @@ TAIL     = 0.45
 MAX_SPEEDUP = 1.35  
 # -------------------------------------
 
-# Daftar scene yang disesuaikan presisi dengan timestamp video_1.mp4 (Total 40 detik)
+# Daftar 11 scene (indeks 0 sampai 10, total durasi 40 detik)
 SCENES = json.loads(r'''[
     {"i": 0, "start": 0, "end": 3, "text": "Pesan makanan tanpa ketik, tinggal NGOMONG doang? Emang bisa?!", "pitch": 1.4},
     {"i": 1, "start": 3, "end": 6, "text": "Mau pesan makanan tapi males antre...", "pitch": 1.4},
@@ -60,20 +60,26 @@ async def main(video):
         speed = 1.0
         if d > room: speed = min(MAX_SPEEDUP, d/room)
         print(f"   Scene {s['i']:02d} [{role(s['pitch']):9s}] -> {d:5.1f}s / ruang {room:4.1f}s (x{speed:.2f})")
+        
         inputs += ["-i", raw]
         ms = int((s["start"]+LEAD_IN)*1000)
+        
+        # Format filter per input audio
         f = f"[{n}:a]"
         if speed > 1: f += f"atempo={speed:.3f},"
         f += f"aformat=sample_rates=44100:channel_layouts=mono,adelay={ms}|{ms}[a{n}]"
-        filters.append(f); labels.append(f"[a{n}]")
+        filters.append(f)
+        labels.append(f"[a{n}]")
     
     total = SCENES[-1]["end"]
+    # Gabungkan semua label audio misal: [a0][a1][a2]...[a10]
     mix_labels = "".join(labels)
     
-    filter_complex = f"{mix_labels}amix=inputs={len(labels)}:normalize=0:dropout_transition=0,loudnorm=I=-16:TP=-1.5:LRA=11,apad=whole_dur={total},atrim=0:{total}[out]"
+    # Gabungkan filter lengkap dengan jumlah input yang dinamis sesuai panjang `labels`
+    filter_graph = ";".join(filters) + f";{mix_labels}amix=inputs={len(labels)}:normalize=0:dropout_transition=0,loudnorm=I=-16:TP=-1.5:LRA=11,apad=whole_dur={total},atrim=0:{total}[out]"
 
     print("\n2. Menggabungkan seluruh potongan suara menjadi satu file narasi...")
-    run(["ffmpeg","-y",*inputs,"-filter_complex", filter_complex,"-map","[out]",
+    run(["ffmpeg","-y",*inputs,"-filter_complex", filter_graph,"-map","[out]",
          "-c:a","aac","-b:a","192k","narasi_mix.m4a"])
     
     base, _ = os.path.splitext(video)
@@ -86,5 +92,5 @@ async def main(video):
     print(f"\n🎉 Berhasil! Video dengan voice-over baru siap digunakan: {outv}")
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2: sys.exit("Cara pakai: python3 tambah_suara.py video_1.mp4")
+    if len(sys.argv) < 2: sys.exit("Cara pakai: python3 tambah_suara.py BantuKasir-promo-HQ.mp4")
     asyncio.run(main(sys.argv[1]))
