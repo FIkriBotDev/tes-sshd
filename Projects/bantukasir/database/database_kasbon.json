@@ -53,6 +53,12 @@
             "tgl": 1794067689905,
             "catatan": "dibayar besok",
             "items": []
+          },
+          {
+            "tipe": "bayar",
+            "jml": 30000,
+            "tgl": 1794127502630,
+            "catatan": "Lunas - dibayar tunai"
           }
         ]
       }
