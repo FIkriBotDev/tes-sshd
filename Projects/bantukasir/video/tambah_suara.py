@@ -16,15 +16,10 @@ import asyncio, json, subprocess, sys, os, shutil
 
 # ---------- PENGATURAN (silakan ubah) ----------
 # ---------- PENGATURAN (silakan ubah) ----------
-VOICES = {                     # pengisi suara per peran
-    # Narator menggunakan Ardi dengan tempo sedikit dinamis
+VOICES = {                     
     "narator":   dict(voice="id-ID-ArdiNeural",  rate="+2%",  pitch="+0Hz"),
-    
-    # Pemilik warung (Bu Siti) menggunakan Gadis (hangat & ramah)
     "pemilik":   dict(voice="id-ID-GadisNeural", rate="+0%",  pitch="+1Hz"),   
-    
-    # Pelanggan menggunakan variasi suara cowok yang agak energik/berbeda (misal pakai Ardi dengan pitch lebih tinggi, atau ganti jv-ID-DimasNeural jika ingin logat khas)
-    "pelanggan": dict(voice="id-ID-ArdiNeural",  rate="+5%",  pitch="+6Hz"),   
+    "pelanggan": dict(voice="jv-ID-DimasNeural",  rate="+4%",  pitch="+2Hz"),   
 }
 # -----------------------------------------------
 LEAD_IN  = 0.35    # detik jeda sebelum bicara di tiap scene
