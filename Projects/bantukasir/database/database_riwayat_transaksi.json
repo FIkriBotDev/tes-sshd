@@ -2853,6 +2853,38 @@
         "bayar": 10000,
         "kembalian": 2000,
         "day": 20765
+      },
+      {
+        "id": "8435c0a5-3a11-457f-964e-e345e8019f2f",
+        "timestamp": 1794110192208,
+        "items": [
+          {
+            "id": 1794109505560,
+            "n": "Es Teh Manis",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          },
+          {
+            "id": 1794109528620,
+            "n": "Air Mineral",
+            "p": 8000,
+            "c": 6500,
+            "q": 1
+          }
+        ],
+        "total": 23000,
+        "subtotal": 23000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "kasir": "Muhammad Rofi Basri",
+        "void": false,
+        "bayar": 23000,
+        "kembalian": 0,
+        "day": 20765
       }
     ]
   }
