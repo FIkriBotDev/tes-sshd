@@ -126,11 +126,33 @@
       },
       {
         "tanggal": "2026-11-08",
-        "ringkasan": "Belum ada penjualan hari ini",
-        "penyebab": "Kemarin untung Rp 61.000, tapi Jus jeruk habis",
-        "saran": "Belanja Jus jeruk dulu supaya bisa buka",
-        "timestamp": 1794098402402,
-        "generated_by": "template"
+        "ringkasan": "Hari ini untungnya Rp 4.400, jauh turun dibanding kemarin Rp 61.000 (selisih Rp -56.600 atau -93%).",
+        "penyebab": "Uang masuk Rp 58.000 tapi modal keluar Rp 38.600, jadi sisa untung tipis. Selain itu Jus jeruk sudah habis dan stok Nasi Goreng serta Kopi Hitam juga menipis.",
+        "saran": "Besok langsung restock Jus jeruk, Nasi Goreng, dan Kopi Hitam supaya tidak ada yang kosong lagi saat pembeli datang.",
+        "timestamp": 1794149494070,
+        "generated_by": "ai",
+        "data_context": {
+          "untung_hari_ini": 4400,
+          "untung_kemarin": 61000,
+          "selisih": -56600,
+          "persen_selisih": -93,
+          "uang_masuk": 58000,
+          "modal": 38600,
+          "pengeluaran": 15000,
+          "produk_terlaris": [
+            "Ayam Goreng (2 terjual)",
+            "Kopi Hitam (2 terjual)",
+            "Ayam Katsu (1 terjual)"
+          ],
+          "produk_habis": [
+            "Jus jeruk"
+          ],
+          "produk_menipis": [
+            "Nasi Goreng",
+            "Kopi Hitam"
+          ],
+          "kasbon_belum_lunas": 0
+        }
       }
     ],
     "refresh_count": {
@@ -139,7 +161,7 @@
       "20261105": 3,
       "20261106": 1,
       "20261107": 3,
-      "20261108": 1
+      "20261108": 2
     }
   },
   {
