@@ -113,6 +113,34 @@
         "payment_method": "tunai",
         "processed_by": "kasir",
         "processed_at": 1794107024097
+      },
+      {
+        "order_id": "order_1794111048949",
+        "order_number": 709,
+        "customer_name": "Fikri",
+        "items": [
+          {
+            "id": 1794109431024,
+            "name": "Nasi Goreng",
+            "price": 15000,
+            "cost": 10000,
+            "quantity": 2,
+            "image": "https://images.unsplash.com/photo-1680674774705-90b4904b3a7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8TmFzaSUyMEdvcmVuZ3xlbnwwfHx8fDE3OTQxMDk0Mjl8MA&ixlib=rb-4.1.0&q=80&w=400"
+          },
+          {
+            "id": 1794109528620,
+            "name": "Air Mineral",
+            "price": 8000,
+            "cost": 6500,
+            "quantity": 1,
+            "image": "https://images.unsplash.com/photo-1612134678926-7592c521aa52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8QWlyJTIwTWluZXJhbHxlbnwwfHx8fDE3OTQxMDk1MzZ8MA&ixlib=rb-4.1.0&q=80&w=400"
+          }
+        ],
+        "subtotal": 38000,
+        "status": "pending",
+        "created_at": 1794111048949,
+        "payment_method": null,
+        "processed_by": null
       }
     ]
   }
