@@ -220,41 +220,6 @@
     "user_id": "user_1794105877803",
     "produk": [
       {
-        "n": "Nasi Goreng",
-        "k": "Makanan",
-        "f": "https://images.unsplash.com/photo-1680674774705-90b4904b3a7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8TmFzaSUyMEdvcmVuZ3xlbnwwfHx8fDE3OTQxMDYyMzF8MA&ixlib=rb-4.1.0&q=80&w=400",
-        "v": [
-          {
-            "n": "Nasi Goreng Jawa",
-            "p": 18000,
-            "c": 14000,
-            "s": 29
-          },
-          {
-            "n": "Nasi Goreng Kampung",
-            "p": 15000,
-            "c": 10000,
-            "s": 250
-          },
-          {
-            "n": "Nasi Goreng Merah",
-            "p": 15000,
-            "c": 10000,
-            "s": 30
-          },
-          {
-            "n": "Nasi Goreng Kambing",
-            "p": 20000,
-            "c": 15000,
-            "s": 20
-          }
-        ],
-        "p": 0,
-        "c": 0,
-        "s": 0,
-        "id": 1794106232026
-      },
-      {
         "n": "Smoothies buah",
         "k": "Minuman",
         "f": "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8U21vb3RoaWVzJTIwYnVhaHxlbnwwfHx8fDE3OTQxMDY2Mjh8MA&ixlib=rb-4.1.0&q=80&w=400",
