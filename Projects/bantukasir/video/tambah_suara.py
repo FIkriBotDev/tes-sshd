@@ -1,21 +1,31 @@
 #!/usr/bin/env python3
 """
 Tambah narasi suara (bahasa Indonesia) & backsound ke video BantuKasir
+
+Kebutuhan (sekali saja):
+    1. Python 3.9+    2. ffmpeg terpasang (perintah `ffmpeg` bisa dijalankan)
+    3. pip install edge-tts       (butuh internet saat membuat suara)
+
+Pemakaian:
+    python tambah_suara.py video_1.mp4
+Hasil:
+    video_1_suara.mp4      (video + narasi + backsound)
+    narasi_mix.m4a         (audio saja)
 """
 import asyncio, json, subprocess, sys, os, shutil
 
 # ---------- PENGATURAN (silakan ubah) ----------
-VOICES = {                     
+VOICES = {                     # pengisi suara per peran
     "narator":   dict(voice="id-ID-ArdiNeural",  rate="+2%",  pitch="+0Hz"),
-    "pemilik":   dict(voice="id-ID-GadisNeural", rate="+0%",  pitch="+1Hz"),   
-    "pelanggan": dict(voice="jv-ID-DimasNeural",  rate="+4%",  pitch="+2Hz"),   
+    "pemilik":   dict(voice="id-ID-GadisNeural", rate="+0%",  pitch="+1Hz"),   # Bu pemilik warung
+    "pelanggan": dict(voice="jv-ID-DimasNeural",  rate="+4%",  pitch="+2Hz"),   # Pelanggan
 }
-LEAD_IN  = 0.35    
-TAIL     = 0.45    
-MAX_SPEEDUP = 1.35  
+LEAD_IN  = 0.35    # detik jeda sebelum bicara di tiap scene
+TAIL     = 0.45    # detik sisa di akhir scene
+MAX_SPEEDUP = 1.35  # kalau kalimat kepanjangan, dipercepat paling banyak sekian kali
 
-BACKSOUND_FILE = "backsound.mp3"  
-BACKSOUND_VOLUME = 0.12           
+BACKSOUND_FILE = "backsound.mp3"  # Letakkan file musik latar di folder ini (opsional)
+BACKSOUND_VOLUME = 0.12           # Volume backsound (0.05 - 0.2 agar suara narator tetap jelas)
 # -----------------------------------------------
 
 SCENES = json.loads(r'''[
@@ -81,6 +91,7 @@ async def main(video):
     total = SCENES[-1]["end"]
     mix_labels = "".join(labels)
     
+    # Deteksi apakah file backsound.mp3 tersedia
     has_backsound = os.path.exists(BACKSOUND_FILE)
     
     if has_backsound:
@@ -88,9 +99,10 @@ async def main(video):
         inputs += ["-i", BACKSOUND_FILE]
         bs_idx = len(labels)
         filter_complex = (
-            f"{mix_labels}amix=inputs={len(labels)}:normalize=0:dropout_transition=0,aformat=sample_rates=44100:channel_layouts=stereo[voice_mix];"
-            f"[{bs_idx}:a]aformat=sample_rates=44100:channel_layouts=stereo,volume={BACKSOUND_VOLUME},aloop=loop=-1:size=2e9,atrim=0:{total}[bs];"
-            f"[voice_mix][bs]amix=inputs=2:weights=1|1,loudnorm=I=-16:TP=-1.5:LRA=11,apad=whole_dur={total},atrim=0:{total}[out]"
+            f"{mix_labels}amix=inputs={len(labels)}:normalize=0:dropout_transition=0[voice_mix];"
+            f"[{bs_idx}:a]volume={BACKSOUND_VOLUME},aformat=sample_rates=44100:channel_layouts=stereo,aloop=loop=-1:size=2e9,atrim=0:{total}[bs];"
+            f"[voice_mix]aformat=sample_rates=44100:channel_layouts=stereo[vm_stereo];"
+            f"[vm_stereo][bs]amix=inputs=2:weights=1|1,loudnorm=I=-16:TP=-1.5:LRA=11,apad=whole_dur={total},atrim=0:{total}[out]"
         )
     else:
         print(f"Catatan: File '{BACKSOUND_FILE}' tidak ditemukan. Video akan diproses tanpa backsound.")
