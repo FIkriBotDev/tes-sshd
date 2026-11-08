@@ -1,31 +1,20 @@
-#!/usr/bin/env python3
+#!/usr/init/env python3
 """
-Tambah narasi suara (bahasa Indonesia) ke video BantuKasir_Explainer_2D.mp4
-
-Kebutuhan (sekali saja):
-    1. Python 3.9+    2. ffmpeg terpasang (perintah `ffmpeg` bisa dijalankan)
-    3. pip install edge-tts       (butuh internet saat membuat suara)
-
-Pemakaian:
-    python tambah_suara.py video_1.mp4
-Hasil:
-    video_1_suara.mp4      (video + narasi)
-    narasi_mix.m4a                     (audio saja, kalau mau diedit di CapCut dll.)
+Tambah narasi suara & backsound otomatis ke video BantuKasir
 """
 import asyncio, json, subprocess, sys, os, shutil
 
-# ---------- PENGATURAN (silakan ubah) ----------
-# ---------- PENGATURAN (silakan ubah) ----------
+# ---------- PENGATURAN ----------
 VOICES = {                     
     "narator":   dict(voice="id-ID-ArdiNeural",  rate="+2%",  pitch="+0Hz"),
     "pemilik":   dict(voice="id-ID-GadisNeural", rate="+0%",  pitch="+1Hz"),   
     "pelanggan": dict(voice="jv-ID-DimasNeural",  rate="+4%",  pitch="+2Hz"),   
 }
-# -----------------------------------------------
-LEAD_IN  = 0.35    # detik jeda sebelum bicara di tiap scene
-TAIL     = 0.45    # detik sisa di akhir scene
-MAX_SPEEDUP = 1.35  # kalau kalimat kepanjangan, dipercepat paling banyak sekian kali
-FAKE = os.environ.get("FAKE_TTS") == "1"    # hanya untuk uji coba tanpa internet
+LEAD_IN  = 0.35    
+TAIL     = 0.45    
+MAX_SPEEDUP = 1.35  
+BACKSOUND_FILE = "backsound.mp3"  # Letakkan file musik latar di sini (opsional)
+BACKSOUND_VOLUME = 0.12           # Volume backsound (0.05 - 0.2 agar tidak menutupi suara orang)
 # -----------------------------------------------
 
 SCENES = json.loads(r'''[
@@ -63,7 +52,7 @@ def dur(path):
     return float(out)
 
 async def make_tts(i, text, cfg, path):
-    if FAKE:
+    if os.environ.get("FAKE_TTS") == "1":
         run(["ffmpeg","-y","-f","lavfi","-i",f"sine=frequency={300+40*i}:duration={len(text)*0.075:.2f}",path]); return
     import edge_tts
     await edge_tts.Communicate(text, cfg["voice"], rate=cfg["rate"], pitch=cfg["pitch"]).save(path)
@@ -79,26 +68,36 @@ async def main(video):
         d = dur(raw); room = (s["end"]-s["start"]) - LEAD_IN - TAIL
         speed = 1.0
         if d > room: speed = min(MAX_SPEEDUP, d/room)
-        flag = "  <-- dipercepat" if speed > 1 else ""
-        print(f"scene {s['i']:02d} [{role(s['pitch']):9s}] {d:5.1f}s / ruang {room:4.1f}s  x{speed:.2f}{flag}")
-        if d/speed > room+0.05:
-            print(f"    ! scene {s['i']:02d} masih kepanjangan; persingkat teks atau naikkan MAX_SPEEDUP")
+        print(f"scene {s['i']:02d} [{role(s['pitch']):9s}] {d:5.1f}s / ruang {room:4.1f}s  x{speed:.2f}")
         inputs += ["-i", raw]
         ms = int((s["start"]+LEAD_IN)*1000)
         f = f"[{n}:a]"
         if speed > 1: f += f"atempo={speed:.3f},"
         f += f"aformat=sample_rates=44100:channel_layouts=mono,adelay={ms}|{ms}[a{n}]"
         filters.append(f); labels.append(f"[a{n}]")
+    
     total = SCENES[-1]["end"]
-    filters.append("".join(labels)+f"amix=inputs={len(labels)}:normalize=0:dropout_transition=0,"
-                   f"loudnorm=I=-16:TP=-1.5:LRA=11,apad=whole_dur={total},atrim=0:{total}[out]")
-    run(["ffmpeg","-y",*inputs,"-filter_complex",";".join(filters),"-map","[out]",
+    
+    # Gabungkan semua suara narasi/karakter
+    mix_labels = "".join(labels)
+    filter_complex = f"{mix_labels}amix=inputs={len(labels)}:normalize=0:dropout_transition=0,loudnorm=I=-16:TP=-1.5:LRA=11,apad=whole_dur={total},atrim=0:{total}[voice_mix]"
+    
+    # Jika ada file backsound, campurkan backsound dengan suara narasi
+    if os.path.exists(BACKSOUND_FILE):
+        inputs += ["-i", BACKSOUND_FILE]
+        bs_idx = len(labels)
+        filter_complex += f";[{bs_idx}:a]volume={BACKSOUND_VOLUME},aloop=loop=-1:size=2e9,atrim=0:{total}[bs];[voice_mix][bs]amix=inputs=2:weights=1|1[out]"
+    else:
+        filter_complex += f";[voice_mix]asplit[out]"
+
+    run(["ffmpeg","-y",*inputs,"-filter_complex", filter_complex,"-map","[out]",
          "-c:a","aac","-b:a","192k","narasi_mix.m4a"])
+    
     base, _ = os.path.splitext(video)
-    outv = base + "_suara.mp4"
+    outv = base + "_suara_musik.mp4"
     run(["ffmpeg","-y","-i",video,"-i","narasi_mix.m4a","-map","0:v","-map","1:a",
          "-c:v","copy","-c:a","aac","-b:a","192k","-movflags","+faststart","-shortest",outv])
-    print("\nSelesai ->", outv)
+    print("\nSelesai dengan backsound ->", outv)
 
 if __name__ == "__main__":
     if len(sys.argv) < 2: sys.exit(__doc__)
