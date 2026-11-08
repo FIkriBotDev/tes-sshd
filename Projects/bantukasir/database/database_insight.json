@@ -183,5 +183,21 @@
       "20261106": 2,
       "20261107": 3
     }
+  },
+  {
+    "user_id": "user_1794105877803",
+    "insights": [
+      {
+        "tanggal": "2026-11-08",
+        "ringkasan": "Belum ada penjualan hari ini",
+        "penyebab": "Belum ada aktivitas",
+        "saran": "Cek stok dan siapkan jualan hari ini",
+        "timestamp": 1794105882770,
+        "generated_by": "template"
+      }
+    ],
+    "refresh_count": {
+      "20261108": 1
+    }
   }
 ]
