@@ -228,6 +228,26 @@
         "s": 30,
         "v": [],
         "id": 1794109431024
+      },
+      {
+        "n": "Es Teh Manis",
+        "k": "Minuman",
+        "f": "https://images.unsplash.com/photo-1722654583863-6116ec8f247a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8RXMlMjBUZWglMjBNYW5pc3xlbnwwfHx8fDE3OTM5NDE4MzB8MA&ixlib=rb-4.1.0&q=80&w=400",
+        "p": 15000,
+        "c": 10000,
+        "s": 10,
+        "v": [],
+        "id": 1794109505560
+      },
+      {
+        "n": "Air Mineral",
+        "k": "Minuman",
+        "f": "",
+        "p": 8000,
+        "c": 6500,
+        "s": 20,
+        "v": [],
+        "id": 1794109528620
       }
     ]
   }
