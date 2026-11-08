@@ -168,10 +168,11 @@
           }
         ],
         "subtotal": 23000,
-        "status": "pending",
+        "status": "paid",
         "created_at": 1794111681400,
-        "payment_method": null,
-        "processed_by": null
+        "payment_method": "tunai",
+        "processed_by": "kasir",
+        "processed_at": 1794112013880
       }
     ]
   }
