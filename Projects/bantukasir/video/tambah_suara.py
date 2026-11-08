@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Tambah narasi suara (bahasa Indonesia) & backsound ke video BantuKasir
+Tambah narasi suara (bahasa Indonesia) ke video BantuKasir
 """
 import asyncio, json, subprocess, sys, os, shutil
 
@@ -13,9 +13,6 @@ VOICES = {
 LEAD_IN  = 0.35    
 TAIL     = 0.45    
 MAX_SPEEDUP = 1.35  
-
-BACKSOUND_FILE = "backsound.mp3"  # Pastikan file ini ada (bisa pakai backsound_fixed.mp3 yang sudah di-rename)
-BACKSOUND_VOLUME = 0.12           
 # -----------------------------------------------
 
 SCENES = json.loads(r'''[
@@ -81,33 +78,20 @@ async def main(video):
     total = SCENES[-1]["end"]
     mix_labels = "".join(labels)
     
-    has_backsound = os.path.exists(BACKSOUND_FILE)
-    
-    if has_backsound:
-        print(f"Menggunakan backsound: {BACKSOUND_FILE}")
-        # Gunakan -stream_loop -1 SEBELUM -i agar backsound otomatis melingkar (looping) tanpa error filter
-        inputs += ["-stream_loop", "-1", "-i", BACKSOUND_FILE]
-        bs_idx = len(labels)
-        filter_complex = (
-            f"{mix_labels}amix=inputs={len(labels)}:normalize=0:dropout_transition=0,aformat=sample_rates=44100:channel_layouts=stereo[voice_mix];"
-            f"[{bs_idx}:a]aformat=sample_rates=44100:channel_layouts=stereo,volume={BACKSOUND_VOLUME},atrim=0:{total}[bs];"
-            f"[voice_mix][bs]amix=inputs=2:weights=1|1,loudnorm=I=-16:TP=-1.5:LRA=11,apad=whole_dur={total},atrim=0:{total}[out]"
-        )
-    else:
-        print(f"Catatan: File '{BACKSOUND_FILE}' tidak ditemukan. Video akan diproses tanpa backsound.")
-        filter_complex = (
-            f"{mix_labels}amix=inputs={len(labels)}:normalize=0:dropout_transition=0,"
-            f"loudnorm=I=-16:TP=-1.5:LRA=11,apad=whole_dur={total},atrim=0:{total}[out]"
-        )
+    # Filter khusus penggabungan suara narator & karakter (stabil & bersih)
+    filter_complex = f"{mix_labels}amix=inputs={len(labels)}:normalize=0:dropout_transition=0,loudnorm=I=-16:TP=-1.5:LRA=11,apad=whole_dur={total},atrim=0:{total}[out]"
 
+    print("\nMenggabungkan narasi suara...")
     run(["ffmpeg","-y",*inputs,"-filter_complex", filter_complex,"-map","[out]",
          "-c:a","aac","-b:a","192k","narasi_mix.m4a"])
     
     base, _ = os.path.splitext(video)
     outv = base + "_suara.mp4"
+    print("Memasukkan narasi ke dalam video...")
     run(["ffmpeg","-y","-i",video,"-i","narasi_mix.m4a","-map","0:v","-map","1:a",
          "-c:v","copy","-c:a","aac","-b:a","192k","-movflags","+faststart","-shortest",outv])
-    print("\nSelesai ->", outv)
+    
+    print("\nSelesai! Video berhasil dibuat ->", outv)
 
 if __name__ == "__main__":
     if len(sys.argv) < 2: sys.exit(__doc__)
