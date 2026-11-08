@@ -2688,6 +2688,54 @@
   },
   {
     "user_id": "user_1794105877803",
-    "transaksi": []
+    "transaksi": [
+      {
+        "id": "trx_1794107024100",
+        "items": [
+          {
+            "id": 1794106232026,
+            "n": "Nasi Goreng (Nasi Goreng Jawa)",
+            "p": 18000,
+            "c": 0,
+            "q": 1,
+            "vi": 0
+          }
+        ],
+        "total": 18000,
+        "method": "tunai",
+        "timestamp": 1794107024100,
+        "day": 20765,
+        "void": false,
+        "from_order": "order_1794107007675",
+        "customer_name": "Rofi"
+      },
+      {
+        "id": "TRX-07019205",
+        "timestamp": 1794107019205,
+        "items": [
+          {
+            "id": 1794106232026,
+            "n": "Nasi Goreng (Nasi Goreng Jawa)",
+            "p": 18000,
+            "c": 14000,
+            "q": 1,
+            "vi": 0
+          }
+        ],
+        "total": 18000,
+        "subtotal": 18000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Rofi Basri",
+        "void": false,
+        "bayar": 20000,
+        "kembalian": 2000,
+        "day": 20765
+      }
+    ]
   }
 ]
