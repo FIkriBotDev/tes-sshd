@@ -16,7 +16,7 @@
   {
     "user_id": "user_1794105877803",
     "toko_id": "ca39a6y8-58a3ejv-siqr",
-    "order_enabled": false,
+    "order_enabled": true,
     "order_url": "https://bantukasir.biz.id/order?toko=ca39a6y8-58a3ejv-siqr",
     "qr_code_base64": null
   }
