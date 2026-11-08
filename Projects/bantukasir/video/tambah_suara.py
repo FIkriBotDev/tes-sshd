@@ -1,33 +1,33 @@
 #!/usr/bin/env python3
 """
-Skrip otomatis untuk membuat dan memasukkan voice-over AI (Edge-TTS) ke video_1.mp4
-Sesuai dengan subtitle dan adegan pada video BantuKasir.
+Otomatis menambahkan narasi suara AI (Edge-TTS) & menyelaraskan scene dengan video_1.mp4
 """
 import asyncio, json, subprocess, sys, os, shutil
 
 # ---------- PENGATURAN SUARA ----------
 VOICES = {                     
-    "narator":   dict(voice="id-ID-ArdiNeural",   rate="+2%",  pitch="+0Hz"),
-    "pemilik":   dict(voice="id-ID-GadisNeural",  rate="+0%",  pitch="+1Hz"),    
-    "pelanggan": dict(voice="jv-ID-DimasNeural",   rate="+4%",  pitch="+2Hz"),    
+    "narator":   dict(voice="id-ID-ArdiNeural",  rate="+2%",  pitch="+0Hz"),
+    "pemilik":   dict(voice="id-ID-GadisNeural", rate="+0%",  pitch="+1Hz"),   
+    "pelanggan": dict(voice="jv-ID-DimasNeural",  rate="+4%",  pitch="+2Hz"),   
 }
 LEAD_IN  = 0.35    
 TAIL     = 0.45    
 MAX_SPEEDUP = 1.35  
 # -------------------------------------
 
-# Skrip adegan yang disesuaikan dengan subtitle pada video_1.mp4 (Total ~40 detik)
+# Daftar scene yang disesuaikan presisi dengan timestamp video_1.mp4 (Total 40 detik)
 SCENES = json.loads(r'''[
-    {"i": 0, "start": 0, "end": 2, "text": "Pesan makanan tanpa ketik, tinggal NGOMONG doang? Emang bisa?!", "pitch": null},
-    {"i": 1, "start": 2, "end": 6, "text": "Mau pesan makanan tapi males antre, atau ribet ngetik menu satu-satu?", "pitch": null},
-    {"i": 2, "start": 6, "end": 11, "text": "Udah bukan zamannya lagi! Cukup tekan tombol suara,", "pitch": null},
-    {"i": 3, "start": 11, "end": 17, "text": "sebutkan pesanannya, \"Ayam goreng satu, es teh manis dua,\"", "pitch": 1.4},
-    {"i": 4, "start": 17, "end": 22, "text": "...dan BOOM! Keranjang langsung terisi otomatis!", "pitch": null},
-    {"i": 5, "start": 22, "end": 26, "text": "Total langsung akurat, tanpa perlu ketik!", "pitch": null},
-    {"i": 6, "start": 26, "end": 30, "text": "Nggak pakai lama, nggak pakai ribet. Anti antre!", "pitch": null},
-    {"i": 7, "start": 30, "end": 34, "text": "Transaksi beres, pelanggan pun senang!", "pitch": null},
-    {"i": 8, "start": 34, "end": 38, "text": "Coba sekarang juga, gratis tanpa perlu unduh aplikasinya!", "pitch": null},
-    {"i": 9, "start": 38, "end": 40, "text": "Kunjungi bantukasir titik biz titik id.", "pitch": null}
+    {"i": 0, "start": 0, "end": 3, "text": "Pesan makanan tanpa ketik, tinggal NGOMONG doang? Emang bisa?!", "pitch": 1.4},
+    {"i": 1, "start": 3, "end": 6, "text": "Mau pesan makanan tapi males antre...", "pitch": 1.4},
+    {"i": 2, "start": 6, "end": 9, "text": "Atau ribet ngetik menu satu-satu?", "pitch": null},
+    {"i": 3, "start": 9, "end": 11, "text": "Udah bukan zamannya lagi!", "pitch": null},
+    {"i": 4, "start": 11, "end": 15, "text": "Cukup tekan tombol suara, sebutkan pesanannya...", "pitch": 1.4},
+    {"i": 5, "start": 15, "end": 18, "text": "Ayam goreng satu, es teh manis dua.", "pitch": 1.4},
+    {"i": 6, "start": 18, "end": 23, "text": "...dan BOOM! Keranjang langsung terisi otomatis!", "pitch": 1.4},
+    {"i": 7, "start": 23, "end": 27, "text": "Total langsung akurat, tanpa perlu ketik!", "pitch": 0.95},
+    {"i": 8, "start": 27, "end": 31, "text": "Nggak pakai lama, nggak pakai ribet, anti antre!", "pitch": null},
+    {"i": 9, "start": 31, "end": 35, "text": "Transaksi beres, pelanggan pun senang!", "pitch": null},
+    {"i": 10, "start": 35, "end": 40, "text": "Coba sekarang juga, gratis tanpa perlu unduh aplikasinya di bantukasir dot biz dot id!", "pitch": null}
 ]''')
 
 def role(pitch):
@@ -59,7 +59,7 @@ async def main(video):
         d = dur(raw); room = (s["end"]-s["start"]) - LEAD_IN - TAIL
         speed = 1.0
         if d > room: speed = min(MAX_SPEEDUP, d/room)
-        print(f"    Scene {s['i']:02d} [{role(s['pitch']):9s}] -> {d:5.1f}s / ruang {room:4.1f}s (x{speed:.2f})")
+        print(f"   Scene {s['i']:02d} [{role(s['pitch']):9s}] -> {d:5.1f}s / ruang {room:4.1f}s (x{speed:.2f})")
         inputs += ["-i", raw]
         ms = int((s["start"]+LEAD_IN)*1000)
         f = f"[{n}:a]"
@@ -80,12 +80,11 @@ async def main(video):
     outv = base + "_suara.mp4"
     
     print(f"\n3. Memasukkan narasi otomatis ke dalam video: {outv}")
-    # Mengganti audio asli video dengan narasi_mix.m4a secara bersih
     run(["ffmpeg","-y","-i",video,"-i","narasi_mix.m4a","-map","0:v","-map","1:a",
          "-c:v","copy","-c:a","aac","-b:a","192k","-movflags","+faststart","-shortest",outv])
     
-    print(f"\n🎉 Berhasil! Video dengan voice-over otomatis siap diposting: {outv}")
+    print(f"\n🎉 Berhasil! Video dengan voice-over baru siap digunakan: {outv}")
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2: sys.exit("Cara pakai: python3 make_voice.py video_1.mp4")
+    if len(sys.argv) < 2: sys.exit("Cara pakai: python3 tambah_suara.py video_1.mp4")
     asyncio.run(main(sys.argv[1]))
