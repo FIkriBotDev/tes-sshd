@@ -3126,6 +3126,31 @@
         "bayar": 20000,
         "kembalian": 5000,
         "day": 20766
+      },
+      {
+        "id": "21a387eb-5a30-438b-8110-c89d79144dc1",
+        "timestamp": 1794188684813,
+        "items": [
+          {
+            "id": 1794109431024,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          }
+        ],
+        "total": 15000,
+        "subtotal": 15000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "kasir": "Muhammad Rofi Basri",
+        "void": false,
+        "bayar": 20000,
+        "kembalian": 5000,
+        "day": 20766
       }
     ]
   }
