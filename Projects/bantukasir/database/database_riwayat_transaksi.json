@@ -3049,6 +3049,32 @@
         "bayar": 50000,
         "kembalian": 20000,
         "day": 20766
+      },
+      {
+        "id": "TRX-88336601",
+        "timestamp": 1794188336601,
+        "items": [
+          {
+            "id": 1794109505560,
+            "n": "Es Teh Manis",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          }
+        ],
+        "total": 15000,
+        "subtotal": 15000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Rofi Basri",
+        "void": false,
+        "bayar": 20000,
+        "kembalian": 5000,
+        "day": 20766
       }
     ]
   }
