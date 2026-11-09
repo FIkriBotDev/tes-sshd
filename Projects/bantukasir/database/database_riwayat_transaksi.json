@@ -3197,6 +3197,77 @@
         "bayar": 30000,
         "kembalian": 7000,
         "day": 20766
+      },
+      {
+        "id": "trx_1794205781486",
+        "items": [
+          {
+            "id": 1794109431024,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 3
+          },
+          {
+            "id": 1794109505560,
+            "n": "Es Teh Manis",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          },
+          {
+            "id": 1794109528620,
+            "n": "Air Mineral",
+            "p": 8000,
+            "c": 6500,
+            "q": 1
+          }
+        ],
+        "total": 68000,
+        "method": "qris",
+        "timestamp": 1794205781486,
+        "day": 20766,
+        "void": false,
+        "from_order": "order_1794205704829",
+        "customer_name": "Manan"
+      },
+      {
+        "id": "TRX-05781199",
+        "timestamp": 1794205781199,
+        "items": [
+          {
+            "id": 1794109431024,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 3
+          },
+          {
+            "id": 1794109505560,
+            "n": "Es Teh Manis",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          },
+          {
+            "id": 1794109528620,
+            "n": "Air Mineral",
+            "p": 8000,
+            "c": 6500,
+            "q": 1
+          }
+        ],
+        "total": 68000,
+        "subtotal": 68000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "qris",
+        "kasir": "Muhammad Rofi Basri",
+        "void": false,
+        "day": 20766
       }
     ]
   }
