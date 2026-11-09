@@ -233,10 +233,19 @@
           "produk_menipis": [],
           "kasbon_belum_lunas": 0
         }
+      },
+      {
+        "tanggal": "2026-11-09",
+        "ringkasan": "Belum ada penjualan hari ini",
+        "penyebab": "Kemarin untung Rp 89.000",
+        "saran": "Cek stok dan siapkan jualan hari ini",
+        "timestamp": 1794182785503,
+        "generated_by": "template"
       }
     ],
     "refresh_count": {
-      "20261108": 2
+      "20261108": 2,
+      "20261109": 1
     }
   }
 ]
