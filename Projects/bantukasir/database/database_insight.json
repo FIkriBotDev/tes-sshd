@@ -236,16 +236,36 @@
       },
       {
         "tanggal": "2026-11-09",
-        "ringkasan": "Belum ada penjualan hari ini",
-        "penyebab": "Kemarin untung Rp 89.000",
-        "saran": "Cek stok dan siapkan jualan hari ini",
-        "timestamp": 1794182785503,
-        "generated_by": "template"
+        "ringkasan": "Untung hari ini Rp 58.500, turun dari kemarin Rp 89.000 atau selisih -30.500 (-34%).",
+        "penyebab": "Pemasukan Rp 174.000 memang ada, tapi modal keluar Rp 100.500 bikin sisa untung mengecil. Selain itu, Es Teh Manis terlihat menipis (2 kali tercatat) jadi bisa pengaruh ke penjualan.",
+        "saran": "Besok pagi stokkan lagi Es Teh Manis karena sudah menipis, biar pembeli tetap dapat dan untung nggak ikut turun.",
+        "timestamp": 1794189988233,
+        "generated_by": "ai",
+        "data_context": {
+          "untung_hari_ini": 58500,
+          "untung_kemarin": 89000,
+          "selisih": -30500,
+          "persen_selisih": -34,
+          "uang_masuk": 174000,
+          "modal": 100500,
+          "pengeluaran": 15000,
+          "produk_terlaris": [
+            "Nasi Goreng (5 terjual)",
+            "Es Teh Manis (5 terjual)",
+            "Air Mineral (1 terjual)"
+          ],
+          "produk_habis": [],
+          "produk_menipis": [
+            "Es Teh Manis",
+            "Es Teh Manis"
+          ],
+          "kasbon_belum_lunas": 0
+        }
       }
     ],
     "refresh_count": {
       "20261108": 2,
-      "20261109": 1
+      "20261109": 2
     }
   }
 ]
