@@ -3151,6 +3151,52 @@
         "bayar": 20000,
         "kembalian": 5000,
         "day": 20766
+      },
+      {
+        "id": "trx_1794189504577",
+        "items": [
+          {
+            "id": 1794109431024,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 1,
+            "vi": null
+          },
+          {
+            "id": 1794109528620,
+            "n": "Air Mineral",
+            "p": 8000,
+            "c": 6500,
+            "q": 1,
+            "vi": null
+          }
+        ],
+        "total": 23000,
+        "method": "tunai",
+        "timestamp": 1794189504577,
+        "day": 20766,
+        "void": false,
+        "from_order": "order_1794189351147",
+        "customer_name": "Rofi"
+      },
+      {
+        "id": "TRX-89504513",
+        "timestamp": 1794189504513,
+        "items": [],
+        "total": 23000,
+        "subtotal": 23000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Rofi Basri",
+        "void": false,
+        "bayar": 30000,
+        "kembalian": 7000,
+        "day": 20766
       }
     ]
   }
