@@ -59,6 +59,28 @@
             "jml": 30000,
             "tgl": 1794127502630,
             "catatan": "Lunas - dibayar tunai"
+          },
+          {
+            "tipe": "utang",
+            "jml": 30000,
+            "tgl": 1794295553520,
+            "catatan": "dibayar besok",
+            "items": [
+              {
+                "id": 1793614077645,
+                "n": "Kopi Susu",
+                "p": 15000,
+                "c": 10000,
+                "q": 1
+              },
+              {
+                "id": 1793547299989,
+                "n": "Nasi Goreng",
+                "p": 15000,
+                "c": 10000,
+                "q": 1
+              }
+            ]
           }
         ]
       }
