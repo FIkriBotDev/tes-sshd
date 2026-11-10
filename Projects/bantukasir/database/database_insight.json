@@ -164,23 +164,23 @@
       },
       {
         "tanggal": "2026-11-10",
-        "ringkasan": "Hari ini untung Rp 6.000, naik dari kemarin yang rugi Rp -15.000 atau selisih Rp 21.000 (140%).",
-        "penyebab": "Uang masuk Rp 81.000 lebih besar dari modal keluar Rp 60.000, jadi hari ini ketolong. Selain itu Jus jeruk habis, tapi Nasi Goreng dan Kopi Hitam masih menipis.",
-        "saran": "Besok langsung tambah stok Nasi Goreng dan Kopi Hitam dulu, supaya nggak kejar-kejaran lagi pas laku.",
-        "timestamp": 1794294260165,
+        "ringkasan": "Hari ini untung Rp 30.000, naik Rp 45.000 dari kemarin yang rugi Rp -15.000 (naik 300%).",
+        "penyebab": "Uang masuk Rp 141.000 lebih besar dibanding modal keluar Rp 96.000, jadi hari ini kebukti ramai. Yang paling banyak laku Ayam Katsu, Nasi Goreng, dan Es Teh (masing-masing 2 terjual), tapi Jus jeruk sudah habis dan Nasi Goreng serta Kopi Hitam menipis.",
+        "saran": "Besok siapkan stok cepat untuk Jus jeruk dan tambah Nasi Goreng dan Kopi Hitam, sambil kejar kasbon 1 pelanggan supaya uang tidak ketahan.",
+        "timestamp": 1794295699856,
         "generated_by": "ai",
         "data_context": {
-          "untung_hari_ini": 6000,
+          "untung_hari_ini": 30000,
           "untung_kemarin": -15000,
-          "selisih": 21000,
-          "persen_selisih": 140,
-          "uang_masuk": 81000,
-          "modal": 60000,
+          "selisih": 45000,
+          "persen_selisih": 300,
+          "uang_masuk": 141000,
+          "modal": 96000,
           "pengeluaran": 15000,
           "produk_terlaris": [
             "Ayam Katsu (2 terjual)",
-            "Nasi Goreng (1 terjual)",
-            "Ayam Goreng (1 terjual)"
+            "Nasi Goreng (2 terjual)",
+            "Es Teh (2 terjual)"
           ],
           "produk_habis": [
             "Jus jeruk"
@@ -189,7 +189,7 @@
             "Nasi Goreng",
             "Kopi Hitam"
           ],
-          "kasbon_belum_lunas": 0
+          "kasbon_belum_lunas": 1
         }
       }
     ],
@@ -201,7 +201,7 @@
       "20261107": 3,
       "20261108": 2,
       "20261109": 1,
-      "20261110": 2
+      "20261110": 3
     }
   },
   {
