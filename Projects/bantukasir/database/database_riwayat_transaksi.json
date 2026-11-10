@@ -2292,6 +2292,72 @@
         "bayar": 50000,
         "kembalian": 30000,
         "day": 20765
+      },
+      {
+        "id": "TRX-94083839",
+        "timestamp": 1794294083839,
+        "items": [
+          {
+            "id": 1793547321723,
+            "n": "Ayam Katsu",
+            "p": 18000,
+            "c": 15000,
+            "q": 2
+          }
+        ],
+        "total": 36000,
+        "subtotal": 36000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 36000,
+        "kembalian": 0,
+        "day": 20767
+      },
+      {
+        "id": "TRX-94091257",
+        "timestamp": 1794294091257,
+        "items": [
+          {
+            "id": 1793547299989,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          },
+          {
+            "id": 1794098669171,
+            "n": "Ayam Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          },
+          {
+            "id": 1794098686797,
+            "n": "Matcha Latte",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          }
+        ],
+        "total": 45000,
+        "subtotal": 45000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 45000,
+        "kembalian": 0,
+        "day": 20767
       }
     ]
   },
