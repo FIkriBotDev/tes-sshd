@@ -2358,6 +2358,25 @@
         "bayar": 45000,
         "kembalian": 0,
         "day": 20767
+      },
+      {
+        "id": "trx_1794295544333",
+        "items": [
+          {
+            "id": 1793547339589,
+            "n": "Es Teh",
+            "p": 15000,
+            "c": 8000,
+            "q": 2
+          }
+        ],
+        "total": 30000,
+        "method": "tunai",
+        "timestamp": 1794295544333,
+        "day": 20767,
+        "void": false,
+        "from_order": "order_1794294846202",
+        "customer_name": "Fikri"
       }
     ]
   },
