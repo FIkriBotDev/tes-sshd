@@ -2410,6 +2410,44 @@
         "bayar": 30000,
         "kembalian": 0,
         "day": 20767
+      },
+      {
+        "id": "TRX-75127772",
+        "timestamp": 1794375127772,
+        "items": [
+          {
+            "id": 1794098791500,
+            "n": "Kopi Hitam",
+            "p": 5000,
+            "c": 1800,
+            "q": 1
+          },
+          {
+            "id": 1794098686797,
+            "n": "Matcha Latte",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          },
+          {
+            "id": 1793614077645,
+            "n": "Kopi Susu",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          }
+        ],
+        "total": 35000,
+        "subtotal": 35000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "qris",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "day": 20768
       }
     ]
   },

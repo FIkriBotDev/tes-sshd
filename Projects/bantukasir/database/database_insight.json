@@ -194,11 +194,32 @@
       },
       {
         "tanggal": "2026-11-11",
-        "ringkasan": "Belum ada penjualan hari ini",
-        "penyebab": "Kemarin untung Rp 30.000",
-        "saran": "Cek stok dan siapkan jualan hari ini",
-        "timestamp": 1794375093356,
-        "generated_by": "template"
+        "ringkasan": "Hari ini rugi Rp -1.800, padahal kemarin untung Rp 30.000 atau turun Rp -31.800 (-106%).",
+        "penyebab": "Uang masuk Rp 35.000 kalah oleh modal keluar Rp 21.800. Kopi Hitam sudah habis, sementara Nasi Goreng menipis jadi penjualan bisa kehambat.",
+        "saran": "Langsung restock Kopi Hitam dan tambah stok Nasi Goreng hari ini agar pelanggan tidak kecewa dan penjualan bisa balik.",
+        "timestamp": 1794375136382,
+        "generated_by": "ai",
+        "data_context": {
+          "untung_hari_ini": -1800,
+          "untung_kemarin": 30000,
+          "selisih": -31800,
+          "persen_selisih": -106,
+          "uang_masuk": 35000,
+          "modal": 21800,
+          "pengeluaran": 15000,
+          "produk_terlaris": [
+            "Kopi Hitam (1 terjual)",
+            "Matcha Latte (1 terjual)",
+            "Kopi Susu (1 terjual)"
+          ],
+          "produk_habis": [
+            "Kopi Hitam"
+          ],
+          "produk_menipis": [
+            "Nasi Goreng"
+          ],
+          "kasbon_belum_lunas": 1
+        }
       }
     ],
     "refresh_count": {
@@ -210,7 +231,7 @@
       "20261108": 2,
       "20261109": 1,
       "20261110": 3,
-      "20261111": 2
+      "20261111": 3
     }
   },
   {
