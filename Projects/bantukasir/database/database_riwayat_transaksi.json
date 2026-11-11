@@ -2448,6 +2448,51 @@
         "kasir": "Muhammad Fikri Fahrezi",
         "void": false,
         "day": 20768
+      },
+      {
+        "id": "trx_1794375407248",
+        "items": [
+          {
+            "id": 1793547339589,
+            "n": "Es Teh",
+            "p": 15000,
+            "c": 8000,
+            "q": 1
+          }
+        ],
+        "total": 15000,
+        "method": "tunai",
+        "timestamp": 1794375407248,
+        "day": 20768,
+        "void": false,
+        "from_order": "order_1794375395511",
+        "customer_name": "abc"
+      },
+      {
+        "id": "TRX-75407098",
+        "timestamp": 1794375407098,
+        "items": [
+          {
+            "id": 1793547339589,
+            "n": "Es Teh",
+            "p": 15000,
+            "c": 8000,
+            "q": 1
+          }
+        ],
+        "total": 15000,
+        "subtotal": 15000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 15000,
+        "kembalian": 0,
+        "day": 20768
       }
     ]
   },

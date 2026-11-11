@@ -109,6 +109,27 @@
         "payment_method": "tunai",
         "processed_by": "kasir",
         "processed_at": 1794295544333
+      },
+      {
+        "order_id": "order_1794375395511",
+        "order_number": 245,
+        "customer_name": "abc",
+        "items": [
+          {
+            "id": 1793547339589,
+            "name": "Es Teh",
+            "price": 15000,
+            "cost": 8000,
+            "quantity": 1,
+            "image": "https://images.unsplash.com/photo-1741241858511-13978ec7a067?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8RXMlMjBUZWh8ZW58MHx8fHwxNzkzNTQ3MzI4fDA&ixlib=rb-4.1.0&q=80&w=400"
+          }
+        ],
+        "subtotal": 15000,
+        "status": "paid",
+        "created_at": 1794375395511,
+        "payment_method": "tunai",
+        "processed_by": "kasir",
+        "processed_at": 1794375407248
       }
     ]
   },
