@@ -2489,7 +2489,7 @@
         "ppn_persen": 0,
         "metode_bayar": "tunai",
         "kasir": "Muhammad Fikri Fahrezi",
-        "void": false,
+        "void": true,
         "bayar": 15000,
         "kembalian": 0,
         "day": 20768
