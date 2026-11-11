@@ -81,6 +81,12 @@
                 "q": 1
               }
             ]
+          },
+          {
+            "tipe": "bayar",
+            "jml": 1000,
+            "tgl": 1794375173382,
+            "catatan": "DP pertama"
           }
         ]
       }
