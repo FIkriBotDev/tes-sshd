@@ -195,9 +195,9 @@
       {
         "tanggal": "2026-11-11",
         "ringkasan": "Belum ada penjualan hari ini",
-        "penyebab": "Kemarin untung Rp 30.000, tapi Jus jeruk habis",
-        "saran": "Belanja Jus jeruk dulu supaya bisa buka",
-        "timestamp": 1794375067646,
+        "penyebab": "Kemarin untung Rp 30.000",
+        "saran": "Cek stok dan siapkan jualan hari ini",
+        "timestamp": 1794375093356,
         "generated_by": "template"
       }
     ],
@@ -210,7 +210,7 @@
       "20261108": 2,
       "20261109": 1,
       "20261110": 3,
-      "20261111": 1
+      "20261111": 2
     }
   },
   {
