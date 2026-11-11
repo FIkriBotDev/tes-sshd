@@ -87,6 +87,18 @@
             "jml": 1000,
             "tgl": 1794375173382,
             "catatan": "DP pertama"
+          },
+          {
+            "tipe": "bayar",
+            "jml": 18000,
+            "tgl": 1794375184152,
+            "catatan": ""
+          },
+          {
+            "tipe": "bayar",
+            "jml": 11000,
+            "tgl": 1794375198954,
+            "catatan": "Ditandai lunas"
           }
         ]
       }
