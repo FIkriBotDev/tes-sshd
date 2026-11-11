@@ -191,6 +191,14 @@
           ],
           "kasbon_belum_lunas": 1
         }
+      },
+      {
+        "tanggal": "2026-11-11",
+        "ringkasan": "Belum ada penjualan hari ini",
+        "penyebab": "Kemarin untung Rp 30.000, tapi Jus jeruk habis",
+        "saran": "Belanja Jus jeruk dulu supaya bisa buka",
+        "timestamp": 1794375067646,
+        "generated_by": "template"
       }
     ],
     "refresh_count": {
@@ -201,7 +209,8 @@
       "20261107": 3,
       "20261108": 2,
       "20261109": 1,
-      "20261110": 3
+      "20261110": 3,
+      "20261111": 1
     }
   },
   {
