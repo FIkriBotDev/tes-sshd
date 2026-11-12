@@ -2493,6 +2493,32 @@
         "bayar": 15000,
         "kembalian": 0,
         "day": 20768
+      },
+      {
+        "id": "TRX-59838806",
+        "timestamp": 1794459838806,
+        "items": [
+          {
+            "id": 1793547321723,
+            "n": "Ayam Katsu",
+            "p": 18000,
+            "c": 15000,
+            "q": 1
+          }
+        ],
+        "total": 18000,
+        "subtotal": 18000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 18000,
+        "kembalian": 0,
+        "day": 20769
       }
     ]
   },
