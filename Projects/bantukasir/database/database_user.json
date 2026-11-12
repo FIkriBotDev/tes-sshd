@@ -83,5 +83,30 @@
     "password": "$2b$10$o5EFDFWi.aoEvp9RqVuO1ekNQH1660GZI9uWegFL9ejimuAQXwN1S",
     "created_at": "2026-11-12T01:56:26.118Z",
     "last_login": "2026-11-12T01:56:26.118Z"
+  },
+  {
+    "id": "user_1794460552325",
+    "nama": "Fahrezi",
+    "nama_usaha": "Warkop Fahrezi",
+    "alamat_usaha": "Jl. Talasalapang 2",
+    "email": "085928087634",
+    "password": "$2b$10$aUbksuZunaChByJuhbskZu.F8Oe4/v003NAxuhkVachAXinBgi/Y6",
+    "created_at": "2026-11-12T05:15:52.325Z",
+    "last_login": "2026-11-12T05:15:52.325Z",
+    "kasir": "Fahrezi",
+    "qris": "",
+    "tema": "terang",
+    "pajak": false,
+    "kats": [
+      "Minuman",
+      "Makanan",
+      "Camilan"
+    ],
+    "ppn_aktif": false,
+    "ppn_persen": 11,
+    "diskon_global_aktif": false,
+    "diskon_global_tipe": "persen",
+    "diskon_global_persen": 0,
+    "diskon_global_nominal": 0
   }
 ]
