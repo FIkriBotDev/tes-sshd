@@ -159,6 +159,12 @@
             "jml": 1000,
             "tgl": 1794497058422,
             "catatan": ""
+          },
+          {
+            "tipe": "bayar",
+            "jml": 979000,
+            "tgl": 1794497079777,
+            "catatan": "Ditandai lunas"
           }
         ]
       }
