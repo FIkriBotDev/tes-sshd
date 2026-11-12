@@ -368,21 +368,22 @@
     "insights": [
       {
         "tanggal": "2026-11-12",
-        "ringkasan": "Hari ini untung Rp 275.000, beda dengan kemarin Rp 0, jadi selisih Rp 275.000 (0%).",
-        "penyebab": "Uang masuk Rp 1.100.000 lebih besar dari modal keluar Rp 825.000. Americano jadi produk terlaris 55 terjual dan habis hari ini, jadi omzetnya kejar-kejaran di satu produk.",
-        "saran": "Besok langsung isi ulang Americano dulu biar tidak kehabisan lagi sebelum laku.",
-        "timestamp": 1794497032193,
+        "ringkasan": "Hari ini untung Rp 110.275.000, sedangkan kemarin Rp 0, jadi selisihnya Rp 110.275.000 (0%).",
+        "penyebab": "Hari ini kelihatan jalan karena Americano jadi produk terlaris (55 terjual), tapi Americano juga habis. Ada 1 kasbon belum lunas, jadi jangan sampai bikin kas seret.",
+        "saran": "Besok pagi langsung restok Americano dulu dan tanya ke pelanggan kasbon agar Rp yang belum lunas segera masuk.",
+        "timestamp": 1794497221029,
         "generated_by": "ai",
         "data_context": {
-          "untung_hari_ini": 275000,
+          "untung_hari_ini": 110275000,
           "untung_kemarin": 0,
-          "selisih": 275000,
+          "selisih": 110275000,
           "persen_selisih": 0,
-          "uang_masuk": 1100000,
-          "modal": 825000,
+          "uang_masuk": 3601100000,
+          "modal": 3490825000,
           "pengeluaran": 0,
           "produk_terlaris": [
-            "Americano (55 terjual)"
+            "Americano (55 terjual)",
+            "Fortuner (5 terjual)"
           ],
           "produk_habis": [
             "Americano"
@@ -393,7 +394,7 @@
       }
     ],
     "refresh_count": {
-      "20261112": 4
+      "20261112": 5
     }
   }
 ]
