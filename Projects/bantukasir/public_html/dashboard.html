@@ -1115,8 +1115,10 @@ async function apiOrderProcess(orderId,paymentMethod,subtotal){
 function hitung(days){
   let m=0,c=0,totalDiskon=0,totalPPN=0;
   const per={};
+  let hasSales=false;
   S.sales.forEach(s=>{
     if(!s.void&&DAY-s.day<days){
+      hasSales=true;
       const trxSubtotal=s.subtotal||s.items.reduce((sum,i)=>sum+i.p*i.q,0);
       const trxDiskon=s.diskon||0;
       const trxPPN=s.ppn||0;
@@ -1135,14 +1137,17 @@ function hitung(days){
       });
     }
   });
-  const k=EXP*days;
+  // Hanya kurangi biaya operasional jika ada penjualan
+  const k=hasSales?EXP*days:0;
   return{m,c,k,u:m-c-k,per:Object.values(per).sort((a,b)=>b.u-a.u),totalDiskon,totalPPN};
 }
 function getBestSellers(days=7){const sold={};S.sales.forEach(s=>{if(!s.void&&DAY-s.day<days)s.items.forEach(i=>{sold[i.id]=(sold[i.id]||0)+i.q})});const sorted=Object.entries(sold).sort((a,b)=>b[1]-a[1]);const threshold=sorted.length>0?sorted[0][1]*0.5:0;return sorted.filter(([id,qty])=>qty>=threshold&&qty>=3).map(([id])=>+id)}
 function hari(o){
   let m=0,c=0;
+  let hasSales=false;
   S.sales.forEach(s=>{
     if(!s.void&&s.day===DAY-o){
+      hasSales=true;
       const trxSubtotal=s.subtotal||s.items.reduce((sum,i)=>sum+i.p*i.q,0);
       const trxDiskon=s.diskon||0;
       const trxPPN=s.ppn||0;
@@ -1151,7 +1156,8 @@ function hari(o){
       s.items.forEach(i=>{c+=i.c*i.q});
     }
   });
-  return m-c-EXP;
+  // Hanya kurangi biaya operasional jika ada penjualan
+  return hasSales ? m-c-EXP : 0;
 }
 function subtotal(){
   return Object.entries(S.cart).reduce((t,[key,val])=>{

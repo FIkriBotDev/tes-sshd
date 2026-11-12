@@ -2065,7 +2065,7 @@ function strukTeksOf(s){
   return t;
 }
 /* Simpan penjualan: kurangi stok, catat transaksi, tampilkan pilihan kasbon */
-function finalizeSale(metode){
+async function finalizeSale(metode){
   if(!Object.keys(S.cart).length){closeSheet();return}
   const det=detailTotal();
   const items=Object.entries(S.cart).map(([key,val])=>{
@@ -2100,9 +2100,14 @@ function finalizeSale(metode){
   // Check if this is from processing an order
   const processingOrderId=localStorage.getItem('processing_order_id');
   if(processingOrderId){
-    // Mark order as paid
-    apiOrderProcess(processingOrderId,metode,det.total);
-    localStorage.removeItem('processing_order_id');
+    // Mark order as paid - MUST await to ensure it completes
+    try{
+      await apiOrderProcess(processingOrderId,metode,det.total);
+      localStorage.removeItem('processing_order_id');
+    }catch(e){
+      console.error('Failed to mark order as paid:',e);
+      // Continue anyway since transaction is already saved
+    }
   }
   
   S.cart={};S.terima=0;
@@ -2179,9 +2184,9 @@ cart:()=>cartSheet(),
 },
 kat:b=>{S.kat=b.dataset.k;render()},per:b=>{S.per=+b.dataset.d;render()},
 metode:b=>{S.metode=b.dataset.k;cartSheet()},quick:b=>{S.terima=+b.dataset.n;cartSheet()},
-save:()=>finalizeSale(S.metode),
+save:async()=>await finalizeSale(S.metode),
 'selesai-bayar':()=>{closeSheet();toast('Penjualan berhasil dicatat!')},
-'qris-selesai':()=>finalizeSale('qris'),
+'qris-selesai':async()=>await finalizeSale('qris'),
 'catat-kasbon':b=>{const total=+b.dataset.total;const items=JSON.parse(b.dataset.items||'[]');closeSheet();formKasbonBaru(total,items)},
 'kasbon-baru':()=>formKasbonBaru(0,[]),
 'kasbon-detail':b=>kasbonDetailSheet(b.dataset.id),
