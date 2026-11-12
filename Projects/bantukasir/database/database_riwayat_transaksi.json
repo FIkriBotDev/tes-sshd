@@ -3790,6 +3790,51 @@
         "bayar": 36000000000,
         "kembalian": 0,
         "day": 20769
+      },
+      {
+        "id": "trx_1794497449502",
+        "items": [
+          {
+            "id": 1794497173957,
+            "n": "Fortuner",
+            "p": 720000000,
+            "c": 698000000,
+            "q": 1
+          }
+        ],
+        "total": 720000000,
+        "method": "tunai",
+        "timestamp": 1794497449502,
+        "day": 20769,
+        "void": false,
+        "from_order": "order_1794497439655",
+        "customer_name": "Pak Jero"
+      },
+      {
+        "id": "TRX-97449392",
+        "timestamp": 1794497449392,
+        "items": [
+          {
+            "id": 1794497173957,
+            "n": "Fortuner",
+            "p": 720000000,
+            "c": 698000000,
+            "q": 1
+          }
+        ],
+        "total": 720000000,
+        "subtotal": 720000000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Fahrezi",
+        "void": false,
+        "bayar": 720000000,
+        "kembalian": 0,
+        "day": 20769
       }
     ]
   }
