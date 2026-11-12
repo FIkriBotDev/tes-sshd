@@ -73,5 +73,15 @@
     "diskon_global_tipe": "persen",
     "diskon_global_persen": 0,
     "diskon_global_nominal": 0
+  },
+  {
+    "id": "user_1794448586118",
+    "nama": "Muh. Reski Ramadani",
+    "nama_usaha": "Warkop reski",
+    "alamat_usaha": "Jln. Pendidikan",
+    "email": "085399151670",
+    "password": "$2b$10$o5EFDFWi.aoEvp9RqVuO1ekNQH1660GZI9uWegFL9ejimuAQXwN1S",
+    "created_at": "2026-11-12T01:56:26.118Z",
+    "last_login": "2026-11-12T01:56:26.118Z"
   }
 ]
