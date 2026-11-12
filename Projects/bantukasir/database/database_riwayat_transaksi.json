@@ -3712,6 +3712,32 @@
         "bayar": 40000,
         "kembalian": 0,
         "day": 20769
+      },
+      {
+        "id": "TRX-97006045",
+        "timestamp": 1794497006045,
+        "items": [
+          {
+            "id": 1794460666791,
+            "n": "Americano",
+            "p": 20000,
+            "c": 15000,
+            "q": 47
+          }
+        ],
+        "total": 940000,
+        "subtotal": 940000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Fahrezi",
+        "void": false,
+        "bayar": 940000,
+        "kembalian": 0,
+        "day": 20769
       }
     ]
   }

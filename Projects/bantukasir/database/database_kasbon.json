@@ -118,6 +118,29 @@
   },
   {
     "user_id": "user_1794460552325",
-    "kasbon": []
+    "kasbon": [
+      {
+        "id": "kb_1794496994636",
+        "nama": "Pak Joni",
+        "hp": "08987654321",
+        "riwayat": [
+          {
+            "tipe": "utang",
+            "jml": 40000,
+            "tgl": 1794496994636,
+            "catatan": "dibayar bulan depan",
+            "items": [
+              {
+                "id": 1794460666791,
+                "n": "Americano",
+                "p": 20000,
+                "c": 15000,
+                "q": 2
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
