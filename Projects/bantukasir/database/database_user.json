@@ -100,7 +100,8 @@
     "kats": [
       "Minuman",
       "Makanan",
-      "Camilan"
+      "Camilan",
+      "Mobil"
     ],
     "ppn_aktif": false,
     "ppn_persen": 11,
