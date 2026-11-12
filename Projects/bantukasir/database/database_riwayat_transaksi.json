@@ -2545,6 +2545,32 @@
         "bayar": 30000,
         "kembalian": 0,
         "day": 20769
+      },
+      {
+        "id": "TRX-59983562",
+        "timestamp": 1794459983562,
+        "items": [
+          {
+            "id": 1793547299989,
+            "n": "Nasi Goreng",
+            "p": 15000,
+            "c": 10000,
+            "q": 8
+          }
+        ],
+        "total": 120000,
+        "subtotal": 120000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 120000,
+        "kembalian": 0,
+        "day": 20769
       }
     ]
   },
