@@ -187,6 +187,18 @@
                 "q": 5
               }
             ]
+          },
+          {
+            "tipe": "bayar",
+            "jml": 10000000,
+            "tgl": 1794497260034,
+            "catatan": ""
+          },
+          {
+            "tipe": "bayar",
+            "jml": 3590000000,
+            "tgl": 1794497264277,
+            "catatan": "Ditandai lunas"
           }
         ]
       }
