@@ -19,5 +19,12 @@
     "order_enabled": true,
     "order_url": "https://bantukasir.biz.id/order?toko=ca39a6y8-58a3ejv-siqr",
     "qr_code_base64": null
+  },
+  {
+    "user_id": "user_1794460552325",
+    "toko_id": "itgyx93l-hk9qzeh-lw7f",
+    "order_enabled": true,
+    "order_url": "https://bantukasir.biz.id/order?toko=itgyx93l-hk9qzeh-lw7f",
+    "qr_code_base64": null
   }
 ]
