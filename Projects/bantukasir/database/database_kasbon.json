@@ -167,6 +167,28 @@
             "catatan": "Ditandai lunas"
           }
         ]
+      },
+      {
+        "id": "kb_1794497208502",
+        "nama": "Pak Jero",
+        "hp": "08987654321",
+        "riwayat": [
+          {
+            "tipe": "utang",
+            "jml": 3600000000,
+            "tgl": 1794497208502,
+            "catatan": "dibayar besok",
+            "items": [
+              {
+                "id": 1794497173957,
+                "n": "Fortuner",
+                "p": 720000000,
+                "c": 698000000,
+                "q": 5
+              }
+            ]
+          }
+        ]
       }
     ]
   }

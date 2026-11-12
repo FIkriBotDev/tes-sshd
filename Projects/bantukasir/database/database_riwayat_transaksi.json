@@ -3738,6 +3738,32 @@
         "bayar": 940000,
         "kembalian": 0,
         "day": 20769
+      },
+      {
+        "id": "TRX-97195306",
+        "timestamp": 1794497195306,
+        "items": [
+          {
+            "id": 1794497173957,
+            "n": "Fortuner",
+            "p": 720000000,
+            "c": 698000000,
+            "q": 5
+          }
+        ],
+        "total": 3600000000,
+        "subtotal": 3600000000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Fahrezi",
+        "void": false,
+        "bayar": 3600000000,
+        "kembalian": 0,
+        "day": 20769
       }
     ]
   }
