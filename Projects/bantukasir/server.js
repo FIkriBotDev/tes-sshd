@@ -687,7 +687,7 @@ app.post("/api/insight", async (req, res) => {
     const userKasbon = (kasbon.find(k => k.user_id === user_id)?.kasbon || []);
     
     const DAY = Math.floor(Date.now() / 864e5);
-    const PENGELUARAN = 15000; // Asumsi pengeluaran harian
+    const PENGELUARAN = 15000; // Biaya operasional harian (opsional)
     
     console.log(`[Insight AI] Calculating for DAY: ${DAY}, user has ${userTransaksi.length} transactions`);
     
@@ -714,7 +714,8 @@ app.post("/api/insight", async (req, res) => {
     
     console.log(`[Insight AI] Found transactions today: uangMasuk=${uangMasuk}, modal=${modal}`);
     
-    untungHariIni = uangMasuk - modal - PENGELUARAN;
+    // Hitung untung: hanya kurangi modal (tidak termasuk biaya operasional otomatis)
+    untungHariIni = uangMasuk - modal;
     
     // Hitung untung kemarin untuk perbandingan
     let untungKemarin = 0;
@@ -735,7 +736,8 @@ app.post("/api/insight", async (req, res) => {
       }
     });
     
-    untungKemarin = uangMasukKemarin - modalKemarin - PENGELUARAN;
+    // Hitung untung kemarin: hanya kurangi modal (tidak termasuk biaya operasional)
+    untungKemarin = uangMasukKemarin - modalKemarin;
     
     // Produk terlaris (top 3)
     const topProduk = Object.entries(produkTerlaris)
@@ -821,7 +823,7 @@ app.post("/api/insight", async (req, res) => {
       persen_selisih: persenSelisih,
       uang_masuk: uangMasuk,
       modal: modal,
-      pengeluaran: PENGELUARAN,
+      pengeluaran: 0, // Biaya operasional tidak dihitung otomatis
       produk_terlaris: topProduk,
       produk_habis: produkHabis.slice(0, 3),
       produk_menipis: produkTipis.slice(0, 3),
