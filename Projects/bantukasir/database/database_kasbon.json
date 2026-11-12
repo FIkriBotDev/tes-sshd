@@ -138,6 +138,21 @@
                 "q": 2
               }
             ]
+          },
+          {
+            "tipe": "utang",
+            "jml": 940000,
+            "tgl": 1794497019334,
+            "catatan": "dibayar bulan depan",
+            "items": [
+              {
+                "id": 1794460666791,
+                "n": "Americano",
+                "p": 20000,
+                "c": 15000,
+                "q": 47
+              }
+            ]
           }
         ]
       }
