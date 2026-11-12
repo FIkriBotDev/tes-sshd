@@ -368,30 +368,32 @@
     "insights": [
       {
         "tanggal": "2026-11-12",
-        "ringkasan": "Hari ini untung Rp 15.000, beda dengan kemarin yang Rp 0, jadi selisihnya Rp 15.000 (0%).",
-        "penyebab": "Uang masuk Rp 60.000 lebih besar daripada modal keluar Rp 45.000, jadi ada sisa untung. Americano jadi produk terlaris, tapi tidak ada produk habis maupun menipis.",
-        "saran": "Besok stok Americano tetap dijaga dan tambah produksi/isi lagi supaya tetap laku.",
-        "timestamp": 1794462599474,
+        "ringkasan": "Hari ini untung Rp 30.000, sedangkan kemarin Rp 0, jadi naik Rp 30.000.",
+        "penyebab": "Uang masuk Rp 120.000 dan modal keluar Rp 90.000, jadi hari ini masih kebantu. Americano jadi produk terlaris (6 terjual) dan saat ini Americano mulai menipis.",
+        "saran": "Besok langsung tambah stok Americano dulu biar tidak kehabisan.",
+        "timestamp": 1794496775584,
         "generated_by": "ai",
         "data_context": {
-          "untung_hari_ini": 15000,
+          "untung_hari_ini": 30000,
           "untung_kemarin": 0,
-          "selisih": 15000,
+          "selisih": 30000,
           "persen_selisih": 0,
-          "uang_masuk": 60000,
-          "modal": 45000,
+          "uang_masuk": 120000,
+          "modal": 90000,
           "pengeluaran": 0,
           "produk_terlaris": [
-            "Americano (3 terjual)"
+            "Americano (6 terjual)"
           ],
           "produk_habis": [],
-          "produk_menipis": [],
+          "produk_menipis": [
+            "Americano"
+          ],
           "kasbon_belum_lunas": 0
         }
       }
     ],
     "refresh_count": {
-      "20261112": 2
+      "20261112": 3
     }
   }
 ]
