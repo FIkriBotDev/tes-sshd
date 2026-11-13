@@ -346,10 +346,11 @@
           }
         ],
         "subtotal": 90000,
-        "status": "pending",
+        "status": "cancelled",
         "created_at": 1794206080385,
         "payment_method": null,
-        "processed_by": null
+        "processed_by": null,
+        "cancelled_at": 1794548195870
       },
       {
         "order_id": "order_1794209022086",
@@ -367,10 +368,11 @@
           }
         ],
         "subtotal": 8000,
-        "status": "pending",
+        "status": "cancelled",
         "created_at": 1794209022086,
         "payment_method": null,
-        "processed_by": null
+        "processed_by": null,
+        "cancelled_at": 1794548197862
       }
     ]
   },
