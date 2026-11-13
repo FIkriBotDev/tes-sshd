@@ -228,6 +228,14 @@
         "saran": "Cek stok dan siapkan jualan hari ini",
         "timestamp": 1794457886753,
         "generated_by": "template"
+      },
+      {
+        "tanggal": "2026-11-13",
+        "ringkasan": "Belum ada penjualan hari ini",
+        "penyebab": "Kemarin untung Rp 53.000",
+        "saran": "Cek stok dan siapkan jualan hari ini",
+        "timestamp": 1794547442774,
+        "generated_by": "template"
       }
     ],
     "refresh_count": {
@@ -240,7 +248,8 @@
       "20261109": 1,
       "20261110": 3,
       "20261111": 3,
-      "20261112": 1
+      "20261112": 1,
+      "20261113": 1
     }
   },
   {
