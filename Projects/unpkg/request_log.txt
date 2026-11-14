@@ -3717,3 +3717,6 @@
 [Sun Nov 15 01:42 GMT+8] 2602:fc16:6:62::2e9b Request to /api/v1/admin/ai-config [GET]
 [Sun Nov 15 01:42 GMT+8] 2602:fc16:6:62::2e9b Request to /api/chat/config [GET]
 [Sun Nov 15 01:42 GMT+8] 2602:fc16:6:62::2e9b Request to /api/ai/settings [GET]
+[Sun Nov 15 02:00 GMT+8] 43.163.126.176 Request to /v1/models [GET]
+[Sun Nov 15 02:00 GMT+8] 43.163.126.176 Request to /api/show [POST]
+[Sun Nov 15 02:00 GMT+8] 43.163.126.176 Request to /v1/chat/completions [POST]
