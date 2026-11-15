@@ -2962,6 +2962,33 @@
         "kasir": "Muh. Reski Ramadani",
         "void": false,
         "day": 20764
+      },
+      {
+        "id": "TRX-42490534",
+        "timestamp": 1794742490534,
+        "items": [
+          {
+            "id": 1793612764396,
+            "n": "Ayam goreng (Pedas)",
+            "p": 15000,
+            "c": 13000,
+            "q": 2,
+            "vi": 0
+          }
+        ],
+        "total": 31500,
+        "subtotal": 30000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 1500,
+        "ppn_persen": 5,
+        "metode_bayar": "tunai",
+        "kasir": "Muh. Reski Ramadani",
+        "void": false,
+        "bayar": 40000,
+        "kembalian": 8500,
+        "day": 20772
       }
     ]
   },
