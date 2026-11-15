@@ -33,7 +33,7 @@ const COURSES_PATH      = path.join(ROOT, "course_list.json");
 const DB_PATH           = path.join(ROOT, "database_user.json");
 const STUDENTS_DIR      = path.join(ROOT, "course-students");
 
-const POLLINATIONS_API_KEY = "sk_RM9sUErPNlaj7kFenSIMljnIVvAyssUk";
+const POLLINATIONS_API_KEY = "sk_fDaL864fZPNVg59S10sqyFgnkmZEXQSY";
 
 // Ensure dirs exist
 [UPLOADS_DIR, COURSE_DATA_DIR, GENERATED_DIR, PROGRESS_DIR, PROMPT_DIR, STUDENTS_DIR].forEach(d => {
