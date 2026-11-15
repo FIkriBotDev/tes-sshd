@@ -718,5 +718,19 @@
     "courseUrl": "/course/5369a253a2082433085ac799241d07f7",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "a7dc8e2833772446c476c9013d61f121",
+    "courseName": "Statistika untuk Informatika: Populasi-Sampel, Sampling, dan Keputusan Data",
+    "courseEmoji": "📚",
+    "courseColor": "#10b981",
+    "courseFileName": "PERTEMUAN 1 dan 2.pptx",
+    "fileType": "pptx",
+    "originalFileName": "PERTEMUAN 1 dan 2.pptx",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "15-11-2026, 12.52.55",
+    "courseUrl": "/course/a7dc8e2833772446c476c9013d61f121",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]

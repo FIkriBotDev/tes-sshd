@@ -1,0 +1,345 @@
+{
+  "title": "Statistika untuk Informatika: Populasi-Sampel, Sampling, dan Keputusan Data",
+  "summary": "Kamu akan belajar bagaimana statistika dipakai di dunia informatika: dari dashboard monitoring, A/B testing UX, sampai simulasi Monte Carlo. Fokus utamanya adalah memahami populasi vs sampel, kapan sampling diperlukan, dan bagaimana trade-off presisi vs efisiensi saat mengolah data.",
+  "emoji": "📚",
+  "color": "#10b981",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Statistika untuk Informatika: Deskriptif, Inferensial, Komputasional",
+      "icon": "🧭",
+      "explanation": "Statistika deskriptif membantu kamu merangkum dan memvisualkan data tanpa menebak populasi yang lebih luas. Statistika inferensial dipakai untuk membuat kesimpulan tentang populasi dari sampel, misalnya uji A/B. Statistika komputasional memakai bantuan komputer untuk menjalankan metode statistik yang berat seperti Monte Carlo dan MCMC.",
+      "analogy": "Bayangkan kamu mengelola aplikasi: deskriptif itu seperti lihat dasbor performa harian, inferensial itu seperti memutuskan apakah perubahan UX benar-benar berdampak, komputasional itu seperti simulasi skenario untuk memprediksi kejadian dalam skala besar.",
+      "highlight": "Deskriptif vs Inferensial vs Komputasional",
+      "keyPoints": [
+        "Deskriptif: ringkas & visualisasi, tanpa generalisasi",
+        "Inferensial: estimasi & keputusan dari sampel",
+        "Komputasional: algoritma berat dibantu komputer"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Populasi, Sampel, Parameter, Statistik",
+      "icon": "🎯",
+      "explanation": "Populasi adalah keseluruhan objek yang ingin kamu pelajari, sedangkan sampel adalah sebagian yang kamu ambil. Parameter adalah ukuran pada populasi (misalnya rata-rata populasi), sedangkan statistik adalah ukuran dari sampel (misalnya rata-rata sampel). Tujuan inferensial: mengestimasi parameter lewat statistik.",
+      "analogy": "Populasi itu seluruh data pengguna yang mungkin pernah pakai aplikasi, sedangkan sampel itu data yang kamu ambil untuk dicek kemarin malam. Parameter adalah nilai ‘asli’, statistik adalah ‘perkiraan dari potongan data’.",
+      "highlight": "Populasi ↔ parameter, Sampel ↔ statistik",
+      "keyPoints": [
+        "Populasi: keseluruhan yang ingin dipelajari",
+        "Parameter: nilai sebenarnya di populasi",
+        "Sampel: sebagian data, statistik: nilai dari sampel"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Monitoring Latency API: Kenapa Statistika Dipakai?",
+      "icon": "⚙️",
+      "explanation": "Kasus monitoring latency endpoint checkout membantu kamu menilai performa sistem secara konsisten. Dari data latency, kamu bisa merangkum distribusi, lalu dengan sampling dan metode inferensial memperkirakan kondisi populasi request di periode tertentu. Dengan begitu, kamu bisa mendeteksi degradasi lebih cepat tanpa harus memproses semua data mentah.",
+      "analogy": "Seperti memeriksa suhu mesin kendaraan: kamu tidak perlu mengukur setiap detik dari seluruh mesin, tapi dengan pengambilan data yang tepat, kamu bisa menilai kondisi umum mesin.",
+      "highlight": "Latensi, keputusan teknis, efisiensi pengolahan",
+      "keyPoints": [
+        "Deskriptif: lihat pola latency (rekap, grafik, dashboard)",
+        "Inferensial: estimasi kondisi populasi request",
+        "Teknis: sampling menghemat biaya komputasi"
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Systematic Random Sampling (Penarikan Sampel Sistematis)",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Tentukan ukuran populasi N",
+          "description": "Misalnya N = total record pengukuran (latency) dalam periode audit atau total paket dalam bulan lalu.",
+          "tip": "Kalau data log besar, N bisa dari metadata sistem (jumlah baris event)."
+        },
+        {
+          "number": 2,
+          "title": "Tentukan ukuran sampel n",
+          "description": "Pilih n berdasarkan batas waktu proses, RAM/disk, atau target presisi.",
+          "tip": "Semakin besar n, umumnya semakin tinggi presisi, tapi biaya naik."
+        },
+        {
+          "number": 3,
+          "title": "Hitung interval k",
+          "description": "k = N / n (dibulatkan sesuai kebutuhan praktis). Interval ini menentukan jarak antar elemen sampel.",
+          "tip": "Dalam praktik, gunakan pembulatan yang konsisten (misal floor/round) sesuai panduan tim."
+        },
+        {
+          "number": 4,
+          "title": "Pilih start acak dari 1 sampai k",
+          "description": "Ambil angka awal r secara acak di rentang [1..k].",
+          "tip": "Ini kunci agar tetap ‘random’ meski penomorannya sistematis."
+        },
+        {
+          "number": 5,
+          "title": "Ambil elemen: r, r+k, r+2k, ... sampai n",
+          "description": "Kumpulkan elemen data pada indeks tersebut sebagai sampel.",
+          "tip": "Pastikan indeks tidak melewati N."
+        }
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Ringkasan Visual: Kapan Sampling Dipakai?",
+      "icon": "📊",
+      "items": [
+        {
+          "label": "Problem",
+          "value": "Data besar, mahal untuk proses semua",
+          "icon": "🧱"
+        },
+        {
+          "label": "Solusi",
+          "value": "Ambil sampel terarah (systematic random)",
+          "icon": "🎲"
+        },
+        {
+          "label": "Tujuan",
+          "value": "Estimasi parameter cukup akurat",
+          "icon": "✅"
+        },
+        {
+          "label": "Trade-off",
+          "value": "Presisi vs efisiensi (waktu, RAM, I/O)",
+          "icon": "⚖️"
+        }
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Praktek: Sampling Sistematis (Systematic Random Sampling)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Ubah nilai N dan n, lalu klik tombol Run (secara manual) dengan menjalankan kode ini. Kode akan menghasilkan indeks sampel menggunakan systematic random sampling: k = N/n, start acak r, lalu ambil r, r+k, r+2k ... Pastikan output menunjukkan jumlah indeks sesuai n (atau sedekat mungkin bila pembulatan).",
+      "fileName": "systematic_sampling.js",
+      "defaultCode": "// Systematic Random Sampling demofunction systematicRandomSampling(N, n, seed) {  // sederhana: seed untuk reprodusibilitas demo  let x = seed || 123456789;  function rand() {    // LCG    x = (1103515245 * x + 12345) % 2147483648;    return x / 2147483648;  }  const kFloat = N / n;  const k = Math.max(1, Math.round(kFloat)); // praktis untuk demo  const r = 1 + Math.floor(rand() * k); // start acak di [1..k]  const indices = [];  let idx = r;  while (idx <= N && indices.length < n) {    indices.push(idx);    idx += k;  }  return { N, n, k, r, indices };}const N = 120;const n = 12;const result = systematicRandomSampling(N, n, 42);console.log('N=', result.N, 'n=', result.n, 'k=', result.k, 'start(r)=', result.r);console.log('sample indices=', result.indices);console.log('sample size=', result.indices.length);",
+      "hint": "Coba ubah N=200, n=20. Lihat apakah start(r) berubah dan bagaimana indeks sampel terbentuk dengan interval k."
+    },
+    {
+      "type": "code_playground",
+      "title": "Praktek: Estimasi Rata-rata + Hitung Error & Presisi (Simulasi)",
+      "icon": "💻",
+      "language": "python",
+      "instruction": "Jalankan kode ini untuk mensimulasikan populasi (data latensi jam), mengambil beberapa sampel secara random, lalu menghitung mean sampel, error relatif terhadap mean populasi, dan indikator presisi. Kamu bisa ubah ukuran sampel n dan jumlah percobaan agar terlihat pengaruhnya.",
+      "fileName": "sampling_error_precision.py",
+      "defaultCode": "import random, statistics\n\nrandom.seed(7)\n\ndef generate_population(N):\n    # latensi jam: campuran agar tidak terlalu ideal\n    return [random.gauss(6.0, 1.5) + (random.random() < 0.08)*random.gauss(6.0, 2.0) for _ in range(N)]\n\ndef sample_random(data, n):\n    # sampling random sederhana untuk demo error\n    return random.sample(data, n)\n\ndef rel_error(est, true):\n    return abs(est - true) / (abs(true) + 1e-9)\n\n# parameter\nN = 5000\nn = 100\ntrials = 200\n\npopulation = generate_population(N)\ntrue_mean = statistics.mean(population)\n\nmeans = []\nerrors = []\nfor _ in range(trials):\n    s = sample_random(population, n)\n    m = statistics.mean(s)\n    means.append(m)\n    errors.append(rel_error(m, true_mean))\n\navg_est = statistics.mean(means)\nmean_error = statistics.mean(errors)\n# presisi kasarnya: sebaran estimasi (semakin kecil makin presisi)\nprecision = statistics.pstdev(means)\n\nprint('True mean=', round(true_mean, 4))\nprint('Average estimated mean=', round(avg_est, 4))\nprint('Mean relative error=', round(mean_error, 4))\nprint('Precision (std dev of estimates)=', round(precision, 4))\n\n# coba ubah n=50 atau n=300 untuk melihat trade-off presisi vs efisiensi",
+      "hint": "Bandingkan hasil saat n dinaikkan dari 100 ke 300. Umumnya mean_error turun dan precision (std dev) mengecil."
+    },
+    {
+      "type": "analogy_card",
+      "title": "Error & Presisi Sampling (Versi yang gampang)",
+      "icon": "💡",
+      "realWorld": "Misal kamu ingin tahu rata-rata durasi pengiriman paket ekspres. Mengukur semua paket mungkin butuh waktu berhari-hari, jadi kamu ambil sebagian.",
+      "connection": "Konsep slide tentang Perhitungan Error dan Presisi Sampling serta trade-off mengolah N vs n.",
+      "insight": "Error itu ‘seberapa jauh perkiraan dari nilai sebenarnya’, sedangkan presisi itu ‘seberapa stabil perkiraan jika diambil sampel lagi’. Jadi bisa saja error kecil tapi presisi buruk (atau sebaliknya).",
+      "explanation": ""
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini Statistika Informatika",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Populasi",
+          "definition": "Seluruh data/objek yang ingin dipelajari",
+          "example": "Semua request checkout selama 1 bulan"
+        },
+        {
+          "term": "Sampel",
+          "definition": "Bagian dari populasi yang diambil untuk dianalisis",
+          "example": "Sebagian request checkout yang dipilih dengan systematic sampling"
+        },
+        {
+          "term": "Parameter",
+          "definition": "Ukuran numerik pada populasi (nilai sebenarnya)",
+          "example": "Mean latency populasi"
+        },
+        {
+          "term": "Statistik",
+          "definition": "Ukuran numerik dari sampel",
+          "example": "Mean latency sampel"
+        },
+        {
+          "term": "Error",
+          "definition": "Selisih (atau proporsi selisih) estimasi vs nilai sebenarnya",
+          "example": "Relative error mean sampel terhadap mean populasi"
+        },
+        {
+          "term": "Presisi",
+          "definition": "Seberapa konsisten estimasi jika sampel diambil berulang",
+          "example": "Standar deviasi estimasi mean dari banyak trial"
+        },
+        {
+          "term": "Systematic Random Sampling",
+          "definition": "Sampling dengan interval tetap dan start acak",
+          "example": "Ambil indeks r, r+k, r+2k ... "
+        },
+        {
+          "term": "Trade-off",
+          "definition": "Kompromi antara akurasi/presisi dan biaya komputasi",
+          "example": "n lebih kecil lebih cepat tapi presisi bisa turun"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Statistika deskriptif paling tepat dipakai untuk tujuan apa?",
+      "options": [
+        "Membuat kesimpulan tentang populasi yang lebih luas",
+        "Mengorganisasi, merangkum, dan memvisualkan data tanpa generalisasi",
+        "Menguji hipotesis menggunakan A/B testing",
+        "Menjalankan algoritma berat seperti MCMC"
+      ],
+      "answer": "Mengorganisasi, merangkum, dan memvisualkan data tanpa generalisasi",
+      "explanation": "Deskriptif fokus pada ringkasan dan visualisasi. Ia tidak ditujukan untuk generalisasi ke populasi yang lebih luas.",
+      "xpReward": 50
+    },
+    {
+      "question": "Dalam konteks populasi-sampel, mean pada populasi disebut apa?",
+      "options": [
+        "Statistik",
+        "Parameter",
+        "Error",
+        "Presisi"
+      ],
+      "answer": "Parameter",
+      "explanation": "Parameter adalah ukuran numerik yang berada pada populasi (nilai sebenarnya yang ingin dipelajari).",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa tujuan utama statistika inferensial?",
+      "options": [
+        "Menghitung semua nilai tanpa perkiraan",
+        "Mengambil keputusan tentang populasi berdasarkan sampel",
+        "Merancang dashboard performa",
+        "Melakukan simulasi Monte Carlo tanpa data sampel"
+      ],
+      "answer": "Mengambil keputusan tentang populasi berdasarkan sampel",
+      "explanation": "Inferensial berkaitan dengan estimasi dan pengambilan kesimpulan/keputusan dari sampel.",
+      "xpReward": 50
+    },
+    {
+      "question": "Pada systematic random sampling, apa yang dipilih secara acak?",
+      "options": [
+        "Interval k",
+        "Start awal r dari 1 sampai k",
+        "Jumlah sampel n",
+        "Nilai error"
+      ],
+      "answer": "Start awal r dari 1 sampai k",
+      "explanation": "Ciri systematic random sampling adalah start acak agar tidak bias, lalu sisanya mengikuti interval tetap.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika kamu mengurangi ukuran sampel n (misalnya dari 300 ke 100), biasanya trade-off yang terjadi adalah:",
+      "options": [
+        "Presisi pasti meningkat dan biaya turun",
+        "Efisiensi komputasi naik tetapi presisi bisa menurun",
+        "Biaya komputasi naik tetapi presisi turun",
+        "Tidak ada pengaruh apa pun"
+      ],
+      "answer": "Efisiensi komputasi naik tetapi presisi bisa menurun",
+      "explanation": "Lebih sedikit data berarti lebih cepat dan hemat resource, namun estimasi cenderung kurang stabil/kurang presisi.",
+      "xpReward": 50
+    },
+    {
+      "question": "Apa perbedaan intuitif antara error dan presisi?",
+      "options": [
+        "Error adalah sebaran estimasi, presisi adalah jarak ke nilai benar",
+        "Error adalah jarak estimasi ke nilai benar, presisi adalah konsistensi antar percobaan",
+        "Keduanya sama artinya",
+        "Presisi hanya untuk data kualitatif"
+      ],
+      "answer": "Error adalah jarak estimasi ke nilai benar, presisi adalah konsistensi antar percobaan",
+      "explanation": "Error mengukur ‘dekat atau tidaknya’ terhadap nilai sebenarnya, sedangkan presisi mengukur ‘stabil atau tidaknya’ estimasi berulang.",
+      "xpReward": 50
+    },
+    {
+      "question": "Kasus A/B testing UX lebih cocok masuk kategori statistika apa?",
+      "options": [
+        "Deskriptif",
+        "Inferensial",
+        "Komputasional",
+        "Hanya sampling tanpa analisis"
+      ],
+      "answer": "Inferensial",
+      "explanation": "A/B testing adalah pengambilan keputusan tentang dampak perubahan pada populasi pengguna/kelompok berdasarkan sampel.",
+      "xpReward": 50
+    },
+    {
+      "question": "Monte Carlo dan Bootstrapping biasanya dipakai dalam statistika komputasional karena:",
+      "options": [
+        "Tidak memerlukan komputer",
+        "Butuh perhitungan statistik kompleks yang intensif",
+        "Hanya melakukan visualisasi",
+        "Hanya menghitung parameter tanpa estimasi"
+      ],
+      "answer": "Butuh perhitungan statistik kompleks yang intensif",
+      "explanation": "Komputasional memanfaatkan kekuatan pemrosesan komputer untuk menjalankan metode statistik yang berat secara komputasi.",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa itu populasi?",
+      "answer": "Populasi adalah seluruh objek/data yang ingin kita pelajari; misalnya semua request checkout selama periode tertentu.",
+      "emoji": "🌍",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa itu sampel?",
+      "answer": "Sampel adalah bagian dari populasi yang diambil untuk analisis agar lebih efisien.",
+      "emoji": "🧩",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Parameter itu dari mana?",
+      "answer": "Parameter berasal dari populasi (nilai sebenarnya yang ingin diestimasi).",
+      "emoji": "📌",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Statistik itu dari mana?",
+      "answer": "Statistik berasal dari sampel (misalnya mean sampel).",
+      "emoji": "📏",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Kalau tujuannya merangkum data di dashboard, itu statistika apa?",
+      "answer": "Statistika deskriptif.",
+      "emoji": "📈",
+      "difficulty": "easy"
+    },
+    {
+      "question": "A/B testing UX termasuk kategori apa?",
+      "answer": "Statistika inferensial.",
+      "emoji": "🧪",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Apa kunci systematic random sampling agar tetap random?",
+      "answer": "Start awal r dipilih secara acak (1 sampai k), lalu elemen berikutnya mengikuti interval tetap k.",
+      "emoji": "🎲",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Presisi itu kira-kira mengukur apa?",
+      "answer": "Konsistensi estimasi jika sampling dilakukan berulang (sebaran estimasi).",
+      "emoji": "🎯",
+      "difficulty": "hard"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama: konsep dasar populasi-sampel dan jenis statistika",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi PPT membahas Pengantar Statistika Informatika, peran industri, serta konsep dasar populasi-sampel. Inti besarnya adalah menjelaskan bagaimana statistika digunakan dalam konteks sistem dan data informatika, bukan sekadar teori. Slide pengantar memperkenalkan topik: kenapa statistika relevan untuk dunia industri (misalnya operasional layanan digital, audit performa server, analisis log, dan pengambilan keputusan produk). Lalu materi membagi statistika ke dalam tiga taksonomi besar: Statistika Deskriptif, Statistika Inferensial, dan Statistika Komputasional. Statistika deskriptif berfokus pada pengorganisasian, peringkasan, dan visualisasi data tanpa melakukan generalisasi ke kelompok yang lebih luas. Ini tampak jelas pada contoh dashboard pemantauan server seperti Grafana dan rekapitulasi jumlah active users: tujuannya adalah memahami kondisi saat ini dari data yang tersedia, misalnya berapa rata-rata latency, berapa jumlah user aktif per periode, atau bagaimana tren berubah. Karena tidak ada klaim tentang populasi yang lebih luas, deskriptif cukup sampai pada ringkasan dan visualisasi. Statistika inferensial digunakan untuk pengambilan kesimpulan, estimasi, dan pembuat keputusan mengenai populasi berdasarkan data sampel. Contoh yang disebutkan adalah A/B Testing pada UX aplikasi: kita tidak menguji semua user, tapi memilih sampel/kelompok lalu membuat keputusan apakah variasi A atau B lebih efektif. Contoh lain: estimasi bug density dari modul kode; artinya dengan melihat sampel bagian kode (bukan seluruh repositori secara menyeluruh) kita dapat membuat estimasi tentang karakteristik populasi kode yang lebih besar dan membantu keputusan rekayasa. Statistika komputasional (computational statistics) memakai kekuatan pemrosesan komputer untuk menjalankan algoritma statistik kompleks yang intensif secara komputasi. Ini cocok untuk kasus seperti simulasi Monte Carlo, bootstrapping, dan algoritma Markov Chain Monte Carlo (MCMC). Pada tahap ini, tutor bisa menekankan bahwa beberapa pertanyaan statistik sulit atau mahal jika dihitung secara analitik, sehingga simulasi/iterasi komputer menjadi alat utama. Slide selanjutnya memperluas peran statistika dalam ranah utama informatika: statistika hadir dalam observabilitas (monitoring), eksperimen produk (A/B test), kualitas perangkat lunak (estimasi bug), dan pemodelan/prediksi dengan simulasi. Setelah itu masuk konsep inti populasi, sampel, parameter, dan statistik. Populasi adalah seluruh objek/data yang ingin dipelajari; sampel adalah bagian yang diambil untuk analisis; parameter adalah nilai numerik pada populasi, sedangkan statistik adalah nilai yang dihitung dari sampel. Karena parameter populasi sering tidak bisa dihitung langsung (misalnya data terlalu besar atau pengambilan seluruh data terlalu mahal), kita menggunakan inferensi: statistik sampel dipakai untuk mengestimasi parameter. Materi kemudian memberi konteks kasus monitoring latency API endpoint checkout e-commerce. Kasus ini bisa dipahami sebagai proses: data latency dari request checkout dikumpulkan; lalu dilakukan analisis untuk melihat performa dan mendeteksi anomali atau penurunan kualitas. Slide ulangan menegaskan kasus yang sama, sehingga tutor perlu menekankan: misalnya latensi adalah indikator teknis; pengambilan keputusan dilakukan agar tim teknik dapat bertindak. Bagian selanjutnya membahas tahapan dan algoritma penarikan sampel Systematic Random Sampling. Tutor dapat menjelaskan langkah-langkah praktis: tetapkan N (ukuran populasi), tetapkan n (ukuran sampel), hitung interval k = N/n, pilih start acak r antara 1 sampai k, lalu ambil indeks r, r+k, r+2k, dan seterusnya sampai mencapai n elemen. Poin penting untuk tutor: meski ada interval tetap, tetap ada komponen acak lewat start r agar sampel tidak terlalu bias terhadap urutan data. Setelah sampling, slide 11 memunculkan topik perhitungan error dan presisi sampling. Tutor perlu mengajarkan perbedaan: error adalah seberapa jauh estimasi dari nilai sebenarnya (atau nilai referensi), sedangkan presisi adalah seberapa konsisten estimasi jika sampling diulang—biasanya diukur lewat sebaran estimasi (misalnya standar deviasi dari beberapa percobaan). Dalam praktik informatika, ini penting karena tim perlu menilai apakah estimasi dari sampel cukup layak untuk keputusan (misalnya apakah perkiraan latency atau bug density sudah stabil). Slide 12 membahas justifikasi komputasi: mengapa harus sampling? Di sini materi menekankan perbandingan efisiensi antara mengolah seluruh populasi N versus mengolah sampel n. Dengan mengolah semua data, biaya tinggi pada memori (RAM/disk), beban I/O disk, kompleksitas query pada database engine, dan waktu eksekusi. Slide menyebut penghematan memori dan beban database minimal, serta bahwa presisi hasil cukup akurat untuk keputusan teknis. Tutor harus mengaitkan ini ke dunia industri: ketika data log atau event sangat besar (misalnya jutaan baris), memproses semuanya bisa tidak efisien untuk insight cepat. Dengan sampling, kita mendapatkan estimasi yang cukup akurat untuk kebutuhan teknis (misalnya pembuatan alert, rekomendasi optimasi, atau perencanaan kapasitas). Slide 13-14 memperkuat justifikasi teknis dan analisis trade-off (kompromi). Tutor bisa menekankan trade-off: semakin kecil n, semakin hemat biaya komputasi, tetapi presisi/akurasi bisa menurun; semakin besar n, presisi meningkat namun biaya naik. Jadi keputusan sampling adalah keputusan rekayasa: menyeimbangkan biaya komputasi dengan kualitas estimasi. Slide 15 berisi tugas, dan slide 16 memuat tugas tim Quality Assurance FastKurir. Tugasnya: audit durasi waktu pengiriman paket ekspres (dalam jam) dari gudang pusat ke konsumen selama bulan lalu. Tutor dapat membantu siswa menyusun kerangka analisis: tentukan populasi (semua pengiriman ekspres selama bulan itu), tentukan statistik yang diinginkan (misalnya rata-rata, median, persentil tertentu), pilih ukuran sampel n karena data bisa besar, gunakan sampling yang sesuai (misalnya systematic random sampling), lalu estimasi parameter dari sampel dan laporkan error/presisi (atau setidaknya indikasi sebaran). Tutor juga bisa mengajak siswa berpikir tentang metrik kualitas: apakah yang diaudit hanya rata-rata, atau juga distribusi dan outlier (karena pengiriman bisa punya kejadian lambat). Di blok interaktif, tutor bisa menyatukan konsep: deskriptif untuk ringkas data sampel, inferensial untuk mengestimasi kondisi keseluruhan populasi pengiriman, dan sampling untuk efisiensi."
+}
