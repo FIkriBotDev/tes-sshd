@@ -24,7 +24,7 @@ app.use("/api", courseRoutes);
 // Mount course routes without /api prefix for page routes (exam, etc)
 app.use("/", courseRoutes);
 
-const POLLINATIONS_API_KEY = "sk_RM9sUErPNlaj7kFenSIMljnIVvAyssUk";
+const POLLINATIONS_API_KEY = "sk_fDaL864fZPNVg59S10sqyFgnkmZEXQSY";
 
 const SYSTEM_PROMPT = fs.readFileSync(
     path.join(__dirname, "SYSTEM_PROMPT.md"),
