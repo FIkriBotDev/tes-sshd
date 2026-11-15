@@ -112,7 +112,7 @@ app.post("/api/chat", async (req, res) => {
         const response = await axios.post(
             "https://gen.pollinations.ai/v1/chat/completions",
             {
-                model: "openai",
+                model: "openai/gpt-5.4-nano",
                 messages: messages
             },
             {
