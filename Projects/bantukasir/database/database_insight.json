@@ -461,11 +461,20 @@
           "produk_menipis": [],
           "kasbon_belum_lunas": 0
         }
+      },
+      {
+        "tanggal": "2026-11-16",
+        "ringkasan": "Belum ada penjualan hari ini",
+        "penyebab": "Fortuner habis, susah buka jualan",
+        "saran": "Belanja Fortuner dulu supaya bisa buka",
+        "timestamp": 1794794833104,
+        "generated_by": "template"
       }
     ],
     "refresh_count": {
       "20261112": 5,
-      "20261113": 2
+      "20261113": 2,
+      "20261116": 1
     }
   }
 ]
