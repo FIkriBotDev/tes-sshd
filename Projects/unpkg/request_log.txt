@@ -3982,3 +3982,6 @@
 [Tue Nov 17 08:01 GMT+8] 43.163.126.176 Request to /v1/chat/completions [POST]
 [Tue Nov 17 08:29 GMT+8] 103.153.189.177 Request to /v1/models [GET]
 [Tue Nov 17 08:29 GMT+8] 103.153.189.177 Request to /v1/chat/completions [POST]
+[Tue Nov 17 09:01 GMT+8] 43.163.126.176 Request to /v1/models [GET]
+[Tue Nov 17 09:01 GMT+8] 43.163.126.176 Request to /api/show [POST]
+[Tue Nov 17 09:01 GMT+8] 43.163.126.176 Request to /v1/chat/completions [POST]
