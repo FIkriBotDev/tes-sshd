@@ -2571,6 +2571,32 @@
         "bayar": 120000,
         "kembalian": 0,
         "day": 20769
+      },
+      {
+        "id": "TRX-97889845",
+        "timestamp": 1794897889845,
+        "items": [
+          {
+            "id": 1794098686797,
+            "n": "Matcha Latte",
+            "p": 15000,
+            "c": 10000,
+            "q": 1
+          }
+        ],
+        "total": 15000,
+        "subtotal": 15000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Muhammad Fikri Fahrezi",
+        "void": false,
+        "bayar": 20000,
+        "kembalian": 5000,
+        "day": 20774
       }
     ]
   },
