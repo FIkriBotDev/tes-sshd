@@ -1,0 +1,329 @@
+{
+  "title": "Probabilitas Dasar & Teorema Bayes: Hitung Peluang dengan Cepat",
+  "summary": "Pelajari apa itu probabilitas, cara membedakan percobaan, ruang sampel, dan kejadian, lalu hitung peluang dengan rumus klasik dan aturan-aturan penting. Kamu juga akan praktik memakai kalkulator plus rumus komplemen dan gabungan (atau/ tidak/ selain) lewat contoh yang mirip soal ujian.",
+  "emoji": "📚",
+  "color": "#6366f1",
+  "learningBlocks": [
+    {
+      "type": "concept_card",
+      "title": "Probabilitas: Angka Kemungkinan",
+      "icon": "🎲",
+      "explanation": "Probabilitas adalah angka yang menunjukkan seberapa besar kemungkinan suatu kejadian terjadi. Nilainya selalu di antara 0 dan 1: 0 berarti mustahil, 1 berarti pasti, dan 0,5 berarti seperti melempar koin. Kalau hasil hitunganmu negatif atau lebih dari 1, berarti ada yang keliru di rumus atau angka yang dipakai.",
+      "analogy": "Bayangkan kupon undian: probabilitas 0 artinya kupon itu tidak bisa menang, probabilitas 1 artinya pasti menang, dan 0,5 artinya peluangnya setengah-setengah seperti memilih salah satu dari dua sisi koin.",
+      "highlight": "0 ≤ P(A) ≤ 1",
+      "keyPoints": [
+        "0 = mustahil, 1 = pasti",
+        "0,5 = setengah-setengah",
+        "Kalau <0 atau >1, cek ulang hitunganmu"
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Tiga Istilah Wajib: Percobaan, Ruang Sampel, Kejadian",
+      "icon": "🧠",
+      "explanation": "Dalam probabilitas, kita selalu mulai dari percobaan (kegiatan acak), lalu ruang sampel S (semua hasil mungkin), dan kejadian A (subset dari S yang sedang kamu incar). Intinya: n(S) adalah semua kemungkinan, sedangkan n(A) adalah yang kita fokuskan.",
+      "analogy": "Seperti daftar semua siswa di kelas (S), lalu kamu sedang meneliti kelompok tertentu seperti siswa yang tinggi badannya di atas rata-rata (A). Total anggota kelas adalah n(S), dan anggota kelompok yang kamu teliti adalah n(A).",
+      "highlight": "n(S) vs n(A)",
+      "keyPoints": [
+        "Percobaan menghasilkan hasil acak",
+        "Ruang sampel S berisi semua kemungkinan",
+        "Kejadian A adalah bagian dari S"
+      ]
+    },
+    {
+      "type": "visual_summary",
+      "title": "Rumus Klasik: P(A) = n(A) ÷ n(S)",
+      "icon": "🧮",
+      "items": [
+        {
+          "label": "Peluang Kejadian",
+          "value": "P(A) = n(A) ÷ n(S)",
+          "icon": "📌"
+        },
+        {
+          "label": "Contoh Dadu",
+          "value": "n(S)=6, genap A={2,4,6} => n(A)=3",
+          "icon": "🎲"
+        },
+        {
+          "label": "Batas Nilai",
+          "value": "Harus tetap di antara 0 dan 1",
+          "icon": "✅"
+        }
+      ]
+    },
+    {
+      "type": "step_by_step",
+      "title": "Langkah Hitung Pakai Rumus Klasik",
+      "icon": "🪜",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Tentukan percobaan & ruang sampel",
+          "description": "Tuliskan semua hasil yang mungkin. Misal dadu: S={1,2,3,4,5,6}.",
+          "tip": "Kalau soal pakai kata ‘ambil acak’, berarti ruang sampelnya total item."
+        },
+        {
+          "number": 2,
+          "title": "Tentukan kejadian yang diincar",
+          "description": "Tulis A sebagai subset dari S. Misal genap: A={2,4,6}.",
+          "tip": "Jika soal berkata ‘bukan’ atau ‘tidak’, kamu bisa pakai komplemen."
+        },
+        {
+          "number": 3,
+          "title": "Hitung n(A) dan n(S)",
+          "description": "Jumlahkan elemen A dan elemen S.",
+          "tip": "Kesalahan paling umum: salah pakai n(S) (total semua kemungkinan)."
+        },
+        {
+          "number": 4,
+          "title": "Terapkan rumus atau aturan gabungan",
+          "description": "Kalau peluangnya klasik: P(A)=n(A)/n(S). Untuk ‘atau’: gunakan aturan gabungan (saling lepas atau tidak).",
+          "tip": "Untuk ‘A atau B’ yang saling lepas: tambah. Kalau bisa tumpang tindih: tambah lalu kurangi irisan."
+        }
+      ]
+    },
+    {
+      "type": "concept_card",
+      "title": "Komplemen & Gabungan: Kata Kunci Soal",
+      "icon": "🔁",
+      "explanation": "Komplemen (bukan A) ditulis A′ dan peluangnya P(A′)=1−P(A). Ini super berguna saat soal memakai kata ‘bukan’, ‘tidak’, atau ‘selain’. Untuk ‘atau’ gunakan gabungan: jika A dan B saling lepas, P(A∪B)=P(A)+P(B); kalau tidak saling lepas, P(A∪B)=P(A)+P(B)−P(A∩B).",
+      "analogy": "Seperti antrean dua jalur: ‘bukan jalur A’ berarti semua yang tidak lewat jalur A. Sedangkan ‘jalur A atau B’ mirip memilih dua pintu, tapi hati-hati kalau ada orang yang bisa masuk lewat keduanya (tumpang tindih) jadi perlu dikurangi sekali.",
+      "highlight": "‘bukan/tidak’ => 1−P(A)",
+      "keyPoints": [
+        "P(A′)=1−P(A)",
+        "‘atau’ saling lepas => tambah",
+        "‘atau’ tidak saling lepas => tambah lalu kurangi irisan"
+      ]
+    },
+    {
+      "type": "code_playground",
+      "title": "Kalkulator Peluang Mini (P(A)=nA/nS)",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Edit angka nA dan nS, lalu klik Run. Program akan menghitung P(A) dan juga menampilkan versi persen. Coba juga sampai dapat hasil antara 0 dan 1.",
+      "fileName": "peluang_kalkulator.js",
+      "defaultCode": "// Kalkulator Peluang Mini\n// Ubah nilai di bawah ini:\nconst nA = 3; // contoh: kejadian yang diincar\nconst nS = 6; // contoh: semua kemungkinan\n\nconst p = nA / nS;\nconst percent = p * 100;\n\nconsole.log('P(A) =', p);\nconsole.log('P(A) dalam persen =', percent + '%');\n\n// Validasi cepat\nif (p < 0 || p > 1) {\n  console.log('Catatan: Hasil di luar 0..1, cek kembali nA dan nS.');\n} else {\n  console.log('Hasil valid: 0 ≤ P(A) ≤ 1');\n}",
+      "hint": "Challenge: set nA=0 lalu nA=nS dan lihat apa yang terjadi pada probabilitasnya."
+    },
+    {
+      "type": "code_playground",
+      "title": "Cek Aturan ‘Atau’ dengan/ tanpa Irisan",
+      "icon": "💻",
+      "language": "javascript",
+      "instruction": "Isi pA, pB, dan pIntersec (peluang irisan). Jika A dan B saling lepas, set pIntersec=0. Program menghitung P(A∪B) memakai rumus yang benar.",
+      "fileName": "aturan_or.js",
+      "defaultCode": "// Hitung P(A ∪ B)\n// Kasus saling lepas: set pIntersec = 0\nconst pA = 0.8;\nconst pB = 0.15;\nconst pIntersec = 0.0; // ubah ke nilai irisan jika perlu\n\nconst pUnion = pA + pB - pIntersec;\n\nconsole.log('P(A ∪ B) =', pUnion);\nconsole.log('Dalam persen =', pUnion * 100 + '%');\n\n// Cek cepat\nif (pUnion < 0 || pUnion > 1) {\n  console.log('Catatan: Hasil di luar 0..1, periksa rumus dan input.');\n}",
+      "hint": "Challenge: coba buat skenario seperti dadu: P(genap)=3/6, P(>4)=2/6, P(irisan=6)=1/6 lalu lihat hasilnya mendekati 4/6."
+    },
+    {
+      "type": "analogy_card",
+      "title": "Kenapa ‘Peluang Tidak Terjadi’ Selalu 1−P(A)?",
+      "icon": "💡",
+      "realWorld": "Di dunia nyata, kita sering ingin tahu peluang ‘yang tidak sesuai’ dari sebuah proses (misal chip cacat).",
+      "connection": "Aturan komplemen mengubah soal ‘bukan A’ jadi lebih mudah karena P(A) + P(bukan A) selalu 1.",
+      "insight": "Kalau kamu sudah menghitung P(A), langsung dapat P(A′) tanpa harus menghitung daftar kejadian yang kebalikannya."
+    },
+    {
+      "type": "key_terms",
+      "title": "Kamus Mini Probabilitas",
+      "icon": "📖",
+      "terms": [
+        {
+          "term": "Percobaan (experiment)",
+          "definition": "Kegiatan acak yang menghasilkan hasil yang bisa diamati.",
+          "example": "Melempar dadu atau memeriksa chip."
+        },
+        {
+          "term": "Ruang sampel (S)",
+          "definition": "Kumpulan semua hasil yang mungkin terjadi.",
+          "example": "Untuk dadu: S={1,2,3,4,5,6} sehingga n(S)=6."
+        },
+        {
+          "term": "Kejadian (A)",
+          "definition": "Bagian dari ruang sampel yang sedang kamu amati.",
+          "example": "Genap: A={2,4,6} sehingga n(A)=3."
+        },
+        {
+          "term": "Komplemen (A′)",
+          "definition": "Kejadian ‘bukan A’.",
+          "example": "Kalau A adalah ‘genap’, maka A′ adalah ‘bukan genap’."
+        },
+        {
+          "term": "Irisan (A ∩ B)",
+          "definition": "Hasil yang terjadi di A dan B sekaligus.",
+          "example": "Pada dadu: genap ∩ >4 = {6}."
+        },
+        {
+          "term": "Gabungan (A ∪ B)",
+          "definition": "Hasil yang terjadi di A atau di B atau keduanya.",
+          "example": "Genap ∪ >4 = {2,4,5,6}."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Jika P(A)=0, apa arti kejadian A?",
+      "options": [
+        "A pasti terjadi",
+        "A mustahil terjadi",
+        "A hanya mungkin setengah",
+        "A peluangnya lebih dari 1"
+      ],
+      "answer": "A mustahil terjadi",
+      "explanation": "Probabilitas 0 berarti kejadian tidak mungkin terjadi sesuai definisi 0 ≤ P(A) ≤ 1.",
+      "xpReward": 50
+    },
+    {
+      "question": "Pada dadu, ruang sampel S berisi semua hasil yang mungkin. Berapa n(S)?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "answer": "6",
+      "explanation": "Untuk dadu bersisi 6, semua kemungkinan adalah 1 sampai 6, jadi n(S)=6.",
+      "xpReward": 50
+    },
+    {
+      "question": "Kejadian A adalah ‘muncul angka genap’ pada dadu. Berapakah n(A)?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "answer": "3",
+      "explanation": "Angka genap adalah {2,4,6}, sehingga jumlahnya 3.",
+      "xpReward": 50
+    },
+    {
+      "question": "Peluang kejadian dengan peluang sama besar memakai rumus klasik: P(A) = ?",
+      "options": [
+        "n(S) ÷ n(A)",
+        "n(A) ÷ n(S)",
+        "n(A) + n(S)",
+        "n(S) − n(A)"
+      ],
+      "answer": "n(A) ÷ n(S)",
+      "explanation": "Rumus klasik membagi jumlah hasil yang diincar (n(A)) dengan total semua kemungkinan (n(S)).",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika P(A)=0,8 maka berapa P(A′) (komplemen)?",
+      "options": [
+        "0,8",
+        "0,2",
+        "1,2",
+        "0"
+      ],
+      "answer": "0,2",
+      "explanation": "Komplemen selalu P(A′)=1−P(A)=1−0,8=0,2.",
+      "xpReward": 50
+    },
+    {
+      "question": "Untuk dua kejadian A dan B yang saling lepas, rumus P(A ∪ B) adalah ?",
+      "options": [
+        "P(A) + P(B) − P(A ∩ B)",
+        "P(A) − P(B)",
+        "P(A) + P(B)",
+        "1 − P(A)"
+      ],
+      "answer": "P(A) + P(B)",
+      "explanation": "Jika saling lepas, irisan tidak terjadi sehingga P(A ∩ B)=0, maka cukup dijumlahkan.",
+      "xpReward": 50
+    },
+    {
+      "question": "Jika A dan B bisa terjadi bersamaan, rumus P(A ∪ B) yang benar adalah ?",
+      "options": [
+        "P(A) + P(B)",
+        "P(A) + P(B) − P(A ∩ B)",
+        "1 − (P(A) + P(B))",
+        "P(A ∩ B) saja"
+      ],
+      "answer": "P(A) + P(B) − P(A ∩ B)",
+      "explanation": "Karena bagian irisan terhitung dua kali saat menjumlahkan P(A)+P(B), maka harus dikurangi sekali.",
+      "xpReward": 50
+    },
+    {
+      "question": "Soal dadu: A=genap ({2,4,6}) dan B=lebih dari 4 ({5,6}). Berapa P(A ∪ B)?",
+      "options": [
+        "3/6",
+        "4/6",
+        "5/6",
+        "6/6"
+      ],
+      "answer": "4/6",
+      "explanation": "Gabungan memenuhi {2,4,5,6} ada 4 dari 6 jadi P=4/6 (≈0,6667).",
+      "xpReward": 50
+    }
+  ],
+  "flashcards": [
+    {
+      "question": "Apa pengertian probabilitas P(A)?",
+      "answer": "Angka yang menyatakan seberapa besar kemungkinan kejadian A terjadi, dengan nilai selalu antara 0 dan 1.",
+      "emoji": "🎲",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Berapa arti P(A)=0?",
+      "answer": "Kejadian A mustahil terjadi.",
+      "emoji": "🚫",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Berapa arti P(A)=1?",
+      "answer": "Kejadian A pasti terjadi.",
+      "emoji": "✅",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Apa bedanya n(S) dan n(A)?",
+      "answer": "n(S) adalah jumlah semua kemungkinan pada ruang sampel S, sedangkan n(A) adalah jumlah hasil yang termasuk kejadian A.",
+      "emoji": "🧩",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Tuliskan rumus probabilitas klasik.",
+      "answer": "P(A)=n(A) ÷ n(S) (untuk kasus peluang tiap hasil sama besar).",
+      "emoji": "🧮",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Jika soal meminta P(bukan A), rumusnya apa?",
+      "answer": "P(A′)=1−P(A).",
+      "emoji": "🔁",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Kapan digunakan rumus P(A ∪ B)=P(A)+P(B)?",
+      "answer": "Saat A dan B saling lepas (tidak bisa terjadi bersamaan).",
+      "emoji": "➕",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Kapan digunakan rumus P(A ∪ B)=P(A)+P(B)−P(A ∩ B)?",
+      "answer": "Saat A dan B tidak saling lepas (bisa terjadi bersamaan), jadi bagian irisan harus dikurangi.",
+      "emoji": "🧠",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Untuk dadu, ruang sampelnya apa dan berapa n(S)?",
+      "answer": "S={1,2,3,4,5,6} sehingga n(S)=6.",
+      "emoji": "🎲",
+      "difficulty": "easy"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_complete",
+      "title": "Penjelajah Pertama",
+      "description": "Menyelesaikan materi pertama",
+      "icon": "🏅",
+      "condition": "complete_all_blocks"
+    }
+  ],
+  "tutorContext": "Materi ini membahas Probabilitas Dasar yang menjadi fondasi untuk UTS Statistika serta pengantar gaya soal yang sering keluar: menghitung peluang dari definisi probabilitas, mengerti notasi ruang sampel dan kejadian, memakai rumus probabilitas klasik (jumlah kejadian dibagi total kemungkinan), serta menggunakan aturan-aturan penting seperti komplemen dan gabungan (atau) baik untuk kasus saling lepas maupun tidak saling lepas. Pertama-tama, tutor perlu menanamkan ide inti: probabilitas adalah angka yang menunjukkan “seberapa besar kemungkinan” sesuatu terjadi. Konsep ini harus dikaitkan dengan batas nilai 0 sampai 1. Jelaskan dengan bahasa sederhana: kalau P(A)=0 berarti mustahil (tidak mungkin), kalau P(A)=1 berarti pasti, dan kalau P(A)=0,5 berarti setengah-setengah. Tekankan aturan penting 0 ≤ P(A) ≤ 1: bila siswa mendapat nilai negatif atau lebih dari 1, biasanya karena salah memilih pembilang/penyebut, lupa kurung saat menghitung, atau menggabungkan peluang dengan rumus yang tidak sesuai. Materi juga menyebut probabilitas bisa dinyatakan sebagai desimal atau persen. Desimal 0,05 setara dengan 5% karena dikali 100. Cara mengajarkan bagian ini: setelah siswa dapat hasil desimal dari hitungan, ubah ke persen di langkah terakhir agar tidak mencampur persen dan desimal terlalu cepat.\n\nBagian kedua: tiga istilah wajib. Tutor harus memastikan siswa tidak sekadar menghafal, tapi paham fungsi masing-masing istilah. Percobaan (experiment) adalah kegiatan acak yang menghasilkan hasil yang bisa diamati. Contohnya melempar dadu, memeriksa chip, atau mengambil satu produk secara acak dari batch. Ruang sampel (S) adalah kumpulan semua hasil yang mungkin. Notasi jumlahnya n(S). Misal untuk dadu, S={1,2,3,4,5,6} sehingga n(S)=6. Kejadian (A) adalah bagian dari ruang sampel yang sedang diperhatikan, juga ditulis sebagai subset dan jumlah anggotanya n(A). Contoh: kejadian “genap” adalah A={2,4,6} sehingga n(A)=3. Tutor sebaiknya memberi cara cepat mengingat: n(S) adalah semua kemungkinan, n(A) adalah yang kita incar. Ini membantu menghindari kesalahan umum seperti menukar total dengan kejadian.\n\nBagian ketiga: rumus utama probabilitas klasik. Tutor perlu menegaskan bahwa P(A)=n(A) ÷ n(S) berlaku ketika setiap hasil punya peluang sama besar (misalnya dadu fair, atau semua chip dianggap acak tanpa perbedaan peluang di level individu). Walau materi menyebut “aksioma” tiga aturan dasar, tutor bisa menerjemahkannya ke praktik: probabilitas tidak negatif dan tidak lebih dari 1, P(S)=1 (satu dari semua kemungkinan pasti terjadi karena S mencakup semua hasil), dan P(∅)=0 (himpunan kosong mustahil terjadi).\n\nSelanjutnya, tutor perlu mengajarkan dua aturan kunci karena sangat sering muncul di soal. Pertama adalah hukum komplemen. Komplemen dari A ditulis A′ dan berarti “bukan A”. Peluangnya P(A′)=1−P(A). Jelaskan bahwa hubungan ini benar karena probabilitas kejadian terjadi ditambah probabilitas kejadian tidak terjadi selalu 1. Dalam penguasaan soal, tekankan kata kunci: jika soal mengandung kata ‘bukan’, ‘tidak’, atau ‘selain’, biasanya lebih cepat memakai komplemen.\n\nKedua adalah hukum penjumlahan dengan kata kunci ‘atau’. Ada dua kasus. Jika A dan B saling lepas (mutually exclusive), artinya tidak mungkin terjadi bersamaan; contoh kategori chip mutu A dan B yang tidak bisa sekaligus. Maka P(A ∪ B)=P(A)+P(B). Jika A dan B tidak saling lepas (bisa terjadi bersamaan), maka ada irisan yang akan terhitung dua kali jika hanya dijumlahkan; jadi gunakan P(A ∪ B)=P(A)+P(B)−P(A ∩ B). Tutor harus melatih siswa menilai sendiri: “apakah A dan B bisa terjadi bersamaan?” Ini bisa dibuat sebagai kebiasaan. Kata kunci yang membantu: ‘atau’ biasanya berarti gabungan (union) dengan prinsip tambah/ tambah-kurangi sesuai kasus, sedangkan ‘bukan’ berarti 1 dikurangi.\n\nMateri juga menyajikan studi kasus Quality Control microchip, yang bertujuan menghubungkan konsep dengan konteks. Tutor harus membantu siswa melakukan tiga perhitungan: (1) peluang chip cacat P(C)=n(C)/n(S)=50/1000=0,05 (5%), (2) peluang chip layak pakai (Kategori A atau B) karena A dan B saling lepas: P(A ∪ B)=800/1000+150/1000=0,95 (95%), (3) peluang chip bukan Kategori A, yaitu P(A′)=1−P(A)=1−800/1000=0,20 (20%). Tutor sebaiknya menekankan pengecekan internal: P(cacat)+P(A)+P(B)=1, sehingga siswa punya cara “cek waras” apakah jawaban masuk akal.\n\nBagian tambahan contoh dadu “genap atau lebih dari 4” menegaskan kasus tidak saling lepas karena angka 6 masuk pada keduanya. Tutor perlu mengajak siswa membentuk himpunan: A={2,4,6}, B={5,6}, irisan A∩B={6}. Lalu gabungan dihitung dengan rumus tambah-kurangi: P(A ∪ B)=3/6+2/6−1/6=4/6≈0,6667. Di sini, tutor bisa menekankan bahwa metode himpunan membantu mencegah kesalahan rumus.\n\nBagian kalkulator penting untuk keterampilan praktis ujian. Tutor harus memberi aturan urutan operasi dan penggunaan kurung. Misalnya untuk menghindari salah hitung: (800+150)/1000 memakai kurung, bukan 800+150/1000 yang membuat kalkulator membagi 150 dulu. Tutor juga harus menjelaskan konversi desimal ke persen dengan mengalikan 100. Selain itu, tekankan bahwa koma pada tampilan soal bisa menjadi titik pada kalkulator. Materi menyebut trik scientific calculator: tombol wajib biasanya angka, +, −, ×, ÷, kurung, dan =. Tutorial AC/ON untuk reset, lalu ketik pembilang ÷ penyebut, kemudian baca hasil. Trik tambahan: memakai Ans (jawaban sebelumnya) untuk mempercepat, serta S ⇔ D untuk ubah tampilan pecahan/desimal jika tersedia.\n\nBagian kesalahan yang sering terjadi perlu dipakai sebagai “checklist”. Tutor dapat mengajarkan siswa untuk selalu melakukan review setelah hitung: apakah hasil di 0..1? apakah n(S) benar sebagai total semua kemungkinan? apakah untuk ‘atau’ kasusnya saling lepas atau tidak? apakah kurung benar? apakah persen dan desimal tidak tercampur? Ini bisa dijadikan langkah akhir sebelum ujian.\n\nAkhirnya, materi memberi latihan mandiri dua soal beserta kunci jawaban. Tutor harus membantu mengarahkan siswa: kerjakan di kertas dulu untuk melatih proses, lalu cocokkan dengan kunci. Dalam soal HP: total 200, rincian 120 baru, 50 bekas bagus, 30 rusak. Tutor perlu menuntun peluang rusak =30/200=0,15 (15%), peluang baru atau bekas bagus = (120+50)/200=0,85 (85%) karena saling lepas, dan peluang bukan baru = 1−120/200=0,40 (40%). Dalam soal dadu: peluang ganjil atau lebih dari 3; tentukan himpunan ganjil {1,3,5}, lebih dari 3 {4,5,6}, irisan {5}; lalu gunakan rumus tambah-kurangi untuk ketidaklepas: 3/6+3/6−1/6=5/6≈0,8333 (83,33%).\n\nRingkasan satu lembar harus dipakai sebagai “cheat sheet” tutor: (1) probabilitas selalu antara 0 dan 1, (2) P(A)=n(A)/n(S), (3) P(A′)=1−P(A), (4) gabungan saling lepas pakai tambah, (5) gabungan tidak saling lepas pakai tambah-kurangi irisan, (6) di kalkulator pakai kurung saat jumlah dulu baru bagi, dan kalikan 100 untuk persen. Tutor idealnya mengulang bahwa notasi himpunan (∪, ∩, A′) bukan sekadar simbol, tapi cara berpikir untuk menentukan rumus yang benar."
+}

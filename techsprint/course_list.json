@@ -732,5 +732,19 @@
     "courseUrl": "/course/a7dc8e2833772446c476c9013d61f121",
     "courseThumbnail": "/assets/course-default.png",
     "courseStatus": "completed"
+  },
+  {
+    "courseId": "5a78273cc4e0396237fc8a94098bd75b",
+    "courseName": "Probabilitas Dasar & Teorema Bayes: Hitung Peluang dengan Cepat",
+    "courseEmoji": "📚",
+    "courseColor": "#6366f1",
+    "courseFileName": "Probabilitas Dasar Panduan Mudah dan Cara Hitung di Kalkulator.pdf",
+    "fileType": "pdf",
+    "originalFileName": "Probabilitas Dasar Panduan Mudah dan Cara Hitung di Kalkulator.pdf",
+    "courseOwner": "muhammadfikrifahrezi2@gmail.com",
+    "courseCreated": "17-11-2026, 12.51.16",
+    "courseUrl": "/course/5a78273cc4e0396237fc8a94098bd75b",
+    "courseThumbnail": "/assets/course-default.png",
+    "courseStatus": "completed"
   }
 ]
