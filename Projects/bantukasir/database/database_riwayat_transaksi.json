@@ -3975,6 +3975,32 @@
         "bayar": 720000000,
         "kembalian": 0,
         "day": 20770
+      },
+      {
+        "id": "TRX-19164673",
+        "timestamp": 1795019164673,
+        "items": [
+          {
+            "id": 1794795770087,
+            "n": "BMW M4 Competition",
+            "p": 1400000000,
+            "c": 1385000000,
+            "q": 2
+          }
+        ],
+        "total": 2800000000,
+        "subtotal": 2800000000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 0,
+        "ppn_persen": 0,
+        "metode_bayar": "tunai",
+        "kasir": "Fahrezi",
+        "void": false,
+        "bayar": 2800000000,
+        "kembalian": 0,
+        "day": 20775
       }
     ]
   }
