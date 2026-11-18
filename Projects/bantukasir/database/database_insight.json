@@ -505,18 +505,35 @@
       },
       {
         "tanggal": "2026-11-18",
-        "ringkasan": "Belum ada penjualan hari ini",
-        "penyebab": "Belum ada aktivitas",
-        "saran": "Cek stok dan siapkan jualan hari ini",
-        "timestamp": 1795019153872,
-        "generated_by": "template"
+        "ringkasan": "Untung hari ini Rp 30,0 juta, naik Rp 30,0 juta dari kemarin",
+        "penyebab": "Penjualan lancar, BMW M4 Competition laris",
+        "saran": "Stok Fortuner tinggal sedikit, siapkan belanjaan",
+        "timestamp": 1795019198619,
+        "generated_by": "template",
+        "data_context": {
+          "untung_hari_ini": 30000000,
+          "untung_kemarin": 0,
+          "selisih": 30000000,
+          "persen_selisih": 0,
+          "uang_masuk": 2800000000,
+          "modal": 2770000000,
+          "pengeluaran": 0,
+          "produk_terlaris": [
+            "BMW M4 Competition (2 terjual)"
+          ],
+          "produk_habis": [],
+          "produk_menipis": [
+            "Fortuner"
+          ],
+          "kasbon_belum_lunas": 0
+        }
       }
     ],
     "refresh_count": {
       "20261112": 5,
       "20261113": 2,
       "20261116": 1,
-      "20261118": 1
+      "20261118": 2
     }
   }
 ]
