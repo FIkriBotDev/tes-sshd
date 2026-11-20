@@ -267,6 +267,14 @@
         "saran": "Cek stok dan siapkan jualan hari ini",
         "timestamp": 1795079275085,
         "generated_by": "template"
+      },
+      {
+        "tanggal": "2026-11-20",
+        "ringkasan": "Belum ada penjualan hari ini",
+        "penyebab": "Belum ada aktivitas",
+        "saran": "Cek stok dan siapkan jualan hari ini",
+        "timestamp": 1795137482489,
+        "generated_by": "template"
       }
     ],
     "refresh_count": {
@@ -282,7 +290,8 @@
       "20261112": 1,
       "20261113": 1,
       "20261117": 2,
-      "20261119": 1
+      "20261119": 1,
+      "20261120": 1
     }
   },
   {
