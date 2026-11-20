@@ -270,11 +270,26 @@
       },
       {
         "tanggal": "2026-11-20",
-        "ringkasan": "Belum ada penjualan hari ini",
-        "penyebab": "Belum ada aktivitas",
-        "saran": "Cek stok dan siapkan jualan hari ini",
-        "timestamp": 1795137482489,
-        "generated_by": "template"
+        "ringkasan": "Hari ini untung Rp 5.000, sama dengan kemarin yang Rp 0, jadi naik Rp 5.000 (0%).",
+        "penyebab": "Masuk uang Rp 15.000 dan modal keluar Rp 10.000, jadi arusnya masih positif. Nasi Goreng jadi produk terlaris (1 terjual) dan tidak ada yang habis atau menipis.",
+        "saran": "Besok pastikan tambah stok Nasi Goreng sedikit lagi biar tidak ketinggalan kalau yang jalan cuma ini.",
+        "timestamp": 1795137512833,
+        "generated_by": "ai",
+        "data_context": {
+          "untung_hari_ini": 5000,
+          "untung_kemarin": 0,
+          "selisih": 5000,
+          "persen_selisih": 0,
+          "uang_masuk": 15000,
+          "modal": 10000,
+          "pengeluaran": 0,
+          "produk_terlaris": [
+            "Nasi Goreng (1 terjual)"
+          ],
+          "produk_habis": [],
+          "produk_menipis": [],
+          "kasbon_belum_lunas": 0
+        }
       }
     ],
     "refresh_count": {
@@ -291,7 +306,7 @@
       "20261113": 1,
       "20261117": 2,
       "20261119": 1,
-      "20261120": 1
+      "20261120": 2
     }
   },
   {
