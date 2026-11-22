@@ -723,11 +723,11 @@
       "title": "Bangun",
       "frequency": "daily",
       "dueDate": "2026-08-07T21:19:00.000Z",
-      "nextTrigger": "2026-11-22T21:19:00.000Z",
+      "nextTrigger": "2026-11-23T21:19:00.000Z",
       "isActive": true,
       "createdAt": "2026-08-06T14:19:59.967Z",
-      "updatedAt": "2026-11-21T21:19:00.967Z",
-      "lastTriggered": "2026-11-21T21:19:00.967Z"
+      "updatedAt": "2026-11-22T21:19:00.775Z",
+      "lastTriggered": "2026-11-22T21:19:00.775Z"
     },
     {
       "id": "f02ab251-b058-42f7-9d08-ef76f6144a19",
@@ -4319,6 +4319,17 @@
       "sentToTelegram": true,
       "relatedId": "f02ab251-b058-42f7-9d08-ef76f6144a19",
       "createdAt": "2026-11-22T19:11:00.070Z"
+    },
+    {
+      "id": "4c0f9e47-5839-4eec-945f-26c74446f627",
+      "userId": "3eae76d2-71e8-4c23-ba4d-ec37d674d032",
+      "type": "reminder_due",
+      "title": "⏰ Bangun",
+      "message": "Reminder: Bangun",
+      "isRead": false,
+      "sentToTelegram": true,
+      "relatedId": "43f6210a-748c-460d-867f-dae41525a2f1",
+      "createdAt": "2026-11-22T21:19:00.176Z"
     }
   ],
   "aiInsights": []
