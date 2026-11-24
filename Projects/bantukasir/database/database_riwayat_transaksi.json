@@ -3102,6 +3102,99 @@
         "kasir": "Muh. Reski Ramadani",
         "void": false,
         "day": 20773
+      },
+      {
+        "id": "trx_1795497596951",
+        "items": [
+          {
+            "id": 1793612764396,
+            "n": "Ayam goreng (Pedas)",
+            "p": 15000,
+            "c": 0,
+            "q": 1,
+            "vi": 0
+          },
+          {
+            "id": 1793612823957,
+            "n": "Kopi Hitam (Hot)",
+            "p": 5000,
+            "c": 0,
+            "q": 1,
+            "vi": 0
+          },
+          {
+            "id": 1793613669939,
+            "n": "Ikan goreng",
+            "p": 15000,
+            "c": 13000,
+            "q": 2
+          },
+          {
+            "id": 1793613700987,
+            "n": "Matcha latte (Large)",
+            "p": 15000,
+            "c": 0,
+            "q": 1,
+            "vi": 0
+          }
+        ],
+        "total": 68250,
+        "method": "tunai",
+        "timestamp": 1795497596951,
+        "day": 20781,
+        "void": false,
+        "from_order": "order_1795497533492",
+        "customer_name": "Daniel"
+      },
+      {
+        "id": "TRX-97596686",
+        "timestamp": 1795497596686,
+        "items": [
+          {
+            "id": 1793612764396,
+            "n": "Ayam goreng (Pedas)",
+            "p": 15000,
+            "c": 13000,
+            "q": 1,
+            "vi": 0
+          },
+          {
+            "id": 1793612823957,
+            "n": "Kopi Hitam (Hot)",
+            "p": 5000,
+            "c": 3000,
+            "q": 1,
+            "vi": 0
+          },
+          {
+            "id": 1793613669939,
+            "n": "Ikan goreng",
+            "p": 15000,
+            "c": 13000,
+            "q": 2
+          },
+          {
+            "id": 1793613700987,
+            "n": "Matcha latte (Large)",
+            "p": 15000,
+            "c": 13000,
+            "q": 1,
+            "vi": 0
+          }
+        ],
+        "total": 68250,
+        "subtotal": 65000,
+        "diskon": 0,
+        "diskon_persen": 0,
+        "diskon_nominal": 0,
+        "ppn": 3250,
+        "ppn_persen": 5,
+        "metode_bayar": "tunai",
+        "kasir": "Muh. Reski Ramadani",
+        "void": false,
+        "bayar": 70000,
+        "kembalian": 1750,
+        "day": 20781
       }
     ]
   },

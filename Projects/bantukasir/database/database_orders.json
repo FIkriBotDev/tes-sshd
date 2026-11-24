@@ -481,11 +481,12 @@
             "variant_index": 0
           }
         ],
-        "subtotal": 65000,
-        "status": "pending",
+        "subtotal": 68250,
+        "status": "paid",
         "created_at": 1795497533492,
-        "payment_method": null,
-        "processed_by": null
+        "payment_method": "tunai",
+        "processed_by": "kasir",
+        "processed_at": 1795497596951
       }
     ]
   }
