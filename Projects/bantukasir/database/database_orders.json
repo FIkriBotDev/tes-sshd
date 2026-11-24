@@ -439,6 +439,53 @@
         "payment_method": "qris",
         "processed_by": "kasir",
         "processed_at": 1794808768600
+      },
+      {
+        "order_id": "order_1795497533492",
+        "order_number": 46,
+        "customer_name": "Daniel",
+        "items": [
+          {
+            "id": 1793612764396,
+            "name": "Ayam goreng (Pedas)",
+            "price": 15000,
+            "cost": 0,
+            "quantity": 1,
+            "image": "https://images.unsplash.com/photo-1732185269471-b62b52ca46f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8QXlhbSUyMGdvcmVuZ3xlbnwwfHx8fDE3OTM2MDgxMDV8MA&ixlib=rb-4.1.0&q=80&w=400",
+            "variant_index": 0
+          },
+          {
+            "id": 1793612823957,
+            "name": "Kopi Hitam (Hot)",
+            "price": 5000,
+            "cost": 0,
+            "quantity": 1,
+            "image": "https://images.unsplash.com/photo-1611162458324-aae1eb4129a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8S29waSUyMEhpdGFtfGVufDB8fHx8MTc5MzYxMjg0M3ww&ixlib=rb-4.1.0&q=80&w=400",
+            "variant_index": 0
+          },
+          {
+            "id": 1793613669939,
+            "name": "Ikan goreng",
+            "price": 15000,
+            "cost": 13000,
+            "quantity": 2,
+            "image": "https://images.unsplash.com/photo-1725393325387-07f0d4951528?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8SWthbiUyMGdvcmVuZ3xlbnwwfHx8fDE3OTM2MTM2NzB8MA&ixlib=rb-4.1.0&q=80&w=400"
+          },
+          {
+            "id": 1793613700987,
+            "name": "Matcha latte (Large)",
+            "price": 15000,
+            "cost": 0,
+            "quantity": 1,
+            "image": "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTE0ODUwfDB8MXxzZWFyY2h8MXx8TWF0Y2hhJTIwbGF0dGV8ZW58MHx8fHwxNzkzNjEzNzI2fDA&ixlib=rb-4.1.0&q=80&w=400",
+            "variant_index": 0
+          }
+        ],
+        "subtotal": 65000,
+        "status": "pending",
+        "created_at": 1795497533492,
+        "payment_method": null,
+        "processed_by": null
       }
     ]
   }
